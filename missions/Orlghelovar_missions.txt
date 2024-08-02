@@ -1073,8 +1073,8 @@ orlghelovar_2p1s = {
 		provinces_to_highlight = {
 			NOT = {
 				OR = {
-					owned_by = F23
 					owned_by = ROOT
+					country_or_non_sovereign_subject_holds = F23
 				}
 			}
 			OR = {
@@ -1092,21 +1092,21 @@ orlghelovar_2p1s = {
 				type = all
 				OR = {
 					owned_by = ROOT
-					owned_by = F23
+					country_or_non_sovereign_subject_holds = F23
 				}
 			}
 			west_overmarch_area = {
 				type = all
 				OR = {
 					owned_by = ROOT
-					owned_by = F23
+					country_or_non_sovereign_subject_holds = F23
 				}
 			}
 			east_overmarch_area = {
 				type = all
 				OR = {
 					owned_by = ROOT
-					owned_by = F23
+					country_or_non_sovereign_subject_holds = F23
 				}
 			}
 		}
@@ -1277,8 +1277,8 @@ orlghelovar_2p2s = {
 						}
 					}
 					AND = {
-						owned_by = F23
-						is_core = F23
+						country_or_non_sovereign_subject_holds = F23
+						is_core = owner
 					}
 				}
 			}
@@ -1757,11 +1757,11 @@ orlghelovar_3p3snt = {
 			F23 = { years_in_vassalage_under = { who = ROOT years = 25 } }
 			reuyel_area = {
 				type = all
-				owned_by = F23
+				country_or_non_sovereign_subject_holds = F23
 			}
 			crathanor_area = {
 				type = all
-				owned_by = F23
+				country_or_non_sovereign_subject_holds = F23
 			}
 			
 		}
