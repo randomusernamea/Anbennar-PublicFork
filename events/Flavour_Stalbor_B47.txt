@@ -72,3 +72,127 @@ country_event = {
 		}
 	}
 }
+
+province_event = {
+	id = flavor_stalbor.2
+	title = flavor_stalbor.2.t
+	desc = flavor_stalbor.2.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	immediate = {
+		owner = {
+			hidden_effect = {
+				set_country_flag = arturo_meny_open
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = arturo_menu_first
+					}
+				}
+				set_variable = {
+					which = arturoAdminCount
+					value = 1
+				}
+				set_country_flag = arturo_menu_first
+			}
+		}
+	}
+
+	#Admin
+	option = {		
+		name = "flavor_stalbor.2.a"
+		ai_chance = { factor = 40 }	
+		trigger = {
+			check_variable = {
+				which = arturoAdminCount
+				value = 0
+			}
+		}
+		add_permanent_province_modifier = {
+			name = arturos_adm_branch
+			duration = -1
+		}
+		hidden = {
+			change_variable = {
+				which = arturoAdminCount
+				value = 1
+			}
+		}
+	}
+	
+	#Military
+	option = {		
+		name = "flavor_stalbor.2.b"
+		ai_chance = { factor = 40 }	
+		remove_province_modifier = arturos_watch_chapter
+		add_permanent_province_modifier = {
+			name = arturos_mil_branch
+			duration = -1
+		}
+		hidden = {
+			if = {
+				limit = {
+					check_variable = {
+						which = arturoAdminCount
+						value = 1
+					}
+				}
+				change_variable = {
+					which = arturoAdminCount
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = arturoAdminCount
+						value = 2
+					}
+				}
+				set_variable = {
+					which = arturoAdminCount
+					value = 0
+				}
+			}
+		}
+	}
+	
+	#Naval
+	#option = {		
+	#	name = "flavor_stalbor.2.c"
+	#	ai_chance = { factor = 10 }	
+	#	
+	#}
+
+	#Back
+	option = {		
+		name = "flavor_stalbor.2.e"
+		ai_chance = { factor = 20 }
+	}
+
+	after = {
+		owner = {
+			hidden_effect = {
+				clr_country_flag = arturo_meny_open
+			}
+		}
+	}
+}
