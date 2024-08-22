@@ -52,6 +52,7 @@ country_decisions = {
 			else_if = { #Stalbor
 				limit = { tag = B13 }
 				change_tag = B47
+				country_event = { id = flavor_stalbor.3 days = 1 }
 			}
 			else_if = { #Ravenmarch
 				limit = { tag = B14 }
