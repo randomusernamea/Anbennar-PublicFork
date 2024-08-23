@@ -102,6 +102,16 @@ can_increase_autonomy = {
 }
 
 can_decrease_autonomy = {
+	condition = {
+		potential = {
+			FROM = {
+				has_reform = book_of_stone
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 can_make_core = {

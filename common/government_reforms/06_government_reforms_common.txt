@@ -7026,3 +7026,25 @@ aggregate_integrate_associate_amalgamate = {
 		factor = 10
 	}
 }
+
+book_of_stone = {
+	icon = "soldiers_4"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		has_country_flag = book_of_stone_unlocked
+	}
+	trigger = {
+	}
+	modifiers = {
+		num_accepted_cultures = 2
+		global_autonomy = -0.1
+		adventurers_loyalty_modifier = 0.1
+		adventurers_influence_modifier = 0.1
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		disabled_purging = yes
+		disabled_expelling = yes
+	}
+}

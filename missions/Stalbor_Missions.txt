@@ -1,0 +1,354 @@
+#Designed and coded by: Nilsoop
+
+B47_stalbor_column_1 = {
+    slot = 1
+    generic = no
+	ai = yes
+    has_country_shield = yes
+
+    potential = {
+		tag = B47
+    }
+
+    B47_deepwood_gateway = {
+        icon = mission_court_education
+		position = 3
+		required_missions = {
+			B47_bladeskeep_and_the_watch
+		}
+
+        trigger = {
+            banesfork_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            beastgrave_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            OR = {
+                AND = {
+                    high_tolerance_elven_race_trigger = yes
+                    OR = {
+                        has_elven_minority_trigger = yes
+                        has_elven_majority_trigger = yes
+                    }
+                }
+                AND = {
+                    any_known_country = { 
+                        AND = {
+                            has_country_modifier = elven_administration
+                            has_opinion = {
+                                who = ROOT
+                                value = 150
+                            }
+                        }
+                    }
+                    OR = {
+                        advisor = diplomat
+                        advisor = statesman
+                    }
+                }
+            }
+        }
+
+        effect = {
+            banesfork_area = {
+                type = all
+				add_elven_minority_size_effect = yes
+            }
+            west_deepwoods_region = {
+                type = all
+                undiscover_country = B47
+            }
+        }
+
+    }
+}
+
+B47_stalbor_column_2 = {
+    slot = 2
+    generic = no
+	ai = yes
+    has_country_shield = yes
+
+    potential = {
+		tag = B47
+    }
+
+    B47_the_early_cuirassiers = {
+        icon = mission_court_education
+		position = 3
+		required_missions = {
+			B47_bladeskeep_and_the_watch
+		}
+
+        trigger = {
+            OR = {
+                any_owned_province = {
+                    is_core = ROOT
+                    trade_goods = livestock
+                    development = 10
+                    has_production_building_trigger = yes
+                }  
+                any_ally = { 
+                    any_owned_province = {
+                        trade_goods = livestock
+                    }
+                }
+            }
+            OR = {
+                army_tradition = 30
+                army_professionalism = 0.15
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = B47_the_early_cuirassiers
+                duration = -1
+            }
+        }
+
+    }
+}
+
+B47_stalbor_column_3 = {
+    slot = 3
+    generic = no
+	ai = yes
+    has_country_shield = yes
+
+    potential = {
+		tag = B47
+    }
+
+    B47_southern_heartland = {
+		icon = mission_court_education
+		position = 1
+		required_missions = {
+			
+		}
+
+        trigger = {
+            vernham_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            oudeben_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            clovenwood_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            mil_power = 50
+        }
+
+        effect = {
+            set_capital = 808
+            808 = {
+                if = {
+                    limit = {
+                        has_fort_building_trigger = no
+                    }
+                    add_building_construction = {
+                        building = fort_15th
+                        speed = 1
+                        cost = 0.5
+                    }
+                }
+            }
+            blademarch_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+            banesfork_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+            beastgrave_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+            add_mil_power = -50
+            define_general = {
+                fire = 1
+                shock = 3
+                manuever = 1
+                siege = 3
+            }
+        }
+    }
+
+    B47_bladeskeep_and_the_watch = {
+		icon = mission_court_education
+		position = 2
+		required_missions = {
+			B47_southern_heartland
+		}
+
+        trigger = {
+            blademarch_area = {
+                type = all
+				owned_by = ROOT
+                is_core = ROOT
+            }
+            manpower = 5
+            817 = { has_fort_building_trigger = yes }
+        }
+
+        effect = {
+            country_event = {
+                id = flavor_stalbor.4
+            }
+            add_manpower = -5
+
+            themin_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+            humacvord_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+            burnoll_area = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+        }
+    } 
+
+    B47_regional_security = {
+		icon = mission_court_education
+		position = 3
+		required_missions = {
+			B47_bladeskeep_and_the_watch
+		}
+
+        trigger = {
+            OR = {
+                barracks = 5
+                training_fields = 5
+            }
+
+            OR = {
+                any_known_country = {
+                    any_owned_province = {
+                        region = south_castanor_region
+                    }
+                    has_spy_network_from = {
+                        who = ROOT
+                        value = 20
+                    }
+                }
+                south_castanor_region = {
+                    type = all
+				    owned_by = ROOT
+                    is_core = ROOT
+                }
+            }
+
+            any_known_country = {
+                NOT = { is_tag = ROOT }
+                capital_scope = {
+                    OR = {
+                        region = inner_castanor_region
+                        region = west_castanor_region
+                    }
+                }
+                has_opinion = {
+                    who = ROOT
+                    value = 200
+                }
+            }
+
+            themin_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            humacvord_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            burnoll_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = B47_southern_conquest
+                duration = 5475
+            }
+            south_castanor_region = {
+                type = all
+                add_permanent_claim = ROOT
+            }
+        }
+    } 
+}
+
+B47_stalbor_column_5 = {
+    slot = 5
+    generic = no
+	ai = yes
+    has_country_shield = yes
+
+    potential = {
+		tag = B47
+    }
+
+    B47_bgeinnings_of_a_city = {
+		icon = mission_court_education
+		position = 2
+		required_missions = {
+			B47_southern_heartland
+		}
+
+        trigger = {
+            808 = {
+                has_tax_building_trigger = yes
+                has_production_building_trigger = yes
+                has_manpower_building_trigger = yes
+                development = 10
+            }
+            800 = {
+                has_tax_building_trigger = yes
+                has_production_building_trigger = yes
+                has_manpower_building_trigger = yes
+                development = 10
+            }
+        }
+
+        effect = {
+            808 = {
+                add_permanent_province_modifier = {
+                    name = vernham_urbanization_I
+                    duration = -1
+                }
+                add_permanent_province_modifier = {
+                    name = arturos_watch_chapter
+                    duration = -1
+                }
+            }
+            800 = {
+                add_permanent_province_modifier = {
+                    name = vernham_urbanization_I
+                    duration = -1
+                }
+            }
+        }
+    }
+}
