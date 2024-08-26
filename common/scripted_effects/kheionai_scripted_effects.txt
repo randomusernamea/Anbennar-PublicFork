@@ -1343,326 +1343,89 @@ check_clan_winning = {
     }
 }
 
-decrease_random_clan_selection = {
-	[[clan_1]
-		random_list = {
-            10 = {
-                decrease_random_clan_vote = { clan = clan_2 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_3 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_4 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_5 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_6 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_7 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_8 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_9 }
-            }
-            10 = {
-                decrease_random_clan_vote = { clan = clan_10 }
-            }
-        }
-	]
-
-	[[clan_2]
-    	random_list = {
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_1 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_3 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_4 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_5 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_6 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_7 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_8 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_9 }
-			}
-    	    10 = {
-    	    	decrease_random_clan_vote = { clan = clan_10 }
-    	    }
-    	}
-	]
-
-	[[clan_3]
-    	random_list = {
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_1 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_2 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_4 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_5 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_6 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_7 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_8 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_9 }
-    	    }
-    	    10 = {
-    	        decrease_random_clan_vote = { clan = clan_10 }
-    	    }
-    	}
-	]
-
-	[[clan_4]
-	    random_list = {
-	        10 = {
+decrease_random_clan_option = {
+	random_list = {
+		[[clan_1]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_1 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_1 }
 	        }
-	        10 = {
+		]
+		[[clan_2]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_2 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_2 }
 	        }
-	        10 = {
+		]
+		[[clan_3]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_3 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_3 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_5 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_6 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_7 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_8 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_9 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_5]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
+		]
+		[[clan_4]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_4 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_4 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_6 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_7 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_8 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_9 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_6]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_4 }
-	        }
-	        10 = {
+		]
+		[[clan_5]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_5 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_5 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_7 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_8 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_9 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_7]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_4 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_5 }
-	        }
-	        10 = {
+		]
+		[[clan_6]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_6 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_6 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_8 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_9 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_8]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_4 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_5 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_6 }
-	        }
-	        10 = {
+		]
+		[[clan_7]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_7 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_7 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_9 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_9]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_4 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_5 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_6 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_7 }
-	        }
-	        10 = {
+		]
+		[[clan_8]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_8 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_8 }
 	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_10 }
-	        }
-	    }
-	]
-
-	[[clan_10]
-	    random_list = {
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_1 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_2 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_3 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_4 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_5 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_6 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_7 }
-	        }
-	        10 = {
-	            decrease_random_clan_vote = { clan = clan_8 }
-	        }
-	        10 = {
+		]
+		[[clan_9]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_9 } 
+				}
 	            decrease_random_clan_vote = { clan = clan_9 }
 	        }
-	    }
-	]
+		]
+		[[clan_10]
+			 10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_10 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_10 }
+	        }
+		]
+	}
 }
 
 decrease_random_clan_vote = {
@@ -1678,4 +1441,3 @@ increase_clan_vote = {
         value = 1
     }
 }
-

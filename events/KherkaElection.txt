@@ -55,7 +55,7 @@ country_event = { #Setting up the variable and calculating
             which = highest_vote
             value = 0
         }
-        set_variable = {
+        set_variable = { #Maximum number of votes
             which = max_vote
             value = 50
         }
@@ -66,7 +66,7 @@ country_event = { #Setting up the variable and calculating
                     value = 1
                 }
             }
-            random_list = {
+            random_list = { #50 times randomly increasing a clan's vote
                 10 = {
                     increase_random_clan_vote = { clan = clan_1 }
                     check_clan_winning = { clan = clan_1 }
@@ -130,7 +130,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 1
     option = { 
         name = kherkaelection.1.a
-        decrease_random_clan_selection = { clan_1 = yes }
+        decrease_random_clan_option = { #Randomly decrease 1 vote from a clan, except for this
+            clan_2 = yes 
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_1 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_1 }
@@ -140,7 +150,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 2
     option = { 
         name = kherkaelection.2.a
-        decrease_random_clan_selection = { clan_2 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_2 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_2 }
@@ -150,7 +170,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 3
     option = { 
         name = kherkaelection.3.a
-        decrease_random_clan_selection = { clan_3 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_3 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_3 }
@@ -160,7 +190,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 4
     option = { 
         name = kherkaelection.4.a
-        decrease_random_clan_selection = { clan_4 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_4 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_4 }
@@ -170,7 +210,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 5
     option = { 
         name = kherkaelection.5.a
-        decrease_random_clan_selection = { clan_5 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_5 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_5 }
@@ -180,7 +230,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 6
     option = { 
         name = kherkaelection.6.a
-        decrease_random_clan_selection = { clan_6 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_6 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_6 }
@@ -190,7 +250,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 7
     option = { 
         name = kherkaelection.7.a
-        decrease_random_clan_selection = { clan_7 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_8 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_7 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_7 }
@@ -200,7 +270,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 8
     option = { 
         name = kherkaelection.8.a
-        decrease_random_clan_selection = { clan_8 = yes }
+        decrease_random_clan_option = {
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_9 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_8 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_8 }
@@ -210,7 +290,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 9
     option = { 
         name = kherkaelection.9.a
-        decrease_random_clan_selection = { clan_9 = yes }
+        decrease_random_clan_option = {
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_10 = yes
+        }
         increase_clan_vote = { clan = clan_9 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_9 }
@@ -220,7 +310,17 @@ country_event = { #Displaying to the player the total votes
     # Option for Clan 10
     option = { 
         name = kherkaelection.10.a
-        decrease_random_clan_selection = { clan_10 = yes }
+        decrease_random_clan_option = { 
+            clan_1 = yes 
+            clan_2 = yes
+            clan_3 = yes
+            clan_4 = yes
+            clan_5 = yes
+            clan_6 = yes
+            clan_7 = yes
+            clan_8 = yes
+            clan_9 = yes
+        }
         increase_clan_vote = { clan = clan_10 }
         add_republican_tradition = -2
         check_clan_winning = { clan = clan_10 }
