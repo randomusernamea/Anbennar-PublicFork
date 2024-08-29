@@ -1,4 +1,8 @@
 
+temp_mod_do_remove = {
+	build_time = -0.9
+}
+
 arturos_watch_chapter = {
 	trade_goods_size_modifier = 0.005
 	local_unrest = -1
@@ -28,13 +32,13 @@ arturos_naval_branch = {
 }
 
 vernham_urbanization_I = {
-	supply_limit = 0.05
+	supply_limit_modifier = 0.1
 	local_development_cost = -0.1
 	allowed_num_of_buildings = 1
 }
 
 vernham_urbanization_II = {
-	supply_limit = 0.15
+	supply_limit_modifier = 0.25
 	local_attacker_dice_roll_bonus = -1
 	local_development_cost = -0.15
 	allowed_num_of_buildings = 2
@@ -42,7 +46,7 @@ vernham_urbanization_II = {
 }
 
 vernham_urbanization_III = {
-	supply_limit = 0.50
+	supply_limit_modifier = 0.50
 	local_attacker_dice_roll_bonus = -2
 	local_development_cost = -0.20
 	allowed_num_of_buildings = 2
@@ -59,4 +63,9 @@ B47_the_early_cuirassiers = {
 B47_southern_conquest = {
 	province_warscore_cost = -0.1
 	land_morale = 0.05
+}
+
+stewards_of_calindal = {
+	prestige = 1
+	leader_land_fire = 1
 }

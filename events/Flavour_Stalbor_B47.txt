@@ -172,6 +172,10 @@ country_event = {
 	option = {		
 		name = "flavor_stalbor.3.a"
 		ai_chance = { factor = 100 }	
+		add_country_modifier = {
+			name = temp_mod_do_remove
+			duration = -1
+		}
 		random_owned_province = {
 			add_orcish_minority_size_effect = yes
 			add_goblin_minority_size_effect = yes
@@ -219,4 +223,30 @@ country_event = {
 		}
 		set_country_flag = book_of_stone_unlocked
 	}
+}
+
+country_event = {
+	id = flavor_stalbor.5
+	title = flavor_stalbor.5.t
+	desc = flavor_stalbor.5.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	#Basic Setup
+	option = {		
+		name = "flavor_stalbor.5.a"
+		ai_chance = { factor = 100 }	
+		817 = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+				leader = "Elrac of Dustandar"
+			}
+		}
+	}	
 }
