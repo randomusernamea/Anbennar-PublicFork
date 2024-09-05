@@ -7073,6 +7073,25 @@ startup_1444_effects = {
 				duration = -1
 			}
 		}
+
+		#taric and cagodic migrations assimilation
+		if = {
+			limit = {
+				owns = 700
+			}
+			700 = { province_event = { id = gerudia.28 days = 18250 } }
+		}
+
+		if = {
+			limit = {
+				culture_group = kheionai_ruinborn_elf
+				ai = no
+			}
+			country_event = {
+				id = kheionai.30
+				days = 730
+			}
+		}
 	}
 }
 
