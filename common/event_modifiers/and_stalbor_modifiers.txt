@@ -11,7 +11,6 @@ arturos_watch_chapter = {
 arturos_adm_branch = {
 	local_unrest = -2
 	local_tax_modifier = 0.5
-	yearly_corruption = -0.05
 	governing_capacity = 25
 }
 
@@ -19,7 +18,6 @@ arturos_mil_branch = {
 	local_unrest = -2
 	local_manpower = 0.5
 	land_forcelimit = 2
-	drill_decay_modifier = -0.02
 	local_defensiveness = 0.25
 }
 
@@ -27,7 +25,6 @@ arturos_naval_branch = {
 	local_unrest = -2
 	local_sailor = 0.25
 	naval_forcelimit = 4
-	global_naval_barrage_cost = -0.05
 	blockade_force_required = 1
 }
 
@@ -63,6 +60,10 @@ B47_the_early_cuirassiers = {
 B47_southern_conquest = {
 	province_warscore_cost = -0.1
 	land_morale = 0.05
+}
+
+B47_eastern_rebuilding = {
+	local_development_cost = -0.15
 }
 
 stewards_of_calindal = {

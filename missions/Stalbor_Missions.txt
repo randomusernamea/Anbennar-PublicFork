@@ -123,7 +123,6 @@ B47_stalbor_column_2 = {
         trigger = {
             OR = {
                 any_owned_province = {
-                    is_core = ROOT
                     trade_goods = livestock
                     development = 10
                     has_production_building_trigger = yes
@@ -338,6 +337,63 @@ B47_stalbor_column_3 = {
             }
         }
     } 
+    B47_western_heartland = {
+		icon = mission_court_education
+		position = 4
+		required_missions = {
+			B47_regional_security
+		}
+
+        trigger = {
+            dostans_way_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            devaced_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            catelsvord_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            oudmerewood_area = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            793 = {
+                has_manpower_building_trigger = yes
+                province_has_current_tech_fort_trigger = yes
+            }
+        }
+
+        effect = {
+            793 = {
+                add_permanent_province_modifier = {
+                    name = arturos_watch_chapter
+                    duration = -1
+                }
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = blademarch_uprising_stalbor
+                        }
+                    }
+                    country_event = {
+                        id = flavor_stalbor.5
+                    }
+                    set_country_flag = blademarch_uprising_stalbor
+                }
+            }
+        }
+    }
+
 }
 
 B47_stalbor_column_4 = {
@@ -409,16 +465,32 @@ B47_stalbor_column_4 = {
                     name = arturos_watch_chapter
                     duration = -1
                 }
+                add_province_modifier = {
+                    name = B47_eastern_rebuilding
+                    duration = 3650
+                }
             }
             4097 = {
                 add_permanent_province_modifier = {
                     name = arturos_watch_chapter
                     duration = -1
                 }
+                add_province_modifier = {
+                    name = B47_eastern_rebuilding
+                    duration = 3650
+                }
             }
             hidden_effect = {
-                country_event = {
-                    id = flavor_stalbor.5
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = blademarch_uprising_stalbor
+                        }
+                    }
+                    country_event = {
+                        id = flavor_stalbor.5
+                    }
+                    set_country_flag = blademarch_uprising_stalbor
                 }
             }
         }
