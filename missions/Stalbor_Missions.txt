@@ -40,12 +40,10 @@ B47_stalbor_column_1 = {
                 }
                 AND = {
                     any_known_country = { 
-                        AND = {
-                            has_country_modifier = elven_administration
-                            has_opinion = {
-                                who = ROOT
-                                value = 150
-                            }
+                        has_country_modifier = elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 150
                         }
                     }
                     OR = {
@@ -69,38 +67,77 @@ B47_stalbor_column_1 = {
                 type = all
                 discover_country = B47
             }
-            south_castanor_region = {
-                discover_country = I26
-                discover_country = I27
-                discover_country = I28
-                discover_country = I29
-            }
-            I26 = {
+            every_country = {
+                limit = {
+                    capital_scope = {
+                        region = west_deepwoods_region
+                    }
+                    has_country_modifier = elven_administration
+                }
                 add_opinion = {
                     who = ROOT
                     modifier = B47_elven_diplomat
                 }
-            }
-            I27 = {
-                add_opinion = {
-                    who = ROOT
-                    modifier = B47_elven_diplomat
-                }
-            }
-            I28 = {
-                add_opinion = {
-                    who = ROOT
-                    modifier = B47_elven_diplomat
-                }
-            }
-            I29 = {
-                add_opinion = {
-                    who = ROOT
-                    modifier = B47_elven_diplomat
+                south_castanor_region = {
+                    discover_country = PREV
                 }
             }
         }
     }
+
+    B47_deepwood_relations = {
+        icon = mission_court_education
+		position = 4
+		required_missions = {
+			B47_deepwood_gateway
+		}
+
+        trigger = {
+            OR = {
+                any_ally = {
+                    has_country_modifier = elven_administration
+                    has_opinion = {
+                        who = ROOT
+                        value = 190
+                    }
+                    capital_scope = {
+                        region = west_deepwoods_region
+                    }
+                }
+                any_subject_country = {
+                    has_country_modifier = elven_administration
+                    capital_scope = {
+                        region = west_deepwoods_region
+                    }
+                }
+                all_known_country = {
+                    NOT = { has_country_modifier = elven_administration }
+                    capital_scope = {
+                        NOT = { region = west_deepwoods_region }
+                    }
+                }
+            }
+        }
+
+        effect = {
+            every_known_country = {
+                limit = {
+                    has_country_modifier = elven_administration
+                    has_opinion = {
+                        who = ROOT
+                        value = 190
+                    }
+                    capital_scope = {
+                        region = west_deepwoods_region
+                    }
+                }
+                country_event = {
+                    id = flavor_stalbor.7
+                }
+            }
+        }
+    }
+
 }
 
 B47_stalbor_column_2 = {
