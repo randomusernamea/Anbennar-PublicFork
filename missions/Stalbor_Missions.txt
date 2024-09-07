@@ -132,7 +132,7 @@ B47_stalbor_column_1 = {
                     }
                 }
                 country_event = {
-                    id = flavor_stalbor.7
+                    id = flavor_stalbor.9
                 }
             }
         }
@@ -316,7 +316,7 @@ B47_stalbor_column_3 = {
 
             OR = {
                 any_known_country = {
-                    any_owned_province = {
+                    capital_scope = {
                         region = south_castanor_region
                     }
                     has_spy_network_from = {
@@ -324,11 +324,10 @@ B47_stalbor_column_3 = {
                         value = 20
                     }
                 }
-                south_castanor_region = {
-                    type = all
-				    owned_by = ROOT
-                    is_core = ROOT
-                    is_city = yes
+                all_country = { 
+                    capital_scope = {
+                        NOT = { region = south_castanor_region }
+                    }
                 }
             }
 
@@ -418,9 +417,7 @@ B47_stalbor_column_3 = {
             hidden_effect = {
                 if = {
                     limit = {
-                        NOT = {
-                            has_country_flag = blademarch_uprising_stalbor
-                        }
+                        NOT = { has_country_flag = blademarch_uprising_stalbor }
                     }
                     country_event = {
                         id = flavor_stalbor.5
@@ -430,7 +427,6 @@ B47_stalbor_column_3 = {
             }
         }
     }
-
 }
 
 B47_stalbor_column_4 = {
@@ -584,5 +580,48 @@ B47_stalbor_column_5 = {
                 }
             }
         }
+    }
+
+    B47_Orc_&_Goblin_Integration = {
+        icon = mission_court_education
+		position = 3
+		required_missions = {
+			B47_beginnings_of_a_city
+            B47_bladeskeep_and_the_watch
+		}
+
+        trigger = {
+            OR = {
+                high_tolerance_goblin_race_trigger = yes
+                AND = {
+                    any_known_country = {
+                        has_country_modifier = goblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                    dip_power = 50
+                }
+            }
+            OR = {
+                high_tolerance_orcish_race_trigger = yes
+                AND = {
+                    any_known_country = {
+                        has_country_modifier = orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                    dip_power = 50
+                }
+            }
+        }
+
+        effect = {
+
+        }
+
     }
 }
