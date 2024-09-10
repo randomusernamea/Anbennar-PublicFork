@@ -1395,6 +1395,19 @@ country_event = {
 			every_owned_province = {
 				cede_province = ROOT
 			}
+			if = {
+				limit = {
+					has_colonist = no
+				}
+				add_country_modifier = {
+					name = nekhei_new_colonies
+					duration = -1
+				}
+				add_country_modifier = {
+					name = nekheis_cheap_colonies
+					duration = 18250 #50 Years
+				}
+			}
 		}
 	}
 }
