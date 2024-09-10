@@ -1,6 +1,9 @@
 
 temp_mod_to_remove = {
 	build_time = -0.9
+	improve_relation_modifier = 1
+	core_creation = -0.9
+	global_missionary_strength = 0.99
 }
 
 arturos_watch_chapter = {
@@ -57,6 +60,11 @@ B47_the_early_cuirassiers = {
 	morale_damage = 0.05
 }
 
+B47_the_winged_cuirassiers = {
+	cavalry_power = 0.15
+	morale_damage = 0.15
+}
+
 B47_southern_conquest = {
 	province_warscore_cost = -0.1
 	land_morale = 0.05
@@ -69,4 +77,40 @@ B47_eastern_rebuilding = {
 stewards_of_calindal = {
 	prestige = 1
 	leader_land_fire = 1
+}
+
+B47_religious_converts = {
+	global_missionary_strength = 0.02
+}
+
+B47_religious_turmoil = {
+	tolerance_own = -5
+	tolerance_heretic = -5
+	tolerance_heathen = -5
+}
+
+B47_deepwoods_accord_I = {
+	liberty_desire = -25
+	global_missionary_strength = 0.02
+}
+
+B47_deepwoods_accord_II = {
+	liberty_desire = -50
+	global_missionary_strength = 0.02
+	land_forcelimit_modifier = 0.15
+}
+
+B47_ozdan_shock_troops = {
+	shock_damage = 0.10
+	recover_army_morale_speed = 0.10
+}
+
+B47_dargom_generals = {
+	leader_land_fire = 1
+	general_cost = -0.15
+}
+
+B47_the_every_hold = {
+	local_unrest = -2
+	province_trade_power_modifier = 1
 }

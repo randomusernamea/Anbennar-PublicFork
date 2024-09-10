@@ -177,6 +177,10 @@ country_event = {
 			name = temp_mod_to_remove
 			duration = -1
 		}
+		forlorn_vale_region = {
+			discover_country = ROOT
+		}
+		####
 		random_owned_province = {
 			add_orcish_minority_size_effect = yes
 			add_goblin_minority_size_effect = yes
@@ -424,7 +428,64 @@ country_event = {
 			days = 1
 		}
 	}
+}
 
+country_event = {
+	id = flavor_stalbor.8
+	title = flavor_stalbor.8.t
+	desc = flavor_stalbor.8.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Wood Elf Vassalization
+	option = {		
+		name = "flavor_stalbor.8.a"
+		ai_chance = { factor = 100 }
+		FROM = {
+			vassalize = I27
+		}
+		change_religion = FROM
+		west_deepwoods_region = {
+			type = all
+            add_permanent_claim = ROOT
+		}
+		add_country_modifier = {
+			name = B47_religious_turmoil
+			duration = 9125
+		}
+		add_country_modifier = {
+			name = B47_deepwoods_accord_I
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "flavor_stalbor.8.b"
+		ai_chance = { factor = 0 }	
+		FROM = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_vassalize_mission
+			}
+		}
+		west_deepwoods_region = {
+			type = all
+            add_permanent_claim = ROOT
+		}
+		add_country_modifier = {
+			name = B47_religious_turmoil
+			duration = 9125
+		}
+		add_country_modifier = {
+			name = B47_deepwoods_accord_I
+			duration = -1
+		}
+	}
 }
 
 country_event = {
@@ -439,14 +500,215 @@ country_event = {
 		always = yes
 	}
 	
-	#Wood Elf Vassalization
-	option = {		
+	#Integrate the Dargom
+	option = {	
 		name = "flavor_stalbor.9.a"
-		ai_chance = { factor = 100 }	
-		vassalize = FROM
-		west_deepwoods_region = {
+		ai_chance = { factor = 50 }
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_orcish_majority_trigger = yes
+					has_orcish_minority_trigger = yes
+				}
+			}
+			spawn_rebels = {
+				type = leadered_peasant_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_orcish_majority_trigger = yes
+					has_orcish_minority_trigger = yes
+				}
+			}
+			spawn_rebels = {
+				type = leadered_peasant_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_orcish_majority_trigger = yes
+					has_orcish_minority_trigger = yes
+				}
+			}
+			spawn_rebels = {
+				type = leadered_peasant_rebels
+				size = 1
+			}
+		}
+		add_country_modifier = {
+			name = B47_dargom_generals
+			duration = -1
+		}
+	}
+
+	#Dismantling the Ozdan
+	option = {
+		name = "flavor_stalbor.9.b"
+		ai_chance = { factor = 50 }	
+		capital_scope = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+			}
+		}
+		add_country_modifier = {
+			name = B47_ozdan_shock_troops
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_stalbor.10
+	title = flavor_stalbor.10.t
+	desc = flavor_stalbor.10.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Last Pocket's of Resistance
+	option = {	
+		name = "flavor_stalbor.10.a"
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = {
+				culture_is_orcish = yes
+			}
+			spawn_rebels = {
+				type = great_dookan_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture_is_elven = yes
+			}
+			spawn_rebels = {
+				type = fey_court_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture_is_goblin = yes
+			}
+			spawn_rebels = {
+				type = goblinic_shamanism_rebels
+				size = 2
+			}
+		}
+		country_event = {
+			id = flavor_stalbor.11
+			days = 7
+		}
+	}
+}
+
+country_event = {
+	id = flavor_stalbor.11
+	title = flavor_stalbor.11.t
+	desc = flavor_stalbor.11.d
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {		
+		name = "flavor_stalbor.11.a"
+		ai_chance = { factor = 1 }	
+		country_event = {
+			id = flavor_stalbor.11
+			days = 7
+		}
+	}
+	option = {		
+		name = "flavor_stalbor.11.a"
+		ai_chance = { factor = 99 }	
+		trigger = {
+			ROOT = {
+				NOT = {
+					num_of_rebel_armies = 1
+				}
+			}
+			ROOT = {
+				NOT = {
+					num_of_rebel_controlled_provinces = 1
+				}
+			}
+		}
+		country_event = {
+			id = flavor_stalbor.12
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_stalbor.12
+	title = flavor_stalbor.12.t
+	desc = flavor_stalbor.12.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#The Matter of the Deepwoods
+	option = {	
+		name = "flavor_stalbor.12.a"
+		ai_chance = { factor = 100 }
+		I27 = {
+			remove_country_modifier = B47_religious_turmoil
+			remove_country_modifier = B47_deepwoods_accord_I
+			add_country_modifier = {
+				name = B47_deepwoods_accord_I
+				duration = -1
+			}
+		}
+		set_country_flag = B47_the_matters_of_the_deepwoods_event
+	}
+}
+
+country_event = {
+	id = flavor_stalbor.12
+	title = flavor_stalbor.12.t
+	desc = flavor_stalbor.12.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Vernham
+	option = {	
+		name = "flavor_stalbor.12.a"
+		ai_chance = { factor = 100 }
+		#Fuck This
+	}
+	#Castonath
+	option = {	
+		name = "flavor_stalbor.12.a"
+		ai_chance = { factor = 100 }
+		inner_castanor_region = {
 			type = all
             add_permanent_claim = ROOT
 		}
 	}
+
 }

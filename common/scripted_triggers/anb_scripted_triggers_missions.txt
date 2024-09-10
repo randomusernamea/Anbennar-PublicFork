@@ -1761,3 +1761,12 @@ pasriagha_trigger_is_most_invited_external = {
 		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_lefthand_path }
 	}
 }
+
+#Stalbor
+has_upgraded_watch_modifer = {
+	OR = {
+		has_province_modifier = arturos_mil_branch
+		has_province_modifier = arturos_adm_branch
+		has_province_modifier = arturos_naval_branch
+	}
+}

@@ -15614,8 +15614,7 @@ on_expanded_infrastructure = {
 			has_province_modifier = arturos_watch_chapter
 			FROM = {
 				OR = {
-					tag = B47
-					was_tag = B47
+					has_reform = book_of_stone
 				}
 				NOT = {has_country_flag = arturo_meny_open}
 			}

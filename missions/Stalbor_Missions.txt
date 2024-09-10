@@ -90,54 +90,243 @@ B47_stalbor_column_1 = {
 		position = 4
 		required_missions = {
 			B47_deepwood_gateway
+            B47_the_early_cuirassiers
 		}
 
         trigger = {
-            OR = {
-                any_ally = {
-                    has_country_modifier = elven_administration
+            I27 = {
+                OR = {
                     has_opinion = {
                         who = ROOT
-                        value = 190
+                        value = 150
                     }
-                    capital_scope = {
-                        region = west_deepwoods_region
-                    }
-                }
-                any_subject_country = {
-                    has_country_modifier = elven_administration
-                    capital_scope = {
-                        region = west_deepwoods_region
-                    }
-                }
-                all_known_country = {
-                    NOT = { has_country_modifier = elven_administration }
-                    capital_scope = {
-                        NOT = { region = west_deepwoods_region }
+                    is_subject_of = ROOT
+                    AND = {
+                        exists = no
+                        ROOT = {
+                            owns = 3054
+                        }
                     }
                 }
             }
         }
 
         effect = {
-            every_known_country = {
+            if = {
                 limit = {
-                    has_country_modifier = elven_administration
-                    has_opinion = {
-                        who = ROOT
-                        value = 190
-                    }
-                    capital_scope = {
-                        region = west_deepwoods_region
+                    I27 = {
+                        OR = {
+                            has_opinion = {
+                                who = ROOT
+                                value = 150
+                            }
+                            is_subject_of = ROOT
+                        }
                     }
                 }
-                country_event = {
-                    id = flavor_stalbor.9
+                I27 = {
+                    country_event = {
+                        id = flavor_stalbor.8
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = { exists = I27 }
+                    owns = 3054
+                }
+                3054 = {
+                    change_culture = wood_elf
+                    change_religion = ROOT
+                    add_core = I27
+                    cede_province = I27
+                }
+                I27 = {
+                    change_government = tribal
+                    add_government_reform = wood_elf_salla
+                    add_country_modifier = {
+                        name = B47_religious_turmoil
+                        duration = 9125
+                    }
+                    add_country_modifier = {
+                        name = B47_deepwoods_accord_II
+                        duration = -1
+                    }
+                }
+                west_deepwoods_region = {
+                    type = all
+                    add_permanent_claim = I27
+                }
+                vassalize = I27
+            }
+        }
+    }
+
+    B47_settle_deepwood_religious_dispute = {
+        icon = mission_court_education
+		position = 6
+		required_missions = {
+			B47_deepwood_relations
+		}
+
+        trigger = {
+            OR = {
+                I27 = {
+                    is_subject_of = ROOT
+                    religious_unity = 0.80
+                    liberty_desire = 0
+                    any_owned_province = {
+                        OR = {
+                            has_elven_majority_trigger = yes
+                            has_elven_minority_trigger = yes
+                        }
+                        OR = {
+                            has_orcish_majority_trigger = yes
+                            has_orcish_minority_trigger = yes
+                        }
+                        OR = {
+                            has_goblin_majority_trigger = yes
+                            has_goblin_minority_trigger = yes
+                        }
+                    }
+                }
+                AND = {
+                    I27 = {
+                        is_subject_of = ROOT
+                        religious_unity = 0.80
+                        liberty_desire = 0
+                    }
+                    OR = {
+                        NOT = {
+                            any_province = {
+                                region = west_deepwoods_region
+                                has_elven_majority_trigger = yes
+                                has_elven_minority_trigger = yes
+                            }
+                        }
+                        NOT = {
+                            any_province = {
+                                region = west_deepwoods_region
+                                has_orcish_majority_trigger = yes
+                                has_orcish_minority_trigger = yes
+                            }
+                        }
+                        NOT = {
+                            any_province = {
+                                region = west_deepwoods_region
+                                has_goblin_majority_trigger = yes
+                                has_goblin_minority_trigger = yes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        effect = {
+            country_event = {
+                id = flavor_stalbor.10
+            }
+        }
+    }
+
+    B47_fey_steel_manufacturing = {
+        icon = mission_court_education
+		position = 7
+		required_missions = {
+			B47_settle_deepwood_religious_dispute
+		}
+
+        trigger = {
+            calc_true_if = {
+                all_owned_province = {
+                    has_upgraded_watch_modifer = yes
+                }
+                amount = 4
+            }
+            custom_trigger_tooltip = {
+                custom_tooltip = B47_settled_the_deepwood_stuff
+                has_country_flag = B47_the_matters_of_the_deepwoods_event
+            }
+            813 = {
+                is_core = yes
+                owned_by = ROOT
+                development = 20
+                has_trade_building_trigger = yes
+                has_center_of_trade_of_level = 2
+            }
+            3020 = {
+                OR = {
+                    owned_by = ROOT
+                    owned_by = I27
+                }
+                development = 20
+                has_production_building_trigger = yes
+            }
+            treasury = 250
+        }
+
+        effect = {
+            add_treasury = -250
+            813 = {
+                if = {
+                    limit = {
+                        NOT = { has_center_of_trade_of_level = 3 }
+                    }
+                    add_center_of_trade_level = 1
+                }
+                else = {
+                    add_dip_power = 200
+                }
+            }
+            3020 = {
+                change_trade_goods = iron
+                add_building_construction = {
+                    building = manufactory
+                        speed = 1
+                        cost = 0
+                }
+                add_province_modifier = {
+                    name = arturos_mil_branch
+                    duration = -1
                 }
             }
         }
     }
 
+    B47_the_winged_cuirassiers = {
+        icon = mission_court_education
+		position = 8
+		required_missions = {
+			B47_fey_steel_manufacturing
+		}
+
+        trigger = {
+            calc_true_if = {
+                all_province = {
+                    country_or_non_sovereign_subject_holds = ROOT
+                    trade_goods = livestock
+                    development = 20
+                    has_manpower_building_trigger = yes
+                    has_forcelimit_building_trigger = yes
+                    has_manufactory_trigger = yes
+                }
+                amount = 3
+            }
+            OR = {
+                army_tradition = 60
+                army_professionalism = 0.30
+            }
+        }
+
+        effect = {
+            remove_country_modifier = B47_the_early_cuirassiers
+            add_country_modifier = {
+                name = B47_the_winged_cuirassiers
+                duration = -1
+            }
+        }
+    }
 }
 
 B47_stalbor_column_2 = {
@@ -324,9 +513,12 @@ B47_stalbor_column_3 = {
                         value = 20
                     }
                 }
-                all_country = { 
-                    capital_scope = {
-                        NOT = { region = south_castanor_region }
+                custom_trigger_tooltip = {
+                    tooltip = B47_capital_not_in_region_south_castanor
+                    all_country = { 
+                        capital_scope = {
+                            NOT = { region = south_castanor_region }
+                        }
                     }
                 }
             }
@@ -528,6 +720,832 @@ B47_stalbor_column_4 = {
             }
         }
     }
+
+    B47_the_every_hold = {
+		icon = mission_court_education
+		position = 5
+		required_missions = {
+			B47_eastern_heartland
+		}
+
+        trigger = {
+            NOT = { exists = B36 }
+            4097 = {
+                development = 30
+            }
+            custom_trigger_tooltip = {
+                tooltip = B47_marrhold_tunnel_open
+                has_global_flag = marrhold_tunnel_opened
+            }
+        }
+
+        effect = {
+            4097 = {
+                remove_province_modifier = human_hold_1
+                remove_province_modifier = human_hold_2
+                remove_province_modifier = human_hold_3
+                add_province_modifier = {
+                    name = B47_the_every_hold
+                    days = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_building = stock_exchange
+                        }
+                    }
+                    add_building = stock_exchange
+                }
+                else = {
+                    add_base_production = 3
+                }
+            }
+            4065 = {
+                if = {
+                    limit = {
+                        is_city = yes
+                    }
+                    add_claim = ROOT
+                }
+                else  = {
+                    add_siberian_construction = 800
+                }
+            }
+        }
+    }
+
+    B47_expansion_of_the_vernham_act_2 = {
+		icon = mission_court_education
+		position = 6
+		required_missions = {
+			B47_the_every_hold
+		}
+
+        trigger = {
+            calc_true_if = {
+                OR = {
+                    high_tolerance_centaur_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = centaur_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_dwarven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = dwarven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnollish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnollish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnomish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnomish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_goblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = goblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_half_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_half_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_halfling_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = halfling_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harimari_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harimari_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harpy_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harpy_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_hobgoblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = hobgoblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_human_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = human_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_kobold_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = kobold_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_lizardfolk_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = lizardfolk_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+				#OR = {
+                #    high_tolerance_mechanim_race_trigger = yes
+                #    any_known_country = {
+                #        has_country_modifier = mechanim_administration
+                #        has_opinion = {
+                #            who = ROOT
+                #            value = 100
+                #        }
+                #    }
+                #}
+                OR = {
+                    high_tolerance_ogre_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ogre_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_ruinborn_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ruinborn_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_troll_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = troll_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 100
+                        }
+                    }
+                }
+                amount = 6
+            }
+            treasury = 200
+            adm_power = 100
+            dip_power = 100
+            mil_power = 100
+        }
+
+        effect = {
+            add_treasury = -200
+            add_adm_power = -100
+            add_dip_power = -100
+            add_mil_power = -100
+            set_country_flag = B47_bew_arrivals_2
+        }
+    }
+
+    B47_vernham_urbanization = {
+		icon = mission_court_education
+		position = 7
+		required_missions = {
+			B47_expansion_of_the_vernham_act_2
+		}
+
+        trigger = {
+            OR = {
+                AND = {
+                    800 = {
+                        development = 30
+                        has_building = manufactory
+                        higher_development_than = 831
+                        higher_development_than = 832
+                        higher_development_than = 833
+                    }
+                    808 = {
+                        development = 30
+                        has_building = manufactory
+                        higher_development_than = 831
+                        higher_development_than = 832
+                        higher_development_than = 833
+                    }
+                }
+                castonath_area = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
+            }
+        }
+
+        effect = {
+            
+        }
+    }
+    B47_expansion_of_the_vernham_act_3 = {
+		icon = mission_court_education
+		position = 8
+		required_missions = {
+			B47_vernham_urbanization
+		}
+
+        trigger = {
+            calc_true_if = {
+                OR = {
+                    high_tolerance_centaur_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = centaur_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_dwarven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = dwarven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnollish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnollish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnomish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnomish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_goblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = goblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_half_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_half_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_halfling_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = halfling_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harimari_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harimari_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harpy_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harpy_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_hobgoblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = hobgoblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_human_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = human_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_kobold_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = kobold_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_lizardfolk_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = lizardfolk_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				#OR = {
+                #    high_tolerance_mechanim_race_trigger = yes
+                #    any_known_country = {
+                #        has_country_modifier = mechanim_administration
+                #        has_opinion = {
+                #            who = ROOT
+                #            value = 200
+                #        }
+                #    }
+                #}
+                OR = {
+                    high_tolerance_ogre_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ogre_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_ruinborn_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ruinborn_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_troll_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = troll_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                amount = 9
+            }
+            adm_power = 100
+            dip_power = 100
+            mil_power = 100
+        }
+
+        effect = {
+            add_adm_power = -100
+            add_dip_power = -100
+            add_mil_power = -100
+            set_country_flag = B47_bew_arrivals_3
+        }
+    }
+    B47_complete_acceptance = {
+		icon = mission_court_education
+		position = 9
+		required_missions = {
+			B47_expansion_of_the_vernham_act_3
+		}
+
+        trigger = {
+            calc_true_if = {
+                OR = {
+                    high_tolerance_centaur_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = centaur_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_dwarven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = dwarven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnollish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnollish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_gnomish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = gnomish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_goblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = goblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_half_elven_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_elven_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_half_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = half_orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_halfling_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = halfling_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harimari_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harimari_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_harpy_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = harpy_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_hobgoblin_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = hobgoblin_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_human_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = human_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_kobold_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = kobold_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				OR = {
+                    high_tolerance_lizardfolk_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = lizardfolk_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+				#OR = {
+                #    high_tolerance_mechanim_race_trigger = yes
+                #    any_known_country = {
+                #        has_country_modifier = mechanim_administration
+                #        has_opinion = {
+                #            who = ROOT
+                #            value = 200
+                #        }
+                #    }
+                #}
+                OR = {
+                    high_tolerance_ogre_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ogre_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_orcish_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = orcish_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_ruinborn_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = ruinborn_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                OR = {
+                    high_tolerance_troll_race_trigger = yes
+                    any_known_country = {
+                        has_country_modifier = troll_administration
+                        has_opinion = {
+                            who = ROOT
+                            value = 200
+                        }
+                    }
+                }
+                amount = 12
+            }
+            adm_power = 200
+            dip_power = 200
+            mil_power = 200
+        }
+
+        effect = {
+            add_adm_power = -200
+            add_dip_power = -200
+            add_mil_power = -200
+            largest_increase_of_human_tolerance_effect = yes
+			largest_increase_of_human_tolerance_effect = yes
+            largest_increase_of_human_tolerance_effect = yes
+            largest_increase_of_elven_tolerance_effect = yes
+            largest_increase_of_elven_tolerance_effect = yes
+            largest_increase_of_elven_tolerance_effect = yes
+            largest_increase_of_dwarven_tolerance_effect = yes
+            largest_increase_of_dwarven_tolerance_effect = yes
+            largest_increase_of_dwarven_tolerance_effect = yes
+            largest_increase_of_halfling_tolerance_effect = yes
+            largest_increase_of_halfling_tolerance_effect = yes
+            largest_increase_of_halfling_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_half_elven_tolerance_effect = yes
+            largest_increase_of_half_elven_tolerance_effect = yes
+            largest_increase_of_half_elven_tolerance_effect = yes
+            largest_increase_of_half_orcish_tolerance_effect = yes
+            largest_increase_of_half_orcish_tolerance_effect = yes
+            largest_increase_of_half_orcish_tolerance_effect = yes
+            largest_increase_of_orcish_tolerance_effect = yes
+            largest_increase_of_orcish_tolerance_effect = yes
+            largest_increase_of_orcish_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_gnomish_tolerance_effect = yes
+            largest_increase_of_kobold_tolerance_effect = yes
+            largest_increase_of_kobold_tolerance_effect = yes
+            largest_increase_of_kobold_tolerance_effect = yes
+            largest_increase_of_troll_tolerance_effect = yes
+            largest_increase_of_troll_tolerance_effect = yes
+            largest_increase_of_troll_tolerance_effect = yes
+            largest_increase_of_harpy_tolerance_effect = yes
+            largest_increase_of_harpy_tolerance_effect = yes
+            largest_increase_of_harpy_tolerance_effect = yes
+            largest_increase_of_ruinborn_tolerance_effect = yes
+            largest_increase_of_ruinborn_tolerance_effect = yes
+            largest_increase_of_ruinborn_tolerance_effect = yes
+            largest_increase_of_goblin_tolerance_effect = yes
+            largest_increase_of_goblin_tolerance_effect = yes
+            largest_increase_of_goblin_tolerance_effect = yes
+            largest_increase_of_gnollish_tolerance_effect = yes
+            largest_increase_of_gnollish_tolerance_effect = yes
+            largest_increase_of_gnollish_tolerance_effect = yes
+            largest_increase_of_harimari_tolerance_effect = yes
+            largest_increase_of_harimari_tolerance_effect = yes
+            largest_increase_of_harimari_tolerance_effect = yes
+            largest_increase_of_hobgoblin_tolerance_effect = yes
+            largest_increase_of_hobgoblin_tolerance_effect = yes
+            largest_increase_of_hobgoblin_tolerance_effect = yes
+            largest_increase_of_centaur_tolerance_effect = yes
+            largest_increase_of_centaur_tolerance_effect = yes
+            largest_increase_of_centaur_tolerance_effect = yes
+            largest_increase_of_ogre_tolerance_effect = yes
+            largest_increase_of_ogre_tolerance_effect = yes
+            largest_increase_of_ogre_tolerance_effect = yes
+            largest_increase_of_lizardfolk_tolerance_effect = yes
+            largest_increase_of_lizardfolk_tolerance_effect = yes
+            largest_increase_of_lizardfolk_tolerance_effect = yes
+            largest_increase_of_mechanim_tolerance_effect = yes
+            largest_increase_of_mechanim_tolerance_effect = yes
+            largest_increase_of_mechanim_tolerance_effect = yes            
+        }
+    }
+
 }
 
 B47_stalbor_column_5 = {
@@ -582,7 +1600,7 @@ B47_stalbor_column_5 = {
         }
     }
 
-    B47_Orc_&_Goblin_Integration = {
+    B47_Orc_and_Goblin_Integration = {
         icon = mission_court_education
 		position = 3
 		required_missions = {
@@ -620,8 +1638,128 @@ B47_stalbor_column_5 = {
         }
 
         effect = {
+            random_owned_province = {
+                add_goblin_minority_size_effect = yes
+                add_orcish_minority_size_effect = yes
+                if = {
+                    limit = {
+                        high_tolerance_orcish_race_trigger = yes
+                    }
+                    add_random_development = 1
+                }
+                if = {
+                    limit = {
+                        high_tolerance_goblin_race_trigger = yes
+                    }
+                    add_random_development = 1
+                }
+            }
+            random_owned_province = {
+                add_goblin_minority_size_effect = yes
+                add_orcish_minority_size_effect = yes
+                if = {
+                    limit = {
+                        high_tolerance_orcish_race_trigger = yes
+                    }
+                    add_random_development = 1
+                }
+                if = {
+                    limit = {
+                        high_tolerance_goblin_race_trigger = yes
+                    }
+                    add_random_development = 1
+                }
+            }
+            every_owned_province = {
+                limit = {
+                    OR = { 
+                        has_orcish_majority_trigger = yes
+                        has_orcish_minority_trigger = yes
+                    }
+                    OR = {
+                        has_human_majority_trigger = yes
+                        has_human_minority_trigger = yes
+                    }
+                }
+                add_half_orcish_minority_size_effect = yes
+            }
+            add_country_modifier = {
+                name = B47_religious_converts
+                duration = 9125
+            }
+        }
+    }
 
+    B47_expansion_of_the_vernham_act = {
+		icon = mission_court_education
+		position = 4
+		required_missions = {
+			B47_Orc_and_Goblin_Integration
+		}
+
+        trigger = {
+            religious_unity = 0.90
+            808 = {
+                has_upgraded_watch_modifer = yes
+            }
+            calc_true_if = {
+                all_owned_province = {
+                    OR = {
+                        has_orcish_majority_trigger = yes
+                        has_orcish_minority_trigger = yes
+                        has_half_orcish_majority_trigger = yes
+                        has_half_orcish_minority_trigger = yes
+                        has_goblin_majority_trigger = yes
+                        has_goblin_minority_trigger = yes
+                    }
+                    development = 7
+                    NOT = { devastation = 1 }
+                }
+                amount = 4
+            }
+            treasury = 100
         }
 
+        effect = {
+            add_treasury = -100
+            808 = {
+                remove_province_modifier = vernham_urbanization_I
+                add_permanent_province_modifier = {
+                    name = vernham_urbanization_II
+                    duration = -1
+                }
+            }
+            800 = {
+                remove_province_modifier = vernham_urbanization_I
+                add_permanent_province_modifier = {
+                    name = vernham_urbanization_II
+                    duration = -1
+                }
+            }
+            set_country_flag = B47_bew_arrivals_1
+        }
+    }
+
+    B47_orc_and_half_orc_soliders_and_generals = {
+		icon = mission_court_education
+		position = 5
+		required_missions = {
+			B47_expansion_of_the_vernham_act
+		}
+
+        trigger = {
+            OR = {
+                has_reform = anbennar_T5_human_half_orcish
+                has_reform = anbennar_T5_human_orcish
+                has_country_modifier = orcish_military
+                has_country_modifier = half_orcish_military
+            }
+        }
+
+        effect = {
+            country_event = {
+                id = flavor_stalbor.9
+            }
+        }
     }
 }
