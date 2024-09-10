@@ -606,6 +606,20 @@ B47_stalbor_column_3 = {
                     duration = -1
                 }
             }
+            dostanor_region = {
+                type = all
+                add_permanent_claim = ROOT
+                discover_country = ROOT
+            }
+            daravans_folly_region = {
+                discover_country = ROOT
+            }
+            ourdia_region = {
+                discover_country = ROOT
+            }
+            441 = {
+                add_permanent_claim = ROOT
+            }
             hidden_effect = {
                 if = {
                     limit = {
@@ -616,6 +630,45 @@ B47_stalbor_column_3 = {
                     }
                     set_country_flag = blademarch_uprising_stalbor
                 }
+            }
+        }
+    }
+    B47_the_stalbor_fleet = {
+		icon = mission_court_education
+		position = 6
+		required_missions = {
+			B47_western_heartland
+		}
+
+        trigger = {
+            daravans_folly_region = {
+                type = all
+                owned_by = ROOT
+                is_core = ROOT
+            }
+            all_owned_province = {
+                region = daravans_folly_region
+                has_port = yes
+                has_shipyard_building_trigger = yes
+                has_dock_building_trigger = yes
+            }
+            navy_size_percentage = 0.50
+        }
+
+        effect = {
+            set_country_flag = B47_slavery_ended
+            451 = {
+                change_trade_goods = paper
+                add_province_modifier = {
+                    name = arturos_watch_chapter
+                    duration = -1
+                }
+            }
+            every_owned_province = {
+                limit = { 
+                    trade_goods = slaves
+                }
+                change_trade_goods = unknown
             }
         }
     }
