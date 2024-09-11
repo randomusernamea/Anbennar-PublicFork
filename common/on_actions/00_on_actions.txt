@@ -13106,7 +13106,8 @@ on_dependency_lost = {
 			OR = {
 				FROM = { 
 					OR = {
-						has_country_modifier = nekheis_cheap_colonies 
+						has_country_modifier = nekheis_cheap_colonies
+						has_country_modifier = nekheis_new_colonies
 						has_a_nekhei_subject_modifier = yes
 					}
 				}
@@ -13115,6 +13116,7 @@ on_dependency_lost = {
 		}
 		FROM = { 
 			remove_country_modifier = nekheis_cheap_colonies 
+			remove_country_modifier = nekheis_new_colonies 
 			remove_all_nekhei_subject_modifiers = yes
 		}
 		if = {
