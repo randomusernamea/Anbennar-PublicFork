@@ -1397,7 +1397,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_colonist = no
+					NOT = { num_of_colonists = 1 }
 				}
 				add_country_modifier = {
 					name = nekheis_new_colonies
