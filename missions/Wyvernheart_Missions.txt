@@ -1,0 +1,452 @@
+1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B39 } 
+
+	weapons_of_adventure = {
+		icon = mission_racial
+		position = 2
+		required_missions = { roar_in_the_greatwoods } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	hunter_in_the_woods = {
+		icon = mission_racial
+		position = 3
+		required_missions = {
+			descend_upon_the_alen
+			weapons_of_adventure
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	down_the_alen = {
+		icon = mission_silblaidd
+		position = 5
+		required_missions = { pillagers_of_the_alen } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	rumours_of_power = {
+		icon = mission_burning_witch
+		position = 7
+		required_missions = { down_the_alen } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	heart_attack = {
+		icon = mission_burning_separation
+		position = 9
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_scions = {
+		icon = mission_star_ascendency
+		position = 10
+		required_missions = { heart_attack } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B39 } 
+
+	roar_in_the_greatwoods = {
+		icon = mission_rb_take_gibraltar
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	descend_upon_the_alen = {
+		icon = mission_racial
+		position = 2
+		required_missions = { roar_in_the_greatwoods } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	pillagers_of_the_alen = {
+		icon = mission_magisterium_fold_seven
+		position = 4
+		required_missions = {
+			might_makes_right
+			hunter_in_the_woods
+			descend_upon_the_alen
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	home_is_where_the_heartmen_are = {
+		icon = mission_magisterium_fold_one
+		position = 5
+		required_missions = { pillagers_of_the_alen } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_hearter_homeland = {
+		icon = mission_dirigible
+		position = 6
+		required_missions = {
+			down_the_alen
+			home_is_where_the_heartmen_are
+			doing_away_with_the_old
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	bioimproved_mages = {
+		icon = mission_artificier_experience
+		position = 9
+		required_missions = { the_perfect_weapon } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B39 } 
+
+	mightiest_of_us = {
+		icon = mission_manifest_destiny
+		position = 2
+		required_missions = {
+			legacy_of_the_wvyern
+			roar_in_the_greatwoods
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	might_makes_right = {
+		icon = mission_racial
+		position = 3
+		required_missions = {
+			descend_upon_the_alen
+			mightiest_of_us
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	beast_unlike_any_other = {
+		icon = mission_magic_tower
+		position = 4
+		required_missions = {
+			might_makes_right
+			a_tower_on_high
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	doing_away_with_the_old = {
+		icon = mission_magisterium_fold_five
+		position = 5
+		required_missions = {
+			pillagers_of_the_alen
+			beast_unlike_any_other
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	welcoming_the_immoral = {
+		icon = mission_magisterium_fold_eight
+		position = 7
+		required_missions = {
+			doing_away_with_the_old
+			a_new_seat_of_power
+			the_hearter_homeland
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_perfect_weapon = {
+		icon = mission_racial
+		position = 8
+		required_missions = {
+			rumours_of_power
+			welcoming_the_immoral
+			imbue_the_royals
+			brand_of_servitude
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_wyvern_ascendant = {
+		icon = mission_arise
+		position = 10
+		required_missions = {
+			improving_on_perfection
+			the_perfect_weapon
+			bioimproved_mages
+			heart_attack
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	a_stronger_escann = {
+		icon = mission_italian_condottiere
+		position = 11
+		required_missions = {
+			the_scions
+			the_wyvern_ascendant
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B39 } 
+
+	legacy_of_the_wvyern = {
+		icon = mission_magisterium_fold_three
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_lands_of_the_north = {
+		icon = mission_magisterium_fold_three
+		position = 2
+		required_missions = { legacy_of_the_wvyern } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	a_tower_on_high = {
+		icon = mission_racial
+		position = 3
+		required_missions = {
+			mightiest_of_us
+			the_lands_of_the_north
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_red_flood = {
+		icon = mission_magisterium_fold_seven
+		position = 5
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	a_new_seat_of_power = {
+		icon = mission_magisterium_fold_seven
+		position = 6
+		required_missions = {
+			doing_away_with_the_old
+			the_red_flood
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	imbue_the_royals = {
+		icon = mission_monarch_in_throne_room
+		position = 7
+		required_missions = { a_new_seat_of_power } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B39 } 
+
+	towards_the_sea = {
+		icon = mission_racial
+		position = 3
+		required_missions = { the_lands_of_the_north } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	soulstones_of_vroren = {
+		icon = mission_magy
+		position = 4
+		required_missions = {
+			a_tower_on_high
+			towards_the_sea
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	a_worthy_sacrifice = {
+		icon = mission_manifest_destiny
+		position = 5
+		required_missions = {
+			beast_unlike_any_other
+			soulstones_of_vroren
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	brand_of_servitude = {
+		icon = mission_missive
+		position = 7
+		required_missions = {
+			a_worthy_sacrifice
+			a_new_seat_of_power
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	stones_of_power = {
+		icon = mission_the_dame_tears
+		position = 8
+		required_missions = { brand_of_servitude } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	improving_on_perfection = {
+		icon = mission_mage_general
+		position = 9
+		required_missions = {
+			stones_of_power
+			the_perfect_weapon
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	bane_of_escann = {
+		icon = mission_burning_man
+		position = 10
+		required_missions = { improving_on_perfection } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
