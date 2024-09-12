@@ -11508,6 +11508,57 @@ on_province_owner_change = {
 			5838 = { owner = { country_event = { id = genie_cult.111 } } }
 		}
 	}
+
+	#Stalbor
+	if = {
+		limit = { owner = { has_country_flag = B47_castonath_patricians_neglected } }
+		trigger_switch = {
+			on_trigger = province_id
+			831 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+			832 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+			833 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+		}
+	}
+
 }
 
 # country 1.35

@@ -700,16 +700,218 @@ country_event = {
 	#Vernham
 	option = {	
 		name = "flavor_stalbor.12.a"
-		ai_chance = { factor = 100 }
-		#Fuck This
+		ai_chance = { factor = 90 }
+		set_country_flag = B47_castonath_patricians_neglected
+		800 = {
+			remove_province_modifier = vernham_urbanization_II
+			add_permanent_province_modifier = {
+				name = vernham_urbanization_III
+				duration = -1
+			}
+		}
+		808 = {
+			remove_province_modifier = vernham_urbanization_II
+			add_permanent_province_modifier = {
+				name = vernham_urbanization_III
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = castonath_patricians_reinstated
+			}
+			clr_country_flag = castonath_patricians_reinstated
+		}
+		if = {
+			limit = {
+				831 = {
+					owned_by = ROOT
+				}
+			}
+			831 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				832 = {
+					owned_by = ROOT
+				}
+			}
+			832 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				833 = {
+					owned_by = ROOT
+				}
+			}
+			833 = {
+				add_devastation = 30
+				add_random_development = -2
+				add_province_modifier = {
+					name = B47_castonath_neglected
+					duration = -1
+				}
+				800 = {
+					add_random_development = 1
+				}
+				808 = {
+					add_random_development = 1
+				}
+			}
+		}
 	}
 	#Castonath
 	option = {	
 		name = "flavor_stalbor.12.a"
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 10 }
 		inner_castanor_region = {
 			type = all
             add_permanent_claim = ROOT
+		}
+	}
+
+}
+
+#Into Bal Dostan
+country_event = {
+	id = flavor_stalbor.13
+	title = flavor_stalbor.13.t
+	desc = flavor_stalbor.13.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#We wait their return.
+	option = {	
+		name = "flavor_stalbor.13.a"
+		ai_chance = { factor = 100 }
+		country_event = {
+			id = flavor_stalbor.14
+			days = 10
+		}
+	}
+
+}
+
+#A Report
+country_event = {
+	id = flavor_stalbor.14
+	title = flavor_stalbor.14.t
+	desc = flavor_stalbor.14.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#We need someone with Experience
+	option = {	
+		name = "flavor_stalbor.14.a"
+		ai_chance = { factor = 100 }
+		country_event = {
+			id = flavor_stalbor.16
+			days = 10
+		}
+	}
+
+	#Send more men!
+	option = {	
+		name = "flavor_stalbor.14.b"
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = flavor_stalbor.15
+			days = 30
+		}
+	}
+
+}
+
+#Another Round
+country_event = {
+	id = flavor_stalbor.15
+	title = flavor_stalbor.15.t
+	desc = flavor_stalbor.15.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#We wait their return.
+	option = {	
+		name = "flavor_stalbor.15.a"
+		ai_chance = { factor = 100 }
+		add_manpower = -1
+		country_event = {
+			id = flavor_stalbor.14
+			days = 10
+		}
+	}
+
+}
+
+#The Monster Hunters
+country_event = {
+	id = flavor_stalbor.16
+	title = flavor_stalbor.16.t
+	desc = flavor_stalbor.16.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Pay the Fee
+	option = {	
+		name = "flavor_stalbor.16.a"
+		ai_chance = { factor = 100 }
+		add_treasury = -50
+		country_event = {
+			id = flavor_stalbor.17
+			days = 10
+		}
+	}
+
+	#We are better of sending our own troops
+	option = {	
+		name = "flavor_stalbor.16.b"
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = flavor_stalbor.15
+			days = 10
 		}
 	}
 
