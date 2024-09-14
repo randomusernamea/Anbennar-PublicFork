@@ -1409,13 +1409,15 @@ country_event = {
 					NOT = { num_of_colonists = 1 }
 				}
 			}
-			add_country_modifier = {
-				name = nekheis_new_colonies
-				duration = -1
-			}
-			add_country_modifier = {
-				name = nekheis_cheap_colonies
-				duration = 18250 #50 Years
+			G59 = {
+				add_country_modifier = {
+					name = nekheis_new_colonies
+					duration = -1
+				}
+				add_country_modifier = {
+					name = nekheis_cheap_colonies
+					duration = 18250 #50 Years
+				}
 			}
 		}
 	}
