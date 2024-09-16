@@ -1399,29 +1399,23 @@ country_event = {
 	}
 
 	after = {
-		if = {
-			limit = {
-				G59 = {
-					is_subject_of_type_with_overlord = {
-						who = ROOT
-						type = nekhei
-					}
-					NOT = { num_of_colonists = 1 }
-				}
+		every_subject_country = {
+			limit = { 
+				is_subject_of_type = nekhei 
+				NOT = { num_of_colonists = 1 }
 			}
-			G59 = {
-				add_country_modifier = {
-					name = nekheis_new_colonies
-					duration = -1
-				}
-				add_country_modifier = {
-					name = nekheis_cheap_colonies
-					duration = 18250 #50 Years
-				}
+			add_country_modifier = {
+				name = nekheis_new_colonies
+				duration = -1
+			}
+			add_country_modifier = {
+				name = nekheis_cheap_colonies
+				duration = 18250 #50 Years
 			}
 		}
 	}
 }
+
 
 country_event = {
 	id = kheionai.19
