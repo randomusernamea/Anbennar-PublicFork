@@ -6,7 +6,7 @@ country_decisions = {
 		potential = {
 			OR = {
 				adm_tech = 10
-				mission_completed = B47_the_stalbor_fleet
+				has_country_flag = B47_slavery_ended
 			}
 			owns = 447
 			NOT = { has_country_modifier = monstrous_nation }
@@ -25,7 +25,7 @@ country_decisions = {
 				adm_tech = 13
 				AND = {
 					adm_tech = 10
-					mission_completed = B47_the_stalbor_fleet
+					has_country_flag = B47_slavery_ended
 				}
 			}
 			adm_power = 150
@@ -33,7 +33,7 @@ country_decisions = {
 				treasury = 1500
 				AND = {
 					treasury = 750
-					mission_completed = B47_the_stalbor_fleet
+					has_country_flag = B47_slavery_ended
 				}
 			}
 			447 = {
@@ -51,7 +51,7 @@ country_decisions = {
 			add_adm_power = -150
 			if = {
 				limit = {
-					mission_completed = B47_the_stalbor_fleet
+					has_country_flag = B47_slavery_ended
 				}
 				add_treasury = -750
 			}
@@ -70,7 +70,7 @@ country_decisions = {
 				}
 				if = {
 					limit = {
-						mission_completed = B47_the_stalbor_fleet
+						has_country_flag = B47_slavery_ended
 					}
 					add_province_modifier = {
 						name = arturos_watch_chapter
@@ -84,6 +84,17 @@ country_decisions = {
 					451 = { province_has_center_of_trade_of_level = 3 }
 				}
 				451 = { add_center_of_trade_level = -1 }
+			}
+			if = {
+				limit = {
+					has_country_flag = B47_slavery_ended
+				}
+				451 = {
+					add_province_modifier = {
+						name = arturos_watch_chapter
+						duration = -1
+					}
+				}
 			}
 			hidden_effect = { set_global_flag = corveld_restored }
 			country_event = { id = corveld_city.1 }

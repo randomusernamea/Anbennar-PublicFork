@@ -404,7 +404,7 @@ B47_stalbor_column_2 = {
         effect = {
             441 = {
                 kill_units = {
-                    who = controller
+                    who = ROOT
                     type = infantry
                     amount = 3
                 }
@@ -643,12 +643,12 @@ B47_stalbor_column_3 = {
                 }
             }
             dostanor_region = {
-                type = all
-                add_permanent_claim = ROOT
                 discover_country = ROOT
             }
             daravans_folly_region = {
+                type = all
                 discover_country = ROOT
+                add_permanent_claim = ROOT
             }
             ourdia_region = {
                 discover_country = ROOT
@@ -695,9 +695,14 @@ B47_stalbor_column_3 = {
             set_country_flag = B47_slavery_ended
             451 = {
                 change_trade_goods = paper
-                add_province_modifier = {
-                    name = arturos_watch_chapter
-                    duration = -1
+                if = {
+                    limit = {
+                        has_global_flag = corveld_restored
+                    }
+                    add_province_modifier = {
+                        name = arturos_watch_chapter
+                        duration = -1
+                    }
                 }
             }
             every_owned_province = {
