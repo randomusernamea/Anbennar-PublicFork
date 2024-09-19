@@ -10734,12 +10734,12 @@ H43_ideas = {
 H47_ideas = {
 	start = {
 		institution_spread_from_true_faith = 0.2
-		infantry_power = 0.1
+		manpower_recovery_speed = 0.1
 		may_recruit_female_generals = yes
 		female_advisor_chance = 0.25
 	}
 	bonus = {
-		manpower_recovery_speed = 0.10
+		land_morale = 0.1
 	}
 	trigger = {
 		tag = H47 #Istranar
@@ -10750,7 +10750,7 @@ H47_ideas = {
 		warscore_cost_vs_other_religion = -0.15
 	}
 	H47_istranari_freeborn = {
-		land_morale = 0.15
+		infantry_power = 0.1
 	}
 	H47_gunpowder_crusaders = {
 		fire_damage = 0.1
@@ -14466,7 +14466,8 @@ H55_ideas = {
 		global_trade_goods_size_modifier = 0.1
 	}
 	H55_come_as_you_are = { #They accept all without question, as they know what its like to be without a home
-		no_religion_penalty = yes
+		tolerance_heretic = 2
+		embracement_cost = -0.1
 	}
 	H55_an_old_memory = { #The memory of losing old Tipney is still a sore point, and they're determined to never let it happen again
 		war_exhaustion = -0.03
@@ -14475,19 +14476,19 @@ H55_ideas = {
 		trade_steering = 0.2
 	}
 	H55_fiddle_swifthand = { #West Tipney bard whose skill with the violin and unique style has become popular across the Ynn
-		diplomatic_reputation = 1.5
+		diplomatic_reputation = 1
 	}
 }
 
 #Beggaston
 H45_ideas = {
 	start = {
-		global_manpower_modifier = 0.10 #initial revolt of the peasantry
-		tolerance_own = 1 #the revolt was built around worship to Begga
+		global_manpower_modifier = 0.15 #initial revolt of the peasantry
+		tolerance_own = 2 #the revolt was built around worship to Begga
 		may_recruit_female_generals = yes
 	}
 	bonus = {
-		interest = -1 #economy built on the backbone of sharing wealth over trying to make a profit through predatory loans
+		interest = -0.5 #economy built on the backbone of sharing wealth over trying to make a profit through predatory loans
 	}
 
 	trigger = {
@@ -14512,14 +14513,15 @@ H45_ideas = {
 		land_morale = 0.1
 	}
 	H45_the_crusade_against_poverty = {
-		global_trade_goods_size_modifier = 0.1
+		global_trade_goods_size_modifier = 0.05
+		reform_progress_growth = 0.1
 	}
 	H45_a_new_merchant_class = {
 		trade_steering = 0.15
 		diplomatic_reputation = 1
 	}
 	H45_the_first_commune = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -14530,7 +14532,7 @@ H35_ideas = {
 		infantry_power = 0.1
 	}
 	bonus = {
-		land_morale = 0.1
+		recover_army_morale_speed = 0.1
 	}
 
 	trigger = {
@@ -14548,7 +14550,8 @@ H35_ideas = {
 		fire_damage = 0.15
 	}
 	H35_the_red_sentries = {
-		global_manpower_modifier = 0.2
+		manpower_in_own_culture_provinces = 0.1
+		manpower_recovery_speed = 0.05
 	}
 	H35_the_call_of_corin = {
 		development_cost = -0.1
@@ -14560,7 +14563,7 @@ H35_ideas = {
 		horde_unity = 1
 	}
 	H35_the_fadhevychi_intervention = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -14698,7 +14701,7 @@ H37_ideas = {
 		land_attrition = -0.15
 	}
 	bonus = {
-		global_own_trade_power = 0.1
+		trade_steering = 0.15
 	}
 
 	trigger = {
@@ -14711,7 +14714,7 @@ H37_ideas = {
 	}
 	H37_northern_marines = { #Many of the founders of Themaria were Themarennic marines
 		allowed_marine_fraction = 0.25
-		shock_damage_received = -0.075
+		shock_damage_received = -0.1
 	}
 	H37_arctic_hospitality = { #People as cold and bitter as their homeland
 		war_exhaustion = -0.02
@@ -14734,7 +14737,7 @@ H37_ideas = {
 #Tellumtir
 H65_ideas = {
 	start = {
-		movement_speed = 0.15
+		mil_tech_cost_modifier = -0.1
 		cav_to_inf_ratio = 0.3
 	}
 	bonus = {
@@ -14755,7 +14758,7 @@ H65_ideas = {
 		global_spy_defence = 0.15
 	}
 	H65_tellumtir_rangers = { #Totally not Texas Rangers
-		cavalry_fire = 0.5
+		movement_speed = 0.15
 		cavalry_power = 0.1
 	}
 	H65_the_lone_colt = { #The Lone Colt of Tellumtir is known across Aelantir, and Tellumtirans take intense pride in it
@@ -14765,7 +14768,7 @@ H65_ideas = {
 		army_tradition_decay = -0.01
 	}
 	H65_relay_network = { #Network of trade posts, postal offices, and saloons across Tellumtir
-		trade_steering = 0.2
+		global_own_trade_power = 0.15
 	}
 	H65_bucks_firearms = { #Famed gun manufacturer from Tellumtir
 		fire_damage = 0.1
@@ -14808,7 +14811,8 @@ H49_ideas = {
 		merchants = 1
 	}
 	H49_boruleed_courier_company = { #Company of couriers to ferry parcels and messages across the harsh deserts of Tiru Moine
-		administrative_efficiency = 0.05
+		movement_speed = 0.1
+		envoy_travel_time = -0.25
 	}
 }
 
@@ -18649,8 +18653,8 @@ Z97_ideas = {
 #Chippengard
 H59_ideas = {
 	start = { #Mercs from chipped tooth company, many half-orcs become mercenaries and the whole place is basically outer heaven
-		mercenary_manpower = 0.25
-		adventurers_loyalty_modifier = 0.1
+		mercenary_discipline = 0.05
+		global_regiment_recruit_speed = -0.2
 	}
 	bonus = {
 		shock_damage = 0.1 #half-orcs are good at shocking
@@ -18662,9 +18666,9 @@ H59_ideas = {
 	free = yes		#will be added at load.
 
 	H59_the_mercenary_god = { #Chippengard's half-orcs worship Dookan as a mercenary god.
-			tolerance_own = 1
-				mercenary_cost = -0.05
-		}
+		tolerance_own = 1
+		mercenary_cost = -0.1
+	}
 	H59_ynnic_contracts = { #Ynn is a great source of wealth for mercenaries, especially since Ynnics hold no prejudice to half-orcs like cannorians do.
 		possible_condottieri = 1.0
 		improve_relation_modifier = 0.15
@@ -18673,8 +18677,8 @@ H59_ideas = {
 		prestige = 1
 	}
 	H59_anbenncoster_influence = { #Chipped Tooth Company was based in Anbenncost and many half-orcs were born there. Half-orcs built their cities in a similar style.
-		development_cost = -0.075
-		build_cost = -0.075
+		development_cost = -0.05
+		build_cost = -0.1
 	}
 	H59_common_bilingualism = { #half-orcs were the first settlers to become fluent in ynnic language as many of them lived among ruinborn as mercenaries
 		diplomats = 1
@@ -21310,8 +21314,8 @@ A63_ideas = {
 #Freemarches
 H51_ideas = {
 	start = {
-		war_exhaustion = -0.02
-		leader_cost = -0.1
+		war_exhaustion = -0.03
+		manpower_in_own_culture_provinces = 0.2	
 	}
 	bonus = {
 		culture_conversion_cost = -0.20 #Horcish blood
@@ -21322,27 +21326,29 @@ H51_ideas = {
 	free = yes		#will be added at load.
 
 	H51_brilliance_of_varbuk = {
-		leader_land_manuever = 1
+		monarch_military_power = 1
+		leader_cost = -0.1 
 	}
 	H51_new_home_for_new_people = {
 		global_colonial_growth = 20
+		development_cost = -0.05	
 	}
 	H51_muroga_the_hunter = {
 		may_recruit_female_generals = yes
 		female_advisor_chance = 0.15
-		tolerance_own = 2
+		leader_land_manuever = 1
 	}
 	H51_the_gray_guard = {
 		army_tradition_decay = -0.01
 	}
 	H51_trials_of_the_forest = {
-		global_supply_limit_modifier = 0.25
+		land_attrition = -0.15
 	}
 	H51_by_half_orcs_for_half_orcs = {
 		same_culture_advisor_cost = -0.15
 	}
 	H51_the_bond_breaker = {
-		land_attrition = -0.10
+		shock_damage_received = -0.1 
 	}
 }
 
@@ -22375,7 +22381,7 @@ Z29_ideas = {
 radavezyr_ideas = { #idea set for the veykodans when they take over Arverynn
 	start = {
 		tolerance_heretic = 2 #indifferent to the ynnics worshipping their river and not interested in proselytizing their ethnic religion to them
-		cavalry_power = 0.10 #they ride beasts
+		cavalry_power = 0.15 #they ride beasts
 	}
 	bonus = {
 		global_manpower_modifier = 0.15 #local ynnic soldiers make up the infantry backbone of the army
@@ -22401,14 +22407,14 @@ radavezyr_ideas = { #idea set for the veykodans when they take over Arverynn
 		province_warscore_cost = -0.15
 	}
 	radavezyr_legacy_of_artan_coup = { #Artan the founder overthrew the decadent Vyrekynn dynasty, but before that he served as a capable pomentere, where he learned how the Ynnics fight and how to counter them
-		discipline = 0.05
+		leader_land_manuever = 1
 	}
 	radavezyr_a_new_homeland = { #being continuously forced out of their homeland by the cannorians, the old veykodans flock towards the new realm established by their brethren
-		development_cost = -0.05
 		culture_conversion_cost = -0.10
+		global_heretic_missionary_strength = 0.02
 	}
 	radavezyr_the_mutton_tax = { #the veykodan beast riders have replaced the ynnic knights, but their beasts are much higher maintenance. This is the reason they instituted a "mutton tax" on the peasants, which requires them to surrender a quarter of their livestock every year to feed the fearsome mounts.
-		cavalry_cost = -0.1
+		cavalry_cost = -0.15
 	}
 	veykoda_the_settled_soul = { #veykodan religious beliefs speak of a dual soul in every person, while the old veykodans prefer the savage side of their soul, the veykodans who forged their new state see the value of the settled soul
 		global_trade_goods_size_modifier = 0.10
@@ -22418,7 +22424,7 @@ radavezyr_ideas = { #idea set for the veykodans when they take over Arverynn
 veykoda_ideas = { #veykodan tag if released as a client state or some other way, the palace coup did not happen
 	start = {
 		culture_conversion_cost = -0.20 #eager to drive out the Cannorian settlers
-		cavalry_power = 0.10 #they ride beasts
+		cavalry_power = 0.20 #they ride beasts
 	}
 	bonus = {
 		global_manpower_modifier = 0.15 #every man woman and child is taught to defend themselves in the case of raids or reprisals from the colonists
@@ -22445,6 +22451,7 @@ veykoda_ideas = { #veykodan tag if released as a client state or some other way,
 		republican_tradition = 0.3
 		devotion = 1
 		horde_unity = 1
+		idea_cost = -0.1
 	}
 	veykoda_legacy_of_artan_loyal = { #Artan the brave fought as a loyal warrior of the Veykodan Guard established in Arverynn and became its first captain, his legacy will always be remembered
 		land_morale = 0.1
@@ -22477,11 +22484,11 @@ U22_ideas = { #veykodan formable
 
 	U22_an_empire_reforged = { # It wasn't diplomacy and talk that united the Ynn, it was conquest
 		prestige = 1
-		prestige_decay = -0.005
+		years_of_nationalism = -5
 	}
 	U22_time_of_the_tiger = { # The time of the antler horse is over, now is the time of the tiger
 		cavalry_shock = 0.15
-		cavalry_power = 0.10
+		discipline = 0.05
 	}
 	U22_end_of_feudalism = { # Veykodan conquest uprooted the old feudal structure, which caused the de facto abolition fo serfdom and allowed even commoners more upward mobility
 		stability_cost_modifier = -0.15
@@ -22491,13 +22498,13 @@ U22_ideas = { #veykodan formable
 	}
 	U22_proliferation_of_rune_tattoos = { # The Veykodan custom of magical tattoos has spread even to the Ynnics. While not nearly as effective on them as on those who have Veykodan blood, it still helps enhance their abilities and lets them work more effectively
 		production_efficiency = 0.10
-		global_heretic_missionary_strength = 0.02
+		global_missionary_strength = 0.02
 	}
 	U22_balgarsmith_invitation = { # The runesmiths of Argezvale establish connections with the Veykodan Rune Scribes allowing them to exchange knowledge for the secrets of Dwarven architecture
 		build_time = -0.15
 	}
 	U22_all_under_the_emperor = { #From the Broken Sea, to the Cliffs of Ruin, all bow to the rightful Emperor of the Ynn and its great valley, by right of conquest and of blood.
-		max_absolutism = 10
+		max_absolutism_effect = 0.15
 		yearly_absolutism = 0.5
 	}
 }
@@ -23362,11 +23369,11 @@ G98_ideas = {
 #Ebenmas ideas
 H34_ideas = {
 	start = {
-		colonist_placement_chance = 0.05
-		cavalry_cost = -0.10
+		land_forcelimit_modifier = 0.2
+		cavalry_cost = -0.15
 	}
 	bonus = {
-		governing_capacity_modifier = 0.10
+		free_adm_policy = 1
 	}
 	trigger = {
 		tag = H34
@@ -23374,20 +23381,21 @@ H34_ideas = {
 	free = yes
 
 	H34_taming_the_expanse = { #they build small forts at regular intervals to help civilize the borderlands
-		fort_maintenance_modifier = -0.10
+		fort_maintenance_modifier = -0.15
+		colonist_placement_chance = 0.05
 	}
 	H34_buffalo_culling = { #stimulate the economy by killing as many wild buffaloes as possible, without caring for the consequences on the Epednar that rely on the herds
 		production_efficiency = 0.10
 	}
 	H34_the_four_horned_exhibition = { #cattle is the biggest industry in the country and this is the biggest cattle fair, with people from the entire country and beyond
-		global_own_trade_power = 0.10
+		trade_efficiency = 0.15
 		prestige_decay = -0.005
 	}
 	H34_prasoynn_trail = { #lots of pioneers went up the Prasoynn, not many were alive at the end, so they are used to hardship
 		war_exhaustion = -0.02
 	}
 	H34_ynno_cannorian_mediator = { #they trade and have good relations with both Ynnics and Cannorians, and Arganjuzorn even gave them an official title as shield of peace
-		diplomatic_upkeep = 1
+		improve_relation_modifier = 0.25
 	}
 	H34_rider_epednan_ranger = { #Cast?n Rider was a ranger known for crazy feats like riding landsharks, and Ebenmassers try to emulate his crazyness
 		leader_land_fire = 1
@@ -24350,7 +24358,7 @@ H57_ideas = {
 	}
 	H57_all_terrain_poachers = { #Lot of skilled poachers from the old Havoral Band that also are part of military
 		prestige = 0.5
-		shock_damage_received = -0.05
+		shock_damage_received = -0.1
 	}
 	H57_ivory_wars = { #Long drawn out guerrilla war with native veykodans. Good at staying in long conflicts as result
 		war_exhaustion = -0.03
@@ -24360,12 +24368,13 @@ H57_ideas = {
 	}
 	H57_loyalty_to_the_charitable = { #Ravelian socities became backbone of civil service and charity in New Havoral, devoted Ravelians as a result
 		tolerance_own = 2
+		ae_impact = -0.1
 	}
 	H57_marauder_kings = { #Government run by bandits, ruthless and absolute as a result
 		max_absolutism = 10
 	}
 	H57_ynnic_usurpers = { #Took over Sarda and attempted to unify the rest of the Ynn shortly after
-		core_creation = -0.10
+		core_creation = -0.15
 	}
 }
 
@@ -37609,7 +37618,7 @@ U66_ideas = {
     }
 
     U66_legacy_of_expeditions = { #Nortiochand began as a research expedition upon a glacier, and the ability to send long, protracted expeditions into hostile terrain far from the homeland has not been lost
-        global_sailors_modifier = 0.05
+        global_sailors_modifier = 0.1
 		global_supply_limit_modifier = 0.25
     }
 
@@ -37626,7 +37635,7 @@ U66_ideas = {
     }
 
     U66_frozen_metropoli = { #Over the centuries, the northern glaciers have been transformed into vast industrial metropoli, churning out untold quantities of resources from the glacial manufactories
-        production_efficiency = 0.15
+        production_efficiency = 0.1
     }
 
     U66_nortiochand_aeronautics_association = { #Nortiochand have been pioneers in the science of airship design, connecting the islands of the Broken Sea and beyond
