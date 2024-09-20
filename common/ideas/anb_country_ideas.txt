@@ -42104,3 +42104,53 @@ U39_ideas = {
 		defensiveness = 0.15
     }
 }
+
+# Esmaryan Temple
+B92_ideas = {
+	start = {
+		global_heretic_missionary_strength = 0.02
+		manpower_recovery_speed = 0.15
+		female_advisor_chance = 0.33
+	}
+	
+	bonus = {  
+		reduced_liberty_desire = 10
+	}
+	
+	trigger = {
+		tag = B92 # Esmaryan Temple
+	}
+	free = yes
+	
+	B92_purifying_the_flame = { # Purifying the Flame. All around Esmaria, the clergy of Esmaryal has been infiltrated by cultists of Hedine. Thankfully true faithfull have united in the Order of the Pure Flame and are fighting to clear the Esmaryan clergy from this corruption.
+		devotion = 1
+		yearly_corruption = -0.1
+	}
+	
+	B92_mothers_duty = { # A Mother’s Duty. Just like Esmaryal loves her daughter Ryala, we maintain good relations with the Ryalan clergy with whom we share Esmaria. We should make sure that the Ryalan temple remains friendly with us so we can guide it, for it is a mother's duty to take care of her daughter.
+		tolerance_own = 2
+	}
+	
+	B92_in_house_of_esmaryal = { # In the House of Esmaryal. In the form of a poem (if I can make a good one). Esmaryal’s temples are seen as a sanctuary where anyone can find protection and as neutral ground for warring parties to negotiate. This role was particularly evident during the Corinites Wars, as many fled the conflicts and took refuge in the temples.
+		morale_damage_received = -0.1
+		ae_impact = -0.05
+	}
+	
+	B92_the_hearth_of_esmaraine = { # The Hearth of Esmarainé. History of the Mother’s Sanctuary. Star during the 1140s and last for 3 centuries. Is financed by the ducs of Esmaria and the Glassblowers Guild of Esmarainé. The Stained glass of the temple is built in such a way that when it is hit by the first ray of sunlight, the light is redirected to the hearth inside the temple, igniting it (magic involved?)
+		prestige_decay = -0.005 
+		all_power_cost = -0.01
+	}
+	
+	B92_virtuous_river = { # Virtuous River. The river parties are a major cultural event in Esmaria, but like many things in the region, they have been corrupted and hedonism runs rampant among the party goers. Let's restore them and make sure any practices seen as sinful by Esmaryal do not happen anymore on her river.
+		diplomatic_reputation = 1
+	}
+	
+	B92_a_divine_meal = { # A Divine Meal. The clergy of Esmaryal has a motherly attitude toward the inhabitants of Esmarainé, particularly the poor. The cooks of the temple, said to have been divinely inspired, created a meal (see Lampredotto or Panino con Bollito) that can be made with cheap ingredients to feed the hungry of Esmaria’s capital. It has since become a staple of the region, even among the noble who think of it as peasant food.
+		global_trade_goods_size_modifier = 0.1
+		war_exhaustion_cost = -0.15
+	}
+	
+B92_the_source_of_corruption = { # The Source of Corruption. It was the merchants that brought corruption in Esmaria, dealing with devils to get more coins. We purged the corruption from our rank, but without dealing with the source it would inevitably come back. That is why our purge extended to the merchants. Now that is done we are free to trade, right?
+		global_trade_power = 0.1
+	}
+}
