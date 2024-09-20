@@ -3,7 +3,7 @@ country_decisions = {
 		major = yes
 		
 		potential = {
-			has_global_flag = escanni_wars_global_flag
+			has_global_flag = crimson_deluge
 			country_can_participate_in_escanni_wars = yes
 		}
 		
@@ -24,13 +24,7 @@ country_decisions = {
 			num_of_owned_provinces_with = {
 				value = 100
 				
-				OR = {
-					region = south_castanor_region
-					region = west_castanor_region
-					region = inner_castanor_region
-					area = cursewood_area
-					area = whistlevale_area
-				}
+				province_group = escann_proper
 			}
 
 			castonath_area = {
@@ -58,27 +52,9 @@ country_decisions = {
 						tooltip = escanni_wars_50_years
 					}
 
-					AND = {
-						south_castanor_region = {
-							type = all
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-						west_castanor_region = {
-							type = all
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-						inner_castanor_region = {
-							type = all
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-						cursewood_area = {
-							type = all
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-						whistlevale_area = {
-							type = all
-							country_or_non_sovereign_subject_holds = ROOT
-						}
+					escann_proper = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
 					}
 				}
 			}
