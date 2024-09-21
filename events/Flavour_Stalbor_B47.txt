@@ -1106,7 +1106,8 @@ country_event = {
 				has_country_flag = B47_vampires_caught_borders
 			}
 		}
-
+		set_country_flag = B47_vampire_hunters_in_borders
+		country_event = { id = flavor_stalbor.23 }
 	}
 	#Esmaria
 	option = {	
@@ -1117,7 +1118,8 @@ country_event = {
 				has_country_flag = B47_vampires_caught_esmaria
 			}
 		}
-
+		set_country_flag = B47_vampire_hunters_in_esmaria
+		country_event = { id = flavor_stalbor.23 }
 	}
 	#East Dameshead
 	option = {	
@@ -1128,7 +1130,8 @@ country_event = {
 				has_country_flag = B47_vampires_caught_dameshead
 			}
 		}
-
+		set_country_flag = B47_vampire_hunters_in_dameshead
+		country_event = { id = flavor_stalbor.23 }
 	}
 	#Damescrown
 	option = {	
@@ -1139,7 +1142,8 @@ country_event = {
 				has_country_flag = B47_vampires_caught_damescrown
 			}
 		}
-
+		set_country_flag = B47_vampire_hunters_in_damescrown
+		country_event = { id = flavor_stalbor.23 }
 	}
 	#Lencenor
 	option = {	
@@ -1150,6 +1154,739 @@ country_event = {
 				has_country_flag = B47_vampires_caught_lencenor
 			}
 		}
-		
+		set_country_flag = B47_vampire_hunters_in_lencenor
+		country_event = { id = flavor_stalbor.23 }
 	}
 }
+
+#Investigating Region
+country_event = {
+	id = flavor_stalbor.23
+	title = flavor_stalbor.23.t
+	desc = flavor_stalbor.23.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Send Vampire Hunters
+	option = {	
+		name = "flavor_stalbor.23.a"
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = B47_aggressive_vampire_hunting
+			duration = 1825
+		}
+		country_event = { 
+			id = flavor_stalbor.24 
+			days = 90
+		}
+	}
+	#Send Diplomats
+	option = {	
+		name = "flavor_stalbor.23.b"
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = B47_diplomat_seeking_vampires
+			duration = 1825
+		}
+		country_event = { 
+			id = flavor_stalbor.28
+			days = 180
+		}
+	}
+}
+
+#On the Track
+country_event = {
+	id = flavor_stalbor.24
+	title = flavor_stalbor.24.t
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		desc = flavor_stalbor.24.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		desc = flavor_stalbor.24.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		desc = flavor_stalbor.24.d.3
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+		desc = flavor_stalbor.24.d.4
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		desc = flavor_stalbor.24.d.5
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Send Vampire Hunters
+	option = {	
+		name = "flavor_stalbor.24.a"
+		ai_chance = { factor = 100 }
+		add_treasury = -100
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 270
+		}
+	}
+	#Send Diplomats
+	option = {	
+		name = "flavor_stalbor.24.b"
+		ai_chance = { factor = 0 }
+		add_prestige = -15
+		add_legitimacy_equivalent = { amount = -15 republican_tradition = -7.5 }
+		random_list = {
+			50 = {
+				country_event = { 
+					id = flavor_stalbor.25 
+					days = 90
+				}
+			}
+			50 = {
+				country_event = { 
+					id = flavor_stalbor.26 
+					days = 90
+				}
+			}
+		}
+	}
+}
+
+#Capture or Slay!
+country_event = {
+	id = flavor_stalbor.25
+	title = flavor_stalbor.25.t
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		desc = flavor_stalbor.25.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		desc = flavor_stalbor.25.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		desc = flavor_stalbor.25.d.3
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+		desc = flavor_stalbor.25.d.4
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		desc = flavor_stalbor.25.d.5
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Slay the Monsters
+	option = {	
+		name = "flavor_stalbor.25.a"
+		ai_chance = { factor = 50 }
+		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_borders
+			}
+			clr_country_flag = B47_vampire_hunters_in_borders
+			set_country_flag = B47_vampires_caught_borders
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_esmaria
+			}
+			clr_country_flag = B47_vampire_hunters_in_esmaria
+			set_country_flag = B47_vampires_caught_esmaria
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_dameshead
+			}
+			clr_country_flag = B47_vampire_hunters_in_dameshead
+			set_country_flag = B47_vampires_caught_dameshead
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_damescrown
+			}
+			clr_country_flag = B47_vampire_hunters_in_damescrown
+			set_country_flag = B47_vampires_caught_damescrown
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_lencenor
+			}
+			clr_country_flag = B47_vampire_hunters_in_lencenor
+			set_country_flag = B47_vampires_caught_lencenor
+		}
+
+	}
+	#No Stone Left Unturned!
+	option = {	
+		name = "flavor_stalbor.25.b"
+		ai_chance = { factor = 0 }
+		add_treasury = -200
+		country_event = { 
+			id = flavor_stalbor.27 
+			days = 180
+		}
+	}
+}
+
+#Failure
+country_event = {
+	id = flavor_stalbor.26
+	title = flavor_stalbor.26.t
+	desc = flavor_stalbor.26.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Utter Failure
+	option = {	
+		name = "flavor_stalbor.26.a"
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_borders
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = the_borders_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = the_borders_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = the_borders_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_esmaria
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = esmaria_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = esmaria_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = esmaria_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_dameshead
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = east_dameshead_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = east_dameshead_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = east_dameshead_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_damescrown
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = damescrown_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = damescrown_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = damescrown_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_lencenor
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = lencenor_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = lencenor_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = lencenor_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+
+		}
+		country_event = { 
+			id = flavor_stalbor.24 
+			days = 90
+		}
+	}
+}
+
+#Returned to Die!
+country_event = {
+	id = flavor_stalbor.27
+	title = flavor_stalbor.27.t
+	desc = flavor_stalbor.27.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Judged & Executed
+	option = {	
+		name = "flavor_stalbor.27.a"
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = {
+				has_province_modifier = B47_old_lord_loyalists
+			}
+		}
+		add_prestige = 20
+		add_army_tradition = 10
+		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_borders
+			}
+			clr_country_flag = B47_vampire_hunters_in_borders
+			set_country_flag = B47_vampires_caught_borders
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_esmaria
+			}
+			clr_country_flag = B47_vampire_hunters_in_esmaria
+			set_country_flag = B47_vampires_caught_esmaria
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_dameshead
+			}
+			clr_country_flag = B47_vampire_hunters_in_dameshead
+			set_country_flag = B47_vampires_caught_dameshead
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_damescrown
+			}
+			clr_country_flag = B47_vampire_hunters_in_damescrown
+			set_country_flag = B47_vampires_caught_damescrown
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_lencenor
+			}
+			clr_country_flag = B47_vampire_hunters_in_lencenor
+			set_country_flag = B47_vampires_caught_lencenor
+		}
+	}
+}
+
+#Making Introductions
+country_event = {
+	id = flavor_stalbor.28
+	title = flavor_stalbor.28.t
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		desc = flavor_stalbor.28.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		desc = flavor_stalbor.28.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		desc = flavor_stalbor.28.d.3
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+		desc = flavor_stalbor.28.d.4
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		desc = flavor_stalbor.28.d.5
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Intensives
+	option = {	
+		name = "flavor_stalbor.28.a"
+		ai_chance = { factor = 50 }
+		add_treasury = -200
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 180
+		}
+	}
+	#Trust the Diplomat
+	option = {	
+		name = "flavor_stalbor.28.b"
+		ai_chance = { factor = 50 }
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 365
+		}
+	}
+}
+
+#Finding Evidence
+country_event = {
+	id = flavor_stalbor.29
+	title = flavor_stalbor.29.t
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		desc = flavor_stalbor.29.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		desc = flavor_stalbor.29.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		desc = flavor_stalbor.29.d.3
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+		desc = flavor_stalbor.29.d.4
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		desc = flavor_stalbor.29.d.5
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Intensives
+	option = {	
+		name = "flavor_stalbor.29.a"
+		ai_chance = { factor = 50 }
+		add_treasury = -200
+		country_event = { 
+			id = flavor_stalbor.30 
+			days = 180
+		}
+		if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_borders
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = the_borders_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_esmaria
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = esmaria_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_dameshead
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = east_dameshead_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_damescrown
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = damescrown_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_lencenor
+			}
+			random_country = {
+				limit = {
+					any_owned_province = {
+						region = lencenor_region
+					}
+				}
+				add_opinion = {
+                    who = ROOT
+                    modifier = B47_vampire_hunter_overreach
+                }
+			}
+		}
+	}
+	#Slow & Steady
+	option = {	
+		name = "flavor_stalbor.29.b"
+		ai_chance = { factor = 50 }
+		country_event = { 
+			id = flavor_stalbor.30
+			days = 365
+		}
+	}
+}
+
+#Making Introductions
+country_event = {
+	id = flavor_stalbor.30
+	title = flavor_stalbor.30.t
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		desc = flavor_stalbor.30.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		desc = flavor_stalbor.30.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		desc = flavor_stalbor.30.d.3
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+		desc = flavor_stalbor.30.d.4
+	}
+	desc = {
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		desc = flavor_stalbor.30.d.5
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	#Unveil the vampires in hiding
+	option = {	
+		name = "flavor_stalbor.30.a"
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = {
+				has_province_modifier = B47_old_lord_loyalists
+			}
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_borders
+			}
+			clr_country_flag = B47_vampire_hunters_in_borders
+			set_country_flag = B47_vampires_caught_borders
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_esmaria
+			}
+			clr_country_flag = B47_vampire_hunters_in_esmaria
+			set_country_flag = B47_vampires_caught_esmaria
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_dameshead
+			}
+			clr_country_flag = B47_vampire_hunters_in_dameshead
+			set_country_flag = B47_vampires_caught_dameshead
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_damescrown
+			}
+			clr_country_flag = B47_vampire_hunters_in_damescrown
+			set_country_flag = B47_vampires_caught_damescrown
+		}
+		else_if = {
+			limit = {
+				has_country_flag = B47_vampire_hunters_in_lencenor
+			}
+			clr_country_flag = B47_vampire_hunters_in_lencenor
+			set_country_flag = B47_vampires_caught_lencenor
+		}
+	}
+}
+

@@ -127,3 +127,25 @@ B47_old_lord_loyalists = {
 	local_production_efficiency = -0.2
 	province_trade_power_modifier = -0.2
 }
+
+B47_aggressive_vampire_hunting = {
+	diplomatic_reputation = -1
+	improve_relation_modifier = -0.1
+	ae_impact = 0.1
+}
+
+B47_diplomat_seeking_vampires = {
+	diplomats = -1
+}
+
+B47_stalbor_engineering = {
+	great_project_upgrade_cost = -0.25
+	great_project_upgrade_time = -0.25
+}
+
+B47_the_great_keep_modifier = {
+	leader_siege = 1
+	fort_level = 1
+	local_hostile_attrition = 2
+	local_garrison_size = 0.25
+}

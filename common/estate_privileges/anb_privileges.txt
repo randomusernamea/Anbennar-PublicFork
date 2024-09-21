@@ -13377,6 +13377,11 @@ estate_adventurers_track_vampire_nobility = {
 	max_absolutism = 0
 	is_valid = {
 		has_country_flag = B47_vampire_lords_on_the_run
+		NOT = { has_country_flag = B47_vampires_caught_borders }
+		NOT = { has_country_flag = B47_vampires_caught_esmaria }
+		NOT = { has_country_flag = B47_vampires_caught_dameshead }
+		NOT = { has_country_flag = B47_vampires_caught_damescrown }
+		NOT = { has_country_flag = B47_vampires_caught_lencenor }
 	}
 
 	can_select = { always = yes }
@@ -13387,7 +13392,6 @@ estate_adventurers_track_vampire_nobility = {
 	}
 	
 	on_granted = {
-		set_country_flag = B47_seeking_vampire_lords
 		country_event = {
 			id = flavor_stalbor.22
 			days = 3
