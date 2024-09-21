@@ -1222,3 +1222,89 @@ country_event = {
 
 	}
 }
+#Esmaryan Temple
+country_event = {
+	id = flavor_esmari.44
+	title = flavor_esmari.44.t
+	desc = flavor_esmari.44.d
+	picture = CHURCH_ESTATE_1_eventPicture
+	goto = 266 # Esmarainé
+	
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 266
+		NOT = {
+			is_core = 266
+			exists = A44
+		}
+		OR = {
+			has_matching_religion = regent_court
+			has_matching_religion = corinite
+			has_matching_religion = ravelian
+		}
+	}
+
+	option = { # Refuse
+		name = flavor_esmari.44.a
+		
+		reverse_add_opinion = {
+			who = emperor
+			modifier = took_esmaraine
+		}
+	}
+
+	option = { # Accept + Vassalize
+		name = flavor_esmari.44.b
+		
+		add_prestige = 10
+		clr_country_flag = regent_court_deity_switch_cooldown
+		create_vassal = B92
+		B92 = {
+			add_core = 266
+		}
+	}
+
+	option = { # Accept
+		name = flavor_esmari.44.c
+		
+		add_stability = 1
+		clr_country_flag = regent_court_deity_switch_cooldown
+		every_known_country = {
+			limit = { 
+				is_part_of_hre = yes 
+			}
+			reverse_add_aggressive_expansion = {
+				who = ROOT 
+				value = -10
+			}
+		}
+		release = B92
+		B92 = {
+			add_core = 266
+		}
+		
+	}
+
+	option = { # Play as
+		name = flavor_esmari.44.d
+		
+		add_stability = 1
+		clr_country_flag = regent_court_deity_switch_cooldown
+		every_known_country = {
+			limit = { 
+				is_part_of_hre = yes 
+			}
+			reverse_add_aggressive_expansion = {
+				who = ROOT 
+				value = -10
+			}
+		}
+		release = B92
+		B92 = {
+			add_core = 266
+		}
+		switch_tag = B92
+		
+	}
+}
