@@ -1,5 +1,4 @@
 
-
 namespace = flavor_stalbor
 
 #Dynasty Naming
@@ -77,18 +76,6 @@ province_event = {
 	id = flavor_stalbor.2
 	title = flavor_stalbor.2.t
 	desc = flavor_stalbor.2.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
 	
 	is_triggered_only = yes
 	
@@ -265,7 +252,6 @@ country_event = {
 	option = {		
 		name = "flavor_stalbor.3.a"
 		ai_chance = { factor = 100 }	
-		#### Remove this!!! For Testing Only ####################################################
 		add_country_modifier = {
 			name = temp_mod_to_remove
 			duration = -1
@@ -273,7 +259,6 @@ country_event = {
 		forlorn_vale_region = {
 			discover_country = ROOT
 		}
-		#########################################################################################
 		random_owned_province = {
 			add_orcish_minority_size_effect = yes
 			add_goblin_minority_size_effect = yes
@@ -398,7 +383,7 @@ country_event = {
 			tooltip = {
 				adventurer_legacy_effect = yes
 				country_event = { id = flavor_blademarches.1 days = 1 }
-#					country_event = { id = adventurer.2 days = 1 }
+ #					country_event = { id = adventurer.2 days = 1 }
 			}
 		}
 		change_tag = B33
@@ -406,7 +391,7 @@ country_event = {
 			limit = { OR = { has_reform = adventurer_reform has_country_flag = adventurer_derived_government } }
 			adventurer_legacy_effect = yes
 			country_event = { id = flavor_blademarches.1 days = 1 }
-#				country_event = { id = adventurer.2 days = 1 }
+ #				country_event = { id = adventurer.2 days = 1 }
 		}
 		if = {
 			limit = {
