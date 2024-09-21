@@ -1250,11 +1250,14 @@ B47_stalbor_column_3 = {
                 owned_by = ROOT
                 is_core = ROOT
             }
-            all_owned_province = {
-                region = daravans_folly_region
-                has_port = yes
-                has_shipyard_building_trigger = yes
-                has_dock_building_trigger = yes
+            calc_true_if = {
+                all_owned_province = {
+                    region = daravans_folly_region
+                    has_port = yes
+                    has_shipyard_building_trigger = yes
+                    has_dock_building_trigger = yes
+                }
+                amount = 4
             }
             navy_size_percentage = 0.50
         }
