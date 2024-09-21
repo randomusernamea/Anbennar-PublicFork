@@ -1259,10 +1259,11 @@ country_event = {
 		
 		add_prestige = 10
 		clr_country_flag = regent_court_deity_switch_cooldown
-		create_vassal = B92
+		release = B92
 		B92 = {
 			add_core = 266
 		}
+		vassalize = B92
 	}
 
 	option = { # Accept
@@ -1274,9 +1275,9 @@ country_event = {
 			limit = { 
 				is_part_of_hre = yes 
 			}
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = ROOT 
-				value = -10
+				value = -20
 			}
 		}
 		release = B92
@@ -1287,7 +1288,7 @@ country_event = {
 	}
 
 	option = { # Play as
-		name = flavor_esmari.44.d
+		name = flavor_esmari.44.e
 		
 		add_stability = 1
 		clr_country_flag = regent_court_deity_switch_cooldown
@@ -1295,9 +1296,9 @@ country_event = {
 			limit = { 
 				is_part_of_hre = yes 
 			}
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = ROOT 
-				value = -10
+				value = -20
 			}
 		}
 		release = B92
