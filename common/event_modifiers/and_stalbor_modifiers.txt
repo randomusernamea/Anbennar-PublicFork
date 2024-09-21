@@ -1,11 +1,12 @@
 
+############################# REMOVE THIS MOD. FOR TESTING ONLY #########################
 temp_mod_to_remove = {
 	build_time = -0.9
 	improve_relation_modifier = 1
 	core_creation = -0.9
 	global_missionary_strength = 0.99
 }
-
+##########################################################################################
 arturos_watch_chapter = {
 	trade_goods_size_modifier = 0.005
 	local_unrest = -1
@@ -26,9 +27,53 @@ arturos_mil_branch = {
 
 arturos_naval_branch = {
 	local_unrest = -2
-	local_sailor = 0.25
+	local_sailor = 250
 	naval_forcelimit = 4
 	blockade_force_required = 1
+}
+
+arturos_adm_center = {
+	local_unrest = -5
+	local_tax_modifier = 2
+	governing_capacity = 80
+}
+
+arturos_mil_center = {
+	local_unrest = -5
+	local_manpower = 2
+	land_forcelimit = 10
+	local_defensiveness = 0.5
+}
+
+arturos_naval_center = {
+	local_unrest = -5
+	local_sailor = 1000
+	naval_forcelimit = 20
+	blockade_force_required = 2
+}
+
+arturos_oversight_I = {
+	yearly_corruption = -0.1
+}
+
+arturos_oversight_II = {
+	yearly_corruption = -0.2
+}
+
+arturos_army_I = {
+	drill_decay_modifier = -0.2
+}
+
+arturos_army_II = {
+	drill_decay_modifier = -0.4
+}
+
+arturos_navy_I = {
+	global_naval_barrage_cost = -0.25
+}
+
+arturos_navy_II = {
+	global_naval_barrage_cost = -0.5
 }
 
 vernham_urbanization_I = {
