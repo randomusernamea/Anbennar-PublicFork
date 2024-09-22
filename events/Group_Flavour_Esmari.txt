@@ -1271,11 +1271,15 @@ country_event = {
 		
 		add_stability = 1
 		clr_country_flag = regent_court_deity_switch_cooldown
-			
-		add_aggressive_expansion = {
-			who = ROOT 
-			value = -20
-			apply_calc = no
+		every_known_country = {
+			limit = { 
+				is_part_of_hre = yes 
+			}
+			add_aggressive_expansion = {
+				who = ROOT 
+				value = -20
+				apply_calc = no
+			}
 		}
 		release = B92
 		B92 = {
