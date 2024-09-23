@@ -7073,8 +7073,11 @@ book_of_stone = {
 		adventurers_influence_modifier = 0.1
 	}
 	custom_attributes = {
-		locked_government_type = yes
 		disabled_purging = yes
 		disabled_expelling = yes
+		cant_manually_decrease_autonomy = yes
+	}
+	ai = {
+		factor = 500
 	}
 }

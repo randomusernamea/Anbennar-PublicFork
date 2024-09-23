@@ -556,8 +556,11 @@ country_event = {
 	option = {		
 		name = "flavor_stalbor.8.a"
 		ai_chance = { factor = 100 }
-		FROM = {
-			vassalize = I27
+		if = {
+			limit = {
+				NOT = { is_subject_of = FROM }
+			}
+			FROM = { vassalize = ROOT }
 		}
 		change_religion = FROM
 		west_deepwoods_region = {
@@ -572,6 +575,9 @@ country_event = {
 			name = B47_deepwoods_accord_I
 			duration = -1
 		}
+		has_country_flag = book_of_stone_unlocked
+		add_government_reform = book_of_stone
+
 	}
 
 	option = {
@@ -591,10 +597,7 @@ country_event = {
 			name = B47_religious_turmoil
 			duration = 9125
 		}
-		add_country_modifier = {
-			name = B47_deepwoods_accord_I
-			duration = -1
-		}
+		has_country_flag = book_of_stone_unlocked
 	}
 }
 
