@@ -1162,11 +1162,13 @@ B47_stalbor_column_3 = {
                     }
                 }
             }
-            every_owned_province = {
-                limit = { 
-                    trade_goods = slaves
+            hidden_effect = {
+                every_owned_province = {
+                    if = {
+                        limit = { trade_goods = slaves }
+                        change_trade_goods = unknown
+                    }
                 }
-                change_trade_goods = unknown
             }
         }
     }
