@@ -692,38 +692,46 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.10.a"
 		ai_chance = { factor = 100 }
-		I27 = {
-			random_owned_province = {
+		custom_tooltip = B47_anger_the_followers
+		hidden_effect = {
+			random_subject_country = {
 				limit = {
-					culture_is_orcish = yes
+					capital_scope = {
+						region = west_deepwoods_region
+					}
 				}
-				spawn_rebels = {
-					type = great_dookan_rebels
-					size = 2
+				random_owned_province = {
+					limit = {
+						culture_is_orcish = yes
+					}
+					spawn_rebels = {
+						type = great_dookan_rebels
+						size = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_is_elven = yes
+					}
+					spawn_rebels = {
+						type = fey_court_rebels
+						size = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_is_goblin = yes
+					}
+					spawn_rebels = {
+						type = goblinic_shamanism_rebels
+						size = 2
+					}
 				}
 			}
-			random_owned_province = {
-				limit = {
-					culture_is_elven = yes
-				}
-				spawn_rebels = {
-					type = fey_court_rebels
-					size = 2
-				}
+			country_event = {
+				id = flavor_stalbor.11
+				days = 7
 			}
-			random_owned_province = {
-				limit = {
-					culture_is_goblin = yes
-				}
-				spawn_rebels = {
-					type = goblinic_shamanism_rebels
-					size = 2
-				}
-			}
-		}
-		country_event = {
-			id = flavor_stalbor.11
-			days = 7
 		}
 	}
 }
@@ -752,12 +760,12 @@ country_event = {
 		name = "flavor_stalbor.11.a"
 		ai_chance = { factor = 99 }	
 		trigger = {
-			I27 = {
+			all_subject_country = {
 				NOT = {
 					num_of_rebel_armies = 1
 				}
 			}
-			I27 = {
+			all_subject_country = {
 				NOT = {
 					num_of_rebel_controlled_provinces = 1
 				}
@@ -786,7 +794,12 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.12.a"
 		ai_chance = { factor = 100 }
-		I27 = {
+		every_subject_country = {
+			limit = {
+				capital_scope = {
+					region = west_deepwoods_region
+				}
+			}
 			remove_country_modifier = B47_religious_turmoil
 			remove_country_modifier = B47_deepwoods_accord_I
 			add_country_modifier = {

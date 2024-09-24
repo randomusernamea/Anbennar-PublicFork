@@ -85,17 +85,6 @@ country_decisions = {
 				}
 				451 = { add_center_of_trade_level = -1 }
 			}
-			if = {
-				limit = {
-					has_country_flag = B47_slavery_ended
-				}
-				451 = {
-					add_province_modifier = {
-						name = arturos_watch_chapter
-						duration = -1
-					}
-				}
-			}
 			hidden_effect = { set_global_flag = corveld_restored }
 			country_event = { id = corveld_city.1 }
 			add_prestige = 25
