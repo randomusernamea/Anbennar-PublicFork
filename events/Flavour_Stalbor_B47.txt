@@ -575,7 +575,7 @@ country_event = {
 			name = B47_deepwoods_accord_I
 			duration = -1
 		}
-		has_country_flag = book_of_stone_unlocked
+		set_country_flag = book_of_stone_unlocked
 		add_government_reform = book_of_stone
 
 	}
@@ -597,7 +597,7 @@ country_event = {
 			name = B47_religious_turmoil
 			duration = 9125
 		}
-		has_country_flag = book_of_stone_unlocked
+		set_country_flag = book_of_stone_unlocked
 	}
 }
 
@@ -1708,6 +1708,7 @@ country_event = {
 			limit = {
 				has_province_modifier = B47_old_lord_loyalists
 			}
+			remove_province_modifier = B47_old_lord_loyalists
 		}
 		add_prestige = 20
 		add_army_tradition = 10
@@ -1973,6 +1974,7 @@ country_event = {
 			limit = {
 				has_province_modifier = B47_old_lord_loyalists
 			}
+			remove_province_modifier = B47_old_lord_loyalists
 		}
 		add_adm_power = 50
 		add_dip_power = 50

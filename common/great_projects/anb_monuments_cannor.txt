@@ -218,10 +218,10 @@ bal_ouord = {
 
 	can_upgrade_trigger = {
 		NOT = { has_province_modifier = ruined_castanorian_citadel }
-		OR = {
-			owner = {
-				tag = U16
-				accepted_culture = ourdi
+		owner = {
+			OR = {
+				tag = U16 
+				accepted_culture = ourdi	
 			}
 		}
 	}
