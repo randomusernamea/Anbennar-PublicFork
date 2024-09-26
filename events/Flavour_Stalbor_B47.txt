@@ -102,40 +102,50 @@ province_event = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_adm_branch_count
-					value = 4
-				}
-				NOT = {
-					OR = {
-						has_country_modifier = arturos_oversight_I
-						has_country_modifier = arturos_oversight_II
+				owner = {
+					check_variable = {
+						which = B47_adm_branch_count
+						value = 4
 					}
+					NOT = {
+						OR = {
+							has_country_modifier = arturos_oversight_I
+							has_country_modifier = arturos_oversight_II
+						}
+					}	
 				}
 			}
-			add_country_modifier = {
-				name = arturos_oversight_I
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_oversight_I
+					duration = -1
+				}		
 			}
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_adm_branch_count
-					value = 9
-				}
-				NOT = {
-					has_country_modifier = arturos_oversight_II
+				owner = {
+					check_variable = {
+						which = B47_adm_branch_count
+						value = 9
+					}
+					NOT = {
+						has_country_modifier = arturos_oversight_II
+					}	
 				}
 			}
-			add_country_modifier = {
-				name = arturos_oversight_II
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_oversight_II
+					duration = -1
+				}		
 			}
 		}
-		change_variable = {
-			which = B47_adm_branch_count
-			value = 1
+		owner = {
+			change_variable = {
+				which = B47_adm_branch_count
+				value = 1
+			}			
 		}
 	}
 	
@@ -150,40 +160,50 @@ province_event = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_mil_branch_count
-					value = 4
-				}
-				NOT = {
-					OR = {
-						has_country_modifier = arturos_army_I
-						has_country_modifier = arturos_army_II
+				owner = {
+					check_variable = {
+						which = B47_mil_branch_count
+						value = 4
 					}
+					NOT = {
+						OR = {
+							has_country_modifier = arturos_army_I
+							has_country_modifier = arturos_army_II
+						}
+					}	
 				}
 			}
-			add_country_modifier = {
-				name = arturos_army_I
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_army_I
+					duration = -1
+				}		
 			}
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_mil_branch_count
-					value = 9
-				}
-				NOT = {
-					has_country_modifier = arturos_army_II
+				owner = {
+					check_variable = {
+						which = B47_mil_branch_count
+						value = 9
+					}
+					NOT = {
+						has_country_modifier = arturos_army_II
+					}	
 				}
 			}
-			add_country_modifier = {
-				name = arturos_army_II
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_army_II
+					duration = -1
+				}		
 			}
 		}
-		change_variable = {
-			which = B47_mil_branch_count
-			value = 1
+		owner = {
+			change_variable = {
+				which = B47_mil_branch_count
+				value = 1
+			}			
 		}
 	}
 	
@@ -201,40 +221,50 @@ province_event = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_naval_branch_count
-					value = 4
-				}
-				NOT = {
-					OR = {
-						has_country_modifier = arturos_navy_I
-						has_country_modifier = arturos_navy_II
+				owner = {
+					check_variable = {
+						which = B47_naval_branch_count
+						value = 4
 					}
+					NOT = {
+						OR = {
+							has_country_modifier = arturos_navy_I
+							has_country_modifier = arturos_navy_II
+						}
+					}	
 				}
 			}
-			add_country_modifier = {
-				name = arturos_navy_I
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_navy_I
+					duration = -1
+				}		
 			}
 		}
 		if = {
 			limit = {
-				check_variable = {
-					which = B47_naval_branch_count
-					value = 9
-				}
-				NOT = {
-					has_country_modifier = arturos_navy_II
+				owner = {
+					check_variable = {
+						which = B47_naval_branch_count
+						value = 9
+					}
+					NOT = {
+						has_country_modifier = arturos_navy_II
+					}
 				}
 			}
-			add_country_modifier = {
-				name = arturos_navy_II
-				duration = -1
+			owner = {
+				add_country_modifier = {
+					name = arturos_navy_II
+					duration = -1
+				}	
 			}
 		}
-		change_variable = {
-			which = B47_naval_branch_count
-			value = 1
+		owner = {
+			change_variable = {
+				which = B47_naval_branch_count
+				value = 1
+			}			
 		}
 	}
 
@@ -2035,154 +2065,157 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.31.a"
 		ai_chance = { factor = 100 }
-		8 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+		custom_tooltip = B47_watch_goes_all_over_cannor
+		hidden_effect = {
+			8 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		10 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			10 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		52 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			52 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		66 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			66 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		67 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			67 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		97 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			97 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		126 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			126 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		146 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			146 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		216 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			216 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		221 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			221 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		229 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			229 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		234 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			234 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		265 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			265 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		292 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			292 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		306 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			306 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		316 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			316 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		352 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			352 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		365 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			365 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		696 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			696 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		723 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			723 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		740 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			740 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		780 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			780 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		840 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			840 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		865 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			865 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
-		}
-		904 = {
-			add_permanent_province_modifier = {
-				name = arturos_watch_chapter
-				duration = -1
+			904 = {
+				add_permanent_province_modifier = {
+					name = arturos_watch_chapter
+					duration = -1
+				}
 			}
 		}
 	}

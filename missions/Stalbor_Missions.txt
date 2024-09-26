@@ -840,9 +840,12 @@ B47_stalbor_column_2 = {
                     amount = 10
                 }
             }
-            NOT = {
-                any_owned_province = {
-                    has_province_modifier = arturos_watch_chapter
+            custom_trigger_tooltip = {
+                tooltip = B47_upgrade_all_watch_chapters
+                NOT = {
+                    any_owned_province = {
+                        has_province_modifier = arturos_watch_chapter
+                    }
                 }
             }
         }
