@@ -2376,18 +2376,21 @@ B47_stalbor_column_5 = {
                     add_random_development = 1
                 }
             }
-            every_owned_province = {
-                limit = {
-                    OR = { 
-                        has_orcish_majority_trigger = yes
-                        has_orcish_minority_trigger = yes
+            custom_tooltip = B47_half_orc_spawn
+            hidden_effect = {
+                every_owned_province = {
+                    limit = {
+                        OR = { 
+                            has_orcish_majority_trigger = yes
+                            has_orcish_minority_trigger = yes
+                        }
+                        OR = {
+                            has_human_majority_trigger = yes
+                            has_human_minority_trigger = yes
+                        }
                     }
-                    OR = {
-                        has_human_majority_trigger = yes
-                        has_human_minority_trigger = yes
-                    }
+                    add_half_orcish_minority_size_effect = yes
                 }
-                add_half_orcish_minority_size_effect = yes
             }
             add_dip_power = -100
             add_country_modifier = {
