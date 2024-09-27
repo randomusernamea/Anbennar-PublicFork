@@ -17,6 +17,27 @@ B47_stalbor_column_1 = {
 			B47_bladeskeep_and_the_watch
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    owner = {
+                        has_country_modifier = elven_administration
+                    }
+                    is_capital = yes
+                }
+                has_elven_minority_trigger = yes
+                has_elven_majority_trigger = yes
+                AND = {
+                    area = banesfork_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = beastgrave_area
+                    NOT = { owned_by = ROOT }
+                }
+            }
+		}
+
         trigger = {
             banesfork_area = {
                 type = all
@@ -93,6 +114,16 @@ B47_stalbor_column_1 = {
             B47_the_early_cuirassiers
 		}
 
+        provinces_to_highlight = {
+			AND = {
+                owner = {
+                    has_country_modifier = elven_administration
+                }
+                is_capital = yes
+                region = west_deepwoods_region
+            }
+		}
+
         trigger = {
             any_country = {
                 has_country_modifier = elven_administration
@@ -139,6 +170,25 @@ B47_stalbor_column_1 = {
 		position = 6
 		required_missions = {
 			B47_deepwood_relations
+		}
+
+        provinces_to_highlight = {
+			AND = {
+                OR = {
+                    has_elven_minority_trigger = yes
+                    has_elven_majority_trigger = yes
+                    has_orcish_majority_trigger = yes
+                    has_orcish_minority_trigger = yes
+                    has_goblin_majority_trigger = yes
+                    has_goblin_minority_trigger = yes
+                }
+                region = west_deepwoods_region
+                owner = {
+                    NOT = {
+                        is_subject_of = ROOT
+                    }
+                }
+            }
 		}
 
         trigger = {
@@ -218,6 +268,31 @@ B47_stalbor_column_1 = {
 			B47_settle_deepwood_religious_dispute
 		}
 
+        provinces_to_highlight = {
+            OR = {
+                AND = {
+                    province_id = 813
+                    NOT = { 
+                        AND = {
+                            development = 20 
+                            has_trade_building_trigger = yes
+                            province_has_center_of_trade_of_level = 2
+                        }
+                    }
+                }
+                AND = {
+                    province_id = 3020
+                    NOT = { 
+                        AND = {
+                            development = 20 
+                            has_production_building_trigger = yes
+                        }
+                    }
+                }
+                has_province_modifier = arturos_watch_chapter
+            }
+        }
+
         trigger = {
             custom_trigger_tooltip = {
                 custom_tooltip = B47_settled_the_deepwood_stuff
@@ -282,6 +357,16 @@ B47_stalbor_column_1 = {
 			B47_fey_steel_manufacturing
 		}
 
+        provinces_to_highlight = {
+            AND = {
+                trade_goods = livestock
+                OR = {
+                    owned_by = ROOT
+                    owned_by_subject_of = ROOT
+                }
+            }
+        }
+
         trigger = {
             calc_true_if = {
                 all_province = {
@@ -327,6 +412,10 @@ B47_stalbor_column_2 = {
 			B47_bladeskeep_and_the_watch
 		}
 
+        provinces_to_highlight = {
+			trade_goods = livestock
+		}
+
         trigger = {
             OR = {
                 any_owned_province = {
@@ -366,6 +455,13 @@ B47_stalbor_column_2 = {
 			B47_western_heartland
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                province_id = 441
+                has_province_modifier = arturos_watch_chapter
+            }
+		}
+
         trigger = {
             441 = {
                 owned_by = ROOT
@@ -401,7 +497,7 @@ B47_stalbor_column_2 = {
 		required_missions = {
 			B47_vampires_of_arca_corvus
 		}
-
+        
         trigger = {
             NOT = { num_of_rebel_armies = 1 }
             custom_trigger_tooltip = {
@@ -448,6 +544,24 @@ B47_stalbor_column_2 = {
 			B47_vampires_of_dostanor
             B47_the_stalbor_fleet
 
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    region = dostanor_region
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    region = daravans_folly_region
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    region = ourdia_region
+                    NOT = { owned_by = ROOT }
+                }
+                province_id = 510
+            }
 		}
 
         trigger = {
@@ -515,6 +629,14 @@ B47_stalbor_column_2 = {
 
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                province_id = 510
+                province_id = 441
+                province_id = 817
+            }
+		}
+
         trigger = {
             510 = {
                 has_great_project = {
@@ -556,6 +678,36 @@ B47_stalbor_column_2 = {
 			B47_the_great_keep
             B47_the_winged_cuirassiers
 
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                province_id = 8
+                province_id = 10
+                province_id = 52
+                province_id = 66
+                province_id = 67
+                province_id = 97
+                province_id = 126
+                province_id = 146
+                province_id = 216
+                province_id = 221
+                province_id = 229
+                province_id = 234
+                province_id = 265
+                province_id = 292
+                province_id = 306
+                province_id = 316
+                province_id = 352
+                province_id = 365
+                province_id = 696
+                province_id = 723
+                province_id = 740
+                province_id = 780
+                province_id = 840
+                province_id = 865
+                province_id = 904
+            }
 		}
 
         trigger = {
@@ -903,6 +1055,23 @@ B47_stalbor_column_3 = {
 			
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    area = vernham_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = oudeben_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = clovenwood_area
+                    NOT = { owned_by = ROOT }
+                }
+            }
+		}
+
         trigger = {
             vernham_area = {
                 type = all
@@ -966,6 +1135,16 @@ B47_stalbor_column_3 = {
 			B47_southern_heartland
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    area = blademarch_area
+                    NOT = { owned_by = ROOT }
+                }
+                province_id = 817
+            }
+		}
+
         trigger = {
             blademarch_area = {
                 type = all
@@ -1002,6 +1181,35 @@ B47_stalbor_column_3 = {
 		position = 3
 		required_missions = {
 			B47_bladeskeep_and_the_watch
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    owner = {
+                        capital_scope = {
+                            OR = {
+                                region = south_castanor_region
+                                region = inner_castanor_region
+                                region = west_castanor_region
+                            }
+                        }
+                    }
+                    is_capital = yes
+                }
+                AND = {
+                    area = themin_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = humacvord_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = burnoll_area
+                    NOT = { owned_by = ROOT }
+                }
+            }
 		}
 
         trigger = {
@@ -1075,6 +1283,28 @@ B47_stalbor_column_3 = {
 			B47_regional_security
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    area = dostans_way_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = devaced_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = catelsvord_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = oudmerewood_area
+                    NOT = { owned_by = ROOT }
+                }
+                province_id = 793
+            }
+		}
+
         trigger = {
             dostans_way_area = {
                 type = all
@@ -1136,11 +1366,25 @@ B47_stalbor_column_3 = {
             }
         }
     }
+
     B47_the_stalbor_fleet = {
 		icon = mission_court_education
 		position = 6
 		required_missions = {
 			B47_western_heartland
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    region = daravans_folly_region
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    region = daravans_folly_region
+                    has_port = yes
+                }
+            }
 		}
 
         trigger = {
@@ -1207,6 +1451,41 @@ B47_stalbor_column_4 = {
 		position = 4
 		required_missions = {
 			B47_regional_security
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    area = escerfork_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = swapstoke_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = medirleigh_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = hornwood_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = dryadsdale_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = doewood_area
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    area = marrhold_area
+                    NOT = { owned_by = ROOT }
+                }
+                province_id = 888
+                province_id = 4097
+            }
 		}
 
         trigger = {
@@ -1297,6 +1576,10 @@ B47_stalbor_column_4 = {
 		position = 5
 		required_missions = {
 			B47_eastern_heartland
+		}
+
+        provinces_to_highlight = {
+			province_id = 4097
 		}
 
         trigger = {
@@ -1581,6 +1864,17 @@ B47_stalbor_column_4 = {
 		position = 7
 		required_missions = {
 			B47_expansion_of_the_vernham_act_2
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                province_id = 800
+                province_id = 808
+                AND = {
+                    area = castonath_area
+                    NOT = { owned_by = ROOT }
+                }
+            }
 		}
 
         trigger = {
@@ -2271,6 +2565,13 @@ B47_stalbor_column_5 = {
 			B47_southern_heartland
 		}
 
+        provinces_to_highlight = {
+			OR = {
+                province_id = 800
+                province_id = 808
+            }
+		}
+
         trigger = {
             808 = {
                 has_tax_building_trigger = yes
@@ -2312,6 +2613,23 @@ B47_stalbor_column_5 = {
 		required_missions = {
 			B47_beginnings_of_a_city
             B47_bladeskeep_and_the_watch
+		}
+
+        provinces_to_highlight = {
+			OR = {
+                AND = {
+                    owner = {
+                        has_country_modifier = goblin_administration
+                    }
+                    is_capital = yes
+                }
+                AND = {
+                    owner = {
+                        has_country_modifier = orcish_administration
+                    }
+                    is_capital = yes
+                }
+            }
 		}
 
         trigger = {
@@ -2405,6 +2723,21 @@ B47_stalbor_column_5 = {
 		position = 4
 		required_missions = {
 			B47_orc_and_goblin_integration
+		}
+
+        provinces_to_highlight = {
+			AND = {
+                OR = {
+                    has_orcish_minority_trigger = yes
+                    has_half_orcish_majority_trigger = yes
+                    has_half_orcish_minority_trigger = yes
+                    has_goblin_majority_trigger = yes
+                    has_goblin_minority_trigger = yes
+                }
+                NOT = { development = 7 }
+                devastation = 1
+                owned_by = ROOT
+            }
 		}
 
         trigger = {
