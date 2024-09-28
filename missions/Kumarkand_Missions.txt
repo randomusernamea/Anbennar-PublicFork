@@ -1298,11 +1298,11 @@ kumarkand_slot_2 = {
 					limit = { has_dlc = "Leviathan" }
 					num_of_times_expanded_infrastructure = 1
 				}
-				
 			}
 		}
 		
 		effect = {
+			country_event = { id = flavor_kumarkand.13 }
 			sur_mountains = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -1961,6 +1961,7 @@ kumarkand_slot_4 = {
 		
 		effect = {
 			custom_tooltip = F30_farming_one_unlock_tt
+			custom_tooltip = F30_farming_over_time_tt
 			every_owned_province = {
 				kumarkand_farming_upgrade = yes
 			}
@@ -2131,7 +2132,7 @@ kumarkand_slot_4 = {
 				value = 8
 				has_province_modifier = F30_farming_level_one
 				has_production_building_trigger = yes
-				base_production = 9
+				base_production = 7
 				OR = {
 					trade_goods = grain
 					trade_goods = livestock
@@ -2308,14 +2309,13 @@ kumarkand_slot_5 = {
 							has_80_opinion_improved_relation = { target = ROOT }
 						}
 					}
-					NOT = { 
-						any_known_country = {
-							capital_scope = {
-								superregion = bulwar_superregion
-							}
-							religion = old_bulwari_sun_cult
+					any_known_country = {
+						capital_scope = {
+							superregion = bulwar_superregion
 						}
-					}	
+						religion = old_bulwari_sun_cult
+						NOT = { exists = yes }
+					}
 				}
 			}
 			if = {
@@ -2392,7 +2392,10 @@ kumarkand_slot_5 = {
 					religion = the_jadd
 				}
 				num_accepted_cultures = 2
-				has_active_fervor = fervor_stability
+				custom_trigger_tooltip = {
+					tooltip = F30_jadd_fervor_tt
+					has_active_fervor = fervor_stability
+				}
 			}
 		}
 		
@@ -3050,15 +3053,12 @@ kumarkand_karqaslu_slot_4 = {
 					limit = {
 						religion = the_jadd
 					}
-					random_owned_province = {
-						limit = { superregion = bulwar_superregion }
-						random_list = {
-							10 = {
-								add_goblin_minority_size_effect = yes
-							}
-							10 = {
-								add_gnollish_minority_size_effect = yes
-							}
+					random_list = {
+						10 = {
+							add_goblin_minority_size_effect = yes
+						}
+						10 = {
+							add_gnollish_minority_size_effect = yes
 						}
 					}
 				}
