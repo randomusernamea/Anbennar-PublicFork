@@ -384,6 +384,7 @@ country_decisions = {
 					override_country_name = ASAEDZUDAR
 				}
 			}
+			swap_non_generic_missions = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -459,6 +460,7 @@ country_decisions = {
 			change_government_to_monarchy = yes
 			add_government_reform = autocracy_reform
 			set_global_flag = kamrayakvals_war_end
+			swap_non_generic_missions = yes
 			remove_country_modifier = G64_bound_by_fear
 		}
 		ai_will_do = {

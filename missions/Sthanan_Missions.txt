@@ -4,9 +4,19 @@ G81_sthanan_column_1 = {
     slot = 1
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_concealed_knowledge = {
@@ -115,9 +125,19 @@ G81_sthanan_column_2 = {
     slot = 2
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_the_land_of_gardens = {
@@ -240,9 +260,19 @@ G81_sthanan_column_3 = {
     slot = 3
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_a_revenge_overdue = {
@@ -483,9 +513,19 @@ G81_sthanan_column_4 = {
     slot = 4
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_united_against_invaders = {
@@ -984,9 +1024,19 @@ G81_sthanan_column_5 = {
     slot = 5
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_seaward_gaze = {
