@@ -967,36 +967,20 @@ country_event = { #adds claims to temples in yanshen, xianjie, and the command
 
 	option = {
 		name = flavor_azjakuma.35.a
-		asia = {
-			limit = {
-				OR = {
-					AND = {
+		temple_province_group = {
+			if = {
+				limit = {
+					OR = {
 						superregion = yanshen_superregion
-						OR = {
-							has_province_modifier = temple_complex
-							has_province_modifier = damaged_temple_complex
-							has_province_modifier = derelict_temple_complex
-							has_province_modifier = ruined_temple_complex
-							has_province_modifier = corrupted_temple_complex
-						}
-					}
-					AND = {
 						region = xianjie_region
-						OR = {
-							has_province_modifier = temple_complex
-							has_province_modifier = damaged_temple_complex
-							has_province_modifier = derelict_temple_complex
-							has_province_modifier = ruined_temple_complex
-							has_province_modifier = corrupted_temple_complex
-						}
 					}
-					province_id = 4630
-					province_id = 4546
-					province_id = 4633
 				}
+				add_permanent_claim = ROOT
 			}
-			add_permanent_claim = ROOT
 		}
+		4630 = { add_permanent_claim = ROOT }
+		4546 = { add_permanent_claim = ROOT }
+		4633 = { add_permanent_claim = ROOT }
 	}
 }
 
@@ -3835,7 +3819,7 @@ province_event = {
 			region = upper_yanshen_region
 			region = north_yanshen_region
 		}
-		NOT = { religion = lefthand_path }
+		NOT = { religion = devouring_path }
 		NOT = { has_province_flag = azjakuma_yan_remove_modifier }
 		NOT = { has_province_modifier = azjakuma_yanshen_resistance }
 		NOT = { area = anjiang_area }
@@ -3855,7 +3839,7 @@ province_event = {
 							region = upper_yanshen_region
 							region = north_yanshen_region
 						}
-						NOT = { religion = lefthand_path }
+						NOT = { religion = devouring_path }
 						NOT = { has_province_flag = azjakuma_yan_remove_modifier }
 						NOT = { has_province_modifier = azjakuma_yanshen_resistance }
 						NOT = { area = anjiang_area }
@@ -3894,7 +3878,7 @@ province_event = {
 			area = linyuan_area
 			area = yanzhong_area
 		}
-		NOT = { religion = lefthand_path }
+		NOT = { religion = devouring_path }
 		NOT = { has_province_flag = azjakuma_league_remove_modifier }
 		NOT = { has_province_modifier = azjakuma_league_resistance }
 	}
@@ -3911,7 +3895,7 @@ province_event = {
 							area = linyuan_area
 							area = yanzhong_area
 						}
-						NOT = { religion = lefthand_path }
+						NOT = { religion = devouring_path }
 						NOT = { has_province_flag = azjakuma_league_remove_modifier }
 						NOT = { has_province_modifier = azjakuma_league_resistance }
 					}
@@ -5161,11 +5145,7 @@ country_event = {
 					is_core = ROOT
 					superregion = yanshen_superregion
 					has_terrain = jungle
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCount value = 1 }
@@ -5183,11 +5163,7 @@ country_event = {
 					has_terrain = jungle
 					is_core = Y23
 				}
-				NOT = { has_province_modifier = temple_complex }
-				NOT = { has_province_modifier = damaged_temple_complex }
-				NOT = { has_province_modifier = derelict_temple_complex }
-				NOT = { has_province_modifier = ruined_temple_complex }
-				NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y23
 		}
@@ -5196,7 +5172,7 @@ country_event = {
 			subject = Y23
 		}
 		Y23 = {
-			change_religion = lefthand_path
+			change_religion = devouring_path
 			add_country_modifier = {
 				name = azjakuma_rethagi
 				duration = -1
@@ -5268,11 +5244,7 @@ country_event = {
 			limit = {
 				superregion = yanshen_superregion
 				has_terrain = jungle
-				NOT = { has_province_modifier = temple_complex }
-				NOT = { has_province_modifier = damaged_temple_complex }
-				NOT = { has_province_modifier = derelict_temple_complex }
-				NOT = { has_province_modifier = ruined_temple_complex }
-				NOT = { has_province_modifier = corrupted_temple_complex }
+				NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y23
 		}
@@ -5281,7 +5253,7 @@ country_event = {
 			subject = Y23
 		}
 		Y23 = {
-			change_religion = lefthand_path
+			change_religion = devouring_path
 			jyutsai_area = {
 				limit = { NOT = { is_core = PREV is_permanent_claim = PREV province_group = temple_province_group } }
 				add_permanent_claim = PREV
@@ -5374,11 +5346,7 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCountY value = 1 }
@@ -5408,16 +5376,12 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y10
 			}
 			Y10 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				add_country_modifier = {
 					name = azjakuma_rethagi
 					duration = -1
@@ -5460,11 +5424,7 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y10
 			}
@@ -5473,7 +5433,7 @@ country_event = {
 				subject = Y10
 			}
 			Y10 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				add_country_modifier = {
 					name = azjakuma_rethagi
 					duration = -1
@@ -5528,7 +5488,7 @@ country_event = {
 			subject = Y10
 		}
 		Y10 = {
-			change_religion = lefthand_path
+			change_religion = devouring_path
 			add_country_modifier = {
 				name = azjakuma_rethagi
 				duration = -1
@@ -5564,11 +5524,7 @@ country_event = {
 					is_core = ROOT
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCountYu value = 1 }
@@ -5600,16 +5556,12 @@ country_event = {
 					}
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y89
 			}
 			Y89 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				add_country_modifier = {
 					name = azjakuma_rethagi
 					duration = -1
@@ -5655,11 +5607,7 @@ country_event = {
 					}
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y89
 			}
@@ -5670,7 +5618,7 @@ country_event = {
 				}
 			}
 			Y89 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				add_country_modifier = {
 					name = azjakuma_rethagi
 					duration = -1
@@ -5751,16 +5699,12 @@ country_event = {
 			every_owned_province = {
 				limit = {
 					area = sir_area
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
 			R78 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				yodhilakra_area = {
 					limit = { NOT = { is_core = PREV is_permanent_claim = PREV province_group = temple_province_group } }
 					add_permanent_claim = PREV
@@ -5825,11 +5769,7 @@ country_event = {
 					area = sir_area
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -5842,7 +5782,7 @@ country_event = {
 			add_opinion = { who = R78 modifier = loyal_servants }
 			reverse_add_opinion = { who = R78 modifier = noble_oni }
 			R78 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				add_country_modifier = {
 					name = azjakuma_rethagi
 					duration = -1
@@ -5928,18 +5868,14 @@ country_event = {
 			every_owned_province = {
 				limit = {
 					area = sir_area
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
 			add_opinion = { who = R78 modifier = loyal_servants }
 			reverse_add_opinion = { who = R78 modifier = noble_oni }
 			R78 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				yodhilakra_area = {
 					limit = { NOT = { is_core = PREV is_permanent_claim = PREV province_group = temple_province_group } }
 					add_permanent_claim = PREV
@@ -6003,11 +5939,7 @@ country_event = {
 					area = sir_area
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -6020,7 +5952,7 @@ country_event = {
 			add_opinion = { who = R78 modifier = loyal_servants }
 			reverse_add_opinion = { who = R78 modifier = noble_oni }
 			R78 = {
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				yodhilakra_area = {
 					limit = { NOT = { is_core = PREV is_permanent_claim = PREV province_group = temple_province_group } }
 					add_permanent_claim = PREV
@@ -6204,14 +6136,7 @@ country_event = {
 					region = xianjie_region
 					area = rangadevi_area
 				}
-				NOT = {
-					OR = {
-						has_province_modifier = temple_complex
-						has_province_modifier = damaged_temple_complex
-						has_province_modifier = ruined_temple_complex
-						has_province_modifier = corrupted_temple_complex
-					}
-				}
+				NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y89
 		}
@@ -6223,7 +6148,7 @@ country_event = {
 			}
 		}
 		Y89 = {
-			change_religion = lefthand_path
+			change_religion = devouring_path
 			add_country_modifier = {
 				name = azjakuma_rethagi
 				duration = -1
@@ -6246,12 +6171,12 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	trigger = { any_owned_province = { NOT = { religion = lefthand_path } } }
+	trigger = { any_owned_province = { NOT = { religion = devouring_path } } }
 
 	option = {
 		name = flavor_azjakuma.2702
 		random_owned_province = {
-			limit = { NOT = { religion = lefthand_path } }
+			limit = { NOT = { religion = devouring_path } }
 			spawn_rebels = {
 				type = nationalist_rebels
 				size = 1

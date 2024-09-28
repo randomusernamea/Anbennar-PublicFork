@@ -493,7 +493,11 @@ country_event = { #The Betrayal of the Oni!
 						set_province_flag = was_temple_complex
 					}
 					remove_province_modifier = temple_complex
-					add_province_triggered_modifier = corrupted_temple_complex
+					if = {
+						limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+						add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
+					}
+					else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
 				}
 				else_if = {
 					limit = { has_province_modifier = damaged_temple_complex }
@@ -502,7 +506,11 @@ country_event = { #The Betrayal of the Oni!
 						set_province_flag = was_damaged_temple_complex
 					}
 					remove_province_modifier = damaged_temple_complex
-					add_province_triggered_modifier = corrupted_temple_complex
+					if = {
+						limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+						add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
+					}
+					else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
 				}
 				else_if = {
 					limit = { has_province_modifier = derelict_temple_complex }
@@ -511,7 +519,11 @@ country_event = { #The Betrayal of the Oni!
 						set_province_flag = was_derelict_temple_complex
 					}
 					remove_province_modifier = derelict_temple_complex
-					add_province_triggered_modifier = corrupted_temple_complex
+					if = {
+						limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+						add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
+					}
+					else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
 				}
 			}
 			clr_country_flag = command_oni_temple_stewardship_flag
@@ -4293,14 +4305,14 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 						limit = { owned_by = ROOT }
 						add_core = Y89
 					}
-					release_with_religion_and_culture = { tag = Y89 religion = lefthand_path culture = western_yan }
+					release_with_religion_and_culture = { tag = Y89 religion = devouring_path culture = western_yan }
 					Y89 = { save_event_target_as = mage_rebel_nation }
 				}
 			}
 			
 			event_target:mage_rebel_nation = {
 				override_country_name = THE_SHADED_MISTS_REBELLION
-				change_religion = lefthand_path
+				change_religion = devouring_path
 				change_government = theocracy
 				add_government_reform = magocracy_reform
 				
@@ -4380,7 +4392,7 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 					dip = 5
 					mil = 6
 					culture = western_yan
-					religion = lefthand_path
+					religion = devouring_path
 				}
 				add_ruler_personality = mage_personality
 				add_ruler_personality = scholar_personality
@@ -4454,7 +4466,7 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 					dip = 5
 					mil = 6
 					culture = western_yan
-					religion = lefthand_path
+					religion = devouring_path
 				}
 				add_ruler_personality = mage_personality
 				add_ruler_personality = scholar_personality

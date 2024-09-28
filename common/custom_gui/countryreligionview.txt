@@ -1452,3 +1452,17 @@ custom_button = {
 		}
 	}
 }
+
+custom_icon = {
+	name = devouring_path_blocker
+	potential = {
+		religion = devouring_path
+		NOT = {
+			AND = {
+				num_of_aspects = 3
+				church_power = 200
+			}
+		}
+	}
+	tooltip = devouring_path_blocker_tt
+}

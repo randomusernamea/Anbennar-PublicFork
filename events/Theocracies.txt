@@ -1851,7 +1851,7 @@ country_event = {
 			OR = {
 				religion = the_jadd
 				religion = righteous_path
-				religion = lefthand_path
+				religion = devouring_path
 			}
 			NOT = {
 				OR = {
@@ -1963,7 +1963,7 @@ country_event = {
 			limit = { 
 				OR = {
 					religion = righteous_path
-					religion = lefthand_path
+					religion = devouring_path
 				}
 			}
 			add_church_power = 10

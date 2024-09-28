@@ -45,7 +45,7 @@ country_event = { #First Council
 	}
 }
 
-country_event = { #Help Yingzhen oust the LHP
+country_event = { #Help Yingzhen oust the DVP
 	id = yangcheng.3
 	title = yangcheng.3.t
 	desc = yangcheng.3.d
@@ -67,7 +67,7 @@ country_event = { #Help Yingzhen oust the LHP
 		
 		4849 = {
 			spawn_rebels = {
-				type = lefthand_path_rebels
+				type = devouring_path_rebels
 				size = 2
 			}
 		}
@@ -145,7 +145,7 @@ country_event = { #Yingzhen second riseup
 			limit = { 4849 = { owned_by = ROOT } }
 			4849 = { 
 				spawn_rebels = {
-					type = lefthand_path_rebels
+					type = devouring_path_rebels
 					size = 3
 				}
 			}

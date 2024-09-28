@@ -1729,7 +1729,7 @@ pasiragha_trigger_check_for_scholar = {
 		had_country_flag = { flag = pasiragha_flag_ravelian_scholar days = 3650 }
 		had_country_flag = { flag = pasiragha_flag_dwarven_pantheon_scholar days = 3650 }
 		had_country_flag = { flag = pasiragha_flag_godlost_scholar days = 3650 }
-		had_country_flag = { flag = pasiragha_flag_lefthand_path_scholar days = 3650 }
+		had_country_flag = { flag = pasiragha_flag_devouring_path_scholar days = 3650 }
 	}
 }
 
@@ -1758,6 +1758,6 @@ pasriagha_trigger_is_most_invited_external = {
 		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_ravelian }
 		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_dwarven_pantheon }
 		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_godlost }
-		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_lefthand_path }
+		check_variable = { which = $VARIABLE$ which = pasiragha_invite_counter_devouring_path }
 	}
 }

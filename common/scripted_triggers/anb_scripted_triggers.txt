@@ -3671,98 +3671,23 @@ has_golden_highway_discount_50_percent = {
 }
 
 can_die_oni_extension = {
-	has_ruler_flag = lefthand_life_extension
+	has_ruler_flag = devouring_life_extension
 	OR = {
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 110
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 111
-				}
-			}
-			ruler_age = 110
+			has_ruler_flag = dvp_life_extension_1
+			ruler_age = 100
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 140
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 141
-				}
-			}
-			ruler_age = 140
+			has_ruler_flag = dvp_life_extension_2
+			ruler_age = 125
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 160
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 161
-				}
-			}
-			ruler_age = 160
+			has_ruler_flag = dvp_life_extension_3
+			ruler_age = 150
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 175
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 176
-				}
-			}
+			has_ruler_flag = dvp_life_extension_4
 			ruler_age = 175
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 185
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 186
-				}
-			}
-			ruler_age = 185
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 190
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 191
-				}
-			}
-			ruler_age = 190
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 195
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 196
-				}
-			}
-			ruler_age = 195
 		}
 		ruler_age = 200 #not allowed to live past 200
 	}
@@ -3771,7 +3696,7 @@ can_die_oni_extension = {
 special_life_extension = {
 	OR = {
 		AND = {
-			has_ruler_flag = lefthand_life_extension
+			has_ruler_flag = devouring_life_extension
 			NOT = { can_die_oni_extension = yes }
 		}
 		has_country_modifier = lich_ruler

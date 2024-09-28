@@ -3019,6 +3019,9 @@ oni_governorship = {
 		modifier = subject_nation
 	}
 	modifier_overlord = clear
+	modifier_overlord = {
+		modifier = overlord_rethagi
+	}
 
 	overlord_opinion_modifier = null # If not "null" it will look for a modifier with that name in 00_opinion_modifiers.txt and other files in that directory.
 	subject_opinion_modifier = null

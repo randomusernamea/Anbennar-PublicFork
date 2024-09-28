@@ -3163,30 +3163,23 @@ beikdugang_rev_sub = {
 #	}
 #}
 
-corrupted_temple_complex = {
-	potential = {
-		always = yes
-	}
-
-	trigger = {
-		religion = lefthand_path
-	}
-
-	picture = "spirits_corrupted_temple_complex_province"
-
-	local_warscore_cost_modifier = 0.1
-	trade_value = 0.25 #Precursor relics found inside are being sold
-	church_power_modifier = 0.1
+devouring_path_from_beyond_randomization_ptm = {
+	potential = { always = yes }
+	hidden = yes
+	trigger = { always = yes }
 
 	on_activation = {
-		remove_province_modifier = storm_of_spirits
-	}
-
-	on_deactivation = {
-		add_province_modifier = {
-			name = storm_of_spirits
-			duration = -1
+		owner = {
+			random_owned_province = {
+				limit = { NOT = { trade_goods = damestear } }
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 20
+				change_trade_goods = damestear
+			}
 		}
+		remove_province_triggered_modifier = devouring_path_from_beyond_randomization_ptm
 	}
 }
 
