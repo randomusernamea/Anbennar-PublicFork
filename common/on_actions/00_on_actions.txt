@@ -13524,6 +13524,10 @@ on_raid_coast = {
 			religion = xhazobkult
 		}
 		add_patriarch_authority = 0.01
+		change_variable = {
+			which = demonicPowerGained
+			value = 1
+		}
 	}
 }
 
@@ -14466,6 +14470,22 @@ on_pre_mil_advisor_fired = {
 # this = country
 on_post_adm_advisor_fired = {
 	on_advisor_removed_effct = { type = adm }
+	if = {
+		limit = { has_estate_privilege = estate_mages_organization_rule_of_warlocks }
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_loot
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
+		clr_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
+		random_list = {
+			1 = { country_event = { id = flavour_rakkaz.6 } }
+			1 = { country_event = { id = flavour_rakkaz.7 } }
+		}
+	}
 }
 
 # this = country
@@ -15980,14 +16000,9 @@ on_raze = {
 				value = 1
 			}
 		}
-		if = {
-			limit = {
-				has_country_modifier = centaur_administration
-			}
-			change_variable = {
-				which = nbProvincesRazed
-				value = 1
-			}
+		change_variable = {
+			which = nbProvincesRazed
+			value = 1
 		}
 	}
 	if = {

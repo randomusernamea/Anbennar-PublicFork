@@ -1,0 +1,1423 @@
+debug_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = F71 } 
+
+	debug_mission_1 = {
+		icon = mission_gnomish_ship
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = rakkaz_unlock_mission_1
+			swap_non_generic_missions = yes
+		}
+	}
+
+	debug_mission_2 = {
+		icon = mission_gnomish_ship
+		position = 2
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = rakkaz_unlock_mission_2
+			swap_non_generic_missions = yes
+		}
+	}
+
+	debug_mission_3 = {
+		icon = mission_gnomish_ship
+		position = 3
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = rakkaz_unlock_optional_mission
+			swap_non_generic_missions = yes
+		}
+	}
+
+	debug_mission_4 = {
+		icon = mission_gnomish_ship
+		position = 4
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = rakkaz_unlock_mission_3
+			enable_branching_mission_review = { 
+				key = F71 
+				ai_event_id = flavour_rakkaz.8 
+			} 
+			swap_non_generic_missions = yes
+		}
+	}
+}
+F71_2_part1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = F71 } 
+
+	F71_rally_the_riders = {
+		icon = mission_gnomish_ship
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_monstrous_tribes
+				loyalty = 60
+			}
+			army_size_percentage = 0.9
+			has_mil_advisor = yes
+		}
+
+		effect = {
+			define_ruler_to_general = {
+				fire = 0
+				shock = 5
+				manuever = 3
+				siege = 0
+			}
+			capital_scope = {
+				add_unit_construction = {
+					amount = 2
+					type = cavalry
+					cost = 0
+					speed = 0.5
+				}
+			}
+			if = {
+				limit = { mission_completed = F71_a_helping_hand } 
+				country_event = { id = flavour_rakkaz.0 } 
+			}
+		}
+	}
+
+	F71_secure_our_holdings = {
+		icon = mission_gnomish_ship
+		position = 3
+		required_missions = { F71_a_hollow_claim } 
+		provinces_to_highlight = {
+			owned_by = ROOT
+			religion = xhazobkult
+			unrest = 0
+		}
+
+		trigger = {
+			overextension_percentage = 0
+			num_of_loans = 0
+			all_owned_province = {
+				if = { limit = { religion = xhazobkult }  } 
+				NOT = { unrest = 0 } 
+			}
+			stability = 1
+			treasury = 100
+		}
+
+		effect = {
+			siniwix_area = { add_claim = ROOT } 
+			kogzalla_area = { add_claim = ROOT } 
+			zallirkor_area = { add_claim = ROOT } 
+			dasmatus_area = { add_claim = ROOT } 
+			if = {
+				limit = { 5470 = { province_has_center_of_trade_of_level = 2 }  } 
+				add_treasury = 100
+			}
+			else = {
+				add_treasury = -100
+				5470 = { add_center_of_trade_level = 1 } 
+			}
+		}
+	}
+
+	F71_the_weakling_packs = {
+		icon = mission_gnomish_ship
+		position = 4
+		required_missions = { F71_secure_our_holdings } 
+		provinces_to_highlight = {
+			OR = {
+				area = siniwix_area
+				area = zallirkor_area
+				province_id = 5463
+				province_id = 5462
+				province_id = 5431
+				province_id = 5667
+				province_id = 5434
+				province_id = 5435
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+
+		trigger = {
+			siniwix_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zallirkor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			5463 = { country_or_non_sovereign_subject_holds = ROOT } 
+			5462 = { country_or_non_sovereign_subject_holds = ROOT } 
+			5431 = { country_or_non_sovereign_subject_holds = ROOT } 
+			5667 = { country_or_non_sovereign_subject_holds = ROOT } 
+			5434 = { country_or_non_sovereign_subject_holds = ROOT } 
+			5435 = { country_or_non_sovereign_subject_holds = ROOT } 
+			has_country_modifier = kult_of_the_packmother_tradition_modifier
+		}
+
+		effect = {
+			pyazada_area = { add_claim = ROOT } 
+			tzilkazin_grum_area = { add_claim = ROOT } 
+			kvangraak_area = { add_claim = ROOT } 
+			add_country_modifier = {
+				name = "rakkaz_new_recruits"
+				duration = 10950
+			}
+		}
+	}
+
+	F71_fieldstalker_lords = {
+		icon = mission_gnomish_ship
+		position = 5
+		required_missions = { F71_the_weakling_packs } 
+		provinces_to_highlight = {
+			region = gazraak_region
+			NOT = {
+				AND = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+			}
+		}
+
+		trigger = {
+			gazraak_region = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = gazraak_region
+				has_manpower_building_trigger = yes
+			}
+		}
+
+		effect = {
+			set_country_flag = rakkaz_improved_kult_of_the_packmother
+			add_prestige = 20
+		}
+	}
+}
+F71_3_part1 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = F71 } 
+
+	F71_a_hollow_claim = {
+		icon = mission_gnomish_ship
+		position = 2
+		required_missions = {
+			F71_rally_the_riders
+			F71_a_helping_hand
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 487
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							controlled_by = F69
+						}
+					}
+				}
+				AND = {
+					province_id = 479
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							controlled_by = F69
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			war_score_against = {
+				who = U09
+				value = 90
+			}
+			OR = {
+				AND = {
+					487 = { controlled_by = ROOT } 
+					479 = { controlled_by = ROOT } 
+				}
+				AND = {
+					487 = { controlled_by = F69 } 
+					479 = { controlled_by = F69 } 
+				}
+			}
+		}
+
+		effect = {
+			white_peace = U09
+			saymas_area = { cede_province = ROOT } 
+			krahilyn_area = { cede_province = ROOT } 
+			zeewix_area = { cede_province = ROOT } 
+			if = {
+				limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
+				ROOT = { add_treasury = 100 } 
+				F69 = { add_treasury = 200 } 
+				U09 = { release = L26 } 
+				golkora_stretch_area = { cede_province = L26 } 
+				golkora_stretch_area = { add_core = L26 } 
+				3196 = { cede_province = F69 } 
+				3196 = { add_core = F69 } 
+				5674 = { cede_province = F69 } 
+				5674 = { add_core = F69 } 
+			}
+			else = {
+				ROOT = { add_treasury = 300 } 
+				U09 = { release = L26 } 
+				golkora_stretch_area = { cede_province = L26 } 
+				golkora_stretch_area = { add_core = L26 } 
+				3196 = { cede_province = L26 } 
+				3196 = { add_core = L26 } 
+				5674 = { cede_province = L26 } 
+				5674 = { add_core = L26 } 
+			}
+		}
+	}
+
+	F71_can_you_hear_them = {
+		icon = mission_gnomish_ship
+		position = 3
+		required_missions = { F71_a_hollow_claim } 
+		provinces_to_highlight = {
+			province_id = 5466
+			NOT = {
+				AND = {
+					development = 10
+					has_fort_building_trigger = yes
+				}
+			}
+		}
+
+		trigger = {
+			check_variable = {
+				which = numOfLightThePyres
+				value = 1
+			}
+			5466 = {
+				development = 10
+				has_fort_building_trigger = yes
+			}
+		}
+
+		effect = {
+			mattabo_area = { add_claim = ROOT } 
+			shena_muhaqaar_area = { add_claim = ROOT } 
+			add_ruler_personality = zealot_personality
+		}
+	}
+
+	F71_seizing_sacrifices = {
+		icon = mission_gnomish_ship
+		position = 4
+		required_missions = { F71_can_you_hear_them } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = mattabo_area
+					NOT = { owned_by = ROOT } 
+					NOT = { is_core = ROOT } 
+				}
+				AND = {
+					area = shena_muhaqaar_area
+					NOT = { owned_by = ROOT } 
+					NOT = { is_core = ROOT } 
+				}
+			}
+		}
+
+		trigger = {
+			mattabo_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			shena_muhaqaar_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			5481 = {
+				NOT = { unrest = 0 } 
+				has_tax_building_trigger = yes
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 2
+				culture = echenka
+				num_of_times_improved_by_owner = 1
+			}
+		}
+
+		effect = {
+			add_patriarch_authority = 0.1
+			5481 = {
+				add_nationalism = -10
+				add_province_modifier = {
+					name = "rakkaz_fighting_pit"
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+		}
+	}
+
+	F71_echenka_serfdom = {
+		icon = mission_gnomish_ship
+		position = 5
+		required_missions = {
+			F71_seizing_sacrifices
+			F71_promise_of_power
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					NOT = { local_autonomy = 1 } 
+					has_province_modifier = autonomy_decreased
+				}
+			}
+		}
+
+		trigger = {
+			development_in_provinces = {
+				value = 30
+				culture = echenka
+				OR = {
+					NOT = { local_autonomy = 1 } 
+					has_province_modifier = autonomy_decreased
+				}
+			}
+			reform_level = 2
+		}
+
+		effect = {
+			custom_tooltip = rakkaz_two_most_developed_provinces
+			tooltip = { change_trade_goods = slaves } 
+			pick_best_provinces = {
+				2 = yes
+				scope = every_owned_province
+				scale = higher_development_than
+				global_trigger = "
+				culture = echenka NOT = { trade_goods = slaves }
+				"
+				event_target_name = "rakkaz_echenka_target"
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_echenka_target_1 } 
+				event_target:rakkaz_echenka_target_1 = { change_trade_goods = slaves } 
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_echenka_target_2 } 
+				event_target:rakkaz_echenka_target_2 = { change_trade_goods = slaves } 
+			}
+			add_owned_provinces_development_ducats = {
+				multiplier = 20
+				trigger = {
+					culture = echenka
+					trade_goods = slaves
+				}
+			}
+		}
+	}
+}
+F71_4_part1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = F71 } 
+
+	F71_a_helping_hand = {
+		icon = mission_gnomish_ship
+		position = 1
+		provinces_to_highlight = {
+			owned_by = ROOT
+			trade_goods = slaves
+			NOT = { num_of_times_improved_by_owner = 1 } 
+		}
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				trade_goods = slaves
+				num_of_times_improved_by_owner = 1
+			}
+			patriarch_authority = 0.05
+		}
+
+		effect = {
+			add_patriarch_authority = -0.05
+			if = {
+				limit = { mission_completed = F71_rally_the_riders } 
+				country_event = { id = flavour_rakkaz.0 } 
+			}
+		}
+	}
+
+	F71_a_debt_repaid = {
+		icon = mission_gnomish_ship
+		position = 3
+		required_missions = { F71_a_hollow_claim } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 55
+			}
+			has_estate_privilege = estate_mages_patronage_of_the_magical_arts
+			num_of_estate_agendas_completed = {
+				estate = estate_mages
+				value = 1
+			}
+		}
+
+		effect = {
+			custom_tooltip = rakkaz_rename_warlocks
+			hidden_effect = { set_country_flag = rakkaz_warlocks_rename } 
+			add_estate_loyalty_modifier = {
+				estate = estate_mages
+				desc = F71_repaid_debt
+				loyalty = 10
+				duration = 7300
+			}
+			hidden_effect = { country_event = { id = flavour_rakkaz.2 }  } 
+		}
+	}
+
+	F71_promise_of_power = {
+		icon = mission_gnomish_ship
+		position = 4
+		required_missions = {
+			F71_can_you_hear_them
+			F71_a_debt_repaid
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			has_estate_privilege = estate_mages_reduced_research_regulations
+			has_estate_privilege = xhazobkult_privilege_organised_sacrifices
+			OR = {
+				current_icon = invocation_of_hellfire
+				current_icon = invocation_of_blood
+			}
+			treasury = 250
+		}
+
+		effect = {
+			if = {
+				limit = { capital_scope = { has_building = mage_tower }  } 
+				add_treasury = -250
+				capital_scope = { add_base_tax = 2 } 
+			}
+			else = {
+				add_treasury = -250
+				capital_scope = { add_building = mage_tower } 
+			}
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_power } 
+			define_advisor = {
+				type = court_mage
+				skill = 2
+				discount = yes
+			}
+			hidden_effect = { country_event = { id = flavour_rakkaz.3 }  } 
+		}
+	}
+
+	F71_the_cursed_ruins = {
+		icon = mission_gnomish_ship
+		position = 5
+		required_missions = {
+			F71_promise_of_power
+			F71_the_profane_gift
+		}
+		provinces_to_highlight = {
+			province_id = 5466
+			NOT = {
+				AND = {
+					OR = {
+						num_of_times_expanded_infrastructure = 1
+						development = 15
+					}
+					has_tax_building_trigger = yes
+					has_trade_building_trigger = yes
+				}
+			}
+		}
+
+		trigger = {
+			if = {
+				limit = { has_dlc = "Leviathan" } 
+				5466 = {
+					num_of_times_expanded_infrastructure = 1
+					has_tax_building_trigger = yes
+					has_trade_building_trigger = yes
+				}
+			}
+			else = {
+				5466 = {
+					development = 15
+					has_tax_building_trigger = yes
+					has_trade_building_trigger = yes
+				}
+			}
+		}
+
+		effect = {
+			5466 = {
+				add_province_modifier = {
+					name = "rakkaz_the_shadow_womb"
+					duration = -1
+				}
+				upgrade_tax_building = yes
+			}
+			hidden_effect = { country_event = { id = flavour_rakkaz.4 }  } 
+		}
+	}
+}
+F71_5_part1 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = F71 } 
+
+	F71_the_profane_gift = {
+		icon = mission_gnomish_ship
+		position = 4
+		required_missions = { F71_a_debt_repaid } 
+		provinces_to_highlight = {
+			province_id = 5466
+			NOT = { cavalry_in_province = 10 } 
+		}
+
+		trigger = {
+			has_estate_privilege = estate_mages_battlemage_academies
+			patriarch_authority = 0.2
+			5466 = { cavalry_in_province = 10 } 
+		}
+
+		effect = {
+			add_patriarch_authority = -0.2
+			5466 = {
+				kill_units = {
+					who = owner
+					type = cavalry
+					amount = 10
+				}
+			}
+			enable_mythical_cavalry = { mount = demoncollar_hyena } 
+			hidden_effect = {
+				add_country_modifier = {
+					name = "rakkaz_base_demoncollar_amount"
+					duration = -1
+				}
+			}
+			capital_scope = { hussars_cavalry = ROOT } 
+			capital_scope = { hussars_cavalry = ROOT } 
+			capital_scope = { hussars_cavalry = ROOT } 
+		}
+	}
+}
+F71_3_part1_ending = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_1
+	}
+
+	F71_a_silent_strike = {
+		icon = mission_gnomish_ship
+		position = 6
+		required_missions = {
+			F71_fieldstalker_lords
+			F71_echenka_serfdom
+			F71_the_cursed_ruins
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = gemradcurt_scrying_internal_tt
+				OR = {
+					has_country_modifier = magic_estate_scrying_internal_dissidents_3
+					has_country_modifier = magic_estate_scrying_internal_dissidents_2
+					has_country_modifier = magic_estate_scrying_internal_dissidents_1
+				}
+			}
+			adm_power = 100
+			dip_power = 100
+			mil_power = 100
+			government_rank = 2
+		}
+
+		effect = {
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+			custom_tooltip = F69_organize_the_vog_mekza_tooltip
+			set_country_flag = no_mandate
+			country_event = { id = flavour_rakkaz.5 } 
+		}
+	}
+}
+F71_3_part2_pre_optional = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_rakhors_legacy = {
+		icon = mission_gnomish_ship
+		position = 8
+		required_missions = { F71_a_silent_strike } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_3_part2_optional = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_optional_mission
+	}
+
+	F71_rakhors_revenge = {
+		icon = mission_gnomish_ship
+		position = 9
+		required_missions = { F71_rakhors_legacy } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_1_part2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_a_land_divided = {
+		icon = mission_gnomish_ship
+		position = 8
+		required_missions = { F71_they_speak_again } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				region = horashesh_region
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				region = horashesh_region
+				trade_goods = livestock
+				num_of_times_expanded_infrastructure = 1
+				has_manpower_building_trigger = yes
+			}
+		}
+
+		effect = {
+			custom_tooltip = rakkaz_three_most_developed_provinces
+			tooltip = {
+				change_trade_goods = slaves
+				add_base_production = 2
+			}
+			pick_best_provinces = {
+				3 = yes
+				scope = every_owned_province
+				scale = higher_development_than
+				global_trigger = "
+				region = horashesh_region trade_goods = livestock num_of_times_expanded_infrastructure = 1
+				"
+				event_target_name = "rakkaz_livestock_horashesh_target"
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_livestock_horashesh_target_1 } 
+				event_target:rakkaz_echenka_target_1 = {
+					change_trade_goods = slaves
+					add_base_production = 2
+				}
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_livestock_horashesh_target_2 } 
+				event_target:rakkaz_echenka_target_2 = {
+					change_trade_goods = slaves
+					add_base_production = 2
+				}
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_livestock_horashesh_target_3 } 
+				event_target:rakkaz_echenka_target_3 = {
+					change_trade_goods = slaves
+					add_base_production = 2
+				}
+			}
+		}
+	}
+
+	F71_easily_exploited = {
+		icon = mission_gnomish_ship
+		position = 9
+		required_missions = { F71_a_land_divided } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 50
+				region = horashesh_region
+				is_core = ROOT
+			}
+			OR = {
+				production_leader = { trade_goods = slaves } 
+				trade_goods_produced_amount = {
+					trade_goods = slaves
+					amount = 30
+				}
+			}
+		}
+
+		effect = {
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_exploitation } 
+			5863 = {
+				add_province_modifier = {
+					name = "rakkaz_fighting_pit"
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+		}
+	}
+
+	F71_weakness_of_faith = {
+		icon = mission_gnomish_ship
+		position = 10
+		required_missions = { F71_easily_exploited } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				region = horashesh_region
+				has_tax_building_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+			5700 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+			5836 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+			5872 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+			5860 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+			5847 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+			5840 = {
+				owned_by = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+
+		effect = {
+			set_country_flag = rakkaz_warlock_unlock_missionary
+			if = {
+				limit = { 5840 = { province_has_center_of_trade_of_level = 3 }  } 
+				add_treasury = 500
+			}
+			else = { 5840 = { add_center_of_trade_level = 1 }  } 
+		}
+	}
+}
+F71_2_part2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_they_speak_again = {
+		icon = mission_gnomish_ship
+		position = 7
+		required_missions = { F71_a_silent_strike } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			if = {
+				limit = { has_dlc = "Leviathan" } 
+				5466 = {
+					num_of_times_expanded_infrastructure = 2
+					has_manpower_building_trigger = yes
+					has_building = mage_tower
+				}
+			}
+			else = {
+				5466 = {
+					development = 30
+					has_manpower_building_trigger = yes
+					has_building = mage_tower
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = rakkaz_mazu_makhara_light_the_pyres
+			if = {
+				limit = { religion = xhazobkult } 
+				custom_tooltip = rakkaz_mazu_makhara_upgrade_xhazobkult
+				tooltip = {
+					add_province_modifier = {
+						name = "rakkaz_surge_of_suffering"
+						duration = 3650
+					}
+				}
+			}
+			if = {
+				limit = { religion = shadow_pact } 
+				custom_tooltip = rakkaz_mazu_makhara_upgrade_shadowpact
+				tooltip = {
+					add_province_modifier = {
+						name = "rakkaz_surge_of_suffering"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+
+	F71_source_of_power = {
+		icon = mission_gnomish_ship
+		position = 8
+		required_missions = { F71_they_speak_again } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_broken_spirit = {
+		icon = mission_gnomish_ship
+		position = 9
+		required_missions = {
+			F71_source_of_power
+			F71_rakhors_legacy
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_channeling_suffering = {
+		icon = mission_gnomish_ship
+		position = 10
+		required_missions = {
+			F71_easily_exploited
+			F71_broken_spirit
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_3_part2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_complete_subserviance = {
+		icon = mission_gnomish_ship
+		position = 10
+		required_missions = {
+			F71_broken_spirit
+			F71_demoncollar_demonflare
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_future_of_the_council = {
+		icon = mission_gnomish_ship
+		position = 11
+		required_missions = {
+			F71_weakness_of_faith
+			F71_channeling_suffering
+			F71_complete_subserviance
+			F71_willing_vessels
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_4_part2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_access_to_the_swamp = {
+		icon = mission_gnomish_ship
+		position = 7
+		required_missions = { F71_a_silent_strike } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_a_perfected_ritual = {
+		icon = mission_gnomish_ship
+		position = 8
+		required_missions = { F71_access_to_the_swamp } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_demoncollar_demonflare = {
+		icon = mission_gnomish_ship
+		position = 9
+		required_missions = { F71_a_perfected_ritual } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_willing_vessels = {
+		icon = mission_gnomish_ship
+		position = 10
+		required_missions = {
+			F71_demoncollar_demonflare
+			F71_absolute_loyalty
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_5_part2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_2
+	}
+
+	F71_whiterlings_rise = {
+		icon = mission_gnomish_ship
+		position = 8
+		required_missions = { F71_access_to_the_swamp } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_absolute_loyalty = {
+		icon = mission_gnomish_ship
+		position = 9
+		required_missions = { F71_whiterlings_rise } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_2_part3_pre_branch1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_the_final_order = {
+		icon = mission_gnomish_ship
+		position = 12
+		required_missions = { F71_future_of_the_council } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_4_part3_pre_branch2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_profane_army = {
+		icon = mission_gnomish_ship
+		position = 12
+		required_missions = { F71_future_of_the_council } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_2_part3_branch1_nobranch = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		NOT = { has_country_flag = F71_demon_missions }
+		NOT = { has_country_flag = F71_hag_missions }
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_branch1_1 = {
+		icon = mission_unknown_mission
+		position = 13
+		required_missions = { F71_the_final_order } 
+		provinces_to_highlight = {  } 
+
+		trigger = { always = no } 
+
+		effect = {  } 
+	}
+
+	F71_branch1_2 = {
+		icon = mission_unknown_mission
+		position = 14
+		required_missions = {
+			F71_bringers_of_suffering
+			F71_branch1_1
+			F71_domain_of_suffering
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { always = no } 
+
+		effect = {  } 
+	}
+}
+F71_2_part3_branch1_demon = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = F71_demon_missions
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+}
+F71_2_part3_branch1_hag = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = F71_hag_missions
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+}
+F71_4_part3_branch2_nobranch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		NOT = { has_country_flag = F71_demon_missions }
+		NOT = { has_country_flag = F71_hag_missions }
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_branch2_1 = {
+		icon = mission_unknown_mission
+		position = 13
+		required_missions = { F71_profane_army } 
+		provinces_to_highlight = {  } 
+
+		trigger = { always = no } 
+
+		effect = {  } 
+	}
+
+	F71_branch2_2 = {
+		icon = mission_unknown_mission
+		position = 14
+		required_missions = {
+			F71_domain_of_suffering
+			F71_branch2_1
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { always = no } 
+
+		effect = {  } 
+	}
+
+	F71_branch2_3 = {
+		icon = mission_unknown_mission
+		position = 15
+		required_missions = { F71_branch2_2 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { always = no } 
+
+		effect = {  } 
+	}
+}
+F71_4_part3_branch2_demon = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = F71_demon_missions
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+}
+F71_4_part3_branch2_hag = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = F71_hag_missions
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+}
+F71_1_part3 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_bringers_of_suffering = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_the_final_order } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_throne_breaker = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = { F71_bringers_of_suffering } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_power_of_the_curse = {
+		icon = mission_gnomish_ship
+		position = 15
+		required_missions = { F71_throne_breaker } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_2_part3 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_end_of_denial = {
+		icon = mission_gnomish_ship
+		position = 15
+		required_missions = { F71_throne_breaker } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+F71_3_part3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = F71 
+		has_country_flag = rakkaz_unlock_mission_3
+	} 
+
+	F71_the_slayers_fate = {
+		icon = mission_gnomish_ship
+		position = 12
+		required_missions = { F71_future_of_the_council } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_domain_of_suffering = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_the_final_order } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_dark_messengers = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = { F71_domain_of_suffering } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_seed_of_darkness = {
+		icon = mission_gnomish_ship
+		position = 15
+		required_missions = { F71_dark_messengers } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_the_profane_empire = {
+		icon = mission_gnomish_ship
+		position = 16
+		required_missions = {
+			F71_power_of_the_curse
+			F71_end_of_denial
+			F71_seed_of_darkness
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}

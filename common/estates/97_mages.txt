@@ -346,7 +346,10 @@ estate_mages = {
 	custom_name = {
 		desc = estate_warlocks
 		trigger = {
-			religion = pactseeker
+			OR = {
+				has_country_flag = rakkaz_warlocks_rename
+				religion = pactseeker
+			}	
 		}
 	}
 
@@ -428,6 +431,10 @@ estate_mages = {
 		estate_mages_young_tower_of_magic # Shangra
 		estate_mages_lawassari_zamukaras #Mount Lazzaward reward
 		estate_mages_archaic_traditions #Orda Aldresia Debuff
+		#Rakkaz MT
+		estate_mages_organization_rule_of_warlocks
+		estate_mages_warlock_pact_power
+		estate_mages_warlock_pact_exploitation
 	}
 
 	agendas = {

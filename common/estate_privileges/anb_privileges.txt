@@ -13491,3 +13491,131 @@ estate_adventurers_state_assassins = {
 
 	ai_will_do = { factor = 10 }
 }
+
+#Rakkaz MT
+estate_mages_warlock_pact_power = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = {
+		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_power }
+	}
+	can_select = {
+		years_of_manpower = 0.2
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		add_yearly_manpower = -0.2
+	}
+	benefits = {
+		land_morale = 0.05
+		shock_damage = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+ 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_power }
+}
+
+estate_mages_organization_rule_of_warlocks = {
+	icon = privilege_promote_maratha_nobility
+	loyalty = 0.1
+	influence = 0.2
+	is_valid = {
+		has_unlocked_estate_privilege = { estate_privilege = estate_mages_organization_rule_of_warlocks }
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		random_list = {
+			1 = { country_event = { id = flavour_rakkaz.6 } }
+			1 = { country_event = { id = flavour_rakkaz.7 } }
+		}
+	}
+	penalties = {
+		ae_impact = 0.1
+	}
+	benefits = {
+		cb_on_religious_enemies = yes
+	}
+	conditional_modifier = {
+		trigger = {
+			full_idea_group = religious_ideas
+		}
+		modifier = {
+			country_admin_power = 1
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 10
+			current_age = age_of_absolutism
+		}
+		modifier = {
+			factor = 0
+			has_estate_privilege = estate_mages_organization_magisterium
+		}
+	}
+}
+
+estate_mages_warlock_pact_exploitation = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = {
+		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_exploitation }
+	}
+	can_select = {
+		any_owned_province = {
+			trade_goods = slaves
+			base_tax = 2
+		}
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		if = {
+			limit = { current_icon = invocation_of_chains }
+			add_owned_provinces_development_ducats = {
+				multiplier = 5
+				trigger = { trade_goods = slaves }
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					has_church_aspect = shadow_pact_tyrant_adm
+					has_church_aspect = shadow_pact_tyrant_dip
+					has_church_aspect = shadow_pact_tyrant_mil
+				}
+			}
+			add_owned_provinces_development_ducats = {
+				multiplier = 10
+				trigger = { trade_goods = slaves }
+			}
+		}
+		every_owned_province = {
+			limit = {
+				trade_goods = slaves
+				base_tax = 2
+			}
+			add_base_tax = -1
+			add_province_modifier = {
+				name = rakkaz_slave_exploitation
+				duration = 3650
+			}
+		}
+	}
+	benefits = {}
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+ 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_exploitation }
+}

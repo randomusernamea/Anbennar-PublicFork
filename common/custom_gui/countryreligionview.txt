@@ -1176,6 +1176,10 @@ custom_button = {
 		}
 	}
 	effect = { 
+		change_variable = {
+			which = numOfLightThePyres
+			value = 1
+		}
 		if = {
 			limit = { NOT = { total_development = 100 } }
 			custom_tooltip = xhazobkult_light_the_pyres_100
@@ -1194,7 +1198,6 @@ custom_button = {
 					add_base_manpower = -1
 				}
 			}		
-			add_patriarch_authority = 0.05
 			clr_country_flag = xhazobkult_light_the_pyres_cooldown
 			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
@@ -1219,7 +1222,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1247,7 +1249,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1275,7 +1276,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1303,7 +1303,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1331,7 +1330,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1359,7 +1357,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1387,7 +1384,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1415,7 +1411,6 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
@@ -1423,7 +1418,7 @@ custom_button = {
 			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
-			limit = { total_development = 300 }
+			limit = { total_development = 1000 }
 			for = {
 				amount = 10
 				custom_tooltip = xhazobkult_light_the_pyres_1000
@@ -1443,12 +1438,22 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
 			clr_country_flag = xhazobkult_light_the_pyres_cooldown
 			set_country_flag = xhazobkult_light_the_pyres_cooldown
+		}
+		add_patriarch_authority = 0.05
+		if = {
+			limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
+			5466 = {
+				hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
+				add_province_modifier = {
+					name = rakkaz_surge_of_suffering
+					duration = 3650
+				}
+			}
 		}
 	}
 }
