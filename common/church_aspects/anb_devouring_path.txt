@@ -11,6 +11,8 @@ expand_the_dark_world = {
 wisdom_beyond_honor = {
 	cost = 200
 
+	potential = { has_country_flag = devouring_powerful_mage_unlocked }
+
 	effect = {
 		if = {
 			limit = { ruler_has_personality = mage_personality }
@@ -29,6 +31,9 @@ wisdom_beyond_honor = {
 
 barter_with_dark_spirits = {
 	cost = 200
+
+	potential = { has_country_flag = devouring_skill_increase_unlocked }
+
 	effect = {
 		if = {
 			limit = {
@@ -99,6 +104,7 @@ advocation_of_chi_stealers = {
 	cost = 200
 
 	potential = {
+		has_country_flag = devouring_life_extension_unlocked
 		NOT = { has_ruler_flag = is_a_lich }
 		NOT = { has_ruler_flag = is_a_vampire } #Its pointless if you go lich or vampire
 		NOT = { has_ruler_flag = dvp_life_extension_5 }
@@ -164,6 +170,63 @@ chroniclers_of_secret_histories = {
 	modifier = { global_unrest = 2 }
 
 	ai_will_do = { factor = 15 }
+}
+
+to_devour_chi = {
+	cost = 200
+	potential = {
+		NOT = {
+			AND = {
+				OR = {
+					tag = Y01
+					AND = {
+						has_country_flag = devouring_temple_secrets
+						has_country_flag = devouring_life_extension_unlocked
+					}
+				}
+				has_country_flag = devouring_powerful_mage_unlocked
+				has_country_flag = devouring_skill_increase_unlocked
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					tag = Y01
+					has_country_flag = devouring_temple_secrets
+				}
+			}
+			custom_tooltip = to_devour_chi_effect_tt
+			set_country_flag = devouring_temple_secrets
+			hidden_effect = { country_event = { id = spirits.606 } }
+		}
+		else = {
+			custom_tooltip = to_devour_chi_effect_2_tt
+			hidden_effect = {
+				random_list = {
+					1 = {
+						trigger = { NOT = { tag = Y01 has_country_flag = devouring_life_extension_unlocked } }
+						set_country_flag = devouring_life_extension_unlocked
+					}
+					1 = {
+						trigger = { NOT = { has_country_flag = devouring_powerful_mage_unlocked } }
+						set_country_flag = devouring_powerful_mage_unlocked
+					}
+					1 = {
+						trigger = { NOT = { tag = Y01 has_country_flag = devouring_skill_increase_unlocked } }
+						set_country_flag = devouring_skill_increase_unlocked
+					}
+				}
+				add_ruler_modifier = { name = dvp_devoured_mod duration = 1825 }
+			}
+		}
+	}
+
+	modifier = { church_power_modifier = 0.1 }
+
+	ai_will_do = { factor = 150 }
 }
 
 gunpowder_meditation = {	#Snorting a mixture of gunpowder and illegal stuff

@@ -11356,111 +11356,6 @@ country_event = { #Quest Preparations - Devouring Version
 	}
 }
 
-country_event = { #Secret of the Temples - catchall event to give DVP tags without MTs the ability to unlock Temple Corruption
-	id = spirits.600
-	title = spirits.600.t
-	picture = BIG_BOOK_eventPicture
-	
-	desc = {
-		trigger = {
-			OR = {
-				any_ally = {
-					tag = Y01
-				}
-				is_subject_of = Y01
-			}
-		}
-		desc = spirits.600.da
-	}
-	
-	desc = {
-		trigger = {
-			OR = {
-				owns_core_province = 5430
-				owns_core_province = 4829
-				owns_core_province = 4831
-				owns_core_province = 4828
-				owns_core_province = 4848
-			}
-		}
-		desc = spirits.600.db
-	}
-	
-	trigger = {
-		religion = devouring_path
-		NOT = { #Add tags here who get this flag via MT
-			has_country_flag = devouring_temple_secrets
-			tag = Y01 #Azjakuma - Oni already know this shit
-		}
-		any_owned_province = {
-			OR = {
-				has_province_modifier = temple_complex
-				has_province_modifier = damaged_temple_complex
-				has_province_modifier = derelict_temple_complex
-			}
-		}
-		OR = {
-			owns_core_province = 5430
-			owns_core_province = 4829
-			owns_core_province = 4831
-			owns_core_province = 4828
-			owns_core_province = 4848
-			alliance_with = Y01
-			is_subject_of = Y01
-		}
-	}
-	
-	mean_time_to_happen = { 
-		months = 180
-		
-		modifier = {
-			factor = 0.8
-			any_owned_province = {
-				region = demon_hills_region
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			Y01 = {
-				has_opinion = {
-					who = ROOT
-					value = 100
-				}
-			}
-		}
-	}
-	
-	after = {
-		hidden_effect = { set_country_flag = devouring_temple_secrets }
-	}
-	
-	option = { 
-		name = spirits.600.a
-		trigger = {
-			OR = {
-				any_ally = { tag = Y01 }
-				is_subject_of = Y01
-			}
-		}
-		custom_tooltip = devouring_temple_secrets_unlock_tooltip
-		add_mil_power = -25
-		add_dip_power = -25
-	}
-	
-	option = { 
-		name = spirits.600.b
-		trigger = {
-			NOT = {
-				any_ally = { tag = Y01 }
-				is_subject_of = Y01
-			}
-		}
-		custom_tooltip = devouring_temple_secrets_unlock_tooltip
-		add_adm_power = -50
-	}
-}
-
 country_event = { #Update event - Discovered Heart Chamber, Devouring version
 	id = spirits.601
 	title = spirits.601.t
@@ -11824,74 +11719,25 @@ country_event = { #Wisdom Beyond Honor event -- prevents error.log from yelling
 	}
 }
 
-country_event = { #catchall event to give any non-Azjakuma country the ability to extend life
-	id = spirits.622
-	title = spirits.622.t
-	desc = spirits.622.d
-	picture = BIG_BOOK_eventPicture
-	
-	trigger = {
-		religion = devouring_path
-		NOT = { #Add tags here who get this flag via MT
-			has_country_flag = devouring_life_extension_unlocked
-			tag = Y01 #Azjakuma - Oni already know this shit
-		}
-		owns_core_province = 4848
-		any_owned_province = {
-			has_province_modifier = corrupted_temple_complex
-		}
-	}
-	
-	mean_time_to_happen = { 
-		months = 180
+country_event = { #Temple Corruption unlock event, for flavor + to explain the mechanics
+	id = spirits.606
+	title = spirits.606.t
+	desc = spirits.606.d
+	picture = HIGH_TEMPLE_IN_DISTANCE_eventPicture
 
-		modifier = {
-			factor = 0.8
-			any_owned_province = {
-				region = demon_hills_region
-			}
-		}
+	is_triggered_only = yes
 
-		modifier = {
-			factor = 0.8
-			Y01 = {
-				has_opinion = {
-					who = ROOT
-					value = 100
-				}
-			}
-		}
-	}
-	
-	after = {
-		hidden_effect = { set_country_flag = devouring_life_extension_unlocked }
-	}
-	
-	option = { 
-		name = spirits.622.a
-		trigger = {
-			OR = {
-				any_ally = { tag = Y01 }
-				is_subject_of = Y01
-			}
-		}
-		custom_tooltip = devouring_temple_secrets_unlock_tooltip
-		add_mil_power = -25
-		add_dip_power = -25
-	}
-	
-	option = { 
-		name = spirits.622.b
-		trigger = {
-			NOT = {
-				any_ally = { tag = Y01 }
-				is_subject_of = Y01
-			}
-		}
-		custom_tooltip = devouring_temple_secrets_unlock_tooltip
-		add_adm_power = -50
+	option = {
+		name = spirits.606.a
+		ai_chance = { factor = 1 }
+
+		custom_tooltip = privileges_available_tt
+		tooltip = { set_estate_privilege = estate_mages_temple_desecrators }
+		add_ruler_modifier = { name = dvp_devoured_mod duration = 1825 }
 	}
 }
+
+
 
 ####################################
 ##     THE RENDING OF REALMS      ##
