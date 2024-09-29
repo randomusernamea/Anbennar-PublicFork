@@ -177,17 +177,35 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.7.F71
+		name = flavour_rakkaz.6.f
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_demonpower
 		}
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
 	}
 
+	option = {
+		name = flavour_rakkaz.6.g
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_churchpower
+		}
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
+	}
+
 	after = {
-		hire_advisor = {
-			type = court_mage
-			skill = 1
+		if = {
+			limit = { has_country_flag = rakkaz_level2_advisor }
+			hire_advisor = {
+				type = court_mage
+				skill = 2
+				discount = yes
+			}
+		}
+		else = {
+			hire_advisor = {
+				type = court_mage
+				skill = 1
+			}
 		}
 	}
 }
@@ -232,11 +250,19 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.7.F71
+		name = flavour_rakkaz.7.f
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_churchpower
 		}
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
+	}
+
+	option = {
+		name = flavour_rakkaz.7.g
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_demonpower
+		}
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
 	}
 
 	after = {
@@ -264,5 +290,84 @@ country_event = {
 	option = {
 		name = flavour_rakkaz.8.b
 		set_country_flag = F71_hag_missions
+	}
+}
+
+country_event = {
+	id = flavour_rakkaz.10
+	title = flavour_rakkaz.10.t
+	desc = flavour_rakkaz.10.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		pick_best_tag = {
+			global_trigger = "
+				NOT = { tag = ROOT }
+				region = kheterata_region
+			"
+			scale = total_development
+			1 = yes
+			event_target_name = "rakkaz_enemy"
+		}
+		event_target:rakkaz_enemy_1 = {
+			save_global_event_target_as = rakkaz_enemy
+		}
+	}
+
+	option = {
+		name = flavour_rakkaz.10.a
+		declare_war_with_cb = {
+			casus_belli = cb_monster_vs_civ
+			who = event_target:rakkaz_enemy
+		}
+	}
+
+	option = {
+		name = flavour_rakkaz.10.b
+		add_stability_or_adm_power = yes
+	}
+}
+
+country_event = {
+	id = flavour_rakkaz.11
+	title = flavour_rakkaz.11.t
+	desc = flavour_rakkaz.11.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_rakkaz.11.a
+		add_patriarch_authority = -0.1
+		add_manpower = -10
+		remove_country_modifier = rakkaz_increase_in_desertions
+		add_country_modifier = {
+			name = rakkaz_witherling_units
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = flavour_rakkaz.12
+	title = flavour_rakkaz.12.t
+	desc = flavour_rakkaz.12.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_rakkaz.12.a
+		add_patriarch_authority = -0.1
+		add_manpower = -10
+		add_country_modifier = {
+			name = rakkaz_increase_in_desertions
+			duration = -1
+		}
 	}
 }

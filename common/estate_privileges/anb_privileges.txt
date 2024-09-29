@@ -13619,3 +13619,87 @@ estate_mages_warlock_pact_exploitation = {
 	cooldown_years = 10 
  	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_exploitation }
 }
+
+estate_mages_warlock_pact_overcharge = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = {
+		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_overcharge }
+	}
+	can_select = {
+		any_owned_province = {
+			has_building = mage_tower
+		}
+		adm_power = 100
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		add_adm_power = -100
+		every_owned_province = {
+			limit = {
+				has_building = mage_tower
+			}
+			add_base_tax = -1
+			add_province_modifier = {
+				name = rakkaz_pact_overcharge
+				duration = 3650
+			}
+		}
+	}
+	benefits = {}
+	penalties = {
+		global_unrest = 2
+		global_monthly_devastation = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+ 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_overcharge }
+}
+
+estate_mages_warlock_pact_domination = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = {
+		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_domination }
+	}
+	can_select = {
+		if = {
+			limit = { religion = xhazobkult }
+			patriarch_authority = 10
+		}
+		if = {
+			limit = { religion = shadow_pact }
+			church_power = 50
+		}
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		if = {
+			limit = { religion = xhazobkult }
+			add_patriarch_authority = -10
+		}
+		if = {
+			limit = { religion = shadow_pact }
+			add_church_power = -50
+		}
+		add_rebel_progress = { value = -100 }
+	}
+	benefits = {
+		global_unrest = 2
+		harsh_treatment_cost = -0.75
+	}
+	penalties = {}
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+ 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_domination }
+}

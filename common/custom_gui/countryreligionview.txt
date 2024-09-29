@@ -1444,13 +1444,29 @@ custom_button = {
 			clr_country_flag = xhazobkult_light_the_pyres_cooldown
 			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
-		add_patriarch_authority = 0.05
+		if = {
+			limit = { has_country_flag = rakkaz_light_the_pyres_upgrade }
+			add_patriarch_authority = 0.75
+		}
+		else = {
+			add_patriarch_authority = 0.05
+		}
 		if = {
 			limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
 			5466 = {
 				hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
 				add_province_modifier = {
 					name = rakkaz_surge_of_suffering
+					duration = 3650
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
+			every_owned_province = {
+				limit = { has_province_modifier = rakkaz_fighting_pit }
+				add_province_modifier = {
+					name = rakkaz_channeling_suffering
 					duration = 3650
 				}
 			}

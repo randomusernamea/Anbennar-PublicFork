@@ -53,10 +53,32 @@ debug_missions = {
 
 		effect = {
 			set_country_flag = rakkaz_unlock_mission_3
-			enable_branching_mission_review = { 
-				key = F71 
-				ai_event_id = flavour_rakkaz.8 
-			} 
+			swap_non_generic_missions = yes
+		}
+	}
+
+	debug_mission_5 = {
+		icon = mission_gnomish_ship
+		position = 5
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = F71_demon_missions
+			swap_non_generic_missions = yes
+		}
+	}
+
+	debug_mission_6 = {
+		icon = mission_gnomish_ship
+		position = 6
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {
+			set_country_flag = F71_hag_missions
 			swap_non_generic_missions = yes
 		}
 	}
@@ -204,6 +226,7 @@ F71_2_part1 = {
 
 		trigger = {
 			gazraak_region = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -562,10 +585,11 @@ F71_4_part1 = {
 			province_id = 5466
 			NOT = {
 				AND = {
-					OR = {
+					if = {
+						limit = { has_dlc = Leviathan }
 						num_of_times_expanded_infrastructure = 1
-						development = 15
 					}
+					else = { development = 15 }
 					has_tax_building_trigger = yes
 					has_trade_building_trigger = yes
 				}
@@ -573,20 +597,14 @@ F71_4_part1 = {
 		}
 
 		trigger = {
-			if = {
-				limit = { has_dlc = "Leviathan" } 
-				5466 = {
+			5466 = {
+				if = {
+					limit = { has_dlc = Leviathan }
 					num_of_times_expanded_infrastructure = 1
-					has_tax_building_trigger = yes
-					has_trade_building_trigger = yes
 				}
-			}
-			else = {
-				5466 = {
-					development = 15
-					has_tax_building_trigger = yes
-					has_trade_building_trigger = yes
-				}
+				else = { development = 15 }
+				has_tax_building_trigger = yes
+				has_trade_building_trigger = yes
 			}
 		}
 
@@ -639,6 +657,7 @@ F71_5_part1 = {
 					name = "rakkaz_base_demoncollar_amount"
 					duration = -1
 				}
+				country_event = { id = flavour_rakkaz.12 days = 180}
 			}
 			capital_scope = { hussars_cavalry = ROOT } 
 			capital_scope = { hussars_cavalry = ROOT } 
@@ -707,9 +726,23 @@ F71_3_part2_pre_optional = {
 		required_missions = { F71_a_silent_strike } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			gol_region = {
+				type = all
+				owned_by = ROOT
+			}
+			accepted_culture = pyreclaw_gnoll
+			num_of_owned_provinces_with = {
+				value = 10
+				culture = pyreclaw_gnoll
+				has_manpower_building_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = { id = flavour_rakkaz.10 }
+			479 = { change_religion = ROOT }
+		} 
 	}
 }
 F71_3_part2_optional = {
@@ -759,7 +792,11 @@ F71_1_part2 = {
 				value = 3
 				region = horashesh_region
 				trade_goods = livestock
-				num_of_times_expanded_infrastructure = 1
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 1
+				}
+				else = { development = 15 }
 				has_manpower_building_trigger = yes
 			}
 		}
@@ -775,7 +812,13 @@ F71_1_part2 = {
 				scope = every_owned_province
 				scale = higher_development_than
 				global_trigger = "
-				region = horashesh_region trade_goods = livestock num_of_times_expanded_infrastructure = 1
+				region = horashesh_region 
+				trade_goods = livestock 
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 1
+				}
+				else = { development = 15 }
 				"
 				event_target_name = "rakkaz_livestock_horashesh_target"
 			}
@@ -879,7 +922,7 @@ F71_1_part2 = {
 			set_country_flag = rakkaz_warlock_unlock_missionary
 			if = {
 				limit = { 5840 = { province_has_center_of_trade_of_level = 3 }  } 
-				add_treasury = 500
+				add_treasury = 1000
 			}
 			else = { 5840 = { add_center_of_trade_level = 1 }  } 
 		}
@@ -902,20 +945,14 @@ F71_2_part2 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			if = {
-				limit = { has_dlc = "Leviathan" } 
-				5466 = {
+			5466 = {
+				if = {
+					limit = { has_dlc = Leviathan }
 					num_of_times_expanded_infrastructure = 2
-					has_manpower_building_trigger = yes
-					has_building = mage_tower
 				}
-			}
-			else = {
-				5466 = {
-					development = 30
-					has_manpower_building_trigger = yes
-					has_building = mage_tower
-				}
+				else = { development = 30 }
+				has_manpower_building_trigger = yes
+				has_building = mage_tower
 			}
 		}
 
@@ -950,9 +987,24 @@ F71_2_part2 = {
 		required_missions = { F71_they_speak_again } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			5483 = {
+				owned_by = ROOT
+				is_core = ROOT
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 1
+				}
+				else = { development = 15 }
+				has_building = mage_tower
+				province_has_center_of_trade_of_level = 2
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_overcharge }
+			add_prestige = 25
+		} 
 	}
 
 	F71_broken_spirit = {
@@ -964,9 +1016,50 @@ F71_2_part2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			khetapera_region = {
+				type = all
+				owned_by = ROOT
+			}
+			5881 = {
+				owned_by = ROOT
+				is_core = ROOT
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 1
+				}
+				else = { development = 15 }
+				has_tax_building_trigger = yes
+				has_manpower_building_trigger = yes
+				province_has_center_of_trade_of_level = 2
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			5881 = {
+				add_nationalism = -10
+				add_province_modifier = {
+					name = "rakkaz_fighting_pit"
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+			if = { 
+				limit = { religion = xhazobkult }
+				add_patriarch_authority = 0.2
+			}
+			if = { 
+				limit = { religion = shadow_pact }
+				add_church_power = 200
+			}
+			if = {
+				limit = { 5881 = { province_has_center_of_trade_of_level = 2 }  } 
+				add_treasury = 1000
+			}
+			else = {
+				5881 = { add_center_of_trade_level = 1 } 
+			}
+		} 
 	}
 
 	F71_channeling_suffering = {
@@ -978,9 +1071,51 @@ F71_2_part2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			development_in_provinces = {
+				value = 50
+				has_province_modifier = rakkaz_fighting_pit
+			}
+			if = {
+				limit = { religion = xhazobkult }
+				check_variable = {
+					which = numOfLightThePyres
+					value = 10
+				}
+				current_icon = invocation_of_chains
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				check_variable = {
+					which = numOfRitualsPerformed
+					value = 1
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = rakkaz_fighting_pit_light_the_pyres
+			if = {
+				limit = { religion = xhazobkult } 
+				custom_tooltip = rakkaz_mazu_makhara_upgrade_xhazobkult
+				tooltip = {
+					add_province_modifier = {
+						name = rakkaz_channeling_suffering
+						duration = 3650
+					}
+				}
+			}
+			if = {
+				limit = { religion = shadow_pact } 
+				custom_tooltip = rakkaz_mazu_makhara_upgrade_shadowpact
+				tooltip = {
+					add_province_modifier = {
+						name = rakkaz_channeling_suffering
+						duration = 7300
+					}
+				}
+			}
+		} 
 	}
 }
 F71_3_part2 = {
@@ -1002,9 +1137,28 @@ F71_3_part2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				value = 30
+				NOT = { culture_group = gnollish }
+				OR = {
+					NOT = { local_autonomy = 1 }
+					has_province_modifier = autonomy_decreased
+				}
+				NOT = { unrest = 0 }
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				NOT = { culture_group = gnollish }
+				has_courthouse_building_trigger = yes
+			}
+			rebel_progress_at_least = { value = 0 }
+		} 
 
-		effect = {  } 
+		effect = { 
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_domination } 
+			add_ruler_personality = legendary_conqueror_personality
+		} 
 	}
 
 	F71_future_of_the_council = {
@@ -1018,9 +1172,23 @@ F71_3_part2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+			all_owned_province = { NOT = { unrest = 0 } }
+			num_of_owned_provinces_with = {
+				value = 10
+				has_building = mage_tower
+			}
+			stability = 2
+			NOT = { government = tribal }
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = { id = flavour_rakkaz.8 }
+			set_country_flag = rakkaz_level2_advisor
+		} 
 	}
 }
 F71_4_part2 = {
@@ -1039,9 +1207,126 @@ F71_4_part2 = {
 		required_missions = { F71_a_silent_strike } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				AND = {
+					6734 = { is_city = no }
+					treasury = 100
+					6690 = {
+						owner = {
+							OR = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 50
+								}
+								gives_military_access_to = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					6734 = { is_city = yes }
+					treasury = 100
+					adm_power = 50
+					dip_power = 50
+					mil_power = 50
+					6734 = {
+						owner = {
+							OR = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 50
+								}
+								gives_military_access_to = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					6734 = { 
+						is_city = yes 
+						owned_by = ROOT
+					}
+					treasury = 100
+					adm_power = 50
+					dip_power = 50
+					mil_power = 50
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_owning
+				first_limit = "
+					6734 = { 
+						is_city = yes 
+						owned_by = ROOT
+					}
+					treasury = 100
+					adm_power = 50
+					dip_power = 50
+					mil_power = 50
+				"
+				first_effect = "
+					add_treasury = -100
+					add_adm_power = -50
+					add_dip_power = -50
+					add_mil_power = -50
+					6734 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+				"	
+				second_custom_tooltip = rakkaz_colonize
+				second_limit = "
+					6734 = { is_city = no }
+					treasury = 100
+					6690 = {
+						owner = {
+							OR = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 50
+								}
+								gives_military_access_to = ROOT
+							}
+						}
+					}
+				"
+				second_effect = "
+					add_treasury = -100
+					6734 = { add_siberian_construction = 200 }
+				"
+				third_custom_tooltip = rakkaz_annex
+				third_limit = "
+					6734 = { is_city = yes }
+					treasury = 100
+					adm_power = 50
+					dip_power = 50
+					mil_power = 50
+					6734 = {
+						owner = {
+							OR = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 50
+								}
+								gives_military_access_to = ROOT
+							}
+						}
+					}
+				"
+				third_effect = "
+					add_treasury = -100
+					add_adm_power = -50
+					add_dip_power = -50
+					add_mil_power = -50
+					6734 = { cede_province = ROOT }
+				"
+			}
+		} 
 	}
 
 	F71_a_perfected_ritual = {
@@ -1050,9 +1335,43 @@ F71_4_part2 = {
 		required_missions = { F71_access_to_the_swamp } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			has_adm_advisor_3 = yes
+			if = {
+				limit = { has_dlc = Leviathan }
+				5442 = {
+					has_great_project = {
+						type = esuvrem
+						tier = 1
+					}
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			else = {
+				5442 = {
+					development = 30
+					has_building = ramparts
+					has_production_building_trigger = yes
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			5466 = {
+				add_province_modifier = {
+					name = rakkaz_mazu_makhara_more_cav
+					duration = -1
+					hidden = yes
+				}
+			}
+			5442 = {
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+			}
+		} 
 	}
 
 	F71_demoncollar_demonflare = {
@@ -1061,9 +1380,29 @@ F71_4_part2 = {
 		required_missions = { F71_a_perfected_ritual } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				army_professionalism = 0.2
+				army_tradition = 40
+			}
+			has_mil_advisor_3 = yes
+			patriarch_authority = 0.3
+			num_of_owned_provinces_with = {
+				value = 5
+				culture_group = gnollish
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				base_manpower = 5
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_patriarch_authority = -0.3
+			add_country_modifier = {
+				name = rakkaz_demonflare_enchantment
+				duration = -1
+			}
+		} 
 	}
 
 	F71_willing_vessels = {
@@ -1075,9 +1414,29 @@ F71_4_part2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_estate_agendas_completed = {
+				estate = estate_mages
+				value = 5
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				has_province_modifier = rakkaz_fighting_pit
+				has_building = ramparts
+				province_has_current_tech_fort_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			every_owned_province = {
+				limit = { has_province_modifier = rakkaz_fighting_pit }
+				add_province_modifier = {
+					name = rakkaz_fighting_pit_more_cav
+					duration = -1
+					hidden = yes
+				}
+			}
+		} 
 	}
 }
 F71_5_part2 = {
@@ -1096,9 +1455,19 @@ F71_5_part2 = {
 		required_missions = { F71_access_to_the_swamp } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			6734 = {
+				development = 6
+				has_tax_building_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+			patriarch_authority = 0.1
+			manpower = 10
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = { id = flavour_rakkaz.11 }
+		} 
 	}
 
 	F71_absolute_loyalty = {
@@ -1107,9 +1476,35 @@ F71_5_part2 = {
 		required_missions = { F71_whiterlings_rise } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				value = 5
+				has_province_modifier = consecrated_ground
+				has_state_edict = edict_centralization_effort
+				infantry_in_province = 3
+				has_manpower_building_trigger = yes
+				has_building = mage_tower
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			every_owned_province = {
+				limit = {
+					has_province_modifier = consecrated_ground
+					has_state_edict = edict_centralization_effort
+					infantry_in_province = 3
+					has_manpower_building_trigger = yes
+					has_building = mage_tower
+				}
+				kill_units = {
+					who = owner
+					type = infantry
+					amount = 3
+				}
+				add_base_manpower = 1
+			}
+			set_country_flag = rakkaz_warlock_unlock_autonomy
+		} 
 	}
 }
 F71_2_part3_pre_branch1 = {
@@ -1117,10 +1512,10 @@ F71_2_part3_pre_branch1 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_the_final_order = {
 		icon = mission_gnomish_ship
@@ -1128,9 +1523,31 @@ F71_2_part3_pre_branch1 = {
 		required_missions = { F71_future_of_the_council } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			5466 = {
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 3
+				}
+				else = { development = 45 }
+				has_building = state_house
+				num_free_building_slots = 0
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			yezel_mora_region = { add_permanent_claim = ROOT }
+			define_advisor = {
+				type = commandant
+				skill = 3
+				discount = yes
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				unlock_government_reform = { government_reform = rakkaz_bringers_of_suffering }
+				add_government_reform = rakkaz_bringers_of_suffering
+			}
+		} 
 	}
 }
 F71_4_part3_pre_branch2 = {
@@ -1138,10 +1555,10 @@ F71_4_part3_pre_branch2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_profane_army = {
 		icon = mission_gnomish_ship
@@ -1159,12 +1576,12 @@ F71_2_part3_branch1_nobranch = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
-		NOT = { has_country_flag = F71_demon_missions }
-		NOT = { has_country_flag = F71_hag_missions }
+	potential = {
+		tag = F71
+		NOT = { has_country_flag = F71_demon_missions } 
+		NOT = { has_country_flag = F71_hag_missions } 
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_branch1_1 = {
 		icon = mission_unknown_mission
@@ -1197,36 +1614,86 @@ F71_2_part3_branch1_demon = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = F71_demon_missions
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
+	F71_mass_sacrifices = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_the_final_order } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_rally_the_kultists = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = {
+			F71_bringers_of_suffering
+			F71_domain_of_suffering
+			F71_mass_sacrifices
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 }
 F71_2_part3_branch1_hag = {
 	slot = 2
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = F71_hag_missions
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
+	F71_otherworldly_pacts = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_the_final_order } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_power_of_the_swamp = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = {
+			F71_bringers_of_suffering
+			F71_otherworldly_pacts
+			F71_domain_of_suffering
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 }
 F71_4_part3_branch2_nobranch = {
 	slot = 4
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
-		NOT = { has_country_flag = F71_demon_missions }
-		NOT = { has_country_flag = F71_hag_missions }
+	potential = {
+		tag = F71
+		NOT = { has_country_flag = F71_demon_missions } 
+		NOT = { has_country_flag = F71_hag_missions } 
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_branch2_1 = {
 		icon = mission_unknown_mission
@@ -1269,34 +1736,104 @@ F71_4_part3_branch2_demon = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = F71_demon_missions
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
+	F71_unrestrained_power = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_profane_army } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_beasts_of_hate = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = { 
+			F71_unrestrained_power 
+			F71_domain_of_suffering
+		} 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_rampaging_horde = {
+		icon = mission_gnomish_ship
+		position = 15
+		required_missions = { F71_beasts_of_hate } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 }
 F71_4_part3_branch2_hag = {
 	slot = 4
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = F71_hag_missions
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
+	F71_undying_loyalty = {
+		icon = mission_gnomish_ship
+		position = 13
+		required_missions = { F71_profane_army } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_send_the_dead = {
+		icon = mission_gnomish_ship
+		position = 14
+		required_missions = {
+			F71_undying_loyalty
+			F71_domain_of_suffering
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	F71_undead_horde = {
+		icon = mission_gnomish_ship
+		position = 15
+		required_missions = { F71_send_the_dead } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 }
 F71_1_part3 = {
 	slot = 1
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_bringers_of_suffering = {
 		icon = mission_gnomish_ship
@@ -1304,9 +1841,37 @@ F71_1_part3 = {
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			check_variable = {
+				value = 100
+				which = nbProvincesRazed
+			}
+			development_in_provinces = {
+				value = 200
+				trade_goods = slaves
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				trade_goods = slaves
+				development = 10
+				has_building = mage_tower
+				has_tax_building_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = { religion = xhazobkult }
+				set_country_flag = rakkaz_light_the_pyres_upgrade
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				set_country_flag = rakkaz_church_power_on_raze
+			}
+			set_country_flag = rakkaz_more_devastation
+			set_country_flag = unlocked_reaver_personality_flag
+			set_country_flag = rakkaz_reaver_on_raze_provinces
+		} 
 	}
 
 	F71_throne_breaker = {
@@ -1315,9 +1880,37 @@ F71_1_part3 = {
 		required_missions = { F71_bringers_of_suffering } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			katala_raz_region = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				has_influencing_fort = yes
+				if = {
+					limit = { has_fort_building_trigger = yes }
+					num_of_units_in_province = {
+						who = owner
+						amount = 5
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			throden_gokad_region = { add_permanent_claim = ROOT }
+			odu_kherass_region = { add_permanent_claim = ROOT }
+			5921 = {
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+				change_trade_goods = slaves
+				add_province_modifier = {
+					name = rakkaz_seat_of_darkness
+					duration = -1
+				}
+			}
+		} 
 	}
 
 	F71_power_of_the_curse = {
@@ -1326,9 +1919,24 @@ F71_1_part3 = {
 		required_missions = { F71_throne_breaker } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			accepted_culture = ashhana_lizardfolk
+			num_of_owned_provinces_with = {
+				value = 5
+				culture = ashhana_lizardfolk
+				development = 10
+				has_tax_building_trigger = yes
+				has_building = mage_tower
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_yearly_manpower = 1
+			add_country_modifier = {
+				name = rakkaz_power_of_the_curse
+				duration = -1
+			}
+		} 
 	}
 }
 F71_2_part3 = {
@@ -1336,10 +1944,10 @@ F71_2_part3 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_end_of_denial = {
 		icon = mission_gnomish_ship
@@ -1347,9 +1955,46 @@ F71_2_part3 = {
 		required_missions = { F71_throne_breaker } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			throden_gokad_region = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			odu_kherass_region = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 30
+				OR = {
+					region = throden_gokad_region
+					region = odu_kherass_region
+				}
+				NOT = { unrest = 0 }
+				NOT = { local_autonomy = 10 }
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			5941 = {
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+			5650 = {
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+			add_power_projection = {
+				type = 25_permanent_power_projection
+				amount = 25
+			}
+		} 
 	}
 }
 F71_3_part3 = {
@@ -1357,10 +2002,10 @@ F71_3_part3 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
-		tag = F71 
+	potential = {
+		tag = F71
 		has_country_flag = rakkaz_unlock_mission_3
-	} 
+	}
 
 	F71_the_slayers_fate = {
 		icon = mission_gnomish_ship
@@ -1376,12 +2021,62 @@ F71_3_part3 = {
 	F71_domain_of_suffering = {
 		icon = mission_gnomish_ship
 		position = 13
-		required_missions = { F71_the_final_order } 
+		required_missions = { F71_the_final_order }
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				value = 15
+				region = yezel_mora_region
+				has_tax_building_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = rakkaz_two_most_developed_provinces
+			tooltip = { 
+				upgrade_tax_building = yes
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+				change_trade_goods = slaves
+			} 
+			pick_best_provinces = {
+				2 = yes
+				scope = every_owned_province
+				scale = higher_development_than
+				global_trigger = "
+				region = yezel_mora_region
+				has_tax_building_trigger = yes
+				has_manpower_building_trigger = yes
+				"
+				event_target_name = "rakkaz_shadowswamp_target"
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_shadowswamp_target_1 } 
+				event_target:rakkaz_echenka_target_1 = { 
+					upgrade_tax_building = yes
+					add_province_modifier = {
+						name = rakkaz_fighting_pit
+						duration = -1
+					}
+					change_trade_goods = slaves
+				} 
+			}
+			if = {
+				limit = { has_saved_event_target = rakkaz_shadowswamp_target_2 } 
+				event_target:rakkaz_echenka_target_2 = { 
+					upgrade_tax_building = yes
+					add_province_modifier = {
+						name = rakkaz_fighting_pit
+						duration = -1
+					}
+					change_trade_goods = slaves
+				} 
+			}
+		} 
 	}
 
 	F71_dark_messengers = {
@@ -1390,9 +2085,36 @@ F71_3_part3 = {
 		required_missions = { F71_domain_of_suffering } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			yezel_mora_region = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			if = {
+				limit = { has_dlc = Leviathan }
+				6690 = {
+					has_great_project = {
+						type = shadowroot_matriarch
+						tier = 3
+					}
+				}
+			}
+			else = {
+				6690 = {
+					development = 20
+					manufactories = 2
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = { has_country_flag = F71_demon_missions }
+			}
+			if = {
+				limit = { has_country_flag = F71_hag_missions }
+			}
+		} 
 	}
 
 	F71_seed_of_darkness = {

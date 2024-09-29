@@ -1771,30 +1771,6 @@ enable_branching_mission_review = {
 # 	}
 # }
 
-#Rakkaz MT
-select_current_missions_F71 = {
-	if = {
-		limit = { has_country_flag = F71_demon_missions }
-		if = { 
-			limit = { religion = xhazobkult } 
-			add_patriarch_authority = 0.1
-		}
-		else = {
-			change_religion = xhazobkult
-		}
-	}
-	if = {
-		limit = { has_country_flag = F71_hag_missions }
-		if = { 
-			limit = { religion = shadow_pact } 
-			add_church_power = 50
-		}
-		else = {
-			change_religion = shadow_pact
-		}
-	}
-}
-
 select_current_missions = {
  	hidden_effect = {
  		clr_country_flag = can_choose_$key$_branching_missions
@@ -1827,10 +1803,6 @@ select_current_branch = {
 # 		limit = { can_preview_mission_of_key = { key = PER } }
 # 		select_current_missions = { key = PER }
 # 	}
-	if = {
-		limit = { can_preview_mission_of_key = { key = F71 } }
-		select_current_missions = { key = F71 }
-	}
 }
 
 clear_all_branching_flags = {
@@ -1866,12 +1838,6 @@ clear_all_branching_flags = {
 # 		clr_country_flag = per_sunni_missions
 # 		clr_country_flag = per_zoroastrian_missions
 # 	}
-	#Rakkaz
-	if = {
-		limit = { can_preview_mission_of_key = { key = F71 } }
-		clr_country_flag = F71_demon_missions
-		clr_country_flag = F71_hag_missions
-	}
 }
 
 preview_mission_branch_1 = {
@@ -1905,11 +1871,6 @@ preview_mission_branch_1 = {
 # 		set_country_flag = per_shia_missions
 # 		custom_tooltip = per_preview_shia_missions
 # 	}
-	#Rakkaz
-	if = {
-		limit = { can_preview_mission_of_key = { key = F71 } }
-		set_country_flag = F71_demon_missions
-	}
 }
 preview_mission_branch_2 = {
 # 	#TEU
@@ -1949,11 +1910,6 @@ preview_mission_branch_2 = {
 # 		set_country_flag = per_sunni_missions
 # 		custom_tooltip = per_preview_sunni_missions
 # 	}
-	#Rakkaz
-if = {
-	limit = { can_preview_mission_of_key = { key = F71 } }
-	set_country_flag = F71_hag_missions
-}
 }
 preview_mission_branch_3 = {
 # 	#TEU_PRU

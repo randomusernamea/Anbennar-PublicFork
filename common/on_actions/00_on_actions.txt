@@ -2658,6 +2658,10 @@ on_monarch_death = {
 		}
 		country_event = { id = 611 }
 	}
+	set_variable = {
+		which = nbProvincesRazedByRuler
+		value = 0
+	}
 
 	anb_scripted_effects_for_ruler_death = yes
 	
@@ -16004,6 +16008,22 @@ on_raze = {
 			which = nbProvincesRazed
 			value = 1
 		}
+		change_variable = {
+			which = nbProvincesRazedByRuler
+			value = 1
+		}
+		if = {
+			limit = {
+				has_country_flag = unlocked_reaver_personality_flag
+				has_country_flag = rakkaz_reaver_on_raze_provinces
+				check_variable = {
+					which = nbProvincesRazedByRuler
+					value = 30
+				}
+				NOT = { ruler_has_personality = reaver_personality } 
+			}
+			add_ruler_personality = reaver_personality
+		}
 	}
 	if = {
 		limit = {
@@ -16031,6 +16051,14 @@ on_raze = {
                 value = 1
             }
         }
+	}
+	if = {
+		limit = { owner = { has_country_flag = rakkaz_church_power_on_raze } }
+		owner = { add_church_power = 3 }
+	}
+	if = {
+		limit = { owner = { has_country_flag = rakkaz_more_devastation } }
+		add_devastation = 10
 	}
 }
 
