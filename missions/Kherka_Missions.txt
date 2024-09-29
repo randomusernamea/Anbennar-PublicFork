@@ -1,10 +1,251 @@
-#Original MT by Runehawk
-G48_forge = {
+G48_slot_1 = {
 	slot = 1
 	generic = no
 	ai = yes
-	potential = {
-		tag = G48
-	}
 	has_country_shield = yes
+	potential = { tag = G48 } 
+
+	G48_learning_from_the_best = {
+		icon = ven_navy_mission_2
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_the_pearl_boom = {
+		icon = mission_riches_of_golconda
+		position = 2
+		required_missions = { G48_learning_from_the_best } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_cleaved_dominance = {
+		icon = dominant_economy
+		position = 3
+		required_missions = {
+			G48_the_pearl_boom
+			G48_breaking_the_merchants
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+G48_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G48 } 
+
+	G48_enemies_at_the_gate = {
+		icon = fortify_the_passes
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_breaking_the_merchants = {
+		icon = mission_destroyed_city
+		position = 2
+		required_missions = { G48_enemies_at_the_gate } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_contenders_no_more = {
+		icon = gory_to_the_black_army
+		position = 3
+		required_missions = { G48_breaking_the_merchants } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_shift_the_tide = {
+		icon = mission_establish_high_seas_navy
+		position = 4
+		required_missions = {
+			G48_contenders_no_more
+			G48_cleaved_dominance
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+G48_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G48 } 
+
+	G48_gaining_an_edge = {
+		icon = mission_vedic_education
+		position = 2
+		required_missions = { G48_enemies_at_the_gate } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_better_bronze = {
+		icon = mission_iron_and_copper
+		position = 3
+		required_missions = {
+			G48_gaining_an_edge
+			G48_beginning_of_new_heights
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_divining_ores = {
+		icon = mission_empowerment
+		position = 4
+		required_missions = { G48_better_bronze } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_looking_beyond = {
+		icon = mission_look_west
+		position = 5
+		required_missions = {
+			G48_shift_the_tide
+			G48_divining_ores
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+G48_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G48 } 
+
+	G48_our_lifeblood = {
+		icon = mission_african_gold
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_beginning_of_new_heights = {
+		icon = mission_city_prosperity
+		position = 2
+		required_missions = { G48_our_lifeblood } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_an_Iron_tide = {
+		icon = mission_industrial_forging
+		position = 3
+		required_missions = { G48_beginning_of_new_heights } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_center_of_industry = {
+		icon = industrialized_rhineland
+		position = 4
+		required_missions = {
+			G48_an_Iron_tide
+			G48_better_bronze
+			G48_shimmer_from_the_top
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_metal_in_our_blood = {
+		icon = mission_forge
+		position = 5
+		required_missions = {
+			G48_divining_ores
+			G48_center_of_industry
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+G48_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G48 } 
+
+	G48_the_mountain_that_gives = {
+		icon = prosper_in_piedmont
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	G48_shimmer_from_the_top = {
+		icon = mission_frozen_star
+		position = 3
+		required_missions = {
+			G48_the_mountain_that_gives
+			G48_beginning_of_new_heights
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 }
