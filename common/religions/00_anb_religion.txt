@@ -8155,8 +8155,20 @@ hag_religion = {
 					limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
 					every_owned_province = {
 						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering }
 						add_province_modifier = {
 							name = rakkaz_channeling_suffering
+							duration = 7300
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = rakkaz_manpower_when_interaction }
+					every_owned_province = {
+						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_darkness_takes_root }
+						add_province_modifier = {
+							name = rakkaz_darkness_takes_root
 							duration = 7300
 						}
 					}

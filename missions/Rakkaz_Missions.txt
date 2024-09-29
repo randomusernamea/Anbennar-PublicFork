@@ -1152,7 +1152,7 @@ F71_3_part2 = {
 				NOT = { culture_group = gnollish }
 				has_courthouse_building_trigger = yes
 			}
-			rebel_progress_at_least = { value = 0 }
+			NOT = { rebel_progress_at_least = { value = 0 } }
 		} 
 
 		effect = { 
@@ -1566,9 +1566,44 @@ F71_4_part3_pre_branch2 = {
 		required_missions = { F71_future_of_the_council } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			if = {
+				limit = { religion = xhazobkult }
+				patriarch_authority = 0.3
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				church_power = 150
+			}
+			num_of_hussars = 20
+			num_of_regiments_at_full_drill = 40
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = { religion = xhazobkult }
+				add_patriarch_authority = -0.3
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				add_church_power = -150
+			}
+			remove_country_modifier = rakkaz_witherling_units
+			if = {
+				limit = { has_country_flag = F71_demon_missions }
+				add_country_modifier = {
+					name = rakkaz_demoncollar_hordes
+					duration = -1
+				}
+			}
+			if = {
+				limit = { has_country_flag = F71_hag_missions }
+				add_country_modifier = {
+					name = rakkaz_witherling_army
+					duration = -1
+				}
+			}
+		} 
 	}
 }
 F71_2_part3_branch1_nobranch = {
@@ -1957,10 +1992,12 @@ F71_2_part3 = {
 
 		trigger = {  
 			throden_gokad_region = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
 			odu_kherass_region = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -2087,6 +2124,7 @@ F71_3_part3 = {
 
 		trigger = {  
 			yezel_mora_region = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -2123,9 +2161,53 @@ F71_3_part3 = {
 		required_missions = { F71_dark_messengers } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			dreksaret_region = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			simegesfan_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			kvathagis_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			tsudhagis_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			accepted_culture = talilibeti
+			num_of_owned_provinces_with = {
+				value = 10
+				culture = talilibeti
+				has_tax_building_trigger = yes
+			}
+			development_in_provinces = {
+				value = 100
+				culture = talilibeti
+			}
+			5689 = {
+				if = {
+					limit = { has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 2
+				}
+				else = { development = 30 }
+				manufactories = 2
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			5689 = {
+				add_province_modifier = {
+					name = rakkaz_fighting_pit
+					duration = -1
+				}
+			}
+			set_country_flag = rakkaz_manpower_when_interaction
+		} 
 	}
 
 	F71_the_profane_empire = {
@@ -2138,7 +2220,22 @@ F71_3_part3 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			has_adm_advisor_5 = yes
+			num_of_estate_agendas_completed = {
+				estate = estate_mages
+				value = 20
+			}
+			OR = {
+				is_hegemon = yes
+				NOT = { great_power_rank = 3 }
+			}
+			government_rank = 3
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 70
+			}
+		} 
 
 		effect = {  } 
 	}

@@ -3207,22 +3207,33 @@ rakkaz_increase_in_desertions = {
 }
 
 rakkaz_witherling_units = {
-	morale_damage_received = -0.1
-}
-
-rakkaz_bringers_of_suffering = {
-	raze_power_gain = -0.25
+	morale_damage_received = 0.1
 }
 
 rakkaz_seat_of_darkness = {
 	local_tax_modifier = 0.3
 	local_production_efficiency = 0.2
-	local_manpower = 1
+	local_manpower_modifier = 1
 }
 
 rakkaz_power_of_the_curse = {
 	leader_land_shock = 1
 	movement_speed = 0.1
+}
+
+rakkaz_demoncollar_hordes = {
+	morale_damage_received = 0.1
+	cav_to_inf_ratio = 0.2
+	special_unit_forcelimit = 0.1
+}
+
+rakkaz_witherling_army = {
+	morale_damage_received = -0.05
+	fire_damage_received = -0.1
+}
+
+rakkaz_darkness_takes_root = {
+	local_manpower_modifier = 1
 }
 #
 
