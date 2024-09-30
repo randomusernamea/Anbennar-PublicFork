@@ -42373,3 +42373,51 @@ B94_ideas = {
 		prestige = 1
 	}
 }
+#Rzenta
+U71_ideas = {
+
+	start = {
+		shock_damage_received = -0.1 #favouring infantry formations and defence rather than antler horsing about
+		global_missionary_strength = 0.02	#rzentur were allowed to settle here as long as they converted
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.2	#rzentan levies are big
+	}
+
+	trigger = {
+		#tag = U71
+	}
+
+	free = yes
+
+	U71_rzentan_humility = {	#rzentur are less pretentious than other ynnics and tend to offend and get offended less
+		global_unrest = -1
+		diplomatic_reputation = 1
+	}
+
+	U71_vaisledar_legacy = {	#vaisledar was the ancient dolidnhan kingdom of the region, it left many ruins and old infrastructure
+		build_cost = -0.1
+		fort_maintenance_modifier = -0.15
+	}
+
+	U71_furs_forest = {	#huge source of furs
+		global_own_trade_power = 0.1
+	}
+
+	U71_imperial_dukes = {	#rzenta had fewer and bigger dependencies
+		liberty_desire_from_subject_development = -0.25
+	}
+
+	U71_trantans_failure = {	#the last imperial claimant in the region abandoned it to a cursed one invasion
+		war_exhaustion = -0.03
+	}
+
+	U71_warrior_lodges = {	#rzentur have had warrior lodges for a long time and the levies they provided were often from them
+		infantry_power = 0.1
+	}
+
+	U71_crafts_of_tordolin = {	#was the centre of the ynnic empire's industry before the fall
+		trade_goods_size_modifier = 0.15
+	}
+}
