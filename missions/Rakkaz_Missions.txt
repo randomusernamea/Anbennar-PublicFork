@@ -119,9 +119,15 @@ F71_2_part1 = {
 					speed = 0.5
 				}
 			}
-			if = {
-				limit = { mission_completed = F71_a_helping_hand } 
-				country_event = { id = flavour_rakkaz.0 } 
+			custom_tooltip = " "
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_completed_a_helping_hand
+				first_limit = "
+					mission_completed = F71_a_helping_hand
+				"
+				first_effect = "
+					country_event = { id = flavour_rakkaz.0 }
+				"
 			}
 		}
 	}
@@ -238,6 +244,7 @@ F71_2_part1 = {
 		}
 
 		effect = {
+			custom_tooltip = rakkaz_invite_scholar_bonus
 			set_country_flag = rakkaz_improved_kult_of_the_packmother
 			add_prestige = 20
 		}
@@ -497,9 +504,15 @@ F71_4_part1 = {
 
 		effect = {
 			add_patriarch_authority = -0.05
-			if = {
-				limit = { mission_completed = F71_rally_the_riders } 
-				country_event = { id = flavour_rakkaz.0 } 
+			custom_tooltip = " "
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_completed_rally_the_riders
+				first_limit = "
+					mission_completed = F71_rally_the_riders
+				"
+				first_effect = "
+					country_event = { id = flavour_rakkaz.0 }
+				"
 			}
 		}
 	}
@@ -1097,7 +1110,7 @@ F71_2_part2 = {
 			set_country_flag = rakkaz_fighting_pit_light_the_pyres
 			if = {
 				limit = { religion = xhazobkult } 
-				custom_tooltip = rakkaz_mazu_makhara_upgrade_xhazobkult
+				custom_tooltip = rakkaz_fighting_pit_upgrade_xhazobkult
 				tooltip = {
 					add_province_modifier = {
 						name = rakkaz_channeling_suffering
@@ -1107,7 +1120,7 @@ F71_2_part2 = {
 			}
 			if = {
 				limit = { religion = shadow_pact } 
-				custom_tooltip = rakkaz_mazu_makhara_upgrade_shadowpact
+				custom_tooltip = rakkaz_fighting_pit_upgrade_shadowpact
 				tooltip = {
 					add_province_modifier = {
 						name = rakkaz_channeling_suffering

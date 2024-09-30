@@ -65,6 +65,7 @@ country_event = {
 	}
 }
 
+#Strange Happenings In The Pack
 country_event = {
 	id = flavour_rakkaz.2
 	title = flavour_rakkaz.2.t
@@ -80,6 +81,7 @@ country_event = {
 	}
 }
 
+#Drastic Increase In Sacrifices
 country_event = {
 	id = flavour_rakkaz.3
 	title = flavour_rakkaz.3.t
@@ -97,6 +99,7 @@ country_event = {
 	}
 }
 
+#Spread Of Disobedience
 country_event = {
 	id = flavour_rakkaz.4
 	title = flavour_rakkaz.4.t
@@ -115,6 +118,7 @@ country_event = {
 	}
 }
 
+#The Silent Coup
 country_event = {
 	id = flavour_rakkaz.5
 	title = flavour_rakkaz.5.t
@@ -129,14 +133,15 @@ country_event = {
 		hidden_effect = {
 			remove_estate_privilege = estate_mages_organization_guilds
 			remove_estate_privilege = estate_mages_organization_state
+			unlock_estate_privilege = { estate_privilege = estate_mages_organization_rule_of_warlocks }
 		}
-		unlock_estate_privilege = { estate_privilege = estate_mages_organization_rule_of_warlocks }
 		set_estate_privilege = estate_mages_organization_rule_of_warlocks
 		set_country_flag = rakkaz_unlock_mission_2
 		swap_non_generic_missions = yes
 	}
 }
 
+#The Warlock's Mission
 country_event = {
 	id = flavour_rakkaz.6
 	title = flavour_rakkaz.6.t
@@ -147,7 +152,38 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+		if = {
+			limit = { has_country_flag = F71_demon_missions }
+			random_list = {
+				0.7 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				0.3 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = F71_hag_missions }
+			random_list = {
+				0.3 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				0.7 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+			}
+		}
+		else = {
+			random_list = {
+				0.5 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				0.5 = {
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+			}
+		}
 	}
 
 	option = {
@@ -157,11 +193,22 @@ country_event = {
 
 	option = {
 		name = flavour_rakkaz.6.b
+		trigger = {
+			has_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+		}
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_loot
 	}
 
 	option = {
-		name = flavour_rakkaz.6.c
+		name = flavour_rakkaz.6.b
+		trigger = {
+			has_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+		}
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
+	}
+
+	option = {
+		name = flavour_rakkaz.6.e
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_autonomy
 		}
@@ -169,7 +216,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.6.e
+		name = flavour_rakkaz.6.f
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_missionary
 		}
@@ -177,7 +224,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.6.f
+		name = flavour_rakkaz.6.g
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_demonpower
 		}
@@ -185,7 +232,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.6.g
+		name = flavour_rakkaz.6.h
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_churchpower
 		}
@@ -210,6 +257,7 @@ country_event = {
 	}
 }
 
+#Bloody Tears, A Sorrow Tainted Red
 country_event = {
 	id = flavour_rakkaz.7
 	title = flavour_rakkaz.7.t
@@ -219,60 +267,13 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	immediate = {
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
-	}
-
 	option = {
 		name = flavour_rakkaz.7.a
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
 	}
-
-	option = {
-		name = flavour_rakkaz.7.b
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
-	}
-
-	option = {
-		name = flavour_rakkaz.7.c
-		trigger = {
-			has_country_flag = rakkaz_warlock_unlock_autonomy
-		}
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
-	}
-
-	option = {
-		name = flavour_rakkaz.7.e
-		trigger = {
-			has_country_flag = rakkaz_warlock_unlock_missionary
-		}
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
-	}
-
-	option = {
-		name = flavour_rakkaz.7.f
-		trigger = {
-			has_country_flag = rakkaz_warlock_unlock_churchpower
-		}
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
-	}
-
-	option = {
-		name = flavour_rakkaz.7.g
-		trigger = {
-			has_country_flag = rakkaz_warlock_unlock_demonpower
-		}
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
-	}
-
-	after = {
-		hire_advisor = {
-			type = court_mage
-			skill = 1
-		}
-	}
 }
 
+#An Impass In The Council
 country_event = {
 	id = flavour_rakkaz.8
 	title = flavour_rakkaz.8.t
@@ -285,14 +286,81 @@ country_event = {
 	option = {
 		name = flavour_rakkaz.8.a
 		set_country_flag = F71_demon_missions
+		if = {
+			limit = { religion = xhazobkult }
+			add_patriarch_authority = 0.1
+		}
+		else = {
+			change_religion = xhazobkult
+			add_country_modifier = {
+				name = orc_conversion_zeal
+				duration = 3650
+			}
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = xhazobkult_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
+		5466 = {
+			spawn_rebels = {
+				type = xhazobkult_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
+		5481 = {
+			spawn_rebels = {
+				type = xhazobkult_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
 	}
 
 	option = {
 		name = flavour_rakkaz.8.b
 		set_country_flag = F71_hag_missions
+		if = {
+			limit = { religion = shadow_pact }
+			add_patriarch_authority = 0.1
+		}
+		else = {
+			change_religion = shadow_pact
+			add_country_modifier = {
+				name = orc_conversion_zeal
+				duration = 3650
+			}
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = shadow_pact_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
+		5466 = {
+			spawn_rebels = {
+				type = shadow_pact_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
+		5481 = {
+			spawn_rebels = {
+				type = shadow_pact_rebels
+				size = 2
+				leader = rebel_preacher
+			}
+		}
 	}
+
+	after = { remove_country_modifier = conversion_zeal }
 }
 
+#Raiding Kheterata
 country_event = {
 	id = flavour_rakkaz.10
 	title = flavour_rakkaz.10.t
@@ -331,6 +399,7 @@ country_event = {
 	}
 }
 
+#A Walking Abomination
 country_event = {
 	id = flavour_rakkaz.11
 	title = flavour_rakkaz.11.t
@@ -352,6 +421,7 @@ country_event = {
 	}
 }
 
+#Increase In Desertions
 country_event = {
 	id = flavour_rakkaz.12
 	title = flavour_rakkaz.12.t
