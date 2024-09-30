@@ -1,0 +1,723 @@
+racial_pop_misc_5_effect = {
+	medium_decrease_of_$race$_tolerance_effect = yes
+	if = {
+		limit = {
+			low_tolerance_$race$_race_trigger = yes
+		}
+		hidden_effect = {
+			country_event = {
+				id = racial_pop_misc.2
+				days = 60
+			}
+			set_country_flag = mob_$race$
+			random_owned_province = {
+				limit = {
+					has_$race$_minority_trigger = yes
+				}
+				set_province_flag = mob_province
+			}
+		}
+	}
+}
+
+racial_pop_misc_6_effect = {
+	random_owned_province = {
+		limit = { has_province_flag = mob_province }
+		remove_$race$_minority_size_effect = yes
+		clr_province_flag = mob_province
+		add_devastation = 15
+		}
+	large_decrease_of_$race$_tolerance_effect = yes
+}
+
+racial_pop_misc_7_effect = {
+	hidden_effect = {
+		set_variable = {
+			which = $varname$
+			value = 0
+		}
+		set_variable = {
+			which = maxgold
+			which = $race$_count
+		}
+		sqrt_variable = {
+			which = maxgold
+		}
+		multiply_variable = {
+			which = maxgold
+			value = 30
+		}
+	}
+	every_owned_province = {
+		limit = {
+		# 		fast_has_pop_of_race = { race = $race$ }			this block works, but throws errors unless I make the change_variable effects visible
+		# }
+		# if = {
+		# 	limit = {
+		# 			generic_has_majority_trigger = { race = $race$ }
+		# 	}
+		# 	ROOT = {
+		# 		hidden_effect = {
+		# 			change_variable = {
+		# 				which = $varname$
+		# 				value = 30
+		# 			}
+		# 		}
+		# 	}
+		# }
+		# if = {
+		# 	limit = { 
+		# 		generic_has_small_minority_trigger = { race = $race$ }
+		# 	}	
+		# 	ROOT = {
+		# 		hidden_effect = {
+		# 			change_variable = {
+		# 				which = $varname$
+		# 				value = 10
+		# 			}
+		# 		}
+		# 	}
+		# }
+		# if = {
+		# 	limit = { 
+			generic_has_large_minority_trigger = { race = $race$ }
+			ROOT = { 
+				check_variable = {
+					which = maxgold
+					which = $varname$
+				}
+			}
+		}
+		ROOT = {
+			hidden_effect = {
+				change_variable = {
+					which = $varname$
+					value = 20
+				}
+			}
+		}
+	}
+	every_owned_province = {
+		limit = {
+			generic_has_small_minority_trigger = { race = $race$ }
+			ROOT = { 
+				check_variable = {
+					which = maxgold
+					which = $varname$
+				}
+			}
+		}
+		ROOT = {
+			hidden_effect = {
+				change_variable = {
+					which = $varname$
+					value = 10
+				}
+			}
+		}
+	}
+	every_owned_province = {
+		limit = {
+			generic_has_majority_trigger = { race = $race$ }
+			ROOT = { 
+				check_variable = {
+					which = maxgold
+					which = $varname$
+				}
+			}
+		}
+		ROOT = {
+			hidden_effect = {
+				change_variable = {
+					which = $varname$
+					value = 30
+				}
+			}
+		}
+	}
+}
+
+racial_pop_misc_7_2_effect = {
+	custom_tooltip = racial_pop_misc.7.$varname$.tt
+	hidden_effect = {
+		var_effect = { effect = add_treasury var = $varname$ sign = + }
+	}
+	medium_decrease_of_$race$_tolerance_effect = yes	
+}
+
+racial_pop_misc_8_effect = {
+	event_target:settlers_destinations = {
+		add_colonysize = 100
+		add_province_modifier = {
+			name = smallfolk_migration
+			duration = 3650
+		}
+		custom_tooltip = add_$race$_minority_size_effect_tooltip
+		hidden_effect = {
+			add_minority_with_correct_tolerance = { race = $race$ size = large}
+			random = {
+				chance = 30
+				change_culture = event_target:$race$_origin
+				change_religion = event_target:$race$_origin
+			}
+		}
+	}
+}
+
+save_random_present_race_as_flag_effect = {	#primary excluded. scripted_trigger can be fast_has_pop_of_race, generic_has_minority_trigger or one of those following it in code
+	random_list = {							#use flags random_race_selected2 and random_race_selected3 as triggers in options against problems if you have only 1 minority race
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = centaur } }
+				NOT = { culture_is_centaur = yes }
+				[[flag2] NOT = { has_country_flag = $flag2$_centaur }]
+				[[flag3] NOT = { has_country_flag = $flag3$_centaur }]
+			}
+			set_country_flag = $flag$_centaur
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = dwarven } }
+				NOT = { culture_is_dwarven = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_dwarven }]
+				[[flag3]NOT = { has_country_flag = $flag3$_dwarven }]
+			}
+			set_country_flag = $flag$_dwarven
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = elven } }
+				NOT = { culture_is_elven = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_elven }]
+				[[flag3]NOT = { has_country_flag = $flag3$_elven }]
+			}
+			set_country_flag = $flag$_elven
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = gnollish } }
+				NOT = { culture_is_gnollish = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_gnollish }]
+				[[flag3]NOT = { has_country_flag = $flag3$_gnollish }]
+			}
+			set_country_flag = $flag$_gnollish
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = gnomish } }
+				NOT = { culture_is_gnomish = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_gnomish }]
+				[[flag3]NOT = { has_country_flag = $flag3$_gnomish }]
+			}
+			set_country_flag = $flag$_gnomish
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = goblin } }
+				NOT = { culture_is_goblin = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_goblin }]
+				[[flag3]NOT = { has_country_flag = $flag3$_goblin }]
+			}
+			set_country_flag = $flag$_goblin
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = halfling } }
+				NOT = { culture_is_halfling = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_halfling }]
+				[[flag3]NOT = { has_country_flag = $flag3$_halfling }]
+			}
+			set_country_flag = $flag$_halfling
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = half_elven } }
+				NOT = { culture_is_half_elven = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_half_elven }]
+				[[flag3]NOT = { has_country_flag = $flag3$_half_elven }]
+			}
+			set_country_flag = $flag$_half_elven
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = half_orcish } }
+				NOT = { culture_is_half_orcish = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_half_orcish }]
+				[[flag3]NOT = { has_country_flag = $flag3$_half_orcish }]
+			}
+			set_country_flag = $flag$_half_orcish
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = harimari } }
+				NOT = { culture_is_harimari = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_harimari }]
+				[[flag3]NOT = { has_country_flag = $flag3$_harimari }]
+			}
+			set_country_flag = $flag$_harimari
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = harpy } }
+				NOT = { culture_is_harpy = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_harpy }]
+				[[flag3]NOT = { has_country_flag = $flag3$_harpy }]
+			}
+			set_country_flag = $flag$_harpy
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = hobgoblin } }
+				NOT = { culture_is_hobgoblin = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_hobgoblin }]
+				[[flag3]NOT = { has_country_flag = $flag3$_hobgoblin }]
+			}
+			set_country_flag = $flag$_hobgoblin
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = human } }
+				NOT = { culture_is_human = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_human }]
+				[[flag3]NOT = { has_country_flag = $flag3$_human }]
+			}
+			set_country_flag = $flag$_human
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = kobold } }
+				NOT = { culture_is_kobold = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_kobold }]
+				[[flag3]NOT = { has_country_flag = $flag3$_kobold }]
+			}
+			set_country_flag = $flag$_kobold
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = lizardfolk } }
+				NOT = { culture_is_lizardfolk = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_lizardfolk }]
+				[[flag3]NOT = { has_country_flag = $flag3$_lizardfolk }]
+			}
+			set_country_flag = $flag$_lizardfolk
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = mechanim } }
+				NOT = { culture_is_mechanim = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_mechanim }]
+				[[flag3]NOT = { has_country_flag = $flag3$_mechanim }]
+			}
+			set_country_flag = $flag$_mechanim
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = ogre } }
+				NOT = { culture_is_ogre = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_ogre }]
+				[[flag3]NOT = { has_country_flag = $flag3$_ogre }]
+			}
+			set_country_flag = $flag$_ogre
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = orcish } }
+				NOT = { culture_is_orcish = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_orcish }]
+				[[flag3]NOT = { has_country_flag = $flag3$_orcish }]
+			}
+			set_country_flag = $flag$_orcish
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = ruinborn } }
+				NOT = { culture_is_ruinborn = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_ruinborn }]
+				[[flag3]NOT = { has_country_flag = $flag3$_ruinborn }]
+			}
+			set_country_flag = $flag$_ruinborn
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+		1 = {
+			trigger = {
+				any_owned_province = { $scripted_trigger$ = { race = troll } }
+				NOT = { culture_is_troll = yes }
+				[[flag2]NOT = { has_country_flag = $flag2$_troll }]
+				[[flag3]NOT = { has_country_flag = $flag3$_troll }]
+			}
+			set_country_flag = $flag$_troll
+			if = {
+				limit = { has_country_flag = random_race_selected2 }
+				set_country_flag = random_race_selected3
+			}
+			if = {
+				limit = { has_country_flag = random_race_selected1 }
+				set_country_flag = random_race_selected2
+			}
+			set_country_flag = random_race_selected1
+		}
+	}
+}
+
+effect_for_random_race = {
+	if = {
+		limit = {
+			has_country_flag = $flag$_troll
+		}
+		$scripted_effect$ = { race = troll [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_ruinborn
+		}
+		$scripted_effect$ = { race = ruinborn [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_orcish
+		}
+		$scripted_effect$ = { race = orcish [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_ogre
+		}
+		$scripted_effect$ = { race = ogre [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_mechanim
+		}
+		$scripted_effect$ = { race = mechanim [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_lizardfolk
+		}
+		$scripted_effect$ = { race = lizardfolk [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_kobold
+		}
+		$scripted_effect$ = { race = kobold [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_human
+		}
+		$scripted_effect$ = { race = human [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_hobgoblin
+		}
+		$scripted_effect$ = { race = hobgoblin [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_harpy
+		}
+		$scripted_effect$ = { race = harpy [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_harimari
+		}
+		$scripted_effect$ = { race = harimari [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_half_orcish
+		}
+		$scripted_effect$ = { race = half_orcish [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_half_elven
+		}
+		$scripted_effect$ = { race = half_elven [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_halfling
+		}
+		$scripted_effect$ = { race = halfling [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_goblin
+		}
+		$scripted_effect$ = { race = goblin [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_gnomish
+		}
+		$scripted_effect$ = { race = gnomish [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_gnollish
+		}
+		$scripted_effect$ = { race = gnollish [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_elven
+		}
+		$scripted_effect$ = { race = elven [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_dwarven
+		}
+		$scripted_effect$ = { race = dwarven [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+	if = {
+		limit = {
+			has_country_flag = $flag$_centaur
+		}
+		$scripted_effect$ = { race = centaur [[effectargument] $effectargument$ = $argumentvalue$ ] }
+	}
+}
+
+clear_random_race_flag = {
+	clr_country_flag = random_race_selected1
+	clr_country_flag = random_race_selected2
+	clr_country_flag = random_race_selected3
+	clr_country_flag = $flag$_troll
+	clr_country_flag = $flag$_ruinborn
+	clr_country_flag = $flag$_orcish
+	clr_country_flag = $flag$_ogre
+	clr_country_flag = $flag$_mechanim
+	clr_country_flag = $flag$_lizardfolk
+	clr_country_flag = $flag$_kobold
+	clr_country_flag = $flag$_human
+	clr_country_flag = $flag$_hobgoblin
+	clr_country_flag = $flag$_harpy
+	clr_country_flag = $flag$_harimari
+	clr_country_flag = $flag$_halfling
+	clr_country_flag = $flag$_half_orcish
+	clr_country_flag = $flag$_half_elven
+	clr_country_flag = $flag$_goblin
+	clr_country_flag = $flag$_gnomish
+	clr_country_flag = $flag$_gnollish
+	clr_country_flag = $flag$_elven
+	clr_country_flag = $flag$_dwarven
+	clr_country_flag = $flag$_centaur
+	[[flag2]
+		clr_country_flag = $flag2$_troll
+		clr_country_flag = $flag2$_ruinborn
+		clr_country_flag = $flag2$_orcish
+		clr_country_flag = $flag2$_ogre
+		clr_country_flag = $flag2$_mechanim
+		clr_country_flag = $flag2$_lizardfolk
+		clr_country_flag = $flag2$_kobold
+		clr_country_flag = $flag2$_human
+		clr_country_flag = $flag2$_hobgoblin
+		clr_country_flag = $flag2$_harpy
+		clr_country_flag = $flag2$_harimari
+		clr_country_flag = $flag2$_halfling
+		clr_country_flag = $flag2$_half_orcish
+		clr_country_flag = $flag2$_half_elven
+		clr_country_flag = $flag2$_goblin
+		clr_country_flag = $flag2$_gnomish
+		clr_country_flag = $flag2$_gnollish
+		clr_country_flag = $flag2$_elven
+		clr_country_flag = $flag2$_dwarven
+		clr_country_flag = $flag2$_centaur
+	]
+	[[flag3]
+		clr_country_flag = $flag3$_troll
+		clr_country_flag = $flag3$_ruinborn
+		clr_country_flag = $flag3$_orcish
+		clr_country_flag = $flag3$_ogre
+		clr_country_flag = $flag3$_mechanim
+		clr_country_flag = $flag3$_lizardfolk
+		clr_country_flag = $flag3$_kobold
+		clr_country_flag = $flag3$_human
+		clr_country_flag = $flag3$_hobgoblin
+		clr_country_flag = $flag3$_harpy
+		clr_country_flag = $flag3$_harimari
+		clr_country_flag = $flag3$_halfling
+		clr_country_flag = $flag3$_half_orcish
+		clr_country_flag = $flag3$_half_elven
+		clr_country_flag = $flag3$_goblin
+		clr_country_flag = $flag3$_gnomish
+		clr_country_flag = $flag3$_gnollish
+		clr_country_flag = $flag3$_elven
+		clr_country_flag = $flag3$_dwarven
+		clr_country_flag = $flag3$_centaur
+	]
+}
