@@ -5717,7 +5717,6 @@ Z43_ideas = {
 	}
 	Z43_alariandel_legacy = {
 		navy_tradition = 1
-		may_recruit_female_generals = yes
 	}
 	Z43_aelnar_drill_academy = {
 		discipline = 0.05
@@ -18685,7 +18684,6 @@ H59_ideas = {
 	}
 	H59_half_orcish_meritocracy = { #Chippengard is very meritocratic as half-orcs don't care about one's origin and promote on merit
 		advisor_cost = -0.1
-		female_advisor_chance = 0.25
 	}
 	H59_the_chargestoppers = { #In 1644, Chippengarder armies clashed with Sarda armies in Stenurynn. Despite being outnumbered and having just foot soldiers fight against Ynnic cavalry, the half-orcs won. This battle solidified their foot soldiers as the best in the region.
 		infantry_power = 0.10
@@ -21606,7 +21604,6 @@ U05_ideas = {
 #Birsartanses
 F21_ideas = {
 	start = {
-		female_advisor_chance = 0.25 #girlboss country
 		governing_capacity_modifier = 0.1
 		global_tax_modifier = 0.1 #From Sun Elf ideas
 	}
@@ -35603,7 +35600,6 @@ F85_ideas = {
 	}
 	F85_harpies = {
 		merchants = 1
-		female_advisor_chance = 0.33
 	}
 	F85_killed_rooftile = {
 		hostile_attrition = 1
@@ -42331,4 +42327,49 @@ Y84_ideas = {
 	yanglam_community_of_spirits_and_humans = {  
 		reform_progress_growth = 0.15 
 	} 	 
+}
+
+#Milcorissia
+B94_ideas = {
+	start = {
+		prestige = 1
+		prestige = 1
+	}
+	
+	bonus = {
+		prestige = 1
+	}
+	
+	trigger = {
+		tag = B94 #Milcorissia
+	}
+	free = yes
+	
+	B94_milcorissia_one = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_two = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_three = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_four = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_five = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_six = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_milcorissia_seven = { #Milcorissia
+		prestige = 1
+	}
 }
