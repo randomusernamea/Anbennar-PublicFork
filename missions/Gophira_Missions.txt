@@ -1,0 +1,572 @@
+gophira_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	a_throne_for_the_queen = {
+		icon = mission_a_crown
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			if = {
+				limit = { J72 = { exists = yes }  } 
+				war_score_against = {
+					who = J72
+					value = 100
+				}
+			}
+			else = {
+				2558 = { owned_by = ROOT } 
+				1791 = { owned_by = ROOT } 
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = { J72 = { exists = yes }  } 
+					white_peace = J72
+				}
+				else = { release = J72 } 
+			}
+			country_event = { id = flavour_gophira.4 } 
+			J72 = {
+				tooltip = {
+					define_ruler = {
+						name = "Azhera"
+						dynasty = Vakhyrlana
+						female = yes
+						adm = 2
+						dip = 1
+						mil = 4
+					}
+				}
+				hidden_effect = {
+					define_consort = {
+						name = "Azhera"
+						dynasty = Vakhyrlana
+						birth_date = 1425.1.25
+						female = yes
+						adm = 2
+						dip = 1
+						mil = 4
+					}
+					define_heir = {
+						name = "Thanal"
+						monarch_name = "Thanal"
+						age = 0
+					}
+					kill_ruler = yes
+					add_stability = 1
+					change_consort_regent_to_ruler = yes
+					define_heir = {
+						name = "Thanal"
+						monarch_name = "Thanal"
+						dynasty = Sangamar
+						culture = yodhanpir
+						claim = 50
+						birth_date = 1443.1.1
+						adm = 1
+						dip = 1
+						mil = 1
+					}
+					set_heir_flag = gophira_heir
+					set_ruler_flag = gophira_wife
+					add_ruler_personality = malevolent_personality
+					define_consort = {
+						name = "Harrihara X"
+						dynasty = Sangamar
+						birth_date = 1421.7.11
+						culture = yodhanpir
+						adm = 2
+						dip = 0
+						mil = 5
+					}
+					add_queen_personality = bold_fighter_personality
+				}
+			}
+		}
+	}
+}
+gophira_1_fren = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G74
+		has_country_flag = gophira_fren
+	}
+
+	tribes_chief = {
+		icon = mission_desert_rider
+		position = 2
+		required_missions = { a_throne_for_the_queen } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			taychend_superregion = {
+				type = all
+				country_or_non_sovereign_subject_holds = J72
+				NOT = { culture = sarihaddi } 
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				set_variable = { which = gophira_relic_dev } 
+				J72 = {
+					every_owned_province = {
+						limit = { trade_goods = precursor_relics } 
+						export_to_variable = {
+							which = gophira_relic_dev
+							value = trigger_value:base_production
+						}
+						ROOT = {
+							change_variable = {
+								which = gophira_relic_dev
+								which = PREV
+							}
+						}
+					}
+				}
+				multiply_variable = {
+					which = gophira_relic_dev
+					value = 30
+				}
+				var_effect = {
+					effect = add_treasury
+					var = gophira_relic_dev
+					sign = +
+				}
+			}
+			custom_tooltip = G74_tribes_chief_tt
+			gauraddhi_region = { add_permanent_claim = J72 } 
+			J72 = {
+				add_trust = {
+					who = ROOT
+					value = 10
+				}
+				add_favors = {
+					who = ROOT
+					amount = -20
+				}
+			}
+			if = {
+				limit = { has_heir_flag = gophira_heir } 
+				change_heir_adm = 1
+			}
+		}
+	}
+
+	two_nations_one_army = {
+		icon = mission_unite_the_deccan
+		position = 3
+		required_missions = {
+			tribes_chief
+			our_weapons_their_riders
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			cavalry_fraction = 0.3
+			J72 = {
+				trust = {
+					who = ROOT
+					value = 80
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = gophira_war_fought_tt
+				check_variable = {
+					which = gophira_war_fought_with_dark
+					value = 10
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = "gophira_one_army"
+				duration = -1
+			}
+			gophira_lower_bad_events_effect = yes
+		}
+	}
+
+	two_nations_one_territory = {
+		icon = mission_secure_khandesh
+		position = 4
+		required_missions = { two_nations_one_army } 
+		provinces_to_highlight = {
+			OR = {
+				region = gauraddhi_region
+				region = yodhanchend_region
+				region = southern_coast_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				country_or_non_sovereign_subject_holds = J72
+			}
+		}
+
+		trigger = {
+			gauraddhi_region = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = J72
+				}
+			}
+			yodhanchend_region = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = J72
+				}
+			}
+			southern_coast_region = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = J72
+				}
+			}
+			OR = {
+				J72 = {
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = personal_union
+					}
+				}
+				AND = {
+					dip_power = 200
+					custom_trigger_tooltip = {
+						tooltip = king_or_wife_ded
+						NOT = {
+							AND = {
+								has_ruler_flag = gophira_ruler
+								has_consort_flag = gophira_wife
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						J72 = {
+							is_subject_of_type_with_overlord = {
+								who = ROOT
+								type = personal_union
+							}
+						}
+					}
+				}
+				country_event = { id = flavour_gophira.8 } 
+				add_dip_power = -200
+			}
+			J72 = {
+				for = {
+					amount = 3
+					effect = "
+						random_owned_province = {
+							limit = {
+								is_capital = no
+								culture = chendyan
+							}
+							change_culture = yodhanpir
+						}
+					"
+				}
+			}
+			for = {
+				amount = 3
+				effect = "
+					random_owned_province = {
+						limit = {
+							is_capital = no
+							culture = yodhanpir
+						}
+						change_culture = chendyan
+					}
+				"
+			}
+		}
+	}
+
+	two_people_one_nation = {
+		icon = mission_aztec_city_alliance
+		position = 5
+		required_missions = { two_nations_one_territory } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			OR = {
+				has_idea = experienced_diplomats
+				has_idea = diplomatic_influence
+			}
+			J72 = {
+				trust = {
+					who = ROOT
+					value = 100
+				}
+			}
+			dip_power = 500
+			custom_trigger_tooltip = {
+				tooltip = taychend_hero_passed_reform_4_tt
+				has_country_flag = got_reform_4
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				set_variable = { which = gophira_pay_dip } 
+				J72 = {
+					export_to_variable = {
+						value = trigger_value:total_development
+						which = gophira_pay_dip
+					}
+					ROOT = {
+						change_variable = {
+							which = gophira_pay_dip
+							which = PREV
+						}
+					}
+				}
+				multiply_variable = {
+					which = gophira_pay_dip
+					value = 3
+				}
+			}
+			inherit = J72
+			var_effect = {
+				effect = add_dip_power
+				var = gophira_pay_dip
+				sign = -
+			}
+			add_accepted_culture_or_dip_power = {
+				culture = chendhyan
+				free = yes
+				dip_reward = no
+			}
+		}
+	}
+}
+gophira_march = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = G74
+		has_country_flag = gophira_march
+	} 
+
+	control_the_relics = {
+		icon = mission_magy
+		position = 2
+		required_missions = { a_throne_for_the_queen } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	first_line_of_offence = {
+		icon = per_recruit_the_qizilbash
+		position = 3
+		required_missions = {
+			control_the_relics
+			our_weapons_their_riders
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	war_economy = {
+		icon = mission_conquer_bengal_tau
+		position = 4
+		required_missions = { first_line_of_offence } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	our_weapons_their_riders = {
+		icon = mission_the_tiger_triumphant
+		position = 2
+		required_missions = {
+			a_throne_for_the_queen
+			rekindle_the_forges
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	rekindle_the_forges = {
+		icon = mission_smith
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	back_with_a_vengeance = {
+		icon = mission_kheionai_laskaris
+		position = 2
+		required_missions = { rekindle_the_forges } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	an_oath_twice_broken = {
+		icon = mission_taychend_nanru_nakar_city_entrance
+		position = 3
+		required_missions = { back_with_a_vengeance } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_northern_pretender = {
+		icon = mission_the_ganges_campaign
+		position = 4
+		required_missions = { an_oath_twice_broken } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	third_and_eternal = {
+		icon = a_real_roman_empire
+		position = 5
+		required_missions = {
+			the_northern_pretender
+			two_nations_one_territory
+			everybody_replaceable
+			war_economy
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	a_relic_for_the_fort = {
+		icon = mission_magisterium_fold_one
+		position = 2
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	the_great_kannalulthe = {
+		icon = mission_defeat_jaunpur
+		position = 3
+		required_missions = { a_relic_for_the_fort } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	everybody_replaceable = {
+		icon = mission_divine_legion
+		position = 4
+		required_missions = { a_question_of_loyalty } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	lean_on_the_warlords = {
+		icon = mission_noble_council
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	train_them_to_perfection = {
+		icon = swiss_mercenaries
+		position = 2
+		required_missions = {
+			lean_on_the_warlords
+			rekindle_the_forges
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	a_question_of_loyalty = {
+		icon = mission_have_two_subjects
+		position = 3
+		required_missions = { train_them_to_perfection } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}

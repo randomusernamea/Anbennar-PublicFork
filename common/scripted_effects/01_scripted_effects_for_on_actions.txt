@@ -7374,6 +7374,11 @@ startup_1444_effects = {
 				id = gisden.1 days = 30
 			}
 		}
+
+		if = {	#Gophira starting event
+			limit = { tag = G74 }
+			country_event = { id = gophira.1 }
+		}
 	}
 }
 
