@@ -8,4 +8,119 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = gophira_court
+				value = 7
+			}
+			country_event = {
+				id = gophira.2
+				days = 1520
+			}
+		}
+	}
+
+	option = {
+		name = gophira.1.1
+		gophira_var_effect = {  operation = subtract value = 1 }
+		define_advisor = {
+			type = statesman
+			skill = 1
+			name = "Pandi"
+			location = 2530
+			discount = yes
+		}
+		change_heir_dip = 1
+	}
+
+	option = {
+		name = gophira.1.2
+		gophira_var_effect = {  operation = change value = 1 }
+		define_advisor = {
+			type = statesman
+			skill = 1
+			name = "Pandi"
+			location = 2530
+			discount = yes
+		}
+		change_heir_adm = 1
+	}
 }
+
+country_event = {
+	id = gophira.2
+	title = gophira.2.t
+	desc = gophira.2.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+	trigger = {	has_heir_flag = gophira_heir }
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = gophira.3
+				days = 2920
+			}
+		}
+	}
+
+	option = {
+		name = gophira.2.1
+		gophira_var_effect = {  operation = subtract value = 1 }
+		if = { 
+			limit = { 
+				NOT = { heir_dip = 6 }
+			}
+			change_heir_dip = 1
+		}
+		else = { add_dip_power = 100 }
+		if = { 
+			limit = {
+				NOT = { heir_mil = 6 }
+			}
+			change_heir_mil = 1
+		}
+		else = { add_mil_power = 100 }
+		add_heir_personality = free_thinker_personality
+	}
+
+	option = {
+		name = gophira.2.2
+		gophira_var_effect = {  operation = change value = 1 }
+		if = { 
+			limit = { 
+				NOT = { heir_adm = 6 }
+			}
+			change_heir_adm = 1
+		}
+		else = { add_adm_power = 100 }
+		if = { 
+			limit = {
+				NOT = { heir_dip = 6 }
+			}
+			change_heir_dip = 1
+		}
+		else = { add_dip_power = 100 }
+		add_heir_personality = bold_fighter_personality
+	}
+}
+
+country_event = {
+	id = gophira.3
+	title = gophira.3.t
+	desc = gophira.3.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+	trigger = {	
+		has_heir_flag = gophira_heir
+		has_consort_flag = gophira_queen
+		has_consort_regency = yes
+	}
+
+	option = {
+		name = gophira.3.1
+		
+	}
