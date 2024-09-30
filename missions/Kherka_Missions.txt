@@ -3,7 +3,15 @@ G48_slot_1 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G48 } 
+	potential = { 
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			} 
+		}
+	} 
 
 	G48_learning_from_the_best = {
 		icon = ven_navy_mission_2
@@ -45,7 +53,15 @@ G48_slot_2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G48 } 
+	potential = { 
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			} 
+		}
+	}  
 
 	G48_enemies_at_the_gate = {
 		icon = fortify_the_passes
@@ -98,7 +114,15 @@ G48_slot_3 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G48 } 
+	potential = { 
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			} 
+		}
+	}  
 
 	G48_gaining_an_edge = {
 		icon = mission_vedic_education
@@ -155,7 +179,15 @@ G48_slot_4 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G48 } 
+	potential = { 
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			} 
+		}
+	}  
 
 	G48_our_lifeblood = {
 		icon = mission_african_gold
@@ -223,7 +255,15 @@ G48_slot_5 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G48 } 
+	potential = { 
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			} 
+		}
+	}  
 
 	G48_the_mountain_that_gives = {
 		icon = prosper_in_piedmont
