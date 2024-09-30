@@ -154,7 +154,7 @@ from_beyond = {
 
 	effect = {
 		custom_tooltip = from_beyond_effect_tt
-		hidden_effect = { hidden_effect = { capital_scope = { add_province_triggered_modifier = devouring_path_from_beyond_randomization_ptm } } }
+		hidden_effect = { country_event = { id = spirits.607 } }
 	}
 
 	modifier = { global_monthly_devastation = 0.1 }
@@ -215,7 +215,7 @@ to_devour_chi = {
 						set_country_flag = devouring_powerful_mage_unlocked
 					}
 					1 = {
-						trigger = { NOT = { tag = Y01 has_country_flag = devouring_skill_increase_unlocked } }
+						trigger = { NOT = { has_country_flag = devouring_skill_increase_unlocked } }
 						set_country_flag = devouring_skill_increase_unlocked
 					}
 				}

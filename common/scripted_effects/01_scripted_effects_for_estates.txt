@@ -1704,6 +1704,16 @@ on_province_religion_converted_estate_privileges_effect = {
 	#}
 	if = {
 		limit = {
+			owner = { has_estate_privilege = estate_church_the_devils_logic }
+			OR = {
+				religion = righteous_path
+				religion = mystic_accord
+			}
+		}
+		change_religion = devouring_path
+	}
+	if = {
+		limit = {
 			owner = {
 				has_country_flag = gets_manpower_from_tax_buildings
 			}
@@ -2372,6 +2382,16 @@ on_province_owner_change_estate_privileges_effect = {
 				duration = -1
 			}
 		}
+	}
+	else_if = {
+		limit = {
+			owner = { has_estate_privilege = estate_church_the_devils_logic }
+			OR = {
+				religion = righteous_path
+				religion = mystic_accord
+			}
+		}
+		change_religion = devouring_path
 	}
 	#if = {
 	#	limit = {

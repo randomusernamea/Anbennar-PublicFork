@@ -3163,26 +3163,6 @@ beikdugang_rev_sub = {
 #	}
 #}
 
-devouring_path_from_beyond_randomization_ptm = {
-	potential = { always = yes }
-	hidden = yes
-	trigger = { always = yes }
-
-	on_activation = {
-		owner = {
-			random_owned_province = {
-				limit = { NOT = { trade_goods = damestear } }
-				add_base_tax = -3
-				add_base_production = -3
-				add_base_manpower = -3
-				add_devastation = 20
-				change_trade_goods = damestear
-			}
-		}
-		remove_province_triggered_modifier = devouring_path_from_beyond_randomization_ptm
-	}
-}
-
 birsartanses_25_year_plan_mod = {
     potential = {
 		owner = {

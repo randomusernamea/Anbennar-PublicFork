@@ -11738,6 +11738,30 @@ country_event = { #Temple Corruption unlock event, for flavor + to explain the m
 	}
 }
 
+country_event = { #From Beyond event -- for same-day randomization
+	id = spirits.607
+	title = spirits.607.t
+	desc = spirits.607.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = spirits.607.a
+		ai_chance = { factor = 1 }
+
+		random_owned_province = {
+			limit = { NOT = { trade_goods = damestear } }
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_devastation = 20
+			change_trade_goods = damestear
+		}
+	}
+}
+
 
 
 ####################################
