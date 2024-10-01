@@ -2218,5 +2218,446 @@ country_event = {
             add_permanent_claim = ROOT
 		}
 	}
+}
 
+#Dwarves Arrive
+country_event = {
+	id = flavor_stalbor.33
+	title = flavor_stalbor.33.t
+	desc = flavor_stalbor.33.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_1
+	}
+	
+	option = {	
+		name = "flavor_stalbor.33.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_dwarven_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_dwarven_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_dwarven_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Elves Arrive
+country_event = {
+	id = flavor_stalbor.34
+	title = flavor_stalbor.34.t
+	desc = flavor_stalbor.34.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_1
+	}
+	
+	option = {	
+		name = "flavor_stalbor.34.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_elven_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_elven_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_elven_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Elves Arrive
+country_event = {
+	id = flavor_stalbor.35
+	title = flavor_stalbor.35.t
+	desc = flavor_stalbor.35.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_1
+	}
+	
+	option = {	
+		name = "flavor_stalbor.35.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_gnomish_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_gnomish_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_gnomish_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Halfling Arrive
+country_event = {
+	id = flavor_stalbor.36
+	title = flavor_stalbor.36.t
+	desc = flavor_stalbor.36.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_1
+	}
+	
+	option = {	
+		name = "flavor_stalbor.36.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_halfling_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_halfling_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_halfling_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Gnoll Arrive
+country_event = {
+	id = flavor_stalbor.37
+	title = flavor_stalbor.37.t
+	desc = flavor_stalbor.37.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_2
+	}
+	
+	option = {	
+		name = "flavor_stalbor.37.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_gnollish_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_gnollish_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_gnollish_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Harpies Arrive
+country_event = {
+	id = flavor_stalbor.38
+	title = flavor_stalbor.38.t
+	desc = flavor_stalbor.38.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_2
+	}
+	
+	option = {	
+		name = "flavor_stalbor.38.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_harpy_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_harpy_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_harpy_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Kobolds Arrive
+country_event = {
+	id = flavor_stalbor.39
+	title = flavor_stalbor.39.t
+	desc = flavor_stalbor.39.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_2
+	}
+	
+	option = {	
+		name = "flavor_stalbor.39.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_kobold_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_kobold_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_kobold_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Trolls Arrive
+country_event = {
+	id = flavor_stalbor.40
+	title = flavor_stalbor.40.t
+	desc = flavor_stalbor.40.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_2
+	}
+	
+	option = {	
+		name = "flavor_stalbor.40.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_troll_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_troll_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_troll_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Centaurs Arrive
+country_event = {
+	id = flavor_stalbor.41
+	title = flavor_stalbor.41.t
+	desc = flavor_stalbor.41.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_centaur_minority_trigger = yes
+            	has_centaur_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.41.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_centaur_minority_size_effect = yes
+			add_devastation = -100
+			add_prosperity = 50
+		}
+		random_owned_province = {
+			add_centaur_minority_size_effect = yes
+			add_random_development = 1
+			add_devastation = -100
+			add_prosperity = 50
+		}
+		random_owned_province = {
+			add_centaur_minority_size_effect = yes
+			add_random_development = 1
+			add_devastation = -100
+			add_prosperity = 50
+		}
+	}
+}
+
+#Haramari Arrive
+country_event = {
+	id = flavor_stalbor.42
+	title = flavor_stalbor.42.t
+	desc = flavor_stalbor.42.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_harimari_minority_trigger = yes
+            	has_harimari_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.42.a"
+		ai_chance = { factor = 100 }
+		change_government_reform_progress = 50
+		808 = {
+			add_harimari_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_harimari_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_harimari_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Lizardfolk Arrive
+country_event = {
+	id = flavor_stalbor.43
+	title = flavor_stalbor.43.t
+	desc = flavor_stalbor.43.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_lizardfolk_minority_trigger = yes
+            	has_lizardfolk_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.43.a"
+		ai_chance = { factor = 100 }
+		add_years_of_owned_provinces_production_income = {
+			years = 3
+			trigger = {
+				province_id = 808
+			}
+		}
+		808 = {
+			add_lizardfolk_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_lizardfolk_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_lizardfolk_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
+}
+
+#Ogre Arrive
+country_event = {
+	id = flavor_stalbor.44
+	title = flavor_stalbor.44.t
+	desc = flavor_stalbor.44.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_ogre_minority_trigger = yes
+            	has_ogre_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.44.a"
+		ai_chance = { factor = 100 }
+		808 = {
+			add_ogre_minority_size_effect = yes
+			add_random_development = 3
+		}
+		random_owned_province = {
+			add_ogre_minority_size_effect = yes
+			add_random_development = 3
+		}
+		random_owned_province = {
+			add_ogre_minority_size_effect = yes
+			add_random_development = 3
+		}
+	}
+}
+
+#Ruinborn Arrive
+country_event = {
+	id = flavor_stalbor.45
+	title = flavor_stalbor.45.t
+	desc = flavor_stalbor.45.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_ruinborn_minority_trigger = yes
+            	has_ruinborn_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.45.a"
+		ai_chance = { factor = 100 }
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		808 = {
+			add_ruinborn_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_ruinborn_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_ruinborn_minority_size_effect = yes
+			add_random_development = 1
+		}
+	}
 }
