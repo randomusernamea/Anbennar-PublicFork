@@ -6093,35 +6093,6 @@ on_bi_yearly_pulse_2 = {
 		1000 = 0
 	}
 
-	#Stalbor 1
-	random_events = {
-		100 = flavor_stalbor.33
-		100 = flavor_stalbor.34
-		100 = flavor_stalbor.35
-		100 = flavor_stalbor.36
-		100 = 0
-	}
-
-	#Stalbor 2
-	random_events = {
-		100 = flavor_stalbor.37
-		100 = flavor_stalbor.38
-		100 = flavor_stalbor.39
-		100 = flavor_stalbor.40
-		10 = 0
-	}
-
-	#Stalbor 3
-	random_events = {
-		100 = flavor_stalbor.41
-		100 = flavor_stalbor.42
-		100 = flavor_stalbor.43
-		100 = flavor_stalbor.44
-		100 = flavor_stalbor.45
-		100 = flavor_stalbor.46
-		10 = 0
-	}
-
 	#Long-lived Pulse
 	random_events = {
 		50 = anb_ruler.5
@@ -6468,6 +6439,32 @@ on_bi_yearly_pulse_4 = {
 			chance = 30
 			country_event = { id = orc_slavery.13 }
 		}
+	}
+
+	#Stalbor 1
+	random_events = {
+		100 = flavor_stalbor.33
+		100 = flavor_stalbor.34
+		100 = flavor_stalbor.35
+		100 = flavor_stalbor.36
+	}
+
+	#Stalbor 2
+	random_events = {
+		100 = flavor_stalbor.37
+		100 = flavor_stalbor.38
+		100 = flavor_stalbor.39
+		100 = flavor_stalbor.40
+	}
+
+	#Stalbor 3
+	random_events = {
+		100 = flavor_stalbor.41
+		100 = flavor_stalbor.42
+		100 = flavor_stalbor.43
+		100 = flavor_stalbor.44
+		100 = flavor_stalbor.45
+		100 = flavor_stalbor.46
 	}
 
 	#Birsartanses
