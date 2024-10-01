@@ -5,7 +5,7 @@ gophira_1 = {
 	has_country_shield = yes
 	potential = { tag = G74 } 
 
-	a_throne_for_the_queen = {
+	G74_a_throne_for_the_queen = {
 		icon = mission_a_crown
 		position = 1
 		provinces_to_highlight = {  } 
@@ -102,10 +102,10 @@ gophira_1_fren = {
 		has_country_flag = gophira_fren
 	}
 
-	tribes_chief = {
+	G74_tribes_chief = {
 		icon = mission_desert_rider
 		position = 2
-		required_missions = { a_throne_for_the_queen } 
+		required_missions = { G74_a_throne_for_the_queen } 
 		provinces_to_highlight = {  } 
 
 		trigger = {
@@ -164,12 +164,12 @@ gophira_1_fren = {
 		}
 	}
 
-	two_nations_one_army = {
+	G74_two_nations_one_army = {
 		icon = mission_unite_the_deccan
 		position = 3
 		required_missions = {
-			tribes_chief
-			our_weapons_their_riders
+			G74_tribes_chief
+			G74_our_weapons_their_riders
 		}
 		provinces_to_highlight = {  } 
 
@@ -199,10 +199,10 @@ gophira_1_fren = {
 		}
 	}
 
-	two_nations_one_territory = {
+	G74_two_nations_one_territory = {
 		icon = mission_secure_khandesh
 		position = 4
-		required_missions = { two_nations_one_army } 
+		required_missions = { G74_two_nations_one_army } 
 		provinces_to_highlight = {
 			OR = {
 				region = gauraddhi_region
@@ -274,7 +274,7 @@ gophira_1_fren = {
 			J72 = {
 				for = {
 					amount = 3
-					effect = 
+					effect = "
 						random_owned_province = {
 							limit = {
 								is_capital = no
@@ -282,12 +282,12 @@ gophira_1_fren = {
 							}
 							change_culture = yodhanpir
 						}
-					
+					"
 				}
 			}
 			for = {
 				amount = 3
-				effect = 
+				effect = "
 					random_owned_province = {
 						limit = {
 							is_capital = no
@@ -295,15 +295,15 @@ gophira_1_fren = {
 						}
 						change_culture = chendyan
 					}
-				
+				"
 			}
 		}
 	}
 
-	two_people_one_nation = {
+	G74_two_people_one_nation = {
 		icon = mission_aztec_city_alliance
 		position = 5
-		required_missions = { two_nations_one_territory } 
+		required_missions = { G74_two_nations_one_territory } 
 		provinces_to_highlight = {  } 
 
 		trigger = {
@@ -368,10 +368,10 @@ gophira_1_march = {
 		has_country_flag = gophira_march
 	}
 
-	control_the_relics = {
+	G74_control_the_relics = {
 		icon = mission_magy
 		position = 2
-		required_missions = { a_throne_for_the_queen } 
+		required_missions = { G74_a_throne_for_the_queen } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -379,12 +379,12 @@ gophira_1_march = {
 		effect = {  } 
 	}
 
-	first_line_of_offence = {
+	G74_first_line_of_offence = {
 		icon = per_recruit_the_qizilbash
 		position = 3
 		required_missions = {
-			control_the_relics
-			our_weapons_their_riders
+			G74_control_the_relics
+			G74_our_weapons_their_riders
 		}
 		provinces_to_highlight = {  } 
 
@@ -393,10 +393,10 @@ gophira_1_march = {
 		effect = {  } 
 	}
 
-	war_economy = {
+	G74_war_economy = {
 		icon = mission_conquer_bengal_tau
 		position = 4
-		required_missions = { first_line_of_offence } 
+		required_missions = { G74_first_line_of_offence } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -411,12 +411,12 @@ gophira_2 = {
 	has_country_shield = yes
 	potential = { tag = G74 } 
 
-	our_weapons_their_riders = {
+	G74_our_weapons_their_riders = {
 		icon = mission_the_tiger_triumphant
 		position = 2
 		required_missions = {
-			a_throne_for_the_queen
-			rekindle_the_forges
+			G74_a_throne_for_the_queen
+			G74_rekindle_the_forges
 		}
 		provinces_to_highlight = {  } 
 
@@ -432,7 +432,7 @@ gophira_3 = {
 	has_country_shield = yes
 	potential = { tag = G74 } 
 
-	rekindle_the_forges = {
+	G74_rekindle_the_forges = {
 		icon = mission_smith
 		position = 1
 		provinces_to_highlight = {  } 
@@ -442,10 +442,10 @@ gophira_3 = {
 		effect = {  } 
 	}
 
-	back_with_a_vengeance = {
+	G74_back_with_a_vengeance = {
 		icon = mission_kheionai_laskaris
 		position = 2
-		required_missions = { rekindle_the_forges } 
+		required_missions = { G74_rekindle_the_forges } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -453,10 +453,10 @@ gophira_3 = {
 		effect = {  } 
 	}
 
-	an_oath_twice_broken = {
+	G74_an_oath_twice_broken = {
 		icon = mission_taychend_nanru_nakar_city_entrance
 		position = 3
-		required_missions = { back_with_a_vengeance } 
+		required_missions = { G74_back_with_a_vengeance } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -464,10 +464,10 @@ gophira_3 = {
 		effect = {  } 
 	}
 
-	the_northern_pretender = {
+	G74_the_northern_pretender = {
 		icon = mission_the_ganges_campaign
 		position = 4
-		required_missions = { an_oath_twice_broken } 
+		required_missions = { G74_an_oath_twice_broken } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -480,14 +480,20 @@ gophira_cap = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		tag = G74
+		NOT = {
+			has_country_flag = gophira_fren
+			has_country_flag = gophira_march
+		}
+	}
 
-	third_and_eternal = {
+	G74_third_and_eternal = {
 		icon = a_real_roman_empire
 		position = 5
 		required_missions = {
-			the_norther_pretender
-			everybody_replaceable
+			G74_the_norther_pretender
+			G74_everybody_replaceable
 		}
 		provinces_to_highlight = {  } 
 
@@ -501,15 +507,18 @@ gophira_cap_fren = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		tag = G74
+		has_country_flag = gophira_fren
+	}
 
-	third_and_eternal_fren = {
+	G74_third_and_eternal_fren = {
 		icon = a_real_roman_empire
 		position = 5
 		required_missions = {
-			two_nations_one_territory
-			the_northern_pretender
-			everybody_replaceable
+			G74_two_nations_one_territory
+			G74_the_northern_pretender
+			G74_everybody_replaceable
 		}
 		provinces_to_highlight = {  } 
 
@@ -523,15 +532,18 @@ gophira_cap_march = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		tag = G74
+		has_country_flag = gophira_march
+	}
 
-	third_and_eternal_march = {
+	G74_third_and_eternal_march = {
 		icon = a_real_roman_empire
 		position = 5
 		required_missions = {
-			war_economy
-			the_northern_pretender
-			everybody_replaceable
+			G74_war_economy
+			G74_the_northern_pretender
+			G74_everybody_replaceable
 		}
 		provinces_to_highlight = {  } 
 
@@ -547,7 +559,7 @@ gophira_4 = {
 	has_country_shield = yes
 	potential = { tag = G74 } 
 
-	a_relic_for_the_fort = {
+	G74_a_relic_for_the_fort = {
 		icon = mission_magisterium_fold_one
 		position = 2
 		provinces_to_highlight = {  } 
@@ -557,10 +569,10 @@ gophira_4 = {
 		effect = {  } 
 	}
 
-	the_great_kannalulthe = {
+	G74_the_great_kannalulthe = {
 		icon = mission_defeat_jaunpur
 		position = 3
-		required_missions = { a_relic_for_the_fort } 
+		required_missions = { G74_a_relic_for_the_fort } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -568,10 +580,10 @@ gophira_4 = {
 		effect = {  } 
 	}
 
-	everybody_replaceable = {
+	G74_everybody_replaceable = {
 		icon = mission_divine_legion
 		position = 4
-		required_missions = { a_question_of_loyalty } 
+		required_missions = { G74_a_question_of_loyalty } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -586,38 +598,192 @@ gophira_5 = {
 	has_country_shield = yes
 	potential = { tag = G74 } 
 
-	lean_on_the_warlords = {
+	G74_lean_on_the_warlords = {
 		icon = mission_noble_council
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			grown_by_states = 1
+			estate_territory = {
+				estate = estate_nobles
+				territory = 40
+			}
+			has_estate_priviledge = estate_nobles_advisors
+		}
 
-		effect = {  } 
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			create_general = { tradition = 50 } 
+			add_country_modifier = {
+				name = gophira_warlords_mod
+				duration = -1
+			}
+			set_country_flag = gophira_bad_events
+		}
 	}
 
-	train_them_to_perfection = {
+	G74_train_them_to_perfection = {
 		icon = swiss_mercenaries
 		position = 2
 		required_missions = {
-			lean_on_the_warlords
-			rekindle_the_forges
+			G74_lean_on_the_warlords
+			G74_rekindle_the_forges
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				num_of_regiments_at_full_drill = 10
+				num_of_battles = { amount = 30 }
+			}
+			num_of_wars = { value = 5 } 
+		}
 
-		effect = {  } 
+		effect = {
+			add_country_modifier = {
+				name = gophira_army_mod
+				duration = -1
+			}
+			if = {
+				limit = { num_of_regiments_at_full_drill = 10 }
+				add_army_professionalism = 0.05
+			}
+			set_country_flag = gophira_state_firearm #for early unlock of vanilla decision, remember to change it!
+		}
 	}
 
-	a_question_of_loyalty = {
+	G74_a_question_of_loyalty = {
 		icon = mission_have_two_subjects
 		position = 3
-		required_missions = { train_them_to_perfection } 
+		required_missions = { G74_train_them_to_perfection } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {	
+				has_personal_deity = taychend_glory_4
+				has_personal_deity = taychend_glory_5
+			}
+			OR = {
+				AND = {
+					OR = {
+						employed_advisor = { type = spymaster }
+						employed_advisor = { type = inquisitor }
+						employed_advisor = { skill = 2 }
+					}
+					num_of_owned_provinces_with = {
+						value = 5
+						has_building = regimental_camp
+						base_manpower = 7
+					}
+				}
+				AND = {
+					OR = {
+						employed_advisor = { type = statesman }
+						employed_advisor = { type = recruitmaster }
+						employed_advisor = { skill = 2 }
+					}
+					num_of_owned_provinces_with = {
+						value = 8
+						has_building = barracks
+						base_manpower = 5
+					}
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			gophira_lower_bad_events_effect = yes
+			if = {
+				limit = {
+					OR = {
+						employed_advisor = { type = spymaster }
+						employed_advisor = { type = inquisitor }
+						employed_advisor = { skill = 2 }
+					}
+					num_of_owned_provinces_with = {
+						value = 5
+						has_building = regimental_camp
+						base_manpower = 7
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							OR = {
+								employed_advisor = { type = statesman }
+								employed_advisor = { type = recruitmaster }
+								employed_advisor = { skill = 2 }
+							}
+							num_of_owned_provinces_with = {
+								value = 8
+								has_building = barracks
+								base_manpower = 5
+							}
+						}
+					}
+					custom_tooltip = gophira_king_lean_wife_tt
+				}
+				if = {
+					limit = {
+						NOT = {
+							employed_advisor = { type = spymaster }
+							employed_advisor = { type = inquisitor }
+						}
+					}
+					custom_tooltip = gophira_generic_advisor_tt
+					add_corruption = 2
+				}
+				add_country_modifier = {
+					name = gophira_king_see_all_mod
+					duration = 7200
+				}
+				every_owned_province = {
+					limit = {
+						has_building = regimental_camp
+						base_manpower = 7
+					}
+					infantry = ROOT
+				}
+				gophira_var_effect = { operation = subtract value = 2 }
+				gophira_heir_effect = { pow = mil amount = 1 }
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {
+							employed_advisor = { type = recruitmaster }
+							employed_advisor = { type = statesman }
+						}
+					}
+					custom_tooltip = gophira_generic_advisor_tt
+					for = {
+						amount = 5
+						effect = "
+							random_owned_province = {
+								limit = { NOT = { is_in_capital_area = yes } }
+								add_local_autonomy = 25
+							}	
+						"
+					}
+				}
+				add_country_modifier = {
+					name = gophira_king_benevolence_mod
+					duration = 7200
+				}
+				every_owned_province = {
+					limit = {
+						has_building = barracks
+						base_manpower = 5
+					}
+					add_nationalism = -1
+				}
+				gophira_var_effect = { operation = change value = 2 }
+				gophira_heir_effect = { pow = adm amount = 1 }
+			}
+		} 
 	}
 }
