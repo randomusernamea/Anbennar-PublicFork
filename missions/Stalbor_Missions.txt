@@ -364,6 +364,14 @@ B47_stalbor_column_1 = {
                     owned_by = ROOT
                     owned_by_subject_of = ROOT
                 }
+                NOT = {
+                    AND = {
+                        development = 20
+                        has_manpower_building_trigger = yes
+                        has_forcelimit_building_trigger = yes
+                        has_manufactory_trigger = yes
+                    }
+                }
             }
         }
 
@@ -413,7 +421,18 @@ B47_stalbor_column_2 = {
 		}
 
         provinces_to_highlight = {
-			trade_goods = livestock
+			AND = {
+                trade_goods = livestock
+                OR = {
+                    NOT = { owned_by = ROOT }
+                    NOT = {
+                        AND = {
+                            development = 10
+                            has_production_building_trigger = yes
+                        }
+                    }
+                }
+            }
 		}
 
         trigger = {
@@ -560,7 +579,18 @@ B47_stalbor_column_2 = {
                     region = ourdia_region
                     NOT = { owned_by = ROOT }
                 }
-                province_id = 510
+                AND = {
+                    province_id = 510
+                    NOT = {
+                        has_shipyard_building_trigger = yes
+                        has_dock_building_trigger = yes
+                        province_has_current_tech_fort_trigger = yes
+                        has_great_project = {
+                            type = bal_ouord
+                            tier = 1
+                        }
+                    }
+                }
             }
 		}
 
@@ -633,7 +663,14 @@ B47_stalbor_column_2 = {
 			OR = {
                 province_id = 510
                 province_id = 441
-                province_id = 817
+                AND = {
+                    province_id = 817
+                    NOT = {
+                        development = 40
+                        province_has_current_tech_fort_trigger = yes
+                        has_building = ramparts
+                    }
+                }
             }
 		}
 
@@ -651,9 +688,9 @@ B47_stalbor_column_2 = {
                 }
             }
             817 = {
+                development = 40
                 province_has_current_tech_fort_trigger = yes
                 has_building = ramparts
-                development = 40
             }
             custom_trigger_tooltip = {
                 tooltip = B47_corveld_restored
@@ -1141,7 +1178,10 @@ B47_stalbor_column_3 = {
                     area = blademarch_area
                     NOT = { owned_by = ROOT }
                 }
-                province_id = 817
+                AND = {
+                    province_id = 817
+                    NOT = { province_has_current_tech_fort_trigger = yes }
+                }
             }
 		}
 
@@ -1152,7 +1192,7 @@ B47_stalbor_column_3 = {
                 is_core = ROOT
             }
             manpower = 5
-            817 = { has_fort_building_trigger = yes }
+            817 = { province_has_current_tech_fort_trigger = yes }
         }
 
         effect = {
@@ -1186,16 +1226,8 @@ B47_stalbor_column_3 = {
         provinces_to_highlight = {
 			OR = {
                 AND = {
-                    owner = {
-                        capital_scope = {
-                            OR = {
-                                region = south_castanor_region
-                                region = inner_castanor_region
-                                region = west_castanor_region
-                            }
-                        }
-                    }
-                    is_capital = yes
+                    owned_by = ROOT
+                    NOT = { has_manpower_building_trigger = yes }
                 }
                 AND = {
                     area = themin_area
@@ -1208,6 +1240,33 @@ B47_stalbor_column_3 = {
                 AND = {
                     area = burnoll_area
                     NOT = { owned_by = ROOT }
+                }
+                AND = {
+                    owner = {
+                        NOT = {
+                            has_spy_network_from = {
+                                who = ROOT
+                                value = 20
+                            }
+                        }
+                    }
+                    region = south_castanor_region
+                    is_capital = yes
+                }
+                AND = {
+                    owner = {
+                        NOT = {
+                            has_opinion = {
+                                who = ROOT
+                                value = 200
+                            }
+                        }
+                    }
+                    OR = {
+                        region = inner_castanor_region
+                        region = west_castanor_region
+                    }
+                    is_capital = yes
                 }
             }
 		}
@@ -1301,7 +1360,13 @@ B47_stalbor_column_3 = {
                     area = oudmerewood_area
                     NOT = { owned_by = ROOT }
                 }
-                province_id = 793
+                AND = {
+                    province_id = 793
+                    NOT = {
+                        province_has_current_tech_fort_trigger = yes
+                        has_manpower_building_trigger = yes
+                    }
+                }
             }
 		}
 
@@ -1383,6 +1448,10 @@ B47_stalbor_column_3 = {
                 AND = {
                     region = daravans_folly_region
                     has_port = yes
+                    NOT = {
+                        has_shipyard_building_trigger = yes
+                        has_dock_building_trigger = yes
+                    }
                 }
             }
 		}
@@ -1483,8 +1552,20 @@ B47_stalbor_column_4 = {
                     area = marrhold_area
                     NOT = { owned_by = ROOT }
                 }
-                province_id = 888
-                province_id = 4097
+                AND = {
+                    province_id = 888
+                    NOT = {
+                        has_manpower_building_trigger = yes
+                        province_has_current_tech_fort_trigger = yes
+                    }
+                }
+                AND = {
+                    province_id = 4097
+                    NOT = {
+                        has_manpower_building_trigger = yes
+                        province_has_current_tech_fort_trigger = yes
+                    }
+                }
             }
 		}
 
@@ -1579,7 +1660,13 @@ B47_stalbor_column_4 = {
 		}
 
         provinces_to_highlight = {
-			province_id = 4097
+			OR = {
+                owned_by = B36
+                AND = {
+                    province_id = 4097
+                    NOT = { development = 30 }
+                }
+            }
 		}
 
         trigger = {
@@ -1868,8 +1955,20 @@ B47_stalbor_column_4 = {
 
         provinces_to_highlight = {
 			OR = {
-                province_id = 800
-                province_id = 808
+                AND = {
+                    province_id = 800
+                    NOT = {
+                        development = 30
+                        has_manufactory_trigger = yes
+                    }
+                }
+                AND = {
+                    province_id = 808
+                    NOT = {
+                        development = 30
+                        has_manufactory_trigger = yes
+                    }
+                }
                 AND = {
                     area = castonath_area
                     NOT = { owned_by = ROOT }
@@ -1905,7 +2004,7 @@ B47_stalbor_column_4 = {
 
         effect = {
             country_event = {
-                id = flavor_stalbor.12
+                id = flavor_stalbor.32
 			    days = 1
             }
         }
@@ -2567,8 +2666,24 @@ B47_stalbor_column_5 = {
 
         provinces_to_highlight = {
 			OR = {
-                province_id = 800
-                province_id = 808
+                AND = {
+                    province_id = 800
+                    NOT = {
+                        development = 10
+                        has_tax_building_trigger = yes
+                        has_production_building_trigger = yes
+                        has_manpower_building_trigger = yes
+                    }
+                }
+                AND = {
+                    province_id = 808
+                    NOT = {
+                        development = 10
+                        has_tax_building_trigger = yes
+                        has_production_building_trigger = yes
+                        has_manpower_building_trigger = yes
+                    }
+                }
             }
 		}
 
@@ -2622,12 +2737,14 @@ B47_stalbor_column_5 = {
                         has_country_modifier = goblin_administration
                     }
                     is_capital = yes
+                    ROOT = { NOT = { high_tolerance_goblin_race_trigger = yes } }
                 }
                 AND = {
                     owner = {
                         has_country_modifier = orcish_administration
                     }
                     is_capital = yes
+                    ROOT = { NOT = { high_tolerance_orcish_race_trigger = yes } }
                 }
             }
 		}
@@ -2726,17 +2843,27 @@ B47_stalbor_column_5 = {
 		}
 
         provinces_to_highlight = {
-			AND = {
-                OR = {
-                    has_orcish_minority_trigger = yes
-                    has_half_orcish_majority_trigger = yes
-                    has_half_orcish_minority_trigger = yes
-                    has_goblin_majority_trigger = yes
-                    has_goblin_minority_trigger = yes
+			OR = {
+                AND = {
+                    province_id = 808
+                    has_province_modifier = arturos_watch_chapter
                 }
-                NOT = { development = 7 }
-                devastation = 1
-                owned_by = ROOT
+                AND = {
+                    NOT = { religion = ROOT }
+                    ROOT = { NOT = { religious_unity = 0.90 } }
+                }
+                AND = {
+                    OR = {
+                        has_orcish_minority_trigger = yes
+                        has_half_orcish_majority_trigger = yes
+                        has_half_orcish_minority_trigger = yes
+                        has_goblin_majority_trigger = yes
+                        has_goblin_minority_trigger = yes
+                    }
+                    NOT = { development = 7 }
+                    devastation = 1
+                    owned_by = ROOT
+                }
             }
 		}
 

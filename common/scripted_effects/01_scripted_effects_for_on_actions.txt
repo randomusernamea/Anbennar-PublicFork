@@ -9703,17 +9703,18 @@ on_province_owner_change_effect = {
 			owner = {
 				has_country_flag = B47_vampire_lords_on_the_run
 			}
-			random = {
-				chance = 50
-				spawn_rebels = {
-					type = vampires_thralls
-					size = 1
-				}
+			region = dostanor_region
+		}
+		random = {
+			chance = 50
+			spawn_rebels = {
+				type = vampires_thralls
+				size = 1
 			}
-			add_province_modifier = {
-				name = B47_old_lord_loyalists
-				duration = -1
-			}
+		}
+		add_province_modifier = {
+			name = B47_old_lord_loyalists
+			duration = -1
 		}
 	}
 }
