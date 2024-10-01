@@ -69,40 +69,16 @@ country_event = {
 	option = {
 		name = gophira.2.1
 		gophira_var_effect = {  operation = subtract value = 1 }
-		if = { 
-			limit = { 
-				NOT = { heir_dip = 6 }
-			}
-			change_heir_dip = 1
-		}
-		else = { add_dip_power = 100 }
-		if = { 
-			limit = {
-				NOT = { heir_mil = 6 }
-			}
-			change_heir_mil = 1
-		}
-		else = { add_mil_power = 100 }
+		gophira_heir_effect = {	pow = dip amount = 1 }
+		gophira_heir_effect = {	pow = mil amount = 1 }
 		add_heir_personality = free_thinker_personality
 	}
 
 	option = {
 		name = gophira.2.2
 		gophira_var_effect = {  operation = change value = 1 }
-		if = { 
-			limit = { 
-				NOT = { heir_adm = 6 }
-			}
-			change_heir_adm = 1
-		}
-		else = { add_adm_power = 100 }
-		if = { 
-			limit = {
-				NOT = { heir_dip = 6 }
-			}
-			change_heir_dip = 1
-		}
-		else = { add_dip_power = 100 }
+		gophira_heir_effect = {	pow = adm amount = 1 }
+		gophira_heir_effect = {	pow = dip amount = 1 }
 		add_heir_personality = bold_fighter_personality
 	}
 }
@@ -116,11 +92,115 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {	
 		has_heir_flag = gophira_heir
-		has_consort_flag = gophira_queen
+		has_consort_flag = gophira_wife
 		has_consort_regency = yes
 	}
 
 	option = {
 		name = gophira.3.1
-		
+		extend_regency = 5
+		add_heir_claim = -15
+		gophira_var_effect = {  operation = subtract value = 3 }
 	}
+
+	option = {
+		name = gophira.3.2
+		J72 = {
+			add_opinion = {
+				who = ROOT
+				modifier = insulted
+			}
+			add_trust = {
+				who = ROOT
+				value = -10
+				mutual = yes
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				heir_adm = 5
+				heir_dip = 5
+				heir_mil = 5
+			}
+		}
+		exile_consort_as = gophira_exiled_queen
+		J72 = {	kill_ruler = yes }
+	}
+}
+
+country_event = {
+	id = gophira.4
+	title = gophira.4.t
+	desc = gophira.4.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			J72 = {
+				force_remove_rival = ROOT
+				if = {
+					limit = { is_subject = yes }
+					overlord = { free_vassal = PREV }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = gophira.4.1
+		J72 = {
+			create_alliance = ROOT
+			add_historical_friend = ROOT
+			sarihaddu_area = { add_permanent_claim = PREV }
+			1785 = { add_permanent_claim = PREV }
+			add_trust = {
+				who = ROOT
+				value = 10
+			}
+		}
+		set_country_flag = gophira_fren
+		add_historical_friend = J72
+		add_favors = {
+			who = J72
+			amount = 20
+		}
+		gophira_var_effect = { operation = subtract value = 3}
+		gophira_heir_effect = {	pow = dip amount = 2 }
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		create_march = J72
+		if = { 
+			limit = { has_saved_event_target = pay_ae }
+			every_known_country = {
+				limit = {
+					capital_scope = { superregion = taychend_superregion }
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+					multiplier = 5
+				}
+			}
+		}
+		J72 = {
+			add_trust = {
+				who = ROOT
+				value = -5
+			}
+		}
+		set_country_flag = gophira_march
+		hidden_effect = { remove_queen_personality = malevolent_personality }
+		add_queen_personality = infertile_personality
+		gophira_var_effect = { operation = change value = 3 }
+		gophira_heir_effect = {	pow = adm amount = 1 }
+		gophira_heir_effect = {	pow = mil amount = 1 }
+		swap_non_generic_missions = yes
+	}
+}

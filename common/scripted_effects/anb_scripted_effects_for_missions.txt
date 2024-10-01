@@ -17507,3 +17507,16 @@ gophira_var_effect = {
 		}
 	}
 }
+
+gophira_heir_effect = {
+	if = {
+		limit = { has_heir_flag = gophira_heir }
+		if = {
+			limit = { 
+				NOT = { has_heir_$pow$ = 6 }
+			}
+			change_heir_$pow$ = $amount$
+		}
+		else = { add_$pow$_power = $amount$00 }
+	}
+}

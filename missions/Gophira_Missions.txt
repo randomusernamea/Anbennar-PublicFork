@@ -29,10 +29,11 @@ gophira_1 = {
 				if = {
 					limit = { J72 = { exists = yes }  } 
 					white_peace = J72
+					save_event_target_as = pay_ae
 				}
 				else = { release = J72 } 
 			}
-			country_event = { id = flavour_gophira.4 } 
+			country_event = { id = gophira.4 } 
 			J72 = {
 				tooltip = {
 					define_ruler = {
@@ -154,10 +155,11 @@ gophira_1_fren = {
 					who = ROOT
 					amount = -20
 				}
+				gauraddhi_region = { add_permanent_claim = PREV } 
 			}
-			if = {
-				limit = { has_heir_flag = gophira_heir } 
-				change_heir_adm = 1
+			gophira_heir_effect = {
+				pow = adm
+				amount = 1
 			}
 		}
 	}
@@ -183,7 +185,7 @@ gophira_1_fren = {
 				tooltip = gophira_war_fought_tt
 				check_variable = {
 					which = gophira_war_fought_with_dark
-					value = 10
+					value = 6
 				}
 			}
 		}
@@ -272,7 +274,7 @@ gophira_1_fren = {
 			J72 = {
 				for = {
 					amount = 3
-					effect = "
+					effect = 
 						random_owned_province = {
 							limit = {
 								is_capital = no
@@ -280,12 +282,12 @@ gophira_1_fren = {
 							}
 							change_culture = yodhanpir
 						}
-					"
+					
 				}
 			}
 			for = {
 				amount = 3
-				effect = "
+				effect = 
 					random_owned_province = {
 						limit = {
 							is_capital = no
@@ -293,7 +295,7 @@ gophira_1_fren = {
 						}
 						change_culture = chendyan
 					}
-				"
+				
 			}
 		}
 	}
@@ -356,15 +358,15 @@ gophira_1_fren = {
 		}
 	}
 }
-gophira_march = {
+gophira_1_march = {
 	slot = 1
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		tag = G74
 		has_country_flag = gophira_march
-	} 
+	}
 
 	control_the_relics = {
 		icon = mission_magy
@@ -472,15 +474,64 @@ gophira_3 = {
 
 		effect = {  } 
 	}
+}
+gophira_cap = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
 
 	third_and_eternal = {
 		icon = a_real_roman_empire
 		position = 5
 		required_missions = {
-			the_northern_pretender
-			two_nations_one_territory
+			the_norther_pretender
 			everybody_replaceable
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_cap_fren = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	third_and_eternal_fren = {
+		icon = a_real_roman_empire
+		position = 5
+		required_missions = {
+			two_nations_one_territory
+			the_northern_pretender
+			everybody_replaceable
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gophira_cap_march = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = G74 } 
+
+	third_and_eternal_march = {
+		icon = a_real_roman_empire
+		position = 5
+		required_missions = {
 			war_economy
+			the_northern_pretender
+			everybody_replaceable
 		}
 		provinces_to_highlight = {  } 
 
