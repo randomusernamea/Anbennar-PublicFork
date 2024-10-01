@@ -5595,6 +5595,7 @@ on_bi_yearly_pulse = {
 		diggy.406 #dwarovar-marrhold tunnel maintenance
 		flavour_ordstun.99 #arg-ordstun roughness manager
 		rahen.99 #Suhanic Reformation event manager
+		flavor_stalbor.47 #Stalbor New Arrival Events
 	}
 	if = { limit = { ruler_can_revive = yes } save_ruler_stats = yes }
 	if = { limit = { capital = 4411 has_government_attribute = is_raja } country_event = { id = rahenraj.2000 days = 365 } }
@@ -6092,20 +6093,33 @@ on_bi_yearly_pulse_2 = {
 		1000 = 0
 	}
 
-	random_event = {
+	#Stalbor 1
+	random_events = {
 		100 = flavor_stalbor.33
 		100 = flavor_stalbor.34
 		100 = flavor_stalbor.35
 		100 = flavor_stalbor.36
+		100 = 0
+	}
+
+	#Stalbor 2
+	random_events = {
 		100 = flavor_stalbor.37
 		100 = flavor_stalbor.38
 		100 = flavor_stalbor.39
 		100 = flavor_stalbor.40
+		10 = 0
+	}
+
+	#Stalbor 3
+	random_events = {
 		100 = flavor_stalbor.41
 		100 = flavor_stalbor.42
 		100 = flavor_stalbor.43
 		100 = flavor_stalbor.44
 		100 = flavor_stalbor.45
+		100 = flavor_stalbor.46
+		10 = 0
 	}
 
 	#Long-lived Pulse

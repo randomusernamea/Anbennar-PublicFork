@@ -2227,10 +2227,10 @@ country_event = {
 	desc = flavor_stalbor.33.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_1
+		NOT = { has_country_flag = B47_arrived_1 }
 	}
 	
 	option = {	
@@ -2247,6 +2247,7 @@ country_event = {
 			add_dwarven_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_1
 	}
 }
 
@@ -2257,10 +2258,10 @@ country_event = {
 	desc = flavor_stalbor.34.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_1
+		NOT = { has_country_flag = B47_arrived_2 }
 	}
 	
 	option = {	
@@ -2277,20 +2278,21 @@ country_event = {
 			add_elven_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_2
 	}
 }
 
-#Elves Arrive
+#Gnomes Arrive
 country_event = {
 	id = flavor_stalbor.35
 	title = flavor_stalbor.35.t
 	desc = flavor_stalbor.35.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_1
+		NOT = { has_country_flag = B47_arrived_3 }
 	}
 	
 	option = {	
@@ -2307,6 +2309,7 @@ country_event = {
 			add_gnomish_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_3
 	}
 }
 
@@ -2317,10 +2320,10 @@ country_event = {
 	desc = flavor_stalbor.36.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_1
+		NOT = { has_country_flag = B47_arrived_4 }
 	}
 	
 	option = {	
@@ -2337,6 +2340,7 @@ country_event = {
 			add_halfling_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_4
 	}
 }
 
@@ -2347,10 +2351,10 @@ country_event = {
 	desc = flavor_stalbor.37.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_2
+		NOT = { has_country_flag = B47_arrived_5 }
 	}
 	
 	option = {	
@@ -2367,6 +2371,7 @@ country_event = {
 			add_gnollish_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_5
 	}
 }
 
@@ -2377,10 +2382,10 @@ country_event = {
 	desc = flavor_stalbor.38.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_2
+		NOT = { has_country_flag = B47_arrived_6 }
 	}
 	
 	option = {	
@@ -2397,6 +2402,7 @@ country_event = {
 			add_harpy_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_6
 	}
 }
 
@@ -2407,10 +2413,10 @@ country_event = {
 	desc = flavor_stalbor.39.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_2
+		NOT = { has_country_flag = B47_arrived_7 }
 	}
 	
 	option = {	
@@ -2427,6 +2433,7 @@ country_event = {
 			add_kobold_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_7
 	}
 }
 
@@ -2437,10 +2444,10 @@ country_event = {
 	desc = flavor_stalbor.40.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_2
+		NOT = { has_country_flag = B47_arrived_8 }
 	}
 	
 	option = {	
@@ -2457,6 +2464,7 @@ country_event = {
 			add_troll_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_8
 	}
 }
 
@@ -2467,10 +2475,10 @@ country_event = {
 	desc = flavor_stalbor.41.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_9 }
 		any_province = {
 			has_discovered = ROOT
 			OR = {
@@ -2500,6 +2508,7 @@ country_event = {
 			add_devastation = -100
 			add_prosperity = 50
 		}
+		set_country_flag = B47_arrived_9
 	}
 }
 
@@ -2510,10 +2519,10 @@ country_event = {
 	desc = flavor_stalbor.42.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_10 }
 		any_province = {
 			has_discovered = ROOT
 			OR = {
@@ -2538,6 +2547,7 @@ country_event = {
 			add_harimari_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_10
 	}
 }
 
@@ -2548,10 +2558,10 @@ country_event = {
 	desc = flavor_stalbor.43.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_11 }
 		any_province = {
 			has_discovered = ROOT
 			OR = {
@@ -2581,6 +2591,7 @@ country_event = {
 			add_lizardfolk_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_11
 	}
 }
 
@@ -2591,10 +2602,10 @@ country_event = {
 	desc = flavor_stalbor.44.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_12 }
 		any_province = {
 			has_discovered = ROOT
 			OR = {
@@ -2619,6 +2630,7 @@ country_event = {
 			add_ogre_minority_size_effect = yes
 			add_random_development = 3
 		}
+		set_country_flag = B47_arrived_12
 	}
 }
 
@@ -2629,10 +2641,10 @@ country_event = {
 	desc = flavor_stalbor.45.d
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_13 }
 		any_province = {
 			has_discovered = ROOT
 			OR = {
@@ -2659,5 +2671,45 @@ country_event = {
 			add_ruinborn_minority_size_effect = yes
 			add_random_development = 1
 		}
+		set_country_flag = B47_arrived_13
+	}
+}
+
+#Hobgoblins Arrive
+country_event = {
+	id = flavor_stalbor.46
+	title = flavor_stalbor.46.t
+	desc = flavor_stalbor.46.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = B47_new_arrivals_3
+		NOT = { has_country_flag = B47_arrived_14 }
+		any_province = {
+			has_discovered = ROOT
+			OR = {
+				has_hobgoblin_minority_trigger = yes
+            	has_hobgoblin_majority_trigger = yes
+			}
+		}
+	}
+	
+	option = {	
+		name = "flavor_stalbor.46.a"
+		ai_chance = { factor = 100 }
+		add_army_professionalism = 0.05
+		808 = {
+			add_hobgoblin_minority_size_effect = yes
+		}
+		random_owned_province = {
+			add_hobgoblin_minority_size_effect = yes
+			add_random_development = 1
+		}
+		random_owned_province = {
+			add_hobgoblin_minority_size_effect = yes
+			add_random_development = 1
+		}
+		set_country_flag = B47_arrived_14
 	}
 }
