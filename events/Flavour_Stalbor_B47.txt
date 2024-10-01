@@ -300,10 +300,6 @@ country_event = {
 	option = {		
 		name = "flavor_stalbor.3.a"
 		ai_chance = { factor = 100 }	
-		add_country_modifier = {
-			name = temp_mod_to_remove
-			duration = -1
-		}
 		forlorn_vale_region = {
 			discover_country = ROOT
 		}
@@ -1273,7 +1269,7 @@ country_event = {
 		always = yes
 	}
 	
-	#Send Vampire Hunters
+	#Gentle
 	option = {	
 		name = "flavor_stalbor.24.a"
 		ai_chance = { factor = 100 }
@@ -1283,7 +1279,7 @@ country_event = {
 			days = 270
 		}
 	}
-	#Send Diplomats
+	#Murder Murder
 	option = {	
 		name = "flavor_stalbor.24.b"
 		ai_chance = { factor = 0 }
@@ -1852,7 +1848,7 @@ country_event = {
 	}
 }
 
-#Making Introductions
+#Unveil the vampires in hiding
 country_event = {
 	id = flavor_stalbor.30
 	title = flavor_stalbor.30.t
@@ -2108,6 +2104,7 @@ country_event = {
 	}
 }
 
+#Castonath Sucks
 country_event = {
 	id = flavor_stalbor.32
 	title = flavor_stalbor.32.t
