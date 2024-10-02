@@ -420,9 +420,43 @@ gophira_2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				employed_advisor = { type = quartermaster }
+				mil_power = 50
+			}
+			J72 = {
+				OR = {
+					has_send_officers = yes
+					has_25_opinion_sent_gift = { target = ROOT }
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_country_modifier = {
+				name = gophira_cat_auxiliaries_mod
+				duration = 5475
+			}
+			J72 = {
+				add_trust = {
+					who = ROOT
+					value = 10
+					mutual = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {	employed_advisor = { type = quartermaster }	}
+				}
+				add_mil_power = -50
+			}
+			gophira_heir_effect = { pow = mil value = 1 }
+			country_event = {
+				id = gophira.5
+				days = 1825
+			}
+		}
 	}
 }
 gophira_3 = {
@@ -435,11 +469,136 @@ gophira_3 = {
 	G74_rekindle_the_forges = {
 		icon = mission_smith
 		position = 1
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2551
+				province_id = 2553
+			}
+			owned_by = ROOT
+			OR = {
+				num_of_units_in_province = {
+					amount = 5
+					who = ROOT
+				}
+				num_of_times_improved_by_owner = 2
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = { tooltip =  gophira_complete_this_tt }
+				AND = {
+					2551 = {
+						owned_by = ROOT
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
+					}
+					2553 = {
+						owned_by = ROOT
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
+					}
+				}
+				custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
+				AND = {
+					2551 = {
+						owned_by = ROOT
+						num_of_times_improved_by_owner = 2
+					}
+					2553 = {
+						owned_by = ROOT
+						num_of_times_improved_by_owner = 2
+					}
+				}				
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_country_modifier = {
+				name = gophira_maintenance_mod
+				duration = 3650
+			}
+			if = {
+				limit = {
+					2551 = {
+						owned_by = ROOT
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
+					}
+					2553 = {
+						owned_by = ROOT
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
+					}
+				}
+				2551 = {
+					add_devastation = 10
+					add_base_production = -1
+				}
+				2553 = {
+					add_devastation = 10
+					add_base_production = -1
+				}
+				capital_scope = { add_base_production = 3 }
+				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_heir_effect = {	pow = adm amount = 1 }
+			}
+			else_if = {
+				limit = {
+					2551 = {
+						owned_by = ROOT
+						num_of_times_improved_by_owner = 2
+					}
+					2553 = {
+						owned_by = ROOT
+						num_of_times_improved_by_owner = 2
+					}
+				}
+				2551 = {
+					add_nationalism = -5
+					add_local_autonomy = -10
+				}
+				2553 = {
+					add_nationalism = -5
+					add_local_autonomy = -10
+				}
+				gophira_var_effect = { operation = change value = 1 }
+				gophira_heir_effect = {	pow = dip amount = 1 }
+			}
+			else = {
+				custom_tooltip = gophira_get_that_tt
+				2551 = {
+					add_devastation = 10
+					add_base_production = -1
+				}
+				2553 = {
+					add_devastation = 10
+					add_base_production = -1
+				}
+				capital_scope = { add_base_production = 3 }
+				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_heir_effect = {	pow = adm amount = 1 }
+				custom_tooltip = gophira_get_that_tt
+				2551 = {
+					add_nationalism = -5
+					add_local_autonomy = -10
+				}
+				2553 = {
+					add_nationalism = -5
+					add_local_autonomy = -10
+				}
+				gophira_var_effect = { operation = change value = 1 }
+				gophira_heir_effect = {	pow = dip amount = 1 }
+			}
+		}
 	}
 
 	G74_back_with_a_vengeance = {
@@ -459,9 +618,97 @@ gophira_3 = {
 		required_missions = { G74_back_with_a_vengeance } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				has_personal_deity = taychend_glory_2
+				has_personal_deity = taychend_glory_3
+				has_personal_deity = taychend_glory_4
+				has_personal_deity = taychend_glory_5
+			}
+			army_size_percentage = 0.9
+			NOT = { truce_with = G52 }
+			if = {
+				limit = {
+					G76 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+					G81 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+					G82 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+				}
+				has_spy_network_in = {
+					who = G52
+					value = 30
+				}
+			}	
+			else = {
+				OR = {
+					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
+					G76 = { is_subject_of = ROOT }
+					custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
+					AND = {
+						G76 = {
+							OR = {
+								has_50_opinion_improved_relation = { target = ROOT }
+								exists = no
+								is_subject = yes
+							}					
+						}
+						G81 = {
+							OR = {
+								has_50_opinion_improved_relation = { target = ROOT }
+								exists = no
+								is_subject = yes
+							}					
+						}
+						G82 = {
+							OR = {
+								has_50_opinion_improved_relation = { target = ROOT }
+								exists = no
+								is_subject = yes
+							}					
+						}
+					}
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			if = {
+				limit = {
+					G76 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+					G81 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+					G82 = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}					
+					}
+				}
+				
+		} 
 	}
 
 	G74_the_northern_pretender = {
@@ -648,12 +895,14 @@ gophira_4 = {
 		trigger = {
 			2527 = {
 				OR = {
+					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					AND = {
 						has_fort_building_trigger = yes
 						has_building = ramparts
 						has_manpower_building_trigger = yes
 						has_state_edict = edict_defensive_edict
 					}
+					custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 					AND = {
 						has_trade_building_trigger = yes
 						has_production_or_gold_building_trigger = yes
@@ -706,6 +955,50 @@ gophira_4 = {
 				limit = {
 					2527 = { has_state_edict = edict_encourage_development }
 				}
+				2527 = {
+					add_province_modifier = {
+						name = rebirth_of_dam_city
+						duration = -1
+					}
+				}
+				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_heir_effect = { pow = adm value = 1 }
+				country_event = {
+					id = gophira.8
+					days = 3650
+				}
+			}
+			else = {
+				custom_tooltip = gophira_get_this_tt
+				2527 = {
+					add_province_modifier = {
+						name = local_fortress
+						duration = -1
+					}
+				}
+				capital_scope = {
+					add_random_development = 2
+					add_province_modifier = {
+						name = gophira_abundant_materials
+						duration = -1
+					}
+				}
+				J72 = {
+					capital_scope = {
+						add_random_development = 2
+						add_province_modifier = {
+							name = gophira_abundant_materials
+							duration = -1
+						}
+					}
+				}
+				gophira_var_effect = { operation = change value = 1 }
+				gophira_heir_effect = { pow = mil amount = 1 }
+				country_event = {
+					id = gophira.7
+					days = 3650
+				}
+				custom_tooltip = gophira_get_that_tt
 				2527 = {
 					add_province_modifier = {
 						name = rebirth_of_dam_city
@@ -842,6 +1135,7 @@ gophira_5 = {
 				has_personal_deity = taychend_glory_5
 			}
 			OR = {
+				custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 				AND = {
 					OR = {
 						employed_advisor = { type = spymaster }
@@ -854,6 +1148,7 @@ gophira_5 = {
 						base_manpower = 7
 					}
 				}
+				custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 				AND = {
 					OR = {
 						employed_advisor = { type = statesman }
@@ -886,21 +1181,77 @@ gophira_5 = {
 				}
 				if = {
 					limit = {
-						AND = {
-							OR = {
-								employed_advisor = { type = statesman }
-								employed_advisor = { type = recruitmaster }
-								employed_advisor = { skill = 2 }
-							}
-							num_of_owned_provinces_with = {
-								value = 8
-								has_building = barracks
-								base_manpower = 5
-							}
+						NOT = {
+							employed_advisor = { type = spymaster }
+							employed_advisor = { type = inquisitor }
 						}
 					}
-					custom_tooltip = gophira_king_lean_wife_tt
+					custom_tooltip = gophira_generic_advisor_tt
+					add_corruption = 2
 				}
+				add_country_modifier = {
+					name = gophira_king_see_all_mod
+					duration = 7200
+				}
+				every_owned_province = {
+					limit = {
+						has_building = regimental_camp
+						base_manpower = 7
+					}
+					infantry = ROOT
+				}
+				gophira_var_effect = { operation = subtract value = 2 }
+				gophira_heir_effect = { pow = mil amount = 1 }
+			}
+			else_if = {
+				limit = {
+					AND = {
+						OR = {
+							employed_advisor = { type = statesman }
+							employed_advisor = { type = recruitmaster }
+							employed_advisor = { skill = 2 }
+						}
+						num_of_owned_provinces_with = {
+							value = 8
+							has_building = barracks
+							base_manpower = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							employed_advisor = { type = recruitmaster }
+							employed_advisor = { type = statesman }
+						}
+					}
+					custom_tooltip = gophira_generic_advisor_tt
+					for = {
+						amount = 5
+						effect = "
+							random_owned_province = {
+								limit = { NOT = { is_in_capital_area = yes } }
+								add_local_autonomy = 25
+							}	
+						"
+					}
+				}
+				add_country_modifier = {
+					name = gophira_king_benevolence_mod
+					duration = 7200
+				}
+				every_owned_province = {
+					limit = {
+						has_building = barracks
+						base_manpower = 5
+					}
+					add_nationalism = -1
+				}
+				gophira_var_effect = { operation = change value = 2 }
+				gophira_heir_effect = { pow = adm amount = 1 }
+			}
+			else = {
+				custom_tooltip = gophira_get_this_tt
 				if = {
 					limit = {
 						NOT = {
@@ -924,8 +1275,7 @@ gophira_5 = {
 				}
 				gophira_var_effect = { operation = subtract value = 2 }
 				gophira_heir_effect = { pow = mil amount = 1 }
-			}
-			else = {
+				custom_tooltip = gophira_get_that_tt
 				if = {
 					limit = {
 						NOT = {
