@@ -285,7 +285,7 @@ B47_stalbor_column_1 = {
                     NOT = { 
                         AND = {
                             development = 20 
-                            has_production_building_trigger = yes
+                            has_production_or_gold_building_trigger = yes
                         }
                     }
                 }
@@ -317,7 +317,7 @@ B47_stalbor_column_1 = {
                     owned_by_subject_of = ROOT
                 }
                 development = 20
-                has_production_building_trigger = yes
+                has_production_or_gold_building_trigger = yes
             }
             treasury = 250
         }
@@ -428,7 +428,7 @@ B47_stalbor_column_2 = {
                     NOT = {
                         AND = {
                             development = 10
-                            has_production_building_trigger = yes
+                            has_production_or_gold_building_trigger = yes
                         }
                     }
                 }
@@ -440,7 +440,7 @@ B47_stalbor_column_2 = {
                 any_owned_province = {
                     trade_goods = livestock
                     development = 10
-                    has_production_building_trigger = yes
+                    has_production_or_gold_building_trigger = yes
                 }  
                 any_ally = { 
                     any_owned_province = {
@@ -1061,7 +1061,7 @@ B47_stalbor_column_2 = {
                     duration = -1
                 }
             }
-            451 = {
+            447 = {
                 remove_province_modifier = arturos_adm_branch
                 remove_province_modifier = arturos_naval_branch
                 remove_province_modifier = arturos_mil_branch
@@ -2671,7 +2671,7 @@ B47_stalbor_column_5 = {
                     NOT = {
                         development = 10
                         has_tax_building_trigger = yes
-                        has_production_building_trigger = yes
+                        has_production_or_gold_building_trigger = yes
                         has_manpower_building_trigger = yes
                     }
                 }
@@ -2680,7 +2680,7 @@ B47_stalbor_column_5 = {
                     NOT = {
                         development = 10
                         has_tax_building_trigger = yes
-                        has_production_building_trigger = yes
+                        has_production_or_gold_building_trigger = yes
                         has_manpower_building_trigger = yes
                     }
                 }
@@ -2690,13 +2690,13 @@ B47_stalbor_column_5 = {
         trigger = {
             808 = {
                 has_tax_building_trigger = yes
-                has_production_building_trigger = yes
+                has_production_or_gold_building_trigger = yes
                 has_manpower_building_trigger = yes
                 development = 10
             }
             800 = {
                 has_tax_building_trigger = yes
-                has_production_building_trigger = yes
+                has_production_or_gold_building_trigger = yes
                 has_manpower_building_trigger = yes
                 development = 10
             }
@@ -2898,6 +2898,7 @@ B47_stalbor_column_5 = {
                     name = vernham_urbanization_II
                     duration = -1
                 }
+                change_trade_goods = paper
             }
             800 = {
                 remove_province_modifier = vernham_urbanization_I
@@ -2905,6 +2906,7 @@ B47_stalbor_column_5 = {
                     name = vernham_urbanization_II
                     duration = -1
                 }
+                change_trade_goods = iron
             }
             custom_tooltip = B47_new_arrivals_1_tooltip
             set_country_flag = B47_new_arrivals_1
