@@ -562,22 +562,164 @@ gophira_4 = {
 	G74_a_relic_for_the_fort = {
 		icon = mission_magisterium_fold_one
 		position = 2
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 2530
+			NOT = { base_manpower = 10 }
+		} 
 
-		trigger = {  } 
+		trigger = {
+			2530 = { base_manpower = 10	}
+			estate_influence = {
+				estate = estate_mages
+				influence = 30
+			}
+			1791 = { owned_by = J72 }
+			OR = {
+				AND = {
+					alliance_with = J72
+					owes_favors = {
+						who = J72
+						value = 15
+					}
+				}
+				AND = {
+					J72 = { is_subject_of = ROOT }
+					treasury = 40
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			if = {
+				limit = { alliance_with = J72 }
+				add_favors = {
+					who = J72
+					amount = -15
+				}
+			}
+			else = { add_treasury = -40 }
+			2530 = {
+				add_building_construction = {
+					building = fort_magic
+					speed = 0
+					cost = 0
+				}
+				if = {
+					limit = {
+						owner = {
+							NOT = { ruler_has_personality = mage_personality }
+						}
+					}
+					add_province_modifier = {
+						name = gophira_understanding_relic
+						duration = 3650
+					}
+				}
+			}
+		}
 	}
 
 	G74_the_great_kannalulthe = {
 		icon = mission_defeat_jaunpur
 		position = 3
 		required_missions = { G74_a_relic_for_the_fort } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 2527
+			NOT = {
+				AND = {
+					has_fort_building_trigger = yes
+					has_building = ramparts
+					has_manpower_building_trigger = yes
+					has_state_edict = edict_defensive_edict
+				}
+				AND = {
+					has_trade_building_trigger = yes
+					has_production_or_gold_building_trigger = yes
+					has_tax_building_trigger = yes
+					has_state_edict = edict_encourage_development
+					OR = {
+						has_building = mage_tower
+						has_production_manufactory_or_gold_trigger = yes
+					}
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			2527 = {
+				OR = {
+					AND = {
+						has_fort_building_trigger = yes
+						has_building = ramparts
+						has_manpower_building_trigger = yes
+						has_state_edict = edict_defensive_edict
+					}
+					AND = {
+						has_trade_building_trigger = yes
+						has_production_or_gold_building_trigger = yes
+						has_tax_building_trigger = yes
+						OR = {
+							has_building = mage_tower
+							has_production_manufactory_or_gold_trigger = yes
+							has_state_edict = edict_encourage_development
+						}
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			if = {
+				limit = {
+					2527 = { has_state_edict = edict_defensive_edict }
+				}
+				2527 = {
+					add_province_modifier = {
+						name = local_fortress
+						duration = -1
+					}
+				}
+				capital_scope = {
+					add_random_development = 2
+					add_province_modifier = {
+						name = gophira_abundant_materials
+						duration = -1
+					}
+				}
+				J72 = {
+					capital_scope = {
+						add_random_development = 2
+						add_province_modifier = {
+							name = gophira_abundant_materials
+							duration = -1
+						}
+					}
+				}
+				gophira_var_effect = { operation = change value = 1 }
+				gophira_heir_effect = { pow = mil amount = 1 }
+				country_event = {
+					id = gophira.7
+					days = 3650
+				}
+			}
+			else_if = {
+				limit = {
+					2527 = { has_state_edict = edict_encourage_development }
+				}
+				2527 = {
+					add_province_modifier = {
+						name = rebirth_of_dam_city
+						duration = -1
+					}
+				}
+				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_heir_effect = { pow = adm value = 1 }
+				country_event = {
+					id = gophira.8
+					days = 3650
+				}
+			}
+		} 
 	}
 
 	G74_everybody_replaceable = {
@@ -586,9 +728,41 @@ gophira_4 = {
 		required_missions = { G74_a_question_of_loyalty } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			army_professionalism = 0.2
+			has_country_modifier = gunpowder_core
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 80
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 40
+				}
+			}
+			OR = {
+				employed_advisor = { type = army_reformer }
+				mil_power = 150
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			gophira_lower_bad_events_effect = yes
+			kill_leader = {	type = general }
+			kill_leader = {	type = general }
+			kill_leader = {	type = general }
+			kill_leader = {	type = general }
+			kill_leader = {	type = general }
+			kill_leader = {	type = general }
+			remove_country_modifier = gophira_warlords_mod
+			hidden_effect = { remove_country_modifier = gophira_army_mod }
+			add_country_modifier = {
+				name = gophira_betterarmy_mod
+				duration = -1
+			}
+			set_country_flag = gophira_better_officer_corp #remember to modify estate_nobles_officer_corp
+		}
 	}
 }
 gophira_5 = {
