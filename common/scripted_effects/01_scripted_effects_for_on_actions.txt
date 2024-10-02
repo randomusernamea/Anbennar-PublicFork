@@ -9749,6 +9749,13 @@ on_province_owner_change_effect = {
 			owner = { country_event = { id = eordand.101 days = 1 } }
 		}
 	}
+	if = {
+		limit = {
+			province_group = raheni_school_origin_provinces
+			owner = { religion = suhans_praxis }
+		}
+		add_province_modifier = { name = raheni_school_origin_suhans_praxis duration = -1 }
+	}
 }
 
 on_primary_culture_changed_effect = {
