@@ -3174,6 +3174,12 @@ rakkaz_surge_of_suffering = {
 	development_cost = -0.1
 }
 
+rakkaz_surge_of_suffering_upgrade = {
+	trade_goods_size = 3
+	development_cost = -0.1
+	local_manpower_modifier = 1
+}
+
 rakkaz_pact_overcharge = {
 	global_unrest = -2
 	global_monthly_devastation = -0.1
@@ -3186,12 +3192,26 @@ rakkaz_channeling_suffering = {
 	local_monthly_devastation = 1
 }
 
+rakkaz_channeling_suffering_upgrade = {
+	trade_goods_size = 2
+	local_monthly_devastation = 1
+	local_manpower_modifier = 1
+}
+
 rakkaz_mazu_makhara_more_cav = {
 	amount_of_hussars = 2
 }
 
+rakkaz_mazu_makhara_more_cav_upgrade = {
+	amount_of_hussars = 4
+}
+
 rakkaz_fighting_pit_more_cav = {
 	amount_of_hussars = 1
+}
+
+rakkaz_fighting_pit_more_cav_upgrade = {
+	amount_of_hussars = 2
 }
 
 rakkaz_demonflare_enchantment = {
@@ -3232,8 +3252,23 @@ rakkaz_witherling_army = {
 	fire_damage_received = -0.1
 }
 
-rakkaz_darkness_takes_root = {
-	local_manpower_modifier = 1
+rakkaz_scorching_flames = {
+	cavalry_shock = 1
+	cavalry_fire = 1
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+rakkaz_soldier_households_1 = {
+	land_forcelimit = 1
+}
+
+rakkaz_soldier_households_2 = {
+	land_forcelimit = 2
+}
+
+rakkaz_soldier_households_3 = {
+	land_forcelimit = 3
 }
 #
 

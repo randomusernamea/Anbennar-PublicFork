@@ -1051,11 +1051,7 @@ F71_2_part2 = {
 		effect = {  
 			5881 = {
 				add_nationalism = -10
-				add_province_modifier = {
-					name = "rakkaz_fighting_pit"
-					duration = -1
-				}
-				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 			if = { 
 				limit = { religion = xhazobkult }
@@ -1371,18 +1367,17 @@ F71_4_part2 = {
 		} 
 
 		effect = {  
-			5466 = {
-				add_province_modifier = {
-					name = rakkaz_mazu_makhara_more_cav
-					duration = -1
-					hidden = yes
+			hidden_effect = {
+				5466 = {
+					add_province_modifier = {
+						name = rakkaz_mazu_makhara_more_cav
+						duration = -1
+						hidden = yes
+					}
 				}
 			}
 			5442 = {
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 		} 
 	}
@@ -1441,12 +1436,15 @@ F71_4_part2 = {
 		} 
 
 		effect = {  
-			every_owned_province = {
-				limit = { has_province_modifier = rakkaz_fighting_pit }
-				add_province_modifier = {
-					name = rakkaz_fighting_pit_more_cav
-					duration = -1
-					hidden = yes
+			set_country_flag = rakkaz_fighting_pit_more_cav_unlocked
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_province_modifier = rakkaz_fighting_pit }
+					add_province_modifier = {
+						name = rakkaz_fighting_pit_more_cav
+						duration = -1
+						hidden = yes
+					}
 				}
 			}
 		} 
@@ -1511,7 +1509,6 @@ F71_5_part2 = {
 				}
 				kill_units = {
 					who = owner
-					type = infantry
 					amount = 3
 				}
 				add_base_manpower = 1
@@ -1674,9 +1671,21 @@ F71_2_part3_branch1_demon = {
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			check_variable = {
+				which = numOfLightThePyres
+				value = 20
+			}
+			check_variable = {
+				which = demonicPowerGained
+				value = 200
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = rakkaz_warlock_unlock_demonpower
+			add_patriarch_authority = 0.25
+		} 
 	}
 
 	F71_rally_the_kultists = {
@@ -1713,7 +1722,10 @@ F71_2_part3_branch1_hag = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = rakkaz_warlock_unlock_churchpower
+			add_church_power = 150
+		} 
 	}
 
 	F71_power_of_the_swamp = {
@@ -1796,9 +1808,26 @@ F71_4_part3_branch2_demon = {
 		required_missions = { F71_profane_army } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			5442 = {
+				if = {
+					limit = { has_dlc = Leviathan }
+					has_great_project = {
+						type = esuvrem
+						tier = 3
+					}
+				}
+				else = { development = 45 }
+				has_building = mage_tower
+				has_building = state_house
+			}
+			has_reform_on_level = 5
+		} 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = unlocked_horde_gov_ideas
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_unrestricted_savagery }
+		} 
 	}
 
 	F71_beasts_of_hate = {
@@ -1810,9 +1839,55 @@ F71_4_part3_branch2_demon = {
 		} 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				value = 5
+				has_province_modifier = rakkaz_fighting_pit
+				if = {
+					limit ={ has_dlc = Leviathan }
+					num_of_times_expanded_infrastructure = 2
+				}
+				else = { development = 30 }
+				province_has_current_tech_fort_trigger = yes
+				has_courthouse_building_trigger = yes
+				has_building = state_house
+				cavalry_in_province = 6
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			every_owned_province = {
+				limit = {
+					has_province_modifier = rakkaz_fighting_pit
+					cavalry_in_province = 6
+				}
+				kill_units = {
+					who = owner
+					type = cavalry
+					amount = 6
+				}
+			}
+			set_country_flag = rakkaz_fighting_pit_more_cav_unlocked
+			hidden_effect = {
+				5466 = {
+					remove_province_modifier = rakkaz_mazu_makhara_more_cav
+					add_province_modifier = {
+						name = rakkaz_mazu_makhara_more_cav_upgrade
+						duration = -1
+						hidden = yes
+					}
+				}
+				every_owned_province = {
+					limit = { has_province_modifier = rakkaz_fighting_pit_more_cav }
+					remove_province_modifier = rakkaz_fighting_pit_more_cav
+					add_province_modifier = {
+						name = rakkaz_fighting_pit_more_cav_upgrade
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		} 
 	}
 
 	F71_rampaging_horde = {
@@ -1821,9 +1896,61 @@ F71_4_part3_branch2_demon = {
 		required_missions = { F71_beasts_of_hate } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_infantry = 0
+			has_global_modifier_value = {
+				which = cavalry_power
+				value = 0.4
+			}
+			if = {
+				limit = { army_tradition = 100 }
+				mil_power = 0
+			}
+			else_if = {
+				limit = { army_tradition = 80 }
+				mil_power = 100
+			}
+			else_if = {
+				limit = { army_tradition = 60 }
+				mil_power = 200
+			}
+			else_if = {
+				limit = { army_tradition = 40 }
+				mil_power = 300
+			}
+			else_if = {
+				limit = { army_tradition = 20 }
+				mil_power = 400
+			}
+			has_mil_advisor_4 = yes
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = { army_tradition = 100 }
+				add_mil_power = -0
+			}
+			else_if = {
+				limit = { army_tradition = 80 }
+				add_mil_power = -100
+			}
+			else_if = {
+				limit = { army_tradition = 60 }
+				add_mil_power = -200
+			}
+			else_if = {
+				limit = { army_tradition = 40 }
+				add_mil_power = -300
+			}
+			else_if = {
+				limit = { army_tradition = 20 }
+				add_mil_power = -400
+			}
+			add_country_modifier = {
+				name = rakkaz_scorching_flames
+				duration = -1
+			}
+		} 
 	}
 }
 F71_4_part3_branch2_hag = {
@@ -1843,9 +1970,30 @@ F71_4_part3_branch2_hag = {
 		required_missions = { F71_profane_army } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			5442 = {
+				if = {
+					limit = { has_dlc = Leviathan }
+					has_great_project = {
+						type = esuvrem
+						tier = 3
+					}
+				}
+				else = { development = 45 }
+				has_building = mage_tower
+				has_building = state_house
+			}
+			has_reform_on_level = 5
+		} 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = unlocked_theocracy_gov_ideas
+			if = {
+				limit = { has_government_attribute = enables_divine_idea_group }
+				add_adm_power = 200
+			}
+			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_battlefield_domination }
+		} 
 	}
 
 	F71_send_the_dead = {
@@ -1857,9 +2005,24 @@ F71_4_part3_branch2_hag = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				value = 10
+				region = yezel_mora_region
+				has_building = soldier_households
+				base_manpower = 3
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			set_country_flag = rakkaz_soldiers_households_bonus
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_building = soldier_households }
+					rakkaz_soldier_household_buffs = yes
+				}
+			}
+		} 
 	}
 
 	F71_undead_horde = {
@@ -1868,9 +2031,26 @@ F71_4_part3_branch2_hag = {
 		required_missions = { F71_send_the_dead } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			army_size = 150
+			army_tradition = 70
+			has_mil_advisor_4 = yes
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = { has_country_modifier = undead_military }
+				add_mil_power = 500
+			}
+			else = {
+				clear_racial_military = yes
+				add_country_modifier = {
+					name = undead_military
+					duration = -1
+				}
+			}
+			set_country_flag = rakkaz_undead_army_not_collapses
+		} 
 	}
 }
 F71_1_part3 = {
@@ -1948,10 +2128,7 @@ F71_1_part3 = {
 			throden_gokad_region = { add_permanent_claim = ROOT }
 			odu_kherass_region = { add_permanent_claim = ROOT }
 			5921 = {
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
 				add_province_modifier = {
 					name = rakkaz_seat_of_darkness
@@ -2027,17 +2204,11 @@ F71_2_part3 = {
 
 		effect = {  
 			5941 = {
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
 			}
 			5650 = {
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
 			}
 			add_power_projection = {
@@ -2087,10 +2258,7 @@ F71_3_part3 = {
 			custom_tooltip = rakkaz_two_most_developed_provinces
 			tooltip = { 
 				upgrade_tax_building = yes
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
 			} 
 			pick_best_provinces = {
@@ -2108,10 +2276,7 @@ F71_3_part3 = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_1 } 
 				event_target:rakkaz_echenka_target_1 = { 
 					upgrade_tax_building = yes
-					add_province_modifier = {
-						name = rakkaz_fighting_pit
-						duration = -1
-					}
+					rakkaz_add_fighting_pit_modifier = yes
 					change_trade_goods = slaves
 				} 
 			}
@@ -2119,10 +2284,7 @@ F71_3_part3 = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_2 } 
 				event_target:rakkaz_echenka_target_2 = { 
 					upgrade_tax_building = yes
-					add_province_modifier = {
-						name = rakkaz_fighting_pit
-						duration = -1
-					}
+					rakkaz_add_fighting_pit_modifier = yes
 					change_trade_goods = slaves
 				} 
 			}
@@ -2214,10 +2376,7 @@ F71_3_part3 = {
 
 		effect = {  
 			5689 = {
-				add_province_modifier = {
-					name = rakkaz_fighting_pit
-					duration = -1
-				}
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 			set_country_flag = rakkaz_manpower_when_interaction
 		} 

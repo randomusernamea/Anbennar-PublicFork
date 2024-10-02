@@ -155,10 +155,10 @@ country_event = {
 		if = {
 			limit = { has_country_flag = F71_demon_missions }
 			random_list = {
-				0.7 = {
+				70 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
-				0.3 = {
+				30 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 			}
@@ -166,20 +166,20 @@ country_event = {
 		else_if = {
 			limit = { has_country_flag = F71_hag_missions }
 			random_list = {
-				0.3 = {
+				30 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
-				0.7 = {
+				70 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 			}
 		}
 		else = {
 			random_list = {
-				0.5 = {
+				50 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
-				0.5 = {
+				50 = {
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 			}

@@ -3051,6 +3051,12 @@ soldier_households = {
 		anbennar_building_effect = yes
 
 		gronstunad_building_authority_effect = { value = 5 }
+
+		#Rakkaz MT 
+		if ={
+			limit = { FROM = { has_country_flag = rakkaz_soldiers_households_bonus } }
+			rakkaz_soldier_household_buffs = yes
+		}
 	}
 
 	on_destroyed = {
@@ -3073,6 +3079,10 @@ soldier_households = {
 		if = {
 			limit = { FROM = { has_reform = kai_diligent_bureucracy } }
 			anb_manufactory_discount_remove = yes
+		}
+		if ={
+			limit = { FROM = { has_country_flag = rakkaz_soldiers_households_bonus } }
+			rakkaz_soldier_household_buffs_remove = yes
 		}
 	}
 	on_obsolete = {
