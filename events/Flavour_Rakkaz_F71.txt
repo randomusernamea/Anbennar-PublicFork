@@ -156,10 +156,12 @@ country_event = {
 			limit = { has_country_flag = F71_demon_missions }
 			random_list = {
 				70 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 				30 = {
-					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
 				}
 			}
 		}
@@ -167,20 +169,24 @@ country_event = {
 			limit = { has_country_flag = F71_hag_missions }
 			random_list = {
 				30 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 				70 = {
-					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
 				}
 			}
 		}
 		else = {
 			random_list = {
 				50 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
 					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 				}
 				50 = {
-					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
 				}
 			}
 		}
@@ -188,6 +194,7 @@ country_event = {
 
 	option = {
 		name = flavour_rakkaz.6.a
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_unrest_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
 	}
 
@@ -196,6 +203,7 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_rule_of_warlocks_advisor_demon
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_loot_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_loot
 	}
 
@@ -204,6 +212,7 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_rule_of_warlocks_advisor_hag
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_loyalty_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
 	}
 
@@ -212,6 +221,7 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_autonomy
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_autonomy_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
 	}
 
@@ -220,6 +230,7 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_missionary
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_missionary_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
 	}
 
@@ -228,6 +239,7 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_demonpower
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_demonpower_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
 	}
 
@@ -236,6 +248,136 @@ country_event = {
 		trigger = {
 			has_country_flag = rakkaz_warlock_unlock_churchpower
 		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_churchpower_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
+	}
+
+	after = {
+		if = {
+			limit = { has_country_flag = rakkaz_level2_advisor }
+			hire_advisor = {
+				type = court_mage
+				skill = 2
+				discount = yes
+			}
+		}
+		else = {
+			hire_advisor = {
+				type = court_mage
+				skill = 1
+			}
+		}
+	}
+}
+
+#The Warlock's Mission - Magocracy Version
+country_event = {
+	id = flavour_rakkaz.7
+	title = flavour_rakkaz.7.t
+	desc = flavour_rakkaz.7.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = F71_demon_missions }
+			random_list = {
+				70 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				30 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = F71_hag_missions }
+			random_list = {
+				30 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				70 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_demon_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+				}
+				50 = {
+					custom_tooltip = rakkaz_rule_of_warlocks_advisor_hag_tooltip
+					set_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavour_rakkaz.7.a
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_unrest_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
+	}
+
+	option = {
+		name = flavour_rakkaz.7.b
+		trigger = {
+			has_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_loot_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_loot
+	}
+
+	option = {
+		name = flavour_rakkaz.7.b
+		trigger = {
+			has_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_loyalty_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
+	}
+
+	option = {
+		name = flavour_rakkaz.7.e
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_autonomy
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_autonomy_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
+	}
+
+	option = {
+		name = flavour_rakkaz.7.f
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_missionary
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_missionary_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
+	}
+
+	option = {
+		name = flavour_rakkaz.7.g
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_demonpower
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_demonpower_tooltip
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
+	}
+
+	option = {
+		name = flavour_rakkaz.7.h
+		trigger = {
+			has_country_flag = rakkaz_warlock_unlock_churchpower
+		}
+		custom_tooltip = rakkaz_rule_of_warlocks_advisor_churchpower_tooltip
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
 	}
 
@@ -259,22 +401,6 @@ country_event = {
 
 #Bloody Tears, A Sorrow Tainted Red
 country_event = {
-	id = flavour_rakkaz.7
-	title = flavour_rakkaz.7.t
-	desc = flavour_rakkaz.7.d
-	picture = DIPLOMACY_eventPicture
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {
-		name = flavour_rakkaz.7.a
-		set_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
-	}
-}
-
-#An Impass In The Council
-country_event = {
 	id = flavour_rakkaz.8
 	title = flavour_rakkaz.8.t
 	desc = flavour_rakkaz.8.d
@@ -285,6 +411,22 @@ country_event = {
 
 	option = {
 		name = flavour_rakkaz.8.a
+		set_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
+	}
+}
+
+#An Impass In The Council
+country_event = {
+	id = flavour_rakkaz.9
+	title = flavour_rakkaz.9.t
+	desc = flavour_rakkaz.9.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_rakkaz.9.a
 		set_country_flag = F71_demon_missions
 		if = {
 			limit = { religion = xhazobkult }
@@ -321,7 +463,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavour_rakkaz.8.b
+		name = flavour_rakkaz.9.b
 		set_country_flag = F71_hag_missions
 		if = {
 			limit = { religion = shadow_pact }

@@ -14684,9 +14684,12 @@ on_post_adm_advisor_fired = {
 		clr_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
 		clr_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
 		clr_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
-		random_list = {
-			1 = { country_event = { id = flavour_rakkaz.6 } }
-			1 = { country_event = { id = flavour_rakkaz.7 } }
+		if = {
+			limit = { has_reform = magocracy_reform }
+			country_event = { id = flavour_rakkaz.7 }
+		}
+		else = {
+			country_event = { id = flavour_rakkaz.6 }
 		}
 	}
 }

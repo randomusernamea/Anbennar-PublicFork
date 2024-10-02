@@ -190,6 +190,88 @@
  F71_the_profane_empire_title:0 "The Profane Empire"
  F71_the_profane_empire_desc:0 ""
 
+#Events
+ #Making True To Out Name
+ flavour_rakkaz.0.t:0 "Making True To Our Name"
+ flavour_rakkaz.0.d:0 "Event"
+ flavour_rakkaz.0.a:0 "We will slay Grizaka alone!"
+ flavour_rakkaz.0.b:0 "We are not foolish. Let's ask for help."
+
+ #A Request Of Help
+ flavour_rakkaz.1.t:0 "A Request Of Help"
+ flavour_rakkaz.1.d:0 "Event"
+ flavour_rakkaz.1.a:0 "The riches of Irsmahap will be ours!"
+ flavour_rakkaz.1.b:0 "They can deal with that themselves."
+
+ #Strange Happenings In The Pack
+ flavour_rakkaz.2.t:0 "Strange Happenings In The Pack"
+ flavour_rakkaz.2.d:0 "Event"
+ flavour_rakkaz.2.a:0 "Must have been a ritual gone wrong."
+
+ #Drastic Increase In Sacrifices
+ flavour_rakkaz.3.t:0 "Drastic Increase In Sacrifices"
+ flavour_rakkaz.3.d:0 "Event"
+ flavour_rakkaz.3.a:0 "This isn't necessarily a negative, right?"
+
+ #Spread Of Disobedience
+ flavour_rakkaz.4.t:0 "Spread Of Disobedience"
+ flavour_rakkaz.4.d:0 "Event"
+ flavour_rakkaz.4.a:0 "This is starting to get worrying..."
+
+ #The Silent Coup
+ flavour_rakkaz.5.t:0 "The Silent Coup"
+ flavour_rakkaz.5.d:0 "Event"
+ flavour_rakkaz.5.a:0 "Now, we control this pack."
+
+ #The Warlock's Mission
+ flavour_rakkaz.6.t:0 "The Warlock's Mission"
+ flavour_rakkaz.6.d:0 "Event"
+ flavour_rakkaz.6.a:0 "To ensure the stability of the pack."
+ flavour_rakkaz.6.b:0 "To keep the flow os sacrifices steady."
+ flavour_rakkaz.6.c:0 "To keep the pack subservient."
+ flavour_rakkaz.6.e:0 "To exert absolute dominance."
+ flavour_rakkaz.6.f:0 "To extend our influence."
+ flavour_rakkaz.6.g:0 "To channel demonic energies."
+ flavour_rakkaz.6.h:0 "To gain the favour of the Shadow Plane."
+
+ #The Warlock's Mission - Magocracy Version
+ flavour_rakkaz.7.t:0 "The Warlock's Mission"
+ flavour_rakkaz.7.d:0 "Event"
+ flavour_rakkaz.7.a:0 "To ensure the stability of the pack."
+ flavour_rakkaz.7.b:0 "To keep the flow os sacrifices steady."
+ flavour_rakkaz.7.c:0 "To keep the pack subservient."
+ flavour_rakkaz.7.e:0 "To exert absolute dominance."
+ flavour_rakkaz.7.f:0 "To extend our influence."
+ flavour_rakkaz.7.g:0 "To channel demonic energies."
+ flavour_rakkaz.7.h:0 "To gain the favour of the Shadow Plane."
+
+ #Bloody Tears, A Sorrow Tainted Red
+ flavour_rakkaz.8.t:0 "Bloody Tears, A Sorrow Tainted Red"
+ flavour_rakkaz.8.d:0 "Event"
+ flavour_rakkaz.8.a:0 "The Sorrow will be tainted red with blood!"
+
+ #An Impass In The Council
+ flavour_rakkaz.9.t:0 "An Impass In The Council"
+ flavour_rakkaz.9.d:0 "Event"
+ flavour_rakkaz.9.a:0 "The Demon Warlocks."
+ flavour_rakkaz.9.b:0 "They Hag Warlocks."
+
+ #Raiding Kheterata
+ flavour_rakkaz.10.t:0 "Raiding Kheterata"
+ flavour_rakkaz.10.d:0 "Event"
+ flavour_rakkaz.10.a:0 "Kheterata will burn in demonflame!"
+ flavour_rakkaz.10.b:0 "Why care about legends of the past."
+
+ #A Walking Abomination
+ flavour_rakkaz.11.t:0 "A Walking Abomination"
+ flavour_rakkaz.11.d:0 "Event"
+ flavour_rakkaz.11.a:0 "A truly abhorrent result, and so perfect."
+
+ #Increase In Desertions
+ flavour_rakkaz.12.t:0 "Increase In Desertions"
+ flavour_rakkaz.12.d:0 "Event"
+ flavour_rakkaz.12.a:0 "Damn those cowards!"
+
 #Custom Tooltips
  rakkaz_two_most_developed_provinces:0 "§YTwo Most Developed Provinces§! that meet the requirements will get the following:"
  rakkaz_three_most_developed_provinces:0 "§YThree Most Developed Provinces§! that meet the requirements will get the following:"
@@ -205,6 +287,15 @@
  rakkaz_completed_a_helping_hand:0 "If we have completed §YA Helping Hand§!."
  rakkaz_completed_rally_the_riders:0 "If we have completed §YRally The Riders§!."
  rakkaz_invite_scholar_bonus:0 "From now on, when we invite a scholar of the §YRally The Riders§! tradition, the following effects will happen:\nA random owned province of §YFieldstalker Gnoll§! culture will receive §G1§! Base Manpower, or §G2§! Base Manpower if we have 40 §GDemonic Power§! or more.\nWe will gain §G0.1§! Years Of Manpower, which increases by an additional §G0.1§! for each 20 §YDemonic Power§! that we have, up to a maximum of §G0.5§! Years Of Manpower."
+ rakkaz_rule_of_warlocks_advisor_demon_tooltip:0 "Because the Warlock has pacted with a Demon, he grants us §G-2§! Years Of Nationalism per level."
+ rakkaz_rule_of_warlocks_advisor_hag_tooltip:0 "Because the Warlock has pacted with a Hag, he grants us §G-3%§! Stability Cost per level."
+ rakkaz_rule_of_warlocks_advisor_unrest_tooltip:0 "Additionally, our Warlock will grant us §G-0.4§! Unrest per level."
+ rakkaz_rule_of_warlocks_advisor_loot_tooltip:0 "Additionally, our Warlock will grant us §G+6%§! Avaliable Loot per level."
+ rakkaz_rule_of_warlocks_advisor_loyalty_tooltip:0 "Additionally, our Warlock will grant us §G+2%§! All Estate Loyalty per level."
+ rakkaz_rule_of_warlocks_advisor_autonomy_tooltip:0 "Additionally, our Warlock will grant us §G-0.03%§! Autonomy per level."
+ rakkaz_rule_of_warlocks_advisor_missionary_tooltip:0 "Additionally, our Warlock will grant us §G+0.4%§! Missionary Strength per level."
+ rakkaz_rule_of_warlocks_advisor_demonpower_tooltip:0 "Additionally, our Warlock will grant us §G+0.1%§! Yearly Demonic Power per level."
+ rakkaz_rule_of_warlocks_advisor_churchpower_tooltip:0 "Additionally, our Warlock will grant us §G+5%§! Church Power per level."
 
 #Estates
  unlock_privilege_estate_mages_warlock_pact_power_tt:0 "Enable the [Root.GetMagesName] privilege '§YWarlock Pact: Power§!'."

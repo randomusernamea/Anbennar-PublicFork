@@ -13444,10 +13444,13 @@ estate_mages_organization_rule_of_warlocks = {
 		always = no
 	}
 	on_granted = {
-		random_list = {
-			1 = { country_event = { id = flavour_rakkaz.6 } }
-			1 = { country_event = { id = flavour_rakkaz.7 } }
+		if = {
+			limit = { has_reform = magocracy_reform }
+			country_event = { id = flavour_rakkaz.7 }
 		}
+		else = {
+			country_event = { id = flavour_rakkaz.6 }
+		}	
 	}
 	penalties = {
 		ae_impact = 0.1
