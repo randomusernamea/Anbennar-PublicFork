@@ -278,7 +278,7 @@ gophira_1_fren = {
 						random_owned_province = {
 							limit = {
 								is_capital = no
-								culture = chendyan
+								culture = chendhyan
 							}
 							change_culture = yodhanpir
 						}
@@ -293,7 +293,7 @@ gophira_1_fren = {
 							is_capital = no
 							culture = yodhanpir
 						}
-						change_culture = chendyan
+						change_culture = chendhyan
 					}
 				"
 			}
@@ -452,11 +452,51 @@ gophira_1_march = {
 		icon = mission_conquer_bengal_tau
 		position = 4
 		required_missions = { G74_first_line_of_offence } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			superregion = taychend_superregion
+			culture = chendhyan
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				AND = {
+					owned_by = ROOT
+					NOT = { has_tax_building_trigger = yes }
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			J72 = {
+				num_of_owned_provinces_with = {
+					value = 3
+					trade_goods = livestock
+					has_production_or_gold_building_trigger = yes
+					has_building = farm_estate
+				}
+			}
+			all_owned_province = {
+				OR = {
+					NOT = { culture = chendhyan }
+					has_tax_building_trigger = yes
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			J72 = {
+				remove_country_modifier = gophira_march_buff
+				add_country_modifier = {
+					name = gophira_march_moarbuff
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = { culture = chendhyan }
+				change_culture = ROOT
+				J72 = {
+					random_owned_province = { add_base_manpower = 1 }
+				}
+			}
+		} 
 	}
 }
 gophira_2 = {
