@@ -295,7 +295,15 @@ the_dead_serve_the_living = {
 
 	potential = { primary_culture = horned_ogre }
 
-	effect = { add_yearly_manpower = 4 }
+	effect = {
+		if = { #Gets you a proper tooltip this way
+			limit = { has_country_modifier = slackening_modifier }
+			add_yearly_manpower = 2
+		}
+		else = {
+			add_yearly_manpower = 4
+		}
+	}
 
 	modifier = { movement_speed = -0.2 }
 
