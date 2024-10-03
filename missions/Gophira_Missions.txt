@@ -607,17 +607,6 @@ gophira_3 = {
 		required_missions = { G74_rekindle_the_forges } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	G74_an_oath_twice_broken = {
-		icon = mission_taychend_nanru_nakar_city_entrance
-		position = 3
-		required_missions = { G74_back_with_a_vengeance } 
-		provinces_to_highlight = {  } 
-
 		trigger = {
 			OR = {
 				has_personal_deity = taychend_glory_2
@@ -683,9 +672,13 @@ gophira_3 = {
 					}
 				}
 			}
-		}
+		} 
 
 		effect = {
+			add_country_modifier = {
+				name = gophira_morale_mod
+				duration = 1825
+			}
 			if = {
 				limit = {
 					G76 = {
@@ -707,8 +700,228 @@ gophira_3 = {
 						}					
 					}
 				}
-				
+				add_manpower = 9
+				set_country_flag = gophira_spy
+			}
+			else_if = {
+				limit = {
+					G76 = { is_subject_of = ROOT }
+				}
+				if = {
+					limit = {
+						G81 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}	
+					}
+					add_manpower = 3
+				}
+				if = {
+					limit = {
+						G82 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}	
+					}
+					add_manpower = 3
+				}
+				set_country_flag = gophira_bad_coalition
+			}
+			else = {
+				if = {
+					limit = {
+						G76 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}	
+					}
+					add_manpower = 3
+				}
+				if = {
+					limit = {
+						G81 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}	
+					}
+					add_manpower = 3
+				}
+				if = {
+					limit = {
+						G82 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}	
+					}
+					add_manpower = 3
+				}
+				set_country_flag = gophira_good_coalition
+			}
+			country_event = { id = gophira.6 }
 		} 
+	}
+
+	G74_an_oath_twice_broken = {
+		icon = mission_taychend_nanru_nakar_city_entrance
+		position = 3
+		required_missions = { G74_back_with_a_vengeance } 
+		provinces_to_highlight = {
+			area = nanru_nakar_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		} 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = taychend_hero_passed_reform_3_tt
+				has_country_flag = got_reform_3
+			}
+			nanru_nakar_area = { country_or_non_sovereign_subject_holds = ROOT type = all }
+			OR = {
+				custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
+				AND = {
+					manpower = 20
+					mil_power = 100
+					nanru_nakar_area = {
+						type = all
+						num_of_units_in_province = {
+							amount = 10
+							who = ROOT
+						}
+					}
+				}
+				custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
+				AND = {
+					OR = {
+						has_advisor_of_type_and_level = { type = artist level = 2 }
+						has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+						dip_power = 150
+					}
+					OR = {
+						capital_scope = { has_province_modifier = gophira_abundant_materials }
+						treasury = 300
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					manpower = 20
+					nanru_nakar_area = {
+						type = all
+						num_of_units_in_province = {
+							amount = 10
+							who = ROOT
+						}
+					}
+				}
+				nanru_nakar_area = {
+					add_devastation = 25
+					add_base_tax = -2
+					add_base_production = -2
+					add_base_manpower = -2
+				}
+				2497 = { change_trade_goods = slaves }		#nakar mlerek
+				2529 = { change_trade_goods = precursor_relics }	#neraghul
+				2527 = { #kannalulthe
+					change_trade_goods = silk
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 2
+				}
+				2530 = {	#gophira
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 2
+				}
+				add_manpower = -20
+				add_mil_power = -100
+				gophira_var_effect = { operation = subtract value = 1 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_advisor_of_type_and_level = { type = artist level = 2 }
+						has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+						dip_power = 150
+					}
+					OR = {
+						capital_scope = { has_province_modifier = gophira_abundant_materials }
+						treasury = 300
+					}
+				}
+				hidden_effect = {
+					nanru_nakar_area = {
+						cede_province = ROOT
+						add_core = J85
+					}
+				}
+				create_vassal = J85
+				nanru_nakar_area = { 
+					add_institution_embracement = { which = renaissance value = 80 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_advisor_of_type_and_level = { type = artist level = 2 }
+							has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+						}
+					}
+					add_dip_power = -150
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital_scope = { has_province_modifier = gophira_abundant_materials }
+						}
+					}
+					add_treasury = -300
+				}
+				gophira_var_effect = { operation = change value = 1 }
+			}
+			else = {
+				custom_tooltip = gophira_get_this_tt
+				nanru_nakar_area = {
+					add_devastation = 25
+					add_base_tax = -2
+					add_base_production = -2
+					add_base_manpower = -2
+				}
+				2497 = { change_trade_goods = slaves }		#nakar mlerek
+				2529 = { change_trade_goods = precursor_relics }	#neraghul
+				2527 = { #kannalulthe
+					change_trade_goods = silk
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 2
+				}
+				2530 = {	#gophira
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 2
+				}
+				add_manpower = -20
+				add_mil_power = -100
+				gophira_var_effect = { operation = subtract value = 1 }
+				custom_tooltip = gophira_get_that_tt
+				create_vassal = J85
+				nanru_nakar_area = { 
+					add_institution_embracement = { which = renaissance value = 80 }
+				}
+				gophira_var_effect = { operation = change value = 1 }
+			}
+		}
 	}
 
 	G74_the_northern_pretender = {
