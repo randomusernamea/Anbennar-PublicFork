@@ -57,6 +57,250 @@
  B47_complete_acceptance_desc:0 "Stalbór may be a realm amongst others, one place of many on the map of Halcann, but more importantly, it is an ideal - the ideal of peaceful coexistence amongst all sentients. We have become a sanctuary for all beings fleeing persecution, prejudice or subjugation simply for the crime of existing. Here in our lands the slate is wiped clean and it is not their race or faith but their own virtues and shortcomings that will determine their fate. It is not an uncommon sight in our cosmopolitan cities to see the gnomish clockmaker setting up shop next to a lizardfolk alchemist, a dwarven smith or a harpy messenger. We are a safe haven for everyone and everyone may have a place amongst our ranks."
  
  #Events
+ flavor_stalbor.3.t:0 "The Founding"
+ flavor_stalbor.3.d:0 "The Grand Founding of Stalbor has occured!"
+ flavor_stalbor.3.a:0 "A new Nation"
+
+ flavor_stalbor.4.t:0 "Bound in Paper and Stone"
+ flavor_stalbor.4.d:0 "A grand agreement laying out the agreement between the Watch and the Nation. Including that none shall be descriminated against."
+ flavor_stalbor.4.a:0 "Wait with Singing"
+ flavor_stalbor.4.b:0 "Sign the Deal"
+
+ flavor_stalbor.5.t:0 "Empire of the Blade"
+ flavor_stalbor.5.d:0 "Elrac of Dustanor stands tall holding Calindal the gleaming blade. Shall we follow him, and his blade or reject his claim to leadership."
+ flavor_stalbor.5.a:0 "He is a rebel like any other."
+ flavor_stalbor.5.b:0 "Elrac will rule, and we shall be the Empire of the Blade"
+
+ flavor_stalbor.6.t:0 "Steward's of the Blade"
+ flavor_stalbor.6.d:0 "Elrac lays slain, and the blade has been returned to Bladeskeep. Were it will serve as an icon of the nation."
+ flavor_stalbor.6.a:0 "We stand tall!"
+
+ flavor_stalbor.8.t:0 "Stalbor offers protection!"
+ flavor_stalbor.8.d:0 "In return for rejecting the fey, they say they will protect use, and seek our salvation."
+ flavor_stalbor.8.a:0 "Accept Vassalization"
+ flavor_stalbor.8.b:0 "Reject assalization, and prepare for War"
+
+ flavor_stalbor.9.t:0 "Ozdan or Dargom"
+ flavor_stalbor.9.d:0 "Should we focus on dismanteling the Ozdan or integrating Dargom."
+ flavor_stalbor.9.a:0 "Integrate the Dargom"
+ flavor_stalbor.9.b:0 "Dismantling the Ozdan"
+
+ flavor_stalbor.10.t:0 "Last Porckets of Resistance"
+ flavor_stalbor.10.d:0 "The time of those that still cling to old belives and superstisions are over."
+ flavor_stalbor.10.a:0 "Let them rise up!"
+
+ flavor_stalbor.12.t:0 "Matters of the Deepwoods"
+ flavor_stalbor.12.d:0 "The last revolts are over, and finally our deepwood breatheren can feel safe under our care."
+ flavor_stalbor.12.a:0 "The Turmoil Ends"
+
+ flavor_stalbor.13.t:0 "Into Bal Dostan"
+ flavor_stalbor.13.d:0 "We have secured Arca Corvus, and even seized the keep of Bal Dostan, but still some holdouts are belived to dwell in the deep reaches of Bal Dostan. We must ready our troops to deal with this threat."
+ flavor_stalbor.13.a:0 "Wait for their return."
+
+ flavor_stalbor.14.t:0 "A report."
+ flavor_stalbor.14.d:0 "A few of our soliders made it back, its worse then we could have ever thought. Vampires and their thralls have fortified themselves in the depth of Bal Dostan. What should we do to deal with them."
+ flavor_stalbor.14.a:0 "We need people with more experience."
+ flavor_stalbor.14.b:0 "Send more troops!"
+
+ flavor_stalbor.15.t:0 "Another Round"
+ flavor_stalbor.15.d:0 "We have gathered a new force to try to deal with the threat."
+ flavor_stalbor.15.a:"Wait for their return."
+
+ flavor_stalbor.16.t:0 "The Monster Hunters"
+ flavor_stalbor.16.d:0 "A group of vampire hunters lead by an indevidual known as Galin sil Vekt comes highly recomended, and were the only group that responded to our notices."
+ flavor_stalbor.16.a:0 "Pay their Fee."
+ flavor_stalbor.16.b:0 "We are better of using our own troops."
+
+ flavor_stalbor.17.t:0 "The Hunter's are Ready"
+ flavor_stalbor.17.d:0 "The vampire hunters are ready to go into Bal Dostan, we hope they fair better then our troops."
+ flavor_stalbor.17.a:0 "Send them Off"
+
+flavor_stalbor.18.t
+flavor_stalbor.18.d
+Option(Search Bal Dostan): 
+flavor_stalbor.18.a
+
+flavor_stalbor.19.t
+flavor_stalbor.19.d
+Option(Eliminate the Vampires): 
+flavor_stalbor.19.a
+
+flavor_stalbor.20.t
+flavor_stalbor.20.d
+Option(Hire him as General): 
+flavor_stalbor.20.a
+Option(Hire him as Advisor): 
+flavor_stalbor.20.b
+
+flavor_stalbor.21.t
+flavor_stalbor.21.d
+Option(We must get our hands on the vampire Lords.): 
+flavor_stalbor.21.a
+
+flavor_stalbor.22.t
+flavor_stalbor.22.d
+Option(Hunt vampires in the borders): 
+flavor_stalbor.22.a
+Option(Hunt vampires in Esmaria): 
+flavor_stalbor.22.b
+Option(Hunt vampires in the east dameshead): 
+flavor_stalbor.22.c
+Option(Hunt vampires in the damescrown): 
+flavor_stalbor.22.e
+Option(Hunt vampires in Lencenor): 
+flavor_stalbor.22.f
+
+flavor_stalbor.23.t
+flavor_stalbor.23.d
+Option(Send our vampire hunters): 
+flavor_stalbor.23.a
+Option(Send a skilled diplomat): 
+flavor_stalbor.23.b
+
+flavor_stalbor.24.t
+flavor_stalbor.24.d.1 (The Borders Loc)
+flavor_stalbor.24.d.2 (Esmaria Loc)
+flavor_stalbor.24.d.3 (East Dameshead Loc)
+flavor_stalbor.24.d.4 (Damescrown Loc)
+flavor_stalbor.24.d.5 (Lencenor Loc)
+Option(A gentle approach): 
+flavor_stalbor.23.a
+Option(No stone left unturned): 
+flavor_stalbor.23.b
+
+flavor_stalbor.25.t
+flavor_stalbor.25.d.1 (The Borders Loc)
+flavor_stalbor.25.d.2 (Esmaria Loc)
+flavor_stalbor.25.d.3 (East Dameshead Loc)
+flavor_stalbor.25.d.4 (Damescrown Loc)
+flavor_stalbor.25.d.5 (Lencenor Loc)
+Option(Slay the Monsters!): 
+flavor_stalbor.25.a
+Option(Bring them home.): 
+flavor_stalbor.25.b
+
+flavor_stalbor.26.t
+flavor_stalbor.26.d
+Option(Utter Failure): 
+flavor_stalbor.26.a
+
+flavor_stalbor.27.t
+flavor_stalbor.27.d
+Option(Judged & Executed): 
+flavor_stalbor.27.a
+
+flavor_stalbor.28.t
+flavor_stalbor.28.d.1 (The Borders Loc)
+flavor_stalbor.28.d.2 (Esmaria Loc)
+flavor_stalbor.28.d.3 (East Dameshead Loc)
+flavor_stalbor.28.d.4 (Damescrown Loc)
+flavor_stalbor.28.d.5 (Lencenor Loc)
+Option(Pick up the Pace): 
+flavor_stalbor.28.a
+Option(Trust the Diplomat): 
+flavor_stalbor.28.b
+
+flavor_stalbor.29.t
+flavor_stalbor.29.d.1 (The Borders Loc)
+flavor_stalbor.29.d.2 (Esmaria Loc)
+flavor_stalbor.29.d.3 (East Dameshead Loc)
+flavor_stalbor.29.d.4 (Damescrown Loc)
+flavor_stalbor.29.d.5 (Lencenor Loc)
+Option(Pick up the Pace): 
+flavor_stalbor.29.a
+Option(Slow & Steady): 
+flavor_stalbor.29.b
+
+flavor_stalbor.30.t
+flavor_stalbor.30.d.1 (The Borders Loc)
+flavor_stalbor.30.d.2 (Esmaria Loc)
+flavor_stalbor.30.d.3 (East Dameshead Loc)
+flavor_stalbor.30.d.4 (Damescrown Loc)
+flavor_stalbor.30.d.5 (Lencenor Loc)
+Option(Unveil the vampires): 
+flavor_stalbor.30.a
+
+flavor_stalbor.31.t
+flavor_stalbor.31.d
+Option(The Watch marches into Cannor): 
+flavor_stalbor.31.a
+
+flavor_stalbor.32.t
+flavor_stalbor.32.d
+Option(Reject Castonath): 
+flavor_stalbor.32.a
+Option(Accept Castonath): 
+flavor_stalbor.32.b
+
+flavor_stalbor.33.t
+flavor_stalbor.33.d
+Option(Dwarves): 
+flavor_stalbor.33.a
+
+flavor_stalbor.34.t
+flavor_stalbor.34.d
+Option(Elves): 
+flavor_stalbor.34.a
+
+flavor_stalbor.35.t
+flavor_stalbor.35.d
+Option(Gnomes): 
+flavor_stalbor.35.a
+
+flavor_stalbor.36.t
+flavor_stalbor.36.d
+Option(Halflings): 
+flavor_stalbor.36.a
+
+flavor_stalbor.37.t
+flavor_stalbor.37.d
+Option(Gnolls): 
+flavor_stalbor.37.a
+
+flavor_stalbor.38.t
+flavor_stalbor.38.d
+Option(Harpies): 
+flavor_stalbor.38.a
+
+flavor_stalbor.39.t
+flavor_stalbor.39.d
+Option(Kobolds): 
+flavor_stalbor.39.a
+
+flavor_stalbor.40.t
+flavor_stalbor.40.d
+Option(Trolls): 
+flavor_stalbor.40.a
+
+flavor_stalbor.41.t
+flavor_stalbor.41.d
+Option(Centaurs): 
+flavor_stalbor.41.a
+
+flavor_stalbor.42.t
+flavor_stalbor.42.d
+Option(Harimari): 
+flavor_stalbor.42.a
+
+flavor_stalbor.43.t
+flavor_stalbor.43.d
+Option(Lizardfolk): 
+flavor_stalbor.43.a
+
+flavor_stalbor.44.t
+flavor_stalbor.44.d
+Option(Ogres): 
+flavor_stalbor.44.a
+
+flavor_stalbor.45.t
+flavor_stalbor.45.d
+Option(Ruinborn): 
+flavor_stalbor.45.a
+
+flavor_stalbor.46.t
+flavor_stalbor.46.d
+Option(Hobgoblin): 
+flavor_stalbor.46.a
 
 
  #Custom Triggers
@@ -153,3 +397,5 @@
  desc_B47_stalbor_engineering:0 ""
  B47_the_great_keep_modifier:0 "The Great Keep"
  desc_B47_the_great_keep_modifier:0 ""
+
+ 
