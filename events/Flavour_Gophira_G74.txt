@@ -31,7 +31,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			skill = 1
-			name = "Pandi"
+			name = "Bobal Pandaya"
 			location = 2530
 			discount = yes
 		}
@@ -44,7 +44,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			skill = 1
-			name = "Pandi"
+			name = "Bobal Pandaya"
 			location = 2530
 			discount = yes
 		}
@@ -209,5 +209,161 @@ country_event = {
 		gophira_heir_effect = {	pow = adm amount = 1 }
 		gophira_heir_effect = {	pow = mil amount = 1 }
 		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = gophira.5
+	title = gophira.5.t
+	desc = gophira.5.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.5.1
+		capital_scope = {
+			bharbhen_1_chendhyan_razers = ROOT
+			bharbhen_1_chendhyan_razers = ROOT
+			bharbhen_1_chendhyan_razers = ROOT
+			bharbhen_1_chendhyan_razers = ROOT
+			bharbhen_1_chendhyan_razers = ROOT
+		}
+		random = {
+			chance = 50
+			set_heir_culture = chendhyan
+		}
+	}
+
+	option = {
+		name = gophira.5.2
+		gain_taychend_glory_effect = { amount = 25 }
+		add_estate_church_loyalty_effect = yes
+		J72 = {
+			add_trust = {
+				who = ROOT
+				value = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gophira.6
+	title = gophira.6.t
+	desc = gophira.6.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.6.1
+		trigger = {	has_country_flag = gophira_good_coalition }
+		ROOT = { form_coalition_against = G52 }
+		G76 = { form_coalition_against = G52 }
+		G81 = { form_coalition_against = G52 }
+		G82 = { form_coalition_against = G52 }
+		gophira_var_effect = { operation = change value = 1 }
+		gophira_heir_effect = { pow = dip amount = 1 }
+	}
+	
+	option = {
+		name = gophira.6.2
+		trigger = {	has_country_flag = gophira_bad_coalition }
+		ROOT = { form_coalition_against = G52 }
+		G76 = { form_coalition_against = G52 }
+		G81 = { form_coalition_against = G52 }
+		G82 = { form_coalition_against = G52 }
+		gophira_var_effect = { operation = subtract value = 1 }
+		gophira_heir_effect = { pow = mil amount = 1 }
+	}
+
+	option = {
+		name = gophira.6.1
+		trigger = {	has_country_flag = gophira_spy }
+		2527 = {
+			add_province_modifier = {
+				name = gophira_loyalists_mod
+				duration = 1825
+			}
+		}
+		gophira_heir_effect = { pow = dip amount = 1 }
+	}
+}
+
+country_event = {
+	id = gophira.7
+	title = gophira.7.t
+	desc = gophira.7.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.7.1
+		if = {
+			limit = {
+				2527 = { province_has_center_of_trade_of_level = 3 }
+			}
+			2530 = { center_of_trade = 3 }
+		}
+		else_if = {
+			limit = {
+				2527 = { province_has_center_of_trade_of_level = 2 }
+			}
+			2530 = { center_of_trade = 2 }
+		}
+		else = {
+			2530 = { center_of_trade = 1 }
+		}
+		2527 = { add_center_of_trade_level = -1 }
+	}
+}
+
+country_event = {
+	id = gophira.8
+	title = gophira.8.t
+	desc = gophira.8.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.8.1
+		set_capital = 2527
+		2527 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+
+	option = {
+		name = gophira.8.2
+		2530 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		2527 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+}
+
+country_event = {
+	id = gophira.9
+	title = gophira.9.t
+	desc = gophira.9.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = gophira.9.1
+		create_union = J72
 	}
 }

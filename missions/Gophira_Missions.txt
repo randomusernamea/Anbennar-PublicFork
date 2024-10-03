@@ -268,7 +268,7 @@ gophira_1_fren = {
 						}
 					}
 				}
-				country_event = { id = flavour_gophira.8 } 
+				country_event = { id = flavour_gophira.9 } 
 				add_dip_power = -200
 			}
 			J72 = {
@@ -1284,13 +1284,6 @@ gophira_4 = {
 				OR = {
 					AND = {
 						custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
-						has_fort_building_trigger = yes
-						has_building = ramparts
-						has_manpower_building_trigger = yes
-						has_state_edict = edict_defensive_edict
-					}
-					AND = {
-						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 						has_trade_building_trigger = yes
 						has_production_or_gold_building_trigger = yes
 						has_tax_building_trigger = yes
@@ -1299,6 +1292,13 @@ gophira_4 = {
 							has_production_manufactory_or_gold_trigger = yes
 							has_state_edict = edict_encourage_development
 						}
+					}
+					AND = {
+						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
+						has_fort_building_trigger = yes
+						has_building = ramparts
+						has_manpower_building_trigger = yes
+						has_state_edict = edict_defensive_edict						
 					}
 				}
 			}
@@ -1359,6 +1359,19 @@ gophira_4 = {
 				custom_tooltip = gophira_get_this_tt
 				2527 = {
 					add_province_modifier = {
+						name = rebirth_of_dam_city
+						duration = -1
+					}
+				}
+				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_heir_effect = { pow = adm value = 1 }
+				country_event = {
+					id = gophira.8
+					days = 3650
+				}
+				custom_tooltip = gophira_get_that_tt
+				2527 = {
+					add_province_modifier = {
 						name = local_fortress
 						duration = -1
 					}
@@ -1383,19 +1396,6 @@ gophira_4 = {
 				gophira_heir_effect = { pow = mil amount = 1 }
 				country_event = {
 					id = gophira.7
-					days = 3650
-				}
-				custom_tooltip = gophira_get_that_tt
-				2527 = {
-					add_province_modifier = {
-						name = rebirth_of_dam_city
-						duration = -1
-					}
-				}
-				gophira_var_effect = { operation = subtract value = 1 }
-				gophira_heir_effect = { pow = adm value = 1 }
-				country_event = {
-					id = gophira.8
 					days = 3650
 				}
 			}
