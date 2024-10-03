@@ -14,6 +14,10 @@ country_event = {
 				which = gophira_court
 				value = 7
 			}
+			set_variable = {
+				which = gophira_war_fought_with_dark
+				value = 0
+			}
 			country_event = {
 				id = gophira.2
 				days = 1520
@@ -196,8 +200,11 @@ country_event = {
 			}
 		}
 		set_country_flag = gophira_march
-		hidden_effect = { remove_queen_personality = malevolent_personality }
-		add_queen_personality = infertile_personality
+		hidden_effect = { 
+			remove_queen_personality = malevolent_personality
+			add_queen_personality = infertile_personality
+		}
+		tooltip = { add_queen_personality = infertile_personality }
 		gophira_var_effect = { operation = change value = 3 }
 		gophira_heir_effect = {	pow = adm amount = 1 }
 		gophira_heir_effect = {	pow = mil amount = 1 }

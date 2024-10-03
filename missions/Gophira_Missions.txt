@@ -192,7 +192,7 @@ gophira_1_fren = {
 
 		effect = {
 			add_country_modifier = {
-				name = "gophira_one_army"
+				name = gophira_one_army
 				duration = -1
 			}
 			gophira_lower_bad_events_effect = yes
@@ -297,6 +297,11 @@ gophira_1_fren = {
 					}
 				"
 			}
+			add_accepted_culture_or_dip_power = {
+				culture = chendhyan
+				free = yes
+				dip_reward = no
+			}
 		}
 	}
 
@@ -307,10 +312,7 @@ gophira_1_fren = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				has_idea = experienced_diplomats
-				has_idea = diplomatic_influence
-			}
+			diplomatic_reputation = 4
 			J72 = {
 				trust = {
 					who = ROOT
@@ -349,11 +351,6 @@ gophira_1_fren = {
 				effect = add_dip_power
 				var = gophira_pay_dip
 				sign = -
-			}
-			add_accepted_culture_or_dip_power = {
-				culture = chendhyan
-				free = yes
-				dip_reward = no
 			}
 		}
 	}
@@ -644,10 +641,12 @@ gophira_3 = {
 			}	
 			else = {
 				OR = {
-					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
-					G76 = { is_subject_of = ROOT }
-					custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 					AND = {
+						custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
+						G76 = { is_subject_of = ROOT }
+					}
+					AND = {
+						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 						G76 = {
 							OR = {
 								has_50_opinion_improved_relation = { target = ROOT }
@@ -787,8 +786,8 @@ gophira_3 = {
 			}
 			nanru_nakar_area = { country_or_non_sovereign_subject_holds = ROOT type = all }
 			OR = {
-				custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 				AND = {
+					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					manpower = 20
 					mil_power = 100
 					nanru_nakar_area = {
@@ -799,8 +798,8 @@ gophira_3 = {
 						}
 					}
 				}
-				custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 				AND = {
+					custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 					OR = {
 						has_advisor_of_type_and_level = { type = artist level = 2 }
 						has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
@@ -928,11 +927,34 @@ gophira_3 = {
 		icon = mission_the_ganges_campaign
 		position = 4
 		required_missions = { G74_an_oath_twice_broken } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 2487
+			NOT = {	controlled_by = ROOT }
+		} 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				AND = {
+					war_score_against = {
+						who = G64
+						value = 90
+					}
+					2487 = { controlled_by = ROOT }
+				}
+				2487 = { owned_by = ROOT }
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			larankarha_highlands_region = { add_permanent_claim = ROOT }
+			if = {
+				limit = { war_with = G64 }
+				country_event = { id = gophira.10 }
+			}
+			else = {
+				gain_taychend_glory_effect = { amount = 100 }
+			}
+		}
 	}
 }
 gophira_cap = {
@@ -955,11 +977,29 @@ gophira_cap = {
 			G74_the_norther_pretender
 			G74_everybody_replaceable
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			superregion = taychend_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				is_island = yes
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			religion = gods_of_the_taychend_reformed
+			taychend_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_island = yes
+				}
+			}
+			army_size = 100
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = { id = gophira.11 }
+		}
 	}
 }
 gophira_cap_fren = {
@@ -980,11 +1020,29 @@ gophira_cap_fren = {
 			G74_the_northern_pretender
 			G74_everybody_replaceable
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			superregion = taychend_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				is_island = yes
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			religion = gods_of_the_taychend_reformed
+			taychend_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_island = yes
+				}
+			}
+			army_size = 100
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = { id = gophira.11 }
+		}
 	}
 }
 gophira_cap_march = {
@@ -1005,11 +1063,29 @@ gophira_cap_march = {
 			G74_the_northern_pretender
 			G74_everybody_replaceable
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			superregion = taychend_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				is_island = yes
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			religion = gods_of_the_taychend_reformed
+			taychend_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_island = yes
+				}
+			}
+			army_size = 100
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = { id = gophira.11 }
+		} 
 	}
 }
 gophira_4 = {
@@ -1108,15 +1184,15 @@ gophira_4 = {
 		trigger = {
 			2527 = {
 				OR = {
-					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					AND = {
+						custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 						has_fort_building_trigger = yes
 						has_building = ramparts
 						has_manpower_building_trigger = yes
 						has_state_edict = edict_defensive_edict
 					}
-					custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 					AND = {
+						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 						has_trade_building_trigger = yes
 						has_production_or_gold_building_trigger = yes
 						has_tax_building_trigger = yes
@@ -1348,8 +1424,8 @@ gophira_5 = {
 				has_personal_deity = taychend_glory_5
 			}
 			OR = {
-				custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 				AND = {
+					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					OR = {
 						employed_advisor = { type = spymaster }
 						employed_advisor = { type = inquisitor }
@@ -1357,12 +1433,12 @@ gophira_5 = {
 					}
 					num_of_owned_provinces_with = {
 						value = 5
-						has_building = regimental_camp
+						has_forcelimit_building_trigger = yes
 						base_manpower = 7
 					}
 				}
-				custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 				AND = {
+					custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 					OR = {
 						employed_advisor = { type = statesman }
 						employed_advisor = { type = recruitmaster }
@@ -1370,7 +1446,7 @@ gophira_5 = {
 					}
 					num_of_owned_provinces_with = {
 						value = 8
-						has_building = barracks
+						has_manpower_building_trigger = yes
 						base_manpower = 5
 					}
 				}
@@ -1388,7 +1464,7 @@ gophira_5 = {
 					}
 					num_of_owned_provinces_with = {
 						value = 5
-						has_building = regimental_camp
+						has_forcelimit_building_trigger = yes
 						base_manpower = 7
 					}
 				}
@@ -1408,7 +1484,7 @@ gophira_5 = {
 				}
 				every_owned_province = {
 					limit = {
-						has_building = regimental_camp
+						has_forcelimit_building_trigger = yes
 						base_manpower = 7
 					}
 					infantry = ROOT
@@ -1426,7 +1502,7 @@ gophira_5 = {
 						}
 						num_of_owned_provinces_with = {
 							value = 8
-							has_building = barracks
+							has_manpower_building_trigger = yes
 							base_manpower = 5
 						}
 					}
@@ -1455,7 +1531,7 @@ gophira_5 = {
 				}
 				every_owned_province = {
 					limit = {
-						has_building = barracks
+						has_manpower_building_trigger = yes
 						base_manpower = 5
 					}
 					add_nationalism = -1
@@ -1481,7 +1557,7 @@ gophira_5 = {
 				}
 				every_owned_province = {
 					limit = {
-						has_building = regimental_camp
+						has_forcelimit_building_trigger = yes
 						base_manpower = 7
 					}
 					infantry = ROOT
@@ -1513,7 +1589,7 @@ gophira_5 = {
 				}
 				every_owned_province = {
 					limit = {
-						has_building = barracks
+						has_manpower_building_trigger = yes
 						base_manpower = 5
 					}
 					add_nationalism = -1
