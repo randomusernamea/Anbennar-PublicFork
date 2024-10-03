@@ -369,11 +369,51 @@ gophira_1_march = {
 		icon = mission_magy
 		position = 2
 		required_missions = { G74_a_throne_for_the_queen } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 1791
+					NOT = { has_fort_building_trigger = yes }
+				}
+				AND = {
+					area = sarihaddu_area
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			sarihaddu_area = {
+				type = all
+				NOT = { owned_by = J72 }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1791 = { has_fort_building_trigger = yes }
+		} 
 
-		effect = {  } 
+		effect = {
+			6754 = { cede_province = J72 }
+			1791 = {
+				add_province_modifier = {
+					name = gophira_relics_badmod
+					duration = 7300
+				}
+			}
+			add_country_modifier = {
+				name = gophira_relics_goodmod
+				duration = 7300
+			}
+			J72 = {	add_liberty_desire = 10	}
+			rakkabuttai_area = {
+				limit = { culture = chendhyan }
+				add_permanent_claim = J72
+			}
+			zaernmaera_area = {
+				limit = { culture = chendhyan }
+				add_permanent_claim = J72
+			}
+			gophira_heir_effect = { pow = adm amount = 1 }
+		}
 	}
 
 	G74_first_line_of_offence = {
@@ -383,11 +423,29 @@ gophira_1_march = {
 			G74_control_the_relics
 			G74_our_weapons_their_riders
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {} 
 
-		trigger = {  } 
+		trigger = {
+			J72 = {
+				num_of_owned_provinces_with = {
+					value = 5
+					OR = {
+						base_manpower = 5
+						has_manpower_building_trigger = yes
+					}
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			J72 = {
+				add_country_modifier = {
+					name = gophira_march_buff
+					duration = -1
+				}
+			}
+			gophira_lower_bad_events_effect = yes
+		} 
 	}
 
 	G74_war_economy = {
@@ -974,7 +1032,7 @@ gophira_cap = {
 		icon = a_real_roman_empire
 		position = 5
 		required_missions = {
-			G74_the_norther_pretender
+			G74_the_northern_pretender
 			G74_everybody_replaceable
 		}
 		provinces_to_highlight = {
