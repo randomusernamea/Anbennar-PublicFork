@@ -48,13 +48,14 @@ owns_all_escanni_wars_regions = {
 }
 
 has_won_escanni_wars = {
-	num_of_owned_provinces_with = {
-		value = 100
-		province_group = escann_proper
-	}
 	castonath_area = {
 		type = all
 		owned_by = PREV
+	}
+	
+	num_of_owned_provinces_with = {
+		value = 100
+		province_group = escann_proper
 	}
 }
 
