@@ -38,7 +38,7 @@ country_event = { #Startup Event
 			4628 = {
 				set_province_flag = command_converted_province_flag
 				change_culture = shamadhan
-				change_religion = righteous_path
+				change_religion = accretive_path
 				export_to_variable = {
 					variable_name = previousCulture
 					value = culture
@@ -1221,7 +1221,7 @@ country_event = { #The Legality of Chi
 		custom_tooltip = command_chi_is_banned_tt
 		hidden_effect = {
 			every_owned_province = {
-				limit = { religion = righteous_path }
+				limit = { OR = { religion = accretive_path religion = transmutative_path } }
 				add_province_modifier = {
 					name = command_chi_is_banned
 					duration = 9125
@@ -1238,7 +1238,7 @@ country_event = { #The Legality of Chi
 		custom_tooltip = command_chi_is_tolerated_tt
 		hidden_effect = {
 			every_owned_province = {
-				limit = { religion = righteous_path }
+				limit = { OR = { religion = accretive_path religion = transmutative_path } }
 				add_province_modifier = {
 					name = command_chi_is_tolerated
 					duration = 9125
@@ -4305,7 +4305,7 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 						limit = { owned_by = ROOT }
 						add_core = Y89
 					}
-					release_with_religion_and_culture = { tag = Y89 religion = devouring_path culture = western_yan }
+					release_with_religion_and_culture = { tag = Y89 religion = devouring_path culture = szitu }
 					Y89 = { save_event_target_as = mage_rebel_nation }
 				}
 			}
@@ -4391,7 +4391,7 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 					adm = 3
 					dip = 5
 					mil = 6
-					culture = western_yan
+					culture = szitu
 					religion = devouring_path
 				}
 				add_ruler_personality = mage_personality
@@ -4465,7 +4465,7 @@ country_event = { #Zhongwen of the Shaded Mists comes out in the open
 					adm = 3
 					dip = 5
 					mil = 6
-					culture = western_yan
+					culture = szitu
 					religion = devouring_path
 				}
 				add_ruler_personality = mage_personality
@@ -5458,7 +5458,7 @@ country_event = { #War of the Three Commands Start
 				type = natural_scientist
 				name = "Gedao Kong"
 				skill = 3
-				culture = river_yan
+				culture = jiangszun
 				cost_multiplier = 0
 			}
 			declare_war_with_cb = {

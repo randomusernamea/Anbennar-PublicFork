@@ -1626,7 +1626,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -1652,7 +1652,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -1678,7 +1678,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -1704,7 +1704,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -1730,7 +1730,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -1756,7 +1756,7 @@ country_event = { #Temple Purification menu
 		trigger = { 
 			AND = {
 				if = {
-					limit = { religion = righteous_path }
+					limit = { OR = { religion = accretive_path religion = transmutative_path } }
 					church_power = 100
 				}
 				#else_if = {
@@ -12053,7 +12053,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					NOT = { religion = righteous_path } # righteous path gets an event to choose
+					NOT = { OR = { religion = accretive_path religion = transmutative_path } } # accretive/transmutative path gets an event to choose
 				}
 				set_country_flag = rending_ward_flag
 			}
@@ -12153,7 +12153,7 @@ country_event = {
 	option = { #rightous path
 		name = spirits.703.c
 		ai_chance = { factor = 100 }
-		trigger = { religion = righteous_path }
+		trigger = { OR = { religion = accretive_path religion = transmutative_path } }
 
 		custom_tooltip = spirits_bork_temple_tt
 		custom_tooltip = spirits_break_temple_tt
@@ -12178,7 +12178,7 @@ country_event = {
 	}
 }
 
-# Righteous Path - Choose your path
+# Accretive/Transmutative Path - Choose your path
 country_event = {
 	id = spirits.704
 	title = spirits.704.t
@@ -12188,7 +12188,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		religion = righteous_path
+		OR = {
+			religion = accretive_path
+			religion = transmutative_path
+		}
 	}
 
 	# suppress

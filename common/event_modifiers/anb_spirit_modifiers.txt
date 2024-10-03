@@ -65,30 +65,6 @@ rite_of_purification = {
 
 }
 
-devouring_empowered_sorcerers = {	#5 year duration
-	all_power_cost = -0.05
-}
-
-azjakuma_give_chi_to_shirgrii = { #give chi to shirgrii
-	local_development_cost = -0.05
-	local_defensiveness = 0.25
-}
-
-devouring_eldritch_foresight = {	#90 day duration
-	all_power_cost = -0.33
-}
-
-devouring_unnatural_plant_growth = {	#5 year duration
-	supply_limit_modifier = 1
-	trade_goods_size = 3
-	local_unrest = 3
-	local_monthly_devastation = 0.5 #Should result in 25 devastation on non-ZoC provinces
-}
-
-devouring_epic_raise_dead = {	#5 year duration
-	manpower_recovery_speed = 1
-}
-
 spirits_banned_blasphemous_research_modifier = {
 	tolerance_own = 2
 }
