@@ -44,6 +44,8 @@ country_decisions = {
 			else_if = { #Wyvernheart
 				limit = { tag = B12 }
 				change_tag = B39
+				custom_tooltip = wyvernheart_nation_settling_advice_tt
+				swap_non_generic_missions = yes
 			}
 			else_if = { #Alenor
 				limit = { tag = B03 }
