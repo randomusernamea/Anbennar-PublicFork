@@ -62,7 +62,7 @@ gophira_1 = {
 					}
 					kill_ruler = yes
 					add_stability = 1
-					change_consort_regent_to_ruler = yes
+					change_consort_regent_to_ruler = yes		#all this stuff so that this woman is the right age
 					define_heir = {
 						name = "Thanal"
 						monarch_name = "Thanal"
@@ -76,7 +76,8 @@ gophira_1 = {
 					}
 					set_heir_flag = gophira_heir
 					set_ruler_flag = gophira_wife
-					add_ruler_personality = malevolent_personality
+					add_ruler_personality = intricate_web_weaver_personality
+					set_ai_personality = { personality = ai_militarist locked = yes }
 					define_consort = {
 						name = "Harrihara X"
 						dynasty = Sangamar
@@ -195,7 +196,8 @@ gophira_1_fren = {
 				name = gophira_one_army
 				duration = -1
 			}
-			gophira_lower_bad_events_effect = yes
+			custom_tooltip = gophira_less_bad_events_tt
+			set_country_flag = gophira_less_bad_events1
 		}
 	}
 
@@ -444,7 +446,8 @@ gophira_1_march = {
 					duration = -1
 				}
 			}
-			gophira_lower_bad_events_effect = yes
+			custom_tooltip = gophira_less_bad_events_tt
+			set_country_flag = gophira_less_bad_events2
 		} 
 	}
 
@@ -1428,7 +1431,8 @@ gophira_4 = {
 		} 
 
 		effect = {
-			gophira_lower_bad_events_effect = yes
+			custom_tooltip = gophira_less_bad_events_tt
+			set_country_flag = gophira_less_bad_events3
 			kill_leader = {	type = general }
 			kill_leader = {	type = general }
 			kill_leader = {	type = general }
@@ -1552,7 +1556,8 @@ gophira_5 = {
 		}
 
 		effect = {
-			gophira_lower_bad_events_effect = yes
+			custom_tooltip = gophira_less_bad_events_tt
+			set_country_flag = gophira_less_bad_events4
 			if = {
 				limit = {
 					OR = {

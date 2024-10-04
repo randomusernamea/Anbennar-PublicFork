@@ -367,3 +367,384 @@ country_event = {
 		create_union = J72
 	}
 }
+
+country_event = {
+	id = gophira.10
+	title = gophira.10.t
+	desc = gophira.10.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.10.1
+		G64 = {
+			kill_heir = {}
+			kill_ruler = yes
+		}
+		add_treasury = 300
+		2487 = { add_devastation = 25 }
+		gophira_var_effect = { operation = subtract value = 1 }
+		gophira_heir_effect = { pow = mil amount = 1 }
+	}
+
+	option = {
+		name = gophira.10.2
+		define_advisor = {
+			type = army_reformer
+			skill = 2
+			culture = larankarha
+			cost_multiplier = 0.75
+		}
+		gain_taychend_glory_effect = { amount = 100 }
+		gophira_var_effect = { operation = change value = 1 }
+		gophira_heir_effect = { pow = dip amount = 1 }
+	}
+}
+
+country_event = {
+	id = gophira.11
+	title = gophira.11.t
+	desc = gophira.11.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.11.1
+		if = {
+			limit = { has_country_modifier = gophira_stance_1 }
+			remove_country_modifier = gophira_stance_1
+			add_country_modifier = {
+				name = gophira_stance_1fin
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { has_country_modifier = gophira_stance_2 }
+			remove_country_modifier = gophira_stance_2
+			add_country_modifier = {
+				name = gophira_stance_2fin
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { has_country_modifier = gophira_stance_3 }
+			remove_country_modifier = gophira_stance_3
+			add_country_modifier = {
+				name = gophira_stance_3fin
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { has_country_modifier = gophira_stance_4 }
+			remove_country_modifier = gophira_stance_4
+			add_country_modifier = {
+				name = gophira_stance_4fin
+				duration = -1
+			}
+		}
+		else = {
+			remove_country_modifier = gophira_stance_5
+			add_country_modifier = {
+				name = gophira_stance_5fin
+				duration = -1
+			}
+		}
+		custom_tooltip = gophira_stop_bad_events_tt
+		clr_country_flag = gophira_bad_events
+	}
+}
+
+country_event = {	#bad events handler
+	id = gophira.12
+	title = gophira.10.t
+	desc = gophira.10.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = G74
+		has_country_flag = gophira_bad_events
+	}
+
+	option = {
+		name = gophira.10.1
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 1.5
+					has_country_flag = gophira_less_bad_events1
+				}
+				modifier = {
+					factor = 1.5
+					has_country_flag = gophira_less_bad_events2
+				}
+				modifier = {
+					factor = 1.5
+					has_country_flag = gophira_less_bad_events3
+				}
+				modifier = {
+					factor = 1.5
+					has_country_flag = gophira_less_bad_events4
+				}
+			}
+			1 = {
+				trigger = {
+					OR = {
+						NOT = { has_country_flag = gophira_event18 }
+						had_country_flag = { flag = gophira_event18 days = 3650 }
+					}
+				}
+				clr_country_flag = gophira_event18
+				country_event = { id = gophira.18 }
+			}
+			1 = {
+				trigger = {
+					OR = {
+						NOT = { has_country_flag = gophira_event13 }
+						had_country_flag = { flag = gophira_event13 days = 3650 }
+					}
+				}
+				clr_country_flag = gophira_event12
+				country_event = { id = gophira.13 }
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_country_flag = gophira_event14
+						is_at_war = yes
+						any_owned_province = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 10
+							}
+						}
+					}
+				}
+				country_event = { id = gophira.14 }
+			}
+			1 = {
+				trigger = {
+					OR = {
+						NOT = { has_country_flag = gophira_event15 }
+						had_country_flag = { flag = gophira_event15 days = 3650 }
+					}
+				}
+				clr_country_flag = gophira_event15
+				country_event = { id = gophira.15 }
+			}
+			1 = {
+				trigger = {
+					OR = {
+						NOT = { has_country_flag = gophira_event16 }
+						had_country_flag = { flag = gophira_event16 days = 3650 }
+					}
+				}
+				clr_country_flag = gophira_event16
+				country_event = { id = gophira.16 }
+			}
+			1 = {
+				trigger = {
+					OR = {
+						NOT = { has_country_flag = gophira_event17 }
+						had_country_flag = { flag = gophira_event17 days = 3650 }
+					}
+				}
+				clr_country_flag = gophira_event17
+				country_event = { id = gophira.17 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gophira.13
+	title = gophira.13.t
+	desc = gophira.13.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.13.1
+		set_country_flag = gophira_event13
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = 2
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+}
+
+country_event = {
+	id = gophira.14
+	title = gophira.14.t
+	desc = gophira.14.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.14.1
+		set_country_flag = gophira_event14
+		random_owned_province = {
+			limit = {
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 10
+				}
+			}
+			kill_units = {
+				who = ROOT
+				amount = 10
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+				estate = estate_nobles
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gophira.15
+	title = gophira.15.t
+	desc = gophira.15.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = { 
+						OR = {
+							trade_goods = cloth
+							trade_goods = silk
+							trade_goods = glass
+							trade_goods = paper
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = cloth
+							trade_goods = silk
+							trade_goods = glass
+							trade_goods = paper
+						}
+					}
+					save_event_target_as = gophira_army_encroaching
+				}
+			}
+			else = {
+				random_owned_province = { save_event_target_as = gophira_army_encroaching }
+			}
+		}
+	}
+
+	option = {
+		name = gophira.15.1
+		goto = gophira_army_encroaching
+		set_country_flag = gophira_event15
+		event_target:gophira_army_encroaching = {
+			add_province_modifier = {
+				name = gophira_army_encroaching
+				duration = 3650
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -10
+		}
+	}
+}
+
+country_event = {
+	id = gophira.16
+	title = gophira.16.t
+	desc = gophira.16.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = { save_event_target_as = gophira_forcerecruit }
+		}
+	}
+
+	option = {
+		name = gophira.16.1
+		goto = gophira_forcerecruit
+		set_country_flag = gophira_event16
+		event_target:gophira_forcerecruit = {
+			add_base_tax = -1
+			add_base_manpower = 1
+			unrest = 5
+			add_local_autonomy = 10
+		}
+	}
+}
+
+country_event = {
+	id = gophira.17
+	title = gophira.17.t
+	desc = gophira.17.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+
+	option = {
+		name = gophira.17.1
+		set_country_flag = gophira_event17
+		add_country_modifier = {
+			name = nsc_army_more_paid
+			duration = 1825
+		}
+	}
+}
+
+country_event = {
+	id = gophira.18
+	title = gophira.18.t
+	desc = gophira.18.d
+	picture = DEBATE_REPUBLICAN_eventPicture #random, change it
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = gophira_event18
+		random_owned_province = { save_event_target_as = gophira_bad_general }
+	}
+
+	option = {
+		name = gophira.18.1
+		goto = gophira_bad_general
+		event_target:gophira_bad_general = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+			kill_leader = { type = general }
+		}
+	}
+
+	option = {
+		name = gophira.18.2
+		add_treasury = -100
+		hire_advisor = {
+			type = commandant
+			skill = 1
+		}
+	}
+}
