@@ -1259,7 +1259,10 @@ gophira_4 = {
 	G74_the_great_kannalulthe = {
 		icon = mission_defeat_jaunpur
 		position = 3
-		required_missions = { G74_a_relic_for_the_fort } 
+		required_missions = { 
+			G74_a_relic_for_the_fort
+			G74_back_with_a_vengeance
+		} 
 		provinces_to_highlight = {
 			province_id = 2527
 			NOT = {
