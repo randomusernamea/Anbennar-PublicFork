@@ -690,7 +690,7 @@ country_event = {
 		event_target:gophira_forcerecruit = {
 			add_base_tax = -1
 			add_base_manpower = 1
-			unrest = 5
+			add_unrest = 5
 			add_local_autonomy = 10
 		}
 	}
@@ -723,8 +723,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_country_flag = gophira_event18
-		random_owned_province = { save_event_target_as = gophira_bad_general }
+		hidden_effect = {
+			set_country_flag = gophira_event18
+			random_owned_province = { save_event_target_as = gophira_bad_general }
+		}
 	}
 
 	option = {
