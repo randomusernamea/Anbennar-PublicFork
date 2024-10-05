@@ -584,7 +584,10 @@ gophira_3 = {
 
 		trigger = {
 			OR = {
-				custom_trigger_tooltip = { tooltip =  gophira_complete_this_tt }
+				custom_trigger_tooltip = { 
+					tooltip =  gophira_complete_this_tt
+					always = no
+				}
 				AND = {
 					2551 = {
 						owned_by = ROOT
@@ -601,7 +604,10 @@ gophira_3 = {
 						}
 					}
 				}
-				custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
+				custom_trigger_tooltip = { 
+					tooltip = gophira_or_that_tt
+					always = no
+				}
 				AND = {
 					2551 = {
 						owned_by = ROOT
@@ -742,32 +748,31 @@ gophira_3 = {
 			}	
 			else = {
 				OR = {
-					AND = {
-						custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
-						G76 = { is_subject_of = ROOT }
-					}
-					AND = {
-						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
-						G76 = {
-							OR = {
+					G76 = { is_subject_of = ROOT }
+					custom_trigger_tooltip = {
+						tooltip = gophira_improve_relations_tt
+						AND = {
+							G76 = {
+								OR = {
 								has_50_opinion_improved_relation = { target = ROOT }
-								exists = no
-								is_subject = yes
-							}					
-						}
-						G81 = {
-							OR = {
-								has_50_opinion_improved_relation = { target = ROOT }
-								exists = no
-								is_subject = yes
-							}					
-						}
-						G82 = {
-							OR = {
-								has_50_opinion_improved_relation = { target = ROOT }
-								exists = no
-								is_subject = yes
-							}					
+									exists = no
+									is_subject = yes
+								}					
+							}
+							G81 = {
+								OR = {
+									has_50_opinion_improved_relation = { target = ROOT }
+									exists = no
+									is_subject = yes
+								}					
+							}
+							G82 = {
+								OR = {
+									has_50_opinion_improved_relation = { target = ROOT }
+									exists = no
+									is_subject = yes
+								}					
+							}
 						}
 					}
 				}
@@ -887,8 +892,11 @@ gophira_3 = {
 			}
 			nanru_nakar_area = { country_or_non_sovereign_subject_holds = ROOT type = all }
 			OR = {
+				custom_trigger_tooltip = { 
+					tooltip = gophira_complete_this_tt
+					always = no
+				}
 				AND = {
-					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					manpower = 20
 					mil_power = 100
 					nanru_nakar_area = {
@@ -899,11 +907,14 @@ gophira_3 = {
 						}
 					}
 				}
+				custom_trigger_tooltip = { 
+					tooltip = gophira_or_that_tt
+					always = no
+				}
 				AND = {
-					custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 					OR = {
-						has_advisor_of_type_and_level = { type = artist level = 2 }
-						has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+						artist = 2
+						natural_scientist = 2
 						dip_power = 150
 					}
 					OR = {
@@ -952,8 +963,8 @@ gophira_3 = {
 			else_if = {
 				limit = {
 					OR = {
-						has_advisor_of_type_and_level = { type = artist level = 2 }
-						has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+						artist = 2
+						natural_scientist = 2
 						dip_power = 150
 					}
 					OR = {
@@ -974,8 +985,8 @@ gophira_3 = {
 				if = {
 					limit = {
 						NOT = {
-							has_advisor_of_type_and_level = { type = artist level = 2 }
-							has_advisor_of_type_and_level = { type = natural_scientist level = 2 }
+							artist = 2
+							natural_scientist = 2
 						}
 					}
 					add_dip_power = -150
@@ -1288,8 +1299,11 @@ gophira_4 = {
 		trigger = {
 			2527 = {
 				OR = {
+					custom_trigger_tooltip = { 
+						tooltip = gophira_complete_this_tt
+						always = no
+					}
 					AND = {
-						custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 						has_trade_building_trigger = yes
 						has_production_or_gold_building_trigger = yes
 						has_tax_building_trigger = yes
@@ -1299,8 +1313,11 @@ gophira_4 = {
 							has_state_edict = edict_encourage_development
 						}
 					}
+					custom_trigger_tooltip = { 
+						tooltip = gophira_or_that_tt
+						always = no
+					}
 					AND = {
-						custom_trigger_tooltip = { tooltip = gophira_or_that_tt	}
 						has_fort_building_trigger = yes
 						has_building = ramparts
 						has_manpower_building_trigger = yes
@@ -1530,25 +1547,36 @@ gophira_5 = {
 				has_personal_deity = taychend_glory_5
 			}
 			OR = {
+				custom_trigger_tooltip = { 
+					tooltip = gophira_complete_this_tt
+					always = no
+				}
 				AND = {
-					custom_trigger_tooltip = { tooltip = gophira_complete_this_tt }
 					OR = {
 						employed_advisor = { type = spymaster }
 						employed_advisor = { type = inquisitor }
-						employed_advisor = { skill = 2 }
-					}
+						custom_trigger_tooltip = {
+							tooltip = gophira_any_lvl2_advisor_tt
+							employed_advisor = { skill = 2 }
+						}					}
 					num_of_owned_provinces_with = {
 						value = 5
 						has_forcelimit_building_trigger = yes
 						base_manpower = 7
 					}
 				}
+				custom_trigger_tooltip = { 
+					tooltip = gophira_or_that_tt
+					always = no
+				}
 				AND = {
-					custom_trigger_tooltip = { tooltip = gophira_or_that_tt }
 					OR = {
 						employed_advisor = { type = statesman }
 						employed_advisor = { type = recruitmaster }
-						employed_advisor = { skill = 2 }
+						custom_trigger_tooltip = {
+							tooltip = gophira_any_lvl2_advisor_tt
+							employed_advisor = { skill = 2 }
+						}
 					}
 					num_of_owned_provinces_with = {
 						value = 8
@@ -1567,7 +1595,10 @@ gophira_5 = {
 					OR = {
 						employed_advisor = { type = spymaster }
 						employed_advisor = { type = inquisitor }
-						employed_advisor = { skill = 2 }
+						custom_trigger_tooltip = {
+							tooltip = gophira_any_lvl2_advisor_tt
+							employed_advisor = { skill = 2 }
+						}
 					}
 					num_of_owned_provinces_with = {
 						value = 5
