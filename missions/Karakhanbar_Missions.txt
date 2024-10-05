@@ -954,11 +954,25 @@ Z54_2_moderate = {
                 medium_tolerance_goblin_race_trigger = yes
                 high_tolerance_goblin_race_trigger = yes
             }
-            has_estate_privilege = estate_burghers_control_over_the_coinage
-            treasury = 200
+            if = {
+                limit = { has_dlc = "Domination" }
+                has_estate_privilege = estate_burghers_control_over_the_coinage
+                treasury = 200
+            }
+            else = {
+                treasury = 400
+            }
         }
-		effect = { 
-            add_treasury = -200
+		effect = {
+            if = {
+                limit = { has_dlc = "Domination" }
+                remove_estate_privilege = estate_burghers_control_over_the_coinage
+                add_treasury = -200
+            }
+            else = {
+                add_treasury = -400
+            }
+            set_estate_privilege = estate_burghers_karakhanbar_cooperation_with_goblin_cartels
             set_country_flag = karakhanbar_cartels
             custom_tooltip = karakhanbar_kartels_of_deepwoods_effect_tt
             hidden_effect = {
@@ -967,10 +981,8 @@ Z54_2_moderate = {
                     effect = "random_owned_province = { limit = { NOT = { has_terrain = gladeway has_terrain = fey_gladeway has_province_flag = karakhanbar_goblins } } add_goblin_minority_size_effect = yes set_province_flag = karakhanbar_goblins }"
                 }
             }
-            remove_estate_privilege = estate_burghers_control_over_the_coinage
-            set_estate_privilege = estate_burghers_karakhanbar_cooperation_with_goblin_cartels
         } 
-	}
+    }
 
     Z54_fey_repellant_M = {
         icon = mission_hanged_tree
@@ -1748,6 +1760,10 @@ Z54_2_1 = {
                     limit = "OR = { region = ourdia_region region = daravans_folly_region } has_port = yes has_dock_building_trigger = yes has_shipyard_building_trigger = yes province_has_current_tech_fort_trigger = yes" 
                     effect = "add_province_modifier = { name = karakhanbar_headquarters_of_the_burning_navy duration = -1 }"
                 }
+                select_highest_dev_province_with_limit = { 
+                    limit = "OR = { region = ourdia_region region = daravans_folly_region } has_port = yes NOT = { has_province_modifier = karakhanbar_headquarters_of_the_burning_navy } has_dock_building_trigger = yes has_shipyard_building_trigger = yes province_has_current_tech_fort_trigger = yes" 
+                    effect = "add_province_modifier = { name = karakhanbar_headquarters_of_the_burning_navy duration = -1 }"
+                }
             }
         }
     }
@@ -1954,7 +1970,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_20_production_building_tt
                 for = {
-                    amount = 4
+                    amount = 5
                     effect = "random_owned_province = { limit = { has_production_building_trigger = yes NOT = { has_province_flag = karakhanbar_production_building } } add_or_upgrade_production_building = yes set_province_flag = karakhanbar_production_building }"
                 }
             }
@@ -1967,7 +1983,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_15_production_building_tt
                 for = {
-                    amount = 3
+                    amount = 4
                     effect = "random_owned_province = { limit = { has_production_building_trigger = yes NOT = { has_province_flag = karakhanbar_production_building } } add_or_upgrade_production_building = yes set_province_flag = karakhanbar_production_building }"
                 }
             }
@@ -1980,7 +1996,7 @@ Z54_3_1 = {
                 }
 			    custom_tooltip = karakhanbar_our_cities_in_woods_effect_10_production_building_tt
 		        for = {
-                    amount = 2
+                    amount = 3
                     effect = "random_owned_province = { limit = { has_production_building_trigger = yes NOT = { has_province_flag = karakhanbar_production_building } } add_or_upgrade_production_building = yes set_province_flag = karakhanbar_production_building }"
                 }
             }
@@ -1996,7 +2012,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_20_tax_building_tt
                 for = {
-                    amount = 4
+                    amount = 5
                     effect = "random_owned_province = { limit = { has_tax_building_trigger = yes NOT = { has_province_flag = karakhanbar_tax_building } } add_or_upgrade_tax_building = yes set_province_flag = karakhanbar_tax_building }"
                 }
             }
@@ -2009,7 +2025,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_15_tax_building_tt
                 for = {
-                    amount = 3
+                    amount = 4
                     effect = "random_owned_province = { limit = { has_tax_building_trigger = yes NOT = { has_province_flag = karakhanbar_tax_building } } add_or_upgrade_tax_building = yes set_province_flag = karakhanbar_tax_building }"
                 }
             }
@@ -2022,7 +2038,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_10_tax_building_tt
                 for = {
-                    amount = 2
+                    amount = 3
                     effect = "random_owned_province = { limit = { has_tax_building_trigger = yes NOT = { has_province_flag = karakhanbar_tax_building } } add_or_upgrade_tax_building = yes set_province_flag = karakhanbar_tax_building }"
                 }
             }
@@ -2038,7 +2054,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_20_manpower_building_tt
                 for = {
-                    amount = 4
+                    amount = 5
                     effect = "random_owned_province = { limit = { has_manpower_building_trigger = yes NOT = { has_province_flag = karakhanbar_manpower_building } } add_or_upgrade_manpower_building = yes set_province_flag = karakhanbar_manpower_building }"
                 }
             }
@@ -2051,7 +2067,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_15_manpower_building_tt
                 for = {
-                    amount = 3
+                    amount = 4
                     effect = "random_owned_province = { limit = { has_manpower_building_trigger = yes NOT = { has_province_flag = karakhanbar_manpower_building } } add_or_upgrade_manpower_building = yes set_province_flag = karakhanbar_manpower_building }"
                 }
             }
@@ -2064,7 +2080,7 @@ Z54_3_1 = {
                 }
                 custom_tooltip = karakhanbar_our_cities_in_woods_effect_10_manpower_building_tt
                 for = {
-                    amount = 2
+                    amount = 3
                     effect = "random_owned_province = { limit = { has_manpower_building_trigger = yes NOT = { has_province_flag = karakhanbar_manpower_building } } add_or_upgrade_manpower_building = yes set_province_flag = karakhanbar_manpower_building }"
                 }
             }
@@ -2826,11 +2842,11 @@ Z54_4_1 = {
                         duration = -1
                     }
                 }
-            }
-            fey_abundant_goods_provinces = {
-                remove_province_modifier = fey_dummy_goods
-                remove_province_modifier = fey_abundant_goods
-                remove_province_modifier = fey_abundant_goods_improved
+                fey_abundant_goods_provinces = {
+                    remove_province_modifier = fey_dummy_goods
+                    remove_province_modifier = fey_abundant_goods
+                    remove_province_modifier = fey_abundant_goods_improved
+                }
             }
         }
     }
@@ -3481,16 +3497,6 @@ Z54_5_1 = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
             }
-            num_of_owned_provinces_with = {
-                value = 5
-                AND = {
-                    region = serpentreach_region
-                    OR = {
-                        has_province_modifier = restored_rail
-                        has_province_modifier = advanced_rail
-                    }
-                }
-            }
             trade_goods_produced_amount = {
                 trade_goods = copper
                 amount = 20
@@ -3501,26 +3507,7 @@ Z54_5_1 = {
             }
         }
         effect = {
-            if = {
-                limit = {
-                    num_of_owned_provinces_with = {
-                        value = 22
-                        AND = {
-                            region = serpentreach_region
-                            OR = {
-                                has_province_modifier = restored_rail
-                                has_province_modifier = advanced_rail
-                            }
-                        }
-                    }
-                }
-                custom_tooltip = karakhanbar_learning_from_dwarves_effect_innovativeness_yes_tt
-                hidden_effect = { change_innovativeness = 10 } 
-            }
-            else = {
-                custom_tooltip = karakhanbar_learning_from_dwarves_effect_innovativeness_no_tt
-                hidden_effect = { change_innovativeness = 5 }
-            }
+            change_innovativeness = 5
             custom_tooltip = karakhanbar_learning_from_dwarves_effect_serpentspine_abundance_tt
             hidden_effect = {
                 if = {
@@ -3573,6 +3560,7 @@ Z54_5_1 = {
                 has_country_modifier = racial_pop_harpy_purge
                 has_country_modifier = racial_pop_harpy_expulsion  
                 medium_tolerance_harpy_race_trigger = yes
+                high_tolerance_harpy_race_trigger = yes
             }
             treasury = 750
             custom_trigger_tooltip = {
@@ -3888,10 +3876,13 @@ Z54_4_endgame = {
             owns_all_provinces = {
                 area = oldhaven_area
             }
-            oldhaven_area = {
-                type = all
-                NOT = { has_fort_building_trigger = yes }
-                artillery_in_province = 6
+            custom_trigger_tooltip = {
+                tooltip = karakhanbar_break_through_white_wall_trigger_tt
+                oldhaven_area = {
+                    type = all
+                    NOT = { has_fort_building_trigger = yes }
+                    artillery_in_province = 6
+                }
             }
         }
         effect = {
