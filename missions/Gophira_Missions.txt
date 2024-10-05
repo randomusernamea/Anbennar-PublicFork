@@ -145,7 +145,7 @@ gophira_1_fren = {
 					sign = +
 				}
 			}
-			custom_tooltip = G74_tribes_chief_tt
+			custom_tooltip = gophira_tribes_chief_tt
 			gauraddhi_region = { add_permanent_claim = J72 } 
 			J72 = {
 				add_trust = {
@@ -246,7 +246,7 @@ gophira_1_fren = {
 				AND = {
 					dip_power = 200
 					custom_trigger_tooltip = {
-						tooltip = king_or_wife_ded
+						tooltip = gophira_king_or_wife_ded
 						NOT = {
 							AND = {
 								has_ruler_flag = gophira_ruler
@@ -270,7 +270,7 @@ gophira_1_fren = {
 						}
 					}
 				}
-				country_event = { id = flavour_gophira.9 } 
+				country_event = { id = gophira.9 } 
 				add_dip_power = -200
 			}
 			J72 = {
@@ -323,7 +323,7 @@ gophira_1_fren = {
 			}
 			dip_power = 500
 			custom_trigger_tooltip = {
-				tooltip = taychend_hero_passed_reform_4_tt
+				tooltip = taychend_passed_reform_4_tt
 				has_country_flag = got_reform_4
 			}
 		}
@@ -672,7 +672,7 @@ gophira_3 = {
 				gophira_heir_effect = {	pow = dip amount = 1 }
 			}
 			else = {
-				custom_tooltip = gophira_get_that_tt
+				custom_tooltip = gophira_get_this_tt
 				2551 = {
 					add_devastation = 10
 					add_base_production = -1
@@ -882,7 +882,7 @@ gophira_3 = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = taychend_hero_passed_reform_3_tt
+				tooltip = taychend_passed_reform_3_tt
 				has_country_flag = got_reform_3
 			}
 			nanru_nakar_area = { country_or_non_sovereign_subject_holds = ROOT type = all }
@@ -1513,6 +1513,7 @@ gophira_5 = {
 				limit = { num_of_regiments_at_full_drill = 10 }
 				add_army_professionalism = 0.05
 			}
+			custom_tooltip = gophira_state_firearm_tt
 			set_country_flag = gophira_state_firearm #for early unlock of vanilla decision, remember to change it!
 		}
 	}
