@@ -17447,7 +17447,7 @@ rakkaz_add_fighting_pit_modifier = {
 			hidden = yes
 		}
 	}
-	add_country_modifier = {
+	add_province_modifier = {
 		name = rakkaz_fighting_pit
 		duration = -1
 	}
@@ -17606,4 +17606,60 @@ rakkaz_soldier_household_buffs_remove = {
 		limit = { has_province_modifier = rakkaz_soldier_households_1 }
 		remove_province_modifier = rakkaz_soldier_households_1
 	}
+}
+
+rakkaz_warlock_advisor_management = {
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_demon
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_hag
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_demonpower
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_loot
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
+	clr_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
+	country_event = { id = flavour_rakkaz.6 days = 1 }
+}
+
+rakkaz_more_bonuses_for_kult_of_the_packmother = {
+	if = {
+		limit = { has_country_flag = rakkaz_improved_kult_of_the_packmother }
+		if = {
+			limit = { patriarch_authority = 0.4 }
+			random_owned_province = {
+				limit = { culture = fieldstalker_gnoll }
+				add_base_manpower = 2
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = { culture = fieldstalker_gnoll }
+				add_base_manpower = 1
+			}
+		}
+		if = {
+			limit = { patriarch_authority = 0.8 }
+			add_yearly_manpower = 0.5
+		}
+		else_if = {
+			limit = { patriarch_authority = 0.6 }
+			add_yearly_manpower = 0.4
+		}
+		else_if = {
+			limit = { patriarch_authority = 0.4 }
+			add_yearly_manpower = 0.3
+		}
+		else_if = {
+			limit = { patriarch_authority = 0.2 }
+			add_yearly_manpower = 0.2
+		}
+		else = { add_yearly_manpower = 0.1 }
+	}
+}
+
+rakkaz_make_warlock_pact_avaliables = {
+	clr_country_flag = revoke_warlock_pact_power
+	clr_country_flag = revoke_warlock_pact_exploitation
+	clr_country_flag = revoke_warlock_pact_domination
+	clr_country_flag = revoke_warlock_pact_overcharge
 }

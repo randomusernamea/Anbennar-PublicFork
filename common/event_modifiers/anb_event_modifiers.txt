@@ -3171,30 +3171,30 @@ rakkaz_slave_exploitation = {
 
 rakkaz_surge_of_suffering = {
 	trade_goods_size = 3
-	development_cost = -0.1
+	local_development_cost = -0.1
 }
 
 rakkaz_surge_of_suffering_upgrade = {
 	trade_goods_size = 3
-	development_cost = -0.1
+	local_development_cost = -0.1
 	local_manpower_modifier = 1
 }
 
 rakkaz_pact_overcharge = {
-	global_unrest = -2
-	global_monthly_devastation = -0.1
-	development_cost = -0.1
-	build_cost = -0.1
+	local_unrest = -2
+	local_monthly_devastation = -0.1
+	local_development_cost = -0.1
+	local_build_cost = -0.1
 }
 
 rakkaz_channeling_suffering = {
 	trade_goods_size = 2
-	local_monthly_devastation = 1
+	local_monthly_devastation = 0.9
 }
 
 rakkaz_channeling_suffering_upgrade = {
 	trade_goods_size = 2
-	local_monthly_devastation = 1
+	local_monthly_devastation = 0.9
 	local_manpower_modifier = 1
 }
 

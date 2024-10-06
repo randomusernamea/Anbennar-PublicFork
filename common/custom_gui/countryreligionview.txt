@@ -1177,9 +1177,11 @@ custom_button = {
 		}
 	}
 	effect = { 
-		change_variable = {
-			which = numOfLightThePyres
-			value = 1
+		hidden_effect = {
+			change_variable = {
+				which = numOfLightThePyres
+				value = 1
+			}
 		}
 		if = {
 			limit = { NOT = { total_development = 100 } }

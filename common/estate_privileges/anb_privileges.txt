@@ -13412,15 +13412,17 @@ estate_mages_warlock_pact_power = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_power }
+		NOT = { has_country_flag = revoke_warlock_pact_power }
 	}
 	can_select = {
-		years_of_manpower = 0.2
+		rakkaz_warlock_pact_limit = yes
+		years_of_manpower = 0.8
 	}
 	can_revoke = {
 		always = no
 	}
 	on_granted = {
-		add_yearly_manpower = -0.2
+		add_yearly_manpower = -0.8
 	}
 	benefits = {
 		land_morale = 0.05
@@ -13430,7 +13432,10 @@ estate_mages_warlock_pact_power = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_power }
+ 	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_power 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
 }
 
 estate_mages_organization_rule_of_warlocks = {
@@ -13444,13 +13449,21 @@ estate_mages_organization_rule_of_warlocks = {
 		always = no
 	}
 	on_granted = {
+		clear_mages_organization_effect = yes
 		if = {
 			limit = { has_reform = magocracy_reform }
-			country_event = { id = flavour_rakkaz.7 }
+			custom_tooltip = rakkaz_warlock_bad
+			hidden_effect = {
+				country_event = { id = flavour_rakkaz.7 }
+			}
 		}
 		else = {
-			country_event = { id = flavour_rakkaz.6 }
+			custom_tooltip = rakkaz_warlock_nice
+			hidden_effect = {
+				country_event = { id = flavour_rakkaz.6 }
+			}
 		}	
+		custom_tooltip = rakkaz_rule_of_warlocks_tooltip
 	}
 	penalties = {
 		ae_impact = 0.1
@@ -13467,15 +13480,7 @@ estate_mages_organization_rule_of_warlocks = {
 		}
 	}
 	ai_will_do = {
-		factor = 5
-		modifier = {
-			factor = 10
-			current_age = age_of_absolutism
-		}
-		modifier = {
-			factor = 0
-			has_estate_privilege = estate_mages_organization_magisterium
-		}
+		factor = 10
 	}
 }
 
@@ -13485,8 +13490,10 @@ estate_mages_warlock_pact_exploitation = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_exploitation }
+		NOT = { has_country_flag = revoke_warlock_pact_exploitation }
 	}
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		any_owned_province = {
 			trade_goods = slaves
 			base_tax = 2
@@ -13499,7 +13506,7 @@ estate_mages_warlock_pact_exploitation = {
 		if = {
 			limit = { current_icon = invocation_of_chains }
 			add_owned_provinces_development_ducats = {
-				multiplier = 5
+				multiplier = 1
 				trigger = { trade_goods = slaves }
 			}
 		}
@@ -13512,7 +13519,7 @@ estate_mages_warlock_pact_exploitation = {
 				}
 			}
 			add_owned_provinces_development_ducats = {
-				multiplier = 10
+				multiplier = 2
 				trigger = { trade_goods = slaves }
 			}
 		}
@@ -13533,7 +13540,10 @@ estate_mages_warlock_pact_exploitation = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_exploitation }
+ 	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_exploitation 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
 }
 
 estate_mages_warlock_pact_overcharge = {
@@ -13542,8 +13552,10 @@ estate_mages_warlock_pact_overcharge = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_overcharge }
+		NOT = { has_country_flag = revoke_warlock_pact_overcharge }
 	}
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		any_owned_province = {
 			has_building = mage_tower
 		}
@@ -13554,14 +13566,22 @@ estate_mages_warlock_pact_overcharge = {
 	}
 	on_granted = {
 		add_adm_power = -100
-		every_owned_province = {
-			limit = {
-				has_building = mage_tower
-			}
-			add_base_tax = -1
+		custom_tooltip = rakkaz_every_owned_province_with_a_mage_tower
+		tooltip = {
 			add_province_modifier = {
 				name = rakkaz_pact_overcharge
 				duration = 3650
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_building = mage_tower
+				}
+				add_province_modifier = {
+					name = rakkaz_pact_overcharge
+					duration = 3650
+				}
 			}
 		}
 	}
@@ -13574,7 +13594,10 @@ estate_mages_warlock_pact_overcharge = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_overcharge }
+ 	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_overcharge 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
 }
 
 estate_mages_warlock_pact_domination = {
@@ -13583,11 +13606,13 @@ estate_mages_warlock_pact_domination = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_domination }
+		NOT = { has_country_flag = revoke_warlock_pact_domination }
 	}
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		if = {
 			limit = { religion = xhazobkult }
-			patriarch_authority = 10
+			patriarch_authority = 0.1
 		}
 		if = {
 			limit = { religion = shadow_pact }
@@ -13600,7 +13625,7 @@ estate_mages_warlock_pact_domination = {
 	on_granted = {
 		if = {
 			limit = { religion = xhazobkult }
-			add_patriarch_authority = -10
+			add_patriarch_authority = -0.1
 		}
 		if = {
 			limit = { religion = shadow_pact }
@@ -13609,7 +13634,7 @@ estate_mages_warlock_pact_domination = {
 		add_rebel_progress = { value = -100 }
 	}
 	benefits = {
-		global_unrest = 2
+		global_unrest = -2
 		harsh_treatment_cost = -0.75
 	}
 	penalties = {}
@@ -13617,7 +13642,10 @@ estate_mages_warlock_pact_domination = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_domination }
+ 	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_domination 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
 }
 
 estate_mages_warlock_pact_unrestricted_savagery = {

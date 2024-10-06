@@ -21,6 +21,7 @@ has_mages_organization_privilege = {
 		has_estate_privilege = estate_mages_organization_onyxguard
 		has_estate_privilege = estate_mages_organization_proffesional_mihipha
 		has_estate_privilege = estate_mages_organization_orda_aldresia
+		has_estate_privilege = estate_mages_organization_rule_of_warlocks
 	}
 }
 
@@ -37,6 +38,7 @@ has_mages_special_organization_privilege = {
 		has_estate_privilege = estate_mages_organization_onyxguard
 		has_estate_privilege = estate_mages_organization_proffesional_mihipha
 		has_estate_privilege = estate_mages_organization_orda_aldresia
+		has_estate_privilege = estate_mages_organization_rule_of_warlocks
 		has_estate_privilege = estate_mages_organization_rule_of_warlocks
 	}
 }
@@ -4234,5 +4236,23 @@ culture_has_equal_heir = {
 		culture = nurcestiran
 		
 		culture = mantimatu
+	}
+}
+
+#Rakkaz MT
+rakkaz_warlock_pact_limit = {
+	custom_trigger_tooltip = {
+		tooltip = rakkaz_warlock_pact_limit_2
+		NOT = {
+			calc_true_if = {
+				amount = 2
+				has_estate_privilege = estate_mages_warlock_pact_battlefield_domination
+				has_estate_privilege = estate_mages_warlock_pact_domination
+				has_estate_privilege = estate_mages_warlock_pact_exploitation
+				has_estate_privilege = estate_mages_warlock_pact_overcharge
+				has_estate_privilege = estate_mages_warlock_pact_power
+				has_estate_privilege = estate_mages_warlock_pact_unrestricted_savagery
+			}
+		}
 	}
 }
