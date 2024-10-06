@@ -1,0 +1,32 @@
+country_event = {
+	id = mykx.1
+	title = naleni.1.t
+	desc = naleni.1.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		}
+	}
+	
+	#sacrifice them all
+	option = {
+		name = mykx.1.a
+		ai_chance = { factor = 100 }
+		every_owned_province = {
+			limit = {
+				culture = crownsman
+			}
+			change_culture = ROOT
+			change_religion = ROOT
+			add_devastation = 25
+		}
+	}
+	#enslave them for our navy
+	option = {
+		
+		}
+	}
