@@ -16203,13 +16203,15 @@ on_raze = {
 		duration = 7300
 	}
 	xhazobkult_terrain_razing = yes
-	change_variable = {
-		which = nbProvincesRazed
-		value = 1
-	}
-	change_variable = {
-		which = nbProvincesRazedByRuler
-		value = 1
+	owner = {
+		change_variable = {
+			which = nbProvincesRazed
+			value = 1
+		}
+		change_variable = {
+			which = nbProvincesRazedByRuler
+			value = 1
+		}
 	}
 	owner = {
 		if = {

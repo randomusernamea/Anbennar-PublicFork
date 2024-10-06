@@ -749,7 +749,7 @@ country_event = {
 	desc = flavour_rakkaz.14.d
 	picture = DIPLOMACY_eventPicture
 
-	hidden = yes
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -757,6 +757,10 @@ country_event = {
 		set_country_flag = rakkaz_can_be_magocracy
 		change_government_to_theocracy = yes
 		add_government_reform = magocracy_reform
+		if = {
+			limit = { mission_completed = F71_the_final_order }
+			add_government_reform = rakkaz_bringers_of_suffering
+		}
 	}
 
 	option = {

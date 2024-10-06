@@ -8354,9 +8354,11 @@ hag_religion = {
 				country_event = {
 					id = shadow_pact.3
 				}
-				change_variable = {
-					which = numOfRitualsPerformed
-					value = 1
+				hidden_effect = {
+					change_variable = {
+						which = numOfRitualsPerformed
+						value = 1
+					}
 				}
 				rakkaz_fighting_pit_mazu_makhara_interactions = yes
 			}

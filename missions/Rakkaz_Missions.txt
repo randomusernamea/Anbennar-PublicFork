@@ -2325,6 +2325,7 @@ F71_4_part3_branch2_hag = {
 				add_country_modifier = {
 					name = undead_military
 					duration = -1
+					hidden = yes
 				}
 				change_unit_type = tech_undead
 			}
@@ -2550,6 +2551,7 @@ F71_3_part3 = {
 		trigger = {  
 			num_of_owned_provinces_with = {
 				value = 15
+				is_core = ROOT
 				region = yezel_mora_region
 				has_tax_building_trigger = yes
 				has_manpower_building_trigger = yes
@@ -2645,14 +2647,17 @@ F71_3_part3 = {
 				is_core = ROOT
 			}
 			simegesfan_area = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
 			kvathagis_area = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
 			tsudhagis_area = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -2672,7 +2677,7 @@ F71_3_part3 = {
 					num_of_times_expanded_infrastructure = 2
 				}
 				else = { development = 30 }
-				manufactories = 2
+				has_multiple_manufactory_trigger = { VAL = 2 }
 			}
 		} 
 
@@ -2702,7 +2707,7 @@ F71_3_part3 = {
 			}
 			OR = {
 				is_hegemon = yes
-				NOT = { great_power_rank = 3 }
+				NOT = { great_power_rank = 4 }
 			}
 			government_rank = 3
 			estate_loyalty = {

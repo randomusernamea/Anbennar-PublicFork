@@ -17454,101 +17454,103 @@ rakkaz_add_fighting_pit_modifier = {
 }
 
 rakkaz_fighting_pit_mazu_makhara_interactions = {
-	if = {
-		limit = { religion = xhazobkult }
+	hidden_effect = {
 		if = {
-			limit = { has_country_flag = rakkaz_manpower_when_interaction }
+			limit = { religion = xhazobkult }
 			if = {
-				limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
-				5466 = {
-					hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
-					add_province_modifier = {
-						name = rakkaz_surge_of_suffering
-						duration = 3650
+				limit = { has_country_flag = rakkaz_manpower_when_interaction }
+				if = {
+					limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
+					5466 = {
+						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
+						add_province_modifier = {
+							name = rakkaz_surge_of_suffering
+							duration = 3650
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
+					every_owned_province = {
+						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering_upgrade }
+						add_province_modifier = {
+							name = rakkaz_channeling_suffering_upgrade
+							duration = 3650
+						}
 					}
 				}
 			}
-			if = {
-				limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
-				every_owned_province = {
-					limit = { has_province_modifier = rakkaz_fighting_pit }
-					hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering_upgrade }
-					add_province_modifier = {
-						name = rakkaz_channeling_suffering_upgrade
-						duration = 3650
+			else = {
+				if = {
+					limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
+					5466 = {
+						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
+						add_province_modifier = {
+							name = rakkaz_surge_of_suffering
+							duration = 3650
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
+					every_owned_province = {
+						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering }
+						add_province_modifier = {
+							name = rakkaz_channeling_suffering
+							duration = 3650
+						}
 					}
 				}
 			}
 		}
-		else = {
-			if = {
-				limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
-				5466 = {
-					hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
-					add_province_modifier = {
-						name = rakkaz_surge_of_suffering
-						duration = 3650
-					}
-				}
-			}
-			if = {
-				limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
-				every_owned_province = {
-					limit = { has_province_modifier = rakkaz_fighting_pit }
-					hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering }
-					add_province_modifier = {
-						name = rakkaz_channeling_suffering
-						duration = 3650
-					}
-				}
-			}
-		}
-	}
-	if = {
-		limit = { religion = shadow_pact }
 		if = {
-			limit = { has_country_flag = rakkaz_manpower_when_interaction }
+			limit = { religion = shadow_pact }
 			if = {
-				limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
-				5466 = {
-					hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
-					add_province_modifier = {
-						name = rakkaz_surge_of_suffering
-						duration = 7300
+				limit = { has_country_flag = rakkaz_manpower_when_interaction }
+				if = {
+					limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
+					5466 = {
+						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
+						add_province_modifier = {
+							name = rakkaz_surge_of_suffering
+							duration = 7300
+						}
+					}
+				}
+				if = {
+					limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
+					every_owned_province = {
+						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering_upgrade }
+						add_province_modifier = {
+							name = rakkaz_channeling_suffering_upgrade
+							duration = 7300
+						}
 					}
 				}
 			}
-			if = {
-				limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
-				every_owned_province = {
-					limit = { has_province_modifier = rakkaz_fighting_pit }
-					hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering_upgrade }
-					add_province_modifier = {
-						name = rakkaz_channeling_suffering_upgrade
-						duration = 7300
+			else = {
+				if = {
+					limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
+					5466 = {
+						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
+						add_province_modifier = {
+							name = rakkaz_surge_of_suffering
+							duration = 7300
+						}
 					}
 				}
-			}
-		}
-		else = {
-			if = {
-				limit = { has_country_flag = rakkaz_mazu_makhara_light_the_pyres }
-				5466 = {
-					hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering }
-					add_province_modifier = {
-						name = rakkaz_surge_of_suffering
-						duration = 7300
-					}
-				}
-			}
-			if = {
-				limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
-				every_owned_province = {
-					limit = { has_province_modifier = rakkaz_fighting_pit }
-					hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering }
-					add_province_modifier = {
-						name = rakkaz_channeling_suffering
-						duration = 7300
+				if = {
+					limit = { has_country_flag = rakkaz_fighting_pit_light_the_pyres }
+					every_owned_province = {
+						limit = { has_province_modifier = rakkaz_fighting_pit }
+						hidden_effect = { remove_province_modifier = rakkaz_channeling_suffering }
+						add_province_modifier = {
+							name = rakkaz_channeling_suffering
+							duration = 7300
+						}
 					}
 				}
 			}
