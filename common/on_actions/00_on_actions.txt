@@ -16203,12 +16203,25 @@ on_raze = {
 		duration = 7300
 	}
 	xhazobkult_terrain_razing = yes
+	change_variable = {
+		which = nbProvincesRazed
+		value = 1
+	}
+	change_variable = {
+		which = nbProvincesRazedByRuler
+		value = 1
+	}
 	owner = {
 		if = {
 			limit = {
-				has_country_modifier = centaur_administration
+				has_country_flag = unlocked_reaver_personality_flag
+				check_variable = {
+					which = nbProvincesRazedByRuler
+					value = 30
+				}
 			}
 			add_ruler_personality = reaver_personality
+			force_add_ruler_personality = { personality = reaver_personality }
 		}
 	}
 	if = {
