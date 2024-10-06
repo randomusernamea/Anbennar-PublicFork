@@ -1942,7 +1942,12 @@ B47_stalbor_column_4 = {
             add_dip_power = -100
             add_mil_power = -100
             custom_tooltip = B47_new_arrivals_2_tooltip
-            set_country_flag = B47_new_arrivals_2
+            hidden_effect = {
+                country_event = {
+                    id = flavor_stalbor.37
+                    days = 730
+                }
+            }
         }
     }
 
@@ -2290,7 +2295,12 @@ B47_stalbor_column_4 = {
             add_dip_power = -100
             add_mil_power = -100
             custom_tooltip = B47_new_arrivals_3_tooltip
-            set_country_flag = B47_new_arrivals_3
+            hidden_effect = {
+                country_event = {
+                    id = flavor_stalbor.41
+                    days = 730
+                }
+            }
         }
     }
     B47_complete_acceptance = {
@@ -2909,7 +2919,12 @@ B47_stalbor_column_5 = {
                 change_trade_goods = iron
             }
             custom_tooltip = B47_new_arrivals_1_tooltip
-            set_country_flag = B47_new_arrivals_1
+            hidden_effect = {
+                country_event = {
+                    id = flavor_stalbor.33
+                    days = 730
+                }
+            }
         }
     }
 
