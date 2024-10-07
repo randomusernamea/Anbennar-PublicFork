@@ -582,12 +582,14 @@ B47_stalbor_column_2 = {
                 AND = {
                     province_id = 510
                     NOT = {
-                        has_shipyard_building_trigger = yes
-                        has_dock_building_trigger = yes
-                        province_has_current_tech_fort_trigger = yes
-                        has_great_project = {
-                            type = bal_ouord
-                            tier = 1
+                        AND = {
+                            has_shipyard_building_trigger = yes
+                            has_dock_building_trigger = yes
+                            province_has_current_tech_fort_trigger = yes
+                            has_great_project = {
+                                type = bal_ouord
+                                tier = 1
+                            }
                         }
                     }
                 }
@@ -666,9 +668,11 @@ B47_stalbor_column_2 = {
                 AND = {
                     province_id = 817
                     NOT = {
-                        development = 40
-                        province_has_current_tech_fort_trigger = yes
-                        has_building = ramparts
+                        AND = {
+                            development = 40
+                            province_has_current_tech_fort_trigger = yes
+                            has_building = ramparts
+                        }
                     }
                 }
             }
@@ -1137,7 +1141,7 @@ B47_stalbor_column_3 = {
                     }
                     add_building_construction = {
                         building = fort_15th
-                        speed = 1
+                        speed = 0.5
                         cost = 0
                     }
                 }
@@ -1363,8 +1367,10 @@ B47_stalbor_column_3 = {
                 AND = {
                     province_id = 793
                     NOT = {
-                        province_has_current_tech_fort_trigger = yes
-                        has_manpower_building_trigger = yes
+                        AND = {
+                            province_has_current_tech_fort_trigger = yes
+                            has_manpower_building_trigger = yes
+                        }
                     }
                 }
             }
@@ -1449,8 +1455,10 @@ B47_stalbor_column_3 = {
                     region = daravans_folly_region
                     has_port = yes
                     NOT = {
-                        has_shipyard_building_trigger = yes
-                        has_dock_building_trigger = yes
+                        AND = {
+                            has_shipyard_building_trigger = yes
+                            has_dock_building_trigger = yes
+                        }  
                     }
                 }
             }
@@ -1555,15 +1563,19 @@ B47_stalbor_column_4 = {
                 AND = {
                     province_id = 888
                     NOT = {
-                        has_manpower_building_trigger = yes
-                        province_has_current_tech_fort_trigger = yes
+                        AND = {
+                            has_manpower_building_trigger = yes
+                            province_has_current_tech_fort_trigger = yes
+                        }
                     }
                 }
                 AND = {
                     province_id = 4097
                     NOT = {
-                        has_manpower_building_trigger = yes
-                        province_has_current_tech_fort_trigger = yes
+                        AND = {
+                            has_manpower_building_trigger = yes
+                            province_has_current_tech_fort_trigger = yes
+                        }
                     }
                 }
             }
@@ -1963,15 +1975,19 @@ B47_stalbor_column_4 = {
                 AND = {
                     province_id = 800
                     NOT = {
-                        development = 30
-                        has_manufactory_trigger = yes
+                        AND = {
+                            development = 30
+                            has_manufactory_trigger = yes
+                        }
                     }
                 }
                 AND = {
                     province_id = 808
                     NOT = {
-                        development = 30
-                        has_manufactory_trigger = yes
+                        AND = {
+                            development = 30
+                            has_manufactory_trigger = yes
+                        }
                     }
                 }
                 AND = {
@@ -2679,19 +2695,23 @@ B47_stalbor_column_5 = {
                 AND = {
                     province_id = 800
                     NOT = {
-                        development = 10
-                        has_tax_building_trigger = yes
-                        has_production_or_gold_building_trigger = yes
-                        has_manpower_building_trigger = yes
+                        AND = {
+                            development = 10
+                            has_tax_building_trigger = yes
+                            has_production_or_gold_building_trigger = yes
+                            has_manpower_building_trigger = yes
+                        }
                     }
                 }
                 AND = {
                     province_id = 808
                     NOT = {
-                        development = 10
-                        has_tax_building_trigger = yes
-                        has_production_or_gold_building_trigger = yes
-                        has_manpower_building_trigger = yes
+                        AND = {
+                            development = 10
+                            has_tax_building_trigger = yes
+                            has_production_or_gold_building_trigger = yes
+                            has_manpower_building_trigger = yes
+                        }
                     }
                 }
             }
