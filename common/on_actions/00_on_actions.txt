@@ -11353,6 +11353,16 @@ on_province_religion_changed = {
 		}
 		remove_province_modifier = L70_enlightenment_by_force
 	}
+	#Rakkaz
+	if = {
+		limit = { owner = { religion = shadow_pact } }
+		owner = {
+			change_variable = {
+				which = numOfProvincesConvertedToSP
+				value = 1
+			}
+		}
+	}
 }
 
 # province

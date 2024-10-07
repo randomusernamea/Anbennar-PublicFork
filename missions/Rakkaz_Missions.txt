@@ -1958,6 +1958,11 @@ F71_2_part3_branch1_demon = {
 					value = 200
 				}
 			}
+			num_of_owned_provinces_with = {
+				value = 10
+				religion = xhazobkult
+				has_building = mage_tower
+			}
 		} 
 
 		effect = {  
@@ -1976,9 +1981,22 @@ F71_2_part3_branch1_demon = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			development_in_provinces = {
+				value = 200
+				has_state_patriach = yes
+			}
+			patriarch_authority = 0.5
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_patriarch_authority = -0.5
+			every_owned_province = {
+				limit = { has_state_patriach = yes }
+				add_base_manpower = 1
+			}
+			set_country_flag = rakkaz_local_cult_gives_manpower
+		} 
 	}
 }
 F71_2_part3_branch1_hag = {
@@ -1998,7 +2016,21 @@ F71_2_part3_branch1_hag = {
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_convert_10_provinces
+				check_variable = {
+					value = 10
+					which = numOfProvincesConvertedToSP
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = yezel_mora_region
+				NOT = { unrest = 0 }
+				has_building = mage_tower
+			}
+		} 
 
 		effect = {  
 			set_country_flag = rakkaz_warlock_unlock_churchpower
@@ -2016,9 +2048,27 @@ F71_2_part3_branch1_hag = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			development_in_provinces = {
+				value = 300
+				religion = shadow_pact
+			}
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_perform_ritual_3_time
+				check_variable = {
+					which = numOfRitualsPerformed
+					value = 3
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			distribute_development = {
+				amount = 15
+				limit = " region = yezel_mora_region religion = shadow_pact "
+				type = manpower
+			}
+		} 
 	}
 }
 F71_4_part3_branch2_nobranch = {
