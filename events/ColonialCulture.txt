@@ -470,3 +470,83 @@ country_event = {
 		triarchy_culture_shift = { to_culture = tinker_gnome }
 	}
 }
+
+country_event = {
+	id = colonial_culture.2
+	title = colonial_culture.2.t
+	desc = colonial_culture.2.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_former_colonial_nation = yes
+			is_colonial_nation = yes
+		}
+		NOT = { has_country_flag = new_colonial_culture }
+	}
+	
+#LENCORI SHIFTS
+	
+	option = { #Arbcoster
+		name = colonial_culture.2.a
+		trigger = {
+			continent = north_america
+			NOT = {
+				colonial_region = colonial_isles
+				colonial_region = colonial_haraf
+				colonial_region = colonial_noruin
+				colonial_region = colonial_endralliande
+			}
+			culture_group = lencori
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = arbcoster }
+		
+	}
+	
+	option = { #Criodhi
+		name = colonial_culture.2.a
+		trigger = {
+			OR = {
+				colonial_region = colonial_isles
+				colonial_region = colonial_haraf
+				colonial_region = colonial_noruin
+				colonial_region = colonial_endralliande
+			}
+			culture_group = lencori
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = criodhi }
+		
+	}
+	
+	option = { #Thornish
+		name = colonial_culture.2.a
+		trigger = {
+			continent = south_america
+			NOT = {
+				colonial_region = colonial_isles
+				colonial_region = colonial_haraf
+				colonial_region = colonial_endralliande
+			}
+			culture_group = lencori
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = thornish }
+		
+	}
+}

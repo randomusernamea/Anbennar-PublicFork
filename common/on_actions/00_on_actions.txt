@@ -15426,6 +15426,14 @@ on_colonial_nation_established = {
 	}
 }
 
+#scope = new country, FROM = parent country 1.35
+on_colonial_nation_established = {
+	country_event = { 
+		id = colonial_culture.2
+		days = 10 # Temporaire
+	}
+}
+
 on_colonist_boosting_colony = {
 	on_colonist_boosting_colony_effect = yes
 	#hidden_effect = {
