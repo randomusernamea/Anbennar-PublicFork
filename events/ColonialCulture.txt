@@ -492,12 +492,14 @@ country_event = {
 	option = { #Arbcoster
 		name = colonial_culture.2.a
 		trigger = {
-			continent = north_america
-			NOT = {
-				colonial_region = colonial_isles
-				colonial_region = colonial_haraf
-				colonial_region = colonial_noruin
-				colonial_region = colonial_endralliande
+			capital_scope = {	
+				continent = north_america
+				NOT = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_noruin
+					colonial_region = colonial_endralliande
+				}
 			}
 			culture_group = lencori
 		}
@@ -513,11 +515,13 @@ country_event = {
 	option = { #Criodhi
 		name = colonial_culture.2.a
 		trigger = {
-			OR = {
-				colonial_region = colonial_isles
-				colonial_region = colonial_haraf
-				colonial_region = colonial_noruin
-				colonial_region = colonial_endralliande
+			capital_scope = {
+				OR = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_noruin
+					colonial_region = colonial_endralliande
+				}
 			}
 			culture_group = lencori
 		}
@@ -533,11 +537,13 @@ country_event = {
 	option = { #Thornish
 		name = colonial_culture.2.a
 		trigger = {
-			continent = south_america
-			NOT = {
-				colonial_region = colonial_isles
-				colonial_region = colonial_haraf
-				colonial_region = colonial_endralliande
+			capital_scope = {	
+				continent = south_america
+				NOT = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_endralliande
+				}
 			}
 			culture_group = lencori
 		}
