@@ -1,32 +1,122 @@
+#this seems to not be working right now?
 country_event = {
-	id = mykx.1
+	id = naleni.1
 	title = naleni.1.t
 	desc = naleni.1.d
 	picture = MILITARY_CAMP_eventPicture
-	
+	# hidden = yes just testing if it actually fires
 	fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {
-		
-		}
-	}
-	
-	#sacrifice them all
-	option = {
-		name = mykx.1.a
-		ai_chance = { factor = 100 }
-		every_owned_province = {
-			limit = {
-				culture = crownsman
+		hidden_effect = {
+			set_variable = {
+				which = matauth
+				value = 3
 			}
-			change_culture = ROOT
-			change_religion = ROOT
-			add_devastation = 25
-		}
+		}		
 	}
-	#enslave them for our navy
 	option = {
-		
+		name = naleni.1.a
+		ai_chance = { factor = 100 }
+		update_matauth = yes
+	}
+}	
+
+country_event = {
+	id = naleni.2
+	title = naleni.2.t
+	desc = naleni.2.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.2.a
+		ai_chance = { factor = 100 }
+		increase_matauth_1 = yes
+	}
+}	
+
+country_event = {
+	id = naleni.3
+	title = naleni.3.t
+	desc = naleni.3.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.3.a
+		ai_chance = { factor = 50 }
+		increase_matauth_2 = yes
+	}
+	option = {
+		name = naleni.3.b
+		ai_chance = { factor = 50 }
+		decrease_matauth_2 = yes
+	}
+}
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = naleni.40 #update modifier to low
+	title = naleni.40.t
+	desc = naleni.40.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naleni.40.a
+		remove_country_modifier = L55_high_authority
+		remove_country_modifier = L55_med_authority
+		add_country_modifier = {
+			name = L55_low_authority
+			duration = -1
 		}
 	}
+}
+
+country_event = {
+	id = naleni.41 #update modifier to med
+	title = naleni.41.t
+	desc = naleni.41.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naleni.41.a
+		remove_country_modifier = L55_high_authority
+		remove_country_modifier = L55_low_authority
+		add_country_modifier = {
+			name = L55_med_authority
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = naleni.42 #update modifier to high
+	title = naleni.42.t
+	desc = naleni.42.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naleni.42.a
+		remove_country_modifier = L55_low_authority
+		remove_country_modifier = L55_med_authority
+		add_country_modifier = {
+			name = L55_high_authority
+			duration = -1
+		}
+	}
+}

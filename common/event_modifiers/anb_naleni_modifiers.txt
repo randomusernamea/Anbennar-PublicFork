@@ -4,3 +4,18 @@ L55_on_deck = {
 	land_morale = 0.1
 	naval_morale = 0.1
 }
+
+L55_low_authority = {
+	global_autonomy = 0.1
+	yearly_corruption = 0.2
+	sailors_recovery_speed = 0.33
+}
+L55_med_authority = {
+	stability_cost_modifier = -0.1
+}
+L55_high_authority = {
+	technology_cost = -0.1
+	idea_cost = -0.1
+	monthly_reform_progress_modifier = 0.25
+	republican_tradition = -0.5
+}

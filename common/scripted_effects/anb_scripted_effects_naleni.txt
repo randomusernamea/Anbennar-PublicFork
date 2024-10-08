@@ -1,0 +1,145 @@
+update_matauth = {
+	if = {
+		limit = {
+				tag = L55
+		}
+		if = {
+			limit = {
+				NOT = { check_variable = { which = matauth value = 1 } }
+				NOT = { has_country_modifier = L55_low_authority }
+			}
+			country_event = { id = naleni.40 }
+		}
+		if = {
+			limit = {
+				check_variable = { which = matauth value = 4 }
+				NOT = { check_variable = { which = matauth value = 8 } }
+				NOT = { has_country_modifier = L55_med_authority }
+			}
+			country_event = { id = naleni.41 }
+		}
+		if = {
+			limit = {
+				check_variable = { which = matauth value = 8 }
+				NOT = { has_country_modifier = L55_high_authority }
+			}
+			country_event = { id = naleni.42 }
+		}
+	}
+}
+
+initialize_matauth_system = {
+	if = {
+		limit = {
+				tag = L55
+		}
+		set_variable = { which = matauth value = 3 }
+	}
+}
+
+decrease_matauth_3 = {
+	if = {
+        limit = {
+                tag = L55
+        }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = -3 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 1 } } }
+                set_variable = { which = matauth value = 1 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}
+increase_matauth_3 = {
+	if = {
+        limit = {
+                tag = L55
+        }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = 3 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+                set_variable = { which = matauth value = 10 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}
+
+decrease_matauth_2 = {
+	if = {
+        limit = {
+                tag = L55
+            }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = -2 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 1 } } }
+                set_variable = { which = matauth value = 1 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}
+
+increase_matauth_2 = {
+    if = {
+        limit = {
+                tag = L55
+        }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = 2 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+                set_variable = { which = matauth value = 10 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}
+
+increase_matauth_1 = {
+	if = {
+        limit = {
+                tag = L55
+        }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = 1 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+                set_variable = { which = matauth value = 10 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}
+
+decrease_matauth_1 = {
+    if = {
+        limit = {
+                tag = L55
+            }
+        # custom_tooltip = 
+        hidden_effect = {
+            change_variable = { which = matauth value = -1 }
+            if = { limit = { NOT = { check_variable = { which = matauth value = 1 } } }
+                set_variable = { which = matauth value = 1 }
+            }
+        }
+		hidden_effect = {
+			update_matauth = yes
+		}
+    }
+}

@@ -42,7 +42,11 @@ Naléni_branch_two = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {
+			country_event = { 
+			id = flavor_naleni.3 
+		}  
+		} 
 	}
 
 	serenade_our_subjects = {
@@ -151,6 +155,9 @@ Naléni_branch_three = {
 				}
 				add_permanent_claim = ROOT
 			}
+			country_event = { 
+				id = flavor_naleni.2 
+			}
 		}
 	}
 
@@ -190,10 +197,10 @@ Naléni_branch_three = {
 			}
 			5522 = { add_nationalism = -5
 			}
-			country_event = { id = flavor_naleni.1
-		 } 
-	}
-
+			country_event = { id = flavor_naleni.3 } 
+		}
+	}	
+	
 	a_southern_roost = {
 		icon = mission_pue_sky_city
 		position = 3
@@ -328,7 +335,11 @@ Naléni_branch_four = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {
+			country_event = { 
+				id = flavor_naleni.3 
+			}  
+		} 
 	}
 
 	raiding_bases = {
