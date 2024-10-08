@@ -17528,7 +17528,7 @@ gophira_heir_effect = {
 		limit = { has_heir_flag = gophira_heir }
 		if = {
 			limit = { 
-				NOT = { has_heir_$pow$ = 6 }
+				NOT = { heir_$pow$ = 6 }
 			}
 			change_heir_$pow$ = $amount$
 		}

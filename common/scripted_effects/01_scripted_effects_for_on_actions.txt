@@ -3148,6 +3148,13 @@ on_battle_won_country_effect = {
 			}
 		}
 	}
+	if = {	#for pdx num_of_battles scripted trigger need to set the country_flag to begin counting
+		limit = { has_country_flag = count_battles_won }
+		change_variable = {
+			which = num_of_battles_won_var
+			value = 1
+		}
+	}
 	if = {
 		limit = { religion = goblinic_shamanism  NOT = { FROM = { OR = { tag = REB tag = NAT } } } }
 		FROM = { goblinic_shamanism_event = yes } # Fires events for a cult spreading upon winning a battle

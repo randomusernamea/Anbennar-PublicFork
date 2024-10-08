@@ -78,16 +78,6 @@ gophira_1 = {
 					set_ruler_flag = gophira_wife
 					add_ruler_personality = intricate_web_weaver_personality
 					set_ai_personality = { personality = ai_militarist locked = yes }
-					define_consort = {
-						name = "Harrihara X"
-						dynasty = Sangamar
-						birth_date = 1421.7.11
-						culture = yodhanpir
-						adm = 2
-						dip = 0
-						mil = 5
-					}
-					add_queen_personality = bold_fighter_personality
 				}
 			}
 		}
@@ -182,11 +172,25 @@ gophira_1_fren = {
 					value = 80
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = gophira_war_fought_tt
-				check_variable = {
-					which = gophira_war_fought_with_dark
-					value = 6
+			if = {
+				limit = {
+					check_variable = {
+						which = gophira_war_fought_with_dark
+						value = 1
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = gophira_war_fought_tt
+					check_variable = {
+						which = gophira_war_fought_with_dark
+						value = 6
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = gophira_zero_war_fought_tt
+					always = no
 				}
 			}
 		}
@@ -347,13 +351,15 @@ gophira_1_fren = {
 					which = gophira_pay_dip
 					value = 3
 				}
+				var_effect = {
+					effect = add_dip_power
+					var = gophira_pay_dip
+					sign = -
+				}
 			}
+			custom_tooltip = gophira_lose_dipmana_tt
 			inherit = J72
-			var_effect = {
-				effect = add_dip_power
-				var = gophira_pay_dip
-				sign = -
-			}
+			
 		}
 	}
 }
@@ -1518,7 +1524,7 @@ gophira_5 = {
 				num_of_regiments_at_full_drill = 10
 				num_of_battles = { amount = 30 }
 			}
-			num_of_wars = { value = 5 } 
+			num_of_wars = { amount = 5 } 
 		}
 
 		effect = {
@@ -1653,6 +1659,7 @@ gophira_5 = {
 						}
 					}
 					custom_tooltip = gophira_generic_advisor_tt
+					custom_tooltip = gophira_gain_autonomy_tt
 					for = {
 						amount = 5
 						effect = "
@@ -1711,6 +1718,7 @@ gophira_5 = {
 						}
 					}
 					custom_tooltip = gophira_generic_advisor_tt
+					custom_tooltip = gophira_gain_autonomy_tt
 					for = {
 						amount = 5
 						effect = "

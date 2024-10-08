@@ -186,10 +186,10 @@ country_event = {
 				limit = {
 					capital_scope = { superregion = taychend_superregion }
 				}
-				add_opinion = {
+				add_aggressive_expansion = {
 					who = ROOT
-					modifier = aggressive_expansion
-					multiplier = 5
+					value = 5
+					apply_calc = no
 				}
 			}
 		}
@@ -452,6 +452,17 @@ country_event = {
 		}
 		custom_tooltip = gophira_stop_bad_events_tt
 		clr_country_flag = gophira_bad_events
+		clr_country_flag = gophira_less_bad_events1
+		clr_country_flag = gophira_less_bad_events2
+		clr_country_flag = gophira_less_bad_events3
+		clr_country_flag = gophira_less_bad_events4
+		clr_country_flag = gophira_event13
+		clr_country_flag = gophira_event14
+		clr_country_flag = gophira_event15
+		clr_country_flag = gophira_event16
+		clr_country_flag = gophira_event17
+		clr_country_flag = gophira_event18
+
 	}
 }
 
@@ -507,7 +518,7 @@ country_event = {	#bad events handler
 						had_country_flag = { flag = gophira_event13 days = 3650 }
 					}
 				}
-				clr_country_flag = gophira_event12
+				clr_country_flag = gophira_event13
 				country_event = { id = gophira.13 }
 			}
 			1 = {
