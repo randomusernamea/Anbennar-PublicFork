@@ -40,14 +40,58 @@ Naléni_branch_two = {
 		required_missions = { all_hands_on_deck } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
-
-		effect = {
-			country_event = { 
-			id = flavor_naleni.3 
-		}  
+		trigger = { OR = {
+			AND = {
+			has_spy_network_in = {
+				who = L57
+				value = 30
+			}
+			trade_embargoing = L57
+			OR = { has_opinion_modifier = { Who = L57 modifier = insulted } has_opinion_modifier = { Who = L57 modifier = scornfully_insulted } }
+			}
+			AND = {
+				L57 = { exists = NO }
+				adm_power = 300
+				dip_power = 300
+				mil_power = 300
+				}
+			}
+		}
+		effect = { 
+			country_event = { id = flavor_naleni.4 }  
+			medifat_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { owned_by = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			emot_nepas_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { owned_by = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			riyiwedeb_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { owned_by = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			add_spy_network_in = {
+				who = L57
+				value = -30
+			}
+			IF = {
+				limit = { L57 = { exists = NO } }
+					add_mil_power = -300
+					add_dip_power = 300
+					add_adm_power = 300
+				}
+			}
 		} 
-	}
 
 	serenade_our_subjects = {
 		icon = mission_pacify_punjab
@@ -118,7 +162,6 @@ Naléni_branch_two = {
 		effect = {  } 
 	}
 }
-
 Naléni_branch_three = {
 	slot = 3
 	generic = no
@@ -155,9 +198,7 @@ Naléni_branch_three = {
 				}
 				add_permanent_claim = ROOT
 			}
-			country_event = { 
-				id = flavor_naleni.2 
-			}
+			country_event = { id = flavor_naleni.2 } 
 		}
 	}
 
@@ -172,35 +213,29 @@ Naléni_branch_three = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			owns_core_province = 5522 # province ID that we should own to fulfil mission
+			owns_core_province = 5522
 			owns_core_province = 5520
 			owns_core_province = 5530
 			owns_core_province = 4547
 			ascension_cape_area = {
 				type = ALL
 				OR = {
-				is_looted = yes
-				country_or_non_sovereign_subject_holds = ROOT
-				} 
-			}	
+					is_looted = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
 		}
-		effect = { 
+		effect = {
 			add_prestige = 25
-			berihrica_area = {
-			add_nationalism = -5
-			}
-			5520 = { add_nationalism = -5
-			}
-			5530 = { add_nationalism = -5
-			}
-			4547 = { add_nationalism = -5
-			}
-			5522 = { add_nationalism = -5
-			}
+			berihrica_area = { add_nationalism = -5 } 
+			5520 = { add_nationalism = -5 } 
+			5530 = { add_nationalism = -5 } 
+			4547 = { add_nationalism = -5 } 
+			5522 = { add_nationalism = -5 } 
 			country_event = { id = flavor_naleni.3 } 
 		}
-	}	
-	
+	}
+
 	a_southern_roost = {
 		icon = mission_pue_sky_city
 		position = 3
@@ -320,6 +355,7 @@ Naléni_branch_three = {
 		effect = {  } 
 	}
 }
+
 Naléni_branch_four = {
 	slot = 4
 	generic = no
@@ -333,12 +369,41 @@ Naléni_branch_four = {
 		required_missions = { all_hands_on_deck } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			had_recent_war = 5
+			has_won_war_against = {
+				who = L57
+				max_years_since = 400
+			}
+			capital_scope = { 
+				has_building = temple
+			}
+			OR = {
+				navy_tradition = 30
+				dip_power = 100
+			}
+		  } 
 
-		effect = {
-			country_event = { 
-				id = flavor_naleni.3 
-			}  
+		effect = { 
+			telekenid_islands_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { owned_by = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			amkamsek_area = {
+				limit = {
+				NOT = { is_core = ROOT } 
+				NOT = { owned_by = ROOT } 
+			}
+			add_permanent_claim = ROOT
+			}
+			add_country_modifier = { name = L55_the_sirens_one duration = -1 }
+			if = {
+				limit = { NOT = { navy_tradition = 30 } }
+				add_dip_power = -100
+			}
 		} 
 	}
 

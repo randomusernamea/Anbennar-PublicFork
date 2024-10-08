@@ -5,7 +5,7 @@ update_matauth = {
 		}
 		if = {
 			limit = {
-				NOT = { check_variable = { which = matauth value = 1 } }
+				NOT = { check_variable = { which = matauth value = 4 } }
 				NOT = { has_country_modifier = L55_low_authority }
 			}
 			country_event = { id = naleni.40 }
@@ -28,7 +28,7 @@ update_matauth = {
 	}
 }
 
-initialize_matauth_system = {
+initialise_matauth = {
 	if = {
 		limit = {
 				tag = L55
@@ -62,7 +62,7 @@ increase_matauth_3 = {
         # custom_tooltip = 
         hidden_effect = {
             change_variable = { which = matauth value = 3 }
-            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+            if = { limit = { check_variable = { which = matauth value = 11 } } 
                 set_variable = { which = matauth value = 10 }
             }
         }
@@ -98,7 +98,7 @@ increase_matauth_2 = {
         # custom_tooltip = 
         hidden_effect = {
             change_variable = { which = matauth value = 2 }
-            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+            if = { limit = { check_variable = { which = matauth value = 11 } } 
                 set_variable = { which = matauth value = 10 }
             }
         }
@@ -116,7 +116,7 @@ increase_matauth_1 = {
         # custom_tooltip = 
         hidden_effect = {
             change_variable = { which = matauth value = 1 }
-            if = { limit = { NOT = { check_variable = { which = matauth value = 11 } } }
+            if = { limit  = { check_variable = { which = matauth value = 11 } } 
                 set_variable = { which = matauth value = 10 }
             }
         }

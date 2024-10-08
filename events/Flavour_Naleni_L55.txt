@@ -1,4 +1,3 @@
-#this seems to not be working right now?
 country_event = {
 	id = naleni.1
 	title = naleni.1.t
@@ -8,17 +7,13 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	immediate = {
-		hidden_effect = {
-			set_variable = {
-				which = matauth
-				value = 3
-			}
-		}		
+	trigger = {
+		tag = L55
 	}
 	option = {
 		name = naleni.1.a
 		ai_chance = { factor = 100 }
+		initialise_matauth = yes
 		update_matauth = yes
 	}
 }	
@@ -53,6 +48,24 @@ country_event = {
 		name = naleni.3.b
 		ai_chance = { factor = 50 }
 		decrease_matauth_2 = yes
+	}
+}
+country_event = {
+	id = naleni.4
+	title = naleni.4.t
+	desc = naleni.4.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.4.a
+		ai_chance = { factor = 75 }
+		increase_matauth_2 = yes
+	}
+	option = {
+		name = naleni.4.b
+		ai_chance = { factor = 25 }
+		decrease_matauth_3 = yes
 	}
 }
 
