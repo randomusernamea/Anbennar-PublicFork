@@ -100,7 +100,10 @@ country_decisions = {
 			tag = A01
 		}
 		effect = {
-			create_union = C01
+			C00 = {
+				switch_tag = Z01
+			}
+			form_union = A01
 		}
 	}
 }
