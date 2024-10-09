@@ -154,7 +154,16 @@ from_beyond = {
 
 	effect = {
 		custom_tooltip = from_beyond_effect_tt
-		hidden_effect = { country_event = { id = spirits.607 } }
+		hidden_effect = { 
+			random_owned_province = {
+				limit = { NOT = { trade_goods = damestear } }
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 20
+				change_trade_goods = damestear
+			}
+		}
 	}
 
 	modifier = { global_monthly_devastation = 0.1 }
@@ -331,6 +340,7 @@ way_of_shadows = {
 			culture_group = middle_raheni
 			culture_group = yanglam
 			culture_group = kai
+			mission_completed = ying_best_things
 		}
 	}
 
