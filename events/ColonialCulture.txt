@@ -492,6 +492,7 @@ country_event = {
 	option = { #Arbcoster
 		name = colonial_culture.2.a
 		trigger = {
+			culture_group = lencori
 			capital_scope = {	
 				continent = north_america
 				NOT = {
@@ -501,7 +502,6 @@ country_event = {
 					colonial_region = colonial_endralliande
 				}
 			}
-			culture_group = lencori
 		}
 		
 		ai_chance = {
@@ -515,6 +515,7 @@ country_event = {
 	option = { #Criodhi
 		name = colonial_culture.2.a
 		trigger = {
+			culture_group = lencori
 			capital_scope = {
 				OR = {
 					colonial_region = colonial_isles
@@ -523,7 +524,6 @@ country_event = {
 					colonial_region = colonial_endralliande
 				}
 			}
-			culture_group = lencori
 		}
 		
 		ai_chance = {
@@ -537,6 +537,7 @@ country_event = {
 	option = { #Thornish
 		name = colonial_culture.2.a
 		trigger = {
+			culture_group = lencori
 			capital_scope = {	
 				continent = south_america
 				NOT = {
@@ -545,7 +546,6 @@ country_event = {
 					colonial_region = colonial_endralliande
 				}
 			}
-			culture_group = lencori
 		}
 		
 		ai_chance = {
@@ -553,6 +553,185 @@ country_event = {
 		}
 		
 		global_culture_shift = { to_culture = thornish }
+		
+	}
+
+#ANBENNARIAN SHIFTS
+	
+	option = { #Arbcoster
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = anbennarian
+			capital_scope = {	
+				continent = north_america
+				NOT = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_noruin
+					colonial_region = colonial_endralliande
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = gliosine }
+		
+	}
+	
+	option = { #Criodhi
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = anbennarian
+			capital_scope = {
+				OR = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_noruin
+					colonial_region = colonial_endralliande
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = arthaman }
+		
+	}
+	
+	option = { #Thornish
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = anbennarian
+			capital_scope = {	
+				continent = south_america
+				NOT = {
+					colonial_region = colonial_isles
+					colonial_region = colonial_haraf
+					colonial_region = colonial_endralliande
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = fiadionni }
+		
+	}
+
+#ALENIC SHIFTS
+	
+	option = { #Westman
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = alenic
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = westman }
+		
+	}
+
+#GERUDIAN SHIFTS
+	
+	option = { #Westman
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = gerudian
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = elnarfolk }
+		
+	}
+
+#BUSINORI SHIFTS
+	
+	option = { #Nariandi
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = businori
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = nariandi }
+		
+	}
+
+#GNOMISH SHIFTS
+	
+	option = { #Frontier Gnome
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = gnomish
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = frontier_gnome }
+		
+	}
+
+#KOBOLD SHIFTS
+	
+	option = { #Vrendzani_kobold
+		name = colonial_culture.2.a
+		trigger = {
+			culture_group = kobold
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		global_culture_shift = { to_culture = vrendzani_kobold }
 		
 	}
 }
