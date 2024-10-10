@@ -3148,7 +3148,7 @@ on_battle_won_country_effect = {
 			}
 		}
 	}
-	if = {	#for pdx num_of_battles scripted trigger need to set the country_flag to begin counting
+	if = {	#for pdx num_of_battles scripted trigger. need to set the country_flag to begin counting
 		limit = { has_country_flag = count_battles_won }
 		change_variable = {
 			which = num_of_battles_won_var
