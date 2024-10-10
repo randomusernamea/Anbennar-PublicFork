@@ -16084,6 +16084,17 @@ on_adm_exploited = {
 			add_church_power = -4
 		}
 	}
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.25
+	}
 }
 
 on_dip_exploited = {

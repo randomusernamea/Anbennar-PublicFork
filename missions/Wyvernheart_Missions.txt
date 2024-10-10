@@ -6,39 +6,291 @@
 	potential = { tag = B39 } 
 
 	weapons_of_adventure = {
-		icon = mission_racial
+		icon = mission_smith
 		position = 2
 		required_missions = { roar_in_the_greatwoods } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				trade_goods = copper
+				trade_goods = iron
+			}
+			NOT = {
+				base_production = 5
+				has_production_building_trigger = yes
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+				base_production = 5
+				has_production_building_trigger = yes
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_adventurers
+				loyalty = 20
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = copper
+						trade_goods = iron
+					}
+					base_production = 5
+					has_production_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = "wyvernheart_local_sources_of_armament"
+					duration = 7300
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = copper
+						trade_goods = iron
+					}
+					base_production = 5
+					has_production_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = "wyvernheart_local_sources_of_armament"
+					duration = 7300
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = copper
+						trade_goods = iron
+					}
+					base_production = 5
+					has_production_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = "wyvernheart_local_sources_of_armament"
+					duration = 7300
+				}
+			}
+			custom_tooltip = wyvernheart_weapons_of_adventure_war_tt
+			hidden_effect = {
+				if = {
+					limit = { is_at_war = yes } 
+					add_country_modifier = {
+						name = "wyvernheart_local_armaments"
+						duration = 7300
+					}
+				}
+			}
+		}
 	}
 
 	hunter_in_the_woods = {
-		icon = mission_racial
+		icon = mission_forest_pilgrim
 		position = 3
 		required_missions = {
 			descend_upon_the_alen
 			weapons_of_adventure
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 229
+						province_id = 729
+						province_id = 728
+						province_id = 748
+						province_id = 741
+					}
+					NOT = {
+						has_fort_building_trigger = yes
+						has_tax_building_trigger = yes
+						is_core = ROOT
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					area = cannwood_area
+					NOT = {
+						is_core = ROOT
+						owned_by = ROOT
+					}
+				}
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			cannwood_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			229 = {
+				has_fort_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			729 = {
+				has_fort_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			728 = {
+				has_fort_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			748 = {
+				has_fort_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			741 = {
+				has_fort_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_stability = 1
+			229 = {
+				add_province_modifier = {
+					name = "wyvernheart_anti_wereworlf_fortifications"
+					duration = 18250
+				}
+			}
+			729 = {
+				add_province_modifier = {
+					name = "wyvernheart_anti_wereworlf_fortifications"
+					duration = 18250
+				}
+			}
+			728 = {
+				add_province_modifier = {
+					name = "wyvernheart_anti_wereworlf_fortifications"
+					duration = 18250
+				}
+			}
+			748 = {
+				add_province_modifier = {
+					name = "wyvernheart_anti_wereworlf_fortifications"
+					duration = 18250
+				}
+			}
+			741 = {
+				add_province_modifier = {
+					name = "wyvernheart_anti_wereworlf_fortifications"
+					duration = 18250
+				}
+			}
+		}
 	}
 
 	down_the_alen = {
 		icon = mission_silblaidd
 		position = 5
 		required_missions = { pillagers_of_the_alen } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = alenvord_area
+				area = balvord_area
+				area = jonsway_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+				has_province_modifier = scorched_earth
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			alenvord_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				has_province_modifier = scorched_earth
+			}
+			balvord_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				has_province_modifier = scorched_earth
+			}
+			jonsway_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				has_province_modifier = scorched_earth
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			if = {
+				limit = { accepted_culture = old_alenic } 
+				add_dip_power = 75
+				alenvord_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+				}
+				balvord_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+				}
+				jonsway_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+				}
+			}
+			else = {
+				add_mil_power = 75
+				alenvord_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+					nationalist_rebels = 1
+				}
+				custom_tooltip = wyvernheart_blank_tt
+				balvord_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+					nationalist_rebels = 1
+				}
+				custom_tooltip = wyvernheart_blank_tt
+				jonsway_area = {
+					add_nationalism = -20
+					add_devastation = 10
+					add_province_modifier = {
+						name = "wyvernheart_remove_the_weak"
+						duration = 10950
+					}
+					nationalist_rebels = 1
+				}
+				custom_tooltip = wyvernheart_remove_the_weak_tt
+			}
+		}
 	}
 
 	rumours_of_power = {
@@ -81,54 +333,236 @@
 	potential = { tag = B39 } 
 
 	roar_in_the_greatwoods = {
-		icon = mission_rb_take_gibraltar
+		icon = mission_alone_in_the_forest
 		position = 1
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = athfork_area
+						area = ebonmarck_area
+					}
+					NOT = {
+						is_core = ROOT
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					province_id = 729
+					NOT = {
+						has_fort_building_trigger = yes
+						development = 15
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			athfork_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			ebonmarck_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			729 = {
+				has_fort_building_trigger = yes
+				development = 15
+				province_has_center_of_trade_of_level = 2
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			729 = { move_capital_effect = yes } 
+			westwall_approach_area = { add_permanent_claim = ROOT } 
+			middle_alen_area = { add_permanent_claim = ROOT } 
+			229 = { add_permanent_claim = ROOT } 
+		}
 	}
 
 	descend_upon_the_alen = {
-		icon = mission_racial
+		icon = mission_heated_battle
 		position = 2
 		required_missions = { roar_in_the_greatwoods } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = westwall_approach_area
+				area = middle_alen_area
+				province_id = 229
+			}
+			NOT = {
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			OR = {
+				local_autonomy = 10
+				NOT = {
+					infantry_in_province = 1
+					has_province_modifier = autonomy_decreased
+				}
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			westwall_approach_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+				OR = {
+					has_province_modifier = autonomy_decreased
+					NOT = { local_autonomy = 10 } 
+					infantry_in_province = 1
+				}
+			}
+			middle_alen_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+				OR = {
+					has_province_modifier = autonomy_decreased
+					NOT = { local_autonomy = 10 } 
+					infantry_in_province = 1
+				}
+			}
+			229 = {
+				is_core = ROOT
+				owned_by = ROOT
+				OR = {
+					has_province_modifier = autonomy_decreased
+					NOT = { local_autonomy = 10 } 
+					infantry_in_province = 1
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_country_modifier = {
+				name = "wyvernheart_iron_fist_rule"
+				duration = 9125
+			}
+			alenvord_area = { discover_country = ROOT } 
+			balvord_area = { discover_country = ROOT } 
+			jonsway_area = { discover_country = ROOT } 
+			balmire_area = { add_permanent_claim = ROOT } 
+			cannwood_area = { add_permanent_claim = ROOT } 
+			falsemire_area = { add_permanent_claim = ROOT } 
+			adenica_area = { add_permanent_claim = ROOT } 
+			silvervord_area = { add_permanent_claim = ROOT } 
+		}
 	}
 
 	pillagers_of_the_alen = {
-		icon = mission_magisterium_fold_seven
+		icon = mission_advance_to_the_dnieper
 		position = 4
 		required_missions = {
 			might_makes_right
 			hunter_in_the_woods
 			descend_upon_the_alen
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = balmire_area
+						area = falsemire_area
+						area = adenica_area
+						area = silvervord_area
+					}
+					NOT = {
+						is_core = ROOT
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					province_id = 229
+					NOT = { infantry_in_province = 10 } 
+				}
+				AND = {
+					province_id = 761
+					NOT = { infantry_in_province = 10 } 
+				}
+				AND = {
+					province_id = 729
+					NOT = { infantry_in_province = 10 } 
+				}
+				AND = {
+					province_id = 756
+					NOT = { infantry_in_province = 10 } 
+				}
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			balmire_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			falsemire_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			adenica_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			silvervord_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			229 = { infantry_in_province = 10 } 
+			761 = { infantry_in_province = 10 } 
+			756 = { infantry_in_province = 10 } 
+			729 = { infantry_in_province = 10 } 
+			has_spy_network_in = {
+				who = A13
+				value = 60
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_treasury = 200
+			add_mil_power = 50
+			add_prestige = -10
+			add_dip_power = -100
+			add_spy_network_in = {
+				who = A13
+				value = -60
+			}
+			upper_alen_river_banks = { add_permanent_claim = ROOT } 
+		}
 	}
 
 	home_is_where_the_heartmen_are = {
-		icon = mission_magisterium_fold_one
+		icon = mission_unite_home_region
 		position = 5
 		required_missions = { pillagers_of_the_alen } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			primary_culture = heartman
+			prestige = 50
+			power_projection = 40
+		}
 
-		effect = {  } 
+		effect = {
+			add_prestige = -25
+			add_country_modifier = {
+				name = "wyvernheart_a_dream_in_out_hearts"
+				duration = -1
+			}
+		}
 	}
 
 	the_hearter_homeland = {
-		icon = mission_dirigible
+		icon = mission_new_dawn
 		position = 6
 		required_missions = {
 			down_the_alen
@@ -161,7 +595,7 @@
 	potential = { tag = B39 } 
 
 	mightiest_of_us = {
-		icon = mission_manifest_destiny
+		icon = mission_empowerment
 		position = 2
 		required_missions = {
 			legacy_of_the_wvyern
@@ -175,7 +609,7 @@
 	}
 
 	might_makes_right = {
-		icon = mission_racial
+		icon = mission_strengthen_the_vegvar
 		position = 3
 		required_missions = {
 			descend_upon_the_alen
@@ -189,7 +623,7 @@
 	}
 
 	beast_unlike_any_other = {
-		icon = mission_magic_tower
+		icon = mission_cute_fella
 		position = 4
 		required_missions = {
 			might_makes_right
@@ -203,7 +637,7 @@
 	}
 
 	doing_away_with_the_old = {
-		icon = mission_magisterium_fold_five
+		icon = mission_burning_castle
 		position = 5
 		required_missions = {
 			pillagers_of_the_alen
@@ -217,7 +651,7 @@
 	}
 
 	welcoming_the_immoral = {
-		icon = mission_magisterium_fold_eight
+		icon = mission_harmaceuticals_2
 		position = 7
 		required_missions = {
 			doing_away_with_the_old
@@ -285,7 +719,7 @@
 	potential = { tag = B39 } 
 
 	legacy_of_the_wvyern = {
-		icon = mission_magisterium_fold_three
+		icon = je_maintiendrai
 		position = 1
 		provinces_to_highlight = {  } 
 
@@ -295,7 +729,7 @@
 	}
 
 	the_lands_of_the_north = {
-		icon = mission_magisterium_fold_three
+		icon = mission_duel_snow
 		position = 2
 		required_missions = { legacy_of_the_wvyern } 
 		provinces_to_highlight = {  } 
@@ -306,7 +740,7 @@
 	}
 
 	a_tower_on_high = {
-		icon = mission_racial
+		icon = mission_magisterium_fold_zero
 		position = 3
 		required_missions = {
 			mightiest_of_us
@@ -320,7 +754,7 @@
 	}
 
 	the_red_flood = {
-		icon = mission_magisterium_fold_seven
+		icon = mission_destroyed_city
 		position = 5
 		provinces_to_highlight = {  } 
 
@@ -330,7 +764,7 @@
 	}
 
 	a_new_seat_of_power = {
-		icon = mission_magisterium_fold_seven
+		icon = balance_of_power
 		position = 6
 		required_missions = {
 			doing_away_with_the_old
@@ -344,7 +778,7 @@
 	}
 
 	imbue_the_royals = {
-		icon = mission_monarch_in_throne_room
+		icon = mission_well_of_majesty
 		position = 7
 		required_missions = { a_new_seat_of_power } 
 		provinces_to_highlight = {  } 
@@ -362,7 +796,7 @@
 	potential = { tag = B39 } 
 
 	towards_the_sea = {
-		icon = mission_racial
+		icon = mission_protect_white_sea_trade
 		position = 3
 		required_missions = { the_lands_of_the_north } 
 		provinces_to_highlight = {  } 
@@ -387,7 +821,7 @@
 	}
 
 	a_worthy_sacrifice = {
-		icon = mission_manifest_destiny
+		icon = mission_blood_sacrifice
 		position = 5
 		required_missions = {
 			beast_unlike_any_other
