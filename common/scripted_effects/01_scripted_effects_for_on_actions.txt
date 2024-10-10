@@ -8591,7 +8591,7 @@ on_province_owner_change_effect = {
 
 	#AI EWoC cores
 	if = {
-		limit = { superregion = escann_superregion }
+		limit = { province_group = escann_proper }
 		owner = {
 			country_event = { id = escanni_wars.4 }
 		}
