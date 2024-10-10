@@ -4248,19 +4248,42 @@ holds_castanor_legacy = {
 		}	
 	}
 }
+
 #Rakkaz MT
 rakkaz_warlock_pact_limit = {
-	custom_trigger_tooltip = {
-		tooltip = rakkaz_warlock_pact_limit_2
-		NOT = {
-			calc_true_if = {
-				amount = 2
-				has_estate_privilege = estate_mages_warlock_pact_battlefield_domination
-				has_estate_privilege = estate_mages_warlock_pact_domination
-				has_estate_privilege = estate_mages_warlock_pact_exploitation
-				has_estate_privilege = estate_mages_warlock_pact_overcharge
-				has_estate_privilege = estate_mages_warlock_pact_power
-				has_estate_privilege = estate_mages_warlock_pact_unrestricted_savagery
+	OR = {
+		AND = {
+			NOT = { has_country_flag = rakkaz_can_have_three_warlock_pacts }
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_warlock_pact_limit_2
+				NOT = {
+					calc_true_if = {
+						amount = 2
+						has_estate_privilege = estate_mages_warlock_pact_battlefield_domination
+						has_estate_privilege = estate_mages_warlock_pact_domination
+						has_estate_privilege = estate_mages_warlock_pact_exploitation
+						has_estate_privilege = estate_mages_warlock_pact_overcharge
+						has_estate_privilege = estate_mages_warlock_pact_power
+						has_estate_privilege = estate_mages_warlock_pact_unrestricted_savagery
+					}
+				}
+			}
+		}
+		AND = {
+			has_country_flag = rakkaz_can_have_three_warlock_pacts
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_warlock_pact_limit_3
+				NOT = {
+					calc_true_if = {
+						amount = 3
+						has_estate_privilege = estate_mages_warlock_pact_battlefield_domination
+						has_estate_privilege = estate_mages_warlock_pact_domination
+						has_estate_privilege = estate_mages_warlock_pact_exploitation
+						has_estate_privilege = estate_mages_warlock_pact_overcharge
+						has_estate_privilege = estate_mages_warlock_pact_power
+						has_estate_privilege = estate_mages_warlock_pact_unrestricted_savagery
+					}
+				}
 			}
 		}
 	}
