@@ -1783,13 +1783,6 @@ anb_scripted_effects_for_ruler_death  = {
 		}
 	}
 
-	#Malacnar ruler event for regency
-	if = {
-		limit = {
-			tag = G32
-		}
-		country_event = { id = flavor_malacnar.9 days = 1 }
-	}
 
 	#Mother Akasik set deity
 	if = {
@@ -2052,7 +2045,8 @@ succession_culture_religion_effect = {
 	if = {
 		limit = {
 			NOT = { has_reform = elective_monarchy }
-			NOT = { has_reform = polish_elective_monarchy } 
+			NOT = { has_reform = polish_elective_monarchy }
+			NOT = { has_reform = racial_tolerance_reform }
 			has_regency = no
 			NOT = { has_country_flag = had_culture_religion_reaction_event_flag }
 			# NOT = { has_reform = mamluk_government }
