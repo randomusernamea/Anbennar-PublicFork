@@ -42463,51 +42463,53 @@ Y82_ideas = {
 		reform_progress_growth = 0.15 
 	} 	 
 }
+
 #Rzenta
 U71_ideas = {
 
-	start = {
-		shock_damage_received = -0.1 #favouring infantry formations and defence rather than antler horsing about
-		global_missionary_strength = 0.02	#rzentur were allowed to settle here as long as they converted
-	}
+    start = {
+        infantry_cost = -0.15 #favouring infantry formations and defence rather than antler horsing about
+        global_missionary_strength = 0.02   #rzentur were allowed to settle here as long as they converted
+    }
 
-	bonus = {
-		land_forcelimit_modifier = 0.2	#rzentan levies are big
-	}
+    bonus = {
+        land_forcelimit_modifier = 0.2  #rzentan levies are big
+    }
 
-	trigger = {
-		#tag = U71
-	}
+    trigger = {
+        #tag = U71
+    }
 
-	free = yes
+    free = yes
 
-	U71_rzentan_humility = {	#rzentur are less pretentious than other ynnics and tend to offend and get offended less
-		global_unrest = -1
-		diplomatic_reputation = 1
-	}
+    U71_rzentan_humility = {    #rzentur are less pretentious than other ynnics and tend to offend and get offended less though they still value their honour
+        diplomatic_reputation = 1
+        diplomatic_annexation_cost = -0.1
+    }
 
-	U71_vaisledar_legacy = {	#vaisledar was the ancient dolidnhan kingdom of the region, it left many ruins and old infrastructure
-		build_cost = -0.1
-		fort_maintenance_modifier = -0.15
-	}
+    U71_vaisledar_legacy = {    #vaisledar was the ancient dolindhan kingdom of the region, it left many ruins and old infrastructure
+        build_cost = -0.1
+        prestige = 0.5
+    }
 
-	U71_furs_forest = {	#huge source of furs
-		global_own_trade_power = 0.1
-	}
+    U71_warrior_lodges = {  #rzentur have had warrior lodges for a long time keeping war in their culture and making them excellent for the levies of local lords
+        global_manpower_modifier = 0.15
+    }
 
-	U71_imperial_dukes = {	#rzenta had fewer and bigger dependencies
-		liberty_desire_from_subject_development = -0.25
-	}
+    U71_furs_of_the_forest = {   #the rzentan forests are a huge source of furs, in both quantity and in unique quality, the fur trade has deep history in rzenta as it was fur traders who spent enough time in Rzenta to settle and convert to YRW and furs are worn by nobility as well as commoners
+        global_own_trade_power = 0.2
+    }
 
-	U71_trantans_failure = {	#the last imperial claimant in the region abandoned it to a cursed one invasion
-		war_exhaustion = -0.03
-	}
+    U71_imperial_dukes = {  #rzenta had fewer and bigger dependencies, talk about the ynnic empire’s administration of the region
+        liberty_desire_from_subject_development = -0.25
+        diplomatic_upkeep = 1
+    }
 
-	U71_warrior_lodges = {	#rzentur have had warrior lodges for a long time and the levies they provided were often from them
-		infantry_power = 0.1
-	}
+    U71_priestly_abodes = {    #a fair amount of rzentur YRW priests were more concerned with living along the rivers instead of in big cities where they could wield influence, these more humble priestly abodes made them more in tune with the common rzentur
+        tolerance_own = 2
+    }
 
-	U71_crafts_of_tordolin = {	#was the centre of the ynnic empire's industry before the fall
-		trade_goods_size_modifier = 0.15
-	}
+    U71_crafts_of_tordolin = {  #was the centre of many of the empire’s trades and had lots of craftsmen in cities like Svemel, Tordolin is Upper Dolindha, the old name for Rzenta
+        global_trade_goods_size_modifier = 0.15
+    }
 }
