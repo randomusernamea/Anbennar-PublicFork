@@ -15,6 +15,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		initialise_matauth = yes
 		update_matauth = yes
+		add_country_modifier = { name = L55_siren_songhalls_2 duration = -1 } #testing the on_action, remove once done
 	}
 }	
 
@@ -69,22 +70,221 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = naleni.5
+	title = naleni.5.t
+	desc = naleni.5.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.5.a
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = L55_the_sirens_one
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = naleni.6
+	title = naleni.6.t
+	desc = naleni.6.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.6.a
+		ai_chance = { factor = 75 }
+		increase_matauth_2 = yes
+		add_stability = -1
+	}
+	option = {
+		name = naleni.6.b
+		ai_chance = { factor = 25 }
+		add_treasury = 200
+		decrease_matauth_2 = yes
+	}
+}
+
+country_event = {
+	id = naleni.7
+	title = naleni.7.t
+	desc = naleni.7.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.6.a
+		ai_chance = { factor = 75 }
+		increase_matauth_2 = yes
+		add_yearly_sailors = -1
+	}
+	option = {
+		name = naleni.6.b
+		ai_chance = { factor = 25 }
+		add_country_modifier = {
+			name = L55_song_sailors
+			duration = 60
+		}
+		decrease_matauth_2 = yes
+	}
+}
+#complaints from the captains event
+country_event = {
+	id = naleni.8
+	title = naleni.8.t
+	desc = naleni.8.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.8.a
+		ai_chance = { factor = 75 }
+		increase_matauth_3 = yes
+		5505 = {
+			spawn_rebels = {
+			size = 1
+			}
+		}
+		5504 = {
+			spawn_rebels = {
+			size = 1
+			}
+		}	
+	}
+	option = {
+		name = naleni.8.b
+		ai_chance = { factor = 25 }
+		add_country_modifier = {
+			name = L55_song_sailors
+			duration = 60
+		}
+		decrease_matauth_2 = yes
+		add_years_of_income = 1
+	}
+}
+#murmurs of discontent
+country_event = {
+	id = naleni.9
+	title = naleni.9.t
+	desc = naleni.9.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.9.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		add_yearly_manpower = -1
+		add_yearly_sailors = -1
+	}
+	option = {
+		name = naleni.9.b
+		ai_chance = { factor = 25 }
+		add_country_modifier = {
+			name = L55_song_sailors
+			duration = 60
+		}
+		decrease_matauth_2 = yes
+		add_years_of_income = 1
+	}
+}
+
+
+#rebel spawning events
+
+country_event = {
+	id = naleni.36 #beri gnidi rebels
+	title = naleni.38.t
+	desc = naleni.38.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		owns_core_province = 5446
+	}
+	option = {
+		name = naleni.39.a
+		5446 = {
+			add_nationalism = -25
+			spawn_rebels = {
+				size = 1
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = naleni.37 #yetsemira rebels
+	title = naleni.39.t
+	desc = naleni.39.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		owns_core_province = 5529
+	}
+	option = {
+		name = naleni.39.a
+		5529 = {
+			add_nationalism = -25
+			spawn_rebels = {
+				size = 1
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = naleni.38 #dakmender rebels
+	title = naleni.39.t
+	desc = naleni.39.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		owns_core_province = 5505
+	}
+	option = {
+		name = naleni.39.a
+		5505 = {
+			add_nationalism = -25
+			spawn_rebels = {
+				size = 1
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = naleni.39 #biribitid rebels
+	title = naleni.39.t
+	desc = naleni.39.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		owns_core_province = 5504
+	}
+	option = {
+		name = naleni.39.a
+		5504 = {
+			add_nationalism = -25
+			spawn_rebels = {
+				size = 1
+			}
+		}
+	}
+}
 
 
 
-
-
-
-
-
+ #modifier changing events
 country_event = {
 	id = naleni.40 #update modifier to low
 	title = naleni.40.t
 	desc = naleni.40.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = naleni.40.a
 		remove_country_modifier = L55_high_authority
@@ -101,9 +301,7 @@ country_event = {
 	title = naleni.41.t
 	desc = naleni.41.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = naleni.41.a
 		remove_country_modifier = L55_high_authority
@@ -120,9 +318,7 @@ country_event = {
 	title = naleni.42.t
 	desc = naleni.42.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = naleni.42.a
 		remove_country_modifier = L55_low_authority

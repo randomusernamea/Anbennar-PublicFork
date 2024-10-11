@@ -11382,7 +11382,18 @@ on_province_culture_changed = {
 		set_province_flag = brokenjaw_converted_province
 		remove_province_modifier = brokenjaw_mass_settling
 	}
+	#naleni harpy minority adding
+	if = {
+		limit = {
+			OR = { has_country_modifier = L55_siren_halls_1 has_country_modifier = L55_siren_songhalls_2 }
+			NOT = { 
+				has_province_modifier = harpy_majority 
+			}
+		}	
+		generic_add_race_minority_size_effect = { race = harpy }
+	}
 }
+
 
 # THIS = Province, FROM = Country who Propogated
 on_convert_by_trade_policy = {
@@ -16327,7 +16338,6 @@ on_core = { #ROOT - Province, #FROM - Country that gets the core
 		limit = { FROM = { OR = { religion = gods_of_the_taychend religion = oren_nayiru } } }
 		FROM = { gain_taychend_glory_effect = { amount = 10 } }
 	}
-
 	#Restoring upgrades if an order was deactivated but not destroyed due to the state only being partially conquered (and you losing the core in the meantime)
 	if = {
 		limit = {
