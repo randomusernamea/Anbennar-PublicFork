@@ -123,6 +123,8 @@ country_event = {
 	}
 
 	option = {
+		name = gophira.3.3
+		highlight = yes
 		trigger = {
 			OR = {
 				heir_adm = 5
@@ -152,6 +154,7 @@ country_event = {
 					overlord = { free_vassal = PREV }
 				}
 			}
+			remove_queen_personality = malevolent_personality
 		}
 	}
 
@@ -173,12 +176,15 @@ country_event = {
 			who = J72
 			amount = 20
 		}
+		custom_tooltip = gophira_queen_webweaver
+		add_queen_personality = intricate_web_weaver_personality
 		gophira_var_effect = { operation = subtract value = 3}
 		gophira_heir_effect = {	pow = dip amount = 2 }
 		swap_non_generic_missions = yes
 	}
 
 	option = {
+		name = gophira.4.2
 		create_march = J72
 		if = { 
 			limit = { has_saved_event_target = pay_ae }
@@ -200,11 +206,8 @@ country_event = {
 			}
 		}
 		set_country_flag = gophira_march
-		hidden_effect = { 
-			remove_queen_personality = malevolent_personality
-			add_queen_personality = infertile_personality
-		}
-		tooltip = { add_queen_personality = infertile_personality }
+		custom_tooltip = gophira_queen_infertile_tt
+		add_queen_personality = infertile_personality
 		gophira_var_effect = { operation = change value = 3 }
 		gophira_heir_effect = {	pow = adm amount = 1 }
 		gophira_heir_effect = {	pow = mil amount = 1 }
