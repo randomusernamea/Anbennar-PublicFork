@@ -260,6 +260,49 @@
  flavour_rakkaz.14.a:0 "They have served their purpose. Time to cut the middleman."
  flavour_rakkaz.14.b:0 "Working from the shadows has served us perfectly."
 
+ #A Fire That Consumes
+ flavour_rakkaz.15.t:0 "A Fire That Consumes"
+ flavour_rakkaz.15.d:0 "Event"
+ flavour_rakkaz.15.a:0 "And the pact is now finished."
+
+ #Paying The Price - Neutral Ending
+ flavour_rakkaz.16.t:0 "Paying The Price"
+ flavour_rakkaz.16.d:0 "Event"
+ flavour_rakkaz.16.a:0 "We knew this was coming."
+
+ #Paying The Price - Heir Ending
+ flavour_rakkaz.17.t:0 "Paying The Price"
+ flavour_rakkaz.17.d:0 "Event"
+ flavour_rakkaz.17.a:0 "We knew this was coming."
+
+ #Paying The Price - Ruler Dies Ending
+ flavour_rakkaz.18.t:0 "Paying The Price"
+ flavour_rakkaz.18.d:0 "Event"
+ flavour_rakkaz.18.a:0 "We knew this was coming."
+
+ #Paying The Price - Good Ending
+ flavour_rakkaz.19.t:0 "Paying The Price?"
+ flavour_rakkaz.19.d:0 "Event"
+ flavour_rakkaz.19.a:0 "Even the Hags recognize our strength!"
+
+ #Paying The Price - Bad Ending
+ flavour_rakkaz.20.t:0 "Paying The Price"
+ flavour_rakkaz.20.d:0 "Event"
+ flavour_rakkaz.20.a:0 "This... this can't be happening!"
+
+ #A Breach In The Planes
+ flavour_rakkaz.21.t:0 "A Breach In The Planes"
+ flavour_rakkaz.21.d:0 "Event"
+ flavour_rakkaz.21.a:0 "One more experiment to be made..."
+
+ #The Night Coven
+ flavour_rakkaz.22.t:0 "The Night Coven"
+ flavour_rakkaz.22.d:0 "Event"
+ flavour_rakkaz.22.a:0 "We are the true vessels of the hags!"
+
+ #The Warlock's Mission - Extra
+ flavour_rakkaz.22.d:0 "Event"
+
 #Modifiers
  rakkaz_new_recruits:0 "New Recruits"
  rakkaz_fighting_pit:0 "Fighting Pit"
@@ -298,7 +341,7 @@
  rakkaz_perform_ritual_1_time:0 "Perform Ritual §Y1§! time (Currently §Y[Root.numOfRitualsPerformed.GetValue]§!)."
  rakkaz_perform_ritual_3_time:0 "Perform Ritual §Y3§! times (Currently §Y[Root.numOfRitualsPerformed.GetValue]§!)."
  rakkaz_light_the_pyres_20_times:0 "Light The Pyres §Y20§! times (Currently §Y[Root.numOfLightThePyres.GetValue]§!)."
- rakkaz_gain_200_demonic_power:0 "Gain §Y200§! Demonic Power by Razing and Raiding Coasts (Currently §Y[Root.demonicPowerGained.GetValue]§!)."
+ rakkaz_gain_300_demonic_power:0 "Gain §Y300§! Demonic Power by Razing and Raiding Coasts (Currently §Y[Root.demonicPowerGained.GetValue]§!)."
  rakkaz_raze_100_provinces:0 "Raze §Y100§! provinces (Currently §Y[Root.nbProvincesRazed.GetValue]§!)."
  rakkaz_convert_10_provinces:0 "Convert §Y10§! provinces to §YShadow Pact§! (Currently §Y[Root.numOfProvincesConvertedToSP.GetValue]§!)."
  rakkaz_mazu_makhara_upgrade_xhazobkult:0 "When we §YLight the Pyres§!, the province of §YMazu Makhara§! will get the following:"
@@ -312,20 +355,28 @@
  rakkaz_completed_a_helping_hand:0 "If we have completed §YA Helping Hand§!."
  rakkaz_completed_rally_the_riders:0 "If we have completed §YRally The Riders§!."
  rakkaz_invite_scholar_bonus:0 "From now on, when we invite a scholar of the §YRally The Riders§! tradition, the following effects will happen:\n A random owned province of §YFieldstalker Gnoll§! culture will receive §G1§! Base Manpower, or §G2§! Base Manpower if we have §Y40§! Demonic Power or more.\n We will gain §G0.1§! Years Of Manpower, which increases by an additional §G0.1§! for each §Y20§! Demonic Power that we have, up to a maximum of §G0.5§! Years Of Manpower."
+ rakkaz_extra_warlock_modifier_tooltip:0 "We can now choose an extra modifier for the Warlock Advisor."
+ rakkaz_manpower_when_interaction_xhazobkult_tooltip:0 "When we §YLight the Pyres§!, provinces with the §YFighting Pit§! modifier will also gain §G+100%§! Local Manpower for §Y10 years§!."
+ rakkaz_manpower_when_interaction_shadowpact_tooltip:0 "When we §YPerform Ritual§!, provinces with the §YFighting Pit§! modifier will also gain §G+100%§! Local Manpower for §Y20 years§!."
+ rakkaz_unlocked_horde_gov_ideas_tooltip:0 "Allow §YHorde§! Idea Group.\nDisallow §YAristocratic§! Idea Group."
+ unlocked_theocracy_gov_ideas_tooltip:0 "Allow §YDivine§! Idea Group."
+ rakkaz_fighting_pit_more_cav_unlocked_tooltip:0 "Doubles the amount of Mythical Cavalry given by the §YMazu Makhara§! and the §YFighting Pit§! modifier."
+ rakkaz_soldiers_households_bonus_tooltip:0 "§YSoldier's Households§! building now gives us:\n  §G+3§! Land Force Limit on provices with the §YFighting Pit§! modifier.\n  §G+2§! Land Force Limit on provices the produce §YFood§! or §YSlaves§!.\n  §G+1§! Land Force Limit on other provinces.."
  rakkaz_level2_advisor_tooltip:0 "The Warlock Advisor will now start as level §G2§! and be §G50%§! discounted."
  rakkaz_bringers_of_suffering_xhazobkult:0 "§YLight the Pyres§! will now gives us §G7.5§! Demonic Power."
  rakkaz_bringers_of_suffering_shadow_pact:0 "§YRazing a Province§! will now gives us §G3§! Religious power."
+ rakkaz_gain_more_demonic_power_tooltip:0 "§YRazing a Province§! will now gives us an extra §G1%§! Demonic Power."
  rakkaz_throne_breaker_tooltip:0 "If the province has a §YFort§!, there are §Y5k§! units present."
  rakkaz_more_devastation_tooltip:0 "§YRazing a Province§! will cause it §R10%§! additional devastation."
  unlocked_reaver_personality_flag_tooltip:0 "Unlock the §YReaver§! personality for our rulers."
  rakkaz_reaver_on_raze_provinces_tooltip:0 "After we raze §Y30§! provinces under the same ruler, our ruler will become a §YReaver§!."
  rakkaz_warlock_unlock_autonomy_tooltip:0 "We can now choose to have our Warlock Advisor give us §G-0.03%§! Autonomy per level."
  rakkaz_warlock_unlock_missionary_tooltip:0 "We can now choose to have our Warlock Advisor give us §G+0.4%§! Missionary Strength per level."
- rakkaz_warlock_unlock_demonpower_tooltip:0 "We can now choose to have our Warlock Advisor give us §G+0.5§! Demonic Power per level."
+ rakkaz_warlock_unlock_demonpower_tooltip:0 "We can now choose to have our Warlock Advisor give us §G+0.1§! Yearly Demonic Power per level."
  rakkaz_warlock_unlock_churchpower_tooltip:0 "We can now choose to have our Warlock Advisor give us §G+5%§! Religious Power per level."
  rakkaz_local_cult_gives_manpower_tooltip:0 "§YInitiate Local Cults§! will have the following effect on the provinces of the state:"
  rakkaz_second_portent_rerol_tooltip:0 "We can now reroll each §YPortent§! twice."
- rakkaz_can_have_three_warlock_pacts_tooltip:0 "We can now have §Y3§! Warlock Pacts active at the same time."
+ rakkaz_can_have_three_warlock_pacts_tooltip:0 "We can now have §G3§! Warlock Pacts active at the same time."
  rakkaz_development_in_shadowswamp_tooltip:0 "Provinces of §YShadow Pact§! religion in the §YShadowswamp§! region recieve the following:"
  rakkaz_rule_of_warlocks_advisor_demon_tooltip:0 "Because the Warlock has pacted with a Demon, he grants us §G-2§! Years Of Nationalism per level."
  rakkaz_rule_of_warlocks_advisor_hag_tooltip:0 "Because the Warlock has pacted with a Hag, he grants us §G-3%§! Stability Cost per level."

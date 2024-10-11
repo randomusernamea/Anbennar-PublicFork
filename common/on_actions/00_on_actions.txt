@@ -2796,6 +2796,16 @@ on_monarch_death = {
 		country_event = { id = sarhalevents.26 }
 	}
 
+	if = {
+		limit = { has_estate_privilege = estate_mages_warlock_pact_demonic_possession }
+		remove_estate_privilege = estate_mages_warlock_pact_demonic_possession
+	}
+
+	if = {
+		limit = { has_estate_privilege = estate_mages_warlock_pact_night_coven }
+		remove_estate_privilege = estate_mages_warlock_pact_night_coven
+	}
+
 	anb_scripted_effects_for_ruler_death = yes
 	
 }
@@ -16234,6 +16244,10 @@ on_raze = {
 		}
 	}
 	owner = {
+		if = {
+			limit = { has_country_flag = rakkaz_gain_more_demonic_power }
+			add_patriarch_authority = 0.01
+		}
 		if = {
 			limit = {
 				has_country_flag = unlocked_reaver_personality_flag

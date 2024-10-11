@@ -13654,6 +13654,7 @@ estate_mages_warlock_pact_unrestricted_savagery = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_unrestricted_savagery }
+		NOT = { has_country_flag = revoke_warlock_pact_unrestricted_savagery }
 	}
 	can_select = {
 		patriarch_authority = 10
@@ -13676,7 +13677,10 @@ estate_mages_warlock_pact_unrestricted_savagery = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_unrestricted_savagery }
+	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_unrestricted_savagery 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
 }
 
 estate_mages_warlock_pact_battlefield_domination = {
@@ -13685,6 +13689,7 @@ estate_mages_warlock_pact_battlefield_domination = {
 	influence = 0
 	is_valid = {
 		has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_battlefield_domination }
+		NOT = { has_country_flag = revoke_warlock_pact_battlefield_domination }
 	}
 	can_select = {
 		church_power = 100
@@ -13707,5 +13712,84 @@ estate_mages_warlock_pact_battlefield_domination = {
 		factor = 1
 	}
 	cooldown_years = 10 
- 	on_cooldown_expires = { remove_estate_privilege = estate_mages_warlock_pact_battlefield_domination }
+	on_cooldown_expires = { 
+		set_country_flag = revoke_warlock_pact_battlefield_domination 
+		country_event = { id = flavour_rakkaz.13 days = 1 }
+	}
+}
+
+estate_mages_warlock_pact_demonic_possession = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = { has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_demonic_possession  } }
+	can_select = {
+		patriarch_authority = 0.1
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		add_patriarch_authority = -0.1
+		change_adm = -3
+		change_dip = -3
+		change_mil = 6
+		clear_ruler_personalities = yes
+		add_ruler_personality = cruel_personality
+		add_ruler_personality = malevolent_personality
+		add_ruler_personality = mage_personality
+		hidden_effect = {
+			set_ruler_flag = evocation_1
+			set_ruler_flag = evocation_2
+		}
+	}
+	benefits = { }
+	penalties = { }
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+	on_cooldown_expires = { country_event = { id = flavour_rakkaz.15 } }
+}
+
+estate_mages_warlock_pact_night_coven = {
+	icon = privilege_cast_spell
+	loyalty = 0
+	influence = 0
+	is_valid = { has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_night_coven  } }
+	can_select = {
+		church_power = 100
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		add_church_power = -100
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		add_ruler_personality = mage_personality
+		hidden_effect = {
+			force_add_ruler_personality = { personality = mage_personality }
+		}
+		hidden_effect = {
+			set_ruler_flag = conjuration_1
+			set_ruler_flag = conjuration_2
+		}
+	}
+	benefits = { }
+	penalties = { }
+	ai_will_do = {
+		factor = 1
+	}
+	cooldown_years = 10 
+	on_cooldown_expires = { 
+		random_list = {
+			50 = { country_event = { id = flavour_rakkaz.16 }  }
+			20 = { country_event = { id = flavour_rakkaz.17 }  }
+			20 = { country_event = { id = flavour_rakkaz.18 }  }
+			9 = { country_event = { id = flavour_rakkaz.19 }  }
+			1 = { country_event = { id = flavour_rakkaz.20 }  }
+		}
+	}
 }
