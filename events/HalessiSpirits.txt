@@ -11686,6 +11686,7 @@ country_event = { #Clearing all the aspects on ruler death
 		name = spirits.604.a
 		ai_chance = { factor = 1 }
 
+		add_church_power = 200
 		remove_church_aspect = random
 		remove_church_aspect = random
 		remove_church_aspect = random
@@ -11735,6 +11736,23 @@ country_event = { #Temple Corruption unlock event, for flavor + to explain the m
 		custom_tooltip = privileges_available_tt
 		tooltip = { set_estate_privilege = estate_mages_temple_desecrators }
 		add_ruler_modifier = { name = dvp_devoured_mod duration = 1825 }
+	}
+}
+
+country_event = { #To Devour Chi needs an event to add church power back
+	id = spirits.607
+	title = spirits.607.t
+	desc = spirits.607.d
+	picture = HIGH_TEMPLE_IN_DISTANCE_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = spirits.607.a
+		ai_chance = { factor = 1 }
+
+		add_church_power = 200
 	}
 }
 

@@ -181,32 +181,48 @@ chroniclers_of_secret_histories = {
 	ai_will_do = { factor = 15 }
 }
 
-to_devour_chi = {
+gifts_for_fools = {
+	cost = 200
+
+	effect = { custom_tooltip = gifts_for_fools_effect_tt hidden_effect = { add_ruler_modifier = { name = gifts_for_fools_mod duration = 7300 } } }
+
+	modifier = { yearly_corruption = 0.1 }
+
+	ai_will_do = { factor = 15 }
+}
+
+to_devour_chi_preview = {
 	cost = 200
 	potential = {
 		NOT = {
-			AND = {
-				OR = {
-					tag = Y01
-					AND = {
-						has_country_flag = devouring_temple_secrets
-						has_country_flag = devouring_life_extension_unlocked
-					}
-				}
-				has_country_flag = devouring_powerful_mage_unlocked
-				has_country_flag = devouring_skill_increase_unlocked
-			}
+			num_of_aspects = 1
+			has_country_flag = to_devour_chi_locked
 		}
 	}
 
 	effect = {
+		custom_tooltip = to_devour_chi_preview_effect_tt
+		hidden_effect = {
+			remove_church_aspect = to_devour_chi_preview
+			country_event = { id = spirits.607 }
+		}
+	}
+
+	modifier = { church_power_modifier = 0.1 }
+
+	ai_will_do = { factor = 0 }
+}
+
+to_devour_chi = {
+	cost = 200
+	potential = {
+		num_of_aspects = 1
+		NOT = { has_country_flag = to_devour_chi_locked }
+	}
+
+	effect = {
 		if = {
-			limit = {
-				NOT = {
-					tag = Y01
-					has_country_flag = devouring_temple_secrets
-				}
-			}
+			limit = { NOT = { has_country_flag = devouring_temple_secrets } }
 			custom_tooltip = to_devour_chi_effect_tt
 			set_country_flag = devouring_temple_secrets
 			hidden_effect = { country_event = { id = spirits.606 } }
@@ -231,6 +247,22 @@ to_devour_chi = {
 				add_ruler_modifier = { name = dvp_devoured_mod duration = 1825 }
 			}
 		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = devouring_powerful_mage_unlocked
+					has_country_flag = devouring_skill_increase_unlocked
+					OR = {
+						tag = Y01
+						AND = {
+							has_country_flag = devouring_temple_secrets
+							has_country_flag = devouring_life_extension_unlocked
+						}
+					}
+				}
+				set_country_flag = to_devour_chi_locked
+			}
+		}
 	}
 
 	modifier = { church_power_modifier = 0.1 }
@@ -241,7 +273,7 @@ to_devour_chi = {
 gunpowder_meditation = {	#Snorting a mixture of gunpowder and illegal stuff
 	cost = 200
 
-	potential = { culture_group = yan }
+	potential = { has_country_flag = gunpowder_meditation_unlocked }
 
 	effect = { custom_tooltip = gunpowder_meditation_effect_tt hidden_effect = { add_ruler_modifier = { name = gunpowder_meditation_mod duration = 7300 } } }
 
@@ -254,12 +286,7 @@ demon_warriors = {	#Trained by Oni
 	cost = 200
 
 	potential = {
-		OR = {
-			culture_group = yan
-			primary_culture = horned_ogre
-			culture_group = upper_raheni
-			culture_group = middle_raheni
-		}
+		has_country_flag = demon_warriors_unlocked
 		NOT = { mission_completed = Y01_demon_warriors }
 	}
 
@@ -285,12 +312,7 @@ oni_demon_warriors = { #better version of above, unlocked in Azjakuma mt
 the_god_eaters = {
 	cost = 200
 
-	potential = {
-		OR = {
-			culture_group = yan
-			culture_group = kai
-		}
-	}
+	potential = { has_country_flag = the_god_eaters_unlocked }
 
 	effect = { custom_tooltip = the_god_eaters_effect_tt hidden_effect = { add_ruler_modifier = { name = the_god_eaters_mod duration = 7300 } } }
 
@@ -302,7 +324,7 @@ the_god_eaters = {
 the_dead_serve_the_living = {
 	cost = 200
 
-	potential = { primary_culture = horned_ogre }
+	potential = { has_country_flag = the_dead_serve_the_living_unlocked }
 
 	effect = {
 		if = { #Gets you a proper tooltip this way
@@ -319,27 +341,12 @@ the_dead_serve_the_living = {
 	ai_will_do = { factor = 15 }
 }
 
-gifts_for_fools = {
-	cost = 200
-
-	potential = { primary_culture = horned_ogre }
-
-	effect = { custom_tooltip = gifts_for_fools_effect_tt hidden_effect = { add_ruler_modifier = { name = gifts_for_fools_mod duration = 7300 } } }
-
-	modifier = { yearly_corruption = 0.1 }
-
-	ai_will_do = { factor = 15 }
-}
-
 way_of_shadows = {
 	cost = 200
 
 	potential = {
 		OR = {
-			culture_group = upper_raheni
-			culture_group = middle_raheni
-			culture_group = yanglam
-			culture_group = kai
+			has_country_flag = way_of_shadows_unlocked
 			mission_completed = ying_best_things
 		}
 	}
@@ -354,12 +361,7 @@ way_of_shadows = {
 means_to_an_end = {
 	cost = 200
 
-	potential = {
-		OR = {
-			culture_group = upper_raheni
-			culture_group = middle_raheni
-		}
-	}
+	potential = { has_country_flag = means_to_an_end_unlocked }
 
 	effect = { custom_tooltip = means_to_an_end_effect_tt hidden_effect = { add_ruler_modifier = { name = means_to_an_end_mod duration = 7300 } } }
 
@@ -371,7 +373,7 @@ means_to_an_end = {
 above_spirits_and_man = {
 	cost = 200
 
-	potential = { culture_group = yanglam }
+	potential = { has_country_flag = above_spirits_and_man_unlocked }
 
 	effect = { custom_tooltip = above_spirits_and_man_effect_tt hidden_effect = { add_ruler_modifier = { name = above_spirits_and_man_mod duration = 7300 } } }
 
@@ -383,7 +385,7 @@ above_spirits_and_man = {
 tether_the_weak = {
 	cost = 200
 
-	potential = { culture_group = yanglam }
+	potential = { has_country_flag = tether_the_weak_unlocked }
 
 	effect = { custom_tooltip = tether_the_weak_effect_tt hidden_effect = { add_ruler_modifier = { name = tether_the_weak_mod duration = 7300 } } }
 
@@ -395,7 +397,7 @@ tether_the_weak = {
 bleed_haless_dry = {
 	cost = 200
 
-	potential = { culture_group = kai }
+	potential = { has_country_flag = bleed_haless_dry_unlocked }
 
 	effect = { custom_tooltip = bleed_haless_dry_effect_tt hidden_effect = { add_ruler_modifier = { name = bleed_haless_dry_mod duration = 7300 } } }
 

@@ -3863,6 +3863,57 @@ on_religion_change_effect = {
 			add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 }
 		}
 	}
+
+	if = {
+		limit = { religion = devouring_path }
+		set_country_flag = was_devouring_path
+		trigger_switch = {
+			on_trigger = culture_group
+			yan = {
+				set_country_flag = gunpowder_meditation_unlocked
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = the_god_eaters_unlocked
+			}
+			upper_raheni = {
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = means_to_an_end_unlocked
+			}
+			middle_raheni = {
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = means_to_an_end_unlocked
+			}
+			yanglam = {
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = above_spirits_and_man_unlocked
+				set_country_flag = tether_the_weak_unlocked
+			}
+			kai = {
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = the_god_eaters_unlocked
+				set_country_flag = bleed_haless_dry_unlocked
+			}
+		}
+		if = {
+			limit = { primary_culture = horned_ogre }
+			set_country_flag = demon_warriors_unlocked
+			set_country_flag = the_dead_serve_the_living_unlocked
+		}
+	}
+	else_if = {
+		limit = { has_country_flag = was_devouring_path }
+		clr_country_flag = was_devouring_path
+		clr_country_flag = gunpowder_meditation_unlocked
+		clr_country_flag = demon_warriors_unlocked
+		clr_country_flag = the_god_eaters_unlocked
+		clr_country_flag = the_dead_serve_the_living_unlocked
+		clr_country_flag = way_of_shadows_unlocked
+		clr_country_flag = means_to_an_end_unlocked
+		clr_country_flag = above_spirits_and_man_unlocked
+		clr_country_flag = tether_the_weak_unlocked
+		clr_country_flag = bleed_haless_dry_unlocked
+	}
 }
 
 
@@ -9833,6 +9884,51 @@ on_primary_culture_changed_effect = {
 					duration = -1
 				}
 			}
+		}
+	}
+	if = {
+		limit = { religion = devouring_path }
+		clr_country_flag = gunpowder_meditation_unlocked
+		clr_country_flag = demon_warriors_unlocked
+		clr_country_flag = the_god_eaters_unlocked
+		clr_country_flag = the_dead_serve_the_living_unlocked
+		clr_country_flag = way_of_shadows_unlocked
+		clr_country_flag = means_to_an_end_unlocked
+		clr_country_flag = above_spirits_and_man_unlocked
+		clr_country_flag = tether_the_weak_unlocked
+		clr_country_flag = bleed_haless_dry_unlocked
+		trigger_switch = {
+			on_trigger = culture_group
+			yan = {
+				set_country_flag = gunpowder_meditation_unlocked
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = the_god_eaters_unlocked
+			}
+			upper_raheni = {
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = means_to_an_end_unlocked
+			}
+			middle_raheni = {
+				set_country_flag = demon_warriors_unlocked
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = means_to_an_end_unlocked
+			}
+			yanglam = {
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = above_spirits_and_man_unlocked
+				set_country_flag = tether_the_weak_unlocked
+			}
+			kai = {
+				set_country_flag = way_of_shadows_unlocked
+				set_country_flag = the_god_eaters_unlocked
+				set_country_flag = bleed_haless_dry_unlocked
+			}
+		}
+		if = {
+			limit = { primary_culture = horned_ogre }
+			set_country_flag = demon_warriors_unlocked
+			set_country_flag = the_dead_serve_the_living_unlocked
 		}
 	}
 }
