@@ -1,10 +1,10 @@
 
 
-namespace = flavor_wyvernheart
+namespace = flavour_wyvernheart
 
 #Dynasty Naming
 country_event = {
-	id = flavor_wyvernheart.1
+	id = flavour_wyvernheart.1
 	title = dynasty_setup.1.t
 	desc = dynasty_setup.1.d
 	picture = {
@@ -29,7 +29,7 @@ country_event = {
 	
 	#Option A
 	option = {		
-		name = "flavor_wyvernheart.1.a"
+		name = "flavour_wyvernheart.1.a"
 		ai_chance = { factor = 40 }	
 		define_heir = {
 			dynasty = "síl Wyvernheart"
@@ -44,7 +44,7 @@ country_event = {
 	
 	#Option B
 	option = {		
-		name = "flavor_wyvernheart.1.b"
+		name = "flavour_wyvernheart.1.b"
 		ai_chance = { factor = 40 }	
 		define_heir = {
 			dynasty = "Wyvernheart"	#of the crossing
@@ -59,7 +59,7 @@ country_event = {
 	
 	#Keep their name
 	option = {		
-		name = "flavor_wyvernheart.1.c"
+		name = "flavour_wyvernheart.1.c"
 		ai_chance = { factor = 20 }	
 		define_heir = {
 			dynasty = ROOT
@@ -70,5 +70,207 @@ country_event = {
 			change_mil = 1
 			hide_skills = yes
 		}
+	}
+}
+
+country_event = {#A Beast Unlike Any Other C4
+	id = flavour_wyvernheart.100
+	title = flavour_wyvernheart.100.t
+	desc = flavour_wyvernheart.100.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.100.a"
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = wyvernheart_monsterized_army
+			duration = -1
+		}
+		hidden_effect = {
+			set_country_flag = wyvernheart_burnblood_1
+		}
+		custom_tooltip = wyvernheart_C4_event_tt
+
+
+		large_decrease_of_orcish_tolerance_effect = yes
+		large_decrease_of_goblin_tolerance_effect = yes
+	}
+}
+country_event = {#Rumours of Power A7
+	id = flavour_wyvernheart.101
+	title = flavour_wyvernheart.101.t
+	desc = flavour_wyvernheart.101.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.101.a"
+		ai_chance = { factor = 1 }
+		227 = {
+			change_trade_goods = gems
+			add_province_modifier = {
+				name = wyvernheart_infernal_bleed
+				duration = -1
+			}
+			spawn_rebels = {
+				size = 3
+				leader = noblezealot
+				type = infernal_court_rebels
+			}
+		}
+
+
+		large_decrease_of_orcish_tolerance_effect = yes
+		large_decrease_of_goblin_tolerance_effect = yes
+	}
+	option = {
+		name = "flavour_wyvernheart.101.b"
+		ai_chance = { factor = 1 }
+		change_religion = infernal_court
+		add_stability = -2
+		add_country_modifier = {
+			name = wyvernheart_khizriel_leads_the_way
+			duration = 3650
+		}
+		227 = {
+			change_trade_goods = gems
+			add_province_modifier = {
+				name = wyvernheart_infernal_bleed
+				duration = -1
+			}
+		}
+
+		large_decrease_of_orcish_tolerance_effect = yes
+		large_decrease_of_goblin_tolerance_effect = yes
+	}
+	option = {
+		name = "flavour_wyvernheart.101.c"
+		ai_chance = { factor = 1 }
+		trigger = {
+			religion = infernal_court
+		}
+		227 = {
+			change_trade_goods = gems
+			add_province_modifier = {
+				name = wyvernheart_infernal_bleed
+				duration = -1
+			}
+		}
+
+
+		large_decrease_of_orcish_tolerance_effect = yes
+		large_decrease_of_goblin_tolerance_effect = yes
+	}
+}
+country_event = {#A Tower on High B3
+	id = flavour_wyvernheart.102
+	title = flavour_wyvernheart.102.t
+	desc = flavour_wyvernheart.102.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.102.a"
+		ai_chance = { factor = 1 }
+		add_prestige = 10
+		add_estate_loyalty_modifier = {
+			estate = estate_mages
+			desc = wyvernheart_invested_in_mages
+			loyalty = 20
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			estate = estate_mages
+			influence = 20
+			desc = wyvernheart_invested_in_mages
+			duration = 7300
+		}
+		country_event = {
+			id = flavour_wyvernheart.103
+			days = 1825
+		}
+	}
+}
+country_event = {#A Grand Breakthrough B3
+	id = flavour_wyvernheart.103
+	title = flavour_wyvernheart.103.t
+	desc = flavour_wyvernheart.103.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.103.a"
+		ai_chance = { factor = 1 }
+		custom_tooltip = wyvernheart_event103_tt
+		set_country_flag = wyvernheart_research_finished
 	}
 }

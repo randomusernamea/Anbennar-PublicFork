@@ -13404,3 +13404,115 @@ estate_adventurers_state_assassins = {
 
 	ai_will_do = { factor = 10 }
 }
+
+#Wyvernheart
+estate_wyvernheart_culture_of_the_heart = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 0
+	influence = 0.1
+	loyalty = 0.05
+	land_share = 5
+	is_valid = { mission_completed = the_hearter_homeland }
+	can_select = { mission_completed = the_hearter_homeland }
+	on_granted = {
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_tta
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_ttb
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				culture = ROOT
+			}
+			add_province_modifier = {
+				name = estate_wyvernheart_culture_of_the_heart_mod
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
+			}
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
+		}
+		if = {
+			limit = {
+				NOT = { culture = ROOT }
+			}
+			add_province_modifier = {
+				name = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+			}
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+		}
+	}
+	on_revoked = {
+	}
+	on_revoked_province = {
+	}
+	on_invalid = {
+		custom_tooltip = estate_church_one_faith_one_culture_rta
+		custom_tooltip = estate_church_one_faith_one_culture_rtb
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_church_united_faith_and_culture
+			}
+			remove_province_modifier = estate_church_united_faith_and_culture
+		}
+		if = {
+			limit = {
+				has_province_modifier = estate_church_false_culture
+			}
+			remove_province_modifier = estate_church_false_culture
+		}
+	}
+	penalties = {
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+	benefits = {
+		global_missionary_strength = 0.01
+	}
+	can_revoke = {
+		always = no
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_wyvernheart_subservient_artificers = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 0
+	influence = -0.05
+	loyalty = -0.05
+	land_share = 0
+	is_valid = { mission_completed = welcoming_the_immoral }
+	can_select = { mission_completed = welcoming_the_immoral }
+	on_granted = {
+		custom_tooltip = estate_wyvernheart_subservient_artificers_tt
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		same_culture_advisor_cost = -0.10
+		monthly_governmental_power = 0.10
+	}
+	can_revoke = {
+		always = no
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

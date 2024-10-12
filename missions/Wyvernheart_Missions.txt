@@ -297,11 +297,69 @@
 		icon = mission_burning_witch
 		position = 7
 		required_missions = { down_the_alen } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 227
+		} 
 
-		trigger = {  } 
+		trigger = {
+			stability = 2
+			227 = {
+				has_building = mage_tower
+				OR = {
+					num_of_times_expanded_infrastructure = 1
+					development = 20
+				}
+				has_ruler_leader_from = ROOT
+			}
+			any_hired_mercenary_company = {
+				OR = {
+					template = merc_wyvernheart_burnblood_company_2_1
+					template = merc_wyvernheart_burnblood_company_2_2
+					template = merc_wyvernheart_burnblood_company_3_1
+					template = merc_wyvernheart_burnblood_company_3_2
+				}
+				location = {
+					province_id = 227
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = wyvernheart_A7_effect_tt
+			country_event = {
+				id = flavour_wyvernheart.101
+			}
+			227 = {
+				add_province_modifier = {
+					name = wyvernheart_burnblood_spawning_pool
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				for = {
+					amount = 5
+					effect = "
+						if = {
+							limit = {
+								any_owned_province = {
+									has_orcish_minority_trigger = yes
+								}
+							}
+							random_owned_province = {
+								limit = {
+									has_orcish_minority_trigger = yes
+								}
+								remove_orcish_minority_size_effect = yes
+							}
+						}
+						else = {
+							add_treasury = -25
+							216 = { owner = { add_treasury = 25 } }
+						}
+					"
+				}
+			}
+		} 
 	}
 
 	heart_attack = {
@@ -569,11 +627,45 @@
 			home_is_where_the_heartmen_are
 			doing_away_with_the_old
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				region = inner_castanor_region
+				area = alenvord_area
+				area = balvord_area
+				area = jonsway_area
+			}
+			NOT = { culture = ROOT }
+		} 
 
-		trigger = {  } 
+		trigger = {
+			alenvord_area = {
+				type = all
+				culture = heartman
+			}
+			balvord_area = {
+				type = all
+				culture = heartman
+			}
+			jonsway_area = {
+				type = all
+				culture = heartman
+			}
+			inner_castanor_region = {
+				type = all
+				culture = heartman
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			set_estate_privilege = estate_wyvernheart_culture_of_the_heart
+			hidden_effect = {
+				remove_estate_privilege = estate_church_one_faith_one_culture
+			}
+			add_prestige = 20
+			add_power_projection_mission = {
+				amount = 20
+			}
+		} 
 	}
 
 	bioimproved_mages = {
@@ -601,11 +693,42 @@
 			legacy_of_the_wvyern
 			roar_in_the_greatwoods
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {	} 
 
-		trigger = {  } 
+		trigger = {
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 60
+			}
+			estate_influence = {
+				estate = estate_mages
+				influence = 20
+			}
+			stability = 1
+			treasury = 100
+			army_tradition = 20
+			legitimacy = 20
+		}
 
-		effect = {  } 
+		effect = {
+			add_treasury = -100
+			add_army_tradition = -20
+			add_legitimacy = -20
+			set_estate_privilege = estate_mages_organization_state
+			define_advisor = {
+				type = court_mage
+				skill = 2
+				culture = ROOT
+				cost_multiplier = 0.5
+			}
+			define_general = {
+				shock = 7
+				fire = 1
+				manuever = 3
+				siege = 1
+				trait = glory_seeker_personality
+			}
+		} 
 	}
 
 	might_makes_right = {
@@ -615,11 +738,109 @@
 			descend_upon_the_alen
 			mightiest_of_us
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = middle_alen_area
+				area = athfork_area
+				area = ebonmarck_area
+				area = westwall_approach_area
+				province_id = 229
+			}
+			OR = {
+				NOT = { culture = ROOT }
+				has_construction = any
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			is_not_purging_or_expelling_any_race_trigger = yes
+			army_size = 15
+			middle_alen_area = {
+				culture = ROOT
+				NOT = { has_construction = any }
+			}
+			athfork_area = {
+				culture = ROOT
+				NOT = { has_construction = any }
+			}
+			ebonmarck_area = {
+				culture = ROOT
+				NOT = { has_construction = any }
+			}
+			westwall_approach_area = {
+				culture = ROOT
+				NOT = { has_construction = any }
+			}
+			229 = {
+				culture = ROOT
+				NOT = { has_construction = any }
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			middle_alen_area = {
+				limit = {
+					NOT = {
+						culture = ROOT
+					}
+				}
+				add_devastation = 10
+				add_culture_construction = {
+					speed = 0.5
+					cost = 0
+				}
+			}
+			athfork_area = {
+				limit = {
+					NOT = {
+						culture = ROOT
+					}
+				}
+				add_devastation = 10
+				add_culture_construction = {
+					speed = 0.5
+					cost = 0
+				}
+			}
+			ebonmarck_area = {
+				limit = {
+					NOT = {
+						culture = ROOT
+					}
+				}
+				add_devastation = 10
+				add_culture_construction = {
+					speed = 0.5
+					cost = 0
+				}
+			}
+			westwall_approach_area = {
+				limit = {
+					NOT = {
+						culture = ROOT
+					}
+				}
+				add_devastation = 10
+				add_culture_construction = {
+					speed = 0.5
+					cost = 0
+				}
+			}
+			229 = {
+				if = {
+					limit = {
+						NOT = {
+							culture = ROOT
+						}
+					}
+					add_devastation = 10
+					add_culture_construction = {
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		} 
 	}
 
 	beast_unlike_any_other = {
@@ -629,11 +850,57 @@
 			might_makes_right
 			a_tower_on_high
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				province_id = 229
+				province_id = 729
+			}
+			NOT = { has_building = mage_tower }
+		} 
 
-		trigger = {  } 
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = wyvernheart_C4_trigger_tt
+				has_country_flag = wyvernheart_research_finished
+			}
+			729 = {
+				has_building = mage_tower
+			}
+			229 = {
+				has_building = mage_tower
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = wyvernheart_C4_effect_tt
+			country_event = {
+				id = flavour_wyvernheart.100
+			}
+			hidden_effect = {
+				for = {
+					amount = 10
+					effect = "
+						if = {
+							limit = {
+								any_owned_province = {
+									has_orcish_minority_trigger = yes
+								}
+							}
+							random_owned_province = {
+								limit = {
+									has_orcish_minority_trigger = yes
+								}
+								remove_orcish_minority_size_effect = yes
+							}
+						}
+						else = {
+							add_treasury = -25
+							216 = { owner = { add_treasury = 25 } }
+						}
+					"
+				}
+			}
+		} 
 	}
 
 	doing_away_with_the_old = {
@@ -645,9 +912,52 @@
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			mil_power = 50
+			calc_true_if = {
+				amount = 30
+				inner_castanor_region = {
+					type = any
+					owned_by = ROOT
+					is_core = ROOT
+				}
+			}
+			castonath_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			any_hired_mercenary_company = {
+				OR = {
+					template = merc_wyvernheart_burnblood_company_1
+					template = merc_wyvernheart_burnblood_company_2_1
+					template = merc_wyvernheart_burnblood_company_2_2
+				}
+				location = {
+					province_id = 833
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			add_mil_power = -50
+			add_prestige = -50
+			castonath_area = {
+				type = all
+				add_devastation = 20
+				add_base_manpower = -1 
+				add_base_production = -1
+				add_base_tax = -1
+				remove_province_modifier = castonath_patrician_influence_significant
+				remove_province_modifier = castonath_patrician_influence_considerable
+				remove_province_modifier = castonath_patrician_influence_some
+				remove_province_modifier = castonath_patrician_influence_full
+				add_culture_construction = {
+					cost = 0
+					speed = 0.5
+				}
+			}
+		} 
 	}
 
 	welcoming_the_immoral = {
@@ -658,11 +968,89 @@
 			a_new_seat_of_power
 			the_hearter_homeland
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			area = castonath_area
+			NOT = {
+				AND = {
+					has_building = mage_tower
+					OR = {
+						has_building = farm_estate
+						has_building = weapons
+						has_building = impressment_offices
+						has_building = wharf
+						has_building = textile
+						has_building = plantations
+						has_building = tradecompany
+						has_building = mills
+						has_building = furnace
+						has_building = ramparts
+						has_building = soldier_households
+						has_building = state_house
+					}
+					num_of_times_expanded_infrastructure = 2
+					development = 40
+				}
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			castonath_area = {
+				OR = {
+					num_of_times_expanded_infrastructure = 2
+					development = 40
+				}
+				custom_trigger_tooltip = {
+					tooltip = wyvernheart_C7_trigger_tt
+					has_building = mage_tower
+					OR = {
+						has_building = farm_estate
+						has_building = weapons
+						has_building = impressment_offices
+						has_building = wharf
+						has_building = textile
+						has_building = plantations
+						has_building = tradecompany
+						has_building = mills
+						has_building = furnace
+						has_building = ramparts
+						has_building = soldier_households
+						has_building = state_house
+					}
+				}
+			}
+			NOT = { diplomatic_reputation = -5 }
+			any_known_country = {
+				has_estate = estate_artificers
+				NOT = { 
+					has_opinion = {
+						who = ROOT
+						value = -100
+					}
+				}
+			}
+			OR = {
+				NOT = {
+					reverse_has_opinion = {
+						who = A59
+						value = -100
+					}
+				}
+				NOT = { exists = A59 }
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			set_estate_privilege = estate_wyvernheart_subservient_artificers
+			set_country_flag = wyvernheart_burnblood_3
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -20
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -20
+			}
+		} 
 	}
 
 	the_perfect_weapon = {
@@ -723,20 +1111,95 @@
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			has_estate_privilege = estate_adventurers_generous_quest_rewards
+			OR = {
+				any_hired_mercenary_company = {
+					OR = {
+						template = merc__local_small_company
+						template = merc__local_grand_company
+						template = merc__local_free_company
+					}
+				}
+				treasury = 30
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			set_estate_privilege = estate_adventurers_heroes_in_the_army
+			if = {
+				limit = {
+					any_hired_mercenary_company = {
+						OR = {
+							template = merc__local_small_company
+							template = merc__local_grand_company
+							template = merc__local_free_company
+						}
+					}
+				}
+				add_army_tradition = 15
+			}
+			else = {
+				add_treasury = -30
+			}
+		}
 	}
 
 	the_lands_of_the_north = {
 		icon = mission_duel_snow
 		position = 2
 		required_missions = { legacy_of_the_wvyern } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 725
+		} 
 
-		trigger = {  } 
+		trigger = {
+			mil_power = 100
+			estate_loyalty = {
+				estate = estate_adventurers
+				loyalty = 60
+			}
+			any_hired_mercenary_company = {
+				location = {
+					province_id = 725
+				}
+			}
+			manpower = 2
+		} 
 
-		effect = {  } 
+		effect = {
+			add_manpower = -2
+			random_hired_mercenary_company = {
+				limit = {
+					location = {
+						province_id = 725
+					}
+				}
+				disband_mercenary_company = THIS
+			}
+			add_treasury = 250
+			if = {
+				limit = {
+					711 = {
+						OR = {
+							owner = {
+								has_country_modifier = monstrous_nation
+							}
+						}
+					}
+				}
+				add_prestige = 10
+			}
+			else = {
+				add_prestige = -10
+			}
+			wudhal_area = {
+				discover_country = ROOT
+			}
+			cedesck_area = {
+				discover_country = ROOT
+			}
+		} 
 	}
 
 	a_tower_on_high = {
@@ -746,11 +1209,48 @@
 			mightiest_of_us
 			the_lands_of_the_north
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 734
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				AND = {
+					province_id = 734
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+						has_building = mage_tower
+					}
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			gulletpeak_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			733 = {
+				has_building = mage_tower
+			}
+			has_estate_privilege = estate_mages_reduced_research_regulations
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = {
+				id = flavour_wyvernheart.102
+			}
+			alenic_reach_region = {
+				discover_country = ROOT
+			}
+			olavlund_region = {
+				discover_country = ROOT
+			}
+		} 
 	}
 
 	the_red_flood = {
@@ -799,11 +1299,69 @@
 		icon = mission_protect_white_sea_trade
 		position = 3
 		required_missions = { the_lands_of_the_north } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = cedesck_area
+				area = wudhal_area
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			cedesck_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			wudhal_area = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			olavlund_region = {
+				type = all
+				owner = {
+					capital_scope = {
+						region = olavlund_region
+					}
+					NOT = { army_size = ROOT }
+				}
+			}
+			alenic_reach_region = {
+				type = all
+				owner = {
+					capital_scope = {
+						region = alenic_reach_region
+					}
+					NOT = { tag = ROOT }
+					NOT = { army_size = ROOT }
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			add_power_projection_mission = { amount = 10 }
+			add_country_modifier = {
+				name = wyvernheart_once_again_on_the_seas
+				duration = 3650
+			}
+			east_chillsbay_area = {
+				add_permanent_claim = ROOT
+			}
+			west_chillsbay_area = {
+				add_permanent_claim = ROOT				
+			}
+			sondaar_area = {
+				add_permanent_claim = ROOT				
+			}
+			vrorenwall_area = {
+				add_permanent_claim = ROOT				
+			}
+			vrorenmarch_area = {
+				add_permanent_claim = ROOT				
+			}
+		} 
 	}
 
 	soulstones_of_vroren = {
@@ -815,9 +1373,52 @@
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			adm_power = 100
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 60
+			}
+			736 = {
+				owned_by = ROOT
+				is_core = ROOT
+				has_building = mage_tower
+			}
+			OR = {
+				dip_power = 100
+				any_known_country = {
+					religion = skaldhyrric_faith
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			add_adm_power = -100
+			if = {
+				limit = {
+					NOT = {
+						any_known_country = {
+							religion = skaldhyrric_faith
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+				}
+				add_dip_power = -100
+			}
+			736 = {
+				add_province_modifier = {
+					name = wyvernheart_vroren_isle_mage_investment
+					duration = 7300
+				}
+			}
+		} 
 	}
 
 	a_worthy_sacrifice = {
@@ -829,9 +1430,78 @@
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = aw_wyvern_1
+						has_province_modifier = aw_wyvern_2
+					}
+				}
+				treasury = 200
+			}
+			728 = {
+				has_building = mage_tower
+				OR = {
+					num_of_times_expanded_infrastructure = 1
+					development = 20
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = wyvernheart_A7_effect_tt
+			hidden_effect = {
+				for = {
+					amount = 5
+					effect = "
+						if = {
+							limit = {
+								any_owned_province = {
+									has_orcish_minority_trigger = yes
+								}
+							}
+							random_owned_province = {
+								limit = {
+									has_orcish_minority_trigger = yes
+								}
+								remove_orcish_minority_size_effect = yes
+							}
+						}
+						else = {
+							add_treasury = -25
+							216 = { owner = { add_treasury = 25 } }
+						}
+					"
+				}
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							has_province_modifier = aw_wyvern_1
+							has_province_modifier = aw_wyvern_2
+						}
+					}
+				}
+				random_owned_province = {
+					remove_province_modifier = aw_wyvern_1
+					remove_province_modifier = aw_wyvern_2
+				}
+			}
+			else = {
+				add_treasury = -200
+			}
+			728 = {
+				add_province_modifier = {
+					name = wyvernheart_burnblood_spawning_pool
+					duration = -1
+				}
+			}
+			set_country_flag = wyvernheart_burnblood_2
+			clr_country_flag = wyvernheart_burnblood_1
+			custom_tooltip = wyvernheart_E5_effect_tt
+		} 
 	}
 
 	brand_of_servitude = {
