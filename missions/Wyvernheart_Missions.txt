@@ -1258,9 +1258,18 @@
 		position = 5
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			ai = no
+			has_global_flag = crimson_deluge
+			government_reform_progress = 100
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = {
+				id = flavour_wyvernheart.104
+			}
+			change_government_reform_progress = -100
+		} 
 	}
 
 	a_new_seat_of_power = {
@@ -1272,9 +1281,59 @@
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			castonath_area = {
+				OR = {
+					has_province_modifier = centralize_state
+					has_courthouse_building_trigger = yes
+				}
+				culture = ROOT
+				development = 25
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+				has_building = mage_tower
+			}
+			check_variable = {
+				which = pointsWitchKing
+				value = 1
+			}
+			treasury = 500
+		} 
 
-		effect = {  } 
+		effect = {
+			833 = {
+				move_capital_effect = yes
+				add_province_modifier = {
+					name = wyvernheart_seat_of_the_council
+					duration = -1
+				}
+			}
+			832 = {
+				if = {
+					limit = {
+						province_has_center_of_trade_of_level = 3
+					}
+					ROOT = { add_treasury = 500 }
+				}
+				else = {
+					add_center_of_trade_level = 2
+				}
+				add_province_modifier = {
+					name = wyvernheart_seat_of_the_council
+					duration = -1
+				}
+			}
+			831 = {
+				add_province_modifier = {
+					name = wyvernheart_seat_of_the_council
+					duration = -1
+				}
+			}
+			custom_tooltip = wyvernheart_D6_effect_tt
+			hidden_effect = {
+				set_country_flag = wyvernheart_cheaper_bloodbrand_power_30
+			}
+		} 
 	}
 
 	imbue_the_royals = {
@@ -1283,9 +1342,52 @@
 		required_missions = { a_new_seat_of_power } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				has_ruler_modifier = witch_king_modifier
+				has_ruler_modifier = heir_mage_personality_mod
+			}
+			adm_power = 100
+			dip_power = 100
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 60
+			}
+			estate_influence = {
+				estate = estate_mages
+				influence = 40
+			}
+			has_heir = yes
+			heir_age = 16
+		} 
 
-		effect = {  } 
+		effect = {
+			if = {
+				limit = {
+					NOT = { ruler_has_mage_personality = yes }
+				}
+				kill_ruler = yes
+				add_stability = 1
+			}
+			add_adm_power = -100
+			add_dip_power = -100
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -30
+			}
+			add_estate_loyalty = {
+				estate = estate_mages
+				loyalty = 10
+			}
+			add_estate_influence_modifier = {
+				influence = 10
+				duration = 3650
+			}
+			change_variable = {
+				which = pointsWitchKing
+				value = 6
+			}
+		} 
 	}
 }
 5 = {
@@ -1511,11 +1613,107 @@
 			a_worthy_sacrifice
 			a_new_seat_of_power
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				province_id = 852
+				province_id = 853
+			}
+			NOT = {
+				has_building = mage_tower
+				OR = {
+					num_of_times_expanded_infrastructure = 1
+					development = 20
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {
+			has_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = 30
+			}
+			any_hired_mercenary_company = {
+				location = {
+					province_id = 852
+				}
+				OR = {
+					template = merc_wyvernheart_burnblood_company_2_1
+					template = merc_wyvernheart_burnblood_company_2_2
+					template = merc_wyvernheart_burnblood_company_3_1
+					template = merc_wyvernheart_burnblood_company_3_2
+				}
+			}
+			any_hired_mercenary_company = {
+				location = {
+					province_id = 853
+				}
+				OR = {
+					template = merc_wyvernheart_burnblood_company_2_1
+					template = merc_wyvernheart_burnblood_company_2_2
+					template = merc_wyvernheart_burnblood_company_3_1
+					template = merc_wyvernheart_burnblood_company_3_2
+				}
+			}
+			852 = {
+				has_building = mage_tower
+				has_fort_building_trigger = yes
+				OR = {
+					num_of_times_expanded_infrastructure = 1
+					development = 20
+				}
+			}
+			853 = {
+				has_building = mage_tower
+				has_fort_building_trigger = yes
+				OR = {
+					num_of_times_expanded_infrastructure = 1
+					development = 20
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = wyvernheart_A7_effect_tt
+			hidden_effect = {
+				for = {
+					amount = 5
+					effect = "
+						if = {
+							limit = {
+								any_owned_province = {
+									has_orcish_minority_trigger = yes
+								}
+							}
+							random_owned_province = {
+								limit = {
+									has_orcish_minority_trigger = yes
+								}
+								remove_orcish_minority_size_effect = yes
+							}
+						}
+						else = {
+							add_treasury = -25
+							216 = { owner = { add_treasury = 25 } }
+						}
+					"
+				}
+			}
+			852 = {
+				add_base_manpower = 5
+				add_province_modifier = {
+					name = wyvernheart_burnblood_spawning_pool
+					duration = -1
+				}
+			}
+			853 = {
+				add_base_manpower = 5
+				add_province_modifier = {
+					name = wyvernheart_burnblood_spawning_pool
+					duration = -1
+				}
+			}
+		} 
 	}
 
 	stones_of_power = {

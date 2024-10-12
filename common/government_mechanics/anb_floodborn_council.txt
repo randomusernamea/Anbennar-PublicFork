@@ -1,0 +1,489 @@
+floodborn_council_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 22
+	available = {
+		has_reform = floodborn_council_reform
+	}
+
+	powers = {
+		bloodbrand_power = {
+			gui = drakonshan_bar
+			max = 100
+			min = 0
+			reset_on_new_ruler = no
+			base_monthly_growth = 0
+			is_good = yes
+			
+			scaled_modifier = {
+				trigger = {
+					has_government_power = {
+                        mechanic_type = floodborn_council_mechanic
+                        power_type = bloodbrand_power
+                        value = 0
+                    }
+				}
+				modifier = {
+					manpower_recovery_speed = 0.20
+					stability_cost_modifier = -0.20
+					global_unrest = 2
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 40
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.25
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 50
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.25
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 60
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 70
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 80
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 90
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_has_mage_personality = yes
+					NOT = { check_variable = { which = pointsWitchKing value = 4 } }
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_has_mage_personality = yes
+					check_variable = { which = pointsWitchKing value = 4 }
+					NOT = { check_variable = { which = pointsWitchKing value = 9 } }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.05
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_has_mage_personality = yes
+					check_variable = { which = pointsWitchKing value = 9 }
+					NOT = { check_variable = { which = pointsWitchKing value = 13 } }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_has_mage_personality = yes
+					check_variable = { which = pointsWitchKing value = 13 }
+					NOT = { check_variable = { which = pointsWitchKing value = 26 } }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.20
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_has_mage_personality = yes
+					OR = {
+						check_variable = { which = pointsWitchKing value = 26 }
+						has_country_modifier = witch_king_modifier
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.50
+				}
+			}
+			range_modifier = {
+				trigger = {
+					NOT = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 20
+						}
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.05
+				}
+			}
+			range_modifier = {
+				trigger = {
+					NOT = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 40
+						}
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 20
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					NOT = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 60
+						}
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 40
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.20
+				}
+			}
+			range_modifier = {
+				trigger = {
+					estate_loyalty = {
+						estate = estate_mages
+						loyalty = 40
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 20
+						}
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					estate_loyalty = {
+						estate = estate_mages
+						loyalty = 40
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 40
+						}
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 20
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.20
+				}
+			}
+			range_modifier = {
+				trigger = {
+					estate_loyalty = {
+						estate = estate_mages
+						loyalty = 40
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 60
+						}
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 40
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.50
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 1
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.01
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 3
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.02
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 5
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.02
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 10
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.05
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 20
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 30
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 40
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					num_of_owned_provinces_with = {
+						value = 50
+						has_building = mage_tower
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 10
+					NOT = { absolutism = 20 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 20
+					NOT = { absolutism = 30 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.20
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 10
+					NOT = { absolutism = 20 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.10
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 20
+					NOT = { absolutism = 30 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.20
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 30
+					NOT = { absolutism = 40 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.30
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 40
+					NOT = { absolutism = 50 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.40
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 50
+					NOT = { absolutism = 60 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.50
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 60
+					NOT = { absolutism = 70 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.60
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 70
+					NOT = { absolutism = 80 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.70
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 80
+					NOT = { absolutism = 90 }
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.80
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 90
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.90
+				}
+			}
+		}
+	}
+
+
+	interactions = {
+		wyvernheart_brand_burnbloods = {
+			icon = GFX_drakonshan_draft_workers
+			gui = drakonshan_button
+			cost_type = bloodbrand_power
+			cost = 25
+			cooldown_years = 0
+			trigger = {
+			}
+			effect = {
+				custom_tooltip = drakonshan_draft_workers_tooltip
+			}
+			ai_chance = {
+				factor = 1
+			}
+		}
+
+		wyvernheart_imbue_mage = {
+			icon = GFX_drakonshan_seize_resources
+			gui = drakonshan_button
+			cost_type = bloodbrand_power
+			cost = 60
+			cooldown_years = 0
+			trigger = {}
+			effect = {
+			}
+			
+			ai_chance = { factor = 1 }
+		}
+
+		wyvernheart_manifest_the_flood = {
+			icon = GFX_drakonshan_hold_tournament
+			gui = drakonshan_button
+			cost_type = bloodbrand_power
+			cost = 90
+			cooldown_years = 0
+			trigger = {
+			}
+			effect = {
+			}
+			
+			ai_chance = { factor = 1 }
+		}
+	}
+	
+}

@@ -274,3 +274,39 @@ country_event = {#A Grand Breakthrough B3
 		set_country_flag = wyvernheart_research_finished
 	}
 }
+country_event = {#The New Face of Magic D5
+	id = flavour_wyvernheart.104
+	title = flavour_wyvernheart.104.t
+	desc = flavour_wyvernheart.104.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.104.a"
+		ai_chance = { factor = 1 }
+		add_government_reform = floodborn_council_reform
+		custom_tooltip = wyvernheart_D5_event_tt
+		hidden_effect = {
+			set_country_flag = floodborn_council_rename
+		}
+		set_estate_privilege = estate_wyvernheart_floodborn_council
+		add_stability = -1
+	}
+}

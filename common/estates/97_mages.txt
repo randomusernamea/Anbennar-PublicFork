@@ -364,6 +364,13 @@ estate_mages = {
 		}
 	}
 
+	custom_name = {
+		desc = wyvernheart_floodborn_council_estate
+		trigger = {
+			has_country_flag = floodborn_council_rename
+		}
+	}
+
 	color = { 153 217 234 }
 
 	privileges = {
@@ -436,6 +443,7 @@ estate_mages = {
 		estate_mages_lawassari_zamukaras #Mount Lazzaward reward
 		estate_mages_archaic_traditions #Orda Aldresia Debuff
 		estate_wyvernheart_subservient_artificers #Wyvernheart
+		estate_wyvernheart_floodborn_council #Wyvernheart
 	}
 
 	agendas = {
