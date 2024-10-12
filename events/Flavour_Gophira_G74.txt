@@ -31,7 +31,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			skill = 1
-			name = "Bobal Pandaya"
+			name = "Vindar Tauruppan"
 			location = 2530
 			discount = yes
 		}
@@ -44,7 +44,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			skill = 1
-			name = "Bobal Pandaya"
+			name = "Vindar Tauruppan"
 			location = 2530
 			discount = yes
 		}
@@ -154,6 +154,7 @@ country_event = {
 					overlord = { free_vassal = PREV }
 				}
 			}
+			remove_rival = J72
 			remove_queen_personality = malevolent_personality
 		}
 	}
@@ -176,7 +177,7 @@ country_event = {
 			who = J72
 			amount = 20
 		}
-		custom_tooltip = gophira_queen_webweaver
+		custom_tooltip = gophira_queen_webweaver_tt
 		add_queen_personality = intricate_web_weaver_personality
 		gophira_var_effect = { operation = subtract value = 3}
 		gophira_heir_effect = {	pow = dip amount = 2 }
@@ -254,8 +255,15 @@ country_event = {
 country_event = {
 	id = gophira.6
 	title = gophira.6.t
-	desc = gophira.6.d
-	picture = CIVIL_WAR_eventPicture
+	desc = {
+		trigger = { NOT = {	has_country_flag = gophira_spy } }
+		desc = gophira.6.d1
+	}
+	desc = {
+		trigger = { has_country_flag = gophira_spy }
+		desc = gophira.6.d2
+	}
+	picture = europeangfx_CIVIL_WAR_eventPicture
 
 	is_triggered_only = yes
 
@@ -268,6 +276,7 @@ country_event = {
 		G82 = { form_coalition_against = G52 }
 		gophira_var_effect = { operation = change value = 1 }
 		gophira_heir_effect = { pow = dip amount = 1 }
+		clr_country_flag = gophira_good_coalition
 	}
 	
 	option = {
@@ -279,6 +288,7 @@ country_event = {
 		G82 = { form_coalition_against = G52 }
 		gophira_var_effect = { operation = subtract value = 1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
+		clr_country_flag = gophira_bad_coalition
 	}
 
 	option = {
@@ -291,6 +301,7 @@ country_event = {
 			}
 		}
 		gophira_heir_effect = { pow = dip amount = 1 }
+		clr_country_flag = gophira_spy
 	}
 }
 
@@ -359,7 +370,14 @@ country_event = {
 country_event = {
 	id = gophira.9
 	title = gophira.9.t
-	desc = gophira.9.d
+	desc = {
+		trigger = { NOT = {	has_saved_event_target = gophira_mt_pu } }
+		desc = gophira.9.d1
+	}
+	desc = {
+		trigger = { has_saved_event_target = gophira_mt_pu }
+		desc = gophira.9.d2
+	}
 	picture = indiangfx_GOOD_WITH_MONARCH_eventPicture
 
 	is_triggered_only = yes
@@ -603,26 +621,39 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = gophira.14.1
-		set_country_flag = gophira_event14
-		random_owned_province = {
-			limit = {
-				num_of_units_in_province = {
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 10
+					}
+				}
+				save_event_target_as = gophira_betrayal
+				kill_units = {
 					who = ROOT
 					amount = 10
 				}
-			}
-			kill_units = {
-				who = ROOT
-				amount = 10
-			}
-			spawn_rebels = {
-				type = noble_rebels
-				size = 2
-				estate = estate_nobles
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				infantry = REB
+				cavalry = REB
+				cavalry = REB
 			}
 		}
+	}
+
+	option = {
+		name = gophira.14.1
+		set_country_flag = gophira_event14
+		goto = gophira_betrayal
+		custom_tooltip = gophira_betrayal_tt
 	}
 }
 
