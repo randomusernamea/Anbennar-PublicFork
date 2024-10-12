@@ -4439,7 +4439,6 @@ on_war_declaration_effect = {
 			duration = -1
 		}
 	}
-	FROM = { capital_scope = { remove_province_modifier = command_defensiveness_for_ai } }
 	if = {
 		limit = { has_country_modifier = J33_resisting_the_command }
 		remove_country_modifier = J33_resisting_the_command
@@ -7347,9 +7346,9 @@ startup_1444_effects = {
 		}
 
 		# Ovdal Tûngr DLC warnings
-		if = { limit = { tag = F23 }
-			country_event = { id = flavour_ovdal_tungr.1000 }
-		}
+		#if = { limit = { tag = F23 }
+		#	country_event = { id = flavour_ovdal_tungr.1000 }
+		#}
 
 		#Command AI stuff, offsetting lucky nation
 		if = {
@@ -8636,9 +8635,11 @@ on_province_owner_change_effect = {
 			owner = {
 				ai = no
 				tag = G43
-				owns_all_provinces = {
-					region = haraf_region
-					culture = harafe
+				NOT = {
+				    haraf_region = {
+				        culture = harafe
+				        NOT = { country_or_non_sovereign_subject_holds = PREV }
+				    }
 				}
 			}
 		}
@@ -9636,12 +9637,16 @@ on_province_owner_change_effect = {
 			province_event = { id = the_command.201 }
 		}
 		if = { #AI Command gives dwarovar to Jade March
-			limit = { superregion = east_serpentspine R62 = { ai = yes } exists = R81 }
+			limit = { superregion = east_serpentspine_superregion R62 = { ai = yes } exists = R81 }
 			cede_province = R81
 		}
 		if = {
 			limit = { fast_has_pop_of_race = { race = hobgoblin } region = jade_mines_region owner = { mission_completed = R62_moving_camp } }
 			add_province_triggered_modifier = command_migration_randomness_ptm
+		}
+		if = {
+			limit = { province_group = temple_province_group owner = { has_country_flag = command_oni_temple_stewardship_flag } }
+			generic_add_race_minority_size_effect = { race = ogre }
 		}
 	}
 	if = { #Command Pre-Edict-of-X Laws of Ninun
@@ -9701,8 +9706,12 @@ on_province_owner_change_effect = {
 		}
 	}
 	if = {
-		limit = { province_id = 4551 has_building = naval_battery mission_completed = R38_relock_the_gate }
+		limit = { province_id = 4551 has_building = naval_battery owner = { mission_completed = R38_relock_the_gate } }
 		add_province_modifier = { name = bhuvauri_gatehouse_of_rahen duration = -1 }
+	}
+	if = {
+		limit = { has_building = soldier_households owner = { mission_completed = R38_raheni_regiments } }
+		add_province_modifier = { name = bhuvauri_adasa_workforce duration = -1 }
 	}
 	if = { #Eordand stuff goes here
 		limit = { owner = { tag = H21 } }
