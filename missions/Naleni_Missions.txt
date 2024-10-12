@@ -391,13 +391,47 @@ Naléni_branch_three = {
 			serenade_our_subjects
 			repurpose_the_slave_port
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = { 
+			region = rahen_coast_region
+		 } 
 
 		trigger = {
-			
-		  } 
+			num_of_owned_provinces_with = {
+				region = rahen_coast_region
+				value = 4
+			}
+			1361 = {
+				trade_share = {
+					country = R38
+					share = 10
+				}
+			}
+			OR = { trade_embargoing = R38 exists = R38 }
+		} 
 
-		effect = {  } 
+		effect = {
+			country_event = {
+				id = naleni.9
+			}
+			4547 = {
+				add_province_modifier = {
+					name = "L55_siphon_to_sarhal"
+					duration = -1
+				}
+			}
+			kharunyana_estuary_area = {
+				remove_loot = {
+					who = root
+					amount = 100
+				}
+			li_btei_area = {
+				remove_loot = {
+					who = root
+					amount = 100
+				}
+			}
+			}
+		  } 
 	}
 
 	conclave_of_captains = {
@@ -623,7 +657,9 @@ Naléni_branch_four = {
 		required_missions = { repurpose_the_slave_port } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			#i think i have to manually scope to each area that has coastal provinces :S
+		  } 
 
 		effect = {  } 
 	}

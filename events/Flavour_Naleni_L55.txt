@@ -157,14 +157,11 @@ country_event = {
 	option = {
 		name = naleni.8.b
 		ai_chance = { factor = 25 }
-		add_country_modifier = {
-			name = L55_song_sailors
-			duration = 60
-		}
 		decrease_matauth_2 = yes
 		add_years_of_income = 1
 	}
 }
+
 #murmurs of discontent
 country_event = {
 	id = naleni.9
@@ -183,12 +180,7 @@ country_event = {
 	option = {
 		name = naleni.9.b
 		ai_chance = { factor = 25 }
-		add_country_modifier = {
-			name = L55_song_sailors
-			duration = 60
-		}
 		decrease_matauth_2 = yes
-		add_years_of_income = 1
 	}
 }
 
