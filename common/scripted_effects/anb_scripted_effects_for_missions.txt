@@ -17787,3 +17787,134 @@ gronstunad_building_authority_effect = {
 		}
 	}
 }
+
+#Kherka
+increase_random_clan_vote = {
+	change_variable = {
+        which = max_vote
+        value = -1
+    }
+    change_variable = {
+        which = $clan$
+        value = 1
+    }
+}
+
+check_clan_winning = {
+    if = {
+        limit = { 
+            check_variable = {
+                which = $clan$
+                which = highest_vote
+            }
+        }
+        set_variable = {
+            which = highest_vote
+            which = $clan$
+        }
+        clr_country_flag = clan_1_winning
+		clr_country_flag = clan_2_winning
+		clr_country_flag = clan_3_winning
+		clr_country_flag = clan_4_winning
+		set_country_flag = $clan$_winning
+    }
+}
+
+decrease_random_clan_option = {
+	random_list = {
+		[[clan_1]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_1 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_1 }
+	        }
+		]
+		[[clan_2]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_2 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_2 }
+	        }
+		]
+		[[clan_3]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_3 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_3 }
+	        }
+		]
+		[[clan_4]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_4 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_4 }
+	        }
+		]
+		[[clan_5]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_5 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_5 }
+	        }
+		]
+		[[clan_6]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_6 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_6 }
+	        }
+		]
+		[[clan_7]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_7 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_7 }
+	        }
+		]
+		[[clan_8]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_8 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_8 }
+	        }
+		]
+		[[clan_9]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_9 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_9 }
+	        }
+		]
+		[[clan_10]
+			10 = {
+				trigger = { 
+					clan_vote_is_not_zero = { clan = clan_10 } 
+				}
+	            decrease_random_clan_vote = { clan = clan_10 }
+	        }
+		]
+	}
+}
+
+decrease_random_clan_vote = {
+    change_variable = {
+        which = $clan$
+        value = -1
+    }
+}
+
+increase_clan_vote = {
+    change_variable = {
+        which = $clan$
+        value = 1
+    }
+}
