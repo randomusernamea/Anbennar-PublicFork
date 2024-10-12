@@ -1870,7 +1870,7 @@ F71_4_part3_pre_branch2 = {
 				limit = { religion = shadow_pact }
 				church_power = 150
 			}
-			num_of_hussars = 20
+			num_of_hussars = 15
 			num_of_regiments_at_full_drill = 40
 		} 
 
@@ -1955,6 +1955,7 @@ F71_2_part3_branch1_demon = {
 		position = 13
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  
+			owned_by = ROOT
 			religion = xhazobkult
 			NOT = { has_building = mage_tower }
 		} 
@@ -1997,12 +1998,13 @@ F71_2_part3_branch1_demon = {
 			F71_mass_sacrifices
 		}
 		provinces_to_highlight = {  
+			owned_by = ROOT
 			has_state_patriach = yes
 		} 
 
 		trigger = {  
 			development_in_provinces = {
-				value = 200
+				value = 300
 				has_state_patriach = yes
 			}
 			patriarch_authority = 0.5
@@ -2526,6 +2528,7 @@ F71_1_part3 = {
 		position = 13
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  
+			owned_by = ROOT
 			trade_goods = slaves
 			NOT = {
 				AND = {
@@ -2540,7 +2543,7 @@ F71_1_part3 = {
 			custom_trigger_tooltip = {
 				tooltip = rakkaz_raze_100_provinces
 				check_variable = {
-					value = 100
+					value = 150
 					which = nbProvincesRazed
 				}
 			}
@@ -2756,8 +2759,14 @@ F71_3_part3 = {
 				AND = {
 					owned_by = ROOT
 					is_core = ROOT
-					has_tax_building_trigger = yes
-					has_manpower_building_trigger = yes
+					OR = {
+						has_tax_building_trigger = yes
+						has_manufactory_trigger = yes
+					}
+					OR = {
+						has_manpower_building_trigger = yes
+						has_manufactory_trigger = yes
+					}
 				}
 			}
 		} 
@@ -2768,8 +2777,14 @@ F71_3_part3 = {
 				region = yezel_mora_region
 				owned_by = ROOT
 				is_core = ROOT
-				has_tax_building_trigger = yes
-				has_manpower_building_trigger = yes
+				OR = {
+					has_tax_building_trigger = yes
+					has_manufactory_trigger = yes
+				}
+				OR = {
+					has_manpower_building_trigger = yes
+					has_manufactory_trigger = yes
+				}
 			}
 		} 
 
@@ -2789,7 +2804,6 @@ F71_3_part3 = {
 				global_trigger = "
 				region = yezel_mora_region
 				has_tax_building_trigger = yes
-				has_manpower_building_trigger = yes
 				"
 				event_target_name = "rakkaz_shadowswamp_target"
 			}

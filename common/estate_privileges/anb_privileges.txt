@@ -13657,14 +13657,14 @@ estate_mages_warlock_pact_unrestricted_savagery = {
 		NOT = { has_country_flag = revoke_warlock_pact_unrestricted_savagery }
 	}
 	can_select = {
-		patriarch_authority = 10
+		patriarch_authority = 0.1
 		mil_power = 100
 	}
 	can_revoke = {
 		always = no
 	}
 	on_granted = {
-		add_patriarch_authority = -10
+		add_patriarch_authority = -0.1
 		add_mil_power = -100
 	}
 	benefits = {
