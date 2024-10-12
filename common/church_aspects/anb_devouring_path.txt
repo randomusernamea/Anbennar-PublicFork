@@ -157,9 +157,6 @@ from_beyond = {
 		hidden_effect = { 
 			random_owned_province = {
 				limit = { NOT = { trade_goods = damestear } }
-				add_base_tax = -1
-				add_base_production = -1
-				add_base_manpower = -1
 				add_devastation = 20
 				change_trade_goods = damestear
 			}
@@ -265,7 +262,13 @@ to_devour_chi = {
 		}
 	}
 
-	modifier = { church_power_modifier = 0.1 }
+	modifier = {
+		legitimacy = -1
+		devotion = -1
+		horde_unity = -1
+		meritocracy = -0.5
+		republican_tradition = -0.5
+	}
 
 	ai_will_do = { factor = 150 }
 }
@@ -401,7 +404,7 @@ bleed_haless_dry = {
 
 	effect = { custom_tooltip = bleed_haless_dry_effect_tt hidden_effect = { add_ruler_modifier = { name = bleed_haless_dry_mod duration = 7300 } } }
 
-	modifier = { global_trade_power = -0.2 }
+	modifier = { global_trade_power = -0.3 }
 
 	ai_will_do = { factor = 15 }
 }
