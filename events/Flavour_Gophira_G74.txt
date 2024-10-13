@@ -392,14 +392,24 @@ country_event = {
 country_event = {
 	id = gophira.10
 	title = gophira.10.t
-	desc = gophira.10.d
+	desc = {
+		trigger = { NOT = {	has_consort_flag = gophira_wife } }
+		desc = gophira.10.d2
+	}
+	desc = {
+		trigger = { has_consort_flag = gophira_wife }
+		desc = gophira.10.d1
+	}
 	picture = muslimgfx_CONQUEST_eventPicture
 	is_triggered_only = yes
 
 	option = {
 		name = gophira.10.1
 		G64 = {
-			kill_heir = {}
+			if = {
+				limit = { has_heir = yes }
+				kill_heir = {}
+			}
 			kill_ruler = yes
 		}
 		add_treasury = 300
