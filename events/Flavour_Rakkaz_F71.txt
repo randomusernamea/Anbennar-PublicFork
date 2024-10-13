@@ -1060,3 +1060,24 @@ country_event = {
 		set_country_flag = rakkaz_rule_of_warlocks_advisor_churchpower
 	}
 }
+
+#Effects for the demonic possession. For some reason adding ruler personalities doesn't work as privilege effects.
+country_event = {
+	id = flavour_rakkaz.24
+	title = flavour_rakkaz.24.t
+	desc = flavour_rakkaz.24.d
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_rakkaz.24.a
+		clear_ruler_personalities = yes
+		add_ruler_personality = cruel_personality
+		add_ruler_personality = malevolent_personality
+		add_ruler_personality = mage_personality
+		set_ruler_flag = evocation_1
+		set_ruler_flag = evocation_2
+	}
+}

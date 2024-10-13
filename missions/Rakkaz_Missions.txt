@@ -393,6 +393,12 @@ F71_3_part1 = {
 			OR = {
 				local_autonomy = 1
 				NOT = { has_province_modifier = autonomy_decreased }
+				NOT = {
+					has_trade_company_investment_in_area = {
+						investment = company_administration
+						investor = ROOT
+					}
+				}
 			}
 		}
 
@@ -403,6 +409,10 @@ F71_3_part1 = {
 				OR = {
 					NOT = { local_autonomy = 1 } 
 					has_province_modifier = autonomy_decreased
+					has_trade_company_investment_in_area = {
+						investment = company_administration
+						investor = ROOT
+					}
 				}
 			}
 			reform_level = 2
@@ -1303,6 +1313,12 @@ F71_3_part2 = {
 					OR = {
 						local_autonomy = 1
 						NOT = { has_province_modifier = autonomy_decreased }
+						NOT = {
+							has_trade_company_investment_in_area = {
+								investment = company_administration
+								investor = ROOT
+							}
+						}
 					}
 					unrest = 0
 				}
@@ -1317,6 +1333,10 @@ F71_3_part2 = {
 				OR = {
 					NOT = { local_autonomy = 1 }
 					has_province_modifier = autonomy_decreased
+					has_trade_company_investment_in_area = {
+						investment = company_administration
+						investor = ROOT
+					}
 				}
 				NOT = { unrest = 0 }
 			}
@@ -1901,44 +1921,6 @@ F71_4_part3_pre_branch2 = {
 		} 
 	}
 }
-F71_2_part3_branch1_nobranch = {
-	slot = 2
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = F71
-		NOT = { has_country_flag = F71_demon_missions } 
-		NOT = { has_country_flag = F71_hag_missions } 
-		has_country_flag = rakkaz_unlock_mission_3
-	}
-
-	F71_branch1_1 = {
-		icon = mission_unknown_mission
-		position = 13
-		required_missions = { F71_the_final_order } 
-		provinces_to_highlight = {  } 
-
-		trigger = { always = no } 
-
-		effect = {  } 
-	}
-
-	F71_branch1_2 = {
-		icon = mission_unknown_mission
-		position = 14
-		required_missions = {
-			F71_bringers_of_suffering
-			F71_branch1_1
-			F71_domain_of_suffering
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = { always = no } 
-
-		effect = {  } 
-	}
-}
 F71_2_part3_branch1_demon = {
 	slot = 2
 	generic = no
@@ -2093,8 +2075,8 @@ F71_2_part3_branch1_hag = {
 		} 
 
 		effect = {  
-			set_country_flag = rakkaz_second_portent_rerol
-			custom_tooltip = rakkaz_second_portent_rerol_tooltip
+			set_country_flag = rakkaz_second_portent_reroll
+			custom_tooltip = rakkaz_second_portent_reroll_tooltip
 			custom_tooltip = rakkaz_development_in_shadowswamp_tooltip
 			distribute_development = {
 				amount = 15
@@ -2104,56 +2086,8 @@ F71_2_part3_branch1_hag = {
 		} 
 	}
 }
-F71_4_part3_branch2_nobranch = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = F71
-		NOT = { has_country_flag = F71_demon_missions } 
-		NOT = { has_country_flag = F71_hag_missions } 
-		has_country_flag = rakkaz_unlock_mission_3
-	}
-
-	F71_branch2_1 = {
-		icon = mission_unknown_mission
-		position = 13
-		required_missions = { F71_profane_army } 
-		provinces_to_highlight = {  } 
-
-		trigger = { always = no } 
-
-		effect = {  } 
-	}
-
-	F71_branch2_2 = {
-		icon = mission_unknown_mission
-		position = 14
-		required_missions = {
-			F71_domain_of_suffering
-			F71_branch2_1
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = { always = no } 
-
-		effect = {  } 
-	}
-
-	F71_branch2_3 = {
-		icon = mission_unknown_mission
-		position = 15
-		required_missions = { F71_branch2_2 } 
-		provinces_to_highlight = {  } 
-
-		trigger = { always = no } 
-
-		effect = {  } 
-	}
-}
-F71_4_part3_branch2_demon = {
-	slot = 4
+F71_5_part3_branch2_demon = {
+	slot = 5
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -2384,8 +2318,8 @@ F71_4_part3_branch2_demon = {
 		} 
 	}
 }
-F71_4_part3_branch2_hag = {
-	slot = 4
+F71_5_part3_branch2_hag = {
+	slot = 5
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -2683,6 +2617,12 @@ F71_2_part3 = {
 					unrest = 0
 					local_autonomy = 10
 				}
+				NOT = {
+					has_trade_company_investment_in_area = {
+						investment = military_administration
+						investor = ROOT
+					}
+				}
 			}
 		} 
 
@@ -2696,7 +2636,21 @@ F71_2_part3 = {
 				value = 30
 				superregion = taneyas_superregion
 				NOT = { unrest = 0 }
-				NOT = { local_autonomy = 10 }
+				OR = {
+					NOT = { local_autonomy = 10 }
+					has_trade_company_investment_in_area = {
+						investment = military_administration
+						investor = ROOT
+					}
+				}
+			}
+			5941 = {
+				num_of_times_expanded_infrastructure = 1
+				province_has_center_of_trade_of_level = 3
+			}
+			5650 = {
+				num_of_times_expanded_infrastructure = 1
+				province_has_center_of_trade_of_level = 3
 			}
 		} 
 
@@ -2826,6 +2780,46 @@ F71_3_part3 = {
 		} 
 	}
 
+	F71_the_profane_empire = {
+		icon = mission_gnomish_ship
+		position = 16
+		required_missions = {
+			F71_power_of_the_curse
+			F71_end_of_denial
+			F71_seed_of_darkness
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			has_adm_advisor_5 = yes
+			num_of_estate_agendas_completed = {
+				estate = estate_mages
+				value = 20
+			}
+			OR = {
+				is_hegemon = yes
+				NOT = { great_power_rank = 4 }
+			}
+			government_rank = 3
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 70
+			}
+		} 
+
+		effect = {  } 
+	}
+}
+F71_4_part3 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		has_country_flag = rakkaz_unlock_mission_3
+	}
+
 	F71_dark_messengers = {
 		icon = mission_gnomish_ship
 		position = 14
@@ -2929,15 +2923,14 @@ F71_3_part3 = {
 				owned_by = ROOT
 				is_core = ROOT
 			}
-			accepted_culture = talilibeti
 			num_of_owned_provinces_with = {
 				value = 10
-				culture = talilibeti
-				has_tax_building_trigger = yes
+				culture_group = mengi
+				has_building = cathedral
 			}
 			development_in_provinces = {
-				value = 100
-				culture = talilibeti
+				value = 200
+				culture_group = mengi
 			}
 			5689 = {
 				if = {
@@ -2963,35 +2956,5 @@ F71_3_part3 = {
 				rakkaz_add_fighting_pit_modifier = yes
 			}
 		} 
-	}
-
-	F71_the_profane_empire = {
-		icon = mission_gnomish_ship
-		position = 16
-		required_missions = {
-			F71_power_of_the_curse
-			F71_end_of_denial
-			F71_seed_of_darkness
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = {  
-			has_adm_advisor_5 = yes
-			num_of_estate_agendas_completed = {
-				estate = estate_mages
-				value = 20
-			}
-			OR = {
-				is_hegemon = yes
-				NOT = { great_power_rank = 4 }
-			}
-			government_rank = 3
-			estate_loyalty = {
-				estate = estate_mages
-				loyalty = 70
-			}
-		} 
-
-		effect = {  } 
 	}
 }

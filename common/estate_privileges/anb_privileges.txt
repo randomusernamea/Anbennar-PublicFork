@@ -13744,6 +13744,7 @@ estate_mages_warlock_pact_unrestricted_savagery = {
 		NOT = { has_country_flag = revoke_warlock_pact_unrestricted_savagery }
 	}
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		patriarch_authority = 0.1
 		mil_power = 100
 	}
@@ -13779,6 +13780,7 @@ estate_mages_warlock_pact_battlefield_domination = {
 		NOT = { has_country_flag = revoke_warlock_pact_battlefield_domination }
 	}
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		church_power = 100
 		mil_power = 100
 		years_of_manpower = 1
@@ -13811,6 +13813,7 @@ estate_mages_warlock_pact_demonic_possession = {
 	influence = 0
 	is_valid = { has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_demonic_possession  } }
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		patriarch_authority = 0.1
 	}
 	can_revoke = {
@@ -13821,13 +13824,9 @@ estate_mages_warlock_pact_demonic_possession = {
 		change_adm = -3
 		change_dip = -3
 		change_mil = 6
-		clear_ruler_personalities = yes
-		add_ruler_personality = cruel_personality
-		add_ruler_personality = malevolent_personality
-		add_ruler_personality = mage_personality
+		custom_tooltip = rakkaz_demonic_possession_tooltip
 		hidden_effect = {
-			set_ruler_flag = evocation_1
-			set_ruler_flag = evocation_2
+			country_event = { id = flavour_rakkaz.24 } #Can't add ruler personalities here, so I made it in a hidden event.
 		}
 	}
 	benefits = { }
@@ -13845,6 +13844,7 @@ estate_mages_warlock_pact_night_coven = {
 	influence = 0
 	is_valid = { has_unlocked_estate_privilege = { estate_privilege = estate_mages_warlock_pact_night_coven  } }
 	can_select = {
+		rakkaz_warlock_pact_limit = yes
 		church_power = 100
 	}
 	can_revoke = {
