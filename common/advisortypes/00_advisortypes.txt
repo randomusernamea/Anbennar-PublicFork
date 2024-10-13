@@ -2552,7 +2552,7 @@ court_mage = {
 				has_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
 			}
 		}
-		modifier = { all_estate_loyalty_equilibrium = 0.02 }
+		modifier = { all_estate_loyalty_equilibrium = 0.01 }
 	}
 
 	skill_scaled_modifier = {
@@ -2561,7 +2561,7 @@ court_mage = {
 				has_country_flag = rakkaz_rule_of_warlocks_advisor_loot
 			}
 		}
-		modifier = { available_province_loot = 0.06 }
+		modifier = { artillery_barrage_cost = -0.05 }
 	}
 
 	skill_scaled_modifier = {
@@ -2570,7 +2570,7 @@ court_mage = {
 				has_country_flag = rakkaz_rule_of_warlocks_advisor_autonomy
 			}
 		}
-		modifier = { global_autonomy = -0.03 }
+		modifier = { min_autonomy_in_territories = -0.02 }
 	}
 
 	skill_scaled_modifier = {

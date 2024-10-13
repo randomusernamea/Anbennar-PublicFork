@@ -6,7 +6,7 @@ F71_1_part1 = {
 	potential = { tag = F71 } 
 
 	F71_secure_our_holdings = {
-		icon = mission_gnomish_ship
+		icon = mission_assert_control_over_delhi
 		position = 3
 		required_missions = { F71_a_hollow_claim } 
 		provinces_to_highlight = {
@@ -48,7 +48,7 @@ F71_1_part1 = {
 	}
 
 	F71_the_weakling_packs = {
-		icon = mission_gnomish_ship
+		icon = mission_sw_against_the_desert
 		position = 4
 		required_missions = { F71_secure_our_holdings } 
 		provinces_to_highlight = {
@@ -95,7 +95,7 @@ F71_1_part1 = {
 	}
 
 	F71_fieldstalker_lords = {
-		icon = mission_gnomish_ship
+		icon = mission_female_throne
 		position = 5
 		required_missions = { F71_the_weakling_packs } 
 		provinces_to_highlight = {
@@ -137,7 +137,7 @@ F71_2_part1 = {
 	potential = { tag = F71 } 
 
 	F71_rally_the_riders = {
-		icon = mission_gnomish_ship
+		icon = mission_desert_rider
 		position = 1
 		provinces_to_highlight = {  } 
 
@@ -180,7 +180,7 @@ F71_2_part1 = {
 	}
 
 	F71_seizing_sacrifices = {
-		icon = mission_gnomish_ship
+		icon = mission_head_on_spike
 		position = 4
 		required_missions = { F71_can_you_hear_them } 
 		provinces_to_highlight = {
@@ -259,7 +259,7 @@ F71_3_part1 = {
 	potential = { tag = F71 } 
 
 	F71_a_hollow_claim = {
-		icon = mission_gnomish_ship
+		icon = mission_heated_battle
 		position = 2
 		required_missions = {
 			F71_rally_the_riders
@@ -346,7 +346,7 @@ F71_3_part1 = {
 	}
 
 	F71_can_you_hear_them = {
-		icon = mission_gnomish_ship
+		icon = mission_dark_book
 		position = 3
 		required_missions = { F71_a_hollow_claim } 
 		provinces_to_highlight = {
@@ -381,7 +381,7 @@ F71_3_part1 = {
 	}
 
 	F71_echenka_serfdom = {
-		icon = mission_gnomish_ship
+		icon = mission_serfdom
 		position = 5
 		required_missions = {
 			F71_seizing_sacrifices
@@ -393,12 +393,6 @@ F71_3_part1 = {
 			OR = {
 				local_autonomy = 1
 				NOT = { has_province_modifier = autonomy_decreased }
-				NOT = {
-					has_trade_company_investment_in_area = {
-						investment = company_administration
-						investor = ROOT
-					}
-				}
 			}
 		}
 
@@ -409,10 +403,6 @@ F71_3_part1 = {
 				OR = {
 					NOT = { local_autonomy = 1 } 
 					has_province_modifier = autonomy_decreased
-					has_trade_company_investment_in_area = {
-						investment = company_administration
-						investor = ROOT
-					}
 				}
 			}
 			reform_level = 2
@@ -456,7 +446,7 @@ F71_4_part1 = {
 	potential = { tag = F71 } 
 
 	F71_a_helping_hand = {
-		icon = mission_gnomish_ship
+		icon = mission_dual_diplomacy
 		position = 1
 		provinces_to_highlight = {
 			owned_by = ROOT
@@ -491,7 +481,7 @@ F71_4_part1 = {
 	}
 
 	F71_promise_of_power = {
-		icon = mission_gnomish_ship
+		icon = mission_empowerment
 		position = 4
 		required_missions = {
 			F71_can_you_hear_them
@@ -537,7 +527,7 @@ F71_5_part1 = {
 	potential = { tag = F71 } 
 
 	F71_a_debt_repaid = {
-		icon = mission_gnomish_ship
+		icon = mission_assassination
 		position = 3
 		required_missions = { F71_a_hollow_claim } 
 		provinces_to_highlight = {  } 
@@ -568,7 +558,7 @@ F71_5_part1 = {
 	}
 
 	F71_the_profane_gift = {
-		icon = mission_gnomish_ship
+		icon = mission_dark_ritual
 		position = 4
 		required_missions = { F71_a_debt_repaid } 
 		provinces_to_highlight = {
@@ -607,7 +597,7 @@ F71_5_part1 = {
 	}
 
 	F71_the_cursed_ruins = {
-		icon = mission_gnomish_ship
+		icon = mission_desert_city
 		position = 5
 		required_missions = {
 			F71_promise_of_power
@@ -663,7 +653,7 @@ F71_3_part1_ending = {
 	}
 
 	F71_a_silent_strike = {
-		icon = mission_gnomish_ship
+		icon = mission_the_covenant
 		position = 6
 		required_missions = {
 			F71_fieldstalker_lords
@@ -709,7 +699,7 @@ F71_3_part2_pre_optional = {
 	}
 
 	F71_rakhors_legacy = {
-		icon = mission_gnomish_ship
+		icon = mission_burning_separation
 		position = 8
 		required_missions = { F71_a_silent_strike } 
 		provinces_to_highlight = {  
@@ -757,7 +747,7 @@ F71_3_part2_optional = {
 	}
 
 	F71_rakhors_revenge = {
-		icon = mission_gnomish_ship
+		icon = mission_burning_castle
 		position = 9
 		required_missions = { F71_rakhors_legacy } 
 		provinces_to_highlight = {  
@@ -797,7 +787,7 @@ F71_1_part2 = {
 	}
 
 	F71_a_land_divided = {
-		icon = mission_gnomish_ship
+		icon = mission_the_grand_trunk_road_dlh
 		position = 8
 		required_missions = { F71_they_speak_again } 
 		provinces_to_highlight = {  
@@ -875,7 +865,7 @@ F71_1_part2 = {
 	}
 
 	F71_easily_exploited = {
-		icon = mission_gnomish_ship
+		icon = mission_heated_battle
 		position = 9
 		required_missions = { F71_a_land_divided } 
 		provinces_to_highlight = {  
@@ -925,7 +915,7 @@ F71_1_part2 = {
 	}
 
 	F71_weakness_of_faith = {
-		icon = mission_gnomish_ship
+		icon = mission_women_prayer
 		position = 10
 		required_missions = { F71_easily_exploited } 
 		provinces_to_highlight = {  
@@ -1051,7 +1041,7 @@ F71_2_part2 = {
 	}
 
 	F71_they_speak_again = {
-		icon = mission_gnomish_ship
+		icon = mission_torch_fire
 		position = 7
 		required_missions = { F71_a_silent_strike } 
 		provinces_to_highlight = {  
@@ -1108,7 +1098,7 @@ F71_2_part2 = {
 	}
 
 	F71_source_of_power = {
-		icon = mission_gnomish_ship
+		icon = mission_sw_torquoise_mining
 		position = 8
 		required_missions = { F71_they_speak_again } 
 		provinces_to_highlight = {  
@@ -1149,7 +1139,7 @@ F71_2_part2 = {
 	}
 
 	F71_broken_spirit = {
-		icon = mission_gnomish_ship
+		icon = mission_priest_church
 		position = 9
 		required_missions = {
 			F71_source_of_power
@@ -1224,7 +1214,7 @@ F71_2_part2 = {
 	}
 
 	F71_channeling_suffering = {
-		icon = mission_gnomish_ship
+		icon = mission_destroyed_city
 		position = 10
 		required_missions = {
 			F71_easily_exploited
@@ -1299,7 +1289,7 @@ F71_3_part2 = {
 	}
 
 	F71_complete_subserviance = {
-		icon = mission_gnomish_ship
+		icon = mission_approach_throne
 		position = 10
 		required_missions = {
 			F71_broken_spirit
@@ -1355,7 +1345,7 @@ F71_3_part2 = {
 	}
 
 	F71_future_of_the_council = {
-		icon = mission_gnomish_ship
+		icon = mission_noble_council
 		position = 11
 		required_missions = {
 			F71_weakness_of_faith
@@ -1399,7 +1389,7 @@ F71_4_part2 = {
 	}
 
 	F71_access_to_the_swamp = {
-		icon = mission_gnomish_ship
+		icon = mission_misty_forest
 		position = 7
 		required_missions = { F71_a_silent_strike } 
 		provinces_to_highlight = {  } 
@@ -1527,7 +1517,7 @@ F71_4_part2 = {
 	}
 
 	F71_a_perfected_ritual = {
-		icon = mission_gnomish_ship
+		icon = mission_fire_judgement
 		position = 8
 		required_missions = { F71_access_to_the_swamp } 
 		provinces_to_highlight = {  
@@ -1590,7 +1580,7 @@ F71_4_part2 = {
 	}
 
 	F71_demoncollar_demonflare = {
-		icon = mission_gnomish_ship
+		icon = mission_burning_man
 		position = 9
 		required_missions = { F71_a_perfected_ritual } 
 		provinces_to_highlight = {  
@@ -1631,7 +1621,7 @@ F71_4_part2 = {
 	}
 
 	F71_willing_vessels = {
-		icon = mission_gnomish_ship
+		icon = mission_monarch_diplomacy
 		position = 10
 		required_missions = {
 			F71_demoncollar_demonflare
@@ -1713,7 +1703,7 @@ F71_5_part2 = {
 	}
 
 	F71_whiterlings_rise = {
-		icon = mission_gnomish_ship
+		icon = mission_blood_sacrifice
 		position = 8
 		required_missions = { F71_access_to_the_swamp } 
 		provinces_to_highlight = {  
@@ -1743,7 +1733,7 @@ F71_5_part2 = {
 	}
 
 	F71_absolute_loyalty = {
-		icon = mission_gnomish_ship
+		icon = mission_whisper
 		position = 9
 		required_missions = { F71_whiterlings_rise } 
 		provinces_to_highlight = {  
@@ -1820,7 +1810,7 @@ F71_2_part3_pre_branch1 = {
 	}
 
 	F71_the_final_order = {
-		icon = mission_gnomish_ship
+		icon = mission_forest_shrine
 		position = 12
 		required_missions = { F71_future_of_the_council } 
 		provinces_to_highlight = {  
@@ -1876,7 +1866,7 @@ F71_4_part3_pre_branch2 = {
 	}
 
 	F71_profane_army = {
-		icon = mission_gnomish_ship
+		icon = mission_racial
 		position = 12
 		required_missions = { F71_future_of_the_council } 
 		provinces_to_highlight = {  } 
@@ -1933,7 +1923,7 @@ F71_2_part3_branch1_demon = {
 	}
 
 	F71_mass_sacrifices = {
-		icon = mission_gnomish_ship
+		icon = mission_burning_witch
 		position = 13
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  
@@ -1972,7 +1962,7 @@ F71_2_part3_branch1_demon = {
 	}
 
 	F71_rally_the_kultists = {
-		icon = mission_gnomish_ship
+		icon = mjz_for_the_horde
 		position = 14
 		required_missions = {
 			F71_bringers_of_suffering
@@ -1994,9 +1984,15 @@ F71_2_part3_branch1_demon = {
 
 		effect = {  
 			add_patriarch_authority = -0.5
-			every_owned_province = {
-				limit = { has_state_patriach = yes }
+			custom_tooltip = rakkaz_gain_manpower_on_local_cult_tooltip
+			tooltip = {
 				add_base_manpower = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_state_patriach = yes }
+					add_base_manpower = 1
+				}
 			}
 			custom_tooltip = rakkaz_local_cult_gives_manpower_tooltip
 			tooltip = {
@@ -2018,12 +2014,13 @@ F71_2_part3_branch1_hag = {
 	}
 
 	F71_otherworldly_pacts = {
-		icon = mission_gnomish_ship
+		icon = mission_science
 		position = 13
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  
 			region = yezel_mora_region
 			unrest = 0
+			NOT = { owned_by = ROOT }
 			NOT = { has_building = mage_tower }
 		} 
 
@@ -2051,7 +2048,7 @@ F71_2_part3_branch1_hag = {
 	}
 
 	F71_power_of_the_swamp = {
-		icon = mission_gnomish_ship
+		icon = mission_sinister_castle
 		position = 14
 		required_missions = {
 			F71_bringers_of_suffering
@@ -2098,7 +2095,7 @@ F71_5_part3_branch2_demon = {
 	}
 
 	F71_unrestrained_power = {
-		icon = mission_gnomish_ship
+		icon = mission_fire_acolyte
 		position = 13
 		required_missions = { F71_profane_army } 
 		provinces_to_highlight = {  
@@ -2181,7 +2178,7 @@ F71_5_part3_branch2_demon = {
 	}
 
 	F71_beasts_of_hate = {
-		icon = mission_gnomish_ship
+		icon = mission_non-western_cavalry_raid
 		position = 14
 		required_missions = { 
 			F71_unrestrained_power 
@@ -2257,7 +2254,7 @@ F71_5_part3_branch2_demon = {
 	}
 
 	F71_rampaging_horde = {
-		icon = mission_gnomish_ship
+		icon = mission_cossack_cavalry
 		position = 15
 		required_missions = { F71_beasts_of_hate } 
 		provinces_to_highlight = {  } 
@@ -2330,7 +2327,7 @@ F71_5_part3_branch2_hag = {
 	}
 
 	F71_undying_loyalty = {
-		icon = mission_gnomish_ship
+		icon = mission_three_death
 		position = 13
 		required_missions = { F71_profane_army } 
 		provinces_to_highlight = {  
@@ -2378,7 +2375,7 @@ F71_5_part3_branch2_hag = {
 	}
 
 	F71_send_the_dead = {
-		icon = mission_gnomish_ship
+		icon = mission_forest_pilgrim
 		position = 14
 		required_missions = {
 			F71_undying_loyalty
@@ -2386,6 +2383,7 @@ F71_5_part3_branch2_hag = {
 		}
 		provinces_to_highlight = {  
 			region = yezel_mora_region
+			NOT = { owned_by = ROOT }
 			NOT = { has_building = soldier_households }
 			NOT = { base_manpower = 3 }
 		} 
@@ -2412,18 +2410,25 @@ F71_5_part3_branch2_hag = {
 	}
 
 	F71_undead_horde = {
-		icon = mission_gnomish_ship
+		icon = mission_silblaidd
 		position = 15
 		required_missions = { F71_send_the_dead } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  
 			army_size = 150
-			army_tradition = 70
+			OR = {
+				army_tradition = 70
+				mil_power = 500
+			}
 			has_mil_advisor_4 = yes
 		} 
 
 		effect = {  
+			if = {
+				limit = { NOT = { army_tradition = 70 } }
+				add_mil_power = -500
+			}
 			if = {
 				limit = { has_country_modifier = undead_military }
 				add_mil_power = 500
@@ -2444,6 +2449,7 @@ F71_5_part3_branch2_hag = {
 				change_unit_type = tech_undead
 			}
 			set_country_flag = rakkaz_undead_army_not_collapses
+			custom_tooltip = rakkaz_undead_army_not_collapses_tooltip
 		} 
 	}
 }
@@ -2458,7 +2464,7 @@ F71_1_part3 = {
 	}
 
 	F71_bringers_of_suffering = {
-		icon = mission_gnomish_ship
+		icon = mission_beheading
 		position = 13
 		required_missions = { F71_the_final_order } 
 		provinces_to_highlight = {  
@@ -2517,14 +2523,19 @@ F71_1_part3 = {
 	}
 
 	F71_throne_breaker = {
-		icon = mission_gnomish_ship
+		icon = mission_mountain_castle
 		position = 14
 		required_missions = { F71_bringers_of_suffering } 
 		provinces_to_highlight = {  
 			region = katala_raz_region
 			OR = {
 				NOT = { owned_by = ROOT }
-				NOT = { has_influencing_fort = yes }
+				NOT = { 
+					OR = {
+						has_influencing_fort = yes
+						any_neighbor_province = { has_influencing_fort = yes }
+					}
+				}
 			}
 		} 
 
@@ -2533,16 +2544,17 @@ F71_1_part3 = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				has_influencing_fort = yes
-				custom_trigger_tooltip = {
-					tooltip = rakkaz_throne_breaker_tooltip
-					if = {
-						limit = { has_fort_building_trigger = yes }
-						num_of_units_in_province = {
-							who = owner
-							amount = 5
-						}
-					}
+				OR = {
+					has_influencing_fort = yes
+					any_neighbor_province = { has_influencing_fort = yes }
+				}
+			}
+			5921 = {
+				has_manufactory_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 50
 				}
 			}
 		} 
@@ -2561,7 +2573,7 @@ F71_1_part3 = {
 	}
 
 	F71_power_of_the_curse = {
-		icon = mission_gnomish_ship
+		icon = mission_well_of_majesty
 		position = 15
 		required_missions = { F71_throne_breaker } 
 		provinces_to_highlight = {  
@@ -2606,7 +2618,7 @@ F71_2_part3 = {
 	}
 
 	F71_end_of_denial = {
-		icon = mission_gnomish_ship
+		icon = mission_break_sicily
 		position = 15
 		required_missions = { F71_throne_breaker } 
 		provinces_to_highlight = {  
@@ -2632,16 +2644,21 @@ F71_2_part3 = {
 				owned_by = ROOT
 				is_core = ROOT
 			}
-			num_of_owned_provinces_with = {
-				value = 30
-				superregion = taneyas_superregion
-				NOT = { unrest = 0 }
-				OR = {
-					NOT = { local_autonomy = 10 }
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 80
+					superregion = taneyas_superregion
+					NOT = { unrest = 0 }
 					has_trade_company_investment_in_area = {
 						investment = military_administration
 						investor = ROOT
 					}
+				}
+				num_of_owned_provinces_with = {
+					value = 30
+					superregion = taneyas_superregion
+					NOT = { unrest = 0 }
+					NOT = { local_autonomy = 10 }
 				}
 			}
 			5941 = {
@@ -2681,7 +2698,7 @@ F71_3_part3 = {
 	}
 
 	F71_the_slayers_fate = {
-		icon = mission_gnomish_ship
+		icon = mission_thinking_king
 		position = 12
 		required_missions = { F71_future_of_the_council } 
 		provinces_to_highlight = {  } 
@@ -2704,7 +2721,7 @@ F71_3_part3 = {
 	}
 
 	F71_domain_of_suffering = {
-		icon = mission_gnomish_ship
+		icon = mission_ghost_town
 		position = 13
 		required_missions = { F71_the_final_order }
 		provinces_to_highlight = {  
@@ -2781,7 +2798,7 @@ F71_3_part3 = {
 	}
 
 	F71_the_profane_empire = {
-		icon = mission_gnomish_ship
+		icon = mission_arise_ashes
 		position = 16
 		required_missions = {
 			F71_power_of_the_curse
@@ -2807,7 +2824,7 @@ F71_3_part3 = {
 			}
 		} 
 
-		effect = {  } 
+		effect = { country_event = { id = flavour_rakkaz.26 } } 
 	}
 }
 F71_4_part3 = {
@@ -2821,7 +2838,7 @@ F71_4_part3 = {
 	}
 
 	F71_dark_messengers = {
-		icon = mission_gnomish_ship
+		icon = mission_moon_moon
 		position = 14
 		required_missions = { F71_domain_of_suffering } 
 		provinces_to_highlight = {  
@@ -2888,7 +2905,7 @@ F71_4_part3 = {
 	}
 
 	F71_seed_of_darkness = {
-		icon = mission_gnomish_ship
+		icon = per_build_the_fire_temples
 		position = 15
 		required_missions = { F71_dark_messengers } 
 		provinces_to_highlight = {  
@@ -2929,7 +2946,7 @@ F71_4_part3 = {
 				has_building = cathedral
 			}
 			development_in_provinces = {
-				value = 200
+				value = 150
 				culture_group = mengi
 			}
 			5689 = {

@@ -13591,34 +13591,60 @@ estate_mages_warlock_pact_exploitation = {
 	}
 	on_granted = {
 		if = {
-			limit = { current_icon = invocation_of_chains }
-			add_owned_provinces_development_ducats = {
-				multiplier = 1
-				trigger = { trade_goods = slaves }
+			limit = { religion = xhazobkult }
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_has_invocation_of_chains
+				first_limit = "
+					current_icon = invocation_of_chains
+				"
+				first_effect = "
+					add_owned_provinces_development_ducats = {
+						multiplier = 1
+						trigger = { trade_goods = slaves }
+					}
+				"
 			}
+			custom_tooltip = " "
 		}
 		if = {
-			limit = { 
-				OR = {
-					has_church_aspect = shadow_pact_tyrant_adm
-					has_church_aspect = shadow_pact_tyrant_dip
-					has_church_aspect = shadow_pact_tyrant_mil
-				}
+			limit = { religion = shadow_pact }
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_has_tyrant_portent
+				first_limit = "
+					OR = {
+						has_church_aspect = shadow_pact_tyrant_adm
+						has_church_aspect = shadow_pact_tyrant_dip
+						has_church_aspect = shadow_pact_tyrant_mil
+					}
+				"
+				first_effect = "
+					add_owned_provinces_development_ducats = {
+						multiplier = 2
+						trigger = { trade_goods = slaves }
+					}
+				"
 			}
-			add_owned_provinces_development_ducats = {
-				multiplier = 2
-				trigger = { trade_goods = slaves }
-			}
+			custom_tooltip = " "
 		}
-		every_owned_province = {
-			limit = {
-				trade_goods = slaves
-				base_tax = 2
-			}
+		custom_tooltip = rakkaz_exploitation_effect_tooltip
+		tooltip = {
 			add_base_tax = -1
 			add_province_modifier = {
 				name = rakkaz_slave_exploitation
 				duration = 3650
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = slaves
+					base_tax = 2
+				}
+				add_base_tax = -1
+				add_province_modifier = {
+					name = rakkaz_slave_exploitation
+					duration = 3650
+				}
 			}
 		}
 	}
@@ -13856,12 +13882,9 @@ estate_mages_warlock_pact_night_coven = {
 		change_dip = 1
 		change_mil = 1
 		add_ruler_personality = mage_personality
+		custom_tooltip = rakkaz_night_coven_tooltip
 		hidden_effect = {
-			force_add_ruler_personality = { personality = mage_personality }
-		}
-		hidden_effect = {
-			set_ruler_flag = conjuration_1
-			set_ruler_flag = conjuration_2
+			country_event = { id = flavour_rakkaz.25 } #Can't add ruler personalities here, so I made it in a hidden event.
 		}
 	}
 	benefits = { }

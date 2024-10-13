@@ -16300,6 +16300,7 @@ on_raze = {
 		if = {
 			limit = {
 				has_country_flag = unlocked_reaver_personality_flag
+				NOT = { ruler_has_personality = reaver_personality }
 				check_variable = {
 					which = nbProvincesRazedByRuler
 					value = 30
