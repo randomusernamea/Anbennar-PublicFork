@@ -663,7 +663,7 @@ country_event = {
 		name = gophira.14.1
 		set_country_flag = gophira_event14
 		goto = gophira_betrayal
-		custom_tooltip = gophira_betrayal_tt
+		custom_tooltip = gophira.14.tt
 	}
 }
 
@@ -791,8 +791,8 @@ country_event = {
 				type = pretender_rebels
 				size = 1
 			}
-			kill_leader = { type = general }
 		}
+		kill_leader = { type = general }
 	}
 
 	option = {
