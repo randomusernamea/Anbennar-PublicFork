@@ -1,9 +1,13 @@
+# to do list
+# graphic for thalassocracy reform doesn't display atm.
+
+
 country_event = {
 	id = naleni.1
 	title = naleni.1.t
 	desc = naleni.1.d
 	picture = MILITARY_CAMP_eventPicture
-	# hidden = yes just testing if it actually fires
+	hidden = yes 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -184,15 +188,151 @@ country_event = {
 	}
 }
 
+#A PIRATES LIFE
+country_event = {
+	id = naleni.10
+	title = naleni.10.t
+	desc = naleni.10.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.10.a
+		ai_chance = { factor = 100 }
+		increase_matauth_1 = yes
+		add_dip_power = 100
+		add_mil_power = 100
+		add_adm_power = 100
+	}
+}
+
+#MUTINY
+country_event = {
+	id = naleni.11
+	title = naleni.11.t
+	desc = naleni.11.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = L55_riva_reform
+		hidden_effect = {
+			if = {
+			limit = {
+				NOT = { check_variable = { which = matauth value = 4 } }
+			}
+			set_country_flag = low_authority
+		}
+		if = {
+			limit = {
+				check_variable = { which = matauth value = 4 }
+				NOT = { check_variable = { which = matauth value = 8 } }
+			}
+			set_country_flag = med_authority
+		}
+		if = {
+			limit = {
+				check_variable = { which = matauth value = 8 }
+			}
+			set_country_flag = high_authority
+		}
+		set_variable = { which = rebelamount value = 3 }
+		}
+	}
+	option = {
+		name = naleni.11.a
+		ai_chance = { factor = 100 }
+		change_government = monarchy
+		add_government_reform = naleni_thalassocracy_reform
+		add_stability = -2
+		if = {
+			limit = { has_country_flag = low_authority }
+			define_ruler = {
+				name = "Ríva"
+				dynasty = "Nephiuéda"
+				adm = 5
+				dip = 4
+				mil = 6
+				age = 22
+				claim = 40
+				culture = naleni_harpy
+				female = yes
+			}
+			add_ruler_personality = inspiring_leader_personality
+			while = {
+				limit = {
+					check_variable = { rebelamount = 0 }
+				}
+				random_core_province = {
+				spawn_rebels = {
+					size = 3
+					}
+				}
+				change_variable = { which = rebelamount value = -1 }
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = med_authority }
+			define_ruler = {
+				name = "Ríva"
+				dynasty = "Nephiuéda"
+				adm = 5
+				dip = 4
+				mil = 6
+				age = 22
+				claim = 50
+				culture = naleni_harpy
+				female = yes
+			}
+			add_ruler_personality = inspiring_leader_personality
+			while = {
+				limit = {
+					check_variable = { rebelamount = 0 }
+				}
+				random_core_province = {
+				spawn_rebels = {
+					size = 3
+					}
+				}
+				change_variable = { which = rebelamount value = -1 }
+			}
+		}
+		else = { 
+			define_ruler = {
+				name = "Ríva"
+				dynasty = "Nephiuéda"
+				adm = 5
+				dip = 4
+				mil = 6
+				age = 22
+				claim = 60
+				culture = naleni_harpy
+				female = yes
+			}
+			add_ruler_personality = inspiring_leader_personality
+			while = {
+				limit = {
+					check_variable = { rebelamount = 0 }
+				}
+				random_core_province = {
+				spawn_rebels = {
+					size = 3
+					}
+				}
+				change_variable = { which = rebelamount value = -1 }
+			}
+		}
+	}
+}
+
+
 
 #rebel spawning events
-
 country_event = {
 	id = naleni.36 #beri gnidi rebels
 	title = naleni.38.t
 	desc = naleni.38.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
 		owns_core_province = 5446
@@ -207,13 +347,15 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 1
+	}
 }
 country_event = {
 	id = naleni.37 #yetsemira rebels
 	title = naleni.39.t
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5529
 	}
@@ -227,13 +369,15 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 1
+	}
 }
 country_event = {
 	id = naleni.38 #dakmender rebels
 	title = naleni.39.t
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5505
 	}
@@ -247,13 +391,15 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 1
+	}
 }
 country_event = {
 	id = naleni.39 #biribitid rebels
 	title = naleni.39.t
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
-	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5504
 	}
@@ -265,6 +411,9 @@ country_event = {
 				size = 1
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 1
 	}
 }
 
@@ -319,5 +468,27 @@ country_event = {
 			name = L55_high_authority
 			duration = -1
 		}
+	}
+}
+
+#mutiny events
+country_event = {
+	id = naleni.43
+	title = naleni.9.t
+	desc = naleni.9.d
+	picture = MILITARY_CAMP_eventPicture
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.9.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		add_yearly_manpower = -1
+		add_yearly_sailors = -1
+	}
+	option = {
+		name = naleni.9.b
+		ai_chance = { factor = 25 }
+		decrease_matauth_2 = yes
 	}
 }

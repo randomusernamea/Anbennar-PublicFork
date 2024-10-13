@@ -203,7 +203,7 @@ Naléni_branch_two = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			owns_core_province = 5446 
+			owns_core_province = 5446
 			owns_core_province = 5505
 			owns_core_province = 5504
 			5446 = {
@@ -218,7 +218,8 @@ Naléni_branch_two = {
 				culture = metobesebi
 				has_building = temple
 			}
-		} 
+		}
+
 		effect = {
 			country_event = { id = naleni.8 } 
 			every_owned_province = {
@@ -229,24 +230,23 @@ Naléni_branch_two = {
 						area = dakmender_area
 						area = beri_gnidi_area
 					}
-					NOT = { 
+					NOT = {
 						OR = {
-						culture = nalenian_harpy
-						religion = the_hunt
-						}	
+							culture = nalenian_harpy
+							religion = the_hunt
+						}
 					}
 				}
 				change_culture = metobesebi
 				change_religion = sky_domain
-			}	
+			}
 		}
 	}
-	
 
 	song_for_the_people = {
 		icon = mission_harpy_diplomats
-		position = 7
-		required_missions = { conclave_of_captains } 
+		position = 8
+		required_missions = { crush_the_mutineers } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -287,13 +287,23 @@ Naléni_branch_two = {
 		effect = {  } 
 	}
 }
-
 Naléni_branch_three = {
 	slot = 3
 	generic = no
 	ai = yes
 	has_country_shield = yes
 	potential = { tag = L55 } 
+
+	privateers_not_pirates = {
+		icon = mission_raid_on_venice
+		position = 8
+		required_missions = { crush_the_mutineers } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
 
 	all_hands_on_deck = {
 		icon = mission_pirate_fleet
@@ -391,9 +401,7 @@ Naléni_branch_three = {
 			serenade_our_subjects
 			repurpose_the_slave_port
 		}
-		provinces_to_highlight = { 
-			region = rahen_coast_region
-		 } 
+		provinces_to_highlight = { region = rahen_coast_region } 
 
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -406,13 +414,14 @@ Naléni_branch_three = {
 					share = 10
 				}
 			}
-			OR = { trade_embargoing = R38 exists = R38 }
-		} 
+			OR = {
+				trade_embargoing = R38
+				exists = R38
+			}
+		}
 
 		effect = {
-			country_event = {
-				id = naleni.9
-			}
+			country_event = { id = naleni.9 } 
 			4547 = {
 				add_province_modifier = {
 					name = "L55_siphon_to_sarhal"
@@ -424,14 +433,14 @@ Naléni_branch_three = {
 					who = root
 					amount = 100
 				}
-			li_btei_area = {
-				remove_loot = {
-					who = root
-					amount = 100
+				li_btei_area = {
+					remove_loot = {
+						who = root
+						amount = 100
+					}
 				}
 			}
-			}
-		  } 
+		}
 	}
 
 	conclave_of_captains = {
@@ -464,7 +473,7 @@ Naléni_branch_three = {
 
 	a_new_naleni = {
 		icon = mission_female_throne
-		position = 8
+		position = 9
 		required_missions = {
 			song_for_the_people
 			crush_the_mutineers
@@ -480,7 +489,7 @@ Naléni_branch_three = {
 
 	across_the_gulf = {
 		icon = mission_indian_ocean_supremacy
-		position = 9
+		position = 10
 		required_missions = { a_new_naleni } 
 		provinces_to_highlight = {  } 
 
@@ -491,7 +500,7 @@ Naléni_branch_three = {
 
 	to_rule_the_sea = {
 		icon = mission_arabian_sea_trade
-		position = 10
+		position = 11
 		required_missions = {
 			across_the_gulf
 			further_afield
@@ -505,7 +514,7 @@ Naléni_branch_three = {
 
 	the_heart_of_rahens_trade = {
 		icon = mission_steer_trade_to_bengal
-		position = 11
+		position = 12
 		required_missions = { to_rule_the_sea } 
 		provinces_to_highlight = {  } 
 
@@ -516,7 +525,7 @@ Naléni_branch_three = {
 
 	the_naleni_gulf = {
 		icon = mission_haless_map
-		position = 12
+		position = 13
 		required_missions = {
 			a_new_kind_of_mezhi'mezhi
 			the_heart_of_rahens_trade
@@ -657,17 +666,15 @@ Naléni_branch_four = {
 		required_missions = { repurpose_the_slave_port } 
 		provinces_to_highlight = {  } 
 
-		trigger = {
-			#i think i have to manually scope to each area that has coastal provinces :S
-		  } 
+		trigger = {  } 
 
 		effect = {  } 
 	}
 
 	professionalise_the_sirens = {
 		icon = jap_train_samurai
-		position = 7
-		required_missions = { conclave_of_captains } 
+		position = 8
+		required_missions = { crush_the_mutineers } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -708,7 +715,6 @@ Naléni_branch_four = {
 		effect = {  } 
 	}
 }
-
 Naléni_branch_five = {
 	slot = 5
 	generic = no
@@ -748,17 +754,6 @@ Naléni_branch_five = {
 		icon = brest_dockyards
 		position = 5
 		required_missions = { new_fleets } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	privateers_not_pirates = {
-		icon = mission_raid_on_venice
-		position = 7
-		required_missions = { conclave_of_captains } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 

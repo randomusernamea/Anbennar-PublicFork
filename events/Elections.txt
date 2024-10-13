@@ -4592,3 +4592,213 @@ country_event = { #ruler ruled for too long, time for chabge
 		}
 	}
 }
+
+#naleni special elections
+country_event = {
+	id = naleni.44
+	title = "nalenipirate.1.t"
+	picture = BUCCANEERS_eventPicture
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = pirate_death_election }
+			NOT = { has_country_flag = pirate_mutineer_council }
+		}
+		desc = "nalenipirate.1.desc"
+	}
+	desc = {
+		trigger = {
+			has_country_flag = pirate_death_election
+		}
+		desc = "nalenipirate.1.desc2"
+	}
+	desc = {
+		trigger = {
+			has_country_flag = pirate_mutineer_council
+		}
+		desc = "nalenipirate.1.desc3"
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+			has_reform = matriarchal_pirate_republic
+	}
+	option = { # Current ruler
+		name = "nalenipirates.1.a"
+		trigger = {
+			has_regency = no
+			NOT = { has_country_flag = pirate_death_election }
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler
+		if = {
+			limit = {
+				OR = {
+					ruler_has_personality = legendary_pirate_personality
+					has_ruler_flag = historical_pirate
+				}
+			}
+			custom_tooltip = historical_pirate_tooltip
+		}
+		if = {
+			limit = { has_government_attribute = reelection_increases_absolutism }
+			tooltip = {
+				add_absolutism = 10
+			}
+			custom_tooltip = ADD_ABSOLUTISM_BASED_ON_ELECTION_TERM
+			hidden_effect = {
+				for_variable_amount = {
+					variable = election_term
+					effect = "
+						add_absolutism = 10
+					"
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = election_term
+					value = 1
+				}
+			}
+		}
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		if = {	#long-lived races
+			limit = {
+				OR = {
+					has_country_modifier = gnomish_administration
+					has_country_modifier = elven_administration
+					has_country_modifier = dwarven_administration
+				}
+			}
+			add_scaled_republican_tradition = -3
+		}
+		else_if = {
+			limit = {
+				NOT = { has_ruler_flag = historical_pirate }
+				NOT = { ruler_has_personality = legendary_pirate_personality }
+			}
+			if = {
+				limit = {
+					has_country_flag = increased_election_cost
+				}
+				add_scaled_republican_tradition = -15
+				clr_country_flag = increased_election_cost
+			}
+			else = {
+				add_scaled_republican_tradition = -10
+			}
+		}
+		if = {
+			limit = {
+				faction_in_power = pr_buccaneers 
+			}
+			add_faction_influence = {
+				faction = pr_buccaneers
+				influence = -10
+			}	
+		}
+		random_list = {
+			10 = {
+				add_adm_power = 50
+			}
+			10 = {
+				add_dip_power = 50
+			}
+			10 = {
+				add_mil_power = 50
+			}
+		}
+		add_karma = -5
+	}
+	option = { # Buccaneer candidate
+		name = "nalenipirate.1.b"
+		ai_chance = { factor = 20 }
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1
+				female = yes
+			}
+			decrease_matauth_1 = yes
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_adm_faction = {
+				influence = 20
+			}
+		}
+		add_karma = 10
+	}
+	option = { # Smugglers candidate
+		name = "nalenipirate.1.c"
+		ai_chance = { factor = 20 }
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1
+				female = yes
+				}
+				decrease_matauth_1 = yes
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_dip_faction = {
+				influence = 20
+			}
+		}
+		add_karma = 10
+	}
+	option = { # Captains candidate
+		name = "nalenipirate.1.d"
+		ai_chance = { factor = 20 }
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1
+				female = yes
+			}
+			decrease_matauth_1 = yes
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_mil_faction = {
+				influence = 20
+			}
+		}
+		add_karma = 10
+	}
+	option = { # Dynasty candidate
+		name = "nalenipirate.1.e"
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { has_country_modifier = harpy_administration }
+			define_ruler = {
+				female = yes
+				dynasty = "Nephiuéda"
+				max_random_adm = 3
+				max_random_dip = 3
+				max_random_mil = 3
+			}
+			increase_matauth_1 = yes
+		}
+		add_karma = 10
+	}
+}
+
