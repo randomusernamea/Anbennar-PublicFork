@@ -30689,3 +30689,109 @@ G79_taking_a_stand = {
 	land_forcelimit = 5
 	global_manpower = 5
 }
+
+gophira_one_army = {
+	cavalry_power = 0.1
+}
+gophira_relics_badmod = {
+	local_production_efficiency = -0.8
+}
+gophira_relics_goodmod = {
+	global_tax_income = 12
+}
+gophira_march_buff = {
+	global_manpower = 10
+	land_forcelimit = 10
+}
+gophira_march_moarbuff = {
+	global_manpower = 20
+	land_forcelimit = 20
+	shock_damage = 0.1
+}
+gophira_cat_auxiliaries_mod = {
+	cavalry_cost = -0.15
+}
+gophira_maintenance_mod = {
+	land_maintenance_modifier = -0.1
+}
+gophira_morale_mod = {
+	morale_damage_received = -0.05
+}
+gophira_understanding_relic = {
+	local_defensiveness = -0.1
+}
+gophira_abundant_materials = {
+	local_build_cost = -0.15
+	allowed_num_of_manufactories = 1
+}
+gophira_rebirth_of_dam_city = {
+	local_development_cost = -0.1
+	local_center_of_trade_upgrade_cost = -0.25
+}
+gophira_warlords_mod = {
+	land_forcelimit = 5
+	nobles_influence_modifier = 0.2
+}
+gophira_army_mod = {
+	drill_decay_modifier = -0.33
+	stability_cost_modifier = 0.5
+}
+gophira_betterarmy_mod = {
+	drill_decay_modifier = -0.33
+}
+gophira_king_see_all_mod = {
+	infantry_power = 0.05
+	nobles_influence_modifier = -0.1
+}
+gophira_king_benevolence_mod = {
+	land_morale = 0.05
+	nobles_loyalty_modifier = 0.15
+}
+gophira_loyalists_mod = {
+	local_defensiveness = -0.25
+}
+gophira_stance_1 = {
+	global_unrest = -2
+	harsh_treatment_cost = -0.25
+	all_estate_loyalty_equilibrium = -0.1
+}
+gophira_stance_1fin = {
+	global_unrest = -2
+	harsh_treatment_cost = -0.25
+}
+gophira_stance_2 = {
+	global_unrest = -1
+	harsh_treatment_cost = -0.15
+	all_estate_loyalty_equilibrium = -0.05
+}
+gophira_stance_2fin = {
+	global_unrest = -1
+	harsh_treatment_cost = -0.15
+}
+gophira_stance_3 = {
+	prestige = -1
+}
+gophira_stance_3fin = {
+	idea_cost = -0.1
+}
+gophira_stance_4 = {
+	advisor_cost = -0.05
+	legitimacy = 0.5
+	global_unrest = 1
+}
+gophira_stance_4fin = {
+	advisor_cost = -0.05
+	legitimacy = 0.5
+}
+gophira_stance_5 = {
+	advisor_cost = -0.1
+	legitimacy = 1
+	global_unrest = 2
+}
+gophira_stance_5fin = {
+	advisor_cost = -0.1
+	legitimacy = 1
+}
+gophira_army_encroaching = {
+	local_production_efficiency = -0.25
+}
