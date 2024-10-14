@@ -42506,3 +42506,43 @@ J99_ideas = {
 		build_cost = -0.10
 	}
 }
+
+#Uanced
+B95_ideas = {
+    start = {
+        land_morale = 0.1
+        republican_tradition = 0.3
+    }
+    bonus = {
+		land_maintenance_modifier = -0.1
+    }
+
+    trigger = {
+        tag = B95
+    }
+    free = yes        #will be added at load.
+
+    B95_uanced_freedoms = { 
+		manpower_in_own_culture_provinces = 0.2
+		hostile_attrition = 1
+    }
+    B95_the_last_resistance = { 
+        prestige_from_land = 1
+    }
+    B95_the_peasant_republic = { 
+		war_exhaustion = -0.03
+		defensiveness = 0.1
+    }
+    B95_the_republic_of_estaire = { 
+		stability_cost_modifier = -0.2
+    }
+    B95_no_lord_doth_rule_us = {
+		global_unrest = -2
+    }
+    B95_do_you_hear_your_people_sing = { 
+		power_projection_from_insults = 1.5
+    }
+    B95_the_uanarchists = { 
+		idea_cost = -0.1
+    }
+}
