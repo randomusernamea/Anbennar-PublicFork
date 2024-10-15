@@ -11,9 +11,33 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_2_1 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = { 
+			num_of_owned_provinces_with = {
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					#has_building = fort_17th
+					#has_building = fort_18th 			#Shouldn't be necessary, thus commented out
+					has_influencing_fort = yes
+				}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				value = 10
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			define_advisor = {
+				type = fortification_expert
+				skill = 3
+				cost_multiplier = 0.25
+				culture = Y17 #Gushuokguan
+				religion = Y17 #Gushuokguan
+			}
+			custom_tooltip = gushuokguan_stone_forts_tt
+		} 
 	}
 
 	gushuokguan_1_3 = {
