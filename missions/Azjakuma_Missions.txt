@@ -2817,7 +2817,12 @@ azjakuma_missiontree_5_pt_2 = {
 		
 		trigger = {
 			#jade march would probably not exist
-			R81 = { exists = no }
+			R81 = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
 			jade_mines_region = {
 				type = all
 				OR = {

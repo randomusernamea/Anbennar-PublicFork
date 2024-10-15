@@ -1825,6 +1825,7 @@ province_event = {	#Temple Purified
 			clr_province_flag = was_derelict_temple_complex
 		}
 		remove_province_modifier = rite_of_purification
+		remove_province_modifier = religious_zeal_at_conv
 	}
 	
 	option = {
@@ -11643,6 +11644,7 @@ province_event = {	#Temple Corrupted
 		}
 		remove_province_modifier = rite_of_corruption
 		remove_province_modifier = azjakuma_rite_of_corruption
+		remove_province_modifier = religious_zeal_at_conv
 	}
 
 	option = {

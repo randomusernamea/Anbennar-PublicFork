@@ -132,11 +132,13 @@ advocation_of_chi_stealers = {
 		else_if = {
 			limit = { OR = { has_ruler_flag = dvp_life_extension_1 fast_ruler_is_harimari = yes fast_ruler_is_kobold = yes } }
 			clr_ruler_flag = dvp_life_extension_1
-			set_ruler_flag = devouring_life_extension
+			set_ruler_flag = long_lived_ruler
 			set_ruler_flag = dvp_life_extension_2
+			set_ruler_flag = devouring_life_extension
 			custom_tooltip = lifeExtension2_tt
 		}
 		else = {
+			set_ruler_flag = long_lived_ruler
 			set_ruler_flag = dvp_life_extension_1
 			set_ruler_flag = devouring_life_extension
 			custom_tooltip = lifeExtension1_tt
