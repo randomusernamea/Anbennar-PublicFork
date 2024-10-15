@@ -17791,7 +17791,7 @@ gronstunad_building_authority_effect = {
 gophira_var_effect = {
 	custom_tooltip = gophira_$operation$_tt
 	hidden_effect = {
-		$operation$_variable = {
+		change_variable = {
 			which = gophira_court
 			value = $value$
 		}
@@ -17810,13 +17810,19 @@ gophira_var_effect = {
 			duration = -1
 		}
 	}
-	else_if = {
+	if = {
 		limit = {
 			check_variable = {
 				which = gophira_court
 				value = 10
 			}
-			NOT = { has_country_modifier = gophira_stance_4 }
+			NOT = {
+				has_country_modifier = gophira_stance_4
+				check_variable = {
+					which = gophira_court
+					value = 13
+				}
+			}
 		}
 		remove_country_modifier = gophira_stance_3
 		remove_country_modifier = gophira_stance_5
@@ -17825,13 +17831,19 @@ gophira_var_effect = {
 			duration = -1
 		}
 	}
-	else_if = {
+	if = {
 		limit = {
 			check_variable = {
 				which = gophira_court
 				value = 7
 			}
-			NOT = { has_country_modifier = gophira_stance_3 }
+			NOT = {
+				has_country_modifier = gophira_stance_3
+				check_variable = {
+					which = gophira_court
+					value = 10
+				}
+			}
 		}
 		remove_country_modifier = gophira_stance_2
 		remove_country_modifier = gophira_stance_4
@@ -17840,13 +17852,19 @@ gophira_var_effect = {
 			duration = -1
 		}
 	}
-	else_if = {
+	if = {
 		limit = {
 			check_variable = {
 				which = gophira_court
 				value = 4
 			}
-			NOT = { has_country_modifier = gophira_stance_2 }
+			NOT = {
+				has_country_modifier = gophira_stance_2
+				check_variable = {
+					which = gophira_court
+					value = 7
+				}
+			}
 		}
 		remove_country_modifier = gophira_stance_1
 		remove_country_modifier = gophira_stance_3
@@ -17855,9 +17873,15 @@ gophira_var_effect = {
 			duration = -1
 		}
 	}
-	else_if = {
+	if = {
 		limit = {
-			NOT = { has_country_modifier = gophira_stance_1 }
+			NOT = {
+				has_country_modifier = gophira_stance_1
+				check_variable = {
+					which = gophira_court
+					value = 4
+				}
+			}
 		}
 		remove_country_modifier = gophira_stance_2
 		add_country_modifier = {

@@ -148,10 +148,7 @@ gophira_1_fren = {
 				}
 				gauraddhi_region = { add_permanent_claim = PREV } 
 			}
-			gophira_heir_effect = {
-				pow = adm
-				amount = 1
-			}
+			gophira_heir_effect = {	pow = adm amount = 1 }
 		}
 	}
 
@@ -556,7 +553,7 @@ gophira_2 = {
 				}
 				add_mil_power = -50
 			}
-			gophira_heir_effect = { pow = mil value = 1 }
+			gophira_heir_effect = { pow = mil amount = 1 }
 			country_event = {
 				id = gophira.5
 				days = 1825
@@ -659,7 +656,7 @@ gophira_3 = {
 					add_base_production = -1
 				}
 				capital_scope = { add_base_production = 3 }
-				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
 				gophira_heir_effect = {	pow = adm amount = 1 }
 			}
 			else_if = {
@@ -695,7 +692,7 @@ gophira_3 = {
 					add_base_production = -1
 				}
 				capital_scope = { add_base_production = 3 }
-				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
 				gophira_heir_effect = {	pow = adm amount = 1 }
 				custom_tooltip = gophira_get_that_tt
 				2551 = {
@@ -965,7 +962,7 @@ gophira_3 = {
 				}
 				add_manpower = -20
 				add_mil_power = -100
-				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
 			}
 			else_if = {
 				limit = {
@@ -1031,7 +1028,7 @@ gophira_3 = {
 				}
 				add_manpower = -20
 				add_mil_power = -100
-				gophira_var_effect = { operation = subtract value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
 				custom_tooltip = gophira_get_that_tt
 				create_vassal = J85
 				nanru_nakar_area = { 
@@ -1378,8 +1375,8 @@ gophira_4 = {
 						duration = -1
 					}
 				}
-				gophira_var_effect = { operation = subtract value = 1 }
-				gophira_heir_effect = { pow = adm value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
+				gophira_heir_effect = { pow = adm amount = 1 }
 				country_event = {
 					id = gophira.8
 					days = 3650
@@ -1393,8 +1390,8 @@ gophira_4 = {
 						duration = -1
 					}
 				}
-				gophira_var_effect = { operation = subtract value = 1 }
-				gophira_heir_effect = { pow = adm value = 1 }
+				gophira_var_effect = { operation = subtract value = -1 }
+				gophira_heir_effect = { pow = adm amount = 1 }
 				country_event = {
 					id = gophira.8
 					days = 3650
@@ -1634,7 +1631,7 @@ gophira_5 = {
 					}
 					infantry = ROOT
 				}
-				gophira_var_effect = { operation = subtract value = 2 }
+				gophira_var_effect = { operation = subtract value = -2 }
 				gophira_heir_effect = { pow = mil amount = 1 }
 			}
 			else_if = {
@@ -1708,7 +1705,7 @@ gophira_5 = {
 					}
 					infantry = ROOT
 				}
-				gophira_var_effect = { operation = subtract value = 2 }
+				gophira_var_effect = { operation = subtract value = -2 }
 				gophira_heir_effect = { pow = mil amount = 1 }
 				custom_tooltip = gophira_get_that_tt
 				if = {

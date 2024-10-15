@@ -27,7 +27,7 @@ country_event = {
 
 	option = {
 		name = gophira.1.1
-		gophira_var_effect = {  operation = subtract value = 1 }
+		gophira_var_effect = {  operation = subtract value = -1 }
 		define_advisor = {
 			type = statesman
 			skill = 1
@@ -72,17 +72,17 @@ country_event = {
 
 	option = {
 		name = gophira.2.1
-		gophira_var_effect = {  operation = subtract value = 1 }
-		gophira_heir_effect = {	pow = dip amount = 1 }
-		gophira_heir_effect = {	pow = mil amount = 1 }
+		gophira_var_effect = { operation = subtract value = -1 }
+		gophira_heir_effect = { pow = dip amount = 1 }
+		gophira_heir_effect = { pow = mil amount = 1 }
 		add_heir_personality = free_thinker_personality
 	}
 
 	option = {
 		name = gophira.2.2
-		gophira_var_effect = {  operation = change value = 1 }
-		gophira_heir_effect = {	pow = adm amount = 1 }
-		gophira_heir_effect = {	pow = dip amount = 1 }
+		gophira_var_effect = { operation = change value = 1 }
+		gophira_heir_effect = { pow = adm amount = 1 }
+		gophira_heir_effect = { pow = dip amount = 1 }
 		add_heir_personality = bold_fighter_personality
 	}
 }
@@ -104,7 +104,7 @@ country_event = {
 		name = gophira.3.1
 		extend_regency = 5
 		add_heir_claim = -15
-		gophira_var_effect = {  operation = subtract value = 3 }
+		gophira_var_effect = {  operation = subtract value = -3 }
 	}
 
 	option = {
@@ -179,7 +179,7 @@ country_event = {
 		}
 		custom_tooltip = gophira_queen_webweaver_tt
 		add_queen_personality = intricate_web_weaver_personality
-		gophira_var_effect = { operation = subtract value = 3}
+		gophira_var_effect = { operation = subtract value = -3}
 		gophira_heir_effect = {	pow = dip amount = 2 }
 		swap_non_generic_missions = yes
 	}
@@ -286,7 +286,7 @@ country_event = {
 		G76 = { form_coalition_against = G52 }
 		G81 = { form_coalition_against = G52 }
 		G82 = { form_coalition_against = G52 }
-		gophira_var_effect = { operation = subtract value = 1 }
+		gophira_var_effect = { operation = subtract value = -1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
 		clr_country_flag = gophira_bad_coalition
 	}
@@ -414,7 +414,7 @@ country_event = {
 		}
 		add_treasury = 300
 		2487 = { add_devastation = 25 }
-		gophira_var_effect = { operation = subtract value = 1 }
+		gophira_var_effect = { operation = subtract value = -1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
 	}
 
@@ -645,16 +645,6 @@ country_event = {
 					who = ROOT
 					amount = 10
 				}
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				infantry = REB
-				cavalry = REB
-				cavalry = REB
 			}
 		}
 	}
@@ -664,6 +654,12 @@ country_event = {
 		set_country_flag = gophira_event14
 		goto = gophira_betrayal
 		custom_tooltip = gophira.14.tt
+		event_target:gophira_betrayal = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}
 	}
 }
 
