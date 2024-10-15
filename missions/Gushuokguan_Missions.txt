@@ -1,0 +1,475 @@
+gushuokguan_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = Y17 } 
+
+	gushuokguan_1_2 = {
+		icon = mission_confrontation
+		position = 2
+		required_missions = { gushuokguan_2_1 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_3 = {
+		icon = mission_confrontation
+		position = 3
+		required_missions = { gushuokguan_1_2 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_4 = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = { gushuokguan_1_3 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_6 = {
+		icon = mission_confrontation
+		position = 6
+		required_missions = { gushuokguan_2_5 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_7 = {
+		icon = mission_confrontation
+		position = 7
+		required_missions = { gushuokguan_1_6 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_8 = {
+		icon = mission_confrontation
+		position = 8
+		required_missions = {
+			gushuokguan_1_7
+			gushuokguan_2_7
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_1_9 = {
+		icon = mission_confrontation
+		position = 9
+		required_missions = { gushuokguan_1_8 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gushuokguan_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = Y17 } 
+
+	gushuokguan_2_1 = {
+		icon = mission_confrontation
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_2 = {
+		icon = mission_confrontation
+		position = 2
+		required_missions = { gushuokguan_2_1 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_3 = {
+		icon = mission_confrontation
+		position = 3
+		required_missions = { gushuokguan_2_2 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_4 = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = {
+			gushuokguan_2_3
+			gushuokguan_4_3
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_5 = {
+		icon = mission_confrontation
+		position = 5
+		required_missions = {
+			gushuokguan_1_4
+			gushuokguan_2_4
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_7 = {
+		icon = mission_confrontation
+		position = 7
+		required_missions = { gushuokguan_2_5 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_8 = {
+		icon = mission_confrontation
+		position = 8
+		required_missions = { gushuokguan_2_7 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_2_9 = {
+		icon = mission_confrontation
+		position = 9
+		required_missions = { gushuokguan_2_8 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gushuokguan_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = Y17 } 
+
+	gushuokguan_3_1 = {
+		icon = mission_confrontation
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_2 = {
+		icon = mission_confrontation
+		position = 2
+		required_missions = { gushuokguan_3_1 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_4 = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = { gushuokguan_4_3 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_6 = {
+		icon = mission_confrontation
+		position = 6
+		required_missions = { gushuokguan_2_5 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_7 = {
+		icon = mission_confrontation
+		position = 7
+		required_missions = { gushuokguan_3_6 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_8 = {
+		icon = mission_confrontation
+		position = 8
+		required_missions = { gushuokguan_2_7 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_3_9 = {
+		icon = mission_confrontation
+		position = 9
+		required_missions = { gushuokguan_3_8 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gushuokguan_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = Y17 } 
+
+	gushuokguan_4_1 = {
+		icon = mission_confrontation
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_2 = {
+		icon = mission_confrontation
+		position = 2
+		required_missions = {
+			gushuokguan_4_1
+			gushuokguan_5_1
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_3 = {
+		icon = mission_confrontation
+		position = 3
+		required_missions = {
+			gushuokguan_3_2
+			gushuokguan_4_2
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_4 = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = { gushuokguan_4_3 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_5 = {
+		icon = mission_confrontation
+		position = 5
+		required_missions = {
+			gushuokguan_3_4
+			gushuokguan_4_4
+			gushuokguan_5_4
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_6 = {
+		icon = mission_confrontation
+		position = 6
+		required_missions = { gushuokguan_2_5 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_7 = {
+		icon = mission_confrontation
+		position = 7
+		required_missions = { gushuokguan_4_6 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_8 = {
+		icon = mission_confrontation
+		position = 8
+		required_missions = { gushuokguan_2_7 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_4_9 = {
+		icon = mission_confrontation
+		position = 9
+		required_missions = { gushuokguan_4_8 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+gushuokguan_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = Y17 } 
+
+	gushuokguan_5_1 = {
+		icon = mission_confrontation
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_2 = {
+		icon = mission_confrontation
+		position = 2
+		required_missions = { gushuokguan_5_1 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_3 = {
+		icon = mission_confrontation
+		position = 3
+		required_missions = { gushuokguan_4_2 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_4 = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = {
+			gushuokguan_4_3
+			gushuokguan_5_3
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_5 = {
+		icon = mission_confrontation
+		position = 5
+		required_missions = { gushuokguan_5_4 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_6 = {
+		icon = mission_confrontation
+		position = 6
+		required_missions = {
+			gushuokguan_2_5
+			gushuokguan_4_5
+			gushuokguan_5_5
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	gushuokguan_5_7 = {
+		icon = mission_confrontation
+		position = 7
+		required_missions = { gushuokguan_5_6 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
