@@ -77,7 +77,7 @@ G81_sthanan_column_1 = {
                 }
                 AND = {
                     province_id = 2525
-                    has_tax_building_trigger = yes
+                    has_tax_building_trigger = no
                 }
             }    
 		}
@@ -655,6 +655,7 @@ G81_sthanan_column_4 = {
                 OR = {
                     country_or_non_sovereign_subject_holds = ROOT
                     owner = {
+                        OR = { tag = G76 tag = G82 }
                         alliance_with = ROOT
                     }
                 }
@@ -996,14 +997,14 @@ G81_sthanan_column_5 = {
 		}
         
         provinces_to_highlight = {
-            area = vul_tenvach_area
+            area = vuls_tenvach_area
 			NOT = { 
                 country_or_non_sovereign_subject_holds = ROOT 
             }
         }
 
         trigger = {
-            vul_tenvach_area = {
+            vuls_tenvach_area = {
                 type = all
                 country_or_non_sovereign_subject_holds = ROOT
             }
