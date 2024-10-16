@@ -204,8 +204,8 @@ country_event = {
 	
     is_triggered_only = yes
 	trigger = {
-		tag = Y58 #Lot Dekkhang
-		has_country_flag = thangoya_mya_coup
+		tag = Z62 #Thangoya
+		Y58 = { has_country_flag = thangoya_mya_coup } #Lot Dekkhang
 	}
 
 	#Just as planned.
@@ -429,7 +429,7 @@ country_event = {
 				country_of_origin = Y62
 				birth_date = 1430.5.9
 				culture = sikai
-				religion = righteous_path
+				religion = transmutative_path
 				adm = 4
 				dip = 5
 				mil = 3
