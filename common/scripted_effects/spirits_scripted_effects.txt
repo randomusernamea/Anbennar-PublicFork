@@ -3784,7 +3784,7 @@ end_temple_quest = {
 	event_target:temple_quest_target = { clr_province_flag = temple_being_quested }
 	add_country_modifier = {
 		name = temple_quest_cooldown
-		duration = 730
+		duration = 365
 		hidden = yes
 	}
 }

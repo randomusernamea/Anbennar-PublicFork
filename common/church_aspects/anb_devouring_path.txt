@@ -84,8 +84,26 @@ barter_with_dark_spirits = {
 	ai_will_do = { factor = 15 }
 }
 
+witches_and_shamans_preview = {
+	cost = 200
+	potential = { NOT = { num_of_aspects = 1 } }
+
+	effect = {
+		custom_tooltip = devouring_path_need_one_aspect_tt
+		hidden_effect = {
+			remove_church_aspect = witches_and_shamans_preview
+			country_event = { id = spirits.607 }
+		}
+	}
+
+	modifier = { stability_cost_modifier = 0.2 }
+
+	ai_will_do = { factor = 0 }
+}
+
 witches_and_shamans = {
 	cost = 200
+	potential = { num_of_aspects = 1 }
 
 	effect = {
 		custom_tooltip = witches_and_shamans_effect_tt
@@ -151,8 +169,26 @@ advocation_of_chi_stealers = {
 	ai_will_do = { factor = 15 }
 }
 
+from_beyond_preview = {
+	cost = 200
+	potential = { NOT = { num_of_aspects = 1 } }
+
+	effect = {
+		custom_tooltip = devouring_path_need_one_aspect_tt
+		hidden_effect = {
+			remove_church_aspect = from_beyond_preview
+			country_event = { id = spirits.607 }
+		}
+	}
+
+	modifier = { global_monthly_devastation = 0.1 }
+
+	ai_will_do = { factor = 0 }
+}
+
 from_beyond = {
 	cost = 200
+	potential = { num_of_aspects = 1 }
 
 	effect = {
 		custom_tooltip = from_beyond_effect_tt
@@ -200,7 +236,7 @@ to_devour_chi_preview = {
 	}
 
 	effect = {
-		custom_tooltip = to_devour_chi_preview_effect_tt
+		custom_tooltip = devouring_path_need_one_aspect_tt
 		hidden_effect = {
 			remove_church_aspect = to_devour_chi_preview
 			country_event = { id = spirits.607 }
@@ -332,18 +368,42 @@ the_god_eaters = {
 	ai_will_do = { factor = 15 }
 }
 
+the_dead_serve_the_living_preview = {
+	cost = 200
+
+	potential = {
+		has_country_flag = the_dead_serve_the_living_unlocked
+		NOT = { num_of_aspects = 1 }
+	}
+
+	effect = {
+		custom_tooltip = devouring_path_need_one_aspect_tt
+		hidden_effect = {
+			remove_church_aspect = the_dead_serve_the_living_preview
+			country_event = { id = spirits.607 }
+		}
+	}
+
+	modifier = { movement_speed = -0.2 }
+
+	ai_will_do = { factor = 0 }
+}
+
 the_dead_serve_the_living = {
 	cost = 200
 
-	potential = { has_country_flag = the_dead_serve_the_living_unlocked }
+	potential = {
+		has_country_flag = the_dead_serve_the_living_unlocked
+		num_of_aspects = 1
+	}
 
 	effect = {
 		if = { #Gets you a proper tooltip this way
 			limit = { has_country_modifier = slackening_modifier }
-			add_yearly_manpower = 2
+			add_yearly_manpower = 1.5
 		}
 		else = {
-			add_yearly_manpower = 4
+			add_yearly_manpower = 3
 		}
 	}
 
