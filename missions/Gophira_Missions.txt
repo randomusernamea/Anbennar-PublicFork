@@ -97,7 +97,10 @@ gophira_1_fren = {
 		icon = mission_desert_rider
 		position = 2
 		required_missions = { G74_a_throne_for_the_queen } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			culture = sarihaddi
+			NOT = { country_or_non_sovereign_subject_holds = J72 }
+		} 
 
 		trigger = {
 			taychend_superregion = {
@@ -146,7 +149,6 @@ gophira_1_fren = {
 					who = ROOT
 					amount = -20
 				}
-				gauraddhi_region = { add_permanent_claim = PREV } 
 			}
 			gophira_heir_effect = {	pow = adm amount = 1 }
 		}
@@ -220,18 +222,21 @@ gophira_1_fren = {
 
 		trigger = {
 			gauraddhi_region = {
+				type = all
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					country_or_non_sovereign_subject_holds = J72
 				}
 			}
 			yodhanchend_region = {
+				type = all
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					country_or_non_sovereign_subject_holds = J72
 				}
 			}
 			southern_coast_region = {
+				type = all
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					country_or_non_sovereign_subject_holds = J72
@@ -576,13 +581,15 @@ gophira_3 = {
 				province_id = 2551
 				province_id = 2553
 			}
-			owned_by = ROOT
-			OR = {
-				num_of_units_in_province = {
-					amount = 5
-					who = ROOT
+			NOT = {
+				owned_by = ROOT
+				OR = {
+					num_of_units_in_province = {
+						amount = 5
+						who = ROOT
+					}
+					num_of_times_improved_by_owner = 2
 				}
-				num_of_times_improved_by_owner = 2
 			}
 		} 
 
@@ -722,60 +729,72 @@ gophira_3 = {
 				has_personal_deity = taychend_glory_4
 				has_personal_deity = taychend_glory_5
 			}
-			army_size_percentage = 0.9
-			NOT = { truce_with = G52 }
-			if = {
+			if = { 
 				limit = {
-					G76 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
-					}
-					G81 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
-					}
-					G82 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
+					NOT = { 
+						any_core_province = { owned_by = G52 }
 					}
 				}
-				has_spy_network_in = {
-					who = G52
-					value = 30
-				}
-			}	
+				NOT = { 
+					any_core_province = { owned_by = G52 }
+				}			
+			}
 			else = {
-				OR = {
-					G76 = { is_subject_of = ROOT }
-					custom_trigger_tooltip = {
-						tooltip = gophira_improve_relations_tt
-						AND = {
-							G76 = {
-								OR = {
-								has_50_opinion_improved_relation = { target = ROOT }
-									exists = no
-									is_subject = yes
-								}					
-							}
-							G81 = {
-								OR = {
+				army_size_percentage = 0.9
+				NOT = { truce_with = G52 }
+				if = {
+					limit = {
+						G76 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}
+						G81 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}
+						G82 = {
+							OR = {
+								exists = no
+								is_subject = yes
+							}					
+						}
+					}
+					has_spy_network_in = {
+						who = G52
+						value = 30
+					}
+				}	
+				else = {
+					OR = {
+						G76 = { is_subject_of = ROOT }
+						custom_trigger_tooltip = {
+							tooltip = gophira_improve_relations_tt
+							AND = {
+								G76 = {
+									OR = {
 									has_50_opinion_improved_relation = { target = ROOT }
-									exists = no
-									is_subject = yes
-								}					
-							}
-							G82 = {
-								OR = {
-									has_50_opinion_improved_relation = { target = ROOT }
-									exists = no
-									is_subject = yes
-								}					
+										exists = no
+										is_subject = yes
+									}					
+								}
+								G81 = {
+									OR = {
+										has_50_opinion_improved_relation = { target = ROOT }
+										exists = no
+										is_subject = yes
+									}					
+								}
+								G82 = {
+									OR = {
+										has_50_opinion_improved_relation = { target = ROOT }
+										exists = no
+										is_subject = yes
+									}					
+								}
 							}
 						}
 					}
@@ -790,94 +809,107 @@ gophira_3 = {
 			}
 			if = {
 				limit = {
-					G76 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
-					}
-					G81 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
-					}
-					G82 = {
-						OR = {
-							exists = no
-							is_subject = yes
-						}					
+					NOT = { 
+						any_core_province = { owned_by = G52 }
 					}
 				}
-				add_manpower = 9
-				set_country_flag = gophira_spy
-			}
-			else_if = {
-				limit = {
-					G76 = { is_subject_of = ROOT }
-				}
-				if = {
-					limit = {
-						G81 = {
-							OR = {
-								exists = no
-								is_subject = yes
-							}					
-						}	
-					}
-					add_manpower = 3
-				}
-				if = {
-					limit = {
-						G82 = {
-							OR = {
-								exists = no
-								is_subject = yes
-							}					
-						}	
-					}
-					add_manpower = 3
-				}
-				set_country_flag = gophira_bad_coalition
+				add_prestige = 20
+				2527 = { set_local_autonomy = 0 }
+				2528 = { set_local_autonomy = 0 }
+				2529 = { set_local_autonomy = 0 }
 			}
 			else = {
-				if = {
+				else_if = {
 					limit = {
 						G76 = {
 							OR = {
 								exists = no
 								is_subject = yes
 							}					
-						}	
-					}
-					add_manpower = 3
-				}
-				if = {
-					limit = {
+						}
 						G81 = {
 							OR = {
 								exists = no
 								is_subject = yes
 							}					
-						}	
-					}
-					add_manpower = 3
-				}
-				if = {
-					limit = {
+						}
 						G82 = {
 							OR = {
 								exists = no
 								is_subject = yes
 							}					
-						}	
+						}
 					}
-					add_manpower = 3
+					add_manpower = 9
+					set_country_flag = gophira_spy
 				}
-				set_country_flag = gophira_good_coalition
+				else_if = {
+					limit = {
+						G76 = { is_subject_of = ROOT }
+					}
+					if = {
+						limit = {
+							G81 = {
+								OR = {
+									exists = no
+									is_subject = yes
+								}					
+							}	
+						}
+						add_manpower = 3
+					}
+					if = {
+						limit = {
+							G82 = {
+								OR = {
+									exists = no
+									is_subject = yes
+								}					
+							}	
+						}
+						add_manpower = 3
+					}
+					set_country_flag = gophira_bad_coalition
+				}
+				else = {
+					if = {
+						limit = {
+							G76 = {
+								OR = {
+									exists = no
+									is_subject = yes
+								}					
+							}	
+						}
+						add_manpower = 3
+					}
+					if = {
+						limit = {
+							G81 = {
+								OR = {
+									exists = no
+									is_subject = yes
+								}					
+							}	
+						}
+						add_manpower = 3
+					}
+					if = {
+						limit = {
+							G82 = {
+								OR = {
+									exists = no
+									is_subject = yes
+								}					
+							}	
+						}
+						add_manpower = 3
+					}
+					set_country_flag = gophira_good_coalition
+				}
+				country_event = { id = gophira.6 }
 			}
-			country_event = { id = gophira.6 }
-		} 
+		}
 	}
 
 	G74_an_oath_twice_broken = {
