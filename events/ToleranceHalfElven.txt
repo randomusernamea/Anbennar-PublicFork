@@ -412,17 +412,8 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = {
-				culture = anbennarian_half_elf
-				culture = lencori_half_elf
-				culture = alenic_half_elf
-				culture = businori_half_elf
-				culture = dostanorian_half_elf
-				culture = farrani_half_elf
-				culture = bulwari_half_elf
-				culture = bom_half_elf
-				culture = kai_half_elf
-				culture = kelino_half_elf
-				culture_group = elven
+				culture_is_half_elven = yes
+				culture_is_elven = yes
 			}
 		}
 		desc = half_elf_tolerance_events.4.d1
@@ -1022,25 +1013,22 @@ country_event = {
 			limit = {
 				capital_scope = {
 					OR = {
+						region = alenic_frontier_region
+						NOT = { 
+							area = arbaran_area
+							area = golden_plains_area
+							area = cestir_area
+						}
+						area = dragonhills_area
 						area = floodmarches_area
 						area = vertesk_area
-						area = westmoor_proper_area
-						area = moorhills_area
-						area = beronmoor_area
-						area = westmounts_area
-						area = alenic_expanse_area
-						area = gawed_area
-						area = south_alen_area
-						area = alenvord_area
-						area = balvord_area
-						area = jonsway_area
 						area = wexhills_area
 						area = east_bisan_area
 						area = west_bisan_area
 						area = ottocam_area
 						area = greater_bardswood_area
 						area = rhinmond_area
-						area = dragonhills_area
+						area = gnollsgate_area
 					}
 				}
 			}
@@ -1279,9 +1267,7 @@ country_event = {
 		else_if = {
 			limit = {
 				capital_scope = {
-					OR = {
-						region = thidinkai_region
-					}
+					region = thidinkai_region
 				}
 			}
 			if = {
