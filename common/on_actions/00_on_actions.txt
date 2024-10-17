@@ -16297,6 +16297,17 @@ on_dip_exploited = {
 	}
 
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.25
+	}
 }
 
 on_mil_exploited = {
@@ -16348,6 +16359,17 @@ on_mil_exploited = {
 	}
 
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+	
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.25
+	}
 }
 
 on_raze = {
