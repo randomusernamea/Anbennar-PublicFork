@@ -476,6 +476,7 @@ merc_stone_army = {
 		NOT = { has_country_modifier = monstrous_nation }
 		NOT = { has_country_modifier = centaur_military }
 		NOT = { has_global_flag = remove_stone_army }
+		NOT = { has_country_flag = gushuokguan_stone_army_tier_2 }
 	}
 	cost_modifier = 1.5
 	modifier = {

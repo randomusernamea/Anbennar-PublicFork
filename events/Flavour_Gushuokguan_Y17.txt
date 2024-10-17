@@ -1,0 +1,58 @@
+namespace = gushuokguan_event
+
+#An Alliance of Convenience
+country_event = {
+	id = gushuokguan_event.1
+	title = gushuokguan_event.1.t
+	desc = gushuokguan_event.1.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.1.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+#The Fools of Lanjinhui
+country_event = {
+	id = gushuokguan_event.2
+	title = gushuokguan_event.2.t
+	desc = gushuokguan_event.2.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.2.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+#The Stone Swords
+country_event = {
+	id = gushuokguan_event.3
+	title = gushuokguan_event.3.t
+	desc = gushuokguan_event.3.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.3.a
+		ai_chance = { factor = 1 }
+	}
+}

@@ -11,33 +11,22 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_2_1 } 
 		provinces_to_highlight = {  } 
 
-		trigger = { 
+		trigger = {  
 			num_of_owned_provinces_with = {
 				OR = {
-					has_building = fort_15th
-					has_building = fort_16th
-					#has_building = fort_17th
-					#has_building = fort_18th 			#Shouldn't be necessary, thus commented out
-					has_influencing_fort = yes
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+					}
+					is_prosperous = yes
+					#The fucking what?!
+					development = 8
 				}
-				OR = {
-					has_building = workshop
-					has_building = counting_house
-				}
-				value = 10
+				value = 15
 			}
 		} 
 
-		effect = {  
-			define_advisor = {
-				type = fortification_expert
-				skill = 3
-				cost_multiplier = 0.25
-				culture = Y17 #Gushuokguan
-				religion = Y17 #Gushuokguan
-			}
-			custom_tooltip = gushuokguan_stone_forts_tt
-		} 
+		effect = {  }
 	}
 
 	gushuokguan_1_3 = {
@@ -46,18 +35,84 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_1_2 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = fish
+				}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+				has_manufactory_trigger = yes
+				base_production = 7
+				value = 15
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			for = {
+				#custom_tooltip = gushuokguan_smth_tt
+				amount = 5
+				effect = "
+					random_owned_province = {
+						limit = {
+							OR = {
+								trade_goods = grain
+								trade_goods = livestock
+								trade_goods = fish
+							}
+							OR = {
+								has_building = workshop
+								has_building = counting_house
+							}
+							OR = {
+								has_building = barracks
+								has_building = training_fields
+							}
+							has_manufactory_trigger = yes
+							base_production = 7
+						}
+						add_base_production = 1
+						if = { limit = { has_building = training_fields } add_mil_power = 100 }
+						else = { remove_building = barracks add_building = training_fields }
+					}
+				"
+			}
+			
+		} 
 	}
 
 	gushuokguan_1_4 = {
 		icon = mission_confrontation
 		position = 4
 		required_missions = { gushuokguan_1_3 } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = { 
+			superregion = yanshen_superregion
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
+			devastation = 0.01
+			unrest = 0
+			AND = {
+				OR = {
+					province_group = golden_highway_upper_yanshen
+					province_group = golden_highway_yanshen_coast
+				}
+				NOT = {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { development = 12 }
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+
+		} 
 
 		effect = {  } 
 	}
@@ -68,7 +123,9 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_2_5 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = { 
+
+		} 
 
 		effect = {  } 
 	}
@@ -121,9 +178,30 @@ gushuokguan_2 = {
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = { 
+			num_of_owned_provinces_with = {
+				OR = {
+					has_fort_building_trigger = yes
+					has_influencing_fort = yes
+				}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				value = 10
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			define_advisor = {
+				type = fortification_expert
+				skill = 3
+				cost_multiplier = 0.25
+				culture = Y17 #Gushuokguan
+				religion = Y17 #Gushuokguan
+			}
+			custom_tooltip = gushuokguan_stone_forts_tt
+		}  
 	}
 
 	gushuokguan_2_2 = {
@@ -132,9 +210,35 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_1 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_condotierri_stone_army_tt
+				any_known_country = {
+					is_hiring_condottiere_from = ROOT #Gushuokguan
+					any_hired_mercenary_company = {
+						template = merc_stone_army #I hope there was another way to check army name
+					}
+				}
+			}
+			capital_scope = {
+				base_manpower = 5
+				has_manpower_building_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = {
+				id = gushuokguan_event.3 #The Stone Swords
+			}
+			custom_tooltip = gushuokguan_stone_army_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_stone_army } #I hope there was another way to check army name
+				disband_mercenary_company = THIS	   #Hopefully this doesn't cause a condotierri-related bug
+			}
+			hidden_effect = {
+				set_country_flag = gushuokguan_stone_army_tier_2
+			}
+		} 
 	}
 
 	gushuokguan_2_3 = {
@@ -221,9 +325,53 @@ gushuokguan_3 = {
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				Y05 = { #Lanjinhui
+					alliance_with = ROOT #Gushuokguan
+					has_opinion = {
+						who = ROOT #Gushuokguan
+						value = 150
+					}
+				}
+				AND = {
+					Y05 = { #Lanjinhui
+						has_90_opinion_improved_relation = { target = ROOT } #Gushuokguan
+					}
+					diplomatic_reputation = 2
+					has_dip_advisor = yes
+				}
+				AND = {
+					Y05 = { #Lanjinhui
+						is_rival = ROOT
+						has_been_insulted_by_root = yes
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			#Case 1:
+			custom_tooltip = gushuokguan_lanjinhui_is_ally_tt
+			country_event = {
+				id = gushuokguan_event.1 #An Alliance of Convenience
+			}
+			add_historical_friend = Y05 #Lanjinhui
+			Y05 = { add_historical_friend = ROOT } #Lanjinhui #Gushuokguan
+			
+			custom_tooltip = feitenEmpty
+			
+			#Case 2:
+			custom_tooltip = gushuokguan_lanjinhui_is_rival_tt
+			country_event = {
+				id = gushuokguan_event.2 #The Fools of Lanjinhui
+			}
+			Y05 = { #Lanjinhui
+				every_owned_province = {
+					add_permanent_claim = ROOT #Gushuokguan
+				}
+			}
+		}
 	}
 
 	gushuokguan_3_2 = {
@@ -232,7 +380,19 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_3_1 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				Y05 = { #Lanjinhui
+					OR = {
+						alliance_with = ROOT #Gushuokguan
+						vassal_of = ROOT #Gushuokguan
+					}
+					capital_scope = {
+						infantry_in_province = 6 #This shouldn't work 
+					}
+				}
+			}
+		} 
 
 		effect = {  } 
 	}
@@ -304,9 +464,39 @@ gushuokguan_4 = {
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			estate_loyalty = {
+				estate = estate_eunuchs
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_burghers #peasants?!
+				loyalty = 60
+			}
+			estate_influence = {
+				estate = estate_eunuchs
+				influence = 50
+			}
+			estate_influence = {
+				estate = estate_nobles
+				influence = 50
+			}
+			estate_influence = {
+				estate = estate_burghers
+				influence = 50
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_writing_a_new_oath
+				duration = 1825
+			}
+		} 
 	}
 
 	gushuokguan_4_2 = {
@@ -419,9 +609,25 @@ gushuokguan_5 = {
 		position = 1
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			# custom_trigger_tooltip = {
+			# 	tooltip = gushuokguan_hired_stone_army_tt #In case the tooltip looks bad
+				any_hired_mercenary_company = { 
+					template = merc_stone_army
+				}
+			# }
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_guardians_of_the_stone_state
+				duration = 7300
+			}
+			add_country_modifier = {
+				name = gushuokguan_home_of_the_stone_army
+				duration = -1
+			}
+		} 
 	}
 
 	gushuokguan_5_2 = {
