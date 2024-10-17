@@ -387,8 +387,32 @@ gushuokguan_3 = {
 						alliance_with = ROOT #Gushuokguan
 						vassal_of = ROOT #Gushuokguan
 					}
-					capital_scope = {
-						infantry_in_province = 6 #This shouldn't work 
+					has_spy_network_from = {
+						who = ROOT
+						value = 30
+					}
+					capital_scope = { #WHY DOES THIS THROW AN ERROR
+						ROOT = {
+							PREV = {
+								infantry_in_province = 6
+							}
+						}
+					}
+					variable_arithmetic_trigger = {
+						custom_tooltip = gushuokguan_larger_than_half_lanjinhui_tt
+						export_to_variable = {
+							which = lanjinhui_half_army_size
+							value = trigger_value:army_size
+							who = Y05 #Lanjinhui
+						}
+						export_to_variable = {
+							which = gushuokguan_army_size
+							value = trigger_value:army_size
+							who = ROOT #Gushuokguan
+						}
+						multiply_variable = { which = lanjinhui_half_army_size value = 0.5 }
+						
+						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
 					}
 				}
 			}
