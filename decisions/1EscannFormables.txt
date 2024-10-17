@@ -343,8 +343,18 @@ country_decisions = {
 		}
 		effect = {
 			custom_tooltip = take_trials_form_castanor_effect_tt
-			set_country_flag = try_castanor_trials_decision_taken
-			set_ruler_flag = attempted_trials_within_lifetime
+			if = {
+				limit = {
+					ai = yes
+				}
+				change_tag = B32
+				country_event = { id = ideagroups.1 } #Swap Ideas
+				swap_non_generic_missions = yes
+			}
+			else = {
+				set_country_flag = try_castanor_trials_decision_taken
+				set_ruler_flag = attempted_trials_within_lifetime
+			}
 		}
 		ai_will_do = {
 			factor = 2
