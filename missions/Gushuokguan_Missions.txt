@@ -378,10 +378,18 @@ gushuokguan_3 = {
 		icon = mission_confrontation
 		position = 2
 		required_missions = { gushuokguan_3_1 } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				area = liuminxiang_area
+				area = erluxi_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			#Maybe I'll do other cases later, who knows			
+		} 
 
 		trigger = {  
 			OR = {
+				#Case 1: Ally or vassal
 				Y05 = { #Lanjinhui
 					OR = {
 						alliance_with = ROOT #Gushuokguan
@@ -391,7 +399,7 @@ gushuokguan_3 = {
 						who = ROOT
 						value = 30
 					}
-					capital_scope = { #WHY DOES THIS THROW AN ERROR
+					capital_scope = {
 						ROOT = {
 							PREV = {
 								infantry_in_province = 6
@@ -415,10 +423,82 @@ gushuokguan_3 = {
 						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
 					}
 				}
+				#Case 2: Rival
+				Y05 = { #Lanjinhui
+					is_enemy = ROOT #Gushuokguan
+					any_neighbor_province = {
+						owned_by = ROOT #Gushuokguan
+						infantry_in_province = 6
+					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 80
+					}
+				}
+				#Case 3: None above
+				AND = {
+					liuminxiang_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					erluxi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					NOT = { exists = Y05 }#Lanjinhui
+				}
 			}
 		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = {
+					Y05 = { #Lanjinhui
+						alliance_with = ROOT #Gushuokguan
+					}
+				}
+				country_event = {
+					id = gushuokguan_event.4
+				}
+			}
+			else_if = {
+				limit = {
+					Y05 = { #Lanjinhui
+						vassal_of = ROOT #Gushuokguan
+					}
+				}
+				Y05 = {
+					add_country_modifier = {
+						name = gushuokguan_brothers_in_freedom
+						duration = 7300
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					Y05 = { #Lanjinhui
+						is_enemy = ROOT #Gushuokguan
+					}
+				}
+			custom_tooltip = gushuokguan_incoming_war_tt
+			country_event = {
+				id = gushuokguan_event.5
+			}
+			}
+			else_if = {
+				limit = {
+					liuminxiang_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					erluxi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				create_vassal = Y05 #Lanjinhui
+			}
+		} 
 	}
 
 	gushuokguan_3_4 = {
