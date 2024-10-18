@@ -85,7 +85,29 @@ gushuokguan_1 = {
 					}
 				"
 			}
-			
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = fish
+					}
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+					}
+					OR = {
+						has_building = barracks
+						has_building = training_fields
+					}
+					has_manufactory_trigger = yes
+					base_production = 7
+				}
+				add_province_modifier = {
+					name = gushokguan_local_supplier
+					duration = 18250
+				}
+			}
 		} 
 	}
 
@@ -391,21 +413,6 @@ gushuokguan_3 = {
 			OR = {
 				#Case 1: Ally or vassal
 				Y05 = { #Lanjinhui
-					OR = {
-						alliance_with = ROOT #Gushuokguan
-						vassal_of = ROOT #Gushuokguan
-					}
-					has_spy_network_from = {
-						who = ROOT
-						value = 30
-					}
-					capital_scope = {
-						ROOT = {
-							PREV = {
-								infantry_in_province = 6
-							}
-						}
-					}
 					variable_arithmetic_trigger = {
 						custom_tooltip = gushuokguan_larger_than_half_lanjinhui_tt
 						export_to_variable = {
@@ -422,6 +429,22 @@ gushuokguan_3 = {
 						
 						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
 					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 30
+					}
+					OR = {
+						alliance_with = ROOT #Gushuokguan
+						vassal_of = ROOT #Gushuokguan
+					}
+					capital_scope = {
+						ROOT = {
+							PREV = {
+								infantry_in_province = 6
+							}
+						}
+					}
+					
 				}
 				#Case 2: Rival
 				Y05 = { #Lanjinhui
@@ -610,11 +633,105 @@ gushuokguan_4 = {
 			gushuokguan_4_1
 			gushuokguan_5_1
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				#Case 1: Gushuokguan Core
+				AND = {
+					OR = {
+						area = xuanbing_area
+						province_id = 4927 #Shiying
+						province_id = 4917 #Jiangchang
+						province_id = 4980 #Tsianjian
+					}
+					NOT = { 
+						AND = { 
+							is_core = ROOT #Gushuokguan
+							OR = {
+								has_production_building_trigger = yes
+								has_tax_building_trigger = yes
+							}
+						}
+					}
+				}
+				#Case 2: Zhiqian exists
+				owned_by = Y14 #Zhiqian
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			xuanbing_area = {
+				is_core = ROOT #Gushuokguan
+				OR = {
+					has_production_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+			4927 = { #Shiying
+				is_core = ROOT #Gushuokguan
+				OR = {
+					has_production_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+			4917 = { #Jiangchang
+				is_core = ROOT #Gushuokguan
+				OR = {
+					has_production_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+			4980 = { #Tsianjian
+				is_core = ROOT #Gushuokguan
+				OR = {
+					has_production_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			NOT = { exists = Y14 } #Zhiqian
+		} 
 
-		effect = {  } 
+		effect = {  
+			jiantsiang_area = {
+				add_permanent_claim = ROOT #Gushuokguan
+			}
+			tianlou_area = {
+				add_permanent_claim = ROOT #Gushuokguan
+			}
+			jinjiang_area = {
+				add_permanent_claim = ROOT #Gushuokguan
+			}
+			yiguan_area = {
+				add_permanent_claim = ROOT #Gushuokguan
+			}
+			xuanbing_area = {
+				add_province_modifier = {
+					name = gushokguan_liberation_of_our_kin
+					duration = 3650
+				}
+			}
+			4927 = { #Shiying
+				add_province_modifier = {
+					name = gushokguan_liberation_of_our_kin
+					duration = 3650
+				}
+			}
+			4917 = { #Jiangchang
+				add_province_modifier = {
+					name = gushokguan_liberation_of_our_kin
+					duration = 3650
+				}
+			}
+			4980 = { #Tsianjian
+				add_province_modifier = {
+					name = gushokguan_liberation_of_our_kin
+					duration = 3650
+				}
+			}
+		} 
 	}
 
 	gushuokguan_4_3 = {
@@ -740,9 +857,27 @@ gushuokguan_5 = {
 		required_missions = { gushuokguan_5_1 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				any_known_country = {
+					OR = {
+						war_with = R62 #The Command
+						capital_scope = {
+							region = shamakhad_region
+						}
+					}
+					is_hiring_condottiere_from = ROOT #Gushokguan
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			4914 = { #Gushibi
+				add_hobgoblin_minority_size_effect = yes
+				add_base_manpower = 2
+			}
+			add_army_tradition = 20
+		} 
 	}
 
 	gushuokguan_5_3 = {
