@@ -42,14 +42,8 @@ gushuokguan_1 = {
 					trade_goods = livestock
 					trade_goods = fish
 				}
-				OR = {
-					has_building = workshop
-					has_building = counting_house
-				}
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}
+				has_production_building_trigger = yes
+				has_manpower_building_trigger = yes
 				has_manufactory_trigger = yes
 				base_production = 7
 				value = 15
@@ -68,14 +62,8 @@ gushuokguan_1 = {
 								trade_goods = livestock
 								trade_goods = fish
 							}
-							OR = {
-								has_building = workshop
-								has_building = counting_house
-							}
-							OR = {
-								has_building = barracks
-								has_building = training_fields
-							}
+							has_production_building_trigger = yes
+							has_manpower_building_trigger = yes
 							has_manufactory_trigger = yes
 							base_production = 7
 						}
@@ -92,14 +80,8 @@ gushuokguan_1 = {
 						trade_goods = livestock
 						trade_goods = fish
 					}
-					OR = {
-						has_building = workshop
-						has_building = counting_house
-					}
-					OR = {
-						has_building = barracks
-						has_building = training_fields
-					}
+					has_production_building_trigger = yes
+					has_manpower_building_trigger = yes
 					has_manufactory_trigger = yes
 					base_production = 7
 				}
@@ -269,9 +251,36 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_2 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_owned_provinces_with = {
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				value = 10
+			}
+			#Have completed at least 2 challenges... what are those?
+		} 
 
-		effect = {  } 
+		effect = {  
+			for = {
+				amount = 10
+				effect = "
+					random_owned_province = {
+						limit = {
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+						}
+						add_province_modifier = {
+							name = gushuokguan_2_3_modifier
+							duration = -1
+						}
+					}
+				"
+			}
+			custom_tooltip = gushuokguan_can_replenish_mercenaries_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_can_replenish_mercenaries
+			}
+		} 
 	}
 
 	gushuokguan_2_4 = {
@@ -405,7 +414,7 @@ gushuokguan_3 = {
 				area = liuminxiang_area
 				area = erluxi_area
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
 			#Maybe I'll do other cases later, who knows			
 		} 
 
@@ -462,11 +471,11 @@ gushuokguan_3 = {
 				AND = {
 					liuminxiang_area = {
 						type = all
-						country_or_non_sovereign_subject_holds = ROOT
+						country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 					}
 					erluxi_area = {
 						type = all
-						country_or_non_sovereign_subject_holds = ROOT
+						country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 					}
 					NOT = { exists = Y05 }#Lanjinhui
 				}
@@ -510,14 +519,8 @@ gushuokguan_3 = {
 			}
 			else_if = {
 				limit = {
-					liuminxiang_area = {
-						type = all
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					erluxi_area = {
-						type = all
-						country_or_non_sovereign_subject_holds = ROOT
-					}
+					liuminxiang_area = { country_or_non_sovereign_subject_holds = ROOT }
+					erluxi_area = { country_or_non_sovereign_subject_holds = ROOT }
 				}
 				create_vassal = Y05 #Lanjinhui
 			}
@@ -530,9 +533,106 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_4_3 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_AAAAAAAAAAA_tt
+				linyuan_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+				yanzhong_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+				anjiang_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+				tianszi_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+				4850 = { #Hunxiang
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+				4892 = { #Lamcue
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = gushuokguan_can_release_hubao_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_can_release_hubao
+			}
+		} 
 	}
 
 	gushuokguan_3_6 = {
@@ -541,9 +641,13 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_2_5 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			
+		}
 
-		effect = {  } 
+		effect = {
+			
+		}
 	}
 
 	gushuokguan_3_7 = {
@@ -660,6 +764,7 @@ gushuokguan_4 = {
 
 		trigger = {  
 			xuanbing_area = {
+				type = all
 				is_core = ROOT #Gushuokguan
 				OR = {
 					has_production_building_trigger = yes
@@ -743,9 +848,50 @@ gushuokguan_4 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			tianlou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+			}
+			jinjiang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+			}
+			# custom_trigger_tooltip = {
+			# 	tooltip = gushuokguan_owns_jiangyang_provinces_tt
+				north_yanshen_region = {
+					type = all
+					culture = jiangyang
+					is_core = ROOT
+					owned_by = ROOT
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+						is_capital = no
+					}
+					NOT = { devastation = 0.01 }
+					unrest = 0
+					if = { 
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = yes 
+					}
+				}
+			# }
+		}
 
-		effect = {  } 
+		effect = {  
+			country_event = {
+				id = gushuokguan_event.7
+			}
+			add_country_modifier = {
+				name = gushuokguan_golden_dawn_for_the_dao
+				duration = 3650
+			}
+			custom_tooltip = gushuokguan_can_release_guwaamud_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_can_release_guwaamud
+			}
+		} 
 	}
 
 	gushuokguan_4_4 = {
@@ -754,9 +900,39 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_4_3 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			iongsim_area = {
+				type = all
+				is_core = ROOT
+				owned_by = ROOT
+				OR = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
+				}
+				NOT = { devastation = 0.01 }
+				unrest = 0
+				if = { 
+					limit = { ROOT = { has_parliament = yes } } 
+					has_seat_in_parliament = yes 
+				}
+			}
+			NOT = { exists = Y20 } #Feiten
+		} 
 
-		effect = {  } 
+		effect = {  
+			4871 = { #Tianlou
+				add_unit_construction = {
+					type = light_ship
+					cost = 0
+					speed = 0.5
+					amount = 10
+				}
+			}
+			custom_tooltip = gushuokguan_can_release_zyujyut_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_can_release_zyujyut
+			}
+		} 
 	}
 
 	gushuokguan_4_5 = {

@@ -57,7 +57,7 @@ country_event = {
 	}
 }
 
-#
+#The Stone Plot
 country_event = {
 	id = gushuokguan_event.4
 	title = gushuokguan_event.4.t
@@ -76,7 +76,7 @@ country_event = {
 	}
 }
 
-#
+#The Ciying Border Incident
 country_event = {
 	id = gushuokguan_event.5
 	title = gushuokguan_event.5.t
@@ -110,6 +110,25 @@ country_event = {
 	
 	option = {
 		name = gushuokguan_event.6.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+#The Confederation of Yanshen
+country_event = {
+	id = gushuokguan_event.7
+	title = gushuokguan_event.7.t
+	desc = gushuokguan_event.7.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.7.a
 		ai_chance = { factor = 1 }
 	}
 }
