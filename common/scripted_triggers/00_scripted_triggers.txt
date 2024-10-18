@@ -662,7 +662,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = Z63 } #Thidinkai
 			NOT = { was_tag = Z63 } #Thidinkai
 			NOT = { tag = Y97 } #Baihon Xinh
-			NOT = { was_tag = Y97 } #Baihon Xinh
+			#NOT = { was_tag = Y97 } #Baihon Xinh #commenting to prevent hon sai from not being able to form baihon
 			NOT = { tag = Z65 } #Yanshen
 			NOT = { was_tag = Z65 } #Yanshen
 			NOT = { tag = Z66 } #Liang
@@ -1743,6 +1743,8 @@ republic_with_female_rulers_trigger = {
 		has_country_modifier = gnollish_administration
 		has_reform = mountainshark_govzenszel
 		has_reform = technocracy_republic_reform
+		
+		culture_has_equal_heir = yes
 	}
 }
 
@@ -2663,6 +2665,7 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_sarraka_two }
 		NOT = { mercenary_company = merc_sarraka_three }
 		NOT = { mercenary_company = merc_daughters_of_akasik_elite }
+		NOT = { mercenary_company = merc_larankarha_household_cavalry }
 	}
 }
 
@@ -2680,6 +2683,7 @@ has_not_free_mercs_trait = {
 	NOT = { has_country_modifier = dan_sca_merc_contract }
 	NOT = { has_idea = seasoned_veterans } #1.35
 	NOT = { has_government_attribute = mercs_do_not_cost_army_professionalism }
+	NOT = { mission_completed = reign_in_the_knight_errants }
 	NOT = { has_country_flag = fra_free_mercs_bargain_sale_flag } #1.35
 }
 

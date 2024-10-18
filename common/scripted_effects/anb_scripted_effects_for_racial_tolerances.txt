@@ -84,7 +84,7 @@ reset_racial_military_via_administration = {
 		}
 		else_if = {
 			limit = {
-				capital_scope = { superregion = west_sarhal_superregion }
+				capital_scope = { superregion = tanib_dajek_superregion }
 			}
 			change_unit_type = tech_west_sarhaly
 		}
@@ -109,7 +109,12 @@ reset_racial_military_via_administration = {
 		}
 		else_if = {
 			limit = {
-				capital_scope = { superregion = south_sarhal_superregion }
+				capital_scope = { 
+					OR = { 
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
+					}
+				}
 			}
 			if = {
 				limit = { 
@@ -651,7 +656,7 @@ reset_racial_military_via_administration = {
 			limit = {
 				OR = {
 					capital_scope = { superregion = north_salahad_superregion }
-					capital_scope = { superregion = west_sarhal_superregion }
+					capital_scope = { superregion = tanib_dajek_superregion }
 					capital_scope = { superregion = fangaula_superregion }
 					primary_culture = nzeri_harpy
 					AND = {
@@ -683,7 +688,7 @@ reset_racial_military_via_administration = {
             limit = {
                 OR = {
                     capital_scope = {
-						superregion = west_sarhal_superregion
+						superregion = tanib_dajek_superregion
 					}
 					is_vyzemby_primary_culture = yes
                     AND = {
@@ -5267,12 +5272,7 @@ pop_menu_military_sorting_effect = {
 	17 = { pop_menu_military_sorting_setup = { RACE = gnollish } }
 	16 = { pop_menu_military_sorting_setup = { RACE = gnomish } }
 	15 = { pop_menu_military_sorting_setup = { RACE = goblin } }
-	14 = {
-		set_variable = { which = nbRaceDev value = 0 }
-		set_variable = { which = raceRanking value = 20 }
-		ROOT = { set_variable = { which = half_elvenRanking value = 20 } }
-		# pop_menu_military_sorting_setup = { RACE = half_elven }
-	}	#half elven military doesn't exist
+	14 = { pop_menu_military_sorting_setup = { RACE = half_elven } }
 	13 = { pop_menu_military_sorting_setup = { RACE = half_orcish } }
 	12 = { pop_menu_military_sorting_setup = { RACE = halfling } }
 	11 = { pop_menu_military_sorting_setup = { RACE = harimari } }
@@ -5328,7 +5328,7 @@ pop_menu_military_change_mil_effects = {
 	pop_menu_military_change_mil_race = { RACE = gnomish ORDER = $ORDER$ GNOMISH_ARTIFICERS = yes }
 	pop_menu_military_change_mil_race = { RACE = goblin ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = halfling ORDER = $ORDER$ }
-	# pop_menu_military_change_mil_race = { RACE = half_elven ORDER = $ORDER$ }
+	pop_menu_military_change_mil_race = { RACE = half_elven ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = half_orcish ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = harimari ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = harpy ORDER = $ORDER$ }
@@ -5583,7 +5583,7 @@ pop_menu_military_change_tech = {
 			limit = {
 				OR = {
 					capital_scope = { superregion = north_salahad_superregion }
-					capital_scope = { superregion = west_sarhal_superregion }
+					capital_scope = { superregion = tanib_dajek_superregion }
 					capital_scope = { superregion = fangaula_superregion }
 					primary_culture = nzeri_harpy
 					AND = {
@@ -5610,7 +5610,7 @@ pop_menu_military_change_tech = {
 			change_unit_type = tech_salahadesi
 		}
 		else_if = { 
-			limit = { capital_scope = { superregion = west_sarhal_superregion } }
+			limit = { capital_scope = { superregion = tanib_dajek_superregion } }
 		    if = {
 				limit = { 
 					OR = {
@@ -5627,7 +5627,14 @@ pop_menu_military_change_tech = {
 			change_unit_type = tech_west_sarhaly
 		}
 		else_if = { 
-			limit = { capital_scope = { superregion = south_sarhal_superregion } }
+			limit = { 
+				capital_scope = { 
+					OR = { 
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
+					}
+				}
+			}
 			if = {
 				limit = { 
 					OR = {
@@ -5873,7 +5880,7 @@ pop_menu_military_change_tech = {
             limit = {
                 OR = {
                     capital_scope = {
-						superregion = west_sarhal_superregion
+						superregion = tanib_dajek_superregion
 					}
 					is_vyzemby_primary_culture = yes
                     AND = {
@@ -5958,7 +5965,7 @@ update_unit_sprites_for_racial_mil = {
 			hidden_effect = { apply_sprite_pack = indiangfx_sprite_pack }
 		}
 		
-		# south haless + yanshen
+		# vimdatrong + yanshen
 		else_if = {
 			limit = {
 				capital_scope = {
@@ -5992,7 +5999,8 @@ update_unit_sprites_for_racial_mil = {
 				capital_scope = {
 					OR = {
 						superregion = east_sarhal_superregion
-						superregion = south_sarhal_superregion
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
 					}
 				}
 			}
@@ -6462,10 +6470,18 @@ generic_decrease_state_action_malus = { #this can be called to give free state a
 	}
 }
 generic_start_purge = {
+	[[free]
+		custom_tooltip = racial_policy_free
+		set_country_flag = free_$race$_purge
+		if = {
+			limit = { has_country_modifier = racial_pop_$race$_purge }
+			hidden_effect = { generic_decrease_state_action_malus = { action = genocide } }
+		}
+	]
 	if = {
 		limit = { NOT = { has_country_modifier = racial_pop_$race$_purge } }
 		if = {
-			limit = { NOT = { has_country_flag = unlimited_genocide } }
+			limit = { NOT = { has_country_flag = free_$race$_purge } }
 			generic_increase_state_action_malus = { action = genocide }
 		}
 		add_country_modifier = {
@@ -6501,9 +6517,20 @@ generic_start_purge = {
 	}
 }
 generic_start_expulsion = {
+	[[free]
+		custom_tooltip = racial_policy_free
+		set_country_flag = free_$race$_expulsion
+		if = {
+			limit = { has_country_modifier = racial_pop_$race$_expulsion }
+			hidden_effect = { generic_decrease_state_action_malus = { action = genocide } }
+		}
+	]
 	if = {
 		limit = { NOT = { has_country_modifier = racial_pop_$race$_expulsion } }
-		generic_increase_state_action_malus = { action = genocide }
+		if = {
+			limit = { NOT = { has_country_flag = free_$race$_expulsion } }
+			generic_increase_state_action_malus = { action = genocide }
+		}
 		add_country_modifier = {
 			name = racial_pop_$race$_expulsion
 			duration = -1
@@ -7629,7 +7656,7 @@ calculate_refugee_exploit_rewards = {
 			which = manpower_gained_on_exploit
 			value = 0.25
 		}
-		if = { #the sanity check—you will never go below 10 ducats and 1000 manpower from a 0 devastation province
+		if = { #the sanity checkï¿½you will never go below 10 ducats and 1000 manpower from a 0 devastation province
 			limit = {
 				NOT = {
 					check_variable = {
