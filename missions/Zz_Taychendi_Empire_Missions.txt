@@ -1,0 +1,2630 @@
+
+J84_1_missions = { 
+	slot = 1
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_1_2_setting_the_sun = {
+		icon = mission_sunset_alternative
+		position = 7
+		required_missions = {
+			J84_3_1_a_warlord_empire
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					province_id = 2333 #Kiao'Oron
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				AND = {
+					province_id = 2302 #Uumunkes
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				AND = {
+					region = dry_coast_region
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 20
+								region = dry_coast_region
+							}
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			owns_core_province = 2333 #Kiao'Oron
+			owns_core_province = 2302 #Uumunkes
+			num_of_owned_provinces_with = {
+				value = 20
+				region = dry_coast_region
+			}
+			has_estate = estate_mages
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 40
+			}
+			has_estate_privilege = estate_mages_patronage_of_the_magical_arts
+		}
+
+		effect = {
+			2333 = { add_devastation = 15 } #Kiao'Oron
+			2302 = { add_devastation = 15 } #Uumunkes
+			capital_scope = { give_all_embraced_institutions_to_province_effect = { tag = H67 } } #Rezankand
+			add_estate_loyalty = {
+				estate = estate_mages
+				loyalty = 20
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 20
+			}
+			add_government_power = {
+				mechanic_type = taychend_vainglory_mechanic
+				power_type = taychend_vainglory_power
+				value = 10
+			}
+			if = {
+				limit = { is_institution_enabled = new_world_i }
+				custom_tooltip = J84_colonialism_no_tt
+			}
+			else = {
+				custom_tooltip = J84_colonialism_yes_tt
+				hidden_effect = {
+					add_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 20
+					}
+				}
+			}
+			tooltip = {
+				add_government_power = {
+					mechanic_type = taychend_vainglory_mechanic
+					power_type = taychend_vainglory_power
+					value = 20
+				}
+			}
+		}
+	}
+
+	J84_1_4_hero_cults_of_the_exemplary = {
+		icon = mission_new_dawn
+		position = 9
+		required_missions = {
+			J84_1_2_setting_the_sun
+		}
+
+		provinces_to_highlight = {
+			owned_by = ROOT 
+			OR = {
+				culture = sun_elf
+				culture = dawn_elf
+			}
+			NOT = {
+				AND = {
+					religion = gods_of_the_taychend_reformed
+					has_tax_building_trigger = yes
+				}
+			}
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							culture = sun_elf
+							culture = dawn_elf
+						}
+						religion = gods_of_the_taychend_reformed
+						has_tax_building_trigger = yes
+					}
+				}
+			}
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						accepted_culture = sun_elf
+						accepted_culture = dawn_elf
+					}
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							culture = sun_elf
+							culture = dawn_elf
+						}
+						religion = gods_of_the_taychend_reformed
+						has_tax_building_trigger = yes
+					}
+				}
+				AND = {
+					OR = {
+						NOT = {
+							calc_true_if = {
+								amount = 5
+								south_america = {
+									type = all
+									OR = {
+										culture = sun_elf
+										culture = dawn_elf
+									}
+								}
+							}
+						}
+						has_country_modifier = racial_pop_elven_expulsion
+						has_country_modifier = racial_pop_elven_purge
+					}
+					2333 = { #Kiao'Oron
+						num_of_units_in_province = {
+							amount = 15
+							who = ROOT
+						}
+					}
+					2302 = { #Uumunkes
+						num_of_units_in_province = {
+							amount = 15
+							who = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			large_increase_of_elven_tolerance_effect = yes
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = sun_elf
+						culture = dawn_elf
+					}
+					religion = gods_of_the_taychend_reformed
+					has_tax_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = J84_hero_cults_of_the_exemplary_mod
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = racial_pop_elven_expulsion
+						has_country_modifier = racial_pop_elven_purge
+					}
+				}
+				custom_tooltip = J84_expelling_elves_yes_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								culture = dawn_elf
+								culture = sun_elf
+							}
+						}
+						add_devastation = 15
+						#change_culture = vaikazelhi WILL BE IMPLEMENTED WITH REZANKAND
+					}
+					add_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 15
+					}
+				}
+			}
+			else = { custom_tooltip = J84_expelling_elves_no_tt }
+			tooltip = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = dawn_elf
+							culture = sun_elf
+						}
+					}
+					add_devastation = 15
+					#change_culture = vaikazelhi WILL BE IMPLEMENTED WITH REZANKAND
+				}
+				add_government_power = {
+					mechanic_type = taychend_vainglory_mechanic
+					power_type = taychend_vainglory_power
+					value = 15
+				}
+			}
+		}
+	}
+
+	J84_1_5_ending_an_exile = {
+		icon = mission_alone_in_the_forest_2
+		position = 10
+		required_missions = {
+			J84_1_4_hero_cults_of_the_exemplary
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					region = mushroom_forest_region
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					region = mushroom_forest_region
+					trade_goods = fungi
+					NOT = {
+						AND = {
+							has_production_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 5
+								who = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			mushroom_forest_region = {
+				type = all
+				owned_by = ROOT
+			}
+			all_owned_province = {
+				OR = {
+					NOT = { has_terrain = mushroom_forest_terrain }
+					AND = {
+						has_production_building_trigger = yes
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
+					}
+				}
+			}
+			accepted_culture = duguihi
+		}
+
+		effect = {
+			mushroom_forest_region = { 
+				change_culture = duguihi 
+			}
+			mushroom_forest_region = { 
+				limit = { trade_goods = fungi }
+				add_province_modifier = {
+					name = J84_the_shroombasket
+					duration = -1
+				}
+			}
+			2376 = { #Keoker
+				add_base_manpower = 3
+				change_culture = laii
+			}
+			2375 = { #Tskeowoh
+				add_base_manpower = 3
+				change_culture = laii
+			}
+		}
+	}
+
+	J84_1_7_strategic_herbicide = {
+		icon = mission_misty_forest
+		position = 12
+		required_missions = {
+			J84_3_6_beyond_taychend
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_1_8_bloom_and_bust = {
+		icon = mission_burning_man
+		position = 13
+		required_missions = {
+			J84_1_7_strategic_herbicide
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_1_9_there_stood_the_grass = {
+		icon = mission_torch_fire
+		position = 14
+		required_missions = {
+			J84_1_8_bloom_and_bust
+			J84_2_8_the_gifts_of_cerachmanu
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_1_10_a_fleet_born_of_fire = {
+		icon = mission_fleet_arrival
+		position = 15
+		required_missions = {
+			J84_1_9_there_stood_the_grass
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_1_11_fear_on_every_state = {
+		icon = mission_gnomish_ship
+		position = 16
+		required_missions = {
+			J84_1_10_a_fleet_born_of_fire
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_1_14_shadow_and_blood = {
+		icon = mission_blood_sacrifice
+		position = 19
+		required_missions = {
+			J84_2_13_the_burning_harbours
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+J84_2_missions_part_1 = { 
+	slot = 2
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_2_2_institutional_apotheosis = {
+		icon = mission_luther_theses
+		position = 7
+		required_missions = {
+			J84_3_1_a_warlord_empire
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 60
+					}
+					estate_influence = {
+						estate = estate_church
+						influence = 40
+					}
+				}
+				AND = {
+					OR = {
+						advisor = inquisitor
+						advisor = theologian
+					}
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 50
+					}
+					estate_influence = {
+						estate = estate_church
+						influence = 40
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				has_tax_building_trigger = yes
+			}
+		}
+
+		effect = {
+			enable_taychend_ruler_style = { deity = dynast }
+			if = {
+				limit = {
+					is_religion_enabled = oren_nayiru
+					num_of_owned_provinces_with = {
+						value = 5
+						religion = oren_nayiru
+						is_reformation_center = no
+					}
+				}
+				custom_tooltip = J84_oren_enabled_yes_tt
+				hidden_effect = {
+					random_owned_province = { #5
+						limit = {
+							religion = oren_nayiru
+							is_reformation_center = no
+						}
+						change_religion = gods_of_the_taychend_reformed
+					}
+					random_owned_province = {
+						limit = {
+							religion = oren_nayiru
+							is_reformation_center = no
+						}
+						change_religion = gods_of_the_taychend_reformed
+					}
+					random_owned_province = {
+						limit = {
+							religion = oren_nayiru
+							is_reformation_center = no
+						}
+						change_religion = gods_of_the_taychend_reformed
+					}
+					random_owned_province = {
+						limit = {
+							religion = oren_nayiru
+							is_reformation_center = no
+						}
+						change_religion = gods_of_the_taychend_reformed
+					}
+					random_owned_province = {
+						limit = {
+							religion = oren_nayiru
+							is_reformation_center = no
+						}
+						change_religion = gods_of_the_taychend_reformed
+					}
+				}
+			}
+			else = { custom_tooltip = J84_oren_enabled_no_tt }
+		}
+	}
+
+	J84_2_3_the_weaver_of_fates = {
+		icon = mission_pray_light
+		position = 8
+		required_missions = {
+			J84_2_2_institutional_apotheosis
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+			treasury = 500
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 75
+				}
+			}
+			has_regency = no
+		}
+
+		effect = {
+			add_treasury = -500
+			2525 = { #Korrimutren
+				add_province_modifier = {
+					name = J84_generous_donation
+					duration = 9125 #25 years
+				}
+			}
+			country_event = {
+				id = taychendi_empire_events.4 #Beneath the Hills of Korrimutren
+			}
+		}
+	}
+
+	J84_2_4_agricultural_evolution = {
+		icon = mission_rice_farming
+		position = 9
+		required_missions = {
+			J84_3_3_vaona_gophira
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				trade_goods = grain
+				trade_goods = wine
+				trade_goods = fish
+			}
+			superregion = taychend_superregion 
+			NOT = {
+				AND = {
+					base_production = 6
+					has_production_building_trigger = yes
+				}
+			}
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							trade_goods = grain
+							trade_goods = wine
+							trade_goods = fish
+						}
+						base_production = 6
+						has_production_building_trigger = yes
+						superregion = taychend_superregion 
+					}
+				}
+			}
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_plant_growth_tt
+				any_owned_province = {
+					OR = {
+						has_province_modifier = magic_realm_transmutation_plant_growth_1
+						has_province_modifier = magic_realm_transmutation_plant_growth_2
+						has_province_modifier = magic_realm_transmutation_plant_growth_3
+						has_province_modifier = magic_realm_transmutation_plant_growth_4
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				has_building = farm_estate
+				superregion = taychend_superregion 
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					trade_goods = grain
+					trade_goods = wine
+					trade_goods = fish
+				}
+				base_production = 6
+				has_production_building_trigger = yes
+				superregion = taychend_superregion 
+			}
+		}
+
+		effect = {
+			custom_tooltip = J84_agricultural_revolution_tt
+			tooltip = {
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = J84_agricultural_revolution
+					duration = 1800 #50 years
+				}
+			}
+			custom_tooltip = J84_farm_estates_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = grain
+							trade_goods = wine
+							trade_goods = fish
+						}
+						base_production = 6
+						has_production_building_trigger = yes
+						superregion = taychend_superregion 
+					}
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = J84_agricultural_revolution
+						duration = 1825 #50 years
+					}
+				}
+				every_owned_province = {
+					limit = { 
+						has_building = farm_estate 
+						superregion = taychend_superregion 
+					}
+					ROOT = { add_manpower = 3 }
+				}
+			}
+		}
+	}
+
+	J84_2_5_paths_of_ascention = {
+		icon = mission_religious
+		position = 10
+		required_missions = {
+			J84_1_4_hero_cults_of_the_exemplary
+			J84_2_4_agricultural_evolution
+			J84_3_4_a_land_of_cities
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				owned_by = U39 #Orenvalyam
+				religion = oren_nayiru
+				religion = oren_nayiru_reformed
+			}
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_kamies_war_ended_tt
+				has_global_flag = kamrayakvals_war_end
+			}
+			religious_unity = 0.95
+			NOT = { 
+				calc_true_if = {
+					amount = 5
+					taychend_superregion = {
+						type = all
+						religion = oren_nayiru
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = taychendi_empire_events.8 #On Apotheosis
+			}
+		}
+	}
+
+	J84_2_7_unravelling_divinity = {
+		icon = mission_interfaith_relations
+		position = 12
+		required_missions = {
+			J84_3_6_beyond_taychend
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_2_8_the_gifts_of_cerachmanu = {
+		icon = mission_fire_acolyte
+		position = 13
+		required_missions = {
+			J84_1_7_strategic_herbicide
+			J84_2_7_unravelling_divinity
+			J84_3_7_no_stone_unturned
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+J84_2_vampire_missions = { 
+	slot = 2
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { 
+		tag = J84 
+		has_country_flag = J84_vampires_pog_flag
+	}
+
+	J84_2_9_its_in_the_blood = {
+		icon = mission_thirsting_queen
+		position = 14
+		required_missions = {
+			J84_2_8_the_gifts_of_cerachmanu
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+J84_2_missions_part_2 = { 
+	slot = 2
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_2_10_sanguosynthesis = {
+		icon = mission_potion
+		position = 15
+		required_missions = {
+			J84_1_9_there_stood_the_grass
+			J84_3_9_the_new_relic_lords
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_2_11_orphans_of_aesadas = {
+		icon = mission_orc_chillin
+		position = 16
+		required_missions = {
+			J84_1_10_a_fleet_born_of_fire
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_2_12_the_lizardfolk_expedition = {
+		icon = mission_warrior_gold
+		position = 17
+		required_missions = {
+			J84_1_11_fear_on_every_state
+			J84_3_11_an_empire_vainglorious
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_2_13_the_burning_harbours = {
+		icon = mission_fire_of_london
+		position = 18
+		required_missions = {
+			J84_2_12_the_lizardfolk_expedition
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_2_14_the_second_usurpation = {
+		icon = mission_conquer_alexandria
+		position = 19
+		required_missions = {
+			J84_2_13_the_burning_harbours
+		}
+
+		provinces_to_highlight = { 
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+J84_3_missions = { 
+	slot = 3
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_3_1_a_warlord_empire = {
+		icon = mission_persianate_empire
+		position = 6
+		required_missions = { 
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+			if = {
+				limit = { was_tag = G67 } #Royakottar
+				mission_completed = G67_3_5_four_becomes_one
+			}
+			OR = {
+				government_reform_progress = 200
+				reform_level = 2
+			}
+			OR = {
+				crown_land_share = 60
+				AND = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 60
+					}
+					estate_influence = {
+						estate = estate_nobles
+						influence = 60
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { NOT = { reform_level = 2 } }
+				change_government_reform_progress = -200
+			}
+			add_government_reform = taychend_warlord_empire
+		}
+	}
+
+	J84_3_3_vaona_gophira = {
+		icon = mission_mechanical_mining
+		position = 8
+		required_missions = { 
+			J84_2_2_institutional_apotheosis
+			J84_4_2_suffer_no_interloper
+		}
+
+		provinces_to_highlight = {  
+			owned_by = ROOT
+			OR = {
+				trade_goods = slaves
+				trade_goods = iron
+				trade_goods = copper
+			}
+			NOT = {
+				AND = {
+					base_production = 10
+					has_trade_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							trade_goods = slaves
+							trade_goods = iron
+							trade_goods = copper
+						}
+						base_production = 10
+						has_trade_building_trigger = yes
+						has_tax_building_trigger = yes
+					}
+				}
+			}
+		}
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					trade_goods = slaves
+					trade_goods = iron
+					trade_goods = copper
+				}
+				base_production = 10
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			OR = {
+				num_of_times_used_pillage_capital = 5
+				has_government_power = {
+					mechanic_type = taychend_vainglory_mechanic
+					power_type = taychend_vainglory_power
+					value = 50
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 50
+					}
+				}
+				custom_tooltip = J84_lose_20_vainglory_yes_tt
+				hidden_effect = {
+					add_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = -25
+					}
+				}
+			}
+			else = { custom_tooltip = J84_lose_20_vainglory_no_tt }
+			country_event = {
+				id = taychendi_empire_events.3 #Crazy, Crazy, Crazy
+			}
+		}
+	}
+
+	J84_3_4_a_land_of_cities = {
+		icon = mission_taychend_nanru_nakar_city_entrance
+		position = 9
+		required_missions = { 
+			J84_3_3_vaona_gophira
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				superregion = taychend_superregion
+				development = 30
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
+		}
+
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = J84_the_imperial_palace
+					duration = -1
+				}
+			}
+			custom_tooltip = J84_urban_boom_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_urban_boom
+					duration = 27375 #75 years
+				}
+			}
+			custom_tooltip = desc_J84_urban_boom
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+						OR = {
+							has_terrain = city_terrain
+							development = 20
+						}
+					}
+					add_province_modifier = {
+						name = J84_urban_boom
+						duration = 27375 #75 years
+					}
+				}
+			}
+		}
+	}
+
+	J84_3_6_beyond_taychend = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { 
+			J84_1_5_ending_an_exile
+			J84_2_5_paths_of_ascention
+			J84_4_5_titans_of_the_sea
+			J84_5_5_the_hand_that_mocks
+		}
+
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					superregion = taychend_superregion
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					superregion = kheionai_superregion
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+
+		trigger = {
+			taychend_superregion = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kheionai_superregion = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				amount = 5
+				all_known_country = {
+					capital_scope = {
+						OR = {
+							continent = europe
+							superregion = bulwar_superregion
+							superregion = north_salahad_superregion
+						}
+					}
+					OR = {
+						has_25_opinion_improved_relation = { target = ROOT }
+						has_spy_network_from = {
+							who = ROOT
+							value = 25
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = taychendi_empire_events.11 #Don't Call Me A Hoplophile
+			}
+			cymbeahn_area = { add_permanent_claim = ROOT }
+			cherimreit_area = { add_permanent_claim = ROOT }
+			nur_damenath_area = { add_permanent_claim = ROOT }
+		}
+	}
+
+	J84_3_7_no_stone_unturned = {
+		icon = mission_magical_forest
+		position = 12
+		required_missions = { 
+			J84_3_6_beyond_taychend
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_8_the_way_of_warlords = {
+		icon = mission_have_two_subjects
+		position = 13
+		required_missions = { 
+			J84_3_7_no_stone_unturned
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_9_the_new_relic_lords = {
+		icon = mission_empowerment
+		position = 14
+		required_missions = { 
+			J84_2_8_the_gifts_of_cerachmanu
+			J84_3_8_the_way_of_warlords
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_10_in_heaven_and_halann = {
+		icon = mission_restore_faith_in_the_throne
+		position = 15
+		required_missions = { 
+			J84_3_9_the_new_relic_lords
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_11_an_empire_vainglorious = {
+		icon = mission_monarch_in_throne_room
+		position = 16
+		required_missions = { 
+			J84_1_10_a_fleet_born_of_fire
+			J84_2_10_sanguosynthesis
+			J84_3_10_in_heaven_and_halann
+			J84_4_10_the_heart_hungers
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_12_echoes_of_ebenanth = {
+		icon = mission_the_dame_tears
+		position = 17
+		required_missions = { 
+			J84_3_11_an_empire_vainglorious
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+
+J84_3_end_game_missions = { 
+	slot = 3
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { 
+		tag = J84 
+		has_country_flag = J84_nuke_time_flag
+	}
+
+	J84_3_13_the_last_city = {
+		icon = mission_magic_tower
+		position = 18
+		required_missions = { 
+			J84_3_12_echoes_of_ebenanth
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_3_15_year_one = {
+		icon = mission_arise_ashes
+		position = 20
+		required_missions = { 
+			J84_2_14_the_second_usurpation
+			J84_3_13_the_last_city
+			J84_4_14_harder_better_faster_stronger
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+
+J84_4_missions = { 
+	slot = 4
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_4_2_suffer_no_interloper = {
+		icon = mission_kheionai_laskaris
+		position = 7
+		required_missions = { 
+			J84_3_1_a_warlord_empire
+		}
+
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					region = andic_reach_region
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					province_id = 2620 #Ameion
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 10
+							}
+							has_manpower_building_trigger = yes
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2625 #Deyeion
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 10
+							}
+							has_manpower_building_trigger = yes
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2684 #Amgremos
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 10
+							}
+							has_manpower_building_trigger = yes
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			andic_reach_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2620 = { #Ameion
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 10
+				}
+				has_manpower_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
+			2625 = { #Deyeion
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 10
+				}
+				has_manpower_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
+			2684 = { #Amgremos
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 10
+				}
+				has_manpower_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
+		}
+
+		effect = {
+			add_government_power = {
+				mechanic_type = taychend_vainglory_mechanic
+				power_type = taychend_vainglory_power
+				value = 20
+			}
+			add_treasury = 500
+			2620 = { #Ameion
+				add_devastation = 50
+				change_trade_goods = slaves
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+			}
+			2625 = { #Deyeion
+				add_devastation = 25
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+			2684 = { #Amgremos
+				add_devastation = 25
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+			add_country_modifier = {
+				name = J84_exiling_the_ambhen
+				duration = 9125 #25 years
+			}
+			mteibas_valley_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	J84_4_4_the_rhythm_of_war = {
+		icon = mission_subdue_rajputana
+		position = 9
+		required_missions = { 
+			J84_3_3_vaona_gophira
+			J84_5_3_raiders_of_the_moon
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+			army_size = 120
+			OR = {
+				AND = {
+					army_professionalism = 0.4
+					has_mil_advisor_3 = yes
+				}
+				AND = {
+					num_of_mercenaries = 100
+					estate_loyalty = {
+						estate = estate_adventurers
+						loyalty = 50
+					}
+				}
+				AND = {
+					army_tradition = 60
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 50
+					}
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = J84_rhythm_of_war_tt
+
+			if = {
+				limit = {
+					army_professionalism = 0.4
+					has_mil_advisor_3 = yes
+				}
+				custom_tooltip = J84_heirs_of_yodhan_1_yes_tt
+				hidden_effect = {
+					add_country_modifier = {
+						name = J84_the_heirs_of_yodhan_1
+						duration = -1
+					}
+				}
+			}
+			else = { custom_tooltip = J84_heirs_of_yodhan_1_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_heirs_of_yodhan_1
+					duration = -1
+				}
+			}
+
+			if = {
+				limit = {
+					num_of_mercenaries = 100
+					estate_loyalty = {
+						estate = estate_adventurers
+						loyalty = 50
+					}
+					NOT = {
+						AND = {
+							army_professionalism = 0.4
+							has_mil_advisor_3 = yes
+						}
+					}
+				}
+				custom_tooltip = J84_oremvand_way_1_yes_tt
+				hidden_effect = {
+					add_country_modifier = {
+						name = J84_the_oremvandian_way_1
+						duration = -1
+					}
+				}
+			}
+			else = { custom_tooltip = J84_oremvand_way_1_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_oremvandian_way_1
+					duration = -1
+				}
+			}
+
+			if = {
+				limit = {
+					army_tradition = 60
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 50
+					}
+					NOT = {
+						AND = {
+							army_professionalism = 0.4
+							has_mil_advisor_3 = yes
+						}
+						AND = {
+							num_of_mercenaries = 100
+							estate_loyalty = {
+								estate = estate_adventurers
+								loyalty = 50
+							}
+						}
+					}
+				}
+				custom_tooltip = J84_ironblood_reborn_1_yes_tt
+				hidden_effect = {
+					add_country_modifier = {
+						name = J84_the_ironblood_reborn_1
+						duration = -1
+					}
+				}
+			}
+			else = { custom_tooltip = J84_ironblood_reborn_1_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_ironblood_reborn_1
+					duration = -1
+				}
+			}
+		}
+	}
+
+	J84_4_5_titans_of_the_sea = {
+		icon = mission_raid_christian_trade
+		position = 10
+		required_missions = { 
+			J84_3_4_a_land_of_cities
+			J84_4_4_the_rhythm_of_war
+			J84_5_4_monuments_of_the_water
+		}
+
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					province_id = 1741 #Kheionai Node
+					1741 = { #Kheionai Node
+						OR = {
+							NOT = {
+								trade_share = {
+									country = ROOT
+									share = 50
+								}
+							}
+							trade_share = {
+								country = PIR
+								share = 1
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1731 #Ameion Node
+					1731 = { #Ameion Node
+						OR = {
+							NOT = {
+								trade_share = {
+									country = ROOT
+									share = 50
+								}
+							}
+							trade_share = {
+								country = PIR
+								share = 1
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1546 #Korrimutren/Oremvand Node
+					1546 = { #Korrimutren/Oremvand Node
+						OR = {
+							NOT = {
+								trade_share = {
+									country = ROOT
+									share = 50
+								}
+							}
+							trade_share = {
+								country = PIR
+								share = 1
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1544 #Taychend/Orenkoraim Node
+					1544 = { #Taychend/Orenkoraim Node
+						OR = {
+							NOT = {
+								trade_share = {
+									country = ROOT
+									share = 50
+								}
+							}
+							trade_share = {
+								country = PIR
+								share = 1
+							}
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			1741 = { #Kheionai Node
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+				NOT = {
+					trade_share = {
+						country = PIR
+						share = 1
+					}
+				}
+			}
+			1731 = { #Ameion
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+				NOT = {
+					trade_share = {
+						country = PIR
+						share = 1
+					}
+				}
+			}
+			1546 = { #Korrimutren/Oremvand
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+				NOT = {
+					trade_share = {
+						country = PIR
+						share = 1
+					}
+				}
+			}
+			1544 = { #Taychend/Orenkoraim
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+				NOT = {
+					trade_share = {
+						country = PIR
+						share = 1
+					}
+				}
+			}
+			OR = {
+				num_of_heavy_ship = 20
+				num_of_geobukseon = 20
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = J84_titans_of_the_sea_mod
+				duration = -1
+			}
+			add_country_modifier = {
+				name = J84_overcoming_thalassophobia
+				duration = -1
+			}
+			add_navy_tradition = 15
+			define_advisor = {
+				name = "Nolaran Varghazhil"
+				type = naval_reformer
+				skill = 3
+				cost_multiplier = 0.25
+			}
+			severed_coast_region = { add_permanent_claim = ROOT }
+		}
+	}
+
+	J84_4_7_the_depths_of_aercel = {
+		icon = mission_underground_cave
+		position = 12
+		required_missions = { 
+			J84_3_6_beyond_taychend
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_8_the_riches_of_the_past = {
+		icon = mission_precursor_relics
+		position = 13
+		required_missions = { 
+			J84_3_7_no_stone_unturned
+			J84_4_7_the_depths_of_aercel
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_9_smoke_and_steel = {
+		icon = mission_machine_of_war
+		position = 14
+		required_missions = { 
+			J84_3_8_the_way_of_warlords
+			J84_4_8_the_riches_of_the_past
+			J84_5_8_slaves_and_silver
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_10_the_heart_hungers = {
+		icon = mission_forge
+		position = 15
+		required_missions = { 
+			J84_3_9_the_new_relic_lords
+			J84_4_9_smoke_and_steel
+			J84_5_9_better_criticals
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_12_beyond_the_storm = {
+		icon = mission_stormy_seas
+		position = 17
+		required_missions = { 
+			J84_3_11_an_empire_vainglorious
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_13_in_folly_opportunity = {
+		icon = mission_industrial_forging
+		position = 18
+		required_missions = { 
+			J84_4_12_beyond_the_storm
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_4_14_harder_better_faster_stronger = {
+		icon = mission_machine
+		position = 19
+		required_missions = { 
+			J84_5_13_the_greatest_hunt
+			J84_4_13_in_folly_opportunity
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+
+J84_5_missions = { 
+	slot = 5
+	generic = no
+	ai = yes 
+	has_country_shield = yes
+	potential = { tag = J84 }
+
+	J84_5_2_we_will_make_you_care = {
+		icon = mission_steppe_warriors
+		position = 7
+		required_missions = { 
+			J84_3_1_a_warlord_empire
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = chendhya_region
+					OR = {
+						units_in_province = REB 
+						controlled_by = REB
+						NOT = { owned_by = ROOT }
+					}
+				}
+				AND = {
+					region = gauraddhi_region
+					OR = {
+						units_in_province = REB 
+						controlled_by = REB
+						NOT = { owned_by = ROOT }
+					}
+				}
+				is_capital_of = H00 #Saerraeg
+				AND = {
+					province_id = 2568 #Rakkabuttai
+					NOT = {
+						AND = {
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 2577 #Kannagarendi
+					NOT = {
+						AND = {
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
+						}
+					}
+				}
+			}  
+		}
+
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = J84_saerraeg_united_tt
+					has_country_flag = J84_saerraeg_united_flag
+				}
+				NOT = {
+					calc_true_if = {
+						amount = 5
+						chendhya_region = {
+							type = all
+							is_empty = yes
+						}
+					}
+				}
+			}
+			chendhya_region = {
+				type = all
+				owned_by = ROOT
+				NOT = { 
+					units_in_province = REB 
+					controlled_by = REB
+				}
+			}
+			gauraddhi_region = {
+				type = all
+				owned_by = ROOT
+				NOT = { 
+					units_in_province = REB 
+					controlled_by = REB
+				}
+			}
+			NOT = { exists = H00 } #Saerraeg
+			OR = {
+				AND = {
+					NOT = { accepted_culture = chendhyan }
+					2568 = { #Rakkabuttai
+						has_fort_building_trigger = yes
+						has_manpower_building_trigger = yes
+						has_forcelimit_building_trigger = yes
+						num_of_units_in_province = {
+							amount = 15
+							who = ROOT
+							type = infantry
+						}
+					}
+					2577 = { #Kannagarendi
+						has_fort_building_trigger = yes
+						has_manpower_building_trigger = yes
+						has_forcelimit_building_trigger = yes
+						num_of_units_in_province = {
+							amount = 15
+							who = ROOT
+							type = infantry
+						}
+					}
+				}
+				AND = {
+					accepted_culture = chendhyan
+					num_of_owned_provinces_with = {
+						value = 6
+						region = chendhya_region
+						has_courthouse_building_trigger = yes
+					}
+					num_of_owned_provinces_with = {
+						value = 15
+						region = chendhya_region
+						NOT = { local_autonomy = 15 }
+					}
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = J84_surpress_or_accept_chendhyans_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { accepted_culture = chendhyan }
+						2568 = { #Rakkabuttai
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
+						}
+						2577 = { #Kannagarendi
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
+						}
+					}
+					set_country_flag = J84_surpress_chendhyans_flag
+				}
+				else = {
+					set_country_flag = J84_accept_chendhyans_flag
+				}
+			}
+			country_event = {
+				id = taychendi_empire_events.1 #Fate of the Chendhya
+			}
+		}
+	}
+
+	J84_5_3_raiders_of_the_moon = {
+		icon = mission_che_the_cave_country
+		position = 8
+		required_missions = { 
+			J84_4_2_suffer_no_interloper
+			J84_5_2_we_will_make_you_care
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					region = mteibas_valley_region
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2665 #Mzhaara
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								amount = 5
+								who = ROOT
+								type = cavalry
+							}
+							has_manpower_building_trigger = yes
+							has_production_building_trigger = yes
+							religion = gods_of_the_taychend_reformed
+						}
+					}
+				}
+				AND = {
+					OR = {
+						region = mteibas_valley_region
+						region = chendhya_region
+					}
+					trade_goods = livestock
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								amount = 5
+								who = ROOT
+								type = cavalry
+							}
+							has_manpower_building_trigger = yes
+							has_production_building_trigger = yes
+							religion = gods_of_the_taychend_reformed
+						}
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 3
+								OR = {
+									region = mteibas_valley_region
+									region = chendhya_region
+								}
+								trade_goods = livestock
+								num_of_units_in_province = {
+									amount = 5
+									who = ROOT
+									type = cavalry
+								}
+								has_manpower_building_trigger = yes
+								has_production_building_trigger = yes
+								religion = gods_of_the_taychend_reformed
+							}
+						}
+					}
+				}
+			} 
+		}
+
+		trigger = {
+			mteibas_valley_region = { 
+				type = all
+				owned_by = ROOT 
+			}
+			2665 = { #Mzhaara
+				num_of_units_in_province = {
+					amount = 5
+					who = ROOT
+					type = cavalry
+				}
+				has_manpower_building_trigger = yes
+				has_production_building_trigger = yes
+				religion = gods_of_the_taychend_reformed
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				OR = {
+					region = mteibas_valley_region
+					region = chendhya_region
+				}
+				trade_goods = livestock
+				num_of_units_in_province = {
+					amount = 5
+					who = ROOT
+					type = cavalry
+				}
+				has_manpower_building_trigger = yes
+				has_production_building_trigger = yes
+				religion = gods_of_the_taychend_reformed
+			}
+		}
+
+		effect = {
+			2665 = { #Mzhaara
+				change_trade_goods = slaves
+				add_province_modifier = {
+					name = J84_valley_raider_camps
+					duration = -1
+				}
+				kill_units = {
+					amount = 5
+					who = ROOT
+					type = cavalry
+				}
+			}
+			custom_tooltip = J84_mteibas_valley_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_valley_raider_camps
+					duration = -1
+				}
+				kill_units = {
+					amount = 5
+					who = ROOT
+					type = cavalry
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = mteibas_valley_region
+							region = chendhya_region
+						}
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+							type = cavalry
+						}
+						has_manpower_building_trigger = yes
+						has_production_building_trigger = yes
+						religion = gods_of_the_taychend_reformed
+					}
+					add_province_modifier = {
+						name = J84_valley_raider_camps
+						duration = -1
+					}
+					kill_units = {
+						amount = 5
+						who = ROOT
+						type = cavalry
+					}
+				}
+			}
+			devand_region = { add_permanent_claim = ROOT }
+		}
+	}
+
+	J84_5_4_monuments_of_the_water = {
+		icon = mission_northumberland_coast
+		position = 9
+		required_missions = { 
+			J84_5_3_raiders_of_the_moon
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					region = devand_region
+					is_island = no
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2680 #Apikhoxi
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2677 #Besolaki
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2674 #Eneion
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2669 #Keyolion
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2595 #Empkeios
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
+				}
+			} 
+		}
+
+		trigger = {
+			devand_region = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					is_island = yes
+				}
+			}
+			2680 = { #Apikhoxi
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+			2677 = { #Besolaki
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+			2674 = { #Eneion
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+			2669 = { #Keyolion
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+			2595 = { #Empkeios
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
+		}
+
+		effect = {
+			enable_degarikes = yes
+			hidden_effect = {
+				set_country_flag = has_degarikes
+			}
+			alecand_region = { add_permanent_claim = ROOT }
+		}
+	}
+
+	J84_5_5_the_hand_that_mocks = {
+		icon = mission_burning_castle
+		position = 10
+		required_missions = { 
+			J84_5_4_monuments_of_the_water
+		}
+
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					region = alecand_region
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2736 #Degakheion
+					NOT = {
+						num_of_units_in_province = {
+							amount = 20
+							who = ROOT
+						}
+					}
+				}
+				AND = {
+					province_group = alecandi_capital_provinces
+					NOT = {
+						num_of_units_in_province = {
+							amount = 10
+							who = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			OR = {
+				innovativeness = 30
+				advisor = natural_scientist
+				advisor = court_mage
+				AND = {
+					has_adm_advisor_3 = yes
+					is_scrying = yes
+				}
+			}
+			alecand_region = {
+				type = all
+				owned_by = ROOT
+			}
+			2736 = { #Degakheion
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			alecandi_capital_provinces = {
+				type = all
+				num_of_units_in_province = {
+					amount = 10
+					who = ROOT
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = taychendi_empire_events.9 #The Hand that Mocks
+			}
+		}
+	}
+
+	J84_5_6_the_heart_that_feeds = {
+		icon = mission_seize_the_bengal_coast
+		position = 11
+		required_missions = { 
+			J84_5_5_the_hand_that_mocks
+		}
+
+		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					region = alecand_region
+					NOT = { religion = gods_of_the_taychend_reformed }
+				}
+				AND = {
+					region = devand_region
+					NOT = { religion = gods_of_the_taychend_reformed }
+				}
+				AND = {
+					province_group = alecandi_capital_provinces
+					NOT = { 
+						AND = {
+							has_tax_building_trigger = yes
+							has_fort_building_trigger = yes
+							has_courthouse_building_trigger = yes
+							NOT = { devastation = 5 }
+						}
+					}
+				}
+				AND = {
+					province_group = alecandi_capital_provinces
+					region = devand_region
+					NOT = { 
+						AND = {
+							has_tax_building_trigger = yes
+							has_fort_building_trigger = yes
+							has_courthouse_building_trigger = yes
+							NOT = { devastation = 5 }
+						}
+					}
+				}
+			} 
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					alecandi_capital_provinces = {
+						type = all
+						OR = {
+							province_id = 2736 #Degakheion
+							num_of_units_in_province = {
+								amount = 30
+								who = ROOT
+							}
+						}
+					}
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 90
+					}
+				}
+				AND = {
+					alecand_region = {
+						type = all
+						religion = gods_of_the_taychend_reformed
+					}
+					devand_region = {
+						type = all
+						religion = gods_of_the_taychend_reformed
+					}
+					alecandi_capital_provinces = {
+						type = all
+						has_tax_building_trigger = yes
+						has_fort_building_trigger = yes
+						has_courthouse_building_trigger = yes
+						NOT = { devastation = 5 }
+					}
+					nekhei_capital_provinces = {
+						type = all
+						OR = {
+							region = andic_reach_region
+							AND = {
+								has_tax_building_trigger = yes
+								has_fort_building_trigger = yes
+								has_courthouse_building_trigger = yes
+								NOT = { devastation = 5 }
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					alecandi_capital_provinces = {
+						type = all
+						OR = {
+							province_id = 2736 #Degakheion
+							num_of_units_in_province = {
+								amount = 30
+								who = ROOT
+							}
+						}
+					}
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 90
+					}
+				}
+				custom_tooltip = J84_destroyed_kheions_yes_tt
+				hidden_effect = {
+					country_event = {
+						id = taychendi_empire_events.13 #The Hearts that Feed
+					}
+				}
+			}
+			else = { custom_tooltip = J84_destroyed_kheions_no_tt }
+			tooltip = {
+				country_event = {
+					id = taychendi_empire_events.13 #The Hearts that Feed
+				}
+			}
+			if = {
+				limit = { #Destroying the Kheions takes priority
+					NOT = {
+						AND = {
+							alecandi_capital_provinces = {
+								type = all
+								OR = {
+									province_id = 2736 #Degakheion
+									num_of_units_in_province = {
+										amount = 30
+										who = ROOT
+									}
+								}
+							}
+							has_government_power = {
+								mechanic_type = taychend_vainglory_mechanic
+								power_type = taychend_vainglory_power
+								value = 90
+							}
+						}
+					}
+					alecand_region = {
+						type = all
+						religion = gods_of_the_taychend_reformed
+					}
+					devand_region = {
+						type = all
+						religion = gods_of_the_taychend_reformed
+					}
+					alecandi_capital_provinces = {
+						type = all
+						has_tax_building_trigger = yes
+						has_fort_building_trigger = yes
+						has_courthouse_building_trigger = yes
+						NOT = { devastation = 5 }
+					}
+					nekhei_capital_provinces = {
+						type = all
+						OR = {
+							region = andic_reach_region
+							AND = {
+								has_tax_building_trigger = yes
+								has_fort_building_trigger = yes
+								has_courthouse_building_trigger = yes
+								NOT = { devastation = 5 }
+							}
+						}
+					}
+				}
+				custom_tooltip = J84_spared_kheions_yes_tt
+				hidden_effect = {
+					country_event = {
+						id = taychendi_empire_events.12 #The Heart That Feeds?
+					}
+				}
+			}
+			else = { custom_tooltip = J84_spared_kheions_no_tt }
+			tooltip = {
+				country_event = {
+					id = taychendi_empire_events.12 #The Heart That Feeds?
+				}
+			}
+		}
+	}
+
+	J84_5_7_lay_waste_to_the_wilds = {
+		icon = mission_colonize_the_west
+		position = 12
+		required_missions = { 
+			J84_3_6_beyond_taychend
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_5_8_slaves_and_silver = {
+		icon = mission_potosi_silver
+		position = 13
+		required_missions = { 
+			J84_5_7_lay_waste_to_the_wilds
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_5_9_better_criticals = {
+		icon = mission_runeforged_cannons
+		position = 14
+		required_missions = { 
+			J84_5_8_slaves_and_silver
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_5_10_theory_praxis_and_avarice = {
+		icon = mission_artificier_experience
+		position = 15
+		required_missions = {
+			J84_5_9_better_criticals
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_5_11_armoured_in_antiquity = {
+		icon = mission_armor_choice
+		position = 16
+		required_missions = { 
+			J84_4_10_the_heart_hungers
+			J84_5_10_theory_praxis_and_avarice
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+
+	J84_5_13_the_greatest_hunt = {
+		icon = mission_hunting
+		position = 18
+		required_missions = { 
+			J84_5_11_armoured_in_antiquity
+			J84_4_12_beyond_the_storm
+		}
+
+		provinces_to_highlight = {  
+		}
+
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}

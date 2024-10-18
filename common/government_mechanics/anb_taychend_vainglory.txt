@@ -1,0 +1,382 @@
+taychend_vainglory_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 12
+	available = {
+		has_reform = taychend_warlord_empire
+	}
+
+	powers = {
+		taychend_vainglory_power = {
+			#gui = argordstun_luster
+			max = 100
+			min = 0
+			reset_on_new_ruler = no
+			is_good = yes
+			
+			scaled_modifier = {
+				modifier = {
+					global_unrest = 15
+					war_exhaustion = 0.1
+				}
+			}
+		}
+	}
+
+	interactions = {
+		taychend_spoil_of_war = {
+			cost_type = taychend_vainglory_power
+			cost = 10
+			cooldown_years = 5
+			trigger = {
+				num_of_owned_provinces_with = {
+					value = 10
+					NOT = { is_core = ROOT }
+				}
+			}
+			effect = {
+				custom_tooltip = taychend_spoil_of_war_tt
+				hidden_effect = {
+					random_owned_province = { #10
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = {
+						limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+						add_devastation = 25
+						random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
+						spawn_rebels = { type = nationalist_rebels size = 1 }
+						set_province_flag = J84_vainglory_temp_flag
+					}
+					random_owned_province = { #10
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					random_owned_province = {
+						limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
+						add_base_production = 1
+					}
+					every_owned_province = {
+						limit = { has_province_flag = J84_vainglory_temp_flag }
+						clr_province_flag = J84_vainglory_temp_flag
+					}
+				}
+			}
+		}
+		taychend_broken_swords_to_golden_ploughshares = {
+			cost_type = taychend_vainglory_power
+			cost = 20
+			cooldown_years = 0
+			trigger = {
+				if = {
+					limit = {
+						has_government_power = {
+							mechanic_type = taychend_vainglory_mechanic
+							power_type = taychend_vainglory_power
+							value = 40
+						}
+					}
+					years_of_income = 1
+				}
+				else = { years_of_income = 0.5 }
+			}
+			effect = {
+				if = {
+					limit = {
+						has_government_power = {
+							mechanic_type = taychend_vainglory_mechanic
+							power_type = taychend_vainglory_power
+							value = 40
+						}
+					}
+					custom_tooltip = broken_swords_to_golden_ploughshares_double_yes_tt
+					add_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = -20
+					}
+					add_years_of_income = -1
+					hidden_effect = {
+						random_owned_province = { #10
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+					}
+				}
+				else = { 
+					custom_tooltip = broken_swords_to_golden_ploughshares_double_no_tt 
+					add_years_of_income = -0.5
+					hidden_effect = {
+						random_owned_province = { #5
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+						random_owned_province = {
+							limit = { NOT = { trade_goods = slaves } is_state_core = ROOT }
+							random_list = { 1 = { add_base_tax = 1 } 1 = { add_base_production = 1 } 1 = { add_base_manpower = 1 } }
+						}
+					}
+				}
+			}
+		}
+		taychend_settling_veterans = {
+			cost_type = taychend_vainglory_power
+			cost = 40
+			cooldown_years = 0
+			trigger = {
+				years_of_manpower = 2
+				num_of_owned_provinces_with = {
+					value = 10
+					NOT = { 
+						has_province_modifier = J84_veteran_colonies
+						religion = ROOT
+					}
+				}
+			}
+			effect = {
+				add_yearly_manpower = -2
+				custom_tooltip = taychend_settling_veterans_tt
+				tooltip = {
+					add_province_modifier = {
+						name = J84_veteran_colonies
+						duration = 9125 #25 years
+					}
+					add_base_tax = 1
+					add_base_production = 2
+					add_base_manpower = 1
+					change_religion = ROOT
+				}
+				hidden_effect = {
+					random_owned_province = { #5
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+						change_culture = ROOT
+					}
+					random_owned_province = { 
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+					}
+					random_owned_province = { 
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+					}
+					random_owned_province = { 
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+					}
+					random_owned_province = { 
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+					}
+				}
+			}
+		}
+		taychend_building_greatness = {
+			cost_type = taychend_vainglory_power
+			cost = 60
+			cooldown_years = 0
+			trigger = {
+				years_of_income = 2.5
+				NOT = { has_country_modifier = J84_building_greatness }
+			}
+			effect = {
+				add_years_of_income = -2.5
+				add_country_modifier = {
+					name = J84_building_greatness
+					duration = 3650 #10 years
+				}
+			}
+		}
+		taychend_taychend_in_bloom = {
+			cost_type = taychend_vainglory_power
+			cost = 80
+			cooldown_years = 0
+			trigger = {
+				NOT = { has_country_modifier = J84_taychend_in_bloom }
+				years_of_income = 5
+				years_of_manpower = 5
+			}
+			effect = {
+				add_country_modifier = {
+					name = J84_taychend_in_bloom
+					duration = 3650 #10 years
+				}
+				add_years_of_income = -5
+				add_yearly_manpower = -5
+			}
+		}
+	}
+}

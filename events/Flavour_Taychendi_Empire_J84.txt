@@ -1,0 +1,1038 @@
+#Creator: @takasakidev
+#Coder: @blaziy
+
+namespace = taychendi_empire_events
+
+country_event = {
+	id = taychendi_empire_events.0 #Hidden event to remove Artificer Capacity tied to modifiers
+	title = taychendi_empire_events.0.t
+	desc = taychendi_empire_events.0.d
+	picture = PORT_BLOCKADED_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = taychendi_empire_events.0.a
+		if = {
+			limit = {
+				NOT = { has_country_modifier = J84_ravelian_resources }
+				has_country_flag = J84_ravelian_resources_artifice_flag
+			}
+			debuff_artifice_points_5 = yes
+			clr_country_flag = J84_ravelian_resources_artifice_flag
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = J84_artificer_aided_colonisation }
+				has_country_flag = J84_artificer_aided_colonisation_artifice_flag
+			}
+			mission_reward_artifice_points_20 = yes
+			clr_country_flag = J84_artificer_aided_colonisation_artifice_flag
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = J84_artificery_unleashed }
+				has_country_flag = J84_artificery_unleashed_artifice_flag
+			}
+			mission_reward_artifice_points_40 = yes
+			clr_country_flag = J84_artificery_unleashed_artifice_flag
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.1 #Fate of the Chendhya
+	title = taychendi_empire_events.1.t
+	picture = PORT_BLOCKADED_eventPicture
+
+	desc = {
+		trigger = { has_country_flag = J84_surpress_chendhyans_flag }
+		desc = taychendi_empire_events.1.da
+	}
+
+	desc = {
+		trigger = { has_country_flag = J84_accept_chendhyans_flag }
+		desc = taychendi_empire_events.1.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.1.a
+		trigger = { has_country_flag = J84_surpress_chendhyans_flag }
+		chendhya_region = {
+			limit = { NOT = { area = gaenbyst_area } }
+			cede_province = J75 #Rakkabuttai
+			add_core = J75 #Rakkabuttai
+		}
+		rakkabuttai_area = {
+			cede_province = J75 #Rakkabuttai
+			add_core = J75 #Rakkabuttai
+		}
+		caergaraen_area = {
+			cede_province = J75 #Rakkabuttai
+			add_core = J75 #Rakkabuttai
+		}
+		create_subject = {
+			subject_type = march
+			subject = J75 #Rakkabuttai
+		}
+		J75 = { #Rakkabuttai
+			add_country_modifier = {
+				name = J84_stewardship_of_the_steppe
+				duration = -1
+			}
+		}
+		2577 = { #Kannagarendi
+			change_trade_goods = slaves
+			kill_units = {
+				amount = 15
+				who = ROOT
+				type = infantry
+			}
+		}
+		2568 = { #Rakkabuttai
+			kill_units = {
+				amount = 15
+				who = ROOT
+				type = infantry
+			}
+		}
+		if = {
+			limit = { was_tag = J75 } #Rakkabuttai
+			custom_tooltip = J84_was_rakkabuttai_yes_tt
+			hidden_effect = {
+				random_province = {
+					limit = {
+						region = chendhya_region
+						NOT = { trade_goods = slaves }
+					}
+					change_trade_goods = slaves
+				}
+				random_province = {
+					limit = {
+						region = chendhya_region
+						NOT = { trade_goods = slaves }
+					}
+					change_trade_goods = slaves
+				}
+				random_province = {
+					limit = {
+						region = chendhya_region
+						NOT = { trade_goods = slaves }
+					}
+					change_trade_goods = slaves
+				}
+			}
+		}
+		else = { custom_tooltip = J84_was_rakkabuttai_no_tt }
+		tooltip = {
+			random_province = {
+				limit = {
+					region = chendhya_region
+					NOT = { trade_goods = slaves }
+				}
+				change_trade_goods = slaves
+			}
+			random_province = {
+				limit = {
+					region = chendhya_region
+					NOT = { trade_goods = slaves }
+				}
+				change_trade_goods = slaves
+			}
+			random_province = {
+				limit = {
+					region = chendhya_region
+					NOT = { trade_goods = slaves }
+				}
+				change_trade_goods = slaves
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.1.ba
+		trigger = { 
+			has_country_flag = J84_surpress_chendhyans_flag 
+			was_tag = J75 #Rakkabuttai
+		}
+		2577 = { #Kannagarendi
+			change_trade_goods = slaves
+		}
+		add_country_modifier = {
+			name = J84_chendhya_pacified
+			duration = 36500 #100 years
+		}
+		custom_tooltip = J84_was_rakkabuttai_yes_tt
+		add_prestige = 15
+	}
+
+	option = {
+		name = taychendi_empire_events.1.bb
+		trigger = { 
+			has_country_flag = J84_surpress_chendhyans_flag 
+			NOT = { was_tag = J75 } #Rakkabuttai
+		}
+		2577 = { #Kannagarendi
+			change_trade_goods = slaves
+		}
+		add_country_modifier = {
+			name = J84_chendhya_pacified
+			duration = 36500 #100 years
+		}
+		custom_tooltip = J84_was_rakkabuttai_no_tt
+		tooltip = { add_prestige = 15 }
+	}
+
+	option = {
+		name = taychendi_empire_events.1.c
+		trigger = { 
+			has_country_flag = J84_accept_chendhyans_flag 
+			NOT = {
+				tag = J73 #Zaernmaera
+				tag = J72 #Darkalydar
+				tag = J74 #Caergaraen
+			}
+		}
+		chendhya_region = {
+			limit = { NOT = { area = gaenbyst_area } }
+			cede_province = J73 #Zaernmaera
+			add_core = J73 #Zaernmaera
+		}
+		rakkabuttai_area = {
+			cede_province = J73 #Zaernmaera
+			add_core = J73 #Zaernmaera
+		}
+		caergaraen_area = {
+			cede_province = J73 #Zaernmaera
+			add_core = J73 #Zaernmaera
+		}
+		create_subject = {
+			subject_type = march
+			subject = J73 #Zaernmaera
+		}
+		J73 = {
+			add_country_modifier = {
+				name = J84_riders_of_the_steppe
+				duration = -1
+			}
+			set_capital = 2591 #Samidon
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.1.d
+		trigger = { has_country_flag = J84_accept_chendhyans_flag }
+		if = {
+			limit = { primary_culture = bekauta }
+			custom_tooltip = J84_is_bekauta_yes_tt
+			hidden_effect = {
+				add_prestige = 25
+				add_legitimacy = 25
+			}
+		}
+		else = { custom_tooltip = J84_is_bekauta_no_tt }
+		tooltip = {
+			add_prestige = 25
+			add_legitimacy = 25
+		}
+
+		if = {
+			limit = { primary_culture = bekauta }
+			custom_tooltip = J84_convert_chendhyan_no_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { culture = chendhyan }
+					change_culture = bekauta
+				}
+			}
+		}
+		else = { custom_tooltip = J84_convert_chendhyan_yes_tt }
+		tooltip = {
+			change_culture = bekauta
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.2 #The Chendhyans Unite Once More!
+	title = taychendi_empire_events.2.t
+	desc = taychendi_empire_events.2.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { exists = H00 } #Saerraeg
+		calc_true_if = {
+			amount = 5
+			chendhya_region = {
+				type = all
+				is_empty = yes
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = J84_saerraeg_united_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.2.a
+		hidden_effect = { #This is so they get your tech level
+			random_province = {
+				limit = {
+					region = chendhya_region
+					is_empty = yes
+				}
+				cede_province = ROOT
+				add_core = H00 #Saerraeg
+				#cede_province = H00 #Saerraeg
+			}
+			release = H00 #Saerraeg
+		}
+		chendhya_region = {
+			limit = {
+				culture = chendhyan
+				is_empty = yes
+			}
+			cede_province = H00 #Saerraeg
+			add_core = H00 #Saerraeg
+		}
+		H00 = { #Saerraeg
+			add_country_modifier = {
+				name = J84_the_second_asezhudar
+				duration = -1
+			}
+			capital_scope = {
+				for = {
+					amount = 20
+					effect = "infantry = H00"
+				}
+				for = {
+					amount = 20
+					effect = "cavalry = H00"
+				}
+			}
+			add_historical_rival = ROOT
+
+			#The 3 Chendhyan Tribes
+			inherit = H23
+			inherit = H28
+			inherit = H29
+		}
+		chendhya_region = {
+			add_permanent_claim = ROOT
+		}
+		add_historical_rival = H00 #Saerraeg
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.3 #Crazy, Crazy, Crazy
+	title = taychendi_empire_events.3.t
+	desc = taychendi_empire_events.3.d
+	picture = BYZ_BATTLE_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = taychendi_empire_events.3.a
+		add_country_modifier = {
+			name = J84_way_of_gophira
+			duration = 18250 #50 years
+		}
+		define_general = {
+			name = "Hurahara the Humungous"
+			fire = 0
+			shock = 6
+			manuever = 6
+			siege = 2
+		}
+		custom_tooltip = J84_crazy_crazy_crazy_tt
+		tooltip = {
+			add_province_modifier = {
+				name = J84_vaona_gophira_mod
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = slaves
+					base_production = 10
+					has_trade_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = J84_vaona_gophira_mod
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.4 #Beneath the Hills of Korrimutren
+	title = taychendi_empire_events.4.t
+	picture = BIG_BOOK_eventPicture
+
+	desc = {
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.4.da
+	}
+
+	desc = {
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.4.db
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = taychendi_empire_events.4.a
+		random_list = {
+			1 = { country_event = { id = taychendi_empire_events.5 } } #The Glory of Steel
+			1 = { country_event = { id = taychendi_empire_events.6 } } #Death and Terror and Ruin
+			1 = { country_event = { id = taychendi_empire_events.7 } } #Mechanical Hearts and Grinding Gears
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.5 #The Glory of Steel
+	title = taychendi_empire_events.5.t
+	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
+
+	desc = {
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.5.da
+	}
+
+	desc = {
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.5.db
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = taychendi_empire_events.5.a
+		add_army_tradition = 10
+		add_country_modifier = {
+			name = J84_prophacy_of_power
+			duration = 18250 #50 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.6 #Death and Terror and Ruin
+	title = taychendi_empire_events.6.t
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	desc = {
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.6.da
+	}
+
+	desc = {
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.6.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.6.a
+		add_prestige = -10
+		add_country_modifier = {
+			name = J84_prophacy_of_ruin
+			duration = 18250 #50 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.7 #Mechanical Hearts and Grinding Gears
+	title = taychendi_empire_events.7.t
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	desc = {
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.7.da
+	}
+
+	desc = {
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		desc = taychendi_empire_events.7.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.7.a
+		if = {
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 10
+		}
+		else = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+		add_country_modifier = {
+			name = J84_prophacy_of_progress
+			duration = 18250 #50 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.8 #On Apotheosis
+	title = taychendi_empire_events.8.t
+	desc = taychendi_empire_events.8.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.8.a
+		add_country_modifier = {
+			name = J84_paths_of_ascension_mod
+			duration = -1
+		}
+		enable_taychend_ruler_style = { deity = eminence }
+		enable_taychend_ruler_style = { deity = patron }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.9 #The Hand that Mocks
+	title = taychendi_empire_events.9.t
+	desc = taychendi_empire_events.9.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.9.a
+		2736 = { #Degakheion
+			remove_province_modifier = kheionai_warded_city
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+			add_devastation = 100
+			add_province_modifier = {
+				name = J84_ruined_kheion
+				duration = -1
+			}
+			add_province_modifier = {
+				name = J84_disassembling_windward
+				duration = 14600 #40 years
+			}
+			hidden_effect = { add_permanent_windward_level = { level = -2 } }
+			change_trade_goods = damestear
+		}
+		country_event = {
+			id = taychendi_empire_events.10 #Zopedan Completely Disassembled (Degakheion)
+			days = 14600 #40 years
+		}
+		alecandi_capital_provinces = {
+			limit = { NOT = { province_id = 2736 } } #Degakheion
+			add_devastation = 50
+		}
+		add_treasury = 1500
+		add_adm_power = 200
+		add_dip_power = 200
+		add_mil_power = 200
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.10 #Zopedan Completely Disassembled (Degakheion)
+	title = taychendi_empire_events.10.t
+	desc = taychendi_empire_events.10.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.10.a
+		2736 = { #Degakheion
+			change_trade_goods = precursor_relics
+			add_province_modifier = {
+				name = J84_disassembled_windward
+				duration = -1
+			}
+			remove_province_modifier = J84_disassembling_windward
+		}
+		add_prestige = 20
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.11 #Don't Call Me A Hoplophile
+	title = taychendi_empire_events.11.t
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	desc = {
+		trigger = {
+			OR = { #PUT MISSIONS THAT REPLACE ORENKORAIM STATUE HEAD HERE
+				mission_completed = J73_3_5_end_ebenanths_legacy
+			}
+		}
+		desc = taychendi_empire_events.11.da
+	}
+
+	desc = {
+		trigger = {
+			NOT = { #PUT MISSIONS THAT REPLACE ORENKORAIM STATUE HEAD HERE
+				mission_completed = J73_3_5_end_ebenanths_legacy
+			}
+		}
+		desc = taychendi_empire_events.11.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.11.a
+		custom_tooltip = supporting_artificers_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = artificery_unlocked }
+				}
+				country_event = {
+					id = magic_artificery_setup.1
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.12 #The Heart That Feeds?
+	title = taychendi_empire_events.12.t
+	desc = taychendi_empire_events.12.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.12.a
+		trigger = { NOT = { was_tag = G63 } } #Korrimutren
+		# G83 = Korrimutren
+		alecand_region = {
+			limit = { NOT = { culture = eltibhar } }
+			cede_province = G83 #Korrimutren
+			add_core = G83 #Korrimutren
+		}
+		devand_region = {
+			limit = { has_port = yes }
+			area = {
+				cede_province = G83 #Korrimutren
+				add_core = G83 #Korrimutren
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = G83 #Korrimutren
+		}
+		G83 = { #Korrimutren
+			override_country_name = VADHIPAKVAM
+			add_country_modifier = {
+				name = J84_kingdom_of_prophacy
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.12.b
+		alecandi_capital_provinces = {
+			add_province_modifier = {
+				name = J84_taychendi_garrison
+				duration = -1
+			}
+		}
+		nekhei_capital_provinces = {
+			limit = { region = devand_region }
+			add_province_modifier = {
+				name = J84_taychendi_garrison
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.13 #The Hearts that Feed
+	title = taychendi_empire_events.13.t
+	desc = taychendi_empire_events.13.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.13.a
+		alecandi_capital_provinces = {
+			limit = { NOT = { province_id = 2736 } } #Degakheion
+			remove_province_modifier = kheionai_warded_city
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+			add_devastation = 100
+			add_province_modifier = {
+				name = J84_ruined_kheion
+				duration = -1
+			}
+			add_province_modifier = {
+				name = J84_disassembling_windward
+				duration = 14600 #40 years
+			}
+			hidden_effect = { 
+				add_permanent_windward_level = { level = -2 } 
+				save_trade_goods = yes
+			}
+			change_trade_goods = damestear
+			custom_tooltip = J84_neighbors_gain_manpower_tt
+			hidden_effect = {
+				every_neighbor_province = {
+					add_base_manpower = 2
+				}
+			}
+			spawn_rebels = {
+				size = 3
+				type = nationalist_rebels
+			}
+		}
+		country_event = {
+			id = taychendi_empire_events.14 #Zopedan Completely Dissasembled (Rest of Kheions)
+			days = 14600 #40 years
+		}
+		custom_tooltip = J84_kheionai_rebel_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 2
+				type = nationalist_rebels
+			}
+		}
+		hidden_effect = {
+			for = {
+				amount = 15
+				effect = "random_province = {
+						limit = { 
+							country_or_non_sovereign_subject_holds = ROOT 
+							culture_group = kheionai_ruinborn_elf
+						}
+						spawn_rebels = {
+							size = 2
+							type = nationalist_rebels
+						}
+					}"
+			}
+		}
+		add_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = -90
+		}
+		add_stability = -1
+		add_country_modifier = {
+			name = J84_international_pariah
+			duration = 1825 #50 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.14 #Zopedan Completely Dissasembled (Rest of Kheions)
+	title = taychendi_empire_events.14.t
+	desc = taychendi_empire_events.14.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.14.a
+		alecandi_capital_provinces = {
+			set_from_saved_trade_goods = yes
+			add_province_modifier = {
+				name = J84_disassembled_windward
+				duration = -1
+			}
+			remove_province_modifier = J84_disassembling_windward
+		}
+		add_prestige = 50
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 25
+		}
+	}
+}
+
+#Vainglory Flavor Events
+country_event = {
+	id = taychendi_empire_events.100 #Border Warlords Attack Neighbour
+	title = taychendi_empire_events.100.t
+	desc = taychendi_empire_events.100.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 40
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.100.a
+		random_neighbor_country = {
+			ROOT = {
+				declare_war_with_cb = {
+					casus_belli = cb_border_war
+					who = PREV
+				}
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.100.b
+		add_stability = -1
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.100.c
+		add_stability = 1
+		add_yearly_manpower = -0.5
+		add_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = -20
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.101 #The Provincial Revolt of YEAR
+	title = taychendi_empire_events.101.t
+	desc = taychendi_empire_events.101.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 40
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = { 
+				NOT = { superregion = taychend_superregion } 
+				is_island = no 
+			}
+			save_event_target_as = taychend_vainglory_province_revolt
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.101.a
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 1 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 1 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 1 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 1 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 1 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 2 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 2 }
+		}
+		random_owned_province = {
+			limit = {
+				region = event_target:taychend_vainglory_province_revolt
+				is_island = no
+			}
+			spawn_rebels = { type = nationalist_rebels size = 2 }
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.102 #Family Member Rebels
+	title = taychendi_empire_events.102.t
+	desc = taychendi_empire_events.102.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 80
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.1021.a
+		random_owned_province = {
+			limit = {
+				superregion = taychend_superregion
+				NOT = { is_capital_of = ROOT }
+				taychend_superregion = {
+					type = all
+					OR = {
+						is_capital_of = ROOT
+						NOT = { higher_development_than = PREV }
+						NOT = { owned_by = ROOT }
+					}
+				}
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.103 #The Slave Revolt of YEAR
+	title = taychendi_empire_events.103.t
+	desc = taychendi_empire_events.103.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 80
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.103.a
+		every_owned_province = {
+			limit = {
+				OR = {
+					trade_goods = slaves
+					trade_goods = iron
+					trade_goods = copper
+				}
+			}
+			random = {
+				chance = 50
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 2
+				}
+			}
+		}
+	}
+}

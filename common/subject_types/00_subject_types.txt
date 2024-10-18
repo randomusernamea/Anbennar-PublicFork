@@ -551,6 +551,13 @@ march = {
 			}
 		}
 	}
+	modifier_overlord = {
+		modifier = J84_vainglory_march_bonus
+		trigger = {
+			overlord = { has_government_mechanic = taychend_vainglory_mechanic }
+			total_development = 100
+		}
+	}
 }
 
 daimyo_vassal = {

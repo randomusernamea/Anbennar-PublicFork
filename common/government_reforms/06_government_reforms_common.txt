@@ -7082,3 +7082,20 @@ khugra_araizary_bond = {
 		factor = 1 
 	}
 }
+
+taychend_warlord_empire = {
+	icon = "war_map"
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			has_reform = taychend_warlord_empire
+			have_had_reform = taychend_warlord_empire
+		}
+	}
+	custom_attributes = {
+		maintain_dynasty = yes
+	}
+	government_abilities = {
+		taychend_vainglory_mechanic
+	}
+}

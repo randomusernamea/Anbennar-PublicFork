@@ -1985,6 +1985,37 @@ on_battle_won_country = {
 			}
 		}
 	}
+
+	if = {
+		limit = {
+			has_government_mechanic = taychend_vainglory_mechanic
+		}
+		set_variable = {
+			which = TaychendDeathCount
+			value = 0
+		}
+		change_variable = {
+			which = TaychendDeathCount
+			which = land_units_killed 
+		}
+		change_variable = {
+			which = TaychendDeathCount
+			which = land_units_lost 
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = TaychendDeathCount
+					value = 1000
+				}
+			}
+			add_government_power = { mechanic_type = taychend_vainglory_mechanic power_type = taychend_vainglory_power value = 0.2 }
+			subtract_variable = {
+				which = TaychendDeathCount
+				value = 1000
+			}
+		}
+	}
 }
 
 # #Unit Scope OnAction for Battle Lost
@@ -9345,6 +9376,12 @@ on_four_year_pulse_3 = {
 		100 = taychend_flavour.32 # caergarae does surf
 		100 = taychend_flavour.33 # (OTTO, TAKA CODED) sarihaddhu tribes migrate
 		100 = taychend_flavour.34 # chend. + sari tribes quarrel
+
+		#Taychendi Empire Vainglory Events
+		100 = taychendi_empire_events.100 #Border Warlods Attack Neighbour
+		100 = taychendi_empire_events.101 #The Provincial Revolt of YEAR
+		100 = taychendi_empire_events.102 #Family Member Rebels
+		100 = taychendi_empire_events.103 #The Slave Revolt of YEAR
 	}
 	
 	
@@ -15165,6 +15202,17 @@ on_conquest = {
 		if = {
 			limit = { province_id = 4411 } #Dhenijansar
 			owner = { country_event = { id = sanghariyar.11 } } #Sack of Dhenijansar
+		}
+	}
+
+	if = {
+		limit = { owner = { has_government_mechanic = taychend_vainglory_mechanic } }
+		owner = {
+			add_government_power = {
+				mechanic_type = taychend_vainglory_mechanic
+				power_type = taychend_vainglory_power
+				value = 2
+			}
 		}
 	}
 }

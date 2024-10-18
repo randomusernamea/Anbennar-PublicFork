@@ -859,6 +859,39 @@ mission_reward_artifice_points_5 = {
 	update_artifice_points = yes
 }
 
+mission_reward_artifice_points_20 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_20_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 20
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_40 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_40_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 40
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_50 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_50_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 50
+		}
+	}
+	update_artifice_points = yes
+}
+
 debuff_artifice_points_2 = {
 	custom_tooltip = permanently_decreases_our_artifice_points_by_2_tt
 	hidden_effect = {
@@ -876,6 +909,39 @@ debuff_artifice_points_5 = {
 		change_variable = {
 			which = StaticArtificePoints
 			value = -5
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_20 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_20_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -20
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_40 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_40_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -40
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_50 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_50_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -50
 		}
 	}
 	update_artifice_points = yes

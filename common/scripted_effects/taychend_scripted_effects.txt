@@ -304,3 +304,10 @@ free_taychend_reform_effect = {
 	custom_tooltip = free_taychend_reform_tt
 	hidden_effect = { set_country_flag = free_taychend_reform_flag }
 }
+
+#Taychendi Empire
+enable_taychend_ruler_style = {
+	custom_tooltip = enabled_$deity$_ruler_style_tt
+	set_country_flag = enabled_$deity$_ruler_style_flag
+	tooltip = { change_personal_deity = taychend_style_$deity$ }
+}
