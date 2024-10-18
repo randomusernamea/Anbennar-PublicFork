@@ -719,6 +719,11 @@ country_event = {
 		name = colonial_culture.2.a
 		trigger = {
 			culture_group = kobold
+			NOT = {
+				culture = darkscale_kobold
+				culture = goldscale_kobold
+				culture = dragonfire_kobold
+			}
 			capital_scope = {
 				OR = {
 					continent = north_america
