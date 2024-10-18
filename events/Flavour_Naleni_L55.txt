@@ -7,7 +7,6 @@ country_event = {
 	title = naleni.1.t
 	desc = naleni.1.d
 	picture = MILITARY_CAMP_eventPicture
-	hidden = yes 
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -17,9 +16,13 @@ country_event = {
 	option = {
 		name = naleni.1.a
 		ai_chance = { factor = 100 }
-		initialise_matauth = yes
-		update_matauth = yes
-		add_country_modifier = { name = L55_siren_songhalls_2 duration = -1 } #testing the on_action, remove once done
+		hidden_effect = {
+			initialise_matauth = yes
+		}
+		add_country_modifier = {
+			name = L55_low_authority
+			duration = -1
+		}
 	}
 }	
 
@@ -513,28 +516,90 @@ country_event = {
 }
 
 country_event = {
-	id = naleni.16 # remaking madrimilak
+	id = naleni.16 # enchanting rule
 	title = naleni.16.t
 	desc = naleni.16.d
 	picture = MILITARY_CAMP_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = naleni.14.a
+		name = naleni.16.a
 		ai_chance = { factor = 100 }
 		add_country_modifier = {
-			name = L55_remaking_madrimilak
+			name = L55_enchanting_rule
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = naleni.17 # on a dragons throne
+	title = naleni.17.t
+	desc = naleni.17.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.17.a
+		ai_chance = { factor = 100 }
+		set_country_flag = L55_stayed_hunt
+	}
+	option = {
+		name = naleni.17.b
+		ai_chance = { factor = 100 }
+		change_religion = sky_domain
+		set_country_flag = L55_converted
+	}
+}
+
+country_event = {
+	id = naleni.18 # Ambition fufilled
+	title = naleni.18.t
+	desc = naleni.18.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.18.a
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = L55_across_the_seas
 			duration = 36500
 		}
-		every_owned_province = {
-			limit = {
-				region = telekenid_region 
-				OR = {
-					has_province_modifier = harpy_minority_integrated_small
-					has_province_modifier = harpy_minority_integrated_large
-				}
-			}
-			add_base_manpower = 1
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_years_of_trade_income = {
+			years = 2
+		}
+		add_splendor = 400
+	}
+}
+
+country_event = {
+	id = naleni.19 # Sea and Sky
+	title = naleni.19.t
+	desc = naleni.19.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = naleni.19.a
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = L55_naleni_eternal
+			duration = -1
+		}
+		IF = {
+			limit = { in_golden_age = yes }
+			extend_golden_age = 600
+		}
+		else = {
+			reset_golden_age = yes
+		}
+		add_permanent_power_projection = {
+			type = 25_permanent_power_projection
+			amount = 25
 		}
 	}
 }
