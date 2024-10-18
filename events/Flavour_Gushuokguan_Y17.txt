@@ -132,3 +132,23 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+
+#Service Guarantees Citizenship
+country_event = {
+	id = gushuokguan_event.8
+	title = gushuokguan_event.8.t
+	desc = gushuokguan_event.8.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.8.a
+		ai_chance = { factor = 1 }
+		add_mil_power = -200
+	}
+}

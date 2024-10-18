@@ -1062,9 +1062,25 @@ gushuokguan_5 = {
 		required_missions = { gushuokguan_4_2 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			if = {
+				limit = { has_country_flag = gushuokguan_stone_army_tier_2 }
+				any_hired_mercenary_company = {
+					template = merc_stone_army_tier_2
+				}
+			}
+			else = {
+				any_hired_mercenary_company = {
+					template = merc_stone_army
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = {
+				id = gushuokguan_event.8
+			}
+		} 
 	}
 
 	gushuokguan_5_4 = {
@@ -1076,9 +1092,41 @@ gushuokguan_5 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			all_subject_country = {
+				num_of_owned_provinces_with = {
+					development = 10
+					NOT = { devastation = 0.01 }
+					num_of_buildings_in_province = 3
+					value = 25
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						development = 10
+						NOT = { devastation = 0.01 }
+						num_of_buildings_in_province = 3
+					}
+					add_province_modifier = {
+						name = gushuokguan_interconfederal_industries_local
+						duration = 18250
+					}
+				}
+				add_country_modifier = {
+					name = gushuokguan_interconfederal_industries_global
+					duration = 18250
+				}
+				add_trust = {
+					who = ROOT
+					value = 50
+					mutual = yes
+				}
+			}
+		} 
 	}
 
 	gushuokguan_5_5 = {
