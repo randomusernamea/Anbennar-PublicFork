@@ -7,30 +7,11 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = gushokguan_replenish_mercenaries_cooldown } 
-			if = {
-				limit = { has_country_flag = gushuokguan_stone_army_tier_2 }
-				any_hired_mercenary_company = {
-					template = merc_stone_army_tier_2
-				}
-			}
-			else = {
-				any_hired_mercenary_company = {
-					template = merc_stone_army
-				}
-			}
+			num_of_hired_mercenary_companies = 1
 		}
 		effect = {
-			if = {
-				limit = { has_country_flag = gushuokguan_stone_army_tier_2 }
-				random_hired_mercenary_company = {
-					limit = { template = merc_stone_army_tier_2 }
-					add_company_manpower = 0.1
-				}
-			}
-			else = {
-				random_hired_mercenary_company = {
-					limit = { template = merc_stone_army }
-				}
+			random_hired_mercenary_company = {
+				add_company_manpower = 0.15
 			}
 		}
 		ai_will_do = {
