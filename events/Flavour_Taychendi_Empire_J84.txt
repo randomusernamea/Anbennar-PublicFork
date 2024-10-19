@@ -44,7 +44,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.1 #Fate of the Chendhya
 	title = taychendi_empire_events.1.t
-	picture = PORT_BLOCKADED_eventPicture
+	picture = KINGS_CHOICE_eventPicture
 
 	desc = {
 		trigger = { has_country_flag = J84_surpress_chendhyans_flag }
@@ -260,7 +260,7 @@ country_event = {
 	id = taychendi_empire_events.2 #The Chendhyans Unite Once More!
 	title = taychendi_empire_events.2.t
 	desc = taychendi_empire_events.2.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	is_triggered_only = yes
 	
@@ -334,7 +334,7 @@ country_event = {
 	id = taychendi_empire_events.3 #Crazy, Crazy, Crazy
 	title = taychendi_empire_events.3.t
 	desc = taychendi_empire_events.3.d
-	picture = BYZ_BATTLE_eventPicture
+	picture = SEJM_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -379,7 +379,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.4 #Beneath the Hills of Korrimutren
 	title = taychendi_empire_events.4.t
-	picture = BIG_BOOK_eventPicture
+	picture = BUDDHISM_LAMA_eventPicture
 
 	desc = {
 		trigger = {
@@ -417,7 +417,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.5 #The Glory of Steel
 	title = taychendi_empire_events.5.t
-	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
+	picture = BYZ_BATTLE_eventPicture
 
 	desc = {
 		trigger = {
@@ -444,6 +444,27 @@ country_event = {
 
 	option = { 
 		name = taychendi_empire_events.5.a
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		add_army_tradition = 10
+		add_country_modifier = {
+			name = J84_prophacy_of_power
+			duration = 18250 #50 years
+		}
+	}
+
+	option = { 
+		name = taychendi_empire_events.5.b
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
 		add_army_tradition = 10
 		add_country_modifier = {
 			name = J84_prophacy_of_power
@@ -455,7 +476,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.6 #Death and Terror and Ruin
 	title = taychendi_empire_events.6.t
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = muslimgfx_COUNTRY_COLLAPSE_eventPicture
 
 	desc = {
 		trigger = {
@@ -481,6 +502,27 @@ country_event = {
 
 	option = {
 		name = taychendi_empire_events.6.a
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		add_prestige = -10
+		add_country_modifier = {
+			name = J84_prophacy_of_ruin
+			duration = 18250 #50 years
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.6.b
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
 		add_prestige = -10
 		add_country_modifier = {
 			name = J84_prophacy_of_ruin
@@ -492,7 +534,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.7 #Mechanical Hearts and Grinding Gears
 	title = taychendi_empire_events.7.t
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = SYNTHETICS_eventPicture
 
 	desc = {
 		trigger = {
@@ -518,6 +560,35 @@ country_event = {
 
 	option = {
 		name = taychendi_empire_events.7.a
+		trigger = {
+			OR = {
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
+		if = {
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 10
+		}
+		else = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+		add_country_modifier = {
+			name = J84_prophacy_of_progress
+			duration = 18250 #50 years
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.7.b
+		trigger = {
+			NOT = { 
+				is_divination_3 = yes #Legendary
+				is_divination_2 = yes #Renowned
+			}
+		}
 		if = {
 			limit = { has_dlc = "Rule Britannia" }
 			change_innovativeness = 10
@@ -538,7 +609,7 @@ country_event = {
 	id = taychendi_empire_events.8 #On Apotheosis
 	title = taychendi_empire_events.8.t
 	desc = taychendi_empire_events.8.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = BUDDHISM_GOOD_eventPicture
 
 	is_triggered_only = yes
 
@@ -557,7 +628,7 @@ country_event = {
 	id = taychendi_empire_events.9 #The Hand that Mocks
 	title = taychendi_empire_events.9.t
 	desc = taychendi_empire_events.9.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = SIEGE_eventPicture
 
 	is_triggered_only = yes
 
@@ -599,7 +670,7 @@ country_event = {
 	id = taychendi_empire_events.10 #Zopedan Completely Disassembled (Degakheion)
 	title = taychendi_empire_events.10.t
 	desc = taychendi_empire_events.10.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = LOOMING_DEATH_eventPicture
 
 	is_triggered_only = yes
 
@@ -620,7 +691,7 @@ country_event = {
 country_event = {
 	id = taychendi_empire_events.11 #Don't Call Me A Hoplophile
 	title = taychendi_empire_events.11.t
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = GOBLIN_GUNNER_event_picture
 
 	desc = {
 		trigger = {
@@ -663,7 +734,7 @@ country_event = {
 	id = taychendi_empire_events.12 #The Heart That Feeds?
 	title = taychendi_empire_events.12.t
 	desc = taychendi_empire_events.12.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = FORTIFIED_CITY_WITH_CARAVAN_OUTSIDE_eventPicture
 
 	is_triggered_only = yes
 
@@ -718,7 +789,7 @@ country_event = {
 	id = taychendi_empire_events.13 #The Hearts that Feed
 	title = taychendi_empire_events.13.t
 	desc = taychendi_empire_events.13.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = SIEGE_eventPicture
 
 	is_triggered_only = yes
 
@@ -798,7 +869,7 @@ country_event = {
 	id = taychendi_empire_events.14 #Zopedan Completely Dissasembled (Rest of Kheions)
 	title = taychendi_empire_events.14.t
 	desc = taychendi_empire_events.14.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = LOOMING_DEATH_eventPicture
 
 	is_triggered_only = yes
 
@@ -825,7 +896,7 @@ country_event = {
 	id = taychendi_empire_events.100 #Border Warlords Attack Neighbour
 	title = taychendi_empire_events.100.t
 	desc = taychendi_empire_events.100.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = QIZILBASH_CAVALRY_CHARGING_eventPicture
 
 	is_triggered_only = yes
 
@@ -878,7 +949,7 @@ country_event = {
 	id = taychendi_empire_events.101 #The Provincial Revolt of YEAR
 	title = taychendi_empire_events.101.t
 	desc = taychendi_empire_events.101.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 
 	is_triggered_only = yes
 
@@ -965,7 +1036,7 @@ country_event = {
 	id = taychendi_empire_events.102 #Family Member Rebels
 	title = taychendi_empire_events.102.t
 	desc = taychendi_empire_events.102.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = SIEGE_eventPicture
 
 	is_triggered_only = yes
 
@@ -1004,7 +1075,7 @@ country_event = {
 	id = taychendi_empire_events.103 #The Slave Revolt of YEAR
 	title = taychendi_empire_events.103.t
 	desc = taychendi_empire_events.103.d
-	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	picture = MARCHING_PEASANTS_eventPicture
 
 	is_triggered_only = yes
 

@@ -15206,7 +15206,10 @@ on_conquest = {
 	}
 
 	if = {
-		limit = { owner = { has_government_mechanic = taychend_vainglory_mechanic } }
+		limit = { 
+			owner = { has_government_mechanic = taychend_vainglory_mechanic } 
+			is_core = no
+		}
 		owner = {
 			add_government_power = {
 				mechanic_type = taychend_vainglory_mechanic

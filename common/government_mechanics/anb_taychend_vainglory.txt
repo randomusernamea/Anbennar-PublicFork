@@ -15,7 +15,7 @@ taychend_vainglory_mechanic = {
 			
 			scaled_modifier = {
 				modifier = {
-					global_unrest = 15
+					stability_cost_modifier = 1
 					war_exhaustion = 0.1
 				}
 			}
@@ -282,7 +282,7 @@ taychend_vainglory_mechanic = {
 					add_base_tax = 1
 					add_base_production = 2
 					add_base_manpower = 1
-					change_religion = ROOT
+					custom_tooltip = J84_change_religion_tt
 				}
 				hidden_effect = {
 					random_owned_province = { #5

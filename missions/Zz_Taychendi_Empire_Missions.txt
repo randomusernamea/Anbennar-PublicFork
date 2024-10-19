@@ -1926,24 +1926,27 @@ J84_5_missions = {
 			OR = {
 				AND = {
 					NOT = { accepted_culture = chendhyan }
-					2568 = { #Rakkabuttai
-						has_fort_building_trigger = yes
-						has_manpower_building_trigger = yes
-						has_forcelimit_building_trigger = yes
-						num_of_units_in_province = {
-							amount = 15
-							who = ROOT
-							type = infantry
+					custom_trigger_tooltip = {
+						tooltip = J84_rakka_and_kanna_tt
+						2568 = { #Rakkabuttai
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
 						}
-					}
-					2577 = { #Kannagarendi
-						has_fort_building_trigger = yes
-						has_manpower_building_trigger = yes
-						has_forcelimit_building_trigger = yes
-						num_of_units_in_province = {
-							amount = 15
-							who = ROOT
-							type = infantry
+						2577 = { #Kannagarendi
+							has_fort_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+							num_of_units_in_province = {
+								amount = 15
+								who = ROOT
+								type = infantry
+							}
 						}
 					}
 				}
