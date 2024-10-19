@@ -4253,7 +4253,9 @@ holds_castanor_legacy = {
 rakkaz_warlock_pact_limit = {
 	OR = {
 		AND = {
-			NOT = { has_country_flag = rakkaz_can_have_three_warlock_pacts }
+			hidden_trigger = {
+				NOT = { has_country_flag = rakkaz_can_have_three_warlock_pacts }
+			}
 			custom_trigger_tooltip = {
 				tooltip = rakkaz_warlock_pact_limit_2
 				NOT = {
@@ -4270,7 +4272,10 @@ rakkaz_warlock_pact_limit = {
 			}
 		}
 		AND = {
-			has_country_flag = rakkaz_can_have_three_warlock_pacts
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_can_have_three_warlock_pacts_tooltip_2
+				has_country_flag = rakkaz_can_have_three_warlock_pacts
+			}
 			custom_trigger_tooltip = {
 				tooltip = rakkaz_warlock_pact_limit_3
 				NOT = {
