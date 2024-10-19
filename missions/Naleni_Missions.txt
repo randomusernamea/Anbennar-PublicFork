@@ -38,59 +38,6 @@ Naléni_branch_one = {
 			}
 		}
 	}
-
-	the_great_songhall_of_yetsemira = {
-		icon = mission_big_house
-		position = 12
-		required_missions = { from_above_to_those_beneath } 
-		provinces_to_highlight = { province_id = 5529 } 
-
-		trigger = { 
-			5529 = {
-				development = 40
-				has_building = mage_tower
-				num_of_buildings_in_province = 8
-			}	
-			IF = {
-				limit = {
-					has_dlc = "Leviathan"
-				}
-				5529 = { 
-					num_of_times_expanded_infrastructure = 2
-				}
-			}
-			else = {
-				adm_power = 200
-				dip_power = 200
-				mil_power = 200
-			}
-			if = {
-				limit = { 
-					NOT = {	has_dlc = "Cradle of Civilization" }
-				}
-				adm_power = 100
-				dip_power = 100
-				mil_power = 100
-			}
-			else = {
-				has_adm_advisor_4 = yes
-			}
-		}
-		effect = {
-			add_prestige = 50
-			5529 = {
-				add_province_modifier = {
-					name = L55_great_songhall
-					duration = -1
-				}
-			generic_add_race_minority_size_effect = { race = gnollish }
-			generic_add_race_minority_size_effect = { race = harimari }
-			generic_add_race_minority_size_effect = { race = harpy }
-			}
-			large_increase_of_gnollish_tolerance_effect = yes
-			large_increase_of_harimari_tolerance_effect = yes
-		} 
-	}
 }
 Naléni_branch_two = {
 	slot = 2
@@ -177,7 +124,7 @@ Naléni_branch_two = {
 			a_southern_roost
 		}
 		provinces_to_highlight = {
-			OR = { 
+			OR = {
 				area = emot_nepas_area
 				area = riyiwedeb_area
 			}
@@ -187,7 +134,7 @@ Naléni_branch_two = {
 					NOT = { has_building = temple } 
 				}
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 		}
 
 		trigger = {
@@ -255,13 +202,13 @@ Naléni_branch_two = {
 		position = 5
 		required_missions = { serenade_our_subjects } 
 		provinces_to_highlight = {
-			OR = { 
+			OR = {
 				province_id = 5446
 				province_id = 5505
 				province_id = 5504
 			}
-			NOT = { culture = metobesebi }
-			NOT = { has_building = temple }
+			NOT = { culture = metobesebi } 
+			NOT = { has_building = temple } 
 		}
 
 		trigger = {
@@ -304,179 +251,10 @@ Naléni_branch_two = {
 					change_culture = metobesebi
 					change_religion = sky_domain
 				}
-			}	
-		}
-	}
-
-	song_for_the_people = {
-		icon = mission_seren_cathedral
-		position = 8
-		required_missions = { crush_the_mutineers } 
-		provinces_to_highlight = { 
-			AND = {
-				culture = metobesebi
-				NOT = { has_building = temple }
-			}
-		} 
-
-		trigger = { 
-			num_of_owned_provinces_with = {
-				value = 18
-				OR = { 
-					culture = metobesebi
-					# culture = naleni_harpy
-				}
-				has_building = temple	
-			}
-			OR = {
-				has_dip_advisor_3 = yes
-				has_adm_advisor_3 = yes
-			} 
-		}
-
-		effect = {
-			country_event = {
-				id = naleni.14
-			}
-		  } 
-	}
-
-	harpy_homelands = {
-		icon = mission_new_dawn
-		position = 10
-		required_missions = { a_new_naleni } 
-		provinces_to_highlight = { 
-			region = telekenid_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {
-			telekenid_region = {
-				type = all
-				owned_by = ROOT
-			}
-			development_in_provinces = {
-				value = 350
-				region = telekenid_region
-			}
-		} 
-
-		effect = { 
-			add_country_modifier = {
-				name = L55_remaking_madrimilak
-				duration = 36500
-			}
-			every_owned_province = { #this needs a custom tooltip
-				limit = {
-					region = telekenid_region 
-					OR = {
-						has_province_modifier = harpy_minority_integrated_small
-						has_province_modifier = harpy_minority_integrated_large
-					}
-				}
-				add_base_manpower = 1
-			}
-		} 
-	}
-
-	from_above_to_those_beneath = {
-		icon = mission_harpy_diplomats
-		position = 11
-		required_missions = { harpy_homelands } 
-		provinces_to_highlight = {
-				region = telekenid_region
-				OR = {
-					NOT = { has_building = courthouse }
-					NOT = { has_building = temple }
-					NOT = { culture = metobesebi }
-					NOT = { culture = naleni_harpy }
-				}
-		}
-		trigger = { 
-			telekenid_region = {
-				type = all
-				OR = {
-					culture = metobesebi
-					culture = naleni_harpy
-				}
-				has_building = courthouse
-				has_building = temple
-			}
-		} 
-		effect = { 
-			country_event = { id = naleni.16 }
-		} 
-	}
-
-	a_new_kind_of_mezhimezhi = {
-		icon = mission_a_crown
-		position = 12
-		required_missions = { from_above_to_those_beneath } 
-		provinces_to_highlight = { 
-			OR = { 
-				AND = { 
-					region = yetefesefi_region
-					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-				} 
-			province_id = 6118
 			}
 		}
-
-		trigger = { 
-			yetefesefi_region = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			6118 = {
-				development = 30
-				has_building = temple
-				has_building = courthouse
-				has_province_modifier = harpy_roost
-				has_great_project = {
-					type = crater_of_the_martyr
-					tier = 1
-				}
-			}
-		} 
-
-		effect = {
-#			IF = { 
-#				limit = {
-#						6118 = {
-#					has_great_project = {
-#						type = crater_of_the_martyr
-#						tier = 3
-#						}
-#					}
-#				}
-#				add_adm_power = 100
-#				add_dip_power = 100
-#				add_mil_power = 100
-#			}
-#			else = {
-#				6118 = {
-#					add_great_project_tier = {
-#					type = crater_of_the_martyr
-#					tier = 1
-#					}
-#				}
-#			}
-			add_country_modifier = {
-				name = L55_harpy_mezhimezhi
-				duration = -1
-			}
-			country_event = {
-				id = naleni.17
-			}
-		} 
 	}
 }
-
-
 Naléni_branch_three = {
 	slot = 3
 	generic = no
@@ -522,13 +300,14 @@ Naléni_branch_three = {
 		position = 2
 		required_missions = { all_hands_on_deck } 
 		provinces_to_highlight = {
-			OR = { area = berihrica_area
+			OR = {
+				area = berihrica_area
 				province_id = 5522
 				province_id = 5520
 				province_id = 5530
 				province_id = 5446
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 		}
 
 		trigger = {
@@ -651,315 +430,8 @@ Naléni_branch_three = {
 				NOT = { has_country_modifier = monstrous_nation } 
 			}
 		}
-
+		custom_tooltip = naleni_unlock__new_missions_tt
 		effect = { country_event = { id = naleni.11 }  } 
-	}
-
-	crush_the_mutineers = {
-		icon = mission_heated_battle
-		position = 7
-		required_missions = { conclave_of_captains } 
-		provinces_to_highlight = {  } 
-
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = naleni_mutiny_defeated_tt
-				NOT = { has_spawned_rebels = particularist_rebels } 
-				has_country_flag = L55_secure_state
-			}
-		}
-
-		effect = {
-			clr_country_flag = L55_riva_reform
-			clr_country_flag = L55_secure_state
-			add_legitimacy = 25
-			add_stability = 1
-			add_prestige = 25
-			country_event = { id = naleni.13 } 
-		}
-	}
-
-	privateers_not_pirates = {
-		icon = mission_raid_on_venice
-		position = 8
-		required_missions = { crush_the_mutineers } 
-		provinces_to_highlight = { 
-			has_province_modifier = L55_raiding_port
-			NOT = { 
-				AND = { 
-					has_building = dock
-					has_building = shipyard
-				}
-			}
-		} 
-
-		trigger = { 
-			custom_trigger_tooltip = {
-				tooltip = privateers_not_pirates_tt
-				all_owned_province = {
-					OR = { 
-						AND = { 
-							has_province_modifier = L55_raiding_port
-							has_building = dock
-							has_building = shipyard
-						}
-						NOT = {
-							has_province_modifier = L55_raiding_port
-						}
-					}
-				}
-			}
-			num_of_owned_provinces_with = {
-				value = 2
-				has_building = impressment_offices
-			}
-			num_ships_privateering = 45
-			navy_size_percentage = 0.9 
-		}
-		effect = { 
-			6061 = {
-				add_permanent_claim = ROOT
-			}
-			5581 = {
-				add_permanent_claim = ROOT
-			}
-			add_country_modifier = {
-				name = L55_on_wing_and_wave
-				duration = -1
-			}
-			decrease_monstrous_10 = yes
-		} 
-	}
-
-	a_new_naleni = {
-		icon = mission_female_throne
-		position = 9
-		required_missions = {
-			song_for_the_people
-			crush_the_mutineers
-			professionalise_the_sirens
-			privateers_not_pirates
-		}
-		provinces_to_highlight = { 
-			is_capital = yes
-			owned_by = ROOT
-		} 
-
-		trigger = { 
-			legitimacy = 95
-			stability = 2
-			NOT = { has_country_modifier = monstrous_nation }
-			capital_scope = {
-				has_building = courthouse
-				development = 40
-			}
-		} 
-
-		effect = { 
-			override_country_name = RIVANALENI
-			set_government_rank = 3
-			country_event = {
-				id = naleni.15
-			}
-		} 
-	}
-
-	across_the_gulf = {
-		icon = mission_indian_ocean_supremacy
-		position = 10
-		required_missions = { a_new_naleni } 
-		provinces_to_highlight = { 
-			OR = {
-				AND = { 
-					OR = {
-						area = sarkhashabid_area
-						area = shenral_area
-						area = avhavubhiya_area
-						area = ascension_cape_area
-						area = harimars_cradle_area
-						area = bharagha_area
-						area = tujgal_area
-					}
-					NOT = { country_or_non_sovereign_subject_holds = ROOT }
-				}
-			province_id = 1361
-			}
-		} 
-
-		trigger = { 
-			avhavubhiya_area = { 
-				type = all
-				owned_by = ROOT 
-				is_core = ROOT
-			}
-			shenral_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			sarkhashabid_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			ascension_cape_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			harimars_cradle_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			bharagha_area ={
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			tujgal_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			1361 = {
-				has_most_province_trade_power = ROOT
-			}
-		} 
-
-		effect = {
-			add_country_modifier = {
-				name = L55_rahens_riches
-				duration = 36500
-			}
-			every_known_country = {
-				limit = {
-					capital_scope = {
-						OR = {
-							superregion = east_sarhal_superregion
-							superregion = rahen_superregion
-						}
-					}
-				}
-				add_aggressive_expansion = { who = ROOT value = -25 apply_calc = yes }
-			}
-		} 
-	}
-
-	to_rule_the_sea = {
-		icon = mission_arabian_sea_trade
-		position = 11
-		required_missions = {
-			across_the_gulf
-			further_afield
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = { 
-			OR = {
-				army_professionalism = 0.5
-				army_tradition = 60
-				mil_power = 300
-			}
-			if = {
-				limit = { 
-					NOT = {	has_dlc = "Cradle of Civilization" }
-				}
-				mil_power = 300
-			}
-			else = {
-				has_mil_advisor_4 = yes
-			}
-			sailors = 50000	
-		} 
-
-		effect = { 
-			IF = {
-				limit = {
-					NOT = { has_dlc = "Cradle of Civilization" }
-				}
-				add_mil_power = -300	
-			}
-			IF = {
-				limit = {
-					NOT = { army_professionalism = 0.5 }
-					NOT = { army_tradition = 60 }
-				}
-				add_mil_power = -300
-			}
-			add_country_modifier = {
-				name = L55_the_sirens_three
-				duration = -1
-			}
-			add_country_modifier = {
-				name = L55_the_sirens_ships_three
-				duration = -1
-			}
-			hidden_effect = {
-				remove_country_modifier = L55_the_sirens_two
-				remove_country_modifier = L55_the_sirens_ships_two
-			}
-		} 
-	}
-
-	the_heart_of_rahens_trade = {
-		icon = mission_steer_trade_to_bengal
-		position = 12
-		required_missions = { to_rule_the_sea } 
-		provinces_to_highlight = { 
-			OR = { 
-				region = rahen_coast_region
-				province_id = 1347
-				province_id = 1343
-				province_id = 1366
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-		trigger = {
-			rahen_coast_region = {
-				type = all
-				owned_by = ROOT 
-				is_core = ROOT 
-			}
-			1347 = {
-				is_strongest_trade_power = L55 
-			}
-			1343 = {
-				is_strongest_trade_power = L55 
-			}
-			1366 = {
-				is_strongest_trade_power = L55 
-			}
-			monthly_trade_income = 80	
-		} 
-		effect = {
-			country_event = {
-				id = naleni.18
-			}
-		} 
-	}
-
-	the_naleni_gulf = {
-		icon = mission_haless_map
-		position = 13
-		required_missions = {
-			a_new_kind_of_mezhimezhi
-			the_heart_of_rahens_trade
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = { 
-			is_hegemon_of_type = naval_hegemon
-			num_of_marines = 100
-		} 
-
-		effect = {
-			1361 = { change_province_name = "The Naléni Gulf" }
-			1349 = { change_province_name = "West Naléni Gulf" }
-			country_event = {
-				id = naleni.19
-			}
-		}
 	}
 }
 Naléni_branch_four = {
@@ -1003,15 +475,15 @@ Naléni_branch_four = {
 				add_permanent_claim = ROOT
 			}
 			add_country_modifier = {
-				name = L55_the_sirens_one
+				name = "L55_the_sirens_one"
 				duration = -1
 			}
 			add_country_modifier = {
-				name = L55_the_sirens_ships_one
+				name = "L55_the_sirens_ships_one"
 				duration = -1
 			}
 			if = {
-				limit = { NOT = { navy_tradition = 30 } } 
+				limit = { NOT = { navy_tradition = 30 }  } 
 				add_dip_power = -100
 			}
 		}
@@ -1022,13 +494,12 @@ Naléni_branch_four = {
 		position = 3
 		required_missions = { the_sirens } 
 		provinces_to_highlight = {
-			OR = { 
+			OR = {
 				area = telekenid_islands_area
 				province_id = 4805
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 		}
-
 
 		trigger = {
 			telekenid_islands_area = {
@@ -1078,14 +549,14 @@ Naléni_branch_four = {
 		effect = {
 			6592 = {
 				add_province_modifier = {
-					name = L55_raiding_port
+					name = "L55_raiding_port"
 					duration = -1
 				}
 				add_base_production = 2
 				add_base_manpower = 2
 			}
 			add_country_modifier = {
-				name = L55_colonist
+				name = "L55_colonist"
 				duration = 18250
 			}
 		}
@@ -1099,7 +570,7 @@ Naléni_branch_four = {
 			region = rahen_coast_region
 			NOT = { is_looted = yes } 
 			has_port = yes
-			NOT = { owned_by = ROOT }
+			NOT = { owned_by = ROOT } 
 		}
 
 		trigger = {
@@ -1117,6 +588,630 @@ Naléni_branch_four = {
 
 		effect = { country_event = { id = naleni.10 }  } 
 	}
+}
+Naléni_branch_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = L55 } 
+
+	new_fleets = {
+		icon = mission_fleet_arrival
+		position = 4
+		required_missions = { raiding_bases } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			has_flagship = yes
+			num_of_light_ship = 10
+			num_of_galley = 15
+			navy_size_percentage = 0.9
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = "L55_on_wing_and_wave"
+				duration = 7300
+			}
+			kiubang_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { owned_by = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	new_bases = {
+		icon = brest_dockyards
+		position = 5
+		required_missions = { new_fleets } 
+		provinces_to_highlight = {
+			ringlet_isles_region = {
+				type = all
+				owned_by = Y64
+			}
+			kiubang_area = {
+				type = all
+				not = { country_or_non_sovereign_subject_holds = ROOT } 
+			}
+			3247 = {
+				OR = {
+					not = { country_or_non_sovereign_subject_holds = ROOT } 
+					is_city = no
+				}
+			}
+			3248 = {
+				OR = {
+					not = { country_or_non_sovereign_subject_holds = ROOT } 
+					is_city = no
+				}
+			}
+		}
+
+		trigger = {
+			kiubang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ringlet_isles_region = {
+				type = all
+				not = { owned_by = Y64 } 
+			}
+			3247 = {
+				owned_by = L55
+				is_city = yes
+			}
+			3248 = {
+				owned_by = L55
+				is_city = yes
+			}
+			1366 = {
+				trade_share = {
+					country = L55
+					share = 10
+				}
+			}
+		}
+
+		effect = {
+			4773 = {
+				add_province_modifier = {
+					name = "L55_raiding_port"
+					duration = -1
+				}
+			}
+			if = {
+				limit = { has_country_modifier = L55_on_wing_and_wave } 
+				extend_country_modifier = {
+					name = "L55_on_wing_and_wave"
+					duration = 7300
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "L55_on_wing_and_wave"
+					duration = 7300
+				}
+			}
+			add_country_modifier = {
+				name = "L55_expanding_construction"
+				duration = 3650
+			}
+		}
+	}
+}
+naléni_branch_one_p2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = L55
+		has_country_flag = L55_part_two
+	}  
+
+	the_great_songhall_of_yetsemira = {
+		icon = mission_big_house
+		position = 12
+		required_missions = { from_above_to_those_beneath } 
+		provinces_to_highlight = { province_id = 5529 } 
+
+		trigger = {
+			5529 = {
+				development = 40
+				has_building = mage_tower
+				num_of_buildings_in_province = 8
+			}
+			IF = {
+				limit = { has_dlc = "Leviathan" } 
+				5529 = { num_of_times_expanded_infrastructure = 2 } 
+			}
+			else = {
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Cradle of Civilization" }  } 
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+			else = { has_adm_advisor_4 = yes } 
+		}
+
+		effect = {
+			add_prestige = 50
+			5529 = {
+				add_province_modifier = {
+					name = "L55_great_songhall"
+					duration = -1
+				}
+				generic_add_race_minority_size_effect = { race = gnollish } 
+				generic_add_race_minority_size_effect = { race = harimari } 
+				generic_add_race_minority_size_effect = { race = harpy } 
+			}
+			large_increase_of_gnollish_tolerance_effect = yes
+			large_increase_of_harimari_tolerance_effect = yes
+		}
+	}
+}
+naleni_branch_two_p2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = L55
+		has_country_flag = L55_part_two
+	} 
+
+	song_for_the_people = {
+		icon = mission_seren_cathedral
+		position = 8
+		required_missions = { crush_the_mutineers } 
+		provinces_to_highlight = {
+			AND = {
+				culture = metobesebi
+				NOT = { has_building = temple } 
+			}
+		}
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 18
+				OR = { culture = metobesebi } 
+				has_building = temple
+			}
+			OR = {
+				has_dip_advisor_3 = yes
+				has_adm_advisor_3 = yes
+			}
+		}
+
+		effect = { country_event = { id = naleni.14 }  } 
+	}
+
+	harpy_homelands = {
+		icon = mission_new_dawn
+		position = 10
+		required_missions = { a_new_naleni } 
+		provinces_to_highlight = {
+			region = telekenid_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+
+		trigger = {
+			telekenid_region = {
+				type = all
+				owned_by = ROOT
+			}
+			development_in_provinces = {
+				value = 350
+				region = telekenid_region
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = "L55_remaking_madrimilak"
+				duration = 36500
+			}
+			every_owned_province = {
+				limit = {
+					region = telekenid_region
+					OR = {
+						has_province_modifier = harpy_minority_integrated_small
+						has_province_modifier = harpy_minority_integrated_large
+					}
+				}
+				add_base_manpower = 1
+			}
+		}
+	}
+
+	from_above_to_those_beneath = {
+		icon = mission_harpy_diplomats
+		position = 11
+		required_missions = { harpy_homelands } 
+		provinces_to_highlight = {
+			region = telekenid_region
+			OR = {
+				NOT = { has_building = courthouse } 
+				NOT = { has_building = temple } 
+				NOT = { culture = metobesebi } 
+				NOT = { culture = naleni_harpy } 
+			}
+		}
+
+		trigger = {
+			telekenid_region = {
+				type = all
+				OR = {
+					culture = metobesebi
+					culture = naleni_harpy
+				}
+				has_building = courthouse
+				has_building = temple
+			}
+		}
+
+		effect = { country_event = { id = naleni.16 }  } 
+	}
+
+	a_new_kind_of_mezhimezhi = {
+		icon = mission_a_crown
+		position = 12
+		required_missions = { from_above_to_those_beneath } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = yetefesefi_region
+					OR = {
+						NOT = { owned_by = ROOT } 
+						NOT = { is_core = ROOT } 
+					}
+				}
+				province_id = 6118
+			}
+		}
+
+		trigger = {
+			yetefesefi_region = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			6118 = {
+				development = 30
+				has_building = temple
+				has_building = courthouse
+				has_province_modifier = harpy_roost
+				has_great_project = {
+					type = crater_of_the_martyr
+					tier = 1
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = "L55_harpy_mezhimezhi"
+				duration = -1
+			}
+			country_event = { id = naleni.17 } 
+		}
+	}
+}
+naléni_branch_three_p2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = L55
+		has_country_flag = L55_part_two
+	} 
+
+	crush_the_mutineers = {
+		icon = mission_heated_battle
+		position = 7
+		required_missions = { conclave_of_captains } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = naleni_mutiny_defeated_tt
+				NOT = { has_spawned_rebels = particularist_rebels } 
+				has_country_flag = L55_secure_state
+			}
+		}
+
+		effect = {
+			clr_country_flag = L55_riva_reform
+			clr_country_flag = L55_secure_state
+			add_legitimacy = 25
+			add_stability = 1
+			add_prestige = 25
+			country_event = { id = naleni.13 } 
+		}
+	}
+
+	privateers_not_pirates = {
+		icon = mission_raid_on_venice
+		position = 8
+		required_missions = { crush_the_mutineers } 
+		provinces_to_highlight = {
+			has_province_modifier = L55_raiding_port
+			NOT = {
+				AND = {
+					has_building = dock
+					has_building = shipyard
+				}
+			}
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = privateers_not_pirates_tt
+				all_owned_province = {
+					OR = {
+						AND = {
+							has_province_modifier = L55_raiding_port
+							has_building = dock
+							has_building = shipyard
+						}
+						NOT = { has_province_modifier = L55_raiding_port } 
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				has_building = impressment_offices
+			}
+			num_ships_privateering = 45
+			navy_size_percentage = 0.9
+		}
+
+		effect = {
+			6061 = { add_permanent_claim = ROOT } 
+			5581 = { add_permanent_claim = ROOT } 
+			add_country_modifier = {
+				name = "L55_on_wing_and_wave"
+				duration = -1
+			}
+			decrease_monstrous_10 = yes
+		}
+	}
+
+	a_new_naleni = {
+		icon = mission_female_throne
+		position = 9
+		required_missions = {
+			song_for_the_people
+			crush_the_mutineers
+			professionalise_the_sirens
+			privateers_not_pirates
+		}
+		provinces_to_highlight = {
+			is_capital = yes
+			owned_by = ROOT
+		}
+
+		trigger = {
+			legitimacy = 95
+			stability = 2
+			NOT = { has_country_modifier = monstrous_nation } 
+			capital_scope = {
+				has_building = courthouse
+				development = 40
+			}
+		}
+
+		effect = {
+			override_country_name = "RIVANALENI"
+			set_government_rank = 3
+			country_event = { id = naleni.15 } 
+		}
+	}
+
+	across_the_gulf = {
+		icon = mission_indian_ocean_supremacy
+		position = 10
+		required_missions = { a_new_naleni } 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = sarkhashabid_area
+						area = shenral_area
+						area = avhavubhiya_area
+						area = ascension_cape_area
+						area = harimars_cradle_area
+						area = bharagha_area
+						area = tujgal_area
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+				}
+				province_id = 1361
+			}
+		}
+
+		trigger = {
+			avhavubhiya_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			shenral_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			sarkhashabid_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			ascension_cape_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			harimars_cradle_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			bharagha_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			tujgal_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			1361 = { has_most_province_trade_power = ROOT } 
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = "L55_rahens_riches"
+				duration = 36500
+			}
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							superregion = east_sarhal_superregion
+							superregion = rahen_superregion
+						}
+					}
+				}
+				add_aggressive_expansion = {
+					who = ROOT
+					value = -25
+					apply_calc = yes
+				}
+			}
+		}
+	}
+
+	to_rule_the_sea = {
+		icon = mission_arabian_sea_trade
+		position = 11
+		required_missions = {
+			across_the_gulf
+			further_afield
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			OR = {
+				army_professionalism = 0.5
+				army_tradition = 60
+				mil_power = 300
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Cradle of Civilization" }  } 
+				mil_power = 300
+			}
+			else = { has_mil_advisor_4 = yes } 
+			sailors = 50000
+		}
+
+		effect = {
+			IF = {
+				limit = { NOT = { has_dlc = "Cradle of Civilization" }  } 
+				add_mil_power = -300
+			}
+			IF = {
+				limit = {
+					NOT = { army_professionalism = 0.5 } 
+					NOT = { army_tradition = 60 } 
+				}
+				add_mil_power = -300
+			}
+			add_country_modifier = {
+				name = "L55_the_sirens_three"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "L55_the_sirens_ships_three"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = L55_the_sirens_two
+				remove_country_modifier = L55_the_sirens_ships_two
+			}
+		}
+	}
+
+	the_heart_of_rahens_trade = {
+		icon = mission_steer_trade_to_bengal
+		position = 12
+		required_missions = { to_rule_the_sea } 
+		provinces_to_highlight = {
+			OR = {
+				region = rahen_coast_region
+				province_id = 1347
+				province_id = 1343
+				province_id = 1366
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+
+		trigger = {
+			rahen_coast_region = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			1347 = { is_strongest_trade_power = L55 } 
+			1343 = { is_strongest_trade_power = L55 } 
+			1366 = { is_strongest_trade_power = L55 } 
+			monthly_trade_income = 80
+		}
+
+		effect = { country_event = { id = naleni.18 }  } 
+	}
+
+	the_naleni_gulf = {
+		icon = mission_haless_map
+		position = 13
+		required_missions = {
+			a_new_kind_of_mezhimezhi
+			the_heart_of_rahens_trade
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			is_hegemon_of_type = naval_hegemon
+			num_of_marines = 100
+		}
+
+		effect = {
+			1361 = { change_province_name = "The Naléni Gulf" } 
+			1349 = { change_province_name = "West Naléni Gulf" } 
+			country_event = { id = naleni.19 } 
+		}
+	}
+
+}
+naléni_branch_four_p2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = L55
+		has_country_flag = L55_part_two
+	}  
 
 	professionalise_the_sirens = {
 		icon = jap_train_samurai
@@ -1124,7 +1219,7 @@ Naléni_branch_four = {
 		required_missions = { crush_the_mutineers } 
 		provinces_to_highlight = {  } 
 
-		trigger = { 
+		trigger = {
 			OR = {
 				army_professionalism = 0.3
 				army_tradition = 50
@@ -1132,37 +1227,37 @@ Naléni_branch_four = {
 			}
 			num_of_marines = 25
 			army_size_percentage = 0.9
-		} 
+		}
 
-		effect = { 
+		effect = {
 			IF = {
 				limit = {
-					NOT = { army_tradition = 50 }
-					NOT = { army_professionalism = 0.3 }
+					NOT = { army_tradition = 50 } 
+					NOT = { army_professionalism = 0.3 } 
 				}
 				add_mil_power = -300
 			}
 			add_country_modifier = {
-				name = L55_the_sirens_two
+				name = "L55_the_sirens_two"
 				duration = -1
 			}
 			add_country_modifier = {
-				name = L55_the_sirens_ships_two
+				name = "L55_the_sirens_ships_two"
 				duration = -1
 			}
 			hidden_effect = {
 				remove_country_modifier = L55_the_sirens_one
-				remove_country_modifier = L55_the_sirens_ships_one 
+				remove_country_modifier = L55_the_sirens_ships_one
 			}
-		decrease_monstrous_10 = yes
-		} 
+			decrease_monstrous_10 = yes
+		}
 	}
 
 	further_afield = {
 		icon = mission_invade_england_ITA
 		position = 10
 		required_missions = { a_new_naleni } 
-		provinces_to_highlight = { 
+		provinces_to_highlight = {
 			AND = {
 				OR = {
 					region = bamaliwuni_region
@@ -1171,12 +1266,12 @@ Naléni_branch_four = {
 					region = lupulan_rainforest_region
 				}
 				NOT = { is_looted = yes } 
-				NOT = { owned_by = ROOT }
+				NOT = { owned_by = ROOT } 
 				has_port = yes
 			}
-		} 
+		}
 
-		trigger = { 
+		trigger = {
 			5581 = {
 				owned_by = ROOT
 				is_core = ROOT
@@ -1221,7 +1316,7 @@ Naléni_branch_four = {
 					has_port = no
 				}
 			}
-		} 
+		}
 
 		effect = {
 			6040 = {
@@ -1245,7 +1340,7 @@ Naléni_branch_four = {
 				}
 				add_permanent_claim = ROOT
 			}
-			6161 = { #insyaa, check this ID later
+			6161 = {
 				limit = {
 					NOT = { is_core = ROOT } 
 					NOT = { owned_by = ROOT } 
@@ -1254,20 +1349,20 @@ Naléni_branch_four = {
 			}
 			5581 = {
 				add_province_modifier = {
-					name = L55_raiding_port
+					name = "L55_raiding_port"
 					duration = -1
-				} 
+				}
 			}
 			6061 = {
 				add_province_modifier = {
-					name = L55_raiding_port
+					name = "L55_raiding_port"
 					duration = -1
-				} 
+				}
 			}
 			add_country_modifier = {
-				name = L55_astride_the_continents
+				name = "L55_astride_the_continents"
 				duration = 36500
-			} 
+			}
 		}
 	}
 
@@ -1275,7 +1370,7 @@ Naléni_branch_four = {
 		icon = mission_stormy_seas
 		position = 11
 		required_missions = { further_afield } 
-		provinces_to_highlight = { 
+		provinces_to_highlight = {
 			AND = {
 				1363 = {
 					NOT = {
@@ -1295,15 +1390,14 @@ Naléni_branch_four = {
 				}
 				6161 = {
 					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-						
+						NOT = { owned_by = ROOT } 
+						NOT = { is_core = ROOT } 
 					}
-				} 
+				}
 			}
 		}
 
-		trigger = { 
+		trigger = {
 			total_own_and_non_tributary_subject_development = {
 				every_known_country = {
 					limit = {
@@ -1314,7 +1408,7 @@ Naléni_branch_four = {
 							}
 						}
 					}
-		 		}
+				}
 			}
 			1363 = {
 				has_privateer_share_in_trade_node = {
@@ -1329,10 +1423,11 @@ Naléni_branch_four = {
 				}
 			}
 		}
+
 		effect = {
 			6161 = {
 				add_province_modifier = {
-					name = L55_raiding_port
+					name = "L55_raiding_port"
 					duration = -1
 				}
 			}
@@ -1343,39 +1438,39 @@ Naléni_branch_four = {
 				}
 				add_permanent_claim = ROOT
 			}
-		} 
+		}
 	}
 
 	an_insyaan_capitol = {
 		icon = capture_adriatic_ports
 		position = 12
 		required_missions = { beyond_the_stormwall } 
-		provinces_to_highlight = { 
+		provinces_to_highlight = {
 			6181 = {
-				OR = { 
-					NOT = { has_building = courthouse }
-					NOT = { has_building = dock }
-					NOT = { has_building = shipyard }
-					NOT = { has_building = temple }
-					NOT = { has_province_modifier = harpy_roost }
-					NOT = { owned_by = L55 }
-					NOT = { is_core = L55 }
-					NOT = { development = 30 }
-				} 
+				OR = {
+					NOT = { has_building = courthouse } 
+					NOT = { has_building = dock } 
+					NOT = { has_building = shipyard } 
+					NOT = { has_building = temple } 
+					NOT = { has_province_modifier = harpy_roost } 
+					NOT = { owned_by = L55 } 
+					NOT = { is_core = L55 } 
+					NOT = { development = 30 } 
+				}
 			}
 		}
 
 		trigger = {
 			6181 = {
-				has_building = courthouse 
+				has_building = courthouse
 				has_building = dock
-				has_building = shipyard 
-				has_building = temple 
-				has_province_modifier = harpy_roost 
-				owned_by = L55 
-				is_core = L55 
-				development = 30 
-			} 
+				has_building = shipyard
+				has_building = temple
+				has_province_modifier = harpy_roost
+				owned_by = L55
+				is_core = L55
+				development = 30
+			}
 		}
 
 		effect = {
@@ -1383,126 +1478,21 @@ Naléni_branch_four = {
 				change_trade_goods = glass
 				add_building = mills
 				add_province_modifier = {
-					name = L55_insyaan_capitol
+					name = "L55_insyaan_capitol"
 					duration = -1
 				}
 			}
-			
-		} 
+		}
 	}
 }
-
-Naléni_branch_five = {
+naléni_branch_five_p2 = {
 	slot = 5
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = L55 } 
+	potential = potential = { 
+		tag = L55
+		has_country_flag = L55_part_two
+	}  
 
-	new_fleets = {
-		icon = mission_fleet_arrival
-		position = 4
-		required_missions = { raiding_bases } 
-		provinces_to_highlight = {  } 
-
-		trigger = {
-			has_flagship = yes
-			num_of_light_ship = 10
-			num_of_galley = 15
-			navy_size_percentage = 0.9
-		}
-
-		effect = {
-			add_country_modifier = {
-				name = "L55_on_wing_and_wave"
-				duration = 240
-			}
-			kiubang_area = {
-				limit = {
-					NOT = { is_core = ROOT } 
-					NOT = { owned_by = ROOT } 
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-
-	new_bases = {
-		icon = brest_dockyards
-		position = 5
-		required_missions = { new_fleets } 
-		provinces_to_highlight = { 
-			ringlet_isles_region = {
-				type = all
-				owned_by = Y64
-			}
-			kiubang_area = {
-				type = all
-				not = { country_or_non_sovereign_subject_holds = ROOT }
-			}
-			3247 = {
-				OR = {
-					not = { country_or_non_sovereign_subject_holds = ROOT }
-					is_city = no
-				}	
-			}
-			3248 = {
-				OR = {
-					not = { country_or_non_sovereign_subject_holds = ROOT }
-					is_city = no
-				}	
-			}
-		} 
-
-		trigger = { 
-			kiubang_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			ringlet_isles_region = {
-			type = all
-			not = { owned_by = Y64 }
-			} 
-			3247 = {
-				owned_by = L55
-				is_city = yes
-			}
-			3248 = {
-				owned_by = L55
-				is_city = yes
-			}
-			1366 = {
-				trade_share = {
-					country = L55
-					share = 10
-				}
-			}	
-		} 
-
-		effect = {
-			4773 = { 
-				add_province_modifier = {
-				name = L55_raiding_port
-				duration = -1
-				}
-			}		
-			if = {
-				limit = { has_country_modifier = L55_on_wing_and_wave }
-				extend_country_modifier = {
-					name = L55_on_wing_and_wave
-					duration = 7300
-				}
-			}
-			else = {
-				add_country_modifier = {
-					name = L55_on_wing_and_wave
-					duration = 7300 
-				}
-			}
-			add_country_modifier = {
-			name = L55_expanding_construction
-			duration = 3650
-			}
-		} 
-	}
 }

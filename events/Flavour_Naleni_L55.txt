@@ -6,7 +6,7 @@ country_event = {
 	id = naleni.1
 	title = naleni.1.t
 	desc = naleni.1.d
-	picture = MILITARY_CAMP_eventPicture
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -23,6 +23,7 @@ country_event = {
 			name = L55_low_authority
 			duration = -1
 		}
+		custom_tooltip = L55_naleni.1_tt
 	}
 }	
 
@@ -512,6 +513,8 @@ country_event = {
 		remove_country_modifier = L55_high_authority
 		remove_country_modifier = L55_med_authority
 		remove_country_modifier = L55_low_authority
+		set_country_flag = L55_part_two
+		swap_non_generic_missions = yes
 	}
 }
 
