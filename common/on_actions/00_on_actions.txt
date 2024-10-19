@@ -11391,15 +11391,29 @@ on_province_culture_changed = {
 		set_province_flag = brokenjaw_converted_province
 		remove_province_modifier = brokenjaw_mass_settling
 	}
-	#naleni harpy minority adding
+	#naleni 
 	if = {
 		limit = {
-			OR = { has_country_modifier = L55_siren_halls_1 has_country_modifier = L55_siren_songhalls_2 }
+			owner = {
+				OR = {
+					has_country_modifier = L55_siren_songhalls_1 
+					has_country_modifier = L55_siren_songhalls_2 
+				}
+			}
 			NOT = { 
 				has_province_modifier = harpy_majority 
 			}
 		}	
 		generic_add_race_minority_size_effect = { race = harpy }
+	}
+	if = {
+		limit = {
+			owner = {
+				OR = { has_country_modifier = L55_siren_songhalls_1 has_country_modifier = L55_siren_songhalls_2 }
+			}
+			superregion = east_sarhal_superregion
+		}
+		change_culture = metobesebi
 	}
 }
 

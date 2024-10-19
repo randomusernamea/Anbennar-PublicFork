@@ -79,7 +79,7 @@ country_event = {
 }
 
 country_event = {
-	id = naleni.5
+	id = naleni.5 #to our tune
 	title = naleni.5.t
 	desc = naleni.5.d
 	picture = MILITARY_CAMP_eventPicture
@@ -89,9 +89,10 @@ country_event = {
 		name = naleni.5.a
 		ai_chance = { factor = 100 }
 		add_country_modifier = {
-			name = L55_the_sirens_one
+			name = L55_siren_songhalls_1
 			duration = -1
 		}
+		custom_tooltip = to_our_tune_tt
 	}
 }
 
