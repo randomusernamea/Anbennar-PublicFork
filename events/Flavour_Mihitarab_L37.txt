@@ -1,0 +1,338 @@
+
+
+namespace = flavor_mihitarab
+
+#starting event
+country_event = {
+	id = flavor_mihitarab.1
+	title = flavor_mihitarab.1.t
+	desc = flavor_mihitarab.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = L37_smooth_death
+				duration = -1  
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = flavor_mihitarab.1.a	
+		kill_ruler = yes
+		hidden_effect = {
+			add_country_modifier = { 
+				name = L37_death_exception
+				duration = 7300  
+				hidden = yes
+			}
+		}
+		custom_tooltip = L37_ruler_wont_die_tooltip
+		add_ruler_personality = conqueror_personality
+		6602 = {
+			add_permanent_claim = ROOT
+		}
+		6617 = {
+			add_permanent_claim = ROOT
+		}
+		set_ruler_flag = mihitarab_haigo_rules_flag
+	}
+	after = {
+		remove_country_modifier = L37_smooth_death
+	}
+}
+
+#lelanan
+country_event = {
+	id = flavor_mihitarab.2
+	title = flavor_mihitarab.2.t
+	desc = flavor_mihitarab.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.2.a
+		6599 = {
+			add_devastation = -100
+			add_base_tax = 1
+			add_local_autonomy = 10
+		}
+		add_treasury = -50
+		add_prestige = 20
+	}
+}
+
+#the finisher
+country_event = {
+	id = flavor_mihitarab.3
+	title = flavor_mihitarab.3.t
+	desc = flavor_mihitarab.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.3.a
+		add_country_modifier = {
+			name = L37_summer_unity
+			duration = 18250  
+		}
+		if = {
+			limit = {
+				has_country_flag = mihitarab_haigo_rules_flag
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_dip_power = 100
+		}
+	}
+}
+
+
+#jouney to ardimya
+country_event = {
+	id = flavor_mihitarab.4
+	title = flavor_mihitarab.4.t
+	desc = flavor_mihitarab.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.4.a
+		west_salahad_coast_region = {
+			discover_country = ROOT
+		}
+		1448 = {
+			discover_country = ROOT
+		}
+		1447 = {
+			discover_country = ROOT
+		}
+		qaynsland_area = {
+			discover_country = ROOT
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_dip_power = 50
+		add_country_modifier = {
+			name = L37_the_bottle_of_nyeekayba
+			duration = 18250  
+		}
+	}
+}
+
+#jounrney to the west
+country_event = {
+	id = flavor_mihitarab.5
+	title = flavor_mihitarab.5.t
+	desc = flavor_mihitarab.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.5.a
+		sil_berkhens_land_area = {
+			discover_country = ROOT
+			random_area_province = {
+				add_permanent_province_modifier = { 
+					name = L37_point_contact
+					duration = -1  
+				}	
+			}
+		}
+		pikakely_area = {
+			discover_country = ROOT
+		}
+		3111 = {
+			discover_country = ROOT
+		}
+		1636 = {
+			discover_country = ROOT
+		}
+		1450 = {
+			discover_country = ROOT
+		}
+		3088 = {
+			discover_country = ROOT
+		}
+		3089 = {
+			discover_country = ROOT
+		}
+		6635 = {
+			discover_country = ROOT
+		}
+		3104 = {
+			discover_country = ROOT
+		}
+		1627 = {
+			discover_country = ROOT
+		}
+		add_prestige = 20
+		add_treasury = 200
+	}
+}
+
+#culprit found
+country_event = {
+	id = flavor_mihitarab.6
+	title = flavor_mihitarab.6.t
+	desc = flavor_mihitarab.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.6.a
+		country_event = { 
+			id = flavor_mihitarab.8
+			days = 180
+			random = 60
+		}
+	}
+}
+
+#great celebration, what could go wrong?
+country_event = {
+	id = flavor_mihitarab.7
+	title = flavor_mihitarab.7.t
+	desc = flavor_mihitarab.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.7.a
+		add_prestige = 20
+		hidden_effect = {
+			country_event = { 
+				id = flavor_mihitarab.10
+				days = 2
+				random = 3
+			}
+		}
+	}
+}
+
+#prisoner reveals secrets
+country_event = {
+	id = flavor_mihitarab.8
+	title = flavor_mihitarab.8.t
+	desc = flavor_mihitarab.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.8.a
+		add_manpower = 0.5
+		country_event = { 
+			id = flavor_mihitarab.9
+			days = 30
+			random = 30
+		}
+	}
+}
+
+#the hidden horrors revealed
+country_event = {
+	id = flavor_mihitarab.9
+	title = flavor_mihitarab.9.t
+	desc = flavor_mihitarab.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.9.a
+		6611 = {
+			change_religion = shadow_pact
+			add_local_autonomy = 10
+			add_permanent_province_modifier = { 
+				name = L37_cult_stronghold
+				duration = -1  
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		5822 = {
+			change_religion = shadow_pact
+			add_local_autonomy = 10
+			add_permanent_province_modifier = { 
+				name = L37_cult_stronghold
+				duration = -1  
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		6613 = {
+			change_religion = shadow_pact
+			add_local_autonomy = 10
+			add_permanent_province_modifier = { 
+				name = L37_cult_stronghold
+				duration = -1  
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		
+	}
+}
+
+
+#Assasination
+country_event = {
+	id = flavor_mihitarab.10
+	title = flavor_mihitarab.10.t
+	desc = flavor_mihitarab.10.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.10.a
+		change_adm = -1
+		change_dip = -1
+		change_mil = -1
+		country_event = { 
+			id = flavor_mihitarab.11
+			days = 90
+			random = 60
+		}
+		add_ruler_modifier = { 
+			name = L37_ruler_injured
+			duration = -1
+		}
+	}
+}
+
+#he recovers
+country_event = {
+	id = flavor_mihitarab.11
+	title = flavor_mihitarab.11.t
+	desc = flavor_mihitarab.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_mihitarab.11.a
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		
+		add_ruler_modifier = { 
+			name = L37_scarred_ruler
+			duration = -1
+		}
+		remove_country_modifier = L37_ruler_injured
+	}
+}
