@@ -420,6 +420,18 @@ gushuokguan_3 = {
 
 		trigger = {  
 			OR = {
+				#Case 2: Rival
+				Y05 = { #Lanjinhui
+					is_enemy = ROOT #Gushuokguan
+					any_neighbor_province = {
+						owned_by = ROOT #Gushuokguan
+						infantry_in_province = 6
+					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 80
+					}
+				}
 				#Case 1: Ally or vassal
 				AND = {
 					variable_arithmetic_trigger = {
@@ -456,21 +468,6 @@ gushuokguan_3 = {
 									}
 								}
 							}
-						}
-					}
-				}
-				
-				#Case 2: Rival
-				AND = { #Purely for tooltip readability
-					Y05 = { #Lanjinhui
-						is_enemy = ROOT #Gushuokguan
-						any_neighbor_province = {
-							owned_by = ROOT #Gushuokguan
-							infantry_in_province = 6
-						}
-						has_spy_network_from = {
-							who = ROOT
-							value = 80
 						}
 					}
 				}
