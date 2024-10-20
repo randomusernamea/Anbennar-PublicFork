@@ -151,3 +151,22 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+
+#
+country_event = {
+	id = gushuokguan_event.9
+	title = gushuokguan_event.9.t
+	desc = gushuokguan_event.9.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = {
+		name = gushuokguan_event.9.a
+		ai_chance = { factor = 1 }
+	}
+}
