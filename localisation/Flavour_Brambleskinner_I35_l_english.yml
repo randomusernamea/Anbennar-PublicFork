@@ -8,7 +8,7 @@
  brambleskinner_pactbreakers_desc:0 "We will break the biggest threat for us, the Verdant Pact of elves supported by the Fey."
 
  brambleskinner_friends_under_the_trees_title:0 "Friends under the Trees"
- brambleskinner_friends_under_the_trees_desc:0 "We are surrounded by ennemies and must find allies that are not bound to the Fey."
+ brambleskinner_friends_under_the_trees_desc:0 "We are surrounded by ennemies and must find allies that are not bound to the Fey. The Spiked Log clan may be a suitable candidate, although they are threatened by the bloodthirsty Relgakk Blackmoon. Maybe we can help them with their ordeal?"
 
  brambleskinner_a_slaughterer_crushed_title:0 "A Slaughterer Crushed"
  brambleskinner_a_slaughterer_crushed_desc:0 "Relgakk Blackmoon is dead, and it is time to bring Spiked Log under our fold"
@@ -40,8 +40,8 @@
  brambleskinner_the_fireproof_mill_title:0 "The Fireproof Mill"
  brambleskinner_the_fireproof_mill_desc:0 "The deadly explosion of our blackpowder district made many wonder whether we should be more careful in our development of new weaponry. Why should we? We only have to build a mill that will not break nor burn even if an incident happens again."
 
- brambleskinner_clearing_the_forest_title:0 "Clear the Forest"
- brambleskinner_clearing_the_forest_desc:0 "We need more space for our populations and our growing needs. Spiked Log have a lot of experience cutting trees, and their land is home for a lot of Feystompers. While they are very useful for fighting the Fey, they would also make for good draft animals and help us move cut trees and unearth stumps."
+ brambleskinner_clear_the_forest_title:0 "Clear the Forest"
+ brambleskinner_clear_the_forest_desc:0 "We need more space for our populations and our growing needs. Spiked Log have a lot of experience cutting trees, and their land is home for a lot of Feystompers. While they are very useful for fighting the Fey, they would also make for good draft animals and help us move cut trees and unearth stumps."
 
  brambleskinner_char_the_forest_title:0 "Char the Forest"
  brambleskinner_char_the_forest_desc:0 "We need charcoal to make blackpowder and we need a lot of it. Fortunately, there are plenty of trees around for us to burn!"
@@ -67,13 +67,13 @@
 
  #events
  flavor_brambleskinner.1.t:0 "Crush the Slaughterer"
- flavor_brambleskinner.1.d:0 "Relgakk Blackmoon is a danger for all goblins. Brambleskinner has offered help to crush him."
- flavor_brambleskinner.1.a:0 "Sure, and let them take the lead."
- flavor_brambleskinner.1.b:0 "Sure, and we will take the lead."
+ flavor_brambleskinner.1.d:0 "Relgakk Blackmoon is a danger for all goblins and he is a direct threat to us. Brambleskinner has offered help to crush him. What should we answer?"
+ flavor_brambleskinner.1.a:0 "Sure, let them take the lead."
+ flavor_brambleskinner.1.b:0 "Sure, we will take the lead."
  flavor_brambleskinner.1.c:0 "No way, we would have no chance of winning!"
  
  flavor_brambleskinner.2.t:0 "Crush the Slaughterer"
- flavor_brambleskinner.2.d:0 "Relgakk Blackmoon is a danger for all goblins. We offered our help to Spiked Log to crush him."
+ flavor_brambleskinner.2.d:0 "Relgakk Blackmoon is a danger for all goblins and he is a direct threat to the Spiked Log clan. We offered our help to Spiked Log to crush him and our envoy came back with their answer."
  flavor_brambleskinner.2.a:0 "We will take the lead. To war!"
  flavor_brambleskinner.2.b:0 "They will take the lead. To war!"
  flavor_brambleskinner.2.c:0 "The cowards refused!"
@@ -109,7 +109,7 @@
  flavor_brambleskinner.9.a:0 "A joyous day for our country!"
 
  flavor_brambleskinner.10.t:0 "Daytime Fireworks"
- flavor_brambleskinner.10.d:0 "A flash, a bang and a tremor. Then another, and another... After the last detonation, silence was covered by panicked screams and the roar of the brazier engulfing what was left of our city.\n\nNegligence? Reckless behaviour? Fey meddling? We do not know. But one of our biggest blackpowder mills exploded, followed by most of the Blackpowder District. As we try to quell the flames, we barely recognize our capital. The once-proud and powerful [Capital.GetName] now stands in ruins, its streets covered by thousands of carbonized corpses."
+ flavor_brambleskinner.10.d:0 "A flash, a bang and a tremor. Then another, and another... After the last detonation, silence was covered by panicked screams and the roar of the brazier engulfing what was left of our capital.\n\nNegligence? Reckless behaviour? Fey meddling? We do not know. But one of our biggest blackpowder mills exploded, followed by most of the Blackpowder District. As we try to quell the flames, we barely recognize our capital. The once-proud and powerful [Root.Capital.GetName] now stands in ruins, its streets covered by thousands of carbonized corpses."
  flavor_brambleskinner.10.a:0 "An unexpected setback..."
 
  flavor_brambleskinner.11.t:0 "The Forest Stirs"
@@ -133,17 +133,14 @@
  brambleskinner_treecutting_grant:0 "Treecutting Grant"
  brambleskinner_sea_trade_grant:0 "Sea Trade Grant"
  
- brambleskinner_no_integration_verminhusk:0 "[GetBrambleskinnerVerminhusk]\n\nAs long as they are our vassal, Verminhusk will transfer us part of their gold income."
- brambleskinner_no_integration_verminhusk2:0 "Verminhusk can not be integrated until we form the Soyzkaru Cartel"
- brambleskinner_no_integration_petalmasher:0 "[GetBrambleskinnerPetalmasher]"
- brambleskinner_no_integration_petalmasher2:0 "Petalmasher can not be integrated until we form the Soyzkaru Cartel"
- brambleskinner_no_integration_spiked_log:0 "[GetBrambleskinnerSpikedLog]"
- brambleskinner_no_integration_spiked_log2:0 "Spiked Log can not be integrated until we form the Soyzkaru Cartel"
- brambleskinner_no_integration_landshark:0 "[GetBrambleskinnerLandshark]"
- brambleskinner_no_integration_landshark2:0 "Landshark can not be integrated until we form the Soyzkaru Cartel"
+ brambleskinner_no_integration_verminhusk:0 "§RVerminhusk can not be integrated until we form the Soyzkaru Cartel.§!"
+ brambleskinner_no_integration_petalmasher:0 "§RPetalmasher can not be integrated until we form the Soyzkaru Cartel.§!"
+ brambleskinner_no_integration_spiked_log:0 "§RSpiked Log can not be integrated until we form the Soyzkaru Cartel.§!"
+ brambleskinner_no_integration_landshark:0 "§RLandshark can not be integrated until we form the Soyzkaru Cartel.§!"
  
+ brambleskinner_anti_fey_momentum:0 "Anti-Fey Momentum"
  brambleskinner_feykiller_front:0 "Feykiller Front"
- brambleskinner_feykiller_front:0 "Bested the Fey"
+ brambleskinner_bested_the_fey:0 "Bested the Fey"
  brambleskinner_fey_rebellion:0 "Fey Rebellion"
  
  brambleskinner_burning_band:0 "The Burning Band"
@@ -161,20 +158,26 @@
  brambleskinner_blackpowder_lab:0 "Blackpowder Lab"
  brambleskinner_blackpowder_district:0 "Blackpowder District"
  brambleskinner_blackpowder_mill:0 "Blackpowder Mill"
+ 
+ 
 
 
  #tooltips
- brambleskinner_blackmoon_war_tt:0 "Declare war on Blackmoon with Spiked Log's help!"
- brambleskinner_wayward_clans_tt:0 "If either or both Petalmasher and Verminhusk don't exist, release them as vassals and gain 50 dip and 50 adm."
- brambleskinner_two_clans_one_boss_upgrade_tt:0 "If you have the Treecutting, Sea Trade, Minting and Alchemy Grants, upgrade the Two Clans, One Boss privilege to Six Clans, One Boss (+30% Reform Progress, +2 Diplomatic Relations, -10% Reduced Liberty Desire)."
- brambleskinner_farm_tt:0 "Two Livestock owned provinces and a Spiked Log Livestock province start building a Workshop for 0% of the cost."
- brambleskinner_charcoal_tt:0 "5 Exotic Wood provinces owned by Brambleskinner or one of their subjects that meet the requirement gain the Charcoal Kiln modifier (+1.5 Goods Produced, +20% Production Efficiency, 0.08 Monthly Devastation)"
- brambleskinner_have_30_dip_per_province_tt:0 "Have 30 dip per Ourdi province culture in Ourdia owned by you or Landshark that is not cored by you."
- brambleskinner_lose_30_dip_per_province_tt:0 "Lose 30 dip per Ourdi province culture in Ourdia owned by you or Landshark that is not cored by you."
- brambleskinner_unlock_cartel_tt:0 "You will be able to form the Soyzkaru Cartel! Once we do so, we will be able to integrate our subjects."
- brambleskinner_bramble_burner_unlocked_tt:0 "Unlock the Bramble-Burners Artifice Invention (+10% Infantry Damage, +5% Fire Damage Taken, +1 Leader Land Fire). It will still be available after forming Soyzkaru Cartel."
+ brambleskinner_blackmoon_war_tt:0 "§RDeclare war on Blackmoon with Spiked Log's help!§!"
+ brambleskinner_wayward_clans_tt:0 "If either or both §YPetalmasher§! and §YVerminhusk§! don't exist, release them as vassals and gain §G50§! Diplomatic Power and §G50§! Administrative Power."
+ brambleskinner_two_clans_one_boss_upgrade_tt:0 "If we have the §YTreecutting§!, §YSea Trade§!, §YMinting§! and §YAlchemy Grants§! modifiers, upgrade the §YTwo Clans, One Boss§! privilege to §YSix Clans, One Boss§! (§G+30%§! Reform Progress, §G+2§! Diplomatic Relations, §G-10%§! Reduced Liberty Desire)."
+ brambleskinner_farm_tt:0 "Two owned §YLivestock§! provinces and a Spiked Log §YLivestock§! province start building a §YWorkshop§! for §Y0%§! of the cost."
+ brambleskinner_charcoal_tt:0 "5 §YExotic Wood§! provinces owned by [Root.GetName] or our subjects that meet the requirement gain the §YCharcoal Kiln§! modifier (§G+1.5§! Goods Produced, §G+20%§! Production Efficiency, §R0.08§! Monthly Devastation)"
+ brambleskinner_have_30_dip_per_province_tt:0 "Have §Y30§! Diplomatic Power per §YOurdi§! province culture in §YOurdia§! owned by us or §YLandshark§! that is not cored by us."
+ brambleskinner_lose_30_dip_per_province_tt:0 "Lose §Y30§! Diplomatic Power per §YOurdi§! province culture in §YOurdia§! owned by us or §YLandshark§! that is not cored by us."
+ brambleskinner_unlock_cartel_tt:0 "§GWe will be able to form the Soyzkaru Cartel! Once we do so, we will be able to integrate our subjects.§!"
+ brambleskinner_bramble_burner_unlocked_tt:0 "Unlock the §YBramble-Burners§! Artifice Invention (§G+10%§! Infantry Damage, §R+5%§! Fire Damage Taken, §G+1§! Leader Land Fire). It will still be available after forming §YSoyzkaru Cartel§!."
  brambleskinner_subordinate_clans:0 "We can not integrate the [From.GetName] clan until we form the Soyzkaru Cartel."
- 
+ brambleskinner_repel_orcs_tt:0 "No §YDeepwoods Orc§! country has more than §Y40§! development."
+ brambleskinner_advisor_adm_tt:0 "One of the following must be true :\n   Natural Scientist with at least skill level §Y2§! is currently employed.\n   Administrative Advisor with at least skill level §Y3§! is currently employed."
+ brambleskinner_advisor_dip_tt:0 "One of the following must be true :\n   Trader with at least skill level §Y2§! is currently employed.\n   Diplomatic Advisor with at least skill level §Y3§! is currently employed."
+ brambleskinner_advisor_mil_tt:0 "One of the following must be true :\n   Military Engineer with at least skill level §Y2§! is currently employed.\n   Military Advisor with at least skill level §Y3§! is currently employed."
+ brambleskinner_end_fey_rebellion_tt:0 "§YFey Rebellion§! will be removed from every province in the Deepwoods."
  
  #privilege
  estate_monstrous_tribes_two_clans_one_boss:0 "Two Clans, One Boss"
@@ -186,5 +189,5 @@
  
  #artifice invention
  artifice_invention_bramble_burners:0 "Bramble-Burners"
- artifice_invention_bramble_burners_desc:0 "Bramble-Burners combine two of our most famed weapons : guns and fire. It can shoot bullets in long ranges like regular rifles, but its main feature is the reloadable container bellow the barrel. When filled with specially refined blackpowder, it releases a middle-range flame breath, useful for both carbonizing the ennemy and clearing dense foliage. Despite our best efforts, Bramble-Burners are sometimes unreliable, but even if they rarely malfunction, we always can craft new ones... and find new goblins to use them. Due to its undeserved reputation to be a somewhat-risky weapon, Bramble-Burners are solely used by our most reckless officers and artificer regiments."
- 
+ artifice_invention_bramble_burners_desc:0 "Bramble-Burners combine two of our most famed weapons : guns and fire. It can shoot bullets in long ranges like regular rifles, but its main feature is the reloadable cartridge bellow the barrel. Filled with specially refined blackpowder, it releases a middle-range flame breath, useful for both carbonizing the ennemy and clearing dense foliage. Despite our best efforts, Bramble-Burners are sometimes unreliable, but even if they rarely malfunction, we always can craft new ones... and find new goblins to use them. Due to its undeserved reputation to be a somewhat-risky weapon, Bramble-Burners are solely used by our most reckless officers and artificer regiments."
+ artifice_bramble_burners:0 "Bramble-Burners"

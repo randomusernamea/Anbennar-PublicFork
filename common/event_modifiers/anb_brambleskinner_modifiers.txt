@@ -28,6 +28,11 @@ brambleskinner_sea_trade_grant = {
 	global_prov_trade_power_modifier = 0.1
 }
 
+brambleskinner_anti_fey_momentum = {
+	missionaries = 1
+	missionary_maintenance_cost = -0.5
+}
+
 brambleskinner_feykiller_front = {
 	global_missionary_strength = 0.02
 	manpower_in_true_faith_provinces = 0.1
@@ -54,7 +59,7 @@ brambleskinner_gunpowder_crash_program = {
 
 brambleskinner_potent_blackpowder = {
 	fire_damage = 0.05
-	artillery_barrage_cost = 0.25
+	artillery_barrage_cost = -0.25
 }
 
 brambleskinner_fireworks_display = {
@@ -77,7 +82,7 @@ brambleskinner_saltpeter_works = {
 }
 
 brambleskinner_charcoal_kiln = {
-	trade_goods_size_modifier = 1.5
+	trade_goods_size = 1.5
 	local_production_efficiency = 0.2
 	local_monthly_devastation = 0.08
 }
@@ -95,7 +100,7 @@ brambleskinner_blackpowder_district = {
 
 brambleskinner_blackpowder_mill = {
 	local_production_efficiency = 0.2
-	local_build_cost = 0.15
+	local_build_cost = -0.15
 	allowed_num_of_manufactories = 1
 	local_tax_modifier = -0.1
 }

@@ -13609,7 +13609,7 @@ on_dependency_lost = {
 		remove_country_modifier = avhavubhiya_puppet_master
 	}
 	
-	if = {
+	if = { #Brambleskinner vassal stuff
 		limit = {
 			ROOT = { has_country_modifier = brambleskinner_minting_grant_1 }
 			FROM = { tag = I37 }
