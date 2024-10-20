@@ -287,6 +287,10 @@ country_event = {
 			hre_size = 1
 			is_emperor = no
 			NOT = { tag = B37 } #Rogieria has its own reward
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
+			}
 		}
 		ai_chance = {
 			factor = 0
@@ -316,7 +320,10 @@ country_event = {
 			#NOT = { exists = Z34 } #Black Castanor doesn't exist
 			#NOT = { tag = B33 } #Blademarches hate Castanor
 			NOT = { tag = Z34 }	#Black Castanor cannot into Castanor
-			NOT = { has_country_flag = orc_nation_formed }	#prevents orc formables from forming it
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
+			}
 		}
 		ai_chance = {
 			factor = 100
@@ -353,6 +360,10 @@ country_event = {
 				has_ruler_modifier = witch_king_modifier
 			}
 			NOT = { exists = Z99 }
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
+			}
 		}
 		ai_chance = {
 			factor = 100
