@@ -832,6 +832,10 @@ country_event = {
 				name = B47_deepwoods_accord_II
 				duration = -1
 			}
+			east_deepwoods_region = {
+				type = all
+				add_permanent_claim = THIS
+			}
 		}
 		set_country_flag = B47_the_matters_of_the_deepwoods_event
 	}
@@ -2121,7 +2125,10 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.32.a"
 		ai_chance = { factor = 90 }
-		set_country_flag = B47_castonath_patricians_neglected
+		custom_trigger_tooltip = {
+			tooltip = B47_hate_castonath
+			set_country_flag = B47_castonath_patricians_neglected
+		}
 		800 = {
 			remove_province_modifier = vernham_urbanization_II
 			add_permanent_province_modifier = {

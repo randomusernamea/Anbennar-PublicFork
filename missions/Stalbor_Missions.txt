@@ -305,7 +305,6 @@ B47_stalbor_column_1 = {
                 amount = 4
             }
             813 = {
-                is_core = yes
                 owned_by = ROOT
                 development = 20
                 has_trade_building_trigger = yes
@@ -545,6 +544,7 @@ B47_stalbor_column_2 = {
             custom_tooltip = B47_vampire_hunters_stalbor_estate_privilege
             hidden_effect = {
                 set_country_flag = B47_vampires_hunted_down
+                clr_country_flag = B47_vampire_lords_on_the_run
                 set_estate_privilege = estate_adventurers_stalbor_vampire_hunters
             }
             all_owned_province = {
@@ -1686,10 +1686,8 @@ B47_stalbor_column_4 = {
             4097 = {
                 development = 30
             }
-            custom_trigger_tooltip = {
-                tooltip = B47_marrhold_tunnel_open
-                has_global_flag = marrhold_tunnel_opened
-            }
+            has_trade_building_trigger = yes
+            province_has_current_tech_fort_trigger = yes
         }
 
         effect = {
@@ -1711,17 +1709,6 @@ B47_stalbor_column_4 = {
                 }
                 else = {
                     add_base_production = 3
-                }
-            }
-            4065 = {
-                if = {
-                    limit = {
-                        is_city = yes
-                    }
-                    add_claim = ROOT
-                }
-                else  = {
-                    add_siberian_construction = 800
                 }
             }
         }
@@ -2003,16 +1990,21 @@ B47_stalbor_column_4 = {
                     800 = {
                         development = 30
                         has_manufactory_trigger = yes
-                        higher_development_than = 831
-                        higher_development_than = 832
-                        higher_development_than = 833
+                        custom_trigger_tooltip = {
+                            tooltip = B47_dev_more_then_castonath
+                            higher_development_than = 831
+                            higher_development_than = 832
+                            higher_development_than = 833
+                        }
                     }
                     808 = {
                         development = 30
-                        has_manufactory_trigger = yes
-                        higher_development_than = 831
-                        higher_development_than = 832
-                        higher_development_than = 833
+                        custom_trigger_tooltip = {
+                            tooltip = B47_dev_more_then_castonath
+                            higher_development_than = 831
+                            higher_development_than = 832
+                            higher_development_than = 833
+                        }
                     }
                 }
                 castonath_area = {
