@@ -14,7 +14,10 @@ A73_Remove_Wex = {
 		
 		trigger = {
 			any_ally = {
-				is_part_of_hre = yes
+				if = {
+					limit = { eoa_is_dismantled = no }
+					is_part_of_hre = yes
+				}
 				NOT = { tag = A30 }
 				development_in_provinces = {
 					value = 50
@@ -28,7 +31,7 @@ A73_Remove_Wex = {
 				duration = 3650
 			}
 			add_dip_power = 50
-	    }
+		}
 	}
 	
 	A73_invitations = {
@@ -57,7 +60,7 @@ A73_Remove_Wex = {
 			else = {
 				add_treasury = 200
 			}
-	   	}
+		}
 	}
 	
 	A73_new_markets = {
@@ -103,56 +106,50 @@ A73_Remove_Wex = {
 				limit = { NOT = { has_dlc = "Mandate of Heaven" } }
 				add_treasury = -200
 			}
-	    }
+		}
 	}
 
 	A73_deal_vanbury = {
 		icon = mission_dethrone_the_rurikovichs
 		required_missions = { A73_new_markets }
 		position = 4
-		
+
 		provinces_to_highlight = {
 			province_id = 911
 		}
-		
+
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = silverforge_tooltip_3_tt
+			OR = {
 				911 = {
 					owner = {
-						trade_embargo_by = A73
-						had_country_flag = {
-							flag = silverforge_embargo
-							days = 1825
+						custom_trigger_tooltip = {
+							tooltip = silverforge_tooltip_3_tt
+							trade_embargo_by = A73
+							had_country_flag = { flag = silverforge_embargo days = 1825 }
 						}
+						NOT = { has_opinion = { who = A73 value = -50 } }
 					}
 				}
-			}
-			911 = {
-				owner = { 
-					NOT = {
-						has_opinion = {
-							who = A73
-							value = -50
-						}
-					}
-				}
+				owns_core_province = 911
 			}
 		}
 		effect = {
 			add_prestige = 30
-			911 = {
-				owner = {
-					reverse_add_casus_belli = {
-						target = ROOT
-						type = cb_loan_cancelled
-						months = 240
+			if = {
+				limit = { NOT = { owns = 911 } }
+				911 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_loan_cancelled
+							months = 240
+						}
 					}
 				}
 			}
-	    }
+		}
 	}
-	
+
 	A73_declare_grievances = {
 		icon = mission_diplomacy_missive 
 		required_missions = { A73_deal_vanbury }
@@ -185,7 +182,7 @@ A73_Remove_Wex = {
 					modifier = historical_rival
 				}
 			}
-	    }
+		}
 	}
 
 	A73_mine_wex = {
@@ -237,7 +234,7 @@ A73_Remove_Wex = {
 				who = A30
 				value = -50
 			}
-	    }
+		}
 	}
 
 	A73_climb_wex = {
@@ -260,7 +257,8 @@ A73_Remove_Wex = {
 					}
 				}
 			}
-			else = {
+			else_if = {
+				limit = { eoa_is_dismantled = no }
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_37_tt
 					emperor = {
@@ -292,7 +290,7 @@ A73_Remove_Wex = {
 				}
 				add_permanent_claim = ROOT
 			}
-	    }
+		}
 	}
 	
 	A73_moon_party = {
@@ -334,7 +332,7 @@ A73_Remove_Wex = {
 					}
 				}
 			}
-	    }
+		}
 	}
 
 	A73_wex_claim = {
@@ -380,7 +378,7 @@ A73_Remove_Wex = {
 				name = holding_wexkeep
 				duration = -1
 			}
-	    }
+		}
 	}
 
 	A73_rebuild_bal_hyl = {
@@ -455,7 +453,7 @@ A73_Remove_Wex = {
 				add_dip_power = 50
 				add_mil_power = 50
 			}
-	    }
+		}
 	}
 	
 	A73_bal_hyl_ceremony = {
@@ -510,7 +508,8 @@ A73_Remove_Wex = {
 					}
 				}
 			}
-			else = {
+			else_if = {
+				limit = { eoa_is_dismantled = no }
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_38_tt
 					emperor = {
@@ -579,7 +578,7 @@ A73_Remove_Wex = {
 					}
 				}
 			}
-	    }
+		}
 	}
 	
 	A73_carver_cut = {
@@ -594,7 +593,7 @@ A73_Remove_Wex = {
 		
 		effect = {
 			add_treasury = 2000
-	    }
+		}
 	}
 	
 	A73_grip_arannen = {
@@ -603,7 +602,7 @@ A73_Remove_Wex = {
 		position = 13
 		
 		provinces_to_highlight = {
-			province_id = 318
+			province_id = 904
 			NOT = {
 				trade_share = {
 					country = ROOT
@@ -613,7 +612,7 @@ A73_Remove_Wex = {
 		}
 		
 		trigger = {
-			318 = {
+			904 = {
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -636,7 +635,7 @@ A73_Remove_Wex = {
 					duration = -1
 				}
 			}
-	    }
+		}
 	}
 
 	A73_hilltop = {
@@ -648,7 +647,7 @@ A73_Remove_Wex = {
 			province_id = 306
 			OR = {
 				NOT = { development = 35 }
-				NOT = { has_province_flag = surface_mine3 }
+				NOT = { has_province_modifier = surface_mine3 }
 			}
 		}
 		
@@ -658,7 +657,7 @@ A73_Remove_Wex = {
 				development = 35
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_5_tt
-					has_province_flag = surface_mine3
+					has_province_modifier = surface_mine3
 				}
 			}
 		}
@@ -666,72 +665,21 @@ A73_Remove_Wex = {
 		effect = {
 			add_treasury = -10000
 			306 = {
-				clr_province_flag = surface_mine3
-				set_province_flag = surface_mine4
 				custom_tooltip = silverforge_tooltip_6_tt
 				change_province_name = "Bal Hyl"
 				hidden_effect = {
-					if = {	
-						limit = { has_province_modifier = surface_mine3a }
-						remove_province_modifier = surface_mine3a
-						add_permanent_province_modifier = {
-							name = surface_mine4a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3b }
-						remove_province_modifier = surface_mine3b
-						add_permanent_province_modifier = {
-							name = surface_mine4b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3c }
-						remove_province_modifier = surface_mine3c
-						add_permanent_province_modifier = {
-							name = surface_mine4c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3d }
-						remove_province_modifier = surface_mine3d
-						add_permanent_province_modifier = {
-							name = surface_mine4d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3e }
-						remove_province_modifier = surface_mine3e
-						add_permanent_province_modifier = {
-							name = surface_mine4e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3f }
-						remove_province_modifier = surface_mine3f
-						add_permanent_province_modifier = {
-							name = surface_mine4f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3g }
-						remove_province_modifier = surface_mine3g
-						add_permanent_province_modifier = {
-							name = surface_mine4g
-							duration = -1
-						}
-					}
+
+				remove_province_modifier = surface_mine3
+				add_permanent_province_modifier = {
+					name = surface_mine4
+					duration = -1
+				}
 				}
 			}
 		}
 	}
 }
+
 
 A73_soldier_up = {
 	slot = 2
@@ -800,7 +748,7 @@ A73_soldier_up = {
 				limit = { NOT = { has_estate = estate_nobles } }
 				add_mil_power = -50
 			}
-	    }	
+		}	
 	}
 	
 	A73_crafty_soldiers = {
@@ -869,13 +817,13 @@ A73_soldier_up = {
 				num_of_owned_provinces_with = {
 					value = 2
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -886,7 +834,7 @@ A73_soldier_up = {
 				name = mining_boom
 				duration = 3650
 			}
-	    }
+		}
 	}
 	
 	A73_get_esmaraine = {
@@ -1076,7 +1024,7 @@ A73_soldier_up = {
 				266 = { add_center_of_trade_level = 1 }
 				add_treasury = -800
 			}
-	    }
+		}
 	}
 	
 	A73_elite_corps = {
@@ -1100,7 +1048,7 @@ A73_soldier_up = {
 				name = elite_engineers
 				duration = 14600
 			}
-	    }
+		}
 	}
 	
 	A73_balgar_temple = {
@@ -1115,7 +1063,11 @@ A73_soldier_up = {
 		
 		trigger = {
 			308 = { has_building = cathedral }
+			
+			OR = {
 			estate_loyalty = { estate = estate_church loyalty = 50 }
+			NOT = {has_estate = estate_church}
+			}
 		}
 		
 		effect = {
@@ -1127,7 +1079,7 @@ A73_soldier_up = {
 				estate = estate_church
 				share = 2
 			}
-	    }
+		}
 	}
 	
 	A73_orc_smith = {
@@ -1137,12 +1089,13 @@ A73_soldier_up = {
 		
 		provinces_to_highlight = {
 			OR = {
-				has_province_flag = surface_mine1
-				has_province_flag = surface_mine2
-				has_province_flag = surface_mine3
-				has_province_flag = surface_mine4
-				has_province_flag = surface_mine5
-				has_province_flag = surface_mine6
+				has_province_modifier = surface_mine0
+				has_province_modifier = surface_mine1
+				has_province_modifier = surface_mine2
+				has_province_modifier = surface_mine3
+				has_province_modifier = surface_mine4
+				has_province_modifier = surface_mine5
+				has_province_modifier = surface_mine6
 			}
 			OR = {
 				NOT = { has_production_building_trigger = yes }
@@ -1156,12 +1109,13 @@ A73_soldier_up = {
 				num_of_owned_provinces_with = {
 					value = 6
 					OR = {
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 					has_production_building_trigger = yes
 					has_building = weapons
@@ -1174,7 +1128,7 @@ A73_soldier_up = {
 				name = orc_smith
 				duration = 7300
 			}
-	    }
+		}
 	}
 	
 	A73_coal_iron = {
@@ -1188,13 +1142,13 @@ A73_soldier_up = {
 				unrest = 0.1
 				local_autonomy = 10
 				NOT = {
-					has_province_flag = surface_mine0
-					has_province_flag = surface_mine1
-					has_province_flag = surface_mine2
-					has_province_flag = surface_mine3
-					has_province_flag = surface_mine4
-					has_province_flag = surface_mine5
-					has_province_flag = surface_mine6
+					has_province_modifier = surface_mine0
+					has_province_modifier = surface_mine1
+					has_province_modifier = surface_mine2
+					has_province_modifier = surface_mine3
+					has_province_modifier = surface_mine4
+					has_province_modifier = surface_mine5
+					has_province_modifier = surface_mine6
 				}
 			}
 		}
@@ -1210,13 +1164,13 @@ A73_soldier_up = {
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_11_tt
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -1225,7 +1179,7 @@ A73_soldier_up = {
 		effect = {
 			add_treasury = -1000
 			303 = { change_trade_goods = coal }
-	    }
+		}
 	}
 	
 	A73_oust_vanbury = {
@@ -1266,7 +1220,7 @@ A73_soldier_up = {
 				add_devastation = 10
 				remove_province_modifier = vanbury_steel_foundry
 			}
-	    }
+		}
 	}
 	
 	A73_general_corps = {
@@ -1290,7 +1244,7 @@ A73_soldier_up = {
 				name = general_engineers
 				duration = -1
 			}
-	    }
+		}
 	}
 }
 
@@ -1353,9 +1307,8 @@ A73_complete_hold = {
 		effect = {
 			custom_tooltip = silverforge_tooltip_13_tt
 			hidden_effect = {
+				clear_adventurers_organization_effect = yes
 				set_estate_privilege = estate_adventurers_organization_licensed_adventurers
-				add_stability = 2
-				add_mil_power = 200
 				country_event = {
 					id = silverforge.6
 					days = 365
@@ -1385,31 +1338,31 @@ A73_complete_hold = {
 				base_manpower = 6
 			}
 			if = {
-				limit = { has_idea = civil_servants }
+				limit = { has_idea = regulation_bureau }
 				adm_power = 20
 			}
 			else_if = {
-				limit = { has_idea = centralization }
+				limit = { has_idea = fort_logistics }
 				adm_power = 60
 			}
 			else_if = {
-				limit = { has_idea = stable_government }
+				limit = { has_idea = administrative_efficiency_idea }
 				adm_power = 100
 			}
 			else_if = {
-				limit = { has_idea = cultural_regulations }
+				limit = { has_idea = expanded_infrastructure_network }
 				adm_power = 140
 			}
 			else_if = {
-				limit = { has_idea = adaptability }
+				limit = { has_idea = efficient_construction_plans }
 				adm_power = 180
 			}
 			else_if = {
-				limit = { has_idea = local_rule }
+				limit = { has_idea = organised_construction }
 				adm_power = 220
 			}
 			else_if = {
-				limit = { has_idea = administrative_council }
+				limit = { has_idea = state_efficiency }
 				adm_power = 260
 			}
 			else = {
@@ -1417,34 +1370,34 @@ A73_complete_hold = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = silverforge_tooltip_14_tt
-				if = {
-					limit = { has_idea = civil_servants }
-					adm_power = 20
-				}
-				else_if = {
-					limit = { has_idea = centralization }
-					adm_power = 60
-				}
-				else_if = {
-					limit = { has_idea = stable_government }
-					adm_power = 100
-				}
-				else_if = {
-					limit = { has_idea = cultural_regulations }
-					adm_power = 140
-				}
-				else_if = {
-					limit = { has_idea = adaptability }
-					adm_power = 180
-				}
-				else_if = {
-					limit = { has_idea = local_rule }
-					adm_power = 220
-				}
-				else_if = {
-					limit = { has_idea = administrative_council }
-					adm_power = 260
-				}
+                if = {
+                    limit = { has_idea = regulation_bureau }
+                    adm_power = 20
+                }
+                else_if = {
+                    limit = { has_idea = fort_logistics }
+                    adm_power = 60
+                }
+                else_if = {
+                    limit = { has_idea = administrative_efficiency_idea }
+                    adm_power = 100
+                }
+                else_if = {
+                    limit = { has_idea = expanded_infrastructure_network }
+                    adm_power = 140
+                }
+                else_if = {
+                    limit = { has_idea = efficient_construction_plans }
+                    adm_power = 180
+                }
+                else_if = {
+                    limit = { has_idea = organised_construction }
+                    adm_power = 220
+                }
+                else_if = {
+                    limit = { has_idea = state_efficiency }
+                    adm_power = 260
+                }
 				else = {
 					adm_power = 300
 				}
@@ -1463,31 +1416,31 @@ A73_complete_hold = {
 				duration = -1
 			}
 			if = {
-				limit = { has_idea = civil_servants }
+				limit = { has_idea = regulation_bureau }
 				add_adm_power = -20
 			}
 			else_if = {
-				limit = { has_idea = centralization }
+				limit = { has_idea = fort_logistics }
 				add_adm_power = -60
 			}
 			else_if = {
-				limit = { has_idea = stable_government }
+				limit = { has_idea = administrative_efficiency_idea }
 				add_adm_power = -100
 			}
 			else_if = {
-				limit = { has_idea = cultural_regulations }
+				limit = { has_idea = expanded_infrastructure_network }
 				add_adm_power = -140
 			}
 			else_if = {
-				limit = { has_idea = adaptability }
+				limit = { has_idea = efficient_construction_plans }
 				add_adm_power = -180
 			}
 			else_if = {
-				limit = { has_idea = local_rule }
+				limit = { has_idea = organised_construction }
 				add_adm_power = -220
 			}
 			else_if = {
-				limit = { has_idea = administrative_council }
+				limit = { has_idea = state_efficiency }
 				add_adm_power = -260
 			}
 			else = { add_adm_power = -300 }
@@ -1557,7 +1510,7 @@ A73_complete_hold = {
 				name = carver_watch
 				duration = 10950
 			}
-	    }
+		}
 	}
 	
 	A73_welcome_gnome = {
@@ -1603,7 +1556,7 @@ A73_complete_hold = {
 		effect = {
 			912 = { add_gnomish_minority_size_effect = yes }
 			change_innovativeness = 10
-	    }
+		}
 	}
 	
 	A73_surface_operations = {
@@ -1643,7 +1596,7 @@ A73_complete_hold = {
 					duration = 7300
 				}
 			}
-	    }
+		}
 	}
 	
 	A73_carver_influence = {
@@ -1674,7 +1627,7 @@ A73_complete_hold = {
 				name = carver_supreme
 				duration = -1
 			}
-	    }
+		}
 	}
 	
 	A73_winches = {
@@ -1689,13 +1642,13 @@ A73_complete_hold = {
 				num_of_owned_provinces_with = {
 					value = 8
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -1704,7 +1657,7 @@ A73_complete_hold = {
 		effect = {
 			custom_tooltip = silverforge_tooltip_19_tt
 			add_treasury = -300
-	    }
+		}
 	}
 	
 	A73_found_strongbellow = {
@@ -1740,7 +1693,7 @@ A73_complete_hold = {
 		
 		effect = {
 			change_innovativeness = 10
-	    }
+		}
 	}
 	
 	A73_terraced_housing = {
@@ -1755,13 +1708,13 @@ A73_complete_hold = {
 				num_of_owned_provinces_with = {
 					value = 12
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -1770,7 +1723,7 @@ A73_complete_hold = {
 		effect = {
 			custom_tooltip = silverforge_tooltip_21_tt
 			add_treasury = -300
-	    }
+		}
 	}
 	
 	A73_delegate = {
@@ -1790,7 +1743,7 @@ A73_complete_hold = {
 				id = silverforge.20
 				days = 1
 			}
-	    }
+		}
 	}
 
 	A73_terraced_farms = {
@@ -1805,13 +1758,13 @@ A73_complete_hold = {
 				num_of_owned_provinces_with = {
 					value = 16
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -1820,7 +1773,7 @@ A73_complete_hold = {
 		effect = {
 			custom_tooltip = silverforge_tooltip_23_tt
 			add_treasury = -300
-	    }
+		}
 	}
 
 	A73_complete_hold = {
@@ -1864,7 +1817,7 @@ A73_complete_hold = {
 				change_province_name = "Silverkeep"
 				remove_province_modifier = incomplete_hold
 			}
-	    }
+		}
 	}
 }
 
@@ -1876,16 +1829,17 @@ A73_remove_ibevar = {
 		tag = A73 #Silverforge
 	}
 	has_country_shield = yes
+
 	
 	A73_old_claims = {
 		icon = mission_conquer_lanka
 		required_missions = {  }
 		position = 1
-		
+			
 		trigger = {
 			diplomatic_reputation = 4
 		}
-		
+			
 		effect = {
 			263 = {
 				add_core = ROOT
@@ -1897,7 +1851,7 @@ A73_remove_ibevar = {
 		icon = mission_assert_control_over_delhi
 		required_missions = { A73_old_claims }
 		position = 2
-		
+			
 		provinces_to_highlight = {
 			province_id = 263
 			OR = {
@@ -1905,11 +1859,11 @@ A73_remove_ibevar = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+			
 		trigger = {
 			owns_core_province = 263
 		}
-		
+			
 		effect = {
 			bennonhill_area = {
 				limit = {
@@ -1918,7 +1872,7 @@ A73_remove_ibevar = {
 				}
 				add_permanent_claim = ROOT
 			}
-			263 = { add_dwarven_minority_size_effect = yes }
+		263 = { add_dwarven_minority_size_effect = yes }
 		}
 	}
 	
@@ -1964,7 +1918,8 @@ A73_remove_ibevar = {
 					}
 				}
 			}
-			else = {
+			else_if = {
+				limit = { eoa_is_dismantled = no }
 				emperor = {
 					alliance_with = ROOT
 					custom_trigger_tooltip = {
@@ -1981,6 +1936,18 @@ A73_remove_ibevar = {
 					}
 					NOT = { tag = A30 }
 				}
+				OR = {
+					owns_core_province = 271
+					A81 = {
+						exists = yes
+						has_opinion = {
+							who = A73
+							value = 80
+						}
+					}
+				}
+			}
+			else = {
 				OR = {
 					owns_core_province = 271
 					A81 = {
@@ -2012,7 +1979,7 @@ A73_remove_ibevar = {
 			if = {
 				limit = {
 					NOT = { exists = A81 } #Giberd
-					A73 = { owns_core_province = 271 }        
+					A73 = { owns_core_province = 271 }		
 				}
 				271 = { set_local_autonomy = 100 }
 			}
@@ -2089,7 +2056,7 @@ A73_remove_ibevar = {
 			353 = {
 				add_permanent_claim = ROOT
 			}
-	    }
+		}
 	}
 	
 	A73_best_elves = {
@@ -2129,14 +2096,14 @@ A73_remove_ibevar = {
 				name = bested_the_elves
 				duration = -1
 			}
-	    }
+		}
 	}
 	
 	A73_old_depot = {
 		icon = mission_priest_church
 		required_missions = { A73_best_elves }
 		position = 7
-		
+			
 		provinces_to_highlight = {
 			province_id = 263
 			OR = {
@@ -2147,7 +2114,7 @@ A73_remove_ibevar = {
 				NOT = { has_trade_building_trigger = yes }
 			}
 		}
-		
+			
 		trigger = {
 			263 = {
 				base_tax = 8
@@ -2157,7 +2124,7 @@ A73_remove_ibevar = {
 				has_trade_building_trigger = yes
 			}
 		}
-		
+			
 		effect = {
 			add_country_modifier = {
 				name = escanni_trade
@@ -2167,7 +2134,7 @@ A73_remove_ibevar = {
 			350 = {
 				add_permanent_claim = ROOT
 			}
-	    }
+		}
 	}
 	
 	A73_little_green = {
@@ -2181,13 +2148,13 @@ A73_remove_ibevar = {
 				num_of_owned_provinces_with = {
 					value = 6
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -2200,7 +2167,7 @@ A73_remove_ibevar = {
 		effect = {
 			add_prestige = 30
 			add_mercantilism = 10
-	    }
+		}
 	}
 	
 	A73_silent_repose = {
@@ -2213,9 +2180,9 @@ A73_remove_ibevar = {
 			OR = {
 				NOT = { is_state_core = ROOT }
 				NOT = {
-					has_province_flag = surface_mine1
-					has_province_flag = surface_mine2
-					has_province_flag = surface_mine3
+					has_province_modifier = surface_mine1
+					has_province_modifier = surface_mine2
+					has_province_modifier = surface_mine3
 				}
 			}
 		}
@@ -2227,9 +2194,9 @@ A73_remove_ibevar = {
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_26_tt
 					OR = {
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
 					}
 				}
 			}
@@ -2272,251 +2239,39 @@ A73_remove_ibevar = {
 			}
 			350 = {
 				if = {
-					limit = { has_province_flag = surface_mine0 }
-					clr_province_flag = surface_mine0
-					set_province_flag = surface_mine5
-					if = {
-						limit = { has_province_modifier = surface_mine0a }
-						remove_province_modifier = surface_mine0a
-						add_province_modifier = {
-							name = surface_mine5a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0b }
-						remove_province_modifier = surface_mine0b
-						add_province_modifier = {
-							name = surface_mine5b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0c }
-						remove_province_modifier = surface_mine0c
-						add_province_modifier = {
-							name = surface_mine5c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0d }
-						remove_province_modifier = surface_mine0d
-						add_province_modifier = {
-							name = surface_mine5d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0e }
-						remove_province_modifier = surface_mine0e
-						add_province_modifier = {
-							name = surface_mine5e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0f }
-						remove_province_modifier = surface_mine0f
-						add_province_modifier = {
-							name = surface_mine5f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine0g }
-						remove_province_modifier = surface_mine0g
-						add_province_modifier = {
-							name = surface_mine5g
-							duration = -1
-						}
+					limit = { has_province_modifier = surface_mine0 }
+					remove_province_modifier = surface_mine0
+					add_province_modifier = {
+						name = surface_mine5
+						duration = -1
 					}
 				}
 				else_if = {
-					limit = { has_province_flag = surface_mine1 }
-					clr_province_flag = surface_mine1
-					set_province_flag = surface_mine5
-					if = {
-						limit = { has_province_modifier = surface_mine1a }
-						remove_province_modifier = surface_mine1a
-						add_province_modifier = {
-							name = surface_mine5a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1b }
-						remove_province_modifier = surface_mine1b
-						add_province_modifier = {
-							name = surface_mine5b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1c }
-						remove_province_modifier = surface_mine1c
-						add_province_modifier = {
-							name = surface_mine5c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1d }
-						remove_province_modifier = surface_mine1d
-						add_province_modifier = {
-							name = surface_mine5d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1e }
-						remove_province_modifier = surface_mine1e
-						add_province_modifier = {
-							name = surface_mine5e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1f }
-						remove_province_modifier = surface_mine1f
-						add_province_modifier = {
-							name = surface_mine5f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine1g }
-						remove_province_modifier = surface_mine1g
-						add_province_modifier = {
-							name = surface_mine5g
-							duration = -1
-						}
+					limit = { has_province_modifier = surface_mine1 }
+					remove_province_modifier = surface_mine1
+					add_province_modifier = {
+						name = surface_mine5
+						duration = -1
 					}
 				}
 				else_if = {
-					limit = { has_province_flag = surface_mine2 }
-					clr_province_flag = surface_mine2
-					set_province_flag = surface_mine5
-					if = {
-						limit = { has_province_modifier = surface_mine2a }
-						remove_province_modifier = surface_mine2a
-						add_province_modifier = {
-							name = surface_mine5a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2b }
-						remove_province_modifier = surface_mine2b
-						add_province_modifier = {
-							name = surface_mine5b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2c }
-						remove_province_modifier = surface_mine2c
-						add_province_modifier = {
-							name = surface_mine5c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2d }
-						remove_province_modifier = surface_mine2d
-						add_province_modifier = {
-							name = surface_mine5d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2e }
-						remove_province_modifier = surface_mine2e
-						add_province_modifier = {
-							name = surface_mine5e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2f }
-						remove_province_modifier = surface_mine2f
-						add_province_modifier = {
-							name = surface_mine5f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine2g }
-						remove_province_modifier = surface_mine2g
-						add_province_modifier = {
-							name = surface_mine5g
-							duration = -1
-						}
+					limit = { has_province_modifier = surface_mine2 }
+					remove_province_modifier = surface_mine2
+					add_province_modifier = {
+						name = surface_mine5
+						duration = -1
 					}
 				}
 				else_if = {
-					limit = { has_province_flag = surface_mine3 }
-					clr_province_flag = surface_mine3
-					set_province_flag = surface_mine5
-					if = {
-						limit = { has_province_modifier = surface_mine3a }
-						remove_province_modifier = surface_mine3a
-						add_province_modifier = {
-							name = surface_mine5a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3b }
-						remove_province_modifier = surface_mine3b
-						add_province_modifier = {
-							name = surface_mine5b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3c }
-						remove_province_modifier = surface_mine3c
-						add_province_modifier = {
-							name = surface_mine5c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3d }
-						remove_province_modifier = surface_mine3d
-						add_province_modifier = {
-							name = surface_mine5d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3e }
-						remove_province_modifier = surface_mine3e
-						add_province_modifier = {
-							name = surface_mine5e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3f }
-						remove_province_modifier = surface_mine3f
-						add_province_modifier = {
-							name = surface_mine5f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine3g }
-						remove_province_modifier = surface_mine3g
-						add_province_modifier = {
-							name = surface_mine5g
-							duration = -1
-						}
+					limit = { has_province_modifier = surface_mine3 }
+					remove_province_modifier = surface_mine3
+					add_province_modifier = {
+						name = surface_mine5
+						duration = -1
 					}
 				}
 			}
-	    }
+		}
 	}
 	
 	A73_moment_silence = {
@@ -2532,7 +2287,7 @@ A73_remove_ibevar = {
 		effect = {
 			912 = { add_elven_minority_size_effect = yes }
 			largest_increase_of_elven_tolerance_effect = yes
-	    }
+		}
 	}
 	
 	A73_improve_old = {
@@ -2579,7 +2334,7 @@ A73_remove_ibevar = {
 				change_province_name = "Adstunad"
 				change_culture = silver_dwarf
 			}
-	    }
+		}
 	}
 	
 	A73_dwarf_elf_trade = {
@@ -2603,7 +2358,7 @@ A73_remove_ibevar = {
 					add_base_manpower = 2
 				}
 			}
-	    }
+		}
 	}
 	
 	A73_grip_freecestir = {
@@ -2645,7 +2400,7 @@ A73_remove_ibevar = {
 					duration = -1
 				}
 			}
-	    }
+		}
 	}
 	
 	A73_mountaintop = {
@@ -2657,7 +2412,7 @@ A73_remove_ibevar = {
 			province_id = 350
 			OR = {
 				NOT = { development = 35 }
-				NOT = { has_province_flag = surface_mine5 }
+				NOT = { has_province_modifier = surface_mine5 }
 			}
 		}
 		
@@ -2668,7 +2423,7 @@ A73_remove_ibevar = {
 			}
 			hidden_trigger = {
 				350 = {
-					has_province_flag = surface_mine5
+					has_province_modifier = surface_mine5
 				}
 			}
 		}
@@ -2676,67 +2431,14 @@ A73_remove_ibevar = {
 		effect = {
 			add_treasury = -7000
 			350 = {
-				clr_province_flag = surface_mine5
-				set_province_flag = surface_mine6
 				change_trade_goods = coal
 				custom_tooltip = silverforge_tooltip_28_tt
 				change_province_name = "High Seam"
 				hidden_effect = {
-					if = {	
-						limit = { has_province_modifier = surface_mine5a }
-						remove_province_modifier = surface_mine5a
-						add_permanent_province_modifier = {
-							name = surface_mine6a
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5b }
-						remove_province_modifier = surface_mine5b
-						add_permanent_province_modifier = {
-							name = surface_mine6b
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5c }
-						remove_province_modifier = surface_mine5c
-						add_permanent_province_modifier = {
-							name = surface_mine6c
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5d }
-						remove_province_modifier = surface_mine5d
-						add_permanent_province_modifier = {
-							name = surface_mine6d
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5e }
-						remove_province_modifier = surface_mine5e
-						add_permanent_province_modifier = {
-							name = surface_mine6e
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5f }
-						remove_province_modifier = surface_mine5f
-						add_permanent_province_modifier = {
-							name = surface_mine6f
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = { has_province_modifier = surface_mine5g }
-						remove_province_modifier = surface_mine5g
-						add_permanent_province_modifier = {
-							name = surface_mine6g
-							duration = -1
-						}
+					remove_province_modifier = surface_mine5
+					add_permanent_province_modifier = {
+						name = surface_mine6
+						duration = -1
 					}
 				}
 			}
@@ -2752,7 +2454,7 @@ A73_orc_stuff = {
 		tag = A73 #Silverforge
 	}
 	has_country_shield = yes
-	
+
 	A73_upstart = {
 		icon = mission_pray_light
 		required_missions = {  }
@@ -2767,7 +2469,7 @@ A73_orc_stuff = {
 				name = next_life
 				duration = 73000
 			}
-	    }
+		}
 	}
 	
 	A73_balgar_legacy = {
@@ -2811,13 +2513,13 @@ A73_orc_stuff = {
 				num_of_owned_provinces_with = {
 					value = 10
 					OR = {
-						has_province_flag = surface_mine0
-						has_province_flag = surface_mine1
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine0
+						has_province_modifier = surface_mine1
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 			}
@@ -2829,13 +2531,13 @@ A73_orc_stuff = {
 						location = {
 							unrest = 0.1
 							OR = {
-								has_province_flag = surface_mine0
-								has_province_flag = surface_mine1
-								has_province_flag = surface_mine2
-								has_province_flag = surface_mine3
-								has_province_flag = surface_mine4
-								has_province_flag = surface_mine5
-								has_province_flag = surface_mine6
+								has_province_modifier = surface_mine0
+								has_province_modifier = surface_mine1
+								has_province_modifier = surface_mine2
+								has_province_modifier = surface_mine3
+								has_province_modifier = surface_mine4
+								has_province_modifier = surface_mine5
+								has_province_modifier = surface_mine6
 							}
 						}
 					}
@@ -2844,13 +2546,13 @@ A73_orc_stuff = {
 						location = {
 							unrest = 0.1
 							OR = {
-								has_province_flag = surface_mine0
-								has_province_flag = surface_mine1
-								has_province_flag = surface_mine2
-								has_province_flag = surface_mine3
-								has_province_flag = surface_mine4
-								has_province_flag = surface_mine5
-								has_province_flag = surface_mine6
+								has_province_modifier = surface_mine0
+								has_province_modifier = surface_mine1
+								has_province_modifier = surface_mine2
+								has_province_modifier = surface_mine3
+								has_province_modifier = surface_mine4
+								has_province_modifier = surface_mine5
+								has_province_modifier = surface_mine6
 							}
 						}
 					}
@@ -2860,10 +2562,10 @@ A73_orc_stuff = {
 		
 		effect = {
 			add_power_projection = {
-                type = mission_rewards_power_projection
-                amount = 10
-            }
-	    }
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+		}
 	}
 	
 	A73_on_site = {
@@ -2879,7 +2581,7 @@ A73_orc_stuff = {
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100
-	    }
+		}
 	}
 	
 	A73_pretense = {
@@ -2903,7 +2605,7 @@ A73_orc_stuff = {
 				duration = 7300
 			}
 			small_increase_of_orcish_tolerance_effect = yes
-	    }
+		}
 	}
 	
 	A73_orc_freedom = {
@@ -2913,11 +2615,11 @@ A73_orc_stuff = {
 		
 		provinces_to_highlight = {
 			OR = {
-				has_province_flag = surface_mine2
-				has_province_flag = surface_mine3
-				has_province_flag = surface_mine4
-				has_province_flag = surface_mine5
-				has_province_flag = surface_mine6
+				has_province_modifier = surface_mine2
+				has_province_modifier = surface_mine3
+				has_province_modifier = surface_mine4
+				has_province_modifier = surface_mine5
+				has_province_modifier = surface_mine6
 			}
 			NOT = { has_courthouse_building_trigger = yes }
 		}
@@ -2928,21 +2630,21 @@ A73_orc_stuff = {
 				num_of_owned_provinces_with = {
 					value = 14
 					OR = {
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 				}
 				num_of_owned_provinces_with = {
 					value = 8
 					OR = {
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 					has_courthouse_building_trigger = yes
 				}
@@ -2959,20 +2661,20 @@ A73_orc_stuff = {
 					custom_trigger_tooltip = {
 						tooltip = silverforge_tooltip_32_tt
 						OR = {
-							has_province_flag = surface_mine0
-							has_province_flag = surface_mine1
-							has_province_flag = surface_mine2
-							has_province_flag = surface_mine3
-							has_province_flag = surface_mine4
-							has_province_flag = surface_mine5
-							has_province_flag = surface_mine6
+							has_province_modifier = surface_mine0
+							has_province_modifier = surface_mine1
+							has_province_modifier = surface_mine2
+							has_province_modifier = surface_mine3
+							has_province_modifier = surface_mine4
+							has_province_modifier = surface_mine5
+							has_province_modifier = surface_mine6
 						}
 					}
 				}
 				add_local_autonomy = 10
 			}
 			small_increase_of_orcish_tolerance_effect = yes
-	    }
+		}
 	}
 	
 	A73_orc_recruits = {
@@ -2982,11 +2684,11 @@ A73_orc_stuff = {
 		
 		provinces_to_highlight = {
 			OR = {
-				has_province_flag = surface_mine2
-				has_province_flag = surface_mine3
-				has_province_flag = surface_mine4
-				has_province_flag = surface_mine5
-				has_province_flag = surface_mine6
+				has_province_modifier = surface_mine2
+				has_province_modifier = surface_mine3
+				has_province_modifier = surface_mine4
+				has_province_modifier = surface_mine5
+				has_province_modifier = surface_mine6
 			}
 			OR = {
 				NOT = { has_manpower_building_trigger = yes }
@@ -3001,11 +2703,11 @@ A73_orc_stuff = {
 				num_of_owned_provinces_with = {
 					value = 10
 					OR = {
-						has_province_flag = surface_mine2
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine2
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 					has_manpower_building_trigger = yes
 					base_tax = 15
@@ -3039,10 +2741,10 @@ A73_orc_stuff = {
 		
 		provinces_to_highlight = {
 			OR = {
-				has_province_flag = surface_mine3
-				has_province_flag = surface_mine4
-				has_province_flag = surface_mine5
-				has_province_flag = surface_mine6
+				has_province_modifier = surface_mine3
+				has_province_modifier = surface_mine4
+				has_province_modifier = surface_mine5
+				has_province_modifier = surface_mine6
 			}
 			NOT = { has_manufactory_trigger = yes }
 		}
@@ -3060,10 +2762,10 @@ A73_orc_stuff = {
 				num_of_owned_provinces_with = {
 					value = 16
 					OR = {
-						has_province_flag = surface_mine3
-						has_province_flag = surface_mine4
-						has_province_flag = surface_mine5
-						has_province_flag = surface_mine6
+						has_province_modifier = surface_mine3
+						has_province_modifier = surface_mine4
+						has_province_modifier = surface_mine5
+						has_province_modifier = surface_mine6
 					}
 					has_manufactory_trigger = yes
 				}
@@ -3100,6 +2802,6 @@ A73_orc_stuff = {
 				add_base_production = 1
 				add_prosperity = 15
 			}
-	    }
+		}
 	}
 }

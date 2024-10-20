@@ -11,7 +11,10 @@ technology_group = tech_cannorian
 capital = 266
 fixed_capital = 266
 
-1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
 
 1422.1.1 = { set_country_flag = lilac_wars_moon_party }
 
@@ -28,3 +31,6 @@ fixed_capital = 266
 	add_ruler_personality = intricate_web_weaver_personality
 	add_ruler_personality = drunkard_personality
 }
+
+set_country_flag = owns_cannorian_holy_site
+set_country_flag = can_use_cannorian_holy_site

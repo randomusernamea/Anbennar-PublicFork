@@ -139,14 +139,13 @@
  corintar_rewards_2_tt:0 "§gThese rewards will be increased if you win the League War§!."
  corintar_rewards_3_tt:0 "§gThese rewards will be increased if you win or participate in the League War§!."
  corintar_rewards_4_tt:0 "§gThese rewards will be reduced if you do not win or participate in the League War§!."
- corintar_corin_upgrade_tt:0 "We will gain automatic access to the Corinite Firebrands holy order and all provinces with the Corinite Firebrands active will gain §Y5% manpower§! and §Y2,5% missionary strength§! (if we've already picked the Corinite Firebrands, we will be able to pick another holy order for free)."
+ corintar_corin_upgrade_tt:0 "We will gain automatic access to the Corinite Firebrands holy order and all provinces with the Corinite Firebrands active will gain §Y5% manpower§! and §Y2,5% missionary strength§! (if we've already picked the Corinite Firebrands, we will be able to pick another order for free)."
  corintar_escanni_wars_tt:0 "The §YEscanni Wars of Consolidation§! have begun"
  corintar_holy_empire_tt:0 "Unlocks the §YHoly Empire of the Corintar§! Consolidation Reward."
  corintar_accord_tt:0 "All §YCorinite§! countries gain §G+25§! opinion of [Root.GetName]"
  corintar_champion_tt:0 "Has a General with §Y6 Shock§!"
  corintar_enable_guidance_tt:0 "You may offer §YSpiritual Guidance§! to other Corinite countries"
  corintar_enable_guidance_future_tt:0 "When §YCorinite§! is enabled, you may offer §YSpiritual Guidance§! to other Corinite countries"
- corintar_max_improve_relations_tt:0 "Has §G+100§! Relations from §YImprove Relations§!"
  corintar_redtusk_spread_tt:0 "The §YRedtusk Orc§! culture will slowly spread to nearby Corinite provinces with an Integrated Orc Majority and no separatism."
  corintar_redtusk_spread_full_tt:0 "The §YRedtusk Orc§! culture can spread to all eligible provinces."
  corintar_redtusk_spread_fast_tt:0 "The §YRedtusk Orc§! culture will spread faster."
@@ -164,6 +163,8 @@
  corintar_bluetusk_funeral_tt:0 "Has had the event §YMourning Lothane Bluetusk§!"
  corintar_five_conversion_tt:0 "Up to five §YRegent Court§! provinces will be converted to §YCorinite§!."
  corintar_redtusk_guide_tt:0 "§gRedtusk Orcs will spawn by event in a cored Corinite province that has an integrated orc majority and no separatism.§!"
+ corintar_paragon_lost_tt:0 "The event §YParagon Lost§! has not fired"
+ corintar_chapter_independence_tt:0 "The event §YChapter Independence§! has not fired"
 
  #############
  # Modifiers #
@@ -293,6 +294,16 @@
  flavor_corintar.6.t:0 "Malliath's Breath"
  flavor_corintar.6.d:0 "Developed in Nimscodd, Malliath's Breath is a massive gnomish bombard sent by Hierarch Mordibam Quintain to aid Grandmaster Lothane Bluetusk of the Corintar. While it arrived too late to be of much use against the Dookanson, it will no doubt be of great use to us as we unite Escann."
  flavor_corintar.6.a:0 "The [Root.Monarch.GetTitle] graciously accepts"
+
+ flavor_corintar.7.t:0 "The Wood Elves"
+ flavor_corintar.7.d:0 "Amongst the many allies Corin gathered were the Wood Elves of the Deepwoods. Many were displaced by the Greentide and eager to assist Corin in the fight against the Dookanson. However, after the orcish defeat in at Castanoth that binding force ended. No small number left to seek a new life in Escann, but those that remain are no doubt dedicated to the Corintar."
+ flavor_corintar.7.a:0 "By bow and glaive, they fight for the Corintar!"
+
+ flavor_corintar.8.t:0 "Gwindeth Camllann"
+ flavor_corintar.8.d:0 "Gwindeth Camllann was, at first, just one of many Wood Elves who followed Corin out of the Deepwoods and fought at the Battle of Castonath. Yet after witnessing the bladedancing of Aldresians and Ibevari elves cutting cleanly through orcish lines, however, Gwindeth's destiny would change. In the decades since the Greentide ended, the Wood Elf has devoted herself to mastering what she had seen while in the service of the Corintar. This zeal has built her a following, one that could be steered with a little direction..."
+ flavor_corintar.8.a:0 "Let her continue her own path."
+ flavor_corintar.8.b:0 "The Corintar could learn from her glaive."
+ flavor_corintar.8.c:0 "Gwindeth would thrive as a commander."
  
  flavor_corintar.10.t:0 "Refugees from the Purge"
  flavor_corintar.10.da:0 "The Corinite Crusaders have taken over the Corintari administration. What was once a proud and pious order dedicated to Corin's will in all forms has fallen into rabid zealotry. The Corintar Chapter we have hosted for decades has dissolved, and its members are now offering their services to us."
@@ -533,9 +544,9 @@
  ########
  redtusk_orc:0 "Redtusk Orc"
  cb_depose_bad_corinite:0 "Depose Corinite Pariah"
- cb_depose_bad_corinite_desc:0 "[From.Monarch.GetName] is a shadow on Corin's light, and must be removed."
+ cb_depose_bad_corinite_desc:0 "Their Ruler is a shadow on Corin's light, and must be removed."
  wg_depose_bad_corinite:0 "Take Capital"
- wg_depose_bad_corinite_desc:0 "Capture [From.GetCapitalName]"
+ wg_depose_bad_corinite_desc:0 "Capture their capital"
  CORINTAR_BAD_CORINITE_WAR_NAME:0 "$ORDER$ War of the $SECOND$ Pariah"
  CB_ALLOWED_po_depose_bad_corinite:0 "Depose Ruler"
  PEACE_po_depose_bad_corinite:0 "Depose Ruler"

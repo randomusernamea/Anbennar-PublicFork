@@ -67,8 +67,9 @@ check_if_non_state_advisor_effect = {
 				$chance_of_secondary$ = { set_country_flag = high_philosophy_advisor }
 				$chance_of_secondary$ = { set_country_flag = the_jadd_advisor }
 				$chance_of_secondary$ = { set_country_flag = ravelian_advisor }
-				$chance_of_secondary$ = { set_country_flag = righteous_path_advisor }
-				$chance_of_secondary$ = { set_country_flag = lefthand_path_advisor }
+				$chance_of_secondary$ = { set_country_flag = accretive_path_advisor }
+				$chance_of_secondary$ = { set_country_flag = transmutative_path_advisor }
+				$chance_of_secondary$ = { set_country_flag = devouring_path_advisor }
 				$chance_of_secondary$ = { set_country_flag = mystic_accord_advisor }
 				$chance_of_secondary$ = { set_country_flag = bangujonsi_advisor }
 				$chance_of_secondary$ = { set_country_flag = saanorgegh_advisor }
@@ -140,8 +141,9 @@ erase_advisor_flags_effect = { #Goes into the after = {} effect after check_if_n
 		ancestor_worship_advisor = { clr_country_flag = ancestor_worship_advisor }
 		high_philosophy_advisor = { clr_country_flag = high_philosophy_advisor }
 		the_jadd_advisor = { clr_country_flag = the_jadd_advisor }
-		righteous_path_advisor = { clr_country_flag = righteous_path_advisor }
-		lefthand_path_advisor = { clr_country_flag = lefthand_path_advisor }
+		accretive_path_advisor = { clr_country_flag = accretive_path_advisor }
+		transmutative_path_advisor = { clr_country_flag = transmutative_path_advisor }
+		devouring_path_advisor = { clr_country_flag = devouring_path_advisor }
 		mystic_accord_advisor = { clr_country_flag = mystic_accord_advisor }
 		bangujonsi_advisor = { clr_country_flag = bangujonsi_advisor }
 		saanorgegh_advisor = { clr_country_flag = saanorgegh_advisor }
@@ -582,13 +584,13 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 				}
 			}
 		}
-		righteous_path_advisor = {
+		accretive_path_advisor = {
 			if = {
-				limit = { NOT = { religion = righteous_path } }
+				limit = { NOT = { religion = accretive_path } }
 				define_advisor = {
 					type = $advisor_type_if_not_state$
 					skill = $skill$
-					religion = righteous_path
+					religion = accretive_path
 					discount = $discount$
 				}
 			}
@@ -601,13 +603,13 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 				}
 			}
 		}
-		lefthand_path_advisor = {
+		transmutative_path_advisor = {
 			if = {
-				limit = { NOT = { religion = lefthand_path } }
+				limit = { NOT = { religion = transmutative_path } }
 				define_advisor = {
 					type = $advisor_type_if_not_state$
 					skill = $skill$
-					religion = lefthand_path
+					religion = transmutative_path
 					discount = $discount$
 				}
 			}
@@ -615,7 +617,26 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 				define_advisor = {
 					type = $advisor_type_if_not_state$
 					skill = $skill$
-					religion = righteous_path
+					religion = mystic_accord
+					discount = $discount$
+				}
+			}
+		}
+		devouring_path_advisor = {
+			if = {
+				limit = { NOT = { religion = devouring_path } }
+				define_advisor = {
+					type = $advisor_type_if_not_state$
+					skill = $skill$
+					religion = devouring_path
+					discount = $discount$
+				}
+			}
+			else = {
+				define_advisor = {
+					type = $advisor_type_if_not_state$
+					skill = $skill$
+					religion = accretive_path
 					discount = $discount$
 				}
 			}
@@ -634,7 +655,7 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 				define_advisor = {
 					type = $advisor_type_if_not_state$
 					skill = $skill$
-					religion = righteous_path
+					religion = transmutative_path
 					discount = $discount$
 				}
 			}
@@ -969,7 +990,19 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 				define_advisor = {
 					type = $advisor_type_if_not_state$
 					skill = $skill$
-					religion = lefthand_path
+					religion = devouring_path
+					discount = $discount$
+				}
+			}
+			else_if = {
+				limit = {
+					religion_group = supreme_spirit
+					capital_scope = { continent = asia }
+				}
+				define_advisor = {
+					type = $advisor_type_if_not_state$
+					skill = $skill$
+					religion = umun_omi
 					discount = $discount$
 				}
 			}
@@ -1060,7 +1093,7 @@ internal_advisor_generation_effect = { #Only used within generate_advisor_of_typ
 							skill = $skill$
 							discount = $discount$
 							religion = xhazobkult
-							culture = sorrowclaw_gnoll
+							culture = pyreclaw_gnoll
 						}
 					}
 					5 = {
@@ -2298,694 +2331,3 @@ define_advisor_of_random_type = {
 		}
 	}
 }
-
-give_random_discounted_advisor = {
-	hidden_effect = {
-		random_list = {
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = philosopher
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = philosopher
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = philosopher
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = natural_scientist
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = natural_scientist
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = natural_scientist
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = artist
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = artist
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = artist
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = treasurer
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = treasurer
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = treasurer
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = theologian
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = theologian
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = theologian
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = master_of_mint
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = master_of_mint
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = master_of_mint
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = inquisitor
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = inquisitor
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = inquisitor
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = court_mage
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = court_mage
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = court_mage
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = statesman
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = statesman
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = statesman
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = naval_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = naval_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = naval_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = trader
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = trader
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = trader
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = spymaster
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = spymaster
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = spymaster
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = colonial_governor
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = colonial_governor
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = colonial_governor
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = diplomat
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = diplomat
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = diplomat
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = navigator
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = navigator
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = navigator
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = army_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = army_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = army_reformer
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = army_organiser
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = army_organiser
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = army_organiser
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = commandant
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = commandant
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = commandant
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = quartermaster
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = quartermaster
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = quartermaster
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = recruitmaster
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = recruitmaster
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = recruitmaster
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = fortification_expert
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = fortification_expert
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = fortification_expert
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-			1 = {
-				random_list = {
-					1 = {
-						define_advisor = {
-							type = grand_captain
-							religion = ROOT
-							culture = ROOT
-							skill = 1
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = grand_captain
-							religion = ROOT
-							culture = ROOT
-							skill = 2
-							discount = yes
-						}
-					}
-					1 = {
-						define_advisor = {
-							type = grand_captain
-							religion = ROOT
-							culture = ROOT
-							skill = 3
-							discount = yes
-						}
-					}
-				}
-			}
-		}
-	}
-}
-			
-			

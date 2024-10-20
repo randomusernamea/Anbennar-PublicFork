@@ -1,5 +1,5 @@
 estate_adeen_power_over_the_throne = {
-	icon = privilege_permit_self_governance
+	icon = privilege_empty_throne
 	max_absolutism = -20
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 4 } }
 	loyalty = 0
@@ -22,7 +22,7 @@ estate_adeen_power_over_the_throne = {
 		}
 		estate_loyalty = {
 			estate = estate_adeen
-			loyalty = 50
+			loyalty = 40
 		}
 	}
 	penalties = {
@@ -33,30 +33,35 @@ estate_adeen_power_over_the_throne = {
 	benefits = {
 	}
 	on_granted = {
-		remove_estate_privilege = estate_adeen_strict_drills
-		remove_estate_privilege = estate_adeen_choice_of_mounts
-		remove_estate_privilege = estate_adeen_open_the_coffers
-		remove_estate_privilege = estate_adeen_heavy_complements
-		remove_estate_privilege = estate_adeen_naval_infantry_training
-		remove_estate_privilege = estate_adeen_professional_supply
-		remove_estate_privilege = estate_adeen_adeen_armories
-		remove_estate_privilege = estate_adeen_intensive_siege_training
+		hidden_effect = {
+			remove_estate_privilege = estate_adeen_strict_drills
+			remove_estate_privilege = estate_adeen_choice_of_mounts
+			remove_estate_privilege = estate_adeen_open_the_coffers
+			remove_estate_privilege = estate_adeen_heavy_complements
+			remove_estate_privilege = estate_adeen_naval_infantry_training
+			remove_estate_privilege = estate_adeen_professional_supply
+			remove_estate_privilege = estate_adeen_adeen_armories
+			remove_estate_privilege = estate_adeen_intensive_siege_training
 
-		set_estate_privilege = estate_adeen_control_of_the_army
-		set_estate_privilege = estate_adeen_support_adeen_families
-		set_estate_privilege = estate_adeen_allow_employment
-		set_estate_privilege = estate_adeen_land_grants_for_adeen
-		set_estate_privilege = estate_adeen_allow_adeen_halqa
-		set_estate_privilege = estate_adeen_rights_of_collection
-		set_estate_privilege = estate_adeen_privilege_of_first_speech
-		set_variable = {
-			which = adeen_appease_count
-			value = 15
+			set_estate_privilege = estate_adeen_control_of_the_army
+			set_estate_privilege = estate_adeen_support_adeen_families
+			set_estate_privilege = estate_adeen_allow_employment
+			set_estate_privilege = estate_adeen_land_grants_for_adeen
+			set_estate_privilege = estate_adeen_allow_adeen_halqa
+			set_estate_privilege = estate_adeen_rights_of_collection
+			set_estate_privilege = estate_adeen_privilege_of_first_speech
+			set_variable = {
+				which = adeen_appease_count
+				value = 15
+			}
 		}
+		custom_tooltip = adeen_control_nation
 		#set_estate_privilege = estate_adeen_reward_incentives
 	}
 	on_revoked = {
-		set_estate_privilege = estate_adeen_adeen_curtailed
+		country_event = {
+			id = estate_adeen.15
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -74,29 +79,42 @@ estate_adeen_power_over_the_throne = {
 }
 
 estate_adeen_control_of_the_army = {
-	icon = privilege_permit_self_governance
+	icon = privilege_military_power
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
-	loyalty = 0.075
+	loyalty = 0.1
 	influence = 0.05
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
 	}
 	penalties = {
-		nobles_influence_modifier = -0.15
-		nobles_loyalty_modifier = -0.15
+		nobles_influence_modifier = -0.10
+		nobles_loyalty_modifier = -0.10
 	}
 	benefits = {
 	}
@@ -123,32 +141,70 @@ estate_adeen_control_of_the_army = {
 }
 
 estate_adeen_support_adeen_families = {
-	icon = privilege_permit_self_governance
+	icon = privilege_give_money
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = 0.05
 	influence = 0.05
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
 	}
 	penalties = {
-		global_regiment_cost = 0.05
 	}
 	benefits = {
-		war_exhaustion = -0.01
 	}
 	on_granted = {
-		custom_tooltip = adeen_pay_loyalty
-		adeen_more_events = yes
-		adeen_increase_appease = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_tooltip = adeen_pay_loyalty
+			adeen_more_events = yes
+			adeen_increase_appease = yes
+		}
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			war_exhaustion = -0.01
+		}
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			global_regiment_cost = 0.05
+		}
 	}
 	on_revoked = {
 		adeen_remove_privilege = yes
@@ -169,18 +225,30 @@ estate_adeen_support_adeen_families = {
 }
 
 estate_adeen_allow_employment = {
-	icon = privilege_permit_self_governance
+	icon = privilege_monopoly
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0.05
 	influence = 0.05
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
@@ -189,9 +257,25 @@ estate_adeen_allow_employment = {
 	}
 	benefits = {
 	}
-	influence_scaled_conditional_modifier = {
+	on_granted = {
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			adeen_more_events = yes
+			adeen_increase_appease = yes
+		}
+	}
+	loyalty_scaled_conditional_modifier = {
 		trigger = {
-			always = yes
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
 		}
 		modifier = {
 			production_efficiency = 0.1
@@ -202,12 +286,8 @@ estate_adeen_allow_employment = {
 			always = yes
 		}
 		modifier = {
-			army_tradition = -0.5
+			army_tradition = -0.4
 		}
-	}
-	on_granted = {
-		adeen_more_events = yes
-		adeen_increase_appease = yes
 	}
 	on_revoked = {
 		adeen_remove_privilege = yes
@@ -228,22 +308,35 @@ estate_adeen_allow_employment = {
 }
 
 estate_adeen_land_grants_for_adeen = {
-	icon = privilege_permit_self_governance
+	icon = privilege_land_rights
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
-	loyalty = 0.075
-	influence = 0.075
+	loyalty = 0.1
+	influence = 0.1
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
@@ -252,12 +345,29 @@ estate_adeen_land_grants_for_adeen = {
 	}
 	benefits = {
 	}
-	modifier_by_land_ownership = {
-		manpower_recovery_speed = -0.2
+	mechanics = {
+		exempt_from_seize_land
 	}
 	on_granted = {
 		adeen_more_events = yes
 		adeen_increase_appease = yes
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			manpower_recovery_speed = 0.1
+		}
 	}
 	on_revoked = {
 		adeen_remove_privilege = yes
@@ -278,22 +388,35 @@ estate_adeen_land_grants_for_adeen = {
 }
 
 estate_adeen_allow_adeen_halqa = {
-	icon = privilege_permit_self_governance
+	icon = privilege_demand_more_troops
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
-	loyalty = 0.075
+	loyalty = 0.15
 	influence = 0.1
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
@@ -302,12 +425,17 @@ estate_adeen_allow_adeen_halqa = {
 	}
 	benefits = {
 	}
-	modifier_by_land_ownership = {
-		yearly_corruption = 0.5
-	}
 	on_granted = {
 		adeen_more_events = yes
 		adeen_increase_appease = yes
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			yearly_corruption = 0.5
+		}
 	}
 	on_revoked = {
 		adeen_remove_privilege = yes
@@ -328,28 +456,41 @@ estate_adeen_allow_adeen_halqa = {
 }
 
 estate_adeen_rights_of_collection = {
-	icon = privilege_permit_self_governance
+	icon = privilege_ducats
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
-	loyalty = 0.075
+	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
 	}
 	penalties = {
-		global_tax_modifier = -0.1
+		global_tax_modifier = -0.05
 	}
 	benefits = {
 	}
@@ -376,22 +517,35 @@ estate_adeen_rights_of_collection = {
 }
 
 estate_adeen_privilege_of_first_speech = {
-	icon = privilege_permit_self_governance
+	icon = privilege_recruit_minister
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
@@ -424,18 +578,35 @@ estate_adeen_privilege_of_first_speech = {
 }
 
 estate_adeen_reward_incentives = {
-	icon = privilege_permit_self_governance
+	icon = privilege_give_money
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
-	loyalty = 0.05
+	loyalty = 0.1
 	influence = 0.05
 	is_valid = {
-		has_country_flag = adeen_enabled
+		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+			has_estate_privilege = estate_adeen_adeen_curtailed
+			has_estate_privilege = estate_adeen_adeen_integrated
+		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
+		if = {
+			limit = { has_disaster = estate_adeen_palace_coup }
+			custom_trigger_tooltip = {
+				tooltip = estate_adeen_revolting_tt
+				always = no
+			}
+		}
+		else = {
+		}
 		NOT = {
 			has_country_modifier = adeen_revoke_cooldown_mod
 		}
@@ -466,16 +637,22 @@ estate_adeen_reward_incentives = {
 }
 
 estate_adeen_strict_drills = {
-	icon = privilege_permit_self_governance
+	icon = privilege_army_tradition
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = -0.05
 	influence = 0
 	is_valid = {
-		has_country_flag = adeen_enabled
+		has_dlc = "Cradle of Civilization"
 	}
 	can_select = {
-		has_dlc = "Cradle of Civilization"
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -487,9 +664,19 @@ estate_adeen_strict_drills = {
 	}
 	on_granted = {
 	}
-	influence_scaled_conditional_modifier = {
+	loyalty_scaled_conditional_modifier = {
 		trigger = {
-			always = yes
+			NOT = { mission_completed = R38_adasa_academies }
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
 		}
 		modifier = {
 			drill_decay_modifier = -0.33
@@ -497,8 +684,12 @@ estate_adeen_strict_drills = {
 	}
 	conditional_modifier = {
 		trigger = {
+			mission_completed = R38_adasa_academies
 		}
 		modifier = {
+			discipline = 0.025
+			drill_decay_modifier = -0.33
+			max_absolutism = 10
 		}
 	}
 	ai_will_do = {
@@ -511,20 +702,24 @@ estate_adeen_strict_drills = {
 }
 
 estate_adeen_choice_of_mounts = {
-	icon = privilege_permit_self_governance
+	icon = horse
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0.05
 	influence = 0.05
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = adeen_enabled_happened_tt
+			has_country_flag = adeen_enabled
+		}
 	}
 	can_revoke = {
 	}
@@ -532,19 +727,28 @@ estate_adeen_choice_of_mounts = {
 		adeen_remove_privilege = yes
 	}
 	penalties = {
+		nobles_loyalty_modifier = -0.1
 	}
 	benefits = {
 	}
 	on_granted = {
 		adeen_increase_appease = yes
 	}
-	influence_scaled_conditional_modifier = {
+	loyalty_scaled_conditional_modifier = {
 		trigger = {
-			always = yes
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
 		}
 		modifier = {
 			cavalry_power = 0.2
-			nobles_loyalty_modifier = -0.2
 		}
 	}
 	conditional_modifier = {
@@ -563,20 +767,19 @@ estate_adeen_choice_of_mounts = {
 }
 
 estate_adeen_open_the_coffers = {
-	icon = privilege_permit_self_governance
+	icon = privilege_ducats
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0
-	influence = 0.075
-	is_valid = {
-		has_country_flag = adeen_enabled
-		NOT = {
-			has_estate_privilege = estate_adeen_adeen_curtailed
-			has_estate_privilege = estate_adeen_adeen_integrated
-		}
-	}
+	influence = 0.1
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -587,11 +790,35 @@ estate_adeen_open_the_coffers = {
 	benefits = {
 	}
 	on_granted = {
-		adeen_increase_appease = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			adeen_increase_appease = yes
+		}
 	}
-	modifier_by_land_ownership = {
-		artillery_power = 0.2
-		artillery_cost = 0.33
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			artillery_power = 0.2
+		}
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			artillery_cost = 0.33
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -609,16 +836,19 @@ estate_adeen_open_the_coffers = {
 }
 
 estate_adeen_heavy_complements = {
-	icon = privilege_permit_self_governance
+	icon = privilege_heavy_ship
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = -0.05
-	influence = 0.075
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
+	influence = 0.1
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -630,8 +860,22 @@ estate_adeen_heavy_complements = {
 	}
 	on_granted = {
 	}
-	modifier_by_land_ownership = {
-		heavy_ship_power = 0.2
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			heavy_ship_power = 0.2
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -649,16 +893,19 @@ estate_adeen_heavy_complements = {
 }
 
 estate_adeen_naval_infantry_training = {
-	icon = privilege_permit_self_governance
+	icon = privilege_marines
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0
 	influence = 0.05
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -671,8 +918,22 @@ estate_adeen_naval_infantry_training = {
 	}
 	on_granted = {
 	}
-	modifier_by_land_ownership = {
-		global_sailors_modifier = 0.2
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			global_sailors_modifier = 0.2
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -690,16 +951,19 @@ estate_adeen_naval_infantry_training = {
 }
 
 estate_adeen_professional_supply = {
-	icon = privilege_permit_self_governance
+	icon = privilege_comission_merchant_ships_for_war
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0
 	influence = 0.05
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -711,9 +975,23 @@ estate_adeen_professional_supply = {
 	}
 	on_granted = {
 	}
-	modifier_by_land_ownership = {
-		land_attrition = -0.4
-		reinforce_speed = 0.3
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			land_attrition = -0.4
+			reinforce_speed = 0.3
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -731,20 +1009,25 @@ estate_adeen_professional_supply = {
 }
 
 estate_adeen_adeen_armories = {
-	icon = privilege_permit_self_governance
+	icon = privilege_promote_purbias
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0
 	influence = 0.1
 	is_valid = {
-		has_country_flag = adeen_enabled
 		NOT = {
 			has_estate_privilege = estate_adeen_adeen_curtailed
 			has_estate_privilege = estate_adeen_adeen_integrated
 		}
 	}
 	can_select = {
-		mil_tech = 7
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
 	}
 	can_revoke = {
 	}
@@ -757,12 +1040,21 @@ estate_adeen_adeen_armories = {
 	on_granted = {
 		custom_tooltip = adeen_purchase_artillery
 	}
-	influence_scaled_conditional_modifier = {
+	loyalty_scaled_conditional_modifier = {
 		trigger = {
-			always = yes
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
 		}
 		modifier = {
-			artillery_fire = 0.4
+			infantry_fire = 0.3
 		}
 	}
 	conditional_modifier = {
@@ -781,16 +1073,22 @@ estate_adeen_adeen_armories = {
 }
 
 estate_adeen_intensive_siege_training = {
-	icon = privilege_permit_self_governance
+	icon = privilege_artillery
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = 0
 	influence = 0.1
-	is_valid = {
-		has_country_flag = adeen_enabled
-	}
 	can_select = {
-		always = yes
+		if = {
+			limit = { NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag } }
+			custom_trigger_tooltip = {
+				tooltip = adeen_enabled_happened_tt
+				has_country_flag = adeen_enabled
+			}
+		}
+		else = {
+			mil_tech = 7
+		}
 	}
 	can_revoke = {
 	}
@@ -799,10 +1097,26 @@ estate_adeen_intensive_siege_training = {
 	penalties = {
 	}
 	benefits = {
-		artillery_barrage_cost = -0.5
-		artillery_level_modifier = 0.2
 	}
 	on_granted = {
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			if = {
+				limit = { has_disaster = estate_adeen_palace_coup }
+				custom_trigger_tooltip = {
+					tooltip = estate_adeen_revolting_tt
+					always = no
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		modifier = {
+			artillery_barrage_cost = -0.5
+			artillery_level_modifier = 0.2
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -822,11 +1136,17 @@ estate_adeen_intensive_siege_training = {
 #########################Focuses##########
 
 estate_adeen_focus_on_merfolk = {
-	icon = privilege_permit_self_governance
+	icon = privilege_infantry
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = -0.1
 	influence = 0
+	is_valid = {
+		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+	}
 	can_select = {
 		culture_group = baashidi
 	}
@@ -859,19 +1179,13 @@ estate_adeen_focus_on_merfolk = {
 			}
 			remove_estate_privilege = estate_adeen_focus_on_lizardfolk
 		}
-		# if = {
-		# 	limit = {
-		# 		has_estate_privilege = estate_adeen_adasa
-		# 	}
-		# 	remove_estate_privilege = estate_adeen_adasa
-		# }
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = {
 			always = yes
 		}
 		modifier = {
-			naval_morale = 0.15
+			naval_maintenance_modifier = -0.1
 		}
 	}
 	conditional_modifier = {
@@ -890,17 +1204,20 @@ estate_adeen_focus_on_merfolk = {
 }
 
 estate_adeen_focus_on_harpies = {
-	icon = privilege_permit_self_governance
+	icon = privilege_infantry
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = -0.1
 	influence = 0
+	is_valid = {
+		NOT = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+	}
 	can_select = {
-		any_country = {
-			culture_group = baashidi
-			any_owned_province = {
-				has_harpy_majority_trigger = yes
-			}
+		any_owned_province = {
+			has_harpy_majority_trigger = yes
 		}
 	}
 	can_revoke = {
@@ -944,12 +1261,6 @@ estate_adeen_focus_on_harpies = {
 			}
 			remove_estate_privilege = estate_adeen_focus_on_lizardfolk
 		}
-		# if = {
-		# 	limit = {
-		# 		has_estate_privilege = estate_adeen_adasa
-		# 	}
-		# 	remove_estate_privilege = estate_adeen_adasa
-		# }
 	}
 	conditional_modifier = {
 		trigger = { 
@@ -969,17 +1280,20 @@ estate_adeen_focus_on_harpies = {
 }
 
 estate_adeen_focus_on_lizardfolk = {
-	icon = privilege_permit_self_governance
+	icon = privilege_infantry
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = -0.1
 	influence = 0
+	is_valid = {
+		OR = {
+			NOT = { tag = R38 has_country_flag = adeen_emulating_adasa_flag }
+			has_country_flag = adasa_lizardfolk_unlocked_flag
+		}
+	}
 	can_select = {
-		any_country = {
-			culture_group = baashidi
-			any_owned_province = {
-				has_lizardfolk_majority_trigger = yes
-			}
+		any_owned_province = {
+			has_lizardfolk_majority_trigger = yes
 		}
 	}
 	can_revoke = {
@@ -1015,12 +1329,6 @@ estate_adeen_focus_on_lizardfolk = {
 			}
 			remove_estate_privilege = estate_adeen_focus_on_harpies
 		}
-		# if = {
-		# 	limit = {
-		# 		has_estate_privilege = estate_adeen_adasa
-		# 	}
-		# 	remove_estate_privilege = estate_adeen_adasa
-		# }
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = {
@@ -1048,7 +1356,7 @@ estate_adeen_focus_on_lizardfolk = {
 }
 
 estate_adeen_traditional_adeen = {
-	icon = privilege_permit_self_governance
+	icon = privilege_infantry
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = -0.1
@@ -1089,12 +1397,6 @@ estate_adeen_traditional_adeen = {
 			}
 			remove_estate_privilege = estate_adeen_focus_on_lizardfolk
 		}
-		# if = {
-		# 	limit = {
-		# 		has_estate_privilege = estate_adeen_adasa
-		# 	}
-		# 	remove_estate_privilege = estate_adeen_adasa
-		# }
 		hidden_effect = {
 			set_variable = {
 				which = adeen_appease_count
@@ -1128,7 +1430,7 @@ estate_adeen_traditional_adeen = {
 }
 
 estate_adeen_adeen_curtailed = {
-	icon = privilege_permit_self_governance
+	icon = privilege_discipline
 	max_absolutism = 5
 	loyalty = 0.3
 	influence = -0.2
@@ -1148,21 +1450,24 @@ estate_adeen_adeen_curtailed = {
 	benefits = {
 	}
 	on_granted = {
-		remove_estate_privilege = estate_adeen_strict_drills
-		remove_estate_privilege = estate_adeen_choice_of_mounts
-		remove_estate_privilege = estate_adeen_open_the_coffers
-		remove_estate_privilege = estate_adeen_heavy_complements
-		remove_estate_privilege = estate_adeen_naval_infantry_training
-		remove_estate_privilege = estate_adeen_professional_supply
-		remove_estate_privilege = estate_adeen_adeen_armories
-		remove_estate_privilege = estate_adeen_intensive_siege_training
-		remove_estate_privilege = estate_adeen_control_of_the_army
-		remove_estate_privilege = estate_adeen_support_adeen_families
-		remove_estate_privilege = estate_adeen_allow_employment
-		remove_estate_privilege = estate_adeen_land_grants_for_adeen
-		remove_estate_privilege = estate_adeen_allow_adeen_halqa
-		remove_estate_privilege = estate_adeen_rights_of_collection
-		remove_estate_privilege = estate_adeen_privilege_of_first_speech
+		hidden_effect = {
+			remove_estate_privilege = estate_adeen_strict_drills
+			remove_estate_privilege = estate_adeen_choice_of_mounts
+			remove_estate_privilege = estate_adeen_open_the_coffers
+			remove_estate_privilege = estate_adeen_heavy_complements
+			remove_estate_privilege = estate_adeen_naval_infantry_training
+			remove_estate_privilege = estate_adeen_professional_supply
+			remove_estate_privilege = estate_adeen_adeen_armories
+			remove_estate_privilege = estate_adeen_intensive_siege_training
+			remove_estate_privilege = estate_adeen_control_of_the_army
+			remove_estate_privilege = estate_adeen_support_adeen_families
+			remove_estate_privilege = estate_adeen_allow_employment
+			remove_estate_privilege = estate_adeen_land_grants_for_adeen
+			remove_estate_privilege = estate_adeen_allow_adeen_halqa
+			remove_estate_privilege = estate_adeen_rights_of_collection
+			remove_estate_privilege = estate_adeen_privilege_of_first_speech
+			remove_estate_privilege = estate_adeen_reward_incentives
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -1180,7 +1485,7 @@ estate_adeen_adeen_curtailed = {
 }
 
 estate_adeen_adeen_integrated = {
-	icon = privilege_permit_self_governance
+	icon = privilege_unifying
 	max_absolutism = 0
 	loyalty = 0.3
 	influence = -0.2
@@ -1200,21 +1505,24 @@ estate_adeen_adeen_integrated = {
 	benefits = {
 	}
 	on_granted = {
-		remove_estate_privilege = estate_adeen_strict_drills
-		remove_estate_privilege = estate_adeen_choice_of_mounts
-		remove_estate_privilege = estate_adeen_open_the_coffers
-		remove_estate_privilege = estate_adeen_heavy_complements
-		remove_estate_privilege = estate_adeen_naval_infantry_training
-		remove_estate_privilege = estate_adeen_professional_supply
-		remove_estate_privilege = estate_adeen_adeen_armories
-		remove_estate_privilege = estate_adeen_intensive_siege_training
-		remove_estate_privilege = estate_adeen_control_of_the_army
-		remove_estate_privilege = estate_adeen_support_adeen_families
-		remove_estate_privilege = estate_adeen_allow_employment
-		remove_estate_privilege = estate_adeen_land_grants_for_adeen
-		remove_estate_privilege = estate_adeen_allow_adeen_halqa
-		remove_estate_privilege = estate_adeen_rights_of_collection
-		remove_estate_privilege = estate_adeen_privilege_of_first_speech
+		hidden_effect = {
+			remove_estate_privilege = estate_adeen_strict_drills
+			remove_estate_privilege = estate_adeen_choice_of_mounts
+			remove_estate_privilege = estate_adeen_open_the_coffers
+			remove_estate_privilege = estate_adeen_heavy_complements
+			remove_estate_privilege = estate_adeen_naval_infantry_training
+			remove_estate_privilege = estate_adeen_professional_supply
+			remove_estate_privilege = estate_adeen_adeen_armories
+			remove_estate_privilege = estate_adeen_intensive_siege_training
+			remove_estate_privilege = estate_adeen_control_of_the_army
+			remove_estate_privilege = estate_adeen_support_adeen_families
+			remove_estate_privilege = estate_adeen_allow_employment
+			remove_estate_privilege = estate_adeen_land_grants_for_adeen
+			remove_estate_privilege = estate_adeen_allow_adeen_halqa
+			remove_estate_privilege = estate_adeen_rights_of_collection
+			remove_estate_privilege = estate_adeen_privilege_of_first_speech
+			remove_estate_privilege = estate_adeen_reward_incentives
+		}
 	}
 	conditional_modifier = {
 		trigger = {
@@ -1231,83 +1539,202 @@ estate_adeen_adeen_integrated = {
 	}
 }
 
-# estate_adeen_adasa = {
-# 	icon = privilege_permit_self_governance
-# 	max_absolutism = -5
-# 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
-# 	loyalty = -0.1
-# 	influence = 0
-# 	is_valid = {
-# 		OR = {
-# 			tag = R38
-# 			has_country_flag = adeen_emulating_adasa_flag
-# 		}
-# 	}
-# 	can_select = {
-# 		OR = {
-# 			tag = R38
-# 			has_country_flag = adeen_emulating_adasa_flag
-# 		}
-# 	}
-# 	can_revoke = {
-# 	}
-# 	on_revoked = {
-# 		remove_country_modifier = adeen_traditional_modifier
-# 	}
-# 	penalties = {
-# 	}
-# 	benefits = {
-# 		infantry_power = 0.1
-# 	}
-# 	on_granted = {
-# 		add_country_modifier = {
-# 			name = adeen_traditional_modifier
-# 			duration = -1
-# 		}
-# 		if = {
-# 			limit = {
-# 				has_estate_privilege = estate_adeen_traditional_adeen
-# 			}
-# 			remove_estate_privilege = estate_adeen_traditional_adeen
-# 		}
-# 		if = {
-# 			limit = {
-# 				has_estate_privilege = estate_adeen_focus_on_merfolk
-# 			}
-# 			remove_estate_privilege = estate_adeen_focus_on_merfolk
-# 		}
-# 		if = {
-# 			limit = {
-# 				has_estate_privilege = estate_adeen_focus_on_lizardfolk
-# 			}
-# 			remove_estate_privilege = estate_adeen_focus_on_lizardfolk
-# 		}
-# 		if = {
-# 			limit = {
-# 				has_estate_privilege = estate_adeen_focus_on_harpies
-# 			}
-# 			remove_estate_privilege = estate_adeen_focus_on_harpies
-# 		}
-# 		hidden_effect = {
-# 			set_variable = {
-# 				which = adeen_appease_count
-# 				value = 0
-# 			}
-# 		}
-# 	}
-# 	influence_scaled_conditional_modifier = {
-# 		trigger = {
-# 			always = yes
-# 		}
-# 		modifier = {
-# 			global_manpower_modifier = 0.1
-# 		}
-# 	}
-# 	ai_will_do = {
-# 		factor = 10
-# 		modifier = {
-# 			factor = 0
-# 			is_absolutism_active = yes
-# 		}
-# 	}
-# }
+estate_adeen_adasa = {
+	icon = privilege_permit_self_governance
+	loyalty = 0.2
+	influence = 0.15
+
+	is_valid = {
+		OR = {
+			has_estate_privilege = estate_adeen_adasa
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+	}
+	can_revoke = {
+		has_country_flag = adeen_emulating_adasa_flag
+	}
+
+	on_granted = {
+		custom_tooltip = estate_adeen_adasa_slave_mod_tt
+	}
+	on_granted_province = {
+		if = {
+			limit = { trade_goods = slaves }
+			add_province_modifier = { name = estate_adeen_adasa_slave_mod duration = -1 }
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_adeen_adasa_slave_mod_tt
+	}
+	on_revoked_province = {
+		if = {
+			limit = { has_province_modifier = estate_adeen_adasa_slave_mod }
+			remove_province_modifier = estate_adeen_adasa_slave_mod
+		}
+	}
+}
+estate_adeen_free_adasa = {
+	icon = privilege_unifying
+	loyalty = 0.3
+	influence = 0.2
+	max_absolutism = 15
+
+	is_valid = {
+		has_estate_privilege = estate_adeen_free_adasa
+	}
+	can_revoke = {
+		always = no
+	}
+
+	benefits = {
+		manpower_recovery_speed = 0.25
+	}
+}
+estate_adeen_adasa_artillery = {
+	icon = privilege_artillery
+	loyalty = 0.05
+	influence = 0.1
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	
+	is_valid = {
+		OR = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+		has_country_flag = adasa_artillery_unlocked_flag
+	}
+	can_select = {
+		mil_tech = 7
+	}
+	penalties = {
+		artillery_cost = 0.1
+	}
+	benefits = {
+		artillery_fire = 0.15
+		siege_ability = 0.1
+	}
+
+	ai_will_do = { factor = 100 }
+}
+estate_adeen_adasa_administrators = {
+	icon = estate_eunuchs_imperial_council_privilege
+	loyalty = 0.1
+	influence = 0.1
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	
+	is_valid = {
+		OR = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+		has_country_flag = adasa_administrators_unlocked_flag
+	}
+	benefits = {
+		administrative_efficiency = 0.025
+	}
+	penalties = {
+		army_tradition_decay = 0.01
+	}
+
+	ai_will_do = { factor = 100 }
+}
+estate_adeen_adasa_slave_soldier_services = {
+	icon = privilege_janissaries
+	loyalty = 0.1
+	influence = 0.1
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	
+	is_valid = {
+		OR = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+		has_country_flag = adasa_slave_soldier_services_unlock_flag
+	}
+	conditional_modifier = {
+		trigger = {
+			NOT = { mission_completed = R38_soldiers_hire }
+		}
+		modifier = {
+			possible_condottieri = 1
+			diplomatic_reputation = 1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			mission_completed = R38_soldiers_hire
+		}
+		modifier = {
+			possible_condottieri = 2
+			diplomatic_reputation = 2
+			diplomatic_upkeep = 1
+		}
+	}
+
+	ai_will_do = { factor = 100 }
+}
+estate_adeen_adasa_recruit_commander = {
+	icon = privilege_recruit_rajput_general
+	loyalty = 0
+	influence = 0
+	max_absolutism = 0
+
+	is_valid = {
+		OR = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+	}
+	on_granted = {
+		enable_estate_action = {
+			estate_action = GRANT_GENERALSHIP_ADMIRALSHIP_ADASA
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = GRANT_GENERALSHIP_ADMIRALSHIP_ADASA
+		}
+	}
+	
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = GRANT_GENERALSHIP_ADMIRALSHIP_ADASA
+		}
+	}
+
+	ai_will_do = {
+		factor = 100
+	}
+}
+estate_adeen_adasa_native_born_adasa = {
+	icon = privilege_rahen_castes
+	loyalty = 0.05
+	influence = 0.15
+	max_absolutism = -15
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 3 } }
+
+	is_valid = {
+		OR = {
+			tag = R38
+			has_country_flag = adeen_emulating_adasa_flag
+		}
+		has_country_flag = adasa_native_born_adasa_unlock_flag
+	}
+	can_revoke = {
+		hidden_trigger = { NOT = { tag = R38 } }
+	}
+	penalties = {
+		yearly_corruption = 0.2
+	}
+	benefits = {
+		manpower_in_own_culture_provinces = 0.2
+		manpower_in_accepted_culture_provinces = 0.2
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}

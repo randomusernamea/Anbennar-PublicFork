@@ -436,7 +436,6 @@ sareyand_2 = {
 			OR = {
 				AND = {
 					OR = {
-						province_id = 690
 						province_id = 636
 						province_id = 637
 					}
@@ -455,7 +454,6 @@ sareyand_2 = {
 		}
 		
 		trigger = {
-			690 = { country_or_non_sovereign_subject_holds = ROOT }
 			636 = { country_or_non_sovereign_subject_holds = ROOT }
 			637 = { country_or_non_sovereign_subject_holds = ROOT }
 			F45 = {
@@ -475,7 +473,7 @@ sareyand_2 = {
 			}
 			add_casus_belli = {
 				target = U20
-				type = cb_bulwari_subjugation
+				type = cb_vassalize_mission
 				months = 360
 			}
 		}
@@ -787,9 +785,18 @@ sareyand_3 = {
 					name = restructuring_military
 					duration = 1825
 				}
-				add_country_modifier = { 
-					name = elven_military
-					duration = -1  
+				hidden_effect = {
+					add_country_modifier = { 
+						name = elven_military
+						duration = -1  
+						hidden = yes
+					}
+				}
+				tooltip = {
+					add_country_modifier = {
+						name = elven_military
+						duration = -1
+					}
 				}
 				if = { limit = { NOT = { has_dlc = "Cradle of Civilization" } }
 					add_country_modifier = { 

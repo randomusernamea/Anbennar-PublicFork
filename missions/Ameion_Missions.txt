@@ -1526,8 +1526,6 @@ G52_3 = {
 				limit = { NOT = { government_rank = 2 } }
 				set_government_rank = 2
 			}
-			custom_tooltip = ameion_no_kheios
-			set_country_flag = ameion_kheios_no
 			add_country_modifier = {
 				name = G52_kheion_worlds
 				duration = 12775
@@ -1696,7 +1694,7 @@ G52_3 = {
 		
 		effect = {
 			add_treasury = -500
-			country_event = { id = flavor_ameion.24 days = 30 random = 10 } 
+			country_event = { id = flavor_ameion.23 days = 30 random = 10 } 
 			custom_tooltip = G52_summit_of_ameion_tt
 		}
 	}
@@ -1726,7 +1724,7 @@ G52_3 = {
 			}
 			legitimacy_equivalent = 90
 			1731 = { is_strongest_trade_power = ROOT }
-			1546 = { is_strongest_trade_power = ROOT }
+			1545 = { is_strongest_trade_power = ROOT }
 			1544 = { is_strongest_trade_power = ROOT }
 			estate_loyalty = { estate = estate_burghers loyalty = 40 }
 			estate_influence = { estate = estate_burghers influence = 40 }
@@ -2046,6 +2044,10 @@ G52_3 = {
 					region = alecand_region
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
+				AND = {
+					owned_by = ROOT
+					NOT = { culture_group = kheionai_ruinborn_elf }
+				}
 			}
 			has_discovered = ROOT
 		}
@@ -2194,7 +2196,7 @@ G52_4 = {
 		provinces_to_highlight = {
 			OR = {
 				area = imarchend_area
-				area = vul_tenvach_area
+				area = vuls_tenvach_area
 				area = sibisimra_area
 			}
 			NOT = {
@@ -2211,7 +2213,7 @@ G52_4 = {
 			 	all_province = { 
 					OR = {
 						area = imarchend_area
-						area = vul_tenvach_area
+						area = vuls_tenvach_area
 						area = sibisimra_area
 					}
 					OR = {
@@ -2235,7 +2237,7 @@ G52_4 = {
 				}
 				else = { add_claim = ROOT }
 			}
-			vul_tenvach_area = {
+			vuls_tenvach_area = {
 				limit = { NOT = { is_core = ROOT } }
 				if = {
 					limit = { is_claim = ROOT }
@@ -2273,7 +2275,7 @@ G52_4 = {
 				area = sthanan_ith_vussam_area
 				area = nagarchend_area
 				area = imarchend_area
-				area = vul_tenvach_area
+				area = vuls_tenvach_area
 				area = sibisimra_area
 			}
 			NOT = { province_group = initial_invasion }
@@ -2302,7 +2304,7 @@ G52_4 = {
 				value = 6
 				OR = {
 					area = imarchend_area
-					area = vul_tenvach_area
+					area = vuls_tenvach_area
 					area = sibisimra_area
 				}
 				is_core = ROOT
@@ -2712,7 +2714,7 @@ G52_4 = {
 			OR = {
 				area = vettakaramai_area
 				area = parahechend_area
-				area = varampiraya_area
+				area = varamraya_area
 				area = uesrennu_area
 				province_id = 2507
 			}
@@ -2729,7 +2731,7 @@ G52_4 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			varampiraya_area = {
+			varamraya_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -2843,7 +2845,7 @@ G52_4 = {
 			}
 			else = {
 				orenkoraim_area = { add_claim = ROOT }
-				katalperai_area = { add_claim = ROOT }
+				katelperai_area = { add_claim = ROOT }
 				country_event = { id = flavor_ameion.40 }
 				custom_tooltip = ameion_orenkoraim_war_1
 			}
