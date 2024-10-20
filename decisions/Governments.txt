@@ -73,7 +73,10 @@ country_decisions = {
 	force_reelection = {
 		major = yes
 		potential = {
-			has_government_attribute = can_force_election
+			OR = {
+				has_government_attribute = can_force_election
+				religion = kheionism
+			}
 		}
 		allow = {
 			republican_tradition = 55

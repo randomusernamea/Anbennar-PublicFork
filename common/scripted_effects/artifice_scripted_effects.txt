@@ -668,6 +668,17 @@ set_up_artifice_system = {
 		}
 		set_country_flag = artificery_choice
 	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = artificery_unlocked }
+			NOT = { has_country_flag = artificery_choice }
+			has_country_flag = enable_artificery_early_flag
+		}
+		country_event = {
+			id = magic_artificery_setup.1
+		}
+		set_country_flag = artificery_choice
+	}
 	update_artifice_points = yes
 }
 

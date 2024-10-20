@@ -1532,3 +1532,1546 @@ furdanhund_order = {
     }
     localization = runefather_allegiance
 }
+
+#Kheionism
+#Adm Orders
+maederitic_rule_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_adm_kheionism_deity = no
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_maederitic_rule_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_maederitic_rule_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_governing_cost = -0.2
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+maederitic_rule_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_schaal_onitheia_deity = yes
+            has_teachings_of_varamelas_deity = yes
+        }
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_maederitic_rule_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_maederitic_rule_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.225
+        local_governing_cost = -0.3
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+maederitic_rule_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_maederitic_rule_deity = yes
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_maederitic_rule_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_maederitic_rule_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_maederitic_rule_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = maederitic_rule }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.3
+        local_governing_cost = -0.4
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_adm_kheionism_deity = no
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_schaal_onitheia_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_schaal_onitheia_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_monthly_devastation = -0.05
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_maederitic_rule_deity = yes
+            has_teachings_of_varamelas_deity = yes
+        }
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_schaal_onitheia_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_schaal_onitheia_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.225
+        local_monthly_devastation = -0.075
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_schaal_onitheia_deity = yes
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_schaal_onitheia_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_schaal_onitheia_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_schaal_onitheia_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = schaal_onitheia }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.3
+        local_monthly_devastation = -0.1
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_adm_kheionism_deity = no
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_teachings_of_varamelas_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_teachings_of_varamelas_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_build_cost = -0.25
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_maederitic_rule_deity = yes
+            has_schaal_onitheia_deity = yes
+        }
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_teachings_of_varamelas_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_teachings_of_varamelas_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.225
+        local_build_cost = -0.375
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = kheionism
+        has_teachings_of_varamelas_deity = yes
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_teachings_of_varamelas_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_teachings_of_varamelas_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_teachings_of_varamelas_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.3
+        local_build_cost = -0.5
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+#Dip Orders
+dictats_of_isparokaeus_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_dip_kheionism_deity = no
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_dictats_of_isparokaeus_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_dictats_of_isparokaeus_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.15
+        local_institution_spread = 0.25
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+dictats_of_isparokaeus_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_archatiradist_doctrine_deity = yes
+            has_anagbheism_deity = yes
+        }
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_dictats_of_isparokaeus_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_dictats_of_isparokaeus_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.225
+        local_institution_spread = 0.375
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+dictats_of_isparokaeus_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_dictats_of_isparokaeus_deity = yes
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_dictats_of_isparokaeus_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_dictats_of_isparokaeus_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_dictats_of_isparokaeus_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.3
+        local_institution_spread = 0.5
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_dip_kheionism_deity = no
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_archatiradist_doctrine_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_archatiradist_doctrine_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.15
+        local_missionary_strength = 0.02
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        OR ={
+            has_dictats_of_isparokaeus_deity = yes
+            has_anagbheism_deity = yes
+        }
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_archatiradist_doctrine_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_archatiradist_doctrine_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.225
+        local_missionary_strength = 0.03
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_archatiradist_doctrine_deity = yes
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_archatiradist_doctrine_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_archatiradist_doctrine_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_archatiradist_doctrine_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.3
+        local_missionary_strength = 0.04
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_dip_kheionism_deity = no
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_anagbheism_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_anagbheism_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.15
+        local_religious_unity_contribution = -0.5
+        local_colonial_growth = 15
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_dictats_of_isparokaeus_deity = yes
+            has_archatiradist_doctrine_deity = yes
+        }
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_anagbheism_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_anagbheism_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.225
+        local_religious_unity_contribution = -0.75
+        local_colonial_growth = 22.5
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = kheionism
+        has_anagbheism_deity = yes
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_anagbheism_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_anagbheism_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_anagbheism_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = anagbheism }
+            }
+        }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.3
+        local_religious_unity_contribution = -1
+        local_colonial_growth = 30
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+#Mil Orders
+axierophonic_mandate_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_mil_kheionism_deity = no
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_axierophonic_mandate_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_axierophonic_mandate_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_fort_maintenance_modifier = -0.75
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+axierophonic_mandate_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_drivos_rochos_deity = yes
+            has_laskaris_creed_deity = yes
+        }
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_axierophonic_mandate_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_axierophonic_mandate_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_fort_maintenance_modifier = -0.875
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+axierophonic_mandate_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_axierophonic_mandate_deity = yes
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_axierophonic_mandate_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_axierophonic_mandate_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_axierophonic_mandate_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = axierophonic_mandate }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.2
+        local_fort_maintenance_modifier = -1
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_mil_kheionism_deity = no
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_drivos_rochos_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_drivos_rochos_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_hostile_attrition = 2
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_axierophonic_mandate_deity = yes
+            has_laskaris_creed_deity = yes
+        }
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_drivos_rochos_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_drivos_rochos_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_hostile_attrition = 3
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_drivos_rochos_deity = yes
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_drivos_rochos_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_drivos_rochos_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_drivos_rochos_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = drivos_rochos }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.2
+        local_hostile_attrition = 4
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_1 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_mil_kheionism_deity = no
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_laskaris_creed_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_laskaris_creed_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_regiment_cost = -0.2
+        regiment_recruit_speed = -0.5
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_2 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_axierophonic_mandate_deity = yes
+            has_drivos_rochos_deity = yes
+        }
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_laskaris_creed_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_laskaris_creed_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_regiment_cost = -0.3
+        regiment_recruit_speed = -0.75
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_3 = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = kheionism
+        has_laskaris_creed_deity = yes
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = 1
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        hidden_effect = {
+            owner = {
+                change_variable = {
+                    which = kheionism_laskaris_creed_var
+                    value = -1
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            check_variable = {
+                                which = kheionism_laskaris_creed_var
+                                value = 0
+                            }
+                        }
+                    }
+                    set_variable = {
+                        which = kheionism_laskaris_creed_var
+                        value = 0
+                    }
+                }
+                upgrade_kheionism_deity = { deity = laskaris_creed }
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.2
+        local_regiment_cost = -0.4
+        regiment_recruit_speed = -1
+    }
+    ai_priority = {
+        factor = 10
+    }
+    localization = kheionist_philosophy
+}
+
+#A holy order you can set a province to so it loses it's current holy order, a workaround of the fact that there's no remove_holy_order effect
+no_holy_order = {
+    icon = GFX_holy_orders_button
+    trigger = {
+        always = no
+    }
+    color = { 255 255 255 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+    }
+    per_province_abandon_effect = {
+    }
+    modifier = {
+    }
+    ai_priority = {
+        factor = 0
+    }
+    localization = holy_order
+}

@@ -235,7 +235,7 @@ G54_1_missions = {
 				}
 			}
 			
-			has_kheionist_philosophy_basic = { type = dip }
+			has_dip_kheionism_deity = yes
 		}
 
 		effect = {
@@ -468,7 +468,7 @@ G54_1_missions = {
 					faction_in_power = beso_caribhen
 				}
 			}
-			has_kheionist_philosophy_advanced = { type = dip }
+			has_dip_kheionism_deity = yes
 			custom_trigger_tooltip = {
 				tooltip = G56_magic_likes_you_req_tt
 				always = yes
@@ -734,7 +734,7 @@ G54_2_missions = {
 		trigger = {
 			is_subject = no
 			is_at_war = no
-			has_kheionist_philosophy_basic = { type = mil }
+			has_mil_kheionism_deity = yes
 			OR = {
 				has_spy_network_in = {
 					who = G55 #Eneion
@@ -1239,7 +1239,7 @@ G54_3_missions = {
 					}
 				}
 			}
-			has_kheionist_philosophy_basic = { type = mil }
+			has_mil_kheionism_deity = yes
 		}
 
 		effect = {
@@ -1515,7 +1515,7 @@ G54_3_missions = {
 		}
 
 		trigger = {
-			has_kheionist_philosophy_advanced = { type = mil }
+			has_mil_kheionism_deity = yes
 			is_at_war = no
 			army_size_percentage = 0.95
 			OR = {
@@ -1680,7 +1680,7 @@ G54_3_missions = {
 					}
 				}
 			}
-			has_kheionist_philosophy_advanced = { type = dip }
+			has_dip_kheionism_deity = yes
 			OR = {
 				has_spy_network_in = {
 					who = G52 #Ameion
@@ -1876,7 +1876,7 @@ G54_3_missions = {
 			}
 			republican_tradition = 95
 			is_great_power = yes
-			has_kheionist_philosophy_best = { type = adm }
+			has_adm_kheionism_deity = yes
 		}
 
 		effect = {
@@ -2680,7 +2680,7 @@ G54_5_missions = {
 				has_mil_advisor = yes
 			}
 			stability = 1
-			has_kheionist_philosophy_basic = { type = adm }
+			has_adm_kheionism_deity = yes
 		}
 
 		effect = {
@@ -3012,7 +3012,7 @@ G54_5_missions = {
 			}
 			government_reform_progress = 200
 			capital_scope = { has_courthouse_building_trigger = yes }
-			has_kheionist_philosophy_advanced = { type = adm }
+			has_adm_kheionism_deity = yes
 			OR = {
 				AND = {
 					faction_influence = {
@@ -3388,7 +3388,7 @@ G54_5_missions = {
 					army_tradition = 60
 				}
 			}
-			has_kheionist_philosophy_best = { type = mil }
+			has_mil_kheionism_deity = yes
 		}
 
 		effect = {
