@@ -2148,6 +2148,9 @@ country_event = {
 	# Let them have some nominal autonomy
 	option = {
 		name = castonath_patricians_events.200.b
+		trigger = {
+			NOT = { tag = Z37 }
+		}
 		ai_chance = { factor = 5 }
 		trigger = {
 			NOT = { has_country_flag = B47_castonath_patricians_neglected }
