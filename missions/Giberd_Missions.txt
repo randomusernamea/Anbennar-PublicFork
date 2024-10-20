@@ -10,115 +10,12 @@ giberd_imperial = {
 	}
 	has_country_shield = yes
 	
-	giberd_send_aid_to_nimscodd = {
-		icon = mission_invade_island
+	giberd_trading_in_damestear = {
+		icon = mission_the_dame_tears
 		required_missions = {
-			
+			giberd_electoral_dreams
 		}
-		position = 1
-		
-		trigger = {
-			OR = {
-				AND = {
-					exists = A06 #Nimscodd
-					treasury = 200
-				}
-				NOT = { exists = A06 } #Nimscodd
-			}
-		}
-		
-		effect = {
-			if = {
-				limit = {
-					exists = A06 #Nimscodd
-				}
-				add_treasury = -200
-				A06 = { #Nimscodd
-					country_event = { id = flavor_giberd.1 days = 60 random = 30 }
-				}
-				add_country_modifier = {
-					name = giberd_nimscodd_aid
-					duration = 7300 # 20 years
-				}
-			}
-		}
-	}
-	
-	giberd_grow_in_size = {
-		icon = mission_conquer_50_development
-		required_missions = {
-			giberd_send_aid_to_nimscodd
-		}
-		position = 2
-		
-		trigger = {
-			total_development = 100
-		}
-		
-		effect = {
-			add_prestige = 20
-		}
-	}
-	
-	giberd_elector_relations = {
-		icon = mission_monarch_diplomacy
-		required_missions = {
-			giberd_grow_in_size
-		}
-		position = 3
-		
-		trigger = {
-			OR = {
-				calc_true_if = {
-					all_elector = {
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					amount = 5
-				}
-				eoa_is_dismantled = yes
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = giberd_elector_support
-				duration = 7300 # 20 years
-			}
-		}
-	}
-	
-	giberd_princely_support = {
-		icon = mission_diplomacy_missive
-		required_missions = {
-			giberd_elector_relations
-		}
-		position = 4
-		
-		trigger = {
-			diplomatic_reputation = 3
-			dip_power = 50
-		}
-		
-		effect = {
-			add_dip_power = -50
-			define_advisor = {
-				type = diplomat
-				name = "Cobbob Fidgetspinner"
-				skill = 2
-				discount = yes
-			}
-		}
-	}
-	
-	giberd_a_gnomish_elector = {
-		icon = imperial_capitals
-		required_missions = {
-			giberd_princely_support
-		}
-		position = 5
+		position = 7
 		
 		trigger = {
 			OR = {
@@ -141,7 +38,64 @@ giberd_imperial = {
 			}
 		}
 	}
-}
+giberd_the_pinklady_power = {
+	icon = mission_develop_nevas_port
+	required_missions = {
+		giberd_trading_in_damestear
+		giberd_wind_in_our_sails
+	}
+	position = 8
+	
+	trigger = {
+		OR = {
+			eoa_is_dismantled = yes
+			AND = {
+				NOT = { num_of_electors = 8 }
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+	}
+	
+	effect = {
+		emperor = {
+			country_event = { id = flavor_giberd.2 days = 30 random = 30 }
+		}
+	  }
+    }
+  giberd_to_strike_an_anvil = {
+	icon = mission_smith
+	required_missions = {
+		giberd_the_pinklady_power=
+	}
+	position = 10
+	
+	trigger = {
+		OR = {
+			eoa_is_dismantled = yes
+			AND = {
+				NOT = { num_of_electors = 8 }
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+	}
+	
+	effect = {
+		emperor = {
+			country_event = { id = flavor_giberd.2 days = 30 random = 30 }
+		}
+	  }
+    }
+  }
 
 giberd_konwell_conquest = {
 	slot = 2
@@ -152,73 +106,59 @@ giberd_konwell_conquest = {
 	}
 	has_country_shield = yes
 	
-	giberd_ally_with_the_dwarves = {
-		icon = mission_alliances
+	giberd_onwards_to_esmaria = {
+		icon = mission_heated_battle
 		required_missions = {
-			
-		}
-		position = 1
-		
-		trigger = {
-			OR = {
-				alliance_with = A73 #Silverforge
-				A73 = { #Silverforge
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
-				}
-				NOT = { exists = A73 } #Silverforge
-			}
-		}
-		
-		effect = {
-			hearthswood_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	
-	giberd_secure_timber = {
-		icon = mission_tree_fishing
-		required_missions = {
-			giberd_ally_with_the_dwarves
+			giberd_ready_the_anvil
 		}
 		position = 2
 		
-		provinces_to_highlight = {
-			area = hearthswood_area
-			NOT = {
+	    provinces_to_highlight = {
+		OR = {
+		 area = bennonhill_area
+		 area = hearthswood_area
+		 }
+		 NOT = {
 				owned_by = ROOT
-			}
-		}
-		
+			   }
+		    }
 		trigger = {
-			hearthswood_area = {
+			 OR = {
+				bennonhill_area = {
 				type = all
 				owned_by = ROOT
-			}
-		}
-		
-		effect = {
-			songbarges_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
 				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	
-	giberd_discipline_the_singers = {
+				hearthswood_area = {
+				type = all
+				owned_by = ROOT
+			    }
+	           } 
+			   has_adm_advisor = yes
+			   has_dip_advisor = yes
+			   has_estate_privilege = estate_artificers_gnommo_diplomacy
+               }
+	  effect = {
+	  songbarges_area = {
+				limit = {
+				   NOT = { is_core = ROOT }
+				   NOT = { is_permanent_claim = ROOT }
+				   }
+				   add_permanent_claim = ROOT
+			       } 
+				   901 = {
+				   add_permanent_claim = ROOT
+				   }
+				   302 = {
+				   add_permanent_claim = ROOT
+				   }
+				}
+			 }	
+				
+	giberd_replacing_the_pane = {
 		icon = mission_danzig_or_war
 		required_missions = {
-			giberd_secure_timber
+			giberd_onwards_to_esmaria
+			giberd_not_just_a_mere_cog
 		}
 		position = 3
 		
@@ -251,10 +191,10 @@ giberd_konwell_conquest = {
 		}
 	}
 	
-	giberd_seize_the_archive = {
-		icon = Compulsory_Education
+	giberd_song_and_steel = {
+		icon = mission_iron_and_copper
 		required_missions = {
-			giberd_discipline_the_singers
+			giberd_replacing_the_pane
 		}
 		position = 4
 		
@@ -279,12 +219,320 @@ giberd_konwell_conquest = {
 			}
 		}
 	}
+giberd_wind_in_our_sails = {
+	icon = mission_establish_high_seas_navy
+	required_missions = {
+		giberd_electoral_dreams
+	}
+	position = 7
 	
-	giberd_claim_to_esmaria = {
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_graining_and_grazing = {
+	icon = mission_pol_breadbasket_europe
+	required_missions = {
+		giberd_wind_in_our_sails
+	}
+	position = 8
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_paned_paper = {
+	icon = bohemian_crystal
+	required_missions = {
+		giberd_graining_and_grazing
+		giberd_diplomacy_deals_dominions
+	}
+	position = 9
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_curtain_call = {
+	icon = mission_state_manufactories
+	required_missions = {
+		giberd_paned_paper
+	}
+	position = 10
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_we_built_this_city = {
+	icon = mission_early_game_buildings
+	required_missions = {
+		giberd_a_faire_to_remember
+	}
+	position = 12
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_egcat = {
+	icon = imperial_capitals
+	required_missions = {
+		giberd_we_built_this_city
+	}
+	position = 13
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+}
+
+giberd_ryalanar_conquest = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = A81
+	}
+	has_country_shield = yes
+	
+	giberd_ready_the_anvil = {
+		icon = mission_alliances
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+		A73 = {
+		    alliance_with = ROOT
+			has_10_opinion_sent_gift = { target = ROOT }
+					has_opinion = {
+						who = ROOT
+						value = 150
+			}
+		}
+	}	
+		effect = {
+				country_event = { id = flavor_giberd.2 days = 30 random = 30 }
+			}
+		}
+	
+	giberd_not_just_a_mere_cog = {
+		icon = mission_confrontation
+		required_missions = {
+			giberd_ready_the_anvil
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				region = esmaria_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		    }
+		    trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 6 
+				OR = {
+					region = esmaria_region
+			     }
+				 }
+				 has_personal_deity = esmaryal
+				 calc_true_if = {
+				 all_elector = {
+					has_25_opinion_sent_gift = { target = ROOT }
+						}
+						amount = 2
+					}
+				}
+		effect = {
+			cann_esmar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = giberd_gnomish_duchy
+				duration = 7300 #20 years
+			}
+		}
+	}
+	
+	giberd_gds_loopeng_gedsandde = {
+		icon = imperial_navy
+		required_missions = {
+			giberd_not_just_a_mere_cog
+			giberd_a_technocratic_administration
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			area = cann_esmar_area
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		
+		trigger = {
+			cann_esmar_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			ryalanar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	giberd_glass_stained_pink = {
+		icon = mission_city_prosperity
+		required_missions = {
+			giberd_gds_loopeng_gedsandde
+			giberd_replacing_the_pane
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			area = ryalanar_area
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		
+		trigger = {
+			ryalanar_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
+		}
+	}
+	
+	giberd_uniting_esmaria = {
 		icon = friends_in_high_places
 		required_missions = {
-			giberd_seize_the_archive
-			giberd_uplift_ryalanar
+			giberd_song_and_steel
+			giberd_glass_stained_pink
+			giberd_chroniclers_and_casters
 		}
 		position = 5
 		
@@ -325,166 +573,262 @@ giberd_konwell_conquest = {
 			}
 		}
 	}
-	
-	giberd_a_new_hierarchy = {
-		icon = mission_crowning
-		required_missions = {
-			giberd_a_gnomish_elector
-			giberd_claim_to_esmaria
-		}
-		position = 6
-		
-		provinces_to_highlight = {
-			region = esmaria_region
-			NOT = { owned_by = ROOT }
-		}
-		
-		trigger = {
-			num_of_owned_provinces_with = {
-				value = 27
-				region = esmaria_region
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = giberd_giberdi_hierarchy
-				duration = -1
-			}
-			override_country_name = GIBERDI_HIERARCHY
-		}
-	}
-}
 
-giberd_ryalanar_conquest = {
-	slot = 3
-	generic = no
-	ai = yes
-	potential = {
-		tag = A81
+    giberd_electoral_dreams = {
+	icon = mission_approach_throne
+	required_missions = {
+		giberd_uniting_esmaria
 	}
-	has_country_shield = yes
+	position = 6
 	
-	giberd_prepare_for_war = {
-		icon = mission_build_up_to_force_limit
-		required_missions = {
-			
-		}
-		position = 1
-		
-		trigger = {
-			army_size_percentage = 1
-		}
-		
-		effect = {
-			bennonhill_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	
-	giberd_protect_ducal_gnomes = {
-		icon = alpine_fortifications
-		required_missions = {
-			giberd_prepare_for_war
-		}
-		position = 2
-		
-		provinces_to_highlight = {
-			area = bennonhill_area
-			NOT = {
-				owned_by = ROOT
-			}
-		}
-		
-		trigger = {
-			bennonhill_area = {
-				type = all
-				owned_by = ROOT
-			}
-		}
-		
-		effect = {
-			cann_esmar_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			add_country_modifier = {
-				name = giberd_gnomish_duchy
-				duration = 7300 #20 years
-			}
-		}
-	}
-	
-	giberd_conquer_cann_esmar = {
-		icon = mission_advance_to_the_dnieper
-		required_missions = {
-			giberd_protect_ducal_gnomes
-		}
-		position = 3
-		
-		provinces_to_highlight = {
-			area = cann_esmar_area
-			NOT = {
-				owned_by = ROOT
-			}
-		}
-		
-		trigger = {
-			cann_esmar_area = {
-				type = all
-				owned_by = ROOT
-			}
-		}
-		
-		effect = {
-			ryalanar_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	
-	giberd_uplift_ryalanar = {
-		icon = mission_develop_nevas_port
-		required_missions = {
-			giberd_conquer_cann_esmar
-		}
-		position = 4
-		
-		provinces_to_highlight = {
+	provinces_to_highlight = {
+		OR = {
+			area = konwell_area
 			area = ryalanar_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
-		
-		trigger = {
-			ryalanar_area = {
-				type = all
+		NOT = {
+			AND = {
 				owned_by = ROOT
-			}
-		}
-		
-		effect = {
-			add_power_projection = {
-				type = mission_rewards_power_projection
-				amount = 20
+				is_core = ROOT
 			}
 		}
 	}
+	
+	trigger = {
+		prestige = 50
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		ryalanar_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	
+	effect = {
+		esmaria_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
 }
-
+giberd_diplomacy_deals_dominions = {
+	icon = mission_diplomacy_missive
+	required_missions = {
+		giberd_electoral_dreams
+		giberd_wind_in_our_sails
+	}
+	position = 8
+	
+	provinces_to_highlight = {
+		OR = {
+			area = konwell_area
+			area = ryalanar_area
+		}
+		NOT = {
+			AND = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+	}
+	
+	trigger = {
+		prestige = 50
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		ryalanar_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	
+	effect = {
+		esmaria_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+  }
+giberd_the_artificers_of_cannor = {
+	icon = mission_gnome_tinkering
+	required_missions = {
+		giberd_diplomacy_deals_dominions
+	}
+	position = 9
+	
+	provinces_to_highlight = {
+		OR = {
+			area = konwell_area
+			area = ryalanar_area
+		}
+		NOT = {
+			AND = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+	}
+	
+	trigger = {
+		prestige = 50
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		ryalanar_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	
+	effect = {
+		esmaria_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+  }
+giberd_sails_on_the_streams = {
+	icon = mission_sailor_boat
+	required_missions = {
+		giberd_the_artificers_of_cannor
+	}
+	position = 10
+	
+	provinces_to_highlight = {
+		OR = {
+			area = konwell_area
+			area = ryalanar_area
+		}
+		NOT = {
+			AND = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+	}
+	
+	trigger = {
+		prestige = 50
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		ryalanar_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	
+	effect = {
+		esmaria_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+  }
+giberd_a_faire_to_remember = {
+	icon = ven_capital_of_europe
+	required_missions = {
+		giberd_sails_on_the_streams
+		giberd_to_strike_an_anvil
+		giberd_understanding_the_fragment
+		giberd_curtain_call
+		giberd_an_esmari_army
+	}
+	position = 11
+	
+	provinces_to_highlight = {
+		OR = {
+			area = konwell_area
+			area = ryalanar_area
+		}
+		NOT = {
+			AND = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+	}
+	
+	trigger = {
+		prestige = 50
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		ryalanar_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	
+	effect = {
+		esmaria_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+  }
+giberd_to_name_a_hierarchy = {
+	icon = mission_crowning
+	required_missions = {
+		giberd_egcat
+		giberd_objectionable_oversight
+	}
+	position = 14
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+}
 giberd_mercantile_shipping = {
 	slot = 4
 	generic = no
@@ -494,10 +838,10 @@ giberd_mercantile_shipping = {
 	}
 	has_country_shield = yes
 	
-	giberd_center_of_commerce = {
-		icon = mission_asian_trader
+	giberd_a_technocratic_administration = {
+		icon = mission_science
 		required_missions = {
-			giberd_improve_giberd
+			giberd_ready_the_anvil
 		}
 		position = 2
 		
@@ -524,11 +868,10 @@ giberd_mercantile_shipping = {
 		}
 	}
 	
-	giberd_integrate_bennon = {
-		icon = mission_hanseatic_city
+	giberd_unbound_undertakings = {
+		icon = mission_runeforged_cannons
 		required_missions = {
-			giberd_protect_ducal_gnomes
-			giberd_center_of_commerce
+			giberd_a_technocratic_administration
 		}
 		position = 3
 		
@@ -555,10 +898,10 @@ giberd_mercantile_shipping = {
 		}
 	}
 	
-	giberd_transhavoral_trade = {
-		icon = mission_high_income
+	giberd_chroniclers_and_casters = {
+		icon = balance_the_estates
 		required_missions = {
-			giberd_integrate_bennon
+			giberd_unbound_undertakings
 		}
 		position = 4
 		
@@ -622,36 +965,185 @@ giberd_mercantile_shipping = {
 			}
 		}
 	}
+giberd_from_a_school_to_a_university = {
+	icon = public_works
+	required_missions = {
+		giberd_electoral_dreams
+	}
+	position = 7
 	
-	giberd_north_giberd = {
-		icon = mission_heart_of_the_hansa
-		required_missions = {
-			giberd_transhavoral_trade
-		}
-		position = 5
-		
-		provinces_to_highlight = {
-			province_id = 268 #Bennon
-			NOT = {
-				development = 50
-			}
-		}
-		
-		trigger = {
-			268 = { #Bennon
-				development = 50
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = giberd_mercantile_shipping_mod
-				duration = -1
-			}
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
 		}
 	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_castle_clareen = {
+	icon = fortress_of_belgrade
+	required_missions = {
+		giberd_from_a_school_to_a_university
+		giberd_the_esmari_ravelians
+	}
+	position = 8
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_the_shooddenin_kemess = {
+	icon = imperial_navy
+	required_missions = {
+		giberd_castle_clareen
+		giberd_diplomacy_deals_dominions
+	}
+	position = 9
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_an_esmari_army = {
+	icon = mission_modern_knight_army
+	required_missions = {
+		giberd_the_shooddenin_kemess
+		giberd_the_artificers_of_cannor
+	}
+	position = 10
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_tha_stook_gaddod = {
+	icon = mission_the_varangians
+	required_missions = {
+		giberd_a_faire_to_remember
+	}
+	position = 12
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
+giberd_objectionable_oversight = {
+	icon = mission_discussion_arch
+	required_missions = {
+		giberd_tha_stook_gaddod
+	}
+	position = 13
+	
+	provinces_to_highlight = {
+		area = konwell_area
+		NOT = {
+			owned_by = ROOT
+		}
+	}
+	
+	trigger = {
+		konwell_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = giberd_imperial_archives
+			duration = 18250 #50 years
+		}
+	}
+  }
 }
-
+Giberd_fake = {
+    slot = 5
+    generic = no
+    ai = yes
+    has_country_shield = yes
+    potential = { tag = A81 } 
+}	
 giberd_artificer = {
 	slot = 5
 	generic = no
@@ -661,162 +1153,12 @@ giberd_artificer = {
 	}
 	has_country_shield = yes
 	
-	giberd_improve_giberd = {
-		icon = mission_early_game_buildings
+	giberd_the_esmari_ravelians = {
+		icon = mission_cope_with_refugees
 		required_missions = {
-			
+			giberd_electoral_dreams
 		}
-		position = 1
-		
-		provinces_to_highlight = {
-			province_id = 271 #Giberd
-			NOT = {
-				development = 30
-			}
-		}
-		
-		trigger = {
-			271 = { #Giberd
-				development = 30
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = giberd_growth_of_giberd
-				duration = 7300 #20 years
-			}
-		}
-	}
-	
-	giberd_encourage_centralization = {
-		icon = mission_smith
-		required_missions = {
-			giberd_improve_giberd
-		}
-		position = 2
-		
-		provinces_to_highlight = {
-			province_id = 271 #Giberd
-			NOT = {
-				has_production_building_trigger = yes
-			}
-		}
-		
-		trigger = {
-			adm_power = 100
-			271 = { #Giberd
-				has_production_building_trigger = yes
-			}
-		}
-		
-		effect = {
-			add_adm_power = -100
-			271 = { #Giberd
-				add_permanent_province_modifier = {
-					name = giberd_craft_centralization
-					duration = -1
-				}
-			}
-		}
-	}
-	
-	giberd_establish_a_technocracy = {
-		icon = mission_writing_book
-		required_missions = {
-			giberd_encourage_centralization
-		}
-		position = 3
-		
-		trigger = {
-			NOT = {
-				has_reform = free_city
-			}
-		}
-		
-		effect = {
-			if = {
-				limit = {
-					has_reform = technocracy_republic_reform
-				}
-				change_government_reform_progress = 50
-			}
-			else = {
-				if = {
-					limit = {
-						NOT = { government = republic }
-					}
-					change_government = republic
-				}
-				add_government_reform = technocracy_republic_reform
-			}
-		}
-	}
-	
-	giberd_institute_mass_production = {
-		icon = mission_have_manufactories
-		required_missions = {
-			giberd_establish_a_technocracy
-		}
-		position = 4
-		
-		provinces_to_highlight = {
-			province_id = 271 #Giberd
-			NOT = {
-				has_manufactory_trigger = yes
-			}
-		}
-		
-		trigger = {
-			271 = { #Giberd
-				has_manufactory_trigger = yes
-			}
-		}
-		
-		effect = {
-			271 = { #Giberd
-				add_permanent_province_modifier = {
-					name = giberd_artificer_manufactories
-					duration = -1
-				}
-			}
-		}
-	}
-	
-	giberd_giberd_technical = {
-		icon = mission_early_modern_university
-		required_missions = {
-			giberd_institute_mass_production
-		}
-		position = 5
-		
-		provinces_to_highlight = {
-			province_id = 271 #Giberd
-			NOT = {
-				has_building = university
-			}
-		}
-		
-		trigger = {
-			271 = { #Giberd
-				has_building = university
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = giberd_giberd_technical_university
-				duration = -1
-			}
-		}
-	}
-	
-	giberd_embrace_ravelianism = {
-		icon = mission_european_church
-		required_missions = {
-			giberd_giberd_technical
-		}
-		position = 6
+		position = 7
 		
 		trigger = {
 			religion = ravelian
@@ -837,5 +1179,82 @@ giberd_artificer = {
 			}
 		}
 	}
+giberd_protecting_kin_and_ravelian = {
+	icon = mission_warrior_gold
+	required_missions = {
+		giberd_the_esmari_ravelians
+	}
+	position = 8
 	
+	trigger = {
+		religion = ravelian
+	}
+	
+	effect = {
+		271 = { #Giberd
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+		add_country_modifier = {
+			name = giberd_embrace_ravelianism_mod
+			duration = 7300 #20 years
+		}
+	  }
+   }
+giberd_atypical_artificers = {
+	icon = mission_artificier_experience
+	required_missions = {
+		giberd_protecting_kin_and_ravelian
+	}
+	position = 9
+	
+	trigger = {
+		religion = ravelian
+	}
+	
+	effect = {
+		271 = { #Giberd
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+		add_country_modifier = {
+			name = giberd_embrace_ravelianism_mod
+			duration = 7300 #20 years
+		}
+	  }
+   }
+giberd_understanding_the_fragment = {
+	icon = mission_crystal_focus
+	required_missions = {
+		giberd_atypical_artificers
+	}
+	position = 10
+	
+	trigger = {
+		religion = ravelian
+	}
+	
+	effect = {
+		271 = { #Giberd
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+		add_country_modifier = {
+			name = giberd_embrace_ravelianism_mod
+			duration = 7300 #20 years
+		}
+	  }
+   }
 }
