@@ -162,6 +162,13 @@ Naleni_branch_two = {
 		}
 
 		effect = {
+			country_event = { id = naleni.7 } 
+			define_advisor = {
+				type = artist
+				name = "Anvíra Saroiéne"
+				skill = 2
+				discount = yes
+			}
 			biribitid_area = {
 				limit = {
 					NOT = { is_core = ROOT } 
@@ -189,13 +196,6 @@ Naleni_branch_two = {
 					NOT = { owned_by = ROOT } 
 				}
 				add_permanent_claim = ROOT
-			}
-			country_event = { id = naleni.7 } 
-			define_advisor = {
-				type = artist
-				name = "Anvíra Saroiéne"
-				skill = 2
-				discount = yes
 			}
 		}
 	}
@@ -294,7 +294,7 @@ Naleni_branch_three = {
 				}
 				add_permanent_claim = ROOT
 			}
-			country_event = { id = flavor_naleni.2 } 
+			country_event = { id = naleni.2 } 
 		}
 	}
 
@@ -338,7 +338,7 @@ Naleni_branch_three = {
 			5530 = { add_nationalism = -5 } 
 			4547 = { add_nationalism = -5 } 
 			5522 = { add_nationalism = -5 } 
-			country_event = { id = flavor_naleni.3 } 
+			country_event = { id = naleni.3 } 
 		}
 	}
 
@@ -360,7 +360,7 @@ Naleni_branch_three = {
 			}
 		}
 
-		effect = { country_event = { id = flavor_naleni.5 }  } 
+		effect = { country_event = { id = naleni.5 }  } 
 	}
 
 	land_ho = {
@@ -433,8 +433,11 @@ Naleni_branch_three = {
 				NOT = { has_country_modifier = monstrous_nation } 
 			}
 		}
-		custom_tooltip = naleni_unlock__new_missions_tt
-		effect = { country_event = { id = naleni.11 }  } 
+		
+		effect = { 
+			country_event = { id = naleni.11 }
+			custom_tooltip = naleni_unlock__new_missions_tt  
+		} 
 	}
 }
 Naleni_branch_four = {
