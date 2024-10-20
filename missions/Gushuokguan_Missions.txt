@@ -421,7 +421,7 @@ gushuokguan_3 = {
 		trigger = {  
 			OR = {
 				#Case 1: Ally or vassal
-				Y05 = { #Lanjinhui
+				AND = {
 					variable_arithmetic_trigger = {
 						custom_tooltip = gushuokguan_larger_than_half_lanjinhui_tt
 						export_to_variable = {
@@ -438,37 +438,46 @@ gushuokguan_3 = {
 						
 						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
 					}
-					has_spy_network_from = {
-						who = ROOT
-						value = 30
-					}
-					OR = {
-						alliance_with = ROOT #Gushuokguan
-						vassal_of = ROOT #Gushuokguan
-					}
-					capital_scope = {
-						ROOT = {
-							PREV = {
-								infantry_in_province = 6
+					Y05 = { #Lanjinhui
+						has_spy_network_from = {
+							who = ROOT
+							value = 30
+						}
+						OR = {
+							alliance_with = ROOT #Gushuokguan
+							vassal_of = ROOT #Gushuokguan
+						}
+						custom_trigger_tooltip = {
+							tooltip = gushuokguan_3_2_tt
+							capital_scope = {
+								ROOT = {
+									PREV = {
+										infantry_in_province = 6
+									}
+								}
 							}
 						}
 					}
-					
 				}
+				
 				#Case 2: Rival
-				Y05 = { #Lanjinhui
-					is_enemy = ROOT #Gushuokguan
-					any_neighbor_province = {
-						owned_by = ROOT #Gushuokguan
-						infantry_in_province = 6
-					}
-					has_spy_network_from = {
-						who = ROOT
-						value = 80
+				AND = { #Purely for tooltip readability
+					Y05 = { #Lanjinhui
+						is_enemy = ROOT #Gushuokguan
+						any_neighbor_province = {
+							owned_by = ROOT #Gushuokguan
+							infantry_in_province = 6
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 80
+						}
 					}
 				}
+				
 				#Case 3: None above
 				AND = {
+					NOT = { exists = Y05 } #Lanjinhui
 					liuminxiang_area = {
 						type = all
 						country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
@@ -477,7 +486,6 @@ gushuokguan_3 = {
 						type = all
 						country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 					}
-					NOT = { exists = Y05 }#Lanjinhui
 				}
 			}
 		} 
@@ -748,7 +756,8 @@ gushuokguan_4 = {
 			}
 		} 
 
-		trigger = {  
+		trigger = { 
+			NOT = { exists = Y14 } #Zhiqian 
 			xuanbing_area = {
 				type = all
 				is_core = ROOT #Gushuokguan
@@ -782,7 +791,7 @@ gushuokguan_4 = {
 				estate = estate_burghers
 				loyalty = 60
 			}
-			NOT = { exists = Y14 } #Zhiqian
+			
 		} 
 
 		effect = {  
@@ -929,9 +938,40 @@ gushuokguan_4 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_50_vassal_provinces_tt
+				tooltip = gushuokguan_50_vassal_provinces_part2_tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					owned_by_subject_of = ROOT #Gushuokguan
+					development = 10
+					NOT = { devastation = 0.01 } 
+					num_of_buildings_in_province = 3
+					NOT = { unrest = 0 }
+					value = 50
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						development = 10
+						NOT = { devastation = 0.01 } 
+						num_of_buildings_in_province = 3
+					}
+					add_province_modifier = {
+						name = gushuokguan_confederal_mercantilism
+						duration = 18250
+					}
+				}
+			}
+			add_country_modifier = {
+				name = gushuokguan_the_caring_leader
+				duration = -1
+			}
+		} 
 	}
 
 	gushuokguan_4_6 = {
@@ -1018,16 +1058,14 @@ gushuokguan_5 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				any_known_country = {
-					OR = {
-						war_with = R62 #The Command
-						capital_scope = {
-							region = shamakhad_region
-						}
+			any_known_country = {
+				OR = {
+					war_with = R62 #The Command
+					capital_scope = {
+						region = shamakhad_region
 					}
-					is_hiring_condottiere_from = ROOT #Gushokguan
 				}
+				is_hiring_condottiere_from = ROOT #Gushokguan
 			}
 		} 
 
@@ -1047,14 +1085,29 @@ gushuokguan_5 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			if = {
-				limit = { has_country_flag = gushuokguan_stone_army_tier_2 } 
-				any_hired_mercenary_company = { template = merc_stone_army_tier_2 } 
+			OR = {
+				AND = {
+					army_tradition = 50
+					if = {
+						limit = { has_country_flag = gushuokguan_stone_army_tier_2 } 
+						any_hired_mercenary_company = { template = merc_stone_army_tier_2 } 
+					}
+					else = { any_hired_mercenary_company = { template = merc_stone_army }  } 
+					mil_power = 200
+				}
+				custom_trigger_tooltip = {
+					tooltip = gushuokguan_completed_mercenary_ideas_tt
+					has_idea = organised_mercenary_recruitment
+				}
 			}
-			else = { any_hired_mercenary_company = { template = merc_stone_army }  } 
+			
 		}
 
-		effect = { country_event = { id = gushuokguan_event.8 }  } 
+		effect = { 
+			if = { limit = { has_idea = organised_mercenary_recruitment } } #Empty
+			else = { add_mil_power = -200 }
+			country_event = { id = gushuokguan_event.8 }
+		} 
 	}
 
 	gushuokguan_5_4 = {
@@ -1067,14 +1120,17 @@ gushuokguan_5 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			all_subject_country = {
-				num_of_owned_provinces_with = {
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_25_vassal_provinces_tt
+				tooltip = gushuokguan_25_vassal_provinces_part2_tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					owned_by_subject_of = ROOT #Gushuokguan
 					development = 10
 					NOT = { devastation = 0.01 } 
 					num_of_buildings_in_province = 3
 					value = 25
 				}
-			}
+			}			
 		}
 
 		effect = {

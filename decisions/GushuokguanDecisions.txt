@@ -1,6 +1,6 @@
 country_decisions = {
 
-	replenish_mercenary_manpower = {
+	gushuokguan_replenish_mercenary_manpower = {
 		potential = {
 			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_can_replenish_mercenaries
@@ -20,17 +20,75 @@ country_decisions = {
 		}
 	}
 
-	release_guwaamud = {
+	gushuokguan_release_guwaamud = {
 		potential = {
 			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_can_release_guwaamud
 		}
 		allow = {
 			NOT = { exists = Y96 } #Guwaamud
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = shuvuushudi_region
+				value = 15
+			}
 		}
 		effect = {
 			create_vassal = Y96 #Guwaamud
 			clr_country_flag = gushuokguan_can_release_guwaamud
+		}
+	}
+
+	gushuokguan_release_hubao = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_hubao
+		}
+		allow = {
+			NOT = { exists = Y03 } #Hubao
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = shuvuushudi_region
+				value = 15
+			}
+		}
+		effect = {
+			create_vassal = Y03 #Hubao
+			clr_country_flag = gushuokguan_can_release_hubao
+		}
+	}
+
+	gushuokguan_release_zyujyut = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_zyujyut
+		}
+		allow = {
+			NOT = { exists = Y96 } #Zyujyut
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = shuvuushudi_region
+				value = 15
+			}
+		}
+		effect = {
+			create_vassal = Y96 #Zyujyut
+			clr_country_flag = gushuokguan_can_release_zyujyut
+		}
+	}
+
+	gushuokguan_release_one_xia = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_one_xia
+		}
+		allow = {
+			NOT = { exists = Y96 } #one_xia
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = shuvuushudi_region
+				value = 15
+			}
+		}
+		effect = {
+			create_vassal = Y96 #one_xia
+			clr_country_flag = gushuokguan_can_release_one_xia
 		}
 	}
 }
