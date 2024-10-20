@@ -2758,3 +2758,51 @@ defined_text = {
 		}
 	}
 }	
+
+defined_text = {
+	name = GetBrambleskinnerLandshark
+
+	text = {
+		localisation_key = brambleskinner_no_integration_landshark2
+		trigger = {
+			tag = I35
+			U11 = { is_subject_of = I35 }
+		}
+	}
+}
+
+defined_text = {
+	name = GetBrambleskinnerSpikedLog
+
+	text = {
+		localisation_key = brambleskinner_no_integration_spiked_log2
+		trigger = {
+			tag = I35
+			I36 = { is_subject_of = I35 }
+		}
+	}
+}
+
+defined_text = {
+	name = GetBrambleskinnerPetalmasher
+
+	text = {
+		localisation_key = brambleskinner_no_integration_petalmasher2
+		trigger = {
+			tag = I35
+			B82 = { is_subject_of = I35 }
+		}
+	}
+}
+
+defined_text = {
+	name = GetBrambleskinnerVerminhusk
+
+	text = {
+		localisation_key = brambleskinner_no_integration_verminhusk2
+		trigger = {
+			tag = I35
+			I37 = { is_subject_of = I35 }
+		}
+	}
+}
