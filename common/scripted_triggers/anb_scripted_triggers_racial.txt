@@ -604,7 +604,7 @@ ruler_is_half_elven = {
 		tooltip = ruler_is_half_elven_tt
 		OR = {
 			has_ruler_flag = half_elven_ruler
-			ruler_culture = anbennarian_half_elf
+			ruler_culture = half_elf
 			ruler_culture = lencori_half_elf
 			ruler_culture = alenic_half_elf
 			ruler_culture = businori_half_elf
@@ -1453,7 +1453,7 @@ consort_is_half_elven = {
 	custom_trigger_tooltip = {
 		tooltip = consort_is_half_elven_tt
 		OR = {
-			consort_culture = anbennarian_half_elf
+			consort_culture = half_elf
 			consort_culture = lencori_half_elf
 			consort_culture = alenic_half_elf
 			consort_culture = businori_half_elf
@@ -2274,7 +2274,7 @@ heir_is_half_elven = {
 	custom_trigger_tooltip = {
 		tooltip = heir_is_half_elven_tt
 		OR = {
-			heir_culture = anbennarian_half_elf
+			heir_culture = half_elf
 			heir_culture = lencori_half_elf
 			heir_culture = alenic_half_elf
 			heir_culture = businori_half_elf
@@ -3247,7 +3247,7 @@ culture_is_halfling = {
 
 culture_is_half_elven = {
 	OR = {
-		culture = anbennarian_half_elf
+		culture = half_elf
 		culture = lencori_half_elf
 		culture = alenic_half_elf
 		culture = businori_half_elf
@@ -3607,7 +3607,7 @@ has_half_elven_advisor = {
 	custom_trigger_tooltip = {
 		tooltip = has_half_elven_advisor_tt
 		OR = {
-			employed_advisor = { culture = anbennarian_half_elf }
+			employed_advisor = { culture = half_elf }
 			employed_advisor = { culture = lencori_half_elf }
 			employed_advisor = { culture = alenic_half_elf }
 			employed_advisor = { culture = businori_half_elf }
@@ -3625,7 +3625,7 @@ has_half_elven_advisor_of_category = {
 	custom_trigger_tooltip = {
 		tooltip = has_half_elven_advisor_$category$_tt
 		OR = {
-			employed_advisor = { category = $category$ culture = anbennarian_half_elf }
+			employed_advisor = { category = $category$ culture = half_elf }
 			employed_advisor = { category = $category$ culture = lencori_half_elf }
 			employed_advisor = { category = $category$ culture = alenic_half_elf }
 			employed_advisor = { category = $category$ culture = businori_half_elf }
@@ -5028,7 +5028,7 @@ has_gnomish_accepted_culture = {
 
 has_half_elven_accepted_culture = {
 	OR = {
-		accepted_culture = anbennarian_half_elf
+		accepted_culture = half_elf
 		accepted_culture = lencori_half_elf
 		accepted_culture = alenic_half_elf
 		accepted_culture = businori_half_elf
