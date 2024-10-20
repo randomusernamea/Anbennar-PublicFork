@@ -30717,18 +30717,18 @@ gushuokguan_brothers_in_freedom = {
 	liberty_desire = -10
 }
 
-gushokguan_liberation_of_our_kin = {
+gushuokguan_liberation_of_our_kin = {
 	local_years_of_nationalism = -5
 	local_unrest = -1
 	local_production_efficiency = 0.1
 	local_monthly_devastation = -0.1
 }
 
-gushokguan_local_supplier = {
+gushuokguan_local_supplier = {
 	local_production_efficiency = 0.15
 }
 
-gushokguan_replenish_mercenaries_cooldown = {} #Empty
+gushuokguan_replenish_mercenaries_cooldown = {} #Empty
 
 gushuokguan_2_3_modifier = {
 	local_manpower_modifier = 0.2
@@ -30762,4 +30762,26 @@ gushuokguan_the_caring_leader = {
 	reduced_liberty_desire = -10
 	global_trade_goods_size_modifier = 0.1
 	vassal_income = 0.1
+}
+
+gushuokguan_peace_in_our_time = {
+	global_unrest = -2
+	production_efficiency = 0.1
+	trade_efficiency = 0.1
+	global_manpower_modifier = 0.1
+}
+
+gushuokguan_experts_of_warfare = {
+	army_tradition = 20
+	diplomatic_upkeep = 1
+}
+
+gushuokguan_trade_power_of_the_yan = {
+	trade_efficiency = 0.1
+	caravan_power = 0.1
+}
+
+gushuokguan_influx_of_foreign_men = {
+	manpower_recovery_speed = 0.15
+	mercenary_manpower = 0.25
 }

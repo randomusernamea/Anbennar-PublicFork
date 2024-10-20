@@ -85,7 +85,7 @@ gushuokguan_1 = {
 					base_production = 7
 				}
 				add_province_modifier = {
-					name = gushokguan_local_supplier
+					name = gushuokguan_local_supplier
 					duration = 18250
 				}
 			}
@@ -98,7 +98,7 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_1_3 } 
 		provinces_to_highlight = {
 			superregion = yanshen_superregion
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
 			devastation = 0.01
 			unrest = 0
 			AND = {
@@ -107,17 +107,35 @@ gushuokguan_1 = {
 					province_group = golden_highway_yanshen_coast
 				}
 				NOT = {
-					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 					NOT = { development = 12 } 
 				}
 			}
 		} 
 
 		trigger = {  
-
+			yanshen_superregion = {
+				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+			}
+			all_owned_province = {
+				superregion = yanshen_superregion
+				NOT = { devastation = 0.01 }
+				NOT = { unrest = 0 }
+			}
+			golden_highway_upper_yanshen = {
+				development = 12
+			}
+			golden_highway_yanshen_coast = {
+				development = 12
+			}
 		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_peace_in_our_time
+				duration = -1
+			}
+		} 
 	}
 
 	gushuokguan_1_6 = {
@@ -292,9 +310,20 @@ gushuokguan_2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			has_mil_advisor_3 = yes
+			num_of_generals = 3
+			num_of_regiments_at_full_drill = 20
+			army_professionalism = 60
+			diplomatic_reputation = 3
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_experts_of_warfare
+				duration = -1
+			}
+		} 
 	}
 
 	gushuokguan_2_5 = {
@@ -306,9 +335,32 @@ gushuokguan_2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_mercenaries = 30
+			calc_true_if = {
+				any_known_country = {
+					OR = {
+						has_opinion = {
+							who = ROOT #Gushuokguan
+							value = 150
+						}
+						alliance_with = ROOT #Gushuokguan
+						has_spy_network_from = {
+							who = ROOT #Gushuokguan
+							value = 50
+						}
+					}
+				}
+				amount = 3
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_influx_of_foreign_men
+				duration = 14600
+			}
+		} 
 	}
 
 	gushuokguan_2_7 = {
@@ -420,18 +472,6 @@ gushuokguan_3 = {
 
 		trigger = {  
 			OR = {
-				#Case 2: Rival
-				Y05 = { #Lanjinhui
-					is_enemy = ROOT #Gushuokguan
-					any_neighbor_province = {
-						owned_by = ROOT #Gushuokguan
-						infantry_in_province = 6
-					}
-					has_spy_network_from = {
-						who = ROOT
-						value = 80
-					}
-				}
 				#Case 1: Ally or vassal
 				AND = {
 					variable_arithmetic_trigger = {
@@ -451,14 +491,6 @@ gushuokguan_3 = {
 						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
 					}
 					Y05 = { #Lanjinhui
-						has_spy_network_from = {
-							who = ROOT
-							value = 30
-						}
-						OR = {
-							alliance_with = ROOT #Gushuokguan
-							vassal_of = ROOT #Gushuokguan
-						}
 						custom_trigger_tooltip = {
 							tooltip = gushuokguan_3_2_tt
 							capital_scope = {
@@ -469,6 +501,31 @@ gushuokguan_3 = {
 								}
 							}
 						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 30
+						}
+						OR = {
+							alliance_with = ROOT #Gushuokguan
+							vassal_of = ROOT #Gushuokguan
+						}
+						
+					}
+				}
+				
+				#Case 2: Rival
+				AND = {
+					is_enemy = Y05 #Lanjinhui
+					Y05 = { #Lanjinhui
+						has_spy_network_from = {
+							who = ROOT
+							value = 80
+						}
+						any_neighbor_province = {
+							owned_by = ROOT #Gushuokguan
+							infantry_in_province = 6
+						}
+						
 					}
 				}
 				
@@ -532,7 +589,7 @@ gushuokguan_3 = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = gushuokguan_AAAAAAAAAAA_tt
+				tooltip = gushuokguan_3_4_trigger_tt
 				linyuan_area = {
 					type = all
 					is_core = ROOT
@@ -625,6 +682,12 @@ gushuokguan_3 = {
 		}
 
 		effect = {
+			create_vassal = Y10 #Yingzhen
+			add_mil_power = 50
+			add_country_modifier = {
+				name = gushuokguan_trade_power_of_the_yan
+				duration = 7300
+			}
 			custom_tooltip = gushuokguan_can_release_hubao_tt
 			hidden_effect = { set_country_flag = gushuokguan_can_release_hubao } 
 		}
@@ -806,25 +869,25 @@ gushuokguan_4 = {
 			}
 			xuanbing_area = {
 				add_province_modifier = {
-					name = gushokguan_liberation_of_our_kin
+					name = gushuokguan_liberation_of_our_kin
 					duration = 3650
 				}
 			}
 			4927 = { #Shiying
 				add_province_modifier = {
-					name = gushokguan_liberation_of_our_kin
+					name = gushuokguan_liberation_of_our_kin
 					duration = 3650
 				}
 			}
 			4917 = { #Jiangchang
 				add_province_modifier = {
-					name = gushokguan_liberation_of_our_kin
+					name = gushuokguan_liberation_of_our_kin
 					duration = 3650
 				}
 			}
 			4980 = { #Tsianjian
 				add_province_modifier = {
-					name = gushokguan_liberation_of_our_kin
+					name = gushuokguan_liberation_of_our_kin
 					duration = 3650
 				}
 			}
@@ -912,6 +975,7 @@ gushuokguan_4 = {
 		} 
 
 		effect = {  
+			create_vassal = Y20 #Feiten
 			4871 = { #Tianlou
 				add_unit_construction = {
 					type = light_ship
@@ -1061,7 +1125,7 @@ gushuokguan_5 = {
 						region = shamakhad_region
 					}
 				}
-				is_hiring_condottiere_from = ROOT #Gushokguan
+				is_hiring_condottiere_from = ROOT #gushuokguan
 			}
 		} 
 
@@ -1160,9 +1224,26 @@ gushuokguan_5 = {
 		required_missions = { gushuokguan_5_4 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			all_subject_country = {
+				total_development = 800
+				NOT = { liberty_desire = 10 }
+				has_opinion = {
+					who = ROOT #Gushuokguan
+					value = 200
+				}
+				trust = {
+					who = ROOT #Gushuokguan
+					value = 90
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {  
+			country_event = {
+				id = gushuokguan_event.9 #Confederal Council
+			}
+		} 
 	}
 
 	gushuokguan_5_6 = {
