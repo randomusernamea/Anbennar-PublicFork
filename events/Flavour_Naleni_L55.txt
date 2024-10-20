@@ -1,6 +1,5 @@
 # to do list
-# graphic for thalassocracy reform doesn't display atm.
-
+namespace = naleni
 
 country_event = {
 	id = naleni.1
@@ -125,13 +124,13 @@ country_event = {
 	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = naleni.6.a
+		name = naleni.7.a
 		ai_chance = { factor = 75 }
 		increase_matauth_2 = yes
 		add_yearly_sailors = -1
 	}
 	option = {
-		name = naleni.6.b
+		name = naleni.7.b
 		ai_chance = { factor = 25 }
 		add_country_modifier = {
 			name = L55_song_sailors
@@ -336,6 +335,8 @@ country_event = {
 				id = naleni.12
 				days = 70
 			}
+			set_country_flag = L55_part_two
+			swap_non_generic_missions = yes
 		}
 	}
 }
@@ -380,16 +381,15 @@ country_event = {
 			}
 		}
 		else = { 
-			limit = { has_country_flag = med_authority }
 			capital_scope = {
 				spawn_rebels = {
-					size = 2
+					size = 1
 					type = particularist_rebels
 				}
 			}
 			random_core_province = {
 				spawn_rebels = {
-					size = 2
+					size = 1
 					type = particularist_rebels
 				}
 			}
@@ -435,29 +435,30 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = naleni.14 #parent to the people
-	title = naleni.14.t
-	desc = naleni.14.d
-	picture = MILITARY_CAMP_eventPicture
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = naleni.14.a
-		ai_chance = { factor = 100 }
-		add_country_modifier = {
-			name = L55_siren_songhalls_2
-			duration = -1
-		}
-		decrease_monstrous_10 = yes
-		hidden_effect = {
-			remove_country_modifier = L55_siren_songhalls_1
-		}
-	}
-}
+# CUT EVENT
+#country_event = {   
+#	id = naleni.14 #parent to the people
+#	title = naleni.14.t
+#	desc = naleni.14.d
+#	picture = MILITARY_CAMP_eventPicture
+#	fire_only_once = yes
+#	is_triggered_only = yes
+#	option = {
+#		name = naleni.14.a
+#		ai_chance = { factor = 100 }
+##		add_country_modifier = {
+#			name = L55_siren_songhalls_2
+#			duration = -1
+#		}
+#		decrease_monstrous_10 = yes
+#		hidden_effect = {
+##			remove_country_modifier = L55_siren_songhalls_1
+#		}
+#	}
+#}
 
 country_event = {
-	id = naleni.15 #parent to the people
+	id = naleni.15 #A queen risen
 	title = naleni.15.t
 	desc = naleni.15.d
 	picture = MILITARY_CAMP_eventPicture
@@ -514,8 +515,10 @@ country_event = {
 		remove_country_modifier = L55_high_authority
 		remove_country_modifier = L55_med_authority
 		remove_country_modifier = L55_low_authority
-		set_country_flag = L55_part_two
-		swap_non_generic_missions = yes
+		clr_country_flag = L55_med_authority
+		clr_country_flag = L55_low_authority
+		clr_country_flag = L55_high_authority
+		clr_country_flag = L55_contest
 	}
 }
 
@@ -547,12 +550,14 @@ country_event = {
 		name = naleni.17.a
 		ai_chance = { factor = 100 }
 		set_country_flag = L55_stayed_hunt
+		custom_tooltip = L55_stay_hunt_tt
 	}
 	option = {
 		name = naleni.17.b
 		ai_chance = { factor = 100 }
 		change_religion = sky_domain
 		set_country_flag = L55_converted
+		custom_tooltip = L55_convert_tt
 	}
 }
 
@@ -605,6 +610,397 @@ country_event = {
 			type = 25_permanent_power_projection
 			amount = 25
 		}
+	}
+}
+
+# pulse events
+country_event = {
+	id = naleni.20 # Desk of the Matriarch - Street Brawls
+	title = naleni.20.t
+	desc = naleni.20.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.20.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		
+	}
+	option = {
+		name = naleni.20.b
+		ai_chance = { factor = 25 }
+		decrease_matauth_1 = yes
+	}
+}
+
+country_event = {
+	id = naleni.21 # Desk of the Matriarch - Shipping raids
+	title = naleni.21.t
+	desc = naleni.21.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.21.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = naleni.21.b
+		ai_chance = { factor = 25 }
+		decrease_matauth_1 = yes
+	}
+}
+
+country_event = {
+	id = naleni.22 # Desk of the Matriarch - Bribery
+	title = naleni.22.t
+	desc = naleni.22.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.22.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		
+	}
+	option = {
+		name = naleni.22.b
+		ai_chance = { factor = 25 }
+		add_treasury = 100
+		decrease_matauth_1 = yes
+	}
+}
+
+country_event = {
+	id = naleni.23 # Desk of the Matriarch - Relationship Issues
+	title = naleni.23.t
+	desc = naleni.23.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.23.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+	}
+	option = {
+		name = naleni.23.b
+		ai_chance = { factor = 25 }
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		decrease_matauth_1 = yes
+	}
+}
+
+country_event = {
+	id = naleni.24 # Desk of the Matriarch - Strife at Sea
+	title = naleni.24.t
+	desc = naleni.24.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.24.a
+		ai_chance = { factor = 75 }
+		increase_matauth_1 = yes
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+	}
+	option = {
+		name = naleni.24.b
+		ai_chance = { factor = 25 }
+	}
+}
+
+country_event = {
+	id = naleni.25 # Desk of the Matriarch - A non harpy Odances?
+	title = naleni.25.t
+	desc = naleni.25.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.25.a
+		ai_chance = { factor = 50 }
+		increase_matauth_1 = yes
+		add_prestige = -10
+	}
+	option = {
+		name = naleni.25.b
+		ai_chance = { factor = 50 }
+		create_admiral = { 
+			tradition = 60
+			culture = metobesebi
+			female = yes 
+		}
+	}
+}
+
+country_event = {
+	id = naleni.26 # Desk of the Matriarch - Popularity contests
+	title = naleni.26.t
+	desc = naleni.26.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		has_country_flag = L55_contest
+	}
+	option = {
+		name = naleni.26.a
+		ai_chance = { factor = 50 }
+		increase_matauth_2 = yes
+		add_republican_tradition = -10
+	}
+	option = {
+		name = naleni.26.b
+		ai_chance = { factor = 50 }
+		decrease_matauth_1 = yes
+	}
+}
+
+#post reform pulse events
+
+country_event = {
+	id = naleni.27 # Desk of the Matriarch - Popularity contests v2
+	title = naleni.27.t
+	desc = naleni.27.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.27.a #support the sirens
+		ai_chance = { factor = 25 }
+		add_prestige = -10
+		add_adm_power = 50
+	}
+	option = {
+		name = naleni.27.b #promote yourself
+		ai_chance = { factor = 25 }
+		add_prestige = -10
+		add_dip_power = 50
+	}
+	option = {
+		name = naleni.27.c #support the Odan?esta
+		ai_chance = { factor = 25 }
+		add_prestige = -10
+		add_mil_power = 50
+	}
+	option = {
+		name = naleni.27.e
+		ai_chance = { factor = 25 }
+	}
+}
+
+country_event = {
+	id = naleni.28 # Desk of the Matriarch - Non harpy Odan?esta
+	title = naleni.28.t
+	desc = naleni.28.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.28.a  #let her serve
+		ai_chance = { factor = 50 }
+		create_admiral = { 
+			tradition = 60
+			culture = metobesebi
+			female = yes 
+		}
+	}
+	option = {
+		name = naleni.28.b #restrict it to harpies only
+		ai_chance = { factor = 50 }
+		add_prestige = 10
+		add_legitimacy = 10
+	}
+}
+
+country_event = {
+	id = naleni.29 # Desk of the Matriarch - Unlawful Privateering
+	title = naleni.29.t
+	desc = naleni.29.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.29.a  #revoke their license
+		ai_chance = { factor = 50 }
+		add_navy_tradition = 10
+		add_army_professionalism = 0.01
+	}
+	option = {
+		name = naleni.29.b #let it slide
+		ai_chance = { factor = 50 }
+		add_years_of_income = 0.5
+	}
+}
+
+country_event = {
+	id = naleni.30 # Desk of the Matriarch - Interservice Rivalry
+	title = naleni.30.t
+	desc = naleni.30.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.30.a  #smooth the tensions
+		ai_chance = { factor = 50 }
+		add_dip_power = -50
+		add_mil_power = -50
+	}
+	option = {
+		name = naleni.30.b #leave it to the individuals
+		ai_chance = { factor = 50 }
+		add_army_professionalism = -0.04
+	}
+}
+
+country_event = {
+	id = naleni.31 # Desk of the Matriarch - Performance brawls
+	title = naleni.31.t
+	desc = naleni.31.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.31.a  #expand access
+		ai_chance = { factor = 50 }
+		add_years_of_income = -1
+	}
+	option = {
+		name = naleni.31.b #its not really our problem
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = L55_performance_supply_issues 
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = naleni.32 # Desk of the Matriarch - Extra Regular Payment
+	title = naleni.32.t
+	desc = naleni.32.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.32.a  #crackdown on the practice
+		ai_chance = { factor = 50 }
+		add_corruption = -2
+		add_country_modifier = {
+			name = L55_extra_reg_crackdown
+			duration = 3650
+		}
+	}
+	option = {
+		name = naleni.32.b #turn a blind eye
+		ai_chance = { factor = 50 }
+		add_corruption = 2
+		add_country_modifier = {
+			name = L55_extra_reg_allow 
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = naleni.33 # Desk of the Matriarch - Relationship issues v2
+	title = naleni.33.t
+	desc = naleni.33.d
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		tag = L55
+		NOT = { has_country_flag = L55_contest }
+	}
+	option = {
+		name = naleni.33.a  #step in
+		ai_chance = { factor = 50 }
+		add_yearly_manpower = 2
+		add_yearly_sailors = 2
+		add_years_of_income = -1
+		custom_tooltip = naleni.33.a_tt
+	}
+	option = {
+		name = naleni.33.b #dont bother
+		ai_chance = { factor = 50 }
+	}
+}
+
+#pure flavour
+
+country_event = {
+	id = naleni.35 #Riva death
+	title = naleni.35.t
+	desc = naleni.35.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = L55
+		has_country_flag = L55_riva_reform
+	}
+	option = {
+		name = naleni.35.a
+		clr_country_flag = L55_riva_reform
 	}
 }
 
@@ -759,24 +1155,4 @@ country_event = {
 	}
 }
 
-#mutiny events
-country_event = {
-	id = naleni.43
-	title = naleni.9.t
-	desc = naleni.9.d
-	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = naleni.9.a
-		ai_chance = { factor = 75 }
-		increase_matauth_1 = yes
-		add_yearly_manpower = -1
-		add_yearly_sailors = -1
-	}
-	option = {
-		name = naleni.9.b
-		ai_chance = { factor = 25 }
-		decrease_matauth_2 = yes
-	}
-}
+

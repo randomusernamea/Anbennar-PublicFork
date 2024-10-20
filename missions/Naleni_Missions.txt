@@ -1,4 +1,7 @@
-Naléni_branch_one = {
+# Made by Liv
+# Thanks to Ottokard, Scamp and Everest for reviewing
+
+Naleni_branch_one = {
 	slot = 1
 	generic = no
 	ai = yes
@@ -39,7 +42,7 @@ Naléni_branch_one = {
 		}
 	}
 }
-Naléni_branch_two = {
+Naleni_branch_two = {
 	slot = 2
 	generic = no
 	ai = yes
@@ -255,7 +258,7 @@ Naléni_branch_two = {
 		}
 	}
 }
-Naléni_branch_three = {
+Naleni_branch_three = {
 	slot = 3
 	generic = no
 	ai = yes
@@ -434,7 +437,7 @@ Naléni_branch_three = {
 		effect = { country_event = { id = naleni.11 }  } 
 	}
 }
-Naléni_branch_four = {
+Naleni_branch_four = {
 	slot = 4
 	generic = no
 	ai = yes
@@ -589,7 +592,7 @@ Naléni_branch_four = {
 		effect = { country_event = { id = naleni.10 }  } 
 	}
 }
-Naléni_branch_five = {
+Naleni_branch_five = {
 	slot = 5
 	generic = no
 	ai = yes
@@ -703,7 +706,7 @@ Naléni_branch_five = {
 		}
 	}
 }
-naléni_branch_one_p2 = {
+naleni_branch_one_p2 = {
 	slot = 1
 	generic = no
 	ai = yes
@@ -791,8 +794,14 @@ naleni_branch_two_p2 = {
 				has_adm_advisor_3 = yes
 			}
 		}
-
-		effect = { country_event = { id = naleni.14 }  } 
+		add_country_modifier = {
+			name = L55_siren_songhalls_2
+			duration = -1
+		}
+		decrease_monstrous_10 = yes
+		hidden_effect = {
+			remove_country_modifier = L55_siren_songhalls_1
+		}
 	}
 
 	harpy_homelands = {
@@ -906,7 +915,7 @@ naleni_branch_two_p2 = {
 		}
 	}
 }
-naléni_branch_three_p2 = {
+naleni_branch_three_p2 = {
 	slot = 3
 	generic = no
 	ai = yes
@@ -931,7 +940,6 @@ naléni_branch_three_p2 = {
 		}
 
 		effect = {
-			clr_country_flag = L55_riva_reform
 			clr_country_flag = L55_secure_state
 			add_legitimacy = 25
 			add_stability = 1
@@ -1203,7 +1211,7 @@ naléni_branch_three_p2 = {
 	}
 
 }
-naléni_branch_four_p2 = {
+naleni_branch_four_p2 = {
 	slot = 4
 	generic = no
 	ai = yes
@@ -1484,15 +1492,4 @@ naléni_branch_four_p2 = {
 			}
 		}
 	}
-}
-naléni_branch_five_p2 = {
-	slot = 5
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = potential = { 
-		tag = L55
-		has_country_flag = L55_part_two
-	}  
-
 }
