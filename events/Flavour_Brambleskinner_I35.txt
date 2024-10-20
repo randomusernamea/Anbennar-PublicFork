@@ -194,7 +194,7 @@ country_event = { #A Durable Arrangement
 		}
 		if = {
 			limit = { I36 = { exists = yes ai = no } }
-			I36 = { country_event = { id = flavor_brambleskinner.3 } }
+			I36 = { country_event = { id = flavor_brambleskinner.4 } }
 		}
 		if = {
 			limit = { I36 = { exists = no } }
@@ -488,13 +488,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_lake_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_lake_grove } }
 				}
 				deepwoods_lake_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -510,13 +510,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_bone_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_bone_grove } }
 				}
 				deepwoods_bone_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -532,13 +532,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_mountain_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_mountain_grove } }
 				}
 				deepwoods_mountain_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -554,13 +554,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_hunter_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_hunter_grove } }
 				}
 				deepwoods_hunter_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -576,13 +576,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_shadow_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_shadow_grove } }
 				}
 				deepwoods_shadow_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -598,13 +598,13 @@ country_event = { #The Forest Stirs
 			if = {
 				limit = {
 					deepwoods_thorn_grove = {
-						type = any
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 					capital_scope = { NOT = { province_group = deepwoods_thorn_grove } }
 				}
 				deepwoods_thorn_grove = {
-					type = any
+					type = random
+					amount = 1
 					limit = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -617,37 +617,34 @@ country_event = { #The Forest Stirs
 					}
 				}
 			}
-			deepwoods_arrow_grove = {
-				type = any
-				limit = { owned_by = I36 }
-				save_event_target_as = fey_rebellion_arrow
-			}
-			event_target:fey_rebellion_arrow = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
+			I37 = {
+				random_owned_province = {
+					limit = { province_group = deepwoods_river_grove }
+					save_event_target_as = fey_rebellion_river
+					spawn_rebels = { 
+						type = treant_rebels
+						size = 2
+					}
 				}
 			}
-			deepwoods_flower_grove = {
-				type = any
-				limit = { owned_by = B82 }
-				save_event_target_as = fey_rebellion_flower
-			}
-			event_target:fey_rebellion_flower = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
+			I36 = {
+				random_owned_province = {
+					limit = { province_group = deepwoods_arrow_grove }
+					save_event_target_as = fey_rebellion_arrow
+					spawn_rebels = { 
+						type = treant_rebels
+						size = 2
+					}
 				}
 			}
-			deepwoods_river_grove = {
-				type = any
-				limit = { owned_by = I37 }
-				save_event_target_as = fey_rebellion_river
-			}
-			event_target:fey_rebellion_river = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
+			B82 = {
+				random_owned_province = {
+					limit = { province_group = fey_rebellion_flower }
+					save_event_target_as = fey_rebellion_flower
+					spawn_rebels = { 
+						type = treant_rebels
+						size = 2
+					}
 				}
 			}
 			set_country_flag = brambleskinner_reconstruction_missions
@@ -670,19 +667,12 @@ country_event = { #The Forest Stirs
 			capital_scope = {
 				spawn_rebels = { 
 					type = treant_rebels
-					size = 3
+					size = 4
 				}
 			}
 			if = {
 				limit = {
-					deepwoods_lake_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_lake_grove } }
+					has_saved_event_target = fey_rebellion_lake
 				}
 				event_target:fey_rebellion_lake = {
 					spawn_rebels = { 
@@ -693,14 +683,7 @@ country_event = { #The Forest Stirs
 			}
 			if = {
 				limit = {
-					deepwoods_bone_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_bone_grove } }
+					has_saved_event_target = fey_rebellion_bone
 				}
 				event_target:fey_rebellion_bone = {
 					spawn_rebels = { 
@@ -711,14 +694,7 @@ country_event = { #The Forest Stirs
 			}
 			if = {
 				limit = {
-					deepwoods_mountain_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_mountain_grove } }
+					has_saved_event_target = fey_rebellion_mountain
 				}
 				event_target:fey_rebellion_mountain = {
 					spawn_rebels = { 
@@ -729,14 +705,7 @@ country_event = { #The Forest Stirs
 			}
 			if = {
 				limit = {
-					deepwoods_hunter_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_hunter_grove } }
+					has_saved_event_target = fey_rebellion_hunter
 				}
 				event_target:fey_rebellion_hunter = {
 					spawn_rebels = { 
@@ -747,14 +716,7 @@ country_event = { #The Forest Stirs
 			}
 			if = {
 				limit = {
-					deepwoods_shadow_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_shadow_grove } }
+					has_saved_event_target = fey_rebellion_shadow
 				}
 				event_target:fey_rebellion_shadow = {
 					spawn_rebels = { 
@@ -765,14 +727,7 @@ country_event = { #The Forest Stirs
 			}
 			if = {
 				limit = {
-					deepwoods_thorn_grove = {
-						type = any
-						OR = { 
-							owned_by = ROOT
-							owner = { is_subject_of = ROOT }
-						}
-					}
-					capital_scope = { NOT = { province_group = deepwoods_thorn_grove } }
+					has_saved_event_target = fey_rebellion_thorn
 				}
 				event_target:fey_rebellion_thorn = {
 					spawn_rebels = { 

@@ -24,7 +24,6 @@ brambleskinner_1 = {
 			custom_trigger_tooltip = {
 				tooltip = brambleskinner_repel_orcs_tt
 				deepwoods_superregion = {
-					type = all
 					NOT = {
 						owner = {
 							culture_group = orcish
@@ -424,22 +423,18 @@ brambleskinner_2 = {
 				has_tax_building_trigger = yes
 			}
 			deepwoods_lake_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_tax_building_trigger = yes
 			}
 			deepwoods_bone_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_tax_building_trigger = yes
 			}
 			deepwoods_thorn_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_tax_building_trigger = yes
 			}
 			deepwoods_arrow_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_tax_building_trigger = yes
 			}
@@ -1063,76 +1058,84 @@ brambleskinner_4_2 = {
 		effect = {
 			custom_tooltip = brambleskinner_charcoal_tt
 			hidden_effect = {
-				deepwoods_superregion = { 
-					random_province = {
-						limit = { 
-							country_or_non_sovereign_subject_holds = ROOT
-							trade_goods = tropical_wood
-							has_production_building_trigger = yes
-							base_production = 6
-							NOT = { is_capital_of = ROOT }
-							NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-						}
-						add_permanent_province_modifier = { 
-							name = brambleskinner_charcoal_kiln
-							duration = -1
-						}
+				deepwoods_superregion = {
+					type = random
+					amount = 1
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						trade_goods = tropical_wood
+						has_production_building_trigger = yes
+						base_production = 6
+						NOT = { is_capital_of = ROOT }
+						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
 					}
-					random_province = {
-						limit = { 
-							country_or_non_sovereign_subject_holds = ROOT
-							trade_goods = tropical_wood
-							has_production_building_trigger = yes
-							base_production = 6
-							NOT = { is_capital_of = ROOT }
-							NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-						}
-						add_permanent_province_modifier = { 
-							name = brambleskinner_charcoal_kiln
-							duration = -1
-						}
+					add_permanent_province_modifier = { 
+						name = brambleskinner_charcoal_kiln
+						duration = -1
 					}
-					random_province = {
-						limit = { 
-							country_or_non_sovereign_subject_holds = ROOT
-							trade_goods = tropical_wood
-							has_production_building_trigger = yes
-							base_production = 6
-							NOT = { is_capital_of = ROOT }
-							NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-						}
-						add_permanent_province_modifier = { 
-							name = brambleskinner_charcoal_kiln
-							duration = -1
-						}
+				}
+				deepwoods_superregion = {
+					type = random
+					amount = 1
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						trade_goods = tropical_wood
+						has_production_building_trigger = yes
+						base_production = 6
+						NOT = { is_capital_of = ROOT }
+						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
 					}
-					random_province = {
-						limit = { 
-							country_or_non_sovereign_subject_holds = ROOT
-							trade_goods = tropical_wood
-							has_production_building_trigger = yes
-							base_production = 6
-							NOT = { is_capital_of = ROOT }
-							NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-						}
-						add_permanent_province_modifier = { 
-							name = brambleskinner_charcoal_kiln
-							duration = -1
-						}
+					add_permanent_province_modifier = { 
+						name = brambleskinner_charcoal_kiln
+						duration = -1
 					}
-					random_province = {
-						limit = { 
-							country_or_non_sovereign_subject_holds = ROOT
-							trade_goods = tropical_wood
-							has_production_building_trigger = yes
-							base_production = 6
-							NOT = { is_capital_of = ROOT }
-							NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-						}
-						add_permanent_province_modifier = { 
-							name = brambleskinner_charcoal_kiln
-							duration = -1
-						}
+				}
+				deepwoods_superregion = {
+					type = random
+					amount = 1
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						trade_goods = tropical_wood
+						has_production_building_trigger = yes
+						base_production = 6
+						NOT = { is_capital_of = ROOT }
+						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
+					}
+					add_permanent_province_modifier = { 
+						name = brambleskinner_charcoal_kiln
+						duration = -1
+					}
+				}
+				deepwoods_superregion = {
+					type = random
+					amount = 1
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						trade_goods = tropical_wood
+						has_production_building_trigger = yes
+						base_production = 6
+						NOT = { is_capital_of = ROOT }
+						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
+					}
+					add_permanent_province_modifier = { 
+						name = brambleskinner_charcoal_kiln
+						duration = -1
+					}
+				}
+				deepwoods_superregion = {
+					type = random
+					amount = 1
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						trade_goods = tropical_wood
+						has_production_building_trigger = yes
+						base_production = 6
+						NOT = { is_capital_of = ROOT }
+						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
+					}
+					add_permanent_province_modifier = { 
+						name = brambleskinner_charcoal_kiln
+						duration = -1
 					}
 				}
 			}
@@ -1542,12 +1545,10 @@ brambleskinner_5_1 = {
 			}
 			510 = { has_trade_building_trigger = yes }
 			deepwoods_lake_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_trade_building_trigger = yes
 			}
 			deepwoods_bone_grove = {
-				type = any
 				country_or_non_sovereign_subject_holds = ROOT
 				has_trade_building_trigger = yes
 			}
@@ -1713,28 +1714,12 @@ brambleskinner_5_3 = {
 					devastation = 1
 				}
 				AND = {
-					is_capital_of = ROOT
 					OR = {
-						NOT = { has_fort_building_trigger = yes }
-						NOT = { infantry_in_province = 8 }
+						is_capital_of = ROOT
+						is_capital_of = B82
+						is_capital_of = I36
+						is_capital_of = I37
 					}
-				}
-				AND = {
-					is_capital_of = B82
-					OR = {
-						NOT = { has_fort_building_trigger = yes }
-						NOT = { infantry_in_province = 8 }
-					}
-				}
-				AND = {
-					is_capital_of = I36
-					OR = {
-						NOT = { has_fort_building_trigger = yes }
-						NOT = { infantry_in_province = 8 }
-					}
-				}
-				AND = {
-					is_capital_of = I37
 					OR = {
 						NOT = { has_fort_building_trigger = yes }
 						NOT = { infantry_in_province = 8 }
@@ -1864,12 +1849,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_lake_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_lake_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
@@ -1878,12 +1861,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_bone_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_bone_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
@@ -1892,12 +1873,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_mountain_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_mountain_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
@@ -1906,12 +1885,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_hunter_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_hunter_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
@@ -1920,12 +1897,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_shadow_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_shadow_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
@@ -1934,12 +1909,10 @@ brambleskinner_5_3 = {
 			if = {
 				limit = {
 					deepwoods_thorn_grove = {
-						type = any
 						owned_by = ROOT
 					}
 				}
 				deepwoods_thorn_grove = {
-					type = any
 					owned_by = ROOT
 					has_fort_building_trigger = yes
 					infantry_in_province = 8
