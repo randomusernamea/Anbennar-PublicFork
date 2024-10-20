@@ -196,15 +196,7 @@ country_event = { #A Durable Arrangement
 			limit = { I36 = { exists = yes ai = no } }
 			I36 = { country_event = { id = flavor_brambleskinner.4 } }
 		}
-		if = {
-			limit = { I36 = { exists = no } }
-			release = I36
-			deepwoods_arrow_grove = {
-				limit = { country_or_non_sovereign_subject_holds = ROOT }
-				cede_province = I36
-			}
-			vassalize = I36
-		}
+		brambleskinner_release_vassal = { vassal = I36 grove = arrow }
 	}
 }
 
@@ -354,7 +346,7 @@ country_event = { #The Forest and the Sea
 		if = {
 			limit = { U11 = { ai = yes } }
 			vassalize = U11
-			deepwoods_superregion = { discover_country = U11 }
+			hidden_effect = { deepwoods_superregion = { discover_country = U11 } }
 			if = {
 				limit = {
 					mission_completed = brambleskinner_the_feykiller_front
@@ -485,168 +477,15 @@ country_event = { #The Forest Stirs
 					size = 4
 				}
 			}
-			if = {
-				limit = {
-					deepwoods_lake_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_lake_grove } }
-				}
-				deepwoods_lake_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_lake
-				}
-				event_target:fey_rebellion_lake = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_bone_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_bone_grove } }
-				}
-				deepwoods_bone_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_bone
-				}
-				event_target:fey_rebellion_bone = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_mountain_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_mountain_grove } }
-				}
-				deepwoods_mountain_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_mountain
-				}
-				event_target:fey_rebellion_mountain = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_hunter_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_hunter_grove } }
-				}
-				deepwoods_hunter_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_hunter
-				}
-				event_target:fey_rebellion_hunter = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_shadow_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_shadow_grove } }
-				}
-				deepwoods_shadow_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_shadow
-				}
-				event_target:fey_rebellion_shadow = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_thorn_grove = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					capital_scope = { NOT = { province_group = deepwoods_thorn_grove } }
-				}
-				deepwoods_thorn_grove = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					save_event_target_as = fey_rebellion_thorn
-				}
-				event_target:fey_rebellion_thorn = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			I37 = {
-				random_owned_province = {
-					limit = { province_group = deepwoods_river_grove }
-					save_event_target_as = fey_rebellion_river
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			I36 = {
-				random_owned_province = {
-					limit = { province_group = deepwoods_arrow_grove }
-					save_event_target_as = fey_rebellion_arrow
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			B82 = {
-				random_owned_province = {
-					limit = { province_group = fey_rebellion_flower }
-					save_event_target_as = fey_rebellion_flower
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
+			brambleskinner_spawn_fey_rebels = { grove = lake }
+			brambleskinner_spawn_fey_rebels = { grove = bone }
+			brambleskinner_spawn_fey_rebels = { grove = mountain }
+			brambleskinner_spawn_fey_rebels = { grove = hunter }
+			brambleskinner_spawn_fey_rebels = { grove = shadow }
+			brambleskinner_spawn_fey_rebels = { grove = thorn }
+			brambleskinner_spawn_fey_rebels_vassals = { vassal = I37 grove = river }
+			brambleskinner_spawn_fey_rebels_vassals = { vassal = I36 grove = arrow }
+			brambleskinner_spawn_fey_rebels_vassals = { vassal = B82 grove = flower }
 			set_country_flag = brambleskinner_reconstruction_missions
 		}
 	}
@@ -670,90 +509,15 @@ country_event = { #The Forest Stirs
 					size = 4
 				}
 			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_lake
-				}
-				event_target:fey_rebellion_lake = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_bone
-				}
-				event_target:fey_rebellion_bone = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_mountain
-				}
-				event_target:fey_rebellion_mountain = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_hunter
-				}
-				event_target:fey_rebellion_hunter = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_shadow
-				}
-				event_target:fey_rebellion_shadow = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_saved_event_target = fey_rebellion_thorn
-				}
-				event_target:fey_rebellion_thorn = {
-					spawn_rebels = { 
-						type = treant_rebels
-						size = 2
-					}
-				}
-			}
-			event_target:fey_rebellion_arrow = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
-				}
-			}
-			event_target:fey_rebellion_flower = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
-				}
-			}
-			event_target:fey_rebellion_river = {
-				spawn_rebels = { 
-					type = treant_rebels
-					size = 2
-				}
-			}
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = lake }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = bone }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = mountain }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = hunter }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = shadow }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = thorn }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = arrow }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = river }
+			brambleskinner_spawn_fey_rebels_tooltip = { grove = flower }
 		}
 		swap_non_generic_missions = yes
 	}

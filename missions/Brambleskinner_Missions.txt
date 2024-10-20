@@ -278,60 +278,8 @@ brambleskinner_2 = {
 					add_adm_power = 50
 					add_dip_power = 50
 				}
-				if = {
-					limit = {
-						NOT = { exists = B82 }
-					}
-					release = B82
-					every_owned_province = {
-						limit = {
-							OR = {
-								province_group = deepwoods_flower_grove
-								province_id = 7030
-							}
-						}
-						cede_province = B82
-					}
-					every_subject_country = {
-						every_owned_province = {
-							limit = {
-								OR = {
-									province_group = deepwoods_flower_grove
-									province_id = 7030
-								}
-							}
-							cede_province = B82
-						}
-					}
-					vassalize = B82
-				}
-				if = {
-					limit = {
-						NOT = { exists = I37 }
-					}
-					release = I37
-					every_owned_province = {
-						limit = {
-							OR = {
-								province_group = deepwoods_river_grove
-								province_id = 7033
-							}
-						}
-						cede_province = I37
-					}
-					every_subject_country = {
-						every_owned_province = {
-							limit = {
-								OR = {
-									province_group = deepwoods_river_grove
-									province_id = 7033
-								}
-							}
-							cede_province = I37
-						}
-					}
-					vassalize = I37
-				}
+				brambleskinner_release_vassal = { vassal = B82 grove = flower }
+				brambleskinner_release_vassal = { vassal = I37 grove = river }
 			}
 			B82 = { 
 				change_religion = goblinic_shamanism
@@ -362,53 +310,10 @@ brambleskinner_2 = {
 					province_group = deepwoods_river_grove
 					NOT = { owned_by = I37 }
 				}
-				AND = {
-					province_group = deepwoods_lake_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_lake_grove = {
-							country_or_non_sovereign_subject_holds = ROOT
-							has_tax_building_trigger = yes
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_bone_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_bone_grove = {
-							country_or_non_sovereign_subject_holds = ROOT
-							has_tax_building_trigger = yes
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_thorn_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_thorn_grove = {
-							country_or_non_sovereign_subject_holds = ROOT
-							has_tax_building_trigger = yes
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_arrow_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_arrow_grove = {
-							country_or_non_sovereign_subject_holds = ROOT
-							has_tax_building_trigger = yes
-						}
-					}
-				}
-				AND = {
-					province_id = 3042
-					OR = {
-						NOT = { base_production = 8 }
-						NOT = { has_tax_building_trigger = yes }
-					}
-				}
+				brambleskinner_building_grove_highlight = { grove = lake building = tax }
+				brambleskinner_building_grove_highlight = { grove = bone building = tax }
+				brambleskinner_building_grove_highlight = { grove = thorn building = tax }
+				brambleskinner_building_grove_highlight = { grove = arrow building = tax }
 			}
 		}
 
@@ -457,19 +362,7 @@ brambleskinner_2 = {
 				}
 				set_country_flag = brambleskinner_no_integration
 			}
-			custom_tooltip = brambleskinner_two_clans_one_boss_upgrade_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_modifier = brambleskinner_minting_grant_1
-						has_country_modifier = brambleskinner_alchemy_grant
-						has_country_modifier = brambleskinner_treecutting_grant
-						has_country_modifier = brambleskinner_sea_trade_grant
-					}
-					remove_estate_privilege = estate_monstrous_tribes_two_clans_one_boss
-					set_estate_privilege = estate_monstrous_tribes_six_clans_one_boss
-				}
-			}
+			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
 }
@@ -771,19 +664,7 @@ brambleskinner_3_1 = {
 			}
 			custom_tooltip = brambleskinner_no_integration_petalmasher
 			B82 = { set_country_flag = brambleskinner_no_integration }
-			custom_tooltip = brambleskinner_two_clans_one_boss_upgrade_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_modifier = brambleskinner_minting_grant_1
-						has_country_modifier = brambleskinner_alchemy_grant
-						has_country_modifier = brambleskinner_treecutting_grant
-						has_country_modifier = brambleskinner_sea_trade_grant
-					}
-					remove_estate_privilege = estate_monstrous_tribes_two_clans_one_boss
-					set_estate_privilege = estate_monstrous_tribes_six_clans_one_boss
-				}
-			}
+			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
 }
@@ -1004,19 +885,7 @@ brambleskinner_4_1 = {
 			}
 			custom_tooltip = brambleskinner_no_integration_spiked_log
 			I36 = { set_country_flag = brambleskinner_no_integration }
-			custom_tooltip = brambleskinner_two_clans_one_boss_upgrade_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_modifier = brambleskinner_minting_grant_1
-						has_country_modifier = brambleskinner_alchemy_grant
-						has_country_modifier = brambleskinner_treecutting_grant
-						has_country_modifier = brambleskinner_sea_trade_grant
-					}
-					remove_estate_privilege = estate_monstrous_tribes_two_clans_one_boss
-					set_estate_privilege = estate_monstrous_tribes_six_clans_one_boss
-				}
-			}
+			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
 }
@@ -1058,86 +927,11 @@ brambleskinner_4_2 = {
 		effect = {
 			custom_tooltip = brambleskinner_charcoal_tt
 			hidden_effect = {
-				deepwoods_superregion = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-						trade_goods = tropical_wood
-						has_production_building_trigger = yes
-						base_production = 6
-						NOT = { is_capital_of = ROOT }
-						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-					}
-					add_permanent_province_modifier = { 
-						name = brambleskinner_charcoal_kiln
-						duration = -1
-					}
-				}
-				deepwoods_superregion = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-						trade_goods = tropical_wood
-						has_production_building_trigger = yes
-						base_production = 6
-						NOT = { is_capital_of = ROOT }
-						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-					}
-					add_permanent_province_modifier = { 
-						name = brambleskinner_charcoal_kiln
-						duration = -1
-					}
-				}
-				deepwoods_superregion = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-						trade_goods = tropical_wood
-						has_production_building_trigger = yes
-						base_production = 6
-						NOT = { is_capital_of = ROOT }
-						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-					}
-					add_permanent_province_modifier = { 
-						name = brambleskinner_charcoal_kiln
-						duration = -1
-					}
-				}
-				deepwoods_superregion = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-						trade_goods = tropical_wood
-						has_production_building_trigger = yes
-						base_production = 6
-						NOT = { is_capital_of = ROOT }
-						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-					}
-					add_permanent_province_modifier = { 
-						name = brambleskinner_charcoal_kiln
-						duration = -1
-					}
-				}
-				deepwoods_superregion = {
-					type = random
-					amount = 1
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-						trade_goods = tropical_wood
-						has_production_building_trigger = yes
-						base_production = 6
-						NOT = { is_capital_of = ROOT }
-						NOT = { has_province_modifier = brambleskinner_charcoal_kiln }
-					}
-					add_permanent_province_modifier = { 
-						name = brambleskinner_charcoal_kiln
-						duration = -1
-					}
-				}
+				brambleskinner_give_charcoal_kiln = yes
+				brambleskinner_give_charcoal_kiln = yes
+				brambleskinner_give_charcoal_kiln = yes
+				brambleskinner_give_charcoal_kiln = yes
+				brambleskinner_give_charcoal_kiln = yes
 			}
 		}
 	}
@@ -1330,171 +1124,61 @@ brambleskinner_5_1 = {
 			custom_trigger_tooltip = { tooltip = brambleskinner_have_30_dip_per_province_tt }
 			if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 10
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 10 }
 				}
 				dip_power = 300
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 9
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 9 }
 				}
 				dip_power = 270
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 8
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 8 }
 				}
 				dip_power = 240
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 7
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 7 }
 				}
 				dip_power = 210
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 6
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 6 }
 				}
 				dip_power = 180
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 5
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 5 }
 				}
 				dip_power = 150
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 4
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 4 }
 				}
 				dip_power = 120
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 3
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 3 }
 				}
 				dip_power = 90
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 2
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 2 }
 				}
 				dip_power = 60
 			}
 			else_if = {
 				limit = {
-					calc_true_if = {
-						ourdia_region = {
-							type = all
-							OR = {
-								owned_by = ROOT
-								owned_by = U11
-							}
-							NOT = { is_core = ROOT }
-							culture = ourdi
-						}
-						amount = 1
-					}
+					brambleskinner_ourdi_dip_cost = { amount = 1 }
 				}
 				dip_power = 30
 			}
@@ -1515,26 +1199,8 @@ brambleskinner_5_1 = {
 					province_id = 510
 					NOT = { has_trade_building_trigger = yes }
 				}
-				AND = {
-					province_group = deepwoods_lake_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_lake_grove = {
-							has_trade_building_trigger = yes
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_bone_grove
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = {
-						deepwoods_bone_grove = {
-							has_trade_building_trigger = yes
-							country_or_non_sovereign_subject_holds = ROOT
-						}
-					}
-				}
+				brambleskinner_building_grove_highlight = { grove = lake building = trade }
+				brambleskinner_building_grove_highlight = { grove = bone building = trade }
 			}
 		}
 
@@ -1585,19 +1251,7 @@ brambleskinner_5_1 = {
 					duration = -1
 				}
 			}
-			custom_tooltip = brambleskinner_two_clans_one_boss_upgrade_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_modifier = brambleskinner_minting_grant_1
-						has_country_modifier = brambleskinner_alchemy_grant
-						has_country_modifier = brambleskinner_treecutting_grant
-						has_country_modifier = brambleskinner_sea_trade_grant
-					}
-					remove_estate_privilege = estate_monstrous_tribes_two_clans_one_boss
-					set_estate_privilege = estate_monstrous_tribes_six_clans_one_boss
-				}
-			}
+			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
 }
@@ -1725,96 +1379,12 @@ brambleskinner_5_3 = {
 						NOT = { infantry_in_province = 8 }
 					}
 				}
-				AND = {
-					province_group = deepwoods_lake_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_lake_grove } } }
-					deepwoods_lake_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_lake_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_bone_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_bone_grove } } }
-					deepwoods_bone_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_bone_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_mountain_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_mountain_grove } } }
-					deepwoods_mountain_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_mountain_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_thorn_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_thorn_grove } } }
-					deepwoods_thorn_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_thorn_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_thorn_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_thorn_grove } } }
-					deepwoods_thorn_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_thorn_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
-				AND = {
-					province_group = deepwoods_shadow_grove
-					owned_by = ROOT
-					ROOT = { capital_scope = { NOT = { province_group = deepwoods_shadow_grove } } }
-					deepwoods_shadow_grove = { owned_by = ROOT }
-					NOT = {
-						deepwoods_shadow_grove = {
-							AND = {
-								has_fort_building_trigger = yes
-								owned_by = ROOT
-								infantry_in_province = 8
-							}
-						}
-					}
-				}
+				brambleskinner_damage_control_highlight = { grove = lake }
+				brambleskinner_damage_control_highlight = { grove = bone }
+				brambleskinner_damage_control_highlight = { grove = mountain }
+				brambleskinner_damage_control_highlight = { grove = hunter }
+				brambleskinner_damage_control_highlight = { grove = shadow }
+				brambleskinner_damage_control_highlight = { grove = thorn }
 			}
 		}
 
@@ -1846,78 +1416,12 @@ brambleskinner_5_3 = {
 					infantry_in_province = 8
 				}
 			}
-			if = {
-				limit = {
-					deepwoods_lake_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_lake_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_bone_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_bone_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_mountain_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_mountain_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_hunter_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_hunter_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_shadow_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_shadow_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
-			if = {
-				limit = {
-					deepwoods_thorn_grove = {
-						owned_by = ROOT
-					}
-				}
-				deepwoods_thorn_grove = {
-					owned_by = ROOT
-					has_fort_building_trigger = yes
-					infantry_in_province = 8
-				}
-			}
+			brambleskinner_damage_control_trigger = { grove = lake }
+			brambleskinner_damage_control_trigger = { grove = bone }
+			brambleskinner_damage_control_trigger = { grove = mountain }
+			brambleskinner_damage_control_trigger = { grove = hunter }
+			brambleskinner_damage_control_trigger = { grove = shadow }
+			brambleskinner_damage_control_trigger = { grove = thorn }
 		}
 
 		effect = {
