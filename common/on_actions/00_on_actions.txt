@@ -12437,6 +12437,10 @@ on_consecrate_patriarch = {
 			hidden = yes
 		}
 	}
+	if = {
+		limit = { owner = { has_country_flag = rakkaz_local_cult_gives_manpower } }
+		every_province_in_state = { add_base_manpower = 1 }
+	}
 }
 
 # country. from = overlord
