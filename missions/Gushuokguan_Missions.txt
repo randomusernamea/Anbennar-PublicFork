@@ -145,10 +145,42 @@ gushuokguan_1 = {
 		provinces_to_highlight = {  } 
 
 		trigger = { 
-
+			Y96 = { #Guwaamud
+				num_of_owned_provinces_with = {
+					culture = shuvuush
+					NOT = { unrest = 0 }
+					province_has_current_tech_fort_trigger = yes
+					has_manpower_building_trigger = yes
+					value = 5
+				}
+				custom_trigger_tooltip = {
+					tooltip = gushuokguan_1_6_tt
+					capital_scope = {
+						ROOT = {
+							PREV = {
+								cavalry_in_province = 20
+							}
+						}
+					}
+				}
+			}
 		} 
 
-		effect = {  } 
+		effect = {  
+			Y96 = {
+				capital_scope = {
+					kill_units = {
+						who = ROOT
+						type = cavalry
+						amount = 20
+					}
+				}
+			}
+			custom_tooltip = gushuokguan_rock_raiders_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_rock_raiders
+			}
+		} 
 	}
 
 	gushuokguan_1_7 = {
@@ -157,23 +189,68 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_1_6 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_rock_raiders_battle_tt
+				has_country_flag = gushuokguan_rock_raiders_battle
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = gushuokguan_rock_raiders_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_rock_raiders }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_rock_raiders
+				set_country_flag = gushuokguan_rock_raiders_tier_2
+			}
+		} 
 	}
 
 	gushuokguan_1_8 = {
 		icon = mission_asian_cannon
 		position = 8
 		required_missions = {
-			gushuokguan_1_7
 			gushuokguan_2_7
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			4901 = { #Hubao
+				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+				infantry_in_province = 10
+				artillery_in_province = 10
+				#What are Stone Army Challenges???
+			}
+			Y03 = { #Hubao
+				NOT = { liberty_desire = 1 }
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			4901 = {
+				kill_units = {
+					who = ROOT
+					type = infantry
+					amount = 10
+				}
+				kill_units = {
+					who = ROOT
+					type = artillery
+					amount = 10
+				}
+			}
+			custom_tooltip = gushuokguan_dacite_dragons_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_dacite_dragons
+				set_variable = {
+					which = gushuokguan_dacite_dragons_death_toll
+					which = 0
+				}
+			}
+		} 
 	}
 
 	gushuokguan_1_9 = {
@@ -182,9 +259,42 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_1_8 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = gushuokguan_renting_to_rending_tt
+					AND = { 
+						has_global_flag = rending_active
+						any_known_country = {
+							OR = {
+								has_country_flag = rending_ward_flag
+								has_country_flag = rending_appease_flag
+							}
+							ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = gushuokguan_defeated_spirit_rebels_tt
+					check_variable = {
+						which = gushuokguan_dacite_dragons_death_toll
+						value = 20000
+					}
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = gushuokguan_dacite_dragons_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_dacite_dragons }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_dacite_dragons
+				set_country_flag = gushuokguan_dacite_dragons_tier_2
+			}
+		} 
 	}
 }
 gushuokguan_2 = {
@@ -239,9 +349,9 @@ gushuokguan_2 = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = gushuokguan_condotierri_stone_army_tt
+				tooltip = gushuokguan_condottieri_stone_army_tt
 				any_known_country = {
-					is_hiring_condottiere_from = ROOT #Gushuokguan
+					ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
 					any_hired_mercenary_company = {
 						template = merc_stone_army #I hope there was another way to check army name
 					}
@@ -260,7 +370,7 @@ gushuokguan_2 = {
 			custom_tooltip = gushuokguan_stone_army_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_stone_army } 
-				disband_mercenary_company = THIS	   #Hopefully this doesn't cause a condotierri-related bug
+				disband_mercenary_company = THIS	   #Hopefully this doesn't cause a condottieri-related bug
 			}
 			hidden_effect = { set_country_flag = gushuokguan_stone_army_tier_2 } 
 		} 
@@ -369,9 +479,20 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_5 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_rented_condottieri_10_times_tt
+				check_variable = {
+					which = gushuokguan_rented_condottieri_counter
+					value = 10
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {  
+			add_years_of_income = 5
+			set_country_flag = anb_cant_be_sacked
+		}
 	}
 
 	gushuokguan_2_8 = {
@@ -380,9 +501,34 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_7 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_terrain = jungle
+				has_manpower_building_trigger = yes
+				NOT = { devastation = 0.01 }
+				value = 4
+			}
+			Y96 = { NOT = { liberty_desire = 10 } }
+			#has_estate_privilege = the_what #Yea, the what?
+			4838 = { #Wongpou
+				infantry_in_province = 20
+			}
+			#What are stone army challenges?
+		} 
 
-		effect = {  } 
+		effect = {
+			4838 = {
+				kill_units = {
+					who = ROOT #Gushuokguan
+					type = cavalry
+					amount = 20
+				}
+			}
+			custom_tooltip = gushuokguan_whetstones_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_whetstones
+			}
+		}
 	}
 
 	gushuokguan_2_9 = {
@@ -391,9 +537,33 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_8 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			any_known_country = {
+				num_of_owned_provinces_with = {
+					has_terrain = jungle
+					value = 3
+				}
+				OR = {
+					ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+					is_in_war = {
+						attacker_leader = ROOT #Gushuokguan
+					}
+				}
+				
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = gushuokguan_whetstones_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_whetstones }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_whetstones
+				set_country_flag = gushuokguan_whetstones_tier_2
+			}
+		}
 	}
 }
 gushuokguan_3 = {
@@ -683,6 +853,19 @@ gushuokguan_3 = {
 
 		effect = {
 			create_vassal = Y10 #Yingzhen
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = yanzhong_area
+						area = balrijin_area
+						area = tianszi_area
+						area = anjiang_area
+						area = linyuan_area
+					}
+				}
+				cede_province = Y10 #Yingzhen
+				add_core = Y10 #Yingzhen
+			}
 			add_mil_power = 50
 			add_country_modifier = {
 				name = gushuokguan_trade_power_of_the_yan
@@ -699,9 +882,30 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_2_5 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			high_tolerance_harimari_race_trigger = yes
+			accepted_culture = serene_harimari
+			4925 = { #Jiantsiang
+				infantry_in_province = 20
+				NOT = { unrest = 0 }
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+			}
+		} 
 
-		effect = {  } 
+		effect = { 
+			4925 = {
+				kill_units = {
+					who = ROOT
+					type = infantry
+					amount = 20
+				}
+			} 
+			custom_tooltip = gushuokguan_chrome_claws_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_chrome_claws
+			}
+		}
 	}
 
 	gushuokguan_3_7 = {
@@ -710,9 +914,33 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_3_6 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			any_known_country = {
+				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+				culture_is_harimari = yes
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				trust = {
+					who = ROOT
+					value = 80
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {
+			4914 = { add_harimari_minority_size_effect = yes } #Gushibi
+			custom_tooltip = gushuokguan_chrome_claws_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_chrome_claws }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_chrome_claws
+				set_country_flag = gushuokguan_chrome_claws_tier_2
+			}
+		}
 	}
 
 	gushuokguan_3_8 = {
@@ -723,7 +951,17 @@ gushuokguan_3 = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {  
+			kill_units = {
+				who = ROOT
+				type = infantry
+				amount = 10
+			}
+			custom_tooltip = gushuokguan_marble_mounts_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_marble_mounts
+			}
+		} 
 	}
 
 	gushuokguan_3_9 = {
@@ -734,7 +972,17 @@ gushuokguan_3 = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = gushuokguan_marble_mounts_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_marble_mounts }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_marble_mounts
+				set_country_flag = gushuokguan_marble_mounts_tier_2
+			}
+		}
 	}
 }
 gushuokguan_4 = {
@@ -1040,9 +1288,11 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_2_5 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			num_of_mercenaries = 100 #Average Lategame mission
+		} 
 
-		effect = {  } 
+		effect = { country_event = { id = gushuokguan_event.20 } } #TODO
 	}
 
 	gushuokguan_4_7 = {
@@ -1053,7 +1303,7 @@ gushuokguan_4 = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = { country_event = { id = gushuokguan_event.20 } } #TODO
 	}
 
 	gushuokguan_4_8 = {
@@ -1064,7 +1314,17 @@ gushuokguan_4 = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {  
+			kill_units = {
+				who = ROOT
+				type = infantry
+				amount = 10
+			}
+			custom_tooltip = gushuokguan_flying_pebbles_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_flying_pebbles
+			}
+		}
 	}
 
 	gushuokguan_4_9 = {
@@ -1075,7 +1335,17 @@ gushuokguan_4 = {
 
 		trigger = {  } 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = gushuokguan_flying_pebbles_tier_2_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_flying_pebbles }
+				disband_mercenary_company = yes
+			}
+			hidden_effect = {
+				clr_country_flag = gushuokguan_flying_pebbles
+				set_country_flag = gushuokguan_flying_pebbles_tier_2
+			}
+		} 
 	}
 }
 gushuokguan_5 = {
@@ -1125,7 +1395,7 @@ gushuokguan_5 = {
 						region = shamakhad_region
 					}
 				}
-				is_hiring_condottiere_from = ROOT #gushuokguan
+				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
 			}
 		} 
 
@@ -1226,7 +1496,7 @@ gushuokguan_5 = {
 
 		trigger = {  
 			all_subject_country = {
-				total_development = 800
+				#total_development = 800 #Not like this
 				NOT = { liberty_desire = 10 }
 				has_opinion = {
 					who = ROOT #Gushuokguan

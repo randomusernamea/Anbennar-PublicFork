@@ -170,3 +170,90 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+
+#condottieri Sold Counter
+country_event = {
+	id = gushuokguan_event.101
+	title = gushuokguan_event.101.t
+	desc = gushuokguan_event.101.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	#There is no on_action for hiring condottieri, so I'm doing mtth for those.
+	#okman, if you have a better idea on how to do execute this - PLEASE HELP
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes 
+
+	trigger = {
+		any_known_country = {
+			ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+			NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
+		}
+	}
+
+
+	immediate = {
+		random_known_country = {
+			limit = {
+				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+				NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
+			}
+			save_event_target_as = gushuokguan_tag_rented_condottieri
+		}
+	}
+	
+	option = {
+		name = gushuokguan_event.101.a
+		ai_chance = { factor = 1 }
+		event_target:gushuokguan_tag_rented_condottieri = {
+			set_country_flag = gushuokguan_already_checked_condottieri
+		}
+		change_variable = {
+			which = gushuokguan_rented_condottieri_counter
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = gushuokguan_event.102
+	title = gushuokguan_event.102.t
+	desc = gushuokguan_event.102.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	#There is no on_action for hiring condottieri, so I'm doing mtth for those.
+	#okman, if you have a better idea on how to do execute this - PLEASE HELP
+	mean_time_to_happen = {
+		days = 1 
+	}
+
+	hidden = yes 
+
+	trigger = {
+		any_known_country = {
+			NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
+			has_country_flag = gushuokguan_already_checked_condottieri
+		}
+	}
+
+
+	immediate = {
+		random_known_country = {
+			limit = {
+				NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
+				has_country_flag = gushuokguan_already_checked_condottieri
+			}
+			save_event_target_as = gushuokguan_tag_rented_condottieri
+		}
+	}
+	
+	option = {
+		name = gushuokguan_event.102.a
+		ai_chance = { factor = 1 }
+		event_target:gushuokguan_tag_rented_condottieri = {
+			clr_country_flag = gushuokguan_already_checked_condottieri
+		}
+	}
+}

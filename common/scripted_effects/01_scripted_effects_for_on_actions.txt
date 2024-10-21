@@ -2991,6 +2991,26 @@ on_battle_won_unit_effect = {
 			}
 		}
 	}
+	if = {
+		limit = { 
+			unit_owner = {
+				has_country_flag = gushuokguan_dacite_dragons
+			}
+			#I want this to check whether a certain mercenary company is in a battle
+			template = merc_dacite_dragons
+
+			enemy_unit = {
+				unit_owner = {
+					tag = REB
+					is_rebel_type = spirit_swarms 
+				}
+			}
+		}
+		change_variable = {
+			which = gushuokguan_dacite_dragons_death_toll
+			which = land_units_killed
+		}
+	}
 }
 
 on_battle_lost_unit_effect = { #this triggers on every unit present 
@@ -3303,6 +3323,15 @@ on_battle_won_country_effect = {
 			id = larankar_events.111 #Sibling War Ends Hidden Event
 			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
 		}
+	}
+	if = {
+		limit = { 
+			has_country_flag = gushuokguan_rock_raiders
+			THIS = {
+				has_underground_terrain = yes
+			}
+		} 
+		ROOT = { set_country_flag = gushuokguan_rock_raiders_battle }
 	}
 }
 
@@ -7389,6 +7418,12 @@ startup_1444_effects = {
     		country_event = {
 				id = gisden.1 days = 30
 			}
+		}
+
+		#Gushuokguan condottieri Sold Counter
+		set_variable = {
+			which = gushuokguan_rented_condottieri_counter
+			value = 1
 		}
 	}
 }
