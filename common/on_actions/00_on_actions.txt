@@ -3216,7 +3216,9 @@ on_diplomatic_annex = {
 
 # country
 on_heir_death = {
-	events = {}
+	events = {
+		flavor_duwarkani.4 #Duwarkani failsafe for if starting heir dies
+	}
 	if = { #Delayed because elective heirs doesn't show up immediatly
 		limit = { has_reform = magisterium_reform }
 		country_event = { id = flavor_magisterium.23 days = 3 } #Mage for Non-Vinerick heir

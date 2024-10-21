@@ -165,9 +165,19 @@ duwarkani_1_missions = {
 				duration = -1
 			}
 			hidden_effect = {
-				country_event = {
-					id = flavor_duwarkani.10
-					days = 1825
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = aakheta_crushed
+							has_global_flag = ahati_rebellion_succeeded
+							has_global_flag = ahati_rebellion_crushed
+							has_global_flag = ahati_disaster_began
+						}
+					}
+					country_event = {
+						id = flavor_duwarkani.10
+						days = 1825
+					}
 				}
 			}
 			set_country_flag = duwarkani_aakhet_is_watching
@@ -228,7 +238,7 @@ duwarkani_2_missions = {
 			has_global_modifier_value = { which = tolerance_own value = 5 }
 			estate_influence = {
 				estate = estate_adventurers
-				influence = 40
+				influence = 30
 			}
 		}
 
@@ -483,17 +493,17 @@ duwarkani_3_missions = {
 
 		trigger = {
 			heir_culture = nzeri_harpy
-			legitimacy = 95
+			legitimacy = 90
 			duwarkani_area = {
 				type = all
 				religion = nirakhetist
 			}
-			dip_power = 50
+			adm_power = 50
 			is_year = 1446
 		}
 
 		effect = {
-			add_dip_power = -50
+			add_adm_power = -50
 			shena_muhaqaar_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -872,7 +882,14 @@ duwarkani_4_missions = {
 		}
 
 		trigger = {
-			crown_land_share = 40
+			OR = {
+				crown_land_share = 40
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 65
+				}
+			}
+			
 			legitimacy = 95
 			ruler_culture = nzeri_harpy
 			NOT = {
