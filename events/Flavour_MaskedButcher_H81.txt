@@ -232,14 +232,6 @@ country_event = {
 			}
 		}
 		remove_country_modifier = mb_otar_on_the_move
-		define_ruler = {
-			name = "Anarchy!"
-			dynasty = " "
-			adm = 0
-			dip = 0
-			mil = 0
-			regency = yes
-		}
 	}
 }
 
@@ -320,6 +312,14 @@ country_event = {
 			mb_set_ptm = { ptm_name = mb_ap_butcherbane move_timer = 90 }
 		}
 		add_government_reform = otaric_succession_reform
+		define_ruler = {
+			name = "Anarchy!"
+			dynasty = " "
+			adm = 0
+			dip = 0
+			mil = 0
+			regency = yes
+		}
 	}
 }
 
@@ -339,6 +339,17 @@ province_event = {
 			set_country_flag = butcherbane_dead
 			set_country_flag = mb_drowninthedeep_flg 
 			swap_non_generic_missions = yes
+			if = {
+				limit = { has_ruler = "Anarchy!" }
+				define_ruler = {
+					min_age = 18
+					max_age = 35
+					change_adm = 1
+					change_dip = 1
+					change_mil = 3
+					random_gender = yes
+				}
+			}
 		}
 	}
 }
@@ -1011,7 +1022,7 @@ province_event = {
 	}
 
 	option = {
-		name = flavour_maskedbutcher.44.a
+		name = flavour_maskedbutcher.45.a
 		custom_tooltip = halfling_mask_1_unlock_tt
 		owner = { set_country_flag = halfling_mask_1 }
 	}
