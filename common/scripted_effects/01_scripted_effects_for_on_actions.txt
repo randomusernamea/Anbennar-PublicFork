@@ -3311,6 +3311,44 @@ on_battle_won_country_effect = {
 			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
 		}
 	}
+	#Stalbor
+	if = {
+		limit = {
+			has_country_flag = B47_elrac_in_rebellion
+			FROM = { tag = REB }
+		}
+		country_event = {
+			id = flavor_stalbor.6 
+			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+		}
+		clr_country_flag = B47_elrac_in_rebellion
+	}
+	if = {
+		limit = {
+			has_country_flag = B47_deepwood_religious_revolt
+			FROM = { tag = REB }
+		}
+		country_event = {
+			id = flavor_stalbor.12
+			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+		}
+		clr_country_flag = B47_deepwood_religious_revolt
+	}
+	if = {
+		limit = {
+			overlord = {
+				has_country_flag = B47_deepwood_religious_revolt
+			}
+			FROM = { tag = REB }
+		}
+		overlord = {
+			country_event = {
+				id = flavor_stalbor.12
+				days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+			}
+			clr_country_flag = B47_deepwood_religious_revolt
+		}
+	}
 }
 
 on_battle_lost_country_effect = {
