@@ -67,7 +67,7 @@ country_event = {
 		name = flavor_maghargma.3.a
 		5052 = {
 			change_province_name = "Mohgortal"
-			add_majority_with_correct_tolerance = { race = goblin }
+			set_tolerance_to_integrated_or_higher = { race = goblin }
 			remove_province_modifier = I90_goblin_arrivals
 			add_province_modifier = {
 				name = I90_goblin_kelaktar
@@ -77,7 +77,7 @@ country_event = {
 	}
 }
 
-#Bulwark Of Humanity
+#Bulwark Of Humanity #Reminder of the bonus 
 country_event = {
 	id = flavor_maghargma.4
 	title = flavor_maghargma.4.t
@@ -92,12 +92,180 @@ country_event = {
 		name = flavor_maghargma.4.a
 		set_country_flag = I90_occupy_westmarches
 		custom_tooltip = I90_occupy_westmarches_tt
+		tooltip = {
+			add_mil_power = 100
+			every_owned_province = {
+				limit = {
+					province_group = westmarches
+					has_terrain = city_terrain
+					development = 12
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_ogre_minority_size_effect = yes
+			}
+			5037 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+		swap_non_generic_missions = yes
 	}
 
 	option = {
 		name = flavor_maghargma.4.b
 		set_country_flag = I90_collaborate_westmarches
 		custom_tooltip = I90_collaborate_westmarches_tt
+		tooltip = {
+			define_general = {
+				shock = 2
+				fire = 4
+				manuever = 6
+				siege = 2
+				name = "Hirvoi Citybreaker"
+			}
+			add_yearly_manpower = 2
+			custom_tooltip = maghargma_tear_them_down_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
+		swap_non_generic_missions = yes
 	}
 }
+
+#An Unusual Meeting
+country_event = {
+	id = flavor_maghargma.5
+	title = flavor_maghargma.5.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.5.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.5.a
+		set_country_flag = I90_merchant_heartland
+		custom_tooltip = I90_merchant_heartland_tt
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.5.b
+		set_country_flag = I90_mage_westmarches
+		custom_tooltip = I90_mage_heartland_tt
+		swap_non_generic_missions = yes
+	}
+}
+
+#Taming The Wolf
+country_event = {
+	id = flavor_maghargma.6
+	title = flavor_maghargma.6.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.6.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.6.a
+		set_country_flag = I90_vahjevgiv_brightland
+		custom_tooltip = I90_vahjevgiv_brightland_tt
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.6.b
+		set_country_flag = I90_qarshtuluu_brightland
+		custom_tooltip = I90_qarshtuluu_brightland_tt
+		swap_non_generic_missions = yes
+	}
+}
+
+#Taverns And Treasure
+country_event = {
+	id = flavor_maghargma.7
+	title = flavor_maghargma.7.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.7.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.7.a
+		set_country_flag = I90_seize_amberlands
+		custom_tooltip = I90_seize_amberlands_tt
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.7.b
+		set_country_flag = I90_befriend_amberlands
+		custom_tooltip = I90_befriend_amberlands_tt
+		swap_non_generic_missions = yes
+	}
+}
+
+#Problem? :orbtroll:
+country_event = {
+	id = flavor_maghargma.12
+	title = flavor_maghargma.12.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.12.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.12.a #Our Birthright
+		set_country_flag = I90_friend_troll
+		large_increase_of_troll_tolerance_effect = yes
+		#add unrest
+		custom_tooltip = I90_friend_troll_tt
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.12.b #Too Much Effort
+		set_country_flag = I90_enemy_troll
+		large_decrease_of_troll_tolerance_effect = yes
+		custom_tooltip = I90_enemy_troll_tt
+		#There's supposed to be a counter?
+		swap_non_generic_missions = yes
+	}
+}
+
+#The New And Old
+country_event = {
+	id = flavor_maghargma.20
+	title = flavor_maghargma.20.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.6.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.20.a
+		set_country_flag = I90_cooperate_sudomengi
+		custom_tooltip = I90_cooperate_sudomengi_tt
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.20.b
+		set_country_flag = I90_purge_sudomengi
+		custom_tooltip = I90_purge_sudomengi_tt
+		swap_non_generic_missions = yes
+	}
+}
+
 

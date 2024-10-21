@@ -179,6 +179,17 @@ maghargma_one = {
 		effect = { country_event = { id = flavor_maghargma.3 }  } 
 	}
 
+	
+}
+maghargma_dynamic_westmarches_ = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+	}
+
 	maghargma_crush_the_westmarches = {
 		icon = mission_fleet_arrival
 		position = 7
@@ -206,7 +217,180 @@ maghargma_one = {
 			add_army_tradition = 20
 		}
 	}
+}
 
+maghargma_dynamic_westmarches_unknown = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+		NOT = { has_country_flag = I90_occupy_westmarches } 
+		NOT = { has_country_flag = I90_collaborate_westmarches } 
+	}
+
+	maghargma_dynamic_westmarches_unknown = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = { maghargma_crush_the_westmarches } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		}
+
+		effect = { 
+			custom_tooltip = maghargma_dynamic_mission_tt
+		} 
+	}
+}
+maghargma_dynamic_westmarches_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+		has_country_flag = I90_occupy_westmarches
+	}
+
+	maghargma_tear_them_down = {
+		icon = mission_armoury
+		position = 8
+		required_missions = { maghargma_crush_the_westmarches } 
+		provinces_to_highlight = {
+			OR = {
+				area = gadhlumo_area
+				area = kuskemua_area
+				area = peenadhi_area
+				area = bocenvokin_area
+				area = prikoyol_area
+			}
+			has_fort_building_trigger = yes
+			has_manpower_building_trigger = yes
+			has_forcelimit_building_trigger = yes
+			OR = {
+				local_autonomy = 10
+				NOT = { has_province_modifier = autonomy_increased } 
+			}
+		}
+
+		trigger = {
+			westmarches = {
+				type = all
+				has_fort_building_trigger = no
+				has_manpower_building_trigger = no
+				has_forcelimit_building_trigger = no
+				OR = {
+					NOT = { local_autonomy = 10 } 
+					has_province_modifier = autonomy_increased
+				}
+			}
+		}
+
+		effect = {
+			add_mil_power = 100
+			every_owned_province = {
+				limit = {
+					province_group = westmarches
+					has_terrain = city_terrain
+					development = 12
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_ogre_minority_size_effect = yes
+			}
+			5037 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+	}
+}
+maghargma_dynamic_westmarches_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+		has_country_flag = I90_collaborate_westmarches
+	}
+
+	maghargma_the_iron_barons = {
+		icon = mission_steppe_warriors
+		position = 8
+		required_missions = { maghargma_crush_the_westmarches } 
+		provinces_to_highlight = {
+			owner = {
+				capital_scope = { region = north_yarikhoi_region } 
+				has_been_insulted_by_root = no
+			}
+		}
+
+		trigger = {
+			if = {
+        		limit = {
+        		    calc_true_if = {
+        		        all_known_country = { capital_scope = { region = north_yarikhoi_region }  } 
+        		        amount = 3
+        		    }
+        		}
+        		calc_true_if = {
+        		    all_known_country = {
+        		        capital_scope = { region = north_yarikhoi_region } 
+        		        has_been_insulted_by_root = yes
+        		    }
+        		    amount = 3
+        		}
+			}
+			has_mil_advisor_3 = yes
+			OR = {
+				army_professionalism = 0.2
+				army_tradition = 20
+			}
+		}
+
+		effect = {
+			define_general = {
+				shock = 2
+				fire = 4
+				manuever = 6
+				siege = 2
+				name = "Hirvoi Citybreaker"
+			}
+			add_yearly_manpower = 2
+			hidden_effect = {
+				westmarches = { remove_core = J51 } 
+				westmarches = {
+					limit = { NOT = { has_terrain = city_terrain }  } 
+					add_core = J51
+					release = J51
+				}
+				westmarches = {
+					limit = { has_terrain = city_terrain } 
+					add_ogre_minority_size_effect = yes
+				}
+			}
+			custom_tooltip = maghargma_tear_them_down_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
+	}
+}
+maghargma_one_post_westmarches = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+	}
 	maghargma_enforce_our_claims = {
 		icon = mission_build_up_to_force_limit
 		position = 10
@@ -306,7 +490,7 @@ maghargma_one = {
 			}
 		}
 	}
-}
+}	
 maghargma_two = {
 	slot = 2
 	generic = no
@@ -382,6 +566,13 @@ maghargma_two = {
 
 		effect = { country_event = { id = flavor_maghargma.11 }  } 
 	}
+}
+maghargma_dynamic_heartlands = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 } 
 
 	maghargma_harness_the_heartlands = {
 		icon = mission_shady_encounter
@@ -390,9 +581,18 @@ maghargma_two = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			owns_all_provinces = { area = yukaron_area } 
-			owns_all_provinces = { area = doynuya_area } 
-			owns_all_provinces = { area = yukaroyol_area } 
+			yukaron_area = {
+				type = all
+				owned_by = ROOT
+			} 
+			doynuya_area = {
+				type = all
+				owned_by = ROOT
+			} 
+			yukaroyol_area  = {
+				type = all
+				owned_by = ROOT
+			}
 		}
 
 		effect = {
@@ -400,6 +600,87 @@ maghargma_two = {
 			country_event = { id = flavor_maghargma.5 } 
 		}
 	}
+}
+maghargma_dynamic_heartlands_unknown = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		NOT = { has_country_flag = I90_merchant_heartland }
+		NOT = { has_country_flag = I90_mage_heartland }
+	} 
+
+	maghargma_dynamic_heartlands_unknown = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = { maghargma_harness_the_heartlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		} 
+
+		effect = {
+			custom_tooltip = maghargma_dynamic_mission_tt
+		} 
+	}
+}
+
+maghargma_dynamic_heartlands_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		has_country_flag = I90_mage_heartland 
+	} 
+
+	maghargma_the_onyx_citadel = {
+		icon = mission_scepter_of_scepters
+		position = 8
+		required_missions = { maghargma_harness_the_heartlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+maghargma_dynamic_heartlands_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		has_country_flag = I90_merchant_heartland 
+	} 
+
+	maghargma_a_gleaming_horizon = {
+		icon = mission_guarded_market
+		position = 8
+		required_missions = { maghargma_harness_the_heartlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+	
+maghargma_dynamic_trolls = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }  
 
 	maghargma_trouble_with_trolls = {
 		icon = mission_frost_troll
@@ -408,11 +689,28 @@ maghargma_two = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			owns_all_provinces = { region = northern_pass_region } 
-			northern_pass_region = { any_owned_province = { has_missionary = yes }  } 
+			northern_pass_region = {
+				type = all
+				owned_by = ROOT
+			}
+			northern_pass_region = { 
+				has_missionary = yes 
+			}
 		}
 
 		effect = { country_event = { id = flavor_maghargma.12 }  } 
+	}
+}
+
+maghargma_dynamic_trolls_unknown = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		NOT = { has_country_flag = I90_friend_troll }
+		NOT = { has_country_flag = I90_enemy_troll }
 	}
 
 	maghargma_dynamic_mission_trolls = {
@@ -421,10 +719,67 @@ maghargma_two = {
 		required_missions = { maghargma_trouble_with_trolls } 
 		provinces_to_highlight = {  } 
 
-		trigger = { always = yes } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		} 
 
-		effect = { add_prestige = 1 } 
+		effect = {  
+			custom_tooltip = maghargma_dynamic_mission_tt
+		} 
 	}
+}
+
+maghargma_dynamic_trolls_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		has_country_flag = I90_friend_troll 
+	}
+
+	maghargma_brothers_in_arms = {
+		icon = mission_dual_diplomacy
+		position = 12
+		required_missions = { maghargma_trouble_with_trolls } 
+		provinces_to_highlight = {  } 
+		trigger = {  } 
+		effect = {  }
+	}
+}
+
+maghargma_dynamic_trolls_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		tag = I90 
+		has_country_flag = I90_enemy_troll 
+	}
+
+	maghargma_a_new_kind_of_livestock = {
+		icon = mission_blood_sacrifice
+		position = 12
+		required_missions = { maghargma_trouble_with_trolls } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+maghargma_two_post_trolls = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
 
 	maghargma_greater_than_giants = {
 		icon = mission_dwarf
@@ -492,28 +847,6 @@ maghargma_two = {
 			}
 			europe = { add_permanent_claim = ROOT } 
 		}
-	}
-
-	maghargma_brothers_in_arms = {
-		icon = mission_dual_diplomacy
-		position = 12
-		required_missions = { maghargma_trouble_with_trolls } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_a_new_kind_of_livestock = {
-		icon = mission_blood_sacrifice
-		position = 12
-		required_missions = { maghargma_trouble_with_trolls } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
 	}
 }
 maghargma_three = {
@@ -799,7 +1132,7 @@ maghargma_three = {
 				manuever = 6
 				siege = 0
 				name = "Jinr'ad 'Ogrefriend'"
-				trait = goal_oriented
+				#trait = goal_oriented
 			}
 		}
 	}
@@ -827,7 +1160,7 @@ maghargma_three = {
 		effect = { add_prestige = 1 } 
 	}
 
-	maghargma_legions_of_bronze = {
+		maghargma_legions_of_bronze = {
 		icon = mission_sunset_alternative
 		position = 12
 		required_missions = { maghargma_a_new_invasion } 
@@ -836,6 +1169,17 @@ maghargma_three = {
 		trigger = { always = yes } 
 
 		effect = { add_prestige = 1 } 
+	}
+
+	maghargma_the_rarest_cut = {
+		icon = mission_solaris
+		position = 13
+		required_missions = { maghargma_confront_the_ancestors } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
 	}
 
 	maghargma_loyaltys_reward = {
@@ -925,39 +1269,6 @@ maghargma_three = {
 		}
 	}
 
-	maghargma_family_reunion = {
-		icon = mission_magnificent_castle
-		position = 18
-		required_missions = {
-			maghargma_lords_of_frost
-			maghargma_lords_of_stone
-			maghargma_lords_of_the_cloud
-		}
-		provinces_to_highlight = {  } 
-
-		trigger = { always = yes } 
-
-		effect = {
-			country_event = { id = flavor_maghargma.28 } 
-			add_country_modifier = {
-				name = "second_rule_of_giants"
-				duration = -1
-				desc = second_rule_of_giants_desc
-			}
-		}
-	}
-
-	maghargma_the_rarest_cut = {
-		icon = mission_solaris
-		position = 13
-		required_missions = { maghargma_confront_the_ancestors } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
 	maghargma_the_fleet_of_unity = {
 		icon = crusader_fleet
 		position = 16
@@ -978,6 +1289,28 @@ maghargma_three = {
 		trigger = {  } 
 
 		effect = {  } 
+	}
+
+	maghargma_family_reunion = {
+		icon = mission_magnificent_castle
+		position = 18
+		required_missions = {
+			maghargma_lords_of_frost
+			maghargma_lords_of_stone
+			maghargma_lords_of_the_cloud
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { always = yes } 
+
+		effect = {
+			country_event = { id = flavor_maghargma.28 } 
+			add_country_modifier = {
+				name = "second_rule_of_giants"
+				duration = -1
+				desc = second_rule_of_giants_desc
+			}
+		}
 	}
 }
 maghargma_four = {
@@ -1139,6 +1472,13 @@ maghargma_four = {
 			}
 		}
 	}
+}
+maghargma_dynamic_brightmarch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 } 
 
 	maghargma_pacify_the_brightmarch = {
 		icon = mission_burning_castle
@@ -1161,6 +1501,83 @@ maghargma_four = {
 			add_army_professionalism = 0.05
 		}
 	}
+}
+maghargma_dynamic_brightmarch_unknown = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		NOT = { has_country_flag = I90_vahjevgiv_brightland }
+		NOT = { has_country_flag = I90_qarshtuluu_brightland }
+	}
+
+		maghargma_dynamic_brightmarch_unknown = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = { maghargma_pacify_the_brightmarch } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = maghargma_dynamic_mission_tt
+		} 
+	} 
+}
+maghargma_dynamic_brightmarch_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_qarshtuluu_brightland 
+	}
+
+	maghargma_the_glass_court = {
+		icon = mission_early_modern_university
+		position = 8
+		required_missions = { maghargma_pacify_the_brightmarch } 
+		provinces_to_highlight = {  } 
+		trigger = {  } 
+		effect = {  } 
+	}
+	
+}
+
+maghargma_dynamic_brightmarch_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_vahjevgiv_brightland
+	}
+
+	maghargma_create_the_wolfguard = {
+		icon = mission_italian_condottiere
+		position = 8
+		required_missions = { maghargma_pacify_the_brightmarch } 
+		provinces_to_highlight = {  } 
+		trigger = {  } 
+		effect = {  } 
+	}
+}
+
+maghargma_four_pre_ancestor = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
 
 	maghargma_a_proper_celebration = {
 		icon = mission_lantern_festival
@@ -1184,6 +1601,14 @@ maghargma_four = {
 			}
 		}
 	}
+}
+
+maghargma_dynamic_ancestor= {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
 
 	maghargma_confront_the_ancestors = {
 		icon = mission_forest_shrine
@@ -1207,16 +1632,97 @@ maghargma_four = {
 			}
 		}
 	}
+}
 
-	maghargma_dynamic_mission_soulseekers = {
+maghargma_dynamic_ancestor_unknown = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		NOT = { has_country_flag = I90_cooperate_sudomengi }
+		NOT = { has_country_flag = I90_purge_sudomengi }
+	}
+
+	maghargma_dynamic_ancestor_unknown = {
 		icon = mission_unknown_mission
 		position = 13
 		required_missions = { maghargma_confront_the_ancestors } 
 		provinces_to_highlight = {  } 
 
-		trigger = { always = yes } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		} 
 
-		effect = { add_prestige = 1 } 
+		effect = {  
+			custom_tooltip = maghargma_dynamic_mission_tt
+		}
+	}
+} 
+
+maghargma_dynamic_ancestor_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_cooperate_sudomengi 
+	}
+
+	maghargma_share_the_burden = {
+		icon = mission_crystal_focus
+		position = 13
+		required_missions = { maghargma_confront_the_ancestors } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+maghargma_dynamic_ancestor_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_purge_sudomengi 
+	}
+
+	maghargma_clean_up_their_mess = {
+		icon = mission_burning_parthenon
+		position = 13
+		required_missions = { maghargma_confront_the_ancestors } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+maghargma_four_post_ancestor = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
+
+	maghargma_whispers_from_afar = {
+		icon = mission_stormy_seas
+		position = 15
+		required_missions = { maghargma_the_third_realm } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
 	}
 
 	maghargma_lords_of_stone = {
@@ -1246,38 +1752,6 @@ maghargma_four = {
 		}
 	}
 
-	maghargma_share_the_burden = {
-		icon = mission_crystal_focus
-		position = 13
-		required_missions = { maghargma_confront_the_ancestors } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_clean_up_their_mess = {
-		icon = mission_burning_parthenon
-		position = 13
-		required_missions = { maghargma_confront_the_ancestors } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_whispers_from_afar = {
-		icon = mission_stormy_seas
-		position = 15
-		required_missions = { maghargma_the_third_realm } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
 }
 maghargma_five = {
 	slot = 5
@@ -1374,6 +1848,13 @@ maghargma_five = {
 
 		effect = { country_event = { id = flavor_maghargma.25 }  } 
 	}
+}
+maghargma_dynamic_amberlands = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
 
 	maghargma_control_the_amberlands = {
 		icon = mission_junk_boat
@@ -1395,6 +1876,87 @@ maghargma_five = {
 			add_prestige = 25
 		}
 	}
+}
+
+maghargma_dynamic_amberlands_unknown = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		NOT = { has_country_flag = I90_seize_amberlands }
+		NOT = { has_country_flag = I90_befriend_amberlands }
+	}
+
+	maghargma_dynamic_amberlands_unknown = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = { maghargma_control_the_amberlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_mission_tt
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = maghargma_dynamic_mission_tt
+		}
+	}
+} 
+
+maghargma_dynamic_amberlands_1 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_seize_amberlands 
+	}
+
+		maghargma_an_ogrish_treasure_fleet = {
+		icon = mission_establish_high_seas_navy
+		position = 8
+		required_missions = { maghargma_control_the_amberlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+maghargma_dynamic_amberlands_2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90 
+		has_country_flag = I90_befriend_amberlands 
+	}
+	maghargma_unlikely_friends = {
+		icon = mission_market_place_with_asian_traders
+		position = 8
+		required_missions = { maghargma_control_the_amberlands } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+maghargma_five_post_amberlands = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = I90 }
 
 	maghargma_the_second_ogre_valley = {
 		icon = mission_city_prosperity
@@ -1569,287 +2131,5 @@ maghargma_five = {
 		}
 
 		effect = { add_prestige = 1 } 
-	}
-}
-maghargma_dynamic_westmarches = {
-	slot = 1
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = I90
-		NOT = { has_country_flag = I90_occupy_westmarches } 
-		NOT = { has_country_flag = I90_collaborate_westmarches } 
-	}
-
-	maghargma_dynamic_westmarches_unknown = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { maghargma_crush_the_westmarches } 
-		provinces_to_highlight = {  } 
-
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = maghargma_dynamic_westmarches_unknown_tt
-				always = no
-			}
-		}
-
-		effect = {  } 
-	}
-}
-maghargma_dynamic_westmarches_1 = {
-	slot = 1
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = I90
-		has_country_flag = I90_direct_westmarches
-	}
-
-	maghargma_the_iron_barons = {
-		icon = mission_armoury
-		position = 8
-		required_missions = { maghargma_crush_the_westmarches } 
-		provinces_to_highlight = {
-			OR = {
-				area = gadhlumo_area
-				area = kuskemua_area
-				area = peenadhi_area
-				area = bocenvokin_area
-				area = prikoyol_area
-			}
-			has_fort_building_trigger = yes
-			has_manpower_building_trigger = yes
-			has_forcelimit_building_trigger = yes
-			OR = {
-				local_autonomy = 10
-				NOT = { has_province_modifier = autonomy_increased } 
-			}
-		}
-
-		trigger = {
-			westmarches = {
-				type = all
-				has_fort_building_trigger = no
-				has_manpower_building_trigger = no
-				has_forcelimit_building_trigger = no
-				OR = {
-					NOT = { local_autonomy = 10 } 
-					has_province_modifier = autonomy_increased
-				}
-			}
-		}
-
-		effect = {
-			add_mil_power = 100
-			every_owned_province = {
-				limit = {
-					province_group = westmarches
-					has_terrain = city_terrain
-					development = 12
-				}
-				add_base_tax = -1
-				add_base_production = -1
-				add_base_manpower = -1
-				add_ogre_minority_size_effect = yes
-			}
-			5037 = {
-				add_base_tax = 2
-				add_base_production = 2
-				add_base_manpower = 2
-			}
-		}
-	}
-}
-maghargma_dynamic_westmarches_2 = {
-	slot = 1
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = I90
-		has_country_flag = I90_collaborate_westmarches
-	}
-
-	maghargma_tear_them_down = {
-		icon = mission_steppe_warriors
-		position = 8
-		required_missions = { maghargma_crush_the_westmarches } 
-		provinces_to_highlight = {
-			owner = {
-				capital_scope = { region = north_yarikhoi_region } 
-				has_been_insulted_by_root = no
-			}
-		}
-
-		trigger = {
-			OR = {
-				calc_true_if = {
-					all_known_country = {
-						capital_scope = { region = north_yarikhoi_region } 
-						has_been_insulted_by_root = yes
-					}
-					amount = 3
-				}
-				#NOT = {
-				#	calc_true_if = {
-				#		all_known_country = { capital_scope = { region = north_yarikhoi_region }  } 
-				#		amount = 3
-				#	}
-				#}
-			}
-			has_mil_advisor = 3
-			OR = {
-				army_professionalism = 0.2
-				army_tradition = 20
-			}
-		}
-
-		effect = {
-			define_general = {
-				shock = 2
-				fire = 4
-				manuever = 6
-				siege = 2
-				name = "Hirvoi Citybreaker"
-			}
-			add_yearly_manpower = 2
-			hidden_effect = {
-				westmarches = { remove_core = J51 } 
-				westmarches = {
-					limit = { NOT = { has_terrain = city_terrain }  } 
-					add_core = J51
-					release = J51
-				}
-				westmarches = {
-					limit = { has_terrain = city_terrain } 
-					add_ogre_minority_size_effect = yes
-				}
-			}
-			custom_tooltip = maghargma_tear_them_down_tt
-			large_increase_of_human_tolerance_effect = yes
-		}
-	}
-}
-maghargma_dynamic_heartlands = {
-	slot = 2
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = I90 } 
-
-	maghargma_dynamic_heartlands_unknown = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { maghargma_harness_the_heartlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_the_onyx_citadel = {
-		icon = mission_scepter_of_scepters
-		position = 8
-		required_missions = { maghargma_harness_the_heartlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_a_gleaming_horizon = {
-		icon = mission_guarded_market
-		position = 8
-		required_missions = { maghargma_harness_the_heartlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-}
-maghargma_dynamic_brightmarch = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = I90 } 
-
-	maghargma_create_the_wolfguard = {
-		icon = mission_italian_condottiere
-		position = 8
-		required_missions = { maghargma_pacify_the_brightmarch } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_dynamic_brightmarch_unknown = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { maghargma_pacify_the_brightmarch } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_the_glass_court = {
-		icon = mission_early_modern_university
-		position = 1
-		required_missions = { maghargma_pacify_the_brightmarch } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-}
-maghargma_dynamic_amberlands = {
-	slot = 5
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = I90 } 
-
-	maghargma_dynamic_amberlands_unknown = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { maghargma_control_the_amberlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_an_ogrish_treasure_fleet = {
-		icon = mission_establish_high_seas_navy
-		position = 8
-		required_missions = { maghargma_control_the_amberlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
-	}
-
-	maghargma_unlikely_friends = {
-		icon = mission_market_place_with_asian_traders
-		position = 8
-		required_missions = { maghargma_control_the_amberlands } 
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
 	}
 }
