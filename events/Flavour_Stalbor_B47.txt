@@ -789,10 +789,6 @@ country_event = {
 			all_subject_country = {
 				NOT = {
 					num_of_rebel_armies = 1
-				}
-			}
-			all_subject_country = {
-				NOT = {
 					num_of_rebel_controlled_provinces = 1
 				}
 			}
@@ -833,8 +829,7 @@ country_event = {
 				duration = -1
 			}
 			east_deepwoods_region = {
-				type = all
-				add_permanent_claim = THIS
+				add_permanent_claim = PREV
 			}
 		}
 		set_country_flag = B47_the_matters_of_the_deepwoods_event
