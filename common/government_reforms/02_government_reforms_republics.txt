@@ -2374,6 +2374,7 @@ gang_control_reform = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	duration = 6
 	modifiers = {
 		candidate_random_bonus = 2
@@ -2385,7 +2386,6 @@ gang_control_reform = {
 	
 	custom_attributes = {
 		disables_regular_estates = yes
-		lock_level_when_selected = yes
 	}
 }
 
