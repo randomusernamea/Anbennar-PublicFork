@@ -23,7 +23,7 @@ brambleskinner_spawn_fey_rebels_vassals = {
     $vassal$ = {
 		random_owned_province = {
 			limit = { province_group = deepwoods_$grove$_grove }
-			save_event_target_as = fey_rebellion_$river$
+			save_event_target_as = fey_rebellion_$grove$
 			spawn_rebels = { 
 				type = treant_rebels
 				size = 2
