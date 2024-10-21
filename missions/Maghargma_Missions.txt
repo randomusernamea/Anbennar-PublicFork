@@ -11,13 +11,7 @@ maghargma_one = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				has_country_flag = fotg_reforms_1
-				has_country_flag = fotg_reforms_2
-				has_country_flag = fotg_reforms_3
-				has_country_flag = fotg_reforms_4
-				has_country_flag = fotg_reforms_5
-			}
+			feast_of_the_gods_1_reform_passed = yes
 			army_size_percentage = 0.9
 		}
 
@@ -52,20 +46,25 @@ maghargma_one = {
 		icon = mission_magnificent_castle
 		position = 2
 		required_missions = { maghargma_empower_ziltaghs_clique } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			5037 = {
+				has_tax_building_trigger = no
+				devastation = 1
+			}
+		}
 
 		trigger = {
 			5037 = {
-				has_building = temple
+				has_tax_building_trigger = yes
 				NOT = { devastation = 1 } 
-				NOT = { doom = 50 } 
 			}
+			NOT = { doom = 50 } 
 		}
 
 		effect = {
 			5037 = {
 				add_province_modifier = {
-					name = "monument_building"
+					name = "I90_monument_building"
 					duration = 3650
 				}
 			}
@@ -79,7 +78,14 @@ maghargma_one = {
 			maghargma_a_city_fit_for_giants
 			maghargma_subdue_the_north
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 5052
+			NOT = { owned_by = ROOT } 
+			NOT = { is_core = 5052 } 
+			has_trade_building_trigger = no
+			has_production_building_trigger = no
+			NOT = { development = 10 } 
+		}
 
 		trigger = {
 			owns_core_province = 5052
@@ -92,10 +98,6 @@ maghargma_one = {
 
 		effect = {
 			country_event = { id = flavor_maghargma.2 } 
-			set_variable = {
-				which = goblin_race_tolerance
-				value = 50
-			}
 			5037 = { add_goblin_minority_size_effect = yes } 
 			5039 = { add_goblin_minority_size_effect = yes } 
 			5053 = { add_goblin_minority_size_effect = yes } 
@@ -111,7 +113,18 @@ maghargma_one = {
 		icon = mission_discussion_arch
 		position = 5
 		required_missions = { maghargma_new_subjects } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				province_id = 5037
+				province_id = 5039
+				province_id = 5053
+				province_id = 5322
+				province_id = 5028
+				province_id = 5026
+				province_id = 5043
+			}
+			has_production_building_trigger = no
+		}
 
 		trigger = {
 			5037 = { has_production_building_trigger = yes } 
@@ -129,16 +142,14 @@ maghargma_one = {
 				add_goblin_minority_size_effect = yes
 			}
 			add_country_modifier = {
-				name = "goblin_auxilliaries"
+				name = "I90_goblin_auxilliaries"
 				duration = -1
-				desc = goblin_auxiliaries_desc
 			}
 			5052 = {
-				remove_province_modifier = {
-					goblin_refugees = add_province_modifier
-					name = "goblin_arrivals"
+				remove_province_modifier = I90_goblin_refugees
+				add_province_modifier = {
+					name = "I90_goblin_arrivals"
 					duration = -1
-					desc = goblin_arrivals_desc
 				}
 			}
 		}
@@ -148,14 +159,20 @@ maghargma_one = {
 		icon = mission_magic_tower
 		position = 6
 		required_missions = { maghargma_the_little_brothers } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			province_id = 5052
+			NOT = { development = 20 } 
+			has_fort_building_trigger = no
+			has_manpower_building_trigger = no
+			has_forcelimit_building_trigger = no
+		}
 
 		trigger = {
 			5052 = {
 				development = 20
-				fort_level = 1
-				has_building = barracks
-				has_building = regimental_camp
+				has_fort_building_trigger = yes
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
 			}
 		}
 
@@ -166,14 +183,22 @@ maghargma_one = {
 		icon = mission_fleet_arrival
 		position = 7
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = gadhlumo_area
+				area = kuskemua_area
+				area = peenadhi_area
+				area = bocenvokin_area
+				area = prikoyol_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
 
 		trigger = {
-			owns_all_provinces = { area = gadhlumo_area } 
-			owns_all_provinces = { area = kuskemua_area } 
-			owns_all_provinces = { area = peenadhi_area } 
-			owns_all_provinces = { area = bocenvokin_area } 
-			owns_all_provinces = { area = prikoyol_area } 
+			westmarches = {
+				type = all
+				owned_by = ROOT
+			}
 		}
 
 		effect = {
@@ -743,7 +768,7 @@ maghargma_three = {
 						}
 					}
 				}
-				own = nansalen_area
+				
 			}
 			OR = {
 				mulenue_area = {
@@ -762,7 +787,7 @@ maghargma_three = {
 						}
 					}
 				}
-				own = mulenue_area
+				
 			}
 		}
 
@@ -844,7 +869,7 @@ maghargma_three = {
 				add_majority_of_current_culture = yes
 			}
 			4119 = { change_trade_goods = silk } 
-			any_subject_country = {
+			random_subject_country = {
 				limit = { owns = 4119 } 
 				clear_racial_military = yes
 				add_country_modifier = {
@@ -969,19 +994,19 @@ maghargma_four = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			all_subject_country = {
-				is_subject_of_type = tributary_state_anb
-				capital_scope = { region = west_forbidden_plains_region } 
-				value = 3
-			}
-			dip_power = 100
+			#all_subject_country = {
+			#	is_subject_of_type = tributary_state_anb
+			#	capital_scope = { region = west_forbidden_plains_region } 
+			#	#value = 3
+			#}
+			#dip_power = 100
 		}
 
 		effect = {
 			add_dip_power = -100
 			west_forbidden_plains_region = { add_permanent_claim = ROOT } 
 			serpent_gift_region = { add_permanent_claim = ROOT } 
-			all_subject_country = {
+			every_subject_country = {
 				limit = {
 					is_subject_of_type = tributary_state_anb
 					capital_scope = { region = west_forbidden_plains_region } 
@@ -1176,7 +1201,7 @@ maghargma_four = {
 
 		effect = {
 			country_event = { id = flavor_maghargma.20 } 
-			all_owned_province = {
+			every_owned_province = {
 				limit = { has_province_modifier = culture_shock } 
 				remove_province_modifier = culture_shock
 			}
@@ -1268,28 +1293,28 @@ maghargma_five = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				all_subject_country = {
-					is_subject_of_type = tributary_state_anb
-					capital_scope = { region = serpent_gift_region } 
-					value = 2
-				}
-				NOT = {
-					value = 2
-					any_country = { capital_scope = { region = serpent_gift_region }  } 
-				}
-			}
+			#OR = {
+			#	all_subject_country = {
+			#		is_subject_of_type = tributary_state_anb
+			#		capital_scope = { region = serpent_gift_region } 
+			#		value = 2
+			#	}
+			#	NOT = {
+			#		value = 2
+			#		any_country = { capital_scope = { region = serpent_gift_region }  } 
+			#	}
+			#}
 		}
 
 		effect = {
-			all_subject_country = {
-				limit = {
-					is_subject_of_type = tributary_state_anb
-					capital_scope = { region = serpent_gift_region } 
-				}
-				vassalize = THIS
-			}
-			add_treasury = 250
+			#every_subject_country = {
+			#	limit = {
+			#		is_subject_of_type = tributary_state_anb
+			#		capital_scope = { region = serpent_gift_region } 
+			#	}
+			#	vassalize = THIS
+			#}
+			#add_treasury = 250
 		}
 	}
 
@@ -1477,14 +1502,14 @@ maghargma_five = {
 		trigger = { always = yes } 
 
 		effect = {
-			if = {
-				limit = { exists = Y01 } 
-				Y01 = { country_event = { id = flavor_maghargma.26 }  } 
-			}
-			all_country = {
-				limit = { any_owned_province = { region = demon_hills_region }  } 
-				country_event = { id = flavor_maghargma.27 } 
-			}
+			#if = {
+			#	limit = { exists = Y01 } 
+			#	Y01 = { country_event = { id = flavor_maghargma.26 }  } 
+			#}
+			#all_country = {
+			#	limit = { any_owned_province = { region = demon_hills_region }  } 
+			#	country_event = { id = flavor_maghargma.27 } 
+			#}
 		}
 	}
 
@@ -1504,23 +1529,23 @@ maghargma_five = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.23 } 
-			any_subject_country = {
-				limit = { capital_scope = { region = demon_hills_region }  } 
-				clear_racial_military = yes
-				add_country_modifier = {
-					name = "restructuring_military"
-					duration = 1825
-				}
-				add_country_modifier = {
-					name = "ogre_military"
-					duration = -1
-				}
-				change_unit_type = tech_eastern_ogre
-				change_primary_culture = horned_ogre
-				country_event = { id = racial_modifiers.5 } 
-				set_country_flag = favored_vassal
-			}
+			#country_event = { id = flavor_maghargma.23 } 
+			#any_subject_country = {
+			#	limit = { capital_scope = { region = demon_hills_region }  } 
+			#	clear_racial_military = yes
+			#	add_country_modifier = {
+			#		name = "restructuring_military"
+			#		duration = 1825
+			#	}
+			#	add_country_modifier = {
+			#		name = "ogre_military"
+			#		duration = -1
+			#	}
+			#	change_unit_type = tech_eastern_ogre
+			#	change_primary_culture = horned_ogre
+			#	country_event = { id = racial_modifiers.5 } 
+			#	set_country_flag = favored_vassal
+			#}
 		}
 	}
 
@@ -1551,7 +1576,11 @@ maghargma_dynamic_westmarches = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = I90 } 
+	potential = {
+		tag = I90
+		NOT = { has_country_flag = I90_occupy_westmarches } 
+		NOT = { has_country_flag = I90_collaborate_westmarches } 
+	}
 
 	maghargma_dynamic_westmarches_unknown = {
 		icon = mission_unknown_mission
@@ -1559,31 +1588,149 @@ maghargma_dynamic_westmarches = {
 		required_missions = { maghargma_crush_the_westmarches } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = maghargma_dynamic_westmarches_unknown_tt
+				always = no
+			}
+		}
 
 		effect = {  } 
+	}
+}
+maghargma_dynamic_westmarches_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+		has_country_flag = I90_direct_westmarches
 	}
 
 	maghargma_the_iron_barons = {
 		icon = mission_armoury
 		position = 8
 		required_missions = { maghargma_crush_the_westmarches } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = gadhlumo_area
+				area = kuskemua_area
+				area = peenadhi_area
+				area = bocenvokin_area
+				area = prikoyol_area
+			}
+			has_fort_building_trigger = yes
+			has_manpower_building_trigger = yes
+			has_forcelimit_building_trigger = yes
+			OR = {
+				local_autonomy = 10
+				NOT = { has_province_modifier = autonomy_increased } 
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			westmarches = {
+				type = all
+				has_fort_building_trigger = no
+				has_manpower_building_trigger = no
+				has_forcelimit_building_trigger = no
+				OR = {
+					NOT = { local_autonomy = 10 } 
+					has_province_modifier = autonomy_increased
+				}
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_mil_power = 100
+			every_owned_province = {
+				limit = {
+					province_group = westmarches
+					has_terrain = city_terrain
+					development = 12
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_ogre_minority_size_effect = yes
+			}
+			5037 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+	}
+}
+maghargma_dynamic_westmarches_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = I90
+		has_country_flag = I90_collaborate_westmarches
 	}
 
 	maghargma_tear_them_down = {
 		icon = mission_steppe_warriors
 		position = 8
 		required_missions = { maghargma_crush_the_westmarches } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			owner = {
+				capital_scope = { region = north_yarikhoi_region } 
+				has_been_insulted_by_root = no
+			}
+		}
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_known_country = {
+						capital_scope = { region = north_yarikhoi_region } 
+						has_been_insulted_by_root = yes
+					}
+					amount = 3
+				}
+				#NOT = {
+				#	calc_true_if = {
+				#		all_known_country = { capital_scope = { region = north_yarikhoi_region }  } 
+				#		amount = 3
+				#	}
+				#}
+			}
+			has_mil_advisor = 3
+			OR = {
+				army_professionalism = 0.2
+				army_tradition = 20
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			define_general = {
+				shock = 2
+				fire = 4
+				manuever = 6
+				siege = 2
+				name = "Hirvoi Citybreaker"
+			}
+			add_yearly_manpower = 2
+			hidden_effect = {
+				westmarches = { remove_core = J51 } 
+				westmarches = {
+					limit = { NOT = { has_terrain = city_terrain }  } 
+					add_core = J51
+					release = J51
+				}
+				westmarches = {
+					limit = { has_terrain = city_terrain } 
+					add_ogre_minority_size_effect = yes
+				}
+			}
+			custom_tooltip = maghargma_tear_them_down_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
 	}
 }
 maghargma_dynamic_heartlands = {

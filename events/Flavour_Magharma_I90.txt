@@ -28,3 +28,76 @@ country_event = {
 		}
 	}
 }
+
+#The Web Cleaners
+country_event = {
+	id = flavor_maghargma.2
+	title = flavor_maghargma.2.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.2.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.2.a
+		set_tolerance_to_coexisting_or_higher = { race = goblin } 
+		5052 = {
+			add_province_modifier = {
+				name = I90_goblin_refugees
+				duration = -1
+			}
+		}
+	}
+}
+
+#The Goblin Kelaktar
+country_event = {
+	id = flavor_maghargma.3
+	title = flavor_maghargma.3.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.3.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.3.a
+		5052 = {
+			change_province_name = "Mohgortal"
+			add_majority_with_correct_tolerance = { race = goblin }
+			remove_province_modifier = I90_goblin_arrivals
+			add_province_modifier = {
+				name = I90_goblin_kelaktar
+				duration = -1
+			}
+		}
+	}
+}
+
+#Bulwark Of Humanity
+country_event = {
+	id = flavor_maghargma.4
+	title = flavor_maghargma.4.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.4.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.4.a
+		set_country_flag = I90_occupy_westmarches
+		custom_tooltip = I90_occupy_westmarches_tt
+	}
+
+	option = {
+		name = flavor_maghargma.4.b
+		set_country_flag = I90_collaborate_westmarches
+		custom_tooltip = I90_collaborate_westmarches_tt
+	}
+}
+
