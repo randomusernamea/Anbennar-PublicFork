@@ -7494,7 +7494,98 @@ giberd_improved_chemical_pulping = {
 	trade_goods_size = 0.5
 	local_state_maintenance_modifier = -0.50
 }
-#Irrliam
+
+giberd_enhanced_cloth_production = {
+	local_production_efficiency = 0.25
+	province_trade_power_modifier = 0.25
+}
+
+giberd_esmaria_fabric_market = {
+	trade_goods_size = 1.5
+	monthly_splendor = 1
+}
+
+giberd_mass_influx_ravelians = {
+	local_institution_spread = 0.33
+}
+
+giberd_ravelian_workshop = {
+	local_production_efficiency = 0.50
+}
+
+# giberd_castle_clareen # PTM
+
+giberd_stained_glass_makers_ravelian = {
+	trade_goods_size_modifier = 0.25
+	trade_value_modifier = 0.20
+}
+
+giberd_egcat = {
+	artillery_power = 0.10
+	prestige_decay = -0.01
+	tolerance_heathen = 2
+}
+
+giberd_artificer_center_of_learning_building = { } # cooldown
+
+# giberd_artificer_center_of_learning = { } # +5 artificer capacity
+
+# new giberd, event/temporary modifiers
+
+giberd_options_war_leslinpar = {
+	land_morale = 0.10
+	global_movement_speed = 0.10
+	# "+2 art infantry units -2 regular infantry units"
+}
+
+giberd_options_war_bennon = {
+	local_defensiveness = -0.5
+	# "+2 art infantry units -2 regular infantry units"
+}
+
+giberd_options_war_peace = {
+	# 15% artificer research speed
+}
+
+giberd_silverforge_favour_accepted = {
+	siege_ability = 0.10
+}
+
+giberd_silverforge_favour_rejected = {
+	improve_relations_modifier = 0.20
+}
+
+giberd_not_a_cog_but_a_machine = {
+	improve_relations_modifier = 0.20
+}
+
+giberd_announcing_our_bid = {
+	diplomats = -1
+}
+
+giberd_demands_enclaves_promises_made = {
+	local_unrest = -5
+}
+
+giberd_construction_of_gds_loopeng_gedsandde = {
+	# -20 artificer cap, -2 invent slots, can't remove society invenstions
+}
+
+giberd_gds_loopeng_gedsandde = {
+	diplomats = 1
+}
+
+giberd_influx_of_merchants = {
+	province_trade_power_modifier = 0.50
+}
+
+giberd_watching_the_north = {
+	local_defensiveness = 0.33
+}
+
+giberd_cultural_investments_in_the_south = {
+	local_unrest = -10
+}#Irrliam
 irrliam_newfound_zeal = {
 	core_creation = -0.15
 }
