@@ -937,6 +937,15 @@ country_event = {
 						region = inner_castanor_region
 						area = whistlevale_area
 						area = cursewood_area
+						AND = {
+							region = alenic_reach_region
+							NOT = { 
+								area = serpentshead_area
+								area = northern_greatwoods_area
+								area = dinesck_area
+								area = west_chillsbay_area
+							}
+						}
 					}
 				}
 			}
@@ -1013,11 +1022,13 @@ country_event = {
 			limit = {
 				capital_scope = {
 					OR = {
-						region = alenic_frontier_region
-						NOT = { 
-							area = arbaran_area
-							area = golden_plains_area
-							area = cestir_area
+						AND = {
+							region = alenic_frontier_region
+							NOT = { 
+								area = arbaran_area
+								area = golden_plains_area
+								area = cestir_area
+							}
 						}
 						area = dragonhills_area
 						area = floodmarches_area
@@ -1029,6 +1040,10 @@ country_event = {
 						area = greater_bardswood_area
 						area = rhinmond_area
 						area = gnollsgate_area
+						area = serpentshead_area
+						area = northern_greatwoods_area
+						area = dinesck_area
+						area = west_chillsbay_area
 					}
 				}
 			}
