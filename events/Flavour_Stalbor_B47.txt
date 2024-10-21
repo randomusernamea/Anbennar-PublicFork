@@ -1369,7 +1369,11 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.25.a"
 		ai_chance = { factor = 50 }
-		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		custom_tooltip = B47_reset_hunters
+		hidden_effect = {
+			remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		}
+
 		if = {
 			limit = {
 				has_country_flag = B47_vampire_hunters_in_borders
