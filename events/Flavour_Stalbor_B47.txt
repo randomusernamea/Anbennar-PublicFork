@@ -111,6 +111,10 @@ province_event = {
 						OR = {
 							has_country_modifier = arturos_oversight_I
 							has_country_modifier = arturos_oversight_II
+							check_variable = {
+								which = B47_adm_branch_count
+								value = 5
+							}
 						}
 					}	
 				}
@@ -130,15 +134,22 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						has_country_modifier = arturos_oversight_II
+						OR = {
+							has_country_modifier = arturos_oversight_II
+							check_variable = {
+								which = B47_adm_branch_count
+								value = 10
+							}
+						}
 					}	
 				}
 			}
 			owner = {
+				remove_country_modifier = arturos_oversight_I
 				add_country_modifier = {
 					name = arturos_oversight_II
 					duration = -1
-				}		
+				}	
 			}
 		}
 		owner = {
@@ -169,6 +180,10 @@ province_event = {
 						OR = {
 							has_country_modifier = arturos_army_I
 							has_country_modifier = arturos_army_II
+							check_variable = {
+								which = B47_mil_branch_count
+								value = 5
+							}
 						}
 					}	
 				}
@@ -188,15 +203,22 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						has_country_modifier = arturos_army_II
+						OR = {
+							has_country_modifier = arturos_army_II
+							check_variable = {
+								which = B47_mil_branch_count
+								value = 10
+							}
+						}
 					}	
 				}
 			}
 			owner = {
+				remove_country_modifier = arturos_army_I
 				add_country_modifier = {
 					name = arturos_army_II
 					duration = -1
-				}		
+				}	
 			}
 		}
 		owner = {
@@ -230,6 +252,10 @@ province_event = {
 						OR = {
 							has_country_modifier = arturos_navy_I
 							has_country_modifier = arturos_navy_II
+							check_variable = {
+								which = B47_naval_branch_count
+								value = 5
+							}
 						}
 					}	
 				}
@@ -238,7 +264,7 @@ province_event = {
 				add_country_modifier = {
 					name = arturos_navy_I
 					duration = -1
-				}		
+				}
 			}
 		}
 		if = {
@@ -249,15 +275,22 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						has_country_modifier = arturos_navy_II
+						OR = {
+							has_country_modifier = arturos_navy_II
+							check_variable = {
+								which = B47_naval_branch_count
+								value = 10
+							}
+						}
 					}
 				}
 			}
 			owner = {
+				remove_country_modifier = arturos_navy_I
 				add_country_modifier = {
 					name = arturos_navy_II
 					duration = -1
-				}	
+				}
 			}
 		}
 		owner = {
