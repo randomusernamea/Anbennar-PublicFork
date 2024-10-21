@@ -221,6 +221,13 @@ maskedbutcher_missions_3 = {
 					government = tribal
 				}
 			}
+			4033 = {
+				NOT = { has_province_modifier = expedition_target }
+				OR = {
+					is_empty = yes
+					owned_by = ROOT
+				}
+			}
 		}
 
 		effect = {
