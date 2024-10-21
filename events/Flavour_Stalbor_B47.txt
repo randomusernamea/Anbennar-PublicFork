@@ -1661,7 +1661,10 @@ country_event = {
 		}
 		add_prestige = 20
 		add_army_tradition = 10
-		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		custom_tooltip = B47_reset_hunters
+		hidden_effect = {
+			remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		}
 		if = {
 			limit = {
 				has_country_flag = B47_vampire_hunters_in_borders
@@ -1928,7 +1931,10 @@ country_event = {
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
-		remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		custom_tooltip = B47_reset_hunters
+		hidden_effect = {
+			remove_estate_privilege = estate_adventurers_track_vampire_nobility
+		}
 		if = {
 			limit = {
 				has_country_flag = B47_vampire_hunters_in_borders
