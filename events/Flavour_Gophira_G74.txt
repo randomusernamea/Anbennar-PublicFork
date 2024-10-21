@@ -15,6 +15,14 @@ country_event = {
 				value = 7
 			}
 			set_variable = {
+				which = gophira_court_add
+				value = 8
+			}
+			set_variable = {
+				which = gophira_court_subtract
+				value = 6
+			}
+			set_variable = {
 				which = gophira_war_fought_with_dark
 				value = 0
 			}
@@ -27,7 +35,7 @@ country_event = {
 
 	option = {
 		name = gophira.1.1
-		gophira_var_effect = {  operation = subtract value = -1 }
+		gophira_var_effect = { subtract = yes value = -1 }
 		define_advisor = {
 			type = statesman
 			skill = 1
@@ -36,11 +44,12 @@ country_event = {
 			discount = yes
 		}
 		change_heir_dip = 1
+		unlock_estate_privilege = {	estate_privilege = estate_nobles_ironblood_officer_corp }
 	}
 
 	option = {
 		name = gophira.1.2
-		gophira_var_effect = {  operation = change value = 1 }
+		gophira_var_effect = { add = yes value = 1 }
 		define_advisor = {
 			type = statesman
 			skill = 1
@@ -72,7 +81,7 @@ country_event = {
 
 	option = {
 		name = gophira.2.1
-		gophira_var_effect = { operation = subtract value = -1 }
+		gophira_var_effect = { subtract = yes value = -1 }
 		gophira_heir_effect = { pow = dip amount = 1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
 		add_heir_personality = free_thinker_personality
@@ -80,7 +89,7 @@ country_event = {
 
 	option = {
 		name = gophira.2.2
-		gophira_var_effect = { operation = change value = 1 }
+		gophira_var_effect = { add = yes value = 1 }
 		gophira_heir_effect = { pow = adm amount = 1 }
 		gophira_heir_effect = { pow = dip amount = 1 }
 		add_heir_personality = bold_fighter_personality
@@ -104,7 +113,7 @@ country_event = {
 		name = gophira.3.1
 		extend_regency = 5
 		add_heir_claim = -15
-		gophira_var_effect = {  operation = subtract value = -3 }
+		gophira_var_effect = { subtract = yes value = -1 }
 	}
 
 	option = {
@@ -179,7 +188,7 @@ country_event = {
 		}
 		custom_tooltip = gophira_queen_webweaver_tt
 		add_queen_personality = intricate_web_weaver_personality
-		gophira_var_effect = { operation = subtract value = -3}
+		gophira_var_effect = { subtract = yes value = -1}
 		gophira_heir_effect = {	pow = dip amount = 2 }
 		swap_non_generic_missions = yes
 	}
@@ -209,7 +218,7 @@ country_event = {
 		set_country_flag = gophira_march
 		custom_tooltip = gophira_queen_infertile_tt
 		add_queen_personality = infertile_personality
-		gophira_var_effect = { operation = change value = 3 }
+		gophira_var_effect = { add = yes value = 1 }
 		gophira_heir_effect = {	pow = adm amount = 1 }
 		gophira_heir_effect = {	pow = mil amount = 1 }
 		swap_non_generic_missions = yes
@@ -237,6 +246,7 @@ country_event = {
 			chance = 50
 			set_heir_culture = chendhyan
 		}
+		gophira_var_effect = { subtract = yes value = -1 }
 	}
 
 	option = {
@@ -249,6 +259,7 @@ country_event = {
 				value = -5
 			}
 		}
+		gophira_var_effect = { add = yes value = 1 }
 	}
 }
 
@@ -274,7 +285,7 @@ country_event = {
 		G76 = { form_coalition_against = G52 }
 		G81 = { form_coalition_against = G52 }
 		G82 = { form_coalition_against = G52 }
-		gophira_var_effect = { operation = change value = 1 }
+		gophira_var_effect = { add = yes value = 1 }
 		gophira_heir_effect = { pow = dip amount = 1 }
 		clr_country_flag = gophira_good_coalition
 	}
@@ -286,7 +297,7 @@ country_event = {
 		G76 = { form_coalition_against = G52 }
 		G81 = { form_coalition_against = G52 }
 		G82 = { form_coalition_against = G52 }
-		gophira_var_effect = { operation = subtract value = -1 }
+		gophira_var_effect = { subtract = yes value = -1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
 		clr_country_flag = gophira_bad_coalition
 	}
@@ -414,7 +425,7 @@ country_event = {
 		}
 		add_treasury = 300
 		2487 = { add_devastation = 25 }
-		gophira_var_effect = { operation = subtract value = -1 }
+		gophira_var_effect = { subtract = yes value = -1 }
 		gophira_heir_effect = { pow = mil amount = 1 }
 	}
 
@@ -427,7 +438,7 @@ country_event = {
 			cost_multiplier = 0.75
 		}
 		gain_taychend_glory_effect = { amount = 100 }
-		gophira_var_effect = { operation = change value = 1 }
+		gophira_var_effect = { add = yes value = 1 }
 		gophira_heir_effect = { pow = dip amount = 1 }
 	}
 }
