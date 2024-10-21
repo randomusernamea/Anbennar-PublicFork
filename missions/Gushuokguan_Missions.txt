@@ -107,14 +107,14 @@ gushuokguan_1 = {
 					province_group = golden_highway_yanshen_coast
 				}
 				NOT = {
-					country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
-					NOT = { development = 12 } 
+					development = 12
 				}
 			}
 		} 
 
 		trigger = {  
 			yanshen_superregion = {
+				type = all
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 			}
 			all_owned_province = {
@@ -123,9 +123,11 @@ gushuokguan_1 = {
 				NOT = { unrest = 0 }
 			}
 			golden_highway_upper_yanshen = {
+				type = all
 				development = 12
 			}
 			golden_highway_yanshen_coast = {
+				type = all
 				development = 12
 			}
 		} 
@@ -325,8 +327,6 @@ gushuokguan_2 = {
 				type = fortification_expert
 				skill = 3
 				cost_multiplier = 0.25
-				culture = Y17 #Gushuokguan
-				religion = Y17 #Gushuokguan
 			}
 			custom_tooltip = gushuokguan_stone_forts_tt
 			hidden_effect = {
@@ -949,13 +949,26 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_2_7 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			Y10 = { #Yingzhen
+				vassal_of = ROOT
+				NOT = { liberty_desire = 0 }
+			}
+			4853 = { #Anjiang
+				cavalry_in_province = 20
+				has_production_building_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+			#What are stone army challenges?
+		} 
 
 		effect = {  
-			kill_units = {
-				who = ROOT
-				type = infantry
-				amount = 10
+			4853 = { #Anjiang
+				kill_units = {
+					who = ROOT
+					type = infantry
+					amount = 10
+				}
 			}
 			custom_tooltip = gushuokguan_marble_mounts_tt
 			hidden_effect = {
@@ -970,7 +983,15 @@ gushuokguan_3 = {
 		required_missions = { gushuokguan_3_8 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_won_100_battles_tt
+				check_variable = {
+					which = gushuokguan_battle_counter
+					value = 100
+				}
+			}
+		} 
 
 		effect = {  
 			custom_tooltip = gushuokguan_marble_mounts_tier_2_tt
@@ -1312,17 +1333,41 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_2_7 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			Y20 = { #Feiten
+				vassal_of = ROOT
+				NOT = { liberty_desire = 0 }
+			}
+			4879 = { #Feiten
+				has_fort_building_trigger = yes
+				has_shipyard_building_trigger = yes
+				has_dock_building_trigger = yes
+				has_building = impressment_offices
+				infantry_in_province = 10
+				artillery_in_province = 10
+			}
+		} 
 
 		effect = {  
-			kill_units = {
-				who = ROOT
-				type = infantry
-				amount = 10
+			4879 = { #Feiten
+				kill_units = {
+					who = ROOT
+					type = infantry
+					amount = 10
+				}
+				kill_units = {
+					who = ROOT
+					type = artillery
+					amount = 10
+				}
 			}
 			custom_tooltip = gushuokguan_flying_pebbles_tt
 			hidden_effect = {
 				set_country_flag = gushuokguan_flying_pebbles
+				set_variable = {
+					which = gushokguan_flying_pebbles_siege_counter
+					value = 0
+				}
 			}
 		}
 	}
@@ -1333,7 +1378,9 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_4_8 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+
+		} 
 
 		effect = {  
 			custom_tooltip = gushuokguan_flying_pebbles_tier_2_tt

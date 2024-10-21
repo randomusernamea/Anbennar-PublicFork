@@ -3331,7 +3331,19 @@ on_battle_won_country_effect = {
 				has_underground_terrain = yes
 			}
 		} 
-		ROOT = { set_country_flag = gushuokguan_rock_raiders_battle }
+		set_country_flag = gushuokguan_rock_raiders_battle
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
+		}
+		change_variable = {
+			which = gushuokguan_battle_counter
+			value = 1
+		}
 	}
 }
 
@@ -7420,10 +7432,14 @@ startup_1444_effects = {
 			}
 		}
 
-		#Gushuokguan condottieri Sold Counter
+		#Gushuokguan
 		set_variable = {
 			which = gushuokguan_rented_condottieri_counter
-			value = 1
+			value = 0
+		}
+		set_variable = {
+			which = gushuokguan_battle_counter
+			value = 0
 		}
 	}
 }
