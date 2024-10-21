@@ -2371,3 +2371,18 @@ country_event = {
 		clr_country_flag = mb_absolutely_devastating_flg
 	}
 }
+
+province_event = {
+	id = flavour_maskedbutcher.150
+	title = flavour_maskedbutcher.150.t
+	desc = flavour_maskedbutcher.150.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = flavour_maskedbutcher.150.a
+		spawn_expedition = yes
+	}
+}

@@ -280,9 +280,7 @@ maskedbutcher_missions_3 = {
 				capital = 4093
 				capital = 4238
 			}
-			4033 = {
-				owned_by = ROOT
-			}
+			owns_core_province = 4033
 			OR = {
 				check_variable = {
 					expeditions_completed_var = 5
@@ -1218,12 +1216,13 @@ maskedbutcher_missions_2d = {
 		}
 
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 70
-				OR = {
-					region = bahar_region
-					region = harpy_hills_region
-				}
+			bahar_region = {
+				type = all
+				owned_by = ROOT
+			}
+			harpy_hills_region = {
+				type = all
+				owned_by = ROOT
 			}
 			check_variable = {
 				which = mb_blood_frenzies
