@@ -7534,7 +7534,7 @@ giberd_artificer_center_of_learning_building = { } # cooldown
 
 giberd_options_war_leslinpar = {
 	land_morale = 0.10
-	global_movement_speed = 0.10
+	movement_speed = 0.10
 	# "+2 art infantry units -2 regular infantry units"
 }
 
@@ -7552,11 +7552,11 @@ giberd_silverforge_favour_accepted = {
 }
 
 giberd_silverforge_favour_rejected = {
-	improve_relations_modifier = 0.20
+	improve_relation_modifier = 0.20
 }
 
 giberd_not_a_cog_but_a_machine = {
-	improve_relations_modifier = 0.20
+	improve_relation_modifier = 0.20
 }
 
 giberd_announcing_our_bid = {
@@ -7585,7 +7585,11 @@ giberd_watching_the_north = {
 
 giberd_cultural_investments_in_the_south = {
 	local_unrest = -10
-}#Irrliam
+}
+
+
+
+#Irrliam
 irrliam_newfound_zeal = {
 	core_creation = -0.15
 }
