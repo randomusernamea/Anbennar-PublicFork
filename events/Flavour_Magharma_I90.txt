@@ -12,12 +12,6 @@ country_event = {
 	
 	trigger = { tag = I90 }
 	
-	immediate = {
-		hidden_effect = {
-			set_ruler_flag = ruler_is_ziltagh
-		}
-	}
-	
 	#Long may he Reign
 	option = {
 		name = flavor_maghargma.1.a
@@ -33,7 +27,7 @@ country_event = {
 country_event = {
 	id = flavor_maghargma.2
 	title = flavor_maghargma.2.t
-	picture = DIPLOMACY_SIGNING_eventPicture
+	picture = GOBLINS_AND_SPIDER_eventPicture
 	desc = flavor_maghargma.2.d
 
 	is_triggered_only = yes
@@ -56,7 +50,7 @@ country_event = {
 country_event = {
 	id = flavor_maghargma.3
 	title = flavor_maghargma.3.t
-	picture = DIPLOMACY_SIGNING_eventPicture
+	picture = FORT_eventPicture
 	desc = flavor_maghargma.3.d
 
 	is_triggered_only = yes
@@ -67,11 +61,11 @@ country_event = {
 		name = flavor_maghargma.3.a
 		5052 = {
 			change_province_name = "Mohgortal"
-			set_tolerance_to_integrated_or_higher = { race = goblin }
+			change_culture = crawler_goblin
 			remove_province_modifier = I90_goblin_arrivals
 			add_province_modifier = {
 				name = I90_goblin_kelaktar
-				duration = -1
+				duration = 3650 #10 Years
 			}
 		}
 	}
@@ -81,7 +75,7 @@ country_event = {
 country_event = {
 	id = flavor_maghargma.4
 	title = flavor_maghargma.4.t
-	picture = DIPLOMACY_SIGNING_eventPicture
+	picture = SIEGE_eventPicture
 	desc = flavor_maghargma.4.d
 
 	is_triggered_only = yes
@@ -89,7 +83,7 @@ country_event = {
 	trigger = {}
 
 	option = {
-		name = flavor_maghargma.4.a
+		name = flavor_maghargma.4.a #Occupy Them
 		set_country_flag = I90_occupy_westmarches
 		custom_tooltip = I90_occupy_westmarches_tt
 		tooltip = {
@@ -115,7 +109,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavor_maghargma.4.b
+		name = flavor_maghargma.4.b #Collaborate With Them
 		set_country_flag = I90_collaborate_westmarches
 		custom_tooltip = I90_collaborate_westmarches_tt
 		tooltip = {
@@ -127,7 +121,7 @@ country_event = {
 				name = "Hirvoi Citybreaker"
 			}
 			add_yearly_manpower = 2
-			custom_tooltip = maghargma_tear_them_down_tt
+			custom_tooltip = maghargma_the_iron_barons_tt
 			large_increase_of_human_tolerance_effect = yes
 		}
 		swap_non_generic_missions = yes
@@ -138,7 +132,7 @@ country_event = {
 country_event = {
 	id = flavor_maghargma.5
 	title = flavor_maghargma.5.t
-	picture = DIPLOMACY_SIGNING_eventPicture
+	picture = ASSASSINATION_eventPicture
 	desc = flavor_maghargma.5.d
 
 	is_triggered_only = yes
@@ -149,6 +143,12 @@ country_event = {
 		name = flavor_maghargma.5.a
 		set_country_flag = I90_merchant_heartland
 		custom_tooltip = I90_merchant_heartland_tt
+		tooltip = {
+			custom_tooltip = maghargma_burgher_tt
+			set_estate_privilege = estate_burghers_friends_in_high_places 
+			custom_tooltip = maghargma_a_gleaming_horizon_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
 		swap_non_generic_missions = yes
 	}
 
@@ -156,6 +156,11 @@ country_event = {
 		name = flavor_maghargma.5.b
 		set_country_flag = I90_mage_westmarches
 		custom_tooltip = I90_mage_heartland_tt
+		tooltip = {
+			custom_tooltip = maghargma_the_onyx_citadel_tt
+			set_estate_privilege = estate_mages_collaborators 
+			5270 = { add_ogre_minority_size_effect = yes }
+		}
 		swap_non_generic_missions = yes
 	}
 }
@@ -164,7 +169,7 @@ country_event = {
 country_event = {
 	id = flavor_maghargma.6
 	title = flavor_maghargma.6.t
-	picture = DIPLOMACY_SIGNING_eventPicture
+	picture = SCOTTISH_MERCENARIES_eventPicture
 	desc = flavor_maghargma.6.d
 
 	is_triggered_only = yes
@@ -186,12 +191,12 @@ country_event = {
 	}
 }
 
-#Taverns And Treasure
+#Tavern and treasures
 country_event = {
 	id = flavor_maghargma.7
 	title = flavor_maghargma.7.t
-	picture = DIPLOMACY_SIGNING_eventPicture
-	desc = flavor_maghargma.7.d
+	picture = SCOTTISH_MERCENARIES_eventPicture
+	desc = flavor_maghargma.6.d
 
 	is_triggered_only = yes
 
@@ -212,6 +217,191 @@ country_event = {
 	}
 }
 
+
+#Shared Tastes
+country_event = {
+	id = flavor_maghargma.8
+	title = flavor_maghargma.8.t
+	picture = FEAST_eventPicture
+	desc = flavor_maghargma.8.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.8.a #Party Rock
+		add_country_modifier = {
+			name = I90_mossmouth_zeal
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.8.b #Boo
+		add_country_modifier = {
+			name = I90_modern_moderation
+			duration = -1
+		}
+	}
+}
+
+#...And the stick
+country_event = {
+	id = flavor_maghargma.9
+	title = flavor_maghargma.9.t
+	picture = DIPLOMACY_SIGNING_eventPicture #PLACEHOLDER
+	desc = flavor_maghargma.9.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.9.a #Let The Feast Begin!
+		country_event = { id = flavor_maghargma.10 days = 30}
+	}
+}
+
+#The Southern Lords
+country_event = {
+	id = flavor_maghargma.10
+	title = flavor_maghargma.10.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.10.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.10.a #Integrate Them Directly
+		add_dip_power = -200
+		if = {
+			limit = {
+				J35 = { is_subject_of = ROOT }
+			}
+			inherit = J35
+		}
+		if = {
+			limit = {
+				J36 = { is_subject_of = ROOT }
+			}
+			inherit = J36
+		}
+		if = {
+			limit = {
+				J37 = { is_subject_of = ROOT }
+			}
+			inherit = J37
+		}
+		country_event = { id = flavor_maghargma.11 days = 30}
+	}
+	option = {
+		name = flavor_maghargma.10.b #Loyalty Has Its Rewards
+		J35 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		J36 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		J37 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		country_event = { id = flavor_maghargma.11 days = 30}
+	}
+}
+
+#The Northern Lords
+country_event = {
+	id = flavor_maghargma.11
+	title = flavor_maghargma.11.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.11.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.11.a #Tigthen Their Leash
+		if = {
+			limit = {
+				J38 = { is_subject_of = ROOT }
+			}
+			vassalize = J38
+		}
+		if = {
+			limit = {
+				J39 = { is_subject_of = ROOT }
+			}
+			vassalize = J39
+		}
+		if = {
+			limit = {
+				J40 = { is_subject_of = ROOT }
+			}
+			vassalize = J40
+		}
+	}
+	option = {
+		name = flavor_maghargma.11.b #Demand A Higher Payment
+		J38 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		J39 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		J40 = {
+			add_opinion = {
+				who = ROOT
+				modifier = I90_happy_ogre
+			}
+			add_country_modifier = {
+				name = I90_loyal_ogre
+				duration = 5480 #15 Years
+			}
+		}
+		add_doom = -20
+	}
+}
+
+
 #Problem? :orbtroll:
 country_event = {
 	id = flavor_maghargma.12
@@ -224,21 +414,357 @@ country_event = {
 	trigger = {}
 
 	option = {
-		name = flavor_maghargma.12.a #Our Birthright
+		name = flavor_maghargma.12.a #Too Much Effort
 		set_country_flag = I90_friend_troll
 		large_increase_of_troll_tolerance_effect = yes
-		#add unrest
+		every_owned_province = {
+			limit = {
+				region =  northern_pass_region
+				has_troll_minority_trigger = yes
+			}
+			add_province_modifier = {
+				name = I90_sharing_our_burden
+				duration = 7305 #20 Years
+			}
+		}
 		custom_tooltip = I90_friend_troll_tt
+		tooltip = {
+			add_country_modifier = {
+				name = I90_troll_auxiliaries
+				duration = -1
+			}
+		}
 		swap_non_generic_missions = yes
 	}
 
 	option = {
-		name = flavor_maghargma.12.b #Too Much Effort
+		name = flavor_maghargma.12.b #Our Birthright 
 		set_country_flag = I90_enemy_troll
 		large_decrease_of_troll_tolerance_effect = yes
 		custom_tooltip = I90_enemy_troll_tt
-		#There's supposed to be a counter?
+		tooltip = {
+			add_country_modifier = {
+				name = I90_troll_farming
+				duration = -1
+			}
+		}
 		swap_non_generic_missions = yes
+	}
+}
+
+#A New Great Clan?
+country_event = {
+	id = flavor_maghargma.13
+	title = flavor_maghargma.13.t
+	picture = CONQUEST_eventPicture
+	desc = flavor_maghargma.13.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.13.a #Bronzegut, The "Civilized" Builders 
+		add_country_modifier = {
+			name = I90_great_clan_rijansavi
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.13.b #Grey Fist, The Fire-Welders
+		add_country_modifier = {
+			name = I90_great_clan_sripttushtef
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.13.c #Ironclaw, The Greatest Hunters
+		add_country_modifier = {
+			name = I90_great_clan_rknarnklach
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.13.d.1 #Trunk Basher, The Clever Innovators
+		add_country_modifier = {
+			name = I90_great_clan_aglurndamki
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.13.e #Skull Gnashers, The Untameable Savages
+		add_country_modifier = {
+			name = I90_great_clan_viskaghrk
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.13.f #Froshide, The Feared Necromancers
+		add_country_modifier = {
+			name = I90_great_clan_levilkhgan
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.13.g #Let Us Rule Over It Personally
+		add_country_modifier = {
+			name = I90_royal_woodlands
+			duration = -1
+		}
+	}
+}
+
+#The Green Army
+country_event = {
+	id = flavor_maghargma.14
+	title = flavor_maghargma.14.t
+	picture = GOBLIN_GUNNER_event_picture
+	desc = flavor_maghargma.14.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.14.a #Conscript Just Enough
+		remove_country_modifier = I90_goblin_auxilliaries
+		add_country_modifier = {
+			name = I90_mass_goblin_conscription
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_maghargma.14.b #Goblins All The Way!
+		remove_country_modifier = I90_goblin_auxilliaries
+		if = {
+			limit = { NOT = { has_country_modifier = goblin_military } }
+			clear_racial_military = yes
+			add_country_modifier = {
+				name = restructuring_military
+				duration = 3650
+			}
+			tooltip = {
+				add_country_modifier = {
+				name = goblin_military
+				duration = -1
+			}
+			}
+			add_country_modifier = {
+				name = goblin_military
+				duration = -1
+				hidden = yes
+			}
+			change_unit_type = tech_goblin
+		}
+		add_country_modifier = {
+			name = I90_ogre_officers
+			duration = -1
+		}
+	}
+}
+
+#A Family Matter
+country_event = {
+	id = flavor_maghargma.15
+	title = flavor_maghargma.15.t
+	desc = { #Ruler is still ziltagh
+		trigger = { has_ruler_flag = ruler_is_ziltagh }
+		desc = flavor_maghargma.15.d.1
+	}
+	desc = { #Chike
+		trigger = { has_ruler_flag = ruler_is_chike }
+		desc = flavor_maghargma.15.d.2
+	}
+	desc = { #Not Chike or Ziltagh
+		trigger = { 
+			NOT = { has_ruler_flag = ruler_is_chike }
+			NOT = { has_ruler_flag = ruler_is_ziltagh }
+		}
+		desc = flavor_maghargma.15.d.3
+	}
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_maghargma.15.a #Hell Yeah
+		trigger = {
+			has_ruler_flag = ruler_is_ziltagh
+		}
+		define_heir = {
+			female = yes
+			dynasty = ROOT
+			name = "Tamargha"
+			claim = 30
+			adm = 6
+			dip = 5
+			mil = 3
+			age = 18
+		}
+		hidden_effect = { add_heir_personality = reformist_personality }
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 10
+				leader = "Chike Gravelhide"
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.15.a #Also Hell Yeah
+		trigger = {
+			NOT = { has_ruler_flag = ruler_is_ziltagh }
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_is_chike
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 10
+					leader = "Chike Gravelhide"
+				}
+			}
+		}
+		else = {
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 10
+				}
+			}
+		}
+		define_ruler = {
+			female = yes
+			dynasty = ROOT
+			name = "Tamargha"
+			claim = 30
+			adm = 6
+			dip = 5
+			mil = 3
+			age = 18
+		}
+		hidden_effect = { add_ruler_personality = reformist_personality }
+	}
+
+	option = {
+		name = flavor_maghargma.15.b
+		add_stability = 1
+		add_legitimacy = 30
+	}
+}
+
+#Gifts From Mengrum
+country_event = {
+	id = flavor_maghargma.16
+	title = flavor_maghargma.16.t
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	desc = flavor_maghargma.16.d
+
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = flavor_maghargma.16.a #Go for it
+		5322 = {
+			add_province_modifier = {
+				name = I90_unprofitable_exports
+				duration = 9132 #25 Years
+			}
+		}
+		custom_tooltip = I90_gifts_from_menghrum_tt
+		hidden_effect = {
+			capital_scope = { 
+				province_event = { id = flavor_maghargma.17 days = 9132 } 
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.16.b #Nah	
+		add_mercantilism = 5
+	}
+}
+
+#Gifts From Mengrum Over
+province_event = {
+	id = flavor_maghargma.17
+	title = flavor_maghargma.17.t
+	picture = CIVIL_WAR_eventPicture
+	desc = flavor_maghargma.17.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_country_modifier = lake_federation_member
+					ai = no
+				}
+				add_country_modifier = {
+					name = I90_metal_shortage
+					duration = 7305 #20 Years
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.17.a
+		owner = {
+			add_country_modifier = {
+				name = I90_studied_architecture
+				duration = 7305 #20 Years
+			}
+		}
+		custom_tooltip = I90_gifts_from_menghrum_1_tt
+	}
+}
+
+#Our Inheritance Realized
+country_event = {
+	id = flavor_maghargma.18
+	title = flavor_maghargma.18.t
+	picture = OVEREXTENSION_eventPicture
+	desc = flavor_maghargma.18.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.18.a
+		add_government_reform = ogre_empire_reform
+		set_government_rank = 3
+	}
+}
+
+#Assuming The Mantle
+country_event = {
+	id = flavor_maghargma.19
+	title = flavor_maghargma.19.t
+	picture = FAR_AND_WIDE_eventPicture
+	desc = flavor_maghargma.19.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.19.a
+		northern_pass_region = {
+			add_permanent_claim = ROOT
+			discover_country = ROOT
+		}
+		serpents_vale_region = {
+			add_permanent_claim = ROOT
+			discover_country = ROOT
+		}
+		nomsyulhan_region = {
+			add_permanent_claim = ROOT
+			discover_country = ROOT
+		}
 	}
 }
 
@@ -247,25 +773,101 @@ country_event = {
 	id = flavor_maghargma.20
 	title = flavor_maghargma.20.t
 	picture = DIPLOMACY_SIGNING_eventPicture
-	desc = flavor_maghargma.6.d
+	desc = flavor_maghargma.20.d
 
 	is_triggered_only = yes
 
 	trigger = {}
 
 	option = {
-		name = flavor_maghargma.20.a
-		set_country_flag = I90_cooperate_sudomengi
-		custom_tooltip = I90_cooperate_sudomengi_tt
+		name = flavor_maghargma.20.a #Respect Their Rights
+		set_country_flag = I90_cooperate_Sudomeg'i
+		custom_tooltip = I90_cooperate_Sudomeg'i_tt
 		swap_non_generic_missions = yes
 	}
 
 	option = {
-		name = flavor_maghargma.20.b
-		set_country_flag = I90_purge_sudomengi
-		custom_tooltip = I90_purge_sudomengi_tt
+		name = flavor_maghargma.20.b #Who You Gonna Call?
+		set_country_flag = I90_purge_Sudomeg'i
+		custom_tooltip = I90_purge_Sudomeg'i_tt
 		swap_non_generic_missions = yes
 	}
 }
 
+#Ancient Rumors
+country_event = {
+	id = flavor_maghargma.21
+	title = flavor_maghargma.21.t
+	picture = ULMISBAR_eventPicture
+	desc = flavor_maghargma.21.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.21.a
+		bulwar_superregion = {
+			add_permanent_claim = ROOT
+			discover_country = ROOT
+		}
+	}
+}
+
+#The Lost Sandmaws
+country_event = {
+	id = flavor_maghargma.22
+	title = flavor_maghargma.22.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.22.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.22.a
+		add_country_modifier = {
+			name = I90_ogre_silverware 
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.22.b
+		add_country_modifier = {
+			name = I90_ogre_weapons 
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.22.c
+		add_country_modifier = {
+			name = I90_decorative_statues
+			duration = -1
+		}
+	}
+}
+
+#The True Heirs
+country_event = {
+	id = flavor_maghargma.23
+	title = flavor_maghargma.23.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.23.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.23.a
+		change_primary_culture = true_giant
+		set_ruler_culture = true_giant
+		set_heir_culture = true_giant
+		every_owned_province = {
+			limit = { culture_group = ogre }
+			change_culture = true_giant
+		}
+		add_country_modifier = {
+			name = I90_second_rule_of_giants
+			duration = -1
+		}
+	}
+}
 

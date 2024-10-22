@@ -13781,3 +13781,30 @@ estate_mages_all_mask = {
 
 	ai_will_do = { factor = 10 }
 }
+
+#Maghargma
+estate_mages_collaborators = {
+	icon = privilege_promote_maratha_nobility
+
+	is_valid = { has_estate_privilege = estate_mages_collaborators }
+	can_select = { has_country_flag = I90_mages_collab_enabled }
+	max_absolutism = 5
+	benefits = {
+		mages_loyalty_modifier = 0.05
+		mages_influence_modifier = 0.1
+	}
+	mechanics = { exempt_from_seize_land }
+}
+
+estate_burghers_friends_in_high_places = {
+	icon = burghers_loyalty_equilibrium
+	is_valid = { has_estate_privilege = estate_mages_collaborators }
+	can_select = { has_country_flag = I90_burghers_collab_enabled }
+	max_absolutism = -5
+	benefits = {
+		burghers_loyalty_modifier = 0.05
+		burghers_influence_modifier = 0.1
+		interest = -1
+		merchants = 1
+	}
+}
