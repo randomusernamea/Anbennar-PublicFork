@@ -45,7 +45,6 @@ country_event = {
 	title = naleni.3.t
 	desc = naleni.3.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.3.a
@@ -63,7 +62,6 @@ country_event = {
 	title = naleni.4.t
 	desc = naleni.4.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.4.a
@@ -82,7 +80,6 @@ country_event = {
 	title = naleni.5.t
 	desc = naleni.5.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.5.a
@@ -100,7 +97,6 @@ country_event = {
 	title = naleni.6.t
 	desc = naleni.6.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.6.a
@@ -121,7 +117,6 @@ country_event = {
 	title = naleni.7.t
 	desc = naleni.7.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.7.a
@@ -145,7 +140,6 @@ country_event = {
 	title = naleni.8.t
 	desc = naleni.8.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.8.a
@@ -176,7 +170,6 @@ country_event = {
 	title = naleni.9.t
 	desc = naleni.9.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.9.a
@@ -198,7 +191,6 @@ country_event = {
 	title = naleni.10.t
 	desc = naleni.10.d
 	picture = MILITARY_CAMP_eventPicture
-	# fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = naleni.10.a
@@ -252,7 +244,7 @@ country_event = {
 			add_government_reform = naleni_thalassocracy_reform
 			add_stability = -2
 			if = {
-				limit = { has_country_flag = low_authority }
+				limit = { has_country_flag = L55_low_authority }
 				define_ruler = {
 					name = "Ríva"
 					dynasty = "Nephiuéda"
@@ -269,7 +261,7 @@ country_event = {
 					limit = {
 						check_variable = { rebelamount = 0 }
 					}
-					random_core_province = {
+					random_owned_province = {
 					spawn_rebels = {
 						size = 3
 						type = particularist_rebels
@@ -279,7 +271,7 @@ country_event = {
 				}
 			}
 			else_if = {
-				limit = { has_country_flag = med_authority }
+				limit = { has_country_flag = L55_med_authority }
 				define_ruler = {
 					name = "Ríva"
 					dynasty = "Nephiuéda"
@@ -296,9 +288,9 @@ country_event = {
 					limit = {
 						check_variable = { rebelamount = 0 }
 					}
-					random_core_province = {
+					random_owned_province = {
 					spawn_rebels = {
-						size = 3
+						size = 2
 						type = particularist_rebels
 						}
 					}
@@ -322,9 +314,9 @@ country_event = {
 					limit = {
 						check_variable = { rebelamount = 0 }
 					}
-					random_core_province = {
+					random_owned_province = {
 					spawn_rebels = {
-						size = 3
+						size = 1
 						type = particularist_rebels
 					}
 					}
@@ -348,17 +340,22 @@ country_event = {
 	picture = GREAT_SPIRIT_YANHE_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
+	immediate = {
+		random_owned_province = {
+			save_event_target_as = rebel_spawn_l55
+		}
+	}
 	option = {
 		name = naleni.12.a
 		if = {
-			limit = { has_country_flag = low_authority }
+			limit = { has_country_flag = L55_low_authority }
 			capital_scope = {
 				spawn_rebels = {
 					size = 3
 					type = particularist_rebels
 				}
 			}
-			random_core_province = {
+			event_target:rebel_spawn_l55 = {
 				spawn_rebels = {
 					size = 3
 					type = particularist_rebels
@@ -366,14 +363,14 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { has_country_flag = med_authority }
+			limit = { has_country_flag = L55_med_authority }
 			capital_scope = {
 				spawn_rebels = {
 					size = 2
 					type = particularist_rebels
 				}
 			}
-			random_core_province = {
+			event_target:rebel_spawn_l55 = {
 				spawn_rebels = {
 					size = 2
 					type = particularist_rebels
@@ -387,7 +384,7 @@ country_event = {
 					type = particularist_rebels
 				}
 			}
-			random_core_province = {
+			event_target:rebel_spawn_l55 = {
 				spawn_rebels = {
 					size = 1
 					type = particularist_rebels
@@ -982,12 +979,11 @@ country_event = {
 		tag = L55
 	}
 	option = {
-		name = naleni.33.a  
+		name = naleni.34.a  
 		ai_chance = { factor = 100 }
 		random_list = {
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -996,8 +992,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1006,8 +1001,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1016,8 +1010,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1026,8 +1019,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1036,8 +1028,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1046,8 +1037,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
@@ -1056,8 +1046,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1066,8 +1055,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1076,8 +1064,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1086,8 +1073,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1096,8 +1082,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1106,8 +1091,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1116,8 +1100,7 @@ country_event = {
 				}
 			}
 			1 = {
-				modifier = {
-					factor = 0
+				trigger = {
 					has_country_flag = L55_contest
 				}
 				country_event = { 
@@ -1156,6 +1139,7 @@ country_event = {
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5446
 		tag = L55
@@ -1170,9 +1154,6 @@ country_event = {
 		}
 		
 	}
-	mean_time_to_happen = {
-		days = 1
-	}
 }
 country_event = {
 	id = naleni.37 #yetsemira rebels
@@ -1180,6 +1161,7 @@ country_event = {
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5529
 		tag = L55
@@ -1194,9 +1176,6 @@ country_event = {
 		}
 		
 	}
-	mean_time_to_happen = {
-		days = 1
-	}
 }
 country_event = {
 	id = naleni.38 #dakmender rebels
@@ -1204,6 +1183,7 @@ country_event = {
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5505
 		tag =  L55
@@ -1218,9 +1198,6 @@ country_event = {
 		}
 		
 	}
-	mean_time_to_happen = {
-		days = 1
-	}
 }
 country_event = {
 	id = naleni.39 #biribitid rebels
@@ -1228,6 +1205,7 @@ country_event = {
 	desc = naleni.39.d
 	picture = GREAT_SPIRIT_YANHE_eventPicture
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		owns_core_province = 5504
 		tag = L55
@@ -1240,9 +1218,6 @@ country_event = {
 				size = 1
 			}
 		}
-	}
-	mean_time_to_happen = {
-		days = 1
 	}
 }
 

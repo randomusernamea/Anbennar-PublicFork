@@ -11636,26 +11636,23 @@ on_province_culture_changed = {
 	}
 	#naleni 
 	if = {
-		limit = {
-			owner = {
-				OR = {
-					has_country_modifier = L55_siren_songhalls_1 
-					has_country_modifier = L55_siren_songhalls_2 
-				}
-			}
-		}	
-		generic_add_race_minority_size_effect = { race = harpy }
-	}
-	if = {
-		limit = {
-			owner = {
-				OR = { has_country_modifier = L55_siren_songhalls_1 has_country_modifier = L55_siren_songhalls_2 }
-			}
-			NOT = { culture = metobesebi }
-			superregion = east_sarhal_superregion
-		}
-		change_culture = metobesebi
-	}
+        limit = {
+            owner = {
+                OR = {
+                    has_country_modifier = L55_siren_songhalls_1 
+                    has_country_modifier = L55_siren_songhalls_2 
+                }
+            }
+        }
+        generic_add_race_minority_size_effect = { race = harpy }
+        if = {
+            limit = {
+                NOT = { culture = metobesebi }
+                superregion = east_sarhal_superregion
+            }
+            change_culture = metobesebi
+        }
+    }
 }
 
 
@@ -16792,6 +16789,44 @@ on_core = { #ROOT - Province, #FROM - Country that gets the core
 			add_permanent_province_modifier = {
 				name = corinite_ryala_upgraded
 				duration = -1
+			}
+		}
+	}
+	#naleni rebels
+	if = {
+		limit = { 
+			owner = { tag = L55 }
+		}
+		if = {
+			limit = { 
+				ROOT = { province_id = 5446 } 
+			} #beri gnidi
+			country_event = {
+				id = naleni.36
+			}
+		}
+		if = {
+			limit = { 
+				ROOT = { province_id = 5529 }
+			} #yetsemira
+			country_event = {
+				id = naleni.37
+			}
+		}
+		if = {
+			limit = { 
+				ROOT = { province_id = 5505 }
+		 	} #dakmender
+			country_event = {
+				id = naleni.38
+			}
+		}
+		if = {
+			limit = { 
+				ROOT = { province_id = 5504 }
+		 	} #biribitid
+			country_event = {
+				id = naleni.39
 			}
 		}
 	}

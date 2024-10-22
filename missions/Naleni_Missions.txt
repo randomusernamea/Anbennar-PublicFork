@@ -131,11 +131,9 @@ Naleni_branch_two = {
 				area = emot_nepas_area
 				area = riyiwedeb_area
 			}
-			OR = {
-				AND = {
-					culture = ofehibi
-					NOT = { has_building = temple } 
-				}
+			AND = {
+				culture = ofehibi
+				NOT = { has_building = temple } 
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 		}
@@ -504,13 +502,13 @@ Naleni_branch_four = {
 				area = telekenid_islands_area
 				province_id = 4805
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+			NOT = { owned_by = ROOT } 
 		}
 
 		trigger = {
 			telekenid_islands_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 				is_core = ROOT
 			}
 			owns_core_province = 4805
@@ -591,7 +589,6 @@ Naleni_branch_four = {
 				}
 			}
 		}
-
 		effect = { country_event = { id = naleni.10 }  } 
 	}
 }
@@ -635,24 +632,19 @@ Naleni_branch_five = {
 		position = 5
 		required_missions = { new_fleets } 
 		provinces_to_highlight = {
-			ringlet_isles_region = {
-				type = all
-				owned_by = Y64
-			}
-			kiubang_area = {
-				type = all
-				not = { country_or_non_sovereign_subject_holds = ROOT } 
-			}
-			3247 = {
-				OR = {
-					not = { country_or_non_sovereign_subject_holds = ROOT } 
-					is_city = no
+			OR = { 
+				province_id = 1366
+				AND = {
+					region = ringlet_isles_region
+					owned_by = Y64
 				}
-			}
-			3248 = {
-				OR = {
-					not = { country_or_non_sovereign_subject_holds = ROOT } 
-					is_city = no
+				AND = {
+					OR = {
+						area = kiubang_area
+						province_id = 3247
+						province_id = 3248
+					}
+					NOT = { owned_by = ROOT }
 				}
 			}
 		}
@@ -660,7 +652,7 @@ Naleni_branch_five = {
 		trigger = {
 			kiubang_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 			ringlet_isles_region = {
 				type = all
@@ -1382,42 +1374,45 @@ naleni_branch_four_p2 = {
 		position = 11
 		required_missions = { further_afield } 
 		provinces_to_highlight = {
-			AND = {
-				1363 = {
-					NOT = {
+			OR = {
+				AND = {
+					province_id = 1363
+					NOT = { 
 						has_privateer_share_in_trade_node = {
 							who = ROOT
 							share = 0.1
 						}
 					}
 				}
-				3651 = {
-					NOT = {
+				AND = {
+					province_id = 3651
 						has_privateer_share_in_trade_node = {
 							who = ROOT
 							share = 0.1
 						}
-					}
 				}
-				6161 = {
-					OR = {
+				AND = {
+					province_id = 6161
 						NOT = { owned_by = ROOT } 
 						NOT = { is_core = ROOT } 
-					}
+					
 				}
 			}
 		}
 
 		trigger = {
-			total_own_and_non_tributary_subject_development = {
-				every_known_country = {
-					limit = {
+			all_known_country = {
+				OR = {
+					NOT = { 
 						capital_scope = {
 							OR = {
 								region = yanacotlele_region
 								region = anakuele_region
 							}
 						}
+					}
+					ROOT = {
+						total_own_and_non_tributary_subject_development = PREV
 					}
 				}
 			}
@@ -1457,7 +1452,7 @@ naleni_branch_four_p2 = {
 		position = 12
 		required_missions = { beyond_the_stormwall } 
 		provinces_to_highlight = {
-			6181 = {
+				province_id = 6181
 				OR = {
 					NOT = { has_building = courthouse } 
 					NOT = { has_building = dock } 
@@ -1469,7 +1464,7 @@ naleni_branch_four_p2 = {
 					NOT = { development = 30 } 
 				}
 			}
-		}
+		
 
 		trigger = {
 			6181 = {
