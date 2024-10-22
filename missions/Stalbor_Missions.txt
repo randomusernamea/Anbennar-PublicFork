@@ -25,14 +25,12 @@ B47_stalbor_column_1 = {
                     }
                     is_capital = yes
                 }
-                has_elven_minority_trigger = yes
-                has_elven_majority_trigger = yes
+                fast_has_pop_of_race = { race = elven }
                 AND = {
-                    area = banesfork_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = beastgrave_area
+                    OR = {
+                        area = banesfork_area
+                        area = beastgrave_area
+                    }
                     NOT = { owned_by = ROOT }
                 }
             }
@@ -53,10 +51,7 @@ B47_stalbor_column_1 = {
                 AND = {
                     high_tolerance_elven_race_trigger = yes
                     any_owned_province = {
-                        OR = {
-                            has_elven_minority_trigger = yes
-                            has_elven_majority_trigger = yes
-                        }
+                        fast_has_pop_of_race = { race = elven }
                     }
                 }
                 AND = {
@@ -77,15 +72,12 @@ B47_stalbor_column_1 = {
 
         effect = {
             banesfork_area = {
-                type = all
 				add_elven_minority_size_effect = yes
             }
             beastgrave_area = {
-                type = all
 				add_elven_minority_size_effect = yes
             }
             west_deepwoods_region = {
-                type = all
                 discover_country = B47
             }
             every_country = {
@@ -115,13 +107,11 @@ B47_stalbor_column_1 = {
 		}
 
         provinces_to_highlight = {
-			AND = {
-                owner = {
-                    has_country_modifier = elven_administration
-                }
-                is_capital = yes
-                region = west_deepwoods_region
+			owner = {
+                has_country_modifier = elven_administration
             }
+            is_capital = yes
+            region = west_deepwoods_region
 		}
 
         trigger = {
@@ -173,20 +163,15 @@ B47_stalbor_column_1 = {
 		}
 
         provinces_to_highlight = {
-			AND = {
-                OR = {
-                    has_elven_minority_trigger = yes
-                    has_elven_majority_trigger = yes
-                    has_orcish_majority_trigger = yes
-                    has_orcish_minority_trigger = yes
-                    has_goblin_majority_trigger = yes
-                    has_goblin_minority_trigger = yes
-                }
-                region = west_deepwoods_region
-                owner = {
-                    NOT = {
-                        is_subject_of = ROOT
-                    }
+			OR = {
+                fast_has_pop_of_race = { race = elven }
+                fast_has_pop_of_race = { race = orcish }
+                fast_has_pop_of_race = { race = goblin }
+            }
+            region = west_deepwoods_region
+            owner = {
+                NOT = {
+                    is_subject_of = ROOT
                 }
             }
 		}
@@ -201,52 +186,34 @@ B47_stalbor_column_1 = {
                 OR = {
                     OR = {
                         any_owned_province = {
-                            OR = {
-                                has_elven_majority_trigger = yes
-                                has_elven_minority_trigger = yes
-                            }
+                            fast_has_pop_of_race = { race = elven }
                         }
                         NOT = {
-                            any_province = {
-                                region = west_deepwoods_region
-                                OR = {
-                                    has_elven_majority_trigger = yes
-                                    has_elven_minority_trigger = yes
-                                }
+                            west_deepwoods_region = {
+                                type = all
+                                fast_has_pop_of_race = { race = elven }
                             }
                         }
                     }
                     OR = {
                         any_owned_province = {
-                            OR = {
-                                has_orcish_majority_trigger = yes
-                                has_orcish_minority_trigger = yes
-                            }
+                            fast_has_pop_of_race = { race = orcish }
                         }
                         NOT = {
-                            any_province = {
-                                region = west_deepwoods_region
-                                OR = {
-                                    has_orcish_majority_trigger = yes
-                                    has_orcish_minority_trigger = yes
-                                }
+                            west_deepwoods_region = {
+                                type = all
+                                fast_has_pop_of_race = { race = orcish }
                             }
                         }
                     }
                     OR = {
                         any_owned_province = {
-                            OR = {
-                                has_goblin_majority_trigger = yes
-                                has_goblin_minority_trigger = yes
-                            }
+                            fast_has_pop_of_race = { race = goblin }
                         }
                         NOT = {
-                            any_province = {
-                                region = west_deepwoods_region
-                                OR = {
-                                    has_goblin_majority_trigger = yes
-                                    has_goblin_minority_trigger = yes
-                                }
+                            west_deepwoods_region = {
+                                type = all
+                                fast_has_pop_of_race = { race = goblin }
                             }
                         }
                     }
@@ -298,11 +265,9 @@ B47_stalbor_column_1 = {
                 custom_tooltip = B47_settled_the_deepwood_stuff
                 has_country_flag = B47_the_matters_of_the_deepwoods_event
             }
-            calc_true_if = {
-                all_owned_province = {
-                    has_upgraded_watch_modifer = yes
-                }
-                amount = 4
+            num_of_owned_provinces_with = {
+                has_upgraded_watch_modifer = yes
+                value = 4
             }
             813 = {
                 owned_by = ROOT
@@ -357,27 +322,24 @@ B47_stalbor_column_1 = {
 		}
 
         provinces_to_highlight = {
-            AND = {
-                trade_goods = livestock
-                OR = {
-                    owned_by = ROOT
-                    owned_by_subject_of = ROOT
-                }
-                NOT = {
-                    AND = {
-                        development = 20
-                        has_manpower_building_trigger = yes
-                        has_forcelimit_building_trigger = yes
-                        has_manufactory_trigger = yes
-                    }
+            trade_goods = livestock
+            OR = {
+                owned_by = ROOT
+                owned_by_subject_of = ROOT
+            }
+            NOT = {
+                AND = {
+                    development = 20
+                    has_manpower_building_trigger = yes
+                    has_forcelimit_building_trigger = yes
+                    has_manufactory_trigger = yes
                 }
             }
         }
 
         trigger = {
             calc_true_if = {
-                all_province = {
-                    country_or_non_sovereign_subject_holds = ROOT
+                num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
                     trade_goods = livestock
                     development = 20
                     has_manpower_building_trigger = yes
@@ -420,15 +382,13 @@ B47_stalbor_column_2 = {
 		}
 
         provinces_to_highlight = {
-			AND = {
-                trade_goods = livestock
-                OR = {
-                    NOT = { owned_by = ROOT }
-                    NOT = {
-                        AND = {
-                            development = 10
-                            has_production_or_gold_building_trigger = yes
-                        }
+			trade_goods = livestock
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = {
+                    AND = {
+                        development = 10
+                        has_production_or_gold_building_trigger = yes
                     }
                 }
             }
@@ -486,11 +446,10 @@ B47_stalbor_column_2 = {
                 infantry_in_province = 3
                 infantry_in_province = ROOT
             }
-            calc_true_if = {
-                all_owned_province = {
-                    has_upgraded_watch_modifer = yes
-                }
-                amount = 2
+            
+            num_of_owned_provinces_with = {
+                has_upgraded_watch_modifer = yes
+                value = 2
             }
             has_estate_privilege = estate_adventurers_sponsor_monster_hunters
         }
@@ -547,7 +506,7 @@ B47_stalbor_column_2 = {
                 clr_country_flag = B47_vampire_lords_on_the_run
                 set_estate_privilege = estate_adventurers_stalbor_vampire_hunters
             }
-            all_owned_province = {
+            every_owned_province = {
                 limit = {
                     has_province_modifier = B47_old_lord_loyalists
                 }
@@ -568,15 +527,11 @@ B47_stalbor_column_2 = {
         provinces_to_highlight = {
 			OR = {
                 AND = {
-                    region = dostanor_region
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    region = daravans_folly_region
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    region = ourdia_region
+                    OR = {
+                        region = dostanor_region
+                        region = daravans_folly_region
+                        region = ourdia_region
+                    }
                     NOT = { owned_by = ROOT }
                 }
                 AND = {
@@ -722,304 +677,15 @@ B47_stalbor_column_2 = {
 		}
 
         provinces_to_highlight = {
-			OR = {
-                province_id = 8
-                province_id = 10
-                province_id = 52
-                province_id = 66
-                province_id = 67
-                province_id = 97
-                province_id = 126
-                province_id = 146
-                province_id = 216
-                province_id = 221
-                province_id = 229
-                province_id = 234
-                province_id = 265
-                province_id = 292
-                province_id = 306
-                province_id = 316
-                province_id = 352
-                province_id = 365
-                province_id = 696
-                province_id = 723
-                province_id = 740
-                province_id = 780
-                province_id = 840
-                province_id = 865
-                province_id = 904
-            }
+			province_group = stalbor_across_cannor_provinces
 		}
 
         trigger = {
             custom_trigger_tooltip = {
                 tooltip = B47_watch_needs_to_go_over_cannor
                 calc_true_if = {
-                    8 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    10 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    52 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    66 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    67 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    97 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    126 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    146 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    216 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    221 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    229 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    234 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    265 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    292 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    306 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    316 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    352 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    365 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    696 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    723 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    740 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    780 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    840 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    865 = {
-                        OR = {
-                            owned_by = ROOT
-                            owner = {
-                                has_opinion = {
-                                    who = ROOT
-                                    value = 150
-                                }
-                            }
-                        }
-                    }
-                    904 = {
+                    stalbor_across_cannor_provinces = {
+                        type = all
                         OR = {
                             owned_by = ROOT
                             owner = {
@@ -1098,19 +764,11 @@ B47_stalbor_column_3 = {
 
         provinces_to_highlight = {
 			OR = {
-                AND = {
-                    area = vernham_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = oudeben_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = clovenwood_area
-                    NOT = { owned_by = ROOT }
-                }
+                area = vernham_area
+                area = oudeben_area
+                area = clovenwood_area
             }
+            NOT = { owned_by = ROOT }
 		}
 
         trigger = {
@@ -1147,15 +805,12 @@ B47_stalbor_column_3 = {
                 }
             }
             blademarch_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
             banesfork_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
             beastgrave_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
             add_mil_power = -50
@@ -1206,15 +861,12 @@ B47_stalbor_column_3 = {
             add_manpower = -5
 
             themin_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
             humacvord_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
             burnoll_area = {
-                type = all
                 add_permanent_claim = ROOT
             }
         }
@@ -1230,20 +882,16 @@ B47_stalbor_column_3 = {
         provinces_to_highlight = {
 			OR = {
                 AND = {
+                    OR = {
+                        area = themin_area
+                        area = humacvord_area
+                        area = burnoll_area
+                    }
+                    NOT = { owned_by = ROOT }
+                }
+                AND = {
                     owned_by = ROOT
                     NOT = { has_manpower_building_trigger = yes }
-                }
-                AND = {
-                    area = themin_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = humacvord_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = burnoll_area
-                    NOT = { owned_by = ROOT }
                 }
                 AND = {
                     owner = {
@@ -1334,7 +982,6 @@ B47_stalbor_column_3 = {
                 duration = 9125
             }
             south_castanor_region = {
-                type = all
                 add_permanent_claim = ROOT
             }
         }
@@ -1349,19 +996,12 @@ B47_stalbor_column_3 = {
         provinces_to_highlight = {
 			OR = {
                 AND = {
-                    area = dostans_way_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = devaced_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = catelsvord_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = oudmerewood_area
+                    OR = {
+                        area = dostans_way_area
+                        area = devaced_area
+                        area = catelsvord_area
+                        area = oudmerewood_area
+                    }
                     NOT = { owned_by = ROOT }
                 }
                 AND = {
@@ -1414,7 +1054,6 @@ B47_stalbor_column_3 = {
                 discover_country = ROOT
             }
             daravans_folly_region = {
-                type = all
                 discover_country = ROOT
                 add_permanent_claim = ROOT
             }
@@ -1470,14 +1109,12 @@ B47_stalbor_column_3 = {
                 owned_by = ROOT
                 is_core = ROOT
             }
-            calc_true_if = {
-                all_owned_province = {
-                    region = daravans_folly_region
-                    has_port = yes
-                    has_shipyard_building_trigger = yes
-                    has_dock_building_trigger = yes
-                }
-                amount = 4
+            num_of_owned_provinces_with = {
+                region = daravans_folly_regio
+                has_port = yes
+                has_shipyard_building_trigger = yes
+                has_dock_building_trigger = yes
+                value = 4
             }
             navy_size_percentage = 0.50
         }
@@ -1533,31 +1170,15 @@ B47_stalbor_column_4 = {
         provinces_to_highlight = {
 			OR = {
                 AND = {
-                    area = escerfork_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = swapstoke_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = medirleigh_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = hornwood_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = dryadsdale_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = doewood_area
-                    NOT = { owned_by = ROOT }
-                }
-                AND = {
-                    area = marrhold_area
+                    OR = {
+                        area = escerfork_area
+                        area = swapstoke_area
+                        area = medirleigh_area
+                        area = hornwood_area
+                        area = dryadsdale_area
+                        area = doewood_area
+                        area = marrhold_area
+                    }
                     NOT = { owned_by = ROOT }
                 }
                 AND = {
@@ -2837,14 +2458,8 @@ B47_stalbor_column_5 = {
             hidden_effect = {
                 every_owned_province = {
                     limit = {
-                        OR = { 
-                            has_orcish_majority_trigger = yes
-                            has_orcish_minority_trigger = yes
-                        }
-                        OR = {
-                            has_human_majority_trigger = yes
-                            has_human_minority_trigger = yes
-                        }
+                        fast_has_pop_of_race = { race = orcish }
+                        fast_has_pop_of_race = { race = human }
                     }
                     add_half_orcish_minority_size_effect = yes
                 }
@@ -2876,11 +2491,9 @@ B47_stalbor_column_5 = {
                 }
                 AND = {
                     OR = {
-                        has_orcish_minority_trigger = yes
-                        has_half_orcish_majority_trigger = yes
-                        has_half_orcish_minority_trigger = yes
-                        has_goblin_majority_trigger = yes
-                        has_goblin_minority_trigger = yes
+                        fast_has_pop_of_race = { race = orcish }
+                        fast_has_pop_of_race = { race = half_orcish }
+                        fast_has_pop_of_race = { race = goblin }
                     }
                     NOT = { development = 7 }
                     devastation = 1
@@ -2894,20 +2507,15 @@ B47_stalbor_column_5 = {
             808 = {
                 has_upgraded_watch_modifer = yes
             }
-            calc_true_if = {
-                all_owned_province = {
-                    OR = {
-                        has_orcish_majority_trigger = yes
-                        has_orcish_minority_trigger = yes
-                        has_half_orcish_majority_trigger = yes
-                        has_half_orcish_minority_trigger = yes
-                        has_goblin_majority_trigger = yes
-                        has_goblin_minority_trigger = yes
-                    }
-                    development = 7
-                    NOT = { devastation = 1 }
+            num_of_owned_provinces_with = {
+                OR = {
+                    fast_has_pop_of_race = { race = orcish }
+                    fast_has_pop_of_race = { race = half_orcish }
+                    fast_has_pop_of_race = { race = goblin }
                 }
-                amount = 4
+                development = 7
+                NOT = { devastation = 1 }
+                value = 4
             }
             treasury = 100
         }

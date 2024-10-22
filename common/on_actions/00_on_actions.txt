@@ -16142,6 +16142,20 @@ on_expanded_infrastructure = {
 		F23_apply_improved_trading_post = yes
 	}
 	owner = { accretive_path_generic_chi_stacking_effect = { amount = 40 } }
+	if = {
+		limit = {
+			FROM = {
+				AND = {
+					has_reform = book_of_stone
+					NOT = {
+						has_country_modifier = arturo_meny_open
+					}
+				}
+			}
+			has_province_modifier = arturos_watch_chapter
+		}
+		province_event = { id = flavor_stalbor.2 }
+	}
 }
 
 #ROOT = province that was centralized in

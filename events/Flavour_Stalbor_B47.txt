@@ -108,13 +108,11 @@ province_event = {
 						value = 4
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_oversight_I
-							has_country_modifier = arturos_oversight_II
-							check_variable = {
-								which = B47_adm_branch_count
-								value = 5
-							}
+						has_country_modifier = arturos_oversight_I
+						has_country_modifier = arturos_oversight_II
+						check_variable = {
+							which = B47_adm_branch_count
+							value = 5
 						}
 					}	
 				}
@@ -134,12 +132,10 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_oversight_II
-							check_variable = {
-								which = B47_adm_branch_count
-								value = 10
-							}
+						has_country_modifier = arturos_oversight_II
+						check_variable = {
+							which = B47_adm_branch_count
+							value = 10
 						}
 					}	
 				}
@@ -177,13 +173,11 @@ province_event = {
 						value = 4
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_army_I
-							has_country_modifier = arturos_army_II
-							check_variable = {
-								which = B47_mil_branch_count
-								value = 5
-							}
+						has_country_modifier = arturos_army_I
+						has_country_modifier = arturos_army_II
+						check_variable = {
+							which = B47_mil_branch_count
+							value = 5
 						}
 					}	
 				}
@@ -203,12 +197,10 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_army_II
-							check_variable = {
-								which = B47_mil_branch_count
-								value = 10
-							}
+						has_country_modifier = arturos_army_II
+						check_variable = {
+							which = B47_mil_branch_count
+							value = 10
 						}
 					}	
 				}
@@ -249,13 +241,11 @@ province_event = {
 						value = 4
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_navy_I
-							has_country_modifier = arturos_navy_II
-							check_variable = {
-								which = B47_naval_branch_count
-								value = 5
-							}
+						has_country_modifier = arturos_navy_I
+						has_country_modifier = arturos_navy_II
+						check_variable = {
+							which = B47_naval_branch_count
+							value = 5
 						}
 					}	
 				}
@@ -275,12 +265,10 @@ province_event = {
 						value = 9
 					}
 					NOT = {
-						OR = {
-							has_country_modifier = arturos_navy_II
-							check_variable = {
-								which = B47_naval_branch_count
-								value = 10
-							}
+						has_country_modifier = arturos_navy_II
+						check_variable = {
+							which = B47_naval_branch_count
+							value = 10
 						}
 					}
 				}
@@ -563,43 +551,6 @@ country_event = {
 	}
 }
 
-#country_event = {
-#	id = flavor_stalbor.7
-#	title = flavor_stalbor.7.t
-#	desc = flavor_stalbor.7.d
-#	
-#	is_triggered_only = yes
-#	hidden = yes
-#	
-#	trigger = {
-#		always = yes
-#	}
-#	
-#	option = {		
-#		name = "flavor_stalbor.7.a"
-#		ai_chance = { factor = 1 }	
-#		country_event = {
-#			id = flavor_stalbor.7
-#			days = 7
-#		}
-#	}
-#	option = {		
-#		name = "flavor_stalbor.7.a"
-#		ai_chance = { factor = 99 }	
-#		trigger = {
-#			ROOT = {
-#				NOT = {
-#					num_of_rebel_armies = 1
-#				}
-#			}
-#		}
-#		country_event = {
-#			id = flavor_stalbor.6
-#			days = 1
-#		}
-#	}
-#}
-
 country_event = {
 	id = flavor_stalbor.8
 	title = flavor_stalbor.8.t
@@ -624,7 +575,6 @@ country_event = {
 		}
 		change_religion = FROM
 		west_deepwoods_region = {
-			type = all
             add_permanent_claim = ROOT
 		}
 		add_country_modifier = {
@@ -791,43 +741,6 @@ country_event = {
 		}
 	}
 }
-
-#country_event = {
-#	id = flavor_stalbor.11
-#	title = flavor_stalbor.11.t
-#	desc = flavor_stalbor.11.d
-#	
-#	is_triggered_only = yes
-#	hidden = yes
-#	
-#	trigger = {
-#		always = yes
-#	}
-#	
-#	option = {		
-#		name = "flavor_stalbor.11.a"
-#		ai_chance = { factor = 1 }	
-#		country_event = {
-#			id = flavor_stalbor.11
-#			days = 7
-#		}
-#	}
-#	option = {		
-#		name = "flavor_stalbor.11.a"
-#		ai_chance = { factor = 99 }	
-#		trigger = {
-#			all_subject_country = {
-#				NOT = {
-#					num_of_rebel_armies = 1
-#				}
-#			}
-#		}
-#		country_event = {
-#			id = flavor_stalbor.12
-#			days = 1
-#		}
-#	}
-#}
 
 country_event = {
 	id = flavor_stalbor.12
@@ -1063,7 +976,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 		add_dip_power = -50
 		dostanor_region = {
-			type = all
             add_permanent_claim = ROOT
 		}
 		country_event = {
@@ -1459,6 +1371,7 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1470,6 +1383,7 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1497,6 +1411,7 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1508,6 +1423,7 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1535,6 +1451,7 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1546,6 +1463,7 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1573,6 +1491,7 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1584,6 +1503,7 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1611,6 +1531,7 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1622,6 +1543,7 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
                     who = ROOT
@@ -1992,151 +1914,10 @@ country_event = {
 		ai_chance = { factor = 100 }
 		custom_tooltip = B47_watch_goes_all_over_cannor
 		hidden_effect = {
-			8 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
+			every_province = {
+				limit = {
+					province_group = stalbor_across_cannor_provinces
 				}
-			}
-			10 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			52 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			66 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			67 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			97 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			126 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			146 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			216 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			221 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			229 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			234 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			265 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			292 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			306 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			316 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			352 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			365 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			696 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			723 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			740 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			780 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			840 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			865 = {
-				add_permanent_province_modifier = {
-					name = arturos_watch_chapter
-					duration = -1
-				}
-			}
-			904 = {
 				add_permanent_province_modifier = {
 					name = arturos_watch_chapter
 					duration = -1
@@ -2256,7 +2037,6 @@ country_event = {
 		name = "flavor_stalbor.32.b"
 		ai_chance = { factor = 10 }
 		inner_castanor_region = {
-			type = all
             add_permanent_claim = ROOT
 		}
 	}
@@ -2281,10 +2061,20 @@ country_event = {
 			add_dwarven_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_dwarven = yes
+				}
+			}
 			add_dwarven_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_dwarven = yes
+				}
+			}
 			add_dwarven_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2316,10 +2106,20 @@ country_event = {
 			add_elven_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_elven = yes
+				}
+			}
 			add_elven_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_elven = yes
+				}
+			}
 			add_elven_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2351,10 +2151,20 @@ country_event = {
 			add_gnomish_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_gnomish = yes
+				}
+			}
 			add_gnomish_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_gnomish = yes
+				}
+			}
 			add_gnomish_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2386,10 +2196,20 @@ country_event = {
 			add_halfling_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_halfling = yes
+				}
+			}
 			add_halfling_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_halfling = yes
+				}
+			}
 			add_halfling_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2415,10 +2235,20 @@ country_event = {
 			add_gnollish_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_gnollish = yes
+				}
+			}
 			add_gnollish_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_gnollish = yes
+				}
+			}
 			add_gnollish_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2450,10 +2280,20 @@ country_event = {
 			add_harpy_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_harpy = yes
+				}
+			}
 			add_harpy_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_harpy = yes
+				}
+			}
 			add_harpy_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2485,10 +2325,20 @@ country_event = {
 			add_kobold_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_kobold = yes
+				}
+			}
 			add_kobold_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_kobold = yes
+				}
+			}
 			add_kobold_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2520,10 +2370,20 @@ country_event = {
 			add_troll_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_troll = yes
+				}
+			}
 			add_troll_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_troll = yes
+				}
+			}
 			add_troll_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2551,12 +2411,22 @@ country_event = {
 			add_prosperity = 50
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_centaur = yes
+				}
+			}
 			add_centaur_minority_size_effect = yes
 			add_random_development = 1
 			add_devastation = -100
 			add_prosperity = 50
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_centaur = yes
+				}
+			}
 			add_centaur_minority_size_effect = yes
 			add_random_development = 1
 			add_devastation = -100
@@ -2591,10 +2461,20 @@ country_event = {
 			add_harimari_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_harimari = yes
+				}
+			}
 			add_harimari_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_harimari = yes
+				}
+			}
 			add_harimari_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2632,10 +2512,20 @@ country_event = {
 			add_lizardfolk_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_lizardfolk = yes
+				}
+			}
 			add_lizardfolk_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_lizardfolk = yes
+				}
+			}
 			add_lizardfolk_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2668,10 +2558,20 @@ country_event = {
 			add_random_development = 3
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_ogre = yes
+				}
+			}
 			add_ogre_minority_size_effect = yes
 			add_random_development = 3
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_ogre = yes
+				}
+			}
 			add_ogre_minority_size_effect = yes
 			add_random_development = 3
 		}
@@ -2706,10 +2606,20 @@ country_event = {
 			add_ruinborn_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_ruinborn = yes
+				}
+			}
 			add_ruinborn_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_ruinborn = yes
+				}
+			}
 			add_ruinborn_minority_size_effect = yes
 			add_random_development = 1
 		}
@@ -2742,10 +2652,20 @@ country_event = {
 			add_hobgoblin_minority_size_effect = yes
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_hobgoblin = yes
+				}
+			}
 			add_hobgoblin_minority_size_effect = yes
 			add_random_development = 1
 		}
 		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_is_hobgoblin = yes
+				}
+			}
 			add_hobgoblin_minority_size_effect = yes
 			add_random_development = 1
 		}
