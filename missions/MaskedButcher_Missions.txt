@@ -721,15 +721,10 @@ maskedbutcher_missions_4b = {
 				capital_scope = {
 					province_has_center_of_trade_of_level = 3
 				}
-				AND = {
-					arg_ordstun_area = {
-						type = all
-						owned_by = ROOT
-					}
-					kings_caverns_area = {
-						type = all
-						owned_by = ROOT
-					}
+				arg_ordstun_area = {
+					type = all
+					owned_by = ROOT
+					is_city = yes
 				}
 			}
 			orlghelovar_area = {
@@ -2150,8 +2145,10 @@ maskedbutcher_missions_5d = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = mb_elf_or_goblin_crafted_tt
-				has_country_flag = elven_mask_1
-				has_country_flag = goblin_mask_1
+				OR = {
+					has_country_flag = elven_mask_1
+					has_country_flag = goblin_mask_1
+				}
 			}
 			num_of_owned_provinces_with = {
 				value = 30
