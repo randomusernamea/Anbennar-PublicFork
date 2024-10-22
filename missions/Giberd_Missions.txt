@@ -617,39 +617,69 @@ giberd_ryalanar_conquest = {
 		
 		provinces_to_highlight = {
 			OR = {
-				area = konwell_area
-				area = ryalanar_area
-			}
-			NOT = {
 				AND = {
-					owned_by = ROOT
-					is_core = ROOT
+					area = konwell_area
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							is_core = ROOT
+							has_state_edict = edict_advancement_effort
+							has_courthouse_building_trigger = yes
+							has_temple_building_trigger = yes
+						}
+					}
+				}
+
+				AND = {
+					area = ryalanar_area
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				AND = {
+					province_id = 265
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
+						}
+					}
 				}
 			}
 		}
 		
 		trigger = {
-			prestige = 50
 			konwell_area = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
+				has_state_edict = edict_advancement_effort
+				has_courthouse_building_trigger = yes
+				has_temple_building_trigger = yes
 			}
 			ryalanar_area = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
+			265 = {
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+			}
 		}
 		
 		effect = {
-			esmaria_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+			265 = {
+				add_province_modifier = {
+					name = giberd_start_of_the_giberd_dockyards
+					duration = -1
 				}
-				add_permanent_claim = ROOT
 			}
+			country_event = { id = flavor_giberd.30	}
+			hidden_effect = { id = flavor_giberd.20 days = 365 }
 		}
 	}
 

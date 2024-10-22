@@ -1,7 +1,9 @@
 
 # Giberd MT events
 # 1-9: old events
-# 10-50: reworked giberd MT events
+# 10-19: mission flavour events
+# 20-29: electorate event chain
+# 30-39: artificer faction events
 
 namespace = flavor_giberd
 
@@ -315,5 +317,39 @@ country_event = {
 		name = flavor_giberd.12.a
 		add_prestige = -20
 		add_historical_rival = A44
+	}
+}
+
+########
+# electorate event chain
+
+# The Art of Promises, Paycheques and Propositions
+country_event = {
+	id = flavor_giberd.20
+	title = flavor_giberd.20.t
+	desc = flavor_giberd.20.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.20.a
+	}
+}
+
+
+########
+# artificer faction events
+
+
+# The Imperial Archive
+country_event = {
+	id = flavor_giberd.30
+	title = flavor_giberd.30.t
+	desc = flavor_giberd.30.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.30.a
 	}
 }
