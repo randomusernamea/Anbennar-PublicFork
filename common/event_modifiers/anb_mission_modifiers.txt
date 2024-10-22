@@ -30700,9 +30700,22 @@ gushuokguan_stone_forts = {
 	defensiveness = 0.1
 }
 
+gushuokguan_alliance_of_yellow_and_blue = {
+	improve_relation_modifier = 0.1
+}
+
+gushoukguan_true_liberation_for_the_peasants = {
+	discipline = 0.025
+}
+
 gushuokguan_writing_a_new_oath = {
 	monthly_reform_progress = -0.2
 	all_estate_loyalty_equilibrium = 0.05
+}
+
+gushuokguan_economic_buff = {
+	global_tax_income = 0.1
+	production_efficiency = 0.15
 }
 
 gushuokguan_guardians_of_the_stone_state = {
@@ -30784,4 +30797,34 @@ gushuokguan_trade_power_of_the_yan = {
 gushuokguan_influx_of_foreign_men = {
 	manpower_recovery_speed = 0.15
 	mercenary_manpower = 0.25
+}
+
+gushuokguan_dao_normal_buff = {
+	reduced_liberty_desire = -10
+	vassal_forcelimit_bonus = 0.15
+	vassal_income = 0.05
+}
+
+gushuokguan_dao_upgraded_buff = {
+	reduced_liberty_desire = -20
+	vassal_forcelimit_bonus = 0.25
+	vassal_income = 0.15
+}
+
+gushuokguan_dao_diplomatic_relations_buff = {
+	diplomatic_upkeep = 1
+}
+
+gushuokguan_dao_republican_tradition_buff = {
+	republican_tradition = 0.5
+}
+
+gushuokguan_stronger_together = {
+	local_production_efficiency = 0.1
+	local_development_cost = -0.1
+	local_unrest = -2
+}
+
+gushuokguan_drill_army_modifier = {
+	drill_gain_modifier = 0.1
 }

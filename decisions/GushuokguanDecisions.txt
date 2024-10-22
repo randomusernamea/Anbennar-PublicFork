@@ -14,10 +14,6 @@ country_decisions = {
 				add_company_manpower = 0.15
 			}
 		}
-		ai_will_do = {
-			factor = 1
-			# England, France, Barbary Coast
-		}
 	}
 
 	gushuokguan_release_guwaamud = {
@@ -33,7 +29,11 @@ country_decisions = {
 			}
 		}
 		effect = {
-			create_vassal = Y96 #Guwaamud
+			release = Y96 #Guwaamud
+			create_subject = {
+				subject_type = dao
+				subject = Y96 #Guwaamud
+			}
 			clr_country_flag = gushuokguan_can_release_guwaamud
 		}
 	}
@@ -51,7 +51,11 @@ country_decisions = {
 			}
 		}
 		effect = {
-			create_vassal = Y03 #Hubao
+			release = Y03 #Hubao
+			create_subject = {
+				subject_type = dao
+				subject = Y03 #Hubao
+			}
 			clr_country_flag = gushuokguan_can_release_hubao
 		}
 	}
@@ -69,7 +73,11 @@ country_decisions = {
 			}
 		}
 		effect = {
-			create_vassal = Y23 #Zyujyut
+			release = Y23 #Zyujyut
+			create_subject = {
+				subject_type = dao
+				subject = Y23 #Zyujyut
+			}
 			clr_country_flag = gushuokguan_can_release_zyujyut
 		}
 	}
@@ -87,7 +95,11 @@ country_decisions = {
 			}
 		}
 		effect = {
-			create_vassal = Y99 #One Xia
+			release = Y99 #One Xia
+			create_subject = {
+				subject_type = dao
+				subject = Y99 #One Xia
+			}
 			clr_country_flag = gushuokguan_can_release_one_xia
 		}
 	}

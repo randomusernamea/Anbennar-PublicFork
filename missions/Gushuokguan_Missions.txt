@@ -25,7 +25,21 @@ gushuokguan_1 = {
 			}
 		}
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = gushuokguan_economic_buff
+				duration = 7300
+			}
+			custom_tooltip = gushuokguan_immigration_events_tt
+			random_list = {
+				1 = { country_event = { id = gushuokguan_event.11 } } #Migrants come to X
+				1 = { country_event = { id = gushuokguan_event.12 } } #Migrant Clash in X
+				1 = { country_event = { id = gushuokguan_event.13 } } #Migrants Clash with Locals
+				1 = { country_event = { id = gushuokguan_event.14 } } #Migrants Thrive
+				1 = { country_event = { id = gushuokguan_event.15 } } #Stronger Together
+				1 = { country_event = { id = gushuokguan_event.16 } } #Migratory Mercenaries
+			}
+		} 
 	}
 
 	gushuokguan_1_3 = {
@@ -631,8 +645,6 @@ gushuokguan_3 = {
 			country_event = {
 				id = gushuokguan_event.1 #An Alliance of Convenience
 			}
-			add_historical_friend = Y05 #Lanjinhui
-			Y05 = { add_historical_friend = ROOT } #Lanjinhui #Gushuokguan
 			
 			custom_tooltip = feitenEmpty
 			
@@ -768,7 +780,12 @@ gushuokguan_3 = {
 					liuminxiang_area = { country_or_non_sovereign_subject_holds = ROOT }
 					erluxi_area = { country_or_non_sovereign_subject_holds = ROOT }
 				}
-				create_vassal = Y05 #Lanjinhui
+				release = Y05 #Lanjinhui
+				create_subject = {
+					subject_type = dao
+					subject = Y05 #Lanjinhui
+				}
+				add_adm_power = 100
 			}
 		} 
 	}
@@ -874,7 +891,11 @@ gushuokguan_3 = {
 		}
 
 		effect = {
-			create_vassal = Y10 #Yingzhen
+			release = Y10 #Yingzhen
+			create_subject = {
+				subject_type = dao
+				subject = Y10 #Yingzhen
+			} 
 			every_owned_province = {
 				limit = {
 					OR = {
@@ -1083,6 +1104,11 @@ gushuokguan_4 = {
 				name = gushuokguan_writing_a_new_oath
 				duration = 1825
 			}
+			hidden_effect = {
+				country_event = {
+					id = gushuokguan_event.6 #The Triple Alliance
+				}
+			}
 		} 
 	}
 
@@ -1277,7 +1303,11 @@ gushuokguan_4 = {
 		} 
 
 		effect = {  
-			create_vassal = Y20 #Feiten
+			release = Y20 #Feiten
+			create_subject = {
+				subject_type = dao
+				subject = Y20 #Feiten
+			} 
 			4871 = { #Tianlou
 				add_unit_construction = {
 					type = light_ship
@@ -1355,7 +1385,20 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_4_6 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_6_stone_army_challenges_tt
+				calc_true_if = {
+					mission_completed = gushuokguan_1_7
+					mission_completed = gushuokguan_1_9
+					mission_completed = gushuokguan_2_9
+					mission_completed = gushuokguan_3_7
+					mission_completed = gushuokguan_3_9
+					mission_completed = gushuokguan_4_9
+					amount = 6
+				}
+			}
+		} 
 
 		effect = { country_event = { id = gushuokguan_event.20 } } #TODO
 	}
@@ -1588,7 +1631,7 @@ gushuokguan_5 = {
 
 		trigger = {  
 			all_subject_country = {
-				#total_development = 800 #Not like this
+				total_development = 150
 				NOT = { liberty_desire = 10 }
 				has_opinion = {
 					who = ROOT #Gushuokguan

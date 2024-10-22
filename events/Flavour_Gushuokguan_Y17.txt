@@ -9,13 +9,17 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
+	trigger = { }
 	
 	option = {
 		name = gushuokguan_event.1.a
 		ai_chance = { factor = 1 }
+		add_historical_friend = Y05 #Lanjinhui
+		Y05 = { add_historical_friend = ROOT } #Lanjinhui #Gushuokguan
+		add_country_modifier = {
+			name = gushuokguan_alliance_of_yellow_and_blue
+			duration = 3650
+		}
 	}
 }
 
@@ -28,13 +32,15 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
+	trigger = {}
 	
 	option = {
 		name = gushuokguan_event.2.a
 		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = gushoukguan_true_liberation_for_the_peasants
+			duration = 3650
+		}
 	}
 }
 
@@ -47,13 +53,16 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
+	trigger = {}
 	
 	option = {
 		name = gushuokguan_event.3.a
 		ai_chance = { factor = 1 }
+		add_army_tradition = 10
+		add_country_modifier = {
+			name = gushuokguan_drill_army_modifier
+			duration = 5475
+		}
 	}
 }
 
@@ -66,13 +75,25 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
+	trigger = {}
 	
 	option = {
 		name = gushuokguan_event.4.a
 		ai_chance = { factor = 1 }
+		create_vassal = Y05
+		random_list = {
+			1 = {}
+			1 = {
+				Y05 = { #Lanjinhui
+					capital_scope = {
+						spawn_rebels = {
+							type = leadered_peasant_rebels
+							size = 2
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -85,17 +106,34 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.5.a
 		ai_chance = { factor = 1 }
+		random_list = {
+			2 = { 
+				create_vassal = Y05 #Lanjinhui
+				Y05 = { #Lanjinhui
+					capital_scope = {
+						spawn_rebels = {
+							type = leadered_peasant_rebels
+							size = 2
+						}
+					}
+				}
+			} 
+			8 = {
+				declare_war_with_cb = {
+					who = Y05 #Lanjinhui
+					casus_belli = cb_vassalize_mission
+				}
+			}
+		}
 	}
 }
 
-#
+#The Triple Alliance
 country_event = {
 	id = gushuokguan_event.6
 	title = gushuokguan_event.6.t
@@ -104,13 +142,18 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.6.a
 		ai_chance = { factor = 1 }
+		add_government_reform = the_stone_jun
+		hidden_effect = {
+			set_variable = {
+				which = election_term
+				value = 1
+			}
+		}
 	}
 }
 
@@ -123,13 +166,19 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.7.a
 		ai_chance = { factor = 1 }
+		create_subject = {
+			subject_type = dao
+			subject = Y05 #Lanjinhui
+		}
+		iongsim_area = {
+			add_permanent_claim = ROOT #Gushuokguan
+		}
+		set_estate_privilege = estate_eunuchs_anb_confederal_administrative_cadre
 	}
 }
 
@@ -142,13 +191,13 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.8.a
 		ai_chance = { factor = 1 }
+		clear_adventurers_organization_effect = yes
+		set_estate_privilege = estate_adventurers_organization_stone_army
 	}
 }
 
@@ -161,17 +210,15 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.9.a
 		ai_chance = { factor = 1 }
 	}
 }
 
-#Confederal Council
+#
 country_event = {
 	id = gushuokguan_event.10
 	title = gushuokguan_event.10.t
@@ -180,112 +227,243 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.10.a
 		ai_chance = { factor = 1 }
+		
 	}
 }
 
-#Confederal Council
+#Migrants come to X
 country_event = {
 	id = gushuokguan_event.11
 	title = gushuokguan_event.11.t
 	desc = gushuokguan_event.11.d
 	picture = CHINESE_GENERAL_eventPicture
+	goto = event_target:gushuokguan_migration_target
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
+	trigger = { }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = gushuokguan_migration_target
+			}
+		}
 	}
 	
 	option = {
 		name = gushuokguan_event.11.a
 		ai_chance = { factor = 1 }
+		event_target:gushuokguan_migration_target = {
+			add_random_development = 1
+			random_list = {
+				90 = {} #Empty
+				10 = {
+					random_list = {
+						1 = {
+							trigger = { has_harimari_majority_trigger = no }
+							add_harimari_minority_size_effect = yes
+						}
+						1 = {
+							trigger = { has_human_majority_trigger = no }
+							add_human_minority_size_effect = yes
+						}
+						1 = {
+							add_kobold_minority_size_effect = yes
+						}
+						1 = {
+							add_elven_minority_size_effect = yes
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
-#Confederal Council
+#Migrant Clash in X
 country_event = {
 	id = gushuokguan_event.12
 	title = gushuokguan_event.12.t
 	desc = gushuokguan_event.12.d
 	picture = CHINESE_GENERAL_eventPicture
+	goto = event_target:gushuokguan_migration_target
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
+	trigger = { }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = gushuokguan_migration_target
+			}
+		}
 	}
-	
+
 	option = {
 		name = gushuokguan_event.12.a
 		ai_chance = { factor = 1 }
+		event_target:gushuokguan_migration_target = {
+			random_list = {
+				9 = {} #Empty
+				1 = {
+					random_list = {
+						1 = {
+							trigger = { has_harimari_minority_trigger = yes }
+							remove_harimari_minority_size_effect = yes
+						}
+						1 = {
+							trigger = { has_human_minority_trigger = no }
+							remove_human_minority_size_effect = yes
+						}
+						1 = {
+							trigger = { has_kobold_minority_trigger = no }
+							remove_kobold_minority_size_effect = yes
+						}
+						1 = {
+							trigger = { has_elven_minority_trigger = no }
+							remove_elven_minority_size_effect = yes
+						}
+					}
+				}
+			}
+			random_list = {
+				4 = {} #Empty
+				1 = { add_random_development = -1 }
+			}
+			random_list = {
+				1 = {} #Empty 
+				1 = { add_devastation = 10 }
+			}
+		}
 	}
 }
 
-#Confederal Council
+#Migrants Clash with Locals
 country_event = {
 	id = gushuokguan_event.13
 	title = gushuokguan_event.13.t
 	desc = gushuokguan_event.13.d
 	picture = CHINESE_GENERAL_eventPicture
+	goto = event_target:gushuokguan_migration_target
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
+	trigger = { }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = gushuokguan_migration_target
+			}
+		}
 	}
-	
+
 	option = {
 		name = gushuokguan_event.13.a
 		ai_chance = { factor = 1 }
+		event_target:gushuokguan_migration_target = {
+			random_list = {
+				4 = {} #Empty
+				1 = { add_random_development = -1 }
+			}
+			random_list = {
+				1 = {} #Empty 
+				1 = { add_devastation = 10 }
+			}
+		}
 	}
 }
 
-#Confederal Council
+#Migrants Thrive
 country_event = {
 	id = gushuokguan_event.14
 	title = gushuokguan_event.14.t
 	desc = gushuokguan_event.14.d
 	picture = CHINESE_GENERAL_eventPicture
+	goto = event_target:gushuokguan_migration_target
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
+	trigger = { }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = gushuokguan_migration_target
+			}
+		}
 	}
 	
 	option = {
 		name = gushuokguan_event.14.a
 		ai_chance = { factor = 1 }
+		event_target:gushuokguan_migration_target = {
+			add_random_development = 2
+			random_list = {
+				90 = {} #Empty
+				10 = {
+					random_list = {
+						1 = {
+							trigger = { has_harimari_majority_trigger = no }
+							add_harimari_minority_size_effect = yes
+						}
+						1 = {
+							trigger = { has_human_majority_trigger = no }
+							add_human_minority_size_effect = yes
+						}
+						1 = {
+							add_kobold_minority_size_effect = yes
+						}
+						1 = {
+							add_elven_minority_size_effect = yes
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
-#Confederal Council
+#Stronger Together
 country_event = {
 	id = gushuokguan_event.15
 	title = gushuokguan_event.15.t
 	desc = gushuokguan_event.15.d
 	picture = CHINESE_GENERAL_eventPicture
+	goto = event_target:gushuokguan_migration_target
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
+	trigger = { }
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = gushuokguan_migration_target
+			}
+		}
 	}
 	
 	option = {
-		name = gushuokguan_event.15.a
+		name = gushuokguan_event.14.a
 		ai_chance = { factor = 1 }
+		event_target:gushuokguan_migration_target = {
+			add_province_modifier = {
+				name = gushuokguan_stronger_together
+				duration = 7300
+			}
+		}
 	}
 }
 
-#Confederal Council
+#Migratory Mercenaries
 country_event = {
 	id = gushuokguan_event.16
 	title = gushuokguan_event.16.t
@@ -294,13 +472,12 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.16.a
 		ai_chance = { factor = 1 }
+		add_yearly_manpower = 0.5
 	}
 }
 
@@ -313,10 +490,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.17.a
 		ai_chance = { factor = 1 }
@@ -332,10 +507,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.18.a
 		ai_chance = { factor = 1 }
@@ -351,10 +524,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.19.a
 		ai_chance = { factor = 1 }
@@ -371,10 +542,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.31.a
 		ai_chance = { factor = 1 }
@@ -390,10 +559,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.32.a
 		ai_chance = { factor = 1 }
@@ -409,10 +576,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.33.a
 		ai_chance = { factor = 1 }
@@ -428,10 +593,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.34.a
 		ai_chance = { factor = 1 }
@@ -447,10 +610,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.35.a
 		ai_chance = { factor = 1 }
@@ -466,10 +627,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.36.a
 		ai_chance = { factor = 1 }
@@ -485,10 +644,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.37.a
 		ai_chance = { factor = 1 }
@@ -505,10 +662,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.51.a
 		ai_chance = { factor = 1 }
@@ -524,10 +679,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.52.a
 		ai_chance = { factor = 1 }
@@ -543,10 +696,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.53.a
 		ai_chance = { factor = 1 }
@@ -562,10 +713,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.54.a
 		ai_chance = { factor = 1 }
@@ -581,10 +730,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.55.a
 		ai_chance = { factor = 1 }
@@ -600,10 +747,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.56.a
 		ai_chance = { factor = 1 }
@@ -619,10 +764,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.57.a
 		ai_chance = { factor = 1 }
@@ -638,10 +781,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.58.a
 		ai_chance = { factor = 1 }
@@ -657,10 +798,8 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger =	{
-		always = yes
-	}
-	
+	trigger = {}
+
 	option = {
 		name = gushuokguan_event.59.a
 		ai_chance = { factor = 1 }
