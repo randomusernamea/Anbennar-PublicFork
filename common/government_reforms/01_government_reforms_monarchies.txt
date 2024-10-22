@@ -12187,10 +12187,7 @@ gronstunad_sovereign_empire = {
 	icon = "states_general"
 	allow_normal_conversion = no
 	potential = {
-		OR = {
-			was_tag = I22
-			tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 		is_revolutionary = no
 		has_country_flag = gronstunad_sovereign_1
 	}
@@ -12212,10 +12209,7 @@ gronstunad_sovereign_of_haless = {
 	icon = "states_general"
 	allow_normal_conversion = no
 	potential = {
-		OR = {
-			was_tag = I22
-			tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 		is_revolutionary = no
 		has_country_flag = gronstunad_sovereign_2
 	}
