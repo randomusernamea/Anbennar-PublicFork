@@ -156,14 +156,18 @@ country_event = {
 			duration = 3560
 		}
 		add_treasury = -50
-		capital_scope = {
+		random_owned_province = {
+			limit = {
+				infantry_in_province = 2
+				infantry_in_province = ROOT
+			}
 			kill_units = {
 				who = owner
 				type = infantry
 				amount = 2
 			}
-			rajput_infantry = A81
-			rajput_infantry = A81
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
 		}
 		custom_tooltip = giberd_unable_to_research_10
 		custom_tooltip = giberd_ae_gnomish_minority_tt
@@ -195,14 +199,18 @@ country_event = {
 			}
 		}
 		add_treasury = -50
-		capital_scope = {
+		random_owned_province = {
+			limit = {
+				infantry_in_province = 2
+				infantry_in_province = ROOT
+			}
 			kill_units = {
 				who = owner
 				type = infantry
 				amount = 2
 			}
-			rajput_infantry = A81
-			rajput_infantry = A81
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
 		}
 		custom_tooltip = giberd_unable_to_research_10 # TODO: Implement
 		custom_tooltip = giberd_ae_gnomish_minority_tt
@@ -236,6 +244,57 @@ country_event = {
 			}
 		}
 		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+	}
+
+}
+
+
+#Silver Linings are Laced in Gold
+country_event = {
+	id = flavor_giberd.11
+	title = flavor_giberd.11.t
+	desc = flavor_giberd.11.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_giberd.11.a
+		add_favors = {
+			who = A73
+			amount = 20
+		}
+		if = {
+			limit = { has_dlc = "The Cossacks" }
+			add_country_modifier = {
+				name = giberd_silverforge_favour_accepted
+				duration = 3650
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					infantry_in_province = 2
+					infantry_in_province = ROOT
+				}
+				kill_units = {
+					who = owner
+					type = infantry
+					amount = 2
+				}
+				rajput_infantry = ROOT
+				rajput_infantry = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = flavor_giberd.11.b
+		add_country_modifier = {
+			name = giberd_silverforge_favour_rejected
+			duration = 5475
+		}
+
 	}
 
 }
