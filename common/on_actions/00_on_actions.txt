@@ -15709,9 +15709,25 @@ on_slacken_start = {
             duration = -1
         }
     }
+	if = {
+		limit = {
+			tag = A95
+			ai = no
+			has_country_flag = sailors_when_slacken
+		}
+		add_country_modifier = { name = sailors_when_slacken duration = -1 }
+	}
 }
 on_slacken_stop = {
 	remove_country_modifier = slackening_modifier
+	if = {
+		limit = {
+			tag = A95
+			ai = no
+			has_country_flag = sailors_when_slacken
+		}
+		remove_country_modifier = sailors_when_slacken
+	}
 }
 
 on_colony_finished = { #ROOT - Province

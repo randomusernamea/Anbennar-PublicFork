@@ -13205,3 +13205,23 @@ virtuous_cults_reform = {
 		virtuous_cults_upgrade = yes
 	}
 }
+imperial_esmari_circle = {
+	icon = "map"
+	allow_normal_conversion = no
+	potential = {
+		has_country_flag = unlocked_imperial_esmari_circle
+		capital_scope = { region = esmaria_region }
+	}
+	lock_level_when_selected = yes
+	modifiers = {
+		trade_efficiency = 0.1
+		development_cost_in_primary_culture = -0.10
+		diplomatic_annexation_cost = -0.1
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	effect = {
+		custom_tooltip = a95_esmari_circle.tt
+	}
+}
