@@ -31,12 +31,11 @@ country_culture_can_participate_in_escanni_wars = {
 		primary_culture = rugan_orc
 		primary_culture = barumand_orc
 		primary_culture = ungulan_orc
-		has_country_flag = formed_escanni_goblin_nation_flag #The goblins don't have a special culture
-		AND = { #Weird requirement, but if we don't check for at least 1 city the war is bypassed by an invisible orcish tag
-			primary_culture = green_orc
-			num_of_cities = 1
-		}
+		primary_culture = forest_goblin
+		primary_culture = common_goblin
+		primary_culture = green_orc
 	}
+	num_of_cities = 1
 }
 
 # If these are update the decision must also be updated
