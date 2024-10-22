@@ -351,6 +351,8 @@ province_event = {
 					random_gender = yes
 				}
 			}
+			custom_tooltip = summon_blood_moon_unlock_tt
+			set_country_flag = mb_blood_moon_flg
 		}
 	}
 }
@@ -416,8 +418,6 @@ country_event = {
 			change_religion = ROOT
 		}
 		add_government_reform = rights_razorblessed_reform
-		custom_tooltip = summon_blood_moon_unlock_tt
-		set_country_flag = mb_blood_moon_flg
 	}
 }
 
