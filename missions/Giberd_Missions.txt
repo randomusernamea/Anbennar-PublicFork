@@ -513,11 +513,11 @@ giberd_ryalanar_conquest = {
 				name = giberd_construction_of_gds_loopeng_gedsandde
 				duration = 1825
 			}
+			custom_tooltip = giberd_giberd_construction_of_gds_loopeng_gedsandde_tt
 			add_country_modifier = {
 				name = giberd_gds_loopeng_gedsandde
 				duration = -1
 			}
-			custom_tooltip = giberd_giberd_construction_of_gds_loopeng_gedsandde_tt
 			hidden_effect = {
 				subtract_variable = {
 					which = artifice_max_invention_slots
@@ -544,23 +544,64 @@ giberd_ryalanar_conquest = {
 		position = 4
 		
 		provinces_to_highlight = {
-			area = ryalanar_area
-			NOT = {
-				owned_by = ROOT
+			OR = {
+				AND = {
+					area = bennonhill_area
+					OR = {
+						NOT = { is_prosperous = yes }
+						NOT = { owned_by = ROOT }
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 901
+						AND = {
+							region = esmaria_region
+							has_terrain = city_terrain
+						}
+					}
+					NOT = { is_state_core = ROOT }
+				}
+				AND = {
+					province_id = 271
+					NOT = { province_has_center_of_trade_of_level = 2 }
+				}
 			}
 		}
 		
 		trigger = {
-			ryalanar_area = {
+			bennonhill_area = {
 				type = all
+				is_prosperous = yes
 				owned_by = ROOT
 			}
+			901 = { is_state_core = ROOT }
+			esmaria_region = {
+				type = all
+				OR = {
+					NOT = { has_terrain = city_terrain }
+					is_state_core = ROOT
+				}
+			}
+			army_size = 30
+			271 = { province_has_center_of_trade_of_level = 2 }
+			treasury = 500
 		}
 		
 		effect = {
-			add_power_projection = {
-				type = mission_rewards_power_projection
-				amount = 20
+			271 = {
+				add_province_modifier = {
+					name = giberd_regional_capital_of_esmaria
+					duration = -1
+				}
+
+			}
+			if = {
+				limit = {
+					NOT = { 271 = { province_has_center_of_trade_of_level = 3 } }
+				}
+				271 = { add_center_of_trade_level = 1 }
+				add_treasury = -500
 			}
 		}
 	}
