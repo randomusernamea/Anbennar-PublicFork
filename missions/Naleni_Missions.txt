@@ -789,13 +789,15 @@ naleni_branch_two_p2 = {
 				has_adm_advisor_3 = yes
 			}
 		}
-		add_country_modifier = {
-			name = L55_siren_songhalls_2
-			duration = -1
-		}
-		decrease_monstrous_10 = yes
-		hidden_effect = {
-			remove_country_modifier = L55_siren_songhalls_1
+		effect = {
+			add_country_modifier = {
+				name = L55_siren_songhalls_2
+				duration = -1
+			}
+			decrease_monstrous_10 = yes
+			hidden_effect = {
+				remove_country_modifier = L55_siren_songhalls_1
+			}
 		}
 	}
 
@@ -1323,31 +1325,15 @@ naleni_branch_four_p2 = {
 
 		effect = {
 			6040 = {
-				limit = {
-					NOT = { is_core = ROOT } 
-					NOT = { owned_by = ROOT } 
-				}
 				add_permanent_claim = ROOT
 			}
 			4847 = {
-				limit = {
-					NOT = { is_core = ROOT } 
-					NOT = { owned_by = ROOT } 
-				}
 				add_permanent_claim = ROOT
 			}
 			6674 = {
-				limit = {
-					NOT = { is_core = ROOT } 
-					NOT = { owned_by = ROOT } 
-				}
 				add_permanent_claim = ROOT
 			}
 			6161 = {
-				limit = {
-					NOT = { is_core = ROOT } 
-					NOT = { owned_by = ROOT } 
-				}
 				add_permanent_claim = ROOT
 			}
 			5581 = {
@@ -1452,18 +1438,18 @@ naleni_branch_four_p2 = {
 		position = 12
 		required_missions = { beyond_the_stormwall } 
 		provinces_to_highlight = {
-				province_id = 6181
-				OR = {
-					NOT = { has_building = courthouse } 
-					NOT = { has_building = dock } 
-					NOT = { has_building = shipyard } 
-					NOT = { has_building = temple } 
-					NOT = { has_province_modifier = harpy_roost } 
-					NOT = { owned_by = L55 } 
-					NOT = { is_core = L55 } 
-					NOT = { development = 30 } 
-				}
+			province_id = 6181
+			OR = {
+				NOT = { has_building = courthouse } 
+				NOT = { has_building = dock } 
+				NOT = { has_building = shipyard } 
+				NOT = { has_building = temple } 
+				NOT = { has_province_modifier = harpy_roost } 
+				NOT = { owned_by = L55 } 
+				NOT = { is_core = L55 } 
+				NOT = { development = 30 } 
 			}
+		}
 		
 
 		trigger = {

@@ -16799,34 +16799,42 @@ on_core = { #ROOT - Province, #FROM - Country that gets the core
 		}
 		if = {
 			limit = { 
-				ROOT = { province_id = 5446 } 
+				province_id = 5446 
 			} #beri gnidi
-			country_event = {
-				id = naleni.36
+			owner = {
+				country_event = {
+					id = naleni.36
+				}
 			}
 		}
 		if = {
 			limit = { 
-				ROOT = { province_id = 5529 }
+				province_id = 5529 
 			} #yetsemira
-			country_event = {
+			owner = {
+				country_event = {
 				id = naleni.37
+				}
 			}
 		}
 		if = {
 			limit = { 
-				ROOT = { province_id = 5505 }
+				province_id = 5505 
 		 	} #dakmender
-			country_event = {
+			owner = {
+				country_event = {
 				id = naleni.38
+				}
 			}
 		}
 		if = {
 			limit = { 
-				ROOT = { province_id = 5504 }
+				province_id = 5504 
 		 	} #biribitid
-			country_event = {
-				id = naleni.39
+			owner = {
+				country_event = {
+					id = naleni.39
+				}
 			}
 		}
 	}
