@@ -430,8 +430,12 @@ giberd_ryalanar_conquest = {
 		position = 2
 		
 		provinces_to_highlight = {
-			region = esmaria_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			owner = {
+				total_development = ROOT
+				capital_scope = {
+					region = esmaria_region
+				}
+			}
 		}
 		trigger = {
 			OR = {
@@ -439,13 +443,12 @@ giberd_ryalanar_conquest = {
 					value = 6
 					region = esmaria_region
 				}
-				esmaria_region = {
-					limit = {
-						is_capital = yes
-					}
-					owner = {
-						NOT = {
-							total_development = ROOT
+				custom_trigger_tooltip = {
+					tooltip = giberd_not_just_a_mere_cog_tt
+					all_known_country = {
+						OR = {
+							NOT = {	total_development = ROOT }
+							NOT = { capital_scope = { region = esmaria_region} }
 						}
 					}
 				}
