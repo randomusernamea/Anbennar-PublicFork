@@ -439,10 +439,6 @@ giberd_ryalanar_conquest = {
 		}
 		trigger = {
 			OR = {
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 6
-					region = esmaria_region
-				}
 				custom_trigger_tooltip = {
 					tooltip = giberd_not_just_a_mere_cog_tt
 					all_known_country = {
@@ -451,6 +447,10 @@ giberd_ryalanar_conquest = {
 							NOT = { capital_scope = { region = esmaria_region} }
 						}
 					}
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					region = esmaria_region
 				}
 			}
 			OR = {
@@ -482,7 +482,7 @@ giberd_ryalanar_conquest = {
 			}
 			hidden_effect = {
 				country_event = {
-					name = flavor_giberd.12
+					id = flavor_giberd.12
 					days = 90
 				}
 			}
@@ -498,26 +498,39 @@ giberd_ryalanar_conquest = {
 		position = 3
 		
 		provinces_to_highlight = {
-			area = cann_esmar_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
 		
 		trigger = {
-			cann_esmar_area = {
-				type = all
-				owned_by = ROOT
-			}
+			artifice_has_points_20 = yes
+			artifice_has_invention_slot = yes # TODO: two invention slots withour using a VAR?
+			num_society_artifice_inventions_discovered = { VAL = 2 }
+			gold_income = 20
 		}
 		
 		effect = {
-			ryalanar_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+			# TODO: "is unable to remove society inventions for 5 years"
+			add_country_modifier = {
+				name = giberd_construction_of_gds_loopeng_gedsandde
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = giberd_gds_loopeng_gedsandde
+				duration = -1
+			}
+			custom_tooltip = giberd_giberd_construction_of_gds_loopeng_gedsandde_tt
+			hidden_effect = {
+				subtract_variable = {
+					which = artifice_max_invention_slots
+					value = 2
 				}
-				add_permanent_claim = ROOT
+				change_variable = {
+					which = StaticArtificePoints
+					value = -20
+				}
+				country_event = {
+					id = flavor_giberd.13
+					days = 1825
+				}
 			}
 		}
 	}

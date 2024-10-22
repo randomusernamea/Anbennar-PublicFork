@@ -65,6 +65,43 @@ artifice_has_points_40 = {
 	}
 }
 
+num_society_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_discovered_tooltip_$VAL$
+
+		#Tier 1 Society
+		has_country_flag = unlocked_artifice_invention_viewcatcher
+		has_country_flag = unlocked_artifice_invention_sending_stones
+		has_country_flag = unlocked_artifice_invention_centipedal_chests
+		has_country_flag = unlocked_artifice_invention_living_mirrors
+		has_country_flag = unlocked_artifice_invention_apparitional_communicator
+		has_country_flag = unlocked_artifice_invention_mystic_ciphers
+		has_country_flag = unlocked_artifice_invention_fey_spray
+		has_country_flag = unlocked_artifice_invention_scrapperclaws
+		has_country_flag = unlocked_artifice_invention_great_processor
+		has_country_flag = unlocked_artifice_invention_conversation_calibrator
+
+		#Tier 2 Society
+		has_country_flag = unlocked_artifice_invention_remedial_tinctures
+		has_country_flag = unlocked_artifice_invention_arithmatons
+		has_country_flag = unlocked_artifice_invention_burrower_arms
+		has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+		has_country_flag = unlocked_artifice_invention_talking_god_temples
+		has_country_flag = unlocked_artifice_invention_empire_engine
+		has_country_flag = unlocked_artifice_invention_mirage_detector_3000
+		has_country_flag = unlocked_artifice_invention_think_thought_transmitters
+		has_country_flag = unlocked_artifice_invention_game_of_khet
+
+		#Tier 3 Society
+		has_country_flag = unlocked_artifice_invention_crierless_crier_device
+		has_country_flag = unlocked_artifice_invention_divendancer_speedboat
+		has_country_flag = unlocked_artifice_invention_bureaucratizer
+		has_country_flag = unlocked_artifice_invention_runethought_network
+		has_country_flag = unlocked_artifice_invention_negotiation_nexus
+	}
+}
+
 num_artifice_inventions_discovered = {
 	calc_true_if = {
 		amount = $VAL$
@@ -356,6 +393,7 @@ artifice_has_invention_slot = {
 		}
 	}
 }
+
 
 artifice_can_select_invention_10 = {
 	artifice_has_invention_slot = yes
