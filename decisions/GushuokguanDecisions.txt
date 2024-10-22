@@ -62,14 +62,14 @@ country_decisions = {
 			has_country_flag = gushuokguan_can_release_zyujyut
 		}
 		allow = {
-			NOT = { exists = Y96 } #Zyujyut
+			NOT = { exists = Y23 } #Zyujyut
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = shuvuushudi_region
 				value = 15
 			}
 		}
 		effect = {
-			create_vassal = Y96 #Zyujyut
+			create_vassal = Y23 #Zyujyut
 			clr_country_flag = gushuokguan_can_release_zyujyut
 		}
 	}

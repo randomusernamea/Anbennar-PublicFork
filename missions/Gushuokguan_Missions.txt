@@ -224,10 +224,21 @@ gushuokguan_1 = {
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 				infantry_in_province = 10
 				artillery_in_province = 10
-				#What are Stone Army Challenges???
 			}
 			Y03 = { #Hubao
 				NOT = { liberty_desire = 1 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_4_stone_army_challenges_tt
+				calc_true_if = {
+					mission_completed = gushuokguan_1_7
+					mission_completed = gushuokguan_2_9
+					mission_completed = gushuokguan_3_7
+					mission_completed = gushuokguan_3_9
+					mission_completed = gushuokguan_4_7
+					mission_completed = gushuokguan_4_9
+					amount = 4
+				}
 			}
 		} 
 
@@ -513,7 +524,18 @@ gushuokguan_2 = {
 			4838 = { #Wongpou
 				infantry_in_province = 20
 			}
-			#What are stone army challenges?
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_4_stone_army_challenges_tt
+				calc_true_if = {
+					mission_completed = gushuokguan_1_7
+					mission_completed = gushuokguan_1_9
+					mission_completed = gushuokguan_3_7
+					mission_completed = gushuokguan_3_9
+					mission_completed = gushuokguan_4_7
+					mission_completed = gushuokguan_4_9
+					amount = 4
+				}
+			}
 		} 
 
 		effect = {
@@ -769,7 +791,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -784,7 +806,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -799,7 +821,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -814,7 +836,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -828,7 +850,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -842,7 +864,7 @@ gushuokguan_3 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { devastation = 0.01 }
-					unrest = 0
+					NOT = { unrest = 0 }
 					if = { 
 						limit = { ROOT = { has_parliament = yes } } 
 						has_seat_in_parliament = yes 
@@ -959,7 +981,18 @@ gushuokguan_3 = {
 				has_production_building_trigger = yes
 				has_manpower_building_trigger = yes
 			}
-			#What are stone army challenges?
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_2_stone_army_challenges_tt
+				calc_true_if = {
+					mission_completed = gushuokguan_1_7
+					mission_completed = gushuokguan_1_9
+					mission_completed = gushuokguan_2_9
+					mission_completed = gushuokguan_3_7
+					mission_completed = gushuokguan_4_7
+					mission_completed = gushuokguan_4_9
+					amount = 2
+				}
+			}
 		} 
 
 		effect = {  
@@ -1194,7 +1227,7 @@ gushuokguan_4 = {
 					is_capital = no
 				}
 				NOT = { devastation = 0.01 } 
-				unrest = 0
+				NOT = { unrest = 0 }
 				if = {
 					limit = { ROOT = { has_parliament = yes }  } 
 						has_seat_in_parliament = yes 
@@ -1234,7 +1267,7 @@ gushuokguan_4 = {
 					has_province_modifier = autonomy_increased
 				}
 				NOT = { devastation = 0.01 }
-				unrest = 0
+				NOT = { unrest = 0 }
 				if = { 
 					limit = { ROOT = { has_parliament = yes } } 
 					has_seat_in_parliament = yes 
@@ -1365,7 +1398,7 @@ gushuokguan_4 = {
 			hidden_effect = {
 				set_country_flag = gushuokguan_flying_pebbles
 				set_variable = {
-					which = gushokguan_flying_pebbles_siege_counter
+					which = gushokguan_siege_counter
 					value = 0
 				}
 			}
@@ -1379,7 +1412,19 @@ gushuokguan_4 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {  
-
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_won_10_sieges_tt
+				check_variable = {
+					which = gushokguan_siege_counter
+					value = 10
+				}
+			}
+			any_war_enemy_country = { #I could do this with another variable to make it more true to the draft. I won't.
+				num_of_owned_provinces_with = {
+					has_province_modifier = scorched_earth
+					value = 20
+				}
+			}
 		} 
 
 		effect = {  
@@ -1560,6 +1605,12 @@ gushuokguan_5 = {
 			country_event = {
 				id = gushuokguan_event.9 #Confederal Council
 			}
+			hidden_effect = {
+				set_variable = {
+					which = gushuokguan_event_counter
+					value = 0
+				}
+			}
 		} 
 	}
 
@@ -1573,9 +1624,32 @@ gushuokguan_5 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_had_5_events_tt
+				check_variable = {
+					which = gushuokguan_event_counter
+					value = 5
+				}
+			}
+			army_size_percentage = 0.8
+			AND = {
+				Y03 = { vassal_of = ROOT } #Hubao
+				Y10 = { vassal_of = ROOT } #Yingzhen
+				Y23 = { vassal_of = ROOT } #Zyujyut
+				Y96 = { vassal_of = ROOT } #Guwaamud
+			}
+			yanshen_superregion = {
+				country_or_non_sovereign_subject_holds = ROOT #Gushokguan
+				NOT = { devastation = 0.01 }
+			}
+		}
 
-		effect = {  } 
+		effect = {  
+			country_event = {
+				id = gushuokguan_event.20
+			}
+		} 
 	}
 
 	gushuokguan_5_7 = {
@@ -1584,8 +1658,72 @@ gushuokguan_5 = {
 		required_missions = { gushuokguan_5_6 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_civil_war_ended_tt
+				OR = {
+					has_country_flag = gushuokguan_civil_war_federalist_won
+					has_country_flag = gushuokguan_civil_war_confederalist_won
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_5_7_tt
+				all_owned_province = {
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { unrest = 0 }
+				}
+				trade_node_provinces = {
+					province_has_center_of_trade_of_level = 2
+					has_trade_building_trigger = yes
+				}
+				capital_scope = {
+					development = 30
+					has_building = state_house
+				}
+			}
+			all_subject_country = {
+				all_owned_province = {
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
+					NOT = { unrest = 0 }
+				}
+				trade_node_provinces = {
+					province_has_center_of_trade_of_level = 2
+					has_trade_building_trigger = yes
+				}
+				capital_scope = {
+					development = 30
+					has_building = state_house
+				}
+			}
+			adm_power = 300
+			dip_power = 300
+			mil_power = 300
+			government_reform_progress = 100
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_adm_power = -300
+			add_dip_power = -300
+			add_mil_power = -300
+			change_government_reform_progress = -100
+			if = {
+				limit = { has_country_flag = gushuokguan_civil_war_federalist_won }
+				#Todo after coding subjects and events
+			}
+			if = {
+				limit = { has_country_flag = gushuokguan_civil_war_confederalist_won }
+				#Todo after coding subjects and events
+			}
+			custom_tooltip = gushuokguan_can_release_one_xia_tt
+			hidden_effect = {
+				set_country_flag = gushuokguan_can_release_one_xia
+			}
+		} 
 	}
 }

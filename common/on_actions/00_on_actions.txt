@@ -2186,6 +2186,21 @@ on_siege_won_country = {
 		}
 		ROOT = { accretive_path_beikling_chi_stacking_effect = { amount = 15 } }
 	}
+
+	#Gushuokguan Siege Counter
+	if = {
+		limit = {
+			has_country_flag = gushuokguan_flying_pebbles
+			any_hired_mercenary_company = { #It's hired, so it can only be ROOT's
+				template = flying_pebbles
+				location = FROM
+			}
+		}
+		change_variable = {
+			which = gushuokguan_siege_counter
+			value = 1
+		}
+	}
 }
 
 # country
