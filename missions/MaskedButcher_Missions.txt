@@ -1359,9 +1359,12 @@ maskedbutcher_missions_3d = {
 			}
 			OR = {
 				spymaster = 2
-				employed_advisor = {
-					category = DIP
-					skill = 3
+				custom_trigger_tooltip = {
+					tooltip = mb_level_3_advisor_tt
+					employed_advisor = {
+						category = DIP
+						skill = 3
+					}
 				}
 			}
 		}
