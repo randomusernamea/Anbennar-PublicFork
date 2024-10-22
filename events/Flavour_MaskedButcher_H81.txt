@@ -232,14 +232,6 @@ country_event = {
 			}
 		}
 		remove_country_modifier = mb_otar_on_the_move
-		define_ruler = {
-			name = "Anarchy!"
-			dynasty = " "
-			adm = 0
-			dip = 0
-			mil = 0
-			regency = yes
-		}
 	}
 }
 
@@ -271,6 +263,7 @@ country_event = {
 		custom_tooltip = blood_frenzy_unlock_tt
 		custom_tooltip = prepare_mask_unlock_tt
 		set_country_flag = mb_prepare_mask_flg
+		set_country_flag = level_2_masks_unlock_flg
 		4033 = {
 			change_trade_goods = damestear
 			set_province_flag = permanent_damestear 
@@ -320,6 +313,14 @@ country_event = {
 			mb_set_ptm = { ptm_name = mb_ap_butcherbane move_timer = 90 }
 		}
 		add_government_reform = otaric_succession_reform
+		define_ruler = {
+			name = "Anarchy!"
+			dynasty = " "
+			adm = 0
+			dip = 0
+			mil = 0
+			regency = yes
+		}
 	}
 }
 
@@ -339,6 +340,17 @@ province_event = {
 			set_country_flag = butcherbane_dead
 			set_country_flag = mb_drowninthedeep_flg 
 			swap_non_generic_missions = yes
+			if = {
+				limit = { has_ruler = "Anarchy!" }
+				define_ruler = {
+					min_age = 18
+					max_age = 35
+					change_adm = 1
+					change_dip = 1
+					change_mil = 3
+					random_gender = yes
+				}
+			}
 		}
 	}
 }
@@ -456,6 +468,7 @@ country_event = {
 		custom_tooltip = ichortap_buff_tt
 		set_country_flag = mb_buffed_ichortap_flg
 		set_estate_privilege = estate_mages_great_fey_mask
+		custom_tooltip = great_fey_mask_tt
 	}
 }
 
@@ -471,7 +484,41 @@ country_event = {
 	option = {
 		name = flavour_maskedbutcher.14.a
 		hidden_effect = { save_global_event_target_as = masked_butcher_target }
-		601 = { province_event = { id = flavour_maskedbutcher.15 } }
+		if = {
+			limit = {
+				601 = {
+					owned_by = ROOT
+				}
+			}
+			custom_tooltip = mb_magic_price_tt
+			hidden_effect = {
+				601 = {
+					add_base_tax = -5
+					add_base_production = -5
+					add_base_manpower = -5
+					add_devastation = 100
+					add_province_modifier = {
+						name = mb_the_price
+						duration = 36500
+					}
+				}
+			}
+			custom_tooltip = mb_wish_magic_tt
+			hidden_effect = {
+				event_target:masked_butcher_target = {
+					every_owned_province = {
+						limit = { superregion = bulwar_superregion }
+						add_province_modifier = {
+							name = mb_last_wish
+							duration = 7300
+						}
+					}
+				}
+			}
+		}
+		else = {
+			601 = { province_event = { id = flavour_maskedbutcher.15 } }
+		}
 	}
 }
 
@@ -528,7 +575,7 @@ province_event = {
 
 	option = {
 		name = flavour_maskedbutcher.15.b
-		trigger = { owner = { ai = no NOT = { tag = H81 was_tag = H81 } } }
+		trigger = { owner = { ai = no } }
 	}
 }
 
@@ -794,6 +841,7 @@ country_event = {
 	option = {
 		name = flavour_maskedbutcher.22.a
 		set_estate_privilege = estate_mages_all_mask
+		custom_tooltip = bonus_level_3_capacity_tt
 	}
 }
 
@@ -891,6 +939,10 @@ province_event = {
 					limit = {
 						NOT = {
 							has_province_modifier = mb_ap_damned_four
+							has_terrain = cavern
+							province_id = 2944
+							province_id = 534
+							province_id = 511
 						}
 					}
 					mb_set_ptm = { ptm_name = mb_ap_damned_four move_timer = 730 }
@@ -1011,7 +1063,7 @@ province_event = {
 	}
 
 	option = {
-		name = flavour_maskedbutcher.44.a
+		name = flavour_maskedbutcher.45.a
 		custom_tooltip = halfling_mask_1_unlock_tt
 		owner = { set_country_flag = halfling_mask_1 }
 	}
@@ -1271,73 +1323,29 @@ province_event = {
 }
 
 #DEBUG
-#country_event = {
-#	id = flavour_maskedbutcher.69
-#	title = flavour_maskedbutcher.69.t
-#	desc = flavour_maskedbutcher.69.d
-#	picture = ARTWORK_eventPicture
-#	
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.a
-#		set_country_flag = mb_keepers_razor_flg
-#		set_country_flag = mb_arok_ankash_flg
-#		set_country_flag = has_vampires_estate
-#		set_country_flag = remove_vampire_masquerade
-#		set_country_flag = remove_vampire_expell_landowners
-#		set_country_flag = remove_vampire_ownership
-#		set_estate_privilege = estate_vampires_organisation_listless_drinkers
-#		set_country_flag = mb_dark_below_flg
-#		set_country_flag = mb_falsedragon_flg
-#		set_country_flag = mb_drowninthedeep_flg
-#		set_country_flag = mb_drowndrowndrown_flg
-#		swap_non_generic_missions = yes
-#		set_country_flag = mb_ichortap_flg
-#		set_country_flag = hill_ogre_de_flg
-#		set_country_flag = swamp_ogre_de_flg
-#		set_country_flag = cave_troll_de_flg
-#		set_country_flag = mb_new_reserves_flg
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.b
-#		set_estate_privilege = estate_vampires_organisation_purpose_of_the_blade
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.c
-#		set_country_flag = mb_prepare_mask_flg
-#		set_country_flag = mb_blood_moon_flg
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.e
-#		set_country_flag = harimari_mask_1
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.f
-#		set_country_flag = harpy_mask_1
-#		set_country_flag = harpy_mask_2
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.g
-#		set_country_flag = hobgoblin_mask_1
-#		set_country_flag = hobgoblin_mask_2
-#		set_country_flag = hobgoblin_mask_3
-#		set_country_flag = human_mask_1
-#		set_country_flag = human_mask_2
-#		set_country_flag = human_mask_3
-#	}
-#
-#	option = {
-#		name = flavour_maskedbutcher.69.h
-#		add_government_reform = otaric_succession_reform
-#		add_government_reform = rights_razorblessed_reform
-#	}
-#}
+country_event = {
+	id = flavour_maskedbutcher.69
+	title = flavour_maskedbutcher.69.t
+	desc = flavour_maskedbutcher.69.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_maskedbutcher.69.a
+		set_country_flag = mb_reserve_menu_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.69.b
+		set_country_flag = level_2_masks_unlock_flg
+	}
+	
+	option = {
+		name = flavour_maskedbutcher.69.b
+		set_country_flag = level_3_masks_unlock_flg
+	}
+}
 
 #New Ruler Event
 country_event = {
@@ -2358,5 +2366,229 @@ country_event = {
 		clr_country_flag = mb_unlucky_twice_flg 
 		clr_country_flag = mb_unlucky_thrice_flg
 		clr_country_flag = mb_absolutely_devastating_flg
+	}
+}
+
+country_event = {
+	id = flavour_maskedbutcher.115
+	title = flavour_maskedbutcher.115.t
+	desc = flavour_maskedbutcher.115.d
+	picture = BIG_STAR_IN_SKY_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_maskedbutcher.115.a
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.b
+		trigger = {
+			has_country_flag = cave_troll_de_flg
+			greatcavern_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		custom_tooltip = cute_troll_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { area = greatcavern_area }
+				change_culture = cave_troll
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = cute_ogre_reserve_flag
+			}
+		}
+		clr_country_flag = cave_troll_de_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.c
+		trigger = {
+			has_country_flag = mb_new_reserves_flg
+			NOT = { has_country_flag = hobgoblin_reserve_done_flg }
+			fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+			kradhungur_area = {
+				type = all
+				owned_by = ROOT
+			}
+			tamvihar_area = {
+				type = all
+				owned_by = ROOT
+			}
+			gronstunad_area = {
+				type = all
+				owned_by = ROOT
+			}
+			adm_power = 150
+		}
+		add_adm_power = -150
+		custom_tooltip = hobgoblin_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { OR = { area = kradhungur_area area = tamvihar_area area = gronstunad_area } }
+				change_culture = wolf_command
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = hobgolbin_reserve_flag
+			}
+		}
+		set_country_flag = hobgoblin_reserve_done_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.e
+		trigger = {
+			has_country_flag = mb_new_reserves_flg
+			NOT = { has_country_flag = harimari_reserve_done_flg }
+			fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+			sulimak_area = {
+				type = all
+				owned_by = ROOT
+			}
+			ibran_pass_area = {
+				type = all
+				owned_by = ROOT
+			}
+			drunken_pass_area = {
+				type = all
+				owned_by = ROOT
+			}
+			adm_power = 150
+		}
+		add_adm_power = -150
+		custom_tooltip = harimari_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { OR = { area = sulimak_area area = ibran_pass_area area = drunken_pass_area } }
+				change_culture = silent_harimari
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = harimari_reserve_flag
+			}
+		}
+		set_country_flag = harimari_reserve_done_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.f
+		trigger = {
+			has_country_flag = mb_new_reserves_flg
+			NOT = { has_country_flag = ruinborn_reserve_done_flg }
+			OR = {
+				fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+				any_subject_country = {
+					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+				}
+			}
+			inner_drolas_area = {
+				type = all
+				owned_by = ROOT
+			}
+			outer_drolas_area = {
+				type = all
+				owned_by = ROOT
+			}
+			adm_power = 150
+			dip_power = 100
+		}
+		add_adm_power = -150
+		add_dip_power = -100
+		custom_tooltip = ruinborn_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { OR = { area = inner_drolas_area area = outer_drolas_area } }
+				change_culture = mayte
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = ruinborn_reserve_flag
+			}
+		}
+		set_country_flag = ruinborn_reserve_done_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.g
+		trigger = {
+			has_country_flag = swamp_ogre_de_flg
+			serpents_vale_region = {
+				type = all
+				owned_by = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = northern_pass_region
+			}
+		}
+		custom_tooltip = swamp_ogre_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { region = serpents_vale_region }
+				change_culture = mossmouth_ogre
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = swamp_ogre_reserve_flag
+			}
+		}
+		clr_country_flag = swamp_ogre_de_flg
+		set_country_flag = mb_mag_ruins_flg
+	}
+
+	option = {
+		name = flavour_maskedbutcher.115.h
+		trigger = {
+			has_country_flag = hill_ogre_de_flg
+			ogre_valley_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		custom_tooltip = hill_ogre_reserve_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = dzimokli_area
+						area = krotavatsvi_area
+						area = ghavatalur_area
+						area = kvakeinolba_area
+					}
+				}
+				change_culture = fathide_ogre
+				add_province_modifier = {
+					name = mb_reserve
+					duration = -1
+				}
+				set_province_flag = hill_ogre_reserve_flag
+			}
+		}
+		clr_country_flag = hill_ogre_de_flg
+		set_country_flag = mb_mag_ruins_flg
+	}
+}
+
+province_event = {
+	id = flavour_maskedbutcher.150
+	title = flavour_maskedbutcher.150.t
+	desc = flavour_maskedbutcher.150.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = flavour_maskedbutcher.150.a
+		spawn_expedition = yes
 	}
 }
