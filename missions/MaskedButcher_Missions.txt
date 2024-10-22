@@ -223,10 +223,7 @@ maskedbutcher_missions_3 = {
 			}
 			4033 = {
 				NOT = { has_province_modifier = expedition_target }
-				OR = {
-					is_empty = yes
-					owned_by = ROOT
-				}
+				owned_by = ROOT
 			}
 		}
 
@@ -1339,25 +1336,31 @@ maskedbutcher_missions_3d = {
 				value = 5
 				has_manpower_building_trigger = yes
 			}
-			any_known_country = {
-				OR = {
-					any_owned_province = { region = bahar_region }
-					any_subject_country = { any_owned_province = { region = bahar_region } }
+			OR = {
+				any_known_country = {
+					OR = {
+						any_owned_province = { region = bahar_region }
+						any_subject_country = { any_owned_province = { region = bahar_region } }
+					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 25
+					}
 				}
-				has_spy_network_from = {
-					who = ROOT
-					value = 25
-				}
+				any_owned_province = { region = bahar_region }
 			}
-			any_known_country = {
-				OR = {
-					any_owned_province = { region = ourdia_region }
-					any_subject_country = { any_owned_province = { region = ourdia_region } }
+			OR = {
+				any_known_country = {
+					OR = {
+						any_owned_province = { region = ourdia_region }
+						any_subject_country = { any_owned_province = { region = ourdia_region } }
+					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 25
+					}
 				}
-				has_spy_network_from = {
-					who = ROOT
-					value = 25
-				}
+				any_owned_province = { region = ourdia_region }
 			}
 			OR = {
 				spymaster = 2
@@ -1662,6 +1665,8 @@ maskedbutcher_missions_3d = {
 			else = {
 				custom_tooltip = mb_one_region_or_other_tt
 			}
+			custom_tooltip = mb_reserve_menu_tt
+			set_country_flag = mb_reserve_menu_flg
 		}
 	}
 
@@ -1982,11 +1987,14 @@ maskedbutcher_missions_4d = {
 				}
 			}
 			5052 = {
-				owner = {
-					has_spy_network_from = {
-						who = ROOT
-						value = 40
+				OR = {
+					owner = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 40
+						}
 					}
+					owned_by = ROOT
 				}
 			}
 		}
@@ -2135,17 +2143,7 @@ maskedbutcher_missions_5d = {
 		position = 8
 
 		provinces_to_highlight = {
-			OR = {
-				province_group = deepwoods_arrow_grove
-				province_group = deepwoods_bone_grove
-				province_group = deepwoods_flower_grove
-				province_group = deepwoods_hunter_grove
-				province_group = deepwoods_lake_grove
-				province_group = deepwoods_mountain_grove
-				province_group = deepwoods_river_grove
-				province_group = deepwoods_shadow_grove
-				province_group = deepwoods_thorn_grove
-			}
+			superregion = deepwoods_superregion
 			NOT = { owned_by = ROOT }
 		}
 
@@ -2155,44 +2153,9 @@ maskedbutcher_missions_5d = {
 				has_country_flag = elven_mask_1
 				has_country_flag = goblin_mask_1
 			}
-			calc_true_if = {
-				amount = 5
-				deepwoods_arrow_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_bone_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_flower_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_hunter_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_lake_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_mountain_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_river_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_shadow_grove = {
-					type = all
-					owned_by = ROOT
-				}
-				deepwoods_thorn_grove = {
-					type = all
-					owned_by = ROOT
-				}
+			num_of_owned_provinces_with = {
+				value = 30
+				superregion = deepwoods_superregion
 			}
 			deepwoods_arrow_grove = {
 				type = all
@@ -2202,101 +2165,10 @@ maskedbutcher_missions_5d = {
 				type = all
 				owned_by = ROOT
 			}
-			custom_trigger_tooltip = {
-				tooltip = mb_3_grove_tower_tt
-				calc_true_if = {
-					amount = 3
-					AND = {
-                        deepwoods_arrow_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_arrow_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_bone_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_bone_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_flower_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_flower_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_hunter_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_hunter_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_lake_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_lake_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_mountain_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_mountain_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_river_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_river_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_shadow_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_shadow_grove
-                            has_building = mage_tower
-                        }
-                    }
-					AND = {
-                        deepwoods_thorn_grove = {
-                            type = all
-                            owned_by = ROOT
-                        }
-                        any_owned_province = {
-                            province_group = deepwoods_thorn_grove
-                            has_building = mage_tower
-                        }
-                    }
-				}
+			num_of_owned_provinces_with = {
+				value = 3
+				superregion = deepwoods_superregion
+				has_building = mage_tower
 			}
 		}
 
