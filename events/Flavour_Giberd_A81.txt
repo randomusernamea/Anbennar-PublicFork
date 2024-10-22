@@ -298,3 +298,19 @@ country_event = {
 	}
 
 }
+
+
+# Esmaraine challenges our Bid
+country_event = {
+	id = flavor_giberd.12
+	title = flavor_giberd.12.t
+	desc = flavor_giberd.12.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.12.b
+		add_prestige = -20
+		add_historical_rival = A44
+	}
+}

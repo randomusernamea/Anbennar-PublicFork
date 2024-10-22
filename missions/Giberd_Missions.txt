@@ -430,37 +430,58 @@ giberd_ryalanar_conquest = {
 		position = 2
 		
 		provinces_to_highlight = {
-			OR = {
-				region = esmaria_region
-			}
+			region = esmaria_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 6 
-				OR = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
 					region = esmaria_region
 				}
-			}
-			has_personal_deity = esmaryal
-			calc_true_if = {
-				all_elector = {
-					has_25_opinion_sent_gift = { target = ROOT }
+				esmaria_region = {
+					limit = {
+						is_capital = yes
+					}
+					owner = {
+						NOT = {
+							total_development = ROOT
+						}
+					}
 				}
-				amount = 2
+			}
+			OR = {
+				has_personal_deity = esmaryal
+				has_personal_deity = ryala
+			}
+			OR = {
+				calc_true_if = {
+					all_elector = {
+						has_25_opinion_sent_gift = { target = ROOT }
+					}
+					amount = 2
+				}
+				reverse_has_opinion = {
+					who = A86
+					value = 100
+				}
 			}
 		}
 		effect = {
-			cann_esmar_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
+			add_prestige = 20
+			add_country_modifier = {
+				name = giberd_not_a_cog_but_a_machine
+				duration = 3650
 			}
 			add_country_modifier = {
-				name = giberd_gnomish_duchy
-				duration = 7300 #20 years
+				name = giberd_announcing_our_bid
+				duration = 1825
+			}
+			hidden_effect = {
+				country_event = {
+					name = flavor_giberd.12
+					days = 90
+				}
 			}
 		}
 	}
