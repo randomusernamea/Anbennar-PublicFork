@@ -169,7 +169,8 @@ country_event = {
 		}
 		custom_tooltip = human_mask_1_unlock_tt
 		hidden_effect = { grant_level_1_mask = { mask_race = human } }
-		apply_mask_opinion = { mask_race = human }
+		custom_tooltip = mask_opinion_tt
+		hidden_effect = { apply_mask_opinion = { mask_race = human } }
 		remove_estate_privilege = estate_vampires_organisation_listless_drinkers
 		set_estate_privilege = estate_vampires_organisation_purpose_of_the_blade
 		set_estate_privilege = estate_vampires_mask_human
@@ -813,7 +814,8 @@ country_event = {
 		}
 		custom_tooltip = gnomish_mask_1_unlock_tt
 		hidden_effect = { grant_level_1_mask = { mask_race = gnomish } }
-		apply_mask_opinion = { mask_race = gnomish }
+		custom_tooltip = mask_opinion_tt
+		hidden_effect = { apply_mask_opinion = { mask_race = gnomish } }
 		add_church_power = 100
 		add_adm_power = 50
 		add_dip_power = 50
@@ -1069,7 +1071,8 @@ province_event = {
 		name = flavour_maskedbutcher.45.a
 		custom_tooltip = halfling_mask_1_unlock_tt
 		hidden_effect = { owner = { grant_level_1_mask = { mask_race = halfling } } }
-		apply_mask_opinion = { mask_race = halfling }
+		custom_tooltip = mask_opinion_tt
+		hidden_effect = { apply_mask_opinion = { mask_race = halfling } }
 	}
 }
 
@@ -1625,6 +1628,8 @@ country_event = { #Fired when you click the prepare mask religious action
 
 	option = {
 		name = flavour_maskedbutcher.104.a
+		custom_tooltip = mask_made_tt
+		custom_tooltip = mask_opinion_tt
 		trigger_switch = { #determines which mask needs to be upgraded
 			on_trigger = has_country_modifier
 			racial_focus_centaur = {
@@ -1856,6 +1861,7 @@ country_event = { #Fired when you click the prepare mask religious action
 
 	option = {
 		name = flavour_maskedbutcher.104.b
+		custom_tooltip = mask_not_yet_tt
 		add_church_power = 100
 	}
 }
@@ -2851,11 +2857,11 @@ country_event = {
 			has_country_flag = mb_new_reserves_flg
 			NOT = { has_country_flag = lizardfolk_reserve_done_flg }
 			fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-			upper_brasan_area = {
+			arrtukerr_area = {
 				type = all
 				owned_by = ROOT
 			}
-			lower_brasan_area = {
+			dasmatus_area = {
 				type = all
 				owned_by = ROOT
 			}
@@ -2865,7 +2871,7 @@ country_event = {
 		custom_tooltip = lizardfolk_reserve_tt
 		hidden_effect = {
 			every_owned_province = {
-				limit = { OR = { area = upper_brasan_area area = lower_brasan_area } }
+				limit = { OR = { area = arrtukerr_area area = dasmatus_area } }
 				change_culture = arraskay_lizardfolk
 				add_province_modifier = {
 					name = mb_reserve
