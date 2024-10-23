@@ -574,9 +574,7 @@ country_event = {
 			FROM = { vassalize = ROOT }
 		}
 		change_religion = FROM
-		west_deepwoods_region = {
-            add_permanent_claim = ROOT
-		}
+		west_deepwoods_region = { add_permanent_claim = ROOT }
 		add_country_modifier = {
 			name = B47_religious_turmoil
 			duration = 9125
@@ -587,7 +585,6 @@ country_event = {
 		}
 		set_country_flag = book_of_stone_unlocked
 		add_government_reform = book_of_stone
-
 	}
 
 	option = {
@@ -599,9 +596,7 @@ country_event = {
 				casus_belli = cb_vassalize_mission
 			}
 		}
-		west_deepwoods_region = {
-            add_permanent_claim = ROOT
-		}
+		west_deepwoods_region = { add_permanent_claim = ROOT }
 		add_country_modifier = {
 			name = B47_religious_turmoil
 			duration = 9125
@@ -804,7 +799,6 @@ country_event = {
 			days = 10
 		}
 	}
-
 }
 
 #A Report
@@ -838,7 +832,6 @@ country_event = {
 			days = 30
 		}
 	}
-
 }
 
 #Another Round
@@ -863,7 +856,6 @@ country_event = {
 			days = 10
 		}
 	}
-
 }
 
 #The Monster Hunters
@@ -898,7 +890,6 @@ country_event = {
 			days = 30
 		}
 	}
-
 }
 
 #The Hunter's Are Ready!
@@ -975,9 +966,7 @@ country_event = {
 		name = "flavor_stalbor.19.a"
 		ai_chance = { factor = 100 }
 		add_dip_power = -50
-		dostanor_region = {
-            add_permanent_claim = ROOT
-		}
+		dostanor_region = { add_permanent_claim = ROOT }
 		country_event = {
 			id = flavor_stalbor.20
 			days = 90
@@ -1374,7 +1363,7 @@ country_event = {
 					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
+                    	who = ROOT
                     modifier = B47_vampire_hunter_overreach
                 }
 			}
