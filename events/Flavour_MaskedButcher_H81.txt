@@ -1858,26 +1858,111 @@ country_event = { #crafts mask at level one, fired by .104
 	
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				racial_focus_centaur = { grant_level_1_mask = { mask_race = centaur } set_country_flag = centaur_1_granted }
+				racial_focus_dwarven = { grant_level_1_mask = { mask_race = dwarven } set_country_flag = dwarven_1_granted }
+				racial_focus_elven = { grant_level_1_mask = { mask_race = elven } set_country_flag = elven_1_granted }
+				racial_focus_gnollish = { grant_level_1_mask = { mask_race = gnollish } set_country_flag = gnollish_1_granted }
+				racial_focus_gnomish = { grant_level_1_mask = { mask_race = gnomish } set_country_flag = gnomish_1_granted }
+				racial_focus_goblin = { grant_level_1_mask = { mask_race = goblin } set_country_flag = goblin_1_granted }
+				racial_focus_halfling = { grant_level_1_mask = { mask_race = halfling } set_country_flag = halfling_1_granted }
+				racial_focus_harimari = { grant_level_1_mask = { mask_race = harimari } set_country_flag = harimari_1_granted }
+				racial_focus_harpy = { grant_level_1_mask = { mask_race = harpy } set_country_flag = harpy_1_granted }
+				racial_focus_hobgoblin = { grant_level_1_mask = { mask_race = hobgoblin } set_country_flag = hobgoblin_1_granted }
+				racial_focus_human = { grant_level_1_mask = { mask_race = human } set_country_flag = human_1_granted }
+				racial_focus_kobold = { grant_level_1_mask = { mask_race = kobold } set_country_flag = kobold_1_granted }
+				racial_focus_lizardfolk = { grant_level_1_mask = { mask_race = lizardfolk } set_country_flag = lizardfolk_1_granted }
+				racial_focus_ogre = { grant_level_1_mask = { mask_race = ogre } set_country_flag = ogre_1_granted }
+				racial_focus_ruinborn = { grant_level_1_mask = { mask_race = ruinborn } set_country_flag = ruinborn_1_granted }
+				racial_focus_troll = { grant_level_1_mask = { mask_race = troll } set_country_flag = troll_1_granted }
+			}
+		}
+	}
+
 	option = {
 		name = flavour_maskedbutcher.105.a
-		trigger_switch = {
-			on_trigger = has_country_modifier
-			racial_focus_centaur = { grant_level_1_mask = { mask_race = centaur } }
-			racial_focus_dwarven = { grant_level_1_mask = { mask_race = dwarven } }
-			racial_focus_elven = { grant_level_1_mask = { mask_race = elven } }
-			racial_focus_gnollish = { grant_level_1_mask = { mask_race = gnollish } }
-			racial_focus_gnomish = { grant_level_1_mask = { mask_race = gnomish } }
-			racial_focus_goblin = { grant_level_1_mask = { mask_race = goblin } }
-			racial_focus_halfling = { grant_level_1_mask = { mask_race = halfling } }
-			racial_focus_harimari = { grant_level_1_mask = { mask_race = harimari } }
-			racial_focus_harpy = { grant_level_1_mask = { mask_race = harpy } }
-			racial_focus_hobgoblin = { grant_level_1_mask = { mask_race = hobgoblin } }
-			racial_focus_human = { grant_level_1_mask = { mask_race = human } }
-			racial_focus_kobold = { grant_level_1_mask = { mask_race = kobold } }
-			racial_focus_lizardfolk = { grant_level_1_mask = { mask_race = lizardfolk } }
-			racial_focus_ogre = { grant_level_1_mask = { mask_race = ogre } }
-			racial_focus_ruinborn = { grant_level_1_mask = { mask_race = ruinborn } }
-			racial_focus_troll = { grant_level_1_mask = { mask_race = troll } }
+		if = {
+			limit = { has_country_flag = centaur_1_granted }
+			clr_country_flag = centaur_1_granted
+			custom_tooltip = centaur_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = dwarven_1_granted }
+			clr_country_flag = dwarven_1_granted
+			custom_tooltip = dwarven_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = elven_1_granted }
+			clr_country_flag = elven_1_granted
+			custom_tooltip = elven_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnollish_1_granted }
+			clr_country_flag = gnollish_1_granted
+			custom_tooltip = gnollish_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnomish_1_granted }
+			clr_country_flag = gnomish_1_granted
+			custom_tooltip = gnomish_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = goblin_1_granted }
+			clr_country_flag = goblin_1_granted
+			custom_tooltip = goblin_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = halfling_1_granted }
+			clr_country_flag = halfling_1_granted
+			custom_tooltip = halfling_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harimari_1_granted }
+			clr_country_flag = harimari_1_granted
+			custom_tooltip = harimari_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harpy_1_granted }
+			clr_country_flag = harpy_1_granted
+			custom_tooltip = harpy_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = hobgoblin_1_granted }
+			clr_country_flag = hobgoblin_1_granted
+			custom_tooltip = hobgoblin_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = human_1_granted }
+			clr_country_flag = human_1_granted
+			custom_tooltip = human_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = kobold_1_granted }
+			clr_country_flag = kobold_1_granted
+			custom_tooltip = kobold_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = lizardfolk_1_granted }
+			clr_country_flag = lizardfolk_1_granted
+			custom_tooltip = lizardfolk_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ogre_1_granted }
+			clr_country_flag = ogre_1_granted
+			custom_tooltip = ogre_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ruinborn_1_granted }
+			clr_country_flag = ruinborn_1_granted
+			custom_tooltip = ruinborn_mask_1_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = troll_1_granted }
+			clr_country_flag = troll_1_granted
+			custom_tooltip = troll_mask_1_unlock_tt
 		}
 	}
 }
@@ -1890,26 +1975,111 @@ country_event = { #upgrades mask to level two, fired by .104
 	
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				racial_focus_centaur = { grant_level_2_mask = { mask_race = centaur } set_country_flag = centaur_2_granted }
+				racial_focus_dwarven = { grant_level_2_mask = { mask_race = dwarven } set_country_flag = dwarven_2_granted }
+				racial_focus_elven = { grant_level_2_mask = { mask_race = elven } set_country_flag = elven_2_granted }
+				racial_focus_gnollish = { grant_level_2_mask = { mask_race = gnollish } set_country_flag = gnollish_2_granted }
+				racial_focus_gnomish = { grant_level_2_mask = { mask_race = gnomish } set_country_flag = gnomish_2_granted }
+				racial_focus_goblin = { grant_level_2_mask = { mask_race = goblin } set_country_flag = goblin_2_granted }
+				racial_focus_halfling = { grant_level_2_mask = { mask_race = halfling } set_country_flag = halfling_2_granted }
+				racial_focus_harimari = { grant_level_2_mask = { mask_race = harimari } set_country_flag = harimari_2_granted }
+				racial_focus_harpy = { grant_level_2_mask = { mask_race = harpy } set_country_flag = harpy_2_granted }
+				racial_focus_hobgoblin = { grant_level_2_mask = { mask_race = hobgoblin } set_country_flag = hobgoblin_2_granted }
+				racial_focus_human = { grant_level_2_mask = { mask_race = human } set_country_flag = human_2_granted }
+				racial_focus_kobold = { grant_level_2_mask = { mask_race = kobold } set_country_flag = kobold_2_granted }
+				racial_focus_lizardfolk = { grant_level_2_mask = { mask_race = lizardfolk } set_country_flag = lizardfolk_2_granted }
+				racial_focus_ogre = { grant_level_2_mask = { mask_race = ogre } set_country_flag = ogre_2_granted }
+				racial_focus_ruinborn = { grant_level_2_mask = { mask_race = ruinborn } set_country_flag = ruinborn_2_granted }
+				racial_focus_troll = { grant_level_2_mask = { mask_race = troll } set_country_flag = troll_2_granted }
+			}
+		}
+	}
+
 	option = {
 		name = flavour_maskedbutcher.106.a
-		trigger_switch = {
-			on_trigger = has_country_modifier
-			racial_focus_centaur = { grant_level_2_mask = { mask_race = centaur } }
-			racial_focus_dwarven = { grant_level_2_mask = { mask_race = dwarven } }
-			racial_focus_elven = { grant_level_2_mask = { mask_race = elven } }
-			racial_focus_gnollish = { grant_level_2_mask = { mask_race = gnollish } }
-			racial_focus_gnomish = { grant_level_2_mask = { mask_race = gnomish } }
-			racial_focus_goblin = { grant_level_2_mask = { mask_race = goblin } }
-			racial_focus_halfling = { grant_level_2_mask = { mask_race = halfling } }
-			racial_focus_harimari = { grant_level_2_mask = { mask_race = harimari } }
-			racial_focus_harpy = { grant_level_2_mask = { mask_race = harpy } }
-			racial_focus_hobgoblin = { grant_level_2_mask = { mask_race = hobgoblin } }
-			racial_focus_human = { grant_level_2_mask = { mask_race = human } }
-			racial_focus_kobold = { grant_level_2_mask = { mask_race = kobold } }
-			racial_focus_lizardfolk = { grant_level_2_mask = { mask_race = lizardfolk } }
-			racial_focus_ogre = { grant_level_2_mask = { mask_race = ogre } }
-			racial_focus_ruinborn = { grant_level_2_mask = { mask_race = ruinborn } }
-			racial_focus_troll = { grant_level_2_mask = { mask_race = troll } }
+		if = {
+			limit = { has_country_flag = centaur_2_granted }
+			clr_country_flag = centaur_2_granted
+			custom_tooltip = centaur_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = dwarven_2_granted }
+			clr_country_flag = dwarven_2_granted
+			custom_tooltip = dwarven_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = elven_2_granted }
+			clr_country_flag = elven_2_granted
+			custom_tooltip = elven_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnollish_2_granted }
+			clr_country_flag = gnollish_2_granted
+			custom_tooltip = gnollish_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnomish_2_granted }
+			clr_country_flag = gnomish_2_granted
+			custom_tooltip = gnomish_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = goblin_2_granted }
+			clr_country_flag = goblin_2_granted
+			custom_tooltip = goblin_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = halfling_2_granted }
+			clr_country_flag = halfling_2_granted
+			custom_tooltip = halfling_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harimari_2_granted }
+			clr_country_flag = harimari_2_granted
+			custom_tooltip = harimari_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harpy_2_granted }
+			clr_country_flag = harpy_2_granted
+			custom_tooltip = harpy_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = hobgoblin_2_granted }
+			clr_country_flag = hobgoblin_2_granted
+			custom_tooltip = hobgoblin_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = human_2_granted }
+			clr_country_flag = human_2_granted
+			custom_tooltip = human_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = kobold_2_granted }
+			clr_country_flag = kobold_2_granted
+			custom_tooltip = kobold_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = lizardfolk_2_granted }
+			clr_country_flag = lizardfolk_2_granted
+			custom_tooltip = lizardfolk_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ogre_2_granted }
+			clr_country_flag = ogre_2_granted
+			custom_tooltip = ogre_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ruinborn_2_granted }
+			clr_country_flag = ruinborn_2_granted
+			custom_tooltip = ruinborn_mask_2_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = troll_2_granted }
+			clr_country_flag = troll_2_granted
+			custom_tooltip = troll_mask_2_unlock_tt
 		}
 	}
 }
@@ -1922,26 +2092,111 @@ country_event = { #upgrades mask to level three, fired by .104
 	
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				racial_focus_centaur = { grant_level_3_mask = { mask_race = centaur } set_country_flag = centaur_3_granted }
+				racial_focus_dwarven = { grant_level_3_mask = { mask_race = dwarven } set_country_flag = dwarven_3_granted }
+				racial_focus_elven = { grant_level_3_mask = { mask_race = elven } set_country_flag = elven_3_granted }
+				racial_focus_gnollish = { grant_level_3_mask = { mask_race = gnollish } set_country_flag = gnollish_3_granted }
+				racial_focus_gnomish = { grant_level_3_mask = { mask_race = gnomish } set_country_flag = gnomish_3_granted }
+				racial_focus_goblin = { grant_level_3_mask = { mask_race = goblin } set_country_flag = goblin_3_granted }
+				racial_focus_halfling = { grant_level_3_mask = { mask_race = halfling } set_country_flag = halfling_3_granted }
+				racial_focus_harimari = { grant_level_3_mask = { mask_race = harimari } set_country_flag = harimari_3_granted }
+				racial_focus_harpy = { grant_level_3_mask = { mask_race = harpy } set_country_flag = harpy_3_granted }
+				racial_focus_hobgoblin = { grant_level_3_mask = { mask_race = hobgoblin } set_country_flag = hobgoblin_3_granted }
+				racial_focus_human = { grant_level_3_mask = { mask_race = human } set_country_flag = human_3_granted }
+				racial_focus_kobold = { grant_level_3_mask = { mask_race = kobold } set_country_flag = kobold_3_granted }
+				racial_focus_lizardfolk = { grant_level_3_mask = { mask_race = lizardfolk } set_country_flag = lizardfolk_3_granted }
+				racial_focus_ogre = { grant_level_3_mask = { mask_race = ogre } set_country_flag = ogre_3_granted }
+				racial_focus_ruinborn = { grant_level_3_mask = { mask_race = ruinborn } set_country_flag = ruinborn_3_granted }
+				racial_focus_troll = { grant_level_3_mask = { mask_race = troll } set_country_flag = troll_3_granted }
+			}
+		}
+	}
+
 	option = {
 		name = flavour_maskedbutcher.107.a
-		trigger_switch = {
-			on_trigger = has_country_modifier
-			racial_focus_centaur = { grant_level_3_mask = { mask_race = centaur } }
-			racial_focus_dwarven = { grant_level_3_mask = { mask_race = dwarven } }
-			racial_focus_elven = { grant_level_3_mask = { mask_race = elven } }
-			racial_focus_gnollish = { grant_level_3_mask = { mask_race = gnollish } }
-			racial_focus_gnomish = { grant_level_3_mask = { mask_race = gnomish } }
-			racial_focus_goblin = { grant_level_3_mask = { mask_race = goblin } }
-			racial_focus_halfling = { grant_level_3_mask = { mask_race = halfling } }
-			racial_focus_harimari = { grant_level_3_mask = { mask_race = harimari } }
-			racial_focus_harpy = { grant_level_3_mask = { mask_race = harpy } }
-			racial_focus_hobgoblin = { grant_level_3_mask = { mask_race = hobgoblin } }
-			racial_focus_human = { grant_level_3_mask = { mask_race = human } }
-			racial_focus_kobold = { grant_level_3_mask = { mask_race = kobold } }
-			racial_focus_lizardfolk = { grant_level_3_mask = { mask_race = lizardfolk } }
-			racial_focus_ogre = { grant_level_3_mask = { mask_race = ogre } }
-			racial_focus_ruinborn = { grant_level_3_mask = { mask_race = ruinborn } }
-			racial_focus_troll = { grant_level_3_mask = { mask_race = troll } }
+		if = {
+			limit = { has_country_flag = centaur_3_granted }
+			clr_country_flag = centaur_3_granted
+			custom_tooltip = centaur_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = dwarven_3_granted }
+			clr_country_flag = dwarven_3_granted
+			custom_tooltip = dwarven_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = elven_3_granted }
+			clr_country_flag = elven_3_granted
+			custom_tooltip = elven_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnollish_3_granted }
+			clr_country_flag = gnollish_3_granted
+			custom_tooltip = gnollish_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = gnomish_3_granted }
+			clr_country_flag = gnomish_3_granted
+			custom_tooltip = gnomish_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = goblin_3_granted }
+			clr_country_flag = goblin_3_granted
+			custom_tooltip = goblin_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = halfling_3_granted }
+			clr_country_flag = halfling_3_granted
+			custom_tooltip = halfling_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harimari_3_granted }
+			clr_country_flag = harimari_3_granted
+			custom_tooltip = harimari_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = harpy_3_granted }
+			clr_country_flag = harpy_3_granted
+			custom_tooltip = harpy_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = hobgoblin_3_granted }
+			clr_country_flag = hobgoblin_3_granted
+			custom_tooltip = hobgoblin_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = human_3_granted }
+			clr_country_flag = human_3_granted
+			custom_tooltip = human_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = kobold_3_granted }
+			clr_country_flag = kobold_3_granted
+			custom_tooltip = kobold_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = lizardfolk_3_granted }
+			clr_country_flag = lizardfolk_3_granted
+			custom_tooltip = lizardfolk_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ogre_3_granted }
+			clr_country_flag = ogre_3_granted
+			custom_tooltip = ogre_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = ruinborn_3_granted }
+			clr_country_flag = ruinborn_3_granted
+			custom_tooltip = ruinborn_mask_3_unlock_tt
+		}
+		else_if = {
+			limit = { has_country_flag = troll_3_granted }
+			clr_country_flag = troll_3_granted
+			custom_tooltip = troll_mask_3_unlock_tt
 		}
 	}
 }
