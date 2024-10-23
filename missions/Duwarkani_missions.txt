@@ -235,7 +235,11 @@ duwarkani_2_missions = {
 			any_hired_mercenary_company = {
 				template = merc_daughters_of_nirakhet
 			}
-			has_global_modifier_value = { which = tolerance_own value = 5 }
+			custom_trigger_tooltip = {
+				tooltip = duwarkani_tt_tolerance_own
+				has_global_modifier_value = { which = tolerance_own value = 5 }
+			}
+			
 			estate_influence = {
 				estate = estate_adventurers
 				influence = 30
@@ -288,6 +292,7 @@ duwarkani_2_missions = {
 		}
 
 		effect = {
+			custom_tooltip = duwarkani_tt_ally_samsumbat
 			if = {
 				limit = {
 					F60 = { exists = no }
@@ -780,7 +785,7 @@ duwarkani_3_missions = {
 		}
 
 		trigger = {
-			owns_core_province = 5442
+			5442 = { country_or_non_sovereign_subject_holds = ROOT }
 			463 = {
 				has_great_project = {
 					type = koroshesh_library
