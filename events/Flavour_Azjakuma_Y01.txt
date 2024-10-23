@@ -231,7 +231,6 @@ country_event = {#command rejects
 	picture = CONSPIRACY_eventpicture
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = {
 		name = flavor_azjakuma.17.a
@@ -245,9 +244,9 @@ country_event = { #Azjakuma Deal initial offer recieved
 	title = flavor_azjakuma.18.t
 	desc = flavor_azjakuma.18.d
 	picture = WESTERNISATION_eventPicture
+	goto = 5430
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = { #accept offer
 		name = flavor_azjakuma.18.a
@@ -256,6 +255,7 @@ country_event = { #Azjakuma Deal initial offer recieved
 		}
 		highlight = yes
 		
+		custom_tooltip = command_check_gov_bar_hint_tt
 		add_truce_with = Y01
 		add_truce_with = Y89 #yuantsai
 		add_government_power = {

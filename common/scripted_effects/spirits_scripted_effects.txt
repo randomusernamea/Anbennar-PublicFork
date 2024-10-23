@@ -4559,3 +4559,31 @@ apply_visvatma = {
 		}
 	}
 }
+
+dvp_gain_ae_with_accretive_and_transmutative_paths = {
+	custom_tooltip = dvp_gain_ae_with_accretive_and_transmutative_paths_tt
+	tooltip = {
+		random_country = {
+			add_aggressive_expansion = {
+				who = ROOT
+				value = $value$
+				apply_calc = no
+			}
+		}
+	}
+	hidden_effect = {
+		every_known_country = {
+			limit = {
+				OR = {
+					religion = accretive_path
+					religion = transmutative_path
+				}
+			}
+			add_aggressive_expansion = {
+				who = ROOT
+				value = $value$
+				apply_calc = no
+			}
+		}
+	}
+}

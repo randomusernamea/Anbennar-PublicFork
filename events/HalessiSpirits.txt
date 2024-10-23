@@ -11603,6 +11603,43 @@ province_event = {	#Temple Corrupted
 		}
 		owner = {
 			hidden_effect = {
+				if = {
+					limit = { NOT = { check_variable = { which = devouring_path_flavor_counter value = 1 } } }
+					country_event = { id = spirits.610 days = 365 }
+				}
+				else_if = {
+					limit = {
+						NOT = { check_variable = { which = devouring_path_flavor_counter value = 2 } }
+						num_of_owned_provinces_with = {
+							value = 5
+							has_province_modifier = corrupted_temple_complex
+						}
+					}
+					country_event = { id = spirits.611 days = 365 }
+				}
+				else_if = {
+					limit = {
+						NOT = { check_variable = { which = devouring_path_flavor_counter value = 3 } }
+						NOT = { has_global_flag = rending_happened }
+						num_of_owned_provinces_with = {
+							value = 10
+							has_province_modifier = corrupted_temple_complex
+						}
+					}
+					country_event = { id = spirits.612 days = 365 }
+				}
+				else_if = {
+					limit = {
+						NOT = { check_variable = { which = devouring_path_flavor_counter value = 4 } }
+						NOT = { has_global_flag = rending_happened }
+						num_of_owned_provinces_with = {
+							value = 15
+							has_province_modifier = corrupted_temple_complex
+						}
+					}
+					country_event = { id = spirits.613 days = 365 }
+				}
+
 				every_known_country = {
 					limit = {
 						capital_scope = {
@@ -11755,6 +11792,86 @@ country_event = { #Some aspects need an event to add church power back
 		ai_chance = { factor = 1 }
 
 		add_church_power = 200
+	}
+}
+
+#Temple Corruption flavor events
+
+country_event = { #The Miseducation of the Demon Hills
+	id = spirits.610
+	title = spirits.610.t
+	desc = spirits.610.d
+	picture = HIGH_TEMPLE_IN_DISTANCE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
+
+	option = {
+		name = spirits.610.a
+		ai_chance = { factor = 1 }
+
+		temple_province_group = { add_claim = ROOT }
+	}
+}
+country_event = { #From the Attic
+	id = spirits.611
+	title = spirits.611.t
+	desc = spirits.611.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
+
+	option = {
+		name = spirits.611.a
+		ai_chance = { factor = 1 }
+
+		create_war_wizard_effect = yes
+		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 10 }
+	}
+}
+country_event = { #More Chi than Usual
+	id = spirits.612
+	title = spirits.612.t
+	desc = spirits.612.d
+	picture = HIGH_TEMPLE_CITY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
+
+	option = {
+		name = spirits.612.a
+		ai_chance = { factor = 1 }
+
+		custom_tooltip = dvp_gain_devcost_tt
+		tooltip = {
+			random_owned_province = {
+				limit = { has_province_modifier = corrupted_temple_complex }
+				add_province_modifier = { name = dvp_temple_devcost duration = 7300 }
+			}
+		}
+		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 15 }
+	}
+}
+country_event = { #Arrival Imminent
+	id = spirits.613
+	title = spirits.613.t
+	desc = spirits.613.d
+	picture = ONI_HUMANS_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
+
+	option = {
+		name = spirits.613.a
+		ai_chance = { factor = 1 }
+
+		temple_province_group = { add_permanent_claim = ROOT }
+		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 50 }
 	}
 }
 

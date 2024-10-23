@@ -5734,6 +5734,8 @@ country_event = { #Sir revolt starts
 			4352 = { add_building = fort_15th add_province_modifier = { name = command_fake_fort duration = -1 } }
 			4345 = { add_building = fort_15th add_province_modifier = { name = command_fake_fort duration = -1 } }
 		}
+		R63 = { country_event = { id = the_command.131 } }
+		R64 = { country_event = { id = the_command.131 } }
 	}
 
 	option = { #DO NOT PUT THIS STUFF IN THE IMMEDIATE. WHITE PEACE IN THE IMMEDIATE CAUSES A CTD
@@ -7760,6 +7762,23 @@ country_event = { #They Call it Lesser Love
 
 		custom_tooltip = command_kill_ruler_tt
 		kill_ruler = yes
+	}
+}
+
+country_event = { #Orc Notification
+	id = the_command.131
+	title = the_command.131.t
+	desc = the_command.131.desc
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+	trigger = { ai = no }
+
+	option = {
+		name = the_command.131.a
+		ai_chance = { factor = 1 }
+
+		custom_tooltip = command_must_win_tt
 	}
 }
 
