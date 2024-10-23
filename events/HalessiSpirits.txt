@@ -11570,7 +11570,7 @@ province_event = {	#Temple Corrupted
 			}
 			remove_province_modifier = temple_complex
 			if = {
-				limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+				limit = { religion = devouring_path owner = { religion = devouring_path } }
 				add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
 			}
 			else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
@@ -11583,7 +11583,7 @@ province_event = {	#Temple Corrupted
 			}
 			remove_province_modifier = damaged_temple_complex
 			if = {
-				limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+				limit = { religion = devouring_path owner = { religion = devouring_path } }
 				add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
 			}
 			else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
@@ -11596,48 +11596,48 @@ province_event = {	#Temple Corrupted
 			}
 			remove_province_modifier = derelict_temple_complex
 			if = {
-				limit = { religion = devouring_path ROOT = { religion = devouring_path } }
+				limit = { religion = devouring_path owner = { religion = devouring_path } }
 				add_permanent_province_modifier = { name = corrupted_temple_complex duration = -1 }
 			}
 			else = { add_permanent_province_modifier = { name = corrupted_temple_complex_useless duration = -1 } }
 		}
 		owner = {
 			hidden_effect = {
-				if = {
-					limit = { NOT = { check_variable = { which = devouring_path_flavor_counter value = 1 } } }
-					country_event = { id = spirits.610 days = 365 }
-				}
-				else_if = {
-					limit = {
-						NOT = { check_variable = { which = devouring_path_flavor_counter value = 2 } }
-						num_of_owned_provinces_with = {
-							value = 5
-							has_province_modifier = corrupted_temple_complex
+				if = { #Temple Corruption Flavor Events
+					limit = { NOT = { check_variable = { which = devouring_path_flavor_counter value = 4 } } }
+					if = {
+						limit = {
+							check_variable = { which = devouring_path_flavor_counter value = 3 }
+							NOT = { has_global_flag = rending_happened }
+							num_of_owned_provinces_with = {
+								value = 15
+								has_province_modifier = corrupted_temple_complex
+							}
 						}
+						country_event = { id = spirits.613 days = 365 }
 					}
-					country_event = { id = spirits.611 days = 365 }
-				}
-				else_if = {
-					limit = {
-						NOT = { check_variable = { which = devouring_path_flavor_counter value = 3 } }
-						NOT = { has_global_flag = rending_happened }
-						num_of_owned_provinces_with = {
-							value = 10
-							has_province_modifier = corrupted_temple_complex
+					else_if = {
+						limit = {
+							check_variable = { which = devouring_path_flavor_counter value = 2 }
+							NOT = { has_global_flag = rending_happened }
+							num_of_owned_provinces_with = {
+								value = 10
+								has_province_modifier = corrupted_temple_complex
+							}
 						}
+						country_event = { id = spirits.612 days = 365 }
 					}
-					country_event = { id = spirits.612 days = 365 }
-				}
-				else_if = {
-					limit = {
-						NOT = { check_variable = { which = devouring_path_flavor_counter value = 4 } }
-						NOT = { has_global_flag = rending_happened }
-						num_of_owned_provinces_with = {
-							value = 15
-							has_province_modifier = corrupted_temple_complex
+					else_if = {
+						limit = {
+							check_variable = { which = devouring_path_flavor_counter value = 1 }
+							num_of_owned_provinces_with = {
+								value = 5
+								has_province_modifier = corrupted_temple_complex
+							}
 						}
+						country_event = { id = spirits.611 days = 365 }
 					}
-					country_event = { id = spirits.613 days = 365 }
+					else = { country_event = { id = spirits.610 days = 365 } }
 				}
 
 				every_known_country = {
