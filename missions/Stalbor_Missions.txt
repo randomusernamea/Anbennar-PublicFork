@@ -11,13 +11,13 @@ B47_stalbor_column_1 = {
     }
 
     B47_deepwood_gateway = {
-        icon = mission_dominate_home_trade_node
+	icon = mission_dominate_home_trade_node
 	position = 3
 	required_missions = {
 		B47_bladeskeep_and_the_watch
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				owner = {
@@ -25,7 +25,7 @@ B47_stalbor_column_1 = {
 				}
 			is_capital = yes
 			}
-                	fast_has_pop_of_race = { race = elven }
+			fast_has_pop_of_race = { race = elven }
 			AND = {
 				OR = {
 					area = banesfork_area
@@ -33,21 +33,21 @@ B47_stalbor_column_1 = {
 				}
 				NOT = { owned_by = ROOT }
 			}
-        	}
+		}
 	}
 
-        trigger = {
-            	banesfork_area = {
+	trigger = {
+		banesfork_area = {
 			type = all
 			owned_by = ROOT
 			is_core = ROOT
-            	}
-            	beastgrave_area = {
+		}
+		beastgrave_area = {
 			type = all
 			owned_by = ROOT
 			is_core = ROOT
-            	}
-            	OR = {
+		}
+		OR = {
 			AND = {
 				high_tolerance_elven_race_trigger = yes
 				any_owned_province = {
@@ -67,13 +67,13 @@ B47_stalbor_column_1 = {
 					advisor = statesman
 				}
 			}
-            	}
-        }
+		}
+	}
 
-        effect = {
-            	banesfork_area = {
+	effect = {
+		banesfork_area = {
 			add_elven_minority_size_effect = yes
-            	}
+		}
 		beastgrave_area = {
 			add_elven_minority_size_effect = yes
 		}
@@ -95,28 +95,28 @@ B47_stalbor_column_1 = {
 				discover_country = PREV
 			}
 		}
-        }
+	}
     }
 
     B47_deepwood_relations = {
-        icon = mission_build_up_to_force_limit
+	icon = mission_build_up_to_force_limit
 	position = 4
 	required_missions = {
 		B47_deepwood_gateway
-            	B47_the_early_cuirassiers
+		B47_the_early_cuirassiers
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		owner = {
-                	has_country_modifier = elven_administration
-            	}
-            	is_capital = yes
-            	region = west_deepwoods_region
+			has_country_modifier = elven_administration
+		}
+		is_capital = yes
+		region = west_deepwoods_region
 	}
 
-        trigger = {
-            	any_known_country = {
-                	has_country_modifier = elven_administration
+	trigger = {
+		any_known_country = {
+			has_country_modifier = elven_administration
 			capital_scope = {
 				region = west_deepwoods_region
 			}
@@ -127,12 +127,12 @@ B47_stalbor_column_1 = {
 					value = 150
 				}
 			}
-            	}
-        }
+		}
+	}
 
-        effect = {
-            	custom_tooltip = B47_seek_to_vassalize_wood_elven_country
-            	hidden_effect = {
+	effect = {
+		custom_tooltip = B47_seek_to_vassalize_wood_elven_country
+		hidden_effect = {
 			random_known_country = { 
 				limit = {
 					has_country_modifier = elven_administration
@@ -149,33 +149,33 @@ B47_stalbor_column_1 = {
 				}
 			country_event = { id = flavor_stalbor.8 }
 			}
-            	}
-        }
+		}
+	}
     }
 
     B47_settle_deepwood_religious_dispute = {
-        icon = mission_hands_praying
+	icon = mission_hands_praying
 	position = 6
 	required_missions = {
 		B47_deepwood_relations
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			fast_has_pop_of_race = { race = elven }
 			fast_has_pop_of_race = { race = orcish }
 			fast_has_pop_of_race = { race = goblin }
-            	}
-            	region = west_deepwoods_region
-            	owner = {
+		}
+		region = west_deepwoods_region
+		owner = {
 			NOT = {
 				is_subject_of = ROOT
 			}
-            	}
+		}
 	}
 
-        trigger = {
-        	any_subject_country = {
+	trigger = {
+		any_subject_country = {
 			capital_scope = {
 				region = west_deepwoods_region
 			}
@@ -216,23 +216,23 @@ B47_stalbor_column_1 = {
 					}
 				}
 			}
-            	}
-        }
+		}
+	}
 
-        effect = {
+	effect = {
 		country_event = { id = flavor_stalbor.10 }
-        }
+	}
     }
 
     B47_fey_steel_manufacturing = {
-        icon = mission_have_manufactories
+	icon = mission_have_manufactories
 	position = 7
 	required_missions = {
 		B47_settle_deepwood_religious_dispute
 	}
 
-        provinces_to_highlight = {
-            	OR = {
+	provinces_to_highlight = {
+		OR = {
 			AND = {
 				province_id = 813
 				NOT = { 
@@ -253,10 +253,10 @@ B47_stalbor_column_1 = {
 				}
 			}
 			has_province_modifier = arturos_watch_chapter
-            	}
-        }
+		}
+	}
 
-        trigger = {
+	trigger = {
 		custom_trigger_tooltip = {
 			custom_tooltip = B47_settled_the_deepwood_stuff
 			has_country_flag = B47_the_matters_of_the_deepwoods_event
@@ -279,11 +279,11 @@ B47_stalbor_column_1 = {
 			development = 20
 			has_production_or_gold_building_trigger = yes
 		}
-            	treasury = 250
-        }
+		treasury = 250
+	}
 
-        effect = {
-            	add_treasury = -250
+	effect = {
+		add_treasury = -250
 		813 = {
 			if = {
 				limit = {
@@ -307,18 +307,18 @@ B47_stalbor_column_1 = {
 				duration = -1
 			}
 		}
-        }
+	}
     }
 
     B47_the_winged_cuirassiers = {
-        icon = mission_conquer_5_states
+	icon = mission_conquer_5_states
 	position = 8
 	required_missions = {
 		B47_fey_steel_manufacturing
 	}
 
-        provinces_to_highlight = {
-            	trade_goods = livestock
+	provinces_to_highlight = {
+		trade_goods = livestock
 		OR = {
 			owned_by = ROOT
 			owned_by_subject_of = ROOT
@@ -331,9 +331,9 @@ B47_stalbor_column_1 = {
 				has_manufactory_trigger = yes
 			}
 		}
-        }
+	}
 
-        trigger = {
+	trigger = {
 		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 			value = 3
 			trade_goods = livestock
@@ -346,15 +346,15 @@ B47_stalbor_column_1 = {
 			army_tradition = 60
 			army_professionalism = 0.30
 		}
-        }
+	}
 
-        effect = {
-            	remove_country_modifier = B47_the_early_cuirassiers
+	effect = {
+		remove_country_modifier = B47_the_early_cuirassiers
 		add_country_modifier = {
 			name = B47_the_winged_cuirassiers
 			duration = -1
 		}
-        }
+	}
     }
 }
 
@@ -369,13 +369,13 @@ B47_stalbor_column_2 = {
     }
 
     B47_the_early_cuirassiers = {
-        icon = mission_conquer_5_states
+	icon = mission_conquer_5_states
 	position = 3
 	required_missions = {
 		B47_bladeskeep_and_the_watch
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		trade_goods = livestock
 		OR = {
 			NOT = { owned_by = ROOT }
@@ -388,7 +388,7 @@ B47_stalbor_column_2 = {
 		}
 	}
 
-        trigger = {
+	trigger = {
 		OR = {
 			any_owned_province = {
 				trade_goods = livestock
@@ -409,45 +409,45 @@ B47_stalbor_column_2 = {
 			army_tradition = 30
 			army_professionalism = 0.15
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		add_country_modifier = {
 			name = B47_the_early_cuirassiers
 			duration = -1
 		}
-        }
+	}
 
     }
 
     B47_vampires_of_arca_corvus = {
-        icon = the_viennese_waltz
+	icon = the_viennese_waltz
 	position = 5
 	required_missions = {
 		B47_western_heartland
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			province_id = 441
 			has_province_modifier = arturos_watch_chapter
-            	}
+		}
 	}
 
-        trigger = {
-            	441 = {
+	trigger = {
+		441 = {
 			owned_by = ROOT
 			infantry_in_province = 3
 			infantry_in_province = ROOT
-            	}
+		}
 		num_of_owned_provinces_with = {
 			has_upgraded_watch_modifer = yes
 			value = 2
 		}
-           	has_estate_privilege = estate_adventurers_sponsor_monster_hunters
-        }
+		has_estate_privilege = estate_adventurers_sponsor_monster_hunters
+	}
 
-        effect = {
+	effect = {
 		441 = {
 			kill_units = {
 				who = ROOT
@@ -458,17 +458,17 @@ B47_stalbor_column_2 = {
 		country_event = {
 			id = flavor_stalbor.13
 		}
-        }
+	}
     }
 
     B47_vampires_of_dostanor = {
-        icon = mission_destroyed_city
+	icon = mission_destroyed_city
 	position = 6
 	required_missions = {
 		B47_vampires_of_arca_corvus
 	}
-        
-        trigger = {
+		
+	trigger = {
 		NOT = { num_of_rebel_armies = 1 }
 		custom_trigger_tooltip = {
 			tooltip = B47_vampire_hunted_borders
@@ -490,33 +490,33 @@ B47_stalbor_column_2 = {
 			tooltip = B47_vampire_hunted_lencenor
 			has_country_flag = B47_vampires_caught_lencenor
 		}
-        }
+	}
 
-        effect = {
-            	custom_tooltip = B47_vampire_hunters_stalbor_estate_privilege
-            	hidden_effect = {
+	effect = {
+		custom_tooltip = B47_vampire_hunters_stalbor_estate_privilege
+		hidden_effect = {
 			set_country_flag = B47_vampires_hunted_down
 			clr_country_flag = B47_vampire_lords_on_the_run
 			set_estate_privilege = estate_adventurers_stalbor_vampire_hunters
-            	}
+		}
 		every_owned_province = {
 			limit = {
 				has_province_modifier = B47_old_lord_loyalists
 			}
 			remove_province_modifier = B47_old_lord_loyalists
 		}
-        }
+	}
     }
 
     B47_secure_the_south = {
-        icon = mission_invade_island
+	icon = mission_invade_island
 	position = 7
 	required_missions = {
 		B47_vampires_of_dostanor
-            	B47_the_stalbor_fleet
+		B47_the_stalbor_fleet
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				OR = {
@@ -540,10 +540,10 @@ B47_stalbor_column_2 = {
 					}
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		dostanor_region = {
 			type = all
 			owned_by = ROOT
@@ -568,9 +568,9 @@ B47_stalbor_column_2 = {
 				tier = 1
 			}
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		dostanor_region = {
 			add_nationalism = -15
 		}
@@ -596,18 +596,18 @@ B47_stalbor_column_2 = {
 				duration = -1
 			}
 		}
-        }
+	}
     }
 
     B47_the_great_keep = {
-        icon = mission_colonial
+	icon = mission_colonial
 	position = 8
 	required_missions = {
 		B47_secure_the_south
-            	B47_vernham_urbanization
+		B47_vernham_urbanization
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			province_id = 510
 			province_id = 441
@@ -621,10 +621,10 @@ B47_stalbor_column_2 = {
 					}
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		510 = {
 			has_great_project = {
 				type = bal_ouord
@@ -646,31 +646,31 @@ B47_stalbor_column_2 = {
 			tooltip = B47_corveld_restored
 			has_global_flag = corveld_restored
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		817 = {
 			add_permanent_province_modifier = {
 				name = B47_the_great_keep_modifier
 				duration = -1
 			}
 		}
-        }
+	}
     }
 
     B47_the_watch_over_cannor = {
-        icon = mission_unite_home_region
+	icon = mission_unite_home_region
 	position = 9
 	required_missions = {
 		B47_the_great_keep
-            	B47_the_winged_cuirassiers
+		B47_the_winged_cuirassiers
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		province_group = stalbor_across_cannor_provinces
 	}
 
-        trigger = {
+	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = B47_watch_needs_to_go_over_cannor
 			calc_true_if = {
@@ -697,9 +697,9 @@ B47_stalbor_column_2 = {
 				}
 			}
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		country_event = {
 			id = flavor_stalbor.31
 		}
@@ -730,7 +730,7 @@ B47_stalbor_column_2 = {
 				duration = -1
 			}
 		}
-        }
+	}
     }
 
 }
@@ -750,16 +750,16 @@ B47_stalbor_column_3 = {
 	position = 1
 	required_missions = { }
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			area = vernham_area
 			area = oudeben_area
 			area = clovenwood_area
-            	}
-            	NOT = { owned_by = ROOT }
+		}
+		NOT = { owned_by = ROOT }
 	}
 
-        trigger = {
+	trigger = {
 		vernham_area = {
 			type = all
 			owned_by = ROOT
@@ -776,10 +776,10 @@ B47_stalbor_column_3 = {
 			is_core = ROOT
 		}
 		mil_power = 50
-        }
+	}
 
-        effect = {
-            	set_capital = 808
+	effect = {
+		set_capital = 808
 		808 = {
 			if = {
 				limit = {
@@ -809,7 +809,7 @@ B47_stalbor_column_3 = {
 			siege = 3
 			trait = siege_specialist_personality
 		}
-        }
+	}
     }
 
     B47_bladeskeep_and_the_watch = {
@@ -819,7 +819,7 @@ B47_stalbor_column_3 = {
 		B47_southern_heartland
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				area = blademarch_area
@@ -829,10 +829,10 @@ B47_stalbor_column_3 = {
 				province_id = 817
 				NOT = { province_has_current_tech_fort_trigger = yes }
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		blademarch_area = {
 			type = all
 			owned_by = ROOT
@@ -840,9 +840,9 @@ B47_stalbor_column_3 = {
 		}
 		manpower = 5
 		817 = { province_has_current_tech_fort_trigger = yes }
-        }
+	}
 
-        effect = {
+	effect = {
 		country_event = {
 			id = flavor_stalbor.4
 		}
@@ -856,8 +856,8 @@ B47_stalbor_column_3 = {
 		burnoll_area = {
 			add_permanent_claim = ROOT
 		}
-        }
-    } 
+	}
+    }
 
     B47_regional_security = {
 	icon = mission_control_the_desh
@@ -866,7 +866,7 @@ B47_stalbor_column_3 = {
 		B47_bladeskeep_and_the_watch
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				OR = {
@@ -907,10 +907,10 @@ B47_stalbor_column_3 = {
 				}
 				is_capital = yes
 			}
-        	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		OR = {
 			barracks = 5
 			training_fields = 5
@@ -961,9 +961,9 @@ B47_stalbor_column_3 = {
 			owned_by = ROOT
 			is_core = ROOT
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		add_country_modifier = {
 			name = B47_southern_conquest
 			duration = 9125
@@ -971,8 +971,8 @@ B47_stalbor_column_3 = {
 		south_castanor_region = {
 			add_permanent_claim = ROOT
 		}
-        }
-    } 
+	}
+    }
     B47_western_heartland = {
 	icon = mission_rb_conquer_wales
 	position = 4
@@ -980,7 +980,7 @@ B47_stalbor_column_3 = {
 		B47_regional_security
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				OR = {
@@ -1000,10 +1000,10 @@ B47_stalbor_column_3 = {
 					}
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		dostans_way_area = {
 			type = all
 			owned_by = ROOT
@@ -1028,9 +1028,9 @@ B47_stalbor_column_3 = {
 			has_manpower_building_trigger = yes
 			province_has_current_tech_fort_trigger = yes
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		793 = {
 			add_permanent_province_modifier = {
 				name = arturos_watch_chapter
@@ -1059,7 +1059,7 @@ B47_stalbor_column_3 = {
 				set_country_flag = blademarch_uprising_stalbor
 			}
 		}
-        }
+	}
     }
 
     B47_the_stalbor_fleet = {
@@ -1069,7 +1069,7 @@ B47_stalbor_column_3 = {
 		B47_western_heartland
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				region = daravans_folly_region
@@ -1085,10 +1085,10 @@ B47_stalbor_column_3 = {
 					}  
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		daravans_folly_region = {
 			type = all
 			owned_by = ROOT
@@ -1102,9 +1102,9 @@ B47_stalbor_column_3 = {
 			value = 4
 		}
 		navy_size_percentage = 0.50
-        }
+	}
 
-        effect = {
+	effect = {
 		451 = {
 			change_trade_goods = paper
 			add_permanent_province_modifier = {
@@ -1131,7 +1131,7 @@ B47_stalbor_column_3 = {
 				}
 			}
 		}
-        }
+	}
     }
 }
 
@@ -1152,7 +1152,7 @@ B47_stalbor_column_4 = {
 		B47_regional_security
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				OR = {
@@ -1184,10 +1184,10 @@ B47_stalbor_column_4 = {
 					}
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		escerfork_area = {
 			type = all
 			owned_by = ROOT
@@ -1231,9 +1231,9 @@ B47_stalbor_column_4 = {
 			has_manpower_building_trigger = yes
 			province_has_current_tech_fort_trigger = yes
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		888 = {
 			add_permanent_province_modifier = {
 				name = arturos_watch_chapter
@@ -1265,7 +1265,7 @@ B47_stalbor_column_4 = {
 				set_country_flag = blademarch_uprising_stalbor
 			}
 		}
-        }
+	}
     }
 
     B47_the_every_hold = {
@@ -1275,26 +1275,26 @@ B47_stalbor_column_4 = {
 		B47_eastern_heartland
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			owned_by = B36
 			AND = {
 				province_id = 4097
 				NOT = { development = 30 }
 			}
-            	}
+		}
 	}
 
-        trigger = {
-            	NOT = { exists = B36 }
+	trigger = {
+		NOT = { exists = B36 }
 		4097 = {
 			development = 30
 		}
-            	has_trade_building_trigger = yes
-            	province_has_current_tech_fort_trigger = yes
-        }
+		has_trade_building_trigger = yes
+		province_has_current_tech_fort_trigger = yes
+	}
 
-        effect = {
+	effect = {
 		4097 = {
 			remove_province_modifier = human_hold_1
 			remove_province_modifier = human_hold_2
@@ -1315,7 +1315,7 @@ B47_stalbor_column_4 = {
 				add_base_production = 3
 			}
 		}
-        }
+	}
     }
 
     B47_expansion_of_the_vernham_act_2 = {
@@ -1326,7 +1326,7 @@ B47_stalbor_column_4 = {
 		B47_orc_and_half_orc_soliders_and_generals
 	}
 
-        trigger = {
+	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = B47_custom_race_trigger_1
 			calc_true_if = {
@@ -1481,14 +1481,14 @@ B47_stalbor_column_4 = {
 					}
 				}
 				#OR = {
-				#    	high_tolerance_mechanim_race_trigger = yes
-				#    	any_known_country = {
-				#        	has_country_modifier = mechanim_administration
-				#        	has_opinion = {
-				#            		who = ROOT
-				#            		value = 100
-				#        	}
-				#    	}
+				#	high_tolerance_mechanim_race_trigger = yes
+				#	any_known_country = {
+				#		has_country_modifier = mechanim_administration
+				#		has_opinion = {
+				#			who = ROOT
+				#			value = 100
+				#		}
+				#	}
 				#}
 				OR = {
 					high_tolerance_ogre_race_trigger = yes
@@ -1561,7 +1561,7 @@ B47_stalbor_column_4 = {
 		B47_expansion_of_the_vernham_act_2
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				province_id = 800
@@ -1588,7 +1588,7 @@ B47_stalbor_column_4 = {
 		}
 	}
 
-        trigger = {
+	trigger = {
 		OR = {
 			AND = {
 				800 = {
@@ -1617,11 +1617,11 @@ B47_stalbor_column_4 = {
 				is_core = ROOT
 			}
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		country_event = { id = flavor_stalbor.32 }
-        }
+	}
     }
     B47_expansion_of_the_vernham_act_3 = {
 	icon = mission_market_place_with_asian_traders
@@ -1630,8 +1630,8 @@ B47_stalbor_column_4 = {
 		B47_vernham_urbanization
 	}
 
-        trigger = {
-            	custom_trigger_tooltip = {
+	trigger = {
+		custom_trigger_tooltip = {
 			tooltip = B47_custom_race_trigger_2
 			calc_true_if = {
 				OR = {
@@ -1830,14 +1830,14 @@ B47_stalbor_column_4 = {
 					}
 				}
 				#OR = {
-				#    	high_tolerance_mechanim_race_trigger = yes
-				#    	any_known_country = {
-				#        	has_country_modifier = mechanim_administration
-				#        	has_opinion = {
-				#            		who = ROOT
-				#            		value = 200
-				#        	}
-				#    	}
+				#	high_tolerance_mechanim_race_trigger = yes
+				#	any_known_country = {
+				#		has_country_modifier = mechanim_administration
+				#		has_opinion = {
+				#			who = ROOT
+				#			value = 200
+				#		}
+				#	}
 				#}
 				OR = {
 					high_tolerance_ogre_race_trigger = yes
@@ -1893,13 +1893,13 @@ B47_stalbor_column_4 = {
 				}
 				amount = 9
 			}
-            	}
+		}
 		adm_power = 100
 		dip_power = 100
 		mil_power = 100
-        }
+	}
 
-        effect = {
+	effect = {
 		add_adm_power = -100
 		add_dip_power = -100
 		add_mil_power = -100
@@ -1910,7 +1910,7 @@ B47_stalbor_column_4 = {
 				days = 730
 			}
 		}
-        }
+	}
     }
     B47_complete_acceptance = {
 	icon = mission_interfaith_relations
@@ -1919,10 +1919,10 @@ B47_stalbor_column_4 = {
 		B47_expansion_of_the_vernham_act_3
 	}
 
-        trigger = {
-            	custom_trigger_tooltip = {
+	trigger = {
+		custom_trigger_tooltip = {
 			tooltip = B47_custom_race_trigger_3
-                	calc_true_if = {
+			calc_true_if = {
 				OR = {
 					high_tolerance_centaur_race_trigger = yes
 					any_known_country = {
@@ -2119,17 +2119,17 @@ B47_stalbor_column_4 = {
 					}
 				}
 				#OR = {
-				#    	high_tolerance_mechanim_race_trigger = yes
-				#    	any_known_country = {
-				#       	has_country_modifier = mechanim_administration
-				#        	OR = {
-				#            		alliance_with = ROOT
-				#            		has_opinion = {
-				#               		who = ROOT
-				#               		value = 200
-				#            		}
+				#	high_tolerance_mechanim_race_trigger = yes
+				#	any_known_country = {
+				#		has_country_modifier = mechanim_administration
+				#		OR = {
+				#			alliance_with = ROOT
+				#			has_opinion = {
+				#				who = ROOT
+				#				value = 200
+				#			}
 				#		}
-				#    	}
+				#	}
 				#}
 				OR = {
 					high_tolerance_ogre_race_trigger = yes
@@ -2184,14 +2184,14 @@ B47_stalbor_column_4 = {
 					}
 				}
 				amount = 12
-                	}
-            	}
+			}
+		}
 		adm_power = 200
 		dip_power = 200
 		mil_power = 200
-        }
+	}
 
-        effect = {
+	effect = {
 		add_adm_power = -200
 		add_dip_power = -200
 		add_mil_power = -200
@@ -2260,8 +2260,8 @@ B47_stalbor_column_4 = {
 			largest_increase_of_mechanim_tolerance_effect = yes
 			largest_increase_of_mechanim_tolerance_effect = yes
 			largest_increase_of_mechanim_tolerance_effect = yes   
-		}         
-        }
+		}
+	}
     }
 
 }
@@ -2283,7 +2283,7 @@ B47_stalbor_column_5 = {
 		B47_southern_heartland
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				province_id = 800
@@ -2307,10 +2307,10 @@ B47_stalbor_column_5 = {
 					}
 				}
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		808 = {
 			has_tax_building_trigger = yes
 			has_production_or_gold_building_trigger = yes
@@ -2323,9 +2323,9 @@ B47_stalbor_column_5 = {
 			has_manpower_building_trigger = yes
 			development = 10
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		808 = {
 			add_permanent_province_modifier = {
 				name = vernham_urbanization_I
@@ -2342,18 +2342,18 @@ B47_stalbor_column_5 = {
 				duration = -1
 			}
 		}
-        }
+	}
     }
 
     B47_orc_and_goblin_integration = {
-        icon = mission_settlers_north_america
+	icon = mission_settlers_north_america
 	position = 3
 	required_missions = {
 		B47_beginnings_of_a_city
-        	B47_bladeskeep_and_the_watch
+		B47_bladeskeep_and_the_watch
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				owner = {
@@ -2369,10 +2369,10 @@ B47_stalbor_column_5 = {
 				is_capital = yes
 				ROOT = { NOT = { high_tolerance_orcish_race_trigger = yes } }
 			}
-            	}
+		}
 	}
 
-        trigger = {
+	trigger = {
 		OR = {
 			high_tolerance_goblin_race_trigger = yes
 			AND = {
@@ -2399,9 +2399,9 @@ B47_stalbor_column_5 = {
 				dip_power = 50
 			}
 		}
-        }
+	}
 
-        effect = {
+	effect = {
 		random_owned_province = {
 			add_goblin_minority_size_effect = yes
 			add_orcish_minority_size_effect = yes
@@ -2449,7 +2449,7 @@ B47_stalbor_column_5 = {
 			name = B47_religious_converts
 			duration = 9125
 		}
-        }
+	}
     }
 
     B47_expansion_of_the_vernham_act = {
@@ -2459,7 +2459,7 @@ B47_stalbor_column_5 = {
 		B47_orc_and_goblin_integration
 	}
 
-        provinces_to_highlight = {
+	provinces_to_highlight = {
 		OR = {
 			AND = {
 				province_id = 808
@@ -2479,11 +2479,11 @@ B47_stalbor_column_5 = {
 				devastation = 1
 				owned_by = ROOT
 			}
-            	}
+		}
 	}
 
-        trigger = {
-            	religious_unity = 0.90
+	trigger = {
+		religious_unity = 0.90
 		808 = {
 			has_upgraded_watch_modifer = yes
 		}
@@ -2498,9 +2498,9 @@ B47_stalbor_column_5 = {
 			value = 4
 		}
 		treasury = 100
-        }
+	}
 
-        effect = {
+	effect = {
 		add_treasury = -100
 		808 = {
 			remove_province_modifier = vernham_urbanization_I
@@ -2525,7 +2525,7 @@ B47_stalbor_column_5 = {
 				days = 730
 			}
 		}
-        }
+	}
     }
 
     B47_orc_and_half_orc_soliders_and_generals = {
@@ -2535,18 +2535,18 @@ B47_stalbor_column_5 = {
 		B47_expansion_of_the_vernham_act
 	}
 
-        trigger = {
+	trigger = {
 		OR = {
 			has_reform = anbennar_T5_human_half_orcish
 			has_reform = anbennar_T5_human_orcish
 			has_country_modifier = orcish_military
 			has_country_modifier = half_orcish_military
 		}
-        }
+	}
 
-        effect = {
-            	country_event = { id = flavor_stalbor.9 }
-        }
+	effect = {
+		country_event = { id = flavor_stalbor.9 }
+	}
     }
 }
 
