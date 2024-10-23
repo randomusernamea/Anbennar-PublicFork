@@ -95,6 +95,7 @@ a95_river_reavers = {
 		}
 		effect = {
 			custom_tooltip = a95_esmari_stewards.c1
+			set_country_flag = a95_disable_bad_party1
 			267 = { add_building_construction = {
 				building = impressment_offices
 				speed = 0.5
@@ -164,7 +165,7 @@ a95_river_reavers = {
 		trigger = {
 			calc_true_if = {
 				amount = 5
-				any_owned_province = {
+				all_owned_province = {
 					has_building = impressment_offices
 				}
 			}
@@ -212,7 +213,7 @@ a95_river_reavers = {
 
 			calc_true_if = {
 				amount = 12
-				any_owned_province = {
+				all_owned_province = {
 					has_building = impressment_offices
 				}
 			}
@@ -246,7 +247,7 @@ a95_river_reavers = {
 			has_estate_privilege = estate_nobles_levies
 			calc_true_if = {
 				amount = 20
-				any_owned_province = {
+				all_owned_province = {
 					has_building = impressment_offices
 				}
 			}
@@ -522,6 +523,7 @@ a95_river_parties = {
 
 		effect = {
 			country_event = { id = flavour_themarenn.21 }
+			set_country_flag = a95_disable_bad_party2
 		}
 	}
 	##Mission End
@@ -751,7 +753,7 @@ a95_women = {
 			}
 			calc_true_if = {
 				amount = 5
-				any_owned_province = { has_tax_building_trigger = yes }
+				all_owned_province = { has_tax_building_trigger = yes }
 			}
 			custom_trigger_tooltip = {
 				tooltip = a95_ryala_esmaryal.tt
@@ -989,6 +991,8 @@ ryala_branching = {
 				}
 				add_adm_power = -120
 			}
+			set_country_flag = a95_bad_consort
+			custom_tooltip = a95_good_consort
 			#disable consort_event.314
 			#increase chance of consort_event.313
 			#also .312 .311 .308 .306 .305 .304 .303 .302 .301
@@ -1025,6 +1029,7 @@ ryala_branching = {
 		effect = {
 			country_event = { id = flavour_themarenn.42 }
 			set_country_flag = a95_remove_zealots
+			set_country_flag = a95_ryalan_prosperity
 			custom_tooltip = a95_remove_zealots.tt
 		}
 	}

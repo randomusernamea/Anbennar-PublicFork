@@ -1,6 +1,6 @@
 namespace = flavour_themarenn
 
-country_event = {
+country_event = { #autonomy of the sweetcastles
 	id = flavour_themarenn.1
 	title = flavour_themarenn.1.t
 	desc = flavour_themarenn.1.d
@@ -117,7 +117,7 @@ country_event = { #First Council of themarenn
 
 	option = {
 		name = flavour_themarenn.3.b
-		trigger = { tag = A95 } # Is Themerann
+		trigger = { OR = { tag = A95 was_tag = a95 } } # Is Themerann
 		917 = { add_permanent_claim = ROOT }
 		265 = { add_permanent_claim = ROOT }
 		333 = { add_permanent_claim = ROOT }
@@ -210,8 +210,15 @@ country_event = {
 	title = flavour_themarenn.94.t
 	desc = flavour_themarenn.94.d
 	picture = GFX_Leviathan
-	is_triggered_only = yes
 	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_ruler_flag = divination_3 }
+		has_country_flag = vassalize_gabmorionn
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
 
 	option = { #accept vassalization
 		name = flavour_themarenn.94.a
@@ -329,7 +336,15 @@ country_event = { #pu gabmorionn
 	title = flavour_themarenn.97.t
 	desc = flavour_themarenn.98.d
 	picture = beautiful_cave
-	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_ruler_flag = divination_3 }
+		has_country_flag = vassalize_gabmorionn
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
 
 	option = {
 		name = flavour_themarenn.97.a
@@ -484,6 +499,8 @@ country_event = { # Palace atop a Lake
 		}
 		define_advisor = {
 			type = artist
+			name = "Trystan Buel"
+			culture = esmari
 			skill = 3
 			cost_multiplier = 0.5
 		}
@@ -2098,7 +2115,6 @@ country_event = { #esmaryal education event
 		}
 	}
 }
-#gabmorionn stuff
 country_event = { #esmaryal education event
 	id = flavour_themarenn.45
 	title = flavour_themarenn.45.t
