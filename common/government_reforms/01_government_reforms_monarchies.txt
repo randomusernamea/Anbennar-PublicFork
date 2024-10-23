@@ -4665,7 +4665,7 @@ ogre_empire = {
 		land_morale = 0.075
 		development_cost = -0.1
 		land_maintenance_modifier = -0.1
-		global_institution_spread = -0.1
+		global_institution_spread = 0.1
 		max_absolutism = 15
 	}
 }
@@ -13203,29 +13203,5 @@ virtuous_cults_reform = {
 	}
 	custom_attributes = {
 		virtuous_cults_upgrade = yes
-	}
-}
-
-ogre_empire_reform  = { #Maghargma
-	icon = "rajput_kingdom"
-	allow_normal_conversion = no
-	lock_level_when_selected = yes
-	fixed_rank = 3
-	maintain_dynasty = yes
-	potential = {
-		has_reform = ogre_empire_reform
-	}
-	modifiers = {
-		defensiveness = 0.3
-		build_cost = -0.15
-		land_morale = 0.075
-		development_cost = -0.1
-		land_maintenance_modifier = -0.1
-		global_institution_spread = 0.1
-		max_absolutism = 15
-	}
-	custom_attributes = {
-		disabled_expelling_human = yes
-		disabled_purging_human = yes
 	}
 }

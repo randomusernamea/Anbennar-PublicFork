@@ -388,6 +388,16 @@ vassal = {
 			}
 		}
 	}
+	modifier_overlord = {
+		modifier = I90_horse_free
+		trigger = {
+			overlord = { tag = I90 }
+			OR = {
+				has_country_flag = I90_centaur_vassal_east
+				has_country_flag = I90_centaur_vassal_west
+			}
+		}
+	}
 
 	overlord_opinion_modifier = is_vassal
 	subject_opinion_modifier = is_vassal

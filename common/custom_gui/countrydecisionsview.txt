@@ -7088,6 +7088,7 @@ custom_button = {
 			has_country_flag = unlocked_artifice_invention_bond_breaker
 			has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 			has_country_flag = unlocked_artifice_invention_high_heat_smelters
+			has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
 			has_country_modifier = G52_mage_8
 			mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 			mission_completed = yingzhen_tools_trade
@@ -7118,6 +7119,7 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_bond_breaker
 					has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 					has_country_flag = unlocked_artifice_invention_high_heat_smelters
+					has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
 					has_country_modifier = G52_mage_8
 					mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 					mission_completed = yingzhen_tools_trade
@@ -7142,6 +7144,7 @@ custom_button = {
 					has_estate_privilege = artifice_invention_bond_breaker
 					has_estate_privilege = artifice_invention_holy_gunblade
 					has_estate_privilege = artifice_invention_the_carousel
+					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 				}
 			}
 			OR = {
@@ -7153,6 +7156,7 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_bond_breaker
 				has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 				has_country_flag = unlocked_artifice_invention_high_heat_smelters
+				has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
 				has_country_modifier = G52_mage_8
 				mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 				mission_completed = yingzhen_tools_trade
@@ -7175,6 +7179,7 @@ custom_button = {
 				has_estate_privilege = artifice_invention_bond_breaker
 				has_estate_privilege = artifice_invention_holy_gunblade
 				has_estate_privilege = artifice_invention_the_carousel
+				has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 				
 			}
 		}
@@ -7194,6 +7199,7 @@ custom_button = {
 				mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 				mission_completed = yingzhen_tools_trade
 				mission_completed = R62_korashi_tuners
+				has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
 			}
 			if = {
 				limit = {
@@ -7628,6 +7634,39 @@ custom_button = {
 				remove_estate_privilege = artifice_invention_korashi_tuners
 			}
 		}
+		else_if = {
+			limit = { 
+				tag = I90
+				was_tag = I90
+			}
+			if = {
+				limit = { 
+					artifice_can_select_invention_20 = yes 
+					NOT = {
+						has_estate_privilege = artifice_invention_ironwraith_weapons_platform
+					}
+				}
+				set_estate_privilege = artifice_invention_ironwraith_weapons_platform
+			}
+			else_if = {
+				limit = {
+					artifice_can_select_invention_20 = no 
+					NOT = {
+						has_estate_privilege = artifice_invention_ironwraith_weapons_platform
+					}
+				}
+				custom_tooltip = artifice_cannot_afford_invention
+				tooltip = {
+					set_estate_privilege = artifice_invention_korashi_tuners
+				}
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
+				}
+				remove_estate_privilege = artifice_invention_ironwraith_weapons_platform
+			}
+		}
 	}
 }
 
@@ -7641,6 +7680,7 @@ custom_button = {
 			has_country_flag = unlocked_artifice_invention_endura_reigns
 			has_country_flag = asra_model_golem_unlocked
 			has_country_flag = unlocked_artifice_invention_black_hearth_torches
+			has_country_flag = unlocked_artifice_invention_spirit_capture_tech
 		}
 		# OR = {
 		# 	tag = I07
@@ -7658,6 +7698,7 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_endura_reigns
 					has_country_flag = asra_model_golem_unlocked
 					has_country_flag = unlocked_artifice_invention_black_hearth_torches
+					has_country_flag = unlocked_artifice_invention_spirit_capture_tech
 				}
 			}
 		}
@@ -7671,6 +7712,7 @@ custom_button = {
 					has_estate_privilege = artifice_invention_asra_model_golem_army
 					has_estate_privilege = artifice_endura_reigns
 					has_estate_privilege = artifice_invention_karakhanbar_black_hearth_torches
+					has_estate_privilege = artifice_invention_spirit_capture_tech
 				}
 			}
 			OR = {
@@ -7678,6 +7720,7 @@ custom_button = {
 				has_country_flag = asra_model_golem_unlocked
 				has_country_flag = unlocked_artifice_invention_endura_reigns
 				has_country_flag = unlocked_artifice_invention_black_hearth_torches
+				has_country_flag = unlocked_artifice_invention_spirit_capture_tech
 			}
 		}
 	}
@@ -7689,6 +7732,7 @@ custom_button = {
 				has_estate_privilege = artifice_invention_asra_model_golem_army
 				has_estate_privilege = artifice_endura_reigns
 				has_estate_privilege = artifice_invention_karakhanbar_black_hearth_torches
+				has_estate_privilege = artifice_invention_spirit_capture_tech
 			}
 		}
 	}
@@ -7699,6 +7743,7 @@ custom_button = {
 				has_country_flag = asra_model_golem_unlocked
 				has_country_flag = unlocked_artifice_invention_endura_reigns
 				has_country_flag = unlocked_artifice_invention_black_hearth_torches
+				has_country_flag = unlocked_artifice_invention_spirit_capture_tech
 			}
 			if = {
 				limit = {
@@ -7849,6 +7894,41 @@ custom_button = {
 					has_estate_privilege = artifice_invention_karakhanbar_black_hearth_torches
 				}
 				remove_estate_privilege = artifice_invention_karakhanbar_black_hearth_torches
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					tag =  I90
+					was_tag = I90
+				}
+			}
+			if = {
+				limit = {
+					artifice_can_select_invention_20 = yes
+					NOT = {
+						has_estate_privilege = artifice_invention_spirit_capture_tech
+					}
+				}
+				set_estate_privilege = artifice_invention_spirit_capture_tech
+			}
+			else_if = {
+				limit = {
+					artifice_can_select_invention_20 = no
+					NOT = {
+						has_estate_privilege = artifice_invention_spirit_capture_tech
+					}
+				}
+				custom_tooltip = artifice_cannot_afford_invention
+				tooltip = {
+					set_estate_privilege = artifice_invention_spirit_capture_tech
+				}
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_spirit_capture_tech
+				}
+				remove_estate_privilege = artifice_invention_spirit_capture_tech
 			}
 		}
 	}

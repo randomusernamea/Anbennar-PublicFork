@@ -180,6 +180,7 @@ country_event = {
 		name = flavor_maghargma.6.a
 		set_country_flag = I90_vahjevgiv_brightland
 		custom_tooltip = I90_vahjevgiv_brightland_tt
+		custom_tooltip = maghargma_create_the_wolfguard_tt
 		swap_non_generic_missions = yes
 	}
 
@@ -187,6 +188,11 @@ country_event = {
 		name = flavor_maghargma.6.b
 		set_country_flag = I90_qarshtuluu_brightland
 		custom_tooltip = I90_qarshtuluu_brightland_tt
+		tooltip = {
+			custom_tooltip = I90_can_use_archive_tt_1 
+			custom_tooltip = maghargma_the_glass_court_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
 		swap_non_generic_missions = yes
 	}
 }
@@ -206,6 +212,23 @@ country_event = {
 		name = flavor_maghargma.7.a
 		set_country_flag = I90_seize_amberlands
 		custom_tooltip = I90_seize_amberlands_tt
+		tooltip = {
+			5226 = {
+				add_unit_construction = {
+				    type = light_ship
+				    amount = 30
+				    speed = 0.1
+				    cost = 0
+				}
+				add_unit_construction = {
+				    type = heavy_ship
+				    amount = 10
+				    speed = 0.1
+				    cost = 0
+				}
+				add_ogre_minority_size_effect = yes
+			}
+		}
 		swap_non_generic_missions = yes
 	}
 
@@ -213,6 +236,19 @@ country_event = {
 		name = flavor_maghargma.7.b
 		set_country_flag = I90_befriend_amberlands
 		custom_tooltip = I90_befriend_amberlands_tt
+		tooltip = {
+			add_dip_power = 100
+			if = {
+				limit = { has_heir = yes }
+				change_heir_dip = 1
+				add_heir_personality = charismatic_negotiator_personality
+			}
+			else = {
+				add_dip_power = 50
+			}
+			custom_tooltip = maghargma_unlikely_friends_tt
+			large_increase_of_human_tolerance_effect = yes
+		}
 		swap_non_generic_missions = yes
 	}
 }
@@ -556,6 +592,8 @@ country_event = {
 				hidden = yes
 			}
 			change_unit_type = tech_goblin
+			custom_tooltip = update_unit_sprites_tooltip
+			hidden_effect = { update_unit_sprites_for_racial_mil = yes }
 		}
 		add_country_modifier = {
 			name = I90_ogre_officers
@@ -737,7 +775,7 @@ country_event = {
 
 	option = {
 		name = flavor_maghargma.18.a
-		add_government_reform = ogre_empire_reform
+		add_government_reform = ogre_empire
 		set_government_rank = 3
 	}
 }
@@ -783,6 +821,9 @@ country_event = {
 		name = flavor_maghargma.20.a #Respect Their Rights
 		set_country_flag = I90_cooperate_Sudomeg'i
 		custom_tooltip = I90_cooperate_Sudomeg'i_tt
+		tooltip = {
+			set_estate_privilege = artifice_invention_ironwraith_weapons_platform
+		}
 		swap_non_generic_missions = yes
 	}
 
@@ -790,6 +831,9 @@ country_event = {
 		name = flavor_maghargma.20.b #Who You Gonna Call?
 		set_country_flag = I90_purge_Sudomeg'i
 		custom_tooltip = I90_purge_Sudomeg'i_tt
+		tooltip = {
+			set_estate_privilege = artifice_invention_spirit_capture_tech
+		}
 		swap_non_generic_missions = yes
 	}
 }
@@ -871,3 +915,536 @@ country_event = {
 	}
 }
 
+#A United Horsemen?
+country_event = {
+	id = flavor_maghargma.24
+	title = flavor_maghargma.24.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.24.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.24.a #Favor West
+		random_subject_country = {
+			limit = { has_ country_flag = I90_centaur_vassal_west }
+			every_country = {
+				limit = { has_country_flag = I90_centaur_vassal_east } 
+				PREV = { inherit = PREV }
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.24.b #Favor East
+		random_subject_country = {
+			limit = { has_ country_flag = I90_centaur_vassal_east }
+			every_country = {
+				limit = { has_country_flag = I90_centaur_vassal_west } 
+				PREV = { inherit = PREV }
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.24.c #Nah
+	}
+}
+
+#Counter Event
+country_event = {
+	id = flavor_maghargma.25
+	title = flavor_maghargma.25.t
+	picture = DIPLOMACY_SIGNING_eventPicture
+	desc = flavor_maghargma.25.d
+	
+	option = {
+		name = flavor_maghargma.25.a #Collaboration Bonus
+		trigger = {
+			check_variable = {
+				which = I90_collaboration_counter
+				value = 3
+			}
+		}
+		add_country_modifier = {
+			name = I90_collaborative_administration
+			duration = -1 
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.25.b #Occupation Bonus
+		trigger = {
+			check_variable = {
+				which = I90_occupation_counter
+				value = 3
+			}
+		}
+		add_country_modifier = {
+			name = I90_despotic_administration
+			duration = -1 
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.25.c #Neutral Bonus
+		trigger = {
+			check_variable = {
+				which = I90_occupation_counter
+				value = 2
+			}
+			check_variable = {
+				which = I90_collaboration_counter
+				value = 2
+			}
+		}
+		add_country_modifier = {
+			name = I90_flexible_administration
+			duration = -1 
+		}
+	}
+}
+
+#Reunification
+country_event = {
+	id = flavor_maghargma.26
+	title = flavor_maghargma.26.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.26.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.26.a #
+		every_owned_province = {
+			limit = {
+				region = nomsyulhan_region
+			}
+			add_province_modifier = {
+				name = I90_reunification_jubilee
+				duration = -1
+			}
+		}
+		country_event = { id = flavor_maghargma.27 days = 730 }
+	}
+}
+
+#A Sour Taste
+country_event = {
+	id = flavor_maghargma.27
+	title = flavor_maghargma.27.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.27.a 
+		every_owned_province = {
+			limit = {
+				region = nomsyulhan_region
+			}
+			remove_province_modifier = I90_reunification_jubilee
+		}
+		6836 = {
+			add_province_modifier = {
+				name = I90_stalwart_resistance
+				duration = -1
+			}			
+		}
+		6827 = {
+			add_province_modifier = {
+				name = I90_stalwart_resistance
+				duration = -1
+			}
+		}
+		6847 = {
+			add_province_modifier = {
+				name = I90_stalwart_resistance
+				duration = -1
+			}
+		}
+		6834 = {
+			add_province_modifier = {
+				name = I90_stalwart_resistance
+				duration = -1
+			}
+		}
+		country_event = { id = flavor_maghargma.28 days = 1825 }
+	}
+}
+
+#A Discussion
+country_event = {
+	id = flavor_maghargma.28
+	title = flavor_maghargma.28.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.28.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.28.a 
+		every_owned_province = {
+			limit = {
+				region = nomsyulhan_region
+			}
+			remove_province_modifier = I90_stalwart_resistance
+		}
+		6836 = {
+			add_province_modifier = {
+				name = I90_culture_shock
+				duration = -1
+			}			
+		}
+		6827 = {
+			add_province_modifier = {
+				name = I90_culture_shock
+				duration = -1
+			}
+		}
+		6847 = {
+			add_province_modifier = {
+				name = I90_culture_shock
+				duration = -1
+			}
+		}
+		6834 = {
+			add_province_modifier = {
+				name = I90_culture_shock
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = flavor_maghargma.28.a 
+		every_owned_province = {
+			limit = {
+				region = nomsyulhan_region
+			}
+			remove_province_modifier = I90_stalwart_resistance
+		}
+		6836 = {
+			add_province_modifier = {
+				name = I90_mutual_understanding
+				duration = -1
+			}			
+		}
+		6827 = {
+			add_province_modifier = {
+				name = I90_mutual_understanding
+				duration = -1
+			}
+		}
+		6847 = {
+			add_province_modifier = {
+				name = I90_mutual_understanding
+				duration = -1
+			}
+		}
+		6834 = {
+			add_province_modifier = {
+				name = I90_mutual_understanding
+				duration = -1
+			}
+		}
+	}
+	
+	after = {
+		set_country_flag = I90_discussion_done
+	}
+}
+
+#A Rival Claimant
+country_event = {
+	id = flavor_maghargma.29
+	title = flavor_maghargma.29.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.29.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.29.a #Halann isn't big enough for the both us
+		large_decrease_of_troll_tolerance_effect = yes
+		every_owned_province = {
+			limit = {
+				culture = hill_troll
+			}
+			change_religion = ROOT
+			spawn_rebels = {
+				size = 1
+				type = un_khudai_rebels
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.29.b #They Can Rule Under Us
+		large_increase_of_troll_tolerance_effect = yes
+		release = V16
+		vassalize = V16
+		V16 = {
+			add_country_modifier = {
+				name = I90_independent_army
+				duration = -1
+			}
+		}
+	}
+}
+
+#Maghargma Demands Our Vassalage
+country_event = {
+	id = flavor_maghargma.30
+	title = flavor_maghargma.30.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = {
+		trigger = { tag = Y01 }
+		flavor_maghargma.30.d
+	}
+	desc = {
+		trigger = { NOT = { tag = Y01 } }
+		flavor_maghargma.30.d.1
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.30.a #Hell Yeah (Azjakuma)
+		trigger = {
+			tag = Y01
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_subject = yes
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					army_strength = {
+						WHO = ROOT
+						value = 2
+					}
+				}
+			}
+		}
+		FROM = { 
+			vassalize = ROOT 
+			set_country_flag = I90_oni_yes
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.30.b #No (Azjakuma)
+		trigger = {
+			tag = Y01
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				is_subject = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					FROM = {
+						army_strength = {
+							WHO = ROOT
+							value = 2
+						}
+					}
+				}
+			}
+		}
+		FROM = { 
+			country_event = flavor_maghargma.31 days = 5 
+			set_country_flag = I90_oni_no	
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.30.c #Yes (Not Azjakuma)
+		trigger = {
+			NOT = { tag = Y01 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				is_subject = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					FROM = {
+						army_strength = {
+							WHO = ROOT
+							value = 2
+						}
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				region = demon_hills_region
+			}
+			cede_province = FROM
+		}
+		FROM = { 
+			country_event = flavor_maghargma.31
+			set_country_flag = I90_demonhill_yes
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.30.d #No (Not Azjakuma)
+		trigger = {
+			NOT = { tag = Y01 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				is_subject = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					FROM = {
+						army_strength = {
+							WHO = ROOT
+							value = 2
+						}
+					}
+				}
+			}
+		}
+		FROM = { 
+			country_event = flavor_maghargma.31
+			set_country_flag = I90_demonhill_no
+		}
+	}
+}
+
+#Their Answer
+country_event = {
+	id = flavor_maghargma.31
+	title = flavor_maghargma.31.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = {
+		trigger = { has_country_flag = I90_oni_yes }
+		flavor_maghargma.31.d
+	}
+	desc = {
+		trigger = { has_country_flag = I90_oni_no }
+		flavor_maghargma.31.d.1
+	}
+	desc = {
+		trigger = { has_country_flag = I90_demonhill_yes }
+		flavor_maghargma.31.d.2
+	}
+	desc = {
+		trigger = { has_country_flag = I90_demonhill_no }
+		flavor_maghargma.31.d.3
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.31.a #Hell Yeah 
+		trigger = {
+			OR = {
+				has_country_flag = I90_oni_yes
+				has_country_flag = I90_demonhill_yes
+			}
+		}
+		demon_hills_region = { add_permanent_claim = ROOT }
+	}
+
+	option = {
+		name = flavor_maghargma.31.a #Those Bastards!
+		trigger = {
+			OR = {
+				has_country_flag = I90_oni_no
+				has_country_flag = I90_demonhill_no
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = I90_oni_no 
+			}
+			add_casus_belli = {
+				target = Y01
+				type = cb_vassalize_mission
+				months = 180
+			}
+			demon_hills_region = { add_permanent_claim = ROOT }
+		}
+		else = {
+			demon_hills_region = { add_permanent_claim = ROOT }
+		}
+	}
+} 
+
+#Deja vu
+country_event = {
+	id = flavor_maghargma.32
+	title = flavor_maghargma.32.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.32.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.32.a #H
+		country_event = { id = flavor_maghargma.33 }
+	}
+}
+
+#Birds Of a Feather
+country_event = {
+	id = flavor_maghargma.33
+	title = flavor_maghargma.33.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.33.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.33.a #Mutual Agreement
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = lefthand_path
+					religion = devouring_path
+				}
+			}
+			add_province_modifier = {
+				name = I90_mutual_understanding 
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.33.b #Let Us Learn From Each Other
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = lefthand_path
+					religion = devouring_path
+				}
+			}
+			change_religion = ROOT
+		}
+		every_owned_province = {
+			limit = {
+				region = nomsyulhan_region
+			}
+			remove_province_modifier = I90_mutual_understanding
+		}
+	}
+}
