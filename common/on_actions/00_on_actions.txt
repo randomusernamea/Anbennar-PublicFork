@@ -5546,9 +5546,11 @@ on_monthly_pulse = {
 					OR = {
 						liberty_desire = 50
 						NOT = {
-							has_opinion = {
-								who = overlord
-								value = 0
+							overlord = {
+								reverse_has_opinion = {
+									who = PREV
+									value = 0
+								}
 							}
 						}
 					}

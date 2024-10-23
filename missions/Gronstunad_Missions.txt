@@ -1056,14 +1056,30 @@ gronstunad_2 = {
 
 		provinces_to_highlight = {
 			OR = {
-				province_id = 4265
-				province_id = 4247
-			}
-			NOT = {
-				hold_condition = { Repaired = yes }
-				has_trade_building_trigger = yes
-				is_core = ROOT
-				owned_by = ROOT
+				AND = {
+					OR = {
+						province_id = 4265 #Grozumdihr
+						province_id = 4247 #Ovdal Kanzad
+					}
+					NOT = {
+						hold_condition = { Repaired = yes }
+						has_trade_building_trigger = yes
+						is_core = ROOT
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					province_id = 4435 #Rayavhashapal
+					owner = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+							has_90_opinion_improved_relation = { target = ROOT }
+						}
+					}
+				}
 			}
 		}
 
@@ -3262,7 +3278,14 @@ gronstunad_4 = {
 			}
 			random_owned_province = {
 				limit = {
+					has_province_modifier = gronstunad_mining_operation
 					any_neighbor_province = {
+						has_terrain = cavern
+						NOT = { has_province_modifier = gronstunad_mining_operation }
+					}
+				}
+				random_neighbor_province = {
+					limit = {
 						has_terrain = cavern
 						NOT = { has_province_modifier = gronstunad_mining_operation }
 					}
@@ -3887,18 +3910,37 @@ gronstunad_5 = {
 		}
 
 		trigger = {
-			calc_true_if = {
-				amount = 2
-				all_subject_country = {
-					OR = {
-						culture = kamtarhid
-						culture = shamadhan
-						culture = khedarid
+			OR = {
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						OR = {
+							culture = kamtarhid
+							culture = shamadhan
+							culture = khedarid
+						}
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
 					}
-					has_opinion = {
-						who = ROOT
-						value = 100
+				}
+				AND = {
+					raghajandi_area = {
+						type = all
+						owned_by = ROOT
 					}
+					R80 = { NOT = { exists = yes } }
+					ghatasak_area = {
+						type = all
+						owned_by = ROOT
+					}
+					R79 = { NOT = { exists = yes } }
+					nadida_area = {
+						type = all
+						owned_by = ROOT
+					}
+					R78 = { NOT = { exists = yes } }
 				}
 			}
 			tamvihar_area = {
@@ -3912,45 +3954,169 @@ gronstunad_5 = {
 		}
 
 		effect = {
-			every_subject_country = {
-				if = {
-					limit = { culture = kamtarhid }
-					khamarutar_area = {
-						add_permanent_claim = PREV
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 2
+						all_subject_country = {
+							OR = {
+								culture = kamtarhid
+								culture = shamadhan
+								culture = khedarid
+							}
+						}
 					}
-					marudhoj_area = {
-						add_permanent_claim = PREV
-					}
-					ghatasak_area = {
-						add_permanent_claim = PREV
-					}
-					small_increase_of_dwarven_tolerance_effect = yes
 				}
-				else_if = {
-					limit = { culture = shamadhan }
-					nadida_area = {
-						add_permanent_claim = PREV
+				every_subject_country = {
+					trigger_switch = {
+						on_trigger = culture
+						kamtarhid = {
+							khamarutar_area = {
+								add_permanent_claim = PREV
+							}
+							marudhoj_area = {
+								add_permanent_claim = PREV
+							}
+							ghatasak_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
+						shamadhan = {
+							nadida_area = {
+								add_permanent_claim = PREV
+							}
+							pharata_area = {
+								add_permanent_claim = PREV
+							}
+							sir_area = {
+								add_permanent_claim = PREV
+							}
+							yodhilakra_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
+						khedarid = {
+							raghajandi_area = {
+								add_permanent_claim = PREV
+							}
+							khasardul_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
 					}
-					pharata_area = {
-						add_permanent_claim = PREV
-					}
-					sir_area = {
-						add_permanent_claim = PREV
-					}
-					yodhilakra_area = {
-						add_permanent_claim = PREV
-					}
-					small_increase_of_dwarven_tolerance_effect = yes
 				}
-				else_if = {
-					limit = { culture = khedarid }
-					raghajandi_area = {
-						add_permanent_claim = PREV
+			}
+			else = {
+				custom_tooltip = gronstunad_release_shamakhad_tt
+				hidden_effect = {
+					if = {
+						limit = {
+							R80 = { NOT = { exists = yes } }
+						}
+						raghajandi_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R80
+							add_core = R80
+						}
+						khasardul_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R80
+							add_core = R80
+						}
+						R80 = {
+							change_religion = high_philosophy
+							change_culture = khedarid
+							raghajandi_area = {
+								add_permanent_claim = PREV
+							}
+							khasardul_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
+						vassalize = R80
 					}
-					khasardul_area = {
-						add_permanent_claim = PREV
+					if = {
+						limit = {
+							R79 = { NOT = { exists = yes } }
+						}
+						khamarutar_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R79
+							add_core = R79
+						}
+						marudhoj_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R79
+							add_core = R79
+						}
+						ghatasak_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R79
+							add_core = R79
+						}
+						R79 = {
+							change_religion = high_philosophy
+							change_culture = kamtarhid
+							khamarutar_area = {
+								add_permanent_claim = PREV
+							}
+							marudhoj_area = {
+								add_permanent_claim = PREV
+							}
+							ghatasak_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
+						vassalize = R79
 					}
-					small_increase_of_dwarven_tolerance_effect = yes
+					if = {
+						limit = {
+							R78 = { NOT = { exists = yes } }
+						}
+						nadida_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R78
+							add_core = R78
+						}
+						pharata_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R78
+							add_core = R78
+						}
+						sir_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R78
+							add_core = R78
+						}
+						yodhilakra_area = {
+							limit = { owned_by = ROOT }
+							cede_province = R78
+							add_core = R78
+						}
+						R78 = {
+							change_religion = high_philosophy
+							change_culture = shamadhan
+							nadida_area = {
+								add_permanent_claim = PREV
+							}
+							pharata_area = {
+								add_permanent_claim = PREV
+							}
+							sir_area = {
+								add_permanent_claim = PREV
+							}
+							yodhilakra_area = {
+								add_permanent_claim = PREV
+							}
+							small_increase_of_dwarven_tolerance_effect = yes
+						}
+						vassalize = R78
+					}
 				}
 			}
 			custom_tooltip = I98_ae_tt
@@ -3974,7 +4140,18 @@ gronstunad_5 = {
 		position = 4
 
 		provinces_to_highlight = {
-			
+			OR = {
+				area = khamarutar_area
+				area = marudhoj_area
+				area = ghatasak_area
+				area = nadida_area
+				area = pharata_area
+				area = sir_area
+				area = yodhilakra_area
+				area = raghajandi_area
+				area = khasardul_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
 		}
 
 		trigger = {
@@ -4020,64 +4197,107 @@ gronstunad_5 = {
 			custom_tooltip = gronstunad_hobgoblin_expulsion
 			hidden_effect = {
 				khamarutar_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				marudhoj_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				ghatasak_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				nadida_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				pharata_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				sir_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				yodhilakra_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				raghajandi_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 				khasardul_area = {
-					limit = { culture_group = hobgoblin }
+					limit = {
+						OR = {
+							culture_group = hobgoblin
+							culture_group = wuhyun
+						}
+					}
 					change_culture = owner
 					change_religion = owner
 				}
 			}
 			every_subject_country = {
-				if = {
-					limit = {
-						OR = {
-							culture = kamtarhid
-							culture = shamadhan
-							culture = khedarid
-						}
+				limit = {
+					OR = {
+						culture = kamtarhid
+						culture = shamadhan
+						culture = khedarid
 					}
-					add_country_modifier = {
-						name = gronstunad_recovering_from_war
-						duration = 3650
-					}
+				}
+				add_country_modifier = {
+					name = gronstunad_recovering_from_war
+					duration = 3650
 				}
 			}
 			medium_increase_of_human_tolerance_effect = yes
@@ -4091,19 +4311,36 @@ gronstunad_5 = {
 
 		provinces_to_highlight = {
 			OR = {
-				province_id = 4538
-				province_id = 4546
-				province_id = 4633
-				province_id = 4630
-			}
-			NOT = {
 				AND = {
-					has_trade_building_trigger = yes
-					has_production_building_trigger = yes
-					NOT = { devastation = 0.01 }
+					province_id = 4538
+					NOT = {
+						AND = {
+							has_trade_building_trigger = yes
+							has_production_building_trigger = yes
+							NOT = { devastation = 0.01 }
+						}
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 4546
+						province_id = 4633
+						province_id = 4630
+					}
+					NOT = {
+						AND = {
+							OR = {
+								AND = {
+									has_trade_building_trigger = yes
+									has_production_building_trigger = yes
+								}
+								NOT = { num_free_building_slots = 1 }
+							}
+							NOT = { devastation = 0.01 }
+						}
+					}
 				}
 			}
-			num_free_building_slots = 1
 		}
 
 		trigger = {
