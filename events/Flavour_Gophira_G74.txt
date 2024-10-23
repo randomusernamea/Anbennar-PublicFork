@@ -44,7 +44,6 @@ country_event = {
 			discount = yes
 		}
 		change_heir_dip = 1
-		unlock_estate_privilege = {	estate_privilege = estate_nobles_ironblood_officer_corp }
 	}
 
 	option = {
@@ -565,14 +564,12 @@ country_event = {	#bad events handler
 			}
 			1 = {
 				trigger = {
-					NOT = {
-						has_country_flag = gophira_event14
-						is_at_war = yes
-						any_owned_province = {
-							num_of_units_in_province = {
-								who = ROOT
-								amount = 10
-							}
+					NOT = {	has_country_flag = gophira_event14 }
+					is_at_war = no
+					any_owned_province = {
+						num_of_units_in_province = {
+							who = ROOT
+							amount = 10
 						}
 					}
 				}

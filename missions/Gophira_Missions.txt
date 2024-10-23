@@ -334,7 +334,7 @@ gophira_1_fren = {
 					value = 100
 				}
 			}
-			dip_power = 500
+			dip_power = 300
 			custom_trigger_tooltip = {
 				tooltip = taychend_passed_reform_4_tt
 				has_country_flag = got_reform_4
@@ -342,33 +342,8 @@ gophira_1_fren = {
 		}
 
 		effect = {
-			hidden_effect = {
-				set_variable = { which = gophira_pay_dip } 
-				J72 = {
-					export_to_variable = {
-						value = trigger_value:total_development
-						which = gophira_pay_dip
-					}
-					ROOT = {
-						change_variable = {
-							which = gophira_pay_dip
-							which = PREV
-						}
-					}
-				}
-				multiply_variable = {
-					which = gophira_pay_dip
-					value = 3
-				}
-				var_effect = {
-					effect = add_dip_power
-					var = gophira_pay_dip
-					sign = -
-				}
-			}
-			custom_tooltip = gophira_lose_dipmana_tt
 			inherit = J72
-			
+			add_dip_power = -300
 		}
 	}
 }
@@ -531,6 +506,10 @@ gophira_1_march = {
 					name = gophira_march_moarbuff
 					duration = -1
 				}
+			}
+			add_country_modifier = {
+				name = gophira_marchboss_buff
+				duration = -1
 			}
 			every_owned_province = {
 				limit = { culture = chendhyan }
@@ -1315,11 +1294,7 @@ gophira_4 = {
 			}
 			else = { add_treasury = -40 }
 			2530 = {
-				add_building_construction = {
-					building = fort_magic
-					speed = 0
-					cost = 0
-				}
+				add_building = fort_magic
 				if = {
 					limit = {
 						owner = {

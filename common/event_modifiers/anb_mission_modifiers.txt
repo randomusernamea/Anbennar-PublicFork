@@ -30814,13 +30814,18 @@ gophira_relics_goodmod = {
 	global_tax_income = 12
 }
 gophira_march_buff = {
-	global_manpower = 10
-	land_forcelimit = 10
+	global_manpower = 5
+	land_forcelimit = 5
+	shock_damage = 0.1
 }
 gophira_march_moarbuff = {
-	global_manpower = 20
-	land_forcelimit = 20
+	global_manpower = 10
+	land_forcelimit = 5
 	shock_damage = 0.1
+	discipline = 0.05
+}
+gophira_marchboss_buff = {
+	global_manpower_modifier = 0.05
 }
 gophira_cat_auxiliaries_mod = {
 	cavalry_cost = -0.15
@@ -30832,14 +30837,14 @@ gophira_morale_mod = {
 	morale_damage_received = -0.05
 }
 gophira_understanding_relic = {
-	local_defensiveness = -0.1
+	local_defensiveness = -1.5
 }
 gophira_abundant_materials = {
 	local_build_cost = -0.15
 	allowed_num_of_manufactories = 1
 }
 gophira_rebirth_of_dam_city = {
-	local_development_cost = -0.1
+	local_development_cost = -0.2
 	local_center_of_trade_upgrade_cost = -0.25
 }
 gophira_warlords_mod = {
@@ -30867,20 +30872,24 @@ gophira_loyalists_mod = {
 gophira_stance_1 = {
 	global_unrest = -2
 	harsh_treatment_cost = -0.25
+	build_cost = -0.1
 	all_estate_loyalty_equilibrium = -0.1
 }
 gophira_stance_1fin = {
 	global_unrest = -2
 	harsh_treatment_cost = -0.25
+	build_cost = -0.1
 }
 gophira_stance_2 = {
 	global_unrest = -1
 	harsh_treatment_cost = -0.15
+	build_cost = -0.05
 	all_estate_loyalty_equilibrium = -0.05
 }
 gophira_stance_2fin = {
 	global_unrest = -1
 	harsh_treatment_cost = -0.15
+	build_cost = -0.05
 }
 gophira_stance_3 = {
 	prestige = -1
