@@ -320,6 +320,139 @@ country_event = {
 	}
 }
 
+# finishing the gds loopeng gedsandde
+# country_event = {
+# 	id = flavor_giberd.13
+# 	title = flavor_giberd.13.t
+# 	desc = flavor_giberd.13.d
+# 	picture = HRE_eventPicture
+
+# 	is_triggered_only = yes
+# 	option = {
+# 		name = flavor_giberd.13.a
+# 	}
+# }
+
+# Convincing the emperor
+country_event = {
+	id = flavor_giberd.14
+	title = flavor_giberd.14.t
+	desc = flavor_giberd.14.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.14.a
+		custom_tooltip = giberd_increases_our_artifice_upkeep_by_20
+		custom_tooltip = artificer_points_upkeep_tt
+		hidden_effect = {
+			change_variable = {
+				which = ArtificeUpkeep
+				value = 20
+			}
+		}
+		update_artifice_points = yes
+		hidden_effect = {
+			emperor = {
+				country_event = {
+					id = flavor_giberd.16
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# The first Gnomish elector
+country_event = {
+	id = flavor_giberd.15
+	title = flavor_giberd.15.t
+	desc = flavor_giberd.15.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.15.a
+		elector = ROOT
+		country_event = {
+			id = flavor_esmari.1
+			days = 1
+		}
+		# TODO: unlock level 2 inventions
+	}
+}
+
+# Giberd asks for an Electorate
+country_event = {
+	id = flavor_giberd.16
+	title = flavor_giberd.16.t
+	desc = flavor_giberd.16.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.16.a
+		ai_chance = { factor = 100 }
+		A81 = {
+			country_event = {
+				id = flavor_giberd.15
+				days = 30
+			}
+			hidden_effect = {
+				country_event = {
+					id = flavor_giberd.17
+					days = 3650
+				}
+			}
+		}
+		if = {
+			limit = {
+				emperor = { is_ai = no }
+			}
+			country_event = {
+				id = flavor_giberd.17
+				days = 3650
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.16.b
+		ai_chance = { factor = 0 }
+		A81 = {
+			hidden_effect = {
+				subtract_variable = {
+					which = ArtificeUpkeep
+					value = 20
+				}
+			}
+		}
+
+	}
+}
+
+# The Mechanical Dragon
+country_event = {
+	id = flavor_giberd.17
+	title = flavor_giberd.17.t
+	desc = flavor_giberd.17.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.17.a
+		if = {
+			limit = { tag = A81 }
+			artifice_remove_20 = yes
+		}
+		emperor = {
+			add_country_modifier = {
+				name = giberd_mechanical_dragon
+				duration = 3650
+			}
+		}
+	}
+}
+
 ########
 # electorate event chain
 
