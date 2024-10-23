@@ -1715,11 +1715,12 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
-                    modifier = B47_vampire_hunter_overreach
-                }
+					who = ROOT
+					modifier = B47_vampire_hunter_overreach
+				}
 			}
 		}
 		else_if = {
@@ -1731,11 +1732,12 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
-                    modifier = B47_vampire_hunter_overreach
-                }
+					who = ROOT
+					modifier = B47_vampire_hunter_overreach
+				}
 			}
 		}
 		else_if = {
@@ -1747,11 +1749,12 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
-                    modifier = B47_vampire_hunter_overreach
-                }
+					who = ROOT
+					modifier = B47_vampire_hunter_overreach
+				}
 			}
 		}
 		else_if = {
@@ -1763,11 +1766,12 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
-                    modifier = B47_vampire_hunter_overreach
-                }
+					who = ROOT
+					modifier = B47_vampire_hunter_overreach
+				}
 			}
 		}
 		else_if = {
@@ -1779,11 +1783,12 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
+					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
 				}
 				add_opinion = {
-                    who = ROOT
-                    modifier = B47_vampire_hunter_overreach
-                }
+					who = ROOT
+					modifier = B47_vampire_hunter_overreach
+				}
 			}
 		}
 	}
