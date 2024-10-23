@@ -1133,62 +1133,49 @@ giberd_mercantile_shipping = {
 		position = 4
 		
 		provinces_to_highlight = {
-			OR = {
-				province_id = 352 #Ibevar
-				province_id = 912 #Anvilwright
-				province_id = 266 #Esmaraine
-			}
-			NOT = {
-				owned_by = ROOT
-				owner = {
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
-				}
-			}
 		}
 		
 		trigger = {
-			352 = { #Ibevar
-					OR = {
-					owned_by = ROOT
-					owner = {
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
+			OR = {
+				has_estate_privilege = estate_artificers_trained_mage_hunters
+				NOT = {
+					estate_influence = {
+						estate = estate_mages
+						influence = 20
 					}
 				}
 			}
-			912 = { #Anvilwright
-					OR = {
-					owned_by = ROOT
-					owner = {
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
+			NOT = {
+				estate_influence = {
+					estate = estate_adventurers
+					influence = 25
 				}
 			}
-			266 = { #Esmaraine
-					OR = {
-					owned_by = ROOT
-					owner = {
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
+			if = {
+				limit = {
+					NOT = { has_estate_privilege = estate_adventurers_organization_chronicler_grants }
+				}
+				estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = 50
 				}
 			}
 		}
 		
 		effect = {
 			add_country_modifier = {
-				name = giberd_transhavoral_trade_mod
-				duration = 7300 #20 years
+				name = giberd_dealing_with_the_magisterium
+				duration = -1
+			}
+
+			if = {
+				limit = {
+					NOT = { has_estate_privilege = estate_adventurers_organization_chronicler_grants }
+				}
+				set_estate_privilege = estate_adventurers_organization_chronicler_grants
+			}
+			else = {
+				add_stability_or_adm_power = yes
 			}
 		}
 	}

@@ -7404,7 +7404,9 @@ giberd_embrace_ravelianism_mod = {
 }
 
 # new giberd, country modifiers
-# giberd_distracting_the_magisterium = {} # -10% mages influence
+giberd_dealing_with_the_magisterium = {
+	mages_loyalty_modifier = 0.1
+}
 
 giberd_merchants_buying_artificer_goods = {
 	trade_efficiency = 0.1
