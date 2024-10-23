@@ -2210,6 +2210,7 @@ technocracy_republic_reform = {
 			current_age = age_of_revolutions
 			has_reform = technocracy_republic_reform
 		}
+		NOT = { has_reform = imperial_technocracy_republic_reform }
 	}
 	duration = 4
 	valid_for_nation_designer = yes
@@ -2250,6 +2251,70 @@ technocracy_republic_reform = {
 			duration = -1
 		}
 		artifice_magic_switch_to_artificery_only_mode = yes
+		country_event = { id = elections.902 days = 1 }
+	}
+	removed_effect = {
+		remove_country_modifier = technocracy_rajput_bonus
+	}
+}
+
+imperial_technocracy_republic_reform = {
+	icon = "paper_with_seal"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		always = no
+	}
+	trigger = {
+		OR = {
+			culture_group = gnomish
+			culture_group = goblin
+			culture_group = kobold
+			has_institution = manufactories
+			current_age = age_of_revolutions
+			has_reform = imperial_technocracy_republic_reform
+		}
+		NOT = { has_reform = technocracy_republic_reform }
+	}
+	duration = 4
+	valid_for_nation_designer = yes
+	nation_designer_trigger = {
+		OR = {
+			culture_group = gnomish
+			culture_group = goblin
+			culture_group = kobold
+			has_institution = manufactories
+			current_age = age_of_revolutions
+		}
+	}
+	nation_designer_cost = 20
+
+	factions = {
+		tec_brilliance
+		tec_technomancy
+		tec_mechanists
+	}
+
+	modifiers = {
+		advisor_cost = -0.1
+		advisor_pool = 1
+		female_advisor_chance = 0.33
+		allowed_rajput_fraction = 0.05 #artificers
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		is_technocracy = yes
+		anb_special_elections = yes
+		cannot_become_dictatorship = yes
+	}
+	effect = {
+		add_country_modifier = {
+			name = technocracy_rajput_bonus
+			duration = -1
+		}
+		# artifice_magic_switch_to_artificery_only_mode = yes
 		country_event = { id = elections.902 days = 1 }
 	}
 	removed_effect = {

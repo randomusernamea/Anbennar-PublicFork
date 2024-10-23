@@ -1052,24 +1052,26 @@ giberd_mercantile_shipping = {
 		
 		provinces_to_highlight = {
 			province_id = 271 #Giberd
-			NOT = { has_trade_building_trigger = yes }
+			NOT = { development = 25 }
+			NOT = { num_of_times_expanded_infrastructure = 1 } # TODO: dlc check, alternative: marketplace
 		}
 		
 		trigger = {
-			271 = { #Giberd
-					has_trade_building_trigger = yes
+			num_artifice_inventions_discovered = { VAL = 3 } # 1 more than the starting 2
+			271 = {
+				development = 25
+				num_of_times_expanded_infrastructure = 1
 			}
-			dip_power = 50
 		}
 		
 		effect = {
-			add_dip_power = -50
-			define_advisor = {
-				type = trader
-				name = "Schleemo Podddoddddod"
-				skill = 2
-				discount = yes
+			271 = {
+				add_province_modifier = {
+					name = giberd_artificer_center_of_learning_building # TODO: implement can't research + benefit upon completion
+					duration = 3650
+				}
 			}
+			add_government_reform = technocracy_republic_reform
 		}
 	}
 	
