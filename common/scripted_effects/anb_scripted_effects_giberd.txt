@@ -1,0 +1,15 @@
+
+giberd_exploit_benonhill = {
+	if = {
+		limit = {
+			province_id = 270
+			owned_by = A81
+		}
+		A81 = {
+			change_variable = {
+				which = giberd_bennonhill_exploited
+				value = 1
+			}
+		}
+	}
+}

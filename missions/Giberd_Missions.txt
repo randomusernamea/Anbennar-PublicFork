@@ -239,7 +239,7 @@ giberd_konwell_conquest = {
 					area = cann_esmar_area
 					OR = {
 						NOT = { owned_by = ROOT }
-						NOT = { has_workshop_building_trigger = yes }
+						NOT = { has_production_building_trigger = yes }
 					}
 				}
 				AND = {
@@ -251,7 +251,7 @@ giberd_konwell_conquest = {
 								owned_by = A93
 							}
 						}
-						NOT = { has_temple_building_trigger = yes }
+						NOT = { has_tax_building_trigger = yes }
 					}
 				}
 				AND = {
@@ -272,14 +272,14 @@ giberd_konwell_conquest = {
 			cann_esmar_area = {
 				type = all
 				owned_by = ROOT
-				has_workshop_building_trigger = yes
+				has_production_building_trigger = yes
 			}
 			songbarges_area = {
 				type = all
 				OR = {
 					AND = {
 						owned_by = ROOT
-						has_temple_building_trigger = yes
+						has_tax_building_trigger = yes
 					}
 					owned_by = A93
 				}
@@ -721,7 +721,7 @@ giberd_ryalanar_conquest = {
 							is_core = ROOT
 							has_state_edict = edict_advancement_effort
 							has_courthouse_building_trigger = yes
-							has_temple_building_trigger = yes
+							has_tax_building_trigger = yes
 						}
 					}
 				}
@@ -754,7 +754,7 @@ giberd_ryalanar_conquest = {
 				is_core = ROOT
 				has_state_edict = edict_advancement_effort
 				has_courthouse_building_trigger = yes
-				has_temple_building_trigger = yes
+				has_tax_building_trigger = yes
 			}
 			ryalanar_area = {
 				type = all
@@ -775,7 +775,7 @@ giberd_ryalanar_conquest = {
 				}
 			}
 			country_event = { id = flavor_giberd.30	}
-			hidden_effect = { id = flavor_giberd.20 days = 365 }
+			hidden_effect = { country_event = { id = flavor_giberd.20 days = 365 } }
 		}
 	}
 
@@ -1083,22 +1083,42 @@ giberd_mercantile_shipping = {
 		position = 3
 		
 		provinces_to_highlight = {
-			province_id = 268 #Bennon
-			NOT = {
-				development = 25
+			province_id = 270
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { province_has_current_tech_fort_trigger = yes }
+				num_of_buildings_in_province = 2
+				NOT = {
+					ROOT = {
+						check_variable = {
+							which = giberd_bennonhill_exploited
+							value = 1
+						}
+					}
+				}
 			}
 		}
 		
 		trigger = {
-			268 = { #Bennon
-					development = 25
+			270 = {
+				owned_by = ROOT
+				province_has_current_tech_fort_trigger = yes
+				NOT = { num_of_buildings_in_province = 2 }
 			}
+			custom_trigger_tooltip = { # TODO: dlc check or decrease autonomy/scorch earth
+				tooltip = giberd_unbound_undertakings_tt
+				check_variable = {
+					which = giberd_bennonhill_exploited
+					value = 1
+				}
+			}
+
 		}
 		
 		effect = {
-			268 = { #Bennon
-					add_permanent_province_modifier = {
-					name = giberd_bennon_trade
+			270 = {
+				add_province_modifier = {
+					name = giberd_testing_grounds
 					duration = -1
 				}
 			}
