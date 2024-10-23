@@ -13739,6 +13739,10 @@ estate_mages_great_fey_mask = {
 	can_select = { has_estate_privilege = estate_mages_great_fey_mask }
 	can_revoke = { always = no }
 
+	on_granted = {
+		custom_tooltip = great_fey_mask_tt
+	}
+
 	on_granted_province = {
 		if = {
 			limit = { OR = { region = east_deepwoods_region region = west_deepwoods_region } }
