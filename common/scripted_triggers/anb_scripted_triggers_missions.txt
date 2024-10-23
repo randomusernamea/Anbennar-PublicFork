@@ -1771,3 +1771,257 @@ escanni_legacy_monument = {
 		}
 	}
 }
+
+stalbor_race_opinion_trigger = {
+    calc_true_if = {
+        OR = {
+            high_tolerance_centaur_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = centaur_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_dwarven_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = dwarven_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_elven_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = elven_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_gnollish_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = gnollish_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_gnomish_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = gnomish_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_goblin_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = goblin_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_half_elven_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = half_elven_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_half_orcish_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = half_orcish_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_halfling_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = halfling_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_harimari_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = harimari_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_harpy_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = harpy_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_hobgoblin_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = hobgoblin_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_human_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = human_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_kobold_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = kobold_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_lizardfolk_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = lizardfolk_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_ogre_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = ogre_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_orcish_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = orcish_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_ruinborn_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = ruinborn_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+		OR = {
+            high_tolerance_troll_race_trigger = yes
+            any_known_country = {
+                has_country_modifier = troll_administration
+                OR = {
+                    alliance_with = ROOT
+                    has_opinion = {
+                        who = ROOT
+                        value = $opinion$
+                    }
+                }
+            }
+        }
+        
+        amount = $amount$
+    }
+}

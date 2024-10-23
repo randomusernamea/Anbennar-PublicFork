@@ -1360,7 +1360,10 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1372,7 +1375,10 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1400,7 +1406,10 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1412,7 +1421,10 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1440,7 +1452,10 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1452,7 +1467,10 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1480,7 +1498,10 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1492,7 +1513,10 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1520,7 +1544,10 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1532,7 +1559,10 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1715,7 +1745,10 @@ country_event = {
 					any_owned_province = {
 						region = the_borders_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1732,7 +1765,10 @@ country_event = {
 					any_owned_province = {
 						region = esmaria_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1749,7 +1785,10 @@ country_event = {
 					any_owned_province = {
 						region = east_dameshead_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1766,7 +1805,10 @@ country_event = {
 					any_owned_province = {
 						region = damescrown_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1783,7 +1825,10 @@ country_event = {
 					any_owned_province = {
 						region = lencenor_region
 					}
-					NOT = { has_opinion_modifier = B47_vampire_hunter_overreach }
+					NOT = { 
+						who = ROOT
+						has_opinion_modifier = B47_vampire_hunter_overreach 
+					}
 				}
 				add_opinion = {
 					who = ROOT
@@ -1908,10 +1953,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		custom_tooltip = B47_watch_goes_all_over_cannor
 		hidden_effect = {
-			every_province = {
-				limit = {
-					province_group = stalbor_across_cannor_provinces
-				}
+			stalbor_across_cannor_provinces = {
 				add_permanent_province_modifier = {
 					name = arturos_watch_chapter
 					duration = -1
