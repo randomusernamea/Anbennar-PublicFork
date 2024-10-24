@@ -30,10 +30,10 @@ giberd_imperial = {
 					custom_trigger_tooltip = {
 						tooltip = giberd_trading_in_damestear_tt
 						9 = {
-							reverse_has_opinion_modifier = {
-								who = ROOT
-								modifier = improved_relation
-								value = 100
+							owner = {
+								has_100_opinion_improved_relation = {
+									target = ROOT
+								}
 							}
 						}
 					}
@@ -1267,24 +1267,32 @@ giberd_ryalanar_conquest = {
 		position = 8
 		provinces_to_highlight = {
 			OR = {
-				province_id = 417
-				province_id = 234
-			}
-			NOT = {
-				OR = {
-					417 = {
-						owner = {
-							reverse_has_opinion = {
-								who = ROOT
-								value = 100
-							}
-						}
+				AND = {
+					province_id = 901
+					NOT = {
+						is_strongest_trade_power = ROOT
 					}
-					234 = {
-						owner = {
-							reverse_has_opinion = {
-								who = ROOT
-								value = 100
+				}
+				AND = {
+					OR = {
+						province_id = 417
+						province_id = 234
+					}
+					NOT = {
+						OR = {
+							417 = {
+								owner = {
+									has_100_opinion_improved_relation = {
+										target = ROOT
+									}
+								}
+							}
+							234 = {
+								owner = {
+									has_100_opinion_improved_relation = {
+										target = ROOT
+									}
+								}
 							}
 						}
 					}
@@ -1296,17 +1304,15 @@ giberd_ryalanar_conquest = {
 			OR = {
 				417 = {
 					owner = {
-						reverse_has_opinion = {
-							who = ROOT
-							value = 100
+						has_100_opinion_improved_relation = {
+							target = ROOT
 						}
 					}
 				}
 				234 = {
 					owner = {
-						reverse_has_opinion = {
-							who = ROOT
-							value = 100
+						has_100_opinion_improved_relation = {
+							target = ROOT
 						}
 					}
 				}
@@ -1351,40 +1357,115 @@ giberd_ryalanar_conquest = {
 		position = 9
 		provinces_to_highlight = {
 			OR = {
-				area = konwell_area
-				area = ryalanar_area
-			}
-			NOT = {
 				AND = {
-					owned_by = ROOT
-					is_core = ROOT
+					OR = {
+						AND = {
+							is_capital = yes
+							continent = europe
+							OR = {
+								has_gnomish_majority_trigger = yes
+								has_gnomish_minority_trigger = yes
+							}
+						}
+						owner = {
+							OR = {
+								culture_is_gnomish = yes
+								culture_is_dwarven = yes
+							}
+						}
+					}
+				}
+				AND = {
+					region = esmaria_region
+					OR = {
+						has_gnomish_majority_trigger = yes
+						has_gnomish_minority_trigger = yes
+					}
+					NOT = {
+						base_production = 7
+						AND = {
+							has_production_building_trigger = yes
+							has_production_manufactory_or_gold_trigger = yes
+						}
+					}
 				}
 			}
 		}
 		trigger = {
-			prestige = 50
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			any_known_country = {
+				OR = {
+					culture_is_gnomish = yes
+					culture_is_dwarven = yes
+					AND = {
+						capital_scope = {
+							continent = europe
+						}
+						any_owned_province = {
+							OR = {
+								has_gnomish_majority_trigger = yes
+								has_gnomish_minority_trigger = yes
+							}
+						}
+					}
+				}
+				has_100_opinion_improved_relation = {
+					target = ROOT
+				}
 			}
-			ryalanar_area = {
+			treasury = 1000
+			esmaria_region = {
 				type = all
-				owned_by = ROOT
-				is_core = ROOT
+				OR = {
+					AND = {
+						has_gnomish_majority_trigger = no
+						has_gnomish_minority_trigger = no
+					}
+					base_production = 7
+					AND = {
+						has_production_building_trigger = yes
+						has_production_manufactory_or_gold_trigger = yes
+					}
+				}
 			}
 		}
 		effect = {
-			esmaria_region = {
+			add_treasury = -1000
+			275 = {
+				add_gnomish_minority_size_effect = yes
+			}
+			911 = {
+				add_gnomish_minority_size_effect = yes
+			}
+			266 = {
+				add_gnomish_minority_size_effect = yes
+			}
+			901 = {
+				add_gnomish_minority_size_effect = yes
+			}
+			random_known_country = {
 				limit = {
-					NOT = {
-						is_core = ROOT
+					OR = {
+						culture_is_gnomish = yes
+						culture_is_dwarven = yes
+						AND = {
+							capital_scope = {
+								continent = europe
+							}
+							any_owned_province = {
+								OR = {
+									has_gnomish_majority_trigger = yes
+									has_gnomish_minority_trigger = yes
+								}
+							}
+						}
 					}
-					NOT = {
-						is_permanent_claim = ROOT
+					has_100_opinion_improved_relation = {
+						target = ROOT
 					}
 				}
-				add_permanent_claim = ROOT
+				capital_scope = {
+					add_gnomish_minority_size_effect = yes
+				}
 			}
 		}
 	}
