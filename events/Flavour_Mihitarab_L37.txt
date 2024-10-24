@@ -83,10 +83,13 @@ country_event = {
 			name = L37_peace_on_the_isles
 			duration = -1  
 		}
-		every_owned_province = {
-			limit = { is_vyzemby_culture = yes }
-			add_local_autonomy = -30
+		hidden_effect = {
+			every_owned_province = {
+				limit = { is_vyzemby_culture = yes }
+				add_local_autonomy = -30
+			}
 		}
+		custom_tooltip = vyzemby_culture_mihitarab_tooltip
 		if = {
 			limit = {
 				has_country_flag = mihitarab_haigo_rules_flag
@@ -108,7 +111,7 @@ country_event = {
 	
 	option = {
 		name = flavor_mihitarab.4.a
-		west_salahad_coast_region = {
+		south_sarhal_coast_region = {
 			discover_country = ROOT
 		}
 		1448 = {
@@ -154,7 +157,7 @@ country_event = {
 				}	
 			}
 		}
-		pikakely_area = {
+		velanynosy_area = {
 			discover_country = ROOT
 		}
 		3111 = {
@@ -238,7 +241,7 @@ country_event = {
 	
 	option = {
 		name = flavor_mihitarab.8.a
-		add_manpower = 0.5
+		add_manpower = -0.5
 		country_event = { 
 			id = flavor_mihitarab.9
 			days = 30
