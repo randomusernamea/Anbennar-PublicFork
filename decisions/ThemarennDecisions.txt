@@ -2,26 +2,15 @@ country_decisions = {
 	build_inland_impressment_office = {
         color = { 173 216 230 }
 		potential = {
-            AND = {
-                ROOT = {
-                    has_country_flag = inland_impressment_offices
-                }
-                NOT = {
-                    AND = {
-                        ROOT = {
-                            esmaria_region = {
-                                any_owned_province = {
-                                    AND = {
-                                        has_port = no
-                                        has_building = impressment_offices
-                                    }
-                                }
-                            }
-                        }
-                    }
+            has_country_flag = inland_impressment_offices
+            NOT = {
+                any_owned_province = {
+                    region = esmaria_region
+                    has_port = no
+                    has_building = impressment_offices
                 }
             }
-		}
+        }
 		
 		provinces_to_highlight = {
 			owned_by = ROOT
@@ -46,22 +35,22 @@ country_decisions = {
 		}
 		
 		allow = {
+            hidden_trigger = { has_country_flag = inland_impressment_offices }
 			treasury = 500
 			esmaria_region = {
-                AND = {
-                    owned_by = ROOT
-                    is_core = ROOT
-                    has_port = no
-                    NOT = { 
-                        has_building = impressment_offices 
-                        has_construction = building
-                        has_construction = core
-                        has_construction = missionary
-                    }
-                    num_free_building_slots	= 1
+                owned_by = ROOT
+                is_core = ROOT
+                has_port = no
+                NOT = { 
+                    has_building = impressment_offices 
+                    has_construction = building
+                    has_construction = core
+                    has_construction = missionary
                 }
+                num_free_building_slots	= 1
             }
-		}
+        }
+	}
 		
 		effect = {
             ROOT = {
@@ -81,18 +70,7 @@ country_decisions = {
                     }
                     if = {
                         limit = {
-                            trade_goods = grain
-                            trade_goods = livestock
-                            trade_goods = salt
-                            trade_goods = naval_supplies
-                            trade_goods = fish
-                            trade_goods = tropical_wood
-                        }
-                        add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = {
+                            OR = {
                                 trade_goods = grain
                                 trade_goods = livestock
                                 trade_goods = salt
@@ -101,9 +79,23 @@ country_decisions = {
                                 trade_goods = tropical_wood
                             }
                         }
+                        add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
+                    }
+                    else = {
+                        limit = {
+                            NOT = {
+                                OR = {
+                                    trade_goods = grain
+                                    trade_goods = livestock
+                                    trade_goods = salt
+                                    trade_goods = naval_supplies
+                                    trade_goods = fish
+                                    trade_goods = tropical_wood
+                                }
+                            }
+                        }
                         add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
                     }
-                    else = {}
                 }
             }
 		}

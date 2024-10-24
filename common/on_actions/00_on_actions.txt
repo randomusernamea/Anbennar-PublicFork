@@ -2798,9 +2798,6 @@ on_new_consort = {
 		}
 		
 	}
-	#themarenn ryala path
-	if = { limit = { OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_ryalan_prosperity } themarenn_refresh_prosperity = yes themarenn_ryala_prosperity = yes }
-	
 	country_event = { id = anb_ruler.100 } # long lived consort
 	# must happen after the harpy consort setting stuff above
 
@@ -2854,6 +2851,14 @@ on_new_consort = {
 				duration = -1
 			}
 		}
+	}
+	#themarenn ryala path
+	if = { 
+		limit = { 
+			OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_ryalan_prosperity 
+		} 
+		themarenn_refresh_prosperity = yes 
+		themarenn_ryala_prosperity = yes
 	}
 }
 
@@ -3429,7 +3434,6 @@ on_new_heir = {
 	country_event = { id = racial_misc.10 days = 1 }	# Heirs are set to their parents race since event heirs are given primary culture instead
 	country_event = { id = rahenraj.6 days = 5 }		# Replace heir if incorrect race for Senapti
 	country_event = { id = anb_ruler.101 days = 3 }		# Immortal/long-lived trait
-	if = { limit = { OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_esmaryal_heir_education } country_event = { id = flavour_themarenn.43 } } #themarenn esmaryal path
 	if = {
 		limit = {
 			has_country_flag = Y91_participating_in_festival
@@ -3503,6 +3507,12 @@ on_new_heir = {
 		}
 		remove_country_modifier = heir_mage_personality_mod
 	}
+	if = { 
+		limit = {
+			OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_esmaryal_heir_education
+		} 
+		country_event = { id = flavour_themarenn.43 } 
+	} #themarenn esmaryal path
 }
 
 # country

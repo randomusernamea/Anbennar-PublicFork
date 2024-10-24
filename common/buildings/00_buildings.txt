@@ -3086,9 +3086,9 @@ impressment_offices = {
 			anb_manufactory_discount_remove = yes
 		}
 		if = { #themarenn
-			limit = { has_country_flag = inland_impressment_offices }
+			limit = { FROM = { has_country_flag = inland_impressment_offices } }
 			remove_province_modifier = a95_tier1_sailors
-			remove_province_modifier = a95_tier2_sailorss
+			remove_province_modifier = a95_tier2_sailors
 		}
 	}
 	on_obsolete = {
