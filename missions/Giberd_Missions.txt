@@ -122,6 +122,27 @@ giberd_imperial = {
 			giberd_the_pinklady_power
 		}
 		position = 10
+		provinces_to_highlight = {
+			AND = {
+				province_id = 308
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						AND = {
+							A73 = {
+								reverse_has_opinion = {
+									who = ROOT
+									value = 200
+								}
+								has_25_opinion_sent_gift = {
+									target = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 		trigger = {
 			OR = {
 				AND = {
