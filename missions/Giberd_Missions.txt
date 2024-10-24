@@ -520,21 +520,111 @@ giberd_konwell_conquest = {
 		}
 		position = 8
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
+			AND = {
+				region = esmaria_region
 				owned_by = ROOT
+				OR = {
+					AND = {
+						trade_goods = grain
+						NOT = {
+							has_manpower_building_trigger = yes
+						}
+						NOT = {
+							has_building = farm_estate
+						}
+						NOT = {
+							base_production = 8
+						}
+					}
+					AND = {
+						trade_goods = livestock
+						NOT = {
+							has_manpower_building_trigger = yes
+						}
+						NOT = {
+							has_building = soldier_households
+						}
+						NOT = {
+							base_manpower = 8
+						}
+					}
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			all_owned_province = {
+				region = esmaria_region
+				OR = {
+					AND = {
+						trade_goods = grain
+						has_manpower_building_trigger = yes
+						has_building = farm_estate
+						base_production = 8
+					}
+					AND = {
+						trade_goods = livestock
+						has_manpower_building_trigger = yes
+						has_building = soldier_households
+						base_manpower = 8
+					}
+					AND = {
+						NOT = {
+							trade_goods = grain
+						}
+						NOT = {
+							trade_goods = livestock
+						}
+					}
+				}
+			}
+			OR = {
+				num_artifice_inventions_discovered_tier_1 = {
+					VAL = 8
+				}
+				AND = {
+					num_artifice_inventions_discovered_tier_2 = {
+						VAL = 2
+					}
+					num_artifice_inventions_active_tier_2 = {
+						VAL = 1
+					}
+				}
+			}
+			artifice_has_invention_slot = yes			# TODO: two invention slots withour using a VAT?
+			901 = {
+				has_production_manufactory_or_gold_trigger = yes
+				has_production_building_trigger = yes
+				development = 25
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			# TODO: 20 years of -2 invention slots
+			901 = {
+				change_trade_goods = wine
+				add_province_modifier = {
+					name = giberd_smooth_giberdi
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = grain
+					region = esmaria_region
+				}
+				add_province_modifier = {
+					name = giberd_gmo
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = livestock
+					region = esmaria_region
+				}
+				add_province_modifier = {
+					name = giberd_gmo_feed
+					duration = -1
+				}
 			}
 		}
 	}
@@ -756,7 +846,7 @@ giberd_ryalanar_conquest = {
 		}
 		trigger = {
 			artifice_has_points_20 = yes
-			artifice_has_invention_slot = yes			# TODO: two invention slots withour using a VAR?
+			artifice_has_invention_slot = yes			# TODO: two invention slots withour using a VAT?
 			num_society_artifice_inventions_discovered = {
 				VAL = 2
 			}

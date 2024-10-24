@@ -855,7 +855,10 @@ country_event = {
 			}
 			every_known_country = {
 				limit = {
-					is_in_trade_league_with = event_target:damescrown_owner
+					OR = {
+						tag = event_target:damescrown_owner
+						is_in_trade_league_with = event_target:damescrown_owner
+					}
 				}
 				add_opinion = {
 					who = ROOT
