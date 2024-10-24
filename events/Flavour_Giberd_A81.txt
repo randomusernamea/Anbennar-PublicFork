@@ -1,28 +1,22 @@
-
 # Giberd MT events
 # 1-9: old events
 # 10-19: mission flavour events
 # 20-29: electorate event chain
 # 30-39: artificer faction events
-
 namespace = flavor_giberd
-
 #Nimscodd Aid
 country_event = {
 	id = flavor_giberd.1
 	title = flavor_giberd.1.t
 	desc = flavor_giberd.1.d
 	picture = GREAT_BUILDING_eventPicture
-	
 	is_triggered_only = yes
-	
-	option = {		
+	option = {
 		name = flavor_giberd.1.a
-		
 		add_treasury = 100
 		add_country_modifier = {
 			name = giberd_aid_from_giberd
-			duration = 7300 #20 years
+			duration = 7300			#20 years
 		}
 	}
 }
@@ -33,21 +27,19 @@ country_event = {
 	title = flavor_giberd.2.t
 	desc = flavor_giberd.2.d
 	picture = HRE_eventPicture
-	
 	is_triggered_only = yes
-	
-	option = {		
+	option = {
 		name = flavor_giberd.2.a
 		ai_chance = {
 			factor = 100
 		}
-		
 		add_imperial_influence = 10
 		add_country_modifier = {
 			name = giberd_gnomish_elector_mod
 			duration = -1
 		}
-		A81 = { #Giberd
+		A81 = {
+			#Giberd
 			if = {
 				limit = {
 					ai = yes
@@ -59,18 +51,19 @@ country_event = {
 			}
 			elector = yes
 			set_country_flag = gnomish_elector
-			country_event = { id = flavor_giberd.3 }
+			country_event = {
+				id = flavor_giberd.3
+			}
 		}
 	}
-	
-	option = {		
+	option = {
 		name = flavor_giberd.2.b
 		ai_chance = {
 			factor = 0
 		}
-		
 		add_imperial_influence = -5
-		A81 = { #Giberd
+		A81 = {
+			#Giberd
 			if = {
 				limit = {
 					ai = yes
@@ -80,7 +73,9 @@ country_event = {
 					modifier = giberd_refused_electorate
 				}
 			}
-			country_event = { id = flavor_giberd.3 }
+			country_event = {
+				id = flavor_giberd.3
+			}
 		}
 	}
 }
@@ -91,12 +86,9 @@ country_event = {
 	title = flavor_giberd.3.t
 	desc = flavor_giberd.3.d
 	picture = HRE_eventPicture
-	
 	is_triggered_only = yes
-	
-	option = {		
+	option = {
 		name = flavor_giberd.3.a
-		
 		add_prestige = 10
 		tooltip = {
 			elector = yes
@@ -110,32 +102,25 @@ country_event = {
 	title = flavor_giberd.4.t
 	desc = flavor_giberd.4.d
 	picture = HRE_eventPicture
-	
 	is_triggered_only = yes
-	
-	option = {		
+	option = {
 		name = flavor_giberd.4.a
-		
 		add_prestige = -10
 	}
 }
 
 # Reworked Giberd MT events
-
 #Our Options of War
 country_event = {
 	id = flavor_giberd.10
 	title = flavor_giberd.10.t
 	desc = flavor_giberd.10.d
-	
 	is_triggered_only = yes
-
 	immediate = {
 		# TODO: implement research speed / inability to research
 		hidden_effect = {
 			#Artificery Local Setup
-			set_country_flag = artificery_unlocked #failsave
-
+			set_country_flag = artificery_unlocked			#failsave
 			artifice_inventions_give_basket = yes
 			update_artifice_points = yes
 			clear_artificers_organization_effect = yes
@@ -148,10 +133,9 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = flavor_giberd.10.a
-		goto = 273 #Tendergrove
+		goto = 273		#Tendergrove
 		add_country_modifier = {
 			name = giberd_options_war_leslinpar
 			duration = 3560
@@ -173,7 +157,6 @@ country_event = {
 		custom_tooltip = giberd_unable_to_research_10
 		custom_tooltip = giberd_ae_gnomish_minority_tt
 		custom_tooltip = giberd_magisterium_oversight_tt
-
 		custom_tooltip = has_already_happened_tt
 		tooltip = {
 			bennonhill_area = {
@@ -184,12 +167,10 @@ country_event = {
 			}
 		}
 		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
-
 	}
-
 	option = {
 		name = flavor_giberd.10.b
-		goto = 268 #Bennon
+		goto = 268		#Bennon
 		custom_tooltip = giberd_bennon_forts_explode_tt
 		tooltip = {
 			268 = {
@@ -213,10 +194,9 @@ country_event = {
 			rajput_infantry = ROOT
 			rajput_infantry = ROOT
 		}
-		custom_tooltip = giberd_unable_to_research_10 # TODO: Implement
+		custom_tooltip = giberd_unable_to_research_10		# TODO: Implement
 		custom_tooltip = giberd_ae_gnomish_minority_tt
 		custom_tooltip = giberd_magisterium_oversight_tt
-
 		custom_tooltip = has_already_happened_tt
 		tooltip = {
 			bennonhill_area = {
@@ -235,10 +215,9 @@ country_event = {
 			name = giberd_options_war_peace
 			duration = 3650
 		}
-		custom_tooltip = giberd_research_speed_tt # TODO: Implement
-		custom_tooltip = giberd_ae_gnomish_minority_tt # TODO: Implement
+		custom_tooltip = giberd_research_speed_tt		# TODO: Implement
+		custom_tooltip = giberd_ae_gnomish_minority_tt		# TODO: Implement
 		custom_tooltip = giberd_magisterium_oversight_tt
-
 		custom_tooltip = has_already_happened_tt
 		tooltip = {
 			bennonhill_area = {
@@ -250,9 +229,7 @@ country_event = {
 		}
 		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
 	}
-
 }
-
 
 #Silver Linings are Laced in Gold
 country_event = {
@@ -260,9 +237,7 @@ country_event = {
 	title = flavor_giberd.11.t
 	desc = flavor_giberd.11.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
-
 	option = {
 		name = flavor_giberd.11.a
 		add_favors = {
@@ -270,7 +245,9 @@ country_event = {
 			amount = 20
 		}
 		if = {
-			limit = { has_dlc = "The Cossacks" }
+			limit = {
+				has_dlc = "The Cossacks"
+			}
 			add_country_modifier = {
 				name = giberd_silverforge_favour_accepted
 				duration = 3650
@@ -292,18 +269,14 @@ country_event = {
 			}
 		}
 	}
-	
 	option = {
 		name = flavor_giberd.11.b
 		add_country_modifier = {
 			name = giberd_silverforge_favour_rejected
 			duration = 5475
 		}
-
 	}
-
 }
-
 
 # Esmaraine challenges our Bid
 country_event = {
@@ -311,7 +284,6 @@ country_event = {
 	title = flavor_giberd.12.t
 	desc = flavor_giberd.12.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.12.a
@@ -326,22 +298,20 @@ country_event = {
 # 	title = flavor_giberd.13.t
 # 	desc = flavor_giberd.13.d
 # 	picture = HRE_eventPicture
-
 # 	is_triggered_only = yes
 # 	option = {
 # 		name = flavor_giberd.13.a
 # 	}
 # }
-
 # Convincing the emperor
 country_event = {
 	id = flavor_giberd.14
 	title = flavor_giberd.14.t
 	desc = flavor_giberd.14.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
+		# TODO: unlock tier 2 inventions
 		name = flavor_giberd.14.a
 		custom_tooltip = giberd_increases_our_artifice_upkeep_by_20
 		custom_tooltip = artificer_points_upkeep_tt
@@ -369,7 +339,6 @@ country_event = {
 	title = flavor_giberd.15.t
 	desc = flavor_giberd.15.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.15.a
@@ -388,11 +357,12 @@ country_event = {
 	title = flavor_giberd.16.t
 	desc = flavor_giberd.16.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.16.a
-		ai_chance = { factor = 100 }
+		ai_chance = {
+			factor = 100
+		}
 		A81 = {
 			country_event = {
 				id = flavor_giberd.15
@@ -407,7 +377,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				emperor = { is_ai = no }
+				emperor = {
+					is_ai = no
+				}
 			}
 			country_event = {
 				id = flavor_giberd.17
@@ -417,7 +389,9 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.16.b
-		ai_chance = { factor = 0 }
+		ai_chance = {
+			factor = 0
+		}
 		A81 = {
 			hidden_effect = {
 				subtract_variable = {
@@ -426,7 +400,6 @@ country_event = {
 				}
 			}
 		}
-
 	}
 }
 
@@ -436,12 +409,13 @@ country_event = {
 	title = flavor_giberd.17.t
 	desc = flavor_giberd.17.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.17.a
 		if = {
-			limit = { tag = A81 }
+			limit = {
+				tag = A81
+			}
 			artifice_remove_20 = yes
 		}
 		emperor = {
@@ -455,34 +429,140 @@ country_event = {
 
 ########
 # electorate event chain
-
 # The Art of Promises, Paycheques and Propositions
 country_event = {
 	id = flavor_giberd.20
 	title = flavor_giberd.20.t
 	desc = flavor_giberd.20.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.20.a
 	}
 }
 
-
 ########
 # artificer faction events
-
-
 # The Imperial Archive
 country_event = {
 	id = flavor_giberd.30
 	title = flavor_giberd.30.t
 	desc = flavor_giberd.30.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.30.a
+	}
+}
+
+# Addressing the Damestear demand
+country_event = {
+	id = flavor_giberd.31
+	title = flavor_giberd.31.t
+	desc = flavor_giberd.31.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		# technomancers
+		name = flavor_giberd.31.a
+		goto = 265
+		giberd_factions_technomancers_increase = yes
+		265 = {
+			change_trade_goods = damestear
+			set_province_flag = permanent_damestear
+			add_province_modifier = {
+				name = giberd_damestear_port_high
+				duration = -1
+			}
+		}
+		add_treasury = -2000
+		add_country_modifier = {
+			name = giberd_paying_the_moonisle
+			duration = -1
+		}
+		custom_tooltip = flavor_giberd.32.war_tt		# TODO: implement
+	}
+	option = {
+		# brillites
+		name = flavor_giberd.31.b
+		goto = 265
+		giberd_factions_brillites_increase = yes
+		country_event = {
+			id = flavor_giberd.32
+			days = 1
+		}
+		tooltip = {
+			add_treasury = -500
+		}
+	}
+	option = {
+		# mechanists
+		name = flavor_giberd.31.c
+		goto = 9
+		giberd_factions_mechanists_increase = yes
+		9 = {
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# Short term low amount renewable deal for Damestear
+country_event = {
+	id = flavor_giberd.32
+	title = flavor_giberd.32.t
+	desc = flavor_giberd.32.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		# yes
+		name = flavor_giberd.32.a
+		custom_tooltip = flavor_giberd.32.accept_tt
+		add_treasury = -500
+		if = {
+			265 = {
+				NOT = {
+					has_province_modifier = giberd_damestear_port_low
+				}
+			}
+			hidden_effect = {
+				265 = {
+					add_province_modifier = {
+						name = giberd_damestear_port_low
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = StaticArtificePoints
+					value = 3
+				}
+			}
+			update_artifice_points = yes
+		}
+	}
+	option = {
+		# no
+		name = flavor_giberd.32.b
+		custom_tooltip = flavor_giberd.32.reject_tt
+		if = {
+			265 = {
+				has_province_modifier = giberd_damestear_port_low
+			}
+			remove_province_modifier = giberd_damestear_port_low
+			hidden_effect = {
+				subtract_variable = {
+					which = StaticArtificePoints
+					value = 3
+				}
+				update_artifice_points = yes
+			}
+		}
+	}
+	after = {
+		country_event = {
+			id = flavor_giberd.32
+			days = 3650
+		}
 	}
 }

@@ -15,28 +15,45 @@ giberd_imperial = {
 		}
 		position = 7
 		trigger = {
-			OR = {
-				eoa_is_dismantled = yes
-				AND = {
+			if = {
+				limit = {
 					NOT = {
-						num_of_electors = 8
+						owns = 9
 					}
-					emperor = {
-						has_opinion = {
-							who = ROOT
-							value = 150
+				}
+				OR = {
+					9 = {
+						owner = {
+							is_rival = ROOT
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = giberd_trading_in_damestear_tt
+						9 = {
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = improved_relation
+								value = 100
+							}
+						}
+					}
+				}
+				9 = {
+					owner = {
+						NOT = {
+							navy_size = ROOT
 						}
 					}
 				}
 			}
+			else = {
+				owns_core_province = 9
+			}
+			treasury = 2000
 		}
 		effect = {
-			emperor = {
-				country_event = {
-					id = flavor_giberd.2
-					days = 30
-					random = 30
-				}
+			country_event = {
+				id = flavor_giberd.31
 			}
 		}
 	}
@@ -1115,12 +1132,14 @@ giberd_mercantile_shipping = {
 			}
 			NOT = {
 				num_of_times_expanded_infrastructure = 1
-			}			# TODO: dlc check, alternative: marketplace
+			}
+			# TODO: dlc check, alternative: marketplace
 		}
 		trigger = {
 			num_artifice_inventions_discovered = {
 				VAL = 3
-			}			# 1 more than the starting 2
+			}
+			# 1 more than the starting 2
 			271 = {
 				development = 25
 				num_of_times_expanded_infrastructure = 1
