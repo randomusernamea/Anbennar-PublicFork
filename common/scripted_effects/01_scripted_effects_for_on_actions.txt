@@ -5015,6 +5015,24 @@ on_province_culture_change_effect = {
 			remove_province_modifier = mb_crimson_heights
 		}
 	}
+			#Strenghten Elven Privilleges
+	if = {
+		limit = {
+			culture = moon_elf
+			has_reform = strengthen_elves_privileges
+		}
+			add_province_modifier = {
+				name = gov_moon_elf_tolerance
+				duration = -1
+			}
+	}
+	if = {
+		limit = {
+			NOT = {culture = moon_elf}
+			has_province_modifier = gov_moon_elf_tolerance
+		}
+			remove_province_modifier = gov_moon_elf_tolerance
+	}
 }
 
 on_province_culture_converted_effect = {
@@ -5047,24 +5065,6 @@ on_province_culture_converted_effect = {
 		add_base_manpower = 1
 		add_base_production = 1
 		set_province_flag = arm_converted_bonus
-	}
-		#Strenghten Elven Privilleges
-	if = {
-		limit = {
-			culture = moon_elf
-			has_reform = strengthen_elves_privileges
-		}
-			add_province_modifier = {
-				name = gov_moon_elf_tolerance
-				duration = -1
-			}
-	}
-	if = {
-		limit = {
-			NOT = {culture = moon_elf}
-			has_province_modifier = gov_moon_elf_tolerance
-		}
-			remove_province_modifier = gov_moon_elf_tolerance
 	}
 }
 
@@ -9890,7 +9890,7 @@ on_province_owner_change_effect = {
 			}
 		}
 	}
-		#Strenghten Elven Privilleges reform
+			#Strenghten Elven Privilleges reform
 	if = { 
 	    limit = {
 			religion = elven_forebears
