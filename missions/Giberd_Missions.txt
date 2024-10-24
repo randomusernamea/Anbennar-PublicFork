@@ -1266,41 +1266,56 @@ giberd_ryalanar_conquest = {
 		}
 		position = 8
 		provinces_to_highlight = {
-			OR = {
-				area = konwell_area
-				area = ryalanar_area
-			}
-			NOT = {
-				AND = {
-					owned_by = ROOT
-					is_core = ROOT
-				}
-			}
 		}
 		trigger = {
-			prestige = 50
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			government_rank = 2
+			OR = {
+				417 = {
+					owner = {
+						reverse_has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+				234 = {
+					owner = {
+						reverse_has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
 			}
-			ryalanar_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			home_trade_node = {
+				is_strongest_trade_power = ROOT
+			}
+			OR = {
+				dip_power = 300
+				full_idea_group = trade_ideas
+			}
+			custom_trigger_tooltip = {
+				tooltip = diplomacy_deals_dominions_tt
+				always = yes
 			}
 		}
 		effect = {
-			esmaria_region = {
+			giberd_factions_technomancers_increase = yes
+			add_country_modifier = {
+				name = giberd_merchants_buying_artificer_goods
+				duration = -1
+			}
+			add_country_modifier = {
+				name = giberd_dealers_abroad
+				duration = 1825
+			}
+			if = {
 				limit = {
 					NOT = {
-						is_core = ROOT
-					}
-					NOT = {
-						is_permanent_claim = ROOT
+						full_idea_group = trade_ideas
 					}
 				}
-				add_permanent_claim = ROOT
+				add_dip_power = -300
 			}
 		}
 	}
