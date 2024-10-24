@@ -1500,7 +1500,10 @@ giberd_ryalanar_conquest = {
 					}
 					navy_size = A85
 				}
-				has_estate_privilege = estate_mages_organization_magisterium
+				AND = {
+					exists = A85
+					has_estate_privilege = estate_mages_organization_magisterium
+				}
 			}
 			has_flagship = yes
 		}
