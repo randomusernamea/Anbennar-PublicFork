@@ -2034,7 +2034,10 @@ maskedbutcher_missions_4d = {
 		}
 
 		trigger = {
-			fast_owns_num_pops_of_race = { race = centaur amount = 20 }
+			custom_trigger_tooltip = {
+				tooltip = owns_at_least_20_centaur_tooltip
+				fast_owns_num_pops_of_race = { race = centaur amount = 20 }
+			}
 			egoirnasgh_area = {
 				type = all
 				owned_by = ROOT
