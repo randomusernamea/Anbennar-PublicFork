@@ -429,21 +429,87 @@ giberd_konwell_conquest = {
 		}
 		position = 7
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
+			OR = {
+				AND = {
+					province_id = 271
+					NOT = {
+						AND = {
+							province_has_center_of_trade_of_level = 3
+							has_state_edict = edict_protect_trade
+						}
+					}
+				}
+				AND = {
+					province_id = 266
+					NOT = {
+						AND = {
+							province_has_center_of_trade_of_level = 3
+							has_state_edict = edict_protect_trade
+						}
+					}
+				}
+				AND = {
+					province_id = 901
+					NOT = {
+						AND = {
+							has_state_edict = edict_protect_trade
+						}
+					}
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			271 = {
+				province_has_center_of_trade_of_level = 3
+				has_state_edict = edict_protect_trade
+			}
+			266 = {
+				province_has_center_of_trade_of_level = 3
+				has_state_edict = edict_protect_trade
+			}
+			901 = {
+				has_state_edict = edict_protect_trade
+			}
+			artifice_has_points_20 = yes
+			num_artifice_inventions_discovered = {
+				VAL = 6
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			# TODO: 10 years of -35% research speed
+			271 = {
+				add_province_modifier = {
+					name = giberd_wind_towers
+					duration = -1
+				}
+			}
+			266 = {
+				add_province_modifier = {
+					name = giberd_wind_towers
+					duration = -1
+				}
+			}
+			901 = {
+				add_province_modifier = {
+					name = giberd_wind_towers
+					duration = -1
+				}
+			}
+			268 = {
+				add_province_modifier = {
+					name = giberd_wind_towers
+					duration = -1
+				}
+			}
+			909 = {
+				add_province_modifier = {
+					name = giberd_wind_towers
+					duration = -1
+				}
+			}
+			country_event = {
+				id = flavor_giberd.36
+				days = 3650
 			}
 		}
 	}
@@ -899,9 +965,9 @@ giberd_ryalanar_conquest = {
 				AND = {
 					is_elector = yes
 					NOT = {
-						reverse_has_opinion = {
+						has_opinion = {
 							who = ROOT
-							amount = 150
+							value = 150
 						}
 					}
 				}

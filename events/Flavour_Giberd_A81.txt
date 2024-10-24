@@ -683,7 +683,7 @@ country_event = {
 	option = {
 		name = flavor_giberd.34.b
 		giberd_factions_brillites_increase = yes
-		custom_tooltip = giberd_construction_of_silverforge_small_tt
+		custom_tooltip = giberd_10_capacity_10_years_tt
 		set_country_flag = giberd_silverforge_hold_small
 		custom_tooltip = artificer_points_upkeep_tt
 		hidden_effect = {
@@ -755,6 +755,154 @@ country_event = {
 			subtract_variable = {
 				which = ArtificeUpkeep
 				value = 10
+			}
+		}
+	}
+}
+
+# Damescrown's due
+country_event = {
+	id = flavor_giberd.36
+	title = flavor_giberd.36.t
+	desc = flavor_giberd.36.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		234 = {
+			owner = {
+				save_event_target_as = damescrown_owner
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.36.a
+		giberd_factions_technomancers_increase = yes
+		custom_tooltip = giberd_10_capacity_10_years_tt
+		custom_tooltip = artificer_points_upkeep_tt
+		set_country_flag = giberd_damescrown_due_large
+		hidden_effect = {
+			change_variable = {
+				which = ArtificeUpkeep
+				value = 10
+			}
+		}
+		update_artifice_points = yes
+		234 = {
+			add_province_modifier = {
+				name = giberd_damescrown_wind_tower
+				duration = -1
+			}
+			owner = {
+				add_opinion = {
+					who = ROOT
+					modifier = giberd_wind_tower_opinion_up
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.36.b
+		giberd_factions_brillites_increase = yes
+		custom_tooltip = giberd_5_capacity_5_years_tt
+		custom_tooltip = artificer_points_upkeep_tt
+		set_country_flag = giberd_damescrown_due_small
+		hidden_effect = {
+			change_variable = {
+				which = ArtificeUpkeep
+				value = 5
+			}
+		}
+		update_artifice_points = yes
+		234 = {
+			owner = {
+				add_opinion = {
+					who = ROOT
+					modifier = giberd_wind_tower_opinion_down
+				}
+			}
+		}
+		home_trade_node_effect_scope = {
+			add_trade_modifier = {
+				who = event_target:damescrown_owner
+				duration = -1
+				power = -30
+				key = giberd_damescrown_diverted_trade
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.36.c
+		giberd_factions_mechanists_increase = yes
+		262 = {
+			add_permanent_claim = ROOT
+		}
+		908 = {
+			add_permanent_claim = ROOT
+		}
+		234 = {
+			add_permanent_claim = ROOT
+		}
+		declare_war_with_cb = {
+			who = event_target:damescrown_owner
+			casus_belli = cb_conquest
+			war_goal_province = 234
+		}
+		if = {
+			limit = {
+				any_known_country = {
+					is_in_trade_league_with = event_target:damescrown_owner
+				}
+			}
+			every_known_country = {
+				limit = {
+					is_in_trade_league_with = event_target:damescrown_owner
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = giberd_wind_tower_opinion_down
+					multiplier = 2
+				}
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = flavor_giberd.37
+				days = 3650
+			}
+		}
+	}
+}
+
+# cleanup after .36
+country_event = {
+	id = flavor_giberd.37
+	title = flavor_giberd.37.t
+	desc = flavor_giberd.37.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.37.a
+		if = {
+			limit = {
+				has_country_flag = giberd_damescrown_due_large
+			}
+			clr_country_flag = giberd_damescrown_due_large
+			subtract_variable = {
+				which = ArtificeUpkeep
+				value = 10
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = giberd_damescrown_due_small
+			}
+			clr_country_flag = giberd_damescrown_due_small
+			subtract_variable = {
+				which = ArtificeUpkeep
+				value = 5
 			}
 		}
 	}

@@ -88,7 +88,8 @@
  giberd_mage_oversight_research_limit_1:0 "Can only research inventions up to §RLevel 1§!"
  giberd_construction_of_gds_loopeng_gedsandde_tt:0 "Lose §R20§! Artificer Capacity and §R2§! Invention slots for §Y5§! years."
  giberd_construction_of_silverforge_large_tt:0 "Lose §R30§! Artificer Capacity for §Y10§! years."
- giberd_construction_of_silverforge_small_tt:0 "Lose §R10§! Artificer Capacity for §Y10§! years."
+ giberd_10_capacity_10_years_tt:0 "Lose §R10§! Artificer Capacity for §Y10§! years."
+ giberd_5_capacity_5_years_tt:0 "Lose §R5§! Artificer Capacity for §Y5§! years."
 
  flavor_giberd.1.t:0 "Aid From Giberd"
  flavor_giberd.1.d:0 "Recently, we have received a large amount of gold from our gnomish brethren in Giberd. They say that this is because they had heard rumours that we were planning to liberate the Dragon Coast from the kobolds, and wanted to assist us in our noble endeavour. This will greatly assist us in our efforts, and the assistance of the imperial gnomes will never be forgotten."
@@ -181,7 +182,14 @@
  giberd_silverforge_war_tt:0 "If we ever attack §YSilverforge§! or own the province, we will lose this bonus.\n\nDwarves from Silverforge are massively impressed by Giberd doing what centuries have failed to do, giving us:"
  giberd_10_provinces_get_dwarves_tt:0 "§Y10§! random provinces in Esmaria get:\n  §GAdds/Increases§! §YDwarven Minority Size§!"
  giberd_2_provinces_get_dwarves_tt:0 "§Y2§! random provinces in Esmaria get:\n  §GAdds/Increases§! §YDwarven Minority Size§!"
- 
+
+ flavor_giberd.36.t:0 "Damecrown's Due"
+ flavor_giberd.36.d:0 "The owners of Damescrown have sent a diplomatic demand to Giberd requesting that our wind towers be built on the mouth part of the Esmar river in order to ensure "fair trade balance" if we do not do so the Damescrown threatens to blockade the Esmar crippling our trade, the guilds have convened and offer us several solutions"
+ flavor_giberd.36.a:0 "Agree to build the wind towers in the Damescrown."
+ flavor_giberd.36.b:0 "Agree to build the wind towers but instead use them to divert trade towards Giberd."
+ flavor_giberd.36.c:0 "Force Damescrown to recognize our control of the Esmar."
+ giberd_damescrown_diverted_trade:0 "Diverted trade towards Giberd"
+
 # old
  giberd_nimscodd_aid:0 "Nimscodd Aid"
  giberd_aid_from_giberd:0 "Aid From Giberd"
@@ -210,7 +218,8 @@
  giberd_testing_grounds:0 "Testing Grounds"
  giberd_regional_capital_of_esmaria:0 "Regional Capital of Esmaria"
  giberd_start_of_the_giberd_dockyards:0 "Start of the Giberd Dockyards"
- giberd_wind_towers:0 "Wind Towers"
+ giberd_wind_towers:0 "Wind Tower"
+ giberd_damescrown_wind_tower:0 "Giberdi Wind Tower"
  giberd_gmo:0 "GMO (Gnome Modified Organisms)"
  giberd_gmo_feed:0 "GMO-Feed"
  giberd_smooth_giberdi:0 "Smooth Giberdi"
@@ -244,3 +253,5 @@
  giberd_estallen_embargo:0 "Estallen embargoed by Giberd"
  giberd_paying_for_silverforge:0 "Artificers digging Silverforge"
  giberd_silverforge_hold:0 "Giberd Artificers built the Hold"
+ giberd_wind_tower_opinion_up:0 "Built Wind Towers"
+ giberd_wind_tower_opinion_down:0 "Betrayed over Wind Towers"
