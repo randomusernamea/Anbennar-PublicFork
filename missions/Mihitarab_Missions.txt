@@ -28,7 +28,7 @@ mihitarab_missions_1 = {
 				advisor = spymaster
 				has_dip_advisor_3 = yes
 			}
-			NOT = { has_country_flag = L37_ruler_injured }
+			NOT = { has_country_modifier = L37_ruler_injured }
 			
 		}
 		
@@ -284,7 +284,7 @@ mihitarab_missions_5 = {
 		}
 		
 		effect = {
-			country_event = { id = flavor_mihitarab.11 }
+			country_event = { id = flavor_mihitarab.12 }
 		}
 	}
 	L37_fomarati_king = {
@@ -304,7 +304,7 @@ mihitarab_missions_5 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = haigo_rules_tooltip
-				has_country_flag = mihitarab_haigo_rules_flag
+				has_ruler_flag = mihitarab_haigo_rules_flag
 			}
 			6602 = {
 				country_or_non_sovereign_subject_holds = ROOT
@@ -313,14 +313,21 @@ mihitarab_missions_5 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			all_subject_country = {
-				any_owned_province = {
-					culture = fomarati
-				}
-				has_opinion = {
-					who = ROOT
-					value = 150
+				OR = {
+					NOT = {
+						any_owned_province = {
+							culture = fomarati
+						}
+					}
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
 				}
 			}
+			all_subjects = {
+			OR = { NOT = { condition }
+			has_opinion = {who = root value = 150 }}}
 			diplomatic_reputation = 2
 		}
 		
@@ -373,12 +380,15 @@ mihitarab_missions_5 = {
 		}
 		
 		trigger = {
-			NOT = {
-				fahvanosy_region = {
-					culture = mboala
-					NOT = {
-						owned_by = ROOT
-						is_core = ROOT
+			custom_trigger_tooltip = {
+				tooltip = mihitarab_owns_all_mboala_provinces_tooltip
+				NOT = {
+					fahvanosy_region = {
+						culture = mboala
+						NOT = {
+							owned_by = ROOT
+							is_core = ROOT
+						}
 					}
 				}
 			}
