@@ -427,6 +427,27 @@ country_event = {
 	}
 }
 
+# The Demands of the enclaves & Esmari
+country_event = {
+	id = flavor_giberd.18
+	title = flavor_giberd.18.t
+	desc = flavor_giberd.18.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.18.a
+		every_owned_province = {
+			limit = {
+				region = esmaria_region
+			}
+			add_province_modifier = {
+				name = giberd_demands_enclaves_promises_made
+				duration = 1825
+			}
+		}
+	}
+}
+
 ########
 # electorate event chain
 # The Art of Promises, Paycheques and Propositions
