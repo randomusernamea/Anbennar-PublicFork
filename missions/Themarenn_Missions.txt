@@ -5,7 +5,6 @@ a95_river_reavers = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	
@@ -45,10 +44,8 @@ a95_river_reavers = {
 			if = {
 				limit = {
 					NOT = {
-						OR = {
-							diplomat = 1
-							statesman = 1
-						}
+						diplomat = 1
+						statesman = 1
 					}
 				}
 				add_dip_power = -100
@@ -121,15 +118,9 @@ a95_river_reavers = {
 
 		trigger = {
 			267 = {
-				AND = {
-					has_building = ramparts
-					has_manpower_building_trigger = yes
-					num_of_times_expanded_infrastructure = 2
-				}
-				#has_great_project = {
-					#type = placeholder for palace place
-					#tier = 1
-				#}
+				has_building = ramparts
+				has_manpower_building_trigger = yes
+				num_of_times_expanded_infrastructure = 2
 			}
 			OR = {
 				267 = { is_prosperous = yes }
@@ -163,11 +154,9 @@ a95_river_reavers = {
 		position = 4
 
 		trigger = {
-			calc_true_if = {
-				amount = 5
-				all_owned_province = {
-					has_building = impressment_offices
-				}
+			num_of_owned_provinces_with = {
+				value = 5
+				has_building = impressment_offices
 			}
 			max_manpower = 25
 			max_sailors = 5000
@@ -206,16 +195,11 @@ a95_river_reavers = {
 					extra_shortcut = yes
 				}
 			}
-			AND = {
-				num_of_regiments_at_full_drill = 10
-				num_of_marines = 10
-			}
-
-			calc_true_if = {
-				amount = 12
-				all_owned_province = {
-					has_building = impressment_offices
-				}
+			num_of_regiments_at_full_drill = 10
+			num_of_marines = 10
+			num_of_owned_provinces_with = {
+				value = 12
+				has_building = impressment_offices
 			}
 		}
 		effect = {
@@ -245,11 +229,9 @@ a95_river_reavers = {
 		trigger = {
 			army_professionalism = 0.95
 			has_estate_privilege = estate_nobles_levies
-			calc_true_if = {
-				amount = 20
-				all_owned_province = {
-					has_building = impressment_offices
-				}
+			num_of_owned_provinces_with = {
+				value = 20
+				has_building = impressment_offices
 			}
 			if = {
 				limit = { has_dlc = "Cradle of Civilization" }
@@ -284,23 +266,27 @@ a95_river_reavers = {
 		required_missions = { a95_special_guests }
 		position = 7
 		provinces_to_highlight = {
-			province_group = esmar_river_group
-			province_id = 276
-			province_id = 330
-			province_id = 910
+			OR = {
+				province_group = esmar_river_group
+				province_id = 276
+				province_id = 330
+				province_id = 910
+			}
 			NOT = {
-				owned_by = ROOT
-				province_id = 262
-				province_id = 908
-				province_id = 234
-				province_id = 254
+				OR = {
+					area = heartland_borders_area
+					province_id = 234
+				}
 			}
 		}
 		trigger = {
-			the_commons_area = {
-				owned_by = ROOT
-				owned_by_subject_of = ROOT
+			esmar_river_group = {
+				country_or_non_sovereign_subject_holds = ROOT
 				type = all
+			}
+			the_commons_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -322,7 +308,7 @@ a95_river_parties = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
+		
 	}
 	has_country_shield = yes
 	
@@ -335,7 +321,8 @@ a95_river_parties = {
 		}
 		position = 2
 		provinces_to_highlight = {
-
+			province_id = 265
+			province_id = 264
 		}
 
 		trigger = {
@@ -377,27 +364,14 @@ a95_river_parties = {
 					duration = -1
 				}
 			}
-			if = { #works
-				limit = { 265 = { owned_by = ROOT } } 
-				265 = {
-					create_flagship_with_modifications = {
+			265 = {
+				create_flagship_with_modifications = {
 					name = Seagull
 					type = light_ship
 					trade_route_map = yes
 					hull_sheating = yes
 					flag_officers = yes
-					} 
-				}
-			}
-			else = { #works
-				264 = {create_flagship_with_modifications = {
-					name = Seagull
-					type = light_ship
-					trade_route_map = yes
-					hull_sheating = yes
-					flag_officers = yes
-					}
-				}
+				} 
 			}
 			custom_tooltip = ryala_good_boy_points.tt
 			set_country_flag = a95_ryala_seagulls
@@ -410,10 +384,11 @@ a95_river_parties = {
 		required_missions = { a95_seagulls_of_ryal }
 		position = 3
 		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
-			province_id = 267
-			province_id = 575
-			province_id = 275
+			OR = {
+				province_id = 267
+				province_id = 575
+				province_id = 265
+			}
 		}
 
 		trigger = {
@@ -448,7 +423,10 @@ a95_river_parties = {
 		}
 		position = 4
 		provinces_to_highlight = {
-			province_id = 267
+			OR = {
+				province_id = 267
+				province_id = 265
+			}
 		}
 		trigger = {
 			265 = {
@@ -493,7 +471,6 @@ a95_river_parties = {
 		provinces_to_highlight = {
 			province_group = esmar_river_group
 			owned_by = ROOT
-			owned_by_subject_of = ROOT
 		}
 
 		trigger = {
@@ -503,19 +480,11 @@ a95_river_parties = {
 			#Largest Army in Esmar
 			custom_trigger_tooltip = {
 				tooltip = esmar_river_prosper_a95.tt
-				ROOT = {
-					all_owned_province = {
-						OR = {
-							AND = {
-								province_group = esmar_river_group
-								NOT = { devastation = 1 }
-								is_prosperous = yes
-							}
-							NOT = {
-								province_group = esmar_river_group
-							}
-						}
-					}
+				esmar_river_group = {
+					type = all
+					country_or_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					is_prosperous = yes
 				}
 			}
 			
@@ -524,6 +493,7 @@ a95_river_parties = {
 		effect = {
 			country_event = { id = flavour_themarenn.21 }
 			set_country_flag = a95_disable_bad_party2
+			custom_tooltip = a95_disable_bad_party.tt
 		}
 	}
 	##Mission End
@@ -536,15 +506,17 @@ a95_river_parties = {
 		}
 		position = 6
 		provinces_to_highlight = {
-			##PROVINCESHIGHLIGHTCODE
+			superregion = deepwoods_superregion
+			superregion = escann_superregion
+			superregion = gerudia_superregion
 		}
 
 		trigger = {
 			is_great_power = yes
 			264 = {
-				transports_in_province = 30
+				transports_in_province = 10
 			}
-			treasury = 1500
+			treasury = 500
 			num_of_royal_marriages = 6
 			any_known_country = {
 				capital_scope = { superregion = escann_superregion }
@@ -565,16 +537,15 @@ a95_river_parties = {
 				kill_units = {
 					who = owner
 					type = transport
-					amount = 30
+					amount = 10
 				}
 			}
-			add_treasury = -1500
+			add_treasury = -500
 			hehaine_river_group = { add_permanent_claim = ROOT }
 			logrodaine_river_group = { add_permanent_claim = ROOT }
 			esmar_river_group = { add_permanent_claim = ROOT }
 			the_commons_area = { add_permanent_claim = ROOT }
 			custom_tooltip = a95_special_guests.c1
-			hidden_effect = { set_country_flag = themarenn_events }
 		}
 	}
 	##Mission End
@@ -621,10 +592,11 @@ a95_river_parties = {
 		}
 		position = 8
 		provinces_to_highlight = {
-			province_group = origin_province_group
-			province_id = 234
-			area = heartland_borders_area
-			NOT = { owned_by = ROOT }
+			OR = {
+				province_group = origin_province_group
+				province_id = 234
+				area = heartland_borders_area
+			}
 		}
 
 		trigger = {
@@ -666,7 +638,7 @@ a95_women = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
+		
 	}
 	has_country_shield = yes
 	
@@ -711,6 +683,7 @@ a95_women = {
 			}
 			else = {
 				treasury = 100
+				religion = regent_court
 			}
 		}
 
@@ -751,9 +724,9 @@ a95_women = {
 					loyalty = 50
 				}
 			}
-			calc_true_if = {
-				amount = 5
-				all_owned_province = { has_tax_building_trigger = yes }
+			num_of_owned_provinces_with = {
+				value = 5
+				has_tax_building_trigger = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = a95_ryala_esmaryal.tt
@@ -906,7 +879,7 @@ esmaryal_branching = {
 					}
 				}
 				has_personal_deity = esmaryal
-				266 = { has_building = temple }
+				266 = { has_tax_building_trigger = yes}
 				266 = { development = 35 }
 				custom_trigger_tooltip = {
 					tooltip = a95_femaleadvisor.tt
@@ -1057,32 +1030,7 @@ ryala_branching = {
 				custom_tooltip = a95_ryala_upgrade.tt
 				set_country_flag = lady_of_flows_ryala
 				hidden_effect = {
-					if = {
-						limit = { consort_dip = 1 }
-						add_country_modifier = { name = a95_consort_pros_1 duration = -1 }
-					}
-					else_if = {
-						limit = { consort_dip = 2 }
-						add_country_modifier = { name = a95_consort_pros_2 duration = -1 }
-					}
-					else_if = {
-						limit = { consort_dip = 3 }
-						add_country_modifier = { name = a95_consort_pros_3 duration = -1 }
-					}
-					else_if = {
-						limit = { consort_dip = 4 }
-						add_country_modifier = { name = a95_consort_pros_4 duration = -1 }
-					}
-					else_if = {
-						limit = { consort_dip = 5 }
-						add_country_modifier = { name = a95_consort_pros_5 duration = -1 }
-					}
-					else_if = {
-						limit = { consort_dip = 6 }
-						add_country_modifier = { name = a95_consort_pros_6 duration = -1 }
-					}
-					else = {}
-					
+					themarenn_ryala_prosperity = yes
 				}
 			}
 		}
@@ -1109,7 +1057,7 @@ a95_barges = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
+		
 	}
 	has_country_shield = yes
 
@@ -1154,7 +1102,7 @@ a95_heretics = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
+		
 	}
 	has_country_shield = yes
 	
@@ -1164,9 +1112,7 @@ a95_heretics = {
 		required_missions = { }
 		position = 2
 		provinces_to_highlight = {
-			OR = {
-				province_id = 260
-			}
+			province_id = 260
 		}
 
 		trigger = {
@@ -1205,7 +1151,7 @@ a95_heretics = {
 				}
 				NOT = {
 					custom_trigger_tooltip = {
-						tooltip = a95_isobelgabmorionn_is_monarch.tt
+						tooltip = a95_isobelgabmorionn_is_not_monarch.tt
 						A94 = {
 							has_ruler_flag = divination_3
 						}
@@ -1428,7 +1374,7 @@ a95_heretics = {
 		}
 		position = 7
 		provinces_to_highlight = {
-			##PROVINCESHIGHLIGHTCODE
+			capital_scope = { tag = emperor }
 		}
 
 		trigger = {
@@ -1482,9 +1428,9 @@ a95_heretics = {
 				}
 			}
 			set_country_flag = unlocked_imperial_esmari_circle
-			custom_tooltip = a95_esmari_circle.tt
+			custom_tooltip = a95_esmari_circle_mission.tt
 			esmaria_region = { add_permanent_claim = ROOT }
-			#new gov reforms!
+
 		}
 	}
 	##Mission End
@@ -1543,7 +1489,7 @@ a95_imperial_council = {
 	ai = yes
 	potential = {
 		tag = A95
-		NOT = { map_setup = map_setup_random }
+		
 	}
 	has_country_shield = yes
 	
@@ -1632,7 +1578,6 @@ a95_imperial_council = {
 				}
 			}
 			333 = {
-				type = all
 				owned_by = ROOT
 				OR = {
 					NOT = { local_autonomy = 10 }
@@ -1650,6 +1595,7 @@ a95_imperial_council = {
 		effect = {
 			A35 = { country_event = { id = flavour_themarenn.17 } }
 			custom_tooltip = ryala_good_boy_points.tt
+			custom_tooltip = a95_demand_konwell_subjugation.tt
 			set_country_flag = a95_ryala_ryalanar
 		}
 	}
@@ -1724,7 +1670,7 @@ a95_imperial_council = {
 				tooltip = reconcilliation_jpg.tt
 				A37 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
 				A90 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
-				A90 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
+				A93 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
 				A99 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
 				A91 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
 				A62 = { OR = { exists = no has_75_opinion_improved_relation = { target = ROOT } } }
@@ -1752,13 +1698,11 @@ a95_imperial_council = {
 		}
 		position = 5
 		provinces_to_highlight = {
-			area = cann_esmar_area
-			area = ryalanar_area
-			area = konwell_area
-			province_id = 333
 			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { owned_by_subject_of = ROOT }
+				area = cann_esmar_area
+				area = ryalanar_area
+				area = konwell_area
+				province_id = 333
 			}
 		}
 
@@ -1771,7 +1715,7 @@ a95_imperial_council = {
 						local_autonomy = 10
 					}
 					has_province_modifier = autonomy_decreased
-					NOt = {
+					NOT = {
 						owned_by = ROOT
 					}
 				}
@@ -1784,7 +1728,7 @@ a95_imperial_council = {
 						local_autonomy = 10
 					}
 					has_province_modifier = autonomy_decreased
-					NOt = {
+					NOT = {
 						owned_by = ROOT
 					}
 				}
@@ -1797,20 +1741,19 @@ a95_imperial_council = {
 						local_autonomy = 10
 					}
 					has_province_modifier = autonomy_decreased
-					NOt = {
+					NOT = {
 						owned_by = ROOT
 					}
 				}
 			}
 			333 = {
-				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 				OR = {
 					NOT = {
 						local_autonomy = 10
 					}
 					has_province_modifier = autonomy_decreased
-					NOt = {
+					NOT = {
 						owned_by = ROOT
 					}
 				}
