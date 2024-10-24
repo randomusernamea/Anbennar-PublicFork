@@ -66,27 +66,53 @@ giberd_imperial = {
 		position = 8
 		trigger = {
 			OR = {
-				eoa_is_dismantled = yes
 				AND = {
-					NOT = {
-						num_of_electors = 8
+					280 = {
+						owned_by = ROOT
 					}
-					emperor = {
-						has_opinion = {
-							who = ROOT
-							value = 150
+					576 = {
+						owned_by = root
+					}
+					301 = {
+						owned_by = root
+					}
+				}
+				AND = {
+					280 = {
+						owner = {
+							reverse_has_opinion = {
+								who = ROOT
+								value = 150
+							}
 						}
+					}
+					901 = {
+						is_strongest_trade_power = ROOT
+					}
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							has_trade_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					280 = {
+						owner = {
+							is_enemy = ROOT
+							trade_embargo_by = ROOT
+						}
+					}
+					916 = {
+						infantry_in_province = ROOT
+						infantry_in_province = 20
 					}
 				}
 			}
 		}
 		effect = {
-			emperor = {
-				country_event = {
-					id = flavor_giberd.2
-					days = 30
-					random = 30
-				}
+			country_event = {
+				id = flavor_giberd.33
 			}
 		}
 	}

@@ -378,7 +378,7 @@ country_event = {
 		if = {
 			limit = {
 				emperor = {
-					is_ai = no
+					ai = no
 				}
 			}
 			country_event = {
@@ -519,9 +519,11 @@ country_event = {
 		custom_tooltip = flavor_giberd.32.accept_tt
 		add_treasury = -500
 		if = {
-			265 = {
-				NOT = {
-					has_province_modifier = giberd_damestear_port_low
+			limit = {
+				265 = {
+					NOT = {
+						has_province_modifier = giberd_damestear_port_low
+					}
 				}
 			}
 			hidden_effect = {
@@ -546,8 +548,10 @@ country_event = {
 		name = flavor_giberd.32.b
 		custom_tooltip = flavor_giberd.32.reject_tt
 		if = {
-			265 = {
-				has_province_modifier = giberd_damestear_port_low
+			limit = {
+				265 = {
+					has_province_modifier = giberd_damestear_port_low
+				}
 			}
 			remove_province_modifier = giberd_damestear_port_low
 			hidden_effect = {
@@ -563,6 +567,77 @@ country_event = {
 		country_event = {
 			id = flavor_giberd.32
 			days = 3650
+		}
+	}
+}
+
+# Esmaria's last port of call
+country_event = {
+	id = flavor_giberd.33
+	title = flavor_giberd.33.t
+	desc = flavor_giberd.33.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.33.a
+		giberd_factions_technomancers_increase = yes
+		add_country_modifier = {
+			name = giberd_estallen_share
+			duration = -1
+		}
+		home_trade_node_effect_scope = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = -1
+				power = 100
+				key = giberd_estallen_trade_deal
+			}
+			add_trade_modifier = {
+				who = A93
+				duration = -1
+				power = -100
+				key = giberd_estallen_trade_deal
+			}
+			every_trade_node_member_province = {
+				limit = {
+					owned_by = A93
+				}
+				add_province_modifier = {
+					name = giberd_business_ventures
+					duration = -1
+				}
+			}
+		}
+		custom_tooltip = flavor_giberd.33.war_tt		# TODO: implement
+	}
+	option = {
+		name = flavor_giberd.33.b
+		giberd_factions_brillites_increase = yes
+		add_manpower = -20
+		280 = {
+			add_permanent_province_modifier = {
+				name = giberd_lock_out_estallen
+				duration = -1
+			}
+			owner = {
+				add_country_modifier = {
+					name = giberd_estallen_embargo
+					duration = 9125
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.33.c
+		giberd_factions_mechanists_increase = yes
+		280 = {
+			add_permanent_claim = ROOT
+		}
+		576 = {
+			add_permanent_claim = ROOT
+		}
+		301 = {
+			add_permanent_claim = ROOT
 		}
 	}
 }
