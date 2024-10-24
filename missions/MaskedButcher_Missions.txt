@@ -2029,15 +2029,12 @@ maskedbutcher_missions_4d = {
 		position = 10
 
 		provinces_to_highlight = {
-			culture_is_centaur = yes
+			fast_has_pop_of_race = { race = centaur }
 			NOT = { owned_by = ROOT }
 		}
 
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 20
-				culture_is_centaur = yes
-			}
+			fast_owns_num_pops_of_race = { race = centaur amount = 20 }
 			egoirnasgh_area = {
 				type = all
 				owned_by = ROOT
