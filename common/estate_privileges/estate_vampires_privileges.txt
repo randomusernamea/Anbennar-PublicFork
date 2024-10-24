@@ -1440,13 +1440,15 @@ estate_vampires_mask_harimari = {
 	can_select = {
 		custom_trigger_tooltip = { tooltip = has_crafted_mask_tt has_country_flag = harimari_mask_1 }
 		church_power = 50
-		mil_power = 50
+		dip_power = 25
+		mil_power = 25
 	}
 
 	on_granted = {
 		track_mask_granted = { mask_race = harimari }
 		add_church_power = -50
-		add_mil_power = -50
+		add_dip_power = -25
+		add_mil_power = -25
 	}
 
 	can_revoke = {
@@ -1461,7 +1463,7 @@ estate_vampires_mask_harimari = {
 	conditional_modifier = {
 		trigger = { has_country_flag = harimari_mask_1 NOT = { has_country_flag = harimari_mask_2 } }
 		modifier = {
-			army_tradition_from_battle = 0.5
+			num_accepted_cultures = 1
 			infantry_power = 0.1
 		}
 	}
@@ -1474,7 +1476,7 @@ estate_vampires_mask_harimari = {
 			}
 		}
 		modifier = {
-			army_tradition_from_battle = 1
+			num_accepted_cultures = 2
 			infantry_power = 0.2
 		}
 	}
@@ -1487,7 +1489,7 @@ estate_vampires_mask_harimari = {
 			}
 		}
 		modifier = {
-			army_tradition_from_battle = 1
+			num_accepted_cultures = 2
 			infantry_power = 0.2
 			administrative_efficiency = 0.15
 		}
@@ -1621,7 +1623,7 @@ estate_vampires_mask_hobgoblin = {
 			yearly_army_professionalism = 0.01
 			drill_gain_modifier = 1.5
 			max_absolutism = 10
-			max_absolutism_effect = 0.1
+			reserves_organisation = 0.15
 			drill_decay_modifier = -0.25
 		}
 	}
