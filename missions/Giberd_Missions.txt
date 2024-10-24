@@ -552,27 +552,30 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
-			all_owned_province = {
-				region = esmaria_region
-				OR = {
-					AND = {
-						trade_goods = grain
-						has_manpower_building_trigger = yes
-						has_building = farm_estate
-						base_production = 8
-					}
-					AND = {
-						trade_goods = livestock
-						has_manpower_building_trigger = yes
-						has_building = soldier_households
-						base_manpower = 8
-					}
-					AND = {
+			custom_trigger_tooltip = {
+				tooltip = giberd_graining_and_grazing_tt
+				all_owned_province = {
+					OR = {
 						NOT = {
-							trade_goods = grain
+							region = esmaria_region
 						}
-						NOT = {
+						AND = {
+							trade_goods = grain
+							has_manpower_building_trigger = yes
+							has_building = farm_estate
+							base_production = 8
+						}
+						AND = {
 							trade_goods = livestock
+							has_manpower_building_trigger = yes
+							has_building = soldier_households
+							base_manpower = 8
+						}
+						AND = {
+							NOT = {
+								trade_goods = grain
+								trade_goods = livestock
+							}
 						}
 					}
 				}
@@ -636,22 +639,10 @@ giberd_konwell_conquest = {
 		}
 		position = 9
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
-			}
 		}
 	}
 	giberd_curtain_call = {
