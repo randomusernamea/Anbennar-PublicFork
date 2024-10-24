@@ -124,27 +124,38 @@ giberd_imperial = {
 		position = 10
 		trigger = {
 			OR = {
-				eoa_is_dismantled = yes
 				AND = {
-					NOT = {
-						num_of_electors = 8
-					}
-					emperor = {
-						has_opinion = {
+					owns = 308
+					owns = 912
+				}
+				AND = {
+					A73 = {
+						reverse_has_opinion = {
 							who = ROOT
-							value = 150
+							value = 200
+						}
+						has_25_opinion_sent_gift = {
+							target = ROOT
+						}
+						custom_trigger_tooltip = {
+							tooltip = giberd_to_strike_an_anvil_tt							# TODO: check that this works
+							any_known_country = {
+								AND = {
+									A73 = {
+										preferred_emperor = PREV
+									}
+									preferred_emperor = THIS
+								}
+							}
 						}
 					}
 				}
+				artifice_has_points_30 = yes
 			}
 		}
 		effect = {
-			emperor = {
-				country_event = {
-					id = flavor_giberd.2
-					days = 30
-					random = 30
-				}
+			country_event = {
+				id = flavor_giberd.34
 			}
 		}
 	}

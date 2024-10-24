@@ -641,3 +641,121 @@ country_event = {
 		}
 	}
 }
+
+# Silverforge's due
+country_event = {
+	id = flavor_giberd.34
+	title = flavor_giberd.34.t
+	desc = flavor_giberd.34.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.34.a
+		giberd_factions_technomancers_increase = yes
+		custom_tooltip = giberd_construction_of_silverforge_large_tt
+		custom_tooltip = artificer_points_upkeep_tt
+		set_country_flag = giberd_silverforge_hold_large
+		hidden_effect = {
+			change_variable = {
+				which = ArtificeUpkeep
+				value = 30
+			}
+		}
+		update_artifice_points = yes
+		add_country_modifier = {
+			name = giberd_paying_for_silverforge
+			duration = 3650
+		}
+		912 = {
+			add_province_modifier = {
+				name = giberd_silverforge_hold
+				duration = -1
+			}
+		}
+		custom_tooltip = giberd_silverforge_war_tt		# TODO: implement
+		large_increase_of_dwarven_tolerance_effect = yes
+		for = {
+			custom_tooltip = giberd_10_provinces_get_dwarves_tt
+			amount = 10
+			effect = "random_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
+		}
+	}
+	option = {
+		name = flavor_giberd.34.b
+		giberd_factions_brillites_increase = yes
+		custom_tooltip = giberd_construction_of_silverforge_small_tt
+		set_country_flag = giberd_silverforge_hold_small
+		custom_tooltip = artificer_points_upkeep_tt
+		hidden_effect = {
+			change_variable = {
+				which = ArtificeUpkeep
+				value = 10
+			}
+		}
+		update_artifice_points = yes
+		for = {
+			custom_tooltip = giberd_2_provinces_get_dwarves_tt
+			amount = 2
+			effect = "random_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
+		}
+	}
+	option = {
+		name = flavor_giberd.35.a
+		giberd_factions_mechanists_increase = yes
+		remove_historical_friend = A73
+		A73 = {
+			add_casus_belli = {
+				type = cb_insult
+				target = ROOT
+				months = 120
+			}
+		}
+		308 = {
+			add_permanent_claim = ROOT
+		}
+		912 = {
+			add_permanent_claim = ROOT
+		}
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = flavor_giberd.35
+				days = 3650
+			}
+		}
+	}
+}
+
+# cleanup after .34
+country_event = {
+	id = flavor_giberd.35
+	title = flavor_giberd.35.t
+	desc = flavor_giberd.35.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.34.a
+		if = {
+			limit = {
+				has_country_flag = giberd_silverforge_hold_large
+			}
+			clr_country_flag = giberd_silverforge_hold_large
+			subtract_variable = {
+				which = ArtificeUpkeep
+				value = 30
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = giberd_silverforge_hold_small
+			}
+			clr_country_flag = giberd_silverforge_hold_small
+			subtract_variable = {
+				which = ArtificeUpkeep
+				value = 10
+			}
+		}
+	}
+}
