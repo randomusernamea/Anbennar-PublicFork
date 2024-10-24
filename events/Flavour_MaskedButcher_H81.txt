@@ -2554,7 +2554,6 @@ country_event = {
 				harpy_reserve_flag = { change_culture = firanyan_harpy }
 				hobgoblin_reserve_flag = { change_culture = wolf_command }
 				kobold_reserve_flag = { change_culture = darkscale_kobold }
-				lizardfolk_reserve_flag = { change_culture = cyazizeta_lizardfolk }
 				hill_ogre_reserve_flag = { change_culture = fathide_ogre }
 				swamp_ogre_reserve_flag = { change_culture = mossmouth_ogre }
 				ruinborn_reserve_flag = { change_culture = mayte }
@@ -2580,7 +2579,7 @@ country_event = {
 		}
 		any_owned_province = {
 			has_province_modifier = mb_reserve
-			has_owner_culture = yes
+			not_reserve_culture_trigger = yes
 		}
 	}
 
