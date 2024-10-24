@@ -735,21 +735,87 @@ giberd_konwell_conquest = {
 		}
 		position = 10
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
+			AND = {
+				region = esmaria_region
 				owned_by = ROOT
+				AND = {
+					trade_goods = cloth
+					NOT = {
+						has_trade_building_trigger = yes
+						has_production_building_trigger = yes
+						base_production = 8
+					}
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			custom_trigger_tooltip = {
+				tooltip = giberd_curtain_call_tt
+				all_owned_province = {
+					OR = {
+						NOT = {
+							region = esmaria_region
+						}
+						AND = {
+							trade_goods = cloth
+							has_production_building_trigger = yes
+							has_trade_building_trigger = yes
+							base_production = 8
+						}
+						NOT = {
+							trade_goods = cloth
+						}
+					}
+				}
+			}
+			260 = {
+				base_production = 12
+				has_building = textile
+				has_state_edict = edict_centralization_effort
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_not_researching_invention_tt
+				NOT = {
+					has_country_flag = artifice_research_in_progress
+					has_country_flag = artifice_research_menu_open
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = esmari_fashion_happened_tt
+					has_global_flag = esmari_fashion_happened
+				}
+				treasury = 5000
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			# TODO: unable to research for 20 years
+			260 = {
+				add_province_modifier = {
+					name = giberd_esmaria_fabric_market
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = cloth
+					region = esmaria_region
+				}
+				add_province_modifier = {
+					name = giberd_enhanced_cloth_production
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = esmari_fashion_happened
+					}
+				}
+				add_treasury = -5000
+				country_event = {
+					id = anb_price.43
+				}
 			}
 		}
 	}
