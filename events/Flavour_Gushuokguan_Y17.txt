@@ -179,6 +179,14 @@ country_event = {
 			add_permanent_claim = ROOT #Gushuokguan
 		}
 		set_estate_privilege = estate_eunuchs_anb_confederal_administrative_cadre
+		add_country_modifier = {
+			name = gushuokguan_golden_dawn_for_the_dao
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = gushuokguan_dao_normal_buff
+			duration = -1
+		}
 	}
 }
 
@@ -215,6 +223,10 @@ country_event = {
 	option = {
 		name = gushuokguan_event.9.a
 		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_enable_confederal_council_tt
+		hidden_effect = {
+			set_country_flag = gushuokguan_enable_confederal_council
+		}
 	}
 }
 
@@ -662,11 +674,115 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = dao
+			}
+			amount = 4
+		}
+		any_subject_country = {
+			any_neighbor_country = {
+				NOT = { 
+					is_subject_of = ROOT #Gushuokguan
+					tag = ROOT #Gushuokguan
+				}
+			}
+		}
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = { 
+					is_subject_of_type = dao 
+					any_neighbor_country = {
+						NOT = { 
+							is_subject_of = ROOT #Gushuokguan
+							tag = ROOT #Gushuokguan
+						} 
+					}
+				}
+				save_global_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+				save_event_target_as = dao_B
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
+				save_event_target_as = dao_C
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
+				save_global_event_target_as = dao_D
+			}
+		}
+	}
 
 	option = {
 		name = gushuokguan_event.51.a
 		ai_chance = { factor = 1 }
+		event_target:dao_B = { 
+			add_liberty_desire = 10 
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
+		event_target:dao_C = { 
+			add_liberty_desire = 10 
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
+		event_target:dao_A = {
+			random_neighbor_country = {
+				limit = {
+					NOT = { 
+						is_subject_of = ROOT #Gushuokguan
+						tag = ROOT #Gushuokguan
+					} 
+				}
+				every_owned_province = {
+					limit = { is_neighbor_of = event_target:dao_A }
+					add_claim = ROOT
+					set_province_flag = gushuokguan_claimed_for_dao
+				}
+			}
+		}
+		set_country_flag = gushuokguan_dao_claim
+	}
+
+	option = {
+		name = gushuokguan_event.51.b
+		ai_chance = { factor = 1 }
+		event_target:dao_A = { 
+			add_liberty_desire = 10 
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
+		event_target:dao_D = { 
+			add_liberty_desire = 10 
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
+		add_ruler_modifier = {
+			name = gushuokguan_prosperity_devastation
+			duration = -1
+		}
+		every_subject_country = {
+			add_ruler_modifier = {
+				name = gushuokguan_prosperity_devastation
+				duration = -1
+			}
+		}
 	}
 }
 
@@ -679,7 +795,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.52.a
@@ -696,7 +814,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.53.a
@@ -713,7 +833,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.54.a
@@ -730,7 +852,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.55.a
@@ -747,7 +871,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.56.a
@@ -764,7 +890,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.57.a
@@ -781,7 +909,9 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.58.a
@@ -798,11 +928,109 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {}
+	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
 
 	option = {
 		name = gushuokguan_event.59.a
 		ai_chance = { factor = 1 }
+	}
+}
+
+#You didn't decc
+country_event = {
+	id = gushuokguan_event.61
+	title = gushuokguan_event.61.t
+	desc = gushuokguan_event.61.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = gushuokguan_dao_claim
+		any_claimed_province = {
+			has_province_flag = gushuokguan_claimed_for_dao
+			owner = { 
+				OR = {
+					NOT = { truce_with = ROOT }
+					NOT = { war_with = ROOT } 
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
+
+	option = {
+		name = gushuokguan_event.61.a
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_D = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		clear_global_event_target = dao_A
+		clear_global_event_target = dao_D
+	}
+}
+
+#You decc
+country_event = {
+	id = gushuokguan_event.62
+	title = gushuokguan_event.62.t
+	desc = gushuokguan_event.62.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = gushuokguan_dao_claim
+		any_claimed_province = {
+			has_province_flag = gushuokguan_claimed_for_dao
+			owner = { 
+				OR = {
+					NOT = { truce_with = ROOT }
+					NOT = { war_with = ROOT } 
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
+
+	option = {
+		name = gushuokguan_event.62.a
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_liberty_desire = -10
+			add_prestige = 20
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_medium
+			}
+		}
+		event_target:dao_D = {
+			add_liberty_desire = -10
+			add_prestige = 20
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_medium
+			}
+		}
+		hidden_effect = {
+			clear_global_event_target = dao_A
+			clear_global_event_target = dao_D
+		}
 	}
 }
 
@@ -813,8 +1041,7 @@ country_event = {
 	desc = gushuokguan_event.101.d
 	picture = CHINESE_GENERAL_eventPicture
 	
-	#There is no on_action for hiring condottieri, so I'm doing mtth for those.
-	#okman, if you have a better idea on how to do execute this - PLEASE HELP
+	#I wish there was an on_action for hiring condotierri
 	mean_time_to_happen = {
 		days = 1
 	}

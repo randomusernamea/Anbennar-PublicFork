@@ -2907,6 +2907,15 @@ on_new_term_election = {
 		accretive_path_upper_raheni_chi_stacking_effect = { amount = 25 }
 		set_ruler_flag = chi_stacking_old_ruler_flag
 	}
+	if = {
+		limit = {
+			has_reform = the_stone_jun
+			has_country_flag = gushuokguan_enable_confederal_council
+		}
+		country_event = {
+			id = gushuokguan_event.61
+		}
+	}
 }
 
 # country
@@ -16593,6 +16602,17 @@ on_war_ended = { #ROOT - Winer FROM - Loser
 			has_country_flag = khao_at_war
 		}
 		clr_country_flag = khao_at_war
+	}
+
+	#Gushuokguan Promise of War
+	if = {
+		limit = {
+			has_reform = the_stone_jun
+			has_country_flag = gushuokguan_enable_confederal_council
+		}
+		country_event = {
+			id = gushuokguan_event.62
+		}
 	}
 }
 
