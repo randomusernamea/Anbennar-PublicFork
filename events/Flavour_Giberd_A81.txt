@@ -933,3 +933,102 @@ country_event = {
 		}
 	}
 }
+
+# Arcane Arts and Artificery
+country_event = {
+	id = flavor_giberd.38
+	title = flavor_giberd.38.t
+	desc = flavor_giberd.38.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.38.a
+		giberd_factions_technomancers_increase = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_the_guilds_betrayed_tt
+			loyalty = -20
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			estate = estate_artificers
+			desc = giberd_the_guilds_betrayed_influence_tt
+			influence = -20
+			duration = 7300
+		}
+		# TODO: unable to research for 20 years
+		add_estate_influence_modifier = {
+			estate = estate_mages
+			desc = giberd_abundance_of_mages_tt
+			influence = 20
+			duration = 7300
+		}
+		custom_tooltip = linebreak_tt
+		custom_tooltip = has_already_happened_tt
+		custom_tooltip = giberd_magisterium_oversight_buffed_tt		# TODO: implement
+	}
+	option = {
+		name = flavor_giberd.38.b
+		giberd_factions_brillites_increase = yes
+		add_country_modifier = {
+			name = giberd_fed_misinformation
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			estate = estate_mages
+			desc = giberd_fed_misinformation_influence_tt
+			influence = -10
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = giberd_magisterium_merchants
+			duration = 7300
+		}
+		custom_tooltip = linebreak_tt
+		custom_tooltip = has_already_happened_tt
+		custom_tooltip = giberd_magisterium_oversight_buffed_tt
+	}
+	option = {
+		name = flavor_giberd.38.c
+		giberd_factions_mechanists_increase = yes
+		add_country_modifier = {
+			name = giberd_sticking_it_to_the_mages
+			duration = 7300
+		}
+		if = {
+			limit = {
+				exists = A85
+			}
+			add_casus_belli = {
+				type = cb_insult
+				target = A85
+				months = 60
+			}
+			declare_war_with_cb = {
+				who = A85
+				casus_belli = cb_insult
+			}
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_mages
+			desc = giberd_sticking_it_to_the_mages_tt
+			loyalty = -30
+			duration = 7300
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_sticking_it_to_the_mages_tt
+			loyalty = 20
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			estate = estate_artificers
+			desc = giberd_sticking_it_to_the_mages_influence_tt
+			influence = 20
+			duration = 7300
+		}
+		custom_tooltip = linebreak_tt
+		custom_tooltip = has_already_happened_tt
+		custom_tooltip = giberd_magisterium_oversight_buffed_tt
+	}
+}

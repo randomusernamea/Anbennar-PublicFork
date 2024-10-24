@@ -159,7 +159,7 @@ giberd_imperial = {
 							target = ROOT
 						}
 						custom_trigger_tooltip = {
-							tooltip = giberd_to_strike_an_anvil_tt							# TODO: check that this works
+							tooltip = giberdt_o_strike_an_anvil_tt							# TODO: check that this works
 							any_known_country = {
 								AND = {
 									A73 = {
@@ -1393,6 +1393,9 @@ giberd_ryalanar_conquest = {
 		}
 		trigger = {
 			any_known_country = {
+				has_100_opinion_improved_relation = {
+					target = ROOT
+				}
 				OR = {
 					culture_is_gnomish = yes
 					culture_is_dwarven = yes
@@ -1407,9 +1410,6 @@ giberd_ryalanar_conquest = {
 							}
 						}
 					}
-				}
-				has_100_opinion_improved_relation = {
-					target = ROOT
 				}
 			}
 			treasury = 1000
@@ -1476,41 +1476,43 @@ giberd_ryalanar_conquest = {
 		}
 		position = 10
 		provinces_to_highlight = {
-			OR = {
-				area = konwell_area
-				area = ryalanar_area
-			}
-			NOT = {
-				AND = {
-					owned_by = ROOT
-					is_core = ROOT
-				}
-			}
 		}
 		trigger = {
-			prestige = 50
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			mission_completed = giberd_to_strike_an_anvil
+			OR = {
+				has_personal_deity = minara
+				A10 = {
+					has_25_opinion_sent_gift = yes
+				}
 			}
-			ryalanar_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			num_of_owned_provinces_with = {
+				value = 5
+				has_shipyard_building_trigger = yes
+				region = esmaria_region
 			}
+			# magisterium
+			OR = {
+				AND = {
+					exists = A85
+					army_strength = {
+						who = A85
+						value = 1
+					}
+					navy_size = A85
+				}
+				has_estate_privilege = estate_mages_organization_magisterium
+			}
+			has_flagship = yes
 		}
 		effect = {
-			esmaria_region = {
-				limit = {
-					NOT = {
-						is_core = ROOT
-					}
-					NOT = {
-						is_permanent_claim = ROOT
-					}
-				}
-				add_permanent_claim = ROOT
+			add_country_modifier = {
+				name = giberd_the_grg
+				duration = -1
+			}
+			# TODO: decreased negative outcomes during the river party
+			# (the player will have a decreased chance for negative events during the river party event chain)
+			country_event = {
+				id = flavor_giberd.38
 			}
 		}
 	}
