@@ -1,22 +1,35 @@
+# region review by T-fool and Chunguito
+# Lead review and approval by Scamp
+# Content review by Magnive
+# Balance by x 
+# Writing by x
+# Writing review by x
+# Thanks to you all for your effort and review
+
 mihitarab_missions_1 = { 
-	slot = 1 
+	slot = 2 
 	generic = no
 	ai = yes 
 	potential = {
 		tag = L37
+		has_country_flag = L37_ruler_assasination
 	} 
 	L37_launch_an_investigation = {
 		icon = mission_fortify_mandu
-		position = 3
-		required_missions = { L37_great_celebration }
+		position = 2
+		required_missions = { L37_era_of_peace_and_prosperity }
 		provinces_to_highlight = {
 			
 		}
 		
 		trigger = {
 			treasury = 100
-			stability = 3
-			NOT = { has_country_flag = mihitarab_king_has_recovered_flag }
+			OR = {
+				advisor = spymaster
+				has_dip_advisor_3 = yes
+			}
+			NOT = { has_country_flag = L37_ruler_injured }
+			
 		}
 		
 		effect = {
@@ -32,11 +45,12 @@ mihitarab_missions_2 = {
 	ai = yes 
 	potential = {
 		tag = L37
+		has_country_flag = L37_horrors_revealed
 	} 
 	
 	L37_seek_spiritual_aid = {
 		icon = mission_fortify_mandu
-		position = 4
+		position = 3
 		required_missions = { L37_launch_an_investigation }
 		provinces_to_highlight = {
 			
@@ -103,27 +117,6 @@ mihitarab_missions_3 = {
 	potential = {
 		tag = L37
 	} 
-	
-	L37_great_celebration = {
-		icon = mission_fortify_mandu
-		position = 2
-		required_missions = { L37_end_of_an_era }
-		provinces_to_highlight = {
-			
-		}
-		
-		trigger = {
-			has_adm_advisor_2 = yes
-			splendor = 200
-			has_estate_privilege = estate_burghers_patronage_of_the_arts
-		}
-		
-		effect = {
-			country_event = { 
-				id = flavor_mihitarab.7
-			}
-		}
-	}
 	L37_breach_the_walls = {
 		icon = mission_fortify_mandu
 		position = 3
@@ -148,10 +141,13 @@ mihitarab_missions_3 = {
 			country_event = { 
 				id = flavor_mihitarab.2
 			}
-			fahvanosy_region = {
-				limit = { culture = amezatany }
-				add_permanent_claim = ROOT
+			hidden_effect = {
+				fahvanosy_region = {
+					limit = { culture = amezatany }
+					add_permanent_claim = ROOT
+				}
 			}
+			custom_tooltip = amezatany_mihitarab_tooltip
 		}
 	}
 }
@@ -161,12 +157,13 @@ mihitarab_missions_4 = {
 	ai = yes 
 	potential = {
 		tag = L37
+		has_country_flag = L37_horrors_revealed
 	} 
 	
 	L37_prepare_a_holy_war = {
 		icon = mission_fortify_mandu
 		position = 4
-		required_missions = { L37_launch_an_investigation }
+		required_missions = { L37_seek_spiritual_aid }
 		provinces_to_highlight = {
 			
 		}
@@ -206,7 +203,6 @@ mihitarab_missions_4 = {
 		position = 5
 		required_missions = {
 			L37_prepare_a_holy_war
-			L37_seek_spiritual_aid
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -225,15 +221,24 @@ mihitarab_missions_4 = {
 		trigger = {
 			6611 = {
 				religion = nakavy_avo
-				local_autonomy = 1
+				OR = {
+					NOT = { local_autonomy = 1 }
+					has_province_modifier = autonomy_decreased
+				}
 			}
 			5822 = {
 				religion = nakavy_avo
-				local_autonomy = 1
+				OR = {
+					NOT = { local_autonomy = 1 }
+					has_province_modifier = autonomy_decreased
+				}
 			}
 			6613 = {
 				religion = nakavy_avo
-				local_autonomy = 1
+				OR = {
+					NOT = { local_autonomy = 1 }
+					has_province_modifier = autonomy_decreased
+				}
 			}
 		}
 		
@@ -256,7 +261,7 @@ mihitarab_missions_5 = {
 		tag = L37
 	} 
 	
-	L37_end_of_an_era = {
+	L37_era_of_peace_and_prosperity = {
 		icon = mission_fortify_mandu
 		position = 1
 		provinces_to_highlight = {
@@ -264,8 +269,8 @@ mihitarab_missions_5 = {
 		}
 		
 		trigger = {
-			corruption = 1
-			stability = 2
+			hidden_trigger = { ai = no }
+			any_neighbor_province = { is_claim = ROOT }
 			employed_advisor = {
 				category = ADM				
 			}
@@ -278,13 +283,13 @@ mihitarab_missions_5 = {
 		}
 		
 		effect = {
-			country_event = { id = flavor_mihitarab.1 }
+			country_event = { id = flavor_mihitarab.11 }
 		}
 	}
 	L37_fomarati_king = {
 		icon = mission_fortify_mandu
 		position = 2
-		required_missions = { L37_end_of_an_era }
+		required_missions = { L37_era_of_peace_and_prosperity }
 		provinces_to_highlight = {
 			OR  = {
 				province_id = 6602
@@ -296,6 +301,10 @@ mihitarab_missions_5 = {
 		}
 		
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = haigo_rules_tooltip
+				has_country_flag = mihitarab_haigo_rules_flag
+			}
 			6602 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -316,36 +325,38 @@ mihitarab_missions_5 = {
 		
 		effect = {
 			3240 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 			}
 			3241 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 			}
 			3242 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 			}
 			3243 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 			}
-			every_subject_country = {
-				limit = {
-					any_owned_province = {
-						culture = fomarati
+			hidden_effect = {
+				set_variable = { which = totalFomaratiDev value = 0 }
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							culture = fomarati
+						}
+						add_core = ROOT
+						ROOT = {
+							export_to_variable = { which = tempVassalDev value = development who = PREV }
+							change_variable = { which = totalFomaratiDev which = tempVassalDev }
+						}
 					}
+					
 				}
-				every_owned_province = {
-					limit = {
-						culture = fomarati
-					}
-					add_core = ROOT
-					cede_province = ROOT
+				while = { limit = { check_variable = { which = totalFomaratiDev value = 1 } }
+					add_dip_power = -2
+					change_variable = { which = totalFomaratiDev value = -1 }
 				}
 			}
-			change_adm = 2
+			custom_tooltip = mihitarab_fomarati_annexation_tooltip
 		}
 	}
 	L37_the_south_kneels = {
@@ -379,20 +390,7 @@ mihitarab_missions_5 = {
 		}
 		
 		effect = {
-			change_mil = 2
-			add_manpower = 5
-			tebajik_area = {
-				add_permanent_claim = ROOT
-			}
-			zohejirofo_area = {
-				add_permanent_claim = ROOT
-			}
-			tebolelmasi_area = {
-				add_permanent_claim = ROOT
-			}
-			ibibakely_area = {
-				add_permanent_claim = ROOT
-			}
+			country_event = { id = flavor_mihitarab.13 }
 		}
 	}
 	L37_cities_of_the_north = {
@@ -423,7 +421,22 @@ mihitarab_missions_5 = {
 		}
 		
 		effect = {
-			change_dip = 3
+			hidden_effect = {
+				set_variable = { which = totalAmezataniTaxDev value = 0 }
+				every_owned_province = {
+					limit = {
+						culture = amezatany
+					}
+					ROOT = {
+						export_to_variable = { which = totalAmezataniTaxDev value = base_tax who = PREV }
+					}
+				}
+				while = { limit = { check_variable = { which = totalAmezataniTaxDev value = 1 } }
+					add_treasury = 5
+					change_variable = { which = totalAmezataniTaxDev value = -1 }
+				}
+			}
+			custom_tooltip = mihitarab_amezatany_tax_dev_tooltip
 			every_owned_province = {
 				limit = { culture = amezatany }
 				add_nationalism = -10
@@ -443,7 +456,7 @@ mihitarab_missions_6 = {
 	L37_growth_of_loranakodro = {
 		icon = mission_fortify_mandu
 		position = 2
-		required_missions = { L37_end_of_an_era }
+		required_missions = { L37_era_of_peace_and_prosperity }
 		provinces_to_highlight = {
 			
 		}
@@ -451,19 +464,18 @@ mihitarab_missions_6 = {
 		trigger = {
 			6612 = {
 				development = 30
-				num_of_times_expanded_infrastructure = 2
+				has_building = mage_tower
+				if = {
+					limit = { has_dlc = "Leviathan" }
+					num_of_times_expanded_infrastructure = 2
+				}
 			}
 			prestige = 20
+			has_institution = feudalism
 		}
 		
 		effect = {
-			6612 = {
-				add_great_project_tier = {
-					type = first_mihipha_college
-					tier = 1
-				}
-				add_building = workshop
-			}
+			country_event = { id = flavor_mihitarab.14 }
 		}
 	}
 	L37_mihipha_patronage = {
@@ -492,7 +504,16 @@ mihitarab_missions_6 = {
 		
 		effect = {
 			set_estate_privilege = estate_mages_organization_proffesional_mihipha
-			magic_ruler_give_random_spell_school = yes
+			hidden_effect = {
+				if = {
+					limit = { has_ruler_flag = mihitarab_haigo_rules_flag }
+					magic_ruler_give_random_spell_school = yes
+				}
+				else = {
+					add_dip_power = 100
+				}
+			}
+			custom_tooltip = haigo_random_school_tooltip
 		}
 	}
 	L37_cross_the_toll = {
@@ -529,22 +550,22 @@ mihitarab_missions_6 = {
 		
 		effect = {
 			3254 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 				change_trade_goods = cloves
 			}
 			3255 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 				change_trade_goods = cloves
 			}
 			3256 = {
-				add_core = ROOT
-				cede_province = ROOT
+				add_siberian_construction = 100
 				change_trade_goods = cloves
 			}
 			random_owned_province = {
-				limit = { trade_goods = cloves }
+				limit = {
+					trade_goods = cloves
+					base_production = 6
+				}
 				add_building = tradecompany
 			}
 		}
@@ -607,7 +628,10 @@ mihitarab_missions_7 = {
 		}
 		
 		trigger = {
-			has_idea_group = exploration_ideas
+			OR = {
+				exploration_ideas = 2
+				dip_power = 200
+			}
 			num_of_light_ship = 6
 			OR = {
 				num_of_admirals = 2
@@ -620,13 +644,8 @@ mihitarab_missions_7 = {
 		}
 		
 		effect = {
-			country_event = {
-				id = flavor_mihitarab.4
-				days = 90
-			}
-			country_event = {
-				id = flavor_mihitarab.5
-				days = 180
+			country_event = { 
+				id = flavor_mihitarab.15
 			}
 		}
 	}

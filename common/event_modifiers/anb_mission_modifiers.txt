@@ -29617,10 +29617,6 @@ L37_plotting_cultists = {
 	global_unrest = 2
 }
 
-L37_smooth_death = {
-	no_stability_loss_on_monarch_death = yes
-}
-
 L37_the_bottle_of_nyeekayba = {
 	monarch_lifespan = 0.33
 }
@@ -29640,13 +29636,18 @@ L37_scarred_ruler = {
 L37_death_exception = {
 	
 }
-L37_summer_unity = {
-	num_accepted_cultures = 2
-}
 L37_cult_stronghold = {
 	local_autonomy = 0.10
 	local_missionary_strength = -1
 	local_unrest = 3
+}
+
+L37_mihipha_college = {
+	adm_advisor_cost = -0.125
+}
+
+L37_peace_on_the_isles = {
+	development_cost = -0.075
 }
 
 #Ekha U08
