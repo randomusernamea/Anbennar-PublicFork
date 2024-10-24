@@ -3440,6 +3440,13 @@ estate_burghers_magnate_council = {
 	benefits = {
 		global_trade_power = 0.10
 	}
+	conditional_modifier = {
+		trigger = { has_reform = empower_magnate_council }
+		modifier = { global_trade_power = 0.10 }
+		modifier = { burghers_loyalty_modifier = 0.05 }
+		modifier = { burghers_influence_modifier = 0.10 }
+		modifier = { max_absolutism = -10 }
+	}
 	# This is too much, adding more crownland through events is more sustainable
 	# mechanics = {
 	# 	exempt_from_seize_land
