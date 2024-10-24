@@ -13829,13 +13829,13 @@ estate_mages_organization_rule_of_warlocks = {
 		clear_mages_organization_effect = yes
 		if = {
 			limit = { has_reform = magocracy_reform }
-			custom_tooltip = rakkaz_warlock_bad
+			custom_tooltip = rakkaz_warlock_nice
 			hidden_effect = {
 				country_event = { id = flavour_rakkaz.7 }
 			}
 		}
 		else = {
-			custom_tooltip = rakkaz_warlock_nice
+			custom_tooltip = rakkaz_warlock_bad
 			hidden_effect = {
 				country_event = { id = flavour_rakkaz.6 }
 			}
