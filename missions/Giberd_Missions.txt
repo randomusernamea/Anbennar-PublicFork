@@ -1266,6 +1266,30 @@ giberd_ryalanar_conquest = {
 		}
 		position = 8
 		provinces_to_highlight = {
+			OR = {
+				province_id = 417
+				province_id = 234
+			}
+			NOT = {
+				OR = {
+					417 = {
+						owner = {
+							reverse_has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+					234 = {
+						owner = {
+							reverse_has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+				}
+			}
 		}
 		trigger = {
 			government_rank = 2
