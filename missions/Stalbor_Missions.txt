@@ -499,11 +499,19 @@ B47_stalbor_column_2 = {
 			clr_country_flag = B47_vampire_lords_on_the_run
 			set_estate_privilege = estate_adventurers_stalbor_vampire_hunters
 		}
-		every_owned_province = {
-			limit = {
-				has_province_modifier = B47_old_lord_loyalists
+		431 = {
+			add_permanent_province_modifier = {
+				name = arturos_watch_chapter
+				duration = -1
 			}
-			remove_province_modifier = B47_old_lord_loyalists
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = B47_old_lord_loyalists
+				}
+				remove_province_modifier = B47_old_lord_loyalists
+			}
 		}
 	}
     }
@@ -964,6 +972,12 @@ B47_stalbor_column_3 = {
 	}
 
 	effect = {
+		823 = {
+			add_permanent_province_modifier = {
+				name = arturos_watch_chapter
+				duration = -1
+			}
+		}
 		add_country_modifier = {
 			name = B47_southern_conquest
 			duration = 9125
@@ -1167,16 +1181,10 @@ B47_stalbor_column_4 = {
 				NOT = { owned_by = ROOT }
 			}
 			AND = {
-				province_id = 888
-				NOT = {
-					AND = {
-						has_manpower_building_trigger = yes
-						province_has_current_tech_fort_trigger = yes
-					}
+				OR = {
+					province_id = 888
+					province_id = 4097
 				}
-			}
-			AND = {
-				province_id = 4097
 				NOT = {
 					AND = {
 						has_manpower_building_trigger = yes
@@ -1362,20 +1370,14 @@ B47_stalbor_column_4 = {
 	provinces_to_highlight = {
 		OR = {
 			AND = {
-				province_id = 800
-				NOT = {
-					AND = {
-					development = 30
-					has_manufactory_trigger = yes
-					}
+				OR = {
+					province_id = 800
+					province_id = 808
 				}
-			}
-			AND = {
-				province_id = 808
 				NOT = {
 					AND = {
-					development = 30
-					has_manufactory_trigger = yes
+						development = 30
+						has_manufactory_trigger = yes
 					}
 				}
 			}
@@ -1461,7 +1463,7 @@ B47_stalbor_column_4 = {
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = B47_custom_race_trigger_3
-			stalbor_race_opinion_trigger = { opinion = 100 amount = 12 }
+			stalbor_race_opinion_trigger = { opinion = 200 amount = 12 }
 		}
 		adm_power = 200
 		dip_power = 200
