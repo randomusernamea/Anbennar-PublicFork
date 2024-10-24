@@ -571,11 +571,9 @@ giberd_konwell_conquest = {
 							has_building = soldier_households
 							base_manpower = 8
 						}
-						AND = {
-							NOT = {
-								trade_goods = grain
-								trade_goods = livestock
-							}
+						NOT = {
+							trade_goods = grain
+							trade_goods = livestock
 						}
 					}
 				}
@@ -639,10 +637,95 @@ giberd_konwell_conquest = {
 		}
 		position = 9
 		provinces_to_highlight = {
+			AND = {
+				region = esmaria_region
+				OR = {
+					AND = {
+						province_id = 911
+						NOT = {
+							base_production = 10
+							development = 25
+							has_production_manufactory_or_gold_trigger = yes
+						}
+					}
+					AND = {
+						OR = {
+							trade_goods = paper
+							trade_goods = glass
+						}
+						NOT = {
+							owned_by = root
+							has_production_building_trigger = yes
+							has_production_manufactory_or_gold_trigger = yes
+							base_production = 12
+							province_id = 309
+						}
+					}
+				}
+			}
 		}
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = giberd_paned_paper_tt
+				esmaria_region = {
+					type = all
+					OR = {
+						AND = {
+							owned_by = root
+							has_production_building_trigger = yes
+							has_production_manufactory_or_gold_trigger = yes
+							base_production = 12
+						}
+						NOT = {
+							trade_goods = paper
+							trade_goods = glass
+						}
+						province_id = 309
+					}
+				}
+			}
+			911 = {
+				base_production = 10
+				development = 25
+				has_production_manufactory_or_gold_trigger = yes
+			}
+			has_idea = A81_artificer_loading_exoskeleton_v1
 		}
 		effect = {
+			add_estate_loyalty_modifier = {
+				estate = estate_artificers
+				desc = giberd_paned_paper_estate_loyalty_tt
+				loyalty = -20
+				duration = 7300
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = glass
+					region = esmaria_region
+				}
+				add_province_modifier = {
+					name = giberd_refined_glass_production_method
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = paper
+					region = esmaria_region
+				}
+				add_province_modifier = {
+					name = giberd_improved_chemical_pulping
+					duration = -1
+				}
+			}
+			911 = {
+				remove_province_modifier = vanbury_steel_foundry
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = giberd_converted_vanbury_glassworks
+					duration = -1
+				}
+			}
 		}
 	}
 	giberd_curtain_call = {
