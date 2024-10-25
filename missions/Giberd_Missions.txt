@@ -1,5 +1,6 @@
 #Designed by: DecipheringDoge
-#Coded by: Tritone and DecipheringDoge
+#Coded by: Tritone, DecipheringDoge, Faeelin
+#Reviwed by: armonistan, Wagentzu, Oxtrooo
 giberd_imperial = {
 	slot = 1
 	generic = no
@@ -1834,21 +1835,83 @@ giberd_mercantile_shipping = {
 		}
 		position = 9
 		provinces_to_highlight = {
-			area = konwell_area
+			province_id = 265
 			NOT = {
-				owned_by = ROOT
+				AND = {
+					owner = {
+						num_of_light_ship = 30
+					}
+					light_ships_in_province = 30
+				}
+				AND = {
+					owner = {
+						num_of_transport = 30
+					}
+					transports_in_province = 30
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			has_country_modifier = giberd_gds_loopeng_gedsandde
+			estate_loyalty = {
+				estate = estate_artificers
+				loyalty = 70
+			}
+			estate_influence = {
+				estate = estate_artificers
+				influence = 60
+			}
+			OR = {
+				AND = {
+					num_of_light_ship = 30
+					265 = {
+						light_ships_in_province = 30
+					}
+				}
+				AND = {
+					num_of_transport = 30
+					265 = {
+						transports_in_province = 30
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_not_researching_invention_tt
+				NOT = {
+					has_country_flag = artifice_research_in_progress
+					has_country_flag = artifice_research_menu_open
+				}
 			}
 		}
 		effect = {
+			# TODO: five years of -2 slots and -50% research speed
+			if = {
+				limit = {
+					265 = {
+						light_ships_in_province = 30
+					}
+				}
+				265 = {
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 30
+					}
+				}
+			}
+			else = {
+				265 = {
+					kill_units = {
+						who = ROOT
+						type = transport
+						amount = 30
+					}
+				}
+			}
+			remove_country_modifier = giberd_gds_loopeng_gedsandde
 			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+				name = giberd_gds_shooddenin_kemess
+				duration = -1
 			}
 		}
 	}

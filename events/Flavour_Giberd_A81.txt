@@ -294,16 +294,31 @@ country_event = {
 }
 
 # finishing the gds loopeng gedsandde
-# country_event = {
-# 	id = flavor_giberd.13
-# 	title = flavor_giberd.13.t
-# 	desc = flavor_giberd.13.d
-# 	picture = HRE_eventPicture
-# 	is_triggered_only = yes
-# 	option = {
-# 		name = flavor_giberd.13.a
-# 	}
-# }
+country_event = {
+	id = flavor_giberd.13
+	title = flavor_giberd.13.t
+	desc = flavor_giberd.13.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.13.a
+		add_country_modifier = {
+			name = giberd_gds_loopeng_gedsandde
+			duration = -1
+		}
+		hidden_effect = {
+			change_variable = {
+				which = artifice_max_invention_slots
+				value = 2
+			}
+			change_variable = {
+				which = StaticArtificePoints
+				value = 20
+			}
+		}
+	}
+}
+
 # Convincing the emperor
 country_event = {
 	id = flavor_giberd.14
@@ -469,7 +484,7 @@ country_event = {
 				exists = A25
 			}
 			country_event = {
-				id= flavor_giberd.21 #damescrown
+				id = flavor_giberd.21				#damescrown
 				days = 60
 			}
 		}
@@ -478,7 +493,7 @@ country_event = {
 				exists = A12
 			}
 			country_event = {
-				id= flavor_giberd.22 #BEEPECK
+				id = flavor_giberd.22				#BEEPECK
 				days = 120
 			}
 		}
@@ -487,7 +502,7 @@ country_event = {
 				exists = A11
 			}
 			country_event = {
-				id= flavor_giberd.23 #pearsledge
+				id = flavor_giberd.23				#pearsledge
 				days = 180
 			}
 		}
@@ -496,7 +511,7 @@ country_event = {
 				exists = A31
 			}
 			country_event = {
-				id= flavor_giberd.24 #Moonhaven
+				id = flavor_giberd.24				#Moonhaven
 				days = 240
 			}
 		}
@@ -505,7 +520,7 @@ country_event = {
 				exists = A45
 			}
 			country_event = {
-				id= flavor_giberd.25 #Istralore
+				id = flavor_giberd.25				#Istralore
 				days = 240
 			}
 		}
@@ -514,7 +529,7 @@ country_event = {
 				exists = A85
 			}
 			country_event = {
-				id= flavor_giberd.26 #Magisterium
+				id = flavor_giberd.26				#Magisterium
 				days = 240
 			}
 		}
@@ -526,7 +541,7 @@ country_event = {
 				exists = A25
 			}
 			country_event = {
-				id= flavor_giberd.21 #damescrown
+				id = flavor_giberd.21				#damescrown
 				days = 60
 			}
 		}
@@ -535,7 +550,7 @@ country_event = {
 				exists = A12
 			}
 			country_event = {
-				id= flavor_giberd.22 #BEEPECK
+				id = flavor_giberd.22				#BEEPECK
 				days = 120
 			}
 		}
@@ -544,7 +559,7 @@ country_event = {
 				exists = A11
 			}
 			country_event = {
-				id= flavor_giberd.23 #pearsledge
+				id = flavor_giberd.23				#pearsledge
 				days = 180
 			}
 		}
@@ -553,7 +568,7 @@ country_event = {
 				exists = A31
 			}
 			country_event = {
-				id= flavor_giberd.24 #Moonhaven
+				id = flavor_giberd.24				#Moonhaven
 				days = 240
 			}
 		}
@@ -562,7 +577,7 @@ country_event = {
 				exists = A45
 			}
 			country_event = {
-				id= flavor_giberd.25 #Istralore
+				id = flavor_giberd.25				#Istralore
 				days = 240
 			}
 		}
@@ -571,15 +586,16 @@ country_event = {
 				exists = A85
 			}
 			country_event = {
-				id = flavor_giberd.26 #Magisterium
+				id = flavor_giberd.26				#Magisterium
 				days = 240
 			}
 		}
 	}
 }
+
 country_event = {
 	id = flavor_giberd.21
-	title = flavor_giberd.21.t ##damescrown
+	title = flavor_giberd.21.t	##damescrown
 	desc = flavor_giberd.21.d
 	picture = HRE_eventPicture
 	is_triggered_only = yes
@@ -589,12 +605,12 @@ country_event = {
 	option = {
 		name = flavor_giberd.21.a
 		home_trade_node_effect_scope = {
-            add_trade_modifier = {
-                who = A25
-                duration = 3650
-                power = 100
-                key = damescrown_contracts
-            }
+			add_trade_modifier = {
+				who = A25
+				duration = 3650
+				power = 100
+				key = damescrown_contracts
+			}
 		}
 		A25 = {
 			add_opinion = {
@@ -602,13 +618,14 @@ country_event = {
 				modifier = giber_potions_bribe
 			}
 		}
-    }
+	}
 	option = {
 		name = flavor_giberd.21.b
 	}
 }
+
 country_event = {
-	id = flavor_giberd.22 ##beepeck
+	id = flavor_giberd.22	##beepeck
 	title = flavor_giberd.22.t
 	desc = flavor_giberd.22.d
 	picture = HRE_eventPicture
@@ -635,8 +652,9 @@ country_event = {
 		name = flavor_giberd.22.b
 	}
 }
+
 country_event = {
-	id = flavor_giberd.23 ##Pearsledge
+	id = flavor_giberd.23	##Pearsledge
 	title = flavor_giberd.23.t
 	desc = flavor_giberd.23.d
 	picture = HRE_eventPicture
@@ -661,15 +679,15 @@ country_event = {
 				duration = 7300
 			}
 		}
-
 		add_treaury = -1000
 	}
 	option = {
 		name = flavor_giberd.23.b
 	}
 }
+
 country_event = {
-	id = flavor_giberd.24 ##Moonhaven
+	id = flavor_giberd.24	##Moonhaven
 	title = flavor_giberd.24.t
 	desc = flavor_giberd.24.d
 	picture = HRE_eventPicture
@@ -680,7 +698,7 @@ country_event = {
 	option = {
 		name = flavor_giberd.24.a
 		A31 = {
-				add_country_modifier = {
+			add_country_modifier = {
 				name = artificers_good_moonhaven
 				duration = 7300
 			}
@@ -698,8 +716,9 @@ country_event = {
 		name = flavor_giberd.24.b
 	}
 }
+
 country_event = {
-	id = flavor_giberd.25 ##Istralore
+	id = flavor_giberd.25	##Istralore
 	title = flavor_giberd.25.t
 	desc = flavor_giberd.25.d
 	picture = HRE_eventPicture
@@ -728,8 +747,9 @@ country_event = {
 		name = flavor_giberd.25.b
 	}
 }
+
 country_event = {
-	id = flavor_giberd.26 ##Masterium
+	id = flavor_giberd.26	##Masterium
 	title = flavor_giberd.26.t
 	desc = flavor_giberd.26.d
 	picture = HRE_eventPicture
@@ -754,6 +774,7 @@ country_event = {
 		name = flavor_giberd.26.b
 	}
 }
+
 ########
 # artificer faction events
 # The Imperial Archive
