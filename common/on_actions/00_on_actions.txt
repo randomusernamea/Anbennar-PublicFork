@@ -2274,6 +2274,22 @@ on_siege_won_country = {
 		clr_country_flag = duwarkani_naga_revolt_started
 		set_country_flag = duwarkani_naga_revolt_ended
 	}
+	if = {
+		limit = {
+			OR = {
+				tag = A95
+				was_tag = A95
+			}
+			ROOT = {
+				has_country_modifier = a95_esmaraine_ep2
+			}
+			266 = {
+				owned_by = A44
+				controlled_by = ROOT
+			}
+		}
+		country_event = { id = flavour_themarenn.39 }
+	}
 }
 
 # country
@@ -2963,6 +2979,21 @@ on_monarch_death = {
 	if = {
 		limit = { has_country_flag = coven_bargain_hag_child }
 		country_event = { id = sarhalevents.26 }
+	}
+
+	if = {
+		limit = {
+			tag = A94
+			has_country_flag = vassalize_gabmorionn
+		}
+		country_event = { id = flavour_themarenn.94 }
+	}
+	if = {
+		limit = {
+			tag = A94
+			has_country_flag = pu_gabmorionn
+		}
+		country_event = { id = flavour_themarenn.97 }
 	}
 
 	anb_scripted_effects_for_ruler_death = yes
