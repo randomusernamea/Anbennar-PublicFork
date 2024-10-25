@@ -7708,6 +7708,44 @@ giber_magisterial_oversight = {
 giberd_accepting_radicals = {
 	tolerance_own = -2
 }
+giberd_integrating_ravelians = {
+	global_autonomy = 0.10
+}
+
+giberd_leader_technomancers = {
+	tec_technomancy = 0.33
+	idea_cost = 0.10
+	technology_cost = 0.10
+	production_efficiency = -0.10
+	build_time = 0.20
+	build_cost = 0.10
+	trade_efficiency = 0.10
+	administrative_efficiency = 0.05
+	embracement_cost = -0.20
+	centralize_state_cost = -0.50
+}
+
+giberd_leader_brillites = {
+	tec_brilliance = 0.33
+	yearly_corruption = 0.20
+	monthly_reform_progress_modifier -0.50 # TODO: broken?
+	advisor_cost = 0.25
+	expand_administration_cost = -0.20
+	governing_cost = -0.10
+	global_autonomy = -0.05
+	inflation_reduction = 0.05
+}
+
+giberd_leader_mechanists = {
+	tec_mechanists = 0.33
+	global_unrest = 2
+	prestige = -1
+	ae_impact = 0.20
+	trade_efficiency = -0.10
+	infantry_power = 0.10
+	state_maintenance_modifier = -0.33
+	global_spy_defence = 0.25
+}
 
 #Irrliam
 irrliam_newfound_zeal = {

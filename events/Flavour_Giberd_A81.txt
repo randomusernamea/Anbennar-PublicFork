@@ -1345,3 +1345,66 @@ country_event = {
 		custom_tooltip = giberd_magisterium_oversight_buffed_tt
 	}
 }
+
+# What to do about the Ravelians
+country_event = {
+	id = flavor_giberd.39
+	title = flavor_giberd.39.t
+	desc = flavor_giberd.39.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = giberd_ravelians_role
+	}
+	option = {
+		name = flavor_giberd.39.a
+		giberd_factions_technomancers_increase = yes
+		custom_tooltip = flavor_giberd.39_tt
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_leader_technomancers_loyalty_tt
+			loyalty = -20
+			duration = -1
+		}
+		add_estate_influence_modifier = {
+			estate = estate_artificers
+			desc = giberd_leader_technomancers_influence_tt
+			influence = -20
+			duration = -1
+		}
+		add_country_modifier = {
+			name = giberd_leader_technomancers
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_giberd.39.b
+		giberd_factions_brillites_increase = yes
+		custom_tooltip = flavor_giberd.39_tt
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_leader_brillites_loyalty_tt
+			loyalty = -10
+			duration = -1
+		}
+		add_country_modifier = {
+			name = giberd_leader_brillites
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_giberd.39.c
+		giberd_factions_mechanists_increase = yes
+		custom_tooltip = flavor_giberd.39_tt
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_leader_mechanists_loyalty_tt
+			loyalty = 10
+			duration = -1
+		}
+		add_country_modifier = {
+			name = giberd_leader_mechanists
+			duration = -1
+		}
+	}
+}

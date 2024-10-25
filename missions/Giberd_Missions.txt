@@ -2053,7 +2053,13 @@ giberd_artificer = {
 		position = 7
 		provinces_to_highlight = {
 			owned_by = ROOT
-			area = bennonhill
+			OR = {
+				province_id = 275
+				province_id = 271
+				province_id = 911
+				province_id = 265
+				province_id = 266
+			}
 			unrest = 0
 		}
 		trigger = {
@@ -2068,8 +2074,27 @@ giberd_artificer = {
 					has_global_flag = crimson_deluge_is_actively_happening
 				}
 			}
-			bennonhill_area = {
-				type = all
+			275 = {
+				NOT = {
+					unrest = 0
+				}
+			}
+			271 = {
+				NOT = {
+					unrest = 0
+				}
+			}
+			911 = {
+				NOT = {
+					unrest = 0
+				}
+			}
+			265 = {
+				NOT = {
+					unrest = 0
+				}
+			}
+			266 = {
 				NOT = {
 					unrest = 0
 				}
@@ -2113,21 +2138,81 @@ giberd_artificer = {
 		}
 		position = 8
 		trigger = {
-			religion = ravelian
+			custom_trigger_tooltip = {
+				tooltip = giberd_league_war_tt
+				corintar_league_war_started = yes
+			}
+			innovativeness = 60
+			OR = {
+				AND = {
+					religion = regent_court
+					has_personal_deity = esmaryal
+				}
+				AND = {
+					religion = corinite
+					karma = 0
+				}
+				religion = ravelian
+			}
+			275 = {
+				has_courthouse_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+			}
+			271 = {
+				has_courthouse_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+			}
+			911 = {
+				has_courthouse_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+			}
+			265 = {
+				has_courthouse_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+			}
+			266 = {
+				has_courthouse_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+			}
 		}
 		effect = {
+			add_country_modifier = {
+				name = giberd_integrating_ravelians
+				duration = 3650
+			}
 			271 = {
-				#Giberd
-				if = {
-					limit = {
-						has_cardinal = no
-					}
-					add_cardinal = yes
+				add_base_production = 1
+				add_province_modifier = {
+					name = giberd_mass_influx_ravelians
+					duration = -1
 				}
 			}
-			add_country_modifier = {
-				name = giberd_embrace_ravelianism_mod
-				duration = 7300				#20 years
+			275 = {
+				add_province_modifier = {
+					name = giberd_mass_influx_ravelians
+					duration = 21900
+				}
+			}
+			911 = {
+				add_province_modifier = {
+					name = giberd_mass_influx_ravelians
+					duration = 21900
+				}
+			}
+			265 = {
+				add_province_modifier = {
+					name = giberd_mass_influx_ravelians
+					duration = 21900
+				}
+			}
+			266 = {
+				add_province_modifier = {
+					name = giberd_mass_influx_ravelians
+					duration = 21900
+				}
+			}
+			country_event = {
+				id = flavor_giberd.39
 			}
 		}
 	}
