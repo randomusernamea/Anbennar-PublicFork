@@ -7022,46 +7022,47 @@ startup_1444_effects = {
 			}
 			country_event = { id = flavour_baihon_xinh.1 }
 		}
-		if = {
-			limit = {
-				tag = Y63	#Verkal Ozovar
-			}
-			country_event = {
-				id = khom_civilwar.10
-				days = 104
-				random = 20
-			}
-		}
-		if = {
-			limit = {
-				tag = Y76	#Jaya Raya
-			}
-			country_event = {
-				id = khom_civilwar.15
-				days = 104
-				random = 20
-			}
-		}
-		if = {
-			limit = {
-				tag = Y73	#Sirtan
-			}
-			country_event = {
-				id = khom_civilwar.20
-				days = 124
-				random = 40
-			}
-		}
-		if = {
-			limit = {
-				tag = Y67	#Mo Hoang
-			}
-			country_event = {
-				id = khom_civilwar.26
-				days = 354
-				random = 90
-			}
-		}
+		#The code below is commented out because the Khom civil war now triggered by event
+#		if = {
+#			limit = {
+#				tag = Y63	#Verkal Ozovar
+#			}
+#			country_event = {
+#				id = khom_civilwar.10
+#				days = 104
+#				random = 20
+#			}
+#		}
+#		if = {
+#			limit = {
+#				tag = Y76	#Jaya Raya
+#			}
+#			country_event = {
+#				id = khom_civilwar.15
+#				days = 104
+#				random = 20
+#			}
+#		}
+#		if = {
+#			limit = {
+#				tag = Y73	#Sirtan
+#			}
+#			country_event = {
+#				id = khom_civilwar.20
+#				days = 124
+#				random = 40
+#			}
+#		}
+#		if = {
+#			limit = {
+#				tag = Y67	#Mo Hoang
+#			}
+#			country_event = {
+#				id = khom_civilwar.26
+#				days = 354
+#				random = 90
+#			}
+#		}
 		#Khom civil war events END
 
 		if = {
