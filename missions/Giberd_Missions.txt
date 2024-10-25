@@ -1923,21 +1923,55 @@ giberd_mercantile_shipping = {
 		}
 		position = 10
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
+			owned_by = ROOT
+			AND = {
+				NOT = {
+					has_manpower_building_trigger = yes
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							has_manpower_building_trigger = yes
+						}
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					has_forcelimit_building_trigger = yes
+				}
+				NOT = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							has_forcelimit_building_trigger = yes
+						}
+					}
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			mission_completed = giberd_curtain_call
+			num_of_rajput = 10
+			calc_true_if = {
+				amount = 10
+				all_owned_province = {
+					has_manpower_building_trigger = yes
+				}
+			}
+			calc_true_if = {
+				amount = 10
+				all_owned_province = {
+					has_forcelimit_building_trigger = yes
+				}
+			}
+			num_military_artifice_inventions_active_tier_3 = {
+				VAL = 1
 			}
 		}
 		effect = {
 			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+				name = giberd_the_gg
+				duration = -1
 			}
 		}
 	}

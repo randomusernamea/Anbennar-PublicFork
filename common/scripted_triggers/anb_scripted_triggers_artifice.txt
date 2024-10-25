@@ -162,6 +162,27 @@ has_active_all_society_tier_2_inventions = {
 	has_estate_privilege = artifice_invention_game_of_khet
 }
 
+has_active_all_military_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_black_damestear_bullets
+	has_estate_privilege = artifice_invention_artillery_autoloader
+	has_estate_privilege = artifice_invention_bioartificed_ascension
+	has_estate_privilege = artifice_invention_personal_mageshields
+	has_estate_privilege = artifice_invention_military_sky_galleons
+	has_estate_privilege = artifice_invention_naval_mageshields
+	has_estate_privilege = artifice_invention_demonflame_flamethrowers
+	has_estate_privilege = artifice_invention_chase_em_rockets
+	has_estate_privilege = artifice_invention_dragonblood_gene_warriors
+	has_estate_privilege = artifice_invention_damestear_reactor_megacannon
+}
+
+num_military_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_3
+		has_active_all_military_tier_3_inventions = yes
+	}
+}
+
 has_active_all_tier_2_inventions = {
 	has_active_all_economic_tier_2_inventions = yes
 	has_active_all_military_tier_2_inventions = yes
