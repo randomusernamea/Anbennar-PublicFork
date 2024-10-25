@@ -189,18 +189,12 @@ maghargma_dynamic_westmarches_ = {
 		position = 7
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {
-			OR = {
-				area = gadhlumo_area
-				area = kuskemua_area
-				area = peenadhi_area
-				area = bocenvokin_area
-				area = prikoyol_area
-			}
+			province_group = fp_westmarches
 			NOT = { owned_by = ROOT } 
 		}
 
 		trigger = {
-			westmarches = {
+			fp_westmarches = {
 				type = all
 				owned_by = ROOT
 			}
@@ -257,13 +251,7 @@ maghargma_dynamic_westmarches_1 = {
 		position = 8
 		required_missions = { maghargma_crush_the_westmarches } 
 		provinces_to_highlight = {
-			OR = {
-				area = gadhlumo_area
-				area = kuskemua_area
-				area = peenadhi_area
-				area = bocenvokin_area
-				area = prikoyol_area
-			}
+			province_group = fp_westmarches
 			has_fort_building_trigger = yes
 			has_manpower_building_trigger = yes
 			has_forcelimit_building_trigger = yes
@@ -275,7 +263,7 @@ maghargma_dynamic_westmarches_1 = {
 		}
 
 		trigger = {
-			westmarches = {
+			fp_westmarches = {
 				type = all
 				has_fort_building_trigger = no
 				has_manpower_building_trigger = no
@@ -294,7 +282,7 @@ maghargma_dynamic_westmarches_1 = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						province_group = westmarches
+						province_group = fp_westmarches
 						has_terrain = city_terrain
 						development = 12
 					}
@@ -377,8 +365,8 @@ maghargma_dynamic_westmarches_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					westmarches = { remove_core = J51 } 
-					westmarches = {
+					fp_westmarches = { remove_core = J51 } 
+					fp_westmarches = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J51
 					}
@@ -386,7 +374,7 @@ maghargma_dynamic_westmarches_2 = {
 					vassalize = J51
 				}
 				else = {
-					westmarches = {
+					fp_westmarches = {
 						limit = {
 							NOT = { has_terrain = city_terrain }
 						}
@@ -394,7 +382,7 @@ maghargma_dynamic_westmarches_2 = {
 						add_core = J51
 					}
 				}
-				westmarches = {
+				fp_westmarches = {
 					limit = { has_terrain = city_terrain } 
 					add_ogre_minority_size_effect = yes
 				}
@@ -670,12 +658,12 @@ maghargma_dynamic_heartlands = {
 		position = 7
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {  
-			province_group = heartlands
+			province_group = fp_heartlands
 			NOT = { owned_by = ROOT }
 		} 
 
 		trigger = {
-			heartlands = {
+			fp_heartlands = {
 				type = all
 				owned_by = ROOT
 			}
@@ -807,8 +795,8 @@ maghargma_dynamic_heartlands_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					heartlands = { remove_core = J50 } 
-					heartlands = {
+					fp_heartlands = { remove_core = J50 } 
+					fp_heartlands = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J50
 					}
@@ -816,7 +804,7 @@ maghargma_dynamic_heartlands_2 = {
 					vassalize = J50
 				}
 				else = {
-					heartlands = {
+					fp_heartlands = {
 						limit = {
 							NOT = { has_terrain = city_terrain }
 						}
@@ -824,7 +812,7 @@ maghargma_dynamic_heartlands_2 = {
 						add_core = J50
 					}
 				}
-				heartlands = {
+				fp_heartlands = {
 					limit = { has_terrain = city_terrain } 
 					add_ogre_minority_size_effect = yes
 				}
@@ -2054,12 +2042,12 @@ maghargma_dynamic_brightmarch = {
 		position = 7
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {  
-			province_group = brightmarch
+			province_group = fp_brightmarch
 			NOT = { owned_by = ROOT }
 		} 
 
 		trigger = {
-			brightmarch = {
+			fp_brightmarch = {
 				type = all
 				owned_by = ROOT
 			}
@@ -2144,8 +2132,8 @@ maghargma_dynamic_brightmarch_1 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					brightmarch = { remove_core = J50 } 
-					brightmarch = {
+					fp_brightmarch = { remove_core = J50 } 
+					fp_brightmarch = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J50
 					}
@@ -2153,7 +2141,7 @@ maghargma_dynamic_brightmarch_1 = {
 					vassalize = J50
 				}
 				else = {
-					brightmarch = {
+					fp_brightmarch = {
 						limit = {
 							NOT = { has_terrain = city_terrain }
 						}
@@ -2161,7 +2149,7 @@ maghargma_dynamic_brightmarch_1 = {
 						add_core = J50
 					}
 				}
-				brightmarch = {
+				fp_brightmarch = {
 					limit = { has_terrain = city_terrain } 
 					add_ogre_minority_size_effect = yes
 				}
@@ -2739,12 +2727,12 @@ maghargma_dynamic_amberlands = {
 		position = 7
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {  
-			province_group = amberlands
+			province_group = fp_amberlands
 			NOT = { owned_by = ROOT } 
 		} 
 
 		trigger = {
-			amberlands = {
+			fp_amberlands = {
 				type = all
 				owned_by = ROOT
 			}
@@ -2908,8 +2896,8 @@ maghargma_dynamic_amberlands_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					amberlands = { remove_core = J52 } 
-					amberlands = {
+					fp_amberlands = { remove_core = J52 } 
+					fp_amberlands = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J52
 					}
@@ -2917,7 +2905,7 @@ maghargma_dynamic_amberlands_2 = {
 					vassalize = J52
 				}
 				else = {
-					amberlands = {
+					fp_amberlands = {
 						limit = {
 							NOT = { has_terrain = city_terrain }
 						}
@@ -2925,7 +2913,7 @@ maghargma_dynamic_amberlands_2 = {
 						add_core = J52
 					}
 				}
-				amberlands = {
+				fp_amberlands = {
 					limit = { has_terrain = city_terrain } 
 					add_ogre_minority_size_effect = yes
 				}
