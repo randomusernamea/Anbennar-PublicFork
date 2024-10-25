@@ -2291,6 +2291,23 @@ giberd_artificer = {
 			giberd_atypical_artificers
 		}
 		position = 10
+		provinces_to_highlight = {
+			province_id = 898
+			NOT = {
+				owner = {
+					has_100_opinion_improved_relation = {
+						target = ROOT
+					}
+				}
+				owner = {
+					has_spy_network_from = {
+						who = ROOT
+						value = 50
+					}
+				}
+				owned_by = ROOT
+			}
+		}
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = H33_god_fragment_found_tt
