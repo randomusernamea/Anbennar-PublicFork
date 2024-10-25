@@ -2222,22 +2222,59 @@ giberd_artificer = {
 			giberd_protecting_kin_and_ravelian
 		}
 		position = 9
-		trigger = {
-			religion = ravelian
-		}
-		effect = {
-			271 = {
-				#Giberd
-				if = {
-					limit = {
-						has_cardinal = no
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_province_modifier = ravelian_society
+			OR = {
+				NOT = {
+					base_production = 12
+				}
+				AND = {
+					NOT = {
+						base_production = 8
 					}
-					add_cardinal = yes
+					NOT = {
+						has_forcelimit_building_trigger = yes
+					}
 				}
 			}
-			add_country_modifier = {
-				name = giberd_embrace_ravelianism_mod
-				duration = 7300				#20 years
+		}
+		trigger = {
+			faction_in_power = tec_technomancy
+			artifice_has_points_30 = yes
+			custom_trigger_tooltip = {
+				tooltip = is_not_researching_invention_tt
+				NOT = {
+					has_country_flag = artifice_research_in_progress
+					has_country_flag = artifice_research_menu_open
+				}
+			}
+			any_owned_province = {
+				has_province_modifier = ravelian_society
+				base_production = 12
+			}
+			all_owned_province = {
+				OR = {
+					AND = {
+						base_production = 8
+						has_forcelimit_building_trigger = yes
+					}
+					NOT = {
+						has_province_modifier = ravelian_society
+						region = esmaria_region
+					}
+				}
+			}
+		}
+		effect = {
+			# TODO: -30 cap and -50% speed for 10 years
+			# TODO: unlock tier 3 inventions
+			271 = {
+				remove_province_modifier = ravelian_society
+				add_province_modifier = {
+					name = giberd_ravelian_workshop
+					duration = -1
+				}
 			}
 		}
 	}

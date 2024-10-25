@@ -7517,7 +7517,12 @@ giberd_mass_influx_ravelians = {
 }
 
 giberd_ravelian_workshop = {
-	local_production_efficiency = 0.50
+	local_production_efficiency = 0.25
+	local_institution_spread = 0.25
+	local_unrest = 1
+	local_missionary_strength = -0.01
+
+	picture = "ravelian_society"
 }
 
 
