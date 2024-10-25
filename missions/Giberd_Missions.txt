@@ -1753,21 +1753,37 @@ giberd_mercantile_shipping = {
 		}
 		position = 7
 		provinces_to_highlight = {
-			area = konwell_area
+			is_capital_of = ROOT
 			NOT = {
-				owned_by = ROOT
+				development = 35
+				num_of_times_expanded_infrastructure = 2
+				has_state_edict = edict_advancement_effort
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			capital_scope = {
+				development = 35
+				num_of_times_expanded_infrastructure = 2
+				NOT = {
+					has_construction = any
+				}
+				has_state_edict = edict_advancement_effort
+			}
+			custom_trigger_tooltip = {
+				tooltip = giberd_from_a_school_to_a_university_tt
+				check_variable = {
+					which = artifice_inventions_currently_used
+					value = 3
+				}
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			capital_scope = {
+				add_building = university
+				add_province_modifier = {
+					name = giberd_first_artificer_school
+					duration = -1
+				}
 			}
 		}
 	}
