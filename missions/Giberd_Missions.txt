@@ -839,7 +839,7 @@ giberd_konwell_conquest = {
 				num_of_times_expanded_infrastructure = 3
 				has_state_edict = edict_encourage_development
 				has_courthouse_building_trigger = yes
-				has_university_building_trigger = yes
+				has_building = university
 				owner = {
 					papal_influence = 100
 				}
@@ -851,7 +851,7 @@ giberd_konwell_conquest = {
 				num_of_times_expanded_infrastructure = 3				# TODO: dlc check or 200 admin
 				has_state_edict = edict_encourage_development
 				has_courthouse_building_trigger = yes
-				has_university_building_trigger = yes
+				has_building = university
 			}
 			papal_influence = 100
 		}
@@ -874,21 +874,67 @@ giberd_konwell_conquest = {
 		}
 		position = 13
 		provinces_to_highlight = {
-			area = konwell_area
+			province_id = 275
 			NOT = {
-				owned_by = ROOT
+				development = 40
+				has_building = university
+				has_building = mage_tower
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			275 = {
+				development = 40
+				has_building = university
+				has_building = mage_tower
+			}
+			num_artifice_inventions_discovered = {
+				VAL = 15
+			}
+			custom_trigger_tooltip = {
+				tooltip = cost_70_artifice_capacity_to_maintain_tt
+				check_variable = {
+					which = RemainingArtificePoints
+					value = 70
+				}
+			}
+			any_known_country = {
+				religion = regent_court
+				OR = {
+					alliance_with = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			any_known_country = {
+				religion = corinite
+				OR = {
+					alliance_with = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			# TODO: lose 70 capacity for 10 years + ability to research
+			random_owned_province = {
+				limit = {
+					has_cardinal = yes
+					NOT = {
+						has_province_triggered_modifier = giberd_permanent_veridical
+					}
+				}
+				remove_cardinal = yes
+			}
+			275 = {
+				change_culture = imperial_gnome
+				add_province_modifier = {
+					name = giberd_egcat
+					duration = -1
+				}
 			}
 		}
 	}
