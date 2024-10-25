@@ -99,7 +99,7 @@ maghargma_one = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.2 } 
+			country_event = { id = flavor_maghargma.2 } #The Web Cleaners
 		}
 	}
 
@@ -170,7 +170,7 @@ maghargma_one = {
 			}
 		}
 
-		effect = { country_event = { id = flavor_maghargma.3 }  } 
+		effect = { country_event = { id = flavor_maghargma.3 }  }  #The Goblin Kelaktar
 	}
 
 	
@@ -201,7 +201,7 @@ maghargma_dynamic_westmarches_ = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.4 } 
+			country_event = { id = flavor_maghargma.4 } #Westmarches Branching
 			add_army_tradition = 20
 		}
 	}
@@ -265,9 +265,9 @@ maghargma_dynamic_westmarches_1 = {
 		trigger = {
 			fp_westmarches = {
 				type = all
-				has_fort_building_trigger = no
-				has_manpower_building_trigger = no
-				has_forcelimit_building_trigger = no
+				NOT = { has_fort_building_trigger = yes }
+				NOT = { has_manpower_building_trigger = yes }
+				NOT = { has_forcelimit_building_trigger = yes }
 				NOT = { has_building = ramparts }
 				OR = {
 					NOT = { local_autonomy = 10 } 
@@ -513,7 +513,7 @@ maghargma_one_post_westmarches = {
 			}
 		}
 
-		effect = { country_event = { id = flavor_maghargma.8 }  } 
+		effect = { country_event = { id = flavor_maghargma.8 }  } #Shared Tastes
 	}
 
 	maghargma_far_far_away = { #Hey Now You're a......
@@ -596,7 +596,7 @@ maghargma_two = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.9 } 
+			country_event = { id = flavor_maghargma.9 } #And The Stick
 			wild_clan_lands = { add_permanent_claim = ROOT } 
 		}
 	}
@@ -626,7 +626,7 @@ maghargma_two = {
 		}
 
 		effect = { 
-			country_event = { id = flavor_maghargma.13 } 
+			country_event = { id = flavor_maghargma.13 } #A New Great Clan?
 			#Wild sedenterization wip 
 		} 
 	}
@@ -643,7 +643,7 @@ maghargma_two = {
 			high_tolerance_goblin_race_trigger = yes
 		}
 
-		effect = { country_event = { id = flavor_maghargma.14 }  } 
+		effect = { country_event = { id = flavor_maghargma.14 }  } #The Green Army
 	}
 }
 maghargma_dynamic_heartlands = {
@@ -671,7 +671,7 @@ maghargma_dynamic_heartlands = {
 
 		effect = {
 			add_years_of_income = 1.5
-			country_event = { id = flavor_maghargma.5 } 
+			country_event = { id = flavor_maghargma.5 } #Heartlands Branching
 		}
 	}
 }
@@ -864,7 +864,7 @@ maghargma_dynamic_trolls = {
 			}
 		}
 
-		effect = { country_event = { id = flavor_maghargma.12 }  } 
+		effect = { country_event = { id = flavor_maghargma.12 }  }  #Problem?
 	}
 }
 
@@ -1129,7 +1129,8 @@ maghargma_two_post_trolls = {
 				name = I90_cannorian_cannons
 				duration = -1
 			}
-			europe = { add_permanent_claim = ROOT } 
+			custom_tooltip = maghargma_lords_of_frost_tt
+			hidden_effect = { europe = { add_permanent_claim = ROOT } }
 		}
 	}
 }
@@ -1188,7 +1189,7 @@ maghargma_three = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.15 }
+			country_event = { id = flavor_maghargma.15 } #A Family Matter
 		}
 	}
 
@@ -1290,7 +1291,7 @@ maghargma_three = {
 		effect = {
 			decrease_monstrous_10 = yes
 			decrease_monstrous_5 = yes
-			country_event = { id = flavor_maghargma.16 } 
+			country_event = { id = flavor_maghargma.16 } #Gifts From Mengrum
 		}
 	}
 
@@ -1371,7 +1372,7 @@ maghargma_three = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.18 } 
+			country_event = { id = flavor_maghargma.18 } #Our Inheritance Realized
 			hidden_effect = {
 				set_variable = {
 					which = I90_mission_counter
@@ -1408,7 +1409,7 @@ maghargma_three = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.19 } 
+			country_event = { id = flavor_maghargma.19 } #Mantle of Giants
 		}
 	}
 
@@ -1462,7 +1463,7 @@ maghargma_three = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.21 } 
+			country_event = { id = flavor_maghargma.21 } #Ancient Rumors
 		}
 	}
 	
@@ -1507,14 +1508,20 @@ maghargma_three = {
 						duration = -1
 					}
 				}
+				clear_racial_military = yes
+				tooltip = {
+					add_country_modifier = {
+						name = centaur_military
+						duration = -1
+					}
+				}
 				hidden_effect = {
 					add_country_modifier = {
 						name = centaur_administration
 						duration = -1
+						hidden = yes
 					}
 				}
-				clear_racial_military = yes
-				reset_racial_military_via_administration = yes
 				custom_tooltip = update_unit_sprites_tooltip
 				hidden_effect = { update_unit_sprites_for_racial_mil = yes }
 				define_ruler = {
@@ -1531,7 +1538,6 @@ maghargma_three = {
 					country_or_non_sovereign_subject_holds = ROOT
 				}
 				change_culture = ghanzamh_centaur
-				add_majority_of_current_culture = yes
 			}
 		} 
 	}
@@ -1568,7 +1574,7 @@ maghargma_three = {
 		} 
 
 		effect = { 
-			country_event = { id = flavor_maghargma.22 }
+			country_event = { id = flavor_maghargma.22 } #The Lost Sandmaws
 		} 
 	}
 
@@ -1607,9 +1613,7 @@ maghargma_three = {
 
 		effect = {
 			amldihr_area = {
-				type = all
 				change_culture = crawler_goblin
-				add_majority_of_current_culture = yes
 			}
 			4119 = { change_trade_goods = silk } 
 			custom_tooltip = maghargma_loyaltys_reward_tt
@@ -1619,7 +1623,6 @@ maghargma_three = {
 					culture_is_goblin = no
 				} 
 				change_primary_culture = crawler_goblin
-				clear_racial_administration = yes
 				add_country_modifier = {
 					name = restructuring_administration
 					duration = 3650
@@ -1630,14 +1633,18 @@ maghargma_three = {
 						duration = -1
 					}
 				}
-				hidden_effect = {
+				clear_racial_military = yes
+				tooltip = {
 					add_country_modifier = {
-						name = goblin_administration
+						name = goblin_military
 						duration = -1
 					}
 				}
-				clear_racial_military = yes
-				reset_racial_military_via_administration = yes
+				add_country_modifier = {
+					name = goblin_military
+					duration = -1
+					hidden = yes
+				}				
 				custom_tooltip = update_unit_sprites_tooltip
 				hidden_effect = { update_unit_sprites_for_racial_mil = yes }
 				west_dwarovar_region = { add_permanent_claim = PREV } 
@@ -1655,18 +1662,13 @@ maghargma_three = {
 		required_missions = { maghargma_loyaltys_reward } 
 		provinces_to_highlight = {  
 			OR = {
-				AND = {
-					region = serpents_vale_region 
-					has_production_building_trigger = no
-					can_build = farm_estate
-					is_prosperous = no
-				}
-				AND = {
-					area = amldihr_area 
-					has_production_building_trigger = no
-					can_build = farm_estate
-					is_prosperous = no
-				}
+				region = serpents_vale_region 
+				area = amldihr_area 
+			}
+			OR = {
+				has_production_building_trigger = no
+				can_build = farm_estate
+				is_prosperous = no
 			}
 		}
 
@@ -1768,7 +1770,7 @@ maghargma_three = {
 		} 
 
 		effect = {
-			country_event = { id = flavor_maghargma.23 } 
+			country_event = { id = flavor_maghargma.23 } #The True Heirs
 		}
 	}
 }
@@ -1948,7 +1950,7 @@ maghargma_four = {
 		}
 
 		effect = { 
-			country_event = { id = flavor_maghargma.24 }
+			country_event = { id = flavor_maghargma.24 } #A United Horsemen?
 			random_subject_country = {
 				limit = {
 					is_subject_of_type = vassal
@@ -2054,7 +2056,7 @@ maghargma_dynamic_brightmarch = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.6 } 
+			country_event = { id = flavor_maghargma.6 } #Brightmarch Branching
 			add_army_professionalism = 0.05
 		}
 	}
@@ -2278,7 +2280,7 @@ maghargma_dynamic_ancestor= {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.20 } 
+			country_event = { id = flavor_maghargma.20 } #Sudomegi
 		}
 	}
 }
@@ -2739,7 +2741,7 @@ maghargma_dynamic_amberlands = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.7 } 
+			country_event = { id = flavor_maghargma.7 } #Amberlands Branching
 			add_prestige = 25
 		}
 	}
@@ -2953,7 +2955,7 @@ maghargma_five_post_amberlands = {
 		}
 
 		effect = {
-			country_event = { id = flavor_maghargma.26 } 
+			country_event = { id = flavor_maghargma.26 } #Reunification
 		}
 	}
 
@@ -3009,7 +3011,7 @@ maghargma_five_post_amberlands = {
 			}
 		}
 
-		effect = { country_event = { id = flavor_maghargma.29 }  } 
+		effect = { country_event = { id = flavor_maghargma.29 }  } #Rival Claimants
 	}
 
 	maghargma_lords_of_the_hills = {
@@ -3073,7 +3075,7 @@ maghargma_five_post_amberlands = {
 					Y01 = { exists = yes }
 				}
 				custom_tooltip = maghargma_the_third_realm_tt 
-				Y01  = { country_event = { id = flavor_maghargma.30 days = 5 } }
+				Y01  = { country_event = { id = flavor_maghargma.30 days = 5 } } #Oni Subjugation
 			}
 			else = {
 				random_known_country = {
@@ -3125,7 +3127,6 @@ maghargma_five_post_amberlands = {
 					capital_scope = { region = demon_hills_region }
 				}
 				change_primary_culture = horned_ogre
-				clear_racial_administration = yes
 				add_country_modifier = {
 					name = restructuring_administration
 					duration = 3650
@@ -3136,14 +3137,20 @@ maghargma_five_post_amberlands = {
 						duration = -1
 					}
 				}
-				hidden_effect = {
+				clear_racial_military = yes
+				tooltip = {
 					add_country_modifier = {
-						name = ogre_administration
+						name = ogre_military
 						duration = -1
 					}
 				}
-				clear_racial_military = yes
-				reset_racial_military_via_administration = yes
+				hidden_effect = {
+					add_country_modifier = {
+						name = ogre_military
+						duration = -1
+						hidden = yes
+					}
+				}
 				custom_tooltip = update_unit_sprites_tooltip
 				hidden_effect = { update_unit_sprites_for_racial_mil = yes }
 				set_ruler_culture = horned_ogre

@@ -459,6 +459,20 @@ country_event = {
 
 	option = {
 		name = flavor_maghargma.12.a #Too Much Effort
+		set_country_flag = I90_enemy_troll
+		large_decrease_of_troll_tolerance_effect = yes
+		custom_tooltip = I90_enemy_troll_tt
+		tooltip = {
+			add_country_modifier = {
+				name = I90_troll_farming
+				duration = -1
+			}
+		}
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = flavor_maghargma.12.b #Our Birthright 
 		set_country_flag = I90_friend_troll
 		large_increase_of_troll_tolerance_effect = yes
 		every_owned_province = {
@@ -475,20 +489,6 @@ country_event = {
 		tooltip = {
 			add_country_modifier = {
 				name = I90_troll_auxiliaries
-				duration = -1
-			}
-		}
-		swap_non_generic_missions = yes
-	}
-
-	option = {
-		name = flavor_maghargma.12.b #Our Birthright 
-		set_country_flag = I90_enemy_troll
-		large_decrease_of_troll_tolerance_effect = yes
-		custom_tooltip = I90_enemy_troll_tt
-		tooltip = {
-			add_country_modifier = {
-				name = I90_troll_farming
 				duration = -1
 			}
 		}
@@ -935,7 +935,6 @@ country_event = {
 		bulwar_superregion = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
 			change_culture = ghanzamh_centaur
-			add_majority_of_current_culture = yes
 		}
 	}
 
@@ -948,7 +947,6 @@ country_event = {
 		bulwar_superregion = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
 			change_culture = ghanzamh_centaur
-			add_majority_of_current_culture = yes
 		}
 	}
 
@@ -961,7 +959,6 @@ country_event = {
 		bulwar_superregion = {
 			limit = { country_or_non_sovereign_subject_holds = ROOT }
 			change_culture = ghanzamh_centaur
-			add_majority_of_current_culture = yes
 		}
 	}
 }

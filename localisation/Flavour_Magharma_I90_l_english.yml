@@ -59,10 +59,10 @@
  maghargma_lords_of_frost_desc:0 "We have finally swallowed the lands of the ancient Frost Giants into our growing dominion. Our western claims may be secured, but the work is not uet done. Let us bend the earth itself to our whims, and set alight the forges of the north so that our armies may be equipped with the strongest of steel and most destructive of weapons."
 
  maghargma_brothers_in_arms_title:0 "Brother In Arms"
- maghargma_brothers_in_arms_desc:0 ""
+ maghargma_brothers_in_arms_desc:0 "Though we may have drifted apart in the past millennia, the Trolls are still our distant kin. Even if they are not ensouled with the same spirit which we ogres took from our giant creators, mastery over the trolls is just as part of our inheritance as our temporal claims. Surely the trolls know in their blood that their purpose is to fight on behalf of their creators. By throwing our industrial might and skill in building behind them, we can fully mobilize our troll populace for war, and in doing so, grant them the purpose that they have been craving for thousands of years."
 
  maghargma_a_new_kind_of_livestock_title:0 "A New Kind Of Livestock"
- maghargma_a_new_kind_of_livestock_desc:0 ""
+ maghargma_a_new_kind_of_livestock_desc:0 "Inadvertent or not, our giant creators have bestowed upon us a great many gifts from beyond the grave; perhaps their souls still shape reality for the benefit of their new hosts. Regardless, it seems as if troll biology is yet another of these hidden boons. The problem with normal livestock is that you can only harvest meat once, but what if that weren't the case? With the trolls, an ogre's most fantastical dream can become a reality: an unending supply of regenerating meat."
 
  maghargma_strike_back_title:0 "Strike Back"
  maghargma_strike_back_desc:0 "Only through the exceptional leadership of Ziltagh were the Fathide Ogres spared from a Hunger-fueled extinction at the hands of the centaur invaders. For the crime of despoiling our lands, and for the regicide of the late Ghornma Gravelhide, we will force the centaurs to atone with their gold, land, and flesh."
@@ -305,6 +305,7 @@
  flavor_maghargma.20.t:0 "The New And Old"
  flavor_maghargma.20.d:0 "Now that we've secured the land of Nomsyulhan, to secure the hearts of its people we must confront the highly-inflentlal ancestor spirits of the Sudomeg'i mausoleums. The representatives of thousands of years of traditions that stand in direct opposition to our own, they will exceedingly diffcult to work with. The simplest measure would be to destroy their mausoleums and send them screaming back to the spirit plane where they belong- However, if we find a way to work with them we have much to gain from their collective mastery of spirit binding."
  flavor_maghargma.20.a:0 "Respect Their Rights"
+ flavor_maghargma.20.b:0 "Who You Gonna Call?"
  flavor_maghargma.21.t:0 "Ancient Rumors"
  flavor_maghargma.21.d:0 "Stories of old tell of armies of ogres terrorizing the populace of Bulwar- Though they are likely long gone, it is our responsibility to investigate their true fates, and repossess anything of cultural value that they left behind"
  flavor_maghargma.21.a:0 "We Must Seek The Truth (PLACEHOLDER)"
@@ -369,9 +370,6 @@
  flavor_maghargma.35.a:0 "Uh oh (PLACEHOLDER)"
 
 
-
-
-
 #Modifiers
 I90_monument_building:0 "Monument Building"
 I90_goblin_refugees:0 "Goblin Refugees"
@@ -434,8 +432,7 @@ I90_islandbreakers:0 "Islandbreakers"
 I90_loyal_troops:0 "Loyal Troops"
 I90_sponsored_invasion:0 "Sponsored Invasions"
 I90_western_fleet_buildup:0 "Western Fleet Buildup"
-
-
+I90_cannorian_cannons:0 "Cannorian Cannons"
 
 #Tooltips
 I90_occupy_westmarches_tt:0 "Taking a §RDirect§! approach will grant us these rewards if we complete their mission:"
@@ -454,7 +451,7 @@ maghargma_dynamic_mission_tt:0 "This mission will depend on our choice in the pr
 maghargma_the_iron_barons_tt:0 "We will release §YPonjögde§! in our §YWestmarches§! provinces that does not have a §YUrban§! terrain if they don't exist. If they do we will cede the aforementioned provinces to them, the remaining §YUrban§! provinces will receive §YOgre§! minorities"
 maghargma_the_onyx_citadel_tt:0 "Enables the §YMage Collaborators§! mage estate privilege"
 maghargma_burgher_tt:0 "Enables the §YFriends In High Places§! burghers estate privilege"
-maghargma_tear_them_down_tt:0 "Every §YUrban province§! in the §YWestmarches§! over §Y12§! development will lose §R1§! development of each category"
+maghargma_tear_them_down_tt:0 "Every §YUrban province§! in the §YWestmarches§! over §Y12§! development will lose §R1§! development of each category and gain a small §YOgre§! minority"
 maghargma_a_gleaming_horizon_tt:0 "We will release §YYukaron/Sunijalla§! in our §YHeartland§! provinces that does not have a §YUrban§! terrain if they don't exist. If they do we will cede the aforementioned provinces to them, the remaining §YUrban§! provinces will receive §YOgre§! minorities"
 I90_gifts_from_menghrum_tt:0 "We will offer the lake federation access to our steel. If they accept, after §Y25§! years all members of the lake federation will receive the §YMetal Shortage§! modifier that gives §R-15%§! §YInfantry Combat Ability§! for 20 years. While we receive the §YStudied Architecture§! modifier that gives §G20%§! §YSiege Ability§! for 20 years"
 I90_gifts_from_menghrum_1_tt:0 "All members of the Lake Federation will receive the §YMetal Shortage§! modifier that gives §R-15%§! §YInfantry Combat Ability§! for 20 years"
@@ -465,7 +462,7 @@ I90_can_use_archive_tt_1:0 "We will now be able to use the §YGrand Archives§! 
 I90_can_use_archive_tt_2:0 "Has unlocked it through the §YMission Tree§!"
 maghargma_the_glass_court_tt:0 "We will release §YYukaron/Sunijalla§! in our §YBrightmarch§! provinces that does not have a §YUrban§! terrain if they don't exist. If they do we will cede the aforementioned provinces to them, the remaining §YUrban§! provinces will receive §YOgre§! minorities"
 I90_gifts_from_menghrum_tt:0 "After §Y25§! years, all members of the lake federation will receive the §YMetal Shortage§! modifier that gives §R-15%§! §YMorale of Armies§! for 20 years. While we receive the §YStudied Architecture§! modifier that gives §G30%§! §YSiege Ability§! for 20 years"
-maghargma_create_the_wolfguard_tt:0 "We will unlock the §YWolfguard§! mercenary company and it will cost no §JArmy Professionalism§Y!"
+maghargma_create_the_wolfguard_tt:0 "We will unlock the §YWolfguard§! mercenary company and it will cost no §JArmy Professionalism§!"
 I90_discussion_done_tt:0 "The event §YA Discussion§! has fired"
 maghargma_unlikely_friends_tt:0 "We will release §YIkögshaantusi§! in our §YAmberlands§! provinces that does not have a §YUrban§! terrain if they don't exist. If they do we will cede the aforementioned provinces to them, the remaining §YUrban§! provinces will receive §YOgre§! minorities"
 maghargma_the_third_realm_tt:0 "We will demand subjugation of the §YOni§!"
@@ -481,6 +478,7 @@ maghargma_a_new_invasion_tt:0 "If we have a §YVassal§! with their capital in t
 maghargma_loyaltys_reward_tt:0 "If a subject owns §YAmldihr§!, they change into §YGoblin§! culture and military"
 maghargma_lords_of_stone_tt:0 "Gain permanent claims on all of §YHaless§!"
 maghargma_introduce_cash_crops_tt:0 "Every province in the §YSerpent Gift§! region that is not producing a §YHigh Value§! trade good (Grain, livestock, etc.) will randomly change into Sugar, Cotton, Tea, Tobacco, or Silk. Provinces meeting the requirement will gain the §YSerpentspine Plantations§! modifier which gives §G1§! Local Trade Value and §R1§! Local Unrest until the end of the game. If they're owned by our §YSubjects§! they will be ceded to us"
+maghargma_lords_of_frost_tt:0 "Gain permanent claims on all of §YCannor§!"
 
 
 #Estate & Reforms & Etc
