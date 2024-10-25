@@ -1795,21 +1795,34 @@ giberd_mercantile_shipping = {
 		}
 		position = 8
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			271 = {
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = castle_clareen_prosperous_tt
+						is_prosperous = yes
+					}
+					has_state_edict = edict_defensive_edict
+				}
 			}
+			has_mil_advisor_3 = yes
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			271 = {
+				add_province_triggered_modifier = giberd_modern_fortress
+				add_province_modifier = {
+					name = giberd_clear_skies
+					duration = 9125
+				}
+				every_neighbor_province = {
+					add_province_modifier = {
+						name = giberd_clear_skies
+						duration = 9125
+					}
+				}
 			}
 		}
 	}
