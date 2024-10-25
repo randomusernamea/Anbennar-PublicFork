@@ -665,7 +665,7 @@ country_event = {
 }
 
 ### Confederal Council Events ###
-#Confederal Council
+#Declaration of Hostilities
 country_event = {
 	id = gushuokguan_event.51
 	title = gushuokguan_event.51.t
@@ -786,7 +786,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Disagreement over Trade Rulers
 country_event = {
 	id = gushuokguan_event.52
 	title = gushuokguan_event.52.t
@@ -799,9 +799,59 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.52.a
 		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = gushuokguan_victory_in_the_council
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.52.b
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_B = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = gushuokguan_victory_in_the_council
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
 	}
 }
 
@@ -818,9 +868,96 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.53.a
 		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_adm_power = 50
+			add_years_of_income = 0.2
+			add_liberty_desire = -10
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_B = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.53.b
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
+		event_target:dao_B = {
+			add_adm_power = 50
+			add_years_of_income = 0.2
+			add_liberty_desire = -10
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.53.c
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_adm_power = 25
+			add_years_of_income = 0.1
+			add_liberty_desire = 10
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
+		event_target:dao_B = {
+			add_adm_power = 25
+			add_years_of_income = 0.1
+			add_liberty_desire = 10
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_small
+			}
+		}
 	}
 }
 
@@ -837,9 +974,129 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
+			save_event_target_as = dao_C
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
+			save_event_target_as = dao_D
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.54.a
 		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_C = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_B = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_D = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.54.b
+		ai_chance = { factor = 1 }
+		event_target:dao_B = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_D = {
+			add_years_of_income = 0.5
+			add_prestige = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+		event_target:dao_A = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_C = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.54.c
+		ai_chance = { factor = 1 }
+		
+		add_years_of_income = 1
+
+		event_target:dao_A = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
+		event_target:dao_C = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
+		event_target:dao_B = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
+		event_target:dao_D = {
+			add_liberty_desire = 15
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+		}
 	}
 }
 
@@ -856,9 +1113,72 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
+			save_event_target_as = dao_C
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
+			save_event_target_as = dao_D
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.55.a
 		ai_chance = { factor = 1 }
+		every_subject_country = {
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
+			}
+			every_owned_province = {
+				add_prosperity = 10
+			}
+		}
+		event_target:dao_A = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.55.b
+		ai_chance = { factor = 1 }
+		every_subject_country = {
+			add_country_modifier = {
+				name = gushuokguan_military_focus
+				duration = 1460
+			}
+		}
+		event_target:dao_C = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_D = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
 	}
 }
 
@@ -875,9 +1195,48 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { 
+				is_subject_of_type = dao 
+				num_of_ports = 1
+			}
+			save_event_target_as = coastal_dao
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.56.a
 		ai_chance = { factor = 1 }
+		event_target:coastal_dao = {
+			add_country_modifier = {
+				name = gushuokguan_trade_benefits
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.56.b
+		ai_chance = { factor = 1 }
+		event_target:coastal_dao = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		every_subject_country = {
+			limit = { is_subject_of_type = dao }
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
 	}
 }
 
@@ -894,9 +1253,48 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { 
+				is_subject_of_type = dao 
+				NOT = { num_of_ports = 1 }
+			}
+			save_event_target_as = interior_dao
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.57.a
 		ai_chance = { factor = 1 }
+		event_target:interior_dao = {
+			add_country_modifier = {
+				name = gushuokguan_caravan_benefits
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.57.b
+		ai_chance = { factor = 1 }
+		event_target:interior_dao = {
+			add_liberty_desire = 10
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		every_subject_country = {
+			limit = { is_subject_of_type = dao }
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_medium
+			}
+		}
 	}
 }
 
@@ -913,9 +1311,57 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.58.a
 		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_country_modifier = {
+				name = gushuokguan_decentralisation_focus
+				duration = 1460
+			}
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+			add_liberty_desire = 25
+		}
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_large
+			}
+			add_liberty_desire = -20
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.58.b
+		ai_chance = { factor = 1 }
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+			add_liberty_desire = 25
+		}
+		event_target:dao_A = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_large
+			}
+			add_liberty_desire = -20
+		}
 	}
 }
 
@@ -930,11 +1376,61 @@ country_event = {
 
 	trigger = {
 		has_country_flag = gushuokguan_enable_confederal_council
+		any_subject_country = {
+			is_subject_of_type = dao
+			is_not_purging_any_race_trigger = no
+		}
+	}
+
+	immediate = {
+		random_subject_country = {
+			limit = { is_subject_of_type = dao }
+			save_event_target_as = dao_A
+		}
+		random_subject_country = {
+			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+			save_event_target_as = dao_B
+		}
 	}
 
 	option = {
 		name = gushuokguan_event.59.a
 		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+			add_liberty_desire = 20
+			end_all_purge = yes
+			end_all_expulsion = yes
+		}
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_large
+			}
+			add_liberty_desire = -15
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.59.a
+		ai_chance = { factor = 1 }
+		event_target:dao_A = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_positive_large
+			}
+			add_liberty_desire = -15
+		}
+		event_target:dao_B = {
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_large
+			}
+			add_liberty_desire = 20
+		}
 	}
 }
 
@@ -1016,7 +1512,7 @@ country_event = {
 			add_prestige = 20
 			add_opinion = {
 				who = PREV #Gushuokguan
-				modifier = gushuokguan_council_tensions_medium
+				modifier = gushuokguan_council_tensions_positive_medium
 			}
 		}
 		event_target:dao_D = {
@@ -1024,7 +1520,7 @@ country_event = {
 			add_prestige = 20
 			add_opinion = {
 				who = PREV #Gushuokguan
-				modifier = gushuokguan_council_tensions_medium
+				modifier = gushuokguan_council_tensions_positive_medium
 			}
 		}
 		hidden_effect = {
