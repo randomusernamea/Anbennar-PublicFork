@@ -460,9 +460,300 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.20.a
+		add_country_modifier = {
+			name = giberd_silverforge_relations_good
+			duration = 3650			#20 years
+		}
+		if = {
+			limit = {
+				exists = A25
+			}
+			country_event = {
+				id= flavor_giberd.21 #damescrown
+				days = 60
+			}
+		}
+		if = {
+			limit = {
+				exists = A12
+			}
+			country_event = {
+				id= flavor_giberd.22 #BEEPECK
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				exists = A11
+			}
+			country_event = {
+				id= flavor_giberd.23 #pearsledge
+				days = 180
+			}
+		}
+		if = {
+			limit = {
+				exists = A31
+			}
+			country_event = {
+				id= flavor_giberd.24 #Moonhaven
+				days = 240
+			}
+		}
+		if = {
+			limit = {
+				exists = A45
+			}
+			country_event = {
+				id= flavor_giberd.25 #Istralore
+				days = 240
+			}
+		}
+		if = {
+			limit = {
+				exists = A85
+			}
+			country_event = {
+				id= flavor_giberd.26 #Magisterium
+				days = 240
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.20.b
+		if = {
+			limit = {
+				exists = A25
+			}
+			country_event = {
+				id= flavor_giberd.21 #damescrown
+				days = 60
+			}
+		}
+		if = {
+			limit = {
+				exists = A12
+			}
+			country_event = {
+				id= flavor_giberd.22 #BEEPECK
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				exists = A11
+			}
+			country_event = {
+				id= flavor_giberd.23 #pearsledge
+				days = 180
+			}
+		}
+		if = {
+			limit = {
+				exists = A31
+			}
+			country_event = {
+				id= flavor_giberd.24 #Moonhaven
+				days = 240
+			}
+		}
+		if = {
+			limit = {
+				exists = A45
+			}
+			country_event = {
+				id= flavor_giberd.25 #Istralore
+				days = 240
+			}
+		}
+		if = {
+			limit = {
+				exists = A85
+			}
+			country_event = {
+				id = flavor_giberd.26 #Magisterium
+				days = 240
+			}
+		}
 	}
 }
+country_event = {
+	id = flavor_giberd.21
+	title = flavor_giberd.21.t ##damescrown
+	desc = flavor_giberd.21.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A25
+	}
+	option = {
+		name = flavor_giberd.21.a
+		home_trade_node_effect_scope = {
+            add_trade_modifier = {
+                who = A25
+                duration = 3650
+                power = 100
+                key = damescrown_contracts
+            }
+		}
+		A25 = {
+			add_opinion = {
+				who = ROOT
+				modifier = giber_potions_bribe
+			}
+		}
+    }
+	option = {
+		name = flavor_giberd.21.b
+	}
+}
+country_event = {
+	id = flavor_giberd.22 ##beepeck
+	title = flavor_giberd.22.t
+	desc = flavor_giberd.22.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A12
+	}
+	option = {
+		name = flavor_giberd.22.a
+		A12 = {
+			add_prestige = 50
+			add_country_modifier = {
+				name = beepeck_honored_by_giberd
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = giberd_beepeck_pawns
+			duration = 3650
+		}
+		add_prestige = -50
+	}
+	option = {
+		name = flavor_giberd.22.b
+	}
+}
+country_event = {
+	id = flavor_giberd.23 ##Pearsledge
+	title = flavor_giberd.23.t
+	desc = flavor_giberd.23.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A11
+	}
+	option = {
+		name = flavor_giberd.23.a
+		A11 = {
+			add_country_modifier = {
+				name = giberd_bought_bad_wine
+				duration = 7300
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = giber_potions_bribe
+			}
+			add_treasury = 1000
+			add_country_modifier = {
+				name = we_bought_bad_wine
+				duration = 7300
+			}
+		}
 
+		add_treaury = -1000
+	}
+	option = {
+		name = flavor_giberd.23.b
+	}
+}
+country_event = {
+	id = flavor_giberd.24 ##Moonhaven
+	title = flavor_giberd.24.t
+	desc = flavor_giberd.24.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A31
+	}
+	option = {
+		name = flavor_giberd.24.a
+		A31 = {
+				add_country_modifier = {
+				name = artificers_good_moonhaven
+				duration = 7300
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = giber_potions_bribe
+			}
+			add_country_modifier = {
+				name = artificers_aelantir
+				duration = 7300
+			}
+		}
+	}
+	option = {
+		name = flavor_giberd.24.b
+	}
+}
+country_event = {
+	id = flavor_giberd.25 ##Istralore
+	title = flavor_giberd.25.t
+	desc = flavor_giberd.25.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A45
+	}
+	option = {
+		name = flavor_giberd.25.a
+		A45 = {
+			add_country_modifier = {
+				name = giberd_helped_istralroe
+				duration = 7300
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = giber_potions_bribe
+			}
+		}
+		add_country_modifier = {
+			name = giberd_harmed_helping
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_giberd.25.b
+	}
+}
+country_event = {
+	id = flavor_giberd.26 ##Masterium
+	title = flavor_giberd.26.t
+	desc = flavor_giberd.26.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		exists = A45
+	}
+	option = {
+		name = flavor_giberd.26.a
+		A85 = {
+			add_opinion = {
+				who = ROOT
+				modifier = giber_potions_bribe
+			}
+		}
+		add_country_modifier = {
+			name = giber_magisterial_oversight
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_giberd.26.b
+	}
+}
 ########
 # artificer faction events
 # The Imperial Archive
