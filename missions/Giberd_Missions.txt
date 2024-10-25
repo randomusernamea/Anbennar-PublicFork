@@ -2051,22 +2051,58 @@ giberd_artificer = {
 			giberd_electoral_dreams
 		}
 		position = 7
-		trigger = {
-			religion = ravelian
+		provinces_to_highlight = {
+			owned_by = ROOT
+			area = bennonhill
+			unrest = 0
 		}
-		effect = {
-			271 = {
-				#Giberd
-				if = {
-					limit = {
-						has_cardinal = no
-					}
-					add_cardinal = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = H33_ravelian_society_enabled_tt
+				has_global_flag = ravelian_society_founded
+			}
+			custom_trigger_tooltip = {
+				tooltip = corintar_deluge_tt
+				OR = {
+					has_global_flag = crimson_deluge_is_over
+					has_global_flag = crimson_deluge_is_actively_happening
 				}
 			}
+			bennonhill_area = {
+				type = all
+				NOT = {
+					unrest = 0
+				}
+			}
+			treasury = 1000
+			num_society_artifice_inventions_active_tier_2 = {
+				VAL = 1
+			}
+			OR = {
+				innovativeness_ideas = 2
+				innovativeness = 50
+			}
+		}
+		effect = {
 			add_country_modifier = {
-				name = giberd_embrace_ravelianism_mod
-				duration = 7300				#20 years
+				name = giberd_accepting_radicals
+				duration = 7300
+			}
+			add_treasury = -1000
+			275 = {
+				add_or_upgrade_lodge = yes
+			}
+			271 = {
+				add_or_upgrade_lodge = yes
+			}
+			911 = {
+				add_or_upgrade_lodge = yes
+			}
+			265 = {
+				add_or_upgrade_lodge = yes
+			}
+			266 = {
+				add_or_upgrade_lodge = yes
 			}
 		}
 	}
