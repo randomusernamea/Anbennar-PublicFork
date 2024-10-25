@@ -117,6 +117,49 @@ num_artifice_inventions_discovered_tier_3 = {
 	}
 }
 
+has_active_all_economic_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_artificer_exo_arms
+	has_estate_privilege = artifice_invention_spell_in_a_box
+	has_estate_privilege = artifice_invention_commercial_sky_galleons
+	has_estate_privilege = artifice_invention_fine_print_obfuscator
+	has_estate_privilege = artifice_invention_automated_translator
+	has_estate_privilege = artifice_invention_wine_ageifier
+	has_estate_privilege = artifice_invention_pearl_cultivators
+	has_estate_privilege = artifice_invention_arcane_battery_capital_complex
+	has_estate_privilege = artifice_invention_market_mender
+	has_estate_privilege = artifice_invention_plane_of_water_teleporter
+}
+
+has_active_all_military_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_portable_turrets
+	has_estate_privilege = artifice_invention_sparkdrive_rifles
+	has_estate_privilege = artifice_invention_vorpal_bullets
+	has_estate_privilege = artifice_invention_magic_missile_deployer
+	has_estate_privilege = artifice_invention_box_of_holding
+	has_estate_privilege = artifice_invention_ancestral_golems
+	has_estate_privilege = artifice_invention_antimagic_field_generator
+	has_estate_privilege = artifice_invention_believable_ruin_bomb
+	has_estate_privilege = artifice_invention_vernman_hero_tonic
+	has_estate_privilege = artifice_invention_dragonscale_plating
+	has_estate_privilege = artifice_invention_predator_exoskeleton
+	has_estate_privilege = artifice_invention_scrap_mechs
+	has_estate_privilege = artifice_invention_sunbeam_armaments
+	has_estate_privilege = artifice_invention_power_fists
+}
+
+has_active_all_society_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_viewcatcher
+	has_estate_privilege = artifice_invention_sending_stones
+	has_estate_privilege = artifice_invention_centipedal_chests
+	has_estate_privilege = artifice_invention_living_mirrors
+	has_estate_privilege = artifice_invention_apparitional_communicator
+	has_estate_privilege = artifice_invention_mystic_ciphers
+	has_estate_privilege = artifice_invention_fey_spray
+	has_estate_privilege = artifice_invention_scrapperclaws
+	has_estate_privilege = artifice_invention_great_processor
+	has_estate_privilege = artifice_invention_conversation_calibrator
+}
+
 has_active_all_economic_tier_2_inventions = {
 	has_estate_privilege = artifice_invention_growth_beans
 	has_estate_privilege = artifice_invention_vendorless_stall
@@ -162,6 +205,24 @@ has_active_all_society_tier_2_inventions = {
 	has_estate_privilege = artifice_invention_game_of_khet
 }
 
+has_active_all_society_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_crierless_crier_device
+	has_estate_privilege = artifice_invention_divendancer_speedboat
+	has_estate_privilege = artifice_invention_bureaucratizer
+	has_estate_privilege = artifice_invention_runethought_network
+	has_estate_privilege = artifice_invention_negotiation_nexus
+}
+
+has_active_all_economic_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_pathway_transmutation
+	has_estate_privilege = artifice_invention_elemental_locomotives
+	has_estate_privilege = artifice_invention_high_velocity_irrigation
+	has_estate_privilege = artifice_invention_weather_predicticator
+	has_estate_privilege = artifice_invention_artifice_powered_magnate_factories
+	has_estate_privilege = artifice_invention_prefabricated_city_constructors
+	has_estate_privilege = artifice_invention_t_wave_transceivers
+}
+
 has_active_all_military_tier_3_inventions = {
 	has_estate_privilege = artifice_invention_black_damestear_bullets
 	has_estate_privilege = artifice_invention_artillery_autoloader
@@ -191,10 +252,22 @@ num_military_artifice_inventions_active_tier_3 = {
 	}
 }
 
+has_active_all_tier_1_inventions = {
+	has_active_all_economic_tier_1_inventions = yes
+	has_active_all_military_tier_1_inventions = yes
+	has_active_all_society_tier_1_inventions = yes
+}
+
 has_active_all_tier_2_inventions = {
 	has_active_all_economic_tier_2_inventions = yes
 	has_active_all_military_tier_2_inventions = yes
 	has_active_all_society_tier_2_inventions = yes
+}
+
+has_active_all_tier_3_inventions = {
+	has_active_all_economic_tier_3_inventions = yes
+	has_active_all_military_tier_3_inventions = yes
+	has_active_all_society_tier_3_inventions = yes
 }
 
 num_artifice_inventions_active_tier_2 = {
@@ -202,6 +275,16 @@ num_artifice_inventions_active_tier_2 = {
 		amount = $VAL$
 		desc = num_artifice_inventions_active_tooltip_tier_2
 		has_active_all_tier_2_inventions = yes
+	}
+}
+
+num_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip
+		has_active_all_tier_1_inventions = yes
+		has_active_all_tier_2_inventions = yes
+		has_active_all_tier_3_inventions = yes
 	}
 }
 

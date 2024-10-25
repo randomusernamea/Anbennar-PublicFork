@@ -15,12 +15,30 @@ giberd_exploit_benonhill = {
 
 giberd_factions_technomancers_increase = {
 	custom_tooltip = giberd_factions_technomancers_increase_tt
+	hidden_effect = {
+		change_variable = {
+			which = giberd_factions_technomancers_influence
+			value = 1
+		}
+	}
 }
 
 giberd_factions_brillites_increase = {
 	custom_tooltip = giberd_factions_brillites_increase_tt
+	hidden_effect = {
+		change_variable = {
+			which = giberd_factions_brillites_influence
+			value = 1
+		}
+	}
 }
 
 giberd_factions_mechanists_increase = {
 	custom_tooltip = giberd_factions_mechanists_increase_tt
+	hidden_effect = {
+		change_variable = {
+			which = giberd_factions_mechanists_influence
+			value = 1
+		}
+	}
 }

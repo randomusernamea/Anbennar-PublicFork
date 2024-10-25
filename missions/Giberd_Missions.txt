@@ -1531,42 +1531,47 @@ giberd_ryalanar_conquest = {
 		}
 		position = 11
 		provinces_to_highlight = {
-			OR = {
-				area = konwell_area
-				area = ryalanar_area
-			}
-			NOT = {
-				AND = {
-					owned_by = ROOT
-					is_core = ROOT
-				}
-			}
 		}
 		trigger = {
-			prestige = 50
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			num_artifice_inventions_active = {
+				VAL = 6
 			}
-			ryalanar_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
+			num_of_diplomats = 1
+			num_of_merchants = 1
+			num_of_transport = 30
+			265 = {
+				transports_in_province = 30
 			}
+			esmaria_region = {
+				type = all
+				NOT = {
+					owned_by = ROOT
+				}
+				AND = {
+					is_prosperous = yes
+					has_state_edict = edict_protect_trade
+				}
+			}
+			has_adm_advisor_5 = yes
+			has_dip_advisor_5 = yes
+			has_mil_advisor_5 = yes
 		}
 		effect = {
-			esmaria_region = {
-				limit = {
-					NOT = {
-						is_core = ROOT
-					}
-					NOT = {
-						is_permanent_claim = ROOT
-					}
+			265 = {
+				kill_units = {
+					who = ROOT
+					type = transport
+					amount = 30
 				}
-				add_permanent_claim = ROOT
 			}
+			add_country_modifier = {
+				name = giberd_statesmen_occupied
+				duration = 180
+			}
+			country_event = {
+				id = flavor_giberd.41
+			}
+			# TODO: start river party evetn chain
 		}
 	}
 	giberd_to_name_a_hierarchy = {

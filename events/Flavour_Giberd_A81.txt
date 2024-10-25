@@ -689,6 +689,7 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.30.a
+		custom_tooltip = giberd_factions_explain_tt
 		giberd_factions_technomancers_increase = yes
 		add_treasury = -500
 		every_elector = {
@@ -716,6 +717,7 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.30.b
+		custom_tooltip = giberd_factions_explain_tt
 		giberd_factions_brillites_increase = yes
 		add_treasury = -300
 		add_adm_power = -75
@@ -740,6 +742,7 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.30.c
+		custom_tooltip = giberd_factions_explain_tt
 		giberd_factions_mechanists_increase = yes
 		add_treasury = -1000
 		# TODO: -20 capacity for 10 years
@@ -1450,6 +1453,111 @@ country_event = {
 					duration = -1
 				}
 			}
+		}
+	}
+}
+
+# Artificer Faire
+country_event = {
+	id = flavor_giberd.41
+	title = flavor_giberd.41.t
+	desc = flavor_giberd.41.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.41.a
+		custom_tooltip = flavor_giberd.41_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					AND = {
+						check_variable = {
+							which = giberd_factions_technomancers_influence
+							which = giberd_factions_brillites_influence
+						}
+						check_variable = {
+							which = giberd_factions_technomancers_influence
+							which = giberd_factions_mechanists_influence
+						}
+					}
+				}
+				country_event = {
+					id = flavor_giberd.42					# technomancers
+					days = 180
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = giberd_factions_brillites_influence
+						which = giberd_factions_mechanists_influence
+					}
+				}
+				country_event = {
+					id = flavor_giberd.43					# brillites
+					days = 180
+				}
+			}
+			else = {
+				country_event = {
+					id = flavor_giberd.44					# mechanists
+					days = 180
+				}
+			}
+		}
+	}
+}
+
+# Technomancers win: Giberd: A Nation Favoured
+country_event = {
+	id = flavor_giberd.42
+	title = flavor_giberd.42.t
+	desc = flavor_giberd.42.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.42.a
+		add_estate_loyalty_modifier = {
+			estate = estate_artificers
+			desc = giberd_nation_favoured_tt
+			loyalty = 10
+			duration = -1
+		}
+		add_country_modifier = {
+			name = giberd_deluge_of_investment
+			duration = -1
+		}
+	}
+}
+
+# Brillites win: Giberd: A Nation Financed
+country_event = {
+	id = flavor_giberd.43
+	title = flavor_giberd.43.t
+	desc = flavor_giberd.43.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.43.a
+		add_country_modifier = {
+			name = giberd_language_of_esmar
+			duration = -1
+		}
+	}
+}
+
+# Mechanists win: Giberd: A Nation Friendless
+country_event = {
+	id = flavor_giberd.44
+	title = flavor_giberd.44.t
+	desc = flavor_giberd.44.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.44.a
+		add_country_modifier = {
+			name = giberd_show_our_might
+			duration = -1
 		}
 	}
 }
