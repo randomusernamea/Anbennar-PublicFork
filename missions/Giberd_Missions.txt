@@ -2287,21 +2287,76 @@ giberd_artificer = {
 		}
 		position = 10
 		trigger = {
-			religion = ravelian
+			custom_trigger_tooltip = {
+				tooltip = H33_god_fragment_found_tt
+				has_global_flag = god_fragment_found
+			}
+			898 = {
+				OR = {
+					owner = {
+						has_100_opinion_improved_relation = {
+							target = ROOT
+						}
+					}
+					owner = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+					}
+					owned_by = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_not_researching_invention_tt
+				NOT = {
+					has_country_flag = artifice_research_in_progress
+					has_country_flag = artifice_research_menu_open
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_not_using_any_inventions_tt
+				NOT = {
+					check_variable = {
+						which = artifice_inventions_currently_used
+						value = 1
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_not_using_any_artificer_cap_tt
+				NOT = {
+					check_variable = {
+						which = ArtificeUpkeep
+						value = 1
+					}
+				}
+			}
 		}
 		effect = {
+			# dedicate all cap for 10 years
+			# spawn ravelian religion early
 			271 = {
-				#Giberd
-				if = {
-					limit = {
-						has_cardinal = no
-					}
-					add_cardinal = yes
+				add_province_modifier = {
+					name = giberd_ravelians_send_finest
+					duration = 7300
+				}
+				add_cardinal = yes
+				custom_tooltip = H33_permanent_veridical_tt
+				hidden_effect = {
+					add_province_triggered_modifier = giberd_permanent_veridical
+				}
+			}
+			275 = {
+				add_cardinal = yes
+				custom_tooltip = H33_permanent_veridical_tt
+				hidden_effect = {
+					add_province_triggered_modifier = giberd_permanent_veridical
 				}
 			}
 			add_country_modifier = {
-				name = giberd_embrace_ravelianism_mod
-				duration = 7300				#20 years
+				name = giberd_factions_united
+				duration = -1
 			}
 		}
 	}

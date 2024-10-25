@@ -5356,6 +5356,27 @@ H33_dual_archprovosts = {
 	}
 }
 
+giberd_permanent_veridical = {
+	potential = {
+		religion = ravelian
+	}
+	trigger = {
+		religion = ravelian
+		has_owner_religion = yes
+		owner = {
+			capital_scope = {
+				region = esmaria_region
+			}
+		}
+	}
+	picture = "papal_influence_from_cardinals"
+
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+
 B34_ettalinde_clues = {
     potential = {
 		always = yes
