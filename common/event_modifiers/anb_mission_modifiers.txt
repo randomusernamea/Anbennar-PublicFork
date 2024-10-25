@@ -7339,73 +7339,11 @@ roilsard_6 = {
 }
 
 #Giberd
-giberd_nimscodd_aid = {
-	improve_relation_modifier = 0.2
-}
-
-giberd_aid_from_giberd = {
-	manpower_recovery_speed = 0.1
-}
-
-giberd_elector_support = {
-	diplomatic_reputation = 2
-}
-giberd_gnomish_elector_mod = {
-	max_electors = 1
-}
-
-giberd_song_calmed = {
-	trade_efficiency = 0.1
-}
-
-giberd_imperial_archives = {
-	idea_cost = -0.1
-}
-
-giberd_giberdi_hierarchy = {
-	free_adm_policy = 1
-}
-
-giberd_gnomish_duchy = {
-	production_efficiency = 0.1
-}
-
-giberd_bennon_trade = {
-	province_trade_power_modifier = 0.25
-}
-
-giberd_transhavoral_trade_mod = {
-	trade_efficiency = 0.2
-}
-
-giberd_mercantile_shipping_mod = {
-	global_trade_power = 0.05
-}
-
-giberd_growth_of_giberd = {
-	global_tax_modifier = 0.1
-}
-
-giberd_craft_centralization = {
-	local_development_cost = -0.1
-}
-
-giberd_artificer_manufactories = {
-	local_production_efficiency = 0.2
-}
-
-giberd_giberd_technical_university = {
-	idea_cost = -0.05
-}
-
-giberd_embrace_ravelianism_mod = {
-	papal_influence = 1
-}
 
 # new giberd, country modifiers
-giberd_dealing_with_the_magisterium = {
-	mages_loyalty_modifier = 0.1
-}
+# giberd_dealing_with_the_magisterium = {
+# 	mages_loyalty_modifier = 0.1
+# }
 
 giberd_merchants_buying_artificer_goods = {
 	trade_efficiency = 0.1
@@ -7718,7 +7656,7 @@ giberd_integrating_ravelians = {
 }
 
 giberd_leader_technomancers = {
-	tec_technomancy = 0.33
+	tec_technomancy_influence = 0.33
 	idea_cost = 0.10
 	technology_cost = 0.10
 	production_efficiency = -0.10
@@ -7731,7 +7669,7 @@ giberd_leader_technomancers = {
 }
 
 giberd_leader_brillites = {
-	tec_brilliance = 0.33
+	tec_brilliance_influence = 0.33
 	yearly_corruption = 0.20
 	monthly_reform_progress_modifier -0.50 # TODO: broken?
 	advisor_cost = 0.25
@@ -7742,7 +7680,7 @@ giberd_leader_brillites = {
 }
 
 giberd_leader_mechanists = {
-	tec_mechanists = 0.33
+	tec_mechanists_influence = 0.33
 	global_unrest = 2
 	prestige = -1
 	ae_impact = 0.20
@@ -7751,6 +7689,36 @@ giberd_leader_mechanists = {
 	state_maintenance_modifier = -0.33
 	global_spy_defence = 0.25
 }
+
+giberd_restoring_archive = {
+	local_unrest = -10
+}
+
+giberd_restored_archive = {
+	local_unrest = -10
+	technology_cost = -0.025
+	# +3 artificer cap
+	local_institution_spread = 0.25
+}
+giberd_scouring_archive = {
+	local_unrest = 10
+}
+giberd_scoured_archive = {
+	local_unrest = 10
+	idea_cost = -0.05
+	# +5 artificer cap
+}
+
+giberd_stealing_archive = {
+	local_unrest = 20
+}
+giberd_stolen_archive = {
+	local_unrest = 20
+	local_institution_spread = 0.33
+	prestige = 0.5
+	# +10% permanent research speed
+}
+
 
 #Irrliam
 irrliam_newfound_zeal = {

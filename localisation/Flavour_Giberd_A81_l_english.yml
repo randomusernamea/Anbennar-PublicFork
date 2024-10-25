@@ -24,6 +24,7 @@
  giberd_glass_stained_pink_desc:0 "9 gnomes"
  giberd_chroniclers_and_casters_title:0 "Chroniclers and Casters"
  giberd_chroniclers_and_casters_desc:0 "10 gnomes"
+ giberd_dealing_with_the_magisterium:0 "Dealing with the Magisterium"
  giberd_uniting_esmaria_title:0 "Uniting Esmaria"
  giberd_uniting_esmaria_desc:0 "11 gnomes"
  giberd_electoral_dreams_title:0 "Electoral Dreams"
@@ -116,6 +117,7 @@
  flavor_giberd.4.d:0 "Today, dark news has arrived in Giberd, and the whole land is united in rage. The river parties have turned to riots, and it seems that the whole nation is in the streets. The dwarves of Silverforge have also sent condolences, and promise to support us in any course of action we take. The emperor has refused our requests for a gnomish electorate, keeping us from being truly equal within the empire. Today is truly a dark day for gnomekind, but we will take what we deserve, by force if necessary."
  flavor_giberd.4.a:0 "There will be blood!"
 
+ # MT events
  flavor_giberd.10.t:0 "Our Options of War"
  flavor_giberd.10.d:0 "A meeting of the minds of Giberd, the artificers offer their services in order to help Giberd's expansion but Research of inventions will be unable to proceed while the artificers help the war effort"
  flavor_giberd.10.a:0 "Focus our artificer efforts on Leslinpar, we should take that first"
@@ -164,6 +166,7 @@
  flavor_giberd.18.d:0 "A represensative of the Esmari and the gnomish enclaves of Esmaria both arrived upon the same day to our capital with the intent purpose of providing a list of concerns and needs that the Esmari people need fixed, it seems our willingness to use artificery to improve Giberd has provoked the idea in many Esmari's heads that technology could aid them greatly. Meanwhile the Gnomkish enclaves having secretly aided our conquests now have a list of resources they require so that they are able to finally be artificers with resources to match their ambitions."
  flavor_giberd.18.a:0 "A rather expensive list but Giberd needs to do this to win over our kin and Esmari alike."
 
+ # diplomatic tour event chain
  flavor_giberd.20.t:0 "Starting with Silverforge"
  flavor_giberd.20.d:0 "The first stop on our diplomatic tour is the dwarven hold of Silverforge, home to skilled miners and craftsmen, if not so skilled as us. They are eager to help with our electoral ambitions - however, they ask for a humble favor for their support, to be used at a later date."
  flavor_giberd.20.a:0 "Excellent, let us go forward together!"
@@ -211,10 +214,20 @@ giber_potions_bribe:0 "Successful Visit"
  flavor_giberd.26.a:0 "Let the Mages in."
  flavor_giberd.26.b:0 "We have no need of nannies."
 giber_magisterial_oversight:0 "Shackled by Mages"
+
  # faction events
  giberd_factions_technomancers_increase_tt:0 "The §MTechnomancers§! support this option."
  giberd_factions_brillites_increase_tt:0 "The §MBrillites§! support this option."
  giberd_factions_mechanists_increase_tt:0 "The §MMechanists§! support this option."
+
+ flavor_giberd.30.t:0 "The Imperial Archive"
+ flavor_giberd.30.d:0 "A debate has broken out amongst the three technocratic factions which dominate Giberd about what to do with the imperial archives of Konwell.\nThe Technomancers support upgrading and repairng any damage to the imperial archive and konwell schools.\nThe Brillites wish to send a team of gnomish scholars and technocrats to scour the imperial archive for any research that could aid our artificery efforts and the Mechanists propose the most radical and contentious suggestion moving the entire imperial archive to Giberd in order increase Giberds importance and to allow all artificers in Giberd easy access to the archives."
+ flavor_giberd.30.a:0 "The Technomancers have the right idea"
+ flavor_giberd.30.b:0 "The Brillites are right"
+ flavor_giberd.30.c:0 "Lets see what the Mechanists can do"
+ giberd_is_restoring_archive:0 "Resting Imperial Archive"
+ giberd_is_stealing_archive:0 "Stealing Imperial Archive"
+ giberd_after_10_years_tt:0 "After 10 years, upgrade the modifier to:"
 
  flavor_giberd.31.t:0 "The Damestear Demand"
  flavor_giberd.31.d:0 "Giberd has an unsustaniable demand for damestear, one that must be addressed quickly lest our artificers refuse to work, the guilds have presented 3 options in acquiring Damestear from the Moonisle"
@@ -272,26 +285,7 @@ giber_magisterial_oversight:0 "Shackled by Mages"
  flavor_giberd.39.c:0 "Any gnomes that convert to ravelian should not be trusted with state and guild secrets"
  flavor_giberd.39_tt:0 "We can switch between these modifiers in future §YElections§!:\n"
 
-# old
- giberd_nimscodd_aid:0 "Nimscodd Aid"
- giberd_aid_from_giberd:0 "Aid From Giberd"
- giberd_elector_support:0 "Elector Support"
- giberd_gnomish_elector_mod:0 "Gnomish Elector"
- giberd_song_calmed:0 "Song Calmed"
- giberd_imperial_archives:0 "Imperial Archives"
- giberd_giberdi_hierarchy:0 "Giberdi Hierarchy"
- giberd_gnomish_duchy:0 "Gnomish Duchy"
- giberd_bennon_trade:0 "Bennon Trade"
- giberd_transhavoral_trade_mod:0 "Transhavoral Trade"
- giberd_mercantile_shipping_mod:0 "Mercantile Shipping"
- giberd_growth_of_giberd:0 "Growth of Giberd"
- giberd_craft_centralization:0 "Craft Centralization"
- giberd_artificer_manufactories:0 "Artificer Manufactories"
- giberd_giberd_technical_university:0 "Giberd Technical University"
- giberd_embrace_ravelianism_mod:0 "Ravelian Enlightenment"
-
- # new modifiers
- giberd_dealing_with_the_magisterium:0 "Dealing with the Magisterium"
+ # modifiers
 
  giberd_merchants_buying_artificer_goods:0 "Merchants buying Artificer goods"
  giberd_the_grg:0 "The GRG (Giberdi River Guard)"
@@ -358,6 +352,12 @@ giber_magisterial_oversight:0 "Shackled by Mages"
  giberd_leader_brillites_loyalty_tt:0 "Ravelian Assistance"
  giberd_leader_mechansits_loyalty_tt:0 "Ravelians Marginalized"
  giberd_leader_technomancers_influence_tt:0 "Ravelian Advisors: §Y-20%§!"
+ giberd_restoring_archive:0 "Restoring Imperial Archive"
+ giberd_restored_archive:0 "Restored Imperial Archive"
+ giberd_scouring_archive:0 "Scouring Imperial Archive"
+ giberd_scoured_archive:0 "Scoured Imperial Archive"
+ giberd_stealing_archive:0 "Stealing Imperial Archive"
+ giberd_stolen_archive:0 "Stolen Imperial Archive"
 
  # where should this one really live
  esmari_fashion_happened_tt:0 "The event §YEsmari Fashion§! has already happened."
