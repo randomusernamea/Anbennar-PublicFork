@@ -2388,9 +2388,21 @@ maskedbutcher_missions_4e = {
 		position = 11
 
 		trigger = {
-			check_variable = {
-				which = mb_oblations_claimed
-				value = 50
+			OR = {
+				check_variable = {
+					which = mb_oblations_claimed
+					value = 50
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = 7_masks_equipped_tt
+						num_of_estate_privileges = {
+							estate = estate_vampires
+							value = 8
+						}
+					}
+					reform_level = 13
+				}
 			}
 		}
 
