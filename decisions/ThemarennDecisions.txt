@@ -58,37 +58,7 @@ country_decisions = {
 		}
 		
 		effect = {
-            ROOT = {
-                random_owned_province = {
-                    limit = {
-                        has_port = no
-                        NOT = {
-                            has_building = impressment_offices
-                            has_construction = building
-                        }
-                        region = esmaria_region
-                    }
-                    add_building_construction = {
-                        building = impressment_offices
-                        speed = 1.0
-                        cost = 1.0
-                    }
-                    if = {
-                        limit = {
-                            trade_goods = grain
-                            trade_goods = livestock
-                            trade_goods = salt
-                            trade_goods = naval_supplies
-                            trade_goods = fish
-                            trade_goods = tropical_wood
-                        }
-                        add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
-                    }
-                    else = {
-                        add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
-                    }
-                }
-            }
+            country_event = { id = flavour_themarenn.48 }
 		}
 	}
     switch_to_sailors_a95 = {

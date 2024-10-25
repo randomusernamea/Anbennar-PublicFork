@@ -10552,3 +10552,50 @@ themarenn_refresh_prosperity = {
 	remove_country_modifier = a95_consort_pros5
 	remove_country_modifier = a95_consort_pros6
 }
+
+themarenn_admin_burden = {
+	if = {
+		limit = {
+			NOT = { has_country_modifier = a95_admin_burden }
+		}
+		add_country_modifier = { name = a95_admin_burden duration = -1 }
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = a95_admin_burden
+		}
+		remove_country_modifier = a95_admin_burden
+		add_country_modifier = { name = a95_admin2_burden duration = -1 }
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = a95_admin2_burden
+		}
+		remove_country_modifier = a95_admin2_burden
+		add_country_modifier = { name = a95_admin3_burden duration = -1 }
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = a95_admin3_burden
+		}
+		remove_country_modifier = a95_admin3_burden
+		add_country_modifier = { name = a95_admin4_burden duration = -1 }
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = a95_admin4_burden
+		}
+		remove_country_modifier = a95_admin4_burden
+		add_country_modifier = { name = a95_admin4_burden duration = -1 }
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = a95_admin4_burden
+		}
+		remove_country_modifier = a95_admin4_burden
+		add_country_modifier = { name = a95_admin5_burden duration = -1 }
+	}
+	else = { 
+		add_adm_power = -100
+	}
+}

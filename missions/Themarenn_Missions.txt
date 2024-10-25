@@ -614,8 +614,6 @@ a95_river_parties = {
 				type = all 
 				NOT = { has_province_modifier = unlawful_territory }
 			}
-			set_country_flag = a95_aranmass_offices
-			custom_tooltip = a95_aranmass.tt
 		}
 		effect = {
 			country_event = { id = flavour_themarenn.13 }
@@ -626,6 +624,8 @@ a95_river_parties = {
 				}
 				remove_province_modifier = esmar_estuary_modifier
 			}
+			set_country_flag = a95_aranmass_offices
+			custom_tooltip = a95_aranmass.tt
 		}
 	}
 	##Mission End
@@ -1374,7 +1374,8 @@ a95_heretics = {
 		}
 		position = 7
 		provinces_to_highlight = {
-			capital_scope = { tag = emperor }
+			owner = { is_emperor = yes }
+			is_capital = yes
 		}
 
 		trigger = {
@@ -1524,13 +1525,11 @@ a95_imperial_council = {
 					}
 					amount = 5
 				}
-				hidden_trigger = {
-					NOT = {
-						calc_true_if = {
-							amount = 2
-							all_known_country = {
-								capital_scope = { region = esmaria_region }
-							}
+				NOT = {
+					calc_true_if = {
+						amount = 2
+						all_known_country = {
+							capital_scope = { region = esmaria_region }
 						}
 					}
 				}
@@ -1541,7 +1540,7 @@ a95_imperial_council = {
 			country_event = { id = flavour_themarenn.3 }
 			ryalanar_area = { add_permanent_claim = ROOT }
 			333 = { add_permanent_claim = ROOT }
-			every_country = { 
+			every_known_country = { 
 				limit = {
 					capital_scope = { region = esmaria_region }
 					has_opinion = {

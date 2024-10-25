@@ -159,13 +159,7 @@ country_event = { #Wayward Heir
 					}
 				}
 				A94 = { set_country_flag = a95_i_dont_bevar }
-				random_list = {
-					20 = { A94 = { country_event = { id = flavour_themarenn.45 days = 1825 } } }
-					20 = { A94 = { country_event = { id = flavour_themarenn.45 days = 3650 } } }
-					20 = { A94 = { country_event = { id = flavour_themarenn.45 days = 5475 } } }
-					20 = { A94 = { country_event = { id = flavour_themarenn.45 days = 7300 } } }
-					20 = { A94 = { country_event = { id = flavour_themarenn.45 days = 9125 } } }
-				}
+				A94 = { country_event = { id = flavour_themarenn.45 days = 1825 random = 7300  } }
 			}
 		}
 	}
@@ -215,14 +209,7 @@ country_event = {
 	desc = flavour_themarenn.94.d
 	picture = GFX_Leviathan
 	fire_only_once = yes
-
-	trigger = {
-		NOT = { has_ruler_flag = divination_3 }
-		has_country_flag = vassalize_gabmorionn
-	}
-	mean_time_to_happen = {
-		months = 1
-	}
+	is_triggered_only = yes
 
 	option = { #accept vassalization
 		name = flavour_themarenn.94.a
@@ -341,14 +328,7 @@ country_event = { #pu gabmorionn
 	desc = flavour_themarenn.98.d
 	picture = beautiful_cave
 	fire_only_once = yes
-
-	trigger = {
-		NOT = { has_ruler_flag = divination_3 }
-		has_country_flag = vassalize_gabmorionn
-	}
-	mean_time_to_happen = {
-		months = 1
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = flavour_themarenn.97.a
@@ -453,7 +433,7 @@ country_event = { #expose esmaraine episode 1
 
 	option = { #form a coalition
 		name = flavour_themarenn.5.a
-		every_country = {
+		every_known_country = {
 			limit = {
 				capital_scope = { region = esmaria_region }
 				has_50_opinion_improved_relation = { target = ROOT }
@@ -1095,50 +1075,7 @@ country_event = { #event for mid phase 1 valen
 	option = { #increase admin burden
 		name = flavour_themarenn.27.a
 
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.30 days = 912 }
 	}
 	option = { #keep pace
@@ -1161,50 +1098,7 @@ country_event = { #event for mid phase 1 gnome #invention of the alternoscope
 	option = { #give him extra resources to work on it
 		name = flavour_themarenn.28.a
 
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.30 days = 547 }
 	}
 	
@@ -1243,50 +1137,7 @@ country_event = { #phase 1 fin > phase 2 start
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		267 = { remove_province_modifier = canal_provisions_a95 }
 		575 = { add_permanent_province_modifier = { name = canal_provisions_a95 duration = -1 } }
 		917 = { add_permanent_province_modifier = { name = canal_provisions_a95 duration = -1 } }
@@ -1381,50 +1232,7 @@ country_event = { #phase 2 challenge gnome
 			add_base_manpower = -3
 			add_base_production = -3
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.35 days = 1400 }
 	}
 	option = {
@@ -1436,50 +1244,7 @@ country_event = { #phase 2 challenge gnome
 			add_base_tax = -2
 			add_base_production = -2
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.35 days = 1800 }
 	}
 }
@@ -1495,50 +1260,7 @@ country_event = { #phase 2 challenge twins
 		name = flavour_themarenn.34.a
 		add_corruption = 2
 		add_inflation = 3
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.35 days = 1800 }
 	}
 	option = { #have the national bank investigate
@@ -1564,50 +1286,7 @@ country_event = { #phase 2 challenge twins
 		add_corruption = 2
 		add_inflation = 3
 		add_treasury = 250
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.35 days = 1800 }
 	}
 	option = { #do all you can
@@ -1617,50 +1296,7 @@ country_event = { #phase 2 challenge twins
 		add_mil_power = -100
 		add_inflation = 1
 		add_corruption = 1
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.35 days = 1700 }
 	}
 }
@@ -1693,50 +1329,7 @@ country_event = { #phase 3 start
 
 	option = {
 		name = flavour_themarenn.36.a
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 
 		265 = {
 			add_permanent_province_modifier = { name = a95_canal_modifier duration = -1 }
@@ -1786,50 +1379,7 @@ country_event = { #phase 3 valen handles the situation
 			add_base_tax = -3
 			add_base_production = -3
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.47 days = 1100 }
 	}
 }
@@ -1857,50 +1407,7 @@ fire_only_once = yes
 			add_base_tax = -3
 			add_base_production = -3
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = a95_admin_burden }
-			}
-			add_country_modifier = { name = a95_admin_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin_burden
-			}
-			remove_country_modifier = a95_admin_burden
-			add_country_modifier = { name = a95_admin2_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin2_burden
-			}
-			remove_country_modifier = a95_admin2_burden
-			add_country_modifier = { name = a95_admin3_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin3_burden
-			}
-			remove_country_modifier = a95_admin3_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin4_burden duration = -1 }
-		}
-		else_if = {
-			limit = {
-				has_country_modifier = a95_admin4_burden
-			}
-			remove_country_modifier = a95_admin4_burden
-			add_country_modifier = { name = a95_admin5_burden duration = -1 }
-		}
-		else = { 
-			add_adm_power = -100
-		}
+		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.47 days = 1100 }
 	}
 }
@@ -2008,9 +1515,6 @@ country_event = { #taking esmaraine
 			owned_by = A44
 			controlled_by = ROOT
 		}
-	}
-	mean_time_to_happen = {
-		months = 1
 	}
 	option = {
 		A44 = {
@@ -2156,5 +1660,265 @@ country_event = { #esmaryal education event
 
 	option = {
 		name = flavour_themarenn.43.a
+	}
+}
+country_event = {
+	id = flavour_themarenn.48
+	title = flavour_themarenn.48.t
+	desc = flavour_themarenn.48.d
+	picture = beautiful_cave
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_themarenn.48.a
+
+	}
+	option = {
+		name = flavour_themarenn.48.b
+		trigger = {
+			esmaria_region = {
+                AND = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_port = no
+                    NOT = { 
+                        has_building = impressment_offices 
+                        has_construction = building
+                        has_construction = core
+                        has_construction = missionary
+                    }
+                    num_free_building_slots	= 1
+                }
+            }
+			NOT = {
+				esmaria_region = {
+					type = all
+					has_building = impressment_offices
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_port = no
+				NOT = {
+					has_building = impressment_offices
+					has_construction = building
+				}
+				region = esmaria_region
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 1.0
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = salt
+						trade_goods = naval_supplies
+						trade_goods = fish
+						trade_goods = tropical_wood
+					}
+					
+				}
+				add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
+			}
+			else = {
+				add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
+			}
+		}
+		country_event = { id = flavour_themarenn.48 days = 1 }
+	}
+	option = {
+		name = flavour_themarenn.48.c
+		trigger = {
+			has_country_flag = a95_ibevar_offices
+			any_owned_province = {
+				OR = {
+					area = south_ibevar_area
+					area = north_ibevar_area
+				}
+                AND = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_port = no
+                    NOT = { 
+                        has_building = impressment_offices 
+                        has_construction = building
+                        has_construction = core
+                        has_construction = missionary
+                    }
+                    num_free_building_slots	= 1
+                }
+            }
+			NOT = {
+				OR = {
+					south_ibevar_area = {
+						type = all
+						has_building = impressment_offices
+					}
+					north_ibevar_area = {
+						type = all
+						has_building = impressment_offices
+					}
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_port = no
+				NOT = {
+					has_building = impressment_offices
+					has_construction = building
+				}
+				OR = {
+					area = north_ibevar_area
+					area = south_ibevar_area
+				}
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 1.0
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = salt
+						trade_goods = naval_supplies
+						trade_goods = fish
+						trade_goods = tropical_wood
+					}
+					
+				}
+				add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
+			}
+			else = {
+				add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
+			}
+		}
+		country_event = { id = flavour_themarenn.48 days = 1 }
+	}
+	option = { #heartland borders
+		name = flavour_themarenn.48.e
+		trigger = {
+			has_country_flag = a95_aranmass_offices
+			heartland_borders_area = {
+                AND = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_port = no
+                    NOT = { 
+                        has_building = impressment_offices 
+                        has_construction = building
+                        has_construction = core
+                        has_construction = missionary
+                    }
+                    num_free_building_slots	= 1
+                }
+            }
+			NOT = {
+				heartland_borders_area = {
+					type = all
+					has_building = impressment_offices
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_port = no
+				NOT = {
+					has_building = impressment_offices
+					has_construction = building
+				}
+				area = heartland_borders_area
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 1.0
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = salt
+						trade_goods = naval_supplies
+						trade_goods = fish
+						trade_goods = tropical_wood
+					}
+					
+				}
+				add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
+			}
+			else = {
+				add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
+			}
+		}
+		country_event = { id = flavour_themarenn.48 days = 1 }
+	}
+	option = { #commons
+		name = flavour_themarenn.48.f
+		trigger = {
+			has_country_flag = a95_commons_offices
+			the_commons_area = {
+                AND = {
+                    owned_by = ROOT
+                    is_core = ROOT
+                    has_port = no
+                    NOT = { 
+                        has_building = impressment_offices 
+                        has_construction = building
+                        has_construction = core
+                        has_construction = missionary
+                    }
+                    num_free_building_slots	= 1
+                }
+            }
+			NOT = {
+				the_commons_area = {
+					type = all
+					has_building = impressment_offices
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_port = no
+				NOT = {
+					has_building = impressment_offices
+					has_construction = building
+				}
+				area = the_commons_area
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 1.0
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = salt
+						trade_goods = naval_supplies
+						trade_goods = fish
+						trade_goods = tropical_wood
+					}
+					
+				}
+				add_permanent_province_modifier = { name = a95_tier2_sailors duration = -1 }
+			}
+			else = {
+				add_permanent_province_modifier = { name = a95_tier1_sailors duration = -1 }
+			}
+		}
+		country_event = { id = flavour_themarenn.48 days = 1 }
 	}
 }
