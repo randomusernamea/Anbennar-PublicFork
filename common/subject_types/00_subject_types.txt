@@ -393,8 +393,8 @@ vassal = {
 		trigger = {
 			overlord = { tag = I90 }
 			OR = {
-				has_country_flag = I90_centaur_vassal_east
-				has_country_flag = I90_centaur_vassal_west
+				has_country_modifier = I90_favored_horse
+				has_country_modifier = I90_sponsored_invasion
 			}
 		}
 	}

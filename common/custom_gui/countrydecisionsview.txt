@@ -7636,8 +7636,10 @@ custom_button = {
 		}
 		else_if = {
 			limit = { 
-				tag = I90
-				was_tag = I90
+				OR = {
+					tag = I90
+					was_tag = I90
+				}
 			}
 			if = {
 				limit = { 

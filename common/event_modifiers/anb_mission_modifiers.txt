@@ -30811,16 +30811,16 @@ I90_monument_building = {
 }
 
 I90_goblin_refugees = {
-	trade_goods_size = 1
+	trade_goods_size = 0.5
 }
 
 I90_goblin_arrivals = {
-	trade_goods_size = 2
+	trade_goods_size = 1
 	local_development_cost = -0.1
 }
 
 I90_goblin_kelaktar = {
-	trade_goods_size = 3
+	trade_goods_size = 2
 	local_development_cost = -0.2
 	local_defensiveness = 0.15
 	local_manpower_modifier = 0.25
@@ -30837,15 +30837,15 @@ I90_mass_goblin_conscription = {
 	manpower_recovery_speed = 0.15
 	global_manpower_modifier = 0.2
 	land_forcelimit_modifier = 0.15
-	fire_damage = 0.15
+	fire_damage = 0.10
 	special_unit_forcelimit = 0.05
 }
 
 I90_ogre_officers = {
 	land_attrition = -0.2
 	siege_ability = 0.1
-	shock_damage = 0.25
-	shock_damage_received = -0.15
+	shock_damage = 0.15
+	shock_damage_received = -0.10
 	recover_army_morale_speed = 0.15
 }
 
@@ -30854,6 +30854,7 @@ I90_sharing_our_burden = {
 }
 
 I90_mossmouth_zeal = {
+	missionaries = 1
 	global_missionary_strength = 0.01
 	tolerance_heretic = -3
 	tolerance_heathen = -3
@@ -30878,17 +30879,17 @@ I90_loyal_ogre = {
 
 I90_great_clan_rijansavi = {
 	burghers_loyalty_modifier = 0.1
-	build_cost = -0.1
+	build_cost = -0.05
 }
 
 I90_great_clan_sripttushtef = {
 	church_loyalty_modifier = 0.1
-	fire_damage = 0.05
+	idea_cost = -0.05
 }
 
 I90_great_clan_rknarnklach = {
 	adventurers_loyalty_modifier = 0.1
-	army_tradition = 0.05
+	army_tradition = 0.25
 }
 
 I90_great_clan_aglurndamki = {
@@ -30898,16 +30899,16 @@ I90_great_clan_aglurndamki = {
 
 I90_great_clan_viskaghrk = {
 	nobles_loyalty_modifier = 0.1
-	cavalry_power = 0.15
+	cavalry_power = 0.05
 }
 
 I90_great_clan_levilkhgan = {
 	mages_loyalty_modifier = 0.1
-	mages_influence_modifier = 0.15
+	mages_influence_modifier = 0.1
 }
 
 I90_royal_woodlands = {
-	max_absolutism = 10
+	max_absolutism = 5
 }
 
 I90_troll_auxiliaries = {
@@ -30915,16 +30916,16 @@ I90_troll_auxiliaries = {
 }
 
 I90_troll_farming = {
-	production_efficiency = 0.1
+	production_efficiency = 0.05
 }
 
-I90_eastern_fleet_buildup = {
-	global_ship_recruit_speed = -0.5
+I90_western_fleet_buildup = {
+	global_ship_recruit_speed = -0.25
 	global_ship_cost = -0.5
 }
 
 I90_cannorian_cannons = {
-	fire_damage = 0.2
+	fire_damage = 0.1
 }
 
 I90_securing_the_north = {
@@ -30933,15 +30934,15 @@ I90_securing_the_north = {
 
 I90_unprofitable_exports = {
 	trade_goods_size = -5
-	local_build_cost = 0.5
+	local_build_cost = 0.25
 }
 
 I90_metal_shortage = {
-	land_morale = -0.15
+	infantry_power = -0.15
 }
 
 I90_studied_architecture = {
-	siege_ability = 0.3
+	siege_ability = 0.2
 }
 
 I90_mantle_of_the_giants = {
@@ -30959,11 +30960,11 @@ I90_ogre_silverware = {
 }
 
 I90_ogre_weapons = {
-	prestige = 1
+	artillery_cost = -0.1
 }
 
 I90_decorative_statues = {
-	artillery_cost = -0.1
+	prestige = 1
 }
 
 I90_full_bellies = {
@@ -31022,12 +31023,12 @@ I90_collaborative_administration = {
 
 I90_despotic_administration = {
 	garrison_size = 0.3
-	max_absolutism_effect = 15
+	ae_impact = -0.10
 	harsh_treatment_cost = -0.25
 }
 
 I90_flexible_administration = {
-	administrative_efficiency = 0.5
+	core_creation = -0.1
 	idea_cost = -0.1
 	autonomy_change_time = -0.15
 }
@@ -31050,10 +31051,22 @@ I90_mutual_understanding = {
 }
 
 I90_fresh_recruits = {
-	manpower_recovery_speed = 0.15
+	land_forcelimit = 10
 }
 
 I90_independent_army = {
 	global_tax_income = 12
-	land_forcelimit = 20
+	land_forcelimit_modifier = 0.25
+}
+
+I90_ogre_steel = {
+	build_cost = -0.1
+}
+
+I90_islandbreakers = {
+	artillery_power = 0.15
+}
+
+I90_loyal_troops = {
+	morale_damage_received = -0.1
 }

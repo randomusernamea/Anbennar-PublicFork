@@ -43,6 +43,14 @@ country_event = {
 				duration = -1
 			}
 		}
+		5037 = { add_goblin_minority_size_effect = yes } 
+		5039 = { add_goblin_minority_size_effect = yes } 
+		5053 = { add_goblin_minority_size_effect = yes } 
+		5322 = { add_goblin_minority_size_effect = yes } 
+		5028 = { add_goblin_minority_size_effect = yes } 
+		5026 = { add_goblin_minority_size_effect = yes } 
+		5043 = { add_goblin_minority_size_effect = yes } 
+		5052 = { add_goblin_minority_size_effect = yes } 
 	}
 }
 
@@ -154,7 +162,7 @@ country_event = {
 
 	option = {
 		name = flavor_maghargma.5.b
-		set_country_flag = I90_mage_westmarches
+		set_country_flag = I90_mage_heartland
 		custom_tooltip = I90_mage_heartland_tt
 		tooltip = {
 			custom_tooltip = maghargma_the_onyx_citadel_tt
@@ -719,6 +727,12 @@ country_event = {
 			capital_scope = { 
 				province_event = { id = flavor_maghargma.17 days = 9132 } 
 			}
+			random_known_country = {
+				limit = {
+					is_lake_federation_leader = yes
+				}
+				country_event = { id = flavor_maghargma.34 }
+			}
 		}
 	}
 
@@ -733,20 +747,31 @@ province_event = {
 	id = flavor_maghargma.17
 	title = flavor_maghargma.17.t
 	picture = CIVIL_WAR_eventPicture
-	desc = flavor_maghargma.17.d
-
+	desc = {
+		trigger = { owner = { NOT = { has_country_flag = I90_rejected_steel } } }
+		desc = flavor_maghargma.17.d
+	}
+	desc = {
+		trigger = { owner = { has_country_flag = I90_rejected_steel } } 
+		desc = flavor_maghargma.17.d.1
+	}
 	is_triggered_only = yes
 
 	immediate = {
 		hidden_effect = {
-			every_known_country = {
+			if = {
 				limit = {
-					has_country_modifier = lake_federation_member
-					ai = no
+					owner = { NOT = { has_country_flag = I90_rejected_steel } }
 				}
-				add_country_modifier = {
-					name = I90_metal_shortage
-					duration = 7305 #20 Years
+				every_known_country = {
+					limit = {
+						has_country_modifier = lake_federation_member
+					}
+					add_country_modifier = {
+						name = I90_metal_shortage
+						duration = 7305 #20 Years
+					}
+					country_event = { id = flavor_maghargma.35 }
 				}
 			}
 		}
@@ -754,6 +779,9 @@ province_event = {
 
 	option = {
 		name = flavor_maghargma.17.a
+		trigger = {
+			owner { NOT = { has_country_flag = I90_rejected_steel } }
+		}
 		owner = {
 			add_country_modifier = {
 				name = I90_studied_architecture
@@ -761,6 +789,19 @@ province_event = {
 			}
 		}
 		custom_tooltip = I90_gifts_from_menghrum_1_tt
+	}
+
+	option = {
+		name = flavor_maghargma.17.b
+		trigger = {
+			owner { has_country_flag = I90_rejected_steel }
+		}
+		owner = {
+			add_country_modifier = {
+				name = I90_studied_architecture
+				duration = 7305 #20 Years
+			}
+		}
 	}
 }
 
@@ -803,6 +844,10 @@ country_event = {
 			add_permanent_claim = ROOT
 			discover_country = ROOT
 		}
+		add_country_modifier = {
+			name = I90_mantle_of_the_giants
+			duration = -1
+		}
 	}
 }
 
@@ -824,6 +869,10 @@ country_event = {
 		tooltip = {
 			set_estate_privilege = artifice_invention_ironwraith_weapons_platform
 		}
+		every_owned_province = {
+			limit = { has_province_modifier = I90_culture_shock } 
+			remove_province_modifier = I90_culture_shock
+		}
 		swap_non_generic_missions = yes
 	}
 
@@ -833,6 +882,10 @@ country_event = {
 		custom_tooltip = I90_purge_Sudomeg'i_tt
 		tooltip = {
 			set_estate_privilege = artifice_invention_spirit_capture_tech
+		}
+		every_owned_province = {
+			limit = { has_province_modifier = I90_culture_shock } 
+			remove_province_modifier = I90_culture_shock
 		}
 		swap_non_generic_missions = yes
 	}
@@ -853,6 +906,14 @@ country_event = {
 			add_permanent_claim = ROOT
 			discover_country = ROOT
 		}
+		define_general = {
+			shock = 6
+			fire = 0
+			manuever = 6
+			siege = 0
+			name = "Jinr'ad 'Ogrefriend'"
+			trait = goal_oriented_personality
+		}
 	}
 }
 
@@ -871,6 +932,11 @@ country_event = {
 			name = I90_ogre_silverware 
 			duration = -1
 		}
+		bulwar_superregion = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			change_culture = ghanzamh_centaur
+			add_majority_of_current_culture = yes
+		}
 	}
 
 	option = {
@@ -879,6 +945,11 @@ country_event = {
 			name = I90_ogre_weapons 
 			duration = -1
 		}
+		bulwar_superregion = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			change_culture = ghanzamh_centaur
+			add_majority_of_current_culture = yes
+		}
 	}
 
 	option = {
@@ -886,6 +957,11 @@ country_event = {
 		add_country_modifier = {
 			name = I90_decorative_statues
 			duration = -1
+		}
+		bulwar_superregion = {
+			limit = { country_or_non_sovereign_subject_holds = ROOT }
+			change_culture = ghanzamh_centaur
+			add_majority_of_current_culture = yes
 		}
 	}
 }
@@ -901,13 +977,8 @@ country_event = {
 
 	option = {
 		name = flavor_maghargma.23.a
-		change_primary_culture = true_giant
 		set_ruler_culture = true_giant
 		set_heir_culture = true_giant
-		every_owned_province = {
-			limit = { culture_group = ogre }
-			change_culture = true_giant
-		}
 		add_country_modifier = {
 			name = I90_second_rule_of_giants
 			duration = -1
@@ -927,7 +998,7 @@ country_event = {
 	option = {
 		name = flavor_maghargma.24.a #Favor West
 		random_subject_country = {
-			limit = { has_ country_flag = I90_centaur_vassal_west }
+			limit = { has_country_flag = I90_centaur_vassal_west }
 			every_country = {
 				limit = { has_country_flag = I90_centaur_vassal_east } 
 				PREV = { inherit = PREV }
@@ -938,7 +1009,7 @@ country_event = {
 	option = {
 		name = flavor_maghargma.24.b #Favor East
 		random_subject_country = {
-			limit = { has_ country_flag = I90_centaur_vassal_east }
+			limit = { has_country_flag = I90_centaur_vassal_east }
 			every_country = {
 				limit = { has_country_flag = I90_centaur_vassal_west } 
 				PREV = { inherit = PREV }
@@ -957,6 +1028,8 @@ country_event = {
 	title = flavor_maghargma.25.t
 	picture = DIPLOMACY_SIGNING_eventPicture
 	desc = flavor_maghargma.25.d
+
+	is_triggered_only = yes
 	
 	option = {
 		name = flavor_maghargma.25.a #Collaboration Bonus
@@ -1016,6 +1089,7 @@ country_event = {
 
 	option = {
 		name = flavor_maghargma.26.a #
+		add_stability = 1
 		every_owned_province = {
 			limit = {
 				region = nomsyulhan_region
@@ -1200,11 +1274,11 @@ country_event = {
 	picture = IMPORTANT_STATUE_eventPicture
 	desc = {
 		trigger = { tag = Y01 }
-		flavor_maghargma.30.d
+		desc = flavor_maghargma.30.d 
 	}
 	desc = {
 		trigger = { NOT = { tag = Y01 } }
-		flavor_maghargma.30.d.1
+		desc = flavor_maghargma.30.d.1 
 	}
 	is_triggered_only = yes
 
@@ -1231,6 +1305,7 @@ country_event = {
 		}
 		FROM = { 
 			vassalize = ROOT 
+			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_oni_yes
 		}
 	}
@@ -1259,7 +1334,7 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = flavor_maghargma.31 days = 5 
+			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_oni_no	
 		}
 	}
@@ -1294,7 +1369,7 @@ country_event = {
 			cede_province = FROM
 		}
 		FROM = { 
-			country_event = flavor_maghargma.31
+			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_yes
 		}
 	}
@@ -1323,7 +1398,7 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = flavor_maghargma.31
+			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_no
 		}
 	}
@@ -1336,19 +1411,19 @@ country_event = {
 	picture = IMPORTANT_STATUE_eventPicture
 	desc = {
 		trigger = { has_country_flag = I90_oni_yes }
-		flavor_maghargma.31.d
+		desc = flavor_maghargma.31.d 
 	}
 	desc = {
 		trigger = { has_country_flag = I90_oni_no }
-		flavor_maghargma.31.d.1
+		desc = flavor_maghargma.31.d.1 
 	}
 	desc = {
 		trigger = { has_country_flag = I90_demonhill_yes }
-		flavor_maghargma.31.d.2
+		desc = flavor_maghargma.31.d.2 
 	}
 	desc = {
 		trigger = { has_country_flag = I90_demonhill_no }
-		flavor_maghargma.31.d.3
+		desc = flavor_maghargma.31.d.3 
 	}
 
 	is_triggered_only = yes
@@ -1417,10 +1492,7 @@ country_event = {
 		name = flavor_maghargma.33.a #Mutual Agreement
 		every_owned_province = {
 			limit = {
-				OR = {
-					religion = lefthand_path
-					religion = devouring_path
-				}
+				religion = devouring_path
 			}
 			add_province_modifier = {
 				name = I90_mutual_understanding 
@@ -1433,10 +1505,7 @@ country_event = {
 		name = flavor_maghargma.33.b #Let Us Learn From Each Other
 		every_owned_province = {
 			limit = {
-				OR = {
-					religion = lefthand_path
-					religion = devouring_path
-				}
+				religion = devouring_path
 			}
 			change_religion = ROOT
 		}
@@ -1448,3 +1517,61 @@ country_event = {
 		}
 	}
 }
+
+#Metals From The Ogres
+country_event = {
+	id = flavor_maghargma.34
+	title = flavor_maghargma.34.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.34.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.34.a #Yes
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ai = yes
+			}
+		}
+		every_known_country = {
+			limit = {
+				has_country_modifier = lake_federation_member
+			}
+			add_country_modifier = {
+				name = I90_ogre_steel
+				duration = 9125
+			}
+			add_treasury = 50
+		}
+	}
+
+	option = {
+		name = flavor_maghargma.34.b #It's A Trap!
+		ai_chance = { factor = 0 }
+		FROM = { set_country_flag = I90_rejected_steel }
+	}
+}
+
+#No Metal?
+country_event = {
+	id = flavor_maghargma.35
+	title = flavor_maghargma.17.t
+	picture = IMPORTANT_STATUE_eventPicture
+	desc = flavor_maghargma.35.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_maghargma.35.a #No Metal
+		tooltip = {
+			add_country_modifier = {
+				name = I90_metal_shortage
+				duration = 7305 #20 Years
+			}
+		}
+	}
+}
+
