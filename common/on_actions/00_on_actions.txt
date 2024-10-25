@@ -126,6 +126,7 @@ on_startup = {
 		flavour_counts_league.1
 		treeoftales.1 #Tree of Tales monument starting event
 		flavor_pasiragha.0 #Pasiragha Setup Event
+		flavour_kherka.1 #Kherka Starting Event
 
 		#Silver Families
 		silver_families.1		#Silmuna
@@ -3044,6 +3045,7 @@ on_new_term_election = {
 		elections.900 #Technocracy Elections
 		elections.1001 ##Racial tolerace elections
 		flavour_maskedbutcher.100 #Masked Butcher Succession
+		flavvour_kherka.1000 #Kherka Election
 	}
 
 	if = {
@@ -3135,6 +3137,7 @@ on_death_election = {
 		elections.901 #Technocracy Death Election
 		elections.1000 ##Racial tolerance death special
 		flavour_maskedbutcher.100 #Masked Butcher election
+		flavvour_kherka.1000 #Kherka Election
 	}
 
 	if = {

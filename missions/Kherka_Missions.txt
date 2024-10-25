@@ -3,15 +3,15 @@ G48_slot_1 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		OR = {
 			tag = G48
 			AND = {
 				tag = H22
 				was_tag = G48
-			} 
+			}
 		}
-	} 
+	}
 
 	G48_learning_from_the_best = {
 		icon = ven_navy_mission_2
@@ -53,30 +53,19 @@ G48_slot_2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		OR = {
 			tag = G48
 			AND = {
 				tag = H22
 				was_tag = G48
-			} 
+			}
 		}
-	}  
-
-	G48_enemies_at_the_gate = {
-		icon = fortify_the_passes
-		position = 1
-		provinces_to_highlight = {  } 
-
-		trigger = {  } 
-
-		effect = {  } 
 	}
 
 	G48_breaking_the_merchants = {
 		icon = mission_destroyed_city
 		position = 2
-		required_missions = { G48_enemies_at_the_gate } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -85,7 +74,7 @@ G48_slot_2 = {
 	}
 
 	G48_contenders_no_more = {
-		icon = gory_to_the_black_army
+		icon = mission_torch_fire
 		position = 3
 		required_missions = { G48_breaking_the_merchants } 
 		provinces_to_highlight = {  } 
@@ -114,20 +103,19 @@ G48_slot_3 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		OR = {
 			tag = G48
 			AND = {
 				tag = H22
 				was_tag = G48
-			} 
+			}
 		}
-	}  
+	}
 
 	G48_gaining_an_edge = {
 		icon = mission_vedic_education
 		position = 2
-		required_missions = { G48_enemies_at_the_gate } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
@@ -179,15 +167,15 @@ G48_slot_4 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		OR = {
 			tag = G48
 			AND = {
 				tag = H22
 				was_tag = G48
-			} 
+			}
 		}
-	}  
+	}
 
 	G48_our_lifeblood = {
 		icon = mission_african_gold
@@ -255,19 +243,20 @@ G48_slot_5 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { 
+	potential = {
 		OR = {
 			tag = G48
 			AND = {
 				tag = H22
 				was_tag = G48
-			} 
+			}
 		}
-	}  
+	}
 
 	G48_the_mountain_that_gives = {
 		icon = prosper_in_piedmont
-		position = 1
+		position = 2
+		required_missions = { G48_our_lifeblood } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
