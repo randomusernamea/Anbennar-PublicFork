@@ -994,7 +994,7 @@ estate_vampires_mask_centaur = {
 	conditional_modifier = {
 		trigger = { has_country_flag = centaur_mask_1 NOT = { has_country_flag = centaur_mask_2 } }
 		modifier = {
-			shock_damage = 0.1
+			shock_damage = 0.05
 			leader_land_manuever = 1
 		}
 	}
@@ -1007,7 +1007,7 @@ estate_vampires_mask_centaur = {
 			}
 		}
 		modifier = {
-			shock_damage = 0.2
+			shock_damage = 0.1
 			leader_land_manuever = 2
 		}
 	}
@@ -1020,7 +1020,7 @@ estate_vampires_mask_centaur = {
 			}
 		}
 		modifier = {
-			shock_damage = 0.2
+			shock_damage = 0.1
 			leader_land_manuever = 2
 			cav_to_inf_ratio = 0.5
 			cavalry_flanking = 0.5
@@ -1059,8 +1059,8 @@ estate_vampires_mask_dwarven = {
 	conditional_modifier = {
 		trigger = { has_country_flag = dwarven_mask_1 NOT = { has_country_flag = dwarven_mask_2 } }
 		modifier = {
-			build_cost = -0.1
-			production_efficiency = 0.15
+			build_cost = -0.05
+			production_efficiency = 0.1
 		}
 	}
 
@@ -1072,8 +1072,8 @@ estate_vampires_mask_dwarven = {
 			}
 		}
 		modifier = {
-			build_cost = -0.2
-			production_efficiency = 0.3
+			build_cost = -0.1
+			production_efficiency = 0.2
 		}
 	}
 
@@ -1085,8 +1085,8 @@ estate_vampires_mask_dwarven = {
 			}
 		}
 		modifier = {
-			build_cost = -0.2
-			production_efficiency = 0.3
+			build_cost = -0.1
+			production_efficiency = 0.2
 			inflation_reduction = -0.5
 			monthly_gold_inflation_modifier = -0.25
 			gold_depletion_chance_modifier = -0.5
@@ -1138,7 +1138,7 @@ estate_vampires_mask_elven = {
 		trigger = { has_country_flag = elven_mask_1 NOT = { has_country_flag = elven_mask_2 } }
 		modifier = {
 			prestige_decay = -0.01
-			discipline = 0.05
+			discipline = 0.025
 		}
 	}
 
@@ -1151,7 +1151,7 @@ estate_vampires_mask_elven = {
 		}
 		modifier = {
 			prestige_decay = -0.02
-			discipline = 0.1
+			discipline = 0.05
 		}
 	}
 
@@ -1164,8 +1164,8 @@ estate_vampires_mask_elven = {
 		}
 		modifier = {
 			prestige_decay = -0.02
-			discipline = 0.1
-			monarch_lifespan = 0.5
+			discipline = 0.05
+			monarch_lifespan = 0.25
 		}
 	}
 }
@@ -1296,7 +1296,7 @@ estate_vampires_mask_gnomish = {
 		modifier = {
 			innovativeness_gain = 0.5
 			global_spy_defence = 0.5
-			technology_cost = -0.2
+			technology_cost = -0.1
 		}
 	}
 }
@@ -1332,7 +1332,7 @@ estate_vampires_mask_goblin = {
 	conditional_modifier = {
 		trigger = { has_country_flag = goblin_mask_1 NOT = { has_country_flag = goblin_mask_2 } }
 		modifier = {
-			idea_cost = -0.1
+			idea_cost = -0.05
 			spy_offence = 0.2
 		}
 	}
@@ -1345,7 +1345,7 @@ estate_vampires_mask_goblin = {
 			}
 		}
 		modifier = {
-			idea_cost = -0.2
+			idea_cost = -0.1
 			spy_offence = 0.4
 		}
 	}
@@ -1358,9 +1358,9 @@ estate_vampires_mask_goblin = {
 			}
 		}
 		modifier = {
-			idea_cost = -0.2
+			idea_cost = -0.1
 			spy_offence = 0.4
-			land_forcelimit_modifier = 0.3
+			land_forcelimit_modifier = 0.2
 		}
 	}
 }
@@ -1425,7 +1425,7 @@ estate_vampires_mask_halfling = {
 			global_colonial_growth = 50
 			embracement_cost = -0.5
 			advisor_cost = -0.2
-			manpower_recovery_speed = 0.2
+			manpower_recovery_speed = 0.1
 		}
 	}
 }
@@ -1464,7 +1464,7 @@ estate_vampires_mask_harimari = {
 		trigger = { has_country_flag = harimari_mask_1 NOT = { has_country_flag = harimari_mask_2 } }
 		modifier = {
 			num_accepted_cultures = 1
-			infantry_power = 0.1
+			infantry_power = 0.05
 		}
 	}
 
@@ -1477,7 +1477,7 @@ estate_vampires_mask_harimari = {
 		}
 		modifier = {
 			num_accepted_cultures = 3
-			infantry_power = 0.2
+			infantry_power = 0.1
 		}
 	}
 
@@ -1490,8 +1490,8 @@ estate_vampires_mask_harimari = {
 		}
 		modifier = {
 			num_accepted_cultures = 3
-			infantry_power = 0.2
-			administrative_efficiency = 0.15
+			infantry_power = 0.1
+			administrative_efficiency = 0.05
 		}
 	}
 }
@@ -1529,8 +1529,8 @@ estate_vampires_mask_harpy = {
 	conditional_modifier = {
 		trigger = { has_country_flag = harpy_mask_1 NOT = { has_country_flag = harpy_mask_2 } }
 		modifier = {
-			siege_ability = 0.1
-			governing_capacity_modifier = 0.1
+			siege_ability = 0.05
+			governing_capacity_modifier = 0.05
 		}
 	}
 
@@ -1542,8 +1542,8 @@ estate_vampires_mask_harpy = {
 			}
 		}
 		modifier = {
-			siege_ability = 0.2
-			governing_capacity_modifier = 0.2
+			siege_ability = 0.1
+			governing_capacity_modifier = 0.1
 		}
 	}
 
@@ -1555,10 +1555,10 @@ estate_vampires_mask_harpy = {
 			}
 		}
 		modifier = {
-			siege_ability = 0.2
-			governing_capacity_modifier = 0.2
-			movement_speed = 0.33
-			envoy_travel_time = -0.5
+			siege_ability = 0.1
+			governing_capacity_modifier = 0.1
+			movement_speed = 0.2
+			envoy_travel_time = -0.33
 		}
 	}
 }
@@ -1594,8 +1594,8 @@ estate_vampires_mask_hobgoblin = {
 	conditional_modifier = {
 		trigger = { has_country_flag = hobgoblin_mask_1 NOT = { has_country_flag = hobgoblin_mask_2 } }
 		modifier = {
-			yearly_army_professionalism = 0.005
-			drill_gain_modifier = 0.75
+			yearly_army_professionalism = 0.0025
+			drill_gain_modifier = 0.5
 		}
 	}
 
@@ -1607,8 +1607,8 @@ estate_vampires_mask_hobgoblin = {
 			}
 		}
 		modifier = {
-			yearly_army_professionalism = 0.01
-			drill_gain_modifier = 1.5
+			yearly_army_professionalism = 0.005
+			drill_gain_modifier = 1
 		}
 	}
 
@@ -1620,11 +1620,10 @@ estate_vampires_mask_hobgoblin = {
 			}
 		}
 		modifier = {
-			yearly_army_professionalism = 0.01
-			drill_gain_modifier = 1.5
+			yearly_army_professionalism = 0.005
+			drill_gain_modifier = 1
 			max_absolutism = 10
 			reserves_organisation = 0.15
-			drill_decay_modifier = -0.25
 		}
 	}
 }
@@ -1664,8 +1663,8 @@ estate_vampires_mask_human = {
 	conditional_modifier = {
 		trigger = { has_country_flag = human_mask_1 NOT = { has_country_flag = human_mask_2 } }
 		modifier = {
-			land_morale = 0.1
-			global_prosperity_growth = 0.15
+			land_morale = 0.05
+			global_prosperity_growth = 0.25
 		}
 	}
 
@@ -1677,8 +1676,8 @@ estate_vampires_mask_human = {
 			}
 		}
 		modifier = {
-			land_morale = 0.2
-			global_prosperity_growth = 0.3
+			land_morale = 0.1
+			global_prosperity_growth = 0.5
 		}
 	}
 
@@ -1690,11 +1689,9 @@ estate_vampires_mask_human = {
 			}
 		}
 		modifier = {
-			land_morale = 0.2
-			global_prosperity_growth = 0.3
-			country_admin_power = 1
-			country_diplomatic_power = 1
-			country_military_power = 1
+			land_morale = 0.1
+			global_prosperity_growth = 0.5
+			core_creation = -0.15
 		}
 	}
 }
@@ -1758,7 +1755,7 @@ estate_vampires_mask_kobold = {
 		modifier = {
 			available_province_loot = 1
 			reinforce_speed = 0.3
-			hostile_attrition = 2
+			hostile_attrition = 1
 			max_hostile_attrition = 1
 		}
 	}
@@ -1796,7 +1793,7 @@ estate_vampires_mask_lizardfolk = {
 		trigger = { has_country_flag = lizardfolk_mask_1 NOT = { has_country_flag = lizardfolk_mask_2 } }
 		modifier = {
 			global_sailors_modifier = 0.15
-			ship_durability = 0.1
+			ship_durability = 0.05
 		}
 	}
 
@@ -1809,7 +1806,7 @@ estate_vampires_mask_lizardfolk = {
 		}
 		modifier = {
 			global_sailors_modifier = 0.3
-			ship_durability = 0.2
+			ship_durability = 0.1
 		}
 	}
 
@@ -1822,9 +1819,9 @@ estate_vampires_mask_lizardfolk = {
 		}
 		modifier = {
 			global_sailors_modifier = 0.3
-			ship_durability = 0.2
+			ship_durability = 0.1
 			max_flagships = 1
-			global_naval_engagement_modifier = 0.15
+			navy_tradition = 1
 		}
 	}
 }
@@ -1862,7 +1859,7 @@ estate_vampires_mask_ogre = {
 	conditional_modifier = {
 		trigger = { has_country_flag = ogre_mask_1 NOT = { has_country_flag = ogre_mask_2 } }
 		modifier = {
-			recover_army_morale_speed = 0.15
+			recover_army_morale_speed = 0.1
 			monthly_church_power = 1.5
 		}
 	}
@@ -1875,7 +1872,7 @@ estate_vampires_mask_ogre = {
 			}
 		}
 		modifier = {
-			recover_army_morale_speed = 0.3
+			recover_army_morale_speed = 0.2
 			monthly_church_power = 3
 		}
 	}
@@ -1890,7 +1887,7 @@ estate_vampires_mask_ogre = {
 		modifier = {
 			recover_army_morale_speed = 0.3
 			monthly_church_power = 3
-			global_trade_goods_size_modifier = 0.25
+			global_trade_goods_size_modifier = 0.15
 		}
 	}
 }
@@ -1928,7 +1925,7 @@ estate_vampires_mask_ruinborn = {
 	conditional_modifier = {
 		trigger = { has_country_flag = ruinborn_mask_1 NOT = { has_country_flag = ruinborn_mask_2 } }
 		modifier = {
-			min_autonomy_in_territories = -0.15
+			min_autonomy_in_territories = -0.05
 			shock_damage_received = -0.1
 		}
 	}
@@ -1941,7 +1938,7 @@ estate_vampires_mask_ruinborn = {
 			}
 		}
 		modifier = {
-			min_autonomy_in_territories = -0.3
+			min_autonomy_in_territories = -0.1
 			shock_damage_received = -0.2
 		}
 	}
@@ -1954,10 +1951,10 @@ estate_vampires_mask_ruinborn = {
 			}
 		}
 		modifier = {
-			min_autonomy_in_territories = -0.3
+			min_autonomy_in_territories = -0.1
 			shock_damage_received = -0.2
-			land_attrition = -0.5
-			global_regiment_cost = -0.15
+			land_attrition = -0.2
+			naval_forcelimit_modifier = 0.15
 		}
 	}
 }
@@ -1995,8 +1992,8 @@ estate_vampires_mask_troll = {
 	conditional_modifier = {
 		trigger = { has_country_flag = troll_mask_1 NOT = { has_country_flag = troll_mask_2 } }
 		modifier = {
-			fire_damage_received = -0.1
-			power_projection_from_insults = 1.5
+			fire_damage_received = -0.05
+			power_projection_from_insults = 1
 		}
 	}
 
@@ -2008,8 +2005,8 @@ estate_vampires_mask_troll = {
 			}
 		}
 		modifier = {
-			fire_damage_received = -0.2
-			power_projection_from_insults = 3
+			fire_damage_received = -0.1
+			power_projection_from_insults = 2
 		}
 	}
 
@@ -2021,10 +2018,10 @@ estate_vampires_mask_troll = {
 			}
 		}
 		modifier = {
-			fire_damage_received = -0.2
-			power_projection_from_insults = 3
-			garrison_damage = 2
-			province_trade_power_modifier = 0.2
+			fire_damage_received = -0.1
+			power_projection_from_insults = 2
+			garrison_damage = 0.2
+			province_trade_power_modifier = 0.1
 		}
 	}
 }
