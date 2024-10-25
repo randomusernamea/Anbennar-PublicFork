@@ -68,7 +68,6 @@ mihitarab_missions_2 = {
 			}
 			OR = {
 				shrine_provinces = {
-					owned_by = ROOT
 					custom_trigger_tooltip = {
 						tooltip = mihitarab_shrine_trigger_tooltip
 						OR = {
@@ -87,13 +86,12 @@ mihitarab_missions_2 = {
 						}
 						owned_by = ROOT
 					}
-					num_of_owned_provinces_with = {
-						value = 5
-						province_group  = shrine_provinces
-						num_of_times_improved = 2
-					}
 				}
-				
+				num_of_owned_provinces_with = {
+					value = 5
+					province_group  = shrine_provinces
+					num_of_times_improved = 2
+				}	
 			}
 		}
 		
@@ -133,9 +131,15 @@ mihitarab_missions_3 = {
 			owns_core_province = 6599
 			6599 = {
 				is_state = yes
-				has_tax_building_trigger = yes
 			}
-			treasury = 50
+			OR =
+				treasury = 100
+				AND = {
+					treasury = 50
+					has_tax_building_trigger = yes
+				}
+			}
+			adm_power = 50
 		}
 		
 		effect = {
@@ -325,9 +329,6 @@ mihitarab_missions_5 = {
 					}
 				}
 			}
-			all_subjects = {
-			OR = { NOT = { condition }
-			has_opinion = {who = root value = 150 }}}
 			diplomatic_reputation = 2
 		}
 		
@@ -352,6 +353,7 @@ mihitarab_missions_5 = {
 							culture = fomarati
 						}
 						add_core = ROOT
+						cede_province = ROOT
 						ROOT = {
 							export_to_variable = { which = tempVassalDev value = development who = PREV }
 							change_variable = { which = totalFomaratiDev which = tempVassalDev }
@@ -392,12 +394,17 @@ mihitarab_missions_5 = {
 					}
 				}
 			}
-			NOT = {
-				any_owned_province = {
-					culture = mboala
-					unrest = 1
+			custom_trigger_tooltip = {
+				tooltip = mihitarab_no_mboala_unret_tooltip
+				NOT = {
+					any_owned_province = {
+						culture = mboala
+						unrest = 1
+					}
 				}
 			}
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
 		}
 		
 		effect = {
@@ -428,7 +435,10 @@ mihitarab_missions_5 = {
 				estate = estate_nobles
 				loyalty = 60
 			}
-			has_estate_privilege = estate_nobles_officer_corp
+			OR = {
+				has_estate_privilege = estate_nobles_levies
+				has_estate_privilege = estate_nobles_officer_corp
+			}
 		}
 		
 		effect = {
@@ -448,10 +458,13 @@ mihitarab_missions_5 = {
 				}
 			}
 			custom_tooltip = mihitarab_amezatany_tax_dev_tooltip
-			every_owned_province = {
-				limit = { culture = amezatany }
-				add_nationalism = -10
+			hidden_effect = {
+				every_owned_province = {
+					limit = { culture = amezatany }
+					add_nationalism = -10
+				}
 			}
+			custom_tooltip = mihitarab_separatism_tooltip
 		}
 	}
 }
@@ -600,18 +613,21 @@ mihitarab_missions_6 = {
 				value = 40
 				region = fahvanosy_region
 			}
-			OR = {
-				AND = {
-					accepted_culture  = mazava
-					accepted_culture  = mboala
-				}
-				AND = {
-					accepted_culture  = mazava
-					accepted_culture  = amezatany
-				}
-				AND = {
-					accepted_culture  = amezatany
-					accepted_culture  = mboala
+			custom_trigger_tooltip = {
+				tooltip = mihitarab_cultural_acceptance_tooltip
+				OR = {
+					AND = {
+						accepted_culture  = mazava
+						accepted_culture  = mboala
+					}
+					AND = {
+						accepted_culture  = mazava
+						accepted_culture  = amezatany
+					}
+					AND = {
+						accepted_culture  = amezatany
+						accepted_culture  = mboala
+					}
 				}
 			}
 		}

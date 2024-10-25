@@ -54,13 +54,18 @@ country_event = {
 			add_devastation = -100
 			add_local_autonomy = 25
 			add_permanent_province_modifier = { 
-					name = autonomy_increased
-					duration = 10950  
-				}
-			
+				name = autonomy_increased
+				duration = 10950  
+			}
+			if = {
+				limit = { has_tax_building_trigger = yes }
+				add_treasury = -50
+			}
+			else = {
+				add_treasury = -100
+			}
 		}
-		add_treasury = -50
-		add_building = cathedral
+		add_adm_power = -50
 		if = {
 			limit = { has_ruler_flag = mihitarab_haigo_rules_flag }
 			change_dip = 2
@@ -92,7 +97,7 @@ country_event = {
 		custom_tooltip = vyzemby_culture_mihitarab_tooltip
 		if = {
 			limit = {
-				has_country_flag = mihitarab_haigo_rules_flag
+				has_ruler_flag = mihitarab_haigo_rules_flag
 			}
 			set_government_rank = 3
 		}
@@ -128,7 +133,7 @@ country_event = {
 		add_dip_power = 50
 		add_country_modifier = {
 			name = L37_the_bottle_of_nyeekayba
-			duration = 18250  
+			duration = -1  
 		}
 		country_event = { 
 			id = flavor_mihitarab.5
@@ -157,7 +162,7 @@ country_event = {
 				}	
 			}
 		}
-		velanynosy_area = {
+		far_uelos_isles_area = {
 			discover_country = ROOT
 		}
 		3111 = {
@@ -288,7 +293,10 @@ country_event = {
 		}
 		set_country_flag = L37_horrors_revealed
 		swap_non_generic_missions = yes
-		
+		add_country_modifier = { 
+			name = L37_plotting_cultists
+			duration = -1  
+		}
 	}
 }
 
