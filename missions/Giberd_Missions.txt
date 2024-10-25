@@ -833,21 +833,37 @@ giberd_konwell_conquest = {
 		}
 		position = 12
 		provinces_to_highlight = {
-			area = konwell_area
+			province_id = 271
 			NOT = {
-				owned_by = ROOT
+				development = 50
+				num_of_times_expanded_infrastructure = 3
+				has_state_edict = edict_encourage_development
+				has_courthouse_building_trigger = yes
+				has_university_building_trigger = yes
+				owner = {
+					papal_influence = 100
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			271 = {
+				development = 50
+				num_of_times_expanded_infrastructure = 3				# TODO: dlc check or 200 admin
+				has_state_edict = edict_encourage_development
+				has_courthouse_building_trigger = yes
+				has_university_building_trigger = yes
 			}
+			papal_influence = 100
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			add_papal_influence = -100
+			271 = {
+				add_province_modifier = {
+					name = giberd_stained_glass_makers_ravelian
+					duration = -1
+				}
+				remove_building = workshop
+				add_building = counting_house
 			}
 		}
 	}
