@@ -13739,6 +13739,10 @@ estate_mages_great_fey_mask = {
 	can_select = { has_estate_privilege = estate_mages_great_fey_mask }
 	can_revoke = { always = no }
 
+	on_granted = {
+		custom_tooltip = great_fey_mask_tt
+	}
+
 	on_granted_province = {
 		if = {
 			limit = { OR = { region = east_deepwoods_region region = west_deepwoods_region } }
@@ -13776,7 +13780,7 @@ estate_mages_all_mask = {
 
 	benefits = {
 		mages_privilege_slots = 1
-		all_power_cost = -0.1
+		all_power_cost = -0.05
 	}
 
 	ai_will_do = { factor = 10 }
