@@ -12492,11 +12492,14 @@ estate_church_autumn_tolerance = {
 		religion = autumn_court
 	}
 	can_select = {
-		num_of_owned_provinces_with = {
-			value = 4
-			OR = {
-				religion = spring_court
-				religion = summer_court
+		OR = {
+			has_reform = raithtall_twilight_court_reform
+			num_of_owned_provinces_with = {
+				value = 4
+				OR = {
+					religion = spring_court
+					religion = summer_court
+				}
 			}
 		}
 	}
@@ -12522,6 +12525,9 @@ estate_church_autumn_tolerance = {
 			}
 			remove_province_modifier = estate_church_autumn_tolerance_mod
 		}	
+	}
+	can_revoke = {
+		NOT = { has_reform = raithtall_twilight_court_reform }
 	}
 	on_revoked = {
 		custom_tooltip = estate_church_autumn_tolerance_revoke_effect_tooltip

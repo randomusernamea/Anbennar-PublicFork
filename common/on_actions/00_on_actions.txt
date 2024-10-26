@@ -1927,6 +1927,18 @@ on_battle_won_country = {
 			add_church_power = 5
 		}
 	}
+
+	#Raithtall MT check
+	if = {
+		limit = {
+			ROOT = { tag = H12 }
+			FROM = { religion = winter_court }
+		}
+		change_variable = {
+			which = raithtall_winter_battle_won
+			amount = 1
+		}
+	}
 }
 
 # #Unit Scope OnAction for Battle Lost
