@@ -6991,15 +6991,7 @@ custom_button = {
 	}
 	trigger = {
 		hidden_trigger = {
-			any_owned_province = {
-				OR = {
-					has_province_modifier = temple_complex
-					has_province_modifier = damaged_temple_complex
-					has_province_modifier = derelict_temple_complex
-					has_province_modifier = corrupted_temple_complex
-					has_province_modifier = ruined_temple_complex
-				}
-			}
+			has_country_flag = owns_high_temple
 		}
 	}
 	effect = { 

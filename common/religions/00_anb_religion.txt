@@ -6231,6 +6231,7 @@ halessi = {
 		color = { 222  222  222 }
 		icon = 70
 		allowed_conversion = {
+			#devouring_path
 		}
 		country = {
 			army_tradition = 0.5
@@ -6614,27 +6615,42 @@ halessi = {
 			#righteous_path
 		}
 		country = {
-			army_tradition_decay = -0.01
+			religious_unity = 0.33
 			shock_damage = 0.1
+			church_power_modifier = -1
+			reverse_relation_with_heretic_religion = -25
 		}
 		country_as_secondary = {
-			army_tradition_decay = -0.01
+			shock_damage = 0.1
 			free_mil_policy = 1
 		}
 
 		uses_church_power = yes				# Uses church power/aspect mechanics
 		aspects = {
 			expand_the_dark_world
+			wisdom_beyond_honor
+			barter_with_dark_spirits
+			witches_and_shamans_preview
+			witches_and_shamans
+			advocation_of_chi_stealers
+			from_beyond_preview
+			from_beyond
+			chroniclers_of_secret_histories
+			gifts_for_fools
+			to_devour_chi_preview
+			to_devour_chi
+
 			gunpowder_meditation
 			demon_warriors
 			oni_demon_warriors
-			barter_with_dark_spirits
-			wisdom_beyond_honor
-			advocation_of_chi_stealers
-			mummy_monks
-			way_of_the_shadows
-			organize_the_cults
-			witches_and_shamans
+			the_god_eaters
+			the_dead_serve_the_living_preview
+			the_dead_serve_the_living
+			way_of_shadows
+			means_to_an_end
+			above_spirits_and_man
+			tether_the_weak
+			bleed_haless_dry
 		}
 		aspects_name = DEVOURING_PATH_ASPECTS
 

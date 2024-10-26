@@ -406,7 +406,6 @@ estate_mages_organization_religious = {
 			religion = ravelian
 			religion = xhazobkult
 			religion = skaldhyrric_faith
-			religion = devouring_path
 			religion = beast_memory
 			religion = rinta_seekers
 			religion = sky_domain
@@ -3368,7 +3367,6 @@ estate_church_guaranteed_autonomy = {
 	}
 }
 
-
 estate_nobles_castanor_upgraded_strong_duchies = {
 	icon = privilege_royal_authority
 	max_absolutism = -10
@@ -5616,15 +5614,14 @@ estate_mages_temple_desecrators = {
 	influence = 0.1
 	is_valid = {
 		religion = devouring_path
-		has_country_flag = consumptive_temple_secrets
+		has_country_flag = devouring_temple_secrets
 	}
 	can_select = {
 		any_owned_province = {
-			OR = {
-				has_province_modifier = temple_complex
-				has_province_modifier = damaged_temple_complex
-				has_province_modifier = derelict_temple_complex
-				has_province_modifier = ruined_temple_complex
+			province_group = temple_province_group
+			NOT = {
+				has_province_modifier = corrupted_temple_complex
+				has_province_modifier = corrupted_temple_complex_useless
 			}
 		}
 	}
