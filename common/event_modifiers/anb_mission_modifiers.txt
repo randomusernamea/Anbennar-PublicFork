@@ -29432,10 +29432,6 @@ duwarkani_feathers_of_maat_mercs = {
 	mercenary_discipline = 0.1
 }
 
-duwarkani_nirakhetist_king = {
-	global_missionary_strength = 0.01
-}
-
 duwarkani_calmed_fears = {
 	local_unrest = -10
 }
@@ -29518,19 +29514,24 @@ duwarkani_she_weeps_for_all = {
 } 
 
 duwarkani_admin_consort = {
-	monarch_admin_power = 1
+	country_admin_power = 1
 }
 
 duwarkani_diplo_consort={
-	monarch_diplomatic_power = 1 
+	country_diplomatic_power = 1
 }
 
 duwarkani_mil_consort = {
-	monarch_military_power = 1 
+	country_military_power = 1
 }
 
 duwarkani_you_deserved_it = {
 	diplomatic_reputation = -2
+}
+
+duwarkani_trollish_ahati_privilege_buff = {
+	shock_damage_received = -0.2
+	is_janissary_modifier = yes
 }
 
 #Zuvavim

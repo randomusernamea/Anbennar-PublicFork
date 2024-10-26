@@ -13455,7 +13455,6 @@ estate_merchants_gnollish_caravans = {
 	ai_will_do = { factor = 10 }
 
 	conditional_modifier = {
-		custom_tooltip = duwarkani_gnollish_caravans_tt
 		trigger = {
 			high_tolerance_gnollish_race_trigger = yes
 
@@ -13491,7 +13490,6 @@ estate_nobility_nzeri_standard_bearers = {
 	ai_will_do = { factor = 10 }
 
 	conditional_modifier = {
-		custom_tooltip = duwarkani_nzeri_standard_bearers_tt
 		trigger = {
 			high_tolerance_harpy_race_trigger = yes
 		}
@@ -13525,7 +13523,6 @@ estate_clergy_architects_at_a_scale = {
 	ai_will_do = { factor = 10 }
 
 	conditional_modifier = {
-		custom_tooltip = duwarkani_architects_at_a_scale_tt
 		trigger = {
 			high_tolerance_lizardfolk_race_trigger = yes
 		}
@@ -13559,7 +13556,6 @@ estate_mages_delta_orbs = {
 	ai_will_do = { factor = 10 }
 
 	conditional_modifier = {
-		custom_tooltip = duwarkani_delta_orbs_tt
 		trigger = {
 			high_tolerance_gnomish_race_trigger = yes
 		}
@@ -13587,19 +13583,25 @@ estate_ahati_trollish_ahati = {
 	is_valid = { has_estate_privilege = estate_ahati_trollish_ahati }
 	can_select = { has_estate_privilege = estate_ahati_trollish_ahati }
 
-	benefits = {
-		special_unit_forcelimit = 0.1
-	}
+	benefits = { }
 	ai_will_do = { factor = 10 }
 
+	on_granted = {
+		add_country_modifier = {
+			name = duwarkani_trollish_ahati_privilege_buff
+			duration = -1
+		}
+	}
+	on_revoked = {
+		remove_country_modifier = duwarkani_trollish_ahati_privilege_buff
+	}
 	conditional_modifier = {
-		custom_tooltip = duwarkani_trollish_ahati_tt
+		
 		trigger = {
 			high_tolerance_troll_race_trigger = yes
 		}
 		modifier = {
-			shock_damage_received = -0.2
-			is_janissary_modifier = yes
+			manpower_recovery_speed = 0.15
 		}
 	}
 	conditional_modifier = {
