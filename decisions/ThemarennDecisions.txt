@@ -5,7 +5,24 @@ country_decisions = {
             has_country_flag = inland_impressment_offices
             NOT = {
                 any_owned_province = {
-                    region = esmaria_region
+                    OR = {
+                        region = esmaria_region
+                        AND = {
+                            ROOT = { has_country_flag = a95_aranmass_offices }
+                            area = heartland_borders_area
+                        }
+                        AND = {
+                            ROOT = { has_country_flag = a95_commons_offices }
+                            area = the_commons_area
+                        }
+                        AND = {
+                            ROOT = { has_country_flag = a95_ibevar_offices }
+                            OR = {
+                                area = south_ibevar_area
+                                area = north_ibevar_area
+                            }
+                        }
+                    } 
                     has_port = no
                     has_building = impressment_offices
                 }
@@ -20,16 +37,16 @@ country_decisions = {
             }
             OR = {
                 region = esmaria_region
-                if = {
-                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
+                AND = {
+                    ROOT = { has_country_flag = a95_aranmass_offices }
                     area = heartland_borders_area
                 }
-                if = {
-                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
+                AND = {
+                    ROOT = { has_country_flag = a95_aranmass_offices }
                     area = the_commons_area
                 }
-                if = {
-                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
+                AND = {
+                    ROOT = { has_country_flag = a95_aranmass_offices }
                     area = south_ibevar_area
                     area = north_ibevar_area
                 }
@@ -41,20 +58,6 @@ country_decisions = {
                 has_country_flag = inland_impressment_offices
             }
 			treasury = 500
-			esmaria_region = {
-                AND = {
-                    owned_by = ROOT
-                    is_core = ROOT
-                    has_port = no
-                    NOT = { 
-                        has_building = impressment_offices 
-                        has_construction = building
-                        has_construction = core
-                        has_construction = missionary
-                    }
-                    num_free_building_slots	= 1
-                }
-            }
 		}
 		
 		effect = {
