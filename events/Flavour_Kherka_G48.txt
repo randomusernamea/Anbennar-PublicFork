@@ -3,8 +3,8 @@ namespace = flavour_kherka
 
 country_event = {
 	id = flavour_kherka.1
-	title = flavour_kherka.t
-	desc = flavour_kherka.d
+	title = flavour_kherka.1.t
+	desc = flavour_kherka.1.d
 	picture = SWORD_OF_OSMAN_eventPicture
 	
 	fire_only_once = yes
@@ -26,7 +26,22 @@ country_event = {
 country_event = { 
 	id = flavour_kherka.1000
 	title = flavour_kherka.1000.t
-	desc = flavour_kherka.1000.d
+	desc = {
+        trigger = { has_country_flag = stalwarts_in_power }
+        desc = flavour_kherka.1000.d
+    }
+	desc = {
+        trigger = { has_country_flag = militants_in_power }
+        desc = flavour_kherka.1000.d.1
+    }
+	desc = {
+        trigger = { has_country_flag = colonists_in_power }
+        desc = flavour_kherka.1000.d.2
+    }
+	desc = {
+        trigger = { has_country_flag = schemers_in_power }
+        desc = flavour_kherka.1000.d.3
+    }
 	picture = SHIP_SAILING_eventPicture
 
     is_triggered_only = yes 
@@ -34,5 +49,146 @@ country_event = {
     trigger = {}
 
     immediate = {
+        hidden_effect = {
+            clr_country_flag = stalwarts_in_power
+            clr_country_flag = militants_in_power
+            clr_country_flag = colonists_in_power
+            clr_country_flag = schemers_in_power
+            random_list = {
+                1 = {
+                    set_country_flag = stalwarts_in_power
+                }
+                1 = {
+                    set_country_flag = militants_in_power
+                }
+                1 = {
+                    set_country_flag = colonists_in_power
+                }
+                1 = {
+                    set_country_flag = schemers_in_power
+                }
+            }
+            define_exiled_ruler = { #Stalwarts
+                exiled_as = irenthegenea_candidate
+                change_adm = 2
+                dynasty = Irenthegenea
+                option = 0
+            }
+            define_exiled_ruler = { #Stalwarts
+                exiled_as = varagenea_candidate
+                change_adm = 2
+                dynasty = Varagenea
+                option = 1
+            }
+            define_exiled_ruler = { #Stalwarts
+                exiled_as = elethogenea_candidate
+                change_adm = 2
+                dynasty = Elethogenea 
+                option = 2
+            }
+            define_exiled_ruler = { #Militants
+                exiled_as = artogenea_candidate
+                change_mil = 2
+                dynasty = Artogenea 
+                option = 3
+            }
+            define_exiled_ruler = { #Militants
+                exiled_as = nestegenea_candidate
+                change_mil = 2
+                dynasty = nestegenea  
+                option = 4
+            }
+            define_exiled_ruler = { #Colonists
+                exiled_as = galengenea_candidate
+                change_adm = 1
+                change_dip = 1
+                dynasty = galengenea  
+                option = 5
+            }
+            define_exiled_ruler = { #Colonists
+                exiled_as = taelagenea_candidate
+                change_adm = 1
+                change_dip = 1
+                dynasty = Taelagenea
+                option = 6  
+            }
+            define_exiled_ruler = { #Schemers
+                exiled_as = serogenea_candidate
+                change_dip = 1
+                change_mil = 1
+                dynasty = Serogenea
+                option = 7
+            }
+            define_exiled_ruler = { #Schemers
+                exiled_as = darasgenea_candidate
+                change_dip = 1
+                change_mil = 1
+                dynasty = Darasgenea
+                option = 8  
+            }
+            define_exiled_ruler = { #Schemers
+                exiled_as = kelasgenea_candidate
+                change_dip = 1
+                change_mil = 1
+                dynasty = Kelasgenea  
+                option = 9
+            }
+        }
+    }
+
+    option = {
+        name = flavour_kherka.1000.a #Random Faction
+        if = {
+            limit = {
+                has_country_flag = stalwarts_in_power
+            }
+            kherka_set_ruler = { stalwarts = yes }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = militants_in_power
+            }
+            kherka_set_ruler = { militants = yes }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = colonists_in_power
+            }
+            kherka_set_ruler = { colonists = yes }
+        }
+        else_if = {
+            limit = {
+                has_country_flag = schemers_in_power
+            }
+            kherka_set_ruler = { schemers = yes }
+        }
+    }
+    
+    option = {
+        name = flavour_kherka.1000.b #Stalwart Faction
+        trigger = { NOT = { has_country_flag = stalwarts_in_power } }
+        kherka_set_ruler = { stalwarts = yes }
+        add_republican_tradition = -20
+    }
+
+    option = {
+        name = flavour_kherka.1000.c
+        trigger = { NOT = { has_country_flag = militants_in_power } }
+        kherka_set_ruler = { militants = yes }
+        add_republican_tradition = -20
+    }
+
+    option = {
+        name = flavour_kherka.1000.d
+        trigger = { NOT = { has_country_flag = colonists_in_power } }
+        kherka_set_ruler = { colonists = yes }
+        add_republican_tradition = -20
+    }
+
+    option = {
+        name = flavour_kherka.1000.e
+        trigger = { NOT = { has_country_flag = schemers_in_power } }
+        kherka_set_ruler = { schemers = yes }
+        add_republican_tradition = -20
     }
 }

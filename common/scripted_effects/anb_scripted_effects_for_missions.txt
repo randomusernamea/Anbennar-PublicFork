@@ -17780,3 +17780,85 @@ gronstunad_building_authority_effect = {
 }
 
 #Kherka
+kherka_set_ruler = {
+	[[stalwarts]
+		random_list = {
+            1 = { 
+                set_ruler = irenthegenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_stalwarts_in_power
+                    duration = -1
+                }
+            }
+            1 = { 
+                set_ruler = varagenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_stalwarts_in_power
+                    duration = -1
+                }
+            }
+            1 = { 
+                set_ruler = elethogenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_stalwarts_in_power
+                    duration = -1
+                }
+            }
+        }
+	]
+    [[militants]
+		random_list = {
+            1 = { 
+                set_ruler = artogenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_militants_in_power
+                    duration = -1
+                }
+            }
+            1 = { 
+                set_ruler = nestegenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_militants_in_power
+                    duration = -1
+                }
+            }
+        }
+	]
+	[[colonists]
+		random_list = {
+            1 = { 
+                set_ruler = galengenea_candidate
+                add_ruler_modifier = {
+                    name = G48_colonists_in_power
+                    duration = -1
+                }
+            }
+            1 = { 
+                set_ruler = taelagenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_colonists_in_power
+                    duration = -1
+                }
+            }
+        }
+	]
+	[[schemers]
+		random_list = {
+            1 = { 
+                set_ruler = darasgenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_schemers_in_power
+                    duration = -1
+                }
+            }
+            1 = { 
+                set_ruler = kelasgenea_candidate 
+                add_ruler_modifier = {
+                    name = G48_schemers_in_power
+                    duration = -1
+                }
+            }
+        }
+	]
+}
+
