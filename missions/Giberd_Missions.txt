@@ -882,6 +882,7 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
+			#TODO: buy indulgence 3 times
 			275 = {
 				development = 40
 				has_building = university
@@ -2051,21 +2052,63 @@ giberd_mercantile_shipping = {
 		}
 		position = 12
 		provinces_to_highlight = {
-			area = konwell_area
+			is_capital_of = Z97
 			NOT = {
-				owned_by = ROOT
+				ROOT = {
+					alliance_with = Z97
+				}
+				ROOT = {
+					reverse_has_opinion = {
+						who = Z97
+						value = 100
+					}
+				}
+				ROOT = {
+					army_strength = {
+						who = Z97
+						value = 4
+					}
+				}
 			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			OR = {
+				alliance_with = Z97
+				reverse_has_opinion = {
+					who = Z97
+					value = 100
+				}
+			}
+			army_strength = {
+				who = Z97
+				value = 4
+			}
+			is_defender_of_faith = yes
+			271 = {
+				num_of_units_in_province = {
+					who = ROOT
+					type = rajput					# TODO: shouldn't include regular infantry
+					amount = 2
+				}
 			}
 		}
 		effect = {
+			271 = {
+				kill_units = {
+					who = ROOT
+					type = rajput
+					amount = 40
+				}
+			}
 			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+				name = giberd_the_fragment_guard
+				duration = -1
+			}
+			Z97 = {
+				add_country_modifier = {
+					name = giberd_the_fragment_guard_ravelian
+					duration = -1
+				}
 			}
 		}
 	}
@@ -2076,16 +2119,8 @@ giberd_mercantile_shipping = {
 		}
 		position = 13
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
-			}
 		}
 		effect = {
 			add_country_modifier = {
