@@ -42,3 +42,32 @@ giberd_factions_mechanists_increase = {
 		}
 	}
 }
+
+giberd_leader_clean_bonus = {
+	hidden_effect = {
+		remove_country_modifier = giberd_leader_technomancers
+		remove_country_modifier = giberd_leader_brillites
+		remove_country_modifier = giberd_leader_mechanists
+	}
+}
+
+giberd_leader_technomancers_bonus = {
+	add_ruler_modifier = {
+		name = giberd_leader_technomancers
+		duration = -1
+	}
+}
+
+giberd_leader_brillites_bonus = {
+	add_ruler_modifier = {
+		name = giberd_leader_brillites
+		duration = -1
+	}
+}
+
+giberd_leader_mechanists_bonus = {
+	add_ruler_modifier = {
+		name = giberd_leader_mechanists
+		duration = -1
+	}
+}

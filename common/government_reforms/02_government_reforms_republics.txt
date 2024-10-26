@@ -2196,6 +2196,7 @@ technocracy_republic_reform = {
 		NOT = { has_reform = self_governing_colony_government }
 		NOT = { has_reform = pentapandemonium_reform }
 		NOT = { has_reform = obsidian_council_reform }
+		NOT = { has_reform = imperial_technocracy_republic_reform }
 		OR = {
 			has_country_flag = magic_artificery_artificery_only
 			has_country_flag = magic_artificery_mixed
@@ -2210,7 +2211,6 @@ technocracy_republic_reform = {
 			current_age = age_of_revolutions
 			has_reform = technocracy_republic_reform
 		}
-		NOT = { has_reform = imperial_technocracy_republic_reform }
 	}
 	duration = 4
 	valid_for_nation_designer = yes
@@ -2260,10 +2260,13 @@ technocracy_republic_reform = {
 
 imperial_technocracy_republic_reform = {
 	icon = "paper_with_seal"
-	allow_normal_conversion = no
-	lock_level_when_selected = yes
+	# allow_normal_conversion = no
+	# lock_level_when_selected = yes
 	potential = {
-		always = no
+		OR = {
+			has_reform = imperial_technocracy_republic_reform
+			have_had_reform = imperial_technocracy_republic_reform
+		}
 	}
 	trigger = {
 		OR = {
@@ -2273,6 +2276,7 @@ imperial_technocracy_republic_reform = {
 			has_institution = manufactories
 			current_age = age_of_revolutions
 			has_reform = imperial_technocracy_republic_reform
+			have_had_reform = imperial_technocracy_republic_reform
 		}
 		NOT = { has_reform = technocracy_republic_reform }
 	}

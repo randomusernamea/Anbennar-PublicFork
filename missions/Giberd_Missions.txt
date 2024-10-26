@@ -1233,6 +1233,7 @@ giberd_ryalanar_conquest = {
 				has_dock_building_trigger = yes
 				has_shipyard_building_trigger = yes
 			}
+			treasury = 500
 		}
 		effect = {
 			265 = {
@@ -1716,6 +1717,12 @@ giberd_mercantile_shipping = {
 					duration = 3650
 				}
 			}
+			if = {
+				limit = {
+					has_reform = free_city
+				}
+				remove_government_reform = free_city
+			}
 			add_government_reform = imperial_technocracy_republic_reform
 		}
 	}
@@ -2106,7 +2113,7 @@ giberd_mercantile_shipping = {
 			271 = {
 				kill_units = {
 					who = ROOT
-					type = rajput
+					type = rajput_infantry
 					amount = 40
 				}
 			}
@@ -2187,7 +2194,7 @@ giberd_mercantile_shipping = {
 			add_dip_power = 200
 			add_favors = {
 				who = Z93
-				value = -30
+				amount = -30
 			}
 			country_event = {
 				id = flavor_giberd.19
