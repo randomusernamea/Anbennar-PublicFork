@@ -437,7 +437,11 @@ estate_eunuchs_anb_confederal_administrative_cadre = {
 		has_estate_privilege = estate_eunuchs_anb_confederal_administrative_cadre
 	}
 	can_select = { }
-	can_revoke = { has_country_flag = gushuokguan_civil_war_federalist_won }
+	can_revoke = { 
+		hidden = {
+			has_country_flag = gushuokguan_civil_war_federalist_won 
+		}
+	}
 	influence = 0.2
 	loyalty = 0.1
 	benefits = { 
