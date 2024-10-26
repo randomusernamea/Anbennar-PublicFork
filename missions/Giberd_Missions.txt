@@ -484,7 +484,11 @@ giberd_konwell_conquest = {
 			}
 		}
 		effect = {
-			# TODO: 10 years of -35% research speed
+			# 10 years of -35% research speed
+			add_country_modifier = {
+				name = giberd_wind_towers_research
+				duration = 3650
+			}
 			271 = {
 				add_province_modifier = {
 					name = giberd_wind_towers
@@ -615,7 +619,11 @@ giberd_konwell_conquest = {
 			}
 		}
 		effect = {
-			# TODO: 20 years of -2 invention slots
+			# 20 years of -2 invention slots
+			add_country_modifier = {
+				name = giberd_smooth_giberdi_research
+				duration = 7300
+			}
 			901 = {
 				change_trade_goods = wine
 				add_province_modifier = {
@@ -1075,16 +1083,14 @@ giberd_ryalanar_conquest = {
 		effect = {
 			# TODO: "is unable to remove society inventions for 5 years"
 			add_country_modifier = {
-				name = giberd_construction_of_gds_loopeng_gedsandde
-				duration = 1825
-			}
-			custom_tooltip = giberd_giberd_construction_of_gds_loopeng_gedsandde_tt
-			add_country_modifier = {
 				name = giberd_gds_loopeng_gedsandde
 				duration = -1
 			}
+			add_country_modifier = {
+				name = giberd_gds_loopeng_gedsandde_research
+				duration = 1825
+			}
 			hidden_effect = {
-				# TODO: -2 invention slots
 				change_variable = {
 					which = StaticArtificePoints
 					value = -20
@@ -1998,7 +2004,10 @@ giberd_mercantile_shipping = {
 			}
 		}
 		effect = {
-			# TODO: five years of -2 slots and -50% research speed
+			add_country_modifier = {
+				name = giberd_gds_shooddenin_kemess_research
+				duration = 1825
+			}
 			if = {
 				limit = {
 					265 = {
@@ -2473,8 +2482,12 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			# TODO: -30 cap and -50% speed for 10 years
+			# TODO: -30 cap for 10 years
 			# TODO: unlock tier 3 inventions
+			add_country_modifier = {
+				name = giberd_atypical_artificers_research
+				duration = 3650
+			}
 			271 = {
 				remove_province_modifier = ravelian_society
 				add_province_modifier = {

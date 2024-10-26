@@ -7341,9 +7341,6 @@ roilsard_6 = {
 #Giberd
 
 # new giberd, country modifiers
-# giberd_dealing_with_the_magisterium = {
-# 	mages_loyalty_modifier = 0.1
-# }
 
 giberd_merchants_buying_artificer_goods = {
 	trade_efficiency = 0.1
@@ -7378,7 +7375,6 @@ giberd_nation_esmaria_built = {
 
 giberd_factions_stand_together = {
 	manpower_in_true_faith_provinces = 0.20
-	# somehow? add two permanent veridicals
 }
 
 # new giberd, province modifiers
@@ -7401,7 +7397,9 @@ giberd_start_of_the_giberd_dockyards = {
 	local_sailors_modifier = 0.25
 	ship_recruit_speed = -0.25
 }
-
+giberd_wind_towers_research = {
+	artificers_research_time = -0.4
+}
 giberd_wind_towers = {
 	province_trade_power_modifier = 0.50
 	local_friendly_movement_speed = 0.20
@@ -7427,6 +7425,9 @@ giberd_gmo_feed = {
 giberd_smooth_giberdi = {
 	trade_goods_size = 1.5
 	global_unrest = -1
+}
+giberd_smooth_giberdi_research = {
+	artificers_invention_slots = -2
 }
 
 giberd_converted_vanbury_glassworks = {
@@ -7487,12 +7488,10 @@ giberd_artificer_center_of_learning_building = { } # cooldown
 giberd_options_war_leslinpar = {
 	land_morale = 0.10
 	movement_speed = 0.10
-	# "+2 art infantry units -2 regular infantry units"
 }
 
 giberd_options_war_bennon = {
 	local_defensiveness = -0.5
-	# "+2 art infantry units -2 regular infantry units"
 }
 
 artificers_invention_slots_base = {
@@ -7501,7 +7500,6 @@ artificers_invention_slots_base = {
 
 giberd_options_war_peace = {
 	artificers_research_time = -0.10
-	artificers_invention_slots= 2
 }
 giberd_test_pos = {
 	artificers_research_time = 20
@@ -7533,7 +7531,18 @@ giberd_demands_enclaves_promises_made = {
 }
 
 giberd_construction_of_gds_loopeng_gedsandde = {
-	# -20 artificer cap, -2 invent slots, can't remove society invenstions
+	# -20 artificer cap, can't remove society invenstions
+}
+giberd_gds_loopeng_gedsandde_research = {
+	artificers_invention_slots = -2
+}
+
+giberd_gds_shooddenin_kemess_research = {
+	artificers_invention_slots = -2
+	artificers_research_time = 0.50
+}
+ giberd_atypical_artificers_research = {
+	artificers_research_time = 0.50
 }
 
 giberd_gds_loopeng_gedsandde = {
@@ -7701,6 +7710,7 @@ giberd_leader_brillites = {
 giberd_leader_mechanists = {
 	tec_mechanists_influence = 0.33
 	artificers_loyalty_modifier = 0.10
+	artificers_research_time = -0.20
 	global_unrest = 2
 	prestige = -1
 	ae_impact = 0.20
@@ -7736,7 +7746,7 @@ giberd_stolen_archive = {
 	local_unrest = 20
 	local_institution_spread = 0.33
 	prestige = 0.5
-	# +10% permanent research speed
+	artificers_research_time = -0.10
 }
 
 giberd_ravelians_send_finest = {
