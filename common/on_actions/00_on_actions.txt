@@ -2870,7 +2870,7 @@ on_new_consort = {
 	#themarenn ryala path
 	if = { 
 		limit = { 
-			OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_ryalan_prosperity 
+			OR = { tag = A95 was_tag = A95 } ai = no has_country_flag = a95_ryalan_prosperity 
 		} 
 		themarenn_refresh_prosperity = yes 
 		themarenn_ryala_prosperity = yes
@@ -3539,7 +3539,7 @@ on_new_heir = {
 	}
 	if = { 
 		limit = {
-			OR = { tag = a95 was_tag = a95 } ai = no has_country_flag = a95_esmaryal_heir_education
+			OR = { tag = A95 was_tag = A95 } ai = no has_country_flag = a95_esmaryal_heir_education
 		} 
 		country_event = { id = flavour_themarenn.43 } 
 	} #themarenn esmaryal path
@@ -15756,7 +15756,7 @@ on_slacken_start = {
 	if = {
 		limit = {
 			OR = {
-				was_tag = a95
+				was_tag = A95
 				tag = A95
 			}
 			ai = no
@@ -15770,7 +15770,7 @@ on_slacken_stop = {
 	if = {
 		limit = {
 			OR = {
-				was_tag = a95
+				was_tag = A95
 				tag = A95
 			}
 			ai = no

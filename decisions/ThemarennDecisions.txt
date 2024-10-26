@@ -21,15 +21,15 @@ country_decisions = {
             OR = {
                 region = esmaria_region
                 if = {
-                    limit = { has_country_flag = a95_aranmass_offices }
-                    area = heatland_borders_area
+                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
+                    area = heartland_borders_area
                 }
                 if = {
-                    limit = { has_country_flag = a95_commons_offices }
+                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
                     area = the_commons_area
                 }
                 if = {
-                    limit = { has_country_flag = a95_ibevar_offices }
+                    limit = { ROOT = { has_country_flag = a95_aranmass_offices } }
                     area = south_ibevar_area
                     area = north_ibevar_area
                 }
