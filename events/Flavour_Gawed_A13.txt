@@ -464,18 +464,18 @@ country_event = {
 			has_country_flag = council_support_ruler
 		}
 		if = {
-        limit = {has_reform = empower_magnate_council}
-		add_ruler_modifier = {
-			name = magnate_council_support_empower
-			duration = -1
-		}
+    		limit = {has_reform = empower_magnate_council}
+			add_ruler_modifier = {
+				name = magnate_council_support_empower
+				duration = -1
+			}
 		}
 		else_if = {
-		add_ruler_modifier = {
-			name = magnate_council_support
-			duration = -1
+			add_ruler_modifier = {
+				name = magnate_council_support
+				duration = -1
+			}
 		}
-	}
 	}
 	
 	# We do not need their help
@@ -513,18 +513,18 @@ country_event = {
 			has_country_flag = council_oppose_ruler
 		}
 		if = {
-			limit = {has_reform = empower_magnate_council}
+			limit = { has_reform = empower_magnate_council }
 			add_ruler_modifier = {
 				name = magnate_council_opposition_empower
 				duration = -1
 			}
 		}
 		else_if = {
-		add_ruler_modifier = {
-			name = magnate_council_opposition
-			duration = -1 #50 Years
+			add_ruler_modifier = {
+				name = magnate_council_opposition
+				duration = -1 #50 Years
+			}
 		}
-	}
 	}
 	
 	# Perhaps we could buy them out?

@@ -13228,14 +13228,14 @@ ties_with_anbennarian_nobility = {
 	allow_normal_conversion = yes
 	block_cultural_union = yes
 	potential = {
-		NOT = {culture_group = anbennarian}
+		NOT = { culture_group = anbennarian }
 		OR = {
 		is_part_of_hre = yes
 		is_emperor = yes
 		tag = Z01 # Anbennar
 		}
 		OR = {
-		capital_scope = {superregion = western_cannor_superregion}
+		capital_scope = { superregion = western_cannor_superregion }
 		tag = Z01 # Anbennar
 		}
 	}
@@ -13252,7 +13252,7 @@ ties_with_anbennarian_nobility = {
 				hidden = yes
 			}
 			every_heretic_province = {
-					limit = {is_anbennarian_culture = yes}
+					limit = {is_anbennarian_imperial_culture = yes}
 					add_province_modifier = { 
 						name = gov_empire_heretic
 						duration = -1
