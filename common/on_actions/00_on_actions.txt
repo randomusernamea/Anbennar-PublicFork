@@ -5544,7 +5544,19 @@ on_monthly_pulse = {
 			limit = { is_subject_of_type = personal_union }
 
 			if = {
-				limit = { liberty_desire = 50 }
+				limit = {
+					OR = {
+						liberty_desire = 50
+						NOT = {
+							overlord = {
+								reverse_has_opinion = {
+									who = PREV
+									value = 0
+								}
+							}
+						}
+					}
+				}
 				ROOT = { add_government_power = { mechanic_type = gronstunad_authority_mechanic power_type = gronstunad_authority_power value = -2.0 } }
 			}
 			
