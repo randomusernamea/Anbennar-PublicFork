@@ -80,7 +80,7 @@ country_event = {
 	option = {
 		name = gushuokguan_event.4.a
 		ai_chance = { factor = 1 }
-		create_vassal = Y05
+		vassalize = Y05
 		random_list = {
 			1 = {}
 			1 = {
@@ -113,7 +113,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		random_list = {
 			2 = { 
-				create_vassal = Y05 #Lanjinhui
+				vassalize = Y05 #Lanjinhui
 				Y05 = { #Lanjinhui
 					capital_scope = {
 						spawn_rebels = {
@@ -230,24 +230,6 @@ country_event = {
 	}
 }
 
-#
-country_event = {
-	id = gushuokguan_event.10
-	title = gushuokguan_event.10.t
-	desc = gushuokguan_event.10.d
-	picture = CHINESE_GENERAL_eventPicture
-	
-	is_triggered_only = yes
-
-	trigger = {}
-
-	option = {
-		name = gushuokguan_event.10.a
-		ai_chance = { factor = 1 }
-		
-	}
-}
-
 #Migrants come to X
 country_event = {
 	id = gushuokguan_event.11
@@ -331,24 +313,26 @@ country_event = {
 							remove_harimari_minority_size_effect = yes
 						}
 						1 = {
-							trigger = { has_human_minority_trigger = no }
+							trigger = { has_human_minority_trigger = yes }
 							remove_human_minority_size_effect = yes
 						}
 						1 = {
-							trigger = { has_kobold_minority_trigger = no }
+							trigger = { has_kobold_minority_trigger = yes }
 							remove_kobold_minority_size_effect = yes
 						}
 						1 = {
-							trigger = { has_elven_minority_trigger = no }
+							trigger = { has_elven_minority_trigger = yes }
 							remove_elven_minority_size_effect = yes
 						}
 					}
 				}
 			}
+			custom_tooltip = feitenEmpty
 			random_list = {
 				4 = {} #Empty
 				1 = { add_random_development = -1 }
 			}
+			custom_tooltip = feitenEmpty
 			random_list = {
 				1 = {} #Empty 
 				1 = { add_devastation = 10 }
@@ -583,14 +567,14 @@ country_event = {
 		name = gushuokguan_event.19.a
 		ai_chance = { factor = 1 }
 		if = {
-			limit = { employed_advisor = { name = gushuokguan_lubei } }
+			limit = { employed_advisor = { name = "Lubei 'the Honorable'" } }
 			add_country_modifier = {
 				name = gushuokguan_advisor_lubei
 				duration = 9125
 			}
 		}
 		if = {
-			limit = { has_leader = gushuokguan_lubei }
+			limit = { has_leader = "Lubei 'the Honorable'" }
 			add_country_modifier = {
 				name = gushuokguan_advisor_lubei
 				duration = 9125
@@ -608,7 +592,7 @@ country_event = {
 }
 
 ### United We Stand Mission Chain ###
-#Confederal Council
+#On The Matter of Governance
 country_event = {
 	id = gushuokguan_event.31
 	title = gushuokguan_event.31.t
@@ -622,10 +606,16 @@ country_event = {
 	option = {
 		name = gushuokguan_event.31.a
 		ai_chance = { factor = 1 }
+		add_republican_tradition = -10
+		add_country_modifier = {
+			name = gushuokguan_political_unrest
+			duration = 850
+		}
+		hidden_effect = { country_event = { id = gushuokguan_event.32 days = 730 } }
 	}
 }
 
-#Confederal Council
+#Bad Forecast
 country_event = {
 	id = gushuokguan_event.32
 	title = gushuokguan_event.32.t
@@ -639,10 +629,15 @@ country_event = {
 	option = {
 		name = gushuokguan_event.32.a
 		ai_chance = { factor = 1 }
+		extend_country_modifier = {
+			name = gushuokguan_political_unrest
+			duration = 360
+		}
+		country_event = { id = gushuokguan_event.33 days = 120 }
 	}
 }
 
-#Confederal Council
+#A Storm Is Brewing
 country_event = {
 	id = gushuokguan_event.33
 	title = gushuokguan_event.33.t
@@ -656,10 +651,16 @@ country_event = {
 	option = {
 		name = gushuokguan_event.33.a
 		ai_chance = { factor = 1 }
+		remove_country_modifier = gushuokguan_political_unrest
+		add_country_modifier = {
+			name = gushuokguan_political_unrest_2
+			duration = 180
+		}
+		country_event = { id = gushuokguan_event.34 days = 60 }
 	}
 }
 
-#Confederal Council
+#Calm Before
 country_event = {
 	id = gushuokguan_event.34
 	title = gushuokguan_event.34.t
@@ -673,10 +674,16 @@ country_event = {
 	option = {
 		name = gushuokguan_event.34.a
 		ai_chance = { factor = 1 }
+		remove_country_modifier = gushuokguan_political_unrest_2
+		add_country_modifier = {
+			name = gushuokguan_political_unrest_3
+			duration = 120
+		}
+		country_event = { id = gushuokguan_event.35 days = 7 }
 	}
 }
 
-#Confederal Council
+#A Choice
 country_event = {
 	id = gushuokguan_event.35
 	title = gushuokguan_event.35.t
@@ -690,10 +697,23 @@ country_event = {
 	option = {
 		name = gushuokguan_event.35.a
 		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_choose_inked_shields_tt
+		hidden_effect = {
+			set_country_flag = gushuokguan_chosen_inked_shields
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.35.b
+		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_choose_red_scarfs_tt
+		hidden_effect = {
+			set_country_flag = gushuokguan_chosen_red_scarfs
+		}
 	}
 }
 
-#Confederal Council
+#The Storm Arrives - You Chose Inked Shields
 country_event = {
 	id = gushuokguan_event.36
 	title = gushuokguan_event.36.t
@@ -710,7 +730,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#The Storm Arrives - You Chose Red Scarfs
 country_event = {
 	id = gushuokguan_event.37
 	title = gushuokguan_event.37.t
@@ -724,6 +744,42 @@ country_event = {
 	option = {
 		name = gushuokguan_event.37.a
 		ai_chance = { factor = 1 }
+	}
+}
+
+#Inked Shields Win
+country_event = {
+	id = gushuokguan_event.38
+	title = gushuokguan_event.38.t
+	desc = gushuokguan_event.38.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = gushuokguan_event.38.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
+	}
+}
+
+#Red Scarfs Win
+country_event = {
+	id = gushuokguan_event.39
+	title = gushuokguan_event.39.t
+	desc = gushuokguan_event.39.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {}
+
+	option = {
+		name = gushuokguan_event.39.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
 	}
 }
 
@@ -949,13 +1005,13 @@ country_event = {
 			add_adm_power = 50
 			add_years_of_income = 0.2
 			add_liberty_desire = -10
-			add_country_modifier = {
-				name = gushuokguan_devastation
-				duration = 1460
-			}
 			add_opinion = {
 				who = PREV #Gushuokguan
 				modifier = gushuokguan_council_tensions_positive_medium
+			}
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
 			}
 		}
 		event_target:dao_B = {
@@ -981,13 +1037,13 @@ country_event = {
 			add_adm_power = 50
 			add_years_of_income = 0.2
 			add_liberty_desire = -10
-			add_country_modifier = {
-				name = gushuokguan_devastation
-				duration = 1460
-			}
 			add_opinion = {
 				who = PREV #Gushuokguan
 				modifier = gushuokguan_council_tensions_positive_medium
+			}
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
 			}
 		}
 	}
@@ -999,26 +1055,26 @@ country_event = {
 			add_adm_power = 25
 			add_years_of_income = 0.1
 			add_liberty_desire = 10
-			add_country_modifier = {
-				name = gushuokguan_devastation
-				duration = 1460
-			}
 			add_opinion = {
 				who = PREV #Gushuokguan
 				modifier = gushuokguan_council_tensions_negative_small
+			}
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
 			}
 		}
 		event_target:dao_B = {
 			add_adm_power = 25
 			add_years_of_income = 0.1
 			add_liberty_desire = 10
-			add_country_modifier = {
-				name = gushuokguan_devastation
-				duration = 1460
-			}
 			add_opinion = {
 				who = PREV #Gushuokguan
 				modifier = gushuokguan_council_tensions_negative_small
+			}
+			add_country_modifier = {
+				name = gushuokguan_devastation
+				duration = 1460
 			}
 		}
 	}
@@ -1035,6 +1091,12 @@ country_event = {
 
 	trigger = {
 		has_country_flag = gushuokguan_enable_confederal_council
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = dao
+			}
+			amount = 4
+		}
 	}
 
 	immediate = {
@@ -1174,6 +1236,12 @@ country_event = {
 
 	trigger = {
 		has_country_flag = gushuokguan_enable_confederal_council
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = dao
+			}
+			amount = 4
+		}
 	}
 
 	immediate = {
@@ -1478,7 +1546,7 @@ country_event = {
 	}
 
 	option = {
-		name = gushuokguan_event.59.a
+		name = gushuokguan_event.59.b
 		ai_chance = { factor = 1 }
 		event_target:dao_A = {
 			add_opinion = {

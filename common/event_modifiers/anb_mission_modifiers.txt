@@ -30714,7 +30714,7 @@ gushuokguan_writing_a_new_oath = {
 }
 
 gushuokguan_economic_buff = {
-	global_tax_income = 0.1
+	global_tax_modifier = 0.1
 	production_efficiency = 0.15
 }
 
@@ -30727,7 +30727,7 @@ gushuokguan_home_of_the_stone_army = {
 }
 
 gushuokguan_brothers_in_freedom = {
-	liberty_desire = -10
+	liberty_desire = 10
 }
 
 gushuokguan_liberation_of_our_kin = {
@@ -30772,7 +30772,7 @@ gushuokguan_confederal_mercantilism = {
 }
 
 gushuokguan_the_caring_leader = {
-	reduced_liberty_desire = -10
+	reduced_liberty_desire = 10
 	global_trade_goods_size_modifier = 0.1
 	vassal_income = 0.1
 }
@@ -30785,7 +30785,7 @@ gushuokguan_peace_in_our_time = {
 }
 
 gushuokguan_experts_of_warfare = {
-	army_tradition = 20
+	army_tradition = 1
 	diplomatic_upkeep = 1
 }
 
@@ -30800,13 +30800,13 @@ gushuokguan_influx_of_foreign_men = {
 }
 
 gushuokguan_dao_normal_buff = {
-	reduced_liberty_desire = -10
+	reduced_liberty_desire = 10
 	vassal_forcelimit_bonus = 0.15
 	vassal_income = 0.05
 }
 
 gushuokguan_dao_upgraded_buff = {
-	reduced_liberty_desire = -20
+	reduced_liberty_desire = 20
 	vassal_forcelimit_bonus = 0.25
 	vassal_income = 0.15
 }
@@ -30885,4 +30885,16 @@ gushuokguan_general_lubei = {
 
 gushuokguan_advisor_lubei = {
 	free_land_leader_pool = 1
+}
+
+gushuokguan_political_unrest = {
+	national_unrest = -1
+}
+
+gushuokguan_political_unrest_2 = {
+	national_unrest = -2
+}
+
+gushuokguan_political_unrest_3 = {
+	national_unrest = -3
 }

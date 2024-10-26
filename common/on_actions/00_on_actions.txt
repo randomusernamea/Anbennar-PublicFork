@@ -2192,8 +2192,8 @@ on_siege_won_country = {
 		limit = {
 			has_country_flag = gushuokguan_flying_pebbles
 			any_hired_mercenary_company = { #It's hired, so it can only be ROOT's
-				template = flying_pebbles
-				location = FROM
+				template = merc_flying_pebbles
+				location = { province_id = FROM }
 			}
 		}
 		change_variable = {

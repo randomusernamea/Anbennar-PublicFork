@@ -240,6 +240,7 @@ gushuokguan_1 = {
 				artillery_in_province = 10
 			}
 			Y03 = { #Hubao
+				vassal_of = ROOT
 				NOT = { liberty_desire = 1 }
 			}
 			custom_trigger_tooltip = {
@@ -449,7 +450,7 @@ gushuokguan_2 = {
 			has_mil_advisor_3 = yes
 			num_of_generals = 3
 			num_of_regiments_at_full_drill = 20
-			army_professionalism = 60
+			army_professionalism = 0.6
 			diplomatic_reputation = 3
 		} 
 
@@ -752,7 +753,7 @@ gushuokguan_3 = {
 			if = {
 				limit = { Y05 = { alliance_with = ROOT }  } 
 				country_event = { id = gushuokguan_event.4 } 
-					}
+			}
 			else_if = {
 				limit = {
 					Y05 = { #Lanjinhui
@@ -891,31 +892,33 @@ gushuokguan_3 = {
 		}
 
 		effect = {
-			release = Y10 #Yingzhen
 			create_subject = {
 				subject_type = dao
 				subject = Y10 #Yingzhen
 			} 
-			every_owned_province = {
-				limit = {
-					OR = {
-						area = yanzhong_area
-						area = balrijin_area
-						area = tianszi_area
-						area = anjiang_area
-						area = linyuan_area
-					}
-				}
-				cede_province = Y10 #Yingzhen
-				add_core = Y10 #Yingzhen
-			}
+			custom_tooltip = gushuokguan_release_yanszin_tt
 			add_mil_power = 50
 			add_country_modifier = {
 				name = gushuokguan_trade_power_of_the_yan
 				duration = 7300
 			}
 			custom_tooltip = gushuokguan_can_release_hubao_tt
-			hidden_effect = { set_country_flag = gushuokguan_can_release_hubao } 
+			hidden_effect = { 
+				set_country_flag = gushuokguan_can_release_hubao 
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = yanzhong_area
+							area = balrijin_area
+							area = tianszi_area
+							area = anjiang_area
+							area = linyuan_area
+						}
+					}
+					cede_province = Y10 #Yingzhen
+					add_core = Y10 #Yingzhen
+				}
+			} 
 		}
 	}
 
@@ -995,7 +998,7 @@ gushuokguan_3 = {
 		trigger = {  
 			Y10 = { #Yingzhen
 				vassal_of = ROOT
-				NOT = { liberty_desire = 0 }
+				NOT = { liberty_desire = 1 }
 			}
 			4853 = { #Anjiang
 				cavalry_in_province = 20
@@ -1240,26 +1243,23 @@ gushuokguan_4 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 			}
-			# custom_trigger_tooltip = {
-			# 	tooltip = gushuokguan_owns_jiangyang_provinces_tt
-				north_yanshen_region = {
-					type = all
-					culture = jiangyang
-				is_core = ROOT
-				owned_by = ROOT
-				OR = {
-					local_autonomy = 25
-					has_province_modifier = autonomy_increased
-					is_capital = no
+			north_yanshen_region = {
+				type = all
+				culture = jiangyang
+			is_core = ROOT
+			owned_by = ROOT
+			OR = {
+				local_autonomy = 25
+				has_province_modifier = autonomy_increased
+				is_capital = no
+			}
+			NOT = { devastation = 0.01 } 
+			NOT = { unrest = 0 }
+			if = {
+				limit = { ROOT = { has_parliament = yes }  } 
+					has_seat_in_parliament = yes 
 				}
-				NOT = { devastation = 0.01 } 
-				NOT = { unrest = 0 }
-				if = {
-					limit = { ROOT = { has_parliament = yes }  } 
-						has_seat_in_parliament = yes 
-					}
-				}
-			# }
+			}
 		}
 
 		effect = {  
@@ -1280,6 +1280,7 @@ gushuokguan_4 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
+			NOT = { exists = Y20 } #Feiten
 			iongsim_area = {
 				type = all
 				is_core = ROOT
@@ -1295,15 +1296,14 @@ gushuokguan_4 = {
 					has_seat_in_parliament = yes 
 				}
 			}
-			NOT = { exists = Y20 } #Feiten
 		} 
 
 		effect = {  
-			release = Y20 #Feiten
 			create_subject = {
 				subject_type = dao
 				subject = Y20 #Feiten
 			} 
+			custom_tooltip = gushuokguan_release_feiten_tt
 			4871 = { #Tianlou
 				add_unit_construction = {
 					type = light_ship
@@ -1313,7 +1313,22 @@ gushuokguan_4 = {
 				}
 			}
 			custom_tooltip = gushuokguan_can_release_zyujyut_tt
-			hidden_effect = { set_country_flag = gushuokguan_can_release_zyujyut } 
+			hidden_effect = { 
+				set_country_flag = gushuokguan_can_release_zyujyut
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = iongsim_area
+							area = luoyip_area
+							area = hongnguan_area
+							area = gungi_area
+							area = xiyun_area
+						}
+					}
+					cede_province = Y20 #Feiten
+					add_core = Y20 #Feiten
+				}
+			} 
 		}
 	}
 
@@ -1417,7 +1432,7 @@ gushuokguan_4 = {
 		trigger = {  
 			Y20 = { #Feiten
 				vassal_of = ROOT
-				NOT = { liberty_desire = 0 }
+				NOT = { liberty_desire = 1 }
 			}
 			4879 = { #Feiten
 				has_fort_building_trigger = yes
@@ -1692,7 +1707,7 @@ gushuokguan_5 = {
 
 		effect = {  
 			country_event = {
-				id = gushuokguan_event.20
+				id = gushuokguan_event.31
 			}
 		} 
 	}
@@ -1711,23 +1726,20 @@ gushuokguan_5 = {
 					has_country_flag = gushuokguan_civil_war_confederalist_won
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = gushuokguan_5_7_tt
-				all_owned_province = {
-					OR = {
-						local_autonomy = 25
-						has_province_modifier = autonomy_increased
-					}
-					NOT = { unrest = 0 }
+			all_owned_province = {
+				OR = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
 				}
-				trade_node_provinces = {
-					province_has_center_of_trade_of_level = 2
-					has_trade_building_trigger = yes
-				}
-				capital_scope = {
-					development = 30
-					has_building = state_house
-				}
+				NOT = { unrest = 0 }
+			}
+			trade_node_provinces = {
+				province_has_center_of_trade_of_level = 2
+				has_trade_building_trigger = yes
+			}
+			capital_scope = {
+				development = 30
+				has_building = state_house
 			}
 			all_subject_country = {
 				all_owned_province = {
