@@ -507,7 +507,7 @@ brambleskinner_3_1 = {
 		}
 
 		effect = {
-			every_owned_province = { #maybe make a custom tooltip to say it's only for former Oubbligschild provinces
+			every_owned_province = {
 				limit = { is_core = U12 }
 				add_local_autonomy = -10
 				add_nationalism = -5
