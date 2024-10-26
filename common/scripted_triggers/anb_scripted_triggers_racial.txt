@@ -694,6 +694,7 @@ ruler_is_gnomish = {
 			ruler_culture = delta_gnome
 			ruler_culture = tinker_gnome
 			ruler_culture = glacier_gnome
+			ruler_culture = frontier_gnome
 		}
 	}
 }
@@ -723,6 +724,9 @@ ruler_is_human = {
 			ruler_culture = vanburian
 			ruler_culture = themarian
 			ruler_culture = dhanaenno
+			ruler_culture = fiadionni
+			ruler_culture = gliosine
+			ruler_culture = arthaman
 			#Alenic
 			ruler_culture = gawedi
 			ruler_culture = old_alenic
@@ -731,10 +735,12 @@ ruler_is_human = {
 			ruler_culture = moorman
 			ruler_culture = wexonard
 			ruler_culture = marrodic
+			ruler_culture = westman
 			#Businori
 			ruler_culture = busilari
 			ruler_culture = tefori
 			ruler_culture = ilatani
+			ruler_culture = nariandi
 			#Escanni
 			ruler_culture = black_castanorian
 			ruler_culture = castanorian
@@ -788,6 +794,9 @@ ruler_is_human = {
 			ruler_culture = iochander
 			ruler_culture = carnetori
 			ruler_culture = sornicandi
+			ruler_culture = thornish
+			ruler_culture = criodhi
+			ruler_culture = arbcoster
 			#Reachman
 			ruler_culture = blue_reachman_r
 			ruler_culture = white_reachman_r
@@ -801,6 +810,7 @@ ruler_is_human = {
 			ruler_culture = olavish
 			ruler_culture = talderannic
 			ruler_culture = perlatter
+			ruler_culture = elnarfolk
 			#Bulwari
 			ruler_culture = bahari
 			ruler_culture = gelkar
@@ -1050,6 +1060,7 @@ ruler_is_kobold = {
 			ruler_culture = goldscale_kobold
 			ruler_culture = dragonfire_kobold
 			ruler_culture = steelscale_kobold
+			ruler_culture = vrendzani_kobold
 		}
 	}
 }
@@ -1540,6 +1551,7 @@ consort_is_gnomish = {
 			consort_culture = delta_gnome
 			consort_culture = tinker_gnome
 			consort_culture = glacier_gnome
+			consort_culture = frontier_gnome
 		}
 	}
 }
@@ -1568,6 +1580,9 @@ consort_is_human = {
 			consort_culture = vanburian
 			consort_culture = themarian
 			consort_culture = dhanaenno
+			consort_culture = fiadionni
+			consort_culture = gliosine
+			consort_culture = arthaman
 			#Alenic
 			consort_culture = gawedi
 			consort_culture = old_alenic
@@ -1576,10 +1591,12 @@ consort_is_human = {
 			consort_culture = moorman
 			consort_culture = wexonard
 			consort_culture = marrodic
+			consort_culture = westman
 			#Businori
 			consort_culture = busilari
 			consort_culture = tefori
 			consort_culture = ilatani
+			consort_culture = nariandi
 			#Escanni
 			consort_culture = black_castanorian
 			consort_culture = castanorian
@@ -1633,6 +1650,9 @@ consort_is_human = {
 			consort_culture = iochander
 			consort_culture = carnetori
 			consort_culture = sornicandi
+			consort_culture = thornish
+			consort_culture = criodhi
+			consort_culture = arbcoster
 			#Reachman
 			consort_culture = blue_reachman_r
 			consort_culture = white_reachman_r
@@ -1646,6 +1666,7 @@ consort_is_human = {
 			consort_culture = olavish
 			consort_culture = talderannic
 			consort_culture = perlatter
+			consort_culture = elnarfolk
 			#Bulwari
 			consort_culture = bahari
 			consort_culture = gelkar
@@ -1890,6 +1911,7 @@ consort_is_kobold = {
 			consort_culture = goldscale_kobold
 			consort_culture = dragonfire_kobold
 			consort_culture = steelscale_kobold
+			consort_culture = vrendzani_kobold
 		}
 	}
 }
@@ -2361,6 +2383,7 @@ heir_is_gnomish = {
 			heir_culture = delta_gnome
 			heir_culture = tinker_gnome
 			heir_culture = glacier_gnome
+			heir_culture = frontier_gnome
 		}
 	}
 }
@@ -2389,6 +2412,9 @@ heir_is_human = {
 			heir_culture = vanburian
 			heir_culture = themarian
 			heir_culture = dhanaenno
+			heir_culture = fiadionni
+			heir_culture = gliosine
+			heir_culture = arthaman
 			#Alenic
 			heir_culture = gawedi
 			heir_culture = old_alenic
@@ -2397,10 +2423,12 @@ heir_is_human = {
 			heir_culture = moorman
 			heir_culture = wexonard
 			heir_culture = marrodic
+			heir_culture = westman
 			#Businori
 			heir_culture = busilari
 			heir_culture = tefori
 			heir_culture = ilatani
+			heir_culture = nariandi
 			#Escanni
 			heir_culture = black_castanorian
 			heir_culture = castanorian
@@ -2454,6 +2482,9 @@ heir_is_human = {
 			heir_culture = iochander
 			heir_culture = carnetori
 			heir_culture = sornicandi
+			heir_culture = thornish
+			heir_culture = criodhi
+			heir_culture = arbcoster
 			#Reachman
 			heir_culture = blue_reachman_r
 			heir_culture = white_reachman_r
@@ -2467,6 +2498,7 @@ heir_is_human = {
 			heir_culture = olavish
 			heir_culture = talderannic
 			heir_culture = perlatter
+			heir_culture = elnarfolk
 			#Bulwari
 			heir_culture = bahari
 			heir_culture = gelkar
@@ -2711,6 +2743,7 @@ heir_is_kobold = {
 			heir_culture = goldscale_kobold
 			heir_culture = dragonfire_kobold
 			heir_culture = steelscale_kobold
+			heir_culture = vrendzani_kobold
 		}
 	}
 }
@@ -3555,6 +3588,7 @@ has_gnomish_advisor = {
 			employed_advisor = { culture = delta_gnome }
 			employed_advisor = { culture = tinker_gnome }
 			employed_advisor = { culture = glacier_gnome }
+			employed_advisor = { culture = frontier_gnome }
 		}
 	}
 }
@@ -3569,6 +3603,7 @@ has_gnomish_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = delta_gnome }
 			employed_advisor = { category = $category$ culture = tinker_gnome}
 			employed_advisor = { category = $category$ culture = glacier_gnome}
+			employed_advisor = { category = $category$ culture = frontier_gnome}
 		}
 	}
 }
@@ -3826,6 +3861,9 @@ has_human_advisor = {
 			employed_advisor = { culture = vanburian }
 			employed_advisor = { culture = themarian }
 			employed_advisor = { culture = dhanaenno }
+			employed_advisor = { culture = fiadionni }
+			employed_advisor = { culture = gliosine }
+			employed_advisor = { culture = arthaman }
 			employed_advisor = { culture = gawedi }
 			employed_advisor = { culture = old_alenic }
 			employed_advisor = { culture = blue_reachman }
@@ -3833,9 +3871,11 @@ has_human_advisor = {
 			employed_advisor = { culture = moorman }
 			employed_advisor = { culture = wexonard }
 			employed_advisor = { culture = marrodic }
+			employed_advisor = { culture = westman }
 			employed_advisor = { culture = busilari }
 			employed_advisor = { culture = tefori }
-			employed_advisor = { culture = ilatani } 
+			employed_advisor = { culture = ilatani }
+			employed_advisor = { culture = nariandi }
 			employed_advisor = { culture = black_castanorian }
 			employed_advisor = { culture = castanorian }
 			employed_advisor = { culture = castellyrian }
@@ -3884,6 +3924,9 @@ has_human_advisor = {
 			employed_advisor = { culture = iochander }
 			employed_advisor = { culture = carnetori }
 			employed_advisor = { culture = sornicandi }
+			employed_advisor = { culture = thornish }
+			employed_advisor = { culture = criodhi }
+			employed_advisor = { culture = arbcoster }
 			employed_advisor = { culture = blue_reachman_r }
 			employed_advisor = { culture = white_reachman_r }
 			employed_advisor = { culture = moorman_r }
@@ -3895,6 +3938,7 @@ has_human_advisor = {
 			employed_advisor = { culture = olavish }
 			employed_advisor = { culture = talderannic }
 			employed_advisor = { culture = perlatter }
+			employed_advisor = { culture = elnarfolk }
 			employed_advisor = { culture = bahari }
 			employed_advisor = { culture = gelkar }
 			employed_advisor = { culture = brasanni }
@@ -4051,6 +4095,9 @@ has_human_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = vanburian }
 			employed_advisor = { category = $category$ culture = themarian }
 			employed_advisor = { category = $category$ culture = dhanaenno }
+			employed_advisor = { category = $category$ culture = fiadionni }
+			employed_advisor = { category = $category$ culture = gliosine }
+			employed_advisor = { category = $category$ culture = arthaman }
 			employed_advisor = { category = $category$ culture = gawedi }
 			employed_advisor = { category = $category$ culture = old_alenic }
 			employed_advisor = { category = $category$ culture = blue_reachman }
@@ -4058,9 +4105,11 @@ has_human_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = moorman }
 			employed_advisor = { category = $category$ culture = wexonard }
 			employed_advisor = { category = $category$ culture = marrodic }
+			employed_advisor = { category = $category$ culture = westman }
 			employed_advisor = { category = $category$ culture = busilari }
 			employed_advisor = { category = $category$ culture = tefori }
 			employed_advisor = { category = $category$ culture = ilatani }
+			employed_advisor = { category = $category$ culture = nariandi }
 			employed_advisor = { category = $category$ culture = black_castanorian }
 			employed_advisor = { category = $category$ culture = castanorian }
 			employed_advisor = { category = $category$ culture = castellyrian }
@@ -4109,6 +4158,9 @@ has_human_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = iochander }
 			employed_advisor = { category = $category$ culture = carnetori }
 			employed_advisor = { category = $category$ culture = sornicandi }
+			employed_advisor = { category = $category$ culture = thornish }
+			employed_advisor = { category = $category$ culture = criodhi }
+			employed_advisor = { category = $category$ culture = arbcoster }
 			employed_advisor = { category = $category$ culture = blue_reachman_r }
 			employed_advisor = { category = $category$ culture = white_reachman_r }
 			employed_advisor = { category = $category$ culture = moorman_r }
@@ -4120,6 +4172,7 @@ has_human_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = olavish }
 			employed_advisor = { category = $category$ culture = talderannic }
 			employed_advisor = { category = $category$ culture = perlatter }
+			employed_advisor = { category = $category$ culture = elnarfolk }
 			employed_advisor = { category = $category$ culture = bahari }
 			employed_advisor = { category = $category$ culture = gelkar }
 			employed_advisor = { category = $category$ culture = brasanni }
@@ -4265,6 +4318,7 @@ has_kobold_advisor = {
 			employed_advisor = { culture = goldscale_kobold }
 			employed_advisor = { culture = dragonfire_kobold }
 			employed_advisor = { culture = steelscale_kobold }
+			employed_advisor = { culture = vrendzani_kobold }
 		}
 	}
 }
@@ -4280,7 +4334,8 @@ has_kobold_advisor_of_category = {
 			employed_advisor = { category = $category$ culture = darkscale_kobold }
 			employed_advisor = { category = $category$ culture = goldscale_kobold }
 			employed_advisor = { category = $category$ culture = dragonfire_kobold }
-			employed_advisor = { category = $category$ culture = steelscale_kobold}
+			employed_advisor = { category = $category$ culture = steelscale_kobold }
+			employed_advisor = { category = $category$ culture = vrendzani_kobold }
 		}
 	}
 }
@@ -4642,6 +4697,9 @@ has_human_accepted_culture = {
 		accepted_culture = vanburian
 		accepted_culture = themarian
 		accepted_culture = dhanaenno
+		accepted_culture = fiadionni
+		accepted_culture = gliosine
+		accepted_culture = arthaman
 		#Alenic
 		accepted_culture = gawedi
 		accepted_culture = old_alenic
@@ -4650,10 +4708,12 @@ has_human_accepted_culture = {
 		accepted_culture = moorman
 		accepted_culture = wexonard
 		accepted_culture = marrodic
+		accepted_culture = westman
 		#Businori
 		accepted_culture = busilari
 		accepted_culture = tefori
 		accepted_culture = ilatani
+		accepted_culture = nariandi
 		#Escanni
 		accepted_culture = black_castanorian
 		accepted_culture = castanorian
@@ -4707,6 +4767,9 @@ has_human_accepted_culture = {
 		accepted_culture = iochander
 		accepted_culture = carnetori
 		accepted_culture = sornicandi
+		accepted_culture = thornish
+		accepted_culture = criodhi
+		accepted_culture = arbcoster
 		#Reachman
 		accepted_culture = blue_reachman_r
 		accepted_culture = white_reachman_r
@@ -4720,6 +4783,7 @@ has_human_accepted_culture = {
 		accepted_culture = olavish
 		accepted_culture = talderannic
 		accepted_culture = perlatter
+		accepted_culture = elnarfolk
 		#Bulwari
 		accepted_culture = bahari
 		accepted_culture = gelkar
@@ -5023,6 +5087,7 @@ has_gnomish_accepted_culture = {
 		accepted_culture = delta_gnome
 		accepted_culture = tinker_gnome
 		accepted_culture = glacier_gnome
+		accepted_culture = frontier_gnome
 	}
 }
 
@@ -5079,6 +5144,7 @@ has_kobold_accepted_culture = {
 		accepted_culture = goldscale_kobold
 		accepted_culture = dragonfire_kobold
 		accepted_culture = steelscale_kobold
+		accepted_culture = vrendzani_kobold
 	}
 }
 
