@@ -4521,6 +4521,7 @@ on_war_declaration_effect = {
 	if = {
 		limit = {
 			has_country_flag = active_frenzy_flg
+			is_in_war = { casus_belli = cb_blood_frenzy }
 		}
 		every_neighbor_country = {
 			reverse_remove_casus_belli = {
