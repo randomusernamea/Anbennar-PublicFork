@@ -3530,9 +3530,11 @@ grand_archives = {
 	can_use_modifiers_trigger = {
 		if = { 
 			limit = {
-				OR = {
-					tag = I90
-					was_tag = I90 
+				owner = {
+					OR = {
+						tag = I90
+						was_tag = I90 
+					}
 				}
 			}
 			owner = { 
@@ -3564,9 +3566,11 @@ grand_archives = {
 	can_upgrade_trigger = {
 		if = { 
 			limit = {
-				OR = {
-					tag = I90
-					was_tag = I90 
+				owner = {
+					OR = {
+						tag = I90
+						was_tag = I90 
+					}
 				}
 			}
 			owner = { 

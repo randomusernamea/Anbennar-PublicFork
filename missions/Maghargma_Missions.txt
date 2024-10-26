@@ -1215,25 +1215,25 @@ maghargma_three = {
 			OR = {
 				AND = {
 					province_id = 5322
-					NOT = { base_production = 6 }
-					has_production_building_trigger = no
+					OR = {
+						NOT = { base_production = 6 }
+						has_production_building_trigger = no
+					}
 				}
 				AND = {
 					province_id = 5123
-					NOT = { country_or_non_sovereign_subject_holds = ROOT }
-					has_trade_building_trigger = no
-				}
-				AND = {
-					owner = {
-						tag = J25
-						NOT = { has_90_opinion_improved_relation = { target = ROOT } }
+					OR = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						has_trade_building_trigger = no
 					}
 				}
-				AND = {
-					owner = {
-						tag = J30
-						NOT = { has_90_opinion_improved_relation = { target = ROOT } }
-					}
+				owner = {
+					tag = J25
+					NOT = { has_90_opinion_improved_relation = { target = ROOT } }
+				}
+				owner = {
+					tag = J30
+					NOT = { has_90_opinion_improved_relation = { target = ROOT } }
 				}
 			}
 		} 
@@ -1809,13 +1809,40 @@ maghargma_four = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			calc_true_if = {
-				all_subject_country = {
-					is_subject_of_type = tributary_state_anb
-					capital_scope = { region = west_forbidden_plains_region }
+			if = {
+				limit = {
+					calc_true_if = {
+						all_known_country = {
+							capital_scope = { region = west_forbidden_plains_region }
+							culture_group = centaur
+						}	
+						amount = 3
+					}
 				}
-				amount = 3
+				custom_trigger_tooltip = {
+					tooltip = maghargma_beasts_of_burden_tt_1
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = tributary_state_anb
+							capital_scope = { region = west_forbidden_plains_region }
+						}
+						amount = 3
+					}
+				}
 			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = maghargma_beasts_of_burden_tt_1
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = tributary_state_anb
+							culture_group = centaur
+						}
+						amount = 3
+					}
+				}
+			}
+
 			dip_power = 100
 			all_subject_country = {
 				NOT = { liberty_desire = 50 }
@@ -1835,13 +1862,49 @@ maghargma_four = {
 					}
 				}
 			}
-			every_subject_country = {
+			if = {
 				limit = {
-					is_subject_of_type = tributary_state_anb
-					culture_group = centaur
-					capital_scope = { region = west_forbidden_plains_region } 
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = tributary_state_anb
+							capital_scope = { region = west_forbidden_plains_region }
+						}
+						amount = 3
+					}
 				}
-				ROOT = { vassalize = PREV }
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						capital_scope = { region = west_forbidden_plains_region } 
+					}
+					ROOT = { vassalize = PREV }
+				}
+			}
+			else = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						any_owned_province = {
+							region = west_forbidden_plains_region
+						}
+					}	
+					ROOT = { vassalize = PREV }
+					if = {
+						limit = {
+							NOT = {
+								capital_scope = { region = west_forbidden_plains_region }
+							}
+						}
+						random_owned_province = {
+							limit = {
+								region = west_forbidden_plains_region 
+							}
+							THIS = { set_capital = PREV }
+						}
+					}
+				}
 			}
 			add_country_modifier = {
 				name = I90_expanding_court
@@ -1923,28 +1986,80 @@ maghargma_four = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = maghargma_lord_of_the_plains_tt
-				calc_true_if = {
-					all_subject_country = {
-						is_subject_of_type = tributary_state_anb
-						capital_scope = { region = east_forbidden_plains_region } 
+			if = {
+				limit = {
+					calc_true_if = {
+						all_subject_country = {
+							culture_group = centaur
+							capital_scope = { region = east_forbidden_plains_region } 
+						}
+						amount = 2
 					}
-					amount = 2
+				}
+				custom_trigger_tooltip = {
+					tooltip = maghargma_lord_of_the_plains_tt
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = tributary_state_anb
+							capital_scope = { region = east_forbidden_plains_region } 
+						}
+						amount = 2
+					}
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					region = east_forbidden_plains_region
+					value = 10
 				}
 			}
 		}
 
 		effect = {
-			every_subject_country = {
+			if = {
 				limit = {
-					is_subject_of_type = tributary_state_anb
-					culture_group = centaur
-					capital_scope = { region = east_forbidden_plains_region } 
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = tributary_state_anb
+							capital_scope = { region = east_forbidden_plains_region }
+						}
+						amount = 2
+					}
 				}
-				ROOT = { vassalize = PREV }
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						capital_scope = { region = east_forbidden_plains_region } 
+					}
+					ROOT = { vassalize = PREV }
+				}
 			}
-			add_yearly_manpower = 1
+			else = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						any_owned_province = {
+							region = east_forbidden_plains_region
+						}
+					}	
+					ROOT = { vassalize = PREV }
+					if = {
+						limit = {
+							NOT = {
+								capital_scope = { region = east_forbidden_plains_region }
+							}
+						}
+						random_owned_province = {
+							limit = {
+								region = east_forbidden_plains_region 
+							}
+							THIS = { set_capital = PREV }
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -2407,6 +2522,7 @@ maghargma_dynamic_ancestor_2 = {
 		required_missions = { maghargma_confront_the_ancestors } 
 		provinces_to_highlight = {  
 			region = nomsyulhan_region
+			NOT = { province_id = 6838 } #Rift Bearer
 			local_autonomy = 25
 		} 
 
@@ -2516,22 +2632,64 @@ maghargma_five = {
 					calc_true_if = {
 						all_subject_country = {
 							capital_scope = { region = serpent_gift_region }
-							is_subject_of = ROOT
+							is_subject_of_type = tributary_state_anb
 						}
 						amount = 2
 					}
 				}
 			}
+			else = {
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					region = serpent_gift_region
+					value = 10
+				}
+			}
 		}
 
 		effect = {
-			every_subject_country = {
+			if = {
 				limit = {
-					is_subject_of_type = tributary_state_anb
-					culture_group = centaur
-					capital_scope = { region = serpent_gift_region } 
+					calc_true_if = {
+						all_subject_country = {
+							capital_scope = { region = serpent_gift_region }
+							is_subject_of_type = tributary_state_anb
+						}
+						amount = 2
+					}
 				}
-				ROOT = { vassalize = PREV }
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						capital_scope = { region = serpent_gift_region } 
+					}
+					ROOT = { vassalize = PREV }
+				}
+			}
+			else = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state_anb
+						culture_group = centaur
+						any_owned_province = {
+							region = serpent_gift_region
+						}
+					}
+					ROOT = { vassalize = PREV }
+					if = {
+						limit = {
+							NOT = {
+								capital_scope = { region = serpent_gift_region }
+							}
+						}
+						random_owned_province = {
+							limit = {
+								region = serpent_gift_region 
+							}
+							THIS = { set_capital = PREV }
+						}
+					}
+				}
 			}
 			5102 = {
 				add_trade_modifier = {
@@ -2560,11 +2718,20 @@ maghargma_five = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			any_subject_country = {
-				is_subject_of_type = vassal
-				capital_scope = { region = serpent_gift_region } 
-				has_50_opinion_improved_relation = { target  = ROOT }
-				culture_group = centaur
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = vassal
+						culture_group = centaur
+						capital_scope = { region = serpent_gift_region } 
+					}
+				}
+				any_subject_country = {
+					is_subject_of_type = vassal
+					capital_scope = { region = serpent_gift_region } 
+					has_50_opinion_improved_relation = { target  = ROOT }
+					culture_group = centaur
+				}
 			}
 		}
 
@@ -2592,11 +2759,16 @@ maghargma_five = {
 					PREV = { inherit = PREV }
 				}
 			}
-			5101 = {
-				cede_province = ROOT
-				add_core = ROOT
-				change_culture = ROOT
-				change_religion = ROOT
+			if = {
+				limit = {
+					5101 = { owned_by_subject_of = ROOT }
+				}
+				5101 = {
+					cede_province = ROOT
+					add_core = ROOT
+					change_culture = ROOT
+					change_religion = ROOT
+				}
 			}
 		} 
 	}
@@ -2954,6 +3126,7 @@ maghargma_five_post_amberlands = {
 		required_missions = { maghargma_lords_of_fire } 
 		provinces_to_highlight = {  
 			region = nomsyulhan_region
+			NOT = { province_id = 6838 } #Rift Bearer
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
@@ -2980,13 +3153,16 @@ maghargma_five_post_amberlands = {
 		required_missions = { maghargma_the_second_ogre_valley } 
 		provinces_to_highlight = {  
 			region = nomsyulhan_region
+			NOT = { province_id = 6838 } #Rift Bearer
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 
 		trigger = {
-			nomsyulhan_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			NOT = {
+				nomsyulhan_region = {
+					NOT = { province_id = 6838 } #Rift Bearer
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
 			}
 			OR = {
 				has_country_modifier = racial_focus_hobgoblin
