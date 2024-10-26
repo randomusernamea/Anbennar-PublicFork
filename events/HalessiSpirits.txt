@@ -11606,36 +11606,42 @@ province_event = {	#Temple Corrupted
 				if = { #Temple Corruption Flavor Events
 					limit = { NOT = { check_variable = { which = devouring_path_flavor_counter value = 4 } } }
 					if = {
-						limit = {
-							check_variable = { which = devouring_path_flavor_counter value = 3 }
-							NOT = { has_global_flag = rending_happened }
-							num_of_owned_provinces_with = {
-								value = 15
-								has_province_modifier = corrupted_temple_complex
+						limit = { check_variable = { which = devouring_path_flavor_counter value = 3 } }
+						if = {
+							limit = {
+								NOT = { has_global_flag = rending_happened }
+								num_of_owned_provinces_with = {
+									value = 15
+									has_province_modifier = corrupted_temple_complex
+								}
 							}
+							country_event = { id = spirits.613 days = 365 }
 						}
-						country_event = { id = spirits.613 days = 365 }
 					}
 					else_if = {
-						limit = {
-							check_variable = { which = devouring_path_flavor_counter value = 2 }
-							NOT = { has_global_flag = rending_happened }
-							num_of_owned_provinces_with = {
-								value = 10
-								has_province_modifier = corrupted_temple_complex
+						limit = { check_variable = { which = devouring_path_flavor_counter value = 2 } }
+						if = {
+							limit = {
+								NOT = { has_global_flag = rending_happened }
+								num_of_owned_provinces_with = {
+									value = 10
+									has_province_modifier = corrupted_temple_complex
+								}
 							}
+							country_event = { id = spirits.612 days = 365 }
 						}
-						country_event = { id = spirits.612 days = 365 }
 					}
 					else_if = {
-						limit = {
-							check_variable = { which = devouring_path_flavor_counter value = 1 }
-							num_of_owned_provinces_with = {
-								value = 5
-								has_province_modifier = corrupted_temple_complex
+						limit = { check_variable = { which = devouring_path_flavor_counter value = 1 } }
+						if = {
+							limit = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_province_modifier = corrupted_temple_complex
+								}
 							}
+							country_event = { id = spirits.611 days = 365 }
 						}
-						country_event = { id = spirits.611 days = 365 }
 					}
 					else = { country_event = { id = spirits.610 days = 365 } }
 				}
