@@ -67,44 +67,47 @@ giberd_imperial = {
 		}
 		position = 8
 		trigger = {
-			OR = {
-				AND = {
-					280 = {
-						owned_by = ROOT
+			custom_trigger_tooltip = {
+				tooltip = giberd_the_pinklady_power_tt
+				OR = {
+					AND = {
+						280 = {
+							owned_by = ROOT
+						}
+						576 = {
+							owned_by = root
+						}
 					}
-					576 = {
-						owned_by = root
-					}
-				}
-				AND = {
-					280 = {
-						owner = {
-							reverse_has_opinion = {
-								who = ROOT
-								value = 150
+					AND = {
+						280 = {
+							owner = {
+								reverse_has_opinion = {
+									who = ROOT
+									value = 150
+								}
+							}
+						}
+						901 = {
+							is_strongest_trade_power = ROOT
+						}
+						calc_true_if = {
+							amount = 10
+							all_owned_province = {
+								has_trade_building_trigger = yes
 							}
 						}
 					}
-					901 = {
-						is_strongest_trade_power = ROOT
-					}
-					calc_true_if = {
-						amount = 10
-						all_owned_province = {
-							has_trade_building_trigger = yes
+					AND = {
+						280 = {
+							owner = {
+								is_enemy = ROOT
+								trade_embargo_by = ROOT
+							}
 						}
-					}
-				}
-				AND = {
-					280 = {
-						owner = {
-							is_enemy = ROOT
-							trade_embargo_by = ROOT
+						916 = {
+							infantry_in_province = ROOT
+							infantry_in_province = 20
 						}
-					}
-					916 = {
-						infantry_in_province = ROOT
-						infantry_in_province = 20
 					}
 				}
 			}
@@ -570,15 +573,22 @@ giberd_konwell_conquest = {
 							has_building = farm_estate
 							base_production = 8
 						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = giberd_graining_and_grazing_livestock_tt
+				all_owned_province = {
+					OR = {
+						NOT = {
+							region = esmaria_region
+							trade_goods = livestock
+						}
 						AND = {
 							trade_goods = livestock
 							has_manpower_building_trigger = yes
 							has_building = soldier_households
 							base_manpower = 8
-						}
-						NOT = {
-							trade_goods = grain
-							trade_goods = livestock
 						}
 					}
 				}
@@ -817,6 +827,7 @@ giberd_konwell_conquest = {
 						has_global_flag = esmari_fashion_happened
 					}
 				}
+				custom_tooltip = giberd_esmari_fashion_happened_yes
 				add_treasury = -5000
 				country_event = {
 					id = anb_price.43
@@ -1456,38 +1467,44 @@ giberd_ryalanar_conquest = {
 			}
 		}
 		trigger = {
-			any_known_country = {
-				has_100_opinion_improved_relation = {
-					target = ROOT
-				}
-				OR = {
-					culture_is_gnomish = yes
-					culture_is_dwarven = yes
-					AND = {
-						capital_scope = {
-							continent = europe
-						}
-						any_owned_province = {
-							OR = {
-								has_gnomish_majority_trigger = yes
-								has_gnomish_minority_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = giberd_the_artificers_of_cannor_tt
+				any_known_country = {
+					has_100_opinion_improved_relation = {
+						target = ROOT
+					}
+					OR = {
+						culture_is_gnomish = yes
+						culture_is_dwarven = yes
+						AND = {
+							capital_scope = {
+								continent = europe
+							}
+							any_owned_province = {
+								OR = {
+									has_gnomish_majority_trigger = yes
+									has_gnomish_minority_trigger = yes
+								}
 							}
 						}
 					}
 				}
 			}
 			treasury = 1000
-			esmaria_region = {
-				type = all
-				OR = {
-					AND = {
-						has_gnomish_majority_trigger = no
-						has_gnomish_minority_trigger = no
-					}
-					base_production = 7
-					AND = {
-						has_production_building_trigger = yes
-						has_production_manufactory_or_gold_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = giberd_the_artificers_of_cannor_2_tt
+				esmaria_region = {
+					type = all
+					OR = {
+						AND = {
+							has_gnomish_majority_trigger = no
+							has_gnomish_minority_trigger = no
+						}
+						base_production = 7
+						AND = {
+							has_production_building_trigger = yes
+							has_production_manufactory_or_gold_trigger = yes
+						}
 					}
 				}
 			}
@@ -1543,6 +1560,7 @@ giberd_ryalanar_conquest = {
 		}
 		trigger = {
 			mission_completed = giberd_to_strike_an_anvil
+			has_flagship = yes
 			OR = {
 				has_personal_deity = minara
 				A10 = {
@@ -1565,11 +1583,12 @@ giberd_ryalanar_conquest = {
 					navy_size = A85
 				}
 				AND = {
-					exists = A85
+					NOT = {
+						exists = A85
+					}
 					has_estate_privilege = estate_mages_organization_magisterium
 				}
 			}
-			has_flagship = yes
 		}
 		effect = {
 			add_country_modifier = {
@@ -1884,6 +1903,15 @@ giberd_mercantile_shipping = {
 		}
 		position = 8
 		provinces_to_highlight = {
+			province_id = 271
+			NOT = {
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+				OR = {
+					is_prosperous = yes
+					has_state_edict = edict_defensive_edict
+				}
+			}
 		}
 		trigger = {
 			271 = {
@@ -2321,6 +2349,7 @@ giberd_artificer = {
 			}
 			innovativeness = 60
 			OR = {
+				religion = ravelian
 				AND = {
 					religion = regent_court
 					has_personal_deity = esmaryal
@@ -2329,7 +2358,6 @@ giberd_artificer = {
 					religion = corinite
 					karma = 0
 				}
-				religion = ravelian
 			}
 			275 = {
 				has_courthouse_building_trigger = yes
@@ -2430,15 +2458,18 @@ giberd_artificer = {
 				has_province_modifier = ravelian_society
 				base_production = 12
 			}
-			all_owned_province = {
-				OR = {
-					AND = {
-						base_production = 8
-						has_forcelimit_building_trigger = yes
-					}
-					NOT = {
-						has_province_modifier = ravelian_society
-						region = esmaria_region
+			custom_trigger_tooltip = {
+				tooltip = atypical_artificers_tt
+				all_owned_province = {
+					OR = {
+						AND = {
+							base_production = 8
+							has_forcelimit_building_trigger = yes
+						}
+						NOT = {
+							has_province_modifier = ravelian_society
+							region = esmaria_region
+						}
 					}
 				}
 			}
