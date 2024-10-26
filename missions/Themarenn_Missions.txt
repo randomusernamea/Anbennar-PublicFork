@@ -321,8 +321,10 @@ a95_river_parties = {
 		}
 		position = 2
 		provinces_to_highlight = {
-			province_id = 265
-			province_id = 264
+			OR = {
+				province_id = 265
+				province_id = 264
+			}
 		}
 
 		trigger = {
@@ -506,9 +508,11 @@ a95_river_parties = {
 		}
 		position = 6
 		provinces_to_highlight = {
-			superregion = deepwoods_superregion
-			superregion = escann_superregion
-			superregion = gerudia_superregion
+			OR = {
+				superregion = deepwoods_superregion
+				superregion = escann_superregion
+				superregion = gerudia_superregion
+			}
 		}
 
 		trigger = {
