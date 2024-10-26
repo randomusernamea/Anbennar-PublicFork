@@ -236,7 +236,7 @@ country_event = {
 			}
 			set_country_flag = L55_high_authority
 		}
-		set_variable = { which = rebelamount value = 3 }
+		set_variable = { which = rebelamount value = 3 }	
 		}
 	}
 	option = {
@@ -332,6 +332,7 @@ country_event = {
 				days = 70
 			}
 			set_country_flag = L55_part_two
+			set_country_flag = L55_riva_alive
 			swap_non_generic_missions = yes
 		}
 	}
@@ -1119,22 +1120,22 @@ country_event = {
 
 #pure flavour
 
-#country_event = {
-#	id = naleni.35 #Riva death
-#	title = naleni.35.t
-#	desc = naleni.35.d
-#	picture = GREAT_SPIRIT_YANHE_eventPicture
-#	fire_only_once = yes
-#	is_triggered_only = yes
-#	trigger = {
-#		tag = L55
-#		has_country_flag = 
-#	}
-#	option = {
-#		name = naleni.35.a
-#		
-#	}
-#}
+country_event = {
+	id = naleni.35 #Riva death
+	title = naleni.35.t
+	desc = naleni.35.d
+	picture = GREAT_SPIRIT_YANHE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = L55
+		has_country_flag = L55_riva_alive
+	}
+	option = {
+		name = naleni.35.a
+		clr_country_flag = L55_riva_alive
+	}
+}
 
 #rebel spawning events
 country_event = {
