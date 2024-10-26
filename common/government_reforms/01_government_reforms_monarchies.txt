@@ -13267,7 +13267,7 @@ ties_with_anbennarian_nobility = {
 			remove_country_modifier = gov_ties_with_anbennarian_III
 			remove_country_modifier = gov_ties_with_anbennarian_IV
 			every_heretic_province = {
-				limit = {is_anbennarian_culture = yes}
+				limit = {is_anbennarian_imperial_culture = yes}
 				remove_province_modifier = gov_empire_heretic
 			}
 		}
