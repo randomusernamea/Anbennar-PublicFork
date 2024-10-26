@@ -800,6 +800,13 @@ can_dig_hold_alert = {
 		}
 		owner = { has_country_flag = hold_operation }
 	}
+	else = {
+		NOT = {
+			owner = {
+				has_country_flag = building_diggy # upgrading infrastructure
+			}
+		}
+	}
 	NOT = {
 		has_construction = any
 		has_province_modifier = ruined_hold
