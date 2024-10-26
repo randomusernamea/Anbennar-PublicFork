@@ -922,7 +922,12 @@ maghargma_dynamic_trolls_1 = {
 			}
 		} 
 		trigger = {  
-			medium_tolerance_troll_race_trigger = yes
+			OR = {
+				medium_tolerance_troll_race_trigger = yes
+				high_tolerance_troll_race_trigger = yes
+				max_tolerance_troll_race_trigger = yes
+			}
+
 			all_owned_province = {
 				OR = {
 					NOT = { continent = europe }
@@ -1396,14 +1401,18 @@ maghargma_three = {
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {  
 			superregion = forbidden_lands_superregion
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			OR = {
+				is_city = yes
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
 		} 
 
 		trigger = {
-			forbidden_lands_superregion = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			NOT = {
+				forbidden_lands_superregion = {
+					is_city = yes
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
 			legitimacy = 90
 			NOT = { overextension_percentage = 0.01 } 
 		}
@@ -1485,6 +1494,8 @@ maghargma_three = {
 			OR = {
 				has_country_modifier = racial_pop_centaur_expulsion
 				medium_tolerance_centaur_race_trigger = yes
+				high_tolerance_centaur_race_trigger = yes
+				max_tolerance_centaur_race_trigger = yes
 			}
 		}
 
