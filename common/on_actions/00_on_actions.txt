@@ -2280,9 +2280,8 @@ on_siege_won_country = {
 				tag = A95
 				was_tag = A95
 			}
-			ROOT = {
-				has_country_modifier = a95_esmaraine_ep2
-			}
+			has_country_modifier = a95_esmaraine_ep2
+			FROM = { [province_id = 266 }
 			266 = {
 				owned_by = A44
 				controlled_by = ROOT
