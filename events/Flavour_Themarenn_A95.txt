@@ -1699,11 +1699,16 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_port = no
-				NOT = {
-					has_building = impressment_offices
-					has_construction = building
-				}
+				owned_by = ROOT
+            	is_core = ROOT
+                has_port = no
+                NOT = { 
+                    has_building = impressment_offices 
+                    has_construction = building
+                    has_construction = core
+                	has_construction = missionary
+                }
+                num_free_building_slots	= 1
 				region = esmaria_region
 			}
 			add_building_construction = {
@@ -1768,11 +1773,16 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_port = no
-				NOT = {
-					has_building = impressment_offices
-					has_construction = building
-				}
+				owned_by = ROOT
+            	is_core = ROOT
+                has_port = no
+                NOT = { 
+                    has_building = impressment_offices 
+                    has_construction = building
+                    has_construction = core
+                	has_construction = missionary
+                }
+                num_free_building_slots	= 1
 				OR = {
 					area = north_ibevar_area
 					area = south_ibevar_area
@@ -1830,11 +1840,16 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_port = no
-				NOT = {
-					has_building = impressment_offices
-					has_construction = building
-				}
+				owned_by = ROOT
+            	is_core = ROOT
+                has_port = no
+                NOT = { 
+                    has_building = impressment_offices 
+                    has_construction = building
+                    has_construction = core
+                	has_construction = missionary
+                }
+                num_free_building_slots	= 1
 				area = heartland_borders_area
 			}
 			add_building_construction = {
@@ -1889,11 +1904,16 @@ country_event = {
 		}
 		random_owned_province = {
 			limit = {
-				has_port = no
-				NOT = {
-					has_building = impressment_offices
-					has_construction = building
-				}
+				owned_by = ROOT
+            	is_core = ROOT
+                has_port = no
+                NOT = { 
+                    has_building = impressment_offices 
+                    has_construction = building
+                    has_construction = core
+                	has_construction = missionary
+                }
+                num_free_building_slots	= 1
 				area = the_commons_area
 			}
 			add_building_construction = {
