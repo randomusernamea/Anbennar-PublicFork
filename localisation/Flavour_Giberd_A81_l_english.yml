@@ -31,6 +31,7 @@
  giberd_dealing_with_the_magisterium:0 "Dealing with the Magisterium"
  giberd_uniting_esmaria_title:0 "Uniting Esmaria"
  giberd_uniting_esmaria_desc:0 "11 gnomes"
+ giberd_diplomatic_tour_tt:0 "We will prepare for a diplomatic tour of the empire to secure the support of the electors."
  giberd_electoral_dreams_title:0 "Electoral Dreams"
  giberd_electoral_dreams_desc:0 "12 gnomes"
  electoral_dreams_bonus_yes:0 "\n£yes£ If we complete the mission by having good relations with §Y7§! electors, we additionally gain:"
@@ -104,23 +105,6 @@
  giberd_5_capacity_5_years_tt:0 "Lose §R5§! Artificer Capacity for §Y5§! years."
  giberd_magisterium_oversight_buffed_tt:0 "Reduce the downsides by §G50%§! for §YArtificer Organization: Magisterium Oversight§!."
 
- flavor_giberd.1.t:0 "Aid From Giberd"
- flavor_giberd.1.d:0 "Recently, we have received a large amount of gold from our gnomish brethren in Giberd. They say that this is because they had heard rumours that we were planning to liberate the Dragon Coast from the kobolds, and wanted to assist us in our noble endeavour. This will greatly assist us in our efforts, and the assistance of the imperial gnomes will never be forgotten."
- flavor_giberd.1.a:0 "We will use this wisely."
-
- flavor_giberd.2.t:0 "A Gnomish Elector?"
- flavor_giberd.2.d:0 "The rising influence of gnomes in Esmaria has led them to demand an electorate, to make themselves equal to the other minorities within the empire. While this would grant us a powerful friend in Esmaria, this land was secured through conquest, setting a bad precedent for the future appointment of electors. If we refuse, however, there could be mass unrest, and we would certainly become the permanent enemies of this rising power of Esmaria. Should we elevate the principality of Giberd to the electorate of Giberd?"
- flavor_giberd.2.a:0 "Let us grant them equal stature with other minorities within the empire."
- flavor_giberd.2.b:0 "Don't we already have enough powerful short people?"
-
- flavor_giberd.3.t:0 "Electorate Granted"
- flavor_giberd.3.d:0 "Today, glorious news has arrived in Giberd, and the whole land has erupted in celebration. The river parties have intensified, temple bells have been rung, and it seems everyone is in the streets. We have received congratulations both from the dwarves of Silverforge, as well as gnomish communities across the world, for today, our dreams were fulfilled.  The emperor has granted our request for a gnomish electorate, and we are now truly equal within the empire. Today truly is a great day for gnomekind. "
- flavor_giberd.3.a:0 "We may finally stand tall!"
-
- flavor_giberd.4.t:0 "Electorate Refused"
- flavor_giberd.4.d:0 "Today, dark news has arrived in Giberd, and the whole land is united in rage. The river parties have turned to riots, and it seems that the whole nation is in the streets. The dwarves of Silverforge have also sent condolences, and promise to support us in any course of action we take. The emperor has refused our requests for a gnomish electorate, keeping us from being truly equal within the empire. Today is truly a dark day for gnomekind, but we will take what we deserve, by force if necessary."
- flavor_giberd.4.a:0 "There will be blood!"
-
  # MT events
  flavor_giberd.10.t:0 "Our Options of War"
  flavor_giberd.10.d:0 "A meeting of the minds of Giberd, the artificers offer their services in order to help Giberd's expansion but Research of inventions will be unable to proceed while the artificers help the war effort"
@@ -146,11 +130,10 @@
  flavor_giberd.13.d:0 "The construction is finally finished."
  flavor_giberd.13.a:0 "A very useful ship."
 
-
  flavor_giberd.14.t:0 "Convincing The Emperor"
  flavor_giberd.14.d:0 "The Emperor has welcomed the gnomish delegation carefully, recognizing that the Magisterium are watching them with great interest. The Emperor in a move to undermine the magsteriums watch sends the delegation a letter late into the evening in secret asking that the gnomes propose that they will construct an aritifcery gift for the Emperor. One that will amaze all if only the Emperor would grant them Electorship, this would appease the Magisterium as an act of showing respect and the invention would please the emperor who is curious to see what we can come up with!"
  flavor_giberd.14.a:0 "The gnomes begin their work immediately"
- # giberd_decreases_our_artifice_upkeep_by_20:0 "Frees §G20§! Artifice Capacity"
+ giberd_decreases_our_artifice_upkeep_by_20:0 "Frees §G20§! Artifice Capacity"
  giberd_increases_our_artifice_upkeep_by_20:0 "Uses §R20§! Artifice Capacity for 10 years."
 
  flavor_giberd.15.t:0 "The First Gnomish Elector"
@@ -192,15 +175,15 @@
  flavor_giberd.21.d:0 "The merchants of Damescrown are frutal electors and unwilling to back a new candidate with its substantial financial power unless it benefits their pockets.  They  demand a contract giving htem exclusive trade rights in ESmaria for two decades in exchange for their support."
  flavor_giberd.21.a:0 "Sign the contract."
  flavor_giberd.21.b:0 "Outrageous deal!"
- damescrown_contracts:0 "Damescrown Contracts"
+ giberd_damescrown_contracts:0 "Damescrown Contracts"
 
  flavor_giberd.22.t:0 "A Short Trip to Beepeck"
  flavor_giberd.22.d:0 "The halflings of Beepeck have some history with gnomish refugees like those that created Giberd.  However, [A11.Monarch.GetName] does not seek to use these ties productively. Instead, their ruler asks us to recognize these frankly insane claims on land owned by lorent and Gawed in exchange for their support.  The justification for these claims is best described as laughable and it's clear the current leader wishes to use our recognition to bolster thir chances at the next election."
  flavor_giberd.22.a:0 "Write up a statement of support."
  flavor_giberd.22.b:0 "We are not pawns in their politics."
- beepeck_honored_by_giberd:0 "Honored by Giberd"
+ giberd_beepeck_honored_by_giberd:0 "Honored by Giberd"
  giberd_beepeck_pawns:0 "Pawned Our Reputation"
-giber_potions_bribe:0 "Successful Visit"
+ giberd_potions_bribe:0 "Successful Visit"
 
 
  flavor_giberd.23.t:0 "Passage to Pearsledge"
@@ -208,7 +191,7 @@ giber_potions_bribe:0 "Successful Visit"
  flavor_giberd.23.a:0 "We'll take five crates for the rest of the journey."
  flavor_giberd.23.b:0 "We prefer good Giberdi ale."
  giberd_bought_bad_wine:0 "Esmari Exports"
- we_bought_bad_wine:0 "Pearledge Piss"
+ giberd_we_bought_bad_wine:0 "Pearledge Piss"
 
  flavor_giberd.24.t:0 "Motioning to Moonhaven"
  flavor_giberd.24.d:0 "The nation of Moonhaven is full of elves openly discussing going back to Aelantir and it seems that with advancements in exploration [A35.Monarch.GetName] desires for several of our artificers to go along with their altest exploration to help analyse precursor technology adn reclics.  They would not be back for decades and their loss would upset the artificers of Giberd - especially since Moonhaven will not pay us.  However, Moonhaven will only give support if we go along."
@@ -229,7 +212,7 @@ giber_potions_bribe:0 "Successful Visit"
  flavor_giberd.26.d:0 "Our last tirp before we return home is by far the one our diplomats hae dreaded the most.  The Magisteriumregards artificery with intense suspicion and dislike.  Howver, our diplomats received a surprisingly warm reception, and the scryers alreayd ahve a deal prepared.  The Magistrium will support us if we agree to prevent any artificer deemed dangerous from being invented and welcome Magisterial oversight for 20 years."
  flavor_giberd.26.a:0 "Let the Mages in."
  flavor_giberd.26.b:0 "We have no need of nannies."
-giber_magisterial_oversight:0 "Shackled by Mages"
+ giberd_magisterial_oversight:0 "Shackled by Mages"
 
  # faction events
  giberd_factions_explain_tt:0 "Which §MFaction§! gains the most support will have consequences later."
@@ -318,8 +301,8 @@ giber_magisterial_oversight:0 "Shackled by Mages"
  flavor_giberd.44.t:0 "Giberd: a Nation Friendless"
  flavor_giberd.44.d:0 "Hours go by, and few envoys and merchants arrive, many artificers leave on the second day, only a few remain on the third. The Mechanists on board proudly boast and brag about how right they were, that Cannor would never accept Artificery and, in anger, a new policy is created."
  flavor_giberd.44.a:0 "Giberd will show the power of artificery in a way the empire can comprehend, war."
- # modifiers
 
+# modifiers
  giberd_merchants_buying_artificer_goods:0 "Merchants buying Artificer goods"
  giberd_the_grg:0 "The GRG (Giberdi River Guard)"
  giberd_the_gg:0 "The GG (Giberdi Guard)"
@@ -400,6 +383,7 @@ giber_magisterial_oversight:0 "Shackled by Mages"
  giberd_deluge_of_investment:0 "A deluge of investments from the Empire"
  giberd_language_of_esmar:0 "The Language of the Esmar"
  giberd_show_our_might:0 "Show our Might"
+ giberd_silverforge_relations_good:0 "Good relations with Silverforge"
 
 
  # where should this one really live

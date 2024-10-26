@@ -376,7 +376,7 @@ country_event = {
 
 ########
 # electorate event chain
-# The Art of Promises, Paycheques and Propositions
+# Starting with Silverforge
 country_event = {
 	id = flavor_giberd.20
 	title = flavor_giberd.20.t
@@ -431,7 +431,7 @@ country_event = {
 			}
 			country_event = {
 				id = flavor_giberd.25				#Istralore
-				days = 240
+				days = 300
 			}
 		}
 		if = {
@@ -440,7 +440,7 @@ country_event = {
 			}
 			country_event = {
 				id = flavor_giberd.26				#Magisterium
-				days = 240
+				days = 360
 			}
 		}
 	}
@@ -488,7 +488,7 @@ country_event = {
 			}
 			country_event = {
 				id = flavor_giberd.25				#Istralore
-				days = 240
+				days = 300
 			}
 		}
 		if = {
@@ -497,12 +497,13 @@ country_event = {
 			}
 			country_event = {
 				id = flavor_giberd.26				#Magisterium
-				days = 240
+				days = 360
 			}
 		}
 	}
 }
 
+# Down stream and up to Damescrown
 country_event = {
 	id = flavor_giberd.21
 	title = flavor_giberd.21.t	##damescrown
@@ -519,13 +520,14 @@ country_event = {
 				who = A25
 				duration = 3650
 				power = 100
-				key = damescrown_contracts
+				key = giberd_damescrown_contracts
 			}
 		}
 		A25 = {
 			add_opinion = {
 				who = ROOT
-				modifier = giber_potions_bribe
+				modifier = giberd_potions_bribe
+				years = 10
 			}
 		}
 	}
@@ -548,7 +550,7 @@ country_event = {
 		A12 = {
 			add_prestige = 50
 			add_country_modifier = {
-				name = beepeck_honored_by_giberd
+				name = giberd_beepeck_honored_by_giberd
 				duration = 3650
 			}
 		}
@@ -574,6 +576,11 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.23.a
+		add_treasury = -1000
+		add_country_modifier = {
+			name = giberd_we_bought_bad_wine
+			duration = 7300
+		}
 		A11 = {
 			add_country_modifier = {
 				name = giberd_bought_bad_wine
@@ -581,15 +588,10 @@ country_event = {
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = giber_potions_bribe
+				modifier = giberd_potions_bribe
 			}
 			add_treasury = 1000
-			add_country_modifier = {
-				name = we_bought_bad_wine
-				duration = 7300
-			}
 		}
-		add_treasury = -1000
 	}
 	option = {
 		name = flavor_giberd.23.b
@@ -614,12 +616,12 @@ country_event = {
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = giber_potions_bribe
+				modifier = giberd_potions_bribe
 			}
-			add_country_modifier = {
-				name = artificers_aelantir
-				duration = 7300
-			}
+		}
+		add_country_modifier = {
+			name = artificers_aelantir
+			duration = 7300
 		}
 	}
 	option = {
@@ -645,7 +647,7 @@ country_event = {
 			}
 			add_opinion = {
 				who = ROOT
-				modifier = giber_potions_bribe
+				modifier = giberd_potions_bribe
 			}
 		}
 		add_country_modifier = {
@@ -672,11 +674,11 @@ country_event = {
 		A85 = {
 			add_opinion = {
 				who = ROOT
-				modifier = giber_potions_bribe
+				modifier = giberd_potions_bribe
 			}
 		}
 		add_country_modifier = {
-			name = giber_magisterial_oversight
+			name = giberd_magisterial_oversight
 			duration = 7300
 		}
 	}

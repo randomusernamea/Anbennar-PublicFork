@@ -7611,22 +7611,22 @@ giberd_clear_skies = {
 }
 
 giberd_silverforge_relations_good = {
-	improve_relation_modifier = 0.30
+	improve_relation_modifier = 0.15
 }
 
 giberd_beepeck_pawns = {
 	diplomatic_reputation = -1
 }
 
-beepeck_honored_by_giberd = {
+giberd_beepeck_honored_by_giberd = {
 	diplomatic_reputation = 1
 }
 
 giberd_bought_bad_wine = {
-	local_production_efficiency = 0.1
+	production_efficiency = 0.1
 }
 
-we_bought_bad_wine = {
+giberd_we_bought_bad_wine = {
 	global_unrest = 3
 }
 
@@ -7647,7 +7647,7 @@ giberd_harmed_helping  = {
 	discipline = -0.05
 	siege_ability = -0.20
 }
-giber_magisterial_oversight = {
+giberd_magisterial_oversight = {
 	mages_influence_modifier = 0.30
 }
 
