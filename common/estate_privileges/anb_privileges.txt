@@ -13785,8 +13785,12 @@ estate_mages_all_mask = {
 #Maghargma
 estate_mages_collaborators = {
 	icon = privilege_promote_maratha_nobility
-
-	is_valid = { has_estate_privilege = estate_mages_collaborators }
+	is_valid = { 
+		OR = {
+			tag = I90
+			was_tag = I90
+		}
+	}
 	can_select = { has_country_flag = I90_mages_collab_enabled }
 	max_absolutism = 0
 	benefits = {
@@ -13798,7 +13802,12 @@ estate_mages_collaborators = {
 
 estate_burghers_friends_in_high_places = {
 	icon = burghers_loyalty_equilibrium
-	is_valid = { has_estate_privilege = estate_mages_collaborators }
+	is_valid = {  
+		OR = {
+			tag = I90
+			was_tag = I90
+		}
+	}
 	can_select = { has_country_flag = I90_burghers_collab_enabled }
 	max_absolutism = -5
 	benefits = {
