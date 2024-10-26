@@ -2989,6 +2989,10 @@ soldier_households = {
 			limit = { FROM = { has_reform = kai_diligent_bureucracy } }
 			anb_manufactory_discount_remove = yes
 		}
+		if = {
+            limit = { has_province_modifier = bhuvauri_adasa_workforce }
+            remove_province_modifier = bhuvauri_adasa_workforce
+        }
 	}
 	on_obsolete = {
 	}
