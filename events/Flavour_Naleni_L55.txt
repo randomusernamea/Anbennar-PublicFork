@@ -50,6 +50,7 @@ country_event = {
 		name = naleni.3.a
 		ai_chance = { factor = 50 }
 		increase_matauth_2 = yes
+		add_treasury = -200
 	}
 	option = {
 		name = naleni.3.b
@@ -72,6 +73,9 @@ country_event = {
 		name = naleni.4.b
 		ai_chance = { factor = 25 }
 		decrease_matauth_3 = yes
+		riyiwedeb_area = {
+			add_core = ROOT
+		}
 	}
 }
 

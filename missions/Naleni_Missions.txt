@@ -63,14 +63,16 @@ Naleni_branch_two = {
 						value = 30
 					}
 					trade_embargoing = L57
-					OR = {
-						has_opinion_modifier = {
-							Who = L57
-							modifier = insulted
-						}
-						has_opinion_modifier = {
-							Who = L57
-							modifier = scornfully_insulted
+					L57 = {
+						OR = {	
+							has_opinion_modifier = {
+								Who = L55
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								Who = L55
+								modifier = scornfully_insulted
+							}
 						}
 					}
 				}
