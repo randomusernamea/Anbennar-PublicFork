@@ -60,7 +60,10 @@ maghargma_one = {
 				has_tax_building_trigger = yes
 				NOT = { devastation = 1 } 
 			}
-			NOT = { doom = 50 } 
+			NOT = {
+				religion = feast_of_the_gods 
+				doom = 50 
+			}
 		}
 
 		effect = {
@@ -1416,6 +1419,7 @@ maghargma_three = {
 					is_city = yes
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
+			}
 			legitimacy = 90
 			NOT = { overextension_percentage = 0.01 } 
 		}

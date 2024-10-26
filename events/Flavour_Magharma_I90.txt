@@ -866,9 +866,6 @@ country_event = {
 		name = flavor_maghargma.20.a #Respect Their Rights
 		set_country_flag = I90_cooperate_Sudomeg'i
 		custom_tooltip = I90_cooperate_Sudomeg'i_tt
-		tooltip = {
-			set_estate_privilege = artifice_invention_ironwraith_weapons_platform
-		}
 		every_owned_province = {
 			limit = { has_province_modifier = I90_culture_shock } 
 			remove_province_modifier = I90_culture_shock
@@ -880,9 +877,6 @@ country_event = {
 		name = flavor_maghargma.20.b #Who You Gonna Call?
 		set_country_flag = I90_purge_Sudomeg'i
 		custom_tooltip = I90_purge_Sudomeg'i_tt
-		tooltip = {
-			set_estate_privilege = artifice_invention_spirit_capture_tech
-		}
 		every_owned_province = {
 			limit = { has_province_modifier = I90_culture_shock } 
 			remove_province_modifier = I90_culture_shock
