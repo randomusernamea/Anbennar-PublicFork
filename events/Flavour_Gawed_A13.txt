@@ -470,7 +470,7 @@ country_event = {
 				duration = -1
 			}
 		}
-		else_if = {
+		else = {
 			add_ruler_modifier = {
 				name = magnate_council_support
 				duration = -1
@@ -495,7 +495,7 @@ country_event = {
 				duration = -1
 			}
 		}
-		else_if = {
+		else = {
 			add_ruler_modifier = {
 			name = magnate_council_rejected
 			duration = -1 #50 Years
@@ -519,7 +519,7 @@ country_event = {
 				duration = -1
 			}
 		}
-		else_if = {
+		else = {
 			add_ruler_modifier = {
 				name = magnate_council_opposition
 				duration = -1 #50 Years
@@ -551,12 +551,12 @@ country_event = {
 				duration = -1
 			}
 		}
-		else_if = {
-		add_ruler_modifier = {
-			name = magnate_council_support
-			duration = -1
+		else = {
+			add_ruler_modifier = {
+				name = magnate_council_support
+				duration = -1
+			}
 		}
-	}
 	}
 }
 
