@@ -359,6 +359,21 @@ country_event = {
 	}
 }
 
+# The shackles of the Magisterium
+country_event = {
+	id = flavor_giberd.19
+	title = flavor_giberd.19.t
+	desc = flavor_giberd.19.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.19.a
+	}
+	option = {
+		name = flavor_giberd.19.b
+	}
+}
+
 ########
 # electorate event chain
 # The Art of Promises, Paycheques and Propositions
@@ -667,6 +682,48 @@ country_event = {
 	}
 	option = {
 		name = flavor_giberd.26.b
+	}
+}
+
+# What is in a name?
+country_event = {
+	id = flavor_giberd.29
+	title = flavor_giberd.29.t
+	desc = flavor_giberd.29.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_giberd.29.a
+		add_country_modifier = {
+			name = giberd_nation_esmaria_built
+			duration = -1
+		}
+		change_tag = Z46
+		# override_country_name = ESMARIA
+	}
+	option = {
+		name = flavor_giberd.29.b
+		add_country_modifier = {
+			name = giberd_nation_esmaria_built
+			duration = -1
+		}
+		override_country_name = IMPERIAL_HIERARCHY
+	}
+	option = {
+		name = flavor_giberd.29.c
+		add_country_modifier = {
+			name = giberd_nation_esmaria_built
+			duration = -1
+		}
+		override_country_name = CAIGHSODDA_HIERARCHY
+	}
+	option = {
+		name = flavor_giberd.29.d
+		add_country_modifier = {
+			name = giberd_nation_esmaria_built
+			duration = -1
+		}
+		override_country_name = GIBERDI_HIERARCHY
 	}
 }
 

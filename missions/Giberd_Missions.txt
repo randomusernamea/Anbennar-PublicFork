@@ -925,7 +925,7 @@ giberd_konwell_conquest = {
 				limit = {
 					has_cardinal = yes
 					NOT = {
-						has_province_triggered_modifier = giberd_permanent_veridical
+						has_province_modifier = giberd_permanent_veridical
 					}
 				}
 				remove_cardinal = yes
@@ -1645,21 +1645,33 @@ giberd_ryalanar_conquest = {
 		}
 		position = 14
 		provinces_to_highlight = {
-			area = konwell_area
-			NOT = {
-				owned_by = ROOT
-			}
 		}
 		trigger = {
-			konwell_area = {
-				type = all
-				owned_by = ROOT
+			is_at_war = no
+			is_defender_of_faith = yes
+			all_states = {
+				OR = {
+					NOT = {
+						region = esmaria
+					}
+					AND = {
+						is_prosperous = yes
+						has_state_edict = edict_advancement_effort
+						any_province_in_state = {
+							has_building = university
+							has_building = cathedral
+						}
+					}
+				}
+			}
+			estate_loyalty = {
+				estate = estate_artificers
+				loyalty = 60
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			country_event = {
+				id = flavor_giberd.29
 			}
 		}
 	}
@@ -2119,13 +2131,68 @@ giberd_mercantile_shipping = {
 		}
 		position = 13
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 271
+						province_id = 275
+						province_id = 901
+						province_id = 266
+						province_id = 911
+					}
+					NOT = {
+						has_building = cathedral
+					}
+				}
+				AND = {
+					is_capital_of = Z97
+					NOT = {
+						ROOT = {
+							owes_favors = {
+								who = Z97
+								value = 30
+							}
+						}
+					}
+				}
+			}
 		}
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = is_researching_invention_tt
+				has_country_flag = artifice_research_in_progress
+			}
+			adm_power = 200
+			dip_power = 200
+			271 = {
+				has_building = cathedral
+			}
+			275 = {
+				has_building = cathedral
+			}
+			901 = {
+				has_building = cathedral
+			}
+			266 = {
+				has_building = cathedral
+			}
+			911 = {
+				has_building = cathedral
+			}
+			owes_favors = {
+				who = Z97
+				value = 30
+			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = giberd_imperial_archives
-				duration = 18250				#50 years
+			add_adm_power = 200
+			add_dip_power = 200
+			add_favors = {
+				who = Z93
+				value = -30
+			}
+			country_event = {
+				id = flavor_giberd.19
 			}
 		}
 	}
