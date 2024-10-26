@@ -640,7 +640,10 @@ maghargma_two = {
 		trigger = {
 			army_size = 60
 			army_size_percentage = 0.9
-			high_tolerance_goblin_race_trigger = yes
+			OR = {
+				high_tolerance_goblin_race_trigger = yes
+				max_tolerance_goblin_race_trigger = yes
+			}
 		}
 
 		effect = { country_event = { id = flavor_maghargma.14 }  } #The Green Army
@@ -1619,7 +1622,10 @@ maghargma_three = {
 				type = all
 				hold_condition = { Repaired = yes }
 			}
-			high_tolerance_goblin_race_trigger = yes
+			OR = {
+				high_tolerance_goblin_race_trigger = yes
+				max_tolerance_goblin_race_trigger = yes
+			}
 		}
 
 		effect = {
