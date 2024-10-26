@@ -14,12 +14,17 @@ fixed_capital = 2773
 1444.1.1 = {
 	set_country_flag = kheio_adm
 	change_personal_deity = kheio_adm_1
+	set_country_flag = militants_in_power
+	add_ruler_modifier = {
+		name = G48_militants_in_power 
+		duration = -1
+	}
 }
 
 1439.9.18 = {
 	monarch = {
 		name = "Vyranos"
-		dynasty = "Jahekles"
+		dynasty = "Artogenea"
 		birth_date = 1383.4.29
 		adm = 4
 		dip = 1

@@ -16,11 +16,42 @@ G48_slot_1 = {
 	G48_learning_from_the_best = {
 		icon = ven_navy_mission_2
 		position = 1
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = { } 
 
-		trigger = {  } 
+		trigger = {  
+			G59 { 
+				has_50_opinion_improved_relation = { target = ROOT } 
+				has_subsidize_armies = yes
+			}
+			OR = {
+				advisor = naval_reformer
+				AND = {
+					dip_power = 50
+					has_dip_advisor = yes
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			add_country_modifier = {
+				name = G48_regular_navy_drills
+				duration = 5478 #15 Years
+			}
+			create_admiral = { tradition = 50 }
+			G59 = {
+				add_country_modifier = {
+					name = G48_regular_navy_drills
+					duration = 5478 #15 Years
+				}
+				create_admiral = { tradition = 50 }
+			}
+			if = {
+				limit = {
+					NOT = { advisor = naval_reformer }
+				}
+				add_dip_power = -50
+			}
+		} 
 	}
 
 	G48_the_pearl_boom = {
@@ -29,9 +60,44 @@ G48_slot_1 = {
 		required_missions = { G48_learning_from_the_best } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			G59 = {
+				capital_scope = {
+					num_of_times_improved = 3
+				}
+				has_divert_trade = yes
+			}
+			has_estate_privilege = estate_burghers_private_trade_fleets
+		} 
 
-		effect = {  } 
+		effect = {  
+			simple_dynamic_effect = {
+				first_custom_tooltip = G48_colonists_in_power_tt
+				first_limit = "has_country_flag = colonists_in_power" 
+				first_effect = "
+				define_advisor = { 
+					type = trader
+					skill = 1
+					cost_multiplier = 0.25
+				}"
+				second_custom_tooltip = G48_colonists_not_in_power_tt
+				second_limit = "NOT = { has_country_flag = colonists_in_power }"
+				second_effect = "
+				define_advisor = { 
+					type = trader
+					skill = 1
+					cost_multiplier = 0.50
+				}" 
+			}
+			G59 = {
+				add_years_of_owned_provinces_production_income = {
+					years = 5
+					trigger = {
+						trade_goods = gems
+					}
+				}
+			}
+		} 
 	}
 
 	G48_cleaved_dominance = {
