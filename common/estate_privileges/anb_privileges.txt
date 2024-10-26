@@ -13781,3 +13781,53 @@ estate_mages_all_mask = {
 
 	ai_will_do = { factor = 10 }
 }
+
+#Brambleskinner
+estate_monstrous_tribes_two_clans_one_boss = {
+	icon = privilege_grant_autonomy
+	loyalty = 0.05
+	influence = 0.1
+	is_valid = { has_estate_privilege = estate_monstrous_tribes_two_clans_one_boss }
+	can_revoke = { always = no }
+	
+	benefits = {
+		reform_progress_growth = 0.15
+		reduced_liberty_desire = 5
+	}
+}
+
+estate_monstrous_tribes_six_clans_one_boss = {
+	icon = privilege_grant_autonomy
+	loyalty = 0.05
+	influence = 0.1
+	is_valid = { has_estate_privilege = estate_monstrous_tribes_six_clans_one_boss }
+	can_revoke = { always = no }
+	
+	benefits = {
+		reform_progress_growth = 0.30
+		diplomatic_upkeep = 2
+		reduced_liberty_desire = 10
+	}
+}
+
+estate_burghers_subsidiary_cartels = {
+	icon = privilege_better_integration
+	loyalty = 0.05
+	influence = 0.1
+	is_valid = { 
+		OR = {	
+			tag = I35 #Brambleskinner
+			was_tag = I35 #Brambleskinner
+		}
+		num_of_subjects = 1
+	}
+	benefits = {
+		vassal_income = 0.25
+		reduced_liberty_desire = 20
+		diplomatic_annexation_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

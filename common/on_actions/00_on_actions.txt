@@ -12981,6 +12981,19 @@ on_dependency_lost = {
 		}
 		remove_country_modifier = avhavubhiya_puppet_master
 	}
+	
+	if = { #Brambleskinner vassal stuff
+		limit = {
+			ROOT = { has_country_modifier = brambleskinner_minting_grant_1 }
+			FROM = { tag = I37 }
+		}
+		I37 = { remove_country_modifier = brambleskinner_minting_debuff }
+		remove_country_modifier = brambleskinner_minting_grant_1
+		add_country_modifier = { 
+			name = brambleskinner_minting_grant_2
+			duration = -1
+		}
+	}
 }
 
 # ROOT = New vassal, FROM = Overlord
