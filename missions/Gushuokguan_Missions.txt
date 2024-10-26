@@ -1372,7 +1372,7 @@ gushuokguan_4 = {
 			num_of_mercenaries = 100 #Average Lategame mission
 		} 
 
-		effect = { country_event = { id = gushuokguan_event.20 } } #TODO
+		effect = { country_event = { id = gushuokguan_event.17 } } #Seven Swords Society
 	}
 
 	gushuokguan_4_7 = {
@@ -1382,6 +1382,10 @@ gushuokguan_4 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_jade_pub_incident_tt
+				has_country_flag = gushuokguan_jade_pub_incident
+			}
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_6_stone_army_challenges_tt
 				calc_true_if = {
@@ -1396,7 +1400,12 @@ gushuokguan_4 = {
 			}
 		} 
 
-		effect = { country_event = { id = gushuokguan_event.20 } } #TODO
+		effect = { 
+			country_event = { id = gushuokguan_event.19 } 
+			hidden_effect = {
+				clr_country_flag = gushuokguan_jade_pub_incident
+			}
+		}
 	}
 
 	gushuokguan_4_8 = {
@@ -1492,12 +1501,9 @@ gushuokguan_5 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {  
-			# custom_trigger_tooltip = {
-			# 	tooltip = gushuokguan_hired_stone_army_tt #In case the tooltip looks bad
-				any_hired_mercenary_company = { 
-					template = merc_stone_army
-				}
-			# }
+			any_hired_mercenary_company = { 
+				template = merc_stone_army
+			}
 		} 
 
 		effect = {  

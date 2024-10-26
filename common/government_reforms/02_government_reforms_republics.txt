@@ -9029,4 +9029,11 @@ gongmin_lianbang = {
 		has_parliament = yes
 		estates_influenced_parliament = yes
 	}
+
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			hessian_militarization_mechanic
+		}
+	}
 }

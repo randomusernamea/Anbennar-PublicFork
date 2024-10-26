@@ -507,6 +507,13 @@ country_event = {
 	option = {
 		name = gushuokguan_event.17.a
 		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = gushuokguan_seven_swords_society
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = { id = gushuokguan_event.18 days = 3650 random = 3650 }
+		} 
 	}
 }
 
@@ -521,9 +528,43 @@ country_event = {
 
 	trigger = {}
 
+	immediate = {
+		hidden_effect = {
+			set_saved_name = {
+				key = gushuokguan_lubei
+				type = simple
+				name = "Lubei 'the Honorable'"
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			set_country_flag = gushuokguan_jade_pub_incident
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.18.a
 		ai_chance = { factor = 1 }
+		define_advisor = {
+			type = army_reformer
+			name = gushuokguan_lubei
+			skill = 2
+			discount = yes
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.18.a
+		ai_chance = { factor = 1 }
+		define_general = {
+			shock = 5
+			fire = 4
+			manuever = 2
+			siege = 2
+			name = gushuokguan_lubei
+		}
 	}
 }
 
@@ -541,6 +582,28 @@ country_event = {
 	option = {
 		name = gushuokguan_event.19.a
 		ai_chance = { factor = 1 }
+		if = {
+			limit = { employed_advisor = { name = gushuokguan_lubei } }
+			add_country_modifier = {
+				name = gushuokguan_advisor_lubei
+				duration = 9125
+			}
+		}
+		if = {
+			limit = { has_leader = gushuokguan_lubei }
+			add_country_modifier = {
+				name = gushuokguan_advisor_lubei
+				duration = 9125
+			}
+		}
+		add_country_modifier = {
+			name = gushuokguan_the_code_of_lubei
+			duration = -1
+		}
+		add_country_modifier = {
+			name = gushuokguan_the_code_of_lubei_morale
+			duration = -1
+		}
 	}
 }
 
@@ -1475,8 +1538,14 @@ country_event = {
 				modifier = gushuokguan_council_tensions_negative_medium
 			}
 		}
-		clear_global_event_target = dao_A
-		clear_global_event_target = dao_D
+		hidden_effect = {
+			clear_global_event_target = dao_A
+			clear_global_event_target = dao_D
+			every_claimed_province = {
+				limit = { has_province_flag = gushuokguan_claimed_for_dao }
+				clr_province_flag = gushuokguan_claimed_for_dao
+			}
+		}
 	}
 }
 
@@ -1526,6 +1595,11 @@ country_event = {
 		hidden_effect = {
 			clear_global_event_target = dao_A
 			clear_global_event_target = dao_D
+			every_claimed_province = {
+				limit = { has_province_flag = gushuokguan_claimed_for_dao }
+				clr_province_flag = gushuokguan_claimed_for_dao
+			}
+			#Could clear the ones in my provinces, but I kinda deem those irrelevant
 		}
 	}
 }
