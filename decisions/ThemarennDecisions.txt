@@ -116,10 +116,7 @@ country_decisions = {
                         loyalty = -5
                     }
                 }
-                else_if = {
-                    limit = {
-                        nobles_privilege_slots = 1
-                    }
+                else = {
                     set_estate_privilege = estate_nobles_themarenn_sailors
                 }
             }

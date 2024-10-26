@@ -352,7 +352,8 @@ a95_river_parties = {
 		effect = {
 			add_sailors = -1000
 			if = {
-				limit = { NOT = { has_personal_deity = ryala } add_dip_power = -100 }
+				limit = { NOT = { has_personal_deity = ryala } }
+				add_dip_power = -100
 			}
 			264 = {
 				add_permanent_province_modifier = {
@@ -395,7 +396,7 @@ a95_river_parties = {
 
 		trigger = {
 			OR = {
-				army_organizer = 2
+				army_organiser = 2
 				quartermaster = 2
 				mil_power = 100
 			}
