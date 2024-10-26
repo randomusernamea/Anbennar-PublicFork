@@ -2602,42 +2602,41 @@ on_province_religion_changed_effect = {
 		remove_province_modifier = religious_zeal_at_conv
 	}
 	if = { #Strenghten Elven Privilleges reform
-	    limit = { 
-			religion = elven_forebears
-			has_reform = strengthen_elves_privileges 
+		limit = { owner = { has_reform = strengthen_elves_privileges } }
+		if = {
+	    	limit = { religion = elven_forebears }
+			add_province_modifier = {
+				name = gov_moon_elven_religion_tolerance
+				duration = -1
+			}	 
 		}
-		add_province_modifier = {
-			name = gov_moon_elven_religion_tolerance
-			duration = -1
-		} 
-	}
-	if = { #Strenghten Elven Privilleges reform
-	    limit = { 
-			NOT = { religion = elven_forebears }
-			has_province_modifier = gov_moon_elven_religion_tolerance 
+		else_if = {
+	    	limit = { has_province_modifier = gov_moon_elven_religion_tolerance }
+			remove_province_modifier = gov_moon_elven_religion_tolerance
 		}
-		remove_province_modifier = gov_moon_elven_religion_tolerance
-	}
+	}	
 	#Ties with Anbennarian Nobility
 	if = { 
-	    limit = { 
-			has_owner_religion = no
-			is_anbennarian_imperial_culture = yes
-			NOT = { has_province_modifier = gov_empire_heretic }
-			owner = { has_reform = ties_with_anbennarian_nobility } 
+		limit = { owner = { has_reform = ties_with_anbennarian_nobility } } 
+		if = {
+	    	limit = { 
+				has_owner_religion = no
+				is_anbennarian_imperial_culture = yes
+				NOT = { has_province_modifier = gov_empire_heretic } 
+			}
+			add_province_modifier = {
+				name = gov_empire_heretic
+				duration = -1
+			} 
 		}
-		add_province_modifier = {
-			name = gov_empire_heretic
-			duration = -1
-		} 
-	}
-	if = { 
-	    limit = { 
-			has_province_modifier = gov_empire_heretic
-			has_owner_religion = yes 
+		else_if = { 
+	    	limit = { 
+				has_province_modifier = gov_empire_heretic
+				has_owner_religion = yes 
+			}
+			remove_province_modifier = gov_empire_heretic
 		}
-		remove_province_modifier = gov_empire_heretic
-	}
+	}	
 }
 
 on_province_religion_converted_effect = {
@@ -5010,22 +5009,19 @@ on_province_culture_change_effect = {
 	}
 	#Strenghten Elven Privilleges
 	if = {
-		limit = {
-			culture = moon_elf
-			has_reform = strengthen_elves_privileges
-		}
+		limit = { owner = { has_reform = strengthen_elves_privileges } }
+		if = {
+			limit = { culture = moon_elf }
 			add_province_modifier = {
 				name = gov_moon_elf_tolerance
 				duration = -1
 			}
-	}
-	if = {
-		limit = {
-			NOT = {culture = moon_elf}
-			has_province_modifier = gov_moon_elf_tolerance
 		}
+		else_if = {
+			limit = { has_province_modifier = gov_moon_elf_tolerance }
 			remove_province_modifier = gov_moon_elf_tolerance
-	}
+		}
+	}	
 }
 
 on_province_culture_converted_effect = {
@@ -9883,7 +9879,7 @@ on_province_owner_change_effect = {
 			}
 		}
 	}
-			#Strenghten Elven Privilleges reform
+	#Strenghten Elven Privilleges reform
 	if = { 
 	    limit = { 
 			religion = elven_forebears
