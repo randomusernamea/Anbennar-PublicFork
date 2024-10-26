@@ -161,7 +161,7 @@ giberd_imperial = {
 							target = ROOT
 						}
 						custom_trigger_tooltip = {
-							tooltip = giberdt_o_strike_an_anvil_tt							# TODO: check that this works
+							tooltip = giberd_to_strike_an_anvil_tt							# TODO: check that this works
 							any_known_country = {
 								AND = {
 									A73 = {
@@ -173,8 +173,8 @@ giberd_imperial = {
 						}
 					}
 				}
-				artifice_has_points_30 = yes
 			}
+			artifice_has_points_30 = yes
 		}
 		effect = {
 			country_event = {
@@ -561,11 +561,12 @@ giberd_konwell_conquest = {
 		}
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = giberd_graining_and_grazing_tt
+				tooltip = giberd_graining_and_grazing_grain_tt
 				all_owned_province = {
 					OR = {
 						NOT = {
 							region = esmaria_region
+							trade_goods = grain
 						}
 						AND = {
 							trade_goods = grain
