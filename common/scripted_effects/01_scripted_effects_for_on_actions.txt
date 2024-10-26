@@ -3311,6 +3311,41 @@ on_battle_won_country_effect = {
 			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
 		}
 	}
+	#Stalbor
+	if = {
+		limit = {
+			has_country_flag = B47_elrac_in_rebellion
+			FROM = { tag = REB }
+		}
+		country_event = {
+			id = flavor_stalbor.6 
+			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = B47_deepwood_religious_revolt
+			FROM = { tag = REB }
+		}
+		country_event = {
+			id = flavor_stalbor.12
+			days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+		}
+	}
+	if = {
+		limit = {
+			overlord = {
+				has_country_flag = B47_deepwood_religious_revolt
+			}
+			FROM = { tag = REB }
+		}
+		overlord = {
+			country_event = {
+				id = flavor_stalbor.12
+				days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
+			}
+		}
+	}
 }
 
 on_battle_lost_country_effect = {
@@ -9826,6 +9861,26 @@ on_province_owner_change_effect = {
 				limit = { has_province_flag = active_cannorian_holy_site }
 				make_cannorian_holy_site_inactive = yes
 			}
+		}
+	}
+	#Stalbor Stuff
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = B47_vampire_lords_on_the_run
+			}
+			region = dostanor_region
+		}
+		random = {
+			chance = 40
+			spawn_rebels = {
+				type = vampires_thralls
+				size = 1
+			}
+		}
+		add_province_modifier = {
+			name = B47_old_lord_loyalists
+			duration = -1
 		}
 	}
 }
