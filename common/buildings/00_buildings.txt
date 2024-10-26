@@ -2993,6 +2993,18 @@ soldier_households = {
             limit = { has_province_modifier = bhuvauri_adasa_workforce }
             remove_province_modifier = bhuvauri_adasa_workforce
         }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_1 }
+            remove_province_modifier = rakkaz_soldier_households_1
+        }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_2 }
+            remove_province_modifier = rakkaz_soldier_households_2
+        }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_3 }
+            remove_province_modifier = rakkaz_soldier_households_3
+        }
 	}
 	on_obsolete = {
 	}
