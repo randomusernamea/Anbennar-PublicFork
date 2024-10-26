@@ -42,13 +42,15 @@ country_decisions = {
                     area = heartland_borders_area
                 }
                 AND = {
-                    ROOT = { has_country_flag = a95_aranmass_offices }
+                    ROOT = { has_country_flag = a95_commons_offices }
                     area = the_commons_area
                 }
                 AND = {
-                    ROOT = { has_country_flag = a95_aranmass_offices }
-                    area = south_ibevar_area
-                    area = north_ibevar_area
+                    ROOT = { has_country_flag = a95_ibevar_offices }
+                    OR = {
+                        area = south_ibevar_area
+                        area = north_ibevar_area
+                    }
                 }
             }
 		}
