@@ -487,10 +487,13 @@ has_discovered_all_tier_3_inventions = {
 }
 
 artifice_has_invention_slot = {
-	NOT = {
-		check_variable = {
-			which = artifice_inventions_currently_used
-			which = artifice_max_invention_slots
+	custom_trigger_tooltip = {
+		tooltip = artifice_has_invention_slot_tt
+		NOT = {
+			check_variable = {
+				which = artifice_inventions_currently_used
+				which = ArtificeMaxInventions
+			}
 		}
 	}
 }

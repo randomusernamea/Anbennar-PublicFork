@@ -592,15 +592,40 @@ research_speed = {
 				value = 0.8
 			}
 		}
-		if = { # 10% faster speed
+
+		# new_years = base_years * (1-x)
+		# ie: -20% research time -> 10 years * (1-0.20) = 8 years
+		export_to_variable = {
+			which = ResearchSpeedMultiplier
+			value = modifier:artificers_research_time
+		}
+		change_variable = {
+			which = ResearchSpeedMultiplier
+			value = 1
+		}
+		if = { # clamp to 0.10 to avoid negative research time
 			limit = {
-				has_country_modifier = giberd_options_war_peace
+				NOT = {
+					check_variable = {
+						which = ResearchSpeedMultiplier
+						value = 0.10
+					}
+				}
 			}
-			multiply_variable = {
-				which = ResearchSpeed
-				value = 0.9
+			set_variable = {
+				which = ResearchSpeedMultiplier
+				value = 0.10
 			}
 		}
+		multiply_variable = {
+			which = ResearchSpeed
+			which = ResearchSpeedMultiplier
+		}
+	}
+	# also update max inventions
+	export_to_variable = {
+		variable_name = ArtificeMaxInventions
+		value = modifier:artificers_invention_slots
 	}
 }
 
@@ -634,10 +659,11 @@ set_up_artifice_system = {
 			value = 0
 		}
 
-			#sets up the maximum allowed simultainious active inventions
-		set_variable = {
-			which = artifice_max_invention_slots
-			value = 7
+		#sets up the maximum allowed simultainious active inventions
+		add_country_modifier = {
+			name = artificers_invention_slots_base
+			duration = -1
+			hidden = yes
 		}
 		set_country_flag = artifice_set_up
 	}

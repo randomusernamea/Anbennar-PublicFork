@@ -641,3 +641,20 @@ estate_adeen = {
 		}
 	}
 }
+
+estate_fake_artificers = {
+	modifier_definition = {
+		type = influence
+		key = artificers_research_time
+		trigger = {
+			has_estate = estate_artificers
+		}
+	}
+	modifier_definition = {
+		type = privileges
+		key = artificers_invention_slots
+		trigger = {
+			has_estate = estate_artificers
+		}
+	}
+}

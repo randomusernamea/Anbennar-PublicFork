@@ -1391,10 +1391,11 @@ country_event = {
 				value = 0
 			}
 	
-				#sets up the maximum allowed simultainious active inventions
-			set_variable = {
-				which = artifice_max_invention_slots
-				value = 7
+			#sets up the maximum allowed simultainious active inventions
+			add_country_modifier = {
+				name = artificers_invention_slots_base
+				duration = -1
+				hidden = yes
 			}
 			set_country_flag = artifice_set_up
 		}

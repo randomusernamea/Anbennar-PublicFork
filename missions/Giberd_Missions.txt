@@ -1084,10 +1084,7 @@ giberd_ryalanar_conquest = {
 				duration = -1
 			}
 			hidden_effect = {
-				subtract_variable = {
-					which = artifice_max_invention_slots
-					value = 2
-				}
+				# TODO: -2 invention slots
 				change_variable = {
 					which = StaticArtificePoints
 					value = -20

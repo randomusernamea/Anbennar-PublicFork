@@ -12,7 +12,7 @@
  fifteen_year_artifice_research_tt:0 "Artifice Research takes §Y15 years§!."
  
  artifice_breakdown:0 "[Root.getArtificeryBreakdownShort]\n\n§L============ Maximum Capacity Sources ===========§!\n[Root.getArtificeGlobal][Root.getEarlyArtificeBonus][Root.getArtificeRelics][Root.getArtificeDamestear][Root.getArtificeHolds][Root.getArtificeDungeons][Root.getArtificeMissions][Root.getArtificeFeitenLightningShuimuHired][Root.getArtificeFeitenStasisShuimuHired][Root.getArtificeFeitenFirestormShuimuHired][Root.getArtificeFeitenSkyFactoryShuimuHired][Root.getArtificeFeitenActiveFirestorm][Root.getArtificeFeitenActiveStasis][Root.getArtificeFeitenActiveSkyFactory][Root.getArtificeFeitenTotalInvestments][Root.getArtificeVaraineAllies][Root.getArtificeVaraineForeignAllies][Root.getArtificeBrelarWatermillBuild][Root.getArtificeBrelarWatermillPoints][Root.getArtificeBrelarRiverwayBuild][Root.getArtificeHasMultipliers]\n§L===============================================§!\n§RGoing beyond your Artifice Capacity will result in a negative modifier!§!"
- artifice_breakdown_short:0 "§L================ Artifice Capacity ================§!\nUsed Capacity:        §o[Root.ArtificeUpkeep.GetValue]§!\nMaxium Capacity:   §Y[Root.MaxArtificePoints.GetValue]§!\nAvailable Capacity:  §G[Root.RemainingArtificePoints.GetValue]§!"
+ artifice_breakdown_short:0 "§L================ Artifice Capacity ================§!\nUsed Capacity:        §o[Root.ArtificeUpkeep.GetValue]§!\nMaxium Capacity:   §Y[Root.MaxArtificePoints.GetValue]§!\nAvailable Capacity:  §G[Root.RemainingArtificePoints.GetValue]§!\nResearch Multiplier: §Y[Root.ResearchSpeedMultiplier.GetValue]§!\nResearch Years:        §Y[Root.ResearchSpeed.GetValue] years§!"
  artifice_multipliers:0 "\n§L=========== Artifice Capacity Multipliers ===========§!\n[Root.getArtificeMultipliers]\n"
  artifice_no_multpliers:0 ""
  
@@ -45,8 +45,9 @@
  artifice_invention_active:0 "§o[Root.artifice_inventions_currently_used.GetValue]§!"
  artifice_invention_active_none:0 "§o0§!"
  
- artifice_invention_max:0 "§Y[Root.artifice_max_invention_slots.GetValue]§!"
+ artifice_invention_max:0 "§Y[Root.ArtificeMaxInventions.GetValue]§!"
  artifice_invention_max_none:0 "§Y7§!"
+ artificers_invention_slots_base:0 "Base Invention slots"
  
  artifice_capacity_max:0 "§Y[Root.MaxArtificePoints.GetValue]§!"
  artifice_capacity_max_none:0 "§Y0§!"
@@ -624,3 +625,6 @@
  artifice_research_inventions_tt:0 "Start researching a new invention."
  
  artifice_display_capacity_fake_button_tt:0 "£icon_artificery_small£ Display Artifice Capacity Breakdown"
+
+ artificers_research_time:0 "Artificer Research time"
+ artificers_invention_slots:0 "Artificer Invention slots"
