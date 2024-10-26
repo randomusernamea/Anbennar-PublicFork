@@ -2933,9 +2933,12 @@ on_monarch_death = {
 		}
 		country_event = { id = 611 }
 	}
-	set_variable = {
-		which = nbProvincesRazedByRuler
-		value = 0
+	if = {
+		limit = { check_variable = { which = nbProvincesRazedByRuler value = 1 } }
+		set_variable = {
+			which = nbProvincesRazedByRuler
+			value = 0
+		}
 	}
 
 	#duwarkani
