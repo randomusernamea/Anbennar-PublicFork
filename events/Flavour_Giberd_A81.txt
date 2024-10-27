@@ -16,6 +16,7 @@ country_event = {
 		# TODO: inability to research
 		hidden_effect = {
 			#Artificery Local Setup
+			# done manually here because the loc/choice in the usual setup event doesn't fit
 			set_country_flag = artificery_unlocked			#failsave
 			artifice_inventions_give_basket = yes
 			update_artifice_points = yes
@@ -27,6 +28,7 @@ country_event = {
 			hearthswood_area = {
 				add_permanent_claim = ROOT
 			}
+			set_country_flag = artifice_research_temporarily_disabled
 		}
 	}
 	option = {
@@ -132,6 +134,9 @@ country_event = {
 			}
 		}
 		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		hidden_effect = {
+			clr_country_flag = artifice_research_temporarily_disabled
+		}
 	}
 }
 

@@ -699,3 +699,24 @@ unable_to_disable_society_inventions = {
 	has_country_modifier = giberd_gds_loopeng_gedsandde_research
 	# }
 }
+
+is_not_researching_invention = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_researching_invention_tt
+		NOT = {
+			has_country_flag = artifice_research_in_progress
+			has_country_flag = artifice_research_menu_open
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = artifice_research_temporarily_disabled
+		}
+		custom_trigger_tooltip = {
+			tooltip = researching_invention_not_disabled_tt
+			NOT = {
+				has_country_flag = artifice_research_temporarily_disabled
+			}
+		}
+	}
+}
