@@ -13,6 +13,7 @@ country_event = {
 	desc = flavor_giberd.10.d
 	picture = HRE_eventPicture
 	is_triggered_only = yes
+	fire_only_once = yes
 	immediate = {
 		# TODO: inability to research
 		hidden_effect = {
@@ -387,9 +388,16 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.19.a
+		remove_government_reform = imperial_technocracy_republic_reform
+		add_government_reform = technocracy_republic_reform
+		remove_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		set_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds
 	}
 	option = {
 		name = flavor_giberd.19.b
+		remove_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		set_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony
+		set_estate_privilege = estate_mages_organization_giberd_beacon_of_harmony
 	}
 }
 
@@ -761,7 +769,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = giberd_faction_competition_enabled
 			country_event = {
-				id = flavor_giberd.40
+				id = flavor_giberd.58
 				days = 3650
 			}
 		}
@@ -1143,41 +1151,8 @@ country_event = {
 	after = {
 		hidden_effect = {
 			country_event = {
-				id = flavor_giberd.35
+				id = flavor_giberd.56
 				days = 3650
-			}
-		}
-	}
-}
-
-# cleanup after .34
-country_event = {
-	id = flavor_giberd.35
-	title = flavor_giberd.35.t
-	desc = flavor_giberd.35.d
-	picture = HRE_eventPicture
-	is_triggered_only = yes
-	hidden = yes
-	option = {
-		name = flavor_giberd.34.a
-		if = {
-			limit = {
-				has_country_flag = giberd_silverforge_hold_large
-			}
-			clr_country_flag = giberd_silverforge_hold_large
-			change_variable = {
-				which = StaticArtificePoints
-				value = 30
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = giberd_silverforge_hold_small
-			}
-			clr_country_flag = giberd_silverforge_hold_small
-			change_variable = {
-				which = StaticArtificePoints
-				value = 10
 			}
 		}
 	}
@@ -1297,41 +1272,8 @@ country_event = {
 	after = {
 		hidden_effect = {
 			country_event = {
-				id = flavor_giberd.37
+				id = flavor_giberd.57
 				days = 3650
-			}
-		}
-	}
-}
-
-# cleanup after .36
-country_event = {
-	id = flavor_giberd.37
-	title = flavor_giberd.37.t
-	desc = flavor_giberd.37.d
-	picture = HRE_eventPicture
-	is_triggered_only = yes
-	hidden = yes
-	option = {
-		name = flavor_giberd.37.a
-		if = {
-			limit = {
-				has_country_flag = giberd_damescrown_due_large
-			}
-			clr_country_flag = giberd_damescrown_due_large
-			change_variable = {
-				which = StaticArtificePoints
-				value = 10
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = giberd_damescrown_due_small
-			}
-			clr_country_flag = giberd_damescrown_due_small
-			change_variable = {
-				which = StaticArtificePoints
-				value = 5
 			}
 		}
 	}
@@ -1482,61 +1424,6 @@ country_event = {
 		# 	loyalty = 10
 		# 	duration = -1
 		# }
-	}
-}
-
-# cleanup for .30
-country_event = {
-	id = flavor_giberd.40
-	title = flavor_giberd.40.t
-	desc = flavor_giberd.40.d
-	picture = HRE_eventPicture
-	is_triggered_only = yes
-	hidden = yes
-	option = {
-		name = flavor_giberd.40.a
-		if = {
-			limit = {
-				275 = {
-					has_province_modifier = giberd_restoring_archive
-				}
-			}
-			275 = {
-				remove_province_modifier = giberd_restoring_archive
-				add_province_modifier = {
-					name = giberd_restored_archive
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				275 = {
-					has_province_modifier = giberd_scouring_archive
-				}
-			}
-			275 = {
-				remove_province_modifier = giberd_scouring_archive
-				add_province_modifier = {
-					name = giberd_scoured_archive
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				271 = {
-					has_province_modifier = giberd_stealing_archive
-				}
-			}
-			271 = {
-				remove_province_modifier = giberd_stealing_archive
-				add_province_modifier = {
-					name = giberd_stolen_archive
-					duration = -1
-				}
-			}
-		}
 	}
 }
 
@@ -1742,6 +1629,127 @@ country_event = {
 		subtract_variable = {
 			which = StaticArtificePoints
 			value = 20
+		}
+	}
+}
+
+# cleanup after .34
+country_event = {
+	id = flavor_giberd.56
+	title = flavor_giberd.56.t
+	desc = flavor_giberd.56.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.56.a
+		if = {
+			limit = {
+				has_country_flag = giberd_silverforge_hold_large
+			}
+			clr_country_flag = giberd_silverforge_hold_large
+			change_variable = {
+				which = StaticArtificePoints
+				value = 30
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = giberd_silverforge_hold_small
+			}
+			clr_country_flag = giberd_silverforge_hold_small
+			change_variable = {
+				which = StaticArtificePoints
+				value = 10
+			}
+		}
+	}
+}
+
+# cleanup after .36
+country_event = {
+	id = flavor_giberd.57
+	title = flavor_giberd.57.t
+	desc = flavor_giberd.57.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.57.a
+		if = {
+			limit = {
+				has_country_flag = giberd_damescrown_due_large
+			}
+			clr_country_flag = giberd_damescrown_due_large
+			change_variable = {
+				which = StaticArtificePoints
+				value = 10
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = giberd_damescrown_due_small
+			}
+			clr_country_flag = giberd_damescrown_due_small
+			change_variable = {
+				which = StaticArtificePoints
+				value = 5
+			}
+		}
+	}
+}
+
+# cleanup for .30
+country_event = {
+	id = flavor_giberd.58
+	title = flavor_giberd.58.t
+	desc = flavor_giberd.58.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.58.a
+		if = {
+			limit = {
+				275 = {
+					has_province_modifier = giberd_restoring_archive
+				}
+			}
+			275 = {
+				remove_province_modifier = giberd_restoring_archive
+				add_province_modifier = {
+					name = giberd_restored_archive
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				275 = {
+					has_province_modifier = giberd_scouring_archive
+				}
+			}
+			275 = {
+				remove_province_modifier = giberd_scouring_archive
+				add_province_modifier = {
+					name = giberd_scoured_archive
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				271 = {
+					has_province_modifier = giberd_stealing_archive
+				}
+			}
+			271 = {
+				remove_province_modifier = giberd_stealing_archive
+				add_province_modifier = {
+					name = giberd_stolen_archive
+					duration = -1
+				}
+			}
 		}
 	}
 }

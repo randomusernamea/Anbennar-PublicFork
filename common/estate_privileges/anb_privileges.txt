@@ -13781,3 +13781,41 @@ estate_mages_all_mask = {
 
 	ai_will_do = { factor = 10 }
 }
+
+#Giberd
+estate_mages_organization_giberd_beacon_of_harmony = {
+	icon = privilege_promote_maratha_nobility
+	max_absolutism = 0
+	loyalty = 0.1
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_mages_organization_giberd_beacon_of_harmony
+	}
+	can_select = {
+		has_estate_privilege = estate_mages_organization_giberd_beacon_of_harmony
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		custom_tooltip = add_magic_study_modifier_10_tt
+		update_magic_study_experience_modifier = { value = 10 }
+		custom_tooltip = mages_benefits_tt
+		clear_mages_organization_effect = yes
+	}
+	on_revoked = {
+		update_magic_study_experience_modifier = { value = 0 }
+	}
+	penalties = {
+	}
+	benefits = {
+		allowed_rajput_fraction = 0.10
+		tolerance_heathen = 1
+		tolerance_heretic = 1
+		tolerance_of_heretics_capacity = 1
+		tolerance_of_heathens_capacity = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
