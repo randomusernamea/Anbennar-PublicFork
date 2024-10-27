@@ -261,13 +261,15 @@ maghargma_dynamic_westmarches_1 = {
 		required_missions = { maghargma_crush_the_westmarches } 
 		provinces_to_highlight = {
 			province_group = fp_westmarches
-			has_fort_building_trigger = yes
-			has_manpower_building_trigger = yes
-			has_forcelimit_building_trigger = yes
-			has_building = ramparts
 			OR = {
-				local_autonomy = 10
-				NOT = { has_province_modifier = autonomy_increased } 
+				has_fort_building_trigger = yes
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_building = ramparts
+				OR = {
+					local_autonomy = 10
+					NOT = { has_province_modifier = autonomy_increased } 
+				}
 			}
 		}
 
@@ -487,8 +489,10 @@ maghargma_one_post_westmarches = {
 		required_missions = { maghargma_enforce_our_claims } 
 		provinces_to_highlight = {  
 			region = serpents_vale_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-			has_influencing_fort = no
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				has_influencing_fort = no
+			}
 		} 
 
 		trigger = {
@@ -508,7 +512,14 @@ maghargma_one_post_westmarches = {
 		icon = mission_feast
 		position = 12
 		required_missions = { maghargma_sieze_the_swamps } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			region = serpents_vale_region
+			OR = {
+				religion = feast_of_the_gods
+				religion = reformed_feast_of_the_gods
+			}
+			NOT = { has_building = cathedral }
+		} 
 
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -616,8 +627,10 @@ maghargma_two = {
 		required_missions = { maghargma_the_carrot } 
 		provinces_to_highlight = {  
 			province_group = wild_clan_lands
-			NOT = { owned_by = ROOT }
-			NOT = {	is_core = ROOT }
+			OR =  {
+				NOT = { owned_by = ROOT }
+				NOT = {	is_core = ROOT }
+			}
 		} 
 
 		trigger = {
@@ -732,10 +745,12 @@ maghargma_dynamic_heartlands_1 = {
 		required_missions = { maghargma_harness_the_heartlands } 
 		provinces_to_highlight = {  
 			province_id = 5270
-			NOT = { owned_by = ROOT }
-			province_has_current_tech_fort_trigger = no
-			NOT = { has_building = mage_tower }
-			has_manpower_building_trigger = no
+			OR = {
+				NOT = { owned_by = ROOT }
+				province_has_current_tech_fort_trigger = no
+				NOT = { has_building = mage_tower }
+				has_manpower_building_trigger = no
+			}
 		} 
 
 		trigger = {  
@@ -775,10 +790,12 @@ maghargma_dynamic_heartlands_2 = {
 		required_missions = { maghargma_harness_the_heartlands } 
 		provinces_to_highlight = {  
 			province_id = 5287
-			NOT = { owned_by = ROOT }
-			has_tax_building_trigger = no
-			has_trade_building_trigger = no
-			NOT = { local_autonomy = 25 }
+			OR = {
+				NOT = { owned_by = ROOT }
+				has_tax_building_trigger = no
+				has_trade_building_trigger = no
+				NOT = { local_autonomy = 25 }
+			}
 		} 
 
 		trigger = {  
@@ -1024,12 +1041,14 @@ maghargma_two_post_trolls = {
 			OR = {
 				AND = {
 					area = amldihr_area
-					NOT = { owned_by = ROOT }
-					NOT = { num_of_buildings_in_province = 3 }
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { num_of_buildings_in_province = 3 }
+					}
 				}
 				AND = {
 					province_id = 4119
-					has_fort_building_trigger = no
+					province_has_current_tech_fort_trigger = no
 				}
 			}
 		} 
@@ -1412,10 +1431,8 @@ maghargma_three = {
 		required_missions = { maghargma_jewel_of_the_fire_giants } 
 		provinces_to_highlight = {  
 			superregion = forbidden_lands_superregion
-			OR = {
-				is_city = yes
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
-			}
+			is_city = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
 		trigger = {
@@ -1859,6 +1876,7 @@ maghargma_four = {
 							country_or_subject_holds = ROOT
 						}
 						cede_province = ROOT
+						add_core = ROOT
 					}
 				}
 			}
@@ -2354,8 +2372,10 @@ maghargma_four_pre_ancestor = {
 		provinces_to_highlight = {  
 			owned_by = ROOT
 			religion = sudomegi
-			has_tax_building_trigger = no
-			has_missionary = no
+			OR = {
+				has_tax_building_trigger = no
+				has_missionary = no
+			}
 		} 
 
 		trigger = {
@@ -2895,6 +2915,7 @@ maghargma_five = {
 						has_production_building_trigger = yes
 					}
 					cede_province = ROOT 
+					add_core = ROOT
 					add_province_modifier = {
 						name = I90_serpentspine_plantations
 						duration  = -1
@@ -3302,8 +3323,10 @@ maghargma_five_post_amberlands = {
 		provinces_to_highlight = {  
 			region = demon_hills_region
 			country_or_non_sovereign_subject_holds = ROOT
-			NOT = { has_building = mage_tower }
-			has_forcelimit_building_trigger = no
+			OR = {
+				NOT = { has_building = mage_tower }
+				has_forcelimit_building_trigger = no
+			}
 		} 
 
 		trigger = {
@@ -3358,7 +3381,10 @@ maghargma_five_post_amberlands = {
 		icon = mission_moon_moon
 		position = 16
 		required_missions = { maghargma_placate_the_shirgrii } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			region = demon_hills_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		} 
 
 		trigger = {
 			demon_hills_region = {
