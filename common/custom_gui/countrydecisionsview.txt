@@ -6991,15 +6991,7 @@ custom_button = {
 	}
 	trigger = {
 		hidden_trigger = {
-			any_owned_province = {
-				OR = {
-					has_province_modifier = temple_complex
-					has_province_modifier = damaged_temple_complex
-					has_province_modifier = derelict_temple_complex
-					has_province_modifier = corrupted_temple_complex
-					has_province_modifier = ruined_temple_complex
-				}
-			}
+			has_country_flag = owns_high_temple
 		}
 	}
 	effect = { 
@@ -7089,6 +7081,7 @@ custom_button = {
 			has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 			has_country_flag = unlocked_artifice_invention_high_heat_smelters
 			has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
+			has_country_flag = unlocked_artifice_invention_bramble_burners
 			has_country_modifier = G52_mage_8
 			mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 			mission_completed = yingzhen_tools_trade
@@ -7120,6 +7113,7 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 					has_country_flag = unlocked_artifice_invention_high_heat_smelters
 					has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
+					has_country_flag = unlocked_artifice_invention_bramble_burners
 					has_country_modifier = G52_mage_8
 					mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 					mission_completed = yingzhen_tools_trade
@@ -7145,6 +7139,7 @@ custom_button = {
 					has_estate_privilege = artifice_invention_holy_gunblade
 					has_estate_privilege = artifice_invention_the_carousel
 					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
+					has_estate_privilege = artifice_invention_bramble_burners
 				}
 			}
 			OR = {
@@ -7157,6 +7152,7 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 				has_country_flag = unlocked_artifice_invention_high_heat_smelters
 				has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
+				has_country_flag = unlocked_artifice_invention_bramble_burners
 				has_country_modifier = G52_mage_8
 				mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 				mission_completed = yingzhen_tools_trade
@@ -7180,7 +7176,7 @@ custom_button = {
 				has_estate_privilege = artifice_invention_holy_gunblade
 				has_estate_privilege = artifice_invention_the_carousel
 				has_estate_privilege = artifice_invention_ironwraith_weapons_platform
-				
+				has_estate_privilege = artifice_invention_bramble_burners
 			}
 		}
 	}
@@ -7195,6 +7191,7 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_bond_breaker
 				has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
 				has_country_flag = unlocked_artifice_invention_high_heat_smelters
+				has_country_flag = unlocked_artifice_invention_bramble_burners
 				has_country_modifier = G52_mage_8
 				mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 				mission_completed = yingzhen_tools_trade
@@ -7667,6 +7664,41 @@ custom_button = {
 					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 				}
 				remove_estate_privilege = artifice_invention_ironwraith_weapons_platform
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					tag =  I35
+					was_tag = I35
+				}
+			}
+			if = {
+				limit = {
+					artifice_can_select_invention_10 = yes
+					NOT = {
+						has_estate_privilege = artifice_invention_bramble_burners
+					}
+				}
+				set_estate_privilege = artifice_invention_bramble_burners
+			}
+			else_if = {
+				limit = {
+					artifice_can_select_invention_10 = no
+					NOT = {
+						has_estate_privilege = artifice_invention_bramble_burners
+					}
+				}
+				custom_tooltip = artifice_cannot_afford_invention
+				tooltip = {
+					set_estate_privilege = artifice_invention_bramble_burners
+				}
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_bramble_burners
+				}
+				remove_estate_privilege = artifice_invention_bramble_burners
 			}
 		}
 	}
