@@ -432,12 +432,14 @@ maghargma_one_post_westmarches = {
 				owns_or_subject_of = 4194
 				owns_or_subject_of = 4193
 			}
-			NOT = {
-				any_known_country = {
-					capital_scope = { region = west_dwarovar_region }
-					army_strength = {
-						who = ROOT
-						value = 0.75
+			all_country = {
+				OR = {
+					NOT = { capital_scope = { region = west_dwarovar_region } }
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 0.75
+						}
 					}
 				}
 			}
