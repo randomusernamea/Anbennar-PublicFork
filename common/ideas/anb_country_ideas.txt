@@ -42714,6 +42714,51 @@ V08_ideas = {
 }
 
 
+#Bazuneizar
+V06_ideas = {
+    start = {
+        caravan_power = 0.2
+        fort_maintenance_modifier = -0.15 
+    }
+    
+    bonus = {
+         morale_damage_received = -0.1
+    }
+    
+    trigger = {
+        tag = V06 #Bazuneizar
+    }
+    free = yes
+	
+	V06_walls = {
+		defensiveness = 0.15
+	}
+	
+	V06_clockwork_wonders = {
+		production_efficiency = 0.1
+	}
+	
+	V06_relic_guilds = {
+		technology_cost = -0.05
+	}
+	
+	V06_open_air = {
+		prestige_decay = -0.01
+	}
+	
+	V06_appeasement = {
+		artificers_loyalty_modifier = 0.05
+        church_loyalty_modifier 0.05
 
+	}
+	
+	V06_practical = {
+		global_supply_limit_modifier = 0.25
+	}
+	
+	V06_isolated = {
+		innovativeness_gain = 0.5
+	}
 
+}
 	
