@@ -146,6 +146,22 @@ country_decisions = {
 							adm_power = 150
 							dip_power = 100
 						}
+						AND = {
+							custom_trigger_tooltip = {
+								tooltip = mb_no_lizardfolk_reserve_tt
+								NOT = { has_country_flag = lizardfolk_reserve_done_flg }
+								arrtukerr_area = {
+									type = all
+									owned_by = ROOT
+								}
+								dasmatus_area = {
+									type = all
+									owned_by = ROOT
+								}
+							}
+							fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+							adm_power = 150
+						}
 					}
 				}
 			}

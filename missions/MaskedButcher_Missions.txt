@@ -2029,15 +2029,12 @@ maskedbutcher_missions_4d = {
 		position = 10
 
 		provinces_to_highlight = {
-			culture_is_centaur = yes
+			fast_has_pop_of_race = { race = centaur }
 			NOT = { owned_by = ROOT }
 		}
 
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 20
-				culture_is_centaur = yes
-			}
+			fast_owns_num_pops_of_race = { race = centaur amount = 20 }
 			egoirnasgh_area = {
 				type = all
 				owned_by = ROOT
@@ -2342,21 +2339,63 @@ maskedbutcher_missions_3e = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = all_mask_tt
+				tooltip = centaur_crafted_tt
 				has_country_flag = centaur_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_crafted_tt
 				has_country_flag = dwarven_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = elven_crafted_tt
 				has_country_flag = elven_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = gnollish_crafted_tt
 				has_country_flag = gnollish_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = goblin_crafted_tt
 				has_country_flag = goblin_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = halfling_crafted_tt
 				has_country_flag = halfling_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = harimari_crafted_tt
 				has_country_flag = harimari_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = harpy_crafted_tt
 				has_country_flag = harpy_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = hobgoblin_crafted_tt
 				has_country_flag = hobgoblin_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = human_crafted_tt
 				has_country_flag = human_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = kobold_crafted_tt
 				has_country_flag = kobold_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = lizardfolk_crafted_tt
 				has_country_flag = lizardfolk_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = ogre_crafted_tt
 				has_country_flag = ogre_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = ruinborn_crafted_tt
 				has_country_flag = ruinborn_mask_2
+			}
+			custom_trigger_tooltip = {
+				tooltip = troll_crafted_tt
 				has_country_flag = troll_mask_2
 			}
 		}
@@ -2391,9 +2430,21 @@ maskedbutcher_missions_4e = {
 		position = 11
 
 		trigger = {
-			check_variable = {
-				which = mb_oblations_claimed
-				value = 50
+			OR = {
+				check_variable = {
+					which = mb_oblations_claimed
+					value = 50
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = 7_masks_equipped_tt
+						num_of_estate_privileges = {
+							estate = estate_vampires
+							value = 8
+						}
+					}
+					reform_level = 11
+				}
 			}
 		}
 
