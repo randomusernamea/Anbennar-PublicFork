@@ -1083,13 +1083,10 @@ giberd_ryalanar_conquest = {
 		effect = {
 			# TODO: "is unable to remove society inventions for 5 years"
 			add_country_modifier = {
-				name = giberd_gds_loopeng_gedsandde
-				duration = -1
-			}
-			add_country_modifier = {
 				name = giberd_gds_loopeng_gedsandde_research
 				duration = 1825
 			}
+			custom_tooltip = giberd_gds_loopeng_gedsandde_tt
 			hidden_effect = {
 				change_variable = {
 					which = StaticArtificePoints

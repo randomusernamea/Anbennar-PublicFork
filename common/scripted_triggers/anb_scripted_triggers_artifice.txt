@@ -685,3 +685,17 @@ artifice_has_unique_invention = {
 		was_tag = R62
 	}
 }
+
+# can_disable_society_inventions = {
+# 	custom_trigger_tooltip = {
+# 		tooltip = can_disable_society_inventions_tt
+# 		NOT = {
+# 			has_country_modifier = giberd_gds_loopeng_gedsandde_research
+# 		}
+# 	}
+# }
+unable_to_disable_society_inventions = {
+	# OR = {
+	has_country_modifier = giberd_gds_loopeng_gedsandde_research
+	# }
+}
