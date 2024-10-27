@@ -335,6 +335,7 @@ country_event = {
 			set_country_flag = L55_part_two
 			set_country_flag = L55_riva_alive
 			swap_non_generic_missions = yes
+			clr_country_flag = L55_contest
 		}
 	}
 }
@@ -350,9 +351,6 @@ country_event = {
 		random_owned_province = {
 			save_event_target_as = rebel_spawn_l55
 		}
-	}
-	option = {
-		name = naleni.12.a
 		if = {
 			limit = { has_country_flag = L55_low_authority }
 			capital_scope = {
@@ -397,6 +395,9 @@ country_event = {
 				}
 			}
 		}
+	}
+	option = {
+		name = naleni.12.a
 		set_country_flag = L55_secure_state
 	}
 }
@@ -521,7 +522,6 @@ country_event = {
 		clr_country_flag = L55_med_authority
 		clr_country_flag = L55_low_authority
 		clr_country_flag = L55_high_authority
-		clr_country_flag = L55_contest
 	}
 }
 
@@ -1481,9 +1481,10 @@ country_event = {
 			define_ruler = {
 				female = yes
 				dynasty = "Nephiuéda"
-				max_random_adm = 2
-				max_random_dip = 2
-				max_random_mil = 2
+				adm = 1
+				dip = 1
+				mil = 1
+				
 			}
 			increase_matauth_1 = yes
 		}
