@@ -110,6 +110,7 @@ country_event = {#A Beast Unlike Any Other C4
 		custom_tooltip = wyvernheart_C4_event_tt
 
 
+		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
 	}
@@ -141,10 +142,17 @@ country_event = {#Rumours of Power A7
 	option = {
 		name = "flavour_wyvernheart.101.a"
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = { religion = infernal_court }
+		}
 		227 = {
 			change_trade_goods = gems
 			add_province_modifier = {
 				name = wyvernheart_infernal_bleed
+				duration = -1
+			}
+			add_province_modifier = {
+				name = wyvernheart_burnblood_spawning_pool
 				duration = -1
 			}
 			spawn_rebels = {
@@ -153,14 +161,43 @@ country_event = {#Rumours of Power A7
 				type = infernal_court_rebels
 			}
 		}
+		custom_tooltip = wyvernheart_E5_3_effect_tt
+		hidden_effect = {
+			for = {
+				amount = 20
+				effect = "
+					if = {
+						limit = {
+							any_owned_province = {
+								has_orcish_minority_trigger = yes
+							}
+						}
+						random_owned_province = {
+							limit = {
+								has_orcish_minority_trigger = yes
+							}
+							remove_orcish_minority_size_effect = yes
+						}
+					}
+					else = {
+						add_treasury = -25
+						216 = { owner = { add_treasury = 25 } }
+					}
+				"
+			}
+		}
 
-
+		
+		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
 	}
 	option = {
 		name = "flavour_wyvernheart.101.b"
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = { religion = infernal_court }
+		}
 		change_religion = infernal_court
 		add_stability = -2
 		add_country_modifier = {
@@ -173,8 +210,39 @@ country_event = {#Rumours of Power A7
 				name = wyvernheart_infernal_bleed
 				duration = -1
 			}
+			add_province_modifier = {
+				name = wyvernheart_burnblood_spawning_pool
+				duration = -1
+			}
+			custom_tooltip = wyvernheart_E5_3_effect_tt
+			hidden_effect = {
+				for = {
+					amount = 20
+					effect = "
+						if = {
+							limit = {
+								any_owned_province = {
+									has_orcish_minority_trigger = yes
+								}
+							}
+							random_owned_province = {
+								limit = {
+									has_orcish_minority_trigger = yes
+								}
+								remove_orcish_minority_size_effect = yes
+							}
+						}
+						else = {
+							add_treasury = -25
+							216 = { owner = { add_treasury = 25 } }
+						}
+					"
+				}
+			}
 		}
 
+		
+		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
 	}
@@ -184,15 +252,47 @@ country_event = {#Rumours of Power A7
 		trigger = {
 			religion = infernal_court
 		}
+		highlight = yes
+		add_legitimacy = 15
 		227 = {
 			change_trade_goods = gems
 			add_province_modifier = {
 				name = wyvernheart_infernal_bleed
 				duration = -1
 			}
+			add_province_modifier = {
+				name = wyvernheart_burnblood_spawning_pool
+				duration = -1
+			}
+		}
+		custom_tooltip = wyvernheart_E5_3_effect_tt
+		hidden_effect = {
+			for = {
+				amount = 20
+				effect = "
+					if = {
+						limit = {
+							any_owned_province = {
+								has_orcish_minority_trigger = yes
+							}
+						}
+						random_owned_province = {
+							limit = {
+								has_orcish_minority_trigger = yes
+							}
+							remove_orcish_minority_size_effect = yes
+						}
+					}
+					else = {
+						add_treasury = -25
+						216 = { owner = { add_treasury = 25 } }
+					}
+				"
+			}
 		}
 
-
+		
+		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
 	}
@@ -310,3 +410,224 @@ country_event = {#The New Face of Magic D5
 		add_stability = -1
 	}
 }
+country_event = {#A Morbid Fascination E5.1
+	id = flavour_wyvernheart.105
+	title = flavour_wyvernheart.105.t
+	desc = flavour_wyvernheart.105.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.105.a"
+		ai_chance = { factor = 1 }
+		add_treasury = -100
+		add_mil_power = -50
+		country_event = {
+			id = flavour_wyvernheart.106
+			days = 180
+		}
+	}
+}
+country_event = {#The Means of Experimentation E5.2
+	id = flavour_wyvernheart.106
+	title = flavour_wyvernheart.106.t
+	desc = flavour_wyvernheart.106.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.106.a"
+		ai_chance = { factor = 1 }
+		840 = {
+			spawn_rebels = {
+				size = 1
+				type = wyverns_rebels
+			}
+		}
+		country_event = {
+			id = flavour_wyvernheart.107
+			days = 365
+		}
+	}
+}
+country_event = {#A Wyvern's Heart Pumping Burning Blood E5.3
+	id = flavour_wyvernheart.107
+	title = flavour_wyvernheart.107.t
+	desc = flavour_wyvernheart.107.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.107.a"
+		ai_chance = { factor = 1 }
+		728 = {
+			add_province_modifier = {
+				name = wyvernheart_burnblood_spawning_pool
+				duration = -1
+			}
+		}
+		custom_tooltip = wyvernheart_E5_3_effect_tt
+		hidden_effect = {
+			for = {
+				amount = 20
+				effect = "
+					if = {
+						limit = {
+							any_owned_province = {
+								has_orcish_minority_trigger = yes
+							}
+						}
+						random_owned_province = {
+							limit = {
+								has_orcish_minority_trigger = yes
+							}
+							remove_orcish_minority_size_effect = yes
+						}
+					}
+					else = {
+						add_treasury = -25
+						216 = { owner = { add_treasury = 25 } }
+					}
+				"
+			}
+		}
+		set_country_flag = wyvernheart_burnblood_2
+		clr_country_flag = wyvernheart_burnblood_1
+		custom_tooltip = wyvernheart_E5_effect_tt
+	}
+}
+
+
+
+
+
+#300+ Floodborn Council flavour events
+country_event = {#Event manager for the flavour events
+	id = flavour_wyvernheart.300
+	title = flavour_wyvernheart.300.t
+	desc = flavour_wyvernheart.300.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+		has_country_flag = wyvernheart_council_events_enabled
+	}
+	immediate = {#decides which 3 agendas are proposed
+		
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.300.a"
+		ai_chance = { factor = 1 }
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.300.b"
+		ai_chance = { factor = 1 }
+	}
+	#Option C
+	option = {
+		name = "flavour_wyvernheart.300.c"
+		ai_chance = { factor = 1 }
+	}
+}
+
+
+country_event = {#A Divided Council #D5
+	id = flavour_wyvernheart.301
+	title = flavour_wyvernheart.301.t
+	desc = flavour_wyvernheart.301.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.301.a"
+		ai_chance = { factor = 1 }
+		set_country_flag = wyvernheart_agenda_flag_build_mage_tower
+		set_country_flag = wyvernheart_council_events_enabled
+		start_estate_agenda = estate_mages
+	}
+}
+
