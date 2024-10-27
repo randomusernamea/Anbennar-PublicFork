@@ -13799,12 +13799,12 @@ estate_mages_organization_giberd_beacon_of_harmony = {
 	}
 	on_granted = {
 		custom_tooltip = add_magic_study_modifier_10_tt
-		update_magic_study_experience_modifier = { value = 10 }
+		update_magic_study_experience_modifier = { value = 10 } #MAGICREWORK
 		custom_tooltip = mages_benefits_tt
 		clear_mages_organization_effect = yes
 	}
 	on_revoked = {
-		update_magic_study_experience_modifier = { value = 0 }
+		update_magic_study_experience_modifier = { value = 0 } #MAGICREWORK
 	}
 	penalties = {
 	}

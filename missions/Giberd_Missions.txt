@@ -2583,6 +2583,7 @@ giberd_artificer = {
 			}
 		}
 		effect = {
+			# TODO: spawn ravelian religion early
 			custom_tooltip = giberd_all_capacity_10_years_tt
 			hidden_effect = {
 				set_variable = {
@@ -2598,7 +2599,6 @@ giberd_artificer = {
 					days = 7300
 				}
 			}
-			# spawn ravelian religion early
 			271 = {
 				add_province_modifier = {
 					name = giberd_ravelians_send_finest
