@@ -1495,7 +1495,10 @@
 
 		trigger = {
 			ai = no
-			has_global_flag = crimson_deluge
+			custom_trigger_tooltip = {
+				tooltip = wyvernheart_D5_trigger_tt
+				has_global_flag = crimson_deluge
+			}
 			government_reform_progress = 100
 		} 
 
@@ -2107,6 +2110,7 @@
 				limit = { NOT = { has_ruler_flag = wyvernheart_regent } }
 				add_mil_power = -200
 			}
+			set_country_flag = scions_completed
 			add_government_reform = floodborn_council_reform_theocracy
 			if = {
 				limit = {
@@ -2177,7 +2181,7 @@
 				limit = { capital_scope = { province_group = escann_proper } }
 				add_aggressive_expansion = {
 					who = ROOT
-					value = 50
+					value = 15
 				}
 			}
 			define_advisor = {
@@ -2204,10 +2208,10 @@
 		}
 		provinces_to_highlight = {
 			province_group = escann_proper
-			NOT = {
-				owned_by = ROOT
-				is_core = ROOT
-				culture = ROOT
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { culture = ROOT }
 			}
 		} 
 
@@ -2300,6 +2304,6 @@
 					add_orcish_minority_size_effect = yes
 				}
 			}
-		} 
+		}
 	}
 }

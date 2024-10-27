@@ -738,6 +738,43 @@ country_event = {#The Castanbane Meteor
 		}
 	}
 }
+country_event = {#The Castanbane Meteor
+	id = flavour_wyvernheart.111
+	title = flavour_wyvernheart.111.t
+	desc = flavour_wyvernheart.111.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.111.a"
+		ai_chance = { factor = 1 }
+		custom_tooltip = wyvernheart_B9_event_tt #rulers defined as war-wizard are considered to have +1 mil, war wizard generated with imbue mage have +1 fire and siege 
+		define_general = {
+			shock = 8
+			fire = 3
+			manuever = 2
+			siege = 4
+			name = "Guillam 'the First'"
+		}
+	}
+}
 country_event = {#Calm After the Storm
 	id = flavour_wyvernheart.112
 	title = flavour_wyvernheart.112.t
@@ -765,7 +802,6 @@ country_event = {#Calm After the Storm
 	option = {
 		name = "flavour_wyvernheart.112.a"
 		ai_chance = { factor = 1 }
-		add_government_reform = magocracy_reform
 		add_stability = 1
 		add_devotion = 20
 		custom_tooltip = wyvernheart_A9_event_tt
@@ -827,7 +863,198 @@ country_event = {#The Heart of Halann
 	}
 }
 
+#200+ Civil war events
+country_event = {#The Promised Mage
+	id = flavour_wyvernheart.200
+	title = flavour_wyvernheart.200.t
+	desc = flavour_wyvernheart.200.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
 
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.200.a"
+		ai_chance = { factor = 1 }
+		define_heir = {
+			adm = 6
+			mil = 6
+			dip = 6
+			age = 9
+		}
+		hidden_effect = {
+			country_event = {
+				id = flavour_wyvernheart.201
+				days = 365
+			}
+		}
+	}
+}
+country_event = {#A Simple Accident
+	id = flavour_wyvernheart.201
+	title = flavour_wyvernheart.201.t
+	desc = flavour_wyvernheart.201.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.201.a"
+		ai_chance = { factor = 1 }
+		define_ruler = {
+			name = "The Regent"
+			dynasty = "of Wyvernheart"
+			adm = 4
+			dip = 5
+			mil = 6
+			male = yes
+			regency = yes
+			age = 25
+			religion = ROOT
+			culture = ROOT
+		}
+		custom_tooltip = wyvernheart_201_event_tt
+		hidden_effect = {
+			country_event = {
+				id = flavour_wyvernheart.202
+				days = 365
+			}
+		}
+	}
+}
+country_event = {#Tyrant's Fall
+	id = flavour_wyvernheart.202
+	title = flavour_wyvernheart.202.t
+	desc = flavour_wyvernheart.202.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	immediate = {
+		hidden_effect = {
+			spawn_wyvernheart_civil_war_rebels = yes
+			add_country_modifier = {
+				name = wyvernheart_war_wizard_rebels_mod
+				duration = -1
+			}
+			spawn_wyvernheart_civil_war_rebels_with_war_wizards = yes
+			remove_country_modifier = wyvernheart_war_wizard_rebels_mod
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.202.a"
+		ai_chance = { factor = 1 }
+		change_government = theocracy
+		add_government_reform = magocracy_reform
+		define_ruler = {
+			name = "The Regent"
+			dynasty = "of Wyvernheart"
+			adm = 4
+			dip = 5
+			mil = 6
+			male = yes
+			age = 26
+			religion = ROOT
+			culture = ROOT
+		}
+		define_ruler_to_general = {
+			fire = 4
+			shock = 10
+			manuever = 4
+			siege = 4
+			trait = ruthless_personality
+		}
+		add_stability = -2
+		add_war_exhaustion = 10
+		hidden_effect = {
+			country_event = {
+				id = flavour_wyvernheart.203
+				days = 365
+			}
+		}
+	}
+}
+country_event = {#Victory or Death
+	id = flavour_wyvernheart.203
+	title = flavour_wyvernheart.203.t
+	desc = flavour_wyvernheart.203.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.203.a"
+		ai_chance = { factor = 1 }
+		
+		custom_tooltip = wyvernheart_203_event_tt
+		set_country_flag = wyvernheart_victory_or_death
+		swap_non_generic_missions = yes
+	}
+}
 
 
 
@@ -900,11 +1127,23 @@ country_event = {#A Divided Council #D5
 		tag = B39
 	}
 	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = wyvernheart_agenda_flag_build_mage_tower
+			pick_random_estate_if_present = { flag = present_agenda estate_action = generate_estate_agenda }
+		}
+	}
+
+	after = {
+		clr_country_flag = wyvernheart_agenda_flag_build_mage_tower
+		clr_country_flag = estate_mages_present_agenda
+		clear_estate_agenda_cache = ROOT
+	}
+
 	#Option A
 	option = {
 		name = "flavour_wyvernheart.301.a"
 		ai_chance = { factor = 1 }
-		set_country_flag = wyvernheart_agenda_flag_build_mage_tower
 		set_country_flag = wyvernheart_council_events_enabled
 		start_estate_agenda = estate_mages
 	}

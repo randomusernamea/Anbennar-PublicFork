@@ -14,8 +14,8 @@
  the_dust_settles_title:0 "The Dust Settles"
  the_dust_settles_desc:0 ""
  wyvernheart_A9_trigger_tt:0 "The Civil War has ended, the Regent is Victorious"
- wyvernheart_A9_effect_tt:0 "If this mission if completed in less than §Y5§! years after the final uprising [Root.GetName] get §Y'Tyrant's Rise'§! until the end of the game giving the following effects:\nNational Unrest: §G-2.00§!\nMaximum Absolutism: §G+20.00§!\nYearly Absolutism: §G+1.00§!\nUnjustified Demands: §G-33.0%§!"
- wyvernheart_A9_event_tt:0 "The §YCourt and Country!§ disaster cannot happen."
+ wyvernheart_A9_effect_tt:0 "If this mission if completed in less than §Y5§! years after the final uprising [Root.GetName] gets §Y'Tyrant's Rise'§! until the end of the game giving the following effects:\nNational Unrest: §G-2.00§!\nMaximum Absolutism: §G+20.00§!\nYearly Absolutism: §G+1.00§!\nUnjustified Demands: §G-33.0%§!"
+ wyvernheart_A9_event_tt:0 "The §YCourt and Country§! disaster cannot happen."
  wyvernheart_tyrants_rise:0 "Tyrant's Rise"
 
  the_scions_title:0 "The Scions"
@@ -45,6 +45,7 @@
 
  bioimproved_mages_title:0 "Bioimproved Mages"
  bioimproved_mages_desc:0 ""
+ wyvernheart_B9_effect_tt:0 "We will lose from 150 to 300 of each Monarch Power depending on our rulers skill in Transmutation"
 
  mightiest_of_us_title:0 "The Mightiest of Us"
  mightiest_of_us_desc:0 ""
@@ -87,6 +88,7 @@
 
  the_red_flood_title:0 "The Red Flood"
  the_red_flood_desc:0 ""
+ wyvernheart_D5_trigger_tt:0 "The Crimson Deluge has happened"
 
  a_new_seat_of_power_title:0 "A New Seat of power"
  a_new_seat_of_power_desc:0 ""
@@ -118,10 +120,11 @@
  improving_on_perfection_title:0 "Improving on Perfection"
  improving_on_perfection_desc:0 ""
  wyvernheart_burnblood_hive:0 "The Burnblood Hive"
+ wyvernheart_E9_effect_tt:0 "All the §YBurnblood Companies§! will now receive §G-10%§! shock damage and deal §G+10%§! shock damage\nThey also now have an §Yincreased manpower reserve§!\n"
 
  bane_of_escann_title:0 "The Bane of Escann"
  bane_of_escann_desc:0 ""
- wyvernheart_E10_trigger_tt:0 "Every area in the Eastern §YAlenic Frontier§!, Eastern §Alenic Reach§!, Northern §YWest Castanor§! and all areas within the white walls have a province with both a §YMage Tower§! and 6 §YBase Manpower§!"
+ wyvernheart_E10_trigger_tt:0 "Every area in the Eastern §YAlenic Frontier§!, Eastern §YAlenic Reach§!, Northern §YWest Castanor§! and all areas within the white walls have a province with both a §YMage Tower§! and 6 §YBase Manpower§!"
  wyvernheart_E10_effect_tt:0 "A fourth §YBurnblood Company§! will be available for recruitment, all §YBurnblood Companies§! will now have a higher manpower reserve\n\nAll provinces with a §YMage Tower§! and 6 §YBase Manpower§! will get a §Ysmall§! or §Ylarge§! orcish minority"
 
 
@@ -219,7 +222,7 @@
  flavour_wyvernheart.111.t:0 "Magic and Artificery Unbound"
  flavour_wyvernheart.111.d:0 "placeholder"
  flavour_wyvernheart.111.a:0 "A new type of Wyvern will fly over Escann."
- wyvernheart_E9_event_tt:0 "Rulers will have now be better war-wizards.\nWar-wizard created through the §YImbue a Mage§! governmental power will have +1 fire and +1 siege."
+ wyvernheart_B9_event_tt:0 "Rulers will have now be better war-wizards.\nWar-wizard created through the §YImbue a Mage§! governmental power will have +1 fire and +1 siege."
 
  flavour_wyvernheart.112.t:0 "Calm After the Storn"
  flavour_wyvernheart.112.d:0 "placeholder"
@@ -228,6 +231,25 @@
  flavour_wyvernheart.113.t:0 "The Heart of Halann "
  flavour_wyvernheart.113.d:0 "placeholder"
  flavour_wyvernheart.113.a:0 "The blood may be black, but our Heart stays true."
+
+ flavour_wyvernheart.200.t:0 "The Promised Mage"
+ flavour_wyvernheart.200.d:0 "placeholder"
+ flavour_wyvernheart.200.a:0 "Wyvernheart has a bright future ahead"
+
+ flavour_wyvernheart.201.t:0 "A Simple Accident"
+ flavour_wyvernheart.201.d:0 "placeholder"
+ flavour_wyvernheart.201.a:0 "A most curious death, we must protect our dynasty"
+ wyvernheart_201_event_tt:0 "Rumours of a §RCoup§! are spreading around the country, it might be wise to focus on §Yinternal turmoil§! for the time being"
+
+ flavour_wyvernheart.202.t:0 "Tyrant's Fall"
+ flavour_wyvernheart.202.d:0 "placeholder"
+ flavour_wyvernheart.202.a:0 "The Regent shall avenge his kin"
+ 
+
+ flavour_wyvernheart.203.t:0 "Victory or Death"
+ flavour_wyvernheart.203.d:0 "placeholder"
+ flavour_wyvernheart.203.a:0 "I will grant them a swift death"
+ wyvernheart_203_event_tt:0 "A new Mission becomes available\n\nIf we complete §Y'The Dust Settles'§! in less than §Y5§! years [Root.GetName] §Y'Tyrant's Rise'§! until the end of the game giving the following effects:\nNational Unrest: §G-2.00§!\nMaximum Absolutism: §G+20.00§!\nYearly Absolutism: §G+1.00§!\nUnjustified Demands: §G-33.0%§!"
 
  flavour_wyvernheart.300.t:0 "Event Manager"
  flavour_wyvernheart.300.d:0 "placeholder"

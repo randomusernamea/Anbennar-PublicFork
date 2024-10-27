@@ -13248,6 +13248,7 @@ floodborn_council_reform = {
 	legacy_equivalent = despotic_monarchy
 	potential = {
 		mission_completed = the_red_flood
+		NOT = { mission_completed = imbue_the_royals }
 	}
 	valid_for_nation_designer = yes
 	modifiers = {
@@ -13262,7 +13263,6 @@ floodborn_council_reform = {
 		disabled_expelling = yes
 		disabled_purging = yes
 		locked_government_type = yes
-		blocked_call_diet = yes
 	}
 	ai = {
 		factor = 0.75 #generic
@@ -13274,7 +13274,7 @@ floodborn_council_reform_always_mage = {
 	lock_level_when_selected = yes
 	legacy_equivalent = despotic_monarchy
 	potential = {
-		mission_completed = the_red_flood
+		mission_completed = imbue_the_royals
 	}
 	valid_for_nation_designer = yes
 	modifiers = {

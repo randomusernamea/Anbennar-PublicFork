@@ -1,0 +1,524 @@
+spawn_wyvernheart_civil_war_rebels = {
+	if = {
+		limit = {
+			any_owned_province = { region = inner_castanor_region }
+			840 = {#North Citadel is used to store flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		inner_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		inner_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = west_castanor_region }
+			728 = {#Cannwood is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		west_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		west_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = south_castanor_region }
+			728 = {#Cannwood is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		south_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		south_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = alenic_reach_region }
+			817 = {#Bladeskeep is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		alenic_reach_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		alenic_reach_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = alenic_frontier_region }
+			227 = {#Aldtempel is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		alenic_frontier_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		alenic_frontier_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = forlorn_vale_region }
+			701 = {#Esald is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		forlorn_vale_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		forlorn_vale_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = noble_name
+			}
+		}
+	}
+}
+spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
+	if = {
+		limit = {
+			any_owned_province = { region = inner_castanor_region }
+			840 = {#North Citadel is used to store flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		inner_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		inner_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = west_castanor_region }
+			728 = {#Cannwood is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		west_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		west_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = south_castanor_region }
+			728 = {#Cannwood is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		south_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		south_castanor_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = alenic_reach_region }
+			817 = {#Bladeskeep is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		alenic_reach_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		alenic_reach_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = alenic_frontier_region }
+			227 = {#Aldtempel is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		alenic_frontier_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		alenic_frontier_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			any_owned_province = { region = forlorn_vale_region }
+			701 = {#Esald is used to story flags
+				NOT = {
+					has_province_flag = wyvernheart_hardliner_councillor
+					has_province_flag = wyvernheart_technocrat_councillor
+					has_province_flag = wyvernheart_heartmage_councillor
+					has_province_flag = wyvernheart_devout_councillor
+					has_province_flag = wyvernheart_wealthy_councillor
+					has_province_flag = wyvernheart_ambitious_councillor
+				}
+			}
+		}
+		forlorn_vale_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 4
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+				leader = pretender
+			}
+		}
+	}
+	else_if = {
+		limit = { any_owned_province = { region = inner_castanor_region } }
+		forlorn_vale_region = {
+			type = random_repeating
+			limit = { owned_by = ROOT }
+			amount = 2
+			spawn_rebels = {
+				size = 2
+				type = mage_rebels
+			}
+		}
+	}
+}
