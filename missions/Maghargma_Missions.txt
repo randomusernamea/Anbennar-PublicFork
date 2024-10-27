@@ -51,8 +51,10 @@ maghargma_one = {
 		required_missions = { maghargma_empower_ziltaghs_clique } 
 		provinces_to_highlight = {
 			province_id = 5037
-			has_tax_building_trigger = no
-			devastation = 1
+			OR = {
+				has_tax_building_trigger = no
+				devastation = 1
+			}
 		}
 
 		trigger = {
@@ -85,11 +87,13 @@ maghargma_one = {
 		}
 		provinces_to_highlight = {
 			province_id = 5052
-			NOT = { owned_by = ROOT } 
-			NOT = { is_core = 5052 } 
-			has_trade_building_trigger = no
-			has_production_building_trigger = no
-			NOT = { development = 10 } 
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { is_core = 5052 } 
+				has_trade_building_trigger = no
+				has_production_building_trigger = no
+				NOT = { development = 10 } 
+			}
 		}
 
 		trigger = {
@@ -158,10 +162,12 @@ maghargma_one = {
 		required_missions = { maghargma_the_little_brothers } 
 		provinces_to_highlight = {
 			province_id = 5052
-			NOT = { development = 20 } 
-			has_fort_building_trigger = no
-			has_manpower_building_trigger = no
-			has_forcelimit_building_trigger = no
+			OR = {
+				NOT = { development = 20 } 
+				has_fort_building_trigger = no
+				has_manpower_building_trigger = no
+				has_forcelimit_building_trigger = no
+			}
 		}
 
 		trigger = {
@@ -645,7 +651,6 @@ maghargma_two = {
 			army_size_percentage = 0.9
 			OR = {
 				high_tolerance_goblin_race_trigger = yes
-				max_tolerance_goblin_race_trigger = yes
 			}
 		}
 
@@ -865,6 +870,7 @@ maghargma_dynamic_trolls = {
 				}
 			}
 			num_of_owned_provinces_with = {
+				value = 3
 				religion = ROOT
 				region = northern_pass_region
 			}
@@ -931,7 +937,6 @@ maghargma_dynamic_trolls_1 = {
 			OR = {
 				medium_tolerance_troll_race_trigger = yes
 				high_tolerance_troll_race_trigger = yes
-				max_tolerance_troll_race_trigger = yes
 			}
 
 			all_owned_province = {
@@ -1127,7 +1132,7 @@ maghargma_two_post_trolls = {
 					num_of_heavy_ship = 25
 					num_of_galley = 50
 				}
-				num_of_heavy_ship = 25
+				num_of_heavy_ship = 60
 			}
 			any_country = {
 				capital_scope = { continent = europe }
@@ -1502,7 +1507,6 @@ maghargma_three = {
 				has_country_modifier = racial_pop_centaur_expulsion
 				medium_tolerance_centaur_race_trigger = yes
 				high_tolerance_centaur_race_trigger = yes
-				max_tolerance_centaur_race_trigger = yes
 			}
 		}
 
@@ -1515,7 +1519,6 @@ maghargma_three = {
 					}
 				}
 				change_primary_culture = ghanzamh_centaur
-				clear_racial_administration = yes
 				add_country_modifier = {
 					name = restructuring_administration
 					duration = 3650
@@ -1626,10 +1629,7 @@ maghargma_three = {
 				type = all
 				hold_condition = { Repaired = yes }
 			}
-			OR = {
-				high_tolerance_goblin_race_trigger = yes
-				max_tolerance_goblin_race_trigger = yes
-			}
+			high_tolerance_goblin_race_trigger = yes
 		}
 
 		effect = {
@@ -1901,7 +1901,7 @@ maghargma_four = {
 							limit = {
 								region = west_forbidden_plains_region 
 							}
-							THIS = { set_capital = PREV }
+							owner = { set_capital = PREV }
 						}
 					}
 				}
@@ -2055,7 +2055,7 @@ maghargma_four = {
 							limit = {
 								region = east_forbidden_plains_region 
 							}
-							THIS = { set_capital = PREV }
+							owner = { set_capital = PREV }
 						}
 					}
 				}
@@ -2686,7 +2686,7 @@ maghargma_five = {
 							limit = {
 								region = serpent_gift_region 
 							}
-							THIS = { set_capital = PREV }
+							owner = { set_capital = PREV }
 						}
 					}
 				}
@@ -3281,16 +3281,14 @@ maghargma_five_post_amberlands = {
 							region =  demon_hills_region
 						}
 						OR = {
-							has_150_opinion_improved_relation = { target = ROOT }
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
 							has_been_insulted_by_root = yes
 						}
 					}
 					country_event = { id = flavor_maghargma.30 days = 5 }
-				}
-			}
-			if = {
-				limit = {
-					
 				}
 			}
 		}

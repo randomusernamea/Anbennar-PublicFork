@@ -98,7 +98,7 @@ country_event = {
 			add_mil_power = 100
 			every_owned_province = {
 				limit = {
-					province_group = westmarches
+					province_group = fp_westmarches
 					has_terrain = city_terrain
 					development = 12
 				}
@@ -671,7 +671,6 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 10
-					leader = "Chike Gravelhide"
 				}
 			}
 		}
@@ -680,6 +679,7 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 10
+					leader = "Chike Gravelhide"
 				}
 			}
 		}
@@ -780,7 +780,7 @@ province_event = {
 	option = {
 		name = flavor_maghargma.17.a
 		trigger = {
-			owner { NOT = { has_country_flag = I90_rejected_steel } }
+			owner = { NOT = { has_country_flag = I90_rejected_steel } }
 		}
 		owner = {
 			add_country_modifier = {
@@ -1447,11 +1447,8 @@ country_event = {
 				type = cb_vassalize_mission
 				months = 180
 			}
-			demon_hills_region = { add_permanent_claim = ROOT }
 		}
-		else = {
-			demon_hills_region = { add_permanent_claim = ROOT }
-		}
+		demon_hills_region = { add_permanent_claim = ROOT }
 	}
 } 
 
