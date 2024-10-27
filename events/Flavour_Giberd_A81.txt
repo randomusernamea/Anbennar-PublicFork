@@ -3,6 +3,7 @@
 # 10-19: mission flavour events
 # 20-29: electorate event chain
 # 30-39: artificer faction events
+# 50-60: cleanup events to end temporary effects
 namespace = flavor_giberd
 # Reworked Giberd MT events
 #Our Options of War
@@ -52,6 +53,12 @@ country_event = {
 			rajput_infantry = ROOT
 		}
 		custom_tooltip = giberd_unable_to_research_10
+		hidden_effect = {
+			country_event = {
+				id = flavor_giberd.50
+				days = 3650
+			}
+		}
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
 		tooltip = {
@@ -91,6 +98,12 @@ country_event = {
 			rajput_infantry = ROOT
 		}
 		custom_tooltip = giberd_unable_to_research_10
+		hidden_effect = {
+			country_event = {
+				id = flavor_giberd.50
+				days = 3650
+			}
+		}
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
 		tooltip = {
@@ -1600,5 +1613,21 @@ country_event = {
 			name = giberd_show_our_might
 			duration = -1
 		}
+	}
+}
+
+##########
+# Cleanup events
+# cleanup for "unable to resarch for X years"
+country_event = {
+	id = flavor_giberd.50
+	title = flavor_giberd.50.t
+	desc = flavor_giberd.50.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.50.a
+		clr_country_flag = artifice_research_temporarily_disabled
 	}
 }
