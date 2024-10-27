@@ -3,29 +3,30 @@ country_decisions = {
         major = yes
 		potential = {
             has_country_flag = inland_impressment_offices
-            NOT = {
-                any_owned_province = {
-                    OR = {
-                        region = esmaria_region
-                        AND = {
-                            ROOT = { has_country_flag = a95_aranmass_offices }
-                            area = heartland_borders_area
+            any_owned_province = {
+                OR = {
+                    region = esmaria_region
+                    AND = {
+                        ROOT = { has_country_flag = a95_aranmass_offices }
+                        area = heartland_borders_area
+                    }
+                    AND = {
+                        ROOT = { has_country_flag = a95_commons_offices }
+                        area = the_commons_area
+                    }
+                    AND = {
+                        ROOT = { has_country_flag = a95_ibevar_offices }
+                        OR = {
+                            area = south_ibevar_area
+                            area = north_ibevar_area
                         }
-                        AND = {
-                            ROOT = { has_country_flag = a95_commons_offices }
-                            area = the_commons_area
-                        }
-                        AND = {
-                            ROOT = { has_country_flag = a95_ibevar_offices }
-                            OR = {
-                                area = south_ibevar_area
-                                area = north_ibevar_area
-                            }
-                        }
-                    } 
+                    }
+                }
+                NOT = {
                     has_port = no
                     has_building = impressment_offices
                 }
+                    
             }
 		}
 		

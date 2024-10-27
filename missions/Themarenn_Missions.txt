@@ -989,18 +989,9 @@ ryala_branching = {
 			has_personal_deity = ryala
 			has_estate_privilege = estate_burghers_patronage_of_the_arts
 			OR = {
-				employed_advisor = {
-					type = philosopher
-					skill = 3
-				}
-				employed_advisor = {
-					type = artist
-					skill = 3
-				}
-				employed_advisor = {
-					type = natural_scientist
-					skill = 3
-				}
+				philosopher = 3
+				artist = 3
+				natural_scientist = 3
 			}
 		}
 
@@ -1341,9 +1332,7 @@ a95_heretics = {
 		trigger = {
 			OR = {
 				AND = {
-					emperor = {
-						is_rival = ROOT
-					}
+					ROOT = { is_rival = emperor }
 					power_projection = 50
 					army_size = emperor
 				}
@@ -1356,7 +1345,7 @@ a95_heretics = {
 				} 
 				is_emperor = yes
 			}
-			NOT = { ROOT = {religion = infernal_court } }
+			NOT = { religion = infernal_court }
 			266 = {
 				NOT = { religion = infernal_court }
 				owned_by = ROOT
@@ -1392,7 +1381,7 @@ a95_heretics = {
 						value = 50
 					}
 				}
-				emperor = { is_rival = ROOT }
+				ROOT = { is_rival = emperor }
 				is_emperor = yes
 			}
 			OR = {
