@@ -171,9 +171,18 @@ country_event = {
 	option = {
 		name = gushuokguan_event.7.a
 		ai_chance = { factor = 1 }
-		create_subject = {
-			subject_type = dao
-			subject = Y05 #Lanjinhui
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Mandate of Heaven"
+					has_dlc = "Art of War"
+					has_dlc = "Leviathan"
+				}
+			}
+			create_subject = {
+				subject_type = dao
+				subject = Y05 #Lanjinhui
+			}
 		}
 		iongsim_area = {
 			add_permanent_claim = ROOT #Gushuokguan
@@ -204,6 +213,7 @@ country_event = {
 	option = {
 		name = gushuokguan_event.8.a
 		ai_chance = { factor = 1 }
+		add_government_reform = gongmin_lianbang
 		clear_adventurers_organization_effect = yes
 		set_estate_privilege = estate_adventurers_organization_stone_army
 	}
@@ -236,7 +246,7 @@ country_event = {
 	title = gushuokguan_event.11.t
 	desc = gushuokguan_event.11.d
 	picture = CHINESE_GENERAL_eventPicture
-	goto = event_target:gushuokguan_migration_target
+	
 	
 	is_triggered_only = yes
 
@@ -286,7 +296,7 @@ country_event = {
 	title = gushuokguan_event.12.t
 	desc = gushuokguan_event.12.d
 	picture = CHINESE_GENERAL_eventPicture
-	goto = event_target:gushuokguan_migration_target
+	
 	
 	is_triggered_only = yes
 
@@ -347,7 +357,7 @@ country_event = {
 	title = gushuokguan_event.13.t
 	desc = gushuokguan_event.13.d
 	picture = CHINESE_GENERAL_eventPicture
-	goto = event_target:gushuokguan_migration_target
+	
 	
 	is_triggered_only = yes
 
@@ -383,7 +393,7 @@ country_event = {
 	title = gushuokguan_event.14.t
 	desc = gushuokguan_event.14.d
 	picture = CHINESE_GENERAL_eventPicture
-	goto = event_target:gushuokguan_migration_target
+	
 	
 	is_triggered_only = yes
 
@@ -433,7 +443,7 @@ country_event = {
 	title = gushuokguan_event.15.t
 	desc = gushuokguan_event.15.d
 	picture = CHINESE_GENERAL_eventPicture
-	goto = event_target:gushuokguan_migration_target
+	
 	
 	is_triggered_only = yes
 
@@ -726,7 +736,7 @@ country_event = {
 
 	trigger = {}
 
-	immediate = {
+	immediate = { #Version - Player is Inked Shield
 		hidden_effect = {
 			random_subject_country = {
 				limit = { is_subject_of_type = dao }
@@ -781,7 +791,7 @@ country_event = {
 	trigger = {}
 
 	immediate = {
-		hidden_effect = {
+		hidden_effect = { #Version - Player is Red Scarf
 			random_subject_country = {
 				limit = { is_subject_of_type = dao }
 				save_global_event_target_as = inked_shield_1
@@ -834,6 +844,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		has_global_flag = gushuokguan_civil_war
 		is_in_war = {
 			attacker_leader = event_target:red_scarf_1
@@ -856,25 +867,41 @@ country_event = {
 		name = gushuokguan_event.38.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_confederalist_won }
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:red_scarf_1
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Mandate of Heaven"
+					has_dlc = "Art of War"
+					has_dlc = "Leviathan"
+				}
+			}
+			create_subject = { #Version - Inked Shield Win
+				subject_type = dao 
+				subject = event_target:red_scarf_1
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:red_scarf_2
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:red_scarf_3
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:inked_shield_1
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:inked_shield_2
+			}
 		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:red_scarf_2
-		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:red_scarf_3
-		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:inked_shield_2
-		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:inked_shield_3
+		else = {
+			vassalize = event_target:red_scarf_1
+			vassalize = event_target:red_scarf_2
+			vassalize = event_target:red_scarf_3
+			vassalize = event_target:inked_shield_1
+			vassalize = event_target:inked_shield_2
 		}
 	}
 }
@@ -890,6 +917,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		has_global_flag = gushuokguan_civil_war
 		is_in_war = {
 			attacker_leader = event_target:inked_shield_1
@@ -912,7 +940,7 @@ country_event = {
 		name = gushuokguan_event.39.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
-		every_subject_country = {
+		every_subject_country = { #Version - Red Scarf Win
 			limit = { is_subject_of_type = dao }
 			free_vassal = THIS
 			ROOT = { vassalize = PREV }
@@ -931,6 +959,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		has_global_flag = gushuokguan_civil_war
 		is_in_war = {
 			attacker_leader = event_target:red_scarf_1
@@ -953,14 +982,14 @@ country_event = {
 		name = gushuokguan_event.40.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
-		every_subject_country = {
+		every_subject_country = { #Version - Red Scarf Win
 			free_vassal = THIS
 			event_target:red_scarfs = {
 				vassalize = THIS
 			}
 		}
 		event_target:red_scarfs = {
-			vassalize = ROOT
+			vassalize = ROOT #Gushuokguan
 		}
 	}
 }
@@ -976,6 +1005,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		has_global_flag = gushuokguan_civil_war
 		is_in_war = {
 			attacker_leader = event_target:inked_shield_1
@@ -998,27 +1028,46 @@ country_event = {
 		name = gushuokguan_event.41.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_confederalist_won }
-		event_target:red_scarf_1 = {
-			create_subject = {
-				subject_type = dao 
-				subject = ROOT
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
+					has_dlc = "Art of War"
+					has_dlc = "Leviathan"
+				}
 			}
-			create_subject = {
-				subject_type = dao 
-				subject = event_target:red_scarf_2
+			event_target:red_scarf_1 = { #Version - Inked Shield Win
+				create_subject = {
+					subject_type = dao 
+					subject = ROOT
+				}
+				create_subject = {
+					subject_type = dao 
+					subject = event_target:red_scarf_2
+				}
+				create_subject = {
+					subject_type = dao 
+					subject = event_target:inked_shield_1
+				}
+				create_subject = {
+					subject_type = dao 
+					subject = event_target:inked_shield_2
+				}
+				create_subject = {
+					subject_type = dao 
+					subject = event_target:inked_shield_3
+				}
 			}
-			create_subject = {
-				subject_type = dao 
-				subject = event_target:inked_shield_1
+		}
+		else = {
+			event_target:red_scarf_1 = {
+				create_vassal = ROOT
+				create_vassal = event_target:red_scarf_2
+				create_vassal = event_target:inked_shield_1
+				create_vassal = event_target:inked_shield_2
+				create_vassal = event_target:inked_shield_3
 			}
-			create_subject = {
-				subject_type = dao 
-				subject = event_target:inked_shield_2
-			}
-			create_subject = {
-				subject_type = dao 
-				subject = event_target:inked_shield_3
-			}
+			
 		}
 	}
 }

@@ -1451,6 +1451,10 @@ estate_adventurers_organization_stone_army = {
 		NOT = { has_adventurers_special_organization_privilege = yes }
 	}
 	can_select = {
+		OR = {
+			tag = Y17
+			was_tag = Y17
+		}
 		if = {
 			limit = { has_adventurers_organization_privilege = yes }
 			NOT = {

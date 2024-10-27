@@ -45,17 +45,15 @@ gushuokguan_1 = {
 		required_missions = { gushuokguan_1_2 } 
 		provinces_to_highlight = {  
 			owned_by = ROOT #Gushuokguan
-			trade_goods = grain
-			trade_goods = livestock
-			trade_goods = fish
-			NOT = {
-				AND = {
-					has_production_building_trigger = yes
-					has_manpower_building_trigger = yes
-					has_manufactory_trigger = yes
-					base_production = 7
-				}
+			OR = {
+				trade_goods = grain
+				trade_goods = livestock
+				trade_goods = fish
 			}
+			NOT = { has_production_building_trigger = yes }
+			NOT = { has_manpower_building_trigger = yes }
+			NOT = { has_manufactory_trigger = yes }
+			NOT = { base_production = 7 }
 		} 
 
 		trigger = {
@@ -121,16 +119,20 @@ gushuokguan_1 = {
 		position = 4
 		required_missions = { gushuokguan_1_3 } 
 		provinces_to_highlight = {
-			superregion = yanshen_superregion
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
-			devastation = 0.01
-			unrest = 0
-			if = {
-				limit = {
-					province_group = golden_highway_upper_yanshen
-					province_group = golden_highway_yanshen_coast
+			OR = {
+				AND = {
+					superregion = yanshen_superregion
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
+					devastation = 0.01
+					unrest = 0
 				}
-				NOT = { development = 12 }
+				AND = {
+					OR = {
+						province_group = golden_highway_upper_yanshen
+						province_group = golden_highway_yanshen_coast
+					}
+					NOT = { development = 12 }
+				}
 			}
 		} 
 
@@ -344,9 +346,12 @@ gushuokguan_2 = {
 		icon = mission_japanese_fort
 		position = 1
 		provinces_to_highlight = {  
+			owned_by = ROOT #Gushuokguan
 			OR = {
 				has_fort_building_trigger = yes
-				has_influencing_fort = yes
+				any_neighbor_province = {
+					has_fort_building_trigger = yes
+				}
 			}
 			NOT = { has_production_building_trigger = yes }
 		} 
@@ -355,7 +360,9 @@ gushuokguan_2 = {
 			num_of_owned_provinces_with = {
 				OR = {
 					has_fort_building_trigger = yes
-					has_influencing_fort = yes
+					any_neighbor_province = {
+						has_fort_building_trigger = yes
+					}
 				}
 				has_production_building_trigger = yes
 				value = 10
@@ -664,22 +671,30 @@ gushuokguan_3 = {
 		effect = {  
 			#Case 1:
 			custom_tooltip = gushuokguan_lanjinhui_is_ally_tt
-			country_event = {
-				id = gushuokguan_event.1 #An Alliance of Convenience
+			if = {
+				limit = { Y05 = { alliance_with = ROOT } } #Lanjinhui
+				country_event = {
+					id = gushuokguan_event.1 #An Alliance of Convenience
+				}
 			}
+			
 			
 			custom_tooltip = feitenEmpty
 			
 			#Case 2:
 			custom_tooltip = gushuokguan_lanjinhui_is_rival_tt
-			country_event = {
-				id = gushuokguan_event.2 #The Fools of Lanjinhui
-			}
-			Y05 = { #Lanjinhui
-				every_owned_province = {
-					add_permanent_claim = ROOT #Gushuokguan
+			if = {
+				limit = { Y05 = { is_rival = ROOT } } #Lanjinhui
+				country_event = {
+					id = gushuokguan_event.2 #The Fools of Lanjinhui
+				}
+				Y05 = { #Lanjinhui
+					every_owned_province = {
+						add_permanent_claim = ROOT #Gushuokguan
+					}
 				}
 			}
+			
 		}
 	}
 
@@ -793,19 +808,14 @@ gushuokguan_3 = {
 						is_enemy = ROOT #Gushuokguan
 					}
 				}
-			custom_tooltip = gushuokguan_incoming_war_tt
 				country_event = { id = gushuokguan_event.5 } 
+				custom_tooltip = gushuokguan_incoming_war_tt
 			}
 			else_if = {
 				limit = {
-					liuminxiang_area = { country_or_non_sovereign_subject_holds = ROOT }
-					erluxi_area = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = { exists = Y05 } #Lanjinhui
 				}
-				release = Y05 #Lanjinhui
-				create_subject = {
-					subject_type = dao
-					subject = Y05 #Lanjinhui
-				}
+				create_vassal = Y05 #Lanjinhui
 				add_adm_power = 100
 			}
 		} 
@@ -824,19 +834,17 @@ gushuokguan_3 = {
 				province_id = 4850 #Hunxiang
 				province_id = 4892 #Lamcue
 			}
-			NOT = {
-				AND = {
-					owned_by = ROOT
-					OR = {
-						local_autonomy = 25
-						has_province_modifier = autonomy_increased
-					}
-					NOT = { devastation = 0.01 }
-					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
-					}
+			AND = {
+				owned_by = ROOT 
+				OR = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
+				}
+				NOT = { devastation = 0.01 }
+				NOT = { unrest = 0 }
+				if = { 
+					limit = { ROOT = { has_parliament = yes } } 
+					has_seat_in_parliament = yes
 				}
 			}
 		} 
@@ -930,11 +938,28 @@ gushuokguan_3 = {
 		}
 
 		effect = {
-			create_subject = {
-				subject_type = dao
-				subject = Y10 #Yingzhen
-			} 
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
+						has_dlc = "Art of War"
+						has_dlc = "Leviathan"
+					}
+				}
+				create_subject = {
+					subject_type = dao
+					subject = Y04 #Anjiang
+				} 
+			}
+			else = {
+				create_vassal = Y04 #Anjiang
+			}
+			Y04 = {
+				override_country_name = YANSZIN
+				swap_non_generic_missions = yes
+			}
 			custom_tooltip = gushuokguan_release_yanszin_tt
+			custom_tooltip = feitenEmpty
 			add_mil_power = 50
 			add_country_modifier = {
 				name = gushuokguan_trade_power_of_the_yan
@@ -953,8 +978,8 @@ gushuokguan_3 = {
 							area = linyuan_area
 						}
 					}
-					cede_province = Y10 #Yingzhen
-					add_core = Y10 #Yingzhen
+					cede_province = Y04 #Anjiang
+					add_core = Y04 #Anjiang
 				}
 			} 
 		}
@@ -1132,7 +1157,7 @@ gushuokguan_4 = {
 
 		trigger = {
 			estate_loyalty = {
-				estate = estate_eunuchs
+				estate = estate_eunuchs_anb
 				loyalty = 60
 			}
 			estate_loyalty = {
@@ -1144,12 +1169,12 @@ gushuokguan_4 = {
 				loyalty = 60
 			}
 			estate_influence = {
-				estate = estate_eunuchs
+				estate = estate_eunuchs_anb
 				influence = 50
 			}
 			estate_influence = {
 				estate = estate_adventurers
-				influence = 50
+				influence = 30
 			}
 			estate_influence = {
 				estate = estate_burghers
@@ -1165,6 +1190,7 @@ gushuokguan_4 = {
 			hidden_effect = {
 				country_event = {
 					id = gushuokguan_event.6 #The Triple Alliance
+					days = 1825
 				}
 			}
 		} 
@@ -1188,12 +1214,10 @@ gushuokguan_4 = {
 						province_id = 4980 #Tsianjian
 					}
 					NOT = { 
-						AND = { 
+						AND = {
 							is_core = ROOT #Gushuokguan
-							OR = {
-								has_production_building_trigger = yes
-								has_tax_building_trigger = yes
-							}
+							has_production_building_trigger = yes
+							has_tax_building_trigger = yes
 						}
 					}
 				}
@@ -1203,41 +1227,32 @@ gushuokguan_4 = {
 		} 
 
 		trigger = { 
-			NOT = { exists = Y14 } #Zhiqian 
-			xuanbing_area = {
-				type = all
-				is_core = ROOT #Gushuokguan
-				OR = {
-					has_production_building_trigger = yes
-					has_tax_building_trigger = yes
-				}
-			}
-			4927 = { #Shiying
-				is_core = ROOT #Gushuokguan
-				OR = {
-					has_production_building_trigger = yes
-					has_tax_building_trigger = yes
-				}
-			}
-			4917 = { #Jiangchang
-				is_core = ROOT #Gushuokguan
-				OR = {
-					has_production_building_trigger = yes
-					has_tax_building_trigger = yes
-				}
-			}
-			4980 = { #Tsianjian
-				is_core = ROOT #Gushuokguan
-				OR = {
-					has_production_building_trigger = yes
-					has_tax_building_trigger = yes
-				}
-			}
 			estate_loyalty = {
 				estate = estate_burghers
 				loyalty = 60
 			}
-			
+			NOT = { exists = Y14 } #Zhiqian 
+			xuanbing_area = {
+				type = all
+				is_core = ROOT #Gushuokguan
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			4927 = { #Shiying
+				is_core = ROOT #Gushuokguan
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			4917 = { #Jiangchang
+				is_core = ROOT #Gushuokguan
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			4980 = { #Tsianjian
+				is_core = ROOT #Gushuokguan
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
 		} 
 
 		effect = {  
@@ -1295,25 +1310,25 @@ gushuokguan_4 = {
 						area = tianlou_area
 						area = jinjiang_area
 					}
-					country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
 				}
 				#Case 2: Areas you need to core
 				AND = {
 					region = north_yanshen_region
 					culture = jiangyang
-					NOT = {
+					NOT = { 
 						AND = {
-							is_core = ROOT
+							is_core = ROOT 
 							OR = {
 								local_autonomy = 25
-								has_province_modifier = autonomy_increased
-								is_capital = no
+								has_province_modifier = autonomy_increased 
+								is_capital = yes
 							}
-							NOT = { devastation = 0.01 } 
+							NOT = { devastation = 0.01 }
 							NOT = { unrest = 0 }
-							if = {
+							if = { 
 								limit = { ROOT = { has_parliament = yes } } 
-								has_seat_in_parliament = yes 
+								has_seat_in_parliament = yes
 							}
 						}
 					}
@@ -1337,7 +1352,7 @@ gushuokguan_4 = {
 				OR = {
 					local_autonomy = 25
 					has_province_modifier = autonomy_increased
-					is_capital = no
+					is_capital = yes
 				}
 				NOT = { devastation = 0.01 } 
 				NOT = { unrest = 0 }
@@ -1363,7 +1378,22 @@ gushuokguan_4 = {
 		icon = mission_tianlou
 		position = 4
 		required_missions = { gushuokguan_4_3 } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			area = iongsim_area
+			AND = {
+				owned_by = ROOT 
+				OR = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
+				}
+				NOT = { devastation = 0.01 }
+				NOT = { unrest = 0 }
+				if = { 
+					limit = { ROOT = { has_parliament = yes } } 
+					has_seat_in_parliament = yes
+				}
+			}
+		} 
 
 		trigger = {
 			NOT = { exists = Y20 } #Feiten
@@ -1385,10 +1415,22 @@ gushuokguan_4 = {
 		} 
 
 		effect = {  
-			create_subject = {
-				subject_type = dao
-				subject = Y20 #Feiten
-			} 
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
+						has_dlc = "Art of War"
+						has_dlc = "Leviathan"
+					}
+				}
+				create_subject = {
+					subject_type = dao
+					subject = Y20 #Feiten
+				} 
+			}
+			else = {
+				create_vassal = Y20 #Feiten
+			}
 			custom_tooltip = gushuokguan_release_feiten_tt
 			4871 = { #Tianlou
 				add_unit_construction = {
@@ -1426,17 +1468,7 @@ gushuokguan_4 = {
 			gushuokguan_4_4
 			gushuokguan_5_4
 		}
-		provinces_to_highlight = {  
-			owned_by_subject_of = ROOT #Gushuokguan
-			NOT = {
-				AND = {
-					development = 10
-					num_of_buildings_in_province = 3
-				}
-			}
-			devastation = 0.01
-			unrest = 0
-		} 
+		provinces_to_highlight = { } 
 
 		trigger = {  
 			custom_trigger_tooltip = {
@@ -1705,16 +1737,7 @@ gushuokguan_5 = {
 			gushuokguan_4_3
 			gushuokguan_5_3
 		}
-		provinces_to_highlight = {  
-			owned_by_subject_of = ROOT #Gushuokguan
-			NOT = {
-				AND = {
-					development = 10
-					num_of_buildings_in_province = 3
-				}
-			}
-			devastation = 0.01
-		} 
+		provinces_to_highlight = { } 
 
 		trigger = {
 			custom_trigger_tooltip = {
@@ -1817,6 +1840,7 @@ gushuokguan_5 = {
 		}
 		provinces_to_highlight = {  
 			superregion = yanshen_superregion
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
 			devastation = 0.01
 		} 
 
@@ -1831,11 +1855,12 @@ gushuokguan_5 = {
 			army_size_percentage = 0.8
 			AND = {
 				Y03 = { vassal_of = ROOT } #Hubao
-				Y10 = { vassal_of = ROOT } #Yingzhen
+				Y04 = { vassal_of = ROOT } #Anjiang
 				Y23 = { vassal_of = ROOT } #Zyujyut
 				Y96 = { vassal_of = ROOT } #Guwaamud
 			}
 			yanshen_superregion = {
+				type = all
 				country_or_non_sovereign_subject_holds = ROOT #Gushokguan
 				NOT = { devastation = 0.01 }
 			}
@@ -1856,19 +1881,19 @@ gushuokguan_5 = {
 			OR = {
 				owned_by = ROOT #Gushuokguan
 				owned_by_subject_of = ROOT #Gushuokguan
+			}
+			OR = {
 				AND = {
 					is_capital = yes
 					NOT = { development = 30 }
 					NOT = { has_building = state_house }
 				}
-			} 
-			OR = {
 				AND = {
 					province_group = trade_node_provinces
 					NOT = { province_has_center_of_trade_of_level = 2 }
 					NOT = { has_trade_building_trigger = yes }	
 				}
-			}
+			} 
 		} 
 
 		trigger = {  
@@ -1886,10 +1911,17 @@ gushuokguan_5 = {
 				}
 				NOT = { unrest = 0 }
 			}
-			trade_node_provinces = {
-				province_has_center_of_trade_of_level = 2
-				has_trade_building_trigger = yes
-			}
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_5_7_tt
+			    trade_node_provinces = {
+				   OR = {
+					   owned_by = ROOT #Gushuokguan
+					   owned_by_subject_of = ROOT #Gushuokguan
+				   }
+				   province_has_center_of_trade_of_level = 2
+				   has_trade_building_trigger = yes
+			   }
+		    }
 			capital_scope = {
 				development = 30
 				has_building = state_house
@@ -1902,13 +1934,17 @@ gushuokguan_5 = {
 					}
 					NOT = { unrest = 0 }
 				}
-				# custom_trigger_tooltip = {
-				# 	tooltip = gushuokguan_5_7_tt
+				custom_trigger_tooltip = {
+				 	tooltip = gushuokguan_5_7_tt
 					trade_node_provinces = {
+						OR = {
+							owned_by = ROOT #Gushuokguan
+							owned_by_subject_of = ROOT #Gushuokguan
+						}
 						province_has_center_of_trade_of_level = 2
 						has_trade_building_trigger = yes
 					}
-				# }
+				}
 				capital_scope = {
 					development = 30
 					has_building = state_house
