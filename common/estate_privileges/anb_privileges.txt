@@ -13921,7 +13921,7 @@ estate_mages_organization_rule_of_warlocks = {
 	loyalty = 0.1
 	influence = 0.2
 	is_valid = {
-		has_unlocked_estate_privilege = { estate_privilege = estate_mages_organization_rule_of_warlocks }
+		has_estate_privilege = estate_mages_organization_rule_of_warlocks
 	}
 	can_revoke = {
 		always = no
@@ -13931,15 +13931,9 @@ estate_mages_organization_rule_of_warlocks = {
 		if = {
 			limit = { has_reform = magocracy_reform }
 			custom_tooltip = rakkaz_warlock_nice
-			hidden_effect = {
-				country_event = { id = flavour_rakkaz.7 }
-			}
 		}
 		else = {
 			custom_tooltip = rakkaz_warlock_bad
-			hidden_effect = {
-				country_event = { id = flavour_rakkaz.6 }
-			}
 		}	
 		custom_tooltip = rakkaz_rule_of_warlocks_tooltip
 	}
@@ -14272,7 +14266,6 @@ estate_mages_warlock_pact_night_coven = {
 		change_adm = 1
 		change_dip = 1
 		change_mil = 1
-		add_ruler_personality = mage_personality
 		custom_tooltip = rakkaz_night_coven_tooltip
 		hidden_effect = {
 			country_event = { id = flavour_rakkaz.25 } #Can't add ruler personalities here, so I made it in a hidden event.

@@ -24,14 +24,11 @@ F71_1_part1 = {
 		trigger = {
 			overextension_percentage = 0
 			num_of_loans = 0
-			custom_trigger_tooltip = {
-				tooltip = rakkaz_secure_our_holdings_tooltip
-				all_owned_province = {
-					if = { 
-						limit = { religion = xhazobkult } 
-						NOT = { unrest = 0 }  
-					} 
-				}
+			NOT = {
+				any_owned_province = {
+					religion = xhazobkult
+					unrest = 0
+				} 
 			}
 			stability = 1
 			treasury = 100
@@ -192,16 +189,10 @@ F71_2_part1 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					area = mattabo_area
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							is_core = ROOT
-						}
+					OR = {
+						area = mattabo_area
+						area = shena_muhaqaar_area
 					}
-				}
-				AND = {
-					area = shena_muhaqaar_area
 					NOT = {
 						AND = {
 							owned_by = ROOT
@@ -273,23 +264,13 @@ F71_3_part1 = {
 		}
 		provinces_to_highlight = {
 			OR = {
+				province_id = 487
+				province_id = 479
+			}
+			NOT = {
 				AND = {
-					province_id = 487
-					NOT = {
-						OR = {
-							controlled_by = ROOT
-							controlled_by = F69
-						}
-					}
-				}
-				AND = {
-					province_id = 479
-					NOT = {
-						OR = {
-							controlled_by = ROOT
-							controlled_by = F69
-						}
-					}
+					controlled_by = ROOT
+					controlled_by = F69
 				}
 			}
 		}
@@ -768,10 +749,10 @@ F71_3_part2_optional = {
 				value = 90
 			}
 			event_target:rakkaz_enemy = {
-				all_owned_province = {
-					if = { 
-						limit = { province_group = mothers_sorrow_group } 
-						is_looted = yes
+				NOT = {
+					any_owned_province = {
+						province_group = mothers_sorrow_group
+						NOT = { is_looted = yes }
 					}
 				}
 			}
@@ -936,52 +917,14 @@ F71_1_part2 = {
 					}
 				}
 				AND = {
-					province_id = 5700
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
-						}
+					OR = {
+						province_id = 5700
+						province_id = 5836
+						province_id = 5872
+						province_id = 5860
+						province_id = 5847
+						province_id = 5840
 					}
-				}
-				AND = {
-					province_id = 5836
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
-						}
-					}
-				}
-				AND = {
-					province_id = 5872
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
-						}
-					}
-				}
-				AND = {
-					province_id = 5860
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
-						}
-					}
-				}
-				AND = {
-					province_id = 5847
-					NOT = {
-						AND = {
-							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
-						}
-					}
-				}
-				AND = {
-					province_id = 5840
 					NOT = {
 						AND = {
 							owned_by = ROOT
@@ -1347,6 +1290,7 @@ F71_3_part2 = {
 		effect = { 
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_domination } 
 			add_ruler_personality = legendary_conqueror_personality
+			force_add_ruler_personality = { personality = legendary_conqueror_personality }
 		} 
 	}
 
@@ -1656,26 +1600,26 @@ F71_4_part2 = {
 			}
 		} 
 
-		effect = {  
+		effect = { 
 			if = {
-				limit = { development_in_provinces = { value = 50 trade_goods = slaves } }
-				add_yearly_manpower = 2
-			}
+				limit = { development_in_provinces = { value = 250 trade_goods = slaves } }
+				add_yearly_manpower = 10
+			} 
 			else_if = {
-				limit = { development_in_provinces = { value = 100 trade_goods = slaves } }
-				add_yearly_manpower = 4
+				limit = { development_in_provinces = { value = 200 trade_goods = slaves } }
+				add_yearly_manpower = 8
 			}
 			else_if = {
 				limit = { development_in_provinces = { value = 150 trade_goods = slaves } }
 				add_yearly_manpower = 6
 			}
 			else_if = {
-				limit = { development_in_provinces = { value = 200 trade_goods = slaves } }
-				add_yearly_manpower = 8
+				limit = { development_in_provinces = { value = 100 trade_goods = slaves } }
+				add_yearly_manpower = 4
 			}
 			else_if = {
-				limit = { development_in_provinces = { value = 250 trade_goods = slaves } }
-				add_yearly_manpower = 10
+				limit = { development_in_provinces = { value = 50 trade_goods = slaves } }
+				add_yearly_manpower = 2
 			}
 			set_country_flag = rakkaz_fighting_pit_more_cav_unlocked
 			hidden_effect = {

@@ -1063,12 +1063,7 @@ irkorzik_3 = {
 
 		effect = {  
 			if = {
-				limit = {
-					5802 = { 
-						province_has_center_of_trade_of_level = 1 
-						owned_by = ROOT
-					}
-				}
+				limit = { 5802 = { province_has_center_of_trade_of_level = 1 } }
 				add_treasury = -50
 				5802 = { add_center_of_trade_level = 1 }
 			}
@@ -1347,17 +1342,9 @@ irkorzik_3 = {
 				}
 				add_treasury = 1000
 			}
-			else = {
-				if = {
-					limit = {
-						5710 = {
-							owned_by = ROOT
-						}
-					}
-				}
-				5710 = {
-					add_center_of_trade_level = 1
-				}
+			else_if = {
+				limit = { 5710 = { owned_by = ROOT } }
+				5710 = { add_center_of_trade_level = 1 }
 			}
 		} 
 	}

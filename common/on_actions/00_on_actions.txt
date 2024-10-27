@@ -10776,7 +10776,10 @@ on_province_religion_changed = {
 	}
 	#Rakkaz
 	if = {
-		limit = { owner = { religion = shadow_pact } }
+		limit = { 
+			religion = shadow_pact
+			owner = { religion = shadow_pact } 
+		}
 		owner = {
 			change_variable = {
 				which = numOfProvincesConvertedToSP
@@ -15858,7 +15861,6 @@ on_raze = {
 					value = 30
 				}
 			}
-			add_ruler_personality = reaver_personality
 			force_add_ruler_personality = { personality = reaver_personality }
 		}
 	}

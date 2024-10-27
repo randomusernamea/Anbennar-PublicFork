@@ -17814,7 +17814,7 @@ rakkaz_fighting_pit_mazu_makhara_interactions = {
 					5466 = {
 						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
 						add_province_modifier = {
-							name = rakkaz_surge_of_suffering
+							name = rakkaz_surge_of_suffering_upgrade
 							duration = 3650
 						}
 					}
@@ -17970,6 +17970,7 @@ rakkaz_warlock_advisor_management = {
 	clr_country_flag = rakkaz_rule_of_warlocks_advisor_loyalty
 	clr_country_flag = rakkaz_rule_of_warlocks_advisor_missionary
 	clr_country_flag = rakkaz_rule_of_warlocks_advisor_unrest
+	clr_country_flag = rakkaz_already_choosen_third_modifier
 	country_event = { id = flavour_rakkaz.6 days = 1 }
 }
 
