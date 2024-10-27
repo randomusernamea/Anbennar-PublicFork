@@ -2273,7 +2273,10 @@ maghargma_dynamic_brightmarch_1 = {
 				owned_by = ROOT
 				has_tax_building_trigger = yes
 				has_production_building_trigger = yes
-				development = 20
+			}
+			development_in_provinces = {
+				value = 40
+				area = qarshtuluu_area
 			}
 			qarshtuluu_area = {
 				has_manufactory_trigger = yes
@@ -2889,7 +2892,7 @@ maghargma_five = {
 					limit = {
 						development = 12
 						has_production_building_trigger = yes
-						OR = { #Not Working For Some Rason
+						OR = { 
 							trade_goods = grain
 							trade_goods = fish 
 							trade_goods = livestock 
