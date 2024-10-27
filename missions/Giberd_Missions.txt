@@ -982,6 +982,10 @@ giberd_ryalanar_conquest = {
 			country_event = {
 				id = flavor_giberd.11
 			}
+			custom_tooltip = giberd_ae_gnomish_minority_tt
+			hidden_effect = {
+				set_country_flag = giberd_gnomes_ae
+			}
 		}
 	}
 	giberd_not_just_a_mere_cog = {

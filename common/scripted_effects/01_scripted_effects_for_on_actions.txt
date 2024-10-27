@@ -9828,6 +9828,23 @@ on_province_owner_change_effect = {
 			}
 		}
 	}
+	if = { #Giberd
+		limit = {
+			owner = {
+				has_country_flag = giberd_gnomes_ae
+			}
+			OR = {
+				has_gnomish_majority_trigger = yes
+				has_gnomish_minority_trigger = yes
+			}
+		}
+		every_known_country = {
+			add_aggressive_expansion = {
+				who = ROOT
+				value = -5
+			}
+		}
+	}
 }
 
 on_primary_culture_changed_effect = {
