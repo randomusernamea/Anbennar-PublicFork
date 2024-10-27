@@ -245,8 +245,8 @@ country_event = {
 		custom_tooltip = giberd_increases_our_artifice_upkeep_by_20
 		custom_tooltip = artificer_points_upkeep_tt
 		hidden_effect = {
-			change_variable = {
-				which = ArtificeUpkeep
+			subtract_variable = {
+				which = StaticArtificePoints
 				value = 20
 			}
 		}
@@ -277,6 +277,7 @@ country_event = {
 			days = 1
 		}
 		# TODO: unlock level 2 inventions
+		# TODO: start river party
 	}
 }
 
@@ -323,8 +324,8 @@ country_event = {
 		}
 		A81 = {
 			hidden_effect = {
-				subtract_variable = {
-					which = ArtificeUpkeep
+				change_variable = {
+					which = StaticArtificePoints
 					value = 20
 				}
 			}
@@ -801,7 +802,17 @@ country_event = {
 		add_adm_power = -75
 		add_dip_power = -75
 		add_mil_power = -75
-		# TODO: -10 capacity for 10 years
+		custom_tooltip = giberd_10_capacity_10_years_tt
+		hidden_effect = {
+			subtract_variable = {
+				which = StaticArtificePoints
+				value = 10
+			}
+			country_event = {
+				id = flavor_giberd.54
+				days = 3650
+			}
+		}
 		275 = {
 			add_province_modifier = {
 				name = giberd_scouring_archive
@@ -827,6 +838,17 @@ country_event = {
 		add_adm_power = -150
 		add_dip_power = -150
 		add_mil_power = -150
+		custom_tooltip = giberd_20_capacity_10_years_tt
+		hidden_effect = {
+			subtract_variable = {
+				which = StaticArtificePoints
+				value = 20
+			}
+			country_event = {
+				id = flavor_giberd.55
+				days = 3650
+			}
+		}
 		every_elector = {
 			add_opinion = {
 				who = ROOT
@@ -1053,12 +1075,12 @@ country_event = {
 	option = {
 		name = flavor_giberd.34.a
 		giberd_factions_technomancers_increase = yes
-		custom_tooltip = giberd_construction_of_silverforge_large_tt
+		custom_tooltip = giberd_30_capaticy_10_years_tt
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_silverforge_hold_large
 		hidden_effect = {
-			change_variable = {
-				which = ArtificeUpkeep
+			subtract_variable = {
+				which = StaticArtificePoints
 				value = 30
 			}
 		}
@@ -1088,8 +1110,8 @@ country_event = {
 		set_country_flag = giberd_silverforge_hold_small
 		custom_tooltip = artificer_points_upkeep_tt
 		hidden_effect = {
-			change_variable = {
-				which = ArtificeUpkeep
+			subtract_variable = {
+				which = StaticArtificePoints
 				value = 10
 			}
 		}
@@ -1101,7 +1123,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = flavor_giberd.35.a
+		name = flavor_giberd.34.c
 		giberd_factions_mechanists_increase = yes
 		remove_historical_friend = A73
 		A73 = {
@@ -1143,8 +1165,8 @@ country_event = {
 				has_country_flag = giberd_silverforge_hold_large
 			}
 			clr_country_flag = giberd_silverforge_hold_large
-			subtract_variable = {
-				which = ArtificeUpkeep
+			change_variable = {
+				which = StaticArtificePoints
 				value = 30
 			}
 		}
@@ -1153,8 +1175,8 @@ country_event = {
 				has_country_flag = giberd_silverforge_hold_small
 			}
 			clr_country_flag = giberd_silverforge_hold_small
-			subtract_variable = {
-				which = ArtificeUpkeep
+			change_variable = {
+				which = StaticArtificePoints
 				value = 10
 			}
 		}
@@ -1182,8 +1204,8 @@ country_event = {
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_damescrown_due_large
 		hidden_effect = {
-			change_variable = {
-				which = ArtificeUpkeep
+			subtract_variable = {
+				which = StaticArtificePoints
 				value = 10
 			}
 		}
@@ -1209,8 +1231,8 @@ country_event = {
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_damescrown_due_small
 		hidden_effect = {
-			change_variable = {
-				which = ArtificeUpkeep
+			subtract_variable = {
+				which = StaticArtificePoints
 				value = 5
 			}
 		}
@@ -1297,8 +1319,8 @@ country_event = {
 				has_country_flag = giberd_damescrown_due_large
 			}
 			clr_country_flag = giberd_damescrown_due_large
-			subtract_variable = {
-				which = ArtificeUpkeep
+			change_variable = {
+				which = StaticArtificePoints
 				value = 10
 			}
 		}
@@ -1307,8 +1329,8 @@ country_event = {
 				has_country_flag = giberd_damescrown_due_small
 			}
 			clr_country_flag = giberd_damescrown_due_small
-			subtract_variable = {
-				which = ArtificeUpkeep
+			change_variable = {
+				which = StaticArtificePoints
 				value = 5
 			}
 		}
@@ -1325,6 +1347,14 @@ country_event = {
 	option = {
 		name = flavor_giberd.38.a
 		giberd_factions_technomancers_increase = yes
+		custom_tooltip = giberd_unable_to_research_20
+		hidden_effect = {
+			set_country_flag = artifice_research_temporarily_disabled
+			country_event = {
+				id = flavor_giberd.50
+				days = 7300
+			}
+		}
 		add_estate_loyalty_modifier = {
 			estate = estate_artificers
 			desc = giberd_the_guilds_betrayed_tt
@@ -1337,7 +1367,6 @@ country_event = {
 			influence = -20
 			duration = 7300
 		}
-		# TODO: unable to research for 20 years
 		add_estate_influence_modifier = {
 			estate = estate_mages
 			desc = giberd_abundance_of_mages_tt
@@ -1629,5 +1658,90 @@ country_event = {
 	option = {
 		name = flavor_giberd.50.a
 		clr_country_flag = artifice_research_temporarily_disabled
+	}
+}
+
+# cleanup for "take -30 artificer cap for X years"
+country_event = {
+	id = flavor_giberd.51
+	title = flavor_giberd.51.t
+	desc = flavor_giberd.51.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.51.a
+		change_variable = {
+			which = StaticArtificePoints
+			value = 30
+		}
+	}
+}
+
+# cleanup for "take ALL artificer cap for X years"
+country_event = {
+	id = flavor_giberd.52
+	title = flavor_giberd.52.t
+	desc = flavor_giberd.52.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.52.a
+		change_variable = {
+			which = StaticArtificePoints
+			which = giberd_understanding_the_fragment_capacity
+		}
+	}
+}
+
+# cleanup for "take 70 artificer cap for X years"
+country_event = {
+	id = flavor_giberd.53
+	title = flavor_giberd.53.t
+	desc = flavor_giberd.53.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.53.a
+		change_variable = {
+			which = StaticArtificePoints
+			value = 70
+		}
+	}
+}
+
+# cleanup for "take -10 artificer cap for X years"
+country_event = {
+	id = flavor_giberd.54
+	title = flavor_giberd.54.t
+	desc = flavor_giberd.54.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.54.a
+		change_variable = {
+			which = StaticArtificePoints
+			value = 10
+		}
+	}
+}
+
+# cleanup for "take -20 artificer cap for X years"
+country_event = {
+	id = flavor_giberd.55
+	title = flavor_giberd.55.t
+	desc = flavor_giberd.55.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.55.a
+		subtract_variable = {
+			which = StaticArtificePoints
+			value = 20
+		}
 	}
 }
