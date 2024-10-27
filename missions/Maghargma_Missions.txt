@@ -423,7 +423,7 @@ maghargma_one_post_westmarches = {
 				province_id = 4194
 				province_id = 4193
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_subject_holds = ROOT }
 		} 
 
 		trigger = {
@@ -1133,7 +1133,7 @@ maghargma_two_post_trolls = {
 			west_castanor_region = { add_permanent_claim = ROOT } 
 			add_country_modifier = {
 				name = I90_western_fleet_buildup
-				duration = 9132 #25 Years
+				duration = 9125 #25 Years
 			}
 		}
 	}
@@ -1436,10 +1436,11 @@ maghargma_three = {
 		} 
 
 		trigger = {
-			NOT = {
-				forbidden_lands_superregion = {
-					is_city = yes
-					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			forbidden_lands_superregion = {
+				type = all
+				OR = {
+					is_city = no
+					country_or_non_sovereign_subject_holds = ROOT 
 				}
 			}
 			legitimacy = 90
@@ -1960,6 +1961,7 @@ maghargma_four = {
 		}
 
 		effect = {
+			custom_tooltip = maghargma_reorganize_the_horsemen_tt
 			random_subject_country = {
 				limit = {
 					is_subject_of_type = vassal
@@ -2044,6 +2046,7 @@ maghargma_four = {
 						amount = 2
 					}
 				}
+				custom_tooltip = maghargma_lord_of_the_plains_tt_1
 				every_subject_country = {
 					limit = {
 						is_subject_of_type = tributary_state_anb
@@ -2054,6 +2057,7 @@ maghargma_four = {
 				}
 			}
 			else = {
+				custom_tooltip = maghargma_lord_of_the_plains_tt_2
 				every_subject_country = {
 					limit = {
 						is_subject_of_type = tributary_state_anb
@@ -2104,7 +2108,7 @@ maghargma_four = {
 		}
 
 		effect = { 
-			country_event = { id = flavor_maghargma.24 } #A United Horsemen?
+			custom_tooltip = maghargma_ordering_the_steppes_tt
 			random_subject_country = {
 				limit = {
 					is_subject_of_type = vassal
@@ -2134,6 +2138,7 @@ maghargma_four = {
 				add_base_production = 2
 				add_base_manpower = 2
 			}
+			country_event = { id = flavor_maghargma.24 } #A United Horsemen?
 		} 
 	}
 
@@ -2178,7 +2183,7 @@ maghargma_four = {
 					duration = -1
 				}
 				if = {
-					limit = { mission_completed = maghargma_new_subjects } 
+					limit = { ROOT = { mission_completed = maghargma_new_subjects } }
 					add_goblin_minority_size_effect = yes
 				}
 				add_ogre_minority_size_effect = yes
@@ -2638,11 +2643,9 @@ maghargma_five = {
 			if = {
 				limit = {
 					calc_true_if = {
-						NOT = {
-							all_known_country = {
-								capital_scope = { region = serpent_gift_region }
-								is_subject = no
-							}
+						all_known_country = {
+							capital_scope = { region = serpent_gift_region }
+							is_subject = no
 						}
 						amount = 2
 					}
@@ -2677,6 +2680,7 @@ maghargma_five = {
 						amount = 2
 					}
 				}
+				custom_tooltip = maghargma_sieze_the_serpent_tt_1
 				every_subject_country = {
 					limit = {
 						is_subject_of_type = tributary_state_anb
@@ -2687,6 +2691,7 @@ maghargma_five = {
 				}
 			}
 			else = {
+				custom_tooltip = maghargma_sieze_the_serpent_tt_2
 				every_subject_country = {
 					limit = {
 						is_subject_of_type = tributary_state_anb
@@ -2755,7 +2760,8 @@ maghargma_five = {
 			}
 		}
 
-		effect = {  
+		effect = {
+			custom_tooltip = maghargma_consolidate_the_riverlands_tt  
 			random_subject_country = {
 				limit = {
 					is_subject_of_type = vassal
