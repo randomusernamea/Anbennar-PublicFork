@@ -701,6 +701,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = gushuokguan_chosen_inked_shields
 		}
+		country_event = { id = gushuokguan_event.36 } #The Storm Arrives - You Chose Inked Shields
 	}
 
 	option = {
@@ -710,6 +711,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = gushuokguan_chosen_red_scarfs
 		}
+		country_event = { id = gushuokguan_event.37 } #The Storm Arrives - You Chose Red Scarfs
 	}
 }
 
@@ -724,9 +726,46 @@ country_event = {
 
 	trigger = {}
 
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_global_event_target_as = red_scarf_1
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } }
+				save_global_event_target_as = inked_shield_1
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } }
+				save_global_event_target_as = red_scarf_2
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_2 } }
+				save_global_event_target_as = inked_shield_2
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_2 } NOT = { has_saved_global_event_target = inked_shield_2 } }
+				save_global_event_target_as = red_scarf_3
+			}
+			event_target:red_scarf_1 = {
+				declare_war_with_cb = {
+					who = ROOT #Gushuokguan
+					casus_belli = cb_independence_war
+				}
+			}
+			event_target:red_scarf_2 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
+			event_target:red_scarf_3 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
+			event_target:inked_shield_1 = { join_all_defensive_wars_of = ROOT }
+			event_target:inked_shield_2 = { join_all_defensive_wars_of = ROOT }
+			set_global_flag = gushuokguan_civil_war
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.36.a
 		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_civil_war_tt
 	}
 }
 
@@ -741,9 +780,46 @@ country_event = {
 
 	trigger = {}
 
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_global_event_target_as = inked_shield_1
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } }
+				save_global_event_target_as = red_scarf_1
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } }
+				save_global_event_target_as = inked_shield_2
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_2 } }
+				save_global_event_target_as = red_scarf_2
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_2 } NOT = { has_saved_global_event_target = red_scarf_2 } }
+				save_global_event_target_as = inked_shield_3
+			}
+			event_target:inked_shield_1 = {
+				declare_war_with_cb = {
+					who = ROOT #Gushuokguan
+					casus_belli = cb_independence_war
+				}
+			}
+			event_target:inked_shield_2 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
+			event_target:inked_shield_3 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
+			event_target:red_scarf_1 = { join_all_defensive_wars_of = ROOT }
+			event_target:red_scarf_2 = { join_all_defensive_wars_of = ROOT }
+			set_global_flag = gushuokguan_civil_war
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.37.a
 		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_civil_war_tt
 	}
 }
 
@@ -754,14 +830,52 @@ country_event = {
 	desc = gushuokguan_event.38.d
 	picture = CHINESE_GENERAL_eventPicture
 	
-	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
 
-	trigger = {}
+	trigger = {
+		has_global_flag = gushuokguan_civil_war
+		is_in_war = {
+			attacker_leader = event_target:red_scarf_1
+			casus_belli = cb_independence_war
+			war_score = 75
+		}
+	}
+
+	after = {
+		clear_global_event_target = event_target:inked_shield_1
+		clear_global_event_target = event_target:inked_shield_2
+		clear_global_event_target = event_target:inked_shield_3
+		clear_global_event_target = event_target:red_scarf_1
+		clear_global_event_target = event_target:red_scarf_2
+		clear_global_event_target = event_target:red_scarf_3
+		clr_global_flag = gushuokguan_civil_war
+	}
 
 	option = {
 		name = gushuokguan_event.38.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
+		hidden_effect = { set_country_flag = gushuokguan_civil_war_confederalist_won }
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:red_scarf_1
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:red_scarf_2
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:red_scarf_3
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:inked_shield_2
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:inked_shield_3
+		}
 	}
 }
 
@@ -772,14 +886,140 @@ country_event = {
 	desc = gushuokguan_event.39.d
 	picture = CHINESE_GENERAL_eventPicture
 	
-	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
 
-	trigger = {}
+	trigger = {
+		has_global_flag = gushuokguan_civil_war
+		is_in_war = {
+			attacker_leader = event_target:inked_shield_1
+			casus_belli = cb_independence_war
+			war_score = 75
+		}
+	}
+
+	after = {
+		clear_global_event_target = event_target:inked_shield_1
+		clear_global_event_target = event_target:inked_shield_2
+		clear_global_event_target = event_target:inked_shield_3
+		clear_global_event_target = event_target:red_scarf_1
+		clear_global_event_target = event_target:red_scarf_2
+		clear_global_event_target = event_target:red_scarf_3
+		clr_global_flag = gushuokguan_civil_war
+	}
 
 	option = {
 		name = gushuokguan_event.39.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
+		every_subject_country = {
+			limit = { is_subject_of_type = dao }
+			free_vassal = THIS
+			ROOT = { vassalize = PREV }
+		}
+	}
+}
+
+#Inked Shields Loss
+country_event = {
+	id = gushuokguan_event.40
+	title = gushuokguan_event.40.t
+	desc = gushuokguan_event.40.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+
+	trigger = {
+		has_global_flag = gushuokguan_civil_war
+		is_in_war = {
+			attacker_leader = event_target:red_scarf_1
+			casus_belli = cb_independence_war
+			war_score = -75
+		}
+	}
+
+	after = {
+		clear_global_event_target = event_target:inked_shield_1
+		clear_global_event_target = event_target:inked_shield_2
+		clear_global_event_target = event_target:inked_shield_3
+		clear_global_event_target = event_target:red_scarf_1
+		clear_global_event_target = event_target:red_scarf_2
+		clear_global_event_target = event_target:red_scarf_3
+		clr_global_flag = gushuokguan_civil_war
+	}
+
+	option = {
+		name = gushuokguan_event.40.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
+		every_subject_country = {
+			free_vassal = THIS
+			event_target:red_scarfs = {
+				vassalize = THIS
+			}
+		}
+		event_target:red_scarfs = {
+			vassalize = ROOT
+		}
+	}
+}
+
+#Red Scarfs Loss
+country_event = {
+	id = gushuokguan_event.41
+	title = gushuokguan_event.41.t
+	desc = gushuokguan_event.41.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+
+	trigger = {
+		has_global_flag = gushuokguan_civil_war
+		is_in_war = {
+			attacker_leader = event_target:inked_shield_1
+			casus_belli = cb_independence_war
+			war_score = -75
+		}
+	}
+
+	after = {
+		clear_global_event_target = event_target:inked_shield_1
+		clear_global_event_target = event_target:inked_shield_2
+		clear_global_event_target = event_target:inked_shield_3
+		clear_global_event_target = event_target:red_scarf_1
+		clear_global_event_target = event_target:red_scarf_2
+		clear_global_event_target = event_target:red_scarf_3
+		clr_global_flag = gushuokguan_civil_war
+	}
+
+	option = {
+		name = gushuokguan_event.41.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { set_country_flag = gushuokguan_civil_war_confederalist_won }
+		event_target:red_scarf_1 = {
+			create_subject = {
+				subject_type = dao 
+				subject = ROOT
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:red_scarf_2
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:inked_shield_1
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:inked_shield_2
+			}
+			create_subject = {
+				subject_type = dao 
+				subject = event_target:inked_shield_3
+			}
+		}
 	}
 }
 
@@ -794,6 +1034,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_country_flag = gushuokguan_enable_confederal_council
 		calc_true_if = {
 			all_subject_country = {
 				is_subject_of_type = dao
@@ -808,7 +1049,6 @@ country_event = {
 				}
 			}
 		}
-		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
 	immediate = {

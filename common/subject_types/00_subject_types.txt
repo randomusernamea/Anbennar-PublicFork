@@ -4499,7 +4499,7 @@ sanghariyar_trade_state = {
 	}
 }
 
-dao = { # Verkal Ozovar's vassals
+dao = { #Gushuokguan vassals
     copy_from = vassal
     
     # Triggers:
@@ -4532,8 +4532,11 @@ dao = { # Verkal Ozovar's vassals
 
 
 	modifier_overlord = {
-		trigger = { has_country_flag = gushuokguan_civil_war_confederalist_won }
+		trigger = { has_country_flag = gushuokguan_dao_diplomatic_relations }
 		modifier = gushuokguan_dao_diplomatic_relations_buff
 	}
-
+	modifier_subject = {
+		trigger = { has_country_flag = gushuokguan_dao_republican_tradition }
+		modifier = gushuokguan_dao_republican_tradition_buff
+	}
 }
