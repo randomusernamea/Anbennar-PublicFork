@@ -42663,3 +42663,139 @@ L64_ideas = {
 		church_power_modifier = 0.1
 	}
 }
+
+#Sudokli
+V08_ideas = {
+	start = {
+		same_culture_advisor_cost = -0.15
+		morale_damage_received = -0.1
+	}
+	
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+
+	trigger = {
+		tag = V08 
+	}
+	free = yes
+	
+	V08_the_first_shrine_binders = {
+    		idea_cost = -0.1
+	}
+    
+	V08_soul_spheres = {
+    		cavalry_shock = 0.25 
+	}
+    
+	V08_tapestries_of_those_remembered = {
+    		free_adm_policy = 1
+	}
+    
+	V08_emulation_of_the_elders = {
+    		build_cost = -0.1
+	}
+    
+	V08_leading_our_brethren = {
+    		diplomats = 1
+            legitimacy = 0.5
+			devotion = 0.5
+			republican_tradition = 0.15
+			horde_unity = 0.5
+	}
+    
+	V08_our_strongest_muscle = {
+    		stability_cost_modifier = -0.15
+	}
+    
+	V08_a_balance_of_our_own = {
+    		tolerance_own = 2
+	}
+}
+
+
+#Bazuneizar
+V06_ideas = {
+    start = {
+        caravan_power = 0.2
+        fort_maintenance_modifier = -0.15 
+    }
+    
+    bonus = {
+         morale_damage_received = -0.1
+    }
+    
+    trigger = {
+        tag = V06 #Bazuneizar
+    }
+    free = yes
+	
+	V06_walls = {
+		defensiveness = 0.15
+	}
+	
+	V06_clockwork_wonders = {
+		production_efficiency = 0.1
+	}
+	
+	V06_relic_guilds = {
+		technology_cost = -0.05
+	}
+	
+	V06_open_air = {
+		prestige_decay = -0.01
+	}
+	
+	V06_appeasement = {
+		artificers_loyalty_modifier = 0.05
+        church_loyalty_modifier 0.05
+	}
+	
+	V06_practical = {
+		global_supply_limit_modifier = 0.25
+	}
+	
+	V06_isolated = {
+		innovativeness_gain = 0.5
+	}
+
+}
+
+#Acromton
+Z40_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.15
+		infantry_power = 0.1
+	}
+	bonus = {
+		leader_land_fire = 1
+	}
+
+	trigger = {
+		tag = Z40 #Acromton
+	}
+	free = yes
+
+	Z40_the_tradewinds_of_anbenncost = {
+		trade_efficiency = 0.10
+	}
+	Z40_the_siege_of_castle_acromton = {
+		defensiveness = 0.15
+	}
+	Z40_damerias_wings = {
+		discipline = 0.05
+	}
+	Z40_the_red_flight = {
+		improve_relation_modifier = 0.2
+	}
+	Z40_the_house_of_acromis = {
+		army_tradition = 0.5
+	}
+	Z40_the_purse_of_the_dove_duke = {
+		development_cost = -0.1
+	}
+	Z40_the_history_of_acromton = {
+		prestige = 0.5
+	}
+}
+
