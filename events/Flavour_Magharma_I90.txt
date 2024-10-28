@@ -794,7 +794,7 @@ province_event = {
 	option = {
 		name = flavor_maghargma.17.b
 		trigger = {
-			owner { has_country_flag = I90_rejected_steel }
+			owner = { has_country_flag = I90_rejected_steel }
 		}
 		owner = {
 			add_country_modifier = {

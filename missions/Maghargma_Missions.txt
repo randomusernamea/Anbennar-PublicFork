@@ -664,9 +664,7 @@ maghargma_two = {
 		trigger = {
 			army_size = 60
 			army_size_percentage = 0.9
-			OR = {
-				high_tolerance_goblin_race_trigger = yes
-			}
+			high_tolerance_goblin_race_trigger = yes
 		}
 
 		effect = { country_event = { id = flavor_maghargma.14 }  } #The Green Army
@@ -1558,7 +1556,7 @@ maghargma_three = {
 				}
 				hidden_effect = {
 					add_country_modifier = {
-						name = centaur_administration
+						name = centaur_military
 						duration = -1
 						hidden = yes
 					}
