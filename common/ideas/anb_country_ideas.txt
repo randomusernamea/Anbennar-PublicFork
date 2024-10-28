@@ -42749,7 +42749,6 @@ V06_ideas = {
 	V06_appeasement = {
 		artificers_loyalty_modifier = 0.05
         church_loyalty_modifier 0.05
-
 	}
 	
 	V06_practical = {
@@ -42761,4 +42760,42 @@ V06_ideas = {
 	}
 
 }
-	
+
+#Acromton
+Z40_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.15
+		infantry_power = 0.1
+	}
+	bonus = {
+		leader_land_fire = 1
+	}
+
+	trigger = {
+		tag = Z40 #Acromton
+	}
+	free = yes
+
+	Z40_the_tradewinds_of_anbenncost = {
+		trade_efficiency = 0.10
+	}
+	Z40_the_siege_of_castle_acromton = {
+		defensiveness = 0.15
+	}
+	Z40_damerias_wings = {
+		discipline = 0.05
+	}
+	Z40_the_red_flight = {
+		improve_relation_modifier = 0.2
+	}
+	Z40_the_house_of_acromis = {
+		army_tradition = 0.5
+	}
+	Z40_the_purse_of_the_dove_duke = {
+		development_cost = -0.1
+	}
+	Z40_the_history_of_acromton = {
+		prestige = 0.5
+	}
+}
+
