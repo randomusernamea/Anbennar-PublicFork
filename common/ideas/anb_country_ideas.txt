@@ -10206,11 +10206,11 @@ Z49_ideas = {
 #Marrhold
 B36_ideas = {
 	start = {
-		global_colonial_growth = 15
+		defensiveness = 0.20
 		cavalry_flanking = 0.75
 	}
 	bonus = {
-		caravan_power = 0.25
+		production_efficiency = 0.15
 	}
 	trigger = {
 		tag = B36
@@ -10218,24 +10218,24 @@ B36_ideas = {
 
 	free = yes
 
-	B36_griffon_riders_of_cannor = {
-		cavalry_power = 0.2
-	}
 	B36_alenic_ancestry = {
-		recover_army_morale_speed = 0.10
-		war_exhaustion = -0.01
+		war_exhaustion = -0.03
 	}
-	B36_the_icon_of_marrhold = {
-		fort_maintenance_modifier = -0.15
+	B36_the_hold_of_the_griffon_king = {
+		development_cost = -0.10
+	}
+	B36_griffon_riders_of_cannor = {
+		cavalry_power = 0.20
+	}
+	B36_the_great_sky_jousts = {
+		army_tradition = 0.50
+		prestige_decay = -0.01
+	}
+	B36_the_young_griffon = {
+		recover_army_morale_speed = 0.10
 	}
 	B36_death_ring_of_marrvale = {
-		leader_land_manuever = 1
-	}
-	B36_curbing_the_tyrants_of_the_serpentspine = {
-		trade_efficiency = 0.15
-	}
-	B36_royal_griffon_races = {
-		global_tax_modifier = 0.1
+		hostile_attrition = 1
 	}
 	B36_griffon_bombadier_squadron = {
 		fire_damage = 0.1
