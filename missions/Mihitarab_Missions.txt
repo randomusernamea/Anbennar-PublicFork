@@ -620,19 +620,11 @@ mihitarab_missions_6 = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = mihitarab_cultural_acceptance_tooltip
-				OR = {
-					AND = {
-						accepted_culture  = mazava
-						accepted_culture  = mboala
-					}
-					AND = {
-						accepted_culture  = mazava
-						accepted_culture  = amezatany
-					}
-					AND = {
-						accepted_culture  = amezatany
-						accepted_culture  = mboala
-					}
+				calc_true_if = {
+					amount = 2
+					accepted_culture = mazava
+					accepted_culture = mboala
+					accepted_culture = amezatany
 				}
 			}
 		}
