@@ -24,6 +24,14 @@
  raithtall_reunite_crusaders_desc:0 "The Hibernal Crusaders were gonna conquer Winter together, but everything changed when the Strutmar nation attacked. Only the [Root.GetRulerName], master of the Autumn Court, can fix this mess."
  raithtall_resume_crusades_title:0 "Resume the Crusades"
  raithtall_resume_crusades_desc:0 "ladrana Emberborn had just declared the Hibernal Crusade when Dorcurt got destroyed. Let's pick up where she left off."
+ raithtall_break_oath_title:0 "Break Their Oath"
+ raithtall_break_oath_desc:0 "It is time to end the Eordellon Crusades at their source. This is naother of those scenes that I've had for over a year and made me want to do this MT."
+ raithtall_vernal_harmony_title:0 "Vernal Harmony"
+ raithtall_vernal_harmony_desc:0 "Arakeprun had a big civil war about the balance of power between the nobles and the clergy. Sure would be nice if someone had an entire government mechanic about exactly that."
+ raithtall_autumn_invincible_title:0 "Autumn Invincible"
+ raithtall_autumn_invincible_desc:0 "You've reaunited the Autumn Court, stronger than ever! This will likely have an effect on Eordand's seasons."
+ raithtall_autumn_invincible_title:0 "Winter Defied"
+ raithtall_autumn_invincible_desc:0 "The Hibernal Crusade has conquered Gemradcurt, which is great! Wouldhave happened far sooner if not for those evil Eordellon Crusaders ruining everything. Self-awareness, what's that?"
  #shared autumn court missions
  raithtall_prepare_praisegranting_festival_title:0 "Contact with Cannor"
  raithtall_prepare_praisegranting_festival_desc:0 "We have known that there are lands beyond our shores, mostly sparsely inhabited by primitive beings not blessed by our Fey Lords. The Caamasi also tell us of merchants from far to the south. What has arrived this day is not an ordinary occurrence: a massive wooden ship bedecked in gleaming iron guns sailed into our harbor, making inquiries about our lands and our peoples. Doubtless impressed by our might, they wish to stay in our lands for some time. This occasion warrants a reaction: let us prepare for a Praisegranting!"
@@ -57,6 +65,12 @@
  flavor_raithtall.8.t:0 "Betrayed by the Inlaws"
  flavor_raithtall.8.d:0 "The Tuathak noble we married doesn't need our protection anymore and now wants our land."
  flavor_raithtall.8.a:0 "Oh shit!"
+ flavor_raithtall.9.t:0 "Dummy Event"
+ flavor_raithtall.9.d:0 "Dummy event to reapply the Superb harvest modifier"
+ flavor_raithtall.9.a:0 "Ok then"
+ flavor_raithtall.10.t:0 "Taking of Gemradcurt"
+ flavor_raithtall.10.d:0 "You finally enter Gemradcurt, but decide not to sack it in order to not repeat what the iadthi did in Dorcurt. This decision proves unpopular among some, who think you have been corrupted."
+ flavor_raithtall.10.a:0 "Marrying a Snecboth princess from Gelcolle probably didn't help matters."
 
 #modifiers
  raithtall_peitar_rebuilders:0 "Peitar Rebuilders"
@@ -70,6 +84,11 @@
  raithtall_disciplined:0 "Disciplined"
  raithtall_crusader_zeal:0 "Crusader Zeal"
  raithtall_crusader_vigilance:0 "Crusader Vigilance"
+ raithtall_disarmed_population:0 "Disarmed Population"
+ raithtall_disarmed_population_desc:0 "§YWill be removed upon converting the province§!"
+ raithtall_superb_harvest:0 "Superb Harvest"
+ raithtall_reconstruction_effort:0 "Reconstruction Effort"
+ 
 
 #government reforms
  raithtall_twilight_court_reform:0 "Twilight Court"
@@ -82,10 +101,12 @@
 #tooltips
  raithtall_iadth_tt:0 "All Iadthi core provinces in Eordand with Peitar culture or Eordellon religion lose 100 years of separatism\nAll Iadthi cores in Eordand are removed"
  autumn_tolerance_locked_tt:0 "Autumn's Protection clergy privilege is always active"
- raithtall_dorcurt_ideas_tt:0 "Our first two national ideas will be upgraded"
+ raithtall_dorcurt_ideas_tt:0 "Our first national idea "Memory of Dorcurt" will be upgraded into "Shield of Autumn"\n"Our second national idea "Appreciation of Superiors" will be upgraded into "The Gloam Knight’s Court""
  raithtall_sglard_tt1:0 "If Reunite the Crusaders has been completed, Sglard gains the Sworn Fealty modifier for 30 years"  #TODO - make it look like regular modifier tooltips
  raithtall_sglard_tt2:0 "If Securing the Copperlord has been completed and Sglard is still our subject, Sglard will also gain this modifier."
  raithtall_gelcolle_tt1:0 "We will send Gelcolle an offer to become our subjects."
  raithtall_gelcolle_tt2:0 "We will become a vassal of [H12.GetName] and convert to Autumn Court."  #TODO - make it look like regular ingame tooltips
  raithtall_gelcolle_tt3:0 "[H12.GetName] will get a permanent claim on our capital and a casus belli to vassalise us."  #TODO - make it look like regular ingame tooltips
  raithtall_0_winter_battles_won_tt:0 "Win 8 battles against WInter Court nations\nCurrent: 0"  #TODO - make it look like regular ingame tooltips
+ raithtall_disarmed_population_tt:0 "This modifier will be removed once we convert the province."
+ raithtall_superb_harvest_tt:0 "This modifier will repeat every year for four years."

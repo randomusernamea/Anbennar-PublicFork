@@ -93,7 +93,7 @@ country_event = {
 		2159 = { add_permanent_claim = ROOT }
 		hidden_effect = { set_country_flag = raithtall_dorcurt_restored }
 		custom_tooltip = raithtall_dorcurt_ideas_tt
-		#TODO - update national ideas
+		hidden_effect = { swap_free_idea_group = yes }
 	}
 }
 
@@ -202,5 +202,68 @@ country_event = {	#TODO - make the the event save the tag you got it from
 	option = {
 		name = flavor_raithtall.8.a
 		custom_tooltip = raithtall_gelcolle_tt3
+	}
+}
+
+country_event = {
+	id = flavor_raithtall.9
+	title = flavor_raithtall.9.t
+	desc = flavor_raithtall.9.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_country_modifier = {
+			name = raithtall_superb_harvest
+			duration = 91
+		}
+	}
+	
+	option = {
+		name = flavor_raithtall.9.a
+		
+	}
+}
+
+country_event = {
+	id = flavor_raithtall.10
+	title = flavor_raithtall.10.t
+	desc = flavor_raithtall.10.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_raithtall.10.a
+		2014 = {
+			spawn_rebels = {
+				type = religious_rebels
+				size = 1
+			}
+		}
+		1775 = {
+			add_devastation = -3
+			add_province_modifier = {
+				name = raithtall_reconstruction_effort
+				duration = 1825
+			}
+		}
+		if = {
+			limit = {
+				H16 = {
+					exists = yes
+					is_subject_of = ROOT
+					NOT = { religion = ROOT }
+				}
+			}
+			H16 = {
+				change_religion = ROOT
+				set_ruler_religion = ROOT
+				set_consort_religion = ROOT
+				set_heir_religion = ROOT
+				add_liberty_desire = 30
+			}
+		}
 	}
 }

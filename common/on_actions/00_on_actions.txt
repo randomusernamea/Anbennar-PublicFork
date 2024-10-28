@@ -10739,6 +10739,11 @@ on_province_religion_changed = {
 			}
 		}
 	}
+	#Raithtall
+	if = {
+		limit = { has_province_modifier = raithtall_disarmed_population }
+		remove_province_modifier = raithtall_disarmed_population
+	}
 }
 
 # province

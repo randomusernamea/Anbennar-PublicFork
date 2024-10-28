@@ -79,6 +79,94 @@ raithtall_1 = {
 			}
 		}
 	}
+
+	raithtall_break_oath = {
+		icon = mission_rb_colonise_spice_islands
+		required_missions = { raithtall_discipline_arakeprun }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 2049
+						owned_by = H08
+					}
+					NOT = { country_or_subject_holds = ROOT }
+				}
+				AND = {
+					owner = { religion = eordellon }
+					OR = {
+						region = glorelthir_region
+						area = pelodard_area
+						area = gathgob_area
+					}
+				}
+				AND = {
+					owned_by = ROOT
+					is_core = H08
+					culture = peitar
+					has_fort_building_trigger = yes
+				}
+
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				H08 = {
+					exists = yes
+					NOT = { is_subject_of = ROOT }
+				}
+			}
+			owns_or_subject_of = 2049
+			NOT = { glorelthir_region = { owner = { religion = eordellon } } }
+			NOT = { pelodard_area = { owner = { religion = eordellon } } }
+			NOT = { gathgob_area = { owner = { religion = eordellon } } }
+			NOT = {
+				any_owned_province = {
+					AND = {
+						is_core = H08
+						culture = peitar
+						has_fort_building_trigger = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				if = {
+					limit = { religion = eordellon }
+					add_base_manpower = -1
+					add_base_production = 1
+					add_province_modifier = {
+						name = raithtall_disarmed_population
+						duration = 5475
+					}
+					custom_tooltip = raithtall_disarmed_population_tt
+				}
+			}
+			if = {
+				limit = {
+					H08 = {
+						exists = yes
+						is_subject_of = ROOT
+						religion = eordellon
+					}
+				}
+				H08 = {
+					kill_ruler = yes
+					change_religion = ROOT
+					set_ruler_religion = ROOT
+					set_consort_religion = ROOT
+					set_heir_religion = ROOT
+					add_liberty_desire = 30
+				}
+				country_event = { id = eordand.3 }
+			}
+		}
+	}
 }
 
 raithtall_2 = {
@@ -215,6 +303,39 @@ raithtall_2 = {
 					}
 				}
 			}
+		}
+	}
+
+	raithtall_vernal_harmony = {
+		icon = mission_rb_colonise_spice_islands
+		required_missions = { raithtall_discipline_arakeprun }
+		position = 5
+		
+		provinces_to_highlight = { }
+		
+		trigger = {
+			has_reform = raithtall_twilight_court_reform
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			OR = {
+				has_any_fey_spring_aspect = yes
+				dip_power = 100
+			}
+		}
+		
+		effect = {
+			
+			if = {
+				limit = { has_any_fey_spring_aspect = no }
+				add_dip_power = -100
+			}
+			#TODO - add government reform triggers and corresponding effects
 		}
 	}
 }
@@ -415,6 +536,77 @@ raithtall_3 = {
 			}
 			add_mercantilism = 5
 			2159 = { change_trade_goods = salt }
+		}
+	}
+
+	raithtall_autumn_invincible = {
+		icon = mission_rb_colonise_spice_islands
+		required_missions = { raithtall_example_of_einnsag raithtall_reunite_crusaders }
+		position = 5
+		
+		provinces_to_highlight = { }
+		
+		trigger = {
+			is_month = 7
+			NOT = { is_month = 8 }
+			H11 = {
+				is_subject_of = ROOT
+				NOT = { liberty_desire = 50 }
+			}
+			H13 = {
+				is_subject_of = ROOT
+				NOT = { liberty_desire = 50 }
+			}
+			H15 = {
+				is_subject_of = ROOT
+				NOT = { liberty_desire = 50 }
+			}
+			calc_true_if = {
+				amount = 50
+				eordand_superregion = {
+					type = all
+					OR = {
+						AND = {
+							owned_by = ROOT
+							NOT = {
+								religion = eordellon
+								religion = winter_court
+							}
+						}
+						owner = {
+							is_subject_of = ROOT
+							religion = autumn_court
+							culture = tuathak
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = raithtall_superb_harvest
+				duration = 91
+			}
+			custom_tooltip = raithtall_superb_harvest_tt
+			hidden_effect = {
+				country_event = {
+					id = flavor_raithtall.9
+					days = 365
+				}
+				country_event = {
+					id = flavor_raithtall.9
+					days = 730
+				}
+				country_event = {
+					id = flavor_raithtall.9
+					days = 1095
+				}
+				country_event = {
+					id = flavor_raithtall.9
+					days = 1460
+				}
+			}
 		}
 	}
 }
@@ -731,6 +923,50 @@ raithtall_5 = {
 				name = raithtall_crusader_vigilance
 				duration = 3650
 			}
+		}
+	}
+
+	raithtall_winter_defied = {
+		icon = mission_rb_colonise_spice_islands
+		required_missions = { raithtall_resume_crusades }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					owned_by = H16
+					H16 = { religion = winter_court }
+				}
+				AND = {
+					province_id = 1775
+					NOT = {
+						country_or_subject_holds= ROOT
+						num_of_units_in_province = {
+							who = ROOT
+							amount = 10
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				H16 = {
+					exists = yes
+					religion = winter_court
+				}
+			}
+			1775 = {
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 10
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = flavor_raithtall.10 }
 		}
 	}
 }
