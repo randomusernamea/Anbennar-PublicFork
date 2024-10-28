@@ -37,7 +37,7 @@ country_event = { #Merchant's Beware
 	trigger = {}
 
     option  = {
-        name = flavour_kherka.1.a
+        name = flavour_kherka.2.a
         2773 = { center_of_trade = 1 }
         if = {
             limit = { has_country_flag = schemers_in_power }
@@ -74,14 +74,20 @@ country_event = { #Shift The Tide
             limit = { 
                 NOT = { has_country_flag = has_degarikes }
             }
-            country_event = { id = kheionai.32 }
+            enable_degarikes = yes
+            hidden_effect = {
+                set_country_flag = has_degarikes
+            }
         }
         G59 = {
             if = {
                 limit = { 
                     NOT = { has_country_flag = has_degarikes }
                 }
-                country_event = { id = kheionai.32 }
+                enable_degarikes = yes
+                hidden_effect = {
+                    set_country_flag = has_degarikes
+                }
             }
             add_country_modifier = {
                 name = G48_heart_of_the_navy
