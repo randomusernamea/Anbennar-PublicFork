@@ -938,21 +938,9 @@ gushuokguan_3 = {
 		}
 
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y04 #Anjiang
-				} 
-			}
-			else = {
-				create_vassal = Y04 #Anjiang
+			create_subject = {
+				subject_type = dao
+				subject = Y04 #Anjiang
 			}
 			Y04 = {
 				override_country_name = YANSZIN
@@ -1415,21 +1403,9 @@ gushuokguan_4 = {
 		} 
 
 		effect = {  
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y20 #Feiten
-				} 
-			}
-			else = {
-				create_vassal = Y20 #Feiten
+			create_subject = {
+				subject_type = dao
+				subject = Y20 #Feiten
 			}
 			custom_tooltip = gushuokguan_release_feiten_tt
 			4871 = { #Tianlou
