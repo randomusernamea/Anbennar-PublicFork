@@ -29619,7 +29619,7 @@ U08_rejected_the_prince = {
 }
 
 U08_planetouched_at_home = {
-	province_trade_power_modifier = 0.15
+	global_prov_trade_power_modifier = 0.15
 }
 
 U08_planetouched_in_the_navy = {
@@ -29658,13 +29658,13 @@ U08_bringing_down_the_Swadxevir = {
 }
 
 U08_established_sisterhood = {
-	build_cost = -0.1
-	development_cost = -0.1
+	local_build_cost = -0.1
+	local_development_cost = -0.1
 }
 
 U08_the_kaino_port = {
 	province_trade_power_modifier = 0.15
-	development_cost = -0.2
+	local_development_cost = -0.2
 	local_missionary_strength = -1
 }
 
