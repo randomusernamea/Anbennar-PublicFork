@@ -944,6 +944,7 @@ country_event = {#A Simple Accident
 			religion = ROOT
 			culture = ROOT
 		}
+		add_ruler_personality = mage_personality
 		custom_tooltip = wyvernheart_201_event_tt
 		hidden_effect = {
 			country_event = {
@@ -1005,6 +1006,7 @@ country_event = {#Tyrant's Fall
 			religion = ROOT
 			culture = ROOT
 		}
+		add_ruler_personality = mage_personality
 		define_ruler_to_general = {
 			fire = 4
 			shock = 10
@@ -1120,23 +1122,14 @@ country_event = {#A Divided Council #D5
 		}
 		picture = ROYAL_COUPLE_FUTURE_eventPicture
 	}
-
+	fire_only_once = yes
 	is_triggered_only = yes
 	
 	trigger = {
 		tag = B39
 	}
-	
-	immediate = {
-		hidden_effect = {
-			set_country_flag = wyvernheart_agenda_flag_build_mage_tower
-			pick_random_estate_if_present = { flag = present_agenda estate_action = generate_estate_agenda }
-		}
-	}
 
 	after = {
-		clr_country_flag = wyvernheart_agenda_flag_build_mage_tower
-		clr_country_flag = estate_mages_present_agenda
 		clear_estate_agenda_cache = ROOT
 	}
 
@@ -1145,7 +1138,760 @@ country_event = {#A Divided Council #D5
 		name = "flavour_wyvernheart.301.a"
 		ai_chance = { factor = 1 }
 		set_country_flag = wyvernheart_council_events_enabled
+		set_country_flag = wyvernheart_agenda_flag_build_mage_tower
+		generate_estate_agenda = estate_mages
 		start_estate_agenda = estate_mages
 	}
 }
 
+country_event = {#A Crisis in Devotion
+	id = flavour_wyvernheart.302
+	title = flavour_wyvernheart.302.t
+	desc = flavour_wyvernheart.302.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.302.a"
+		ai_chance = { factor = 1 }
+		add_stability = -1
+		add_country_modifier = {
+			name = wyvernheart_faith_in_the_flood_questionned
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			influence = -20
+			duration = 7300
+			estate = estate_mages
+		}
+		add_estate_influence_modifier = {
+			influence = -20
+			duration = 7300
+			estate = estate_church
+		}
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.302.b"
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = wyvernheart_faith_in_magic_reinforced
+			duration = 7300
+		}
+		for = {
+			amount = 10
+			effect = "
+				random_owned_province = {
+					limit = { NOT = { religion = black_doctrine } }
+					change_religion = black_doctrine
+				}
+			"
+		}
+	}
+}
+
+country_event = {#The New Face of the Council
+	id = flavour_wyvernheart.303
+	title = flavour_wyvernheart.303.t
+	desc = flavour_wyvernheart.303.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.303.a"
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = wyvernheart_escanni_centralization
+			duration = 9125
+		}
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.303.b"
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = wyvernheart_castonath_first_neg
+			duration = 9125
+		}
+		castonath_area = {
+			add_province_modifier = {
+				name = wyvernheart_castonath_first_pos
+				duration = 9125
+			}
+		}
+	}
+	#Option C
+	option = {
+		name = "flavour_wyvernheart.303.c"
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = wyvernheart_floodborn_academy
+			duration = 9125
+		}
+		#+25% study speed for ruler/heir and estate #MAGICREWORK
+	}
+}
+
+country_event = {#A Change in Course
+	id = flavour_wyvernheart.304
+	title = flavour_wyvernheart.304.t
+	desc = flavour_wyvernheart.304.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	immediate = {
+		hidden_effect = {
+			random_list = {#Chooses a random Rivalry Agenda
+				1 = {
+
+				}
+				1 = {
+
+				}
+				1 = {
+
+				}
+				1 = {
+
+				}
+			}
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.304.a"
+		ai_chance = { factor = 1 }
+		#wip
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.304.b"
+		ai_chance = { factor = 1 }
+		trigger = { crown_land_share = 0.30 }
+		add_estate_loyalty = {
+			estate = all
+			loyalty = -10
+		}
+	}
+}
+
+country_event = {#The Floodborn Machine
+	id = flavour_wyvernheart.305
+	title = flavour_wyvernheart.305.t
+	desc = flavour_wyvernheart.305.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.305.a"
+		ai_chance = { factor = 1 }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		add_mil_power = 33
+		add_dip_power = 33
+		add_adm_power = 33
+	}
+}
+
+country_event = {#The Council's Challenge
+	id = flavour_wyvernheart.306
+	title = flavour_wyvernheart.306.t
+	desc = flavour_wyvernheart.306.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.306.a"
+		ai_chance = { factor = 1 }
+		add_legitimacy_equivalent = {
+			amount = -20
+		}
+		random = {
+			chance = 25
+			add_stability = -1
+		}
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.306.b"
+		ai_chance = { factor = 1 }
+		castonath_area = {
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				leader = pretender
+			}
+		}
+	}
+	#Option C
+	option = {
+		name = "flavour_wyvernheart.306.c"
+		ai_chance = { factor = 1 }
+		trigger = {
+			calc_true_if = {
+				amount = 2
+				OR = {
+					has_ruler_flag = divination_3
+					has_ruler_flag = conjuration_3
+					has_ruler_flag = abjuration_3
+					has_ruler_flag = enchantment_3
+					has_ruler_flag = transmutation_3
+					has_ruler_flag = illusion_3
+					has_ruler_flag = necromancy_3
+					has_ruler_flag = conjuration_3
+				}
+			}
+		}
+		highlight = yes
+		add_legitimacy_equivalent = {
+			amount = 20
+		}
+	}
+}
+
+country_event = {#The Heart of an Adventurer
+	id = flavour_wyvernheart.307
+	title = flavour_wyvernheart.307.t
+	desc = flavour_wyvernheart.307.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.307.a"
+		ai_chance = { factor = 1 }
+		add_estate_loyalty = {
+			estate = estate_adventurers
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -10
+		}
+		add_country_modifier = {
+			name = wyvernheart_funding_heartmages
+			duration = 3650
+		}
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.307.b"
+		ai_chance = { factor = 1 }
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_adventurers
+			loyalty = -30
+		}
+		add_legitimacy_equivalent = {
+			amount = 10
+		}
+		add_country_modifier = {
+			name = wyvernheart_refused_heartmages
+			duration = 3650
+		}
+	}
+}
+
+country_event = {#The Rivalries of the Council
+	id = flavour_wyvernheart.308
+	title = flavour_wyvernheart.308.t
+	desc = flavour_wyvernheart.308.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.308.a"
+		ai_chance = { factor = 1 }
+		#WIP
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.308.b"
+		ai_chance = { factor = 1 }
+		#WIP
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.308.c"
+		ai_chance = { factor = 1 }
+		#WIP
+	}
+}
+
+country_event = {#An Upstart in the Council
+	id = flavour_wyvernheart.309
+	title = flavour_wyvernheart.309.t
+	desc = flavour_wyvernheart.309.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.309.a"
+		ai_chance = { factor = 1 }
+		add_legitimacy_equivalent = {
+			amount = 15
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		add_war_exhaustion = 4
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = -5
+		}
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.309.b"
+		ai_chance = { factor = 1 }
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -15
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -15
+		}
+		#+100xp for the current estate research or a random one if there is no active research #MAGICREWORK
+	}
+	#Option C
+	option = {
+		name = "flavour_wyvernheart.309.c"
+		ai_chance = { factor = 1 }
+		add_legitimacy_equivalent = {
+			amount = -10
+		}
+		define_advisor = {
+			type = court_mage
+			skill = 1
+			cost_multiplier = 0.50
+			culture = ROOT
+			religion = ROOT
+		}
+	}
+	#Option D
+	option = {
+		name = "flavour_wyvernheart.309.e"
+		ai_chance = { factor = 1 }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+		add_legitimacy_equivalent = {
+			amount = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -5
+		}
+	}
+}
+
+
+
+
+
+
+
+#400+ Culture conversion events
+province_event = {#A Heartman Home
+	id = flavour_wyvernheart.401
+	title = flavour_wyvernheart.401.t
+	desc = flavour_wyvernheart.401.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			tag = B39
+			NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			NOT = { has_country_flag = wyvernheart_401_recent }
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.401.a"
+		ai_chance = { factor = 1 }
+		owner = {
+			hidden_effect = {
+				add_country_modifier = {
+					hidden = yes
+					name = wyvernheart_cultural_events_timer
+					duration = 2890 #8years - 1 month
+				}
+			}
+			set_country_flag = wyvernheart_401_recent
+			clr_country_flag = wyvernheart_402_recent
+			clr_country_flag = wyvernheart_403_recent
+			clr_country_flag = wyvernheart_404_recent
+		}
+	}
+}
+
+province_event = {#A Dream Realised
+	id = flavour_wyvernheart.402
+	title = flavour_wyvernheart.402.t
+	desc = flavour_wyvernheart.402.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			tag = B39
+			NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			NOT = { has_country_flag = wyvernheart_402_recent }
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.402.a"
+		ai_chance = { factor = 1 }
+		owner = {
+			add_legitimacy_equivalent = {
+				amount = 5
+			}
+			hidden_effect = {
+				add_country_modifier = {
+					hidden = yes
+					name = wyvernheart_cultural_events_timer
+					duration = 2890 #8years - 1 month
+				}
+			}
+			set_country_flag = wyvernheart_402_recent
+			clr_country_flag = wyvernheart_401_recent
+			clr_country_flag = wyvernheart_403_recent
+			clr_country_flag = wyvernheart_404_recent
+		}
+	}
+}
+
+province_event = {#Away With the Old
+	id = flavour_wyvernheart.403
+	title = flavour_wyvernheart.403.t
+	desc = flavour_wyvernheart.403.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			tag = B39
+			NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			NOT = { has_country_flag = wyvernheart_403_recent }
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.403.a"
+		ai_chance = { factor = 1 }
+		add_unrest = 3
+		owner = {
+			hidden_effect = {
+				add_country_modifier = {
+					hidden = yes
+					name = wyvernheart_cultural_events_timer
+					duration = 2890 #8years - 1 month
+				}
+			}
+			set_country_flag = wyvernheart_403_recent
+			clr_country_flag = wyvernheart_402_recent
+			clr_country_flag = wyvernheart_401_recent
+			clr_country_flag = wyvernheart_404_recent
+		}
+	}
+}
+
+province_event = {#A Forceful Assimilation
+	id = flavour_wyvernheart.404
+	title = flavour_wyvernheart.404.t
+	desc = flavour_wyvernheart.404.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			tag = B39
+			NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			NOT = { has_country_flag = wyvernheart_404_recent }
+		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.404.a"
+		ai_chance = { factor = 1 }
+		add_devastation = 10
+		owner = {
+			hidden_effect = {
+				add_country_modifier = {
+					hidden = yes
+					name = wyvernheart_cultural_events_timer
+					duration = 2890 #8years - 1 month
+				}
+			}
+			set_country_flag = wyvernheart_404_recent
+			clr_country_flag = wyvernheart_402_recent
+			clr_country_flag = wyvernheart_403_recent
+			clr_country_flag = wyvernheart_401_recent
+		}
+	}
+}
+
+
+
+
+country_event = {#Backup for agendas
+	id = flavour_wyvernheart.3022
+	title = flavour_wyvernheart.302.t
+	desc = flavour_wyvernheart.302.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	immediate = {
+		clr_country_flag = wyvernheart_agenda_flag_build_mage_tower
+		clr_country_flag = wyvernheart_agenda_flag_dev
+	}
+
+	after = {
+		clear_estate_agenda_cache = ROOT
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.301.a"
+		ai_chance = { factor = 1 }
+		set_country_flag = wyvernheart_council_events_enabled
+		set_country_flag = wyvernheart_agenda_flag_build_mage_tower
+		generate_estate_agenda = estate_mages
+		start_estate_agenda = estate_mages
+	}
+	option = {
+		name = "flavour_wyvernheart.301.b"
+		ai_chance = { factor = 1 }
+		set_country_flag = wyvernheart_council_events_enabled
+		set_country_flag = wyvernheart_agenda_flag_dev
+		generate_estate_agenda = estate_mages
+		start_estate_agenda = estate_mages
+	}
+}

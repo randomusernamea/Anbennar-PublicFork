@@ -2122,7 +2122,7 @@
 					value = 20
 				}
 			}
-		} 
+		}
 	}
 }
 3_endgame = {
@@ -2249,7 +2249,51 @@
 		icon = mission_burning_man
 		position = 10
 		required_missions = { improving_on_perfection } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {
+			OR = {
+				area = alenvord_area
+				area = balvord_area
+				area = jonsway_area
+				area = west_chillsbay_area
+				area = east_chillsbay_area
+				area = wudhal_area
+				area = sondaar_area
+				area = cedesck_area
+				area = vrorenmarch_area
+				area = vrorenwall_area
+				area = gulletpeak_area
+				area = middle_alen_area
+				area = athfork_area
+				area = ebonmarck_area
+				area = balmire_area
+				area = cannwood_area
+				area = falsemire_area
+				area = adenica_area
+				area = silvervord_area
+				area = northyl_area
+				area = westgate_area
+				area = nortmere_area
+				area = lower_nath_area
+				area = upper_nath_area
+				area = southgate_area
+				area = castonath_area
+				area = trialmount_area
+				area = serpentsmarck_area
+				area = coalwoud_area
+				area = bradescker_area
+				area = ardent_glade_area
+				area = oldhaven_area
+				area = steelhyl_area
+			}
+			all_province_in_state = {
+				NOT = {
+					AND = {
+						has_building = mage_tower
+						base_manpower = 6
+					}
+				}
+			}
+		} 
 
 		trigger = {
 			custom_trigger_tooltip = {

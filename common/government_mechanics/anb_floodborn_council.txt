@@ -3,11 +3,13 @@ floodborn_council_mechanic = {
 	alert_icon_index = 22
 	available = {
 		has_reform = floodborn_council_reform
+		has_reform = floodborn_council_reform_always_mage
+		has_reform = floodborn_council_reform_theocracy
 	}
 
 	powers = {
 		bloodbrand_power = {
-			gui = drakonshan_bar
+			gui = effelai_attuned_gov_mech
 			max = 100
 			min = 0
 			reset_on_new_ruler = no
@@ -443,8 +445,8 @@ floodborn_council_mechanic = {
 
 	interactions = {
 		wyvernheart_brand_burnbloods = {
-			icon = GFX_drakonshan_draft_workers
-			gui = drakonshan_button
+			icon = GFX_effelai_government_spear_button
+			gui = effelai_attuned_gov_button_1
 			cost_type = bloodbrand_power
 			cost = 25
 			cooldown_years = 0
@@ -459,8 +461,8 @@ floodborn_council_mechanic = {
 		}
 
 		wyvernheart_imbue_mage = {
-			icon = GFX_drakonshan_seize_resources
-			gui = drakonshan_button
+			icon = GFX_effelai_government_sapling_button
+			gui = effelai_attuned_gov_button_2
 			cost_type = bloodbrand_power
 			cost = 60
 			cooldown_years = 0
@@ -472,8 +474,8 @@ floodborn_council_mechanic = {
 		}
 
 		wyvernheart_manifest_the_flood = {
-			icon = GFX_drakonshan_hold_tournament
-			gui = drakonshan_button
+			icon = GFX_effelai_government_fist_button
+			gui = effelai_attuned_gov_button_3
 			cost_type = bloodbrand_power
 			cost = 90
 			cooldown_years = 0
