@@ -376,13 +376,23 @@ maghargma_dynamic_westmarches_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					fp_westmarches = { remove_core = J51 } 
+					forbidden_lands_superregion = { remove_core = J51 } 
 					fp_westmarches = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J51
 					}
 					release = J51
 					vassalize = J51
+					if = {
+						limit = {
+							fp_westmarches = { #Incase it is own by another subject
+								NOT = { owned_by = J51 }
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J51
+							add_core = J51
+						}
+					}
 				}
 				else = {
 					fp_westmarches = {
@@ -629,6 +639,7 @@ maghargma_two = {
 		required_missions = { maghargma_the_carrot } 
 		provinces_to_highlight = {  
 			province_group = wild_clan_lands
+			is_city = yes
 			OR =  {
 				NOT = { owned_by = ROOT }
 				NOT = {	is_core = ROOT }
@@ -638,9 +649,14 @@ maghargma_two = {
 		trigger = {
 			wild_clan_lands = {
 				type = all
-				owned_by = ROOT
-				is_core = ROOT
-				NOT = { unrest = 0.01 }
+				OR = {
+					is_city = no
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+						NOT = { unrest = 0.01 }
+					}
+				}
 			}
 			wild_clan_lands = {
 				has_fort_building_trigger = yes
@@ -823,13 +839,23 @@ maghargma_dynamic_heartlands_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					fp_heartlands = { remove_core = J50 } 
+					forbidden_lands_superregion = { remove_core = J50 } 
 					fp_heartlands = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J50
 					}
 					release = J50
 					vassalize = J50
+					if = {
+						limit = {
+							fp_heartlands = { #Incase it is own by another subject
+								NOT = { owned_by = J50 }
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J50
+							add_core = J50
+						}
+					}
 				}
 				else = {
 					fp_heartlands = {
@@ -2296,13 +2322,23 @@ maghargma_dynamic_brightmarch_1 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					fp_brightmarch = { remove_core = J50 } 
+					forbidden_lands_superregion = { remove_core = J50 } 
 					fp_brightmarch = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J50
 					}
 					release = J50
 					vassalize = J50
+					if = {
+						limit = {
+							fp_brightmarch = { #Incase it is own by another subject
+								NOT = { owned_by = J50 }
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J50
+							add_core = J50
+						}
+					}
 				}
 				else = {
 					fp_brightmarch = {
@@ -3101,7 +3137,7 @@ maghargma_dynamic_amberlands_2 = {
 			add_dip_power = 100
 			if = {
 				limit = { has_heir = yes }
-				change_heir_dip = 1
+				increase_heir_dip_effect = yes
 				add_heir_personality = charismatic_negotiator_personality
 			}
 			else = {
@@ -3115,13 +3151,23 @@ maghargma_dynamic_amberlands_2 = {
 							NOT = { is_subject_of = ROOT } 
 						} 
 					}
-					fp_amberlands = { remove_core = J52 } 
+					forbidden_lands_superregion = { remove_core = J52 } 
 					fp_amberlands = {
 						limit = { NOT = { has_terrain = city_terrain }  } 
 						add_core = J52
 					}
 					release = J52
 					vassalize = J52
+					if = {
+						limit = {
+							fp_amberlands = { #Incase it is own by another subject
+								NOT = { owned_by = J52 }
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J52
+							add_core = J52
+						}
+					}
 				}
 				else = {
 					fp_amberlands = {

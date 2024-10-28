@@ -248,7 +248,7 @@ country_event = {
 			add_dip_power = 100
 			if = {
 				limit = { has_heir = yes }
-				change_heir_dip = 1
+				increase_heir_dip_effect = yes
 				add_heir_personality = charismatic_negotiator_personality
 			}
 			else = {
