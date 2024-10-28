@@ -516,7 +516,7 @@ mihitarab_missions_6 = {
 		trigger = {
 			6612 = {
 				has_tax_building_trigger = yes
-				has_building = mage_tower
+				has_building = mage_tower #MAGICREWORK (unsure if needed here)
 			}
 			estate_loyalty = {
 				estate = estate_mages
@@ -533,8 +533,8 @@ mihitarab_missions_6 = {
 			set_estate_privilege = estate_mages_organization_proffesional_mihipha
 			hidden_effect = {
 				if = {
-					limit = { has_ruler_flag = mihitarab_haigo_rules_flag }
-					magic_ruler_give_random_spell_school = yes
+					limit = { has_ruler_flag = mihitarab_haigo_rules_flag } 
+					magic_ruler_give_random_spell_school = yes #MAGICREWORK 
 				}
 				else = {
 					add_dip_power = 100
