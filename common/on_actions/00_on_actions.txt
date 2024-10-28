@@ -12232,6 +12232,65 @@ on_culture_promoted = {
 			random = 9125
 		}
 	}
+	if = {
+		limit = { has_reform = ties_with_anbennarian_nobility }
+		if = {
+			limit = { 
+				has_country_modifier = gov_ties_with_anbennarian_III
+		 		number_of_accepted_imperial_cultures = {amount = 4} 
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_III
+			add_dip_power = 50
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_IV
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_modifier = gov_ties_with_anbennarian_II
+		 		number_of_accepted_imperial_cultures = {amount = 3} 
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_II
+			add_dip_power = 50
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_III
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_modifier = gov_ties_with_anbennarian_I
+		 		number_of_accepted_imperial_cultures = {amount = 2} 
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_I
+			add_dip_power = 50
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_II
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { 
+					NOT = { 
+						has_country_modifier = gov_ties_with_anbennarian_IV
+						has_country_modifier = gov_ties_with_anbennarian_III
+						has_country_modifier = gov_ties_with_anbennarian_II
+						has_country_modifier = gov_ties_with_anbennarian_I 
+						}
+					number_of_accepted_imperial_cultures = {amount = 1}		 
+			}			 
+			add_dip_power = 50	
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_I
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
 }
 
 # ROOT = country
@@ -12375,6 +12434,59 @@ on_culture_demoted = {
 		remove_accepted_culture = plain_centaur
 		remove_accepted_culture = ghanzamh_centaur
 	}
+	if = {
+		limit = { has_reform = ties_with_anbennarian_nobility }
+		if = {
+			limit = {
+				has_country_modifier = gov_ties_with_anbennarian_IV
+				NOT = { number_of_accepted_imperial_cultures = { amount = 4 } }
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_IV
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_III
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = gov_ties_with_anbennarian_III
+				NOT = { number_of_accepted_imperial_cultures = { amount = 3 } }
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_III
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_II
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = gov_ties_with_anbennarian_II
+				NOT = { number_of_accepted_imperial_cultures = { amount = 2 } }
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_II
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_I
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = gov_ties_with_anbennarian_I
+				NOT = { number_of_accepted_imperial_cultures = { amount = 1 } }
+			}
+			remove_country_modifier = gov_ties_with_anbennarian_I
+		}
+	}
+	if = {
+		limit = { 
+				has_reform = strengthen_elves_privileges
+		 		NOT = { accepted_culture = moon_elf } 
+			}
+		add_accepted_culture = moon_elf
+	 }
 }
 
 # ROOT = country
