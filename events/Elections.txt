@@ -2195,6 +2195,11 @@ country_event = {
 		desc = elections.721.feiten
 	}
 	
+	desc = {
+		trigger = { has_reform = raithtall_twilight_court_reform }
+		desc = elections.721.raithall
+	}
+	
 	# desc = {
 	# 	trigger = {
 	# 		NOT = {
@@ -2226,6 +2231,7 @@ country_event = {
 			NOT = { has_reform = feuillant_reform }
 			NOT = { has_reform = damescrown_republic_reform }
 			NOT = { has_reform = feiten_reformist_movement }
+			NOT = { has_reform = raithtall_twilight_court_reform }
 		}
 		if = {
 			limit = {
@@ -2303,6 +2309,7 @@ country_event = {
 					has_reform = monastic_elections_reform 
 					has_reform = damescrown_republic_reform
 					has_reform = feiten_reformist_movement
+					has_reform = raithtall_twilight_court_reform
 				} 
 			} 
 		}
@@ -2345,14 +2352,24 @@ country_event = {
 	
 	option = {
 		name = elections.720.e
-		trigger = { has_reform = monastic_elections_reform }
+		trigger = { 
+			OR = {	
+				has_reform = monastic_elections_reform
+				has_reform = raithtall_twilight_court_reform
+			}
+		}
 		define_ruler = {
 		}
 		change_statists_vs_orangists = -0.33
 	}
 
 	option = {
-		trigger = { has_reform = monastic_elections_reform }
+		trigger = { 
+			OR = {	
+				has_reform = monastic_elections_reform
+				has_reform = raithtall_twilight_court_reform
+			}
+		}
 		name = elections.720.f
 		define_ruler = {
 		}
