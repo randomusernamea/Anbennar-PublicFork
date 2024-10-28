@@ -17,6 +17,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		hidden_effect = {
 			initialise_matauth = yes
+			set_country_flag = L55_contest
 		}
 		add_country_modifier = {
 			name = L55_low_authority
@@ -50,6 +51,7 @@ country_event = {
 		name = naleni.3.a
 		ai_chance = { factor = 50 }
 		increase_matauth_2 = yes
+		add_treasury = -200
 	}
 	option = {
 		name = naleni.3.b
@@ -72,6 +74,9 @@ country_event = {
 		name = naleni.4.b
 		ai_chance = { factor = 25 }
 		decrease_matauth_3 = yes
+		riyiwedeb_area = {
+			add_core = ROOT
+		}
 	}
 }
 
@@ -232,7 +237,7 @@ country_event = {
 			}
 			set_country_flag = L55_high_authority
 		}
-		set_variable = { which = rebelamount value = 3 }
+		set_variable = { which = rebelamount value = 3 }	
 		}
 	}
 	option = {
@@ -328,7 +333,9 @@ country_event = {
 				days = 70
 			}
 			set_country_flag = L55_part_two
+			set_country_flag = L55_riva_alive
 			swap_non_generic_missions = yes
+			clr_country_flag = L55_contest
 		}
 	}
 }
@@ -344,9 +351,6 @@ country_event = {
 		random_owned_province = {
 			save_event_target_as = rebel_spawn_l55
 		}
-	}
-	option = {
-		name = naleni.12.a
 		if = {
 			limit = { has_country_flag = L55_low_authority }
 			capital_scope = {
@@ -391,6 +395,9 @@ country_event = {
 				}
 			}
 		}
+	}
+	option = {
+		name = naleni.12.a
 		set_country_flag = L55_secure_state
 	}
 }
@@ -515,7 +522,6 @@ country_event = {
 		clr_country_flag = L55_med_authority
 		clr_country_flag = L55_low_authority
 		clr_country_flag = L55_high_authority
-		clr_country_flag = L55_contest
 	}
 }
 
@@ -625,7 +631,8 @@ country_event = {
 		name = naleni.20.a
 		ai_chance = { factor = 75 }
 		increase_matauth_1 = yes
-		
+		add_yearly_manpower = -1
+		add_yearly_sailors = -1
 	}
 	option = {
 		name = naleni.20.b
@@ -984,7 +991,7 @@ country_event = {
 		random_list = {
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.20
@@ -993,7 +1000,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.21
@@ -1002,7 +1009,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.22
@@ -1011,7 +1018,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.23
@@ -1020,7 +1027,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.24
@@ -1029,7 +1036,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.25
@@ -1038,7 +1045,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					NOT = { has_country_flag = L55_contest }
+					has_country_flag = L55_contest
 				}
 				country_event = { 
 					id = naleni.26
@@ -1047,7 +1054,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.27
@@ -1056,7 +1063,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.28
@@ -1065,7 +1072,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.29
@@ -1074,7 +1081,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.30
@@ -1083,7 +1090,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.31
@@ -1092,7 +1099,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.32
@@ -1101,7 +1108,7 @@ country_event = {
 			}
 			1 = {
 				trigger = {
-					has_country_flag = L55_contest
+					NOT = { has_country_flag = L55_contest }
 				}
 				country_event = { 
 					id = naleni.33
@@ -1124,11 +1131,11 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		tag = L55
-		has_country_flag = L55_riva_reform
+		has_country_flag = L55_riva_alive
 	}
 	option = {
 		name = naleni.35.a
-		clr_country_flag = L55_riva_reform
+		clr_country_flag = L55_riva_alive
 	}
 }
 
@@ -1474,12 +1481,17 @@ country_event = {
 			define_ruler = {
 				female = yes
 				dynasty = "Nephiuéda"
-				max_random_adm = 2
-				max_random_dip = 2
-				max_random_mil = 2
+				adm = 1
+				dip = 1
+				mil = 1
+				
 			}
 			increase_matauth_1 = yes
 		}
 		add_karma = 10
+	}
+	after = {
+		clr_country_flag = pirate_death_election
+		clr_country_flag = pirate_mutineer_council
 	}
 }
