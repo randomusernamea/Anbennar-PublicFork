@@ -107,6 +107,183 @@ country_event = {
     }
 }
 
+# The right Jelli for the Job - tree of tales monument starting event
+country_event = {
+	id = sarhalevents.4
+	title = sarhalevents.4.title
+	desc = sarhalevents.4.desc
+	picture = MAGES_ESTATE_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 5743
+	}
+
+	option = {
+		name = sarhalevents.4.a
+		ai_chance = { factor = 25 }
+		define_advisor = {
+			type = theologian
+			skill = 1
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.4.b
+		ai_chance = { factor = 25 }
+		define_advisor = {
+			type = artist
+			skill = 1
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.4.c
+		ai_chance = { factor = 25 }
+		define_advisor = {
+			type = diplomat
+			skill = 1
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.4.d
+		ai_chance = { factor = 25 }
+		define_advisor = {
+			type = spymaster
+			skill = 1
+			cost_multiplier = 0.5
+		}
+	}
+}
+
+# reward for upgrading tree of tales monument to lvl2
+country_event = {
+	id = sarhalevents.5
+	title = sarhalevents.5.title
+	desc = sarhalevents.5.desc
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+			
+	option = {
+		name = sarhalevents.5.a
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = theologian
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.5.b
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = artist
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.5.c
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = diplomat
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.5.d
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = spymaster
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.5.e
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = court_mage
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+}
+
+# reward for upgrading tree of tales monument to lvl3
+country_event = {
+	id = sarhalevents.6
+	title = sarhalevents.6.title
+	desc = sarhalevents.6.desc
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = sarhalevents.6.a
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = theologian
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.6.b
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = artist
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.6.c
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = diplomat
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.6.d
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = spymaster
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+
+	option = {
+		name = sarhalevents.6.e
+		ai_chance = { factor = 20 }
+		define_advisor = {
+			type = court_mage
+			skill = 3
+			cost_multiplier = 0.5
+		}
+	}
+}
+
 ##################################### Coven's Bargain events #####################################
 
 #"Bankruptcy" - a.k.a. 15 loans
@@ -123,7 +300,18 @@ country_event = {
     option = {
 		name = sarhalevents.20.a
         ai_chance = {
-            factor = 1
+            factor = 2
+            modifier = {
+                factor = 2.5     
+                current_income_balance = 0
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
         }
     }
 
@@ -132,6 +320,18 @@ country_event = {
 		name = sarhalevents.20.b
         ai_chance = {
             factor = 1
+            modifier = {
+                factor = 2
+                inflation = 20
+            }
+            modifier = {
+                factor = 2
+                num_of_loans = 30
+            }
+            modifier = {
+                factor = 2      #Max factor: 8
+                ruler_has_personality = embezzler_personality
+            }
         }
         add_years_of_income = 3
         add_country_modifier = {
@@ -158,7 +358,13 @@ country_event = {
     #Suffer the consequences
     option = {
 		name = sarhalevents.21.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1
+            modifier = {
+                factor = 10
+                is_bankrupt = yes #My man doesn't care at this point
+            }
+        }
         add_years_of_income = -5
         add_country_modifier = {
             name = coven_bargain_interest_bad
@@ -170,7 +376,13 @@ country_event = {
     #Convert to Shadow Pact
     option = {
 		name = sarhalevents.21.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1 
+            modifier = {
+                factor = 2
+                NOT = { current_income_balance = 0 }
+            }
+        }
         add_years_of_income = -3
         capital_scope = {
             change_religion = shadow_pact
@@ -199,20 +411,43 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.22.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1 
+            modifier = {
+                factor = 2
+                stability = 1
+            }
+            modifier = {
+                factor = 2
+                stability = 2
+            }
+            modifier = {
+                factor = 2.5    #Max factor: 10
+                stability = 3
+            }
+            modifier = {
+                factor = 2     
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     #Yes
     option = {
 		name = sarhalevents.22.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 4
+        } 
         add_stability = 4
         country_event = { id = sarhalevents.23 days = 1825 }
     }
 }
 
 
-#Disaster payoff
+#Disaster Follow Up
 country_event = {
     id = sarhalevents.23
     title = sarhalevents.23.t
@@ -270,13 +505,40 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.24.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 2
+            modifier = {
+                factor = 2         #Lower modifier because higher factor
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     #Yes
     option = {
 		name = sarhalevents.24.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1
+            modifier = {
+                factor = 2
+                ruler_age = 60
+            }
+            modifier = {
+                factor = 2
+                ruler_age = 70
+            }
+            modifier = {
+                factor = 2.5          #Max factor: 10
+                ruler_age = 80        
+            }
+            modifier = {
+                factor = 0.25
+                has_government_attribute = has_harem     #Special heir elections, also shouldn't stack with theocracies
+            }
+        }
         define_heir = {
             age = 0
             dynasty = original_dynasty
@@ -286,6 +548,7 @@ country_event = {
             max_random_adm = 3
             max_random_dip = 3
             max_random_mil = 3
+            claim = 40
             religion = shadow_pact
         }
         add_heir_personality = shadow_planetouched_personality
@@ -383,7 +646,7 @@ country_event = {
         capital_scope = {
             spawn_rebels = {
                 type = pretender_rebels
-                size = 2
+                size = 3
                 use_heir_as_leader = yes
             }
         }
@@ -429,13 +692,43 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.28.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 2 
+            modifier = {
+                factor = 2
+                OR = {
+                    ruler_has_personality = scholar_personality
+                    ruler_has_personality = free_thinker_personality
+                }
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     #Yes
     option = {
 		name = sarhalevents.28.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1 
+            modifier = {
+                factor = 2
+                NOT = { adm = 1 }
+            }
+            modifier = {
+                factor = 2
+                NOT = { dip = 1 }
+            }
+            modifier = {
+                factor = 2
+                NOT = { mil = 1 }
+            }
+        }
         change_adm = 2
         change_dip = 2
         change_mil = 2
@@ -499,12 +792,31 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.30.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 2
+            modifier = {
+                factor = 5
+                num_of_provinces_in_states = 1 #OPM, including stuff like trading cities, starting OPM's, etc
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     option = {
 		name = sarhalevents.30.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1 
+            modifier = {
+                factor = 2
+                ruler_has_personality = sinner_personality
+            }
+        }
         add_country_modifier = {
             name = coven_bargain_tolerance
             duration = -1
@@ -608,14 +920,24 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.32.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 2
+            modifier = {
+                factor = 2
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     #Yes
     option = {
 		name = sarhalevents.32.b
-        ai_chance = { factor = 1 }
-        custom_tooltip = coven_bargain_autonomy_less_tt
+        ai_chance = { 
+            factor = 1
+        }
         add_country_modifier = {
             name = coven_bargain_autonomy_good
             duration = 1825
@@ -686,13 +1008,36 @@ country_event = {
     #No
     option = {
 		name = sarhalevents.34.a
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 2
+            modifier = {
+                factor = 2
+                ruler_has_personality = cruel_personality
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    culture = tanizu
+                    culture = cyazizeta_lizardfolk
+                }
+            }
+        }
     }
 
     #Yes
     option = {
 		name = sarhalevents.34.b
-        ai_chance = { factor = 1 }
+        ai_chance = { 
+            factor = 1 
+            modifier = {
+                factor = 2
+                NOT = { manpower_percentage = 25 }
+            }
+            modifier = {
+                factor = 2
+                NOT = { manpower_percentage = 1 }
+            }
+        }
         add_stability = 2
         add_country_modifier = { name = coven_bargain_harsh_treatment duration = 1825 }
         hidden_effect = { country_event = { id = sarhalevents.35 days = 1825 } }
@@ -810,7 +1155,8 @@ country_event = {
                                 government = tribal
                             }
                             ruler_age = 40
-                            is_female = yes
+                            is_female = no
+							has_heir = no
                         }
                         country_event = { id = sarhalevents.24 }
                     }
@@ -831,12 +1177,21 @@ country_event = {
                     }
                     1 = {
                         trigger = {
-                            NOT = { religious_unity = 0.3 }
+                            NOT = { 
+                                religious_unity = 0.3 
+                                NOT = { 
+                                    has_country_modifier = conversion_zeal 
+                                    has_country_modifier = conversion_zeal2
+                                    has_country_modifier = coven_bargain_shadow_zealotry
+                                }
+                            }
                         }
                         country_event = { id = sarhalevents.30 }
                     }
                     1 = {
-                        trigger = { average_autonomy = 40 }
+                        trigger = { 
+                            average_autonomy_above_min = 40 #Above min, because trade companies, even tho TC  technically skew this in tag's favor now
+                        }
                         country_event = { id = sarhalevents.32 }
                     }
                     1 = {
