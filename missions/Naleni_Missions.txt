@@ -17,8 +17,8 @@ Naleni_branch_one = {
 		trigger = {
 			owns_core_province = 5529
 			5529 = {
-				has_building = workshop
-				has_building = temple
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
 				culture = metobesebi
 				province_has_center_of_trade_of_level = 2
 			}
@@ -63,14 +63,16 @@ Naleni_branch_two = {
 						value = 30
 					}
 					trade_embargoing = L57
-					OR = {
-						has_opinion_modifier = {
-							Who = L57
-							modifier = insulted
-						}
-						has_opinion_modifier = {
-							Who = L57
-							modifier = scornfully_insulted
+					L57 = {
+						OR = {	
+							has_opinion_modifier = {
+								Who = L55
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								Who = L55
+								modifier = scornfully_insulted
+							}
 						}
 					}
 				}
@@ -131,11 +133,13 @@ Naleni_branch_two = {
 				area = emot_nepas_area
 				area = riyiwedeb_area
 			}
-			AND = {
-				culture = ofehibi
-				NOT = { has_building = temple } 
+			OR = {
+				AND = {
+					culture = ofehibi
+					NOT = { has_building = temple } 
+				}
+				NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 		}
 
 		trigger = {
@@ -152,7 +156,7 @@ Naleni_branch_two = {
 					NOT = { culture = ofehibi } 
 					AND = {
 						culture = ofehibi
-						has_building = temple
+						has_tax_building_trigger = yes
 						NOT = { unrest = 0 } 
 					}
 				}
@@ -218,15 +222,15 @@ Naleni_branch_two = {
 			owns_core_province = 5504
 			5446 = {
 				culture = metobesebi
-				has_building = temple
+				has_tax_building_trigger = yes
 			}
 			5505 = {
 				culture = metobesebi
-				has_building = temple
+				has_tax_building_trigger = yes
 			}
 			5504 = {
 				culture = metobesebi
-				has_building = temple
+				has_tax_building_trigger = yes
 			}
 		}
 
@@ -236,7 +240,7 @@ Naleni_branch_two = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_building = temple
+						has_tax_building_trigger = yes
 						OR = {
 							area = biribitid_area
 							area = dakmender_area
@@ -351,7 +355,7 @@ Naleni_branch_three = {
 
 		trigger = {
 			5530 = {
-				has_building = temple
+				has_tax_building_trigger = yes
 				has_province_modifier = harpy_roost
 				has_building = fort_15th
 				num_of_times_improved = 2
@@ -782,7 +786,7 @@ naleni_branch_two_p2 = {
 			num_of_owned_provinces_with = {
 				value = 18
 				OR = { culture = metobesebi } 
-				has_building = temple
+				has_tax_building_trigger = yes
 			}
 			OR = {
 				has_dip_advisor_3 = yes
@@ -844,12 +848,14 @@ naleni_branch_two_p2 = {
 		position = 11
 		required_missions = { harpy_homelands } 
 		provinces_to_highlight = {
-			region = telekenid_region
-			OR = {
-				NOT = { has_building = courthouse } 
-				NOT = { has_building = temple } 
-				NOT = { culture = metobesebi } 
-				NOT = { culture = naleni_harpy } 
+			AND = {
+				region = telekenid_region
+				OR = {
+					NOT = { has_building = courthouse } 
+					NOT = { has_building = temple } 
+					NOT = { culture = metobesebi } 
+					NOT = { culture = naleni_harpy } 
+				}
 			}
 		}
 
@@ -861,7 +867,7 @@ naleni_branch_two_p2 = {
 					culture = naleni_harpy
 				}
 				has_building = courthouse
-				has_building = temple
+				has_tax_building_trigger = yes
 			}
 		}
 
@@ -893,7 +899,7 @@ naleni_branch_two_p2 = {
 			}
 			6118 = {
 				development = 30
-				has_building = temple
+				has_tax_building_trigger = yes
 				has_building = courthouse
 				has_province_modifier = harpy_roost
 				has_great_project = {
@@ -1457,7 +1463,7 @@ naleni_branch_four_p2 = {
 				has_building = courthouse
 				has_building = dock
 				has_building = shipyard
-				has_building = temple
+				has_tax_building_trigger = yes
 				has_province_modifier = harpy_roost
 				owned_by = L55
 				is_core = L55

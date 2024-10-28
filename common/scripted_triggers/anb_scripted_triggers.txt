@@ -4178,3 +4178,54 @@ holds_castanor_legacy = {
 		}	
 	}
 }
+
+number_of_accepted_imperial_cultures = {
+    calc_true_if = {
+			accepted_culture = anbenncoster
+			accepted_culture = half_elf
+			accepted_culture = west_damerian
+			accepted_culture = east_damerian
+			accepted_culture = pearlsedger
+			accepted_culture = crownsman
+			accepted_culture = vernman
+			accepted_culture = exwesser
+			accepted_culture = arbarani
+			accepted_culture = esmari
+			accepted_culture = arannese
+			accepted_culture = uelairey
+			accepted_culture = aldresian
+			accepted_culture = telgeiran
+			accepted_culture = pashainey
+			accepted_culture = havoric
+			accepted_culture = imperial_halfling
+			accepted_culture = imperial_gnome
+			accepted_culture = dovesworn_gnoll
+			accepted_culture = moon_elf
+        amount = $amount$
+    }
+}
+
+is_anbennarian_imperial_culture = {
+	OR = {
+		culture = anbenncoster
+		culture = half_elf
+		culture = west_damerian
+		culture = east_damerian
+		culture = pearlsedger
+		culture = crownsman
+		culture = vernman
+		culture = exwesser
+		culture = arbarani
+		culture = esmari
+		culture = arannese
+		culture = uelairey
+		culture = aldresian
+		culture = telgeiran
+		culture = pashainey
+		culture = havoric
+		culture = imperial_halfling
+		culture = imperial_gnome
+		culture = dovesworn_gnoll
+		culture = moon_elf
+	}
+}
