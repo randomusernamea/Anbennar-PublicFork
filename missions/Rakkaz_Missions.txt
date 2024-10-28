@@ -268,10 +268,8 @@ F71_3_part1 = {
 				province_id = 479
 			}
 			NOT = {
-				AND = {
-					controlled_by = ROOT
-					controlled_by = F69
-				}
+				controlled_by = ROOT
+				controlled_by = F69
 			}
 		}
 
@@ -1289,7 +1287,6 @@ F71_3_part2 = {
 
 		effect = { 
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_domination } 
-			add_ruler_personality = legendary_conqueror_personality
 			force_add_ruler_personality = { personality = legendary_conqueror_personality }
 		} 
 	}
