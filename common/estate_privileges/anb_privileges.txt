@@ -3439,6 +3439,15 @@ estate_burghers_magnate_council = {
 	benefits = {
 		global_trade_power = 0.10
 	}
+	conditional_modifier = {
+		trigger = { has_reform = empower_magnate_council }
+		modifier = { 
+			global_trade_power = 0.10
+			burghers_loyalty_modifier = 0.05 
+			burghers_influence_modifier = 0.10
+			max_absolutism = -10 
+		}
+	}
 	# This is too much, adding more crownland through events is more sustainable
 	# mechanics = {
 	# 	exempt_from_seize_land
@@ -5621,7 +5630,7 @@ estate_mages_temple_desecrators = {
 			province_group = temple_province_group
 			NOT = {
 				has_province_modifier = corrupted_temple_complex
-				has_province_modifier = corrupted_temple_complex_useless
+				has_province_modifier = corrupted_temple_complex_inactive
 			}
 		}
 	}
@@ -13780,6 +13789,42 @@ estate_mages_all_mask = {
 	}
 
 	ai_will_do = { factor = 10 }
+}
+
+#Maghargma
+estate_mages_collaborators = {
+	icon = privilege_promote_maratha_nobility
+	is_valid = { 
+		OR = {
+			tag = I90
+			was_tag = I90
+		}
+	}
+	can_select = { has_country_flag = I90_mages_collab_enabled }
+	max_absolutism = 0
+	benefits = {
+		mages_loyalty_modifier = 0.05
+		mages_influence_modifier = 0.1
+	}
+	mechanics = { exempt_from_seize_land }
+}
+
+estate_burghers_friends_in_high_places = {
+	icon = burghers_loyalty_equilibrium
+	is_valid = {  
+		OR = {
+			tag = I90
+			was_tag = I90
+		}
+	}
+	can_select = { has_country_flag = I90_burghers_collab_enabled }
+	max_absolutism = -5
+	benefits = {
+		burghers_loyalty_modifier = 0.05
+		burghers_influence_modifier = 0.1
+		interest = -1
+		merchants = 1
+	}
 }
 
 #Brambleskinner
