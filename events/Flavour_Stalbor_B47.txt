@@ -1055,6 +1055,9 @@ country_event = {
 		name = "flavor_stalbor.21.a"
 		ai_chance = { factor = 100 }
 		set_country_flag = B47_vampire_lords_on_the_run
+		western_cannor_superregion = {
+			discover_country = ROOT
+		}
 		every_owned_province = {
 			limit = {
 				region = dostanor_region
