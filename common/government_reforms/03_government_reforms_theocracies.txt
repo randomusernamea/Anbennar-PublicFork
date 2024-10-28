@@ -2183,6 +2183,29 @@ raithtall_twilight_court_reform = {
 		can_change_primary_culture = no
 		custom_tooltip = autumn_tolerance_locked_tt
  	}
+	queen = yes
+	royal_marriage = yes
+	
+	conditional = {
+		allow = { has_dlc = "Res Publica" }
+		heir = no
+		election_on_death = yes
+		duration = 4
+		has_term_election = yes
+		states_general_mechanic = {
+			militarists = {
+				manpower_recovery_speed = 0.2
+				warscore_cost_vs_other_religion = -0.15
+				army_tradition_from_battle = 0.5
+			}
+
+			theocrats = {
+				tolerance_own = 2
+				global_missionary_strength = 0.02
+				devotion = 0.5
+			}
+		}
+	}
 }
 
 #Internal vs External Mission
@@ -3731,6 +3754,7 @@ monastic_elections_reform = {
 		NOT = { has_reform = papacy_reform }
 		NOT = { has_adventurer_reform = yes } # Anbennar
 		NOT = { ruler_can_revive = yes } # Anbennar
+		NOT = { has_reform = raithtall_twilight_court_reform }
 	}
 	
 	trigger = {
