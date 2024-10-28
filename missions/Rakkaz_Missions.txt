@@ -22,8 +22,8 @@ F71_1_part1 = {
 		}
 
 		trigger = {
-			overextension_percentage = 0
-			num_of_loans = 0
+			NOT = { overextension_percentage = 0.01 }
+			NOT = { num_of_loans = 1 }
 			NOT = {
 				any_owned_province = {
 					religion = xhazobkult
@@ -737,16 +737,16 @@ F71_3_part2_optional = {
 		required_missions = { F71_rakhors_legacy } 
 		provinces_to_highlight = {  
 			province_group = mothers_sorrow_group
-			owned_by = event_target:rakkaz_enemy
+			owned_by = event_target:EmperorOfChina
 			NOT = { is_looted = yes }
 		} 
 
 		trigger = {  
 			war_score_against = {
-				who = event_target:rakkaz_enemy
+				who = event_target:EmperorOfChina
 				value = 90
 			}
-			event_target:rakkaz_enemy = {
+			event_target:EmperorOfChina = {
 				NOT = {
 					any_owned_province = {
 						province_group = mothers_sorrow_group
