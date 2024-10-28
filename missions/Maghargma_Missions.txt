@@ -3281,15 +3281,15 @@ maghargma_five_post_amberlands = {
 			}
 			else = {
 				any_known_country = {
-					any_owned_province = {
-						region = demon_hills_region
-					}
 					OR = {
 						has_opinion = {
 							who = ROOT
 							value = 150
 						}
 						has_been_insulted_by_root = yes
+					}
+					any_owned_province = {
+						region = demon_hills_region
 					}
 				}
 			}
