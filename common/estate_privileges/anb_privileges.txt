@@ -13927,7 +13927,6 @@ estate_mages_organization_rule_of_warlocks = {
 		always = no
 	}
 	on_granted = {
-		clear_mages_organization_effect = yes
 		if = {
 			limit = { has_reform = magocracy_reform }
 			custom_tooltip = rakkaz_warlock_nice
