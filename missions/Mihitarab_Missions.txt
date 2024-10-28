@@ -136,7 +136,9 @@ mihitarab_missions_3 = {
 				treasury = 100
 				AND = {
 					treasury = 50
-					has_tax_building_trigger = yes
+					6599 = {
+						has_tax_building_trigger = yes
+					}
 				}
 			}
 			adm_power = 50
