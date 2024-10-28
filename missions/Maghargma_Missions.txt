@@ -62,8 +62,8 @@ maghargma_one = {
 				has_tax_building_trigger = yes
 				NOT = { devastation = 1 } 
 			}
-			NOT = {
-				religion = feast_of_the_gods 
+			OR = {
+				has_reformed_feast_of_the_gods = yes
 				doom = 50 
 			}
 		}
