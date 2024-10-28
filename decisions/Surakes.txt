@@ -85,11 +85,11 @@ country_decisions = {
 			}
 		}
 		allow = {
+			owns_core_province = 601
 			if = {
 				limit = {
 					ai = yes
 				}
-				owns_core_province = 601
 				is_at_war = no
 				is_free_or_tributary_trigger = yes
 				num_of_owned_provinces_with = {
@@ -98,7 +98,6 @@ country_decisions = {
 				}
 			}
 			else = {
-				owns_core_province = 601
 				owns_core_province = 536
 				owns_core_province = 613
 				owns_core_province = 565
