@@ -1,7 +1,7 @@
 
 namespace = flavour_kherka
 
-country_event = {
+country_event = { #Starting Event
 	id = flavour_kherka.1
 	title = flavour_kherka.1.t
 	desc = flavour_kherka.1.d
@@ -13,11 +13,94 @@ country_event = {
 
     option  = {
         name = flavour_kherka.1.a
-        lokemeion_area = {
-            add_permanent_claim = ROOT
+        G50 = {
+            every_owned_province = {
+                add_permanent_claim = ROOT
+            }
         }
-        ormam_area = {
-            add_permanent_claim = ROOT
+        G49 = {
+            every_owned_province = {
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
+
+country_event = { #Merchant's Beware
+	id = flavour_kherka.2
+	title = flavour_kherka.2.t
+	desc = flavour_kherka.2.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = {
+        name = flavour_kherka.1.a
+        2773 = { center_of_trade = 1 }
+        if = {
+            limit = { has_country_flag = schemers_in_power }
+            2738 = {
+                add_devastation = 100
+                add_unrest = 10
+            }
+            add_treasury = 400
+        }
+        else = {
+            2738 = {
+                add_devastation = 50
+                add_unrest = 10
+            }
+            add_treasury = 200
+        }
+    }
+}
+
+country_event = { #Shift The Tide
+	id = flavour_kherka.3
+	title = flavour_kherka.3.t
+	desc = flavour_kherka.3.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = {
+        name = flavour_kherka.3.a
+        custom_tooltip = G48_shift_the_tide_tt
+        if = {
+            limit = { 
+                NOT = { has_country_flag = has_degarikes }
+            }
+            country_event = { id = kheionai.32 }
+        }
+        G59 = {
+            if = {
+                limit = { 
+                    NOT = { has_country_flag = has_degarikes }
+                }
+                country_event = { id = kheionai.32 }
+            }
+            add_country_modifier = {
+                name = G48_heart_of_the_navy
+                duration = -1
+            }
+            add_country_modifier = {
+                name = G48_mass_degarikes
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = colonists_in_power 
+            }
+            define_advisor = {
+                type = naval_reformer 
+                skill = 3
+                cost_multiplier = 0.5
+            }
         }
     }
 }

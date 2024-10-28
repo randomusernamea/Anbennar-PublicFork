@@ -107,11 +107,65 @@ G48_slot_1 = {
 			G48_the_pearl_boom
 			G48_breaking_the_merchants
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				province_id = 2773
+				province_id = 2738
+			}
+			NOT = {
+				province_has_center_of_trade_of_level = 2
+				has_state_edict = edict_protect_trade
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			2773 = {
+				province_has_center_of_trade_of_level = 2
+				has_state_edict = edict_protect_trade
+			}
+			2738 = {
+				province_has_center_of_trade_of_level = 2
+				has_state_edict = edict_protect_trade
+			}
+			all_rival_country = {
+				trade_embargo_by = ROOT
+			}
+			1741 = { 
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			simple_dynamic_effect = {
+				first_custom_tooltip = G48_colonists_or_schemers_in_power_tt
+				first_limit = "
+					OR = { 
+						has_country_flag = colonists_in_power
+						has_country_flag = schemers_in_power
+					}
+				" 
+				first_effect = " 
+					add_mercantilism = 6
+					add_years_of_trade_income = { 
+						years = 4
+					}
+				"
+				second_custom_tooltip = G48_colonists_not_in_power_tt
+				second_limit = "NOT = { 
+				has_country_flag = colonists_in_power 
+				has_country_flag = schemers_in_power
+				}"
+				second_effect =" 
+					add_mercantilism = 3
+					add_years_of_trade_income = { 
+						years = 2
+					}
+				"
+			}
+		} 
 	}
 }
 G48_slot_2 = {
@@ -132,22 +186,117 @@ G48_slot_2 = {
 	G48_breaking_the_merchants = {
 		icon = mission_destroyed_city
 		position = 2
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = ormam_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2773
+						province_id = 2738
+					}
+					has_trade_building_trigger = no
+				}
+				owner = {
+					tag = 650
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			ormam_area = {
+				owned_by = ROOT
+			}
+			G50 = { exists = no }
+			2738 = { has_trade_building_trigger = yes }
+			2773 = { has_trade_building_trigger = yes }
+		} 
 
-		effect = {  } 
+		effect = {
+			custom_tooltip = G48_schemers_bonus_tt  
+			country_event = { id = flavour_kherka.2 }
+		} 
 	}
 
 	G48_contenders_no_more = {
 		icon = mission_torch_fire
 		position = 3
 		required_missions = { G48_breaking_the_merchants } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = degakheion_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2736
+					has_manpower_building_trigger = no
+				}
+				owner = {
+					tag = G46
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			degakheion_area = {
+				owned_by = ROOT
+			}
+			G46 = { exists = no }
+			2736 = { has_manpower_building_trigger = yes }
+			all_known_country = {
+				OR = {
+					NOT = { capital_scope = { region = alecand_region } }
+					NOT = { army_size = ROOT }
+				}
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			2736 = { 
+				add_building_construction = {
+					building = regimental_camp
+					speed = 1
+					cost = 0
+				} 
+			}
+			custom_tooltip = G48_militants_in_power_tt
+			tooltip = { 
+				2773 = {
+					add_building_construction = {
+						building = regimental_camp
+						speed = 1
+						cost = 0
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						has_country_flag = militants_in_power
+					}
+					2773 = {
+						add_building_construction = {
+							building = regimental_camp
+							speed = 1
+							cost = 0
+						}
+					}
+				}
+			}
+			G47 = {
+				every_owned_province = {
+					add_permanent_claim = ROOT
+				}
+			}
+			G51 = {
+				every_owned_province = {
+					add_permanent_claim = ROOT
+				}
+			}
+		} 
 	}
 
 	G48_shift_the_tide = {
@@ -159,9 +308,26 @@ G48_slot_2 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = { 
+			oktikheion_area = {
+				owned_by = ROOT
+			}
+			2731 = { has_shipyard_building_trigger = yes }
+			2717 = { has_shipyard_building_trigger = yes }
+			G47 = { exists = no }
+			G59 = { 
+				NOT = { liberty_desire = 50 }
+			}
+			OR = {
+				has_discovered_degarikes = yes
+				G59 = { has_discovered_degarikes = yes }
+			}
+		} 
 
-		effect = {  } 
+		effect = { 
+			custom_tooltip = G48_colonists_bonus_tt 
+			country_event = { id = flavour_kherka.3 }
+		} 
 	}
 }
 G48_slot_3 = {
