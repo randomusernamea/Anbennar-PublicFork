@@ -6233,7 +6233,7 @@ halessi = {
 		color = { 222  222  222 }
 		icon = 70
 		allowed_conversion = {
-			#devouring_path
+			transmutative_path
 		}
 		country = {
 			army_tradition = 0.5
@@ -6557,6 +6557,7 @@ halessi = {
 		color = { 195  255  197 }
 		icon = 140
 		allowed_conversion = {
+			accretive_path
 		}
 		country = {
 			global_unrest = -2
@@ -6621,6 +6622,9 @@ halessi = {
 			shock_damage = 0.1
 			church_power_modifier = -1
 			reverse_relation_with_heretic_religion = -25
+		}
+		province = {
+			local_tolerance_of_heretics = -3
 		}
 		country_as_secondary = {
 			shock_damage = 0.1
