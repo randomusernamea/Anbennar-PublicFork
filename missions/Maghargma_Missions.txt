@@ -471,8 +471,20 @@ maghargma_one_post_westmarches = {
 					}
 				} 
 				vassalize = J32
-				serpents_vale_region = { add_permanent_claim = J32 } 
-				amldihr_area = { add_permanent_claim = ROOT } 
+				serpents_vale_region = {
+					limit = {
+						NOT = { is_core = J32 }
+						NOT = { owned_by = J32 }
+					}
+					add_permanent_claim = J32 
+				} 
+				amldihr_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				} 
 			}
 			else = {
 				random_known_country = {
@@ -489,8 +501,20 @@ maghargma_one_post_westmarches = {
 						}
 					}
 				}
-				serpents_vale_region = { add_permanent_claim = ROOT } 
-				amldihr_area = { add_permanent_claim = ROOT } 
+				serpents_vale_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				} 
+				amldihr_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				} 
 			}
 		}
 	}
@@ -629,7 +653,13 @@ maghargma_two = {
 
 		effect = {
 			country_event = { id = flavor_maghargma.9 } #And The Stick
-			wild_clan_lands = { add_permanent_claim = ROOT } 
+			wild_clan_lands = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 		}
 	}
 
@@ -1120,9 +1150,27 @@ maghargma_two_post_trolls = {
 					power = 25
 				}
 			}
-			gerudian_frontier_region = { add_permanent_claim = ROOT } 
-			dalr_region = { add_permanent_claim = ROOT } 
-			alenic_frontier_region = { add_permanent_claim = ROOT } 
+			gerudian_frontier_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
+			dalr_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
+			alenic_frontier_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 		}
 	}
 
@@ -1155,8 +1203,20 @@ maghargma_two_post_trolls = {
 		}
 
 		effect = {
-			alenic_reach_region = { add_permanent_claim = ROOT } 
-			west_castanor_region = { add_permanent_claim = ROOT } 
+			alenic_reach_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
+			west_castanor_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 			add_country_modifier = {
 				name = I90_western_fleet_buildup
 				duration = 9125 #25 Years
@@ -1191,7 +1251,15 @@ maghargma_two_post_trolls = {
 				duration = -1
 			}
 			custom_tooltip = maghargma_lords_of_frost_tt
-			hidden_effect = { europe = { add_permanent_claim = ROOT } }
+			hidden_effect = {
+				europe = { 
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}
+			}
 		}
 	}
 }
@@ -1220,11 +1288,36 @@ maghargma_three = {
 		effect = {  
 			if = {
 				limit = { has_ruler_flag = ruler_is_ziltagh }
-				foirakhian_area = { add_permanent_claim = ROOT }
-				naglaibar_area = { add_permanent_claim = ROOT }
-				naglaibar_area = { add_permanent_claim = ROOT }
-				ugheabar_area = { add_permanent_claim = ROOT }
-				caubheameas_area = { add_permanent_claim = ROOT }
+				foirakhian_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}	
+				naglaibar_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}
+				naglaibar_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}
+				ugheabar_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}
+				caubheameas_area = { 
+					limit = {
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				}
 			}
 			else = {
 				add_prestige = 5
@@ -1314,7 +1407,10 @@ maghargma_three = {
 		effect = {
 			5123 = { center_of_trade = 1 } 
 			yyl_moista_region = {
-				type = all
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
 				add_permanent_claim = ROOT
 			}
 			add_country_modifier = {
@@ -1377,8 +1473,20 @@ maghargma_three = {
 		}
 
 		effect = {
-			south_yarikhoi_region = { add_permanent_claim = ROOT } 
-			north_yarikhoi_region = { add_permanent_claim = ROOT } 
+			south_yarikhoi_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
+			north_yarikhoi_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 			add_legitimacy = 10
 			custom_tooltip = maghargma_shatter_the_mirror_tt
 			tooltip = {
@@ -1712,11 +1820,23 @@ maghargma_three = {
 				}				
 				custom_tooltip = update_unit_sprites_tooltip
 				hidden_effect = { update_unit_sprites_for_racial_mil = yes }
-				west_dwarovar_region = { add_permanent_claim = PREV } 
+				west_dwarovar_region = { 
+					limit = {
+						NOT = { is_core = PREV }
+						NOT = { owned_by = PREV }
+					}
+					add_permanent_claim = PREV  
+				} 
 			}
 			if = {
 				limit = { owns_core_province = 4119 } 
-				west_dwarovar_region = { add_permanent_claim = ROOT } 
+				west_dwarovar_region = { 
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				} 
 			}
 		}
 	}
@@ -1956,8 +2076,20 @@ maghargma_four = {
 				duration = 10950 #30 Years
 			}
 			add_dip_power = -100
-			west_forbidden_plains_region = { add_permanent_claim = ROOT } 
-			serpent_gift_region = { add_permanent_claim = ROOT } 
+			west_forbidden_plains_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
+			serpent_gift_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 		}
 	}
 
@@ -2021,7 +2153,13 @@ maghargma_four = {
 				}
 				add_dip_power = 100
 			}
-			east_forbidden_plains_region = { add_permanent_claim = ROOT } 
+			east_forbidden_plains_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 		}
 	}
 
@@ -2158,7 +2296,13 @@ maghargma_four = {
 					PREV = { inherit = PREV }
 				}
 			}
-			nuzurbokh_region = { add_permanent_claim = ROOT }
+			nuzurbokh_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
 			capital_scope = { 
 				add_base_tax = 2
 				add_base_production = 2
@@ -2655,7 +2799,13 @@ maghargma_four_post_ancestor = {
 		effect = {
 			custom_tooltip = maghargma_lords_of_stone_tt
 			hidden_effect = {
-				asia = { add_permanent_claim = ROOT } 
+				asia = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT 
+				} 
 			}
 			add_country_modifier = {
 				name = I90_continental_claims
@@ -3248,7 +3398,13 @@ maghargma_five_post_amberlands = {
 		}
 
 		effect = {
-			north_haless_superregion = { add_permanent_claim = ROOT } 
+			north_haless_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			} 
 			add_country_modifier = {
 				name = I90_fresh_recruits
 				duration = 9125 #25 Years
