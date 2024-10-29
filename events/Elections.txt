@@ -2077,24 +2077,14 @@ country_event = {
 	
 	option = {
 		name = elections.720.e
-		trigger = { 
-			OR = {	
-				has_reform = monastic_elections_reform
-				has_reform = raithtall_twilight_court_reform
-			}
-		}
+		trigger = { has_reform = monastic_elections_reform }
 		define_ruler = {
 		}
 		change_statists_vs_orangists = -0.33
 	}
 
 	option = {
-		trigger = { 
-			OR = {	
-				has_reform = monastic_elections_reform
-				has_reform = raithtall_twilight_court_reform
-			}
-		}
+		trigger = { has_reform = monastic_elections_reform }
 		name = elections.720.f
 		define_ruler = {
 		}
@@ -2162,6 +2152,28 @@ country_event = {
 		change_statists_vs_orangists = 0.33
 		change_innovativeness = -2
 		add_mercantilism_excess_to_diplo_power_effect = { VAL = 2 }
+	}
+	
+	option = {
+		name = elections.720.twilightMonarchist
+		trigger = { 
+			has_reform = raithtall_twilight_court_reform
+		}
+		define_ruler = {
+			dynasty = ROOT
+		}
+		change_statists_vs_orangists = -0.33
+	}
+
+	option = {
+		trigger = { 
+			has_reform = raithtall_twilight_court_reform
+		}
+		name = elections.720.twilightTheocrat
+		define_ruler = {
+			dynasty = ROOT
+		}
+		change_statists_vs_orangists = 0.33
 	}
 }
 
@@ -2352,24 +2364,14 @@ country_event = {
 	
 	option = {
 		name = elections.720.e
-		trigger = { 
-			OR = {	
-				has_reform = monastic_elections_reform
-				has_reform = raithtall_twilight_court_reform
-			}
-		}
+		trigger = { has_reform = monastic_elections_reform }
 		define_ruler = {
 		}
 		change_statists_vs_orangists = -0.33
 	}
 
 	option = {
-		trigger = { 
-			OR = {	
-				has_reform = monastic_elections_reform
-				has_reform = raithtall_twilight_court_reform
-			}
-		}
+		trigger = { has_reform = monastic_elections_reform }
 		name = elections.720.f
 		define_ruler = {
 		}
@@ -2408,6 +2410,28 @@ country_event = {
 		change_statists_vs_orangists = 0.33
 		change_innovativeness = -2
 		add_mercantilism_excess_to_diplo_power_effect = { VAL = 2 }
+	}
+		
+	option = {
+		name = elections.720.twilightMonarchist
+		trigger = { 
+			has_reform = raithtall_twilight_court_reform
+		}
+		define_ruler = {
+			dynasty = ROOT
+		}
+		change_statists_vs_orangists = -0.33
+	}
+
+	option = {
+		trigger = { 
+			has_reform = raithtall_twilight_court_reform
+		}
+		name = elections.720.twilightTheocrat
+		define_ruler = {
+			dynasty = ROOT
+		}
+		change_statists_vs_orangists = 0.33
 	}
 }
 
