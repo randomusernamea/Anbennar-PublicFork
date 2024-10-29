@@ -2098,6 +2098,10 @@ deathsand_lab = {
 
 	can_use_modifiers_trigger = {
 		OR = {
+			if = {
+				limit = { owner = { has_country_flag = J84_deathwind_lab_enabled_flag } } 
+				culture_group = taychendi_ruinborn_elf
+			}
 			culture_group = kheionai_ruinborn_elf
 			culture = eltibhar
 		}

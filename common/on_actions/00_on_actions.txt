@@ -14826,10 +14826,10 @@ on_conquest = {
 		}
 	}
 
-	if = {
+	if = { #Taychendi Vainglory
 		limit = { 
 			owner = { has_government_mechanic = taychend_vainglory_mechanic } 
-			is_core = no
+			NOT = { is_core = ROOT }
 		}
 		owner = {
 			add_government_power = {

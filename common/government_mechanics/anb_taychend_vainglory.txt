@@ -84,14 +84,14 @@ taychend_vainglory_mechanic = {
 				has_government_power = {
 					mechanic_type = taychend_vainglory_mechanic
 					power_type = taychend_vainglory_power
-					value = 40
+					value = 20
 				}
 				if = {
 					limit = {
 						has_government_power = {
 							mechanic_type = taychend_vainglory_mechanic
 							power_type = taychend_vainglory_power
-							value = 20
+							value = 40
 						}
 					}
 					years_of_income = 1
@@ -99,11 +99,6 @@ taychend_vainglory_mechanic = {
 				else = { years_of_income = 0.5 }
 			}
 			effect = {
-				add_government_power = {
-					mechanic_type = taychend_vainglory_mechanic
-					power_type = taychend_vainglory_power
-					value = -20
-				}
 				if = {
 					limit = {
 						has_government_power = {
@@ -116,7 +111,7 @@ taychend_vainglory_mechanic = {
 					add_government_power = {
 						mechanic_type = taychend_vainglory_mechanic
 						power_type = taychend_vainglory_power
-						value = -20
+						value = -40
 					}
 					add_years_of_income = -1
 					hidden_effect = {
@@ -132,6 +127,11 @@ taychend_vainglory_mechanic = {
 				}
 				else = { 
 					custom_tooltip = broken_swords_to_golden_ploughshares_double_no_tt 
+					add_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = -20
+					}
 					add_years_of_income = -0.5
 					hidden_effect = {
 						for = {

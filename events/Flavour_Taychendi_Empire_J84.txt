@@ -657,6 +657,7 @@ country_event = {
 			}
 			hidden_effect = { add_permanent_windward_level = { level = -2 } }
 			change_trade_goods = damestear
+			set_province_flag = permanent_damestear 
 		}
 		country_event = {
 			id = taychendi_empire_events.10 #Zopedan Completely Disassembled (Degakheion)
@@ -684,6 +685,7 @@ country_event = {
 	option = {
 		name = taychendi_empire_events.10.a
 		2736 = { #Degakheion
+			clr_province_flag = permanent_damestear 
 			change_trade_goods = precursor_relics
 			add_province_modifier = {
 				name = J84_disassembled_windward
@@ -772,6 +774,8 @@ country_event = {
 				duration = -1
 			}
 		}
+		custom_tooltip = J84_deathwind_lab_enabled_tt
+		set_country_flag = J84_deathwind_lab_enabled_flag
 	}
 
 	option = {
@@ -789,6 +793,8 @@ country_event = {
 				duration = -1
 			}
 		}
+		custom_tooltip = J84_deathwind_lab_enabled_tt
+		set_country_flag = J84_deathwind_lab_enabled_flag
 	}
 }
 
@@ -822,6 +828,7 @@ country_event = {
 				save_trade_goods = yes
 			}
 			change_trade_goods = damestear
+			set_province_flag = permanent_damestear 
 			custom_tooltip = J84_neighbors_gain_manpower_tt
 			hidden_effect = {
 				every_neighbor_province = {
@@ -884,6 +891,7 @@ country_event = {
 		name = taychendi_empire_events.14.a
 		alecandi_capital_provinces = {
 			set_from_saved_trade_goods = yes
+			clr_province_flag = permanent_damestear 
 			add_province_modifier = {
 				name = J84_disassembled_windward
 				duration = -1
@@ -1576,7 +1584,7 @@ country_event = {
 				}
 			}
 		}
-		2078 = { #Léembalkal/Zurzumexia
+		2078 = { #Lï¿½embalkal/Zurzumexia
 			add_permanent_claim = ROOT
 			owner = {
 				if = {
@@ -2157,7 +2165,7 @@ country_event = {
 	}
 
 	option = {
-		name = taychendi_empire_events.1021.a
+		name = taychendi_empire_events.102.a
 		random_owned_province = {
 			limit = {
 				superregion = taychend_superregion
@@ -2492,6 +2500,7 @@ country_event = {
 		name = taychendi_empire_events.208.b
 		2495 = { #Nakar Kriadvai
 			change_trade_goods = damestear
+			set_province_flag = permanent_damestear
 			add_province_modifier = {
 				name = J84_scrapping_slave_collars
 				duration = 3650 #10 years
@@ -2517,6 +2526,7 @@ country_event = {
 		name = taychendi_empire_events.208.c
 		2495 = { #Nakar Kriadvai
 			change_trade_goods = damestear
+			set_province_flag = permanent_damestear
 			add_province_modifier = {
 				name = J84_scrapping_slave_collars
 				duration = 2555 #7 years
@@ -2555,6 +2565,7 @@ country_event = {
 		name = taychendi_empire_events.209.a
 		2495 = { #Nakar Kriadvai
 			change_trade_goods = precursor_relics
+			clr_province_flag = permanent_damestear
 			remove_province_modifier = J84_scrapping_slave_collars
 		}
 	}
