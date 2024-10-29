@@ -160,14 +160,21 @@ giberd_imperial = {
 						has_25_opinion_sent_gift = {
 							target = ROOT
 						}
-						custom_trigger_tooltip = {
-							tooltip = giberd_to_strike_an_anvil_tt							# TODO: check that this works
-							any_known_country = {
-								AND = {
-									A73 = {
-										preferred_emperor = PREV
+						if = {
+							limit = {
+								A73 = {
+									is_elector = yes
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = giberd_to_strike_an_anvil_tt								# TODO: check that this works
+								any_known_country = {
+									AND = {
+										A73 = {
+											preferred_emperor = PREV
+										}
+										preferred_emperor = THIS
 									}
-									preferred_emperor = THIS
 								}
 							}
 						}
@@ -664,28 +671,28 @@ giberd_konwell_conquest = {
 		}
 		position = 9
 		provinces_to_highlight = {
-			AND = {
-				region = esmaria_region
-				OR = {
-					AND = {
-						province_id = 911
-						NOT = {
-							base_production = 10
-							development = 25
-							has_production_manufactory_or_gold_trigger = yes
-						}
+			region = esmaria_region
+			OR = {
+				AND = {
+					province_id = 911
+					NOT = {
+						base_production = 10
+						development = 25
+						has_manufactory_trigger = yes
 					}
-					AND = {
-						OR = {
-							trade_goods = paper
-							trade_goods = glass
-						}
-						NOT = {
-							owned_by = root
+				}
+				AND = {
+					OR = {
+						trade_goods = paper
+						trade_goods = glass
+					}
+					NOT = {
+						province_id = 309
+						AND = {
+							owned_by = ROOT
 							has_production_building_trigger = yes
-							has_production_manufactory_or_gold_trigger = yes
+							has_manufactory_trigger = yes
 							base_production = 12
-							province_id = 309
 						}
 					}
 				}
@@ -700,7 +707,7 @@ giberd_konwell_conquest = {
 						AND = {
 							owned_by = root
 							has_production_building_trigger = yes
-							has_production_manufactory_or_gold_trigger = yes
+							has_manufactory_trigger = yes
 							base_production = 12
 						}
 						NOT = {
@@ -714,7 +721,7 @@ giberd_konwell_conquest = {
 			911 = {
 				base_production = 10
 				development = 25
-				has_production_manufactory_or_gold_trigger = yes
+				has_manufactory_trigger = yes
 			}
 			has_idea = A81_artificer_loading_exoskeleton_v1
 		}
@@ -762,12 +769,12 @@ giberd_konwell_conquest = {
 		}
 		position = 10
 		provinces_to_highlight = {
+			region = esmaria_region
+			owned_by = ROOT
 			AND = {
-				region = esmaria_region
-				owned_by = ROOT
-				AND = {
-					trade_goods = cloth
-					NOT = {
+				trade_goods = cloth
+				NOT = {
+					AND = {
 						has_trade_building_trigger = yes
 						has_production_building_trigger = yes
 						base_production = 8
@@ -783,14 +790,14 @@ giberd_konwell_conquest = {
 						NOT = {
 							region = esmaria_region
 						}
+						NOT = {
+							trade_goods = cloth
+						}
 						AND = {
 							trade_goods = cloth
 							has_production_building_trigger = yes
 							has_trade_building_trigger = yes
 							base_production = 8
-						}
-						NOT = {
-							trade_goods = cloth
 						}
 					}
 				}
