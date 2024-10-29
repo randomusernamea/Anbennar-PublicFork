@@ -1463,6 +1463,11 @@ giberd_ryalanar_conquest = {
 					OR = {
 						AND = {
 							is_capital = yes
+							owner = {
+								NOT = {
+									ROOT
+								}
+							}
 							continent = europe
 							OR = {
 								has_gnomish_majority_trigger = yes
