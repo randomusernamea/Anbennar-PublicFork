@@ -12,6 +12,13 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 
+	trigger = {
+		OR = {
+			tag = J84 #Taychendi Empire
+			was_tag = J84 #Taychendi Empire
+		}
+	}
+
 	option = {
 		name = taychendi_empire_events.0.a
 		if = {
@@ -384,8 +391,8 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.4.da
@@ -394,8 +401,8 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.4.db
@@ -422,8 +429,8 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.5.da
@@ -432,8 +439,8 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.5.db
@@ -446,8 +453,8 @@ country_event = {
 		name = taychendi_empire_events.5.a
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		add_army_tradition = 10
@@ -461,8 +468,8 @@ country_event = {
 		name = taychendi_empire_events.5.b
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		add_army_tradition = 10
@@ -481,8 +488,8 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.6.da
@@ -491,8 +498,8 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.6.db
@@ -504,8 +511,8 @@ country_event = {
 		name = taychendi_empire_events.6.a
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		add_prestige = -10
@@ -519,8 +526,8 @@ country_event = {
 		name = taychendi_empire_events.6.b
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		add_prestige = -10
@@ -539,8 +546,8 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.7.da
@@ -549,8 +556,8 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		desc = taychendi_empire_events.7.db
@@ -562,8 +569,8 @@ country_event = {
 		name = taychendi_empire_events.7.a
 		trigger = {
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		if = {
@@ -585,8 +592,8 @@ country_event = {
 		name = taychendi_empire_events.7.b
 		trigger = {
 			NOT = { 
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 			}
 		}
 		if = {
@@ -860,7 +867,7 @@ country_event = {
 		add_stability = -1
 		add_country_modifier = {
 			name = J84_international_pariah
-			duration = 1825 #50 years
+			duration = 18250 #50 years
 		}
 	}
 }
@@ -891,7 +898,1108 @@ country_event = {
 	}
 }
 
-#Vainglory Flavor Events
+country_event = {
+	id = taychendi_empire_events.15 #Honest Hearts, Dishonest Actions
+	title = taychendi_empire_events.15.t
+	picture = LOOMING_DEATH_eventPicture
+
+	desc = {
+		desc = taychendi_empire_events.15.da
+		trigger = {
+			is_religion_enabled = ravelian
+		}
+	}
+
+	desc = {
+		desc = taychendi_empire_events.15.db
+		trigger = {
+			NOT = { is_religion_enabled = ravelian }
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = J84_ravelian_event_happened_flag
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.aa
+		trigger = { NOT = { is_religion_enabled = ravelian } }
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_country_modifier = {
+			name = J84_rejected_ravelianism
+			duration = -1
+		}
+		custom_tooltip = J84_remove_ravelians_tt
+		custom_tooltip = J84_ravelians_rise_up_tt
+		tooltip = {
+			random = {
+				chance = 50
+				spawn_rebels = {
+					size = 1
+					type = ravelian_rebels
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = ravelian_lodge
+						has_province_modifier = ravelian_society
+					}
+				}
+				remove_province_modifier = ravelian_lodge
+				remove_province_modifier = ravelian_society
+			}
+			every_owned_province = {
+				limit = { religion = ravelian }
+				random = {
+					chance = 50
+					spawn_rebels = {
+						size = 1
+						type = ravelian_rebels
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.a
+		trigger = { 
+			NOT = { religion = ravelian } 
+			is_religion_enabled = ravelian
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_country_modifier = {
+			name = J84_rejected_ravelianism
+			duration = -1
+		}
+		custom_tooltip = J84_remove_ravelians_tt
+		custom_tooltip = J84_ravelians_rise_up_tt
+		tooltip = {
+			random = {
+				chance = 50
+				spawn_rebels = {
+					size = 1
+					type = ravelian_rebels
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = ravelian_lodge
+						has_province_modifier = ravelian_society
+					}
+				}
+				remove_province_modifier = ravelian_lodge
+				remove_province_modifier = ravelian_society
+			}
+			every_owned_province = {
+				limit = { religion = ravelian }
+				random = {
+					chance = 50
+					spawn_rebels = {
+						size = 1
+						type = ravelian_rebels
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.bb
+		trigger = { NOT = { is_religion_enabled = ravelian } }
+		add_country_modifier = {
+			name = J84_ravelian_resources
+			duration = -1
+		}
+		custom_tooltip = J84_5_artificer_capacity_tt
+		if = {
+			limit = { is_religion_enabled = ravelian }
+			custom_tooltip = J84_ravelian_provinces_spawn_tt
+			custom_tooltip = J84_ravelian_tolerated_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_ravelianism_tolerated
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				set_country_flag = J84_ravelianism_tolerated_flag
+				set_country_flag = J84_ravelian_resources_artifice_flag
+				mission_reward_artifice_points_5 = yes
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = {
+						limit = {
+							NOT = { religion = ravelian }
+						}
+						change_religion = ravelian
+					}"
+				}
+				every_owned_province = {
+					limit = { religion = ravelian }
+					add_province_modifier = {
+						name = J84_ravelianism_tolerated
+						duration = -1
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = J84_ravelian_societies_spawn_tt
+			hidden_effect = {
+				set_country_flag = J84_ravelian_resources_artifice_flag
+				mission_reward_artifice_points_5 = yes
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = {
+						limit = {
+							NOT = { has_province_modifier = ravelian_society }
+						}
+						add_province_modifier = {
+							name = ravelian_society
+							duration = -1
+						}
+					}"
+				}
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 15
+		}
+		custom_tooltip = J84_thw_rise_up_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 1
+				type = gods_of_the_taychend_reformed_rebels
+			}
+		}
+		hidden_effect = {
+			for = {
+				amount = 15
+				effect = "
+				random_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+					}
+					spawn_rebels = {
+						size = 1
+						type = gods_of_the_taychend_reformed_rebels
+					}
+				}"
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.b
+		trigger = { 
+			NOT = { religion = ravelian } 
+			is_religion_enabled = ravelian
+		}
+		add_country_modifier = {
+			name = J84_ravelian_resources
+			duration = -1
+		}
+		custom_tooltip = J84_5_artificer_capacity_tt
+		if = {
+			limit = { is_religion_enabled = ravelian }
+			custom_tooltip = J84_ravelian_provinces_spawn_tt
+			custom_tooltip = J84_ravelian_tolerated_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_ravelianism_tolerated
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				set_country_flag = J84_ravelianism_tolerated_flag
+				set_country_flag = J84_ravelian_resources_artifice_flag
+				mission_reward_artifice_points_5 = yes
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = {
+						limit = {
+							NOT = { religion = ravelian }
+						}
+						change_religion = ravelian
+					}"
+				}
+				every_owned_province = {
+					limit = { religion = ravelian }
+					add_province_modifier = {
+						name = J84_ravelianism_tolerated
+						duration = -1
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = J84_ravelian_societies_spawn_tt
+			hidden_effect = {
+				set_country_flag = J84_ravelian_resources_artifice_flag
+				mission_reward_artifice_points_5 = yes
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = {
+						limit = {
+							NOT = { has_province_modifier = ravelian_society }
+						}
+						add_province_modifier = {
+							name = ravelian_society
+							duration = -1
+						}
+					}"
+				}
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 15
+		}
+		custom_tooltip = J84_thw_rise_up_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 1
+				type = gods_of_the_taychend_reformed_rebels
+			}
+		}
+		hidden_effect = {
+			for = {
+				amount = 15
+				effect = "
+				random_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+					}
+					spawn_rebels = {
+						size = 1
+						type = gods_of_the_taychend_reformed_rebels
+					}
+				}"
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.c
+		trigger = {
+			is_religion_enabled = ravelian
+			NOT = { religion = ravelian }
+		}
+		change_religion = ravelian
+		2500 = { change_religion = ravelian } #Royakottar
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 30
+		}
+		add_country_modifier = {
+			name = J84_slave_holding_ravelians
+			duration = -1
+		}
+		custom_tooltip = J84_thw_rise_up_more_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 1
+				type = gods_of_the_taychend_reformed_rebels
+			}
+		}
+		hidden_effect = {
+			for = {
+				amount = 30
+				effect = "
+				random_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+					}
+					spawn_rebels = {
+						size = 1
+						type = gods_of_the_taychend_reformed_rebels
+					}
+				}"
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.15.d
+		trigger = { religion = ravelian }
+		highlight = yes
+		2500 = { change_religion = ravelian } #Royakottar
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 30
+		}
+		add_country_modifier = {
+			name = J84_slave_holding_ravelians
+			duration = -1
+		}
+		custom_tooltip = J84_thw_rise_up_more_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 1
+				type = gods_of_the_taychend_reformed_rebels
+			}
+		}
+		hidden_effect = {
+			for = {
+				amount = 30
+				effect = "
+				random_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+					}
+					spawn_rebels = {
+						size = 1
+						type = gods_of_the_taychend_reformed_rebels
+					}
+				}"
+			}
+		}
+		add_papal_influence = 50
+		custom_tooltip = J84_ravelian_provinces_spawn_tt
+		for = {
+			amount = 10
+			effect = "
+			random_owned_province = {
+				limit = { NOT = { religion = ravelian } }
+				change_religion = ravelian
+			}"
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.16 #Gearing Up
+	title = taychendi_empire_events.16.t
+	desc = taychendi_empire_events.16.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.16.a
+		add_army_tradition = 15
+		add_country_modifier = {
+			name = J84_plants_vs_warlords
+			duration = 18250 #50 years
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -10
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.16.b
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = J84_artificer_aided_colonisation
+			duration = 18250 #50 years
+		}
+		custom_tooltip = J84_20_artificer_capacity_tt
+		hidden_effect = {
+			debuff_artifice_points_20 = yes
+			set_country_flag = J84_artificer_aided_colonisation_artifice_flag
+			country_event = {
+				id = taychendi_empire_events.0
+				days = 18251 #50 years 1 day
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.16.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 15
+		}
+		add_country_modifier = {
+			name = J84_artificery_unleashed
+			duration = 18250 #50 years
+		}
+		custom_tooltip = J84_40_artificer_capacity_tt
+		hidden_effect = {
+			debuff_artifice_points_40 = yes
+			set_country_flag = J84_artificery_unleashed_artifice_flag
+			country_event = {
+				id = taychendi_empire_events.0
+				days = 18251 #50 years 1 day
+			}
+			country_event = {
+				id = taychendi_empire_events.17 #Against Fire
+				days = 3650 #10 years
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.17 #Against Fire
+	title = taychendi_empire_events.17.t
+	desc = taychendi_empire_events.17.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.17.a
+		random_owned_province = {
+			limit = { is_effelai_network_province = yes }
+			add_devastation = 50
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.18 #To Kneel
+	title = taychendi_empire_events.18.t
+	desc = taychendi_empire_events.18.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.18.a
+		add_government_reform = taychend_tailatam_system_reform
+		random_owned_province = {
+			limit = { superregion = taychend_superregion }
+			spawn_rebels = {
+				size = 2
+				type = noble_rebels
+			}
+		}
+		random_owned_province = {
+			limit = { superregion = taychend_superregion }
+			spawn_rebels = {
+				size = 2
+				type = noble_rebels
+			}
+		}
+		random_owned_province = {
+			limit = { superregion = taychend_superregion }
+			spawn_rebels = {
+				size = 2
+				type = noble_rebels
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.19 #Up on the High Chair
+	title = taychendi_empire_events.19.t
+	desc = taychendi_empire_events.19.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.19.a
+		add_government_reform = taychend_mudaliar_system_reform
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.20 #War for the Singing Jungle
+	title = taychendi_empire_events.20.t
+	desc = taychendi_empire_events.20.d
+	picture = EFFELAI_BLOOM_ANIMATED_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.20.a
+		set_country_flag = J84_singing_jungle_war_start_flag
+		custom_tooltip = J84_cede_effelai_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_terrain = jungle
+						has_terrain = marsh
+					}
+					OR = {
+						region = leechdens_region
+						region = soruin_region
+						region = west_effelai_region
+					}
+				}
+				cede_province = G20 #Araya
+				add_core = G20 #Araya
+			}
+		}
+		G20 = { #Araya
+			override_country_name = SOINASADYVAHDI
+			add_country_modifier = {
+				name = J84_effelai_rising
+				duration = 7300 #20 years
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_war_for_the_singing_jungle
+				who = ROOT
+			}
+		}
+		custom_tooltip = J84_dont_fuckin_white_peace_tt
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.21 #Effelai Defeated
+	title = taychendi_empire_events.21.t
+	desc = taychendi_empire_events.21.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.21.a
+		country_event = {
+			id = effelai_bloom.450 #Effelai Bloom Burned Path Ending
+		}
+		inherit = G20 #Araya
+		add_army_tradition = 50
+		add_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 50
+		}
+		add_prestige = 10
+		add_ruler_modifier = {
+			name = J84_the_junglesbane
+			duration = -1
+		}
+		remove_country_modifier = J84_plants_vs_warlords
+		remove_country_modifier = J84_artificer_aided_colonisation
+		remove_country_modifier = J84_artificery_unleashed
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.22 #Effelai Victorious
+	title = taychendi_empire_events.22.t
+	desc = taychendi_empire_events.22.d
+	picture = EFFELAI_BLOOM_ANIMATED_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.22.a
+		# country_event = {
+		# 	id = effelai_bloom.91 #Effelai Bloom Becomes Dorment Ending
+		# }
+		custom_tooltip = J84_effelai_destroyed_you_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_effelai_network_province = yes
+					NOT = { is_effelai_network_burned = yes }
+				}
+				cede_province = G20 #Araya
+				add_core = G20 #Araya
+			}
+		}
+		add_stability = -1
+		add_prestige = -50
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.23 #A Demon, A Devil, A Flamethrower
+	title = taychendi_empire_events.23.t
+	desc = taychendi_empire_events.23.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.23.a
+		#PATRONREWORK - If you have an Infernal-Type patron, gain 2 favor
+		custom_tooltip = unlocked_artifice_invention_demon_powered_flame_rigs_tt
+		set_country_flag = unlocked_artifice_invention_demon_powered_flame_rigs
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.24 #Chance to Hit: 50%
+	title = taychendi_empire_events.24.t
+	desc = taychendi_empire_events.24.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.24.a
+		custom_tooltip = unlocked_artifice_invention_prism_cored_war_machines_tt
+		set_country_flag = unlocked_artifice_invention_prism_cored_war_machines
+		2088 = { #Tolalkal/Gommoport
+			add_permanent_claim = ROOT
+			owner = {
+				if = {
+					limit = { 
+						capital_scope = { 
+							OR = {
+								continent = north_america
+								continent = south_america
+							}
+						}
+						is_colonial_nation = no
+					}
+					reverse_add_casus_belli = {
+						type = cb_vassalize_mission
+						target = ROOT
+						months = 1200 #100 years
+					}
+				}
+			}
+		}
+		2078 = { #Léembalkal/Zurzumexia
+			add_permanent_claim = ROOT
+			owner = {
+				if = {
+					limit = { 
+						capital_scope = { 
+							OR = {
+								continent = north_america
+								continent = south_america
+							}
+						}
+						is_colonial_nation = no
+					}
+					reverse_add_casus_belli = {
+						type = cb_vassalize_mission
+						target = ROOT
+						months = 1200 #100 years
+					}
+				}
+			}
+		}
+		2083 = { #K'il'uiolob/Mestikardu
+			add_permanent_claim = ROOT
+			owner = {
+				if = {
+					limit = { 
+						capital_scope = { 
+							OR = {
+								continent = north_america
+								continent = south_america
+							}
+						}
+						is_colonial_nation = no
+					}
+					reverse_add_casus_belli = {
+						type = cb_vassalize_mission
+						target = ROOT
+						months = 1200 #100 years
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.25 #Cry Me A River
+	title = taychendi_empire_events.25.t
+	desc = taychendi_empire_events.25.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.25.a
+		custom_tooltip = unlocked_artifice_invention_imitation_seedthralls_tt
+		set_country_flag = unlocked_artifice_invention_imitation_seedthralls
+		custom_tooltip = unlocked_artifice_invention_effelai_growth_stimulants_tt
+		set_country_flag = unlocked_artifice_invention_effelai_growth_stimulants
+		hidden_effect = {
+			country_event = {
+				id = taychendi_empire_events.26 #Plant Misbehavin'
+				days = 5475 #15 years
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.26 #Plant Misbehavin'
+	title = taychendi_empire_events.26.t
+	desc = taychendi_empire_events.26.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { is_effelai_network_province = yes }
+				save_event_target_as = J84_effelai_outbreak_target
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.26.a
+		add_stability = -1
+		
+		event_target:J84_effelai_outbreak_target = {
+			area = {
+				add_province_modifier = {
+					name = J84_effelai_outbreak
+					duration = 2650 #10 years
+				}
+				spawn_rebels = {
+					size = 2
+					type = seedthrall_rebels
+				}
+				random_neighbor_province = {
+					limit = { 
+						NOT = { area = PREV } 
+						owned_by = ROOT
+					}
+					area = {
+						add_province_modifier = {
+							name = J84_effelai_outbreak
+							duration = 2650 #10 years
+						}
+						spawn_rebels = {
+							size = 2
+							type = seedthrall_rebels
+						}
+					}
+				}
+			}
+			random_neighbor_province = {
+				limit = { NOT = { area = PREV } }
+				area = {
+					add_province_modifier = {
+						name = J84_effelai_outbreak
+						duration = 2650 #10 years
+					}
+					spawn_rebels = {
+						size = 2
+						type = seedthrall_rebels
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.27 #Of Strength and Honour
+	title = taychendi_empire_events.27.t
+	desc = taychendi_empire_events.27.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.27.a
+		largest_increase_of_orcish_tolerance_effect = yes
+		add_accepted_culture = ozgar_orc
+		add_country_modifier = {
+			name = J84_free_accepted_orc_culture
+			duration = -1
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.27.b
+		medium_increase_of_orcish_tolerance_effect = yes
+		unlock_merc_company = { merc_company = merc_the_orcish_company }
+	}
+
+	option = {
+		name = taychendi_empire_events.27.c
+		largest_decrease_of_orcish_tolerance_effect = yes
+		add_country_modifier = {
+			name = J84_orcs_in_the_mines
+			duration = -1
+		}
+		custom_tooltip = J84_devastate_orcs_tt
+		custom_tooltip = J84_convert_ozgar_tt
+		hidden_effect = {
+			for = {
+				amount = 5
+				effect = "
+				random_owned_province = {
+					limit = {
+						culture_group = orcish
+						NOT = { has_province_flag = J84_temp_flag }
+					}
+					add_devastation = 25
+					set_province_flag = J84_temp_flag
+				}"
+			}
+			every_owned_province = {
+				limit = { has_province_flag = J84_temp_flag }
+				clr_province_flag = J84_temp_flag
+			}
+			every_owned_province = {
+				limit = { culture = ozgar_orc }
+				change_religion = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.28 #The Power of Yodhan
+	title = taychendi_empire_events.28.t
+	desc = taychendi_empire_events.28.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.28.a
+		custom_tooltip = unlocked_artifice_invention_relic_lord_prototype_power_armour_tt
+		set_country_flag = unlocked_artifice_invention_relic_lord_prototype_power_armour
+		add_treasury = -2000
+		add_adm_power = -200
+		add_dip_power = -200
+		add_mil_power = -200
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.29 #An Empire Vainglorious
+	title = taychendi_empire_events.29.t
+	picture = LOOMING_DEATH_eventPicture
+
+	desc = { #Generic Desc
+		desc = taychendi_empire_events.29.da
+		trigger = {
+			NOT = {
+				has_country_flag = J84_is_mihaela_flag
+				was_tag = G64 #Larankar
+				was_tag = G74 #Gophira
+				was_tag = G81 #Sthanan ith Vussam
+				was_tag = J85 #Nanru Nakar
+	
+				#Evil 1444 Tags
+				was_tag = G80 #Imarchend
+				was_tag = J75 #Rakkabuttai
+				was_tag = G75 #Sibisimra
+				was_tag = J81 #Parahechend
+			}
+		}
+	}
+
+	desc = { #Mihaela Desc
+		desc = taychendi_empire_events.29.dvampire
+		trigger = { has_country_flag = J84_is_mihaela_flag }
+	}
+
+	desc = { #Larankar Desc
+		desc = taychendi_empire_events.29.dlarankar
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G64 #Larankar
+		}
+	}
+
+	desc = { #Gophira Desc
+		desc = taychendi_empire_events.29.dgophira
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G74 #Gophira
+		}
+	}
+
+	desc = { #Sthanan ith Vussam Desc
+		desc = taychendi_empire_events.29.dsthanan
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G81 #Sthanan ith Vussam
+		}
+	}
+
+	desc = { #Nanru Nakar Desc
+		desc = taychendi_empire_events.29.dnakar
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = J85 #Nanru Nakar
+		}
+	}
+
+	desc = { #Evil Desc
+		desc = taychendi_empire_events.29.devil
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			OR = {
+				#Evil 1444 Tags
+				was_tag = G80 #Imarchend
+				was_tag = J75 #Rakkabuttai
+				was_tag = G75 #Sibisimra
+				was_tag = J81 #Parahechend
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.29.aa #Generic
+		trigger = {
+			NOT = {
+				has_country_flag = J84_is_mihaela_flag
+				was_tag = G64 #Larankar
+				was_tag = G74 #Gophira
+				was_tag = G81 #Sthanan ith Vussam
+				was_tag = J85 #Nanru Nakar
+	
+				#Evil 1444 Tags
+				was_tag = G80 #Imarchend
+				was_tag = J75 #Rakkabuttai
+				was_tag = G75 #Sibisimra
+				was_tag = J81 #Parahechend
+			}
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.aevil #Evil
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			OR = {
+				#Evil 1444 Tags
+				was_tag = G80 #Imarchend
+				was_tag = J75 #Rakkabuttai
+				was_tag = G75 #Sibisimra
+				was_tag = J81 #Parahechend
+			}
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.avampire #Mihaela
+		trigger = { has_country_flag = J84_is_mihaela_flag }
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.alarankar #Larankar
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G64 #Larankar
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.agophira #Gophira
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G74 #Gophira
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.asthanan #Sthanan
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = G81 #Sthanan ith Vussam
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.29.anakar #Nanru Nakar
+		trigger = {
+			NOT = { has_country_flag = J84_is_mihaela_flag }
+			was_tag = J85 #Nanru Nakar
+		}
+		custom_tooltip = J84_aelantir_claims_tt
+		custom_tooltip = J84_subjugate_aelantir_tt
+		hidden_effect = {
+			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
+			every_country = {
+				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
+			}
+		}
+	}
+}
+
+###########################
+# Vainglory Flavor Events #
+###########################
+
 country_event = {
 	id = taychendi_empire_events.100 #Border Warlords Attack Neighbour
 	title = taychendi_empire_events.100.t
@@ -1104,6 +2212,652 @@ country_event = {
 					size = 2
 				}
 			}
+		}
+	}
+}
+
+####################################
+# The Depths of Aercel Event Chain #
+####################################
+
+country_event = {
+	id = taychendi_empire_events.200 #The Depths of Aercel
+	title = taychendi_empire_events.200.t
+	desc = taychendi_empire_events.200.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = J84_aercel_damage
+				value = 0
+			}
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.200.a
+		highlight = yes
+		trigger = {
+			OR = {
+				dynasty = "Mudaliar"
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+			}
+		}
+		country_event = { id = taychendi_empire_events.201 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.200.b
+		take_aercel_damage = yes
+		country_event = { id = taychendi_empire_events.201 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.201 #The Undercity
+	title = taychendi_empire_events.201.t
+	desc = taychendi_empire_events.201.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.201.a
+		highlight = yes
+		trigger = {
+			OR = {
+				estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = 60
+				}
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+			}
+		}
+		country_event = { id = taychendi_empire_events.202 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.201.b
+		add_corruption = 10
+		add_years_of_income = -0.5
+		country_event = { id = taychendi_empire_events.202 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.201.c
+		take_aercel_damage = yes
+		country_event = { id = taychendi_empire_events.202 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.202 #Into the Dark
+	title = taychendi_empire_events.202.t
+	desc = taychendi_empire_events.202.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.202.a
+		country_event = { id = taychendi_empire_events.203 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.203 #A Precursor Armoury
+	title = taychendi_empire_events.203.t
+	desc = taychendi_empire_events.203.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.203.a
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = J84_glut_of_precursor_equipment
+			duration = 9125 #25 years
+		}
+		add_estate_loyalty = {
+			estate = estate_adventurers
+			loyalty = 15
+		}
+		country_event = { id = taychendi_empire_events.204 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.203.b
+		artifice_unlock_random_invention_effect = yes
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 15
+		}
+		country_event = { id = taychendi_empire_events.204 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.204 #Deep Elves Attack
+	title = taychendi_empire_events.204.t
+	desc = taychendi_empire_events.204.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.204.a
+		highlight = yes
+		trigger = {
+			army_tradition = 60
+			OR = {
+				has_global_modifier_value = {
+					which = infantry_power
+					value = 0.15
+				}
+				has_global_modifier_value = {
+					which = discipline
+					value = 0.1
+				}
+			}
+		}
+		country_event = { id = taychendi_empire_events.205 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.204.b
+		take_aercel_damage = yes
+		custom_tooltip = J84_lose_aercel_units_tt
+		set_country_flag = J84_lose_aercel_units_flag
+		country_event = { id = taychendi_empire_events.205 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.205 #Demons in the Depths?
+	title = taychendi_empire_events.205.t
+	desc = taychendi_empire_events.205.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.205.a
+		custom_tooltip = J84_gain_level_3_patron_tt #PATRONREWORK
+		add_stability = -1
+		country_event = { id = taychendi_empire_events.206 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.205.b
+		add_prestige = 10
+		if = {
+			limit = { religion = gods_of_the_taychend_reformed }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = { religion = ravelian }
+			add_papal_influence = 15
+		}
+		heal_aercel_damage = yes
+		country_event = { id = taychendi_empire_events.206 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.206 #Last Dying Breath
+	title = taychendi_empire_events.206.t
+	desc = taychendi_empire_events.206.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.206.a
+		highlight = yes
+		trigger = {
+			army_tradition = 80
+			OR = {
+				has_global_modifier_value = {
+					which = infantry_power
+					value = 0.2
+				}
+				has_global_modifier_value = {
+					which = discipline
+					value = 0.15
+				}
+			}
+		}
+		add_mil_power = 100
+		country_event = { id = taychendi_empire_events.207 days = 30 }
+	}
+
+	option = {
+		name = taychendi_empire_events.206.b
+		take_aercel_damage = yes
+		custom_tooltip = J84_lose_more_aercel_units_tt
+		set_country_flag = J84_lose_more_aercel_units_flag
+		country_event = { id = taychendi_empire_events.207 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.207 #The Glow
+	title = taychendi_empire_events.207.t
+	desc = taychendi_empire_events.207.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.207.a
+		add_prestige = 15
+		country_event = { id = taychendi_empire_events.208 days = 30 }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.208 #The Tomb of Liandarha
+	title = taychendi_empire_events.208.t
+	desc = taychendi_empire_events.208.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.208.a
+		add_ruler_personality = just_personality
+		add_prestige = 20
+		2495 = { #Nakar Kriadvai
+			add_province_modifier = {
+				name = J84_understanding_with_the_deep_folk
+				duration = 36500 #100 years
+			}
+		}
+		aercel_scaling_rewards = yes
+	}
+
+	option = {
+		name = taychendi_empire_events.208.b
+		2495 = { #Nakar Kriadvai
+			change_trade_goods = damestear
+			add_province_modifier = {
+				name = J84_scrapping_slave_collars
+				duration = 3650 #10 years
+			}
+		}
+		country_event = {
+			id = taychendi_empire_events.209 #Slave Collars Sold Off
+			days = 3650 #10 years
+		}
+		add_prestige = -10
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -10
+		}
+		aercel_scaling_rewards = yes
+	}
+
+	option = {
+		name = taychendi_empire_events.208.c
+		2495 = { #Nakar Kriadvai
+			change_trade_goods = damestear
+			add_province_modifier = {
+				name = J84_scrapping_slave_collars
+				duration = 2555 #7 years
+			}
+		}
+		country_event = {
+			id = taychendi_empire_events.209 #Slave Collars Sold Off
+			days = 2555 #7 years
+		}
+		add_country_modifier = {
+			name = J84_precursor_control_collars
+			duration = -1
+		}
+		add_prestige = -10
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		aercel_scaling_rewards = yes
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.209 #Slave Collars Sold Off
+	title = taychendi_empire_events.209.t
+	desc = taychendi_empire_events.209.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.209.a
+		2495 = { #Nakar Kriadvai
+			change_trade_goods = precursor_relics
+			remove_province_modifier = J84_scrapping_slave_collars
+		}
+	}
+}
+
+########################################
+# The Woman in the Shadows Event Chain #
+########################################
+
+country_event = {
+	id = taychendi_empire_events.300 #The Woman in the Shadows
+	title = taychendi_empire_events.300.t
+	desc = taychendi_empire_events.300.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.300.a
+		country_event = {
+			id = taychendi_empire_events.301
+			days = 3650 #10 years
+		}
+	}
+
+	option = {
+		name = taychendi_empire_events.300.b
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.301 #The Errant Princess
+	title = taychendi_empire_events.301.t
+	desc = taychendi_empire_events.301.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.301.a
+		custom_tooltip = karakhanbar_accepted_vampires_tt
+		hidden_effect = { 
+			set_country_flag = J84_vampires_pog_flag
+			set_country_flag = has_vampires_estate
+			country_event = { id = vampires_estate_events.12 days = 2 }
+		}
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = taychendi_empire_events.301.b
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.302 #Meeting under the Moon
+	title = taychendi_empire_events.302.t
+	desc = taychendi_empire_events.302.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.302.a
+		country_event = { id = taychendi_empire_events.303 }
+		custom_tooltip = J84_mihaela_becomes_ruler_warning_tt
+	}
+
+	option = {
+		name = taychendi_empire_events.302.b
+		clear_vampire_law = yes
+		clear_vampire_organization = yes
+		tooltip = {
+			set_estate_privilege = estate_vampires_law_state_collusion_masquerade
+			set_estate_privilege = estate_vampires_organization_bloody_aristocracy
+		}
+		hidden_effect = {
+			country_event = {
+				id = taychendi_empire_events.3002
+				days = 1
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_vampires
+			loyalty = -50
+		}
+		random_owned_province = { spawn_rebels = { size = 2 type = vampires_nobles } }
+		random_owned_province = { spawn_rebels = { size = 2 type = vampires_nobles } }
+		random_owned_province = { spawn_rebels = { size = 2 type = vampires_nobles } }
+		random_owned_province = { spawn_rebels = { size = 2 type = vampires_nobles } }
+		random_owned_province = { spawn_rebels = { size = 2 type = vampires_nobles } }
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.3002
+	title = taychendi_empire_events.3002.t
+	desc = taychendi_empire_events.3002.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = taychendi_empire_events.3002.a
+		set_estate_privilege = estate_vampires_law_state_collusion_masquerade
+		set_estate_privilege = estate_vampires_organization_bloody_aristocracy
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.303 #The Pale Queen Rises
+	title = taychendi_empire_events.303.t
+	desc = taychendi_empire_events.303.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.303.a
+		set_country_flag = J84_is_mihaela_flag
+		set_ruler = mihaela
+		initialize_vampire = yes
+		clear_vampire_law = yes
+		clear_vampire_organization = yes
+		tooltip = {
+			set_estate_privilege = estate_vampires_organization_vampires_lord
+			set_estate_privilege = estate_vampire_law_relic_shrouded_masquerade
+		}
+		hidden_effect = {
+			set_ruler_religion = ROOT
+			country_event = {
+				id = taychendi_empire_events.3003
+				days = 1
+			}
+		}
+		add_stability = -3
+		for = {
+			amount = 5
+			effect = "
+			random_owned_province = {
+				spawn_rebels = {
+					size = 2
+					type = pretender_rebels
+				}
+			}"
+		}
+		add_country_modifier = {
+			name = J84_taychendi_shadow_war
+			duration = 21900 #60 years
+		}
+		country_event = {
+			id = taychendi_empire_events.304 #A Game of Shadows
+			days = 7300 #20 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.3003
+	title = taychendi_empire_events.3003.t
+	desc = taychendi_empire_events.3003.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = taychendi_empire_events.3003.a
+		set_estate_privilege = estate_vampires_organization_vampires_lord
+		set_estate_privilege = estate_vampire_law_relic_shrouded_masquerade
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.304 #A Game of Shadows
+	title = taychendi_empire_events.304.t
+	desc = taychendi_empire_events.304.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.304.a
+		add_stability = -1
+		custom_tooltip = J84_8_rebels_rise_up_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+			}
+		}
+		for = {
+			amount = 8
+			effect = "
+			random_owned_province = {
+				limit = { region = kalavend_region }
+				spawn_rebels = {
+					size = 1
+					type = pretender_rebels
+				}
+			}"
+		}
+		6559 = { #Kottar Orenkoraim
+			spawn_rebels = {
+				size = 2
+				type = vampires_nobles
+			}
+		}
+		country_event = {
+			id = taychendi_empire_events.305 #Blood Ties
+			days = 7300 #20 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.305 #Blood Ties
+	title = taychendi_empire_events.305.t
+	desc = taychendi_empire_events.305.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.305.a
+		custom_tooltip = J84_5_rebels_rise_up_tt
+		tooltip = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}
+		for = {
+			amount = 5
+			effect = "
+			random_owned_province = {
+				limit = {
+					has_port = yes
+					OR = {
+						region = kalavend_region
+						region = southern_coast_region #Thektoraim
+					}
+				}
+				spawn_rebels = {
+					size = 3
+					type = pretender_rebels
+				}
+			}"
+		}
+		2515 = { #Korrimadhala
+			spawn_rebels = {
+				size = 3
+				type = vampires_nobles
+			}
+		}
+		2520 = { #Nagar Vyechei
+			spawn_rebels = {
+				size = 3
+				type = vampires_nobles
+			}
+		}
+		country_event = {
+			id = taychendi_empire_events.306 #A Duel at Midnight
+			days = 3650 #10 years
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.306 #A Duel at Midnight
+	title = taychendi_empire_events.306.t
+	desc = taychendi_empire_events.306.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.306.a
+		add_army_tradition = 15
+		country_event = {
+			id = taychendi_empire_events.307 #Its in the Blood
+		}
+	}
+}
+
+country_event = {
+	id = taychendi_empire_events.307 #Its in the Blood
+	title = taychendi_empire_events.307.t
+	desc = taychendi_empire_events.307.d
+	picture = LOOMING_DEATH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = taychendi_empire_events.307.a
+		remove_country_modifier = J84_taychendi_shadow_war
+		change_dip = 1
+		add_prestige = 20
+		add_government_power = {
+			mechanic_type = taychend_vainglory_mechanic
+			power_type = taychend_vainglory_power
+			value = 20
 		}
 	}
 }

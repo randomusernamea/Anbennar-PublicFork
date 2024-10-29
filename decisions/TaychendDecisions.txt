@@ -324,6 +324,10 @@ country_decisions = {
 				}
 				add_permanent_claim = J84
 			}
+			add_country_modifier = {
+				name = taychend_formed_colonist
+				duration = 18250 #50 years
+			}
 			# if = {
 			# 	limit = { has_custom_ideas = no }
 			# 	country_event = { id = ideagroups.1 } #Swap Ideas

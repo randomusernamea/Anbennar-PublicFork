@@ -330,12 +330,62 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			NOT = { owned_by = ROOT }
+			OR = {
+				region = leechdens_region
+				region = west_effelai_region
+				region = east_effelai_region
+				region = south_effelai_region
+			}
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 20
+						OR = {
+							region = leechdens_region
+							region = west_effelai_region
+							region = east_effelai_region
+							region = south_effelai_region
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				OR = {
+					region = leechdens_region
+					region = west_effelai_region
+					region = east_effelai_region
+					region = south_effelai_region
+				}
+			}
+			OR = {
+				employed_advisor = { culture = dawn_elf }
+				employed_advisor = { culture = sun_elf }
+				employed_advisor = { culture = duguihi }
+				employed_advisor = { culture = oronoii }
+				natural_scientist = 3
+				estate_loyalty = {
+					estate = estate_artificers
+					loyalty = 50
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = J84_30_artifice_capacity
+				check_variable = {
+					which = MaxArtificePoints
+					value = 30
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.16 #Gearing Up
+			}
 		}
 	}
 
@@ -347,12 +397,78 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			NOT = { owned_by = ROOT }
+			superregion = effelai_superregion
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 100
+						superregion = effelai_superregion
+					}
+				}
+			}
 		}
 
 		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				superregion = effelai_superregion
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = J84_burning_the_effelai_tt
+					has_country_flag = effelai_burned_path
+				}
+				custom_trigger_tooltip = {
+					tooltip = J84_effelai_bloom_ended_tt
+					has_global_flag = effelai_blooming_over
+				}
+			}
 		}
 
 		effect = {
+			if = {
+				limit = { has_global_flag = effelai_blooming_happening }
+				custom_tooltip = J84_effelai_blooming_yes_tt
+				hidden_effect = {
+					country_event = {
+						id = taychendi_empire_events.20 #War for the Singing Jungle
+					}
+				}
+			}
+			else = { custom_tooltip = J84_effelai_blooming_no_tt }
+			tooltip = {
+				country_event = {
+					id = taychendi_empire_events.20 #War for the Singing Jungle
+				}
+			}
+
+			if = {
+				limit = { has_global_flag = effelai_blooming_over }
+				custom_tooltip = J84_effelai_ended_yes_tt
+				hidden_effect = {
+					add_army_tradition = 25
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 25
+					}
+					remove_country_modifier = J84_plants_vs_warlords
+					remove_country_modifier = J84_artificer_aided_colonisation
+					remove_country_modifier = J84_artificery_unleashed
+					country_event = { id = taychendi_empire_events.0 days = 1 }
+				}
+			}
+			else = { custom_tooltip = J84_effelai_ended_no_tt }
+			tooltip = {
+				add_army_tradition = 25
+				add_power_projection = {
+					type = mission_rewards_power_projection
+					amount = 25
+				}
+				remove_country_modifier = J84_plants_vs_warlords
+				remove_country_modifier = J84_artificer_aided_colonisation
+				remove_country_modifier = J84_artificery_unleashed
+			}
 		}
 	}
 
@@ -365,12 +481,48 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			is_effelai_network_hub = yes
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = {
+					AND = {
+						has_building = mage_tower
+						has_building = university
+					}
+				}
+			}
+			ROOT = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						effelai_has_burned_hub = yes
+						has_building = mage_tower
+						has_building = university
+					}
+				}
+			}
 		}
 
 		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				custom_trigger_tooltip = {
+					tooltip = J84_has_burned_hub_tt
+					effelai_has_burned_hub = yes
+				}
+				has_building = mage_tower
+				has_building = university
+			}
+			custom_trigger_tooltip = {
+				tooltip = J84_not_researching_artifice_tt
+				NOT = { has_country_flag = artifice_research_in_progress }
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.25 #Cry Me A River
+			}
 		}
 	}
 
@@ -382,12 +534,128 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					trade_goods = naval_supplies
+					superregion = effelai_superregion
+					NOT = {
+						AND = {
+							has_production_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+						}
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								trade_goods = naval_supplies
+								superregion = effelai_superregion
+								has_production_building_trigger = yes
+								has_manpower_building_trigger = yes
+								has_forcelimit_building_trigger = yes
+							}
+							effelai_superregion = {
+								type = all
+								trade_goods = naval_supplies
+								has_production_building_trigger = yes
+								has_manpower_building_trigger = yes
+								has_forcelimit_building_trigger = yes
+							}
+						}
+					}
+				}
+				AND = {
+					has_port = yes
+					superregion = effelai_superregion
+					has_shipyard_building_trigger = no
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 20
+								has_port = yes
+								superregion = effelai_superregion
+								has_shipyard_building_trigger = yes
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 10
+						effelai_superregion = {
+							type = all
+							trade_goods = naval_supplies
+						}
+					}
+				}
+				num_of_owned_provinces_with = {
+					value = 10
+					trade_goods = naval_supplies
+					superregion = effelai_superregion
+					has_production_building_trigger = yes
+					has_manpower_building_trigger = yes
+					has_forcelimit_building_trigger = yes
+				}
+			}
+			else = {
+				effelai_superregion = {
+					type = all
+					OR = {
+						NOT = { trade_goods = naval_supplies }
+						AND = {
+							has_production_building_trigger = yes
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+						}
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				has_port = yes
+				superregion = effelai_superregion
+				has_shipyard_building_trigger = yes
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_woodcutter_warlord_camp_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_woodcutter_warlord_camp
+					duration = -1
+				}
+			}
+			custom_tooltip = J84_ashen_born_shipyard_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_ashen_born_shipyard
+					duration = 9125 #25 years
+				}
+			}
+			ruined_isles_region = { add_permanent_claim = ROOT }
+			hidden_effect = {
+				effelai_superregion = {
+					limit = { trade_goods = naval_supplies }
+					add_province_modifier = {
+						name = J84_woodcutter_warlord_camp
+						duration = -1
+					}
+				}
+				effelai_superregion = {
+					limit = { has_port = yes has_shipyard_building_trigger = yes }
+					add_province_modifier = {
+						name = J84_ashen_born_shipyard
+						duration = 9125 #25 years
+					}
+				}
+			}
 		}
 	}
 
@@ -399,12 +667,133 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					is_capital = yes
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+					owner = { 
+						navy_size = ROOT 
+						NOT = { tag = ROOT }
+					}
+				}
+				AND = {
+					province_id = 1438 #Soruin
+					NOT = {
+						1438 = { #Soruin
+							trade_share = {
+								country = ROOT
+								share = 30
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1527 #Ruined Sea
+					NOT = {
+						1527 = { #Ruined Sea
+							trade_share = {
+								country = ROOT
+								share = 30
+							}
+						}
+					}
+				}
+				AND = {
+					region = ruined_isles_region
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								region = ruined_isles_region
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			navy_size = 300
+			num_of_geobukseon = 50 #Degarikes
+			all_country = {
+				OR = {
+					capital_scope = {
+						NOT = {
+							continent = north_america
+							continent = south_america
+						}
+					}
+					NOT = { navy_size = ROOT }
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = ruined_isles_region
+			}
+			1438 = { #Soruin
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
+			1527 = { #Ruined Sea
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_ruined_sea_tt
+			tooltip = {
+				change_culture = bekauta
+				change_religion = gods_of_the_taychend_reformed
+			}
+			hidden_effect = {
+				for = {
+					amount = 5
+					effect = "
+					random_owned_province = {
+						limit = { 
+							region = ruined_isles_region 
+							NOT = { culture = bekauta } 
+						}
+						change_culture = bekauta
+						change_religion = gods_of_the_taychend_reformed
+					}"
+				}
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = {
+						limit = { 
+							has_port = yes 
+							NOT = { 
+								superregion = taychend_superregion 
+								culture = bekauta
+							} 
+						}
+						change_culture = bekauta
+						change_religion = gods_of_the_taychend_reformed
+					}"
+				}
+			}
+			add_country_modifier = {
+				name = J84_warlords_of_the_waves
+				duration = -1
+			}
+			remove_country_modifier = J84_titans_of_the_sea_mod
+			sil_berkhens_land_area = { add_permanent_claim = ROOT } #Adinonosy
+			far_uelos_isles_area = { add_permanent_claim = ROOT } #Velanynosy
+			tebajik_area = { add_permanent_claim = ROOT } #Tebajik
+			zohejirofo_area = { add_permanent_claim = ROOT } #Zohejirofo
+			tebolelmasi_area = { add_permanent_claim = ROOT } #Tebolelmasi
+			ibibakely_area = { add_permanent_claim = ROOT } #Ibibakely
 		}
 	}
 
@@ -543,8 +932,8 @@ J84_2_missions_part_1 = {
 		trigger = {
 			treasury = 500
 			OR = {
-				is_divination_3 = yes #Legendary
-				is_divination_2 = yes #Renowned
+				is_divination_3 = yes #Legendary #MAGICREWORK
+				is_divination_2 = yes #Renowned #MAGICREWORK
 				estate_loyalty = {
 					estate = estate_church
 					loyalty = 75
@@ -605,7 +994,7 @@ J84_2_missions_part_1 = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
+			custom_trigger_tooltip = { #MAGICREWORK
 				tooltip = J84_plant_growth_tt
 				any_owned_province = {
 					OR = {
@@ -722,12 +1111,76 @@ J84_2_missions_part_1 = {
 		}
 
 		provinces_to_highlight = { 
+			is_capital = yes
+			owner = {
+				OR = {
+					is_papal_controller = yes
+					any_owned_province = { has_province_modifier = ravelian_lodge }
+					any_owned_province = { has_province_modifier = ravelian_society }
+				}
+				NOT = { tag = ROOT }
+			}
+			ROOT = {
+				NOT = {
+					any_known_country = {
+						OR = {
+							is_papal_controller = yes
+							any_owned_province = { has_province_modifier = ravelian_lodge }
+							any_owned_province = { has_province_modifier = ravelian_society }
+						}
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 75
+							}
+							has_spy_network_from = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 10
+					OR = {
+						religion = ravelian
+						has_province_modifier = ravelian_lodge
+						has_province_modifier = ravelian_society
+					}
+				}
+				any_known_country = {
+					OR = {
+						is_papal_controller = yes
+						any_owned_province = { has_province_modifier = ravelian_lodge }
+						any_owned_province = { has_province_modifier = ravelian_society }
+					}
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 75
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+				AND = {
+					religion = ravelian
+					religious_unity = 0.65
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.15 #Honest Hearts, Dishonest Actions
+			}
 		}
 	}
 
@@ -741,12 +1194,119 @@ J84_2_missions_part_1 = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					province_id = 2560 #Imarchend
+					NOT = { has_building = mage_tower }
+				}
+				AND = {
+					province_id = 2559 #Anakeampkad
+					NOT = { has_building = mage_tower }
+				}
+				AND = {
+					province_id = 2526 #Varanya Sangaman
+					NOT = { has_building = mage_tower }
+				}
+				AND = {
+					is_capital_of = Z97 #Ravelian State
+					NOT = {
+						Z97 = { #Ravelian State
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						any_country = {
+							religion = ravelian
+							all_country = {
+								OR = {
+									NOT = { religion = ravelian }
+									NOT = { total_development = PREV }
+								}
+							}
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+				}
+				AND = {
+					is_capital = yes
+					owner = {
+						NOT = { tag = ROOT }
+						religion = ravelian
+						all_country = {
+							OR = {
+								NOT = { religion = ravelian }
+								NOT = { total_development = PREV }
+							}
+						}
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+					NOT = {
+						Z97 = { #Ravelian State
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			OR = {
+				#MAGICREWORK - Mage estate has renowned conjuration
+				AND = {
+					2560 = { has_building = mage_tower } #Imarchend
+					2559 = { has_building = mage_tower } #Anakeampkad
+					2526 = { has_building = mage_tower } #Varanya Sangaman
+					estate_loyalty = {
+						estate = estate_mages
+						loyalty = 60
+					}
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 75
+					}
+				}
+				#PATRONREWORK - Has an Infernal-Type Patron
+				Z97 = { #Ravelian State
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = J84_largest_ravel_like_tt
+					any_country = {
+						religion = ravelian
+						all_country = {
+							OR = {
+								NOT = { religion = ravelian }
+								NOT = { total_development = PREV }
+							}
+						}
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.23 #A Demon, A Devil, A Flamethrower
+			}
 		}
 	}
 }
@@ -769,12 +1329,38 @@ J84_2_vampire_missions = {
 		}
 
 		provinces_to_highlight = { 
+			owned_by = ROOT
+			OR = { 
+				controlled_by = REB
+				units_in_province = REB
+			}
 		}
 
 		trigger = {
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 60
+			}
+			estate_influence = {
+				estate = estate_vampires
+				influence = 50
+			}
+			has_estate_privilege = estate_vampires_vampires_in_the_administration
+			OR = {
+				absolutism = 50
+				has_estate_privilege = estate_vampires_vampiric_military_command #Midnight Command Privilege
+			}
+			stability = 1
+			NOT = { 
+				num_of_rebel_armies = 1
+				num_of_rebel_controlled_provinces = 1
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.302 #Meeting under the Moon
+			}
 		}
 	}
 }
@@ -795,12 +1381,68 @@ J84_2_missions_part_2 = {
 		}
 
 		provinces_to_highlight = { 
+			is_capital = yes
+			OR = { 
+				continent = north_america 
+				continent = south_america 
+			} 
+			owner = { 
+				army_size = ROOT 
+				NOT = { tag = ROOT }
+			}
 		}
 
 		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = grain
+				amount = 50
+			}
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = wine
+					amount = 25
+				}
+				trade_goods_produced_amount = {
+					trade_goods = fish
+					amount = 25
+				}
+			}
+			trading_bonus = { trade_goods = grain value = yes }
+			trading_bonus = { trade_goods = wine value = yes }
+			trading_bonus = { trade_goods = fish value = yes }
+			manpower = 500
+			all_country = {
+				OR = {
+					capital_scope = { 
+						NOT = { 
+							continent = north_america 
+							continent = south_america 
+						} 
+					}
+					NOT = { army_size = ROOT }
+				}
+			}
 		}
 
 		effect = {
+			set_country_flag = J84_sanguosynthesis_enabled_flag
+			set_country_flag = J84_soldiers_households_buff_flag
+
+			custom_tooltip = J84_sanguosynthesis_enabled_tt
+			tooltip = { calc_sanguosynthesis_modifier = yes }
+
+			custom_tooltip = J84_soldiers_households_tt
+
+			hidden_effect = {
+				calc_sanguosynthesis_modifier = yes
+				every_owned_province = {
+					limit = { has_building = soldier_households }
+					add_province_modifier = {
+						name = J84_soldiers_households_buff
+						duration = -1
+					}
+				}
+			}
 		}
 	}
 
@@ -812,12 +1454,100 @@ J84_2_missions_part_2 = {
 		}
 
 		provinces_to_highlight = { 
+			continent = south_america
+			culture_group = orcish
+			if = {
+				limit = { owned_by = ROOT }
+				NOT = {
+					AND = {
+						has_forcelimit_building_trigger = yes
+						has_building = training_fields
+						has_tax_building_trigger = yes
+					}
+				}
+				ROOT = {
+					NOT = {
+						num_of_owned_provinces_with = {
+							value = 10
+							culture_group = orcish
+							continent = south_america
+							has_forcelimit_building_trigger = yes
+							has_building = training_fields
+							has_tax_building_trigger = yes
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			south_america = {
+				type = all
+				OR = {
+					NOT = { culture_group = orcish }
+					owned_by = ROOT
+				}
+			}
+			if = {
+				limit = {
+					num_of_owned_provinces_with = {
+						value = 10
+						culture_group = orcish
+						continent = south_america
+					}
+				}
+				num_of_owned_provinces_with = {
+					value = 10
+					culture_group = orcish
+					continent = south_america
+					has_forcelimit_building_trigger = yes
+					has_building = training_fields
+					has_tax_building_trigger = yes
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						culture_group = orcish
+						continent = south_america
+					}
+				}
+				all_owned_province = {
+					OR = {
+						NOT = { continent = south_america }
+						NOT = { culture_group = orcish }
+						AND = {
+							culture_group = orcish
+							has_forcelimit_building_trigger = yes
+							has_building = training_fields
+							has_tax_building_trigger = yes
+						}
+					}
+				}
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					value = 10
+					OR = {
+						culture_group = orcish
+						has_orcish_minority_trigger = yes
+					}
+					continent = south_america
+					has_forcelimit_building_trigger = yes
+					has_building = training_fields
+					has_tax_building_trigger = yes
+				}
+			}
+			NOT = {
+				has_country_modifier = racial_pop_orcish_expulsion
+				has_country_modifier = racial_pop_orcish_purge
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.27 #Of Strength and Honour
+			}
 		}
 	}
 
@@ -1123,6 +1853,12 @@ J84_3_missions = {
 			cymbeahn_area = { add_permanent_claim = ROOT }
 			cherimreit_area = { add_permanent_claim = ROOT }
 			nur_damenath_area = { add_permanent_claim = ROOT }
+			hidden_effect = {
+				country_event = {
+					id = taychendi_empire_events.300 #The Woman in the Shadows
+					days = 1825 #5 years
+				}
+			}
 		}
 	}
 
@@ -1137,9 +1873,57 @@ J84_3_missions = {
 		}
 
 		trigger = {
+			is_scrying = yes #MAGICREWORK
+			estate_loyalty = {
+				estate = estate_adventurers
+				loyalty = 60
+			}
+			treasury = 2500
 		}
 
 		effect = {
+			add_treasury = -2500
+			2540 = { #Matnadevela
+				change_trade_goods = precursor_relics
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_province_modifier = {
+					name = J84_intensive_excavation
+					duration = -1
+				}
+			}
+			2607 = { #Assakadail
+				change_trade_goods = precursor_relics
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_province_modifier = {
+					name = J84_intensive_excavation
+					duration = -1
+				}
+			}
+			2526 = { #Varanya Sangaman
+				change_trade_goods = precursor_relics
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_province_modifier = {
+					name = J84_intensive_excavation
+					duration = -1
+				}
+			}
+			2492 = { #Pattivaram
+				change_trade_goods = precursor_relics
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_province_modifier = {
+					name = J84_intensive_excavation
+					duration = -1
+				}
+			}
+			enable_taychend_ruler_style = { deity = dreamer }
 		}
 	}
 
@@ -1154,9 +1938,95 @@ J84_3_missions = {
 		}
 
 		trigger = {
+			OR = {
+				absolutism = 50
+				reform_level = 7
+			}
+			OR = {
+				AND = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 75
+					}
+					num_of_owned_provinces_with = {
+						value = 25
+						has_courthouse_building_trigger = yes
+					}
+					num_of_owned_provinces_with = {
+						value = 25
+						has_forcelimit_building_trigger = yes
+					}
+				}
+				AND = {
+					num_of_owned_provinces_with = {
+						value = 50
+						has_courthouse_building_trigger = yes
+					}
+					num_of_owned_provinces_with = {
+						value = 5
+						has_building = state_house
+					}
+				}
+			}
 		}
 
 		effect = {
+			if = {
+				limit = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 75
+					}
+					num_of_owned_provinces_with = {
+						value = 25
+						has_courthouse_building_trigger = yes
+					}
+					num_of_owned_provinces_with = {
+						value = 25
+						has_forcelimit_building_trigger = yes
+					}
+				}
+				custom_tooltip = J84_generic_first_reqs_yes_tt
+				hidden_effect = { country_event = { id = taychendi_empire_events.19 } }
+			}
+			else = { custom_tooltip = J84_generic_first_reqs_no_tt }
+			tooltip = { add_government_reform = taychend_mudaliar_system_reform }
+
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							has_government_power = {
+								mechanic_type = taychend_vainglory_mechanic
+								power_type = taychend_vainglory_power
+								value = 75
+							}
+							num_of_owned_provinces_with = {
+								value = 25
+								has_courthouse_building_trigger = yes
+							}
+							num_of_owned_provinces_with = {
+								value = 25
+								has_forcelimit_building_trigger = yes
+							}
+						}
+					}
+					num_of_owned_provinces_with = {
+						value = 50
+						has_courthouse_building_trigger = yes
+					}
+					num_of_owned_provinces_with = {
+						value = 5
+						has_building = state_house
+					}
+				}
+				custom_tooltip = J84_generic_second_reqs_yes_tt
+				hidden_effect = { country_event = { id = taychendi_empire_events.18 } }
+			}
+			else = { custom_tooltip = J84_generic_second_reqs_no_tt }
+			tooltip = { add_government_reform = taychend_tailatam_system_reform }
 		}
 	}
 
@@ -1172,9 +2042,97 @@ J84_3_missions = {
 		}
 
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_has_3_military_artifice_intentions_tt
+				calc_true_if = {
+					amount = 3
+					has_estate_privilege = artifice_invention_portable_turrets
+					has_estate_privilege = artifice_invention_sparkdrive_rifles
+					has_estate_privilege = artifice_invention_artificer_exo_arms
+					has_estate_privilege = artifice_invention_vorpal_bullets
+					has_estate_privilege = artifice_invention_magic_missile_deployer
+					has_estate_privilege = artifice_invention_commercial_sky_galleons
+					has_estate_privilege = artifice_invention_wandlocks
+					has_estate_privilege = artifice_invention_balloonboost_packs
+					has_estate_privilege = artifice_invention_war_golems
+					has_estate_privilege = artifice_invention_prototype_tanks
+					has_estate_privilege = artifice_invention_arcane_blaster
+					has_estate_privilege = artifice_invention_black_damestear_bullets
+					has_estate_privilege = artifice_invention_artillery_autoloader
+					has_estate_privilege = artifice_invention_bioartificed_ascension
+					has_estate_privilege = artifice_invention_personal_mageshields
+					has_estate_privilege = artifice_invention_military_sky_galleons
+					has_estate_privilege = artifice_invention_damestear_reactor_megacannon
+				}
+			}
+			num_of_rajput = 25
+			OR = {
+				AND = {
+					has_country_modifier = J84_the_heirs_of_yodhan_1
+					army_professionalism = 0.5
+				}
+				AND = {
+					has_country_modifier = J84_the_oremvandian_way_1
+					num_of_mercenaries = 250
+				}
+				AND = {
+					has_country_modifier = J84_the_ironblood_reborn_1
+					OR = {
+						ruler_has_personality = mage_personality
+						#MAGICREWORK - Mage Estate has Renowned Conjuration
+					}
+				}
+			}
 		}
 
 		effect = {
+			if = {
+				limit = { has_country_modifier = J84_the_heirs_of_yodhan_1 }
+				custom_tooltip = J84_chose_yodhan_yes_tt
+				hidden_effect = {
+					add_country_modifier = { name = J84_the_heirs_of_yodhan_2 duration = -1 }
+					remove_country_modifier = J84_the_heirs_of_yodhan_1
+				}
+			}
+			else = { custom_tooltip = J84_chose_yodhan_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_heirs_of_yodhan_2
+					duration = -1
+				}
+			}
+
+			if = {
+				limit = { has_country_modifier = J84_the_oremvandian_way_1 }
+				custom_tooltip = J84_chose_oremvand_yes_tt
+				hidden_effect = {
+					add_country_modifier = { name = J84_the_oremvandian_way_2 duration = -1 }
+					remove_country_modifier = J84_the_oremvandian_way_1
+				}
+			}
+			else = { custom_tooltip = J84_chose_oremvand_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_oremvandian_way_2
+					duration = -1
+				}
+			}
+
+			if = {
+				limit = { has_country_modifier = J84_the_ironblood_reborn_1 }
+				custom_tooltip = J84_chose_ironblood_yes_tt
+				hidden_effect = {
+					add_country_modifier = { name = J84_the_ironblood_reborn_2 duration = -1 }
+					remove_country_modifier = J84_the_ironblood_reborn_1
+				}
+			}
+			else = { custom_tooltip = J84_chose_ironblood_no_tt }
+			tooltip = {
+				add_country_modifier = {
+					name = J84_the_ironblood_reborn_2
+					duration = -1
+				}
+			}
 		}
 	}
 
@@ -1186,12 +2144,101 @@ J84_3_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					ROOT = {
+						religion = gods_of_the_taychend_reformed
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 450
+								religion = ROOT
+							}
+						}
+					}
+					owned_by = ROOT
+					NOT = { religion = ROOT }
+				}
+				AND = {
+					ROOT = {
+						religion = ravelian
+						NOT = { religious_unity = 0.95 }
+					}
+					owned_by = ROOT
+					NOT = { religion = ROOT }
+				}
+			}
 		}
 
 		trigger = {
+			OR = {
+				AND = {
+					religion = gods_of_the_taychend_reformed
+					absolutism = 75
+					num_of_owned_provinces_with = {
+						value = 450
+						religion = ROOT
+					}
+				}
+				AND = {
+					religion = ravelian
+					is_papal_controller = yes
+					papal_influence = 100
+					religious_unity = 0.95
+				}
+			}
 		}
 
 		effect = {
+			set_estate_privilege = estate_church_supreme_imperial_cult
+			if = {
+				limit = { religion = gods_of_the_taychend_reformed }
+				custom_tooltip = J84_religion_is_thw_yes_tt
+				hidden_effect = { enable_taychend_ruler_style = { deity = universalist } }
+			}
+			else = { custom_tooltip = J84_religion_is_thw_no_tt }
+			tooltip = { enable_taychend_ruler_style = { deity = universalist } }
+			
+			if = {
+				limit = { religion = ravelian }
+				custom_tooltip = J84_religion_is_ravelian_yes_tt
+				hidden_effect = { 
+					2497 = { add_cardinal = yes } #Nakar Mlerek
+					6559 = { add_cardinal = yes } #Kottar Orenkoraim
+					2520 = { add_cardinal = yes } #Nagar Vyechei
+					2500 = { add_cardinal = yes } #Royakottar
+					if = {
+						limit = { 
+							capital_scope = { has_cardinal = yes } 
+							2487 = { is_capital = yes } #Urvand
+						}
+						2465 = { add_cardinal = yes } #Clematar
+					}
+					else_if = {
+						limit = { capital_scope = { has_cardinal = yes } }
+						2487 = { add_cardinal = yes } #Urvand
+					}
+					else = { capital_scope = { add_cardinal = yes } }
+				}
+			}
+			else = { custom_tooltip = J84_religion_is_ravelian_no_tt }
+			tooltip = {
+				2497 = { add_cardinal = yes } #Nakar Mlerek
+				6559 = { add_cardinal = yes } #Kottar Orenkoraim
+				2520 = { add_cardinal = yes } #Nagar Vyechei
+				2500 = { add_cardinal = yes } #Royakottar
+				if = {
+					limit = { 
+						capital_scope = { has_cardinal = yes } 
+						2487 = { is_capital = yes } #Urvand
+					}
+					2465 = { add_cardinal = yes } #Clematar
+				}
+				else_if = {
+					limit = { capital_scope = { has_cardinal = yes } }
+					2487 = { add_cardinal = yes } #Urvand
+				}
+				else = { capital_scope = { add_cardinal = yes } }
+			}
 		}
 	}
 
@@ -1206,12 +2253,38 @@ J84_3_missions = {
 		}
 
 		provinces_to_highlight = {  
+			continent = south_america
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_wasteland = no
+			is_sea = no
 		}
 
 		trigger = {
+			south_america = {
+				type = all
+				custom_trigger_tooltip = {
+					tooltip = J84_own_sa_tt
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_wasteland = yes
+						is_sea = yes
+					}
+				}
+			}
+			monthly_adm = 10
+			monthly_dip = 10
+			monthly_mil = 10
+			has_government_power = {
+				mechanic_type = taychend_vainglory_mechanic
+				power_type = taychend_vainglory_power
+				value = 80
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.29 #An Empire Vainglorious
+			}
 		}
 	}
 
@@ -1706,12 +2779,42 @@ J84_4_missions = {
 		}
 
 		provinces_to_highlight = {  
+			province_id = 2495 #Nakar Kriadvai
+			NOT = {
+				AND = {
+					num_of_units_in_province = {
+						amount = 30
+						who = ROOT
+						type = infantry
+					}
+					has_ruler_leader_from = ROOT
+				}
+			}
 		}
 
 		trigger = {
+			2495 = { #Nakar Kriadvai
+				num_of_units_in_province = {
+					amount = 30
+					who = ROOT
+					type = infantry
+				}
+				has_ruler_leader_from = ROOT
+			}
 		}
 
 		effect = {
+			2495 = { #Nakar Kriadvai
+				kill_units = {
+					amount = 30
+					who = ROOT
+					type = infantry
+				}
+			}
+			country_event = {
+				id = taychendi_empire_events.200 #The Depths of Aercel
+			}
+			custom_tooltip = J84_aercel_prep_tt
 		}
 	}
 
@@ -1724,12 +2827,113 @@ J84_4_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					province_id = 1544 #Taychend/Orenkoraim
+					1544 = { #Taychend/Orenkoraim
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 50
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1607 #Dry Coast
+					1607 = { #Dry Coast
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 50
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1539 #East Effelai
+					1539 = { #East Effelai
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 50
+							}
+						}
+					}
+				}
+				AND = {
+					trade_goods = precursor_relics
+					superregion = taychend_superregion
+					NOT = {
+						AND = {
+							base_production = 15
+							has_manufactory_trigger = yes
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			taychend_superregion = {
+				type = all
+				OR = {
+					NOT = { trade_goods = precursor_relics }
+					AND = {
+						base_production = 15
+						has_manufactory_trigger = yes
+					}
+				}
+			}
+			1544 = { #Taychend/Orenkoraim
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			1607 = { #Dry Coast
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			} 
+			1539 = { #East Effelai
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_precursor_relic_cash_tt
+			custom_tooltip = J84_relic_trade_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						superregion = taychend_superregion
+						trade_goods = precursor_relics
+						base_production = 15
+						has_manufactory_trigger = yes
+					}
+					ROOT = {
+						add_treasury = 500
+						add_adm_power = 25
+						add_dip_power = 25
+						add_mil_power = 25
+					}
+				}
+				every_known_country = {
+					limit = {
+						capital_scope = { continent = europe }
+						has_estate = estate_artificers
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = J84_trading_relics
+					}
+				}
+			}
 		}
 	}
 
@@ -1743,12 +2947,112 @@ J84_4_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					region = tor_nayyi_region
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						area = east_vanburia_area
+						area = west_vanburia_area
+						area = north_vanburia_area
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 5
+								OR = {
+									area = east_vanburia_area
+									area = west_vanburia_area
+									area = north_vanburia_area
+								}
+								has_manufactory_trigger = yes
+								has_production_building_trigger = yes
+								OR = {
+									has_building = trade_depot
+									has_building = stock_exchange
+								}
+								taychendi_empire_has_production_or_vainglory = yes
+							}
+						}
+					}
+					NOT = {
+						AND = {
+							has_manufactory_trigger = yes
+							has_production_building_trigger = yes
+							OR = {
+								has_building = trade_depot
+								has_building = stock_exchange
+							}
+							taychendi_empire_has_production_or_vainglory = yes
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			tor_nayyi_region = { type = all owned_by = ROOT }
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					area = east_vanburia_area
+					area = west_vanburia_area
+					area = north_vanburia_area
+				}
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+				OR = {
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				taychendi_empire_has_production_or_vainglory = yes
+			}
 		}
 
 		effect = {
+			if = {
+				limit = { 2172 = { NOT = { trade_goods = coal } } } #Rionfort
+				2172 = { #Rionfort
+					change_trade_goods = coal
+					add_province_modifier = {
+						name = J84_early_industrialisation
+						duration = 18250 #50 years
+					}
+				}
+			}
+			custom_tooltip = J84_vanburian_steel_foundries_tt
+			tooltip = {
+				add_province_modifier = {
+					name = J84_vanburian_steel_foundries
+					duration = -1
+				}
+				change_trade_goods = iron
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = east_vanburia_area
+							area = west_vanburia_area
+							area = north_vanburia_area
+						}
+						has_manufactory_trigger = yes
+						has_production_building_trigger = yes
+						OR = {
+							has_building = trade_depot
+							has_building = stock_exchange
+						}
+						taychendi_empire_has_production_or_vainglory = yes
+					}
+					add_province_modifier = {
+						name = J84_vanburian_steel_foundries
+						duration = -1
+					}
+					change_trade_goods = iron
+				}
+			}
 		}
 	}
 
@@ -1762,12 +3066,65 @@ J84_4_missions = {
 		}
 
 		provinces_to_highlight = {  
+			is_capital = yes
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+			owner = { 
+				NOT = { tag = ROOT }
+				monthly_income = ROOT 
+			}
 		}
 
 		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = iron
+				amount = 25
+			}
+			trade_goods_produced_amount = {
+				trade_goods = copper
+				amount = 25
+			}
+			trade_goods_produced_amount = {
+				trade_goods = slaves
+				amount = 25
+			}
+			production_leader = { trade_goods = precursor_relics }
+			trading_bonus = {
+				trade_goods = damestear
+				value = yes
+			}
+			monthly_income = 500
+			all_country = {
+				OR = {
+					capital_scope = {
+						NOT = {
+							continent = north_america
+							continent = south_america
+						}
+					}
+					NOT = { monthly_income = ROOT }
+				}
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_trade_station_bonus_tt
+			set_country_flag = J84_trade_station_bonus_flag
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = tradecompany #Trade Station
+						trade_goods = precursor_relics
+					}
+					add_province_modifier = {
+						name = J84_trade_station_buff
+						duration = -1
+					}
+					ROOT = { mission_reward_artifice_points_2 = yes }
+				}
+			}
 		}
 	}
 
@@ -2307,7 +3664,7 @@ J84_5_missions = {
 				advisor = court_mage
 				AND = {
 					has_adm_advisor_3 = yes
-					is_scrying = yes
+					is_scrying = yes #MAGICREWORK
 				}
 			}
 			alecand_region = {
@@ -2449,14 +3806,14 @@ J84_5_missions = {
 						value = 90
 					}
 				}
-				custom_tooltip = J84_destroyed_kheions_yes_tt
+				custom_tooltip = J84_generic_first_reqs_yes_tt
 				hidden_effect = {
 					country_event = {
 						id = taychendi_empire_events.13 #The Hearts that Feed
 					}
 				}
 			}
-			else = { custom_tooltip = J84_destroyed_kheions_no_tt }
+			else = { custom_tooltip = J84_generic_first_reqs_no_tt }
 			tooltip = {
 				country_event = {
 					id = taychendi_empire_events.13 #The Hearts that Feed
@@ -2511,14 +3868,14 @@ J84_5_missions = {
 						}
 					}
 				}
-				custom_tooltip = J84_spared_kheions_yes_tt
+				custom_tooltip = J84_generic_second_reqs_yes_tt
 				hidden_effect = {
 					country_event = {
 						id = taychendi_empire_events.12 #The Heart That Feeds?
 					}
 				}
 			}
-			else = { custom_tooltip = J84_spared_kheions_no_tt }
+			else = { custom_tooltip = J84_generic_second_reqs_no_tt }
 			tooltip = {
 				country_event = {
 					id = taychendi_empire_events.12 #The Heart That Feeds?
@@ -2535,12 +3892,98 @@ J84_5_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = cymbeahn_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = cherimreit_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = nur_damenath_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2421 #Dawenban
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+				AND = {
+					province_id = 2435 #Cara Banqúm
+					NOT = {
+						AND = {
+							has_dock_building_trigger = yes
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			cymbeahn_area = { type = all owned_by = ROOT }
+			cherimreit_area = { type = all owned_by = ROOT }
+			nur_damenath_area = { type = all owned_by = ROOT }
+			2421 = { #Dawenban
+				has_dock_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
+			2435 = { #Cara Banqúm
+				has_dock_building_trigger = yes
+				has_fort_building_trigger = yes
+			}
 		}
 
 		effect = {
+			amadia_region = { add_permanent_claim = ROOT }
+			2421 = { #Dawenban
+				change_trade_goods = slaves
+				custom_tooltip = J84_building_mana_tt
+				hidden_effect = {
+					trigger_switch = {
+						on_trigger = num_of_buildings_in_province
+						12 = { ROOT = { add_adm_power = 600 add_dip_power = 600 add_mil_power = 600 } }
+						11 = { ROOT = { add_adm_power = 550 add_dip_power = 550 add_mil_power = 550 } }
+						10 = { ROOT = { add_adm_power = 500 add_dip_power = 500 add_mil_power = 500 } }
+						9 = { ROOT = { add_adm_power = 450 add_dip_power = 450 add_mil_power = 450 } }
+						8 = { ROOT = { add_adm_power = 400 add_dip_power = 400 add_mil_power = 400 } }
+						7 = { ROOT = { add_adm_power = 350 add_dip_power = 350 add_mil_power = 350 } }
+						6 = { ROOT = { add_adm_power = 300 add_dip_power = 300 add_mil_power = 300 } }
+						5 = { ROOT = { add_adm_power = 250 add_dip_power = 250 add_mil_power = 250 } }
+						4 = { ROOT = { add_adm_power = 200 add_dip_power = 200 add_mil_power = 200 } }
+						3 = { ROOT = { add_adm_power = 150 add_dip_power = 150 add_mil_power = 150 } }
+						2 = { ROOT = { add_adm_power = 100 add_dip_power = 100 add_mil_power = 100 } }
+						1 = { ROOT = { add_adm_power = 50 add_dip_power = 50 add_mil_power = 50 } }
+					}
+				}
+			}
+			2435 = { #Cara Banqúm
+				change_trade_goods = slaves
+				custom_tooltip = J84_building_mana_tt
+				hidden_effect = {
+					trigger_switch = {
+						on_trigger = num_of_buildings_in_province
+						12 = { ROOT = { add_adm_power = 600 add_dip_power = 600 add_mil_power = 600 } }
+						11 = { ROOT = { add_adm_power = 550 add_dip_power = 550 add_mil_power = 550 } }
+						10 = { ROOT = { add_adm_power = 500 add_dip_power = 500 add_mil_power = 500 } }
+						9 = { ROOT = { add_adm_power = 450 add_dip_power = 450 add_mil_power = 450 } }
+						8 = { ROOT = { add_adm_power = 400 add_dip_power = 400 add_mil_power = 400 } }
+						7 = { ROOT = { add_adm_power = 350 add_dip_power = 350 add_mil_power = 350 } }
+						6 = { ROOT = { add_adm_power = 300 add_dip_power = 300 add_mil_power = 300 } }
+						5 = { ROOT = { add_adm_power = 250 add_dip_power = 250 add_mil_power = 250 } }
+						4 = { ROOT = { add_adm_power = 200 add_dip_power = 200 add_mil_power = 200 } }
+						3 = { ROOT = { add_adm_power = 150 add_dip_power = 150 add_mil_power = 150 } }
+						2 = { ROOT = { add_adm_power = 100 add_dip_power = 100 add_mil_power = 100 } }
+						1 = { ROOT = { add_adm_power = 50 add_dip_power = 50 add_mil_power = 50 } }
+					}
+				}
+			}
 		}
 	}
 
@@ -2552,12 +3995,97 @@ J84_5_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					region = amadia_region
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 1741 #Kheionai Node
+					1741 = { #Kheionai Node
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 75
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 1553 #Amadia Node
+					1553 = { #Amadia Node
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 75
+							}
+						}
+					}
+				}
+				AND = {
+					owned_by = ROOT
+					trade_goods = slaves
+					NOT = {
+						AND = {
+							has_production_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			amadia_region = {
+				type = all
+				owned_by = ROOT
+			}
+			1741 = { #Kheionai Node
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+			1553 = { #Amadia Node
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+			all_owned_province = {
+				OR = {
+					NOT = { trade_goods = slaves }
+					AND = {
+						has_production_building_trigger = yes
+						has_forcelimit_building_trigger = yes
+					}
+				}
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_amadian_gold_tt
+			tooltip = {
+				random = {
+					chance = 25
+					change_trade_goods = gold
+				}
+			}
+			hidden_effect = {
+				amadia_region = {
+					limit = {
+						OR =  {
+							has_terrain = highlands
+							has_terrain = mountain
+						}
+						NOT = { trade_goods = damestear }
+					}
+					random = {
+						chance = 25
+						change_trade_goods = gold
+					}
+				}
+			}
 		}
 	}
 
@@ -2569,12 +4097,35 @@ J84_5_missions = {
 		}
 
 		provinces_to_highlight = {  
+			region = amadia_region
+			trade_goods = damestear
+			NOT = {
+				AND = {
+					base_production = 10
+					has_building = university
+					has_building = mage_tower
+				}
+			}
 		}
 
 		trigger = {
+			amadia_region = {
+				type = all
+				OR = {
+					NOT = { trade_goods = damestear }
+					AND = {
+						base_production = 10
+						has_building = university
+						has_building = mage_tower
+					}
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.24 #Chance to Hit: 50%
+			}
 		}
 	}
 
@@ -2586,12 +4137,105 @@ J84_5_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					province_id = 2088 #Tolalkal/Gommoport
+					NOT = {
+						AND = {
+							country_or_non_sovereign_subject_holds = ROOT
+							num_of_units_in_province = {
+								amount = 20
+								who = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 2078 #Léembalkal/Zurzumexia
+					NOT = {
+						AND = {
+							country_or_non_sovereign_subject_holds = ROOT
+							num_of_units_in_province = {
+								amount = 20
+								who = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 2083 #K'il'uiolob/Mestikardu
+					NOT = {
+						AND = {
+							country_or_non_sovereign_subject_holds = ROOT
+							num_of_units_in_province = {
+								amount = 20
+								who = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 2554 #Varaendi
+					NOT = { has_building = university }
+				}
+				AND = {
+					province_id = 2502 #Uesrennu
+					NOT = { has_building = university }
+				}
+			}
 		}
 
 		trigger = {
+			2088 = { #Tolalkal/Gommoport
+				country_or_non_sovereign_subject_holds = ROOT
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			2078 = { #Léembalkal/Zurzumexia
+				country_or_non_sovereign_subject_holds = ROOT
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			2083 = { #K'il'uiolob/Mestikardu
+				country_or_non_sovereign_subject_holds = ROOT
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			2554 = { #Varaendi 
+				has_building = university
+			}
+			2502 = { #Uesrennu 
+				has_building = university
+			}
 		}
 
 		effect = {
+			2088 = { #Tolalkal/Gommoport
+				add_devastation = 15
+			}
+			2078 = { #Léembalkal/Zurzumexia
+				add_devastation = 15
+			}
+			2083 = { #K'il'uiolob/Mestikardu
+				add_devastation = 15
+			}
+			2500 = { #Royakottar
+				add_gnomish_minority_size_effect = yes
+				add_kobold_minority_size_effect = yes
+				add_goblin_minority_size_effect = yes
+				add_province_modifier = {
+					name = J84_triarchs_quarter
+					duration = -1
+				}
+			}
+			custom_tooltip = unlocked_artifice_invention_artifice_augmented_kotakompu_tt
+			set_country_flag = unlocked_artifice_invention_artifice_augmented_kotakompu
 		}
 	}
 
@@ -2604,12 +4248,123 @@ J84_5_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					if = {
+						limit = { exists = H30 } #Gommoport
+						is_capital_of = H30
+						H30 = { liberty_desire = 50 }
+					}
+					else = {
+						province_id = 2088 #Tolalkal/Gommoport
+						NOT = {
+							AND = {
+								NOT = { local_autonomy = 25 }
+								OR = {
+									has_building = fort_17th
+									has_building = fort_18th
+								}
+								has_building = university
+							}
+						}
+					}
+				}
+				AND = {
+					if = {
+						limit = { exists = H31 } #Zurzumexia
+						is_capital_of = H31
+						H31 = { liberty_desire = 50 }
+					}
+					else = {
+						province_id = 2078 #Léembalkal/Zurzumexia
+						NOT = {
+							AND = {
+								NOT = { local_autonomy = 25 }
+								OR = {
+									has_building = fort_17th
+									has_building = fort_18th
+								}
+								has_building = university
+							}
+						}
+					}
+				}
+				AND = {
+					if = {
+						limit = { exists = H32 } #Mestikardu
+						is_capital_of = H32
+						H32 = { liberty_desire = 50 }
+					}
+					else = {
+						province_id = 2083 #K'il'uiolob/Mestikardu
+						NOT = {
+							AND = {
+								NOT = { local_autonomy = 25 }
+								OR = {
+									has_building = fort_17th
+									has_building = fort_18th
+								}
+								has_building = university
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			OR = {
+				H30 = { #Gommoport
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
+				2088 = { #Tolalkal/Gommoport
+					NOT = { local_autonomy = 25 }
+					OR = {
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+					has_building = university
+				}
+			}
+			OR = {
+				H31 = { #Zurzumexia 
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
+				2078 = { #Léembalkal/Zurzumexia
+					NOT = { local_autonomy = 25 }
+					OR = {
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+					has_building = university
+				}
+			}
+			OR = {
+				H32 = { #Mestikardu
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
+				2083 = { #K'il'uiolob/Mestikardu
+					NOT = { local_autonomy = 25 }
+					OR = {
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+					has_building = university
+				}
+			}
+			treasury = 2000
+			adm_power = 200
+			dip_power = 200
+			mil_power = 200
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.28 #The Power of Yodhan
+			}
 		}
 	}
 

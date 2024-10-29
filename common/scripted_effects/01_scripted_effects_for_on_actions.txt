@@ -2594,6 +2594,26 @@ on_province_religion_changed_effect = {
 		}
 		remove_province_modifier = religious_zeal_at_conv
 	}
+	if = { #Taychendi Empire
+		limit = {
+			owner = { 
+				has_country_flag = J84_ravelianism_tolerated_flag 
+				religion = ravelian
+			}
+			religion = ravelian
+		}
+		add_province_modifier = {
+			name = J84_ravelianism_tolerated
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			has_province_modifier = J84_ravelianism_tolerated
+			NOT = { religion = ravelian }
+		}
+		remove_province_modifier = J84_ravelianism_tolerated
+	}
 }
 
 on_province_religion_converted_effect = {
@@ -7390,6 +7410,23 @@ startup_1444_effects = {
 				id = gisden.1 days = 30
 			}
 		}
+
+		#Taychendi Empire
+		if = {
+			limit = {
+				has_estate_privilege = estate_vampire_law_relic_shrouded_masquerade
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = precursor_relics
+				}
+				add_province_modifier = {
+					name = J84_masquerade_relics
+					duration = -1
+					hidden = yes
+				}
+			}
+		}
 	}
 }
 
@@ -7497,6 +7534,25 @@ on_province_owner_change_effect = {
 				}
 				add_province_modifier = {
 					name = wine_lord_wine
+					duration = -1
+					hidden = yes
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = { has_province_modifier = J84_masquerade_relics }
+			owner = { has_estate_privilege = estate_vampire_law_relic_shrouded_masquerade }
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					trade_goods = precursor_relics
+				}
+				add_province_modifier = {
+					name = J84_masquerade_relics
 					duration = -1
 					hidden = yes
 				}

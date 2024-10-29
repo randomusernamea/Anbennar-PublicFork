@@ -13491,3 +13491,23 @@ estate_church_validaunean_syncretism = {
 		}
 	}
 }
+
+#Taychendi Empire
+estate_church_supreme_imperial_cult = {
+	icon = privilege_seek_support_of_clergy
+	loyalty = 0.2
+	influence = -0.2
+	max_absolutism = 15
+	is_valid = { has_estate_privilege = estate_church_supreme_imperial_cult }
+	can_revoke = {
+		always = yes
+	}
+	benefits = {
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
+		monarch_military_power = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
