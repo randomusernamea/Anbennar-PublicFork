@@ -31,6 +31,7 @@ country_event = {
 				add_permanent_claim = ROOT
 			}
 			set_country_flag = artifice_limited_to_tier_1
+			research_speed = yes
 		}
 	}
 	option = {
@@ -71,7 +72,9 @@ country_event = {
 		}
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
-		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		tooltip = {
+			set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		}
 	}
 	option = {
 		name = flavor_giberd.10.b
@@ -116,7 +119,9 @@ country_event = {
 		}
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
-		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		tooltip = {
+			set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		}
 	}
 	option = {
 		name = flavor_giberd.10.c
@@ -133,7 +138,6 @@ country_event = {
 		# 	name = giberd_test_pos
 		# 	duration = 3650
 		# }
-		research_speed = yes
 		tooltip = {
 			bennonhill_area = {
 				add_permanent_claim = ROOT
@@ -144,7 +148,9 @@ country_event = {
 		}
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
-		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		tooltip = {
+			set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		}
 		hidden_effect = {
 			clr_country_flag = artifice_research_temporarily_disabled
 		}
