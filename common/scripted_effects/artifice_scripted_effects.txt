@@ -3398,7 +3398,8 @@ artifice_tiering_update = {
 		if = {
 			limit = {
 				is_year = 1500
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 2
@@ -3414,7 +3415,8 @@ artifice_tiering_update = {
 		else_if = {
 			limit = {
 				NOT = { is_year = 1500 }
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 4
@@ -3431,6 +3433,7 @@ artifice_tiering_update = {
 			limit = { 
 				is_year = 1550
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 2
@@ -3447,6 +3450,7 @@ artifice_tiering_update = {
 			limit = { 
 				NOT = { is_year = 1550 }
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 4
@@ -3470,7 +3474,8 @@ artifice_tiering_update = {
 		if = {
 			limit = {
 				is_year = 1500
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 3
@@ -3486,7 +3491,8 @@ artifice_tiering_update = {
 		else_if = {
 			limit = {
 				NOT = { is_year = 1500 }
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 6
@@ -3503,6 +3509,7 @@ artifice_tiering_update = {
 			limit = { 
 				is_year = 1550
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 3
@@ -3519,6 +3526,7 @@ artifice_tiering_update = {
 			limit = { 
 				NOT = { is_year = 1550 }
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 6
@@ -3542,7 +3550,8 @@ artifice_tiering_update = {
 		if = {
 			limit = {
 				is_year = 1500
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 6
@@ -3558,7 +3567,8 @@ artifice_tiering_update = {
 		else_if = {
 			limit = {
 				NOT = { is_year = 1500 }
-				has_country_flag = artifice_unlocked_basic 
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 12
@@ -3575,6 +3585,7 @@ artifice_tiering_update = {
 			limit = { 
 				is_year = 1550
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 6
@@ -3591,6 +3602,7 @@ artifice_tiering_update = {
 			limit = { 
 				NOT = { is_year = 1550 }
 				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
 				check_variable = {
 					which = artifice_level_progress
 					value = 12
@@ -4948,5 +4960,20 @@ artifice_unlock_random_invention_effect = {
 				}
 			}
 		}
+	}
+}
+
+
+display_research_limit_tt = {
+	if = {
+		limit = { has_country_flag = artifice_limited_to_tier_1 }
+		custom_tooltip = artifice_limited_to_tier_1_tt
+	}
+	else_if = {
+		limit = { has_country_flag = artifice_limited_to_tier_2 }
+		custom_tooltip = artifice_limited_to_tier_2_tt
+	}
+	else = {
+		custom_tooltip = artifice_limited_to_tier_3_tt
 	}
 }

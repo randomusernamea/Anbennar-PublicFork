@@ -2483,7 +2483,7 @@ giberd_artificer = {
 				base_production = 12
 			}
 			custom_trigger_tooltip = {
-				tooltip = atypical_artificers_tt
+				tooltip = giberd_atypical_artificers_tt
 				all_owned_province = {
 					OR = {
 						AND = {
@@ -2499,7 +2499,7 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			custom_tooltip = giberd_atypical_artificers_research_tt
+			custom_tooltip = giberd_30_capaticy_10_years_tt
 			hidden_effect = {
 				change_variable = {
 					which = ArtificeUpkeep
@@ -2510,11 +2510,12 @@ giberd_artificer = {
 					days = 1825
 				}
 			}
-			# TODO: unlock tier 3 inventions
 			add_country_modifier = {
 				name = giberd_atypical_artificers_research
 				duration = 3650
 			}
+			custom_tooltip = artifice_limited_to_tier_3_tt
+			clr_country_flag = artifice_limited_to_tier_2
 			271 = {
 				remove_province_modifier = ravelian_society
 				add_province_modifier = {
