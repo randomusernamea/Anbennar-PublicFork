@@ -535,31 +535,25 @@ giberd_konwell_conquest = {
 		}
 		position = 8
 		provinces_to_highlight = {
-			AND = {
-				region = esmaria_region
-				owned_by = ROOT
-				OR = {
-					AND = {
-						trade_goods = grain
-						NOT = {
+			owned_by = ROOT
+			region = esmaria_region
+			OR = {
+				AND = {
+					trade_goods = grain
+					NOT = {
+						AND = {
 							has_manpower_building_trigger = yes
-						}
-						NOT = {
 							has_building = farm_estate
-						}
-						NOT = {
 							base_production = 8
 						}
 					}
-					AND = {
-						trade_goods = livestock
-						NOT = {
+				}
+				AND = {
+					trade_goods = livestock
+					NOT = {
+						AND = {
 							has_manpower_building_trigger = yes
-						}
-						NOT = {
 							has_building = soldier_households
-						}
-						NOT = {
 							base_manpower = 8
 						}
 					}
@@ -573,9 +567,12 @@ giberd_konwell_conquest = {
 					OR = {
 						NOT = {
 							region = esmaria_region
+						}
+						NOT = {
 							trade_goods = grain
 						}
 						AND = {
+							region = esmaria_region
 							trade_goods = grain
 							has_manpower_building_trigger = yes
 							has_building = farm_estate
@@ -590,9 +587,12 @@ giberd_konwell_conquest = {
 					OR = {
 						NOT = {
 							region = esmaria_region
+						}
+						NOT = {
 							trade_goods = livestock
 						}
 						AND = {
+							region = esmaria_region
 							trade_goods = livestock
 							has_manpower_building_trigger = yes
 							has_building = soldier_households
@@ -1460,33 +1460,32 @@ giberd_ryalanar_conquest = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					OR = {
-						AND = {
-							is_capital = yes
-							owner = {
-								NOT = {
-									ROOT
-								}
-							}
-							continent = europe
-							OR = {
-								has_gnomish_majority_trigger = yes
-								has_gnomish_minority_trigger = yes
-							}
+					capital_scope = {
+						continent = europe
+					}
+					owner = {
+						NOT = {
+							tag = ROOT
 						}
-						owner = {
-							OR = {
-								culture_is_gnomish = yes
-								culture_is_dwarven = yes
+						OR = {
+							fast_owns_num_pops_of_race = {
+								race = gnomish
+								amount = 1
 							}
+							culture_is_gnomish = yes
+							culture_is_dwarven = yes
+						}
+					}
+					NOT = {
+						has_100_opinion_improved_relation = {
+							target = ROOT
 						}
 					}
 				}
 				AND = {
 					region = esmaria_region
-					OR = {
-						has_gnomish_majority_trigger = yes
-						has_gnomish_minority_trigger = yes
+					fast_has_pop_of_race = {
+						race = gnomish
 					}
 					NOT = {
 						base_production = 7
@@ -1513,9 +1512,8 @@ giberd_ryalanar_conquest = {
 								continent = europe
 							}
 							any_owned_province = {
-								OR = {
-									has_gnomish_majority_trigger = yes
-									has_gnomish_minority_trigger = yes
+								fast_has_pop_of_race = {
+									race = gnomish
 								}
 							}
 						}
@@ -1528,9 +1526,10 @@ giberd_ryalanar_conquest = {
 				esmaria_region = {
 					type = all
 					OR = {
-						AND = {
-							has_gnomish_majority_trigger = no
-							has_gnomish_minority_trigger = no
+						NOT = {
+							fast_has_pop_of_race = {
+								race = gnomish
+							}
 						}
 						base_production = 7
 						AND = {
@@ -1565,9 +1564,8 @@ giberd_ryalanar_conquest = {
 								continent = europe
 							}
 							any_owned_province = {
-								OR = {
-									has_gnomish_majority_trigger = yes
-									has_gnomish_minority_trigger = yes
+								fast_has_pop_of_race = {
+									race = gnomish
 								}
 							}
 						}
