@@ -680,9 +680,9 @@ J84_1_missions = {
 					}
 				}
 				AND = {
-					province_id = 1438 #Soruin
+					province_id = 1438 #Soruin Node
 					NOT = {
-						1438 = { #Soruin
+						1438 = { #Soruin Node
 							trade_share = {
 								country = ROOT
 								share = 30
@@ -691,9 +691,9 @@ J84_1_missions = {
 					}
 				}
 				AND = {
-					province_id = 1527 #Ruined Sea
+					province_id = 1527 #Ruined Sea Node
 					NOT = {
-						1527 = { #Ruined Sea
+						1527 = { #Ruined Sea Node
 							trade_share = {
 								country = ROOT
 								share = 30
@@ -734,13 +734,13 @@ J84_1_missions = {
 				value = 10
 				region = ruined_isles_region
 			}
-			1438 = { #Soruin
+			1438 = { #Soruin Node
 				trade_share = {
 					country = ROOT
 					share = 30
 				}
 			}
-			1527 = { #Ruined Sea
+			1527 = { #Ruined Sea Node
 				trade_share = {
 					country = ROOT
 					share = 30
@@ -2626,8 +2626,25 @@ J84_4_missions = {
 		provinces_to_highlight = {  
 			OR = {
 				AND = {
-					province_id = 1741 #Kheionai Node
-					1741 = { #Kheionai Node
+					province_id = 1741 #Alecand Node
+					1741 = { #Alecand Node
+						OR = {
+							NOT = {
+								trade_share = {
+									country = ROOT
+									share = 50
+								}
+							}
+							trade_share = {
+								country = PIR
+								share = 1
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 2595 #Devand Node
+					2595 = { #Devand Node
 						OR = {
 							NOT = {
 								trade_share = {
@@ -2660,25 +2677,8 @@ J84_4_missions = {
 					}
 				}
 				AND = {
-					province_id = 1546 #Korrimutren/Oremvand Node
-					1546 = { #Korrimutren/Oremvand Node
-						OR = {
-							NOT = {
-								trade_share = {
-									country = ROOT
-									share = 50
-								}
-							}
-							trade_share = {
-								country = PIR
-								share = 1
-							}
-						}
-					}
-				}
-				AND = {
-					province_id = 1544 #Taychend/Orenkoraim Node
-					1544 = { #Taychend/Orenkoraim Node
+					province_id = 1544 #Kalavend Node
+					1544 = { #Kalavend Node
 						OR = {
 							NOT = {
 								trade_share = {
@@ -2697,7 +2697,7 @@ J84_4_missions = {
 		}
 
 		trigger = {
-			1741 = { #Kheionai Node
+			1741 = { #Alecand Node
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -2709,7 +2709,7 @@ J84_4_missions = {
 					}
 				}
 			}
-			1731 = { #Ameion
+			2595 = { #Devand Node
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -2721,7 +2721,7 @@ J84_4_missions = {
 					}
 				}
 			}
-			1546 = { #Korrimutren/Oremvand
+			1731 = { #Ameion Node
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -2733,7 +2733,7 @@ J84_4_missions = {
 					}
 				}
 			}
-			1544 = { #Taychend/Orenkoraim
+			1544 = { #Kalavend Node
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -2829,8 +2829,8 @@ J84_4_missions = {
 		provinces_to_highlight = {  
 			OR = {
 				AND = {
-					province_id = 1544 #Taychend/Orenkoraim
-					1544 = { #Taychend/Orenkoraim
+					province_id = 1544 #Kalavend Node
+					1544 = { #Kalavend Node
 						NOT = {
 							trade_share = {
 								country = ROOT
@@ -2840,8 +2840,8 @@ J84_4_missions = {
 					}
 				}
 				AND = {
-					province_id = 1607 #Dry Coast
-					1607 = { #Dry Coast
+					province_id = 1607 #Dry Coast Node
+					1607 = { #Dry Coast Node
 						NOT = {
 							trade_share = {
 								country = ROOT
@@ -2851,8 +2851,8 @@ J84_4_missions = {
 					}
 				}
 				AND = {
-					province_id = 1539 #East Effelai
-					1539 = { #East Effelai
+					province_id = 1539 #East Effelai Node
+					1539 = { #East Effelai Node
 						NOT = {
 							trade_share = {
 								country = ROOT
@@ -2885,19 +2885,19 @@ J84_4_missions = {
 					}
 				}
 			}
-			1544 = { #Taychend/Orenkoraim
+			1544 = { #Kalavend Node
 				trade_share = {
 					country = ROOT
 					share = 50
 				}
 			}
-			1607 = { #Dry Coast
+			1607 = { #Dry Coast Node
 				trade_share = {
 					country = ROOT
 					share = 50
 				}
 			} 
-			1539 = { #East Effelai
+			1539 = { #East Effelai Node
 				trade_share = {
 					country = ROOT
 					share = 50
@@ -4001,8 +4001,8 @@ J84_5_missions = {
 					NOT = { owned_by = ROOT }
 				}
 				AND = {
-					province_id = 1741 #Kheionai Node
-					1741 = { #Kheionai Node
+					province_id = 1741 #Alecand Node
+					1741 = { #Alecand Node
 						NOT = {
 							trade_share = {
 								country = ROOT
@@ -4040,7 +4040,7 @@ J84_5_missions = {
 				type = all
 				owned_by = ROOT
 			}
-			1741 = { #Kheionai Node
+			1741 = { #Alecand Node
 				trade_share = {
 					country = ROOT
 					share = 75
