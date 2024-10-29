@@ -35,13 +35,13 @@ G48_slot_1 = {
 		effect = {  
 			add_country_modifier = {
 				name = G48_regular_navy_drills
-				duration = 5478 #15 Years
+				duration = 5475 #15 Years
 			}
 			create_admiral = { tradition = 50 }
 			G59 = {
 				add_country_modifier = {
 					name = G48_regular_navy_drills
-					duration = 5478 #15 Years
+					duration = 5475 #15 Years
 				}
 				create_admiral = { tradition = 50 }
 			}
@@ -139,33 +139,55 @@ G48_slot_1 = {
 		} 
 
 		effect = {  
-			simple_dynamic_effect = {
-				first_custom_tooltip = G48_colonists_or_schemers_in_power_tt
-				first_limit = "
+			custom_tooltip = G48_colonists_or_schemers_in_power_tt
+			if = {
+				limit = {
 					OR = { 
 						has_country_flag = colonists_in_power
 						has_country_flag = schemers_in_power
 					}
-				" 
-				first_effect = " 
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect =  {
 					add_mercantilism = 6
 					add_years_of_trade_income = { 
 						years = 4
 						custom_tooltup = gainFourYearsTradeIncome
 					}
-				"
-				second_custom_tooltip = G48_colonists_not_in_power_tt
-				second_limit = "NOT = { 
-				has_country_flag = colonists_in_power 
-				has_country_flag = schemers_in_power
-				}"
-				second_effect =" 
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_mercantilism = 6
+				add_years_of_trade_income = { 
+					years = 4
+					custom_tooltup = gainFourYearsTradeIncome
+				}
+			}
+			custom_tooltip = G48_colonists_not_in_power_tt
+			if = {
+				limit = {
+					NOT = { 
+						has_country_flag = colonists_in_power
+						has_country_flag = schemers_in_power
+					}
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
 					add_mercantilism = 3
 					add_years_of_trade_income = { 
 						years = 2
-						custom_tooltup = gainTwoYearsTradeIncome
+						custom_tooltup = gainFourYearsTradeIncome
 					}
-				"
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_mercantilism = 3
+				add_years_of_trade_income = { 
+					years = 2
+					custom_tooltup = gainFourYearsTradeIncome
+				}
 			}
 		} 
 	}
@@ -250,7 +272,7 @@ G48_slot_2 = {
 			2736 = { has_manpower_building_trigger = yes }
 			all_known_country = {
 				OR = {
-					NOT = { capital_scope = { region = alecand_region } }
+					is_a_kheion = yes
 					NOT = { army_size = ROOT }
 				}
 			}
@@ -308,7 +330,24 @@ G48_slot_2 = {
 			G48_contenders_no_more
 			G48_cleaved_dominance
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = oktikheion_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2731
+						province_id = 2731
+					}
+					has_shipyard_building_trigger = no
+				}
+				owner = {
+					tag = G47
+				}
+			}
+		} 
 
 		trigger = { 
 			oktikheion_area = {
@@ -350,11 +389,33 @@ G48_slot_3 = {
 	G48_gaining_an_edge = {
 		icon = mission_vedic_education
 		position = 2
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = lokemeion_area
+					NOT = { owned_by = ROOT }
+				}
+				owner = { tag = G49 }
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			lokemeion_area = {
+				owned_by = ROOT
+			}
+			G49 = { exists = no }
+			any_known_country = {
+				is_a_kheion = yes
+				NOT = { tech_difference = 1 }
+				has_been_insulted_by_root = yes
+			}
+			dip_power = 100
+		} 
 
-		effect = {  } 
+		effect = {  
+			custom_tooltip = G48_militants_bonus_tt
+			country_event = { id = flavour_kherka.4 }
+		} 
 	}
 
 	G48_better_bronze = {
@@ -364,22 +425,82 @@ G48_slot_3 = {
 			G48_gaining_an_edge
 			G48_beginning_of_new_heights
 		}
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = eltikan_area 
+					OR = {
+						NOT = { owned_by = ROOT }
+						has_owner_religion = no
+						OR = {
+							has_tax_building_trigger = no
+							has_owner_accepted_culture = no
+						}
+					}
+				}
+				AND = {
+					province_id = 2773
+					OR = {
+						has_production_building_trigger = no
+						NOT = { base_production = 15 }
+					}
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			eltikan_area = {
+				owned_by = ROOT
+				has_owner_religion = yes
+			}
+			OR = {
+				eltikan_area = {
+					has_tax_building_trigger = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			2773 = {
+				has_production_building_trigger = yes
+				base_production = 15
+			}
+		} 
 
-		effect = {  } 
+		effect = {  
+			country_event = { id = flavour_kherka.5 }
+		} 
 	}
 
 	G48_divining_ores = {
 		icon = mission_empowerment
 		position = 4
 		required_missions = { G48_better_bronze } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = arpedifer_area 
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2773
+						province_id = 2728
+					}
+					NOT = { has_building = mage_tower }
+				}
+			}
+		} 
 
-		trigger = {  } 
+		trigger = {  
+			arpedifer_area = {
+				owned_by = ROOT
+			}
+			G51 = { exists = no }
+			2728 = { has_building = mage_tower }
+			2773 = { has_building = mage_tower }
+			is_scrying = yes #MAGICREWORK
+		} 
 
-		effect = {  } 
+		effect = { country_event = { id = flavour_kherka.6 } }
 	}
 
 	G48_looking_beyond = {
@@ -391,9 +512,52 @@ G48_slot_3 = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {  
+			any_subject_country = {
+				any_owned_province = {
+					any_neighbor_province = {
+						region = mteibas_valley_region
+					}
+				}
+			}
+			if = {
+				limit = {
+					2666 = {
+						owner = { culture_group = devandi_ruinborn_elf }
+					}
+				}
+				OR = {
+					G63 = { has_100_opinion_improved_relation = yes }
+					any_known_country = {
+						owns = 2666
+						has_100_opinion_improved_relation = yes
+					}
+				}
+			}
+			manpower = 10
+			treasury = 200
+		} 
 
-		effect = {  } 
+		effect = {  
+			if = {
+				limit = {
+					2666 = {
+						owner = { culture_group = devandi_ruinborn_elf }
+					}
+				}
+				country_event = { id = flavour_kherka.7 }
+			}
+			else = {
+				set_country_flag = G48_hfaesban_conquer
+				mteibas_valley_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		} 
 	}
 }
 G48_slot_4 = {
