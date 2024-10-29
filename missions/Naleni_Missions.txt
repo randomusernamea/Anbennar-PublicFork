@@ -20,7 +20,10 @@ Naleni_branch_one = {
 				has_production_building_trigger = yes
 				has_tax_building_trigger = yes
 				culture = metobesebi
-				province_has_center_of_trade_of_level = 2
+				OR = {
+					province_has_center_of_trade_of_level = 2
+					province_has_center_of_trade_of_level = 3
+				}
 			}
 			treasury = 200
 		}
@@ -247,10 +250,7 @@ Naleni_branch_two = {
 							area = beri_gnidi_area
 						}
 						NOT = {
-							OR = {
-								culture = naleni_harpy
-								religion = the_hunt
-							}
+							culture = naleni_harpy
 						}
 					}
 					change_culture = metobesebi
@@ -988,10 +988,13 @@ naleni_branch_three_p2 = {
 		}
 
 		effect = {
+			hidden_effect = {
+				remove_country_modifier = L55_on_wing_and_wave
+			}
 			6061 = { add_permanent_claim = ROOT } 
 			5581 = { add_permanent_claim = ROOT } 
 			add_country_modifier = {
-				name = "L55_on_wing_and_wave"
+				name = L55_on_wing_and_wave
 				duration = -1
 			}
 			decrease_monstrous_10 = yes
@@ -1091,23 +1094,26 @@ naleni_branch_three_p2 = {
 		}
 
 		effect = {
+			custom_tooltip = across_the_gulf_tt
 			add_country_modifier = {
 				name = "L55_rahens_riches"
 				duration = 36500
 			}
-			every_known_country = {
-				limit = {
-					capital_scope = {
-						OR = {
-							superregion = east_sarhal_superregion
-							superregion = rahen_superregion
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								superregion = east_sarhal_superregion
+								superregion = rahen_superregion
+							}
 						}
 					}
-				}
-				add_aggressive_expansion = {
-					who = ROOT
-					value = -25
-					apply_calc = yes
+					add_aggressive_expansion = {
+						who = ROOT
+						value = -25
+						apply_calc = yes
+					}
 				}
 			}
 		}
@@ -1333,7 +1339,7 @@ naleni_branch_four_p2 = {
 			6040 = {
 				add_permanent_claim = ROOT
 			}
-			4847 = {
+			4837 = {
 				add_permanent_claim = ROOT
 			}
 			6674 = {

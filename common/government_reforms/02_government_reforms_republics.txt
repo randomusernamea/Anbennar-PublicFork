@@ -5569,6 +5569,7 @@ pirate_king_reform = {
 	legacy_equivalent = pirate_kingdom
 	potential = {
 		has_government_attribute = is_pirate_republic_reform
+		NOT = { has_reform = matriarchal_pirate_republic }
 	}
 	modifiers = {
 		pr_captains_influence = 0.1
@@ -7425,6 +7426,8 @@ matriarchal_pirate_republic = {
 		cannot_become_dictatorship = yes
 		disables_regular_estates = yes #is that wanted?
 		anb_special_elections = yes
+		disabled_expelling_human = yes
+		disabled_purging_human = yes
 	}
 }
 
