@@ -944,8 +944,8 @@ giberd_konwell_conquest = {
 		effect = {
 			custom_tooltip = giberd_70_capacity_10_years_tt
 			hidden_effect = {
-				subtract_variable = {
-					which = StaticArtificePoints
+				change_variable = {
+					which = ArtificeUpkeep
 					value = 70
 				}
 				country_event = {
@@ -1114,8 +1114,8 @@ giberd_ryalanar_conquest = {
 			}
 			custom_tooltip = giberd_gds_loopeng_gedsandde_tt
 			hidden_effect = {
-				subtract_variable = {
-					which = StaticArtificePoints
+				change_variable = {
+					which = ArtificeUpkeep
 					value = 20
 				}
 				country_event = {
@@ -2503,8 +2503,8 @@ giberd_artificer = {
 		effect = {
 			custom_tooltip = giberd_atypical_artificers_research_tt
 			hidden_effect = {
-				subtract_variable = {
-					which = StaticArtificePoints
+				change_variable = {
+					which = ArtificeUpkeep
 					value = 30
 				}
 				country_event = {
@@ -2598,8 +2598,8 @@ giberd_artificer = {
 					which = giberd_understanding_the_fragment_capacity
 					which = MaxArtificePoints
 				}
-				subtract_variable = {
-					which = StaticArtificePoints
+				change_variable = {
+					which = ArtificeUpkeep
 					which = giberd_understanding_the_fragment_capacity
 				}
 				country_event = {

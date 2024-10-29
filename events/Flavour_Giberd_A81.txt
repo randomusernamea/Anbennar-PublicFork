@@ -225,8 +225,8 @@ country_event = {
 			duration = -1
 		}
 		hidden_effect = {
-			change_variable = {
-				which = StaticArtificePoints
+			subtract_variable = {
+				which = ArtificeUpkeep
 				value = 20
 			}
 		}
@@ -246,8 +246,8 @@ country_event = {
 		custom_tooltip = giberd_increases_our_artifice_upkeep_by_20
 		custom_tooltip = artificer_points_upkeep_tt
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 20
 			}
 		}
@@ -325,8 +325,8 @@ country_event = {
 		}
 		A81 = {
 			hidden_effect = {
-				change_variable = {
-					which = StaticArtificePoints
+				subtract_variable = {
+					which = ArtificeUpkeep
 					value = 20
 				}
 			}
@@ -812,8 +812,8 @@ country_event = {
 		add_mil_power = -75
 		custom_tooltip = giberd_10_capacity_10_years_tt
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 10
 			}
 			country_event = {
@@ -842,14 +842,13 @@ country_event = {
 		custom_tooltip = giberd_factions_explain_tt
 		giberd_factions_mechanists_increase = yes
 		add_treasury = -1000
-		# TODO: -20 capacity for 10 years
 		add_adm_power = -150
 		add_dip_power = -150
 		add_mil_power = -150
 		custom_tooltip = giberd_20_capacity_10_years_tt
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 20
 			}
 			country_event = {
@@ -920,6 +919,7 @@ country_event = {
 		# brillites
 		name = flavor_giberd.31.b
 		goto = 265
+		custom_tooltip = flavor_giberd.31.b_tt
 		giberd_factions_brillites_increase = yes
 		country_event = {
 			id = flavor_giberd.32
@@ -968,13 +968,7 @@ country_event = {
 					}
 				}
 			}
-			hidden_effect = {
-				change_variable = {
-					which = StaticArtificePoints
-					value = 3
-				}
-			}
-			update_artifice_points = yes
+			mission_reward_artifice_points_3 = yes
 		}
 	}
 	option = {
@@ -989,9 +983,11 @@ country_event = {
 			}
 			remove_province_modifier = giberd_damestear_port_low
 			hidden_effect = {
-				subtract_variable = {
-					which = StaticArtificePoints
-					value = 3
+				hidden_effect = {
+					change_variable = {
+						which = StaticArtificePoints
+						value = -3
+					}
 				}
 				update_artifice_points = yes
 			}
@@ -1087,8 +1083,8 @@ country_event = {
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_silverforge_hold_large
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 30
 			}
 		}
@@ -1118,8 +1114,8 @@ country_event = {
 		set_country_flag = giberd_silverforge_hold_small
 		custom_tooltip = artificer_points_upkeep_tt
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 10
 			}
 		}
@@ -1179,8 +1175,8 @@ country_event = {
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_damescrown_due_large
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 10
 			}
 		}
@@ -1206,8 +1202,8 @@ country_event = {
 		custom_tooltip = artificer_points_upkeep_tt
 		set_country_flag = giberd_damescrown_due_small
 		hidden_effect = {
-			subtract_variable = {
-				which = StaticArtificePoints
+			change_variable = {
+				which = ArtificeUpkeep
 				value = 5
 			}
 		}
@@ -1558,8 +1554,8 @@ country_event = {
 	hidden = yes
 	option = {
 		name = flavor_giberd.51.a
-		change_variable = {
-			which = StaticArtificePoints
+		subtract_variable = {
+			which = ArtificeUpkeep
 			value = 30
 		}
 	}
@@ -1575,8 +1571,8 @@ country_event = {
 	hidden = yes
 	option = {
 		name = flavor_giberd.52.a
-		change_variable = {
-			which = StaticArtificePoints
+		subtract_variable = {
+			which = ArtificeUpkeep
 			which = giberd_understanding_the_fragment_capacity
 		}
 	}
@@ -1592,8 +1588,8 @@ country_event = {
 	hidden = yes
 	option = {
 		name = flavor_giberd.53.a
-		change_variable = {
-			which = StaticArtificePoints
+		subtract_variable = {
+			which = ArtificeUpkeep
 			value = 70
 		}
 	}
@@ -1609,8 +1605,8 @@ country_event = {
 	hidden = yes
 	option = {
 		name = flavor_giberd.54.a
-		change_variable = {
-			which = StaticArtificePoints
+		subtract_variable = {
+			which = ArtificeUpkeep
 			value = 10
 		}
 	}
@@ -1627,7 +1623,7 @@ country_event = {
 	option = {
 		name = flavor_giberd.55.a
 		subtract_variable = {
-			which = StaticArtificePoints
+			which = ArtificeUpkeep
 			value = 20
 		}
 	}
@@ -1648,8 +1644,8 @@ country_event = {
 				has_country_flag = giberd_silverforge_hold_large
 			}
 			clr_country_flag = giberd_silverforge_hold_large
-			change_variable = {
-				which = StaticArtificePoints
+			subtract_variable = {
+				which = ArtificeUpkeep
 				value = 30
 			}
 		}
@@ -1658,8 +1654,8 @@ country_event = {
 				has_country_flag = giberd_silverforge_hold_small
 			}
 			clr_country_flag = giberd_silverforge_hold_small
-			change_variable = {
-				which = StaticArtificePoints
+			subtract_variable = {
+				which = ArtificeUpkeep
 				value = 10
 			}
 		}
@@ -1681,8 +1677,8 @@ country_event = {
 				has_country_flag = giberd_damescrown_due_large
 			}
 			clr_country_flag = giberd_damescrown_due_large
-			change_variable = {
-				which = StaticArtificePoints
+			subtract_variable = {
+				which = ArtificeUpkeep
 				value = 10
 			}
 		}
@@ -1691,8 +1687,8 @@ country_event = {
 				has_country_flag = giberd_damescrown_due_small
 			}
 			clr_country_flag = giberd_damescrown_due_small
-			change_variable = {
-				which = StaticArtificePoints
+			subtract_variable = {
+				which = ArtificeUpkeep
 				value = 5
 			}
 		}
