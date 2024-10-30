@@ -111,6 +111,14 @@ country_event = { #Shift The Tide
                     duration = -1
                 }
             }
+            capital_scope = {
+                add_unit_construction = {
+                    type = geobukseon
+                    amount = 5
+                    speed = 0.5
+                    cost = 0
+                }
+            }
         }
         if = {
             limit = {
@@ -261,11 +269,15 @@ country_event = { #Extensive Prospecting
                 30 = { change_trade_goods = gems }
                 5 = { change_trade_goods = gold }
             }
+            add_province_modifier = {
+                name = G48_new_mines
+                duration = 5475 #15 years
+            }
         }
     }
 }
 
-country_event = { #Extensive Prospecting
+country_event = { #Edge Of The Valley
 	id = flavour_kherka.7
 	title = flavour_kherka.7.t
 	desc = flavour_kherka.7.d
@@ -277,8 +289,170 @@ country_event = { #Extensive Prospecting
 
     option  = {
         name = flavour_kherka.7.a #
+        country_event = { id = flavour_kherka.8 days = 30 }
     }
 }
+
+country_event = { #A Traveler's Welcome
+	id = flavour_kherka.8
+	title = flavour_kherka.8.t
+	desc = flavour_kherka.8.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = {
+        name = flavour_kherka.8.a #
+        if = {
+            limit = {
+                G63 = { exists = yes }
+            }
+            G63 = { country_event = { id = flavour_kherka.9 } }
+        }
+        else = { 
+            2666 = { 
+                owner = { country_event = { id = flavour_kherka.9 } }
+            }
+        }
+    }
+}
+
+country_event = { #An Offer Of Knowledge
+	id = flavour_kherka.9
+	title = flavour_kherka.9.t
+	desc = flavour_kherka.9.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = { 
+        name = flavour_kherka.9.a #Accept
+        ai_chance = {
+            factor = 100
+        }
+        FROM = { country_event = { id = flavour_kherka.10 days = 30 } }
+        capital_scope = {
+            if = {
+	        	limit = { FROM = { has_institution = feudalism } }
+	        	add_institution_embracement = { which = feudalism value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = renaissance } }
+	        	add_institution_embracement = { which = renaissance value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = new_world_i } }
+	        	add_institution_embracement = { which = new_world_i value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = printing_press } }
+	        	add_institution_embracement = { which = printing_press value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = global_trade } }
+	        	add_institution_embracement = { which = global_trade value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = manufactories } }
+	        	add_institution_embracement = { which = manufactories value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = enlightenment } }
+	        	add_institution_embracement = { which = enlightenment value = 100 }
+	        }
+	        if = {
+	        	limit = { FROM = { has_institution = industrialization } }
+	        	add_institution_embracement = { which = industrialization value = 100 }
+	        }
+        }
+        add_country_modifier = {
+            name = G48_blue_friend
+            duration = -1
+        }
+    }
+    option  = { 
+        name = flavour_kherka.9. #nope
+        ai_chance = {
+            factor = 0
+        }
+        FROM = { country_event = { id = flavour_kherka.11 days = 30 } }
+    }
+}
+
+country_event = { #Cementing Our Bond
+	id = flavour_kherka.10
+	title = flavour_kherka.10.t
+	desc = flavour_kherka.10.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = { 
+        name = flavour_kherka.10.a #Yipee
+        add_country_modifier = {
+            name = G48_magic_and_steel
+            duration = -1
+        }
+    }
+}
+
+country_event = { #A Bitter Rejection
+	id = flavour_kherka.11
+	title = flavour_kherka.11.t
+	desc = flavour_kherka.11.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = { 
+        name = flavour_kherka.11.a #Sad
+        set_country_flag = G48_hfaesban_conquer
+        custom_tooltip = G48_hfaesban_conquer_tt
+		tooltip = {
+			add_country_modifier = {
+                name = G48_magic_and_steel
+                duration = -1
+            }
+		}
+		mteibas_valley_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+    }
+}
+
+country_event = { #Riches From Below
+	id = flavour_kherka.12
+	title = flavour_kherka.12.t
+	desc = flavour_kherka.12.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {}
+
+    option  = { 
+        name = flavour_kherka.12.a #Yipee
+        kherka_area = {
+            add_base_tax = 1
+            add_base_production = 1
+            add_base_manpower = 1
+        }
+        set_country_flag = G48_riches_fire
+    }
+}
+
 
 #Election Stuff
 country_event = { 
