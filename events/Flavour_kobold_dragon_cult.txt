@@ -490,10 +490,29 @@ country_event = {
 		}
 	}
 
-## UPGRADED
+## UPGRADED: LOCKED OUT
 option = {
 	name = flavour_kobold_dragon_cult.1.c
-	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = red
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = red
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
@@ -502,10 +521,13 @@ option = {
 			requirebasic = yes
 		}
 	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = red
-		SLOT = 2
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = red
+			SLOT = 2
+			UPGRADE = upgraded
+		}
 	}
 }
 
@@ -521,10 +543,34 @@ option = {
 		}
 	}
 	
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = red
-		SLOT = 3
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = red
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 1
+			UPGRADE = upgraded
+		}
 	}
 }
 
@@ -539,10 +585,13 @@ option = {
 			requirebasic = yes
 		}
 	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = blue
-		SLOT = 2
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 2
+			UPGRADE = upgraded
+		}
 	}
 }
 
@@ -557,10 +606,34 @@ option = {
 			requirebasic = yes
 		}
 	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = blue
-		SLOT = 3
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree #LEX DO THIS
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = green
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = green
+			SLOT = 1
+			UPGRADE = upgraded
+		}
 	}
 }
 
@@ -575,10 +648,13 @@ option = {
 			requirebasic = yes
 		}
 	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = green
-		SLOT = 2
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = green
+			SLOT = 2
+			UPGRADE = upgraded
+		}
 	}
 }
 
@@ -593,16 +669,167 @@ option = {
 			requirebasic = yes
 		}
 	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = green
-		SLOT = 3
-		UPGRADE = upgraded
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = green
+			SLOT = 3
+			UPGRADE = upgraded
+		}
 	}
 }
 
 option = {
 	name = flavour_kobold_dragon_cult.1.c
 	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = white
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = white
+			SLOT = 2
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = white
+			SLOT = 3
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = upgrade_comes_from_mission_tree 
+			always = no
+		}
+	}
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 2
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = upgrade_comes_from_mission_tree 
+			always = no
+		}
+	}
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 3
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	custom_tooltip = upgrade_comes_from_mission_tree 
+	tooltip = {
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = black
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+		COLOUR = black
+		SLOT = 1
+		UPGRADE = upgraded
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
@@ -641,33 +868,15 @@ option = {
 	
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
-			COLOUR = white
-			SLOT = 2
+			COLOUR = purple
+			SLOT = 1
 			UPGRADE = upgraded
 			requirebasic = yes
 		}
 	}
 	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = white
-		SLOT = 2
-		UPGRADE = upgraded
-	}
-}
-
-option = {
-	name = flavour_kobold_dragon_cult.1.c
-	
-	trigger = {
-		can_unlock_kobold_cult_for_color_slot_upgrade = {
-			COLOUR = white
-			SLOT = 3
-			UPGRADE = upgraded
-			requirebasic = yes
-		}
-	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = white
-		SLOT = 3
+		COLOUR = purple
+		SLOT = 1
 		UPGRADE = upgraded
 	}
 }
@@ -714,6 +923,24 @@ option = {
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+		COLOUR = brown
+		SLOT = 1
+		UPGRADE = upgraded
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = brown
 			SLOT = 2
 			UPGRADE = upgraded
 			requirebasic = yes
@@ -750,6 +977,24 @@ option = {
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+		COLOUR = brass
+		SLOT = 1
+		UPGRADE = upgraded
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = brass
 			SLOT = 2
 			UPGRADE = upgraded
 			requirebasic = yes
@@ -785,33 +1030,15 @@ option = {
 	
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
-			COLOUR = copper
-			SLOT = 2
+			COLOUR = bronze
+			SLOT = 1
 			UPGRADE = upgraded
 			requirebasic = yes
 		}
 	}
 	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = copper
-		SLOT = 2
-		UPGRADE = upgraded
-	}
-}
-
-option = {
-	name = flavour_kobold_dragon_cult.1.c
-	
-	trigger = {
-		can_unlock_kobold_cult_for_color_slot_upgrade = {
-			COLOUR = copper
-			SLOT = 3
-			UPGRADE = upgraded
-			requirebasic = yes
-		}
-	}
-	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-		COLOUR = copper
-		SLOT = 3
+		COLOUR = bronze
+		SLOT = 1
 		UPGRADE = upgraded
 	}
 }
@@ -848,6 +1075,24 @@ option = {
 	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 		COLOUR = bronze
 		SLOT = 3
+		UPGRADE = upgraded
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+		COLOUR = silver
+		SLOT = 1
 		UPGRADE = upgraded
 	}
 }
@@ -895,6 +1140,24 @@ option = {
 	trigger = {
 		can_unlock_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
+			SLOT = 1
+			UPGRADE = upgraded
+			requirebasic = yes
+		}
+	}
+	unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+		COLOUR = gold
+		SLOT = 1
+		UPGRADE = upgraded
+	}
+}
+
+option = {
+	name = flavour_kobold_dragon_cult.1.c
+	
+	trigger = {
+		can_unlock_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = gold
 			SLOT = 2
 			UPGRADE = upgraded
 			requirebasic = yes
@@ -924,9 +1187,6 @@ option = {
 		UPGRADE = upgraded
 	}
 }
-
-
-
 	option = {
 		name = flavour_kobold_dragon_cult.1.a
 		

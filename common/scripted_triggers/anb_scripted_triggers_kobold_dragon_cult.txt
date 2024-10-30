@@ -2,19 +2,6 @@ has_unlocked_kobold_cult_for_color_slot_upgrade = {
 	has_country_flag = unlocked_$COLOUR$_dragon_$SLOT$_$UPGRADE$
 }
 
-# has_unlocked_all_kobold_cults = { #LEX NOTE: not working right
-# 	has_unlocked_kobold_cult_for_color_slot_upgrade = {
-# 		CONDITION = AND
-# 		SLOT = 2
-# 		UPGRADE = base
-# 	}
-# 	has_unlocked_kobold_cult_for_color_slot_upgrade = {
-# 		CONDITION = AND
-# 		SLOT = 3
-# 		UPGRADE = base
-# 	}
-# }
-
 can_unlock_kobold_cult_for_color_slot_upgrade = {
 	OR = {
 		has_church_aspect = $COLOUR$_dragon_1_base
@@ -40,9 +27,4 @@ can_unlock_kobold_cult_for_color_slot_upgrade = {
 	}
 	]
 }
-
-has_unlocked_kobold_cult_for_color_slot_upgrade = {
-	has_country_flag = unlocked_$COLOUR$_dragon_$SLOT$_$UPGRADE$
-}
-
 
