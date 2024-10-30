@@ -177,7 +177,7 @@ G48_slot_1 = {
 					add_mercantilism = 3
 					add_years_of_trade_income = { 
 						years = 2
-						custom_tooltup = gainFourYearsTradeIncome
+						custom_tooltip = gainFourYearsTradeIncome
 					}
 				}
 			}
@@ -186,7 +186,7 @@ G48_slot_1 = {
 				add_mercantilism = 3
 				add_years_of_trade_income = { 
 					years = 2
-					custom_tooltup = gainFourYearsTradeIncome
+					custom_tooltip = gainFourYearsTradeIncome
 				}
 			}
 		} 
@@ -764,8 +764,8 @@ G48_slot_4 = {
 				remove_province_modifier = G48_influx_of_capital_2
 				upgrade_building = { production = yes }
 				build_production_manufactory = {
-					speed = 1
-					cost = 0
+					SPEED = 1
+					COST = 0
 				}
 			}
 			if = {
