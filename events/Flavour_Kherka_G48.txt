@@ -170,43 +170,51 @@ country_event = { #Scrolls Of Knowledge
             add_treasury = 75
             change_innovativeness = 3
         }
-        geneltik_area = {
-            limit = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
+        G60 = {
+            every_owned_province = {
+                limit = {
+                    NOT = { owned_by = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
             }
-            add_permanent_claim = ROOT
         }
     }
 
     option  = {
         name = flavour_kherka.b.a #Leave It
-        geneltik_area = {
-            limit = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
+        G60 = {
+            every_owned_province = {
+                limit = {
+                    NOT = { owned_by = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
             }
-            add_permanent_claim = ROOT
         }
     }
 
         option  = {
         name = flavour_kherka.b.a #Leave It
         add_dip_power = -100
-        add_institution_embracement = {
-            which = renaissance 
-            value = 50
-        }
-        add_institution_embracement = {
-            which = new_world_i 
-            value = 50
-        }
-        geneltik_area = {
-            limit = {
-                NOT = { owned_by = ROOT }
-                NOT = { is_core = ROOT }
+        capital_scope = {
+            add_institution_embracement = {
+                which = renaissance 
+                value = 50
             }
-            add_permanent_claim = ROOT
+            add_institution_embracement = {
+                which = new_world_i 
+                value = 50
+            }
+        }
+        G60 = {
+            every_owned_province = {
+                limit = {
+                    NOT = { owned_by = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
         }
     }
 }
