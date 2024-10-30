@@ -4501,6 +4501,67 @@ on_war_declaration_effect = {
 		}
 		clr_country_flag = active_frenzy_flg
 	}
+	if = {
+		limit = {
+			tag = A81
+		}
+		if = {
+			limit = {
+				FROM = {
+					owns = 234
+				}
+			}
+			234 = {
+				remove_province_modifier = giberd_damescrown_wind_tower
+				owner = {
+					add_opinion = {
+						who = ROOT
+						modifier = giberd_wind_tower_opinion_up
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owns = 9
+				}
+				has_country_modifier = giberd_paying_the_moonisle
+			}
+			265 = {
+				change_trade_goods = cloth
+				clr_province_flag = permanent_damestear
+				remove_province_modifier = giberd_damestear_port_high
+			}
+			remove_country_modifier = giberd_paying_the_moonisle
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owns = 280
+				}
+				has_country_modifier = giberd_estallen_share
+			}
+			remove_country_modifier = giberd_estallen_share
+			home_trade_node_effect_scope = {
+				remove_trade_modifier = {
+					who = ROOT
+					key = giberd_estallen_trade_deal
+				}
+				remove_trade_modifier = {
+					who = A93
+					key = giberd_estallen_trade_deal
+				}
+				every_trade_node_member_province = {
+					limit = { owned_by = A93 }
+					remove_province_modifier = giberd_business_ventures
+				}
+			}
+		}
+		else_if = {
+
+		}
+	}
 }
 
 remove_all_age_of_discovery_modifiers = {

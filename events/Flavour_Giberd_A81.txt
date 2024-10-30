@@ -913,12 +913,13 @@ country_event = {
 				duration = -1
 			}
 		}
+		custom_tooltip = orlghelovar_damestear_tt
 		add_treasury = -2000
 		add_country_modifier = {
 			name = giberd_paying_the_moonisle
 			duration = -1
 		}
-		custom_tooltip = flavor_giberd.32.war_tt		# TODO: implement
+		custom_tooltip = giberds_bonus_disappear_tt
 	}
 	option = {
 		# brillites
@@ -1043,7 +1044,7 @@ country_event = {
 				}
 			}
 		}
-		custom_tooltip = flavor_giberd.33.war_tt		# TODO: implement
+		custom_tooltip = giberds_bonus_disappear_tt
 	}
 	option = {
 		name = flavor_giberd.33.b
@@ -1199,6 +1200,7 @@ country_event = {
 				}
 			}
 		}
+		custom_tooltip = giberds_bonus_disappear_tt
 	}
 	option = {
 		name = flavor_giberd.36.b
