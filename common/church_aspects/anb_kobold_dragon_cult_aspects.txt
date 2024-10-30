@@ -5,9 +5,9 @@ red_dragon_1_base = {
 	cost = 100
 	trigger = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -24,9 +24,9 @@ red_dragon_1_base = {
 red_dragon_2_base = {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -42,9 +42,9 @@ red_dragon_2_base = {
 red_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -61,9 +61,9 @@ blue_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -81,9 +81,9 @@ blue_dragon_1_base= {
 blue_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = blue
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -99,9 +99,9 @@ blue_dragon_2_base= {
 blue_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = blue
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -118,9 +118,9 @@ green_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -137,9 +137,9 @@ green_dragon_1_base= {
 green_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = green
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -155,9 +155,9 @@ green_dragon_2_base= {
 green_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = green
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -174,9 +174,9 @@ black_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -193,9 +193,9 @@ black_dragon_1_base= {
 black_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -211,9 +211,9 @@ black_dragon_2_base= {
 black_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -230,9 +230,9 @@ white_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -249,9 +249,9 @@ white_dragon_1_base= {
 white_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = white
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -267,9 +267,9 @@ white_dragon_2_base= {
 white_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = white
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -286,9 +286,9 @@ purple_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -305,9 +305,9 @@ purple_dragon_1_base= {
 purple_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = purple
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -323,9 +323,9 @@ purple_dragon_2_base= {
 purple_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = purple
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -342,9 +342,9 @@ brown_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -361,9 +361,9 @@ brown_dragon_1_base= {
 brown_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -379,9 +379,9 @@ brown_dragon_2_base= {
 brown_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -398,9 +398,9 @@ brass_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -417,9 +417,9 @@ brass_dragon_1_base= {
 brass_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -435,9 +435,9 @@ brass_dragon_2_base= {
 brass_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -454,9 +454,9 @@ copper_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -473,9 +473,9 @@ copper_dragon_1_base= {
 copper_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = copper
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -491,9 +491,9 @@ copper_dragon_2_base= {
 copper_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = copper
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -510,9 +510,9 @@ bronze_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -530,9 +530,9 @@ bronze_dragon_1_base= {
 bronze_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = bronze
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -548,9 +548,9 @@ bronze_dragon_2_base= {
 bronze_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = bronze
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -567,9 +567,9 @@ silver_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -587,9 +587,9 @@ silver_dragon_1_base= {
 silver_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = silver
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -605,9 +605,9 @@ silver_dragon_2_base= {
 silver_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = silver
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -624,9 +624,9 @@ gold_dragon_1_base= {
 	cost = 100
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
-				LEVEL = 1
+				SLOT = 1
 				UPGRADE = upgraded
 			}
 		}	
@@ -643,9 +643,9 @@ gold_dragon_1_base= {
 gold_dragon_2_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
-			LEVEL = 2
+			SLOT = 2
 			UPGRADE = base
 		}
 	}
@@ -661,9 +661,9 @@ gold_dragon_2_base= {
 gold_dragon_3_base= {
 	cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
-			LEVEL = 3
+			SLOT = 3
 			UPGRADE = base
 		}
 	}
@@ -684,9 +684,9 @@ red_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -704,9 +704,9 @@ red_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -724,9 +724,9 @@ blue_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -744,9 +744,9 @@ blue_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -764,9 +764,9 @@ green_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -784,9 +784,9 @@ green_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -804,9 +804,9 @@ black_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -824,9 +824,9 @@ black_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -844,9 +844,9 @@ white_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white	
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -864,9 +864,9 @@ white_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -884,9 +884,9 @@ purple_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -904,9 +904,9 @@ purple_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -924,9 +924,9 @@ brown_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -944,9 +944,9 @@ brown_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -964,9 +964,9 @@ brass_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -984,9 +984,9 @@ brass_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -1004,9 +1004,9 @@ copper_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -1024,9 +1024,9 @@ copper_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -1044,9 +1044,9 @@ bronze_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -1064,9 +1064,9 @@ bronze_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -1084,9 +1084,9 @@ silver_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -1104,9 +1104,9 @@ silver_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -1124,9 +1124,9 @@ gold_dragon_2_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
-				LEVEL = 2
+				SLOT = 2
 				UPGRADE = base
 			}
 		}
@@ -1144,9 +1144,9 @@ gold_dragon_3_locked = {
 	}
 	potential = {
 		NOT = {
-			has_unlocked_kobold_cult_for_color_level_upgrade = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
-				LEVEL = 3
+				SLOT = 3
 				UPGRADE = base
 			}
 		}
@@ -1162,9 +1162,9 @@ gold_dragon_3_locked = {
 red_dragon_1_upgraded = {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1181,9 +1181,9 @@ red_dragon_1_upgraded = {
 red_dragon_2_upgraded = {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = red
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1200,9 +1200,9 @@ red_dragon_2_upgraded = {
 red_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = red
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1219,9 +1219,9 @@ red_dragon_3_upgraded= {
 blue_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = blue
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1239,9 +1239,9 @@ blue_dragon_1_upgraded= {
 blue_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = blue
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1258,9 +1258,9 @@ blue_dragon_2_upgraded= {
 blue_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = blue
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1277,9 +1277,9 @@ blue_dragon_3_upgraded= {
 green_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = green
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1296,9 +1296,9 @@ green_dragon_1_upgraded= {
 green_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = green
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1315,9 +1315,9 @@ green_dragon_2_upgraded= {
 green_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = green
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1333,9 +1333,9 @@ green_dragon_3_upgraded= {
 black_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1352,9 +1352,9 @@ black_dragon_1_upgraded= {
 black_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = black
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1371,9 +1371,9 @@ black_dragon_2_upgraded= {
 black_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = black
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1390,9 +1390,9 @@ black_dragon_3_upgraded= {
 white_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = white
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1408,9 +1408,9 @@ white_dragon_1_upgraded= {
 white_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = white
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1427,9 +1427,9 @@ white_dragon_2_upgraded= {
 white_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = white
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1446,9 +1446,9 @@ white_dragon_3_upgraded= {
 purple_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = purple
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1465,9 +1465,9 @@ purple_dragon_1_upgraded= {
 purple_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = purple
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1484,9 +1484,9 @@ purple_dragon_2_upgraded= {
 purple_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = purple
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1503,9 +1503,9 @@ purple_dragon_3_upgraded= {
 brown_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1522,9 +1522,9 @@ brown_dragon_1_upgraded= {
 brown_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = brown
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1541,9 +1541,9 @@ brown_dragon_2_upgraded= {
 brown_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = brown
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1560,9 +1560,9 @@ brown_dragon_3_upgraded= {
 brass_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1579,9 +1579,9 @@ brass_dragon_1_upgraded= {
 brass_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = brass
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1598,9 +1598,9 @@ brass_dragon_2_upgraded= {
 brass_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = brass
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1617,9 +1617,9 @@ brass_dragon_3_upgraded= {
 copper_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = copper
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1636,9 +1636,9 @@ copper_dragon_1_upgraded= {
 copper_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = copper
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1654,9 +1654,9 @@ copper_dragon_2_upgraded= {
 copper_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = copper
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1673,9 +1673,9 @@ copper_dragon_3_upgraded= {
 bronze_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = bronze
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1694,9 +1694,9 @@ bronze_dragon_1_upgraded= {
 bronze_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = bronze
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1713,9 +1713,9 @@ bronze_dragon_2_upgraded= {
 bronze_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = bronze
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1732,9 +1732,9 @@ bronze_dragon_3_upgraded= {
 silver_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = silver
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1751,9 +1751,9 @@ silver_dragon_1_upgraded= {
 silver_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = silver
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1770,9 +1770,9 @@ silver_dragon_2_upgraded= {
 silver_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = silver
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }
@@ -1789,9 +1789,9 @@ silver_dragon_3_upgraded= {
 gold_dragon_1_upgraded= {
     cost = 100
 	potential = {
-		has_unlocked_kobold_cult_for_color_level_upgrade = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
-			LEVEL = 1
+			SLOT = 1
 			UPGRADE = upgraded
 		}
 	}
@@ -1808,9 +1808,9 @@ gold_dragon_1_upgraded= {
 gold_dragon_2_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = gold
-            LEVEL = 2
+            SLOT = 2
             UPGRADE = upgraded
         }
     }
@@ -1826,9 +1826,9 @@ gold_dragon_2_upgraded= {
 gold_dragon_3_upgraded= {
     cost = 100
     potential = {
-        has_unlocked_kobold_cult_for_color_level_upgrade = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
             COLOUR = gold
-            LEVEL = 3
+            SLOT = 3
             UPGRADE = upgraded
         }
     }

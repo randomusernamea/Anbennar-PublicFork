@@ -1,14 +1,14 @@
-unlock_kobold_dragon_cult_for_colour_level_upgrade = {
-	set_country_flag = unlocked_$COLOUR$_dragon_$LEVEL$_$UPGRADE$
+unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+	set_country_flag = unlocked_$COLOUR$_dragon_$SLOT$_$UPGRADE$
 
-	tooltip = { #tooltip not working right 
+	tooltip = { 
 		add_country_modifier = {
-			name = $COLOUR$_dragon_$LEVEL$_$UPGRADE$
+			name = $COLOUR$_dragon_$SLOT$_$UPGRADE$
 			desc = UNLOCKED_DRAGON_CULT_TOOLTIP
 			duration = -1
 		}
 	}
-	add_church_aspect = $COLOUR$_dragon_$LEVEL$_$UPGRADE$
+	add_church_aspect = $COLOUR$_dragon_$SLOT$_$UPGRADE$
 }
 
 upgrade_kobold_hoard = {
