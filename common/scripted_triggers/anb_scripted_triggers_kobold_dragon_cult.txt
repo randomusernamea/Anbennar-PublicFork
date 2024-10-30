@@ -27,10 +27,15 @@ can_unlock_kobold_cult_for_color_slot_upgrade = {
 			UPGRADE = $UPGRADE$
 		}
 	}
-	[[REQUIRE_BASIC]
+	[[requirebasic]
 	has_unlocked_kobold_cult_for_color_slot_upgrade = {
 		COLOUR = $COLOUR$
-		SLOT = $SLOT$
+		SLOT = 2
+		UPGRADE = base
+	}
+	has_unlocked_kobold_cult_for_color_slot_upgrade = {
+		COLOUR = $COLOUR$
+		SLOT = 3
 		UPGRADE = base
 	}
 	]
