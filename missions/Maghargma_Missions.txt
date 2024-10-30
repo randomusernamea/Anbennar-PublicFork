@@ -389,9 +389,9 @@ maghargma_dynamic_westmarches_2 = {
 								NOT = { owned_by = J51 }
 								owned_by_subject_of = ROOT
 							}
-							cede_province = J51
-							add_core = J51
 						}
+						cede_province = J51
+						add_core = J51
 					}
 				}
 				else = {
@@ -633,8 +633,10 @@ maghargma_two = {
 			owner = {
 				is_subject_of = ROOT
 				culture_group = ogre
-				NOT = { has_50_opinion_improved_relation = { target = ROOT } }
-				liberty_desire = 25
+				OR = {
+					NOT = { has_50_opinion_improved_relation = { target = ROOT } }
+					liberty_desire = 25
+				}
 			} 
 		} 
 
@@ -882,9 +884,9 @@ maghargma_dynamic_heartlands_2 = {
 								NOT = { owned_by = J50 }
 								owned_by_subject_of = ROOT
 							}
-							cede_province = J50
-							add_core = J50
 						}
+						cede_province = J50
+						add_core = J50
 					}
 				}
 				else = {
@@ -1990,6 +1992,15 @@ maghargma_four = {
 							is_subject_of_type = tributary_state_anb
 							capital_scope = { region = west_forbidden_plains_region }
 						}
+						all_known_country = {
+							overlord = {
+								culture_group = ogre
+								is_subject_of = ROOT
+								is_subject_of_type = tributary_state_anb
+							}
+							culture_group = centaur
+							capital_scope = { region = west_forbidden_plains_region }
+						}
 						amount = 3
 					}
 				}
@@ -2015,23 +2026,20 @@ maghargma_four = {
 
 		effect = {
 			custom_tooltip = maghargma_beasts_of_burden_tt
-			hidden_effect = {
-				ogre_valley_region = {
-					every_neighbor_province = {
-						limit = {
-							region = west_forbidden_plains_region
-							country_or_subject_holds = ROOT
-						}
-						cede_province = ROOT
-						add_core = ROOT
-					}
-				}
-			}
 			if = {
 				limit = {
 					calc_true_if = {
 						all_subject_country = {
 							is_subject_of_type = tributary_state_anb
+							capital_scope = { region = west_forbidden_plains_region }
+						}
+						all_known_country = {
+							overlord = {
+								culture_group = ogre
+								is_subject_of = ROOT
+								is_subject_of_type = tributary_state_anb
+							}
+							culture_group = centaur
 							capital_scope = { region = west_forbidden_plains_region }
 						}
 						amount = 3
@@ -2044,6 +2052,36 @@ maghargma_four = {
 						capital_scope = { region = west_forbidden_plains_region } 
 					}
 					ROOT = { vassalize = PREV }
+				}
+				every_known_country = {
+					limit = {
+						overlord = {
+							culture_group = ogre
+							is_subject_of = ROOT
+							is_subject_of_type = tributary_state_anb
+						}
+						culture_group = centaur
+						capital_scope = { region = west_forbidden_plains_region }
+					}
+					ROOT = { vassalize = PREV }
+				}
+				hidden_effect = {
+					every_subject_country = {
+						limit = {
+							is_subject_of_type = tributary_state_anb
+							culture_group = centaur
+							any_owned_province = {
+								region = west_forbidden_plains_region
+							}
+						}
+						every_owned_province = {
+							limit = {
+								region = west_forbidden_plains_region
+							}
+							cede_province = ROOT
+							add_core = ROOT
+						}
+					}
 				}
 			}
 			else = {
@@ -2068,6 +2106,18 @@ maghargma_four = {
 							}
 							owner = { set_capital = PREV }
 						}
+					}
+				}
+			}
+			hidden_effect = {
+				ogre_valley_region = {
+					every_neighbor_province = {
+						limit = {
+							region = west_forbidden_plains_region
+							country_or_subject_holds = ROOT
+						}
+						cede_province = ROOT
+						add_core = ROOT
 					}
 				}
 			}
@@ -2218,6 +2268,24 @@ maghargma_four = {
 						capital_scope = { region = east_forbidden_plains_region } 
 					}
 					ROOT = { vassalize = PREV }
+				}
+				hidden_effect = {
+					every_subject_country = {
+						limit = {
+							is_subject_of_type = tributary_state_anb
+							culture_group = centaur
+							any_owned_province = {
+								region = east_forbidden_plains_region
+							}
+						}
+						every_owned_province = {
+							limit = {
+								region = east_forbidden_plains_region
+							}
+							cede_province = ROOT
+							add_core = ROOT
+						}
+					}
 				}
 			}
 			else = {
@@ -2479,9 +2547,9 @@ maghargma_dynamic_brightmarch_1 = {
 								NOT = { owned_by = J50 }
 								owned_by_subject_of = ROOT
 							}
-							cede_province = J50
-							add_core = J50
 						}
+						cede_province = J50
+						add_core = J50
 					}
 				}
 				else = {
@@ -2877,6 +2945,24 @@ maghargma_five = {
 						capital_scope = { region = serpent_gift_region } 
 					}
 					ROOT = { vassalize = PREV }
+				}
+				hidden_effect = {
+					every_subject_country = {
+						limit = {
+							is_subject_of_type = tributary_state_anb
+							culture_group = centaur
+							any_owned_province = {
+								region = serpent_gift_region
+							}
+						}
+						every_owned_province = {
+							limit = {
+								region = serpent_gift_region
+							}
+							cede_province = ROOT
+							add_core = ROOT
+						}
+					}
 				}
 			}
 			else = {
@@ -3314,9 +3400,9 @@ maghargma_dynamic_amberlands_2 = {
 								NOT = { owned_by = J52 }
 								owned_by_subject_of = ROOT
 							}
-							cede_province = J52
-							add_core = J52
 						}
+						cede_province = J52
+						add_core = J52
 					}
 				}
 				else = {
