@@ -463,6 +463,7 @@ maghargma_one_post_westmarches = {
 					exists = no
 					alliance_with = ROOT
 					has_been_insulted_by_root = yes
+					is_subject_of = ROOT
 				}
 			}
 		}
@@ -2326,7 +2327,7 @@ maghargma_four = {
 		trigger = {
 			nuzurbokh_region = {
 				type = all 
-				country_or_non_sovereign_subject_holds = yes
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 3
