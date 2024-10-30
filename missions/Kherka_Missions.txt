@@ -531,7 +531,7 @@ G48_slot_3 = {
 					}
 				}
 				OR = {
-					G63 = { has_100_opinion_improved_relation = yes }
+					G63 = { has_100_opinion_improved_relation = { target = ROOT } }
 					any_known_country = {
 						owns = 2666
 						has_100_opinion_improved_relation = yes
