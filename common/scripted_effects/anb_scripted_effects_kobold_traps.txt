@@ -1,99 +1,14 @@
-unlock_kobold_dragon_cult_for_colour_and_level = {
-	set_country_flag = unlocked_$COLOUR$_dragon_$LEVEL$
+unlock_kobold_dragon_cult_for_colour_level_upgrade = {
+	set_country_flag = unlocked_$COLOUR$_dragon_$LEVEL$_$UPGRADE$
 
-	tooltip = {
+	tooltip = { #tooltip not working right 
 		add_country_modifier = {
-			name = $COLOUR$_dragon_$LEVEL$
+			name = $COLOUR$_dragon_$LEVEL$_$UPGRADE$
 			desc = UNLOCKED_DRAGON_CULT_TOOLTIP
 			duration = -1
 		}
 	}
-	
-	if = {
-		limit = {
-			NOT = {
-				has_kobold_cult_for_level = {
-					LEVEL = $LEVEL$
-				}
-			}
-		}
-		add_church_aspect = $COLOUR$_dragon_$LEVEL$
-	}
-}
-
-kobold_dragon_cult_conquered_province = {
-	if = {
-		limit = {
-			owner = { has_church_aspect = black_dragon_1 }
-			is_city = yes
-		}
-		if = {
-			limit = {
-				culture_group = kobold
-			}
-			owner = { add_church_power = 5 }
-		}
-		owner = { add_church_power = 3 }
-	}
-}
-
-kobold_dragon_cult_recruited_leader = {
-	if = {
-		limit = {
-			has_church_aspect = blue_dragon_1
-		}
-		add_church_power = 15
-	}
-}
-
-kobold_dragon_cult_won_war = {
-	if = {
-		limit = {
-			has_church_aspect = bronze_dragon_1
-		}
-		add_church_power = 25
-	}
-}
-
-kobold_dragon_cult_won_battle = {
-	if = {
-		limit = {
-			has_church_aspect = brown_dragon_1
-		}
-		add_church_power = 5
-	}
-}
-
-kobold_dragon_cult_won_siege = {
-	if = {
-		limit = {
-			FROM = { fort_level = 1 }
-			has_church_aspect = white_dragon_1
-		}
-		add_church_power = 10
-	}
-}
-
-kobold_dragon_cult_exploration = {
-	FROM = {
-		if = {
-			limit = {
-				has_church_aspect = green_dragon_1
-			}
-			add_church_power = 4
-		}
-	}
-}
-
-kobold_dragon_cult_conversion = {
-	owner = {
-		if = {
-			limit = {
-				has_church_aspect = brass_dragon_1
-			}
-			add_church_power = 10
-		}
-	}
+	add_church_aspect = $COLOUR$_dragon_$LEVEL$_$UPGRADE$
 }
 
 upgrade_kobold_hoard = {
@@ -359,7 +274,7 @@ kobold_trap_mastery_effect = {
 
 change_kobold_culture_based_on_fleeing_province = {
 	if = {
-		limit = { has_global_flag = kobildzan_flag }
+		limit = { has_global_flag = formed_kobildzan_flag }
 		change_culture = kobildzani_kobold
 	}
 	else_if = { # Changing province culture based on source province

@@ -1110,13 +1110,16 @@ pasiragha_missions_middle_2 = {
 
 		trigger = {
 			has_adm_advisor_of_level = {
-				level = 2
+				LEVEL = 2
+			UPGRADE = base
 			}
 			has_dip_advisor_of_level= {
-				level = 2
+				LEVEL = 2
+			UPGRADE = base
 			}
 			has_mil_advisor_of_level= {
-				level = 2
+				LEVEL = 2
+			UPGRADE = base
 			}
 			has_estate_privilege = estate_uppercastes_all_school_diplomats
 			estate_loyalty = {
