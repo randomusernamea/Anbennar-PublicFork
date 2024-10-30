@@ -4597,8 +4597,11 @@ dao = { #Gushuokguan vassals
     
     # Triggers:
     is_potential_overlord = {
-        tag = Y17 #Gushuokguan
-		was_tag = Y17 #Gushuokguan
+		OR = {
+			tag = Y17 #Gushuokguan
+			was_tag = Y17 #Gushuokguan
+		}
+        
     }
     
     # Graphics:
@@ -4608,13 +4611,12 @@ dao = { #Gushuokguan vassals
     
     # Properties:
 	can_be_annexed = no
-    overlord_can_attack = no
     military_focus = 4
 	trust_on_start = 0
     relative_power_class = 1
     
     # Subject Interactions:
-
+	
     
     # Modifiers:
     modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
