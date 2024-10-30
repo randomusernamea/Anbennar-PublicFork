@@ -457,9 +457,7 @@ G48_slot_3 = {
 				type = all
 				owned_by = ROOT
 				has_owner_religion = yes
-			}
-			OR = {
-				eltikan_area = {
+				OR = {
 					has_tax_building_trigger = yes
 					has_owner_accepted_culture = yes
 				}
@@ -623,7 +621,10 @@ G48_slot_4 = {
 		icon = mission_city_prosperity
 		position = 2
 		required_missions = { G48_our_lifeblood } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			area = kherka_area 
+			NOT = { num_of_times_improved = 3 }
+		} 
 
 		trigger = {  
 			kherka_area = {

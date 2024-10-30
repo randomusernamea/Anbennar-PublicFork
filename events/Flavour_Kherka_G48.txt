@@ -202,10 +202,6 @@ country_event = { #Scrolls Of Knowledge
                 which = renaissance 
                 value = 50
             }
-            add_institution_embracement = {
-                which = new_world_i 
-                value = 50
-            }
         }
         G60 = {
             every_owned_province = {
@@ -512,37 +508,49 @@ country_event = {
                 exiled_as = irenthegenea_candidate
                 change_adm = 2
                 dynasty = Irenthegenea
+                culture = ROOT
+                religion = ROOT
                 option = 0
             }
             define_exiled_ruler = { #Stalwarts
                 exiled_as = varagenea_candidate
                 change_adm = 2
                 dynasty = Varagenea
+                culture = ROOT
+                religion = ROOT
                 option = 1
             }
             define_exiled_ruler = { #Stalwarts
                 exiled_as = elethogenea_candidate
                 change_adm = 2
-                dynasty = Elethogenea 
+                dynasty = Elethogenea
+                culture = ROOT
+                religion = ROOT 
                 option = 2
             }
             define_exiled_ruler = { #Militants
                 exiled_as = artogenea_candidate
                 change_mil = 2
                 dynasty = Artogenea 
+                culture = ROOT
+                religion = ROOT
                 option = 3
             }
             define_exiled_ruler = { #Militants
                 exiled_as = nestegenea_candidate
                 change_mil = 2
-                dynasty = Nestegenea  
+                dynasty = Nestegenea
+                culture = ROOT
+                religion = ROOT  
                 option = 4
             }
             define_exiled_ruler = { #Colonists
                 exiled_as = galengenea_candidate
                 change_adm = 1
                 change_dip = 1
-                dynasty = galengenea  
+                dynasty = Galengenea
+                culture = ROOT
+                religion = ROOT  
                 option = 5
             }
             define_exiled_ruler = { #Colonists
@@ -550,6 +558,8 @@ country_event = {
                 change_adm = 1
                 change_dip = 1
                 dynasty = Taelagenea
+                culture = ROOT
+                religion = ROOT
                 option = 6  
             }
             define_exiled_ruler = { #Schemers
@@ -557,6 +567,8 @@ country_event = {
                 change_dip = 1
                 change_mil = 1
                 dynasty = Serogenea
+                culture = ROOT
+                religion = ROOT
                 option = 7
             }
             define_exiled_ruler = { #Schemers
@@ -564,13 +576,17 @@ country_event = {
                 change_dip = 1
                 change_mil = 1
                 dynasty = Darasgenea
+                culture = ROOT
+                religion = ROOT
                 option = 8  
             }
             define_exiled_ruler = { #Schemers
                 exiled_as = kelasgenea_candidate
                 change_dip = 1
                 change_mil = 1
-                dynasty = Kelasgenea  
+                dynasty = Kelasgenea
+                culture = ROOT
+                religion = ROOT  
                 option = 9
             }
         }
