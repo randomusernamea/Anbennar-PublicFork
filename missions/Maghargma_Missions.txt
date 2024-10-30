@@ -527,7 +527,10 @@ maghargma_one_post_westmarches = {
 			region = serpents_vale_region
 			OR = {
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
-				has_influencing_fort = no
+				OR = {
+					has_influencing_fort = no
+					any_neighbor_province = { has_influencing_fort = no }
+				}
 			}
 		} 
 
@@ -535,7 +538,10 @@ maghargma_one_post_westmarches = {
 			serpents_vale_region = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
-				has_influencing_fort = yes
+				OR = {
+					has_influencing_fort = yes
+					any_neighbor_province = { has_influencing_fort = yes }
+				}
 			}
 		}
 
@@ -1056,7 +1062,10 @@ maghargma_dynamic_trolls_2 = {
 			has_troll_minority_trigger = yes
 			OR = {
 				has_tax_building_trigger = no
-				has_influencing_fort = yes
+				OR = {
+					has_influencing_fort = no
+					any_neighbor_province = { has_influencing_fort = no }
+				}
 			}
 		} 
 
@@ -1069,7 +1078,10 @@ maghargma_dynamic_trolls_2 = {
 					}
 					AND = {
 						has_tax_building_trigger = yes
-						has_influencing_fort = yes
+						OR = {
+							has_influencing_fort = yes
+							any_neighbor_province = { has_influencing_fort = yes }
+						}
 					}
 				}
 			}
@@ -2850,13 +2862,19 @@ maghargma_four_post_ancestor = {
 		required_missions = { maghargma_the_final_piece } 
 		provinces_to_highlight = {  
 			region = demon_hills_region
-			has_influencing_fort = no
+			OR = {
+				has_influencing_fort = no
+				any_neighbor_province = { has_influencing_fort = no }
+			}
 		} 
 
 		trigger = {
 			demon_hills_region = {
 				type = all
-				has_influencing_fort = yes
+				OR = {
+					any_neighbor_province = { has_influencing_fort = yes }
+					has_influencing_fort = yes
+				}
 			}
 			OR = {	
 				NOT = { has_global_flag = rending_happened } 
