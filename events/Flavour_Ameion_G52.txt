@@ -499,7 +499,50 @@ country_event = {
 	
 	option = {
 		name = flavor_ameion.11.a
-		add_dip_power = 5
+		trigger = { exists = G63 }
+		tooltip = {
+			create_subject = { subject_type = tributary_state_anb subject = G63 }
+			mteibas_valley_region = { add_core = G63 }
+		}
+		set_country_flag = G52_mteibhar_tributary
+		hidden_effect = { G63 = { country_event = { id = flavor_ameion.1100 } } }
+	}
+	option = {
+		name = flavor_ameion.11.b
+		trigger = { exists = G63 }
+		add_dip_power = -50
+		add_casus_belli = {
+			target = G63
+			type = cb_vassalize_mission
+			months = 300
+		}
+		set_country_flag = G52_mteibhar_vassal
+	}
+	option = {
+		name = flavor_ameion.11.c
+		add_mil_power = -50
+		mteibas_valley_region = { add_claim = ROOT }
+		set_country_flag = G52_mteibhar_conquest
+	}
+}
+
+#Meeting Mteibhara, them getting subjugated
+country_event = {
+	id = flavor_ameion.1100
+	title = flavor_ameion.1100.t
+	desc = flavor_ameion.11d1.d
+	picture = DIPLOMACY_eventPicture
+	
+	option = {
+		name = flavor_ameion.1100.a
+		ai_chance = { factor = 100 }
+		G52 = { create_subject = { subject_type = tributary_state_anb subject = G63 } }
+		mteibas_valley_region = { add_core = G63 }
+	}
+	option = {
+		name = flavor_ameion.1100.b
+		ai_chance = { factor = 0 }
+		add_prestige = 5
 	}
 }
 
@@ -730,6 +773,23 @@ country_event = {
 		idziydir_area = {
 			limit = { NOT = { is_core = G62 } }
 			add_core = G62
+		}
+		if = {
+			limit = { has_country_flag = G52_mteibhar_conquest }
+			zhazn_al_dalk_area = {
+				limit = {
+					NOT = { is_core = G62 }
+					NOT = { is_claim = G62 }
+				}
+				add_permanent_claim = G62
+			}
+			bzhaernaer_area = {
+				limit = {
+					NOT = { is_core = G56 }
+					NOT = { is_claim = G56 }
+				}
+				add_permanent_claim = G56
+			}
 		}
 	}
 }
@@ -1282,7 +1342,7 @@ country_event = {
 	}
 }
 
-#Summit of Ameion begins
+#Summit of Ameion Begins
 country_event = {
 	id = flavor_ameion.23
 	title = flavor_ameion.23.t
@@ -1303,7 +1363,7 @@ country_event = {
 	}
 }
 
-#Concerns of the Chendhyan
+#Summit Chendhyan
 country_event = {
 	id = flavor_ameion.24
 	title = flavor_ameion.24.t
@@ -1352,7 +1412,7 @@ country_event = {
 	}
 }
 
-#Concerns of the Kheionai
+#Summit Kheionai
 country_event = {
 	id = flavor_ameion.25
 	title = flavor_ameion.25.t
@@ -1448,7 +1508,7 @@ country_event = {
 	}
 }
 
-#Concerns of the Mteibhar
+#Summit Mteibhar
 country_event = {
 	id = flavor_ameion.26
 	title = flavor_ameion.26.t
@@ -1472,6 +1532,12 @@ country_event = {
 				duration = 5475
 			}
 		}
+		G63 = { 
+			change_primary_culture = astolbhen
+			capital_scope = { change_culture = astolbhen }
+			override_country_name = astoian
+			add_accepted_culture = mteibhar
+		}
 	}
 	option = {
 		name = flavor_ameion.26.b
@@ -1486,7 +1552,7 @@ country_event = {
 	}
 }
 
-#Concerns of the Taychendi
+#Summit Taychendi
 country_event = {
 	id = flavor_ameion.27
 	title = flavor_ameion.27.t
@@ -1518,7 +1584,7 @@ country_event = {
 	}
 }
 
-#The Summit Concludes
+#Summit Conclusion
 country_event = {
 	id = flavor_ameion.28
 	title = flavor_ameion.28.t
@@ -1534,58 +1600,20 @@ country_event = {
 	
 	option = {
 		name = flavor_ameion.28.a
-		add_prestige = 20
 		add_country_modifier = {
-			name = G52_unity_peoples
-			duration = 5475
+			name = G52_empire_ruin
+			duration = -1
 		}
-		custom_tooltip = ameion_klereyen_2
-		hidden_effect = {
-			random_owned_province = {
-				limit = {
-					superregion = taychend_superregion
-					is_core = ROOT
-					religion = kheionism
-					NOT = { culture = klereyen }
-					NOT = { is_island = yes }
-				}
-				change_culture = klereyen
-			}
-			random_owned_province = {
-				limit = {
-					superregion = taychend_superregion
-					is_core = ROOT
-					religion = kheionism
-					NOT = { culture = klereyen }
-					NOT = { is_island = yes }
-				}
-				change_culture = klereyen
-			}
-		}
-		every_subject_country = { 
-			limit = { culture_group = devandi_ruinborn_elf }
-			change_primary_culture = astolbhen
-			change_religion = kheionism
-			add_accepted_culture = mteibhar
-			add_accepted_culture = chendhyan
-			capital_scope = { 
-				change_culture = astolbhen
-				change_religion = kheionism
-			}
-			if = {
-				limit = { tag = G63 }
-				override_country_name = astoian
-			}
-		}
+		
 	}
 }
 
-#Ameion offers Treaty to Larankar
+#Summit Effelai Event
 country_event = {
 	id = flavor_ameion.29
 	title = flavor_ameion.29.t
 	desc = flavor_ameion.29.d
-	picture = DIPLOMACY_eventPicture
+	picture = REFORM_eventPicture
 	
 	major = yes
 	major_trigger = {
@@ -1600,162 +1628,41 @@ country_event = {
 	option = {
 		name = flavor_ameion.29.a
 		ai_chance = { factor = 100 }
-		add_stability_or_adm_power = yes
-		add_truce_with = G52
-		custom_tooltip = ameion_G64_vassals
-		hidden_effect = {
-			every_known_country = {
-				limit = { 
-					alliance_with = ROOT
-					culture_group = taychendi_ruinborn_elf 
-				}
-				G64 = { vassalize = PREV } 
-			}
-			every_subject_country = {
-				if = {
-					limit = {
-						NOT = {
-							primary_culture = kalavendhi
-							primary_culture = larankarha
-							tag = G77
-						}
-					}
-					grant_independence = yes
-					add_trust = {
-						who = G64
-						value = -100
-						mutual = yes
-					}
-				}
-				else = {
-					add_truce_with = G64
-					add_liberty_desire = -25
-					add_trust = {
-						who = G64
-						value = 30
-						mutual = yes
-					}
-				}
-			}
-		}
-		tooltip = {
-			random_subject_country = {
-				add_truce_with = G64
-				add_liberty_desire = -25
-				add_trust = {
-					who = G64
-					value = 30
-					mutual = yes
-				}
-			}
-		}
-		G52 = {
-			country_event = { id = flavor_ameion.30 days = 2 }
-			custom_tooltip = ameion_G64_land
-		}
+		
 	}
 	option = {
 		name = flavor_ameion.29.b
-		ai_chance = { factor = 0 }
-		add_stability = -1
-		every_subject_country = {
-			add_liberty_desire = 25
-		}
-		every_ally = {
-			if = {
-				limit = {
-					NOT = {
-						primary_culture = kalavendhi
-						primary_culture = larankarha
-						tag = G77
-					}
-				}
-				add_trust = {
-					who = G64
-					value = 10
-					mutual = yes
-				}
-			}
-			else = {
-				add_trust = {
-					who = G64
-					value = -20
-					mutual = yes
-				}
-			}
-		}
-		G52 = { country_event = { id = flavor_ameion.30 days = 2 } }
+		
 	}
 }
 
-#Laranakr Accepts Treaty
+#Summit Amadian Event
 country_event = {
 	id = flavor_ameion.30
 	title = flavor_ameion.30.t
 	desc = flavor_ameion.30.d
-	picture = DIPLOMACY_eventPicture
+	picture = REFORM_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = flavor_ameion.30.a
-		add_truce_with = G64
-		hidden_effect = {
-			taychend_superregion = {
-				limit = {
-					country_or_non_sovereign_subject_holds = G64
-					NOT = {
-						area = marhed_rayodana_area
-						area = kattisangamar_area
-						culture = kalavendhi
-					}
-				}
-				cede_province = G52
-				remove_core = G64
-			}
-			taychend_superregion = {
-				limit = {
-					country_or_non_sovereign_subject_holds = G52
-					OR = {
-						area = marhed_rayodana_area
-						area = kattisangamar_area
-						culture = kalavendhi
-					}
-				}
-				cede_province = G64
-				remove_core = G52
-			}
-		}
-		custom_tooltip = ameion_transfer
+		
 	}
 }
 
-#Laranakr Denies Treaty
+#Summit Cannorian Event
 country_event = {
 	id = flavor_ameion.31
 	title = flavor_ameion.31.t
 	desc = flavor_ameion.31.d
-	picture = DIPLOMACY_eventPicture
+	picture = REFORM_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = flavor_ameion.30.a
-		add_country_modifier = {
-			name = G52_player_laranakar
-			duration = 9125
-		}
-		yodhanchend_region = {
-			limit = {
-				country_or_non_sovereign_subject_holds = G64
-				NOT = {
-					area = marhed_rayodana_area
-					area = kattisangamar_area
-					culture = kalavendhi
-				}
-			}
-			add_permanent_claim = G52
-		}
+		
 	}
 }
 
@@ -1859,41 +1766,6 @@ country_event = {
 			siege = 5
 			name = "Kelindas Laskaris"
 		}
-		nanru_nakar_area = {
-			limit = {
-				NOT = { is_core = ROOT }
-				NOT = { is_claim = ROOT }
-			}
-			add_permanent_claim = ROOT
-		}
-		vettakaramai_area = {
-			limit = {
-				NOT = { is_core = ROOT }
-				NOT = { is_claim = ROOT }
-			}
-			add_claim = ROOT
-		}
-		parahechend_area = {
-			limit = {
-				NOT = { is_core = ROOT }
-				NOT = { is_claim = ROOT }
-			}
-			add_claim = ROOT
-		}
-		varamraya_area = {
-			limit = {
-				NOT = { is_core = ROOT }
-				NOT = { is_claim = ROOT }
-			}
-			add_claim = ROOT
-		}
-		larankarha_highlands_region = {
-			limit = {
-				NOT = { is_core = ROOT }
-				NOT = { is_claim = ROOT }
-			}
-			add_claim = ROOT
-		}
 		add_truce_with = G71
 	}
 }
@@ -1934,7 +1806,7 @@ country_event = {
 					limit = {
 						OR = {
 							area = keyolion_area
-							province_id = 2713
+							area = dtsiaerh_area
 						}
 					}
 					add_core = G58
@@ -1948,6 +1820,7 @@ country_event = {
 							area = eneion_area
 							province_id = 2710
 							province_id = 2711
+							province_id = 2712
 						}
 					}
 					add_core = G55
@@ -1960,7 +1833,7 @@ country_event = {
 						OR = {
 							area = besolaki_area
 							province_id = 2705
-							province_id = 2702
+							province_id = 2704
 						}
 					}
 					add_core = G54
@@ -1973,7 +1846,7 @@ country_event = {
 						OR = {
 							area = apikhoxi_area
 							area = msaghyan_area
-							province_id = 2701
+							area = denabatha_area
 						}
 					}
 					add_core = G57
@@ -2067,6 +1940,34 @@ country_event = {
 			}
 		}
 	}
+	
+	option = {
+		name = flavor_ameion.34.b
+		custom_tooltip = ameion_theinos_march
+		hidden_effect = { #Arrange nekhis borders
+			devand_region = {
+				if = {
+					limit = {
+						NOT = {
+							area = vothelisi_area
+							area = anisikheion_area
+							area = soreion_area
+						}
+					}
+					add_core = U27
+					cede_province = U27
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+			devand_region = { add_claim = U27 }
+		}
+		create_subject = { subject_type = march subject = U27 } #Theinos
+	}
+	option = {
+		name = flavor_ameion.34.c
+		add_adm_power = 50
+	}
 }
 
 #Cleaved Sea Admirality
@@ -2089,12 +1990,9 @@ country_event = {
 			south_america = {
 				limit = {
 					OR = {
-						region = devand_region
-						area = arpenisi_area
-					}
-					OR = {
-						is_island = yes
 						area = vothelisi_area
+						area = anisikheion_area
+						area = soreion_area
 					}
 				}
 				remove_core = ROOT
@@ -2104,21 +2002,16 @@ country_event = {
 			}
 		}
 		custom_tooltip = ameion_nekhis_gyli_3
-		create_subject = { subject_type = gylikheion subject = G59 } #Anisikheion
+		create_subject = { subject_type = march subject = G59 } #Anisikheion
 		hidden_effect = {
 			G59 = { #Cede outside territory to Ameion
 				south_america = { #every_owned_province bug workaround
 					limit = {
 						owned_by = PREV
-						OR = {
-							NOT = { 
-								region = devand_region
-								area = arpenisi_area
-							}
-							NOT = {
-								is_island = yes
-								area = vothelisi_area
-							}
+						NOT = {
+							area = vothelisi_area
+							area = anisikheion_area
+							area = soreion_area
 						}
 					}
 					if = {
@@ -2156,121 +2049,114 @@ country_event = {
 					add_idea_group = naval_ideas
 				}
 			}
-		}
-		hidden_effect = {
 			if = {
-				limit = { tag = G00 }
-				G59 = { change_government_to_monarchy = yes }
+				limit = { NOT = { government = republic } }
+				change_government = republic
+				change_government_reform_progress = 200
 			}
+			add_government_reform = anisikheioni_naval_stratocracy
 		}
 	}
 	
 	option = {
 		name = flavor_ameion.35.b
-		custom_tooltip = ameion_nekhis_gyli_4
-		hidden_effect = {
-			south_america = {
-				limit = { 
-					OR = { 
-						region = devand_region
-						area = arpenisi_area
-					}
-					OR = {
-						is_island = yes
-						area = vothelisi_area
-					}
-				}
-				remove_core = ROOT
-				remove_claim = ROOT
-				if = {
-					limit = {
+		if = {
+			limit = { has_subject_of_type = gylikheion }
+			custom_tooltip = ameion_nekhis_gyli_4
+			hidden_effect = {
+				south_america = {
+					limit = { 
 						OR = {
-							province_id = 2735
-							province_id = 2725
-							province_id = 2724
-							province_id = 2720
+							area = arpenisi_area
+							area = vothelisi_area
+							area = anisikheion_area
+							area = soreion_area
 						}
 					}
-					add_core = G53
-					cede_province = G53
-				}
-				else_if = {
-					limit = {
-						OR = {
-							province_id = 2774
-							province_id = 2719
-							province_id = 2721
+					remove_core = ROOT
+					remove_claim = ROOT
+					if = {
+						limit = {
+							OR = {
+								province_id = 2735
+								province_id = 2725
+								province_id = 2724
+								province_id = 2720
+							}
 						}
+						add_core = G53
+						cede_province = G53
 					}
-					add_core = G58
-					cede_province = G58
-				}
-				else_if = {
-					limit = {
-						OR = {
-							province_id = 2681
-							province_id = 2722
-							province_id = 2672
+					else_if = {
+						limit = {
+							OR = {
+								province_id = 2774
+								province_id = 2719
+								province_id = 2721
+							}
 						}
+						add_core = G58
+						cede_province = G58
 					}
-					add_core = G55
-					cede_province = G55
-				}
-				else_if = {
-					limit = {
-						OR = {
-							province_id = 2718
-							province_id = 2750
-							province_id = 2747
+					else_if = {
+						limit = {
+							OR = {
+								province_id = 2681
+								province_id = 2722
+								province_id = 2672
+							}
 						}
+						add_core = G55
+						cede_province = G55
 					}
-					add_core = G54
-					cede_province = G54
-				}
-				else_if = {
-					limit = {
-						OR = {
-							province_id = 2717
-							province_id = 2716
+					else_if = {
+						limit = {
+							OR = {
+								province_id = 2718
+								province_id = 2750
+								province_id = 2747
+							}
 						}
+						add_core = G54
+						cede_province = G54
 					}
-					add_core = G57
-					cede_province = G57
+					else_if = {
+						limit = {
+							OR = {
+								province_id = 2717
+								province_id = 2716
+							}
+						}
+						add_core = G57
+						cede_province = G57
+					}
 				}
 			}
 		}
-		G53 = {
-			add_country_modifier = {
-				name = G52_expanded_navy
-				duration = -1
-			}
-		}
-		hidden_effect = {
-			G58 = {
-				add_country_modifier = {
-					name = G52_expanded_navy
-					duration = -1
-				}
-			}
-			G55 = {
-				add_country_modifier = {
-					name = G52_expanded_navy
-					duration = -1
-				}
-			}
-			G54 = {
-				add_country_modifier = {
-					name = G52_expanded_navy
-					duration = -1
-				}
-			}
-			G57 = {
-				add_country_modifier = {
-					name = G52_expanded_navy
-					duration = -1
+		else_if = {
+			limit = { U27 = { is_subject_of = ROOT } }
+			custom_tooltip = ameion_nekhis_gyli_4b
+			hidden_effect = {
+				south_america = {
+					limit = { 
+						OR = {
+							area = vothelisi_area
+							area = anisikheion_area
+							area = soreion_area
+						}
+					}
+					remove_core = ROOT
+					remove_claim = ROOT
+					add_core = U27
+					cede_province = U27
 				}
 			}
 		}
+	}
+	
+	option = {
+		name = flavor_ameion.35.c
+		add_adm_power = 50
 	}
 }
 
@@ -2393,135 +2279,323 @@ country_event = {
 	}
 }
 
-#Fate of the Eltibhar
+#The Kheions Bend the Knee
 country_event = {
 	id = flavor_ameion.39
 	title = flavor_ameion.39.t
 	desc = flavor_ameion.39.d
-	picture = NATIVES_eventPicture
+	picture = FAR_AND_WIDE_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = flavor_ameion.39.a
-		add_casus_belli = {
-			target = G60
-			type = cb_vassalize_mission
-			months = 240
+		custom_tooltip = ameion_nekhis_gyli_5
+			hidden_effect = { #Arrange kheion borders
+				if = {
+					limit = { G59 = { is_subject_of = ROOT } }
+					arpenisi_area = {
+						add_core = G59
+						cede_province = G59
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+				}
+				alecand_region = {
+					#limit = { region = alecand_region }
+					if = {
+						limit = { area = arpedifer_area }
+						add_core = G51
+						cede_province = G51
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = { area = oktikheion_area }
+						add_core = G47
+						cede_province = G47
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = {
+							OR = {
+								area = kimanis_area
+								area = kheinos_area
+							}
+						}
+						add_core = G61
+						cede_province = G61
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = { area = degakheion_area }
+						add_core = G46
+						cede_province = G46
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = { area = ormam_area }
+						add_core = G50
+						cede_province = G50
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = { area = kherka_area }
+						add_core = G48
+						cede_province = G48
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+					else_if = {
+						limit = { area = lokemeion_area }
+						add_core = G49
+						cede_province = G49
+						remove_core = ROOT
+						remove_claim = ROOT
+					}
+				}
+			}
+			create_subject = { subject_type = gylikheion subject = G51 } #Arpedifer
+			create_subject = { subject_type = gylikheion subject = G47 } #Oktikheion
+			create_subject = { subject_type = gylikheion subject = G61 } #Kimanis
+			create_subject = { subject_type = gylikheion subject = G46 } #Degakheion
+			create_subject = { subject_type = gylikheion subject = G50 } #Ormam
+			create_subject = { subject_type = gylikheion subject = G48 } #Kherka
+			create_subject = { subject_type = gylikheion subject = G49 } #Lokemeion
+			custom_tooltip = ameion_nekhis_gyli_6
+			hidden_effect = {
+				every_subject_country = { #Cede outside territory to Ameion
+					limit = {
+						OR = {
+							tag = G51
+							tag = G47
+							tag = G61
+							tag = G46
+							tag = G50
+							tag = G48
+							tag = G49
+						}
+					}
+					south_america = { #every_owned_province bug workaround
+						limit = {
+							owned_by = PREV
+							NOT = {
+								area = arpedifer_area
+								area = oktikheion_area
+								area = kimanis_area
+								area = kheinos_area
+								area = degakheion_area
+								area = ormam_area
+								area = kherka_area
+								area = lokemeion_area
+							}
+						}
+						if = {
+							limit = { is_core = owner }
+							remove_core = owner
+							add_core = ROOT
+						}
+						cede_province = ROOT
+					}
+				}
+				south_america = { #Remove Excess claims/cores
+					limit = { 
+						OR = {
+							is_claim = G51
+							is_claim = G47
+							is_claim = G61
+							is_claim = G46
+							is_claim = G50
+							is_claim = G48
+							is_claim = G49
+						}
+					}
+					remove_claim = G51
+					remove_claim = G47
+					remove_claim = G61
+					remove_claim = G46
+					remove_claim = G50
+					remove_claim = G48
+					remove_claim = G49
+				}
+				ameion_gly_clear_claim_core = { TAG = G51 }
+				ameion_gly_clear_claim_core = { TAG = G47 }
+				ameion_gly_clear_claim_core = { TAG = G61 }
+				ameion_gly_clear_claim_core = { TAG = G46 }
+				ameion_gly_clear_claim_core = { TAG = G50 }
+				ameion_gly_clear_claim_core = { TAG = G48 }
+				ameion_gly_clear_claim_core = { TAG = G49 }
+				if = {
+					limit = { tag = G00 }
+					hidden_effect = {
+						every_subject_country = {
+							limit = {
+								is_subject_of_type = gylikheion
+								NOT = { government = monarchy }
+							}
+							change_government_to_monarchy = yes
+							change_government_reform_progress = 300
+						}
+					}
+				}
+			}
+			custom_tooltip = ameion_nekhis_gyli_7
+			hidden_effect = { #Arrange borders
+				alecand_region = {
+					remove_core = ROOT
+					remove_claim = ROOT
+					if = {
+						limit = {
+							OR = {
+								area = mtelian_area
+								area = eltikan_area
+								area = lokegentia_area
+								area = geneltik_area
+							}
+						}
+						add_core = G60
+						cede_province = G60
+					}
+				}
+			}
+			G60 = {
+				change_religion = kheionism
+				change_primary_culture = eltibhen
+				2785 = {
+					move_capital_effect = yes
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					change_religion = kheionism
+					change_culture = eltibhen
+				}
+			}
+			create_subject = { subject_type = gylikheion subject = G60 } #Eltikan
+			custom_tooltip = ameion_nekhis_gyli_8
+			hidden_effect = {
+				G60 = { #Cede outside territory to Ameion
+					south_america = { #every_owned_province bug workaround
+						limit = {
+							owned_by = PREV
+							NOT = {
+								area = mtelian_area
+								area = eltikan_area
+								area = lokegentia_area
+								area = geneltik_area
+							}
+						}
+						if = {
+							limit = { is_core = owner }
+							remove_core = owner
+							add_core = ROOT
+						}
+						cede_province = ROOT
+					}
+					every_owned_province = {
+						limit = { 
+							religion = kheionism
+							NOT = { province_id = 2785 }
+						}
+						add_culture_construction = {
+							speed = 1
+							cost = 0
+						}
+					}
+				}
+				every_province = { #Remove Excess claims/cores
+					limit = { is_claim = G60 }
+					remove_claim = G60
+				}
+				ameion_gly_clear_claim_core = { TAG = G60 }
+			}
+	}
+	option = {
+		name = flavor_ameion.39.b
+		custom_tooltip = ameion_kheios_march
+		hidden_effect = { #Kheios
+			alecand_region = {
+				if = {
+					limit = { NOT = { area = arpenisi_area } }
+					add_core = H22
+					cede_province = H22
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+			if = {
+				limit = { G59 = { is_subject_of = ROOT } }
+				arpenisi_area = {
+					add_core = G59
+					cede_province = G59
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+			else = {
+				arpenisi_area = {
+					add_core = H22
+					cede_province = H22
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
 		}
-		set_country_flag = ameion_eltibhen_1
+		create_subject = { subject_type = march subject = H22 } #Kheios
+	}
+	option = {
+		name = flavor_ameion.39.c
+		add_adm_power = 50
 	}
 }
 
-#Orenkoraim Attacked
+#Leader of the Kheionai World
 country_event = {
 	id = flavor_ameion.40
 	title = flavor_ameion.40.t
 	desc = flavor_ameion.40.d
-	picture = REVOLUTION_eventPicture
+	picture = FAR_AND_WIDE_eventPicture
 	
 	is_triggered_only = yes
 	
-	immediate = {
-		hidden_effect = {
-			if = {
-				limit = { tag = G52 }
-				set_global_flag = ameion_G52_c #Accounts for G00
-			}
-			taychend_superregion = {
-				#limit = { region = yodhanchend_region }
-				if = {
-					limit = { has_province_flag = G52_c_G71 }
-					#clr_province_flag = G52_c_G71
-					if = {
-						limit = {
-							owner = {
-								NOT = {
-									tag = G52
-									tag = G00
-									tag = G71
-								}
-							}
-						}
-						ROOT = { set_country_flag = ameion_G71_vassal_1 }
-						owner = { set_country_flag = ameion_G71_vassal_2 }
-					}
-					add_core = G71
-					cede_province = G71
-					if = {
-						limit = { NOT = { fort_level = 3 } }
-						add_building = fort_16th
-					}
-				}
-			}
-			if = {
-				limit = { has_country_flag = ameion_G71_vassal_1 }
-				random_known_country = {
-					limit = { has_country_flag = ameion_G71_vassal_1 }
-					vassalize = G71
-				}
-			}
-			declare_war_with_cb = {
-				who = G71
-				casus_belli = cb_conquest
-				war_goal_province = 6559
-			}
-			G71 = {
-				create_general = { tradition = 70 }
-				change_religion = gods_of_the_taychend
-				add_country_modifier = {
-					name = G52_free_port
-					duration = -1
-				}
-				ameion_G71_reinforce = yes
-				set_capital = 6559
-			}
-			every_country = {
-				limit = {
-					full_idea_group = exploration_ideas
-					capital_scope = { continent = europe }
-					OR = {
-						total_development = 150
-						any_subject_country = { capital_scope = { continent = south_america } }
-						luck = yes
-					}
-				}
-				country_event = { id = flavor_ameion.42 days = 30 random = 365 }
-			}
-		}
-	}
-	
 	option = {
 		name = flavor_ameion.40.a
-		tooltip = {
-			declare_war_with_cb = {
-				who = G71
-				casus_belli = cb_conquest
-				war_goal_province = 6559
-			}
-			G71 = {
-				add_country_modifier = {
-					name = G52_free_port
-					duration = -1
-				}
-				ameion_G71_reinforce = yes
-				set_capital = 6559
+		trigger = { has_subject_of_type = gylikheion }
+		add_country_modifier = {
+			name = G52_strength_philosophy
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_ameion.40.b
+		trigger = {
+			OR = {
+				U27 = { is_subject_of = ROOT }
+				H22 = { is_subject_of = ROOT }
 			}
 		}
 		add_country_modifier = {
-			name = G52_free_port_war
+			name = G52_brother_states
 			duration = -1
 		}
+		add_historical_friend = U27
+		add_historical_friend = H22
 		hidden_effect = {
-			add_country_modifier = {
-				name = G52_free_port_slow
-				duration = 30
-			}
+			U27 = { add_historical_friend = ROOT }
+			H22 = { add_historical_friend = ROOT }
 		}
-		custom_tooltip = ameion_orenkoraim_war_3
+	}
+	option = {
+		name = flavor_ameion.40.c
+		add_country_modifier = {
+			name = G52_centralized_nation
+			duration = -1
+		}
 	}
 }
-
 
 #Orenkoraim Revolts
 country_event = {
@@ -2634,216 +2708,7 @@ country_event = {
 	}
 }
 
-#Orenkoraim Asks For Aid
-country_event = {
-	id = flavor_ameion.42
-	title = flavor_ameion.42.t
-	desc = flavor_ameion.42.d
-	picture = DIPLOMACY_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = { #Help
-		name = flavor_ameion.42.a
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 5
-				is_enemy = FROM
-			}
-			modifier = {
-				factor = 5
-				is_rival = FROM
-			}
-			modifier = {
-				factor = 0
-				is_bankrupt = yes
-			}
-		}
-		add_treasury = -400
-		if = {
-			limit = { has_global_flag = ameion_G52_c }
-			G52 = { country_event = { id = flavor_ameion.46 days = 60 random = 90 } }
-		}
-		else = { G00 = { country_event = { id = flavor_ameion.46 days = 60 random = 90 } } }
-	}
-	option = { #Threat
-		name = flavor_ameion.42.b
-		ai_chance = { 
-			factor = 60
-			modifier = {
-				factor = 0
-				is_bankrupt = yes
-			}
-		}
-		if = {
-			limit = { has_global_flag = ameion_G52_c }
-			G52 = { country_event = { id = flavor_ameion.43 days = 30 random = 60 } }
-		}
-		else = { G00 = { country_event = { id = flavor_ameion.43 days = 30 random = 60 } } }
-	}
-	option = { #Meh
-		name = flavor_ameion.42.c
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 2
-				num_of_loans = 3
-			}
-			modifier = {
-				factor = 0.25
-				1544 = { #Taychend
-					trade_share = {
-						country = ROOT
-						share = 3
-					}
-				}
-			}
-		}
-		add_prestige = -15
-	}
-}
-
-#Cannorians Threaten
-country_event = {
-	id = flavor_ameion.43
-	title = flavor_ameion.43.t
-	desc = flavor_ameion.43.d
-	picture = SIEGE_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = { exists = G71 }
-	
-	option = {
-		name = flavor_ameion.43.a
-		add_truce_with = FROM
-		1544 = {
-			add_trade_modifier = {
-				who = FROM
-				duration = 18250
-				power = 30
-				key = ameion_G71_threat
-			}
-		}
-		FROM = { country_event = { id = flavor_ameion.44 days = 30 } }
-	}
-	option = {
-		name = flavor_ameion.43.b
-		add_mercantilism = 1
-		FROM = { country_event = { id = flavor_ameion.45 days = 30 } }
-	}
-}
-
-#Ameion Accepts Threat
-country_event = {
-	id = flavor_ameion.44
-	title = flavor_ameion.44.t
-	desc = flavor_ameion.44.d
-	picture = CONQUEST_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = flavor_ameion.44.a
-		add_prestige = 15
-		tooltip = {
-			add_truce_with = FROM
-			1544 = {
-				add_trade_modifier = {
-					who = ROOT
-					duration = 18250
-					power = 30
-					key = ameion_G71_threat
-				}
-			}
-		}
-	}
-}
-
-#Ameion Declines Threat
-country_event = {
-	id = flavor_ameion.45
-	title = flavor_ameion.45.t
-	desc = flavor_ameion.45.d
-	picture = REVOLUTION_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = { exists = G71 }
-	
-	option = {
-		name = flavor_ameion.45.a
-		add_treasury = -400
-		if = {
-			limit = { has_global_flag = ameion_G52_c }
-			G52 = { country_event = { id = flavor_ameion.46 days = 30 random = 60 } }
-		}
-		else = { G00 = { country_event = { id = flavor_ameion.46 days = 30 random = 60 } } }
-	}
-}
-
-#Orenkoraim gets Aid
-country_event = {
-	id = flavor_ameion.46
-	title = flavor_ameion.46.t
-	desc = flavor_ameion.46.d
-	picture = SHIP_SAILING_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = { exists = G71 }
-	
-	option = {
-		name = flavor_ameion.46.a
-		G71 = { ameion_G71_reinforce = yes }
-	}
-}
-
-#Orenkoraim Defeated
-country_event = {
-	id = flavor_ameion.47
-	title = flavor_ameion.47.t
-	desc = flavor_ameion.47.d
-	picture = FLAGSHIP_SUNK_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		#OR = {
-			mission_completed = G52_last_port
-		#	has_country_flag = ameion_debug_g71
-		#}
-		orenkoraim_area = {
-			type = all
-			owned_by = ROOT
-		}
-		katelperai_area = {
-			type = all
-			owned_by = ROOT
-		}
-		NOT = { has_country_flag = ameion_G71_victory }
-	}
-	
-	option = {
-		name = flavor_ameion.47.a
-		set_country_flag = ameion_G71_victory
-		remove_country_modifier = G52_free_port_war
-		add_prestige = 25
-		add_splendor = 200
-		1544 = {
-			add_trade_modifier = {
-				who = ROOT
-				duration = -1
-				power = 25
-				key = ameion_G71_win
-			}
-		}
-		G71 = { remove_country_modifier = G52_free_port }
-	}
-}
-
-#Capstone
+#Old Capstone
 country_event = {
 	id = flavor_ameion.48
 	title = flavor_ameion.48.t
@@ -4149,6 +4014,135 @@ country_event = {
 		add_legitimacy = -10
 		add_truce_with = H00
 		H00 = { add_truce_with = ROOT }
+	}
+}
+
+#Foreign Intervention
+country_event = {
+	id = flavor_ameion.80
+	title = flavor_ameion.80.t
+	desc = flavor_ameion.80.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_ameion.80.a
+		amadia_region = { add_core = J90 }
+		if = {
+			limit = { NOT = { exists = J90 } }
+			release_with_religion_and_culture = { tag = J90 religion = ROOT culture = quchamar }
+		}
+		hidden_effect = {
+			amadia_region = {
+				limit = { owned_by = ROOT }
+				cede_province = J90
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+		}
+		create_subject = { subject_type = march subject = J90 }
+		J90 = {
+			override_country_name = thamlimos
+			if = {
+				limit = { NOT = { government = republic } }
+				change_government = republic
+				change_government_reform_progress = 200
+			}
+			change_religion = kheionism
+			add_country_modifier = {
+				name = G52_adopting_kheionism
+				duration = 9125
+			}
+		}
+	}
+	option = {
+		name = flavor_ameion.80.b
+		set_country_flag = G52_amadian_rule
+		custom_tooltip = ameion_amadian_rule_tt
+	}
+}
+
+#Rise of the Klereyen
+country_event = {
+	id = flavor_ameion.81
+	title = flavor_ameion.81.t
+	desc = flavor_ameion.81.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_ameion.81.a
+		2525 = { change_culture = klereyen }
+		2520 = { change_culture = klereyen }
+		clr_country_flag = ameion_fotistrepei_flag
+		custom_tooltip = ameion_kheionization_tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = G52_fotistrepei_mod }
+				ameion_kheionization_effect = yes
+				remove_province_modifier = G52_fotistrepei_mod
+			}
+			remove_accepted_culture = larankarha
+			remove_accepted_culture = advakhalla
+			remove_accepted_culture = sarihaddi
+			remove_accepted_culture = yodhanpir
+			remove_accepted_culture = kalavendhi
+			remove_accepted_culture = thekvrystana
+		}
+		add_country_modifier = {
+			name = G52_mandated_kheionization
+			duration = 36500
+		}
+		every_owned_province = {
+			limit = {
+				superregion = taychend_superregion
+				NOT = {
+					area = caergaraen_area
+					area = rakkabuttai_area 
+					area = zaernmaera_area
+					area = oremvand_area
+					area = ameionavil_area
+				}
+				culture_group = kheionai_ruinborn_elf
+				NOT = { culture = klereyen }
+			}
+			change_culture = klereyen
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = chendhya_region
+					region = mteibas_valley_region
+					area = caergaraen_area
+					area = rakkabuttai_area 
+					area = zaernmaera_area
+					area = oremvand_area
+				}
+				NOT = { culture = astolbhen }
+			}
+			change_culture = astolbhen
+		}
+	}
+}
+
+#Old Capstone
+country_event = {
+	id = flavor_ameion.82
+	title = flavor_ameion.82.t
+	desc = flavor_ameion.82.d
+	picture = BIG_STAR_IN_SKY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_ameion.82.a
+		remove_country_modifier = G52_empire_ruin
+		add_country_modifier = {
+			name = G52_reborn_ruin
+			duration = -1
+		}
 	}
 }
 

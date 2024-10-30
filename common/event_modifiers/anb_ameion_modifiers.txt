@@ -29,7 +29,7 @@ G52_laskaris_destiny_d = {
 }
 
 #Ameion Missions
-G52_interior_development = { #1
+G52_interior_development = {
 	global_tax_income = 12
 	global_colonial_growth = 20
 }
@@ -60,40 +60,133 @@ G52_severing_uncivilizable = {
 	culture_conversion_cost = -0.20
 }
 
-G52_birth_kheion = { #2
-	global_institution_spread = 0.3
-	development_cost = -0.1
-}
-G52_integrating_kin = {
-	global_tax_income = 24
-	colonists = 1
-}
-G52_recognized_kheion = {
-	local_development_cost = -0.1
-	local_defensiveness = 0.1
-	local_defender_dice_roll_bonus = 1
-	allowed_num_of_buildings = 1
-}
-G52_chendhyan_growth_3 = {
-	global_colonial_growth = 25
+G52_organized_settling = { #1
 	colonist_placement_chance = 0.05
+	global_colonial_growth = 25
 }
-G52_chendhyan_growth_2 = {
-	global_tax_income = 36
-	global_colonial_growth = 35
-	colonist_placement_chance = 0.1
-	colonists = 1
-}
-G52_chendhyan_growth_1 = {
-	global_tax_income = 60
-	global_colonial_growth = 50
-	colonist_placement_chance = 0.15
-	colonists = 2
+G52_common_military_m = {
+	mil_tech_cost_modifier = -0.1
+	yearly_army_professionalism = 0.004
 }
 G52_devandi_unifier = {
 	diplomatic_reputation = 1
 	accept_vassalization_reasons = 5
 }
+G52_cleaved_admiralty = {
+	naval_forcelimit = 10
+	naval_forcelimit_modifier = 0.5
+	global_ship_cost = -0.25
+	global_sailors = 1000
+	liberty_desire = -15
+	amount_of_geobukseon = 15
+	has_geobukseon = yes
+}
+G52_strength_philosophy = {
+	monarch_power_tribute = 1
+}
+G52_brother_states = {
+	liberty_desire_from_subject_development = -0.1
+	diplomatic_reputation = 1
+}
+G52_centralized_nation = {
+	governing_capacity = 200
+}
+
+G52_sponsored_consolidation = { #2
+	global_tax_income = 24
+	technology_cost = -0.1
+	global_institution_spread = 0.3
+}
+G52_chendhyan_control = {
+	colonists = 1
+}
+G52_chendhyan_auxiliary = {
+	merc_maintenance_modifier = -0.25
+	cavalry_power = 0.15
+}
+G52_adopting_kheionism = {
+	global_missionary_strength = 0.02
+	religious_unity = 0.5
+	development_cost_in_primary_culture = -0.1
+}
+G52_developing_land = {
+	local_build_cost = -0.1
+	local_development_cost = -0.1
+}
+G52_empire_ruin = {
+	discipline = 0.05
+	administrative_efficiency = 0.05
+}
+G52_local_capital = {
+	statewide_governing_cost = -0.1
+	local_governing_cost_increase = -15
+	local_tax_modifier = 0.25
+	picture = "statewide_governing_cost"
+}
+G52_kheionai_settlement = {
+	local_culture_conversion_cost = -0.1
+	local_development_cost = -0.2
+}
+G52_amadian_tolerance = {
+	num_accepted_cultures = 6
+}
+
+G52_ambhen_city = { #3
+	statewide_governing_cost = -0.10
+	trade_goods_size_modifier = 0.20
+	picture = "statewide_governing_cost"
+}
+G52_delivering_civilized = {
+	missionaries = 1
+	global_autonomy = -0.05
+}
+G52_recognized_kheion = {
+	local_development_cost = -0.1
+	local_great_project_upgrade_cost = -0.25
+	local_defender_dice_roll_bonus = 1
+	allowed_num_of_buildings = 1
+}
+G52_conquest_taychend = {
+	administrative_efficiency = 0.1
+	harsh_treatment_cost = -0.5
+	global_missionary_strength = 0.02
+}
+G52_mandated_kheionization = {
+	global_missionary_strength = 0.03
+	missionaries = 1
+	num_accepted_cultures = -5
+}
+G52_kheionai_immigrants = {
+	development_cost = -0.1
+	culture_conversion_cost = -0.1
+}
+G52_eiried_ameioni = {
+	legitimacy = 1
+	republican_tradition = 0.3
+	devotion = 0.5
+	global_monthly_devastation = -0.1
+	global_prosperity_growth = 0.25
+	land_morale = 0.10
+	global_missionary_strength = 0.02
+}
+G52_reunifiying_old_home = {
+	prestige = 1
+	province_warscore_cost = -0.1
+}
+G52_reborn_ruin = {
+	discipline = 0.05
+	administrative_efficiency = 0.05
+	governing_capacity_modifier = 0.2
+	diplomatic_upkeep = 1
+}
+
+#4
+G52_fotistrepei_mod = {
+	local_autonomy = -0.05
+	local_manpower_modifier = 0.2
+}
+
+
 G52_mass_kheionization = {
 	culture_conversion_cost = -0.20
 	development_cost = -0.05
@@ -109,30 +202,13 @@ G52_securing_trade = {
 	global_own_trade_power = 0.25
 	leader_naval_manuever = 1
 }
-G52_administrative_center = {
-	statewide_governing_cost = -0.2
-	local_defender_dice_roll_bonus = 1
-	local_fort_maintenance_modifier = -0.25
-	picture = "statewide_governing_cost"
-}
 
-G52_organized_settling = { #3
-	colonist_placement_chance = 0.05
-	global_colonial_growth = 25
-}
-G52_common_military_m = {
-	mil_tech_cost_modifier = -0.1
-	yearly_army_professionalism = 0.004
-}
+
 G52_kheion_worlds = {
 	diplomatic_reputation = 1
 	diplomatic_upkeep = 1
 }
-G52_ambhen_city = {
-	statewide_governing_cost = -0.20
-	trade_goods_size_modifier = 0.20
-	picture = "statewide_governing_cost"
-}
+
 G52_restrict_settling = {
 	global_colonial_growth = -15
 }
@@ -172,27 +248,6 @@ G52_unifying_brothers = {
 	diplomatic_annexation_cost = -0.25
 	liberty_desire_from_subject_development = -0.2
 }
-G52_gylkheion_cooldown = {
-	#empty
-}
-G52_cleaved_admiralty = {
-	naval_forcelimit = 10
-	global_ship_cost = -0.15
-	navy_tradition_decay = -0.01
-	global_sailors = 1000
-	liberty_desire = -15
-}
-G52_expanded_navy = {
-	naval_forcelimit_modifier = 0.2
-	global_ship_cost = -0.2
-}
-G52_eiried_ameioni = {
-	legitimacy = 1
-	republican_tradition = 0.3
-	devotion = 0.5
-	global_monthly_devastation = -0.1
-	global_prosperity_growth = 0.25
-}
 
 G52_first_steps = { #4
 	global_missionary_strength = 0.03
@@ -218,22 +273,9 @@ G52_preparing_impact = {
 	manpower_recovery_speed = 0.25
 	spy_offence = 0.25
 }
-G52_delivering_civilized = {
-	missionaries = 1
-	global_autonomy = -0.05
-}
 G52_western_protection = {
 	fort_maintenance_modifier = -0.10
 	defensiveness = 0.10
-}
-G52_peaceful_reprieve = {
-	development_cost = -0.15
-	stability_cost_to_declare_war = 2
-	administrative_efficiency = -0.25
-}
-G52_conquest_taychend = {
-	administrative_efficiency = 0.1
-	global_rebel_suppression_efficiency = 0.25
 }
 G52_laskaris_vision = {
 	global_autonomy = -0.025
