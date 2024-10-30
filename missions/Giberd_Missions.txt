@@ -2185,11 +2185,12 @@ giberd_mercantile_shipping = {
 				value = 4
 			}
 			is_defender_of_faith = yes
+			num_of_rajput = 40
 			271 = {
 				num_of_units_in_province = {
 					who = ROOT
-					type = rajput					# TODO: shouldn't include regular infantry
-					amount = 2
+					type = infantry
+					amount = 40
 				}
 			}
 		}
@@ -2197,7 +2198,7 @@ giberd_mercantile_shipping = {
 			271 = {
 				kill_units = {
 					who = ROOT
-					type = rajput_infantry
+					type = infantry
 					amount = 40
 				}
 			}
