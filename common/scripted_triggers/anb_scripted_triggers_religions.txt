@@ -283,10 +283,7 @@ feast_of_the_gods_4_reforms_passed = {
 has_reformed_feast_of_the_gods = {
 	custom_trigger_tooltip = {
 		tooltip = fotg_reformed_tt
-		OR = {
-			NOT = { religion = feast_of_the_gods }
-			religion = reformed_feast_of_the_gods
-		}
+		NOT = { religion = feast_of_the_gods }
 	}
 }
 

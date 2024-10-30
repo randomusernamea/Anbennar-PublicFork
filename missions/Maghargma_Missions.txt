@@ -390,8 +390,13 @@ maghargma_dynamic_westmarches_2 = {
 								owned_by_subject_of = ROOT
 							}
 						}
-						cede_province = J51
-						add_core = J51
+						fp_westmarches = {
+							limit = { 
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J51
+							add_core = J51
+						}
 					}
 				}
 				else = {
@@ -472,17 +477,9 @@ maghargma_one_post_westmarches = {
 				} 
 				vassalize = J32
 				serpents_vale_region = {
-					limit = {
-						NOT = { is_core = J32 }
-						NOT = { owned_by = J32 }
-					}
 					add_permanent_claim = J32 
 				} 
 				amldihr_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				} 
 			}
@@ -502,17 +499,9 @@ maghargma_one_post_westmarches = {
 					}
 				}
 				serpents_vale_region = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				} 
 				amldihr_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				} 
 			}
@@ -662,10 +651,6 @@ maghargma_two = {
 		effect = {
 			country_event = { id = flavor_maghargma.9 } #And The Stick
 			wild_clan_lands = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 		}
@@ -891,8 +876,13 @@ maghargma_dynamic_heartlands_2 = {
 								owned_by_subject_of = ROOT
 							}
 						}
-						cede_province = J50
-						add_core = J50
+						fp_heartlands = {
+							limit = {
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J50
+							add_core = J50
+						}
 					}
 				}
 				else = {
@@ -1165,24 +1155,12 @@ maghargma_two_post_trolls = {
 				}
 			}
 			gerudian_frontier_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			dalr_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			alenic_frontier_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 		}
@@ -1218,17 +1196,9 @@ maghargma_two_post_trolls = {
 
 		effect = {
 			alenic_reach_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			west_castanor_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			add_country_modifier = {
@@ -1267,10 +1237,6 @@ maghargma_two_post_trolls = {
 			custom_tooltip = maghargma_lords_of_frost_tt
 			hidden_effect = {
 				europe = { 
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				}
 			}
@@ -1303,33 +1269,15 @@ maghargma_three = {
 			if = {
 				limit = { has_ruler_flag = ruler_is_ziltagh }
 				foirakhian_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				}	
 				naglaibar_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-					}
-					add_permanent_claim = ROOT 
-				}
-				naglaibar_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				}
 				ugheabar_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				}
 				caubheameas_area = { 
-					limit = {
-						NOT = { is_core = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				}
 			}
@@ -1421,10 +1369,6 @@ maghargma_three = {
 		effect = {
 			5123 = { center_of_trade = 1 } 
 			yyl_moista_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT
 			}
 			add_country_modifier = {
@@ -1488,17 +1432,9 @@ maghargma_three = {
 
 		effect = {
 			south_yarikhoi_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			north_yarikhoi_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			add_legitimacy = 10
@@ -1845,10 +1781,6 @@ maghargma_three = {
 			if = {
 				limit = { owns_core_province = 4119 } 
 				west_dwarovar_region = { 
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				} 
 			}
@@ -2139,17 +2071,9 @@ maghargma_four = {
 			}
 			add_dip_power = -100
 			west_forbidden_plains_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			serpent_gift_region = { 
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 		}
@@ -2216,10 +2140,6 @@ maghargma_four = {
 				add_dip_power = 100
 			}
 			east_forbidden_plains_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 		}
@@ -2377,10 +2297,6 @@ maghargma_four = {
 				}
 			}
 			nuzurbokh_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			}
 			capital_scope = { 
@@ -2560,8 +2476,13 @@ maghargma_dynamic_brightmarch_1 = {
 								owned_by_subject_of = ROOT
 							}
 						}
-						cede_province = J50
-						add_core = J50
+						fp_brightmarch = {
+							limit = { 
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J50
+							add_core = J50
+						}
 					}
 				}
 				else = {
@@ -2886,10 +2807,6 @@ maghargma_four_post_ancestor = {
 			custom_tooltip = maghargma_lords_of_stone_tt
 			hidden_effect = {
 				asia = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { owned_by = ROOT }
-					}
 					add_permanent_claim = ROOT 
 				} 
 			}
@@ -3419,8 +3336,13 @@ maghargma_dynamic_amberlands_2 = {
 								owned_by_subject_of = ROOT
 							}
 						}
-						cede_province = J52
-						add_core = J52
+						fp_amberlands = {
+							limit = {
+								owned_by_subject_of = ROOT
+							}
+							cede_province = J52
+							add_core = J52
+						}
 					}
 				}
 				else = {
@@ -3503,10 +3425,6 @@ maghargma_five_post_amberlands = {
 
 		effect = {
 			north_haless_superregion = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
 				add_permanent_claim = ROOT 
 			} 
 			add_country_modifier = {
