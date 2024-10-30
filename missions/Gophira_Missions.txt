@@ -501,7 +501,8 @@ gophira_1_march = {
 
 		effect = {
 			J72 = {
-				remove_country_modifier = gophira_march_buff
+				custom_tooltip = gophira_bettermarch_tt
+				hidden_effect = { remove_country_modifier = gophira_march_buff }
 				add_country_modifier = {
 					name = gophira_march_moarbuff
 					duration = -1
@@ -712,11 +713,14 @@ gophira_3 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				has_personal_deity = taychend_glory_2
-				has_personal_deity = taychend_glory_3
-				has_personal_deity = taychend_glory_4
-				has_personal_deity = taychend_glory_5
+			if = {
+				limit = { religion = gods_of_the_taychend }	
+				OR = {
+					has_personal_deity = taychend_glory_2
+					has_personal_deity = taychend_glory_3
+					has_personal_deity = taychend_glory_4
+					has_personal_deity = taychend_glory_5
+				}
 			}
 			if = { 
 				limit = {
@@ -1151,6 +1155,7 @@ gophira_cap = {
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					is_island = yes
+					is_city = no
 				}
 			}
 			army_size = 100
@@ -1184,6 +1189,7 @@ gophira_cap_fren = {
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 				is_island = yes
+				is_city = no
 			}
 		} 
 
@@ -1194,6 +1200,7 @@ gophira_cap_fren = {
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					is_island = yes
+					is_city = no
 				}
 			}
 			army_size = 100
@@ -1347,7 +1354,6 @@ gophira_4 = {
 					}
 					AND = {
 						has_trade_building_trigger = yes
-						has_production_or_gold_building_trigger = yes
 						has_tax_building_trigger = yes
 						OR = {
 							has_building = mage_tower
@@ -1479,7 +1485,7 @@ gophira_4 = {
 			has_country_modifier = gunpowder_core
 			estate_loyalty = {
 				estate = estate_nobles
-				loyalty = 80
+				loyalty = 50
 			}
 			NOT = {
 				estate_influence = {
@@ -1585,6 +1591,8 @@ gophira_5 = {
 				duration = -1
 			}
 			set_country_flag = gunpowder_core_activated
+			clr_country_flag = count_battles_won
+			clr_country_flag = count_wars_won
 		}
 	}
 
@@ -1595,9 +1603,12 @@ gophira_5 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {	
-				has_personal_deity = taychend_glory_4
-				has_personal_deity = taychend_glory_5
+			if = {
+				limit = { religion = gods_of_the_taychend }	
+				OR = {	
+					has_personal_deity = taychend_glory_4
+					has_personal_deity = taychend_glory_5
+				}
 			}
 			OR = {
 				custom_trigger_tooltip = { 

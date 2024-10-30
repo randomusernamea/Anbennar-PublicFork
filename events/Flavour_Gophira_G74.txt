@@ -195,7 +195,7 @@ country_event = {
 	option = {
 		name = gophira.4.2
 		create_march = J72
-		if = { 
+		if = {
 			limit = { has_saved_event_target = pay_ae }
 			every_known_country = {
 				limit = {
@@ -234,12 +234,15 @@ country_event = {
 
 	option = {
 		name = gophira.5.1
-		capital_scope = {
-			bharbhen_1_chendhyan_razers = ROOT
-			bharbhen_1_chendhyan_razers = ROOT
-			bharbhen_1_chendhyan_razers = ROOT
-			bharbhen_1_chendhyan_razers = ROOT
-			bharbhen_1_chendhyan_razers = ROOT
+		custom_tooltip = gophira_chendhyan_division_tt
+		hidden_effect = {
+			capital_scope = {
+				bharbhen_1_chendhyan_razers = ROOT
+				bharbhen_1_chendhyan_razers = ROOT
+				bharbhen_1_chendhyan_razers = ROOT
+				bharbhen_1_chendhyan_razers = ROOT
+				bharbhen_1_chendhyan_razers = ROOT
+			}
 		}
 		random = {
 			chance = 50
@@ -452,9 +455,10 @@ country_event = {
 
 	option = {
 		name = gophira.11.1
+		custom_tooltip = gophira_improve_stance_tt
 		if = {
 			limit = { has_country_modifier = gophira_stance_1 }
-			remove_country_modifier = gophira_stance_1
+			hidden_effect = { remove_country_modifier = gophira_stance_1 }
 			add_country_modifier = {
 				name = gophira_stance_1fin
 				duration = -1
@@ -462,7 +466,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { has_country_modifier = gophira_stance_2 }
-			remove_country_modifier = gophira_stance_2
+			hidden_effect = { remove_country_modifier = gophira_stance_2 }
 			add_country_modifier = {
 				name = gophira_stance_2fin
 				duration = -1
@@ -478,14 +482,14 @@ country_event = {
 		}
 		else_if = {
 			limit = { has_country_modifier = gophira_stance_4 }
-			remove_country_modifier = gophira_stance_4
+			hidden_effect = { remove_country_modifier = gophira_stance_4 }
 			add_country_modifier = {
 				name = gophira_stance_4fin
 				duration = -1
 			}
 		}
 		else = {
-			remove_country_modifier = gophira_stance_5
+			hidden_effect = { remove_country_modifier = gophira_stance_5 }
 			add_country_modifier = {
 				name = gophira_stance_5fin
 				duration = -1
