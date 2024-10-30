@@ -878,11 +878,17 @@ giberd_konwell_conquest = {
 			271 = {
 				development = 50
 				num_of_times_expanded_infrastructure = 3				# TODO: dlc check or 200 admin
-				has_state_edict = edict_encourage_development
 				has_courthouse_building_trigger = yes
 				has_building = university
 			}
 			papal_influence = 100
+			custom_trigger_tooltip = {
+				tooltip = giberd_we_built_this_city_edict_tt
+				had_country_flag = {
+					flag = giberd_bennonhill_development_edict
+					days = 3650
+				}
+			}
 		}
 		effect = {
 			add_papal_influence = -100
@@ -1915,7 +1921,13 @@ giberd_mercantile_shipping = {
 				NOT = {
 					has_construction = any
 				}
-				has_state_edict = edict_advancement_effort
+			}
+			custom_trigger_tooltip = {
+				tooltip = giberd_from_a_school_to_a_university_edict_tt
+				had_country_flag = {
+					flag = giberd_bennonhill_advancement_edict
+					days = 1825
+				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = giberd_from_a_school_to_a_university_tt
@@ -1962,7 +1974,13 @@ giberd_mercantile_shipping = {
 						tooltip = castle_clareen_prosperous_tt
 						is_prosperous = yes
 					}
-					has_state_edict = edict_defensive_edict
+					custom_trigger_tooltip = {
+						tooltip = giberd_castle_clareen_edict_tt
+						had_country_flag = {
+							flag = giberd_bennonhill_defensive_edict
+							days = 1825
+						}
+					}
 				}
 			}
 			has_mil_advisor_3 = yes
