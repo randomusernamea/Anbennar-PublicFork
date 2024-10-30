@@ -19,13 +19,6 @@ country_event = {
 				}
 				save_event_target_as = kobold_event_target
 			}
-			random_owned_province = {
-				limit = {
-					religion = kobold_dragon_cult
-					NOT = { has_province_modifier = kdc_donated_to_hoard }
-				}
-				save_event_target_as = kobold_event_target
-			}
 			set_variable = {
 				which = dev2add
 				value = 0
@@ -59,17 +52,6 @@ country_event = {
 					}
 				}
 			}
-		}
-	}
-	
-	after = {
-		if = {
-			limit = {
-				has_unlocked_all_kobold_cults = yes
-
-				NOT = { has_country_flag = kobold_power_of_the_rainbow }
-			}
-			country_event = { id = flavour_kobold_dragon_cult.3 }
 		}
 	}
 	
@@ -118,13 +100,6 @@ country_event = {
 		}
 		else = {
 			var_effect = { effect = add_treasury var = dev2add sign = + } 
-		}
-		
-		event_target:kobold_event_target = {
-			add_province_modifier = {
-				name = kdc_donated_to_hoard
-				duration = 365
-			}
 		}
 	}
 	
@@ -564,7 +539,6 @@ country_event = {
 		tooltip = { random = { chance = 10 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_1
 		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -580,7 +554,6 @@ country_event = {
 		tooltip = { random = { chance = 25 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_2
 		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -596,7 +569,6 @@ country_event = {
 		tooltip = { random = { chance = 50 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_3
 		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -610,7 +582,6 @@ country_event = {
 		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 1000 } } }
 		add_prestige = 10
 		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -625,7 +596,6 @@ country_event = {
 		add_prestige = 25
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -642,7 +612,6 @@ country_event = {
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
 		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
 	}
 	
@@ -652,49 +621,5 @@ country_event = {
 		ai_chance = { factor = 50 }
 		highlight = yes
 		hidden_effect = { clr_country_flag = kobold_hoard_menu }
-	}
-}
-
-# Unlock malliath
-country_event = {
-	id = flavour_kobold_dragon_cult.3
-	title = flavour_kobold_dragon_cult.3.t
-	desc = flavour_kobold_dragon_cult.3.d
-	picture = KOBOLD_HOARD_eventPicture
-	
-	is_triggered_only = yes
-	
-	# Coolio
-	option = {		
-		name = flavour_kobold_dragon_cult.3.a
-		ai_chance = { factor = 50 }
-
-		add_country_modifier = {
-			name = rainbow_dragon
-			duration = -1
-		}
-		set_country_flag = kobold_power_of_the_rainbow
-	}
-}
-
-
-country_event = {
-	id = flavour_kobold_dragon_cult.4
-	title = flavour_kobold_dragon_cult.4.t
-	desc = flavour_kobold_dragon_cult.4.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	is_triggered_only = yes
-	hidden = yes
-	
-	trigger = {
-		always = yes
-	}
-	
-	# Dragon Spawn
-	option = {		
-		name = flavour_kobold_dragon_cult.4.a
-		ai_chance = { factor = 50 }	
-		country_event = { id = flavour_kobold_dragon_cult.2 }
 	}
 }
