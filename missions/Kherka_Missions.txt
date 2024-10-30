@@ -177,7 +177,7 @@ G48_slot_1 = {
 					add_mercantilism = 3
 					add_years_of_trade_income = { 
 						years = 2
-						custom_tooltip = gainFourYearsTradeIncome
+						custom_tooltip = gainTwoYearsTradeIncome
 					}
 				}
 			}
@@ -186,7 +186,7 @@ G48_slot_1 = {
 				add_mercantilism = 3
 				add_years_of_trade_income = { 
 					years = 2
-					custom_tooltip = gainFourYearsTradeIncome
+					custom_tooltip = gainTwoYearsTradeIncome
 				}
 			}
 		} 
@@ -231,6 +231,7 @@ G48_slot_2 = {
 
 		trigger = {  
 			ormam_area = {
+				type = all
 				owned_by = ROOT
 			}
 			G50 = { exists = no }
@@ -266,6 +267,7 @@ G48_slot_2 = {
 
 		trigger = {  
 			degakheion_area = {
+				type = all
 				owned_by = ROOT
 			}
 			G46 = { exists = no }
@@ -351,6 +353,7 @@ G48_slot_2 = {
 
 		trigger = { 
 			oktikheion_area = {
+				type = all
 				owned_by = ROOT
 			}
 			2731 = { has_shipyard_building_trigger = yes }
@@ -401,6 +404,7 @@ G48_slot_3 = {
 
 		trigger = {  
 			lokemeion_area = {
+				type = all
 				owned_by = ROOT
 			}
 			G49 = { exists = no }
@@ -450,6 +454,7 @@ G48_slot_3 = {
 
 		trigger = {  
 			eltikan_area = {
+				type = all
 				owned_by = ROOT
 				has_owner_religion = yes
 			}
@@ -493,6 +498,7 @@ G48_slot_3 = {
 		trigger = {  
 			arpedifer_area = {
 				owned_by = ROOT
+				type = all
 			}
 			G51 = { exists = no }
 			2728 = { has_building = mage_tower }
@@ -621,6 +627,7 @@ G48_slot_4 = {
 
 		trigger = {  
 			kherka_area = {
+				type = all 
 				num_of_times_improved = 3
 			}
 			stability = 1
@@ -743,6 +750,7 @@ G48_slot_4 = {
 
 		trigger = {  
 			kherka_area = {
+				type = all
 				num_free_building_slots = 0
 			}
 			treasury = 2000
@@ -768,6 +776,7 @@ G48_slot_4 = {
 					COST = 0
 				}
 			}
+			custom_tooltip = G48_stalwarts_in_power_tt
 			if = {
 				limit = {
 					has_country_flag = G48_stalwarts_in_power
@@ -798,7 +807,7 @@ G48_slot_4 = {
 				OR = {
                 	has_terrain = mountain
                 	has_terrain = hills
-                	has_terrain = higlands
+                	has_terrain = highlands
                 }
 				OR = {
 					trade_goods = copper
@@ -809,7 +818,7 @@ G48_slot_4 = {
 			}
 			OR = {
 				NOT = { base_production = 10 }
-				NOT = { has_production_building_trigger = yes }
+				NOT = { has_production_or_gold_building_trigger = yes }
 			}
 		} 
 
@@ -819,7 +828,7 @@ G48_slot_4 = {
 					OR = {
                     	has_terrain = mountain
                     	has_terrain = hills
-                    	has_terrain = higlands
+                    	has_terrain = highlands
                 	}
 					OR = {
 						trade_goods = copper
@@ -828,7 +837,7 @@ G48_slot_4 = {
                     	trade_goods = gold
 					}
 					NOT = { base_production = 10 }
-					NOT = { has_production_building_trigger = yes }
+					NOT = { has_production_or_gold_building_trigger = yes }
 					owned_by = ROOT
 				}
 			}
