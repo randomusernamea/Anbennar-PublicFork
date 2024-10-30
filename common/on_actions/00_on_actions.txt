@@ -12294,6 +12294,10 @@ on_culture_promoted = {
 			}
 		}
 	}
+	if = {
+		limit = { has_country_flag = ameion_fotistrepei_flag }
+		ameion_fotistrepei_effect = yes
+	}
 }
 
 # ROOT = country
@@ -12489,7 +12493,31 @@ on_culture_demoted = {
 		 		NOT = { accepted_culture = moon_elf } 
 			}
 		add_accepted_culture = moon_elf
-	 }
+	}
+	if = {
+		limit = {
+			has_country_modifier = G52_amadian_tolerance
+			OR = {
+				NOT = { accepted_culture = quchamar }
+				NOT = { accepted_culture = chaqanel }
+				NOT = { accepted_culture = quruwei }
+				NOT = { accepted_culture = chamullach }
+				NOT = { accepted_culture = banche }
+				NOT = { accepted_culture = faalte }
+			}
+		}
+		remove_country_modifier = G52_amadian_tolerance
+		remove_accepted_culture = quchamar
+		remove_accepted_culture = chaqanel
+		remove_accepted_culture = quruwei
+		remove_accepted_culture = chamullach
+		remove_accepted_culture = banche
+		remove_accepted_culture = faalte
+	}
+	if = {
+		limit = { has_country_flag = ameion_fotistrepei_flag }
+		ameion_fotistrepei_effect = yes
+	}
 }
 
 # ROOT = country
