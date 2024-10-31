@@ -238,6 +238,9 @@ Naleni_branch_two = {
 				culture = metobesebi
 				has_tax_building_trigger = yes
 			}
+			custom_trigger_tooltip = {
+				tooltip = along_the_coast_ttt
+			}
 		}
 
 		effect = {
@@ -434,10 +437,16 @@ Naleni_branch_three = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				has_country_flag = removing_monstrous
-				NOT = { has_country_modifier = monstrous_nation } 
-			}
+			
+				OR = {
+					hidden_trigger = {
+						has_country_flag = removing_monstrous
+					}
+					custom_trigger_tooltip = {
+						tooltip = L55_not_monster
+					}
+					NOT = { has_country_modifier = monstrous_nation } 
+				}
 		}
 		
 		effect = { 
