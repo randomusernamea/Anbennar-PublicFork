@@ -8,7 +8,7 @@ raithtall_1 = {
 	has_country_shield = yes
 
 	raithtall_gate_stewards = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_secret_of_the_veil
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
@@ -25,7 +25,12 @@ raithtall_1 = {
 			owns_core_province = 2003
 			2003 = { religion = autumn_court }
 			NOT = { exists = H09 }
-			any_owned_province = { has_province_modifier = seasonal_building_embassy }
+
+			if = {
+				limit = { has_dlc = "Origins" }
+				any_owned_province = { has_province_modifier = seasonal_building_embassy }
+			}
+			else = { has_estate_privilege = estate_church_land_rights }
 		}
 		
 		effect = {
@@ -34,7 +39,7 @@ raithtall_1 = {
 	}
 
 	raithtall_replant_groves = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_new_dawn
 		required_missions = { raithtall_gate_stewards raithtall_twilight_oath }
 		position = 4
 		
@@ -56,15 +61,18 @@ raithtall_1 = {
 				is_core = ROOT
 			}
 			domandrod_gladeway_4_area = { has_production_building_trigger = yes }
+
 			estate_influence = {
 				estate = estate_mages
 				influence = 50
 			}
+
 			adm_power = 150
 		}
 		
 		effect = {
 			add_adm_power = -150
+
 			iadth_area = {
 				add_permanent_province_modifier = {
 					name = raithtall_golden_groves
@@ -81,7 +89,7 @@ raithtall_1 = {
 	}
 
 	raithtall_break_oath = {
-		icon = mission_rb_colonise_spice_islands
+		icon = the_latin_empire
 		required_missions = { raithtall_discipline_arakeprun }
 		position = 5
 		
@@ -94,6 +102,7 @@ raithtall_1 = {
 					}
 					NOT = { country_or_subject_holds = ROOT }
 				}
+
 				AND = {
 					owner = { religion = eordellon }
 					OR = {
@@ -102,6 +111,7 @@ raithtall_1 = {
 						area = gathgob_area
 					}
 				}
+
 				AND = {
 					owned_by = ROOT
 					is_core = H08
@@ -120,9 +130,11 @@ raithtall_1 = {
 				}
 			}
 			owns_or_subject_of = 2049
+			
 			NOT = { glorelthir_region = { owner = { religion = eordellon } } }
 			NOT = { pelodard_area = { owner = { religion = eordellon } } }
 			NOT = { gathgob_area = { owner = { religion = eordellon } } }
+			
 			NOT = {
 				any_owned_province = {
 					AND = {
@@ -147,6 +159,7 @@ raithtall_1 = {
 					custom_tooltip = raithtall_disarmed_population_tt
 				}
 			}
+
 			if = {
 				limit = {
 					H08 = {
@@ -163,8 +176,47 @@ raithtall_1 = {
 					set_heir_religion = ROOT
 					add_liberty_desire = 30
 				}
+
 				country_event = { id = eordand.3 }
 			}
+		}
+	}
+
+	raithtall_release_prisoners = {
+		icon = mission_engelbrekt
+		required_missions = { raithtall_break_oath }
+		position = 6
+		
+		provinces_to_highlight = {
+			province_id = 2049
+			OR = {
+				NOT = { owned_by = ROOT }
+				devastation = 0.01
+				religion = eordellon
+			}
+		}
+		
+		trigger = {
+			OR = {
+				accepted_culture = selphereg
+				accepted_culture = caamas
+				accepted_culture = peitar
+			}
+
+			2049 = {
+				owned_by = ROOT
+				NOT = { devastation = 0.01 }
+				NOT = { religion = eordellon }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = raithtall_freed_dissidents
+				duration = 3650
+			}
+
+			country_event = { id = flavor_raithtall.11 }
 		}
 	}
 }
@@ -179,7 +231,7 @@ raithtall_2 = {
 	has_country_shield = yes
 
 	raithtall_twilight_oath = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_control_junkers
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
@@ -211,6 +263,7 @@ raithtall_2 = {
 				type = all
 				owned_by = ROOT
 			}
+
 			estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 60
@@ -219,19 +272,29 @@ raithtall_2 = {
 				estate = estate_church
 				loyalty = 60
 			}
-			church_power = 50
+
+			if = {
+				has_dlc = "Origins"
+				church_power = 50
+			}
+			#TODO - find replacement trigger
 		}
 		
 		effect = {
-			add_church_power = -50
+			if = {
+				has_dlc = "Origins"
+				add_church_power = -50
+			}
+
 			country_event = { id = flavor_raithtall.3 }
+
 			2007 = { add_permanent_claim = ROOT }
 			2008 = { add_permanent_claim = ROOT }
 		}
 	}
 
 	raithtall_discipline_arakeprun = {
-		icon = mission_rb_colonise_spice_islands
+		icon = per_qizilbash_loyalty
 		required_missions = { raithtall_twilight_oath }
 		position = 4
 		
@@ -258,6 +321,7 @@ raithtall_2 = {
 		
 		effect = {
 			2049 = { add_permanent_claim = ROOT }
+
 			every_owned_province = {
 				if = {
 					limit = {
@@ -269,6 +333,7 @@ raithtall_2 = {
 					add_nationalism = -2.5
 				}
 			}
+
 			if = {
 				limit = { H01 = { is_subject_of = ROOT } }
 				H01 = {
@@ -307,7 +372,7 @@ raithtall_2 = {
 	}
 
 	raithtall_vernal_harmony = {
-		icon = mission_rb_colonise_spice_islands
+		icon = jap_balance_shinokosho
 		required_missions = { raithtall_discipline_arakeprun }
 		position = 5
 		
@@ -315,6 +380,7 @@ raithtall_2 = {
 		
 		trigger = {
 			has_reform = raithtall_twilight_court_reform
+
 			estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 60
@@ -323,6 +389,7 @@ raithtall_2 = {
 				estate = estate_church
 				loyalty = 60
 			}
+
 			OR = {
 				has_any_fey_spring_aspect = yes
 				dip_power = 100
@@ -330,12 +397,136 @@ raithtall_2 = {
 		}
 		
 		effect = {
-			
 			if = {
 				limit = { has_any_fey_spring_aspect = no }
 				add_dip_power = -100
 			}
 			#TODO - add government reform triggers and corresponding effects
+		}
+	}
+
+	raithtall_true_chivalry = {
+		icon = mission_rb_conquer_the_highlands
+		required_missions = { raithtall_break_oath }
+		position = 6
+		
+		provinces_to_highlight = {
+			superregion = eordand_superregion
+			OR = {
+				AND = {
+					religion = eordellon
+					is_city = yes
+				}
+
+				owner = { religion = eordellon }
+
+				AND = {
+					culture = peitar
+					OR = {
+						AND = {
+							NOT = { owned_by = ROOT }
+							NOT = {
+								ROOT = {
+									num_of_owned_provinces_with = {
+										value = 5
+										culture = peitar
+									}
+								}
+							}
+						}
+						AND = {
+							owned_by = ROOT
+							NOT = {
+								ROOT = {
+									num_of_owned_provinces_with = {
+										value = 5
+										culture = peitar
+										has_tax_building_trigger = yes
+										development = 12
+									}
+								}
+							}
+							NOT = {
+								has_tax_building_trigger = yes
+								development = 12
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				eordand_superregion = {
+					any_country = { religion = eordellon }
+					any_province = {
+						religion = eordellon
+						is_city = yes
+					}
+				}
+			}
+
+			num_of_owned_provinces_with = {
+				value = 5
+				culture = peitar
+				has_tax_building_trigger = yes
+				development = 12
+			}
+		}
+		
+		effect = {
+			create_general = { tradition = 70 }
+
+			custom_tooltip = raithtall_peitar_boost_tt
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						culture = peitar
+						NOT = { has_province_flag = raithtall_peitar_boost }
+					}
+					add_base_manpower = 1
+					set_province_flag = raithtall_peitar_boost
+				}
+				random_owned_province = {
+					limit = {
+						culture = peitar
+						NOT = { has_province_flag = raithtall_peitar_boost }
+					}
+					add_base_manpower = 1
+					set_province_flag = raithtall_peitar_boost
+				}
+				random_owned_province = {
+					limit = {
+						culture = peitar
+						NOT = { has_province_flag = raithtall_peitar_boost }
+					}
+					add_base_manpower = 1
+					set_province_flag = raithtall_peitar_boost
+				}
+				random_owned_province = {
+					limit = {
+						culture = peitar
+						NOT = { has_province_flag = raithtall_peitar_boost }
+					}
+					add_base_manpower = 1
+					set_province_flag = raithtall_peitar_boost
+				}
+				random_owned_province = {
+					limit = {
+						culture = peitar
+						NOT = { has_province_flag = raithtall_peitar_boost }
+					}
+					add_base_manpower = 1
+					set_province_flag = raithtall_peitar_boost
+				}
+				#TODO - repeat three more times if the monarchy faction is in charge.
+			}
+
+			add_country_modifier = {
+				name = raithtall_chivalrous_knights
+				duration = -1
+			}
 		}
 	}
 }
@@ -350,7 +541,7 @@ raithtall_3 = {
 	has_country_shield = yes
 
 	raithtall_golden_memory = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_humiliate_lubeck
 		required_missions = { }
 		position = 1
 		
@@ -362,18 +553,23 @@ raithtall_3 = {
 				OR = {
 					AND = {
 						army_size_percentage = 0.9
+
 						any_hired_mercenary_company = { template = merc_dorcurt_blademasters }
+
 						employed_advisor = { category = MIL }
 					}
+
 					2014 = {
 						owned_by = ROOT
 						religion = autumn_court
 					}
 				}
 			}
-			else {
+			else = {
 				army_size_percentage = 0.9
+
 				any_hired_mercenary_company = { template = merc_dorcurt_blademasters }
+
 				employed_advisor = { category = MIL }
 			}
 		}
@@ -385,7 +581,7 @@ raithtall_3 = {
 	}
 
 	raithtall_court_anew = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_castle_construction
 		required_missions = { raithtall_golden_memory }
 		position = 2
 		
@@ -412,6 +608,7 @@ raithtall_3 = {
 					religion = autumn_court
 					development = 12
 				}
+
 				has_estate_privilege = estate_burghers_patronage_of_the_arts
 			}
 		}
@@ -425,6 +622,7 @@ raithtall_3 = {
 					duration = 3650
 				}
 			}
+
 			1969 = { add_permanent_claim = ROOT }
 			2159 = { add_permanent_claim = ROOT }
 			add_casus_belli = {
@@ -436,7 +634,7 @@ raithtall_3 = {
 	}
 
 	raithtall_securing_copperlord = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_cocoa
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
@@ -446,6 +644,7 @@ raithtall_3 = {
 					owned_by = H11
 					NOT = { H11 = { is_subject_of = ROOT } }
 				}
+
 				AND = {
 					province_id = 1118
 					NOT = {
@@ -459,16 +658,19 @@ raithtall_3 = {
 		
 		trigger = {
 			overlord_of = H11
+
 			1118 = {
 				owned_by = H11
 				has_production_building_trigger = yes
 				base_production = 6
 			}
+
 			dip_power = 100
 		}
 		
 		effect = {
 			add_dip_power = -100
+
 			1118 = {
 				add_base_production = 2
 				add_province_modifier = {
@@ -476,6 +678,7 @@ raithtall_3 = {
 					duration = 7300
 				}
 			}
+
 			custom_tooltip = raithtall_sglard_tt1
 			hidden_effect = {
 				if = {
@@ -492,23 +695,26 @@ raithtall_3 = {
 	}
 
 	raithtall_example_of_einnsag = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_rb_take_gibraltar
 		required_missions = { raithtall_twilight_oath }
 		position = 4
 		
 		provinces_to_highlight = {
 			OR = {
 				owned_by = H10
+
 				AND = {
 					province_id = 2159
 					NOT = {
 						owned_by = ROOT
 						has_trade_building_trigger = yes
 					}
-					AND = {
-						is_core = H10
-						NOT = { is_state_core = ROOT }
-					}
+				}
+
+				AND = {
+					is_core = H10
+					owned_by = ROOT
+					NOT = { is_state_core = ROOT }
 				}
 			}
 		}
@@ -519,6 +725,7 @@ raithtall_3 = {
 				owned_by = ROOT
 				has_trade_building_trigger = yes
 			}
+
 			all_owned_province = {
 				OR = {
 					NOT = { is_core = H10 }
@@ -534,13 +741,15 @@ raithtall_3 = {
 					add_local_autonomy = -30
 				}
 			}
+
 			add_mercantilism = 5
+
 			2159 = { change_trade_goods = salt }
 		}
 	}
 
 	raithtall_autumn_invincible = {
-		icon = mission_rb_colonise_spice_islands
+		icon = establish_oktoberfest
 		required_missions = { raithtall_example_of_einnsag raithtall_reunite_crusaders }
 		position = 5
 		
@@ -549,6 +758,7 @@ raithtall_3 = {
 		trigger = {
 			is_month = 7
 			NOT = { is_month = 8 }
+
 			H11 = {
 				is_subject_of = ROOT
 				NOT = { liberty_desire = 50 }
@@ -561,6 +771,7 @@ raithtall_3 = {
 				is_subject_of = ROOT
 				NOT = { liberty_desire = 50 }
 			}
+
 			calc_true_if = {
 				amount = 50
 				eordand_superregion = {
@@ -609,6 +820,238 @@ raithtall_3 = {
 			}
 		}
 	}
+
+	raithtall_new_praisegranting = {
+		icon = feast_of_pheasants
+		required_missions = { raithtall_vernal_harmony raithtall_autumn_invincible }
+		position = 6
+		
+		provinces_to_highlight = { }
+		
+		trigger = {
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 2
+						eordand_superregion = {
+							any_country = {
+								OR = {
+									culture = peitar
+									culture = snecboth
+									culture = selphereg
+									culture = caamas
+								}
+							}
+						}
+					}
+				}
+				calc_true_if = {
+					amount = 2
+					any_subject_country = {
+						OR = {
+							culture = peitar
+							culture = snecboth
+							culture = selphereg
+							culture = caamas
+						}
+						NOT = {
+							religion = eordellon
+							religion = winter_court
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					eordand_superregion = {
+						any_country = {
+							OR = {
+								culture = peitar
+								culture = snecboth
+								culture = selphereg
+								culture = caamas
+							}
+						}
+					}
+				}
+				any_subject_country = {
+					OR = {
+						culture = peitar
+						culture = snecboth
+						culture = selphereg
+						culture = caamas
+					}
+					NOT = {
+						religion = eordellon
+						religion = winter_court
+					}
+				}
+			}
+
+			treasury = 300
+		}
+		
+		effect = {
+			add_treasury = -300
+
+			every_subject_country = {
+				remove_country_modifier = raithtall_sworn_fealty
+				add_country_modifier = {
+					name = raithtall_expanded_praisegranting
+					duration = -1
+				}
+			}
+
+			custom_tooltip = raithtall_autumn_tolerance_tt
+			hidden_effect = { set_country_flag = raithtall_autumn_tolerance }	#TODO - upgrade province modifiers manually if they don't upgrade automatically
+		}
+	}
+
+	raithtall_golden_dream = {
+		icon = the_crown_of_lothair
+		required_missions = { raithtall_true_chivalry raithtall_new_praisegranting raithtall_emberborns_ambition }
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = raithlos_area
+						area = iadth_area
+					}
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							development = 10
+							is_prosperous = yes
+							has_province_modifier = raithtall_golden_groves
+						}
+					}
+				}
+
+				owner = {
+					is_subject_of = ROOT
+					liberty_desire = 50
+				}
+			}
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					has_global_modifier_value = {
+						which = num_accepted_cultures
+						value = 4
+					}
+				}
+				accepted_culture = selphereg
+				accepted_culture = caamas
+				accepted_culture = snecboth
+				accepted_culture = peitar
+			}
+			else_if = {
+				limit = {
+					has_global_modifier_value = {
+						which = num_accepted_cultures
+						value = 3
+					}
+				}
+				calc_true_if = {
+					amount = 3
+					accepted_culture = selphereg
+					accepted_culture = caamas
+					accepted_culture = snecboth
+					accepted_culture = peitar
+				}
+			}
+			else = {
+				calc_true_if = {
+					amount = 2
+					accepted_culture = selphereg
+					accepted_culture = caamas
+					accepted_culture = snecboth
+					accepted_culture = peitar
+				}
+			}
+
+			#TODO - Add x favors with Gloam Knight requirement once patron system is in
+
+			raithlos_area = {
+				type = all
+				owned_by = ROOT
+				development = 10
+				is_prosperous = yes
+				has_province_modifier = raithtall_golden_groves
+			}
+			iadth_area = {
+				type = all
+				owned_by = ROOT
+				development = 10
+				is_prosperous = yes
+				has_province_modifier = raithtall_golden_groves
+			}
+
+			NOT = { any_subject_country = { liberty_desire = 50 } }
+
+			if = {
+				limit = { has_estate = estate_nobles }
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+			}
+			if = {
+				limit = { has_estate = estate_burghers }
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+			}
+			if = {
+				limit = { has_estate = estate_church }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
+			}
+			if = {
+				limit = { has_estate = estate_adventurers }
+				estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = 60
+				}
+			}
+			if = {
+				limit = { has_estate = estate_mages }
+				estate_loyalty = {
+					estate = estate_mages
+					loyalty = 60
+				}
+			}
+			if = {
+				limit = { has_estate = estate_artificers }
+				estate_loyalty = {
+					estate = estate_artificers
+					loyalty = 60
+				}
+			}
+		}
+		
+		effect = {
+			add_power_projection = { 
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+
+			add_country_modifier = {
+				name = raithtall_golden_dream_mod
+				duration = -1
+			}
+
+			custom_tooltip = raithtall_yearly_harvest_tt
+			hidden_effect = { set_global_flag = raithtall_yearly_harvest_flag }
+		}
+	}
 }
 
 raithtall_4 = {
@@ -621,13 +1064,14 @@ raithtall_4 = {
 	has_country_shield = yes
 
 	raithtall_example_of_eighard = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_pol_imperial_commonwealth
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
 		provinces_to_highlight = {
-			OR  ={
+			OR = {
 				owned_by = H14
+
 				AND = {
 					province_id = 1969
 					NOT = {
@@ -635,6 +1079,7 @@ raithtall_4 = {
 						has_tax_building_trigger = yes
 					}
 				}
+
 				AND = {
 					is_core = H14
 					owned_by = ROOT
@@ -645,12 +1090,14 @@ raithtall_4 = {
 		
 		trigger = {
 			NOT = { exists = H14 }
+
 			NOT = {
 				any_owned_province = {
 					is_core = H14
 					NOT = { is_state_core = ROOT }
 				}
 			}
+
 			NOT = { any_hired_mercenary_company = { template = merc_cult_of_rot } }
 		}
 		
@@ -661,6 +1108,7 @@ raithtall_4 = {
 					add_local_autonomy = -30
 				}
 			}
+			
 			define_advisor = {
 				type = inquisitor
 				discount = yes
@@ -670,6 +1118,7 @@ raithtall_4 = {
 				name = raithtall_cleansing_rot
 				duration = 1825
 			}
+			
 			1994 = { add_permanent_claim = ROOT }
 			add_casus_belli = {
 				target = H13
@@ -694,7 +1143,7 @@ raithtall_4 = {
 	}
 
 	raithtall_reunite_crusaders = {
-		icon = mission_rb_colonise_spice_islands
+		icon = spa_spanish_road
 		required_missions = { raithtall_example_of_eighard }
 		position = 4
 		
@@ -704,6 +1153,7 @@ raithtall_4 = {
 					owned_by = H19
 					H19 = { religion = eordellon }
 				}
+
 				AND = {
 					OR = {
 						owned_by = H13
@@ -721,8 +1171,10 @@ raithtall_4 = {
 				NOT = { H19 = { religion = eordellon } }
 			}
 			1994 = { country_or_subject_holds = ROOT }
+
 			overlord_of = H13
 			overlord_of = H15
+
 			#TODO - add Oath Legion requirement once patron mechanics are finished
 			OR = {
 				army_tradition = 60
@@ -738,6 +1190,7 @@ raithtall_4 = {
 				name = raithtall_crusader_zeal
 				duration = 5475
 			}
+			
 			H13 = {
 				add_country_modifier = {
 					name = raithtall_sworn_fealty
@@ -766,6 +1219,103 @@ raithtall_4 = {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	raithtall_emberborns_ambition = {
+		icon = la_marseillaise
+		required_missions = { raithtall_reunite_crusaders raithtall_winter_defied }
+		position = 6
+		
+		provinces_to_highlight = {
+			superregion = eordand_superregion
+			OR = {
+				AND = {
+					religion = winter_court
+					is_city = yes
+				}
+
+				owner = { religion = winter_court }
+				AND = {
+					culture = snecboth
+					OR = {
+						NOT = { owned_by = ROOT }
+						devastation = 1
+						AND = {
+							NOT = {
+								ROOT = {
+									num_of_owned_provinces_with = {
+										value = 5
+										culture = snecboth
+										has_tax_building_trigger = yes
+									}
+								}
+							}
+							NOT = {
+								has_tax_building_trigger = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				eordand_superregion = {
+					any_country = { religion = winter_court }
+					any_province = {
+						religion = winter_court
+						is_city = yes
+					}
+				}
+			}
+
+			NOT = {
+				any_owned_province = {
+					culture = snecboth
+					devastation = 1
+				}
+			}
+
+			num_of_owned_provinces_with = {
+				value = 5
+				culture = snecboth
+				has_tax_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			custom_tooltip = raithtall_snecboth_boost_tt
+			hidden_effect = {
+				randrunnse_region = {
+					if = {
+						limit = {
+							country_or_subject_holds = ROOT
+							OR = {
+								culture = snecboth
+								culture = tuathak
+							}
+							is_state = yes
+							NOT = { has_province_flag = raithtall_snecboth_boost }
+						}
+						if = {
+							limit = { is_prosperous = yes }
+							ROOT = { add_treasury = 20 }
+						}
+						else = {
+							add_prosperity = 15
+						}
+						every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
+					}
+				}
+			}
+			
+			#TODO - boost the effect if the theocracy faction is in charge.
+			add_country_modifier = {
+				name = raithtall_winter_quelled
+				duration = -1
 			}
 		}
 	}
@@ -854,7 +1404,7 @@ raithtall_5 = {
 	}
 
 	raithtall_resume_crusades = {
-		icon = mission_rb_colonise_spice_islands
+		icon = the_russian_campaign
 		required_missions = { raithtall_example_of_eighard }
 		position = 4
 		
@@ -886,17 +1436,20 @@ raithtall_5 = {
 					}
 				}
 			}
+
 			OR = {
 				has_leader_with = { fire = 4 }
 				has_leader_with = { shock = 4 }
 				has_leader_with = { manuever = 4 }
 				has_leader_with = { siege = 4 }
 			}
+
 			OR = {
 				num_of_owned_provinces_with = {
 					value = 4
 					culture = snecboth
 				}
+
 				if = {
 					limit = {
 						check_variable = {
@@ -927,7 +1480,7 @@ raithtall_5 = {
 	}
 
 	raithtall_winter_defied = {
-		icon = mission_rb_colonise_spice_islands
+		icon = mission_fall_of_constantinople
 		required_missions = { raithtall_resume_crusades }
 		position = 5
 		
@@ -937,6 +1490,7 @@ raithtall_5 = {
 					owned_by = H16
 					H16 = { religion = winter_court }
 				}
+
 				AND = {
 					province_id = 1775
 					NOT = {
@@ -957,7 +1511,9 @@ raithtall_5 = {
 					religion = winter_court
 				}
 			}
+
 			1775 = {
+				country_or_subject_holds = ROOT
 				num_of_units_in_province = {
 					who = ROOT
 					amount = 10

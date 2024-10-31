@@ -30,8 +30,18 @@
  raithtall_vernal_harmony_desc:0 "Arakeprun had a big civil war about the balance of power between the nobles and the clergy. Sure would be nice if someone had an entire government mechanic about exactly that."
  raithtall_autumn_invincible_title:0 "Autumn Invincible"
  raithtall_autumn_invincible_desc:0 "You've reaunited the Autumn Court, stronger than ever! This will likely have an effect on Eordand's seasons."
- raithtall_autumn_invincible_title:0 "Winter Defied"
- raithtall_autumn_invincible_desc:0 "The Hibernal Crusade has conquered Gemradcurt, which is great! Wouldhave happened far sooner if not for those evil Eordellon Crusaders ruining everything. Self-awareness, what's that?"
+ raithtall_winter_defied_title:0 "Winter Defied"
+ raithtall_winter_defied_desc:0 "The Hibernal Crusade has conquered Gemradcurt, which is great! Wouldhave happened far sooner if not for those evil Eordellon Crusaders ruining everything. Self-awareness, what's that?"
+ raithtall_release_prisoners_title:0 "Release the Prisoners"
+ raithtall_release_prisoners_desc:0 "Releasing all the guys arrested for heresy up by the Seasons Unchanging Inquisition"
+ raithtall_true_chivalry_title:0 "True Chivalry"
+ raithtall_true_chivalry_desc:0 "Peitar chivalry: Cringe\nTuathak chivalry: Based"
+ raithtall_new_praisegranting_title:0 "The New Praisegranting"
+ raithtall_new_praisegranting_desc:0 "Expand the Praisegranting Festival to also involve your non-Tuathak subjects."
+ raithtall_emberborns_ambition_title:0 "Emberborn's Ambition"
+ raithtall_emberborns_ambition_desc:0 "The Tuathak and Snecboth can finally live in peace and accept each other, as long as the Snecboth aren't filthy Winter Worshippers. Those disgusting Winter devils are so [REMOVED FOR HATE SPEECH AND PROFANITY, SPEAKER BANNED FROM FUTURE MISSION LOC]"
+ raithtall_golden_dream_title:0 "The Golden Dream"
+ raithtall_golden_dream_desc:0 "You did it! Oh, and don't worry about what's up with the mission icon."
  #shared autumn court missions
  raithtall_prepare_praisegranting_festival_title:0 "Contact with Cannor"
  raithtall_prepare_praisegranting_festival_desc:0 "We have known that there are lands beyond our shores, mostly sparsely inhabited by primitive beings not blessed by our Fey Lords. The Caamasi also tell us of merchants from far to the south. What has arrived this day is not an ordinary occurrence: a massive wooden ship bedecked in gleaming iron guns sailed into our harbor, making inquiries about our lands and our peoples. Doubtless impressed by our might, they wish to stay in our lands for some time. This occasion warrants a reaction: let us prepare for a Praisegranting!"
@@ -71,6 +81,11 @@
  flavor_raithtall.10.t:0 "Taking of Gemradcurt"
  flavor_raithtall.10.d:0 "You finally enter Gemradcurt, but decide not to sack it in order to not repeat what the iadthi did in Dorcurt. This decision proves unpopular among some, who think you have been corrupted."
  flavor_raithtall.10.a:0 "Marrying a Snecboth princess from Gelcolle probably didn't help matters."
+ flavor_raithtall.11.t:0 "From the Dungeons of the Inquisition"
+ flavor_raithtall.11.d:0 "You can hire various important figures that were imrpisoned by the Inquisition. Of course, the different court factions have their own favorites."
+ flavor_raithtall.11.a:0 "The theologian"
+ flavor_raithtall.11.b:0 "The artist"
+ flavor_raithtall.11.c:0 "The philosopher"
 
 #modifiers
  raithtall_peitar_rebuilders:0 "Peitar Rebuilders"
@@ -87,8 +102,13 @@
  raithtall_disarmed_population:0 "Disarmed Population"
  raithtall_disarmed_population_desc:0 "§YWill be removed upon converting the province§!"
  raithtall_superb_harvest:0 "Superb Harvest"
+ raithtall_superb_harvest_local:0 "Superb Harvest"
  raithtall_reconstruction_effort:0 "Reconstruction Effort"
- 
+ raithtall_freed_dissidents:0 "Freed Dissidents"
+ raithtall_chivalrous_knights:0 "Chivalrous Knights"
+ raithtall_expanded_praisegranting:0 "Expanded Praisegranting Festival"
+ raithtall_winter_quelled:0 "Winter Quelled"
+ raithtall_golden_dream_mod:0 "Golden Dream"
 
 #government reforms
  raithtall_twilight_court_reform:0 "Twilight Court"
@@ -110,3 +130,7 @@
  raithtall_0_winter_battles_won_tt:0 "Win 8 battles against WInter Court nations\nCurrent: 0"  #TODO - make it look like regular ingame tooltips
  raithtall_disarmed_population_tt:0 "This modifier will be removed once we convert the province."
  raithtall_superb_harvest_tt:0 "This modifier will repeat every year for four years."
+ raithtall_peitar_boost_tt:0 "Five of our Peitar provinces will get +1 base manpower. If the monarchists are in charge, it applies to eight provinces instead."
+ raithtall_autumn_tolerance_tt:0 "Protection of Autumn will now also give +2 Local Tolerance of Heretics."
+ raithtall_snecboth_boost_tt:0 "All states in the Randrunnse region with Snecboth or Tuathak culture owned by us or our subjects gain +15 prosperity progress. If they were already prsoperous, they instead give you 20 gold. If the theocrats are in charge, the effect is boosted to +20 prosperity progress and +20 gold."
+ raithtall_yearly_harvest_tt: "The Superb Harvest modifier will be reapplied every autumn for the Iadth and Raithlos areas."

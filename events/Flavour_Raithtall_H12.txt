@@ -205,6 +205,7 @@ country_event = {	#TODO - make the the event save the tag you got it from
 	}
 }
 
+#Dummy event to reapply the Superb Harvest modifier
 country_event = {
 	id = flavor_raithtall.9
 	title = flavor_raithtall.9.t
@@ -265,5 +266,41 @@ country_event = {
 				add_liberty_desire = 30
 			}
 		}
+	}
+}
+
+country_event = {
+	id = flavor_raithtall.11
+	title = flavor_raithtall.11.t
+	desc = flavor_raithtall.11.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_raithtall.11.a
+		define_advisor = {
+			type = theologian
+			culture = selphereg
+		}
+		#TODO - Make the advisor discounted depending on faciton balance
+	}
+
+	option = {
+		name = flavor_raithtall.11.b
+		define_advisor = {
+			type = artist
+			culture = selphereg
+		}
+		#TODO - Make the advisor discounted depending on faciton balance
+	}
+
+	option = {
+		name = flavor_raithtall.11.c
+		define_advisor = {
+			type = philosopher
+			culture = selphereg
+		}
+		#TODO - Make the advisor discounted depending on faciton balance
 	}
 }

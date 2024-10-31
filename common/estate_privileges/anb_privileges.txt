@@ -12550,17 +12550,31 @@ estate_church_autumn_tolerance = {
 					religion = summer_court
 				}
 			}
-			add_province_modifier = {
-				name = estate_church_autumn_tolerance_mod
-				duration = -1
+			#Raithall privilege upgrade
+			if = {
+				limit = { owner = { has_country_flag = raithtall_autumn_tolerance } }
+				add_province_modifier = {
+					name = estate_church_autumn_tolerance_mod_upgraded
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = estate_church_autumn_tolerance_mod
+					duration = -1
+				}
 			}
 		}
 		else_if = {
-			limit = { 
-				has_province_modifier = estate_church_autumn_tolerance_mod
+			limit = {
+				OR = {
+					has_province_modifier = estate_church_autumn_tolerance_mod
+					has_province_modifier = estate_church_autumn_tolerance_mod_upgraded
+				}
 			}
 			remove_province_modifier = estate_church_autumn_tolerance_mod
-		}	
+			remove_province_modifier = estate_church_autumn_tolerance_mod_upgraded
+		}
 	}
 	can_revoke = {
 		NOT = { has_reform = raithtall_twilight_court_reform }

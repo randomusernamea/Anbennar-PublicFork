@@ -2181,8 +2181,11 @@ raithtall_twilight_court_reform = {
 		enables_aristocratic_idea_group = yes
 		locked_government_type = yes
 		can_change_primary_culture = no
-		custom_tooltip = autumn_tolerance_locked_tt
  	}
+
+	effects = {
+		custom_tooltip = autumn_tolerance_locked_tt
+	}
 }
 
 #Internal vs External Mission
