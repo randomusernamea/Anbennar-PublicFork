@@ -2434,7 +2434,11 @@ maghargma_dynamic_brightmarch_1 = {
 			area = qarshtuluu_area
 			NOT = { owned_by = ROOT }
 		} 
-		trigger = {  
+		trigger = {
+			OR = {
+				J50 = { is_subject_of = ROOT }
+				J50 = { exists = no }	
+			}  
 			qarshtuluu_area = {
 				type = all
 				owned_by = ROOT
