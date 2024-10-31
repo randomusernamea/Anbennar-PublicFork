@@ -149,11 +149,13 @@ province_event = {
 				}	
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_adm_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_adm_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 	
@@ -214,11 +216,13 @@ province_event = {
 				}	
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_mil_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_mil_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 	
@@ -282,11 +286,13 @@ province_event = {
 				}
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_naval_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_naval_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 
@@ -1058,20 +1064,23 @@ country_event = {
 		western_cannor_superregion = {
 			discover_country = ROOT
 		}
-		every_owned_province = {
-			limit = {
-				region = dostanor_region
-			}
-			random = {
-				chance = 50
-				spawn_rebels = {
-					type = vampires_thralls
-					size = 1
+		custom_tooltip = B47_old_lord_loyalist_explained
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = dostanor_region
 				}
-			}
-			add_province_modifier = {
-				name = B47_old_lord_loyalists
-				duration = -1
+				random = {
+					chance = 50
+					spawn_rebels = {
+						type = vampires_thralls
+						size = 1
+					}
+				}
+				add_province_modifier = {
+					name = B47_old_lord_loyalists
+					duration = -1
+				}
 			}
 		}
 	}
