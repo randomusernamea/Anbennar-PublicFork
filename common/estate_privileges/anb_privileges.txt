@@ -1449,12 +1449,13 @@ estate_adventurers_organization_stone_army = {
 	influence = 0.2
 	is_valid = {
 		NOT = { has_adventurers_special_organization_privilege = yes }
-	}
-	can_select = {
 		OR = {
 			tag = Y17
 			was_tag = Y17
 		}
+		has_estate_privilege = estate_adventurers_organization_stone_army
+	}
+	can_select = {
 		if = {
 			limit = { has_adventurers_organization_privilege = yes }
 			NOT = {

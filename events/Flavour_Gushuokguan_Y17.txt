@@ -749,6 +749,15 @@ country_event = {
 				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_2 } NOT = { has_saved_global_event_target = inked_shield_2 } }
 				save_global_event_target_as = red_scarf_3
 			}
+			set_global_flag = gushuokguan_civil_war
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.36.a
+		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_civil_war_tt
+		hidden_effect = {
 			release = event_target:red_scarf_1
 			release = event_target:red_scarf_2
 			release = event_target:red_scarf_3
@@ -766,16 +775,7 @@ country_event = {
 			}
 			event_target:red_scarf_2 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
 			event_target:red_scarf_3 = { join_all_offensive_wars_of = event_target:red_scarf_1 }
-			event_target:inked_shield_1 = { join_all_defensive_wars_of = ROOT }
-			event_target:inked_shield_2 = { join_all_defensive_wars_of = ROOT }
-			set_global_flag = gushuokguan_civil_war
 		}
-	}
-
-	option = {
-		name = gushuokguan_event.36.a
-		ai_chance = { factor = 1 }
-		custom_tooltip = gushuokguan_civil_war_tt
 	}
 }
 
@@ -812,6 +812,15 @@ country_event = {
 				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_2 } NOT = { has_saved_global_event_target = red_scarf_2 } }
 				save_global_event_target_as = inked_shield_3
 			}
+			set_global_flag = gushuokguan_civil_war
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.37.a
+		ai_chance = { factor = 1 }
+		custom_tooltip = gushuokguan_civil_war_tt
+		hidden_effect = {
 			release = event_target:inked_shield_1
 			release = event_target:inked_shield_2
 			release = event_target:inked_shield_3
@@ -829,16 +838,7 @@ country_event = {
 			}
 			event_target:inked_shield_2 = { join_all_offensive_wars_of = event_target:inked_shield_1 }
 			event_target:inked_shield_3 = { join_all_offensive_wars_of = event_target:inked_shield_1 }
-			event_target:red_scarf_1 = { join_all_defensive_wars_of = ROOT }
-			event_target:red_scarf_2 = { join_all_defensive_wars_of = ROOT }
-			set_global_flag = gushuokguan_civil_war
 		}
-	}
-
-	option = {
-		name = gushuokguan_event.37.a
-		ai_chance = { factor = 1 }
-		custom_tooltip = gushuokguan_civil_war_tt
 	}
 }
 
@@ -996,6 +996,15 @@ country_event = {
 		}
 	}
 
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.51.a
 		ai_chance = { factor = 1 }
@@ -1102,6 +1111,15 @@ country_event = {
 		}
 	}
 
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.52.a
 		ai_chance = { factor = 1 }
@@ -1147,7 +1165,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Restoration Funds
 country_event = {
 	id = gushuokguan_event.53
 	title = gushuokguan_event.53.t
@@ -1168,6 +1186,15 @@ country_event = {
 		random_subject_country = {
 			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
 			save_event_target_as = dao_B
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -1273,7 +1300,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Spoils of War
 country_event = {
 	id = gushuokguan_event.54
 	title = gushuokguan_event.54.t
@@ -1308,6 +1335,15 @@ country_event = {
 		random_subject_country = {
 			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
 			save_event_target_as = dao_D
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -1456,7 +1492,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Restoration vs Military
 country_event = {
 	id = gushuokguan_event.55
 	title = gushuokguan_event.55.t
@@ -1491,6 +1527,15 @@ country_event = {
 		random_subject_country = {
 			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
 			save_event_target_as = dao_D
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -1544,7 +1589,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Trade Benefits
 country_event = {
 	id = gushuokguan_event.56
 	title = gushuokguan_event.56.t
@@ -1564,6 +1609,15 @@ country_event = {
 				num_of_ports = 1
 			}
 			save_event_target_as = coastal_dao
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -1607,7 +1661,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Support for Caravans
 country_event = {
 	id = gushuokguan_event.57
 	title = gushuokguan_event.57.t
@@ -1627,6 +1681,15 @@ country_event = {
 				NOT = { num_of_ports = 1 }
 			}
 			save_event_target_as = interior_dao
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -1670,7 +1733,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Anti-centralisation
 country_event = {
 	id = gushuokguan_event.58
 	title = gushuokguan_event.58.t
@@ -1693,6 +1756,15 @@ country_event = {
 			save_event_target_as = dao_B
 		}
 	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
+		}
+	}
 
 	option = {
 		name = gushuokguan_event.58.a
@@ -1708,7 +1780,7 @@ country_event = {
 			}
 			if = {
 				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
-				add_liberty_desire = 12.5
+				add_liberty_desire = 12
 			}
 			else = { add_liberty_desire = 25 }
 			
@@ -1732,7 +1804,7 @@ country_event = {
 			}
 			if = {
 				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
-				add_liberty_desire = 12.5
+				add_liberty_desire = 12
 			}
 			else = { add_liberty_desire = 25 }
 			
@@ -1747,7 +1819,7 @@ country_event = {
 	}
 }
 
-#Confederal Council
+#Anti-oppression
 country_event = {
 	id = gushuokguan_event.59
 	title = gushuokguan_event.59.t
@@ -1772,6 +1844,15 @@ country_event = {
 		random_subject_country = {
 			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
 			save_event_target_as = dao_B
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			change_variable = {
+				which = gushokguan_event_counter
+				value = 1
+			}
 		}
 	}
 
@@ -2006,8 +2087,8 @@ country_event = {
 
 	trigger = {
 		any_known_country = {
-			NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
 			has_country_flag = gushuokguan_already_checked_condottieri
+			NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
 		}
 	}
 

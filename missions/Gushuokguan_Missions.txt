@@ -308,7 +308,10 @@ gushuokguan_1 = {
 								has_country_flag = rending_ward_flag
 								has_country_flag = rending_appease_flag
 							}
-							ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+							any_hired_mercenary_company = {
+								template = merc_dacite_dragons #I hope there was another way to check army name
+								location = { controller = { is_hiring_condottiere_from = ROOT } } #Gushuokguan
+							}
 						}
 					}
 				}
@@ -403,11 +406,9 @@ gushuokguan_2 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_condottieri_stone_army_tt
-				any_known_country = {
-					ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
-					any_army = {
-						template = merc_stone_army #I hope there was another way to check army name
-					}
+				any_hired_mercenary_company = {
+					template = merc_stone_army #I hope there was another way to check army name
+					location = { controller = { is_hiring_condottiere_from = ROOT } } #Gushuokguan
 				}
 			}
 			capital_scope = {
@@ -614,7 +615,7 @@ gushuokguan_2 = {
 					value = 3
 				}
 				OR = {
-					ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+					is_hiring_condottiere_from = ROOT #Gushuokguan
 					is_in_war = {
 						attacker_leader = ROOT #Gushuokguan
 					}
@@ -730,21 +731,9 @@ gushuokguan_3 = {
 				#Case 1: Ally
 				AND = {
 					alliance_with = ROOT #Gushuokguan
-					variable_arithmetic_trigger = {
-						custom_tooltip = gushuokguan_larger_than_half_lanjinhui_tt
-						export_to_variable = {
-							which = lanjinhui_half_army_size
-							value = trigger_value:army_size
-							who = Y05 #Lanjinhui
-						}
-						export_to_variable = {
-							which = gushuokguan_army_size
-							value = trigger_value:army_size
-							who = ROOT #Gushuokguan
-						}
-						multiply_variable = { which = lanjinhui_half_army_size value = 0.5 }
-						
-						check_variable = { which = gushuokguan_army_size which = lanjinhui_half_army_size }
+					army_strength = {
+						who = Y05 #Lanjinhui
+						value = 0.5
 					}
 					Y05 = { #Lanjinhui
 						custom_trigger_tooltip = {
@@ -883,9 +872,12 @@ gushuokguan_3 = {
 				}
 				NOT = { devastation = 0.01 }
 				NOT = { unrest = 0 }
-				if = { 
+				if = {
 					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = yes
+					custom_trigger_tooltip = {
+						tooltip = thangoya_seat_in_parliament_tt
+						has_seat_in_parliament = yes 
+					}
 				}
 			}
 		} 
@@ -979,22 +971,6 @@ gushuokguan_3 = {
 		}
 
 		effect = {
-			create_subject = {
-				subject_type = dao
-				subject = Y04 #Anjiang
-			}
-			Y04 = {
-				override_country_name = "Yanszin"
-				swap_non_generic_missions = yes
-			}
-			custom_tooltip = gushuokguan_release_yanszin_tt
-			custom_tooltip = feitenEmpty
-			add_mil_power = 50
-			add_country_modifier = {
-				name = gushuokguan_trade_power_of_the_yan
-				duration = 7300
-			}
-			custom_tooltip = gushuokguan_can_release_hubao_tt
 			hidden_effect = { 
 				set_country_flag = gushuokguan_can_release_hubao 
 				every_owned_province = {
@@ -1007,10 +983,22 @@ gushuokguan_3 = {
 							area = linyuan_area
 						}
 					}
-					cede_province = Y04 #Anjiang
-					add_core = Y04 #Anjiang
+					cede_province = V19 #Anjiang
+					add_core = V19 #Anjiang
 				}
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = V19 #Yanszin
+			}
+			custom_tooltip = gushuokguan_release_yanszin_tt
+			custom_tooltip = feitenEmpty
+			add_mil_power = 50
+			add_country_modifier = {
+				name = gushuokguan_trade_power_of_the_yan
+				duration = 7300
+			}
+			custom_tooltip = gushuokguan_can_release_hubao_tt
 		}
 	}
 
@@ -1063,7 +1051,7 @@ gushuokguan_3 = {
 							who = ROOT
 							value = 80
 						}
-						ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+						is_hiring_condottiere_from = ROOT #Gushuokguan
 						any_hired_mercenary_company = {
 							template = merc_chrome_claws
 						}
@@ -1074,7 +1062,7 @@ gushuokguan_3 = {
 
 		trigger = {  
 			any_known_country = {
-				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+				is_hiring_condottiere_from = ROOT #Gushuokguan
 				culture_is_harimari = yes
 				has_opinion = {
 					who = ROOT
@@ -1390,7 +1378,10 @@ gushuokguan_4 = {
 				NOT = { unrest = 0 }
 				if = {
 					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = yes 
+					custom_trigger_tooltip = {
+						tooltip = thangoya_seat_in_parliament_tt
+						has_seat_in_parliament = yes 
+					}
 				}
 			}
 		}
@@ -1420,9 +1411,12 @@ gushuokguan_4 = {
 				}
 				NOT = { devastation = 0.01 }
 				NOT = { unrest = 0 }
-				if = { 
+				if = {
 					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = yes
+					custom_trigger_tooltip = {
+						tooltip = thangoya_seat_in_parliament_tt
+						has_seat_in_parliament = yes 
+					}
 				}
 			}
 		} 
@@ -1447,21 +1441,7 @@ gushuokguan_4 = {
 		} 
 
 		effect = {  
-			create_subject = {
-				subject_type = dao
-				subject = Y20 #Feiten
-			}
-			custom_tooltip = gushuokguan_release_feiten_tt
-			4871 = { #Tianlou
-				add_unit_construction = {
-					type = light_ship
-					cost = 0
-					speed = 0.5
-					amount = 10
-				}
-			}
-			custom_tooltip = gushuokguan_can_release_zyujyut_tt
-			hidden_effect = { 
+			hidden_effect = { #hidden effect goes first so that create subject works properly
 				set_country_flag = gushuokguan_can_release_zyujyut
 				every_owned_province = {
 					limit = {
@@ -1477,6 +1457,20 @@ gushuokguan_4 = {
 					add_core = Y20 #Feiten
 				}
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y20 #Feiten
+			}
+			custom_tooltip = gushuokguan_release_feiten_tt
+			4871 = { #Tianlou
+				add_unit_construction = {
+					type = light_ship
+					cost = 0
+					speed = 0.5
+					amount = 10
+				}
+			}
+			custom_tooltip = gushuokguan_can_release_zyujyut_tt
 		}
 	}
 
@@ -1506,22 +1500,24 @@ gushuokguan_4 = {
 
 		effect = {  
 			custom_tooltip = gushuokguan_4_5_effect_tt
-			every_subject_country = {
-				every_owned_province = {
-					limit = {
-						development = 10
-						NOT = { devastation = 0.01 } 
-						num_of_buildings_in_province = 3
-					}
-					add_province_modifier = {
-						name = gushuokguan_confederal_mercantilism
-						duration = 18250
-					}
-				}
-			}
 			add_country_modifier = {
 				name = gushuokguan_the_caring_leader
 				duration = -1
+			}
+			hidden_effect = {
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							development = 10
+							NOT = { devastation = 0.01 } 
+							num_of_buildings_in_province = 3
+						}
+						add_province_modifier = {
+							name = gushuokguan_confederal_mercantilism
+							duration = 18250
+						}
+					}
+				}
 			}
 		} 
 	}
@@ -1609,10 +1605,6 @@ gushuokguan_4 = {
 			custom_tooltip = gushuokguan_flying_pebbles_tt
 			hidden_effect = {
 				set_country_flag = gushuokguan_flying_pebbles
-				set_variable = {
-					which = gushokguan_siege_counter
-					value = 0
-				}
 			}
 		}
 	}
@@ -1627,13 +1619,14 @@ gushuokguan_4 = {
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_won_10_sieges_tt
 				check_variable = {
-					which = gushokguan_siege_counter
+					which = gushuokguan_siege_counter
 					value = 10
 				}
 			}
-			any_war_enemy_country = { #I could do this with another variable to make it more true to the draft. I won't.
-				num_of_owned_provinces_with = {
-					has_province_modifier = scorched_earth
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_scorched_20_provinces_tt
+				check_variable = {
+					which = gushuokguan_scorched_earth_counter
 					value = 20
 				}
 			}
@@ -1694,7 +1687,7 @@ gushuokguan_5 = {
 						region = shamakhad_region
 					}
 				}
-				NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
+				NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
 			}
 		} 
 
@@ -1706,7 +1699,7 @@ gushuokguan_5 = {
 						region = shamakhad_region
 					}
 				}
-				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+				is_hiring_condottiere_from = ROOT #Gushuokguan
 			}
 		} 
 
@@ -1777,8 +1770,8 @@ gushuokguan_5 = {
 		}
 
 		effect = {
+			custom_tooltip = gushuokguan_5_4_effect_tt
 			every_subject_country = {
-				custom_tooltip = gushuokguan_5_4_effect_tt
 				hidden_effect = {
 					every_owned_province = {
 						limit = {
@@ -1792,7 +1785,6 @@ gushuokguan_5 = {
 						}
 					}
 				}
-				
 				add_country_modifier = {
 					name = gushuokguan_interconfederal_industries_global
 					duration = 18250
@@ -1848,12 +1840,6 @@ gushuokguan_5 = {
 		effect = {  
 			country_event = {
 				id = gushuokguan_event.9 #Confederal Council
-			}
-			hidden_effect = {
-				set_variable = {
-					which = gushuokguan_event_counter
-					value = 0
-				}
 			}
 		} 
 	}

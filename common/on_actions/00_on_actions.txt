@@ -2281,6 +2281,7 @@ on_siege_won_country = {
 	#Gushuokguan Siege Counter
 	if = {
 		limit = {
+			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_flying_pebbles
 			any_hired_mercenary_company = { #It's hired, so it can only be ROOT's
 				template = merc_flying_pebbles
@@ -3080,7 +3081,7 @@ on_new_term_election = {
 	}
 	if = {
 		limit = {
-			has_reform = the_stone_jun
+			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_enable_confederal_council
 		}
 		country_event = {
@@ -16302,6 +16303,13 @@ on_scorch_earth = { #ROOT - scorching country, FROM - scorched province
 		}
 	}
 	ROOT = { accretive_path_beikling_chi_stacking_effect = { amount = 10 } }
+	if = {
+		limit = { tag = Y17 } #Gushuokguan
+		change_variable = {
+			which = gushuokguan_scorched_earth_counter
+			value = 1
+		}
+	}
 }
 
 on_war_ended = { #ROOT - Winer FROM - Loser
@@ -16343,7 +16351,7 @@ on_war_ended = { #ROOT - Winer FROM - Loser
 	#Gushuokguan Promise of War
 	if = {
 		limit = {
-			has_reform = the_stone_jun
+			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_enable_confederal_council
 		}
 		country_event = {

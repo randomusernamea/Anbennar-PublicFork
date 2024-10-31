@@ -3049,6 +3049,7 @@ on_battle_won_unit_effect = {
 	if = {
 		limit = { 
 			unit_owner = {
+				tag = Y17 #Gushuokguan
 				has_country_flag = gushuokguan_dacite_dragons
 			}
 			#I want this to check whether a certain mercenary company is in a battle
@@ -3416,6 +3417,7 @@ on_battle_won_country_effect = {
 	}
 	if = {
 		limit = { 
+			tag = Y17 #Gushuokguan
 			has_country_flag = gushuokguan_rock_raiders
 			THIS = {
 				has_underground_terrain = yes
@@ -3424,12 +3426,7 @@ on_battle_won_country_effect = {
 		set_country_flag = gushuokguan_rock_raiders_battle
 	}
 	if = {
-		limit = { 
-			OR = {
-				tag = Y17 #Gushuokguan
-				was_tag = Y17 #Gushuokguan
-			}
-		}
+		limit = { tag = Y17 } #Gushuokguan
 		change_variable = {
 			which = gushuokguan_battle_counter
 			value = 1
@@ -7633,6 +7630,18 @@ startup_1444_effects = {
 		}
 		set_variable = {
 			which = gushuokguan_battle_counter
+			value = 0
+		}
+		set_variable = {
+			which = gushuokguan_siege_counter
+			value = 0
+		}
+		set_variable = {
+			which = gushuokguan_scorched_earth_counter
+			value = 0
+		}
+		set_variable = {
+			which = gushuokguan_event_counter
 			value = 0
 		}
 	}
