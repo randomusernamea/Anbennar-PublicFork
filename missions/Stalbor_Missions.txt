@@ -73,9 +73,17 @@ B47_stalbor_column_1 = {
 	effect = {
 		banesfork_area = {
 			add_elven_minority_size_effect = yes
+			if = {
+				limit = { fast_has_pop_of_race = { race = human } }
+				add_half_elven_minority_size_effect = yes
+			}
 		}
 		beastgrave_area = {
 			add_elven_minority_size_effect = yes
+			if = {
+				limit = { fast_has_pop_of_race = { race = human } }
+				add_half_elven_minority_size_effect = yes
+			}
 		}
 		west_deepwoods_region = {
 			discover_country = B47

@@ -1256,6 +1256,40 @@ country_event = {
 			}
 		}
 	}
+	#Riverboat Parties
+	option = {	
+		name = "flavor_stalbor.24.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		ai_chance = { factor = 0 }
+		add_treasury = -50
+		add_prestige = 5
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		random_list = {
+			90 = {
+				country_event = { 
+					id = flavor_stalbor.25 
+					days = 180
+				}
+			}
+			10 = {
+				country_event = { 
+					id = flavor_stalbor.26 
+					days = 180
+				}
+			}
+		}
+	}
+	#Rubyhold
+	option = {	
+		name = "flavor_stalbor.24.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		ai_chance = { factor = 0 }
+		add_army_professionalism = 0.05
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 365
+		}
+	}
 }
 
 #Capture or Slay!
@@ -1297,42 +1331,41 @@ country_event = {
 		custom_tooltip = B47_reset_hunters
 		hidden_effect = {
 			remove_estate_privilege = estate_adventurers_track_vampire_nobility
-		}
-
-		if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_borders
+			if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_borders
+				}
+				clr_country_flag = B47_vampire_hunters_in_borders
+				set_country_flag = B47_vampires_caught_borders
 			}
-			clr_country_flag = B47_vampire_hunters_in_borders
-			set_country_flag = B47_vampires_caught_borders
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_esmaria
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_esmaria
+				}
+				clr_country_flag = B47_vampire_hunters_in_esmaria
+				set_country_flag = B47_vampires_caught_esmaria
 			}
-			clr_country_flag = B47_vampire_hunters_in_esmaria
-			set_country_flag = B47_vampires_caught_esmaria
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_dameshead
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_dameshead
+				}
+				clr_country_flag = B47_vampire_hunters_in_dameshead
+				set_country_flag = B47_vampires_caught_dameshead
 			}
-			clr_country_flag = B47_vampire_hunters_in_dameshead
-			set_country_flag = B47_vampires_caught_dameshead
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_damescrown
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_damescrown
+				}
+				clr_country_flag = B47_vampire_hunters_in_damescrown
+				set_country_flag = B47_vampires_caught_damescrown
 			}
-			clr_country_flag = B47_vampire_hunters_in_damescrown
-			set_country_flag = B47_vampires_caught_damescrown
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_lencenor
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_lencenor
+				}
+				clr_country_flag = B47_vampire_hunters_in_lencenor
+				set_country_flag = B47_vampires_caught_lencenor
 			}
-			clr_country_flag = B47_vampire_hunters_in_lencenor
-			set_country_flag = B47_vampires_caught_lencenor
 		}
 
 	}
@@ -1344,6 +1377,64 @@ country_event = {
 		country_event = { 
 			id = flavor_stalbor.27 
 			days = 180
+		}
+	}
+	#Hand them to the Locals
+	option = {	
+		name = "flavor_stalbor.25.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		ai_chance = { factor = 50 }
+		custom_tooltip = B47_reset_hunters
+		hidden_effect = {
+			remove_estate_privilege = estate_adventurers_track_vampire_nobility
+			if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_borders
+				}
+				clr_country_flag = B47_vampire_hunters_in_borders
+				set_country_flag = B47_vampires_caught_borders
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_esmaria
+				}
+				clr_country_flag = B47_vampire_hunters_in_esmaria
+				set_country_flag = B47_vampires_caught_esmaria
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_dameshead
+				}
+				clr_country_flag = B47_vampire_hunters_in_dameshead
+				set_country_flag = B47_vampires_caught_dameshead
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_damescrown
+				}
+				clr_country_flag = B47_vampire_hunters_in_damescrown
+				set_country_flag = B47_vampires_caught_damescrown
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_lencenor
+				}
+				clr_country_flag = B47_vampire_hunters_in_lencenor
+				set_country_flag = B47_vampires_caught_lencenor
+			}
+		}
+		add_mil_power = 50
+		add_prestige = -10
+	}
+	#They will never Escape
+	option = {	
+		name = "flavor_stalbor.25.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		ai_chance = { factor = 0 }
+		add_treasury = -300
+		country_event = { 
+			id = flavor_stalbor.27 
+			days = 10
 		}
 	}
 }
@@ -1621,6 +1712,45 @@ country_event = {
 			days = 90
 		}
 	}
+	#Turn to Local Hunters
+	option = {	
+		name = "flavor_stalbor.25.b"
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		ai_chance = { factor = 0 }
+		add_prestige = -5
+		add_dip_power = -50
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 180
+		}
+	}
+	#Aid for anti-slavers
+	option = {	
+		name = "flavor_stalbor.25.c"
+		trigger = { 
+			trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+			any_province = {
+				region = damescrown_region
+				trade_goods = slaves
+			}
+		}
+		ai_chance = { factor = 0 }
+		add_treasury = -300
+		random_province = {
+			limit = {
+				region = damescrown_region
+				trade_goods = slaves
+			}
+			spawn_rebels = {
+				size = 2
+				type = leadered_peasant_rebels
+			}
+		}
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 180
+		}
+	}
 }
 
 #Returned to Die!
@@ -1739,6 +1869,28 @@ country_event = {
 		country_event = { 
 			id = flavor_stalbor.29 
 			days = 365
+		}
+	}
+	#Visit Anbenncóst
+	option = {	
+		name = "flavor_stalbor.28.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		ai_chance = { factor = 0 }
+		add_dip_power = 50
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 180
+		}
+	}
+	#Visit the Wine Lords
+	option = {	
+		name = "flavor_stalbor.28.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		ai_chance = { factor = 0 }
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 270
 		}
 	}
 }
@@ -1902,6 +2054,34 @@ country_event = {
 		country_event = { 
 			id = flavor_stalbor.30
 			days = 365
+		}
+	}
+	#Attend Riverboat Parties.
+	option = {	
+		name = "flavor_stalbor.29.c"
+		ai_chance = { factor = 0 }
+		add_treasury = -50
+		add_prestige = 5
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		country_event = { 
+			id = flavor_stalbor.30
+			days = 180
+		}
+	}
+	#Vissit Bal Vertesk.
+	option = {	
+		name = "flavor_stalbor.29.e"
+		ai_chance = { factor = 0 }
+		every_known_country = { 
+			add_aggressive_expansion = {
+				who = ROOT
+				value = -5
+				apply_calc = yes
+			}
+		}
+		country_event = { 
+			id = flavor_stalbor.30
+			days = 90
 		}
 	}
 }
@@ -2235,20 +2415,55 @@ country_event = {
 		add_legitimacy_equivalent = { amount = 15 republican_tradition = 7.5 }
 		808 = {
 			add_elven_minority_size_effect = yes
+			add_half_elven_minority_size_effect = yes
 		}
 		if = {
 			limit = {
 				any_owned_province = {
 					preferred_terrain = { elven = yes }
 					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
 				}
 			}
 			random_owned_province = {
 				limit = {
 					preferred_terrain = { elven = yes }
 					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
 				}
 				add_elven_minority_size_effect = yes
+				add_half_elven_minority_size_effect = yes
+				add_random_development = 1
+				
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
+				}
+				add_elven_minority_size_effect = yes
+				add_half_elven_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
+				}
+				add_elven_minority_size_effect = yes
+				add_half_elven_minority_size_effect = yes
 				add_random_development = 1
 			}
 		}
@@ -2256,33 +2471,10 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					NOT = { culture_is_elven = yes }
+					fast_has_pop_of_race = { race = human }
 				}
 				add_elven_minority_size_effect = yes
-				add_random_development = 1
-			}
-		}
-		if = {
-			limit = {
-				any_owned_province = {
-					preferred_terrain = { elven = yes }
-					NOT = { culture_is_elven = yes }
-				}
-			}
-			random_owned_province = {
-				limit = {
-					preferred_terrain = { elven = yes }
-					NOT = { culture_is_elven = yes }
-				}
-				add_elven_minority_size_effect = yes
-				add_random_development = 1
-			}
-		}
-		else = {
-			random_owned_province = {
-				limit = {
-					NOT = { culture_is_elven = yes }
-				}
-				add_elven_minority_size_effect = yes
+				add_half_elven_minority_size_effect = yes
 				add_random_development = 1
 			}
 		}
@@ -2960,47 +3152,15 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_province = {
-					preferred_terrain = { lizardfolk = yes }
+					has_port = yes
+					region = daravans_folly_region
 					NOT = { culture_is_lizardfolk = yes }
 				}
 			}
-			random_owned_province = {
+			all_owned_province = {
 				limit = {
-					preferred_terrain = { lizardfolk = yes }
-					NOT = { culture_is_lizardfolk = yes }
-				}
-				add_lizardfolk_minority_size_effect = yes
-				add_random_development = 1
-			}
-		}
-		else = {
-			random_owned_province = {
-				limit = {
-					NOT = { culture_is_lizardfolk = yes }
-				}
-				add_lizardfolk_minority_size_effect = yes
-				add_random_development = 1
-			}
-		}
-		if = {
-			limit = {
-				any_owned_province = {
-					preferred_terrain = { lizardfolk = yes }
-					NOT = { culture_is_lizardfolk = yes }
-				}
-			}
-			random_owned_province = {
-				limit = {
-					preferred_terrain = { lizardfolk = yes }
-					NOT = { culture_is_lizardfolk = yes }
-				}
-				add_lizardfolk_minority_size_effect = yes
-				add_random_development = 1
-			}
-		}
-		else = {
-			random_owned_province = {
-				limit = {
+					has_port = yes
+					region = daravans_folly_region
 					NOT = { culture_is_lizardfolk = yes }
 				}
 				add_lizardfolk_minority_size_effect = yes
