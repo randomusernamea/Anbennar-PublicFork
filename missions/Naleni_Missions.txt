@@ -439,12 +439,10 @@ Naleni_branch_three = {
 		trigger = {
 			
 				OR = {
-					hidden_trigger = {
-						has_country_flag = removing_monstrous
-					}
 					custom_trigger_tooltip = {
-						tooltip = L55_not_monster
-					}
+                        tooltip = L55_not_monster
+                        has_country_flag = removing_monstrous
+                    }
 					NOT = { has_country_modifier = monstrous_nation } 
 				}
 		}
