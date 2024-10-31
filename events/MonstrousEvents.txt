@@ -2478,6 +2478,7 @@ country_event = {
 		trigger = {
 			stability = 0
 			religion = xhazobkult
+			NOT = { has_country_flag = xhazobkult_rejected_conversion }
 		}
 		country_event = { id = xhazobkult_events.2 }
 	}
