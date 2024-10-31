@@ -21,7 +21,6 @@ G48_slot_1 = {
 		trigger = {  
 			G59 { 
 				has_50_opinion_improved_relation = { target = ROOT } 
-				has_subsidize_armies = yes
 			}
 			OR = {
 				advisor = naval_reformer
@@ -35,19 +34,20 @@ G48_slot_1 = {
 		effect = {  
 			add_country_modifier = {
 				name = G48_regular_navy_drills
-				duration = 5475 #15 Years
+				duration = 10950 #30 Years
 			}
 			create_admiral = { tradition = 50 }
 			G59 = {
 				add_country_modifier = {
 					name = G48_regular_navy_drills
-					duration = 5475 #15 Years
+					duration = 10950 #30 Years
 				}
 				create_admiral = { tradition = 50 }
 			}
 			if = {
 				limit = {
 					NOT = { advisor = naval_reformer }
+					NOT = { has_country_flag = colonists_in_power }
 				}
 				add_dip_power = -50
 			}
@@ -58,14 +58,17 @@ G48_slot_1 = {
 		icon = mission_riches_of_golconda
 		position = 2
 		required_missions = { G48_learning_from_the_best } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			owner = { tag = G59 }
+			is_capital = yes
+			NOT = { has_trade_building_trigger = yes }
+		} 
 
 		trigger = {  
 			G59 = {
 				capital_scope = {
-					num_of_times_improved = 3
+					has_trade_building_trigger = yes
 				}
-				has_divert_trade = yes
 			}
 			has_estate_privilege = estate_burghers_private_trade_fleets
 		} 
@@ -133,7 +136,7 @@ G48_slot_1 = {
 			1741 = { 
 				trade_share = {
 					country = ROOT
-					share = 30
+					share = 50
 				}
 			}
 		} 
@@ -223,9 +226,6 @@ G48_slot_2 = {
 					}
 					has_trade_building_trigger = no
 				}
-				owner = {
-					tag = 650
-				}
 			}
 		} 
 
@@ -234,7 +234,6 @@ G48_slot_2 = {
 				type = all
 				owned_by = ROOT
 			}
-			G50 = { exists = no }
 			2738 = { has_trade_building_trigger = yes }
 			2773 = { has_trade_building_trigger = yes }
 		} 
@@ -259,9 +258,6 @@ G48_slot_2 = {
 					province_id = 2736
 					has_manpower_building_trigger = no
 				}
-				owner = {
-					tag = G46
-				}
 			}
 		} 
 
@@ -270,7 +266,6 @@ G48_slot_2 = {
 				type = all
 				owned_by = ROOT
 			}
-			G46 = { exists = no }
 			2736 = { has_manpower_building_trigger = yes }
 			all_known_country = {
 				OR = {
@@ -289,26 +284,26 @@ G48_slot_2 = {
 				} 
 			}
 			custom_tooltip = G48_militants_in_power_tt
+			if = {
+				limit = { has_country_flag = militants_in_power}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					2736 = { 
+						add_building_construction = {
+							building = regimental_camp
+							speed = 1
+							cost = 0
+						} 
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
 			tooltip = { 
 				2773 = {
 					add_building_construction = {
 						building = regimental_camp
 						speed = 1
 						cost = 0
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = { 
-						has_country_flag = militants_in_power
-					}
-					2773 = {
-						add_building_construction = {
-							building = regimental_camp
-							speed = 1
-							cost = 0
-						}
 					}
 				}
 			}
@@ -345,9 +340,6 @@ G48_slot_2 = {
 					}
 					has_shipyard_building_trigger = no
 				}
-				owner = {
-					tag = G47
-				}
 			}
 		} 
 
@@ -358,13 +350,16 @@ G48_slot_2 = {
 			}
 			2731 = { has_shipyard_building_trigger = yes }
 			2717 = { has_shipyard_building_trigger = yes }
-			G47 = { exists = no }
 			G59 = { 
 				NOT = { liberty_desire = 50 }
 			}
 			OR = {
 				has_discovered_degarikes = yes
 				G59 = { has_discovered_degarikes = yes }
+				num_of_owned_provinces_with = {
+					has_shipyard_building_trigger = yes
+					value = 5
+				}
 			}
 		} 
 
@@ -398,7 +393,6 @@ G48_slot_3 = {
 					area = lokemeion_area
 					NOT = { owned_by = ROOT }
 				}
-				owner = { tag = G49 }
 			}
 		} 
 
@@ -407,13 +401,12 @@ G48_slot_3 = {
 				type = all
 				owned_by = ROOT
 			}
-			G49 = { exists = no }
 			any_known_country = {
 				is_a_kheion = yes
 				NOT = { tech_difference = 1 }
 				has_been_insulted_by_root = yes
 			}
-			dip_power = 100
+			dip_power = 50
 		} 
 
 		effect = {  
@@ -476,7 +469,10 @@ G48_slot_3 = {
 	G48_divining_ores = {
 		icon = mission_empowerment
 		position = 4
-		required_missions = { G48_better_bronze } 
+		required_missions = { 
+			G48_better_bronze 
+			G48_contenders_no_more
+		} 
 		provinces_to_highlight = {  
 			OR = {
 				AND = {
@@ -498,7 +494,6 @@ G48_slot_3 = {
 				owned_by = ROOT
 				type = all
 			}
-			G51 = { exists = no }
 			2728 = { has_building = mage_tower }
 			2773 = { has_building = mage_tower }
 			is_scrying = yes #MAGICREWORK
@@ -517,13 +512,6 @@ G48_slot_3 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {  
-			any_subject_country = {
-				any_owned_province = {
-					any_neighbor_province = {
-						region = mteibas_valley_region
-					}
-				}
-			}
 			if = {
 				limit = {
 					2666 = {
@@ -592,9 +580,15 @@ G48_slot_4 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {  
-			estate_loyalty = {
-				estate = estate_burghers
-				loyalty = 60
+			OR = {
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_burghers
+					value = 1
+				}
 			}
 			if = {
 				limit = { has_dlc = "Domination" }
@@ -623,20 +617,20 @@ G48_slot_4 = {
 		required_missions = { G48_our_lifeblood } 
 		provinces_to_highlight = {  
 			area = kherka_area 
-			NOT = { num_of_times_improved = 3 }
+			NOT = { num_of_times_improved = 2 }
 		} 
 
 		trigger = {  
 			kherka_area = {
 				type = all 
-				num_of_times_improved = 3
+				num_of_times_improved = 2
 			}
 			stability = 1
 		} 
 
 		effect = {  
 			kherka_area = {
-				add_prosperity = 50
+				add_prosperity = 12.5
 				add_devastation = -100
 				remove_province_modifier = G48_influx_of_capital
 				add_province_modifier = {
@@ -647,7 +641,7 @@ G48_slot_4 = {
 			custom_tooltip = G48_stalwarts_in_power_tt
 			if = {
 				limit = {
-					has_country_flag = G48_stalwarts_in_power
+					has_country_flag = stalwarts_in_power
 				}
 				custom_tooltip = BONUS_REWARD_YES
 				hidden_effect = {
@@ -656,7 +650,7 @@ G48_slot_4 = {
 			}
 			else = { custom_tooltip = BONUS_REWARD_NO }
 			tooltip = {
-				kherka_area = { add_prosperity = 50 }
+				kherka_area = { add_prosperity = 12.5 }
 			}
 		} 
 	}
@@ -714,7 +708,7 @@ G48_slot_4 = {
 			custom_tooltip = G48_militants_in_power_tt
 			if = {
 				limit = {
-					has_country_flag = G48_militants_in_power
+					has_country_flag = militants_in_power
 				}
 				custom_tooltip = BONUS_REWARD_YES
 				hidden_effect = {
@@ -745,16 +739,10 @@ G48_slot_4 = {
 			G48_shimmer_from_the_top
 		}
 		provinces_to_highlight = {  
-			area = kherka_area
-			num_free_building_slots = 1
 		} 
 
 		trigger = {  
-			kherka_area = {
-				type = all
-				num_free_building_slots = 0
-			}
-			treasury = 2000
+			treasury = 1000
 			OR = {
 				num_of_estate_agendas_completed = {
 					estate = estate_burghers
@@ -768,7 +756,7 @@ G48_slot_4 = {
 		} 
 
 		effect = {  
-			add_treasury = -2000
+			add_treasury = -1000
 			kherka_area = {
 				remove_province_modifier = G48_influx_of_capital_2
 				upgrade_building = { production = yes }
@@ -780,7 +768,7 @@ G48_slot_4 = {
 			custom_tooltip = G48_stalwarts_in_power_tt
 			if = {
 				limit = {
-					has_country_flag = G48_stalwarts_in_power
+					has_country_flag = stalwarts_in_power
 				}
 				custom_tooltip = BONUS_REWARD_YES
 				hidden_effect = {
@@ -789,7 +777,7 @@ G48_slot_4 = {
 			}
 			else = { custom_tooltip = BONUS_REWARD_NO }
 			tooltip = {
-				add_treasury = 1000
+				add_treasury = 500
 			}
 		} 
 	}
@@ -805,20 +793,13 @@ G48_slot_4 = {
 			region = alecand_region
 			owned_by = ROOT
 			OR = {
-				OR = {
-                	has_terrain = mountain
-                	has_terrain = hills
-                	has_terrain = highlands
-                }
-				OR = {
-					trade_goods = copper
-                	trade_goods = iron
-                	trade_goods = gems
-                	trade_goods = gold
-				}
+				trade_goods = copper
+            	trade_goods = iron
+            	trade_goods = gems
+            	trade_goods = gold
 			}
 			OR = {
-				NOT = { base_production = 10 }
+				NOT = { base_production = 5 }
 				NOT = { has_production_or_gold_building_trigger = yes }
 			}
 		} 
@@ -827,19 +808,14 @@ G48_slot_4 = {
 			NOT = {
 				alecand_region	= {
 					OR = {
-                    	has_terrain = mountain
-                    	has_terrain = hills
-                    	has_terrain = highlands
-                	}
-					OR = {
 						trade_goods = copper
                     	trade_goods = iron
                     	trade_goods = gems
                     	trade_goods = gold
 					}
-					NOT = { base_production = 10 }
+					NOT = { base_production = 5 }
 					NOT = { has_production_or_gold_building_trigger = yes }
-					owned_by = ROOT
+					NOT = { owned_by = ROOT }
 				}
 			}
 		} 

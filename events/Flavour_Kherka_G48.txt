@@ -60,6 +60,11 @@ country_event = { #Merchant's Beware
             }
             add_treasury = 200
         }
+        G46 = {
+            every_owned_province = { 
+                add_permanent_claim = ROOT
+            }
+        }
     }
 }
 
@@ -145,6 +150,7 @@ country_event = { #Scrolls Of Knowledge
 
     option  = {
         name = flavour_kherka.4.a #Sack The Library
+        add_dip_power = -50
         if = {
             limit = {
                 has_country_flag = militants_in_power
@@ -182,7 +188,7 @@ country_event = { #Scrolls Of Knowledge
     }
 
     option  = {
-        name = flavour_kherka.b.a #Leave It
+        name = flavour_kherka.4.b #Leave It
         G60 = {
             every_owned_province = {
                 limit = {
@@ -194,23 +200,15 @@ country_event = { #Scrolls Of Knowledge
         }
     }
 
-        option  = {
-        name = flavour_kherka.b.a #Leave It
-        add_dip_power = -100
-        capital_scope = {
-            add_institution_embracement = {
-                which = renaissance 
-                value = 50
-            }
+    option  = {
+        name = flavour_kherka.4.c #Study It
+        if = {
+            limit = {  is_institution_enabled = renaissance }
+            add_next_institution_embracement = 50
         }
-        G60 = {
-            every_owned_province = {
-                limit = {
-                    NOT = { owned_by = ROOT }
-                    NOT = { is_core = ROOT }
-                }
-                add_permanent_claim = ROOT
-            }
+        else = {
+            custom_tooltip = G48_institution_bonus_tt
+            set_country_flag = G48_institution_bonus
         }
     }
 }
@@ -486,10 +484,7 @@ country_event = {
 
     immediate = {
         hidden_effect = {
-            clr_country_flag = stalwarts_in_power
-            clr_country_flag = militants_in_power
-            clr_country_flag = colonists_in_power
-            clr_country_flag = schemers_in_power
+            kherka_remove_faction_flags = yes
             random_list = {
                 1 = {
                     set_country_flag = stalwarts_in_power
@@ -623,6 +618,8 @@ country_event = {
     option = {
         name = flavour_kherka.1000.b #Stalwart Faction
         trigger = { NOT = { has_country_flag = stalwarts_in_power } }
+        kherka_remove_faction_flags = yes
+        set_country_flag = stalwarts_in_power
         kherka_set_ruler = { stalwarts = yes }
         add_republican_tradition = -20
     }
@@ -630,6 +627,8 @@ country_event = {
     option = {
         name = flavour_kherka.1000.c
         trigger = { NOT = { has_country_flag = militants_in_power } }
+        kherka_remove_faction_flags = yes
+        set_country_flag = militants_in_power
         kherka_set_ruler = { militants = yes }
         add_republican_tradition = -20
     }
@@ -637,6 +636,8 @@ country_event = {
     option = {
         name = flavour_kherka.1000.d
         trigger = { NOT = { has_country_flag = colonists_in_power } }
+        kherka_remove_faction_flags = yes
+        set_country_flag = colonists_in_power
         kherka_set_ruler = { colonists = yes }
         add_republican_tradition = -20
     }
@@ -644,6 +645,8 @@ country_event = {
     option = {
         name = flavour_kherka.1000.e
         trigger = { NOT = { has_country_flag = schemers_in_power } }
+        kherka_remove_faction_flags = yes
+        set_country_flag = schemers_in_power
         kherka_set_ruler = { schemers = yes }
         add_republican_tradition = -20
     }
