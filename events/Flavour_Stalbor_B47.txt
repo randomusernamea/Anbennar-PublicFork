@@ -2153,26 +2153,59 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.33.a"
 		ai_chance = { factor = 100 }
+		add_splendor = 50
 		808 = {
 			add_dwarven_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_dwarven = yes
+				any_owned_province = {
+					preferred_terrain = { dwarven = yes }
+					NOT = { culture_is_dwarven = yes }
 				}
 			}
-			add_dwarven_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { dwarven = yes }
+					NOT = { culture_is_dwarven = yes }
+				}
+				add_dwarven_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_dwarven = yes }
+				}
+				add_dwarven_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_dwarven = yes
+				any_owned_province = {
+					preferred_terrain = { dwarven = yes }
+					NOT = { culture_is_dwarven = yes }
 				}
 			}
-			add_dwarven_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { dwarven = yes }
+					NOT = { culture_is_dwarven = yes }
+				}
+				add_dwarven_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_dwarven = yes }
+				}
+				add_dwarven_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2199,26 +2232,59 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.34.a"
 		ai_chance = { factor = 100 }
+		add_legitimacy_equivalent = { amount = 15 republican_tradition = 7.5 }
 		808 = {
 			add_elven_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_elven = yes
+				any_owned_province = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
 				}
 			}
-			add_elven_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
+				}
+				add_elven_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_elven = yes }
+				}
+				add_elven_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_elven = yes
+				any_owned_province = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
 				}
 			}
-			add_elven_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { elven = yes }
+					NOT = { culture_is_elven = yes }
+				}
+				add_elven_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_elven = yes }
+				}
+				add_elven_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2245,26 +2311,65 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.35.a"
 		ai_chance = { factor = 100 }
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			discount = yes
+			culture = imperial_gnome
+			religion = ROOT
+		}
 		808 = {
 			add_gnomish_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_gnomish = yes
+				any_owned_province = {
+					preferred_terrain = { gnomish = yes }
+					NOT = { culture_is_gnomish = yes }
 				}
 			}
-			add_gnomish_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { gnomish = yes }
+					NOT = { culture_is_gnomish = yes }
+				}
+				add_gnomish_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_gnomish = yes }
+				}
+				add_gnomish_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_gnomish = yes
+				any_owned_province = {
+					preferred_terrain = { gnomish = yes }
+					NOT = { culture_is_gnomish = yes }
 				}
 			}
-			add_gnomish_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { gnomish = yes }
+					NOT = { culture_is_gnomish = yes }
+				}
+				add_gnomish_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_gnomish = yes }
+				}
+				add_gnomish_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2291,26 +2396,59 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.36.a"
 		ai_chance = { factor = 100 }
+		add_corruption = -1
 		808 = {
 			add_halfling_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_halfling = yes
+				any_owned_province = {
+					preferred_terrain = { halfling = yes }
+					NOT = { culture_is_halfling = yes }
 				}
 			}
-			add_halfling_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { halfling = yes }
+					NOT = { culture_is_halfling = yes }
+				}
+				add_halfling_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_halfling = yes }
+				}
+				add_halfling_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_halfling = yes
+				any_owned_province = {
+					preferred_terrain = { halfling = yes }
+					NOT = { culture_is_halfling = yes }
 				}
 			}
-			add_halfling_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { halfling = yes }
+					NOT = { culture_is_halfling = yes }
+				}
+				add_halfling_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_halfling = yes }
+				}
+				add_halfling_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 	}
 }
@@ -2331,26 +2469,62 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.37.a"
 		ai_chance = { factor = 100 }
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 10
+		}
 		808 = {
 			add_gnollish_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_gnollish = yes
+				any_owned_province = {
+					preferred_terrain = { gnollish = yes }
+					NOT = { culture_is_gnollish = yes }
 				}
 			}
-			add_gnollish_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { gnollish = yes }
+					NOT = { culture_is_gnollish = yes }
+				}
+				add_gnollish_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_gnollish = yes }
+				}
+				add_gnollish_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_gnollish = yes
+				any_owned_province = {
+					preferred_terrain = { gnollish = yes }
+					NOT = { culture_is_gnollish = yes }
 				}
 			}
-			add_gnollish_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { gnollish = yes }
+					NOT = { culture_is_gnollish = yes }
+				}
+				add_gnollish_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_gnollish = yes }
+				}
+				add_gnollish_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2377,26 +2551,59 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.38.a"
 		ai_chance = { factor = 100 }
+		add_mercantilism = 3
 		808 = {
 			add_harpy_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_harpy = yes
+				any_owned_province = {
+					preferred_terrain = { harpy = yes }
+					NOT = { culture_is_harpy = yes }
 				}
 			}
-			add_harpy_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { harpy = yes }
+					NOT = { culture_is_harpy = yes }
+				}
+				add_harpy_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_harpy = yes }
+				}
+				add_harpy_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_harpy = yes
+				any_owned_province = {
+					preferred_terrain = { harpy = yes }
+					NOT = { culture_is_harpy = yes }
 				}
 			}
-			add_harpy_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { harpy = yes }
+					NOT = { culture_is_harpy = yes }
+				}
+				add_harpy_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_harpy = yes }
+				}
+				add_harpy_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2423,26 +2630,59 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.39.a"
 		ai_chance = { factor = 100 }
+		add_inflation = -2
 		808 = {
 			add_kobold_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_kobold = yes
+				any_owned_province = {
+					preferred_terrain = { kobold = yes }
+					NOT = { culture_is_kobold = yes }
 				}
 			}
-			add_kobold_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { kobold = yes }
+					NOT = { culture_is_kobold = yes }
+				}
+				add_kobold_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_kobold = yes }
+				}
+				add_kobold_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_kobold = yes
+				any_owned_province = {
+					preferred_terrain = { kobold = yes }
+					NOT = { culture_is_kobold = yes }
 				}
 			}
-			add_kobold_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { kobold = yes }
+					NOT = { culture_is_kobold = yes }
+				}
+				add_kobold_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_kobold = yes }
+				}
+				add_kobold_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2472,23 +2712,55 @@ country_event = {
 		808 = {
 			add_troll_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_troll = yes
+				any_owned_province = {
+					preferred_terrain = { troll = yes }
+					NOT = { culture_is_troll = yes }
 				}
 			}
-			add_troll_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { troll = yes }
+					NOT = { culture_is_troll = yes }
+				}
+				add_troll_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_troll = yes }
+				}
+				add_troll_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_troll = yes
+				any_owned_province = {
+					preferred_terrain = { troll = yes }
+					NOT = { culture_is_troll = yes }
 				}
 			}
-			add_troll_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { troll = yes }
+					NOT = { culture_is_troll = yes }
+				}
+				add_troll_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_troll = yes }
+				}
+				add_troll_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 	}
 }
@@ -2514,27 +2786,63 @@ country_event = {
 			add_devastation = -100
 			add_prosperity = 50
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_centaur = yes
+				any_owned_province = {
+					preferred_terrain = { centaur = yes }
+					NOT = { culture_is_centaur = yes }
 				}
 			}
-			add_centaur_minority_size_effect = yes
-			add_random_development = 1
-			add_devastation = -100
-			add_prosperity = 50
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { centaur = yes }
+					NOT = { culture_is_centaur = yes }
+				}
+				add_centaur_minority_size_effect = yes
+				add_random_development = 1
+				add_devastation = -100
+				add_prosperity = 50
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_centaur = yes }
+				}
+				add_centaur_minority_size_effect = yes
+				add_random_development = 1
+				add_devastation = -100
+				add_prosperity = 50
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_centaur = yes
+				any_owned_province = {
+					preferred_terrain = { centaur = yes }
+					NOT = { culture_is_centaur = yes }
 				}
 			}
-			add_centaur_minority_size_effect = yes
-			add_random_development = 1
-			add_devastation = -100
-			add_prosperity = 50
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { centaur = yes }
+					NOT = { culture_is_centaur = yes }
+				}
+				add_centaur_minority_size_effect = yes
+				add_random_development = 1
+				add_devastation = -100
+				add_prosperity = 50
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_centaur = yes }
+				}
+				add_centaur_minority_size_effect = yes
+				add_random_development = 1
+				add_devastation = -100
+				add_prosperity = 50
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2565,23 +2873,55 @@ country_event = {
 		808 = {
 			add_harimari_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_harimari = yes
+				any_owned_province = {
+					preferred_terrain = { harimari = yes }
+					NOT = { culture_is_harimari = yes }
 				}
 			}
-			add_harimari_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { harimari = yes }
+					NOT = { culture_is_harimari = yes }
+				}
+				add_harimari_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_harimari = yes }
+				}
+				add_harimari_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_harimari = yes
+				any_owned_province = {
+					preferred_terrain = { harimari = yes }
+					NOT = { culture_is_harimari = yes }
 				}
 			}
-			add_harimari_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { harimari = yes }
+					NOT = { culture_is_harimari = yes }
+				}
+				add_harimari_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_harimari = yes }
+				}
+				add_harimari_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2617,23 +2957,55 @@ country_event = {
 		808 = {
 			add_lizardfolk_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_lizardfolk = yes
+				any_owned_province = {
+					preferred_terrain = { lizardfolk = yes }
+					NOT = { culture_is_lizardfolk = yes }
 				}
 			}
-			add_lizardfolk_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { lizardfolk = yes }
+					NOT = { culture_is_lizardfolk = yes }
+				}
+				add_lizardfolk_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_lizardfolk = yes }
+				}
+				add_lizardfolk_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_lizardfolk = yes
+				any_owned_province = {
+					preferred_terrain = { lizardfolk = yes }
+					NOT = { culture_is_lizardfolk = yes }
 				}
 			}
-			add_lizardfolk_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { lizardfolk = yes }
+					NOT = { culture_is_lizardfolk = yes }
+				}
+				add_lizardfolk_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_lizardfolk = yes }
+				}
+				add_lizardfolk_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2664,23 +3036,55 @@ country_event = {
 			add_ogre_minority_size_effect = yes
 			add_random_development = 3
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_ogre = yes
+				any_owned_province = {
+					preferred_terrain = { ogre = yes }
+					NOT = { culture_is_ogre = yes }
 				}
 			}
-			add_ogre_minority_size_effect = yes
-			add_random_development = 3
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { ogre = yes }
+					NOT = { culture_is_ogre = yes }
+				}
+				add_ogre_minority_size_effect = yes
+				add_random_development = 3
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_ogre = yes }
+				}
+				add_ogre_minority_size_effect = yes
+				add_random_development = 3
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_ogre = yes
+				any_owned_province = {
+					preferred_terrain = { ogre = yes }
+					NOT = { culture_is_ogre = yes }
 				}
 			}
-			add_ogre_minority_size_effect = yes
-			add_random_development = 3
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { ogre = yes }
+					NOT = { culture_is_ogre = yes }
+				}
+				add_ogre_minority_size_effect = yes
+				add_random_development = 3
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_ogre = yes }
+				}
+				add_ogre_minority_size_effect = yes
+				add_random_development = 3
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2713,23 +3117,55 @@ country_event = {
 		808 = {
 			add_ruinborn_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_ruinborn = yes
+				any_owned_province = {
+					preferred_terrain = { ruinborn = yes }
+					NOT = { culture_is_ruinborn = yes }
 				}
 			}
-			add_ruinborn_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { ruinborn = yes }
+					NOT = { culture_is_ruinborn = yes }
+				}
+				add_ruinborn_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_ruinborn = yes }
+				}
+				add_ruinborn_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_ruinborn = yes
+				any_owned_province = {
+					preferred_terrain = { ruinborn = yes }
+					NOT = { culture_is_ruinborn = yes }
 				}
 			}
-			add_ruinborn_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { ruinborn = yes }
+					NOT = { culture_is_ruinborn = yes }
+				}
+				add_ruinborn_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_ruinborn = yes }
+				}
+				add_ruinborn_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 		hidden_effect = {
 			country_event = {
@@ -2760,23 +3196,55 @@ country_event = {
 		808 = {
 			add_hobgoblin_minority_size_effect = yes
 		}
-		random_owned_province = {
+		if = {
 			limit = {
-				NOT = {
-					culture_is_hobgoblin = yes
+				any_owned_province = {
+					preferred_terrain = { hobgoblin = yes }
+					NOT = { culture_is_hobgoblin = yes }
 				}
 			}
-			add_hobgoblin_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { hobgoblin = yes }
+					NOT = { culture_is_hobgoblin = yes }
+				}
+				add_hobgoblin_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
-		random_owned_province = {
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_hobgoblin = yes }
+				}
+				add_hobgoblin_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		if = {
 			limit = {
-				NOT = {
-					culture_is_hobgoblin = yes
+				any_owned_province = {
+					preferred_terrain = { hobgoblin = yes }
+					NOT = { culture_is_hobgoblin = yes }
 				}
 			}
-			add_hobgoblin_minority_size_effect = yes
-			add_random_development = 1
+			random_owned_province = {
+				limit = {
+					preferred_terrain = { hobgoblin = yes }
+					NOT = { culture_is_hobgoblin = yes }
+				}
+				add_hobgoblin_minority_size_effect = yes
+				add_random_development = 1
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					NOT = { culture_is_hobgoblin = yes }
+				}
+				add_hobgoblin_minority_size_effect = yes
+				add_random_development = 1
+			}
 		}
 	}
 }
