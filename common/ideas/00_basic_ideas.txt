@@ -30,7 +30,13 @@ aristocracy_ideas = {
 				has_government_attribute = enables_aristocratic_idea_group
 			}
 		}
-		NOT = { government = theocracy }
+		OR = {
+			NOT = { government = theocracy }
+			AND = {
+				government = theocracy
+				has_government_attribute = enables_aristocratic_idea_group
+			}
+		}
 		NOT = { 
 			OR = {
 				has_reform = steppe_horde
