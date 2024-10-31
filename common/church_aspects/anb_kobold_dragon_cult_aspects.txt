@@ -1838,7 +1838,7 @@ copper_dragon_3_upgraded= {
     }
 }
 
-bronze_dragon_1_upgraded= {
+bronze_dragon_1_upgraded = {
     cost = 100
 	potential = {
 		has_unlocked_kobold_cult_for_color_slot_upgrade = {
@@ -1849,10 +1849,8 @@ bronze_dragon_1_upgraded= {
 	}
     monarch_power = adm
     modifier = {
-		army_tradition = 0.5
-		navy_tradition = 0.5
-		army_tradition_decay = -0.01
-		navy_tradition_decay = -0.01
+		army_tradition = 1
+		navy_tradition = 1
     }
     ai_will_do = {
         factor = 15
