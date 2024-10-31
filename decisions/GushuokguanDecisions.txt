@@ -33,21 +33,6 @@ country_decisions = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y96 #Guwaamud
-				}
-			}
-			else = { create_vassal = Y96 } #Guwaamud
-			clr_country_flag = gushuokguan_can_release_guwaamud
 			custom_tooltip = gushuokguan_release_guwaamud_tt
 			hidden_effect = { 
 				every_owned_province = {
@@ -57,7 +42,12 @@ country_decisions = {
 					cede_province = Y96 #Guwaamud
 					add_core = Y96 #Guwaamud
 				}
+				clr_country_flag = gushuokguan_can_release_guwaamud
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y96 #Guwaamud
+			}
 		}
 	}
 
@@ -80,23 +70,9 @@ country_decisions = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y03 #Hubao
-				}
-			}
-			else = { create_vassal = Y03 } #Hubao
-			clr_country_flag = gushuokguan_can_release_hubao
 			custom_tooltip = gushuokguan_release_hubao_tt
 			hidden_effect = { 
+				clr_country_flag = gushuokguan_can_release_hubao
 				every_owned_province = {
 					limit = {
 						OR = {
@@ -111,6 +87,10 @@ country_decisions = {
 					add_core = Y03 #Hubao
 				}
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y03 #Hubao
+			}
 		}
 	}
 
@@ -132,21 +112,6 @@ country_decisions = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y23 #Zyujyut
-				}
-			}
-			else = { create_vassal = Y23 } #Zyujyut
-			clr_country_flag = gushuokguan_can_release_zyujyut
 			custom_tooltip = gushuokguan_release_zyujyut_tt
 			hidden_effect = { 
 				every_owned_province = {
@@ -161,7 +126,12 @@ country_decisions = {
 					cede_province = Y23 #Zyujyut
 					add_core = Y23 #Zyujyut
 				}
+				clr_country_flag = gushuokguan_can_release_zyujyut
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y23 #Zyujyut
+			}
 		}
 	}
 
@@ -178,21 +148,6 @@ country_decisions = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Mandate of Heaven" #Apparently every single instance of create_subject is supposed to check for at least one of those
-						has_dlc = "Art of War"
-						has_dlc = "Leviathan"
-					}
-				}
-				create_subject = {
-					subject_type = dao
-					subject = Y99 #One Xia
-				}
-			}
-			else = { create_vassal = Y99 } #One Xia
-			clr_country_flag = gushuokguan_can_release_one_xia
 			custom_tooltip = gushuokguan_release_one_xia_tt
 			hidden_effect = { 
 				every_owned_province = {
@@ -202,7 +157,12 @@ country_decisions = {
 					cede_province = Y99 #One Xia
 					add_core = Y99 #One Xia
 				}
+				clr_country_flag = gushuokguan_can_release_one_xia
 			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y99 #One Xia
+			}
 		}
 	}
 }
