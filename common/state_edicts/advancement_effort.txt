@@ -36,7 +36,7 @@ edict_advancement_effort = {
 	}
 
 	on_state_edict_revoked = {
-		clr_country_flag = giberd_bennonhill_advancement_edict
+		FROM = { clr_country_flag = giberd_bennonhill_advancement_edict }
 	}
 	
 	

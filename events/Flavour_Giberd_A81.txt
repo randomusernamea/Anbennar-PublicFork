@@ -279,6 +279,7 @@ country_event = {
 			id = flavor_esmari.1
 			days = 1
 		}
+		custom_tooltip = giberd_change_artifice_limit_tt
 		custom_tooltip = artifice_limited_to_tier_2_tt
 		clr_country_flag = artifice_limited_to_tier_1
 		set_country_flag = artifice_limited_to_tier_2
@@ -584,6 +585,11 @@ country_event = {
 			add_country_modifier = {
 				name = giberd_beepeck_honored_by_giberd
 				duration = 3650
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = giberd_potions_bribe
+				years = 10
 			}
 		}
 		add_country_modifier = {

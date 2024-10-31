@@ -32,7 +32,7 @@ edict_encourage_development = {
 	}
 
 	on_state_edict_revoked = {
-		clr_country_flag = giberd_bennonhill_development_edict
+		FROM = { clr_country_flag = giberd_bennonhill_development_edict }
 	}
 
 	

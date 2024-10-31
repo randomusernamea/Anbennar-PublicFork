@@ -131,14 +131,12 @@ giberd_imperial = {
 					OR = {
 						owned_by = ROOT
 						AND = {
-							A73 = {
-								reverse_has_opinion = {
-									who = ROOT
-									value = 200
-								}
-								has_25_opinion_sent_gift = {
-									target = ROOT
-								}
+							reverse_has_opinion = {
+								who = A73
+								value = 200
+							}
+							has_25_opinion_sent_gift = {
+								target = A73
 							}
 						}
 					}
@@ -152,30 +150,32 @@ giberd_imperial = {
 					owns = 912
 				}
 				AND = {
+					reverse_has_opinion = {
+						who = A73
+						value = 200
+					}
 					A73 = {
-						reverse_has_opinion = {
-							who = ROOT
-							value = 200
-						}
 						has_25_opinion_sent_gift = {
 							target = ROOT
 						}
-						if = {
-							limit = {
-								A73 = {
-									is_elector = yes
-								}
+					}
+				}
+			}
+			if = {
+				limit = {
+					A73 = {
+						is_elector = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = giberd_to_strike_an_anvil_tt					# TODO: check that this works
+					any_known_country = {
+						AND = {
+							A73 = {
+								preferred_emperor = PREV
 							}
-							custom_trigger_tooltip = {
-								tooltip = giberd_to_strike_an_anvil_tt								# TODO: check that this works
-								any_known_country = {
-									AND = {
-										A73 = {
-											preferred_emperor = PREV
-										}
-										preferred_emperor = THIS
-									}
-								}
+							ROOT = {
+								preferred_emperor = PREV
 							}
 						}
 					}
@@ -560,7 +560,10 @@ giberd_konwell_conquest = {
 					NOT = {
 						AND = {
 							has_manpower_building_trigger = yes
-							has_building = soldier_households
+							OR = {
+								has_building = farm_estate
+								has_building = soldier_households
+							}
 							base_manpower = 8
 						}
 					}
@@ -602,7 +605,10 @@ giberd_konwell_conquest = {
 							region = esmaria_region
 							trade_goods = livestock
 							has_manpower_building_trigger = yes
-							has_building = soldier_households
+							OR = {
+								has_building = farm_estate
+								has_building = soldier_households
+							}
 							base_manpower = 8
 						}
 					}
@@ -641,24 +647,44 @@ giberd_konwell_conquest = {
 					duration = -1
 				}
 			}
-			every_owned_province = {
-				limit = {
-					trade_goods = grain
-					region = esmaria_region
-				}
-				add_province_modifier = {
-					name = giberd_gmo
-					duration = -1
+			custom_tooltip = giberd_graining_and_grazing_grain_effect_tt
+			tooltip = {
+				capital_scope = {
+					add_province_modifier = {
+						name = giberd_gmo
+						duration = -1
+					}
 				}
 			}
-			every_owned_province = {
-				limit = {
-					trade_goods = livestock
-					region = esmaria_region
+			custom_tooltip = giberd_graining_and_grazing_livestock_effect_tt
+			tooltip = {
+				capital_scope = {
+					add_province_modifier = {
+						name = giberd_gmo_feed
+						duration = -1
+					}
 				}
-				add_province_modifier = {
-					name = giberd_gmo_feed
-					duration = -1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = grain
+						region = esmaria_region
+					}
+					add_province_modifier = {
+						name = giberd_gmo
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					limit = {
+						trade_goods = livestock
+						region = esmaria_region
+					}
+					add_province_modifier = {
+						name = giberd_gmo_feed
+						duration = -1
+					}
 				}
 			}
 		}
@@ -1496,6 +1522,7 @@ giberd_ryalanar_conquest = {
 					}
 				}
 				AND = {
+					owned_by = ROOT
 					region = esmaria_region
 					fast_has_pop_of_race = {
 						race = gnomish
@@ -1543,6 +1570,7 @@ giberd_ryalanar_conquest = {
 							fast_has_pop_of_race = {
 								race = gnomish
 							}
+							owned_by = ROOT
 						}
 						base_production = 7
 						AND = {
@@ -1959,7 +1987,7 @@ giberd_mercantile_shipping = {
 			NOT = {
 				province_has_current_tech_fort_trigger = yes
 				has_building = ramparts
-				OR = {
+				AND = {
 					is_prosperous = yes
 					has_state_edict = edict_defensive_edict
 				}
@@ -1988,14 +2016,17 @@ giberd_mercantile_shipping = {
 		effect = {
 			271 = {
 				add_province_triggered_modifier = giberd_modern_fortress
+				custom_tooltip = giberd_castle_clareen_effect_tt
 				add_province_modifier = {
 					name = giberd_clear_skies
 					duration = 9125
 				}
-				every_neighbor_province = {
-					add_province_modifier = {
-						name = giberd_clear_skies
-						duration = 9125
+				hidden_effect = {
+					every_neighbor_province = {
+						add_province_modifier = {
+							name = giberd_clear_skies
+							duration = 9125
+						}
 					}
 				}
 			}
@@ -2540,6 +2571,7 @@ giberd_artificer = {
 				name = giberd_atypical_artificers_research
 				duration = 3650
 			}
+			custom_tooltip = giberd_change_artifice_limit_tt
 			custom_tooltip = artifice_limited_to_tier_3_tt
 			clr_country_flag = artifice_limited_to_tier_2
 			271 = {
