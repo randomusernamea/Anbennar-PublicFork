@@ -3982,7 +3982,10 @@ the_pirate_ways_reform = {
 	icon = "sailors"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	modifiers = {
 		privateer_efficiency = 0.25
@@ -4814,7 +4817,10 @@ respect_for_the_sea_reform = {
 	icon = "great_sea"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		if = {
@@ -4840,7 +4846,10 @@ relgious_freedom_reform = {
 	icon = "partial_secularisation_reform"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = { 
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		if = {
@@ -5451,7 +5460,10 @@ power_to_the_raiders_reform = {
 	icon = "sea_raiders"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	modifiers = {
 		pr_buccaneers_influence = 0.1
@@ -5467,7 +5479,10 @@ power_to_the_captains_reform = {
 	icon = "pirate_queen"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	modifiers = {
 		pr_captains_influence = 0.1
@@ -5483,7 +5498,10 @@ power_to_the_smugglers_reform = {
 	icon = "blackmailing"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	modifiers = {
 		pr_smugglers_influence = 0.1
@@ -5568,8 +5586,7 @@ pirate_king_reform = {
 	allow_normal_conversion = yes
 	legacy_equivalent = pirate_kingdom
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
-		NOT = { has_reform = matriarchal_pirate_republic }
+			has_government_attribute = is_pirate_republic_reform
 	}
 	modifiers = {
 		pr_captains_influence = 0.1
@@ -5591,7 +5608,10 @@ war_against_the_world_doctrine_reform = {
 	legacy_equivalent = war_against_the_world_government
 	disallowed_trade_goods = { slaves }
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		NOT = { culture_group = gnollish }
@@ -5751,7 +5771,10 @@ open_naval_services_reform = {
 	icon = "merchant_ship"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		if = {
@@ -5806,7 +5829,10 @@ master_smugglers_reform = {
 	icon = "black_army_reform"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		if = {
@@ -5834,7 +5860,10 @@ cutthroat_approach_reform = {
 	icon = "pirate_republic"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		if = {
@@ -6215,7 +6244,10 @@ rule_through_plunder_reform = {
 	icon = "rioting_burning_2"
 	allow_normal_conversion = yes
 	potential = {
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	modifiers = {
 		loot_amount = 1
@@ -6574,7 +6606,10 @@ scourge_of_the_seven_sea_reform = {
 	icon = "pirate_ship"
 	allow_normal_conversion = yes
 	potential = { 
-		has_government_attribute = is_pirate_republic_reform
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			has_reform = naleni_thalassocracy_reform
+		}
 	}
 	trigger = {
 		is_emperor_of_china = no #Anbennar
