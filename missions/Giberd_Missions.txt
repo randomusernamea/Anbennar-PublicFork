@@ -2516,23 +2516,20 @@ giberd_artificer = {
 		position = 9
 		provinces_to_highlight = {
 			owned_by = ROOT
+			region = esmaria_region
 			has_province_modifier = ravelian_society
-			OR = {
-				NOT = {
-					base_production = 12
-				}
+			NOT = {
 				AND = {
-					NOT = {
-						base_production = 8
-					}
-					NOT = {
-						has_forcelimit_building_trigger = yes
-					}
+					base_production = 8
+					has_forcelimit_building_trigger = yes
 				}
 			}
 		}
 		trigger = {
-			faction_in_power = tec_technomancy
+			custom_trigger_tooltip = {
+				tooltip = giberd_technomancer_in_power_tt
+				has_ruler_flag = technomancy_ruler
+			}
 			artifice_has_points_30 = yes
 			is_not_researching_invention = yes
 			any_owned_province = {
@@ -2548,8 +2545,10 @@ giberd_artificer = {
 							has_forcelimit_building_trigger = yes
 						}
 						NOT = {
-							has_province_modifier = ravelian_society
-							region = esmaria_region
+							NOT = {
+								has_province_modifier = ravelian_society
+								region = esmaria_region
+							}
 						}
 					}
 				}
