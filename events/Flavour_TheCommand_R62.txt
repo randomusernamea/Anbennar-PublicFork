@@ -16365,7 +16365,7 @@ country_event = { #Force Command AI to do stuff
 					3 = {
 						modifier = {
 							factor = 2
-							NOT = { has_country_flag = insubordination_complete }
+							NOT = { owner = { has_country_flag = insubordination_complete } }
 						}
 					}
 					1 = {
