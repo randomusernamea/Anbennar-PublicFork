@@ -34,6 +34,7 @@ mihitarab_missions_1 = {
 		
 		effect = {
 			country_event = { id = flavor_mihitarab.6 }
+			custom_tooltip = mihitarab_investigation_tooltip
 		}
 	}
 	
@@ -179,7 +180,10 @@ mihitarab_missions_4 = {
 		trigger = {
 			army_size = 30
 			is_monarch_leader = yes
-			monthly_mil = 10
+			OR = 
+				monthly_mil = 10
+				has_mil_advisor_of_level = { level = 4 }
+			}
 		}
 		
 		effect = {
