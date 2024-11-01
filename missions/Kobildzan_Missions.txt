@@ -1,0 +1,852 @@
+Kob_2a = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Z38
+			tag = A26
+			tag = A27
+			tag = A28
+		}
+		
+	}
+	has_country_shield = yes
+	Z38_audacity_red = {
+		icon = mission_kobold
+		position = 1
+		required_missions = { 
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_magic_and_the_pass = {
+		icon = mission_kobold
+		position = 2
+		required_missions = { 
+			Z38_audacity_red
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_technology_and_trade = {
+		icon = mission_kobold
+		position = 3
+		required_missions = { 
+			Z38_magic_and_the_pass
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_malignant_whisper = {
+		icon = mission_kobold
+		position = 4
+		required_missions = { 
+			Z38_technology_and_trade
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_3a = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Z38
+			tag = A26
+			tag = A27
+			tag = A28
+		}
+	}
+	has_country_shield = yes
+	Z38_sagacity_blue = {
+		icon = mission_kobold
+		position = 1
+		required_missions = { 
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_purple_union = {
+		icon = mission_kobold
+		position = 2
+		required_missions = { 
+			Z38_audacity_red
+			Z38_sagacity_blue
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_malliaths_call = {
+		icon = mission_kobold
+		position = 3
+		required_missions = { 
+			Z38_a_purple_union
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_the_meaning_of_dragonfire = {
+		icon = mission_kobold
+		position = 4
+		required_missions = { 
+			Z38_malliaths_call
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_heirs_of_dragonkind = {
+		icon = mission_kobold
+		position = 5
+		required_missions = { 
+			Z38_the_meaning_of_dragonfire
+			Z38_the_shape_of_dalaire
+			Z38_a_malignant_whisper
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_4a = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Z38
+			tag = A26
+			tag = A27
+			tag = A28
+		}
+	}
+	has_country_shield = yes
+	Z38_tenacity_green = {
+		icon = mission_kobold
+		position = 1
+		required_missions = { 
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_holding_on = {
+		icon = mission_kobold
+		position = 2
+		required_missions = { 
+			Z38_tenacity_green
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+	Z38_seasick_green = {
+		icon = mission_kobold
+		position = 3
+		required_missions = { 
+			Z38_holding_on
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+	Z38_the_shape_of_dalaire = {
+		icon = mission_kobold
+		position = 4
+		required_missions = { 
+			Z38_seasick_green
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+
+		effect = {
+		}
+	}
+}
+Kob_5a = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { 
+		OR = {
+			tag = A26
+			tag = A27
+			tag = A28
+			tag = Z38
+		}
+	}
+}
+Kob_1b = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+	Z38_meet_your_idols = {
+		icon = mission_kobold
+		position = 6
+		required_missions = { 
+			Z38_heirs_of_dragonkind
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_pledge = {
+		icon = mission_kobold
+		position = 7
+		required_missions = { 
+			Z38_meet_your_idols
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_supply_the_crusade = {
+		icon = mission_kobold
+		position = 11
+		required_missions = { 
+			Z38_a_pledge
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_2b = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+	Z38_the_compendium_of_dragons = {
+		icon = mission_kobold
+		position = 6
+		required_missions = { 
+			Z38_heirs_of_dragonkind
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_step_into_the_draconic = {
+		icon = mission_kobold
+		position = 7
+		required_missions = { 
+			Z38_the_compendium_of_dragons
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_relics_of_the_future = {
+		icon = mission_kobold
+		position = 8
+		required_missions = { 
+			Z38_a_step_into_the_draconic
+			Z38_a_pledge
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_technocracy_for_all = {
+		icon = mission_kobold
+		position = 9
+		required_missions = { 
+			Z38_relics_of_the_future
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_the_artificer_ruinborn = {
+		icon = mission_kobold
+		position = 10
+		required_missions = { 
+			Z38_the_artificer_ruinborn
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_3b = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+	Z38_a_civilzed_cult = {
+		icon = mission_kobold
+		position = 8
+		required_missions = { 
+			Z38_a_step_into_the_draconic
+			Z38_an_artificers_dream
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_new_face_a_new_body = {
+		icon = mission_kobold
+		position = 10
+		required_missions = { 
+			Z38_a_technocracy_for_all
+			Z38_a_civilzed_cult
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_celebration_of_kobildzan = {
+		icon = mission_kobold
+		position = 11
+		required_missions = { 
+			Z38_the_artificer_ruinborn
+			Z38_reclaiming_the_frontier
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_4b = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+	Z38_a_hoard_worth_having = {
+		icon = mission_kobold
+		position = 6
+		required_missions = { 
+			Z38_the_great_revitalization
+			Z38_heirs_of_dragonkind
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_an_artificers_dream = {
+		icon = mission_kobold
+		position = 7
+		required_missions = { 
+			Z38_a_hoard_worth_having
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_trapping_the_wealth = {
+		icon = mission_kobold
+		position = 8
+		required_missions = { 
+			Z38_an_artificers_dream
+			Z38_koboldquilt_cloth
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_the_holy_caverns = {
+		icon = mission_kobold
+		position = 9
+		required_missions = { 
+			Z38_trapping_the_wealth
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_reclaiming_the_frontier = {
+		icon = mission_kobold
+		position = 10
+		required_missions = { 
+			Z38_the_holy_caverns
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_5b = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+	Z38_the_great_revitalization = {
+		icon = mission_kobold
+		position = 5
+		required_missions = { 
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_farms_not_fish = {
+		icon = mission_kobold
+		position = 6
+		required_missions = { 
+			Z38_the_great_revitalization
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_koboldquilt_cloth = {
+		icon = mission_kobold
+		position = 7
+		required_missions = { 
+			Z38_farms_not_fish
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_the_kobold_krakeneers = {
+		icon = mission_kobold
+		position = 8
+		required_missions = {
+			Z38_koboldquilt_cloth
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_traders_and_traitors = {
+		icon = mission_kobold
+		position = 11
+		required_missions = { 
+			Z38_reclaiming_the_frontier
+			Z38_the_kobold_krakeneers
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_1c = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+		#has_country_flag = temp
+	}
+	has_country_shield = yes
+	Z38_aelantir_as_one = {
+		icon = mission_kobold
+		position = 13
+		required_missions = { 
+			Z38_in_raw_desperation
+			Z38_supply_the_crusade
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_eclipsing_a_dragon = {
+		icon = mission_kobold
+		position = 16
+		required_missions = { 
+			Z38_aelantir_as_one
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_2c = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+		#has_country_flag = temp
+	}
+	has_country_shield = yes
+	Z38_easing_the_pain = {
+		icon = mission_kobold
+		position = 13
+		required_missions = { 
+			Z38_in_raw_desperation
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_rebuilding_what_was_lost = {
+		icon = mission_kobold
+		position = 15
+		required_missions = { 
+			Z38_easing_the_pain
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_pilgrimage_to_the_hoard = {
+		icon = mission_kobold
+		position = 16
+		required_missions = { 
+			Z38_rebuilding_what_was_lost
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_3c = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+		#has_country_flag = temp
+	}
+	has_country_shield = yes
+	Z38_in_raw_desperation = {
+		icon = mission_kobold
+		position = 12
+		required_missions = { 
+			Z38_a_celebration_of_kobildzan
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_last_gasps_of_heresy = {
+		icon = mission_kobold
+		position = 16
+		required_missions = { 
+			Z38_rebuilding_what_was_lost
+			Z38_interview_with_a_dragon
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_draconic_conference = {
+		icon = mission_kobold
+		position = 17
+		required_missions = { 
+			Z38_eclipsing_a_dragon
+			Z38_pilgrimage_to_the_hoard
+			Z38_the_alosian_skald_cult
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_a_second_draconic_conference = {
+		icon = mission_kobold
+		position = 18
+		required_missions = { 
+			Z38_a_draconic_conference
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_4c = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+		#has_country_flag = temp
+	}
+	has_country_shield = yes
+	Z38_acts_of_ascension = {
+		icon = mission_kobold
+		position = 13
+		required_missions = { 
+			Z38_in_raw_desperation
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_interview_with_a_dragon = {
+		icon = mission_kobold
+		position = 15
+		required_missions = { 
+			Z38_acts_of_ascension
+			Z38_exploit_the_land
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
+Kob_5c = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+		#has_country_flag = temp
+	}
+	has_country_shield = yes
+	Z38_lashing_out = {
+		icon = mission_kobold
+		position = 13
+		required_missions = { 
+			Z38_traders_and_traitors
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_exploit_the_land = {
+		icon = mission_kobold
+		position = 14
+		required_missions = { 
+			Z38_lashing_out
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_ritual_of_awakening = {
+		icon = mission_kobold
+		position = 15
+		required_missions = { 
+			Z38_exploit_the_land
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	Z38_the_alosian_skald_cult = {
+		icon = mission_kobold
+		position = 16
+		required_missions = { 
+			Z38_ritual_of_awakening
+		}
+
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+}
