@@ -407,6 +407,22 @@ defined_text = {
 }
 
 defined_text = {
+	name = getArtificeModifiers
+	random = no
+
+	text = {
+		localisation_key = artifice_modifier_points
+		trigger = {
+			check_variable = {
+				which = ModifierArtificePoints
+				value = 1
+			}
+		}
+	}
+}
+
+
+defined_text = {
 	name = getArtificeHasMultipliers
 	random = no
 	

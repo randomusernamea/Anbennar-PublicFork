@@ -7383,7 +7383,7 @@ giberd_testing_grounds = {
 	allowed_num_of_buildings = -3
 	allowed_num_of_manufactories = -1
 	local_monthly_devastation = 0.20
-	# +2.5 artificer capacity
+	artificers_capacity = 5
 	local_defensiveness = 0.20
 	local_hostile_attrition = 1
 }
@@ -7622,6 +7622,7 @@ giberd_sticking_it_to_the_mages = {
 
 giberd_first_artificer_school = {
 	artificers_loyalty_modifier = 0.1
+	artificers_capacity = 10
 }
 
 giberd_clear_skies = {
@@ -7680,6 +7681,7 @@ giberd_leader_technomancers = {
 	tec_technomancy_influence = 0.33
 	artificers_loyalty_modifier = -0.20
 	artificers_influence_modifier = -0.20
+	artificers_capacity = 5
 	idea_cost = 0.10
 	technology_cost = 0.10
 	production_efficiency = -0.10
@@ -7694,6 +7696,7 @@ giberd_leader_technomancers = {
 giberd_leader_brillites = {
 	tec_brilliance_influence = 0.33
 	artificers_loyalty_modifier = -0.10
+	artificers_capacity = 3
 	yearly_corruption = 0.20
 	monthly_reform_progress_modifier -0.50 # TODO: broken?
 	advisor_cost = 0.25
@@ -7715,7 +7718,9 @@ giberd_leader_mechanists = {
 	state_maintenance_modifier = -0.33
 	global_spy_defence = 0.25
 }
-
+giberd_ace = {
+	artificers_capacity = 5
+}
 giberd_restoring_archive = {
 	local_unrest = -10
 }
@@ -7723,7 +7728,7 @@ giberd_restoring_archive = {
 giberd_restored_archive = {
 	local_unrest = -10
 	technology_cost = -0.025
-	# +3 artificer cap
+	artificers_capacity = 3
 	local_institution_spread = 0.25
 }
 giberd_scouring_archive = {
@@ -7732,7 +7737,7 @@ giberd_scouring_archive = {
 giberd_scoured_archive = {
 	local_unrest = 10
 	idea_cost = -0.05
-	# +5 artificer cap
+	artificers_capacity = 5
 }
 
 giberd_stealing_archive = {

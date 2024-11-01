@@ -953,10 +953,10 @@ giberd_konwell_conquest = {
 				VAL = 15
 			}
 			custom_trigger_tooltip = {
-				tooltip = cost_70_artifice_capacity_to_maintain_tt
+				tooltip = cost_60_artifice_capacity_to_maintain_tt
 				check_variable = {
 					which = RemainingArtificePoints
-					value = 70
+					value = 60
 				}
 			}
 			any_known_country = {
@@ -1695,7 +1695,7 @@ giberd_ryalanar_conquest = {
 		}
 		trigger = {
 			num_artifice_inventions_active = {
-				VAL = 6
+				VAL = 5
 			}
 			num_of_diplomats = 1
 			num_of_merchants = 1
@@ -1816,12 +1816,26 @@ giberd_mercantile_shipping = {
 		}
 		effect = {
 			custom_tooltip = giberd_unable_to_research_10
-			# TODO: after 5 years, get +5 permanent capacity
 			hidden_effect = {
 				set_country_flag = artifice_research_temporarily_disabled
 				country_event = {
 					id = flavor_giberd.50
 					days = 3650
+				}
+			}
+			custom_tooltip = giberd_after_5_years_tt
+			tooltip = {
+				271 = {
+					add_province_modifier = {
+						name = giberd_ace
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = flavor_giberd.59
+					days = 1825
 				}
 			}
 			if = {
@@ -1981,6 +1995,7 @@ giberd_mercantile_shipping = {
 		effect = {
 			capital_scope = {
 				add_building = university
+				remove_province_modifier = giberd_ace
 				add_province_modifier = {
 					name = giberd_first_artificer_school
 					duration = -1

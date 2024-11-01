@@ -1762,3 +1762,22 @@ country_event = {
 		}
 	}
 }
+
+# followup for giberd_a_technocratic_administration
+country_event = {
+	id = flavor_giberd.59
+	title = flavor_giberd.59.t
+	desc = flavor_giberd.59.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = flavor_giberd.59.a
+		271 = {
+			add_province_modifier = {
+				name = giberd_ace
+				duration = -1
+			}
+		}
+	}
+}
