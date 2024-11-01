@@ -7086,6 +7086,7 @@ custom_button = {
 			mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 			mission_completed = yingzhen_tools_trade
 			mission_completed = R62_korashi_tuners
+			has_country_flag = kobildzan_draconic_ascension
 		}
 		# OR = {
 		# 	tag = G97
@@ -7118,6 +7119,7 @@ custom_button = {
 					mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 					mission_completed = yingzhen_tools_trade
 					mission_completed = R62_korashi_tuners
+					has_country_flag = kobildzan_draconic_ascension
 				}
 			}
 		}
@@ -7140,6 +7142,7 @@ custom_button = {
 					has_estate_privilege = artifice_invention_the_carousel
 					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 					has_estate_privilege = artifice_invention_bramble_burners
+					has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 				}
 			}
 			OR = {
@@ -7157,6 +7160,7 @@ custom_button = {
 				mission_completed = vanbury_guild_preliminary_precursor_weaponry_research
 				mission_completed = yingzhen_tools_trade
 				mission_completed = R62_korashi_tuners
+				has_country_flag = kobildzan_draconic_ascension
 			}
 		}
 	}
@@ -7177,6 +7181,7 @@ custom_button = {
 				has_estate_privilege = artifice_invention_the_carousel
 				has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 				has_estate_privilege = artifice_invention_bramble_burners
+				has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			}
 		}
 	}
@@ -7197,6 +7202,7 @@ custom_button = {
 				mission_completed = yingzhen_tools_trade
 				mission_completed = R62_korashi_tuners
 				has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
+				has_country_flag = kobildzan_draconic_ascension
 			}
 			if = {
 				limit = {
@@ -7699,6 +7705,18 @@ custom_button = {
 					has_estate_privilege = artifice_invention_bramble_burners
 				}
 				remove_estate_privilege = artifice_invention_bramble_burners
+			}
+		}
+		else_if = {
+			limit = { tag = Z38 }
+			if = {
+				limit = {
+					artifice_can_select_invention_10 = yes
+					NOT = {
+						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+					}
+				}
+				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			}
 		}
 	}

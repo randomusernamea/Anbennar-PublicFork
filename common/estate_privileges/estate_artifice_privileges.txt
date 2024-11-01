@@ -13104,6 +13104,7 @@ artifice_invention_kobildzan_draconic_ascension = {
 		hidden_effect = {
 			artifice_inventions_currently_used_increase = yes
 		}
+		# NOTE: No artificer points utilized here b/c it depends on the stage of the invention; handled during unlock / upgrade
 	}
 	on_revoked = {
 		hidden_effect = {
