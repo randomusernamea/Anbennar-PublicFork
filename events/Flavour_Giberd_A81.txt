@@ -882,7 +882,7 @@ country_event = {
 				years = 10
 			}
 		}
-		271 = {
+		275 = {
 			add_province_modifier = {
 				name = giberd_stealing_archive
 				duration = -1
@@ -890,7 +890,7 @@ country_event = {
 		}
 		custom_tooltip = giberd_after_10_years_tt
 		tooltip = {
-			271 = {
+			275 = {
 				add_province_modifier = {
 					name = giberd_stolen_archive
 					duration = -1
@@ -1749,11 +1749,11 @@ country_event = {
 		}
 		if = {
 			limit = {
-				271 = {
+				275 = {
 					has_province_modifier = giberd_stealing_archive
 				}
 			}
-			271 = {
+			275 = {
 				remove_province_modifier = giberd_stealing_archive
 				add_province_modifier = {
 					name = giberd_stolen_archive
