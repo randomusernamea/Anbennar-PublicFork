@@ -65,6 +65,16 @@ philosopher = {
 			republican_tradition = 0.02 
 		}
 	}
+	skill_scaled_modifier = {
+		trigger = { 
+			owner = { 
+				has_country_flag = a95_ryalan_dream
+			}
+		}
+		modifier = {
+			idea_cost = -0.02
+		}
+	}
 
 	# skill_scaled_modifier = {
 	# 	trigger = { 
@@ -171,6 +181,16 @@ natural_scientist = {
 		}
 		modifier = {
 			governing_capacity_modifier = 0.05
+		}
+	}
+	skill_scaled_modifier = {
+		trigger = { 
+			owner = { 
+				has_country_flag = a95_ryalan_dream
+			}
+		}
+		modifier = {
+			global_monthly_devastation = -0.05
 		}
 	}
 
@@ -291,6 +311,16 @@ artist = {
 		}
 		modifier = {
 			governing_capacity_modifier = 0.05
+		}
+	}
+	skill_scaled_modifier = {
+		trigger = { 
+			owner = { 
+				has_country_flag = a95_ryalan_dream
+			}
+		}
+		modifier = {
+			tolerance_own = 0.5
 		}
 	}
 
