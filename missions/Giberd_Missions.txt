@@ -1684,6 +1684,14 @@ giberd_ryalanar_conquest = {
 		}
 		position = 11
 		provinces_to_highlight = {
+			region = esmaria_region
+			owned_by = ROOT
+			NOT = {
+				AND = {
+					is_prosperous = yes
+					has_state_edict = edict_protect_trade
+				}
+			}
 		}
 		trigger = {
 			num_artifice_inventions_active = {
@@ -1695,14 +1703,19 @@ giberd_ryalanar_conquest = {
 			265 = {
 				transports_in_province = 30
 			}
-			esmaria_region = {
-				type = all
-				NOT = {
-					owned_by = ROOT
-				}
-				AND = {
-					is_prosperous = yes
-					has_state_edict = edict_protect_trade
+			custom_trigger_tooltip = {
+				tooltip = giberd_a_faire_to_remember_tt
+				esmaria_region = {
+					type = all
+					OR = {
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							is_prosperous = yes
+							has_state_edict = edict_protect_trade
+						}
+					}
 				}
 			}
 			has_adm_advisor_5 = yes
@@ -2004,9 +2017,11 @@ giberd_mercantile_shipping = {
 					}
 					custom_trigger_tooltip = {
 						tooltip = giberd_castle_clareen_edict_tt
-						had_country_flag = {
-							flag = giberd_bennonhill_defensive_edict
-							days = 1825
+						owner = {
+							had_country_flag = {
+								flag = giberd_bennonhill_defensive_edict
+								days = 1825
+							}
 						}
 					}
 				}

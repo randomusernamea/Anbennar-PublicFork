@@ -3055,9 +3055,6 @@ country_event = { #Technocracy Election
 			has_reform = imperial_technocracy_republic_reform
 		}
 	}
-	immediate = {
-		giberd_leader_clean_bonus = yes
-	}
 	
 	option = {
 		trigger = {
@@ -3291,6 +3288,7 @@ country_event = { #Technocracy Election
 			limit = {
 				has_country_flag = giberd_ravelians_role
 			}
+			giberd_leader_clean_bonus = yes
 			giberd_leader_brillites_bonus = yes
 		}
 		ai_chance = {
@@ -3435,6 +3433,7 @@ country_event = { #Technocracy Election
 			limit = {
 				has_country_flag = giberd_ravelians_role
 			}
+			giberd_leader_clean_bonus = yes
 			giberd_leader_technomancers_bonus = yes
 		}
 		hidden_effect = {
@@ -3581,6 +3580,7 @@ country_event = { #Technocracy Election
 			limit = {
 				has_country_flag = giberd_ravelians_role
 			}
+			giberd_leader_clean_bonus = yes
 			giberd_leader_mechanists_bonus = yes
 		}
 		hidden_effect = {
