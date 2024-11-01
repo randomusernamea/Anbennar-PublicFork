@@ -137,7 +137,7 @@ country_event = {
 	option = {
 		name = flavour_rakkaz.5.a
 		hidden_effect = {
-			unlock_estate_privilege = { estate_privilege = estate_mages_organization_rule_of_warlocks }
+			clear_mages_organization_effect = yes
 		}
 		set_estate_privilege = estate_mages_organization_rule_of_warlocks
 		set_country_flag = rakkaz_unlock_mission_2
@@ -970,7 +970,7 @@ country_event = {
 
 	option = {
 		name = flavour_rakkaz.7.a
-		country_event = { id = flavour_rakkaz.23 }
 		set_country_flag = rakkaz_already_choosen_third_modifier
+		country_event = { id = flavour_rakkaz.23 }
 	}
 }

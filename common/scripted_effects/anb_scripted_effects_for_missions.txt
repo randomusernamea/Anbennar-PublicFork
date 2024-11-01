@@ -17779,6 +17779,47 @@ gronstunad_building_authority_effect = {
 	}
 }
 
+#Maghargma
+increase_occupation_counter = {
+	change_variable = {
+		which = I90_mission_counter
+		value = 1
+	}
+	change_variable = {
+		which = I90_occupation_counter
+		value = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = I90_mission_counter
+				value = 4
+			}
+		}
+		country_event = { id = flavor_maghargma.25 }
+	}
+}
+
+increase_collaboration_counter = {
+	change_variable = {
+		which = I90_mission_counter
+		value = 1
+	}
+	change_variable = {
+		which = I90_collaboration_counter
+		value = 1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = I90_mission_counter
+				value = 4
+			}
+		}
+		country_event = { id = flavor_maghargma.25 }
+	}
+}
+
 #Rakkaz
 rakkaz_add_fighting_pit_modifier = {
 	if = {
@@ -17864,7 +17905,7 @@ rakkaz_fighting_pit_mazu_makhara_interactions = {
 					5466 = {
 						hidden_effect = { remove_province_modifier = rakkaz_surge_of_suffering_upgrade }
 						add_province_modifier = {
-							name = rakkaz_surge_of_suffering
+							name = rakkaz_surge_of_suffering_upgrade
 							duration = 7300
 						}
 					}
