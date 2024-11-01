@@ -471,7 +471,9 @@ country_event = {
 
     is_triggered_only = yes 
 
-    trigger = {}
+    trigger = {
+        has_reform = forge_council_reform
+    }
 
     immediate = {
         hidden_effect = {
