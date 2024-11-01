@@ -651,13 +651,10 @@ can_upgrade_hold = {
 	NOT = { has_construction = army } #For clarity
 	NOT = { has_construction = navy } #For clarity
 	NOT = { owner = { dwarovar_orc_culture_primary = yes } }
-	if = { limit = { has_province_flag = cannot_dig }
+	custom_trigger_tooltip = {
+		tooltip = not_diggy_locked_tooltip
 		NOT = { has_province_flag = cannot_dig }
-	}
-	if = { limit = { has_province_modifier = incomplete_hold }
 		NOT = { has_province_modifier = incomplete_hold }
-	}
-	if = { limit = { has_province_modifier = incomplete_hold_0 }
 		NOT = { has_province_modifier = incomplete_hold_0 }
 	}
 	hold_condition = { Repaired = yes }
