@@ -1619,17 +1619,18 @@ gophira_5 = {
 					always = no
 				}
 				AND = {
+					num_of_owned_provinces_with = {
+						value = 4
+						has_forcelimit_building_trigger = yes
+						base_manpower = 7
+					}
 					OR = {
 						employed_advisor = { type = spymaster }
 						employed_advisor = { type = inquisitor }
 						custom_trigger_tooltip = {
 							tooltip = gophira_any_lvl2_advisor_tt
 							employed_advisor = { skill = 2 }
-						}					}
-					num_of_owned_provinces_with = {
-						value = 4
-						has_forcelimit_building_trigger = yes
-						base_manpower = 7
+						}
 					}
 				}
 				custom_trigger_tooltip = { 
@@ -1637,6 +1638,11 @@ gophira_5 = {
 					always = no
 				}
 				AND = {
+					num_of_owned_provinces_with = {
+						value = 8
+						has_manpower_building_trigger = yes
+						base_manpower = 5
+					}
 					OR = {
 						employed_advisor = { type = statesman }
 						employed_advisor = { type = recruitmaster }
@@ -1644,12 +1650,7 @@ gophira_5 = {
 							tooltip = gophira_any_lvl2_advisor_tt
 							employed_advisor = { skill = 2 }
 						}
-					}
-					num_of_owned_provinces_with = {
-						value = 8
-						has_manpower_building_trigger = yes
-						base_manpower = 5
-					}
+					}					
 				}
 			}
 		}
