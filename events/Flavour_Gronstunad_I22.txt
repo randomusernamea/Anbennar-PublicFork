@@ -233,10 +233,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -267,10 +264,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -281,6 +275,7 @@ country_event = {
 			reverse_add_casus_belli = {
 				type = cb_humiliate
 				target = ROOT
+				months = 120
 			}
 			capital_scope = {
 				discover_country = ROOT
@@ -369,10 +364,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	immediate = {
@@ -407,10 +399,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -431,10 +420,7 @@ province_event = {
 
 	trigger = {
 		owner = { 
-			OR = {
-				tag = I22
-				was_tag = I22
-			}
+			is_or_was_tag = { tag = I22 }
 		}
 		has_province_modifier = gronstunad_upgraded_mining_operation
 	}
@@ -668,11 +654,9 @@ province_event = {
 
 	trigger = {
 		province_id = 4338 #Emerald Spire
-		owner = { 
-			OR = {
-				tag = I22
-				was_tag = I22
-			}
+		owner = {
+			is_or_was_tag = { tag = I22 }
+			has_government_mechanic = gronstunad_authority_mechanic
 		}
 	}
 
@@ -698,10 +682,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -725,10 +706,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -758,10 +736,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -781,10 +756,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
@@ -807,14 +779,18 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
 		name = flavour_gronstunad.4100.a
+		nomsyulhan_region = {
+			limit = { trade_goods = precursor_relics }
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
 		add_government_power = {
 			mechanic_type = gronstunad_authority_mechanic
 			power_type = gronstunad_damestear_power
@@ -868,6 +844,9 @@ country_event = {
 				subject_type = personal_union
 				subject = ROOT
 			}
+			country_event = {
+				id = flavour_gronstunad.4121
+			}
 		}
 		rakhadesh_region = {
 			add_permanent_claim = ROOT
@@ -882,10 +861,67 @@ country_event = {
 	option = {
 		name = flavour_gronstunad.4120.b
 		add_prestige = 5
+		FROM = {
+			country_event = {
+				id = flavour_gronstunad.4122
+			}
+		}
 
 		ai_chance = {
 			factor = 0
 		}
+	}
+}
+
+#Successful Union
+country_event = {
+	id = flavour_gronstunad.4121
+	title = flavour_gronstunad.4121.t
+	desc = flavour_gronstunad.4121.d
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_or_was_tag = { tag = I22 }
+	}
+
+	option = {
+		name = flavour_gronstunad.4121.a
+		tooltip = {
+			FROM = {
+				change_government_to_monarchy = yes
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_good_relations
+				}
+				rakhadesh_region = {
+					add_permanent_claim = ROOT
+				}
+			}
+			create_subject = {
+				subject_type = personal_union
+				subject = FROM
+			}
+		}
+	}
+}
+
+#Rejected Union
+country_event = {
+	id = flavour_gronstunad.4122
+	title = flavour_gronstunad.4122.t
+	desc = flavour_gronstunad.4122.d
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_or_was_tag = { tag = I22 }
+	}
+
+	option = {
+		name = flavour_gronstunad.4122.a
 	}
 }
 
@@ -899,10 +935,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			tag = I22
-			was_tag = I22
-		}
+		is_or_was_tag = { tag = I22 }
 	}
 
 	option = {
