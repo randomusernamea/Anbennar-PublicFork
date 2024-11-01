@@ -596,8 +596,8 @@ country_event = {	#bad events handler
 						had_country_flag = { flag = gophira_event16 days = 3650 }
 					}
 				}
-				clr_country_flag = gophira_event16
 				country_event = { id = gophira.16 }
+				clr_country_flag = gophira_event16
 			}
 			1 = {
 				trigger = {
@@ -734,7 +734,14 @@ country_event = {
 country_event = {
 	id = gophira.16
 	title = gophira.16.t
-	desc = gophira.16.d
+	desc = {
+		trigger = { has_country_flag = gophira_event16 }
+		desc = gophira.16.d1
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = gophira_event16 } }
+		desc = gophira.16.d2
+	}
 	picture = indiangfx_ACCUSATION_eventPicture
 
 	is_triggered_only = yes
