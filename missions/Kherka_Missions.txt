@@ -772,7 +772,7 @@ G48_slot_4 = {
 				}
 				custom_tooltip = BONUS_REWARD_YES
 				hidden_effect = {
-					add_treasury = 1000
+					add_treasury = 500
 				}
 			}
 			else = { custom_tooltip = BONUS_REWARD_NO }
@@ -813,9 +813,11 @@ G48_slot_4 = {
                     	trade_goods = gems
                     	trade_goods = gold
 					}
-					NOT = { base_production = 5 }
-					NOT = { has_production_or_gold_building_trigger = yes }
-					NOT = { owned_by = ROOT }
+					owned_by = ROOT 
+					OR = {
+						NOT = { base_production = 5 }
+						NOT = { has_production_or_gold_building_trigger = yes }
+					}
 				}
 			}
 		} 
