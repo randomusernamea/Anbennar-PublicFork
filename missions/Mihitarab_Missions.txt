@@ -180,7 +180,7 @@ mihitarab_missions_4 = {
 		trigger = {
 			army_size = 30
 			is_monarch_leader = yes
-			OR = 
+			OR = {
 				monthly_mil = 10
 				has_mil_advisor_of_level = { level = 4 }
 			}
