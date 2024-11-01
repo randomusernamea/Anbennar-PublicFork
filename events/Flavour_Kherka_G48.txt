@@ -8,6 +8,7 @@ country_event = { #Starting Event
 	picture = SWORD_OF_OSMAN_eventPicture
 	
 	fire_only_once = yes
+    is_triggered_only = yes
 
 	trigger = { tag = G48 }
 
@@ -98,23 +99,16 @@ country_event = { #Shift The Tide
                 enable_degarikes = yes
                 hidden_effect = {
                     set_country_flag = has_degarikes
+                    add_country_modifier = {
+                        name = G48_mass_degarikes
+                        duration = -1
+                    }
+                    add_country_modifier = {
+                        name = G48_heart_of_the_navy
+                        duration = -1
+                    }
                 }
-            }
-            add_country_modifier = {
-                name = G48_heart_of_the_navy
-                duration = -1
-            }
-            tooltip = {
-                add_country_modifier = {
-                    name = G48_mass_degarikes
-                    duration = -1
-                }
-            }
-            hidden_effect = {
-                add_country_modifier = {
-                    name = G48_mass_degarikes
-                    duration = -1
-                }
+                custom_tooltip = G48_anisikheion_degarikes_tt
             }
             capital_scope = {
                 add_unit_construction = {
@@ -177,10 +171,6 @@ country_event = { #Scrolls Of Knowledge
         }
         G60 = {
             every_owned_province = {
-                limit = {
-                    NOT = { owned_by = ROOT }
-                    NOT = { is_core = ROOT }
-                }
                 add_permanent_claim = ROOT
             }
         }
@@ -190,10 +180,6 @@ country_event = { #Scrolls Of Knowledge
         name = flavour_kherka.4.b #Leave It
         G60 = {
             every_owned_province = {
-                limit = {
-                    NOT = { owned_by = ROOT }
-                    NOT = { is_core = ROOT }
-                }
                 add_permanent_claim = ROOT
             }
         }
@@ -212,10 +198,6 @@ country_event = { #Scrolls Of Knowledge
         add_dip_power = -50
         G60 = {
             every_owned_province = {
-                limit = {
-                    NOT = { owned_by = ROOT }
-                    NOT = { is_core = ROOT }
-                }
                 add_permanent_claim = ROOT
             }
         }

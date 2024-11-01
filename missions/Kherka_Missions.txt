@@ -19,7 +19,7 @@ G48_slot_1 = {
 		provinces_to_highlight = { } 
 
 		trigger = {  
-			G59 { 
+			G59 = { 
 				has_50_opinion_improved_relation = { target = ROOT } 
 			}
 			OR = {
@@ -116,8 +116,10 @@ G48_slot_1 = {
 				province_id = 2738
 			}
 			NOT = {
-				province_has_center_of_trade_of_level = 2
-				has_state_edict = edict_protect_trade
+				AND = {
+					province_has_center_of_trade_of_level = 2
+					has_state_edict = edict_protect_trade
+				}
 			}
 		} 
 
@@ -388,12 +390,8 @@ G48_slot_3 = {
 		icon = mission_vedic_education
 		position = 2
 		provinces_to_highlight = {  
-			OR = {
-				AND = {
-					area = lokemeion_area
-					NOT = { owned_by = ROOT }
-				}
-			}
+			area = lokemeion_area
+			NOT = { owned_by = ROOT }
 		} 
 
 		trigger = {  
