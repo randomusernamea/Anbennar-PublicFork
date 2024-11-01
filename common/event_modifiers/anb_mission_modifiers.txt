@@ -6089,12 +6089,12 @@ G48_regular_navy_drills = {
 }
 
 G48_heart_of_the_navy = {
-	naval_maintenance_modifier = -0.5
+	naval_maintenance_modifier = -0.25
 	is_geobukseon_modifier = yes
 }
 
 G48_mass_degarikes = {
-	allowed_geobukseon_fraction = 0.5
+	allowed_geobukseon_fraction = 0.25
 }
 
 G48_recently_sacked = {
@@ -6110,9 +6110,9 @@ G48_kheintro_challum = {
 }
 
 G48_kheintro_sidara = {
-	local_regiment_cost = -0.4
-	regiment_recruit_speed = -0.5
-	local_manpower_modifier = 0.2
+	local_regiment_cost = -0.25
+	regiment_recruit_speed = -0.25
+	local_manpower_modifier = 0.25
 }
 
 G48_kheintro_kosphin = {
@@ -6122,7 +6122,6 @@ G48_kheintro_kosphin = {
 
 G48_magic_and_steel = {
 	trade_goods_size_modifier = 0.1
-	production_efficiency = 0.1
 }
 
 G48_blue_friend = {
@@ -6153,7 +6152,6 @@ G48_new_mines = {
 }
 
 G48_master_of_metallu = {
-	allowed_num_of_manufactories = 1
 	local_production_efficiency = 0.2
 }
 
