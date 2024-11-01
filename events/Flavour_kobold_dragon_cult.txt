@@ -368,11 +368,9 @@ country_event = {
 					has_church_aspect = bronze_dragon_2_upgraded
 					has_church_aspect = bronze_dragon_3_upgraded
 				}
-				if = { #Has all 3 upgraded + active
-					limit = {
-						U04 = { is_emperor_of_china = yes }
-					}
-					U04 = { add_mandate = 6 }
+				if = { 
+					limit = { event_target:emperor_of_china = { religion = aakhetist } }
+					event_target:emperor_of_china = { add_mandate = 6 }
 				}
 				if = { #cant use scripted effect for planetouched general b/c it's broken
 					limit = { army_tradition = 80 }
@@ -431,16 +429,16 @@ country_event = {
 						has_church_aspect = bronze_dragon_3_upgraded
 					}
 				}
-				if = { #Has all 3 upgraded + active
-					limit = { U04 = { is_emperor_of_china = yes } }
-					U04 = { add_mandate = 4 }
+				if = { 
+					limit = { event_target:emperor_of_china = { religion = aakhetist } }
+					event_target:emperor_of_china = { add_mandate = 4 }
 				}
 			}
 			else = { #Only 1 upgraded active
-				if = { #Has all 3 upgraded + active
-					limit = { U04 = { is_emperor_of_china = yes } }
-					U04 = { add_mandate = 2 }
-				}				
+				if = { 
+					limit = { event_target:emperor_of_china = { religion = aakhetist } }
+					event_target:emperor_of_china = { add_mandate = 2 }
+				}						
 			}
 		}
 		else_if = { #Silver dragon upgrade proc
@@ -1521,8 +1519,8 @@ country_event = {
 						is_year = 1600
 					}	
 					any_ally = {
-						tag = U04
 						is_emperor_of_china = yes
+						religion = aakhetist
 					}				
 					owns = 466
 				}		
@@ -2704,7 +2702,7 @@ country_event = {
 						is_year = 1600
 					}	
 					any_ally = {
-						tag = U04
+						religion = aakhetist
 						is_emperor_of_china = yes
 					}				
 					owns = 466
@@ -3467,7 +3465,7 @@ country_event = { #Bronze aspect 1
 	option = {		
 		name = flavour_kobold_dragon_cult.16.a
 		trigger = {
-			U04 = { is_emperor_of_china = yes }
+			event_target:emperor_of_china = { religion = aakhetist }	
 		}
 		if ={
 			limit = { has_church_aspect = bronze_dragon_1_base }
@@ -3479,14 +3477,16 @@ country_event = { #Bronze aspect 1
 			UPGRADE = upgraded
 		}
 		add_years_of_income = -1
-		U04 = { add_historical_friend = ROOT }
-		ROOT = { add_historical_friend = U04 }
+		event_target:emperor_of_china = {
+			add_historical_friend = ROOT
+			ROOT = { add_historical_friend = PREV }
+		}
 	}
 	option = {		
 		name = flavour_kobold_dragon_cult.16.b
 		trigger = {
 			any_known_country = { is_emperor_of_china = yes }
-			NOT = { U04 = { is_emperor_of_china = yes } }
+			NOT = { event_target:emperor_of_china = { religion = aakhetist } }		
 			NOT = { has_global_flag = ahati_disaster_began }
 		}
 		if ={
@@ -3499,8 +3499,7 @@ country_event = { #Bronze aspect 1
 			UPGRADE = upgraded
 		}
 		add_years_of_income = -1
-		random_known_country = {
-			limit = { is_emperor_of_china = yes }
+		event_target:emperor_of_china = {
 			country_event = { id = ahati_events.34 days = 30 }
 			country_event = { id = ahati_events.35 days = 60 }
 			country_event = { id = ahati_events.36 days = 90 }
