@@ -24,6 +24,7 @@ brambleskinner_1 = {
 			custom_trigger_tooltip = {
 				tooltip = brambleskinner_repel_orcs_tt
 				deepwoods_superregion = {
+					type = all
 					NOT = {
 						owner = {
 							culture_group = orcish
@@ -307,6 +308,13 @@ brambleskinner_2 = {
 				brambleskinner_building_grove_highlight = { grove = bone building = tax }
 				brambleskinner_building_grove_highlight = { grove = thorn building = tax }
 				brambleskinner_building_grove_highlight = { grove = arrow building = tax }
+				AND = {
+					province_id = 3042
+					NOT = {
+						base_production = 8
+						has_tax_building_trigger = yes
+					}
+				}
 			}
 		}
 
