@@ -156,16 +156,17 @@ F71_2_part1 = {
 		effect = {
 			define_ruler_to_general = {
 				fire = 0
-				shock = 5
+				shock = 4
 				manuever = 3
 				siege = 0
+				trait = born_to_the_saddle_personality
 			}
 			capital_scope = {
 				add_unit_construction = {
 					amount = 2
 					type = cavalry
 					cost = 0
-					speed = 0.5
+					speed = 0.75
 				}
 			}
 			custom_tooltip = " "
@@ -263,10 +264,7 @@ F71_3_part1 = {
 			F71_a_helping_hand
 		}
 		provinces_to_highlight = {
-			OR = {
-				province_id = 487
-				province_id = 479
-			}
+			province_id = 487
 			NOT = {
 				controlled_by = ROOT
 				controlled_by = F69
@@ -278,15 +276,11 @@ F71_3_part1 = {
 				who = U09
 				value = 90
 			}
-			OR = {
-				AND = {
-					487 = { controlled_by = ROOT } 
-					479 = { controlled_by = ROOT } 
-				}
-				AND = {
-					487 = { controlled_by = F69 } 
-					479 = { controlled_by = F69 } 
-				}
+			487 = { 
+				OR = {
+					controlled_by = ROOT
+					controlled_by = F69
+				} 
 			}
 		}
 
@@ -298,7 +292,7 @@ F71_3_part1 = {
 			if = {
 				limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
 				ROOT = { add_treasury = 100 } 
-				F69 = { add_treasury = 200 } 
+				F69 = { add_treasury = 150 } 
 				U09 = { release = L26 } 
 				golkora_stretch_area = { cede_province = L26 } 
 				golkora_stretch_area = { add_core = L26 } 
@@ -308,7 +302,7 @@ F71_3_part1 = {
 				5674 = { add_core = F69 } 
 			}
 			else = {
-				ROOT = { add_treasury = 300 } 
+				ROOT = { add_treasury = 250 } 
 				U09 = { release = L26 } 
 				golkora_stretch_area = { cede_province = L26 } 
 				golkora_stretch_area = { add_core = L26 } 
@@ -317,14 +311,32 @@ F71_3_part1 = {
 				5674 = { cede_province = L26 } 
 				5674 = { add_core = L26 } 
 			}
+			capital_scope = {
+				add_next_institution_embracement = 50
+			}
+			custom_tooltip = " "
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_occupied_golkora
+				first_limit = "
+					OR = { 479 = { controlled_by = ROOT } }
+				"
+				first_effect = "
+					add_treasury = 100
+					add_manpower = 3
+					capital_scope = { add_next_institution_embracement = 50 }
+				"
+			}
 			hidden_effect = {
 				L26 = {
 					create_unit_forcelimit_percentage = {
 						type = infantry
 						force_limit_percentage = 0.9
 					}
-					add_treasury = 200
+					add_treasury = 300
 					add_manpower = 10
+					add_truce_with = U01
+					add_truce_with = U02
+					add_truce_with = F69
 				}
 			}
 		}
@@ -623,6 +635,7 @@ F71_5_part1 = {
 				}
 				upgrade_tax_building = yes
 			}
+			custom_tooltip = rakkaz_more_missions_tooltip
 			hidden_effect = { country_event = { id = flavour_rakkaz.4 }  } 
 		}
 	}
@@ -670,6 +683,7 @@ F71_3_part1_ending = {
 			custom_tooltip = F69_organize_the_vog_mekza_tooltip
 			set_country_flag = no_mandate
 			country_event = { id = flavour_rakkaz.5 } 
+			tooltip = { swap_non_generic_missions = yes }
 		}
 	}
 }
@@ -1322,6 +1336,7 @@ F71_3_part2 = {
 			country_event = { id = flavour_rakkaz.9 }
 			custom_tooltip = rakkaz_level2_advisor_tooltip
 			set_country_flag = rakkaz_level2_advisor
+			tooltip = { swap_non_generic_missions = yes }
 		} 
 	}
 }
