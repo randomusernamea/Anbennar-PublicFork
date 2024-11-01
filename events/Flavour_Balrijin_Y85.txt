@@ -7098,6 +7098,10 @@ country_event = {
 			}
 		}
 		else = { #for when KDC country does it 
+			if ={
+				limit = { has_church_aspect = gold_dragon_3_base }
+				remove_church_aspect = gold_dragon_3_base
+			}
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 				COLOUR = gold
 				SLOT = 3
