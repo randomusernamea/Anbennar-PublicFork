@@ -17828,55 +17828,30 @@ kherka_set_ruler = {
             1 = { set_ruler = varagenea_candidate }
             1 = { set_ruler = elethogenea_candidate }
 		}
-		tooltip = { 
-			add_ruler_modifier = {
-				name = G48_stalwarts_in_power
-                duration = -1
-			}
-        }
-		hidden_effect = { 
-			add_ruler_modifier = {
-				name = G48_stalwarts_in_power
-				duration = -1
-			}
-        }
-
+		add_ruler_modifier = {
+			name = G48_stalwarts_in_power
+            duration = -1
+		}
 	]
     [[militants]
 		random_list = {
             1 = { set_ruler = artogenea_candidate  }
             1 = { set_ruler = nestegenea_candidate }
 		}
-		tooltip = { 
-			add_ruler_modifier = {
-				name = G48_militants_in_power
-                duration = -1
-			}
-        }
-		hidden_effect = { 
-			add_ruler_modifier = {
-				name = G48_militants_in_power
-				duration = -1
-			}
-        }
+		add_ruler_modifier = {
+			name = G48_militants_in_power
+            duration = -1
+		}
 	]
 	[[colonists]
 		random_list = {
             1 = { set_ruler = galengenea_candidate }
             1 = { set_ruler = taelagenea_candidate }
         }
-		tooltip = { 
-			add_ruler_modifier = {
-				name = G48_colonists_in_power
-                duration = -1
-			}
-        }
-		hidden_effect = { 
-			add_ruler_modifier = {
-				name = G48_colonists_in_power
-				duration = -1
-			}
-        }
+		add_ruler_modifier = {
+			name = G48_colonists_in_power
+            duration = -1
+		}
 	]
 	[[schemers]
 		random_list = {
@@ -17884,18 +17859,10 @@ kherka_set_ruler = {
             1 = { set_ruler = darasgenea_candidate }
             1 = { set_ruler = kelasgenea_candidate }
         }
-		tooltip = { 
-			add_ruler_modifier = {
-				name = G48_schemers_in_power
-                duration = -1
-			}
-        }
-		hidden_effect = { 
-			add_ruler_modifier = {
-				name = G48_schemers_in_power
-				duration = -1
-			}
-        }
+		add_ruler_modifier = {
+			name = G48_schemers_in_power
+            duration = -1
+		}
 	]
 }
 

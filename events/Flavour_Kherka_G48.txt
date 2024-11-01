@@ -476,6 +476,10 @@ country_event = {
     immediate = {
         hidden_effect = {
             kherka_remove_faction_flags = yes
+            remove_country_modifier = G48_stalwarts_in_power
+            remove_country_modifier = G48_colonists_in_power
+            remove_country_modifier = G48_schemers_in_power
+            remove_country_modifier = G48_militants_in_power
             random_list = {
                 1 = {
                     set_country_flag = stalwarts_in_power
@@ -591,18 +595,21 @@ country_event = {
             limit = {
                 has_country_flag = militants_in_power
             }
+            custom_tooltip = G48_militants_has_won
             kherka_set_ruler = { militants = yes }
         }
         else_if = {
             limit = {
                 has_country_flag = colonists_in_power
             }
+            custom_tooltip = G48_colonists_has_won
             kherka_set_ruler = { colonists = yes }
         }
         else_if = {
             limit = {
                 has_country_flag = schemers_in_power
             }
+            custom_tooltip = G48_schemers_has_won
             kherka_set_ruler = { schemers = yes }
         }
     }

@@ -518,9 +518,8 @@ G48_slot_3 = {
 				}
 				OR = {
 					G63 = { has_100_opinion_improved_relation = { target = ROOT } }
-					any_known_country = {
-						owns = 2666
-						has_100_opinion_improved_relation = { target = ROOT }
+					2666 = {
+						owner = { has_100_opinion_improved_relation = { target = ROOT } }
 					}
 				}
 			}
@@ -541,9 +540,9 @@ G48_slot_3 = {
 				custom_tooltip = G48_hfaesban_conquer_tt
 				tooltip = {
 					add_country_modifier = {
-        			    name = G48_magic_and_steel
-        			    duration = -1
-        			}
+						name = G48_magic_and_steel
+						duration = -1
+					}
 				}
 				set_country_flag = G48_hfaesban_conquer
 				mteibas_valley_region = {
@@ -895,9 +894,11 @@ G48_slot_5 = {
 		}
 		provinces_to_highlight = {  
 			province_id = 2776
-			OR = {
-				base_production = 10
-				has_production_building_trigger = yes
+			NOT = {
+				AND = {
+					base_production = 10
+					has_production_building_trigger = yes
+				}
 			}
 		} 
 
