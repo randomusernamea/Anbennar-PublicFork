@@ -1309,16 +1309,22 @@ country_event = {
 			tag = Y01
 		}
 		ai_chance = {
-			factor = 1
+			factor = 100
 			modifier = {
 				factor = 0
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				FROM = {
 					army_strength = {
-						WHO = ROOT
+						who = ROOT
 						value = 2
 					}
 				}
@@ -1326,8 +1332,8 @@ country_event = {
 		}
 		FROM = { 
 			vassalize = ROOT 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_oni_yes
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1339,15 +1345,21 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				factor = 1000
+				factor = 100
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				NOT = {
 					FROM = {
 						army_strength = {
-							WHO = ROOT
+							who = ROOT
 							value = 2
 						}
 					}
@@ -1355,8 +1367,8 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_oni_no	
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1366,19 +1378,23 @@ country_event = {
 			NOT = { tag = Y01 }
 		}
 		ai_chance = {
-			factor = 1
+			factor = 100
 			modifier = {
-				factor = 1000
+				factor = 0
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
-				NOT = {
-					FROM = {
-						army_strength = {
-							WHO = ROOT
-							value = 2
-						}
+				factor = 50
+				FROM = {
+					army_strength = {
+						who = ROOT
+						value = 2
 					}
 				}
 			}
@@ -1390,8 +1406,8 @@ country_event = {
 			cede_province = FROM
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_yes
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1403,15 +1419,21 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				factor = 1000
+				factor = 100
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				NOT = {
 					FROM = {
 						army_strength = {
-							WHO = ROOT
+							who = ROOT
 							value = 2
 						}
 					}
@@ -1419,8 +1441,8 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_no
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 }
@@ -1461,7 +1483,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavor_maghargma.31.a #Those Bastards!
+		name = flavor_maghargma.31.b #Those Bastards!
 		trigger = {
 			OR = {
 				has_country_flag = I90_oni_no
