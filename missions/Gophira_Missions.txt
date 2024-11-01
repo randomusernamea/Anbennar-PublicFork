@@ -29,7 +29,7 @@ gophira_1 = {
 				if = {
 					limit = { J72 = { exists = yes }  } 
 					white_peace = J72
-					save_event_target_as = pay_ae
+					set_country_flag = gophira_pay_ae
 				}
 				else = { release = J72 } 
 			}
@@ -152,7 +152,7 @@ gophira_1_fren = {
 					amount = -20
 				}
 			}
-			gophira_var_effect = { subtract = yes value = -1 }
+			gophira_var_effect_subtract = yes
 			gophira_heir_effect = {	pow = adm amount = 1 }
 		}
 	}
@@ -204,7 +204,7 @@ gophira_1_fren = {
 			}
 			custom_tooltip = gophira_less_bad_events_tt
 			set_country_flag = gophira_less_bad_events1
-			gophira_var_effect = { subtract = yes value = -1 }
+			gophira_var_effect_subtract = yes
 		}
 	}
 
@@ -282,7 +282,7 @@ gophira_1_fren = {
 						}
 					}
 				}
-				hidden_effect = { save_event_target_as = gophira_mt_pu }
+				set_country_flag = gophira_mt_pu
 				country_event = { id = gophira.9 } 
 				add_dip_power = -200
 			}
@@ -428,7 +428,7 @@ gophira_1_march = {
 				add_permanent_claim = J72
 			}
 			gophira_heir_effect = { pow = adm amount = 1 }
-			gophira_var_effect = { add = yes value = 1 }
+			gophira_var_effect_add = yes
 		}
 	}
 
@@ -462,7 +462,7 @@ gophira_1_march = {
 			}
 			custom_tooltip = gophira_less_bad_events_tt
 			set_country_flag = gophira_less_bad_events2
-			gophira_var_effect = { add = yes value = 1 }
+			gophira_var_effect_add = yes
 		} 
 	}
 
@@ -676,7 +676,7 @@ gophira_3 = {
 						add_base_production = -1
 					}
 					capital_scope = { add_base_production = 3 }
-					gophira_var_effect = { subtract = yes value = -1 }
+					gophira_var_effect_subtract = yes
 					gophira_heir_effect = {	pow = adm amount = 1 }
 				"
 				second_custom_tooltip = gophira_get_that_tt
@@ -699,7 +699,7 @@ gophira_3 = {
 						add_nationalism = -5
 						add_local_autonomy = -10
 					}
-					gophira_var_effect = { add = yes value = 1 }
+					gophira_var_effect_add = yes
 					gophira_heir_effect = {	pow = dip amount = 1 }
 				"
 			}
@@ -988,7 +988,7 @@ gophira_3 = {
 				}
 				add_manpower = -20
 				add_mil_power = -100
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 			}
 			else_if = {
 				limit = {
@@ -1036,7 +1036,7 @@ gophira_3 = {
 					}
 					add_treasury = -300
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 			}
 			else = {
 				custom_tooltip = gophira_get_this_tt
@@ -1061,7 +1061,7 @@ gophira_3 = {
 				}
 				add_manpower = -20
 				add_mil_power = -100
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 				custom_tooltip = gophira_get_that_tt
 				if = { 
 					limit = { NOT = { exists = J85 } }
@@ -1080,7 +1080,7 @@ gophira_3 = {
 				nanru_nakar_area = { 
 					add_institution_embracement = { which = renaissance value = 90 }
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 			}
 		}
 	}
@@ -1145,6 +1145,7 @@ gophira_cap = {
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 				is_island = yes
+				is_city = no
 			}
 		} 
 
@@ -1234,6 +1235,7 @@ gophira_cap_march = {
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 				is_island = yes
+				is_city = no
 			}
 		} 
 
@@ -1244,6 +1246,7 @@ gophira_cap_march = {
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT
 					is_island = yes
+					is_city = no
 				}
 			}
 			army_size = 100
@@ -1403,7 +1406,7 @@ gophira_4 = {
 						}
 					}
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 				gophira_heir_effect = { pow = mil amount = 1 }
 				country_event = {
 					id = gophira.7
@@ -1420,7 +1423,7 @@ gophira_4 = {
 						duration = -1
 					}
 				}
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 				gophira_heir_effect = { pow = adm amount = 1 }
 				country_event = {
 					id = gophira.8
@@ -1435,7 +1438,7 @@ gophira_4 = {
 						duration = -1
 					}
 				}
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 				gophira_heir_effect = { pow = adm amount = 1 }
 				country_event = {
 					id = gophira.8
@@ -1464,7 +1467,7 @@ gophira_4 = {
 						}
 					}
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 				gophira_heir_effect = { pow = mil amount = 1 }
 				country_event = {
 					id = gophira.7
@@ -1694,7 +1697,7 @@ gophira_5 = {
 						infantry = ROOT
 					}
 				}
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 				gophira_heir_effect = { pow = mil amount = 1 }
 			}
 			else_if = {
@@ -1745,7 +1748,7 @@ gophira_5 = {
 						add_nationalism = -1
 					}
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 				gophira_heir_effect = { pow = adm amount = 1 }
 			}
 			else = {
@@ -1774,7 +1777,7 @@ gophira_5 = {
 						infantry = ROOT
 					}
 				}
-				gophira_var_effect = { subtract = yes value = -1 }
+				gophira_var_effect_subtract = yes
 				gophira_heir_effect = { pow = mil amount = 1 }
 				custom_tooltip = gophira_get_that_tt
 				if = {
@@ -1810,7 +1813,7 @@ gophira_5 = {
 						add_nationalism = -1
 					}
 				}
-				gophira_var_effect = { add = yes value = 1 }
+				gophira_var_effect_add = yes
 				gophira_heir_effect = { pow = adm amount = 1 }
 			}
 		} 

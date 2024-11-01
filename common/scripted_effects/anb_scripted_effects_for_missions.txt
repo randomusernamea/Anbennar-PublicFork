@@ -18062,330 +18062,174 @@ rakkaz_make_warlock_pact_avaliables = {
 	clr_country_flag = revoke_warlock_pact_battlefield_domination
 }
 
-gophira_var_effect = {
-	[[add]
-		custom_tooltip = gophira_change_tt
-	]
-	[[subtract]
-		custom_tooltip = gophira_subtract_tt
-	]
+gophira_var_effect_add = {
+	custom_tooltip = gophira_change_tt
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 12
+			}
+			NOT = { has_country_modifier = gophira_stance_5 }
+		}
+		remove_country_modifier = gophira_stance_4
+		add_country_modifier = {
+			name = gophira_stance_5
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 9
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_4
+				check_variable = {
+					which = gophira_court
+					value = 12
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_3
+		add_country_modifier = {
+			name = gophira_stance_4
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 6
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_3
+				check_variable = {
+					which = gophira_court
+					value = 9
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_2
+		add_country_modifier = {
+			name = gophira_stance_3
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 3
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_2
+				check_variable = {
+					which = gophira_court
+					value = 6
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_1
+		add_country_modifier = {
+			name = gophira_stance_2
+			duration = -1
+		}
+	}
 	hidden_effect = {
 		change_variable = {
 			which = gophira_court
-			value = $value$
-		}
-		change_variable = {
-			which = gophira_court_add
-			value = $value$
-		}
-		change_variable = {
-			which = gophira_court_subtract
-			value = $value$
-		}
-		if = {
-			limit = {
+			value = 1
+		}	
+	}
+}
+
+gophira_var_effect_subtract = {
+	custom_tooltip = gophira_subtract_tt
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 11
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_4
 				check_variable = {
 					which = gophira_court
-					value = 13
+					value = 14
 				}
-				NOT = { has_country_modifier = gophira_stance_5 }
-			}
-			remove_country_modifier = gophira_stance_4
-			add_country_modifier = {
-				name = gophira_stance_5
-				duration = -1
 			}
 		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court
-					value = 10
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_4
-					check_variable = {
-						which = gophira_court
-						value = 13
-					}
-				}
-			}
-			remove_country_modifier = gophira_stance_3
-			remove_country_modifier = gophira_stance_5
-			add_country_modifier = {
-				name = gophira_stance_4
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court
-					value = 7
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_3
-					check_variable = {
-						which = gophira_court
-						value = 10
-					}
-				}
-			}
-			remove_country_modifier = gophira_stance_2
-			remove_country_modifier = gophira_stance_4
-			add_country_modifier = {
-				name = gophira_stance_3
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court
-					value = 4
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_2
-					check_variable = {
-						which = gophira_court
-						value = 7
-					}
-				}
-			}
-			remove_country_modifier = gophira_stance_1
-			remove_country_modifier = gophira_stance_3
-			add_country_modifier = {
-				name = gophira_stance_2
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_country_modifier = gophira_stance_1
-					check_variable = {
-						which = gophira_court
-						value = 4
-					}
-				}
-			}
-			remove_country_modifier = gophira_stance_2
-			add_country_modifier = {
-				name = gophira_stance_1
-				duration = -1
-			}
+		remove_country_modifier = gophira_stance_5
+		add_country_modifier = {
+			name = gophira_stance_4
+			duration = -1
 		}
 	}
-	[[add]
-		if = {
-			limit = {
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 8
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_3
 				check_variable = {
-					which = gophira_court_add
-					value = 13
-				}
-				NOT = { has_country_modifier = gophira_stance_5 }
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_4
-				add_country_modifier = {
-					name = gophira_stance_5
-					duration = -1
+					which = gophira_court
+					value = 11
 				}
 			}
 		}
-		if = {
-			limit = {
+		remove_country_modifier = gophira_stance_4
+		add_country_modifier = {
+			name = gophira_stance_3
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 5
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_2
 				check_variable = {
-					which = gophira_court_add
-					value = 10
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_4
-					check_variable = {
-						which = gophira_court_add
-						value = 13
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_3
-				remove_country_modifier = gophira_stance_5
-				add_country_modifier = {
-					name = gophira_stance_4
-					duration = -1
+					which = gophira_court
+					value = 8
 				}
 			}
 		}
-		if = {
-			limit = {
+		remove_country_modifier = gophira_stance_3
+		add_country_modifier = {
+			name = gophira_stance_2
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_modifier = gophira_stance_1
 				check_variable = {
-					which = gophira_court_add
-					value = 7
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_3
-					check_variable = {
-						which = gophira_court_add
-						value = 10
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_2
-				remove_country_modifier = gophira_stance_4
-				add_country_modifier = {
-					name = gophira_stance_3
-					duration = -1
+					which = gophira_court
+					value = 5
 				}
 			}
 		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court_add
-					value = 4
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_2
-					check_variable = {
-						which = gophira_court_add
-						value = 7
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_1
-				remove_country_modifier = gophira_stance_3
-				add_country_modifier = {
-					name = gophira_stance_2
-					duration = -1
-				}
-			}
+		remove_country_modifier = gophira_stance_2
+		add_country_modifier = {
+			name = gophira_stance_1
+			duration = -1
 		}
-		if = {
-			limit = {
-				NOT = {
-					has_country_modifier = gophira_stance_1
-					check_variable = {
-						which = gophira_court_add
-						value = 4
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_2
-				add_country_modifier = {
-					name = gophira_stance_1
-					duration = -1
-				}
-			}
+	}
+	hidden_effect = {
+		change_variable = {
+			which = gophira_court
+			value = -1
 		}
-	]
-	[[subtract]
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court_subtract
-					value = 13
-				}
-				NOT = { has_country_modifier = gophira_stance_5 }
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_4
-				add_country_modifier = {
-					name = gophira_stance_5
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court_subtract
-					value = 10
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_4
-					check_variable = {
-						which = gophira_court_subtract
-						value = 13
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_3
-				remove_country_modifier = gophira_stance_5
-				add_country_modifier = {
-					name = gophira_stance_4
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court_subtract
-					value = 7
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_3
-					check_variable = {
-						which = gophira_court_subtract
-						value = 10
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_2
-				remove_country_modifier = gophira_stance_4
-				add_country_modifier = {
-					name = gophira_stance_3
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = gophira_court_subtract
-					value = 4
-				}
-				NOT = {
-					has_country_modifier = gophira_stance_2
-					check_variable = {
-						which = gophira_court_subtract
-						value = 7
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_1
-				remove_country_modifier = gophira_stance_3
-				add_country_modifier = {
-					name = gophira_stance_2
-					duration = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_country_modifier = gophira_stance_1
-					check_variable = {
-						which = gophira_court_subtract
-						value = 4
-					}
-				}
-			}
-			tooltip = {
-				remove_country_modifier = gophira_stance_2
-				add_country_modifier = {
-					name = gophira_stance_1
-					duration = -1
-				}
-			}
-		}
-	]
+	}
 }
 
 gophira_heir_effect = {
