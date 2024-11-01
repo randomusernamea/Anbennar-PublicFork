@@ -542,22 +542,14 @@ country_event = {	#bad events handler
 			}
 			1 = {
 				trigger = {
-					OR = {
-						NOT = { has_country_flag = gophira_event18 }
-						had_country_flag = { flag = gophira_event18 days = 3650 }
-					}
+					NOT = { has_country_modifier = gophira_event18 }
 				}
-				clr_country_flag = gophira_event18
 				country_event = { id = gophira.18 }
 			}
 			1 = {
 				trigger = {
-					OR = {
-						NOT = { has_country_flag = gophira_event13 }
-						had_country_flag = { flag = gophira_event13 days = 3650 }
-					}
+					NOT = { has_country_modifier = gophira_event13 }
 				}
-				clr_country_flag = gophira_event13
 				country_event = { id = gophira.13 }
 			}
 			1 = {
@@ -575,32 +567,20 @@ country_event = {	#bad events handler
 			}
 			1 = {
 				trigger = {
-					OR = {
-						NOT = { has_country_flag = gophira_event15 }
-						had_country_flag = { flag = gophira_event15 days = 3650 }
-					}
+					NOT = { has_country_modifier = gophira_event15 }
 				}
-				clr_country_flag = gophira_event15
 				country_event = { id = gophira.15 }
 			}
 			1 = {
 				trigger = {
-					OR = {
-						NOT = { has_country_flag = gophira_event16 }
-						had_country_flag = { flag = gophira_event16 days = 3650 }
-					}
+					NOT = { has_country_modifier = gophira_event16 }
 				}
 				country_event = { id = gophira.16 }
-				clr_country_flag = gophira_event16
 			}
 			1 = {
 				trigger = {
-					OR = {
-						NOT = { has_country_flag = gophira_event17 }
-						had_country_flag = { flag = gophira_event17 days = 3650 }
-					}
+					NOT = { has_country_modifier = gophira_event17 }
 				}
-				clr_country_flag = gophira_event17
 				country_event = { id = gophira.17 }
 			}
 		}
@@ -617,7 +597,11 @@ country_event = {
 
 	option = {
 		name = gophira.13.1
-		set_country_flag = gophira_event13
+		add_country_modifier = {
+			name = gophira_event13
+			duration = 3650
+			hidden = yes
+		}
 		change_estate_land_share = {
 			estate = estate_nobles
 			share = 2
@@ -711,7 +695,11 @@ country_event = {
 	option = {
 		name = gophira.15.1
 		goto = gophira_army_encroaching
-		set_country_flag = gophira_event15
+		add_country_modifier = {
+			name = gophira_event15
+			duration = 3650
+			hidden = yes
+		}
 		event_target:gophira_army_encroaching = {
 			add_province_modifier = {
 				name = gophira_army_encroaching
@@ -750,6 +738,11 @@ country_event = {
 		name = gophira.16.1
 		goto = gophira_forcerecruit
 		set_country_flag = gophira_event16
+		add_country_modifier = {
+			name = gophira_event16
+			duration = 3650
+			hidden = yes
+		}
 		event_target:gophira_forcerecruit = {
 			add_base_tax = -1
 			add_base_manpower = 1
@@ -769,7 +762,11 @@ country_event = {
 
 	option = {
 		name = gophira.17.1
-		set_country_flag = gophira_event17
+		add_country_modifier = {
+			name = gophira_event17
+			duration = 3650
+			hidden = yes
+		}
 		add_country_modifier = {
 			name = nsc_army_more_paid
 			duration = 1825
@@ -787,7 +784,11 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			set_country_flag = gophira_event18
+			add_country_modifier = {
+				name = gophira_event18
+				duration = 3650
+				hidden = yes
+			}
 			random_owned_province = { save_event_target_as = gophira_bad_general }
 		}
 	}
