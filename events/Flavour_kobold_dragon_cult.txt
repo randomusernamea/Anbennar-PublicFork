@@ -43,6 +43,10 @@ country_event = {
 					}
 				}
 			}
+			random_owned_province = {
+				limit = { region = dragon_coast_region }
+				save_event_target_as = jyntas_kobold_target
+			}
 		}
 	}
 	
@@ -276,12 +280,6 @@ country_event = {
 		else_if = { #Brass dragon upgrade proc
 			limit = { has_church_aspect = brass_dragon_1_upgraded }
 			custom_tooltip = enhanced_brass_festival_tt
-			hidden_effect = {
-				random_owned_province = {
-					limit = { region = dragon_coast_region }
-					save_event_target_as = jyntas_kobold_target
-				}
-			}
 			if = { #Has all 3 upgraded + active
 				limit = {
 					has_church_aspect = brass_dragon_2_upgraded
