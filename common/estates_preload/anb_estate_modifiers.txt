@@ -663,7 +663,9 @@ estate_fake_artificers = {
 }
 
 estate_fake_artificers_2 = {
-	trigger = { always = no }
+	trigger = {
+		always = no
+	}
 	modifier_definition = {
 		type = privileges
 		key = artificers_capacity

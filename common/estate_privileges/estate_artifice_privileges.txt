@@ -538,7 +538,6 @@ estate_artificers_organization_sun_elf = {
 	on_granted = {
 		custom_tooltip = ten_year_artifice_research_tt
 		custom_tooltip = artificer_points_hover_over_me_tt
-		debuff_artifice_points_5 = yes
 		if = {
 			limit = {
 				has_artificers_organization_privilege = yes
@@ -571,6 +570,7 @@ estate_artificers_organization_sun_elf = {
     }
 	penalties = {
 		global_unrest = 1
+		artificers_capacity = -5
 	}
 	benefits = {
 		nobles_influence_modifier = 0.10
@@ -814,6 +814,8 @@ estate_artificers_organization_giberd_magisterium_oversight = {
 	influence = 0.05
 	is_valid = {
 		has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony }
 	}
 	can_select = {
 		has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
@@ -871,6 +873,8 @@ estate_artificers_organization_giberd_ravelian_guilds = {
 	influence = 0.2
 	is_valid = {
 		has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony }
 	}
 	can_select = {
 		has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds
@@ -918,8 +922,9 @@ estate_artificers_organization_giberd_beacon_of_harmony = {
 	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
-		always = yes
 		has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds }
 	}
 	can_select = {
 		has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony
@@ -1294,10 +1299,8 @@ estate_artificers_relic_fueled_artificery = {
 	can_revoke = {
 	}
 	on_granted = {
-		custom_tooltip = artifice_research_speed_moderate_tt
 	}
 	on_revoked = {
-		custom_tooltip = artifice_research_speed_moderate_removal_tt
 	}
 	on_invalid = {
 		
@@ -1306,7 +1309,7 @@ estate_artificers_relic_fueled_artificery = {
 		
 	}
 	benefits = {
-
+		artificers_research_time = -0.20
 	}
 	ai_will_do = {
 		factor = 5

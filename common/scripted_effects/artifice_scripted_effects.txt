@@ -597,17 +597,6 @@ research_speed = {
 			}
 		}
 
-		#all researchspeed bonuses go here for 5 year resarches 20% (0.8) is allowed (10% would not change anything), for longer ones 10/20/30% (0.9/0.8/0.7) are allowed
-		if = { # 20% faster speed
-			limit = {
-				has_estate_privilege = estate_artificers_relic_fueled_artificery
-			}
-			multiply_variable = {
-				which = ResearchSpeed
-				value = 0.8
-			}
-		}
-
 		# new_years = base_years * (1-x)
 		# example: -20% research time -> 10 years * (1-0.20) = 8 years
 		export_to_variable = {
