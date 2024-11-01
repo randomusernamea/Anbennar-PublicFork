@@ -739,6 +739,7 @@ country_event = {
 			duration = -1
 		}
 		change_tag = Z46
+		set_country_flag = formed_esmaria_flag
 		# override_country_name = ESMARIA
 	}
 	option = {
@@ -1603,7 +1604,7 @@ country_event = {
 		name = flavor_giberd.53.a
 		subtract_variable = {
 			which = ArtificeUpkeep
-			value = 70
+			value = 60
 		}
 	}
 }
