@@ -42892,3 +42892,52 @@ B92_ideas = {
 		global_trade_power = 0.1
 	}
 }
+
+#Ildumár
+B93_ideas = {
+	start = {
+		colonists = 1
+		may_explore = yes
+		leader_naval_manuever = 1
+	}
+	
+	bonus = {  
+		trade_steering = 0.2
+	}
+	
+	trigger = {
+		tag = B93 # Ildumár
+	}
+	free = yes
+	
+	B93_narawen_wander = { # Narawen’s Wanders. Narawen is the founder of house Silnara and a member of the Silver Band. She is famous for her travel after the WotSK when she tried to discover a route to Aelentir and mapped the coast of Sarhal before returning to Busilar.
+		range = 0.25
+		movement_speed_in_fleet_modifier = 1
+		may_recruit_female_generals = yes
+	}
+	
+	B93_wonder_of_sarhal = { # The Wonders of Sarhal. Narawen’s discoveries in Sarhal took hold of the imagination of Ildumár. As a result, when Busilar colonized West Sarhal, the majority of its explorers and colonists came from Leonar.
+		global_colonial_growth = 15
+	}
+	
+	B93_lion_hearted = { # Lion-Hearted. Narawen brought to Leonar more than maps and dreams. With her came a Ndurubu tribe. When she met them, they were fighting for their home fiercely against a more powerful power. The Ndurubu married the Leonari and taught them the same passion that led them to fight against insurmountable odds.
+		land_morale = 0.1
+	}
+	
+	B93_protect_the_coast = { # Protect the Coast. Due to its position, many tried to control Ildumár. From Castanor, the Phoenix Empire and Eborthil, the duchy changed hands many times. To protect itself, Leonar maintains a large fleet of galley men by the experienced sailors that live around the coast.
+		galley_power = 0.1
+		navy_tradition = 0.5 
+	}
+	
+	B93_lion_share = { # The Lion’s Share. The Lion’s Pass is an important trade route connecting the East Divenhal to the West, the rich countries of Kheterata and Bulwar to the heart of Anbennar and Lorent and land further away. Control of the Pass brought a lot of wealth to Leonar.
+		trade_efficiency = 0.1
+	}
+	
+	B93_harvest_under_stars = { # Harvest under the Stars. Religious festival dedicated to the Dame and Nerat. It happens on the first night of Summer. People light candles in memory of the dead with no other source of light allowed. They harvest part of the fields, orchards… and the food collected is offered to the dead.
+		stability_cost_modifier = -0.15
+	}
+	
+	B93_cork_coast = { # The Cork Coast. The climate of Ildumár is perfect for the growth of Cork Oak and the production of cork. This has led Leonar to become the leading producer of cork in Cannor.
+		production_efficiency = 0.1
+	}
+}
