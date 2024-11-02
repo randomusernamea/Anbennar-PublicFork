@@ -218,7 +218,10 @@ giberd_konwell_conquest = {
 			OR = {
 				bennonhill_area = {
 					type = all
-					owned_by = ROOT
+					OR = {
+						owned_by = ROOT
+						province_id = 909
+					}
 				}
 				hearthswood_area = {
 					type = all
@@ -500,31 +503,31 @@ giberd_konwell_conquest = {
 				duration = 3650
 			}
 			271 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_wind_towers
 					duration = -1
 				}
 			}
 			266 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_wind_towers
 					duration = -1
 				}
 			}
 			901 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_wind_towers
 					duration = -1
 				}
 			}
 			268 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_wind_towers
 					duration = -1
 				}
 			}
 			909 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_wind_towers
 					duration = -1
 				}
@@ -1037,8 +1040,13 @@ giberd_ryalanar_conquest = {
 		trigger = {
 			A73 = {
 				alliance_with = ROOT
-				has_10_opinion_sent_gift = {
-					target = ROOT
+				if = {
+					limit = {
+						ai = no
+					}
+					has_10_opinion_sent_gift = {
+						target = ROOT
+					}
 				}
 				has_opinion = {
 					who = ROOT
@@ -1105,9 +1113,11 @@ giberd_ryalanar_conquest = {
 					}
 					amount = 2
 				}
-				reverse_has_opinion = {
-					who = A86
-					value = 100
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
 				}
 			}
 		}
@@ -1814,7 +1824,12 @@ giberd_mercantile_shipping = {
 			# 1 more than the starting 2
 			271 = {
 				development = 25
-				num_of_times_expanded_infrastructure = 1
+				if = {
+					limit = {
+						ai = no
+					}
+					num_of_times_expanded_infrastructure = 1
+				}
 			}
 		}
 		effect = {
@@ -1999,7 +2014,7 @@ giberd_mercantile_shipping = {
 			capital_scope = {
 				add_building = university
 				remove_province_modifier = giberd_ace
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_first_artificer_school
 					duration = -1
 				}

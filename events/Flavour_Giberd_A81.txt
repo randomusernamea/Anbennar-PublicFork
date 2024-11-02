@@ -76,6 +76,7 @@ country_event = {
 		name = flavor_giberd.10.b
 		goto = 268		#Bennon
 		custom_tooltip = giberd_bennon_forts_explode_tt
+		set_country_flag = giberd_bennon_forts_explode
 		tooltip = {
 			268 = {
 				add_province_modifier = {
@@ -1727,7 +1728,7 @@ country_event = {
 			}
 			275 = {
 				remove_province_modifier = giberd_restoring_archive
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_restored_archive
 					duration = -1
 				}
@@ -1741,7 +1742,7 @@ country_event = {
 			}
 			275 = {
 				remove_province_modifier = giberd_scouring_archive
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_scoured_archive
 					duration = -1
 				}
@@ -1755,7 +1756,7 @@ country_event = {
 			}
 			275 = {
 				remove_province_modifier = giberd_stealing_archive
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = giberd_stolen_archive
 					duration = -1
 				}
@@ -1775,7 +1776,7 @@ country_event = {
 	option = {
 		name = flavor_giberd.59.a
 		271 = {
-			add_province_modifier = {
+			add_permanent_province_modifier = {
 				name = giberd_ace
 				duration = -1
 			}
