@@ -14,7 +14,7 @@
  the_dust_settles_title:0 "The Dust Settles"
  the_dust_settles_desc:0 ""
  wyvernheart_A9_trigger_tt:0 "The Civil War has ended, the Regent is Victorious"
- wyvernheart_A9_effect_tt:0 "If this mission if completed in less than §Y5§! years after the final uprising [Root.GetName] gets §Y'Tyrant's Rise'§! until the end of the game giving the following effects:\nNational Unrest: §G-2.00§!\nMaximum Absolutism: §G+20.00§!\nYearly Absolutism: §G+1.00§!\nUnjustified Demands: §G-33.0%§!"
+ wyvernheart_A9_effect_tt:0 "If this mission is completed while the Regent is still alive and in less than §Y5§! years after the final uprising [Root.GetName] gets §Y'Tyrant's Rise'§! until the end of the game giving the following effects:\nNational Unrest: §G-2.00§!\nMaximum Absolutism: §G+20.00§!\nYearly Absolutism: §G+1.00§!\nUnjustified Demands: §G-33.0%§!"
  wyvernheart_A9_event_tt:0 "The §YCourt and Country§! disaster cannot happen."
  wyvernheart_tyrants_rise:0 "Tyrant's Rise"
 
@@ -115,7 +115,7 @@
 
  stones_of_power_title:0 "Stones of Power"
  stones_of_power_desc:0 ""
- wyvernheart_E8_trigger_tt:0 "The mission cost will depend on the school mastery of our ruler and estate.\nAbjuration will redure the devastation and destruction caused.\nTransmutation will reduced the administrative strain.\nEnchantment will soothe the local populus.\nConjuration will reduce the overall cost."
+ wyvernheart_E8_trigger_tt:0 "The mission cost will depend on the school mastery of our ruler and estate.\nAbjuration will reduce the devastation and destruction caused.\nTransmutation will reduce the administrative strain.\nEnchantment will soothe the local populus.\nConjuration will reduce the overall cost."
 
  improving_on_perfection_title:0 "Improving on Perfection"
  improving_on_perfection_desc:0 ""
@@ -233,6 +233,29 @@
  flavour_wyvernheart.113.d:0 "placeholder"
  flavour_wyvernheart.113.a:0 "The blood may be black, but our Heart stays true."
 
+ flavour_wyvernheart.114.t:0 "Burnbloods Pacify [Root.GetName]"
+ flavour_wyvernheart.114.d:0 "placeholder"
+ flavour_wyvernheart.114.a:0 "Let them run free."
+ flavour_wyvernheart.114.b:0 "Stop them!"
+
+ flavour_wyvernheart.115.t:0 "A region to Oversee ..."
+ flavour_wyvernheart.115.d:0 "placeholder"
+ flavour_wyvernheart.115.a:0 "Alenic Reach"
+ flavour_wyvernheart.115.b:0 "Alenic Frontier"
+ flavour_wyvernheart.115.c:0 "West Castanor"
+ flavour_wyvernheart.115.e:0 "Forlorn Vale"
+ flavour_wyvernheart.115.f:0 "Inner Castanor"
+ flavour_wyvernheart.115.g:0 "South Castanor"
+
+ flavour_wyvernheart.116.t:0 "... A Councillor to Empower"
+ flavour_wyvernheart.116.d:0 "placeholder"
+ flavour_wyvernheart.116.a:0 "The Hardliner Mage"
+ flavour_wyvernheart.116.b:0 "The Technocrat Arcanist"
+ flavour_wyvernheart.116.c:0 "The Heartmage"
+ flavour_wyvernheart.116.e:0 "The Devout of the Flood"
+ flavour_wyvernheart.116.f:0 "The Wealthy Scion"
+ flavour_wyvernheart.116.g:0 "The Ambitious Floodborn"
+
  flavour_wyvernheart.200.t:0 "The Promised Mage"
  flavour_wyvernheart.200.d:0 "placeholder"
  flavour_wyvernheart.200.a:0 "Wyvernheart has a bright future ahead"
@@ -342,6 +365,9 @@
  wyverns_rebels_demand:0 "Burns and Raze"
  wyverns_rebels_demand_desc:0 "These beasts have been enraged by our actions and seek retribution in kind. By feasting upon our people."
 
+ wyvernheart_brand_burnbloods_tt:0 "Next use will grant a free core to a random owned non-cored province."
+ wyvernheart_brand_burnbloods_tt2:0 "Next use will §Rnot§! grant a free core to a random owned non-cored province."
+
  merc_wyvernheart_burnblood_company_1:0 "Burnblood Company I"
  merc_wyvernheart_burnblood_company_2_1:0 "Burnblood Company I"
  merc_wyvernheart_burnblood_company_2_2:0 "Burnblood Company II"
@@ -357,3 +383,12 @@
  merc_wyvernheart_burnblood_company_6_2:0 "Burnblood Company II"
  merc_wyvernheart_burnblood_company_6_3:0 "Burnblood Company III"
  merc_wyvernheart_burnblood_company_6_4:0 "Burnblood Company IV"
+
+ wyvernheart_imbue_mage_tt:0 "A new §YOverseer§! will be uplifted from the Council by the Sovereign, creating a powerful §YWar-wizard§!.\nThey will be attributed a §Yregion§! to Oversee and they will impact the §Yregion§! as a whole depending on which clique they belong to."
+
+ wyvernheart_hardliner_seat:0 "Seat of a Harliner Overseer"
+ wyvernheart_technocratic_seat_mod:0 "Seat of a Technocrat Overseer"
+ wyvernheart_heartmage_seat:0 "Seat of a Heartmage Overseer"
+ wyvernheart_devout_seat_mod:0 "Seat of a Devout Overseer"
+ wyvernheart_wealthy_seat:0 "Seat of a Wealthy Overseer"
+ wyvernheart_ambitious_seat_mod:0 "Seat of a Ambitious Overseer"

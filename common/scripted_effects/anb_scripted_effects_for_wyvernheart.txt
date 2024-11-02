@@ -4,12 +4,13 @@ spawn_wyvernheart_civil_war_rebels = {
 			any_owned_province = { region = inner_castanor_region }
 			840 = {#North Citadel is used to store flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -53,12 +54,13 @@ spawn_wyvernheart_civil_war_rebels = {
 			any_owned_province = { region = west_castanor_region }
 			728 = {#Cannwood is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -79,7 +81,7 @@ spawn_wyvernheart_civil_war_rebels = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = west_castanor_region } }
 		west_castanor_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -100,14 +102,15 @@ spawn_wyvernheart_civil_war_rebels = {
 	if = {
 		limit = {
 			any_owned_province = { region = south_castanor_region }
-			728 = {#Cannwood is used to story flags
+			817 = {#Bladeskeep is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -128,7 +131,7 @@ spawn_wyvernheart_civil_war_rebels = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = south_castanor_region } }
 		south_castanor_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -149,14 +152,15 @@ spawn_wyvernheart_civil_war_rebels = {
 	if = {
 		limit = {
 			any_owned_province = { region = alenic_reach_region }
-			817 = {#Bladeskeep is used to story flags
+			701 = {#Esald is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -177,7 +181,7 @@ spawn_wyvernheart_civil_war_rebels = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = alenic_reach_region } }
 		alenic_reach_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -200,12 +204,13 @@ spawn_wyvernheart_civil_war_rebels = {
 			any_owned_province = { region = alenic_frontier_region }
 			227 = {#Aldtempel is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -226,7 +231,7 @@ spawn_wyvernheart_civil_war_rebels = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = alenic_frontier_region } }
 		alenic_frontier_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -247,14 +252,15 @@ spawn_wyvernheart_civil_war_rebels = {
 	if = {
 		limit = {
 			any_owned_province = { region = forlorn_vale_region }
-			701 = {#Esald is used to story flags
+			777 = {#Escin is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -275,7 +281,7 @@ spawn_wyvernheart_civil_war_rebels = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = forlorn_vale_region } }
 		forlorn_vale_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -299,12 +305,12 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 			any_owned_province = { region = inner_castanor_region }
 			840 = {#North Citadel is used to store flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -337,12 +343,13 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 			any_owned_province = { region = west_castanor_region }
 			728 = {#Cannwood is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -358,7 +365,7 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = west_castanor_region } }
 		west_castanor_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -373,14 +380,15 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 	if = {
 		limit = {
 			any_owned_province = { region = south_castanor_region }
-			728 = {#Cannwood is used to story flags
+			817 = {#Bladeskeep is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -396,7 +404,7 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = south_castanor_region } }
 		south_castanor_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -411,14 +419,15 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 	if = {
 		limit = {
 			any_owned_province = { region = alenic_reach_region }
-			817 = {#Bladeskeep is used to story flags
+			701 = {#Esald is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -434,7 +443,7 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = alenic_reach_region } }
 		alenic_reach_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -451,12 +460,13 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 			any_owned_province = { region = alenic_frontier_region }
 			227 = {#Aldtempel is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -472,7 +482,7 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = alenic_frontier_region } }
 		alenic_frontier_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -487,14 +497,15 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 	if = {
 		limit = {
 			any_owned_province = { region = forlorn_vale_region }
-			701 = {#Esald is used to story flags
+			777 = {#Escin is used to story flags
 				NOT = {
-					has_province_flag = wyvernheart_hardliner_councillor
-					has_province_flag = wyvernheart_technocrat_councillor
-					has_province_flag = wyvernheart_heartmage_councillor
-					has_province_flag = wyvernheart_devout_councillor
-					has_province_flag = wyvernheart_wealthy_councillor
-					has_province_flag = wyvernheart_ambitious_councillor
+					
+					has_province_modifier = wyvernheart_hardliner_seat
+					has_province_modifier = wyvernheart_technocratic_seat
+					has_province_modifier = wyvernheart_heartmage_seat
+					has_province_modifier = wyvernheart_devout_seat
+					has_province_modifier = wyvernheart_wealthy_seat
+					has_province_modifier = wyvernheart_ambitious_seat
 				}
 			}
 		}
@@ -510,7 +521,7 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 		}
 	}
 	else_if = {
-		limit = { any_owned_province = { region = inner_castanor_region } }
+		limit = { any_owned_province = { region = forlorn_vale_region } }
 		forlorn_vale_region = {
 			type = random_repeating
 			limit = { owned_by = ROOT }
@@ -518,6 +529,1093 @@ spawn_wyvernheart_civil_war_rebels_with_war_wizards = {
 			spawn_rebels = {
 				size = 2
 				type = mage_rebels
+			}
+		}
+	}
+}
+
+wyvernheart_define_war_wizard_hardliner = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Hardliner Overseer"
+			}
+		}
+	}
+}
+wyvernheart_define_war_wizard_technocrat = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Technocrat Overseer"
+			}
+		}
+	}
+}
+wyvernheart_define_war_wizard_heartmage = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Heartmage Overseer"
+			}
+		}
+	}
+}
+wyvernheart_define_war_wizard_devout = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Devout Overseer"
+			}
+		}
+	}
+}
+wyvernheart_define_war_wizard_wealthy = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Wealthy Overseer"
+			}
+		}
+	}
+}
+wyvernheart_define_war_wizard_ambitious = {
+	if = {#+1 fire, speed and siege
+		limit = {
+			has_country_flag = wyvernheart_bioimproved_mages_results
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 2
+				shock = 7
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 3
+				shock = 8
+				manuever = 5
+				siege = 3
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 4
+				shock = 9
+				manuever = 7
+				siege = 4
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+	}
+	if = {#+1 speed
+		limit = {
+			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
+			has_estate_privilege = estate_wyvernheart_floodborn_council
+		}
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 0
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 4
+				siege = 1
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 5
+				siege = 2
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 7
+				siege = 3
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+	}
+	else = {#Normal but special name
+		if = {
+			limit = {
+				army_tradition = 0.00
+				NOT = { army_tradition = 30 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 2
+				siege = 0
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 30
+				NOT = { army_tradition = 60 }
+			}
+			define_general = {
+				fire = 1
+				shock = 7
+				manuever = 3
+				siege = 1
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 60
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 8
+				manuever = 4
+				siege = 2
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 80
+			}
+			define_general = {
+				fire = 3
+				shock = 9
+				manuever = 6
+				siege = 3
+				trait = war_wizard_personality
+				name = "Ambitious Overseer"
 			}
 		}
 	}

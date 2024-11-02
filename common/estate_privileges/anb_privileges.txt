@@ -1875,6 +1875,14 @@ estate_adventurers_heroes_in_the_army = {
 			infantry_power = 0.1
 		}
 	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = wyvernheart_legacy_of_the_wyvern_reward
+		}
+		modifier = {
+			adventurers_loyalty_modifier = 0.2
+		}
+	}
 	ai_will_do = {
 		factor = 5
 		modifier = {
@@ -14061,7 +14069,7 @@ estate_wyvernheart_floodborn_council = {
 	benefits = {
 		monthly_bloodbrand_power = 0.25
 		#+25% exp for the estate and leader when learning #MAGICREWORK
-		#+1 movement for war wizards #MAGICREWORK
+		#+1 movement for war wizards #included in the wyvernheart war warwizard scripted effect
 	}
 	can_revoke = {
 		always = no

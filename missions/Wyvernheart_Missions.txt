@@ -121,8 +121,6 @@
 					OR = {
 						province_id = 229
 						province_id = 729
-						province_id = 728
-						province_id = 748
 						province_id = 741
 					}
 					NOT = {
@@ -148,19 +146,20 @@
 				owned_by = ROOT
 				is_core = ROOT
 			}
+			balmire_area = {
+				has_state_edict = edict_defensive_edict
+			}
+			athfork_area = {
+				has_state_edict = edict_defensive_edict
+			}
+			ebonmarck_area = {
+				has_state_edict = edict_defensive_edict
+			}
 			229 = {
 				has_fort_building_trigger = yes
 				has_tax_building_trigger = yes
 			}
 			729 = {
-				has_fort_building_trigger = yes
-				has_tax_building_trigger = yes
-			}
-			728 = {
-				has_fort_building_trigger = yes
-				has_tax_building_trigger = yes
-			}
-			748 = {
 				has_fort_building_trigger = yes
 				has_tax_building_trigger = yes
 			}
@@ -179,18 +178,6 @@
 				}
 			}
 			729 = {
-				add_province_modifier = {
-					name = "wyvernheart_anti_wereworlf_fortifications"
-					duration = 18250
-				}
-			}
-			728 = {
-				add_province_modifier = {
-					name = "wyvernheart_anti_wereworlf_fortifications"
-					duration = 18250
-				}
-			}
-			748 = {
 				add_province_modifier = {
 					name = "wyvernheart_anti_wereworlf_fortifications"
 					duration = 18250
@@ -321,8 +308,8 @@
 			227 = {
 				has_building = mage_tower
 				OR = {
-					num_of_times_expanded_infrastructure = 1
-					development = 20
+					num_of_times_expanded_infrastructure = 2
+					development = 40
 				}
 				NOT = { unrest = 1 }
 			}
@@ -343,6 +330,7 @@
 					has_ruler_leader_from = ROOT
 				}
 			}
+			treasury = 250
 		}
 
 		effect = {
@@ -379,7 +367,6 @@
 					NOT = {
 						has_fort_building_trigger = yes
 						development = 15
-						province_has_center_of_trade_of_level = 2
 					}
 				}
 			}
@@ -399,7 +386,6 @@
 			729 = {
 				has_fort_building_trigger = yes
 				development = 15
-				province_has_center_of_trade_of_level = 2
 			}
 		}
 
@@ -803,7 +789,7 @@
 			has_government_power = {
 				mechanic_type = floodborn_council_mechanic
 				power_type = bloodbrand_power
-				value = 30
+				value = 60
 			}
 		} 
 
@@ -835,7 +821,7 @@
 			add_government_power = {
 				mechanic_type = floodborn_council_mechanic
 				power_type = bloodbrand_power
-				value = -30
+				value = -60
 			}
 			country_event = {
 				id = flavour_wyvernheart.111
@@ -865,9 +851,9 @@
 				estate = estate_mages
 				loyalty = 60
 			}
-			estate_influence = {
+			estate_influence = { #check with testers
 				estate = estate_mages
-				influence = 20
+				influence = 30
 			}
 			stability = 1
 			treasury = 100
@@ -888,12 +874,6 @@
 				loyalty = -10
 			}
 			set_estate_privilege = estate_mages_organization_state
-			define_advisor = {
-				type = court_mage
-				skill = 2
-				culture = ROOT
-				cost_multiplier = 0.5
-			}
 			define_general = {
 				shock = 7
 				fire = 1
@@ -947,9 +927,13 @@
 				culture = ROOT
 				NOT = { has_construction = any }
 			}
+			adm_power = 50
+			mil_power = 50
 		} 
 
 		effect = {
+			add_adm_power = -50
+			add_mil_power = -50
 			if = {
 				limit = {
 					has_country_modifier = racial_pop_orcish_purge
@@ -1217,6 +1201,14 @@
 				}
 			}
 			NOT = { diplomatic_reputation = -5 }
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 40
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 40
+			}
 		} 
 
 		effect = {
@@ -1279,7 +1271,7 @@
 			has_government_power = {
 				mechanic_type = floodborn_council_mechanic
 				power_type = bloodbrand_power
-				value = 50
+				value = 80
 			}
 			custom_trigger_tooltip = {
 				tooltip = wyvernheart_C8_trigger_tt
@@ -1341,6 +1333,11 @@
 			country_event = {
 				id = flavour_wyvernheart.108
 			}
+			add_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = -80
+			}
 		} 
 	}
 }
@@ -1359,10 +1356,15 @@
 		trigger = {
 			has_estate_privilege = estate_adventurers_generous_quest_rewards
 			num_of_mercenaries = 4
+			num_of_estate_agendas_completed = {
+				estate = estate_adventurers
+				value = 1
+			}
 		}
 
 		effect = {
 			set_estate_privilege = estate_adventurers_heroes_in_the_army
+			set_country_flag = wyvernheart_legacy_of_the_wyvern_reward
 			add_army_tradition = 15
 		}
 	}
@@ -1397,7 +1399,7 @@
 				}
 				disband_mercenary_company = THIS
 			}
-			add_treasury = 250
+			add_treasury = 150
 			if = {
 				limit = {
 					711 = {
@@ -1594,6 +1596,7 @@
 		provinces_to_highlight = {  } 
 
 		trigger = {
+			is_legendary_mage = yes
 			adm_power = 100
 			dip_power = 100
 			estate_loyalty = {
@@ -1844,8 +1847,8 @@
 			NOT = {
 				has_building = mage_tower
 				OR = {
-					num_of_times_expanded_infrastructure = 1
-					development = 20
+					num_of_times_expanded_infrastructure = 2
+					development = 40
 				}
 			}
 		} 
@@ -1854,7 +1857,7 @@
 			has_government_power = {
 				mechanic_type = floodborn_council_mechanic
 				power_type = bloodbrand_power
-				value = 30
+				value = 65
 			}
 			custom_trigger_tooltip = {
 				tooltip = wyvernheart_E7_trigger_tt1
@@ -1888,16 +1891,16 @@
 				has_building = mage_tower
 				has_fort_building_trigger = yes
 				OR = {
-					num_of_times_expanded_infrastructure = 1
-					development = 20
+					num_of_times_expanded_infrastructure = 2
+					development = 40
 				}
 			}
 			853 = {
 				has_building = mage_tower
 				has_fort_building_trigger = yes
 				OR = {
-					num_of_times_expanded_infrastructure = 1
-					development = 20
+					num_of_times_expanded_infrastructure = 2
+					development = 40
 				}
 			}
 			calc_true_if = {
@@ -1937,6 +1940,11 @@
 					duration = -1
 				}
 			}
+			add_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = -65
+			}
 		} 
 	}
 
@@ -1946,12 +1954,15 @@
 		required_missions = { brand_of_servitude } 
 		provinces_to_highlight = {
 			province_id = 840
-		} 
+		}
 
 		trigger = {
+			has_ruler_flag = evocation_3
 			has_ruler_flag = divination_3
 			840 = {
-				development = 33
+				base_tax = 11
+				base_production = 11
+				base_manpower = 11
 				has_building = mage_tower
 				has_production_building_trigger = yes
 			}
@@ -1990,7 +2001,7 @@
 			has_government_power = {
 				mechanic_type = floodborn_council_mechanic
 				power_type = bloodbrand_power
-				value = 30
+				value = 50
 			}
 			treasury = 1000
 			custom_trigger_tooltip = {
@@ -2037,6 +2048,11 @@
 					duration = -1
 				}
 			}
+			add_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = -50
+			}
 		} 
 	}
 
@@ -2070,7 +2086,7 @@
 				id = flavour_wyvernheart.112
 			}
 			custom_tooltip = wyvernheart_A9_effect_tt
-		} 
+		}
 	}
 }
 1_endgame = {
@@ -2332,6 +2348,7 @@
 				oldhaven_area = { type = any AND = { has_building = mage_tower base_manpower = 6 } }
 				steelhyl_area = { type = any AND = { has_building = mage_tower base_manpower = 6 } }
 			}
+			army_tradition = 60
 		} 
 
 		effect = {

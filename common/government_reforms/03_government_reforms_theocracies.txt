@@ -5019,6 +5019,7 @@ floodborn_council_reform_theocracy = {
 	icon = "asian_scripture"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
+	block_cultural_union = yes
 	legacy_equivalent = despotic_monarchy
 	maintain_dynasty = yes
 	potential = {
@@ -5027,9 +5028,8 @@ floodborn_council_reform_theocracy = {
 	}
 	valid_for_nation_designer = yes
 	modifiers = {
-		governing_cost = -0.20
+		governing_capacity = 0.15
 		global_unrest = 2
-		stability_cost_modifier = 0.20
 		monarch_military_power = 1
 	}
 	government_abilities = {

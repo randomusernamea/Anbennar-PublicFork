@@ -46,18 +46,19 @@ estate_wyvernheart_culture_of_the_heart_mod = {
 	local_manpower_modifier = 0.20
 }
 estate_wyvernheart_culture_of_the_heart_weak_culture_mod = {
-	local_unrest = 8
+	local_unrest = 5
 	local_culture_conversion_cost = -0.50
 }
 wyvernheart_once_again_on_the_seas = {
-	global_ship_cost = -0.50
+	global_ship_cost = -0.25
+	global_ship_recruit_speed = -0.25
 }
 wyvernheart_vroren_isle_mage_investment = {
 	local_build_cost = -0.20
 	local_development_cost = -0.75
 }
 wyvernheart_seat_of_the_council = {
-	local_development_cost = -0.20
+	local_development_cost = -0.15
 	institution_growth = 0.25
 }
 wyvernheart_pilfering_the_alen = {
@@ -66,13 +67,14 @@ wyvernheart_pilfering_the_alen = {
 	global_own_trade_power = 0.10
 }
 wyvernheart_burnblood_hive = {
+	global_regiment_recruit_speed = -0.10
+	reinforce_speed = 0.10
 	local_manpower_modifier = 0.20
-	local_monthly_devastation = 0.33
-	local_unrest = 3
+	local_monthly_devastation = 0.25
+	local_unrest = 1
 	monthly_bloodbrand_power = 0.1
 }
 wyvernheart_tyrants_rise = {
-	global_unrest = -2
 	max_absolutism = 20
 	yearly_absolutism = 1
 	unjustified_demands = -0.33
@@ -81,6 +83,7 @@ wyvernheart_the_wyvern_rises = {
 	years_of_nationalism = -5
 	harsh_treatment_cost = -0.20
 	prestige_from_land = 0.25
+	warscore_from_battles_modifier = 0.20
 }
 wyvernheart_along_the_vessels = {
 	max_absolutism_effect = 0.15
@@ -101,17 +104,17 @@ wyvernheart_faith_in_magic_reinforced = {
 	tolerance_own = -3
 }
 wyvernheart_escanni_centralization = {
-	global_autonomy = -0.1
+	global_autonomy = -0.05
 	global_unrest = -2
 }
 wyvernheart_castonath_first_neg = {
-	development_cost = 0.15
+	development_cost = 0.10
 }
 wyvernheart_castonath_first_pos = {
-	development_cost = -0.35
+	development_cost = -0.25
 }
-wyvernheart_floodborn_academy = {
-	yearly_innovativeness = 0.5
+wyvernheart_floodborn_academy = { #ADD STUDY SPEED #MAGICREWORK
+	yearly_innovativeness = 0.25
 }
 wyvernheart_funding_heartmages = {
 	global_tax_income = -0.15
@@ -124,3 +127,25 @@ wyvernheart_refused_heartmages = {
 	war_exhaustion_cost = 1
 }
 wyvernheart_cultural_events_timer = {} #Empty as its just a timer
+wyvernheart_hardliner_seat = {}
+wyvernheart_technocratic_seat_mod = {
+	technology_cost = -0.05
+	yearly_innovativeness = 0.1
+	local_monthly_devastation = 0.5
+}
+wyvernheart_heartmage_seat = {}
+wyvernheart_devout_seat_mod = {
+	global_missionary_strength = 0.02
+	monthly_bloodbrand_power = 0.2
+	stability_cost_modifier = -0.1
+}
+wyvernheart_wealthy_seat = {}
+wyvernheart_ambitious_seat_mod = {
+	discipline = 0.025
+	monthly_bloodbrand_power = -0.5
+	legitimacy = -2
+	devotion = -2
+}
+wyvernheart_technocratic_seat = {}
+wyvernheart_devout_seat = {}
+wyvernheart_ambitious_seat = {}

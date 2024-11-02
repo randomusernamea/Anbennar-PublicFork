@@ -13394,6 +13394,7 @@ floodborn_council_reform = {
 	icon = "asian_scripture"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
+	block_cultural_union = yes
 	legacy_equivalent = despotic_monarchy
 	potential = {
 		mission_completed = the_red_flood
@@ -13401,9 +13402,8 @@ floodborn_council_reform = {
 	}
 	valid_for_nation_designer = yes
 	modifiers = {
-		governing_cost = -0.20
+		governing_capacity = 0.15
 		global_unrest = 2
-		stability_cost_modifier = 0.20
 	}
 	government_abilities = {
 		floodborn_council_mechanic
@@ -13421,15 +13421,15 @@ floodborn_council_reform_always_mage = {
 	icon = "asian_scripture"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
+	block_cultural_union = yes
 	legacy_equivalent = despotic_monarchy
 	potential = {
 		mission_completed = imbue_the_royals
 	}
 	valid_for_nation_designer = yes
 	modifiers = {
-		governing_cost = -0.20
+		governing_capacity = 0.15
 		global_unrest = 2
-		stability_cost_modifier = 0.20
 	}
 	government_abilities = {
 		floodborn_council_mechanic
