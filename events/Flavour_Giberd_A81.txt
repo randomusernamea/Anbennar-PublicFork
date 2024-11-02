@@ -1216,6 +1216,9 @@ country_event = {
 				}
 			}
 		}
+		add_country_modifier = {
+			name = giberd_damescrown_trade
+		}
 		custom_tooltip = giberds_bonus_disappear_tt
 	}
 	option = {
@@ -1244,7 +1247,7 @@ country_event = {
 			add_trade_modifier = {
 				who = event_target:damescrown_owner
 				duration = -1
-				power = -30
+				power = -60
 				key = giberd_damescrown_diverted_trade
 			}
 		}
