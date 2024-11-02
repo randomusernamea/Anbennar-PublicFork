@@ -2088,6 +2088,10 @@ country_event = {#A Divided Council #D5
 		tag = B39
 	}
 
+	immediate = {
+		generate_estate_agenda = estate_mages
+	}
+
 	after = {
 		clear_estate_agenda_cache = ROOT
 	}
@@ -2097,8 +2101,6 @@ country_event = {#A Divided Council #D5
 		name = "flavour_wyvernheart.301.a"
 		ai_chance = { factor = 1 }
 		set_country_flag = wyvernheart_council_events_enabled
-		set_country_flag = wyvernheart_agenda_flag_build_mage_tower
-		generate_estate_agenda = estate_mages
 		start_estate_agenda = estate_mages
 	}
 }
@@ -2221,7 +2223,8 @@ country_event = {#The New Face of the Council
 			name = wyvernheart_floodborn_academy
 			duration = 9125
 		}
-		#+25% study speed for ruler/heir and estate #MAGICREWORK
+		custom_tooltip = add_magic_study_modifier_25_tt
+		update_magic_study_experience_modifier = { value = 25 }
 	}
 }
 
@@ -2561,7 +2564,7 @@ country_event = {#An Upstart in the Council
 			estate = estate_nobles
 			loyalty = -15
 		}
-		#+100xp for the current estate research or a random one if there is no active research #MAGICREWORK
+		increase_study_experience = { experience = 100 }
 	}
 	#Option C
 	option = {

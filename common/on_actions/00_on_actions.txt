@@ -11440,6 +11440,21 @@ on_province_owner_change = {
 		}
 	}
 
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = { tag = B39 }
+			OR = {
+				has_orcish_minority_trigger = yes
+				has_orcish_majority_trigger = yes
+			}
+		}
+		change_variable = {
+			which = acquired_orcish_pops
+			value = 1
+		}
+	}
+
 }
 
 # country 1.35

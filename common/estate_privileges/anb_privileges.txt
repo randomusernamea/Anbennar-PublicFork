@@ -14058,6 +14058,8 @@ estate_wyvernheart_floodborn_council = {
 	can_select = { mission_completed = the_red_flood }
 	on_granted = {
 		custom_tooltip = estate_wyvernheart_floodborn_council_tt
+		custom_tooltip = add_magic_study_modifier_25_tt
+		update_magic_study_experience_modifier = { value = 25 }
 	}
 	on_revoked = {
 	}
@@ -14068,7 +14070,6 @@ estate_wyvernheart_floodborn_council = {
 	}
 	benefits = {
 		monthly_bloodbrand_power = 0.25
-		#+25% exp for the estate and leader when learning #MAGICREWORK
 		#+1 movement for war wizards #included in the wyvernheart war warwizard scripted effect
 	}
 	can_revoke = {

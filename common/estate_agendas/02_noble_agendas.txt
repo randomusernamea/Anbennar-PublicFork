@@ -7,6 +7,9 @@ estate_nobles_hire_advisor = {
 				category = MIL
 			}
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 1
@@ -55,6 +58,9 @@ estate_nobles_fire_advisor = {
 		employed_advisor = {
 			category = MIL
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 1
@@ -131,6 +137,9 @@ estate_nobles_get_allies = {
 		NOT = { has_country_modifier = foreign_contacts }
 		is_free_or_tributary_trigger = yes
 		NOT = { has_subject_of_type = ynnic_iosahar }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 1
@@ -229,6 +238,9 @@ estate_nobles_get_allies = {
 #Befriend Rival of Rival
 estate_nobles_befriend_rival_of_rival = {
 	can_select = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_rival_country = {
 			any_rival_country = {
 				NOT = { tag = root }
@@ -432,6 +444,9 @@ estate_nobles_restore_legitimacy = {
 		government = monarchy
 		NOT = { has_ruler_modifier = legitimacy_defended }
 		NOT = { has_regency = yes }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 2
@@ -502,6 +517,9 @@ estate_nobles_restore_legitimacy = {
 #Improve Relations with X
 estate_nobles_relations_with_X = {
 	can_select = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_known_country = {
 			NOT = { is_rival = root }
 			ROOT = { NOT = { is_rival = prev } }
@@ -716,6 +734,9 @@ estate_nobles_relations_with_X = {
 #Get AE down (if there is a coalition) 
 estate_nobles_break_coalition = {
 	can_select = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_country = {
 			coalition_target = root
 			has_opinion_modifier = {
@@ -847,6 +868,9 @@ estate_nobles_condottieri_rivals = {
 	can_select = {
 		has_dlc = "Mare Nostrum"
 		is_at_war = no
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		NOT = {
 			any_country = {
 				root = { is_renting_condottieri_to = prev }
@@ -1041,6 +1065,9 @@ estate_nobles_support_independence = {
 				}
 			}
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 2
@@ -1149,6 +1176,9 @@ estate_nobles_retake_core = {
 			is_city = yes
 			NOT = { owner = { ROOT = { truce_with = prev } } }
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 2
@@ -1300,6 +1330,9 @@ estate_nobles_crush_revolts = {
 				has_spawned_rebels = lollard_rebels
 			}
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 2
@@ -1371,6 +1404,9 @@ estate_nobles_regain_liberty = {
 				liberty_desire = 35
 			}
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 5
@@ -1440,6 +1476,9 @@ estate_nobles_regain_liberty = {
 #Convert province culture
 estate_nobles_convert_province_culture = {
 	can_select = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_owned_province = {
 			NOT = { culture = root }
 			has_owner_accepted_culture = no
@@ -1584,6 +1623,9 @@ estate_nobles_protect_our_culture = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_neighbor_country = {
 			NOT = { culture_group = root }
 			any_owned_province = {
@@ -1820,6 +1862,9 @@ estate_nobles_vassalise_vulnerable_country = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		num_of_cities = 12
 		any_neighbor_country = {
 			NOT = { has_reform = free_city }
@@ -2027,6 +2072,9 @@ estate_nobles_expand_into_x = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_neighbor_country = {
 			num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -2286,6 +2334,9 @@ estate_nobles_complete_conquest_of_x = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_neighbor_country = {
 			num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -2596,6 +2647,9 @@ estate_nobles_annex_subject = {
 			}
 		}
 		NOT = { tag = Y63 }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 3
@@ -2742,6 +2796,9 @@ estate_nobles_build_an_army = {
 			}
 			NOT = { army_size_percentage = 0.35 }
 		}
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 5
@@ -2827,6 +2884,9 @@ estate_nobles_bigger_army_than_rival = {
 	can_select = {
 		NOT = { has_country_modifier = thriving_arms_industry }
 		NOT = { army_size_percentage = 1 }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_rival_country = {
 			NOT = { war_with = root }
 			NOT = { root = { army_size = prev } }
@@ -2918,6 +2978,9 @@ estate_nobles_build_up_manpower_reserves = {
 	can_select = {
 		is_at_war = no
 		NOT = { manpower_percentage = 0.40 }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 5
@@ -3047,6 +3110,9 @@ estate_nobles_build_up_manpower_reserves = {
 estate_nobles_recover_abysmal_prestige = {
 	can_select = {
 		NOT = { prestige = -30 }
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 8
@@ -3129,6 +3195,10 @@ estate_nobles_improve_prestige = {
 	can_select = {
 		prestige = -30
 		NOT = { prestige = 20 }
+		
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 	}
 	selection_weight = {
 		factor = 2.5
@@ -3230,4 +3300,224 @@ estate_nobles_improve_prestige = {
     }
 }
 
-
+#Wyvernheart
+estate_nobles_wyvernheart_invest_in_burblood_production = {
+	can_select = {
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+		any_owned_province = {
+			OR = {
+				has_province_modifier = wyvernheart_burnblood_spawning_pool
+				has_province_modifier = wyvernheart_burnblood_hive
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+	}
+	pre_effect = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = wyvernheart_burnblood_spawning_pool
+					has_province_modifier = wyvernheart_burnblood_hive
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+		event_target:agenda_province = {
+			if = {
+				limit = {
+					check_variable = {
+						which = province_mil_var
+						value = 1
+					}
+				}
+				set_variable = {
+					which = province_mil_var
+					value = 0
+				}
+			}
+			export_to_variable = {
+				which = province_mil_var
+				value = trigger_value:base_manpower
+			}
+			change_variable = {
+				which = province_mil_var
+				value = 3
+			}
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			NOT = { owned_by = root }
+		}
+	}
+	task_requirements = {
+		event_target:agenda_province = {
+				base_manpower = "province_mil_var"
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		event_target:agenda_province = {
+			add_province_modifier = {
+				name = wyvernheart_burnblood_investment
+				duration = 3650
+			}
+		}
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+	}
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_nobles
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+        add_estate_loyalty_modifier = {
+            estate = estate_mages
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = -5
+		}
+    }
+}
+estate_nobles_wyvernheart_procure_burnblood_candidates = {
+	can_select = {
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+		any_neighbor_country = {
+			any_owned_province = {
+				OR = {
+					has_orcish_minority_trigger = yes
+					has_orcish_majority_trigger = yes
+				}
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+	}
+	pre_effect = {
+		if = {
+			limit = {
+				check_variable = {
+					which = acquired_orcish_pops
+					value = 1
+				} 
+			}
+			set_variable = {
+				which = acquired_orcish_pops
+				value = 0
+			}
+		}
+		random_neighbor_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_orcish_minority_trigger = yes
+						has_orcish_majority_trigger = yes
+					}
+				}
+			}
+			save_event_target_as = agenda_country
+		}
+	}
+	provinces_to_highlight = {
+		is_neighbor_of = ROOT
+		OR = {
+			has_orcish_minority_trigger = yes
+			has_orcish_majority_trigger = yes
+		}
+	}
+	fail_if = {
+	}
+	task_requirements = {
+		check_variable = {
+			which = acquired_orcish_pops
+			value = 5
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_nobles
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 10
+		}
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+	}
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_nobles
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+        add_estate_loyalty_modifier = {
+            estate = estate_mages
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+        add_estate_loyalty_modifier = {
+            estate = estate_burghers
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = -5
+		}
+    }
+}

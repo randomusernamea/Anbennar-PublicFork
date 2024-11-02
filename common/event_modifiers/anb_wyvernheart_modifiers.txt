@@ -96,6 +96,32 @@ wyvernheart_war_wizard_rebels_mod = {
 	leader_land_manuever = 2
 	leader_siege = 2
 }
+wyvernheart_reduced_devastation = {
+	local_monthly_devastation = -0.5
+	local_development_cost = -0.10
+}
+wyvernheart_burnblood_investment = {
+	local_manpower_modifier = 0.33
+	trade_goods_size_modifier = 0.20
+}
+wyvernheart_devout_vision_of_magic = {
+	global_missionary_strength = 0.02
+	tolerance_own = 2
+	discipline = -0.05
+	stability_cost_modifier = 0.20
+}
+wyvernheart_hardliner_vision_of_magic = {
+	manpower_recovery_speed = 0.10
+	shock_damage = 0.05
+	tolerance_own = -2
+	stability_cost_modifier = 0.20
+}
+wyvernheart_heartmage_vision_of_magic = {
+	war_exhaustion = -0.1
+	development_cost = -0.05
+	land_morale = -0.05
+	stability_cost_modifier = 0.20
+}
 
 wyvernheart_faith_in_the_flood_questionned = {
 	stability_cost_modifier = 0.25
@@ -113,7 +139,7 @@ wyvernheart_castonath_first_neg = {
 wyvernheart_castonath_first_pos = {
 	development_cost = -0.25
 }
-wyvernheart_floodborn_academy = { #ADD STUDY SPEED #MAGICREWORK
+wyvernheart_floodborn_academy = {
 	yearly_innovativeness = 0.25
 }
 wyvernheart_funding_heartmages = {

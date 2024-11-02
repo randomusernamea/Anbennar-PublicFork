@@ -2211,18 +2211,11 @@ estate_mages_develop_damestear_in_y = {
 		factor = 1
 	}
 	can_select = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
 		any_owned_province = {
 			trade_goods = damestear
-		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = floodborn_council_reform 
-					has_reform = floodborn_council_reform_always_mage 
-					has_reform = floodborn_council_reform_theocracy
-				}
-			}
-			has_country_flag = wyvernheart_agenda_flag_dev
 		}
 	}
 	pre_effect = {
@@ -2416,20 +2409,7 @@ estate_mages_build_mage_tower_in_y = {
 				is_capital = yes
 			}
 		}
-		OR = {
-			monthly_income = 30
-			has_country_flag = wyvernheart_agenda_flag_build_mage_tower
-		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = floodborn_council_reform 
-					has_reform = floodborn_council_reform_always_mage 
-					has_reform = floodborn_council_reform_theocracy
-				}
-			}
-			has_country_flag = wyvernheart_agenda_flag_build_mage_tower
-		}
+		monthly_income = 30
 	}
 	selection_weight = {
 		factor = 1
@@ -2762,5 +2742,924 @@ estate_mages_develop_x = {
 			loyalty = -5
 			duration = 7300
         }
+    }
+}
+
+#Wyvernheart agendas
+estate_mages_wyvernheart_invest_in_critical_materials = {
+	selection_weight = {
+		factor = 1
+	}
+	can_select = {
+		always = no
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+		OR = {
+			227 = { owned_by = ROOT }
+			736 = { owned_by = ROOT }
+			any_owned_province = {
+				trade_goods = damestear
+			}
+		}
+	}
+	pre_effect = {
+		random_list = {
+			1 = {
+				trigger = {
+					227 = { owned_by = ROOT }
+				}
+				227 = { save_event_target_as = agenda_province }
+			}
+			1 = {
+				trigger = {
+					736 = { owned_by = ROOT }
+				}
+				736 = { save_event_target_as = agenda_province }
+			}
+			1 = {
+				trigger = {
+					any_owned_province = { trade_goods = damestear }
+				}
+				random_owned_province = {
+					limit = { trade_goods = damestear }
+					save_event_target_as = agenda_province
+				}
+			}
+		}
+		event_target:agenda_province = {
+			if = {
+				limit = {
+					check_variable = {
+						which = province_dip_var
+						value = 1
+					}
+				}
+				set_variable = {
+					which = province_dip_var
+					value = 0
+				}
+			}
+			export_to_variable = {
+				which = province_dip_var
+				value = trigger_value:base_production
+			}
+			change_variable = {
+				which = province_dip_var
+				value = 3
+			}
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			NOT = { owned_by = root }
+		}
+	}
+    task_requirements = {
+		event_target:agenda_province = {
+				base_production = "province_dip_var"
+		}
+    }
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_mages
+		}
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {#should be 0.25 mana regen for 10 year #MAGICREWORK
+			influence = 10
+			duration = 3650
+		}
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		event_target:agenda_province = {
+			if = {
+				limit = { owned_by = root }
+				add_named_unrest = {
+					name = local_mages_displeased
+					value = 5
+				}
+			}
+		}
+        add_estate_loyalty_modifier = {
+            estate = estate_mages
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = -5
+		}
+    }
+}
+estate_mages_wyvernheart_wave_the_heart = {
+	selection_weight = {
+		factor = 1
+	}
+	can_select = {
+		always = no
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+		any_owned_province = {
+			NOT = { culture = ROOT }
+		}
+	}
+	pre_effect = {
+		random_owned_province = {
+			limit = {
+				NOT = { culture = ROOT }
+			}
+			save_event_target_as = agenda_province
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			NOT = { owned_by = root }
+		}
+	}
+    task_requirements = {
+		event_target:agenda_province = {
+			area_for_scope_province = {
+				type = all
+				culture = ROOT
+			}
+		}
+    }
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_mages
+		}
+		add_estate_loyalty = {
+			estate = all
+			loyalty = 5
+		}
+		event_target:agenda_province = {
+			area_for_scope_province = {
+				type = all
+				add_province_modifier = {
+					name = wyvernheart_reduced_devastation
+					duration = 3650
+				}
+			}
+		}
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 5
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		event_target:agenda_province = {
+			if = {
+				limit = { owned_by = root }
+				add_named_unrest = {
+					name = local_mages_displeased
+					value = 5
+				}
+			}
+		}
+        add_estate_loyalty_modifier = {
+            estate = all
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -10
+			duration = 7300
+        }
+    }
+}
+estate_mages_wyvernheart_spread_vision_of_magic = {
+	selection_weight = {
+		factor = 1
+	}
+	can_select = {
+		always = no
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+	}
+	pre_effect = {
+		random_owned_province = {
+			save_event_target_as = agenda_province
+		}
+		event_target:agenda_province = {
+			if = {
+				limit = {
+					check_variable = {
+						which = province_dip_var
+						value = 1
+					}
+				}
+				set_variable = {
+					which = province_dip_var
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = province_adm_var
+						value = 1
+					}
+				}
+				set_variable = {
+					which = province_adm_var
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = province_mil_var
+						value = 1
+					}
+				}
+				set_variable = {
+					which = province_mil_var
+					value = 0
+				}
+			}
+			export_to_variable = {
+				which = province_dip_var
+				value = trigger_value:base_production
+			}
+			change_variable = {
+				which = province_dip_var
+				value = 3
+			}
+			export_to_variable = {
+				which = province_adm_var
+				value = trigger_value:base_tax
+			}
+			change_variable = {
+				which = province_adm_var
+				value = 3
+			}
+			export_to_variable = {
+				which = province_mil_var
+				value = trigger_value:base_manpower
+			}
+			change_variable = {
+				which = province_mil_var
+				value = 3
+			}
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			NOT = { owned_by = root }
+		}
+	}
+    task_requirements = {
+		event_target:agenda_province = {
+			OR = {
+				base_tax = "province_adm_var"
+				base_production = "province_dip_var"
+				base_manpower = "province_mil_var"
+			}
+		}
+    }
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_mages
+		}
+		custom_tooltip = wyvernheart_vision_of_magic_reward_tt
+		hidden_effect = {
+			if = {
+				limit = {#Heartmages
+					event_target:agenda_province = {
+						base_production = "province_dip_var"
+					}
+				}
+				add_country_modifier = {
+					name = wyvernheart_heartmage_vision_of_magic
+					duration = 3650
+				}
+				add_estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = 10
+				}
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 10
+				}
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -10
+				}
+			}
+			else_if = {
+				limit = {#Hardliners
+					event_target:agenda_province = {
+						base_manpower = "province_mil_var"
+					}
+				}
+				add_country_modifier = {
+					name = wyvernheart_hardliner_vision_of_magic
+					duration = 3650
+				}
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 10
+				}
+				add_estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = -10
+				}
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -10
+				}
+			}
+			else = {#Devouts
+				add_country_modifier = {
+					name = wyvernheart_devout_vision_of_magic
+					duration = 3650
+				}
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 20
+				}
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 10
+				}
+				add_estate_loyalty = {
+					estate = estate_adventurers
+					loyalty = -10
+				}
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+			}
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		event_target:agenda_province = {
+			if = {
+				limit = { owned_by = root }
+				add_named_unrest = {
+					name = local_mages_displeased
+					value = 5
+				}
+			}
+		}
+		custom_tooltip = wyvernheart_all_estate_lose_10_loyalty_tt
+		hidden_effect = {
+			add_estate_loyalty_modifier = {
+				estate = all
+				desc = EST_VAL_AGENDA_DENIED
+				loyalty = -10
+				duration = 7300
+			}
+		}
+    }
+}
+estate_mages_wyvernheart_research_new_spells = {
+	selection_weight = {
+		factor = 1
+	}
+	can_select = {
+		tag = B39
+		OR = {
+			has_reform = floodborn_council_reform
+			has_reform = floodborn_council_reform_always_mage
+			has_reform = floodborn_council_reform_theocracy
+		}
+		ruler_has_mage_personality = yes
+		NOT = { ruler_studying_magic = yes }
+	}
+	pre_effect = {
+		clr_country_flag = wyvernheart_school_focus_1_abjuration
+		clr_country_flag = wyvernheart_school_focus_2_abjuration
+		clr_country_flag = wyvernheart_school_focus_1_conjuration
+		clr_country_flag = wyvernheart_school_focus_2_conjuration
+		clr_country_flag = wyvernheart_school_focus_1_divination
+		clr_country_flag = wyvernheart_school_focus_2_divination
+		clr_country_flag = wyvernheart_school_focus_1_enchantment
+		clr_country_flag = wyvernheart_school_focus_2_enchantment
+		clr_country_flag = wyvernheart_school_focus_1_evocation
+		clr_country_flag = wyvernheart_school_focus_2_evocation
+		clr_country_flag = wyvernheart_school_focus_1_illusion
+		clr_country_flag = wyvernheart_school_focus_2_illusion
+		clr_country_flag = wyvernheart_school_focus_1_necromancy
+		clr_country_flag = wyvernheart_school_focus_2_necromancy
+		clr_country_flag = wyvernheart_school_focus_1_transmutation
+		clr_country_flag = wyvernheart_school_focus_2_transmutation
+		clr_country_flag = wyvernheart_school_agenda_scion_ambitious
+		clr_country_flag = wyvernheart_school_agenda_technocrat_devout
+		clr_country_flag = wyvernheart_school_agenda_heartmage_hardliner
+		clr_ruler_flag = ruler_studying_abjuration
+		clr_ruler_flag = ruler_studying_conjuration
+		clr_ruler_flag = ruler_studying_divination
+		clr_ruler_flag = ruler_studying_enchantment
+		clr_ruler_flag = ruler_studying_evocation
+		clr_ruler_flag = ruler_studying_illusion
+		clr_ruler_flag = ruler_studying_necromancy
+		clr_ruler_flag = ruler_studying_transmutation
+		random_list = {#Set school one to learn
+			1 = {
+				trigger = { NOT = { is_abjuration_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_abjuration
+			}
+			1 = {
+				trigger = { NOT = { is_conjuration_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_conjuration
+			}
+			1 = {
+				trigger = { NOT = { is_divination_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_divination
+			}
+			1 = {
+				trigger = { NOT = { is_enchantment_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_enchantment
+			}
+			1 = {
+				trigger = { NOT = { is_evocation_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_evocation
+			}
+			1 = {
+				trigger = { NOT = { is_illusion_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_illusion
+			}
+			1 = {
+				trigger = { NOT = { is_necromancy_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_necromancy
+			}
+			1 = {
+				trigger = { NOT = { is_transmutation_3 = yes } }
+				set_country_flag = wyvernheart_school_focus_1_transmutation
+			}
+		}
+		random_list = {#set school two to learn
+			1 = {
+				trigger = { NOT = { is_abjuration_3 = yes has_country_flag = wyvernheart_school_focus_1_abjuration } }
+				set_country_flag = wyvernheart_school_focus_2_abjuration
+			}
+			1 = {
+				trigger = { NOT = { is_conjuration_3 = yes has_country_flag = wyvernheart_school_focus_1_conjuration } }
+				set_country_flag = wyvernheart_school_focus_2_conjuration
+			}
+			1 = {
+				trigger = { NOT = { is_divination_3 = yes has_country_flag = wyvernheart_school_focus_1_divination } }
+				set_country_flag = wyvernheart_school_focus_2_divination
+			}
+			1 = {
+				trigger = { NOT = { is_enchantment_3 = yes has_country_flag = wyvernheart_school_focus_1_enchantment } }
+				set_country_flag = wyvernheart_school_focus_2_enchantment
+			}
+			1 = {
+				trigger = { NOT = { is_evocation_3 = yes has_country_flag = wyvernheart_school_focus_1_evocation } }
+				set_country_flag = wyvernheart_school_focus_2_evocation
+			}
+			1 = {
+				trigger = { NOT = { is_illusion_3 = yes has_country_flag = wyvernheart_school_focus_1_illusion } }
+				set_country_flag = wyvernheart_school_focus_2_illusion
+			}
+			1 = {
+				trigger = { NOT = { is_necromancy_3 = yes has_country_flag = wyvernheart_school_focus_1_necromancy } }
+				set_country_flag = wyvernheart_school_focus_2_necromancy
+			}
+			1 = {
+				trigger = { NOT = { is_transmutation_3 = yes has_country_flag = wyvernheart_school_focus_1_transmutation } }
+				set_country_flag = wyvernheart_school_focus_2_transmutation
+			}
+		}
+		random_list = {#choose the Versus
+			1 = {
+				set_country_flag = wyvernheart_school_agenda_scion_ambitious
+			}
+			1 = {
+				set_country_flag = wyvernheart_school_agenda_technocrat_devout
+			}
+			1 = {
+				set_country_flag = wyvernheart_school_agenda_heartmage_hardliner
+			}
+		}
+	}
+	provinces_to_highlight = {
+	}
+	fail_if = {
+		AND = {
+			ruler_studying_magic = yes
+			NOT = {
+				OR = {
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_abjuration has_country_flag = wyvernheart_school_focus_2_abjuration } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_abjuration
+							has_ruler_flag = ruler_studying_abjuration
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_conjuration has_country_flag = wyvernheart_school_focus_2_conjuration } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_conjuration
+							has_ruler_flag = ruler_studying_conjuration
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_divination has_country_flag = wyvernheart_school_focus_2_divination } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_divination
+							has_ruler_flag = ruler_studying_divination
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_enchantment has_country_flag = wyvernheart_school_focus_2_enchantment } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_enchantment
+							has_ruler_flag = ruler_studying_enchantment
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_evocation has_country_flag = wyvernheart_school_focus_2_evocation } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_evocation
+							has_ruler_flag = ruler_studying_evocation
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_illusion has_country_flag = wyvernheart_school_focus_2_illusion } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_illusion
+							has_ruler_flag = ruler_studying_illusion
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_necromancy has_country_flag = wyvernheart_school_focus_2_necromancy } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_necromancy
+							has_ruler_flag = ruler_studying_necromancy
+						}
+					}
+					if = {
+						limit = { OR = { has_country_flag = wyvernheart_school_focus_1_transmutation has_country_flag = wyvernheart_school_focus_2_transmutation } }
+						custom_trigger_tooltip = {
+							tooltip = ruler_studying_transmutation
+							has_ruler_flag = ruler_studying_transmutation
+						}
+					}
+				}
+			}
+		}
+	}
+    task_requirements = {
+		ruler_studying_magic = yes
+		OR = {
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_abjuration has_country_flag = wyvernheart_school_focus_2_abjuration } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_abjuration
+					has_ruler_flag = ruler_studying_abjuration
+				}
+				has_ruler_flag = ruler_studying_abjuration #very bugged?
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_conjuration has_country_flag = wyvernheart_school_focus_2_conjuration } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_conjuration
+					has_ruler_flag = ruler_studying_conjuration
+				}
+				has_ruler_flag = ruler_studying_conjuration
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_divination has_country_flag = wyvernheart_school_focus_2_divination } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_divination
+					has_ruler_flag = ruler_studying_divination
+				}
+				has_ruler_flag = ruler_studying_divination
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_enchantment has_country_flag = wyvernheart_school_focus_2_enchantment } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_enchantment
+					has_ruler_flag = ruler_studying_enchantment
+				}
+				has_ruler_flag = ruler_studying_enchantment
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_evocation has_country_flag = wyvernheart_school_focus_2_evocation } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_evocation
+					has_ruler_flag = ruler_studying_evocation
+				}
+				has_ruler_flag = ruler_studying_evocation
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_illusion has_country_flag = wyvernheart_school_focus_2_illusion } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_illusion
+					has_ruler_flag = ruler_studying_illusion
+				}
+				has_ruler_flag = ruler_studying_illusion
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_necromancy has_country_flag = wyvernheart_school_focus_2_necromancy } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_necromancy
+					has_ruler_flag = ruler_studying_necromancy
+				}
+				has_ruler_flag = ruler_studying_necromancy
+			}
+			if = {
+				limit = { OR = { has_country_flag = wyvernheart_school_focus_1_transmutation has_country_flag = wyvernheart_school_focus_2_transmutation } }
+				custom_trigger_tooltip = {
+					tooltip = ruler_studying_transmutation
+					has_ruler_flag = ruler_studying_transmutation
+				}
+				has_ruler_flag = ruler_studying_transmutation
+			}
+		}
+    }
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_mages
+		}
+		if = {#Wealthy vs Ambitious
+			limit = { has_country_flag = wyvernheart_school_agenda_scion_ambitious }
+			custom_tooltip = wyvernheart_school_agenda_scion_ambitious_effect_tt
+			if = {
+				limit = { has_ruler_flag = ruler_studying_abjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_abjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_conjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_conjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_divination }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_divination }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_enchantment }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_enchantment }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_evocation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_evocation }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_illusion }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_illusion }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_necromancy }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_necromancy }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_transmutation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_transmutation }
+				}
+				else = {
+					
+				}
+			}
+		}
+		if = {#Technocrat vs Devout
+			limit = { has_country_flag = wyvernheart_school_agenda_technocrat_devout }
+			custom_tooltip = wyvernheart_school_agenda_technocrat_devout_effect_tt
+			if = {
+				limit = { has_ruler_flag = ruler_studying_abjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_abjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_conjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_conjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_divination }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_divination }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_enchantment }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_enchantment }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_evocation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_evocation }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_illusion }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_illusion }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_necromancy }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_necromancy }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_transmutation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_transmutation }
+				}
+				else = {
+					
+				}
+			}
+		}
+		if = {#Heartmage vs Hardliner
+			limit = { has_country_flag = wyvernheart_school_agenda_heartmage_hardliner }
+			custom_tooltip = wyvernheart_school_agenda_heartmage_hardliner_effect_tt
+			if = {
+				limit = { has_ruler_flag = ruler_studying_abjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_abjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_conjuration }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_conjuration }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_divination }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_divination }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_enchantment }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_enchantment }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_evocation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_evocation }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_illusion }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_illusion }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_necromancy }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_necromancy }
+				}
+				else = {
+					
+				}
+			}
+			else_if = {
+				limit = { has_ruler_flag = ruler_studying_transmutation }
+				if = {
+					limit = { has_country_flag = wyvernheart_school_focus_1_transmutation }
+				}
+				else = {
+					
+				}
+			}
+		}
+		hidden_effect = {
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		custom_tooltip = wyvernheart_all_estate_lose_10_loyalty_tt
+		hidden_effect = {
+			add_estate_loyalty_modifier = {
+				estate = all
+				desc = EST_VAL_AGENDA_DENIED
+				loyalty = -10
+				duration = 7300
+			}
+		}
     }
 }
