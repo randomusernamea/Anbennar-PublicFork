@@ -1043,7 +1043,9 @@ giberd_ryalanar_conquest = {
 				alliance_with = ROOT
 				if = {
 					limit = {
-						ai = no
+						ROOT = {
+							ai = no
+						}
 					}
 					has_10_opinion_sent_gift = {
 						target = ROOT
@@ -1538,11 +1540,15 @@ giberd_ryalanar_conquest = {
 					fast_has_pop_of_race = {
 						race = gnomish
 					}
-					NOT = {
-						base_production = 7
-						AND = {
-							has_production_building_trigger = yes
-							has_production_manufactory_or_gold_trigger = yes
+					AND = {
+						NOT = {
+							base_production = 7
+						}
+						NOT = {
+							AND = {
+								has_production_building_trigger = yes
+								has_production_manufactory_or_gold_trigger = yes
+							}
 						}
 					}
 				}
@@ -1581,6 +1587,8 @@ giberd_ryalanar_conquest = {
 							fast_has_pop_of_race = {
 								race = gnomish
 							}
+						}
+						NOT = {
 							owned_by = ROOT
 						}
 						base_production = 7
@@ -1827,7 +1835,9 @@ giberd_mercantile_shipping = {
 				development = 25
 				if = {
 					limit = {
-						ai = no
+						owner = {
+							ai = no
+						}
 					}
 					num_of_times_expanded_infrastructure = 1
 				}
