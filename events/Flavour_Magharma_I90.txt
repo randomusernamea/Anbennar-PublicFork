@@ -793,15 +793,17 @@ province_event = {
 				limit = {
 					owner = { NOT = { has_country_flag = I90_rejected_steel } }
 				}
-				every_known_country = {
-					limit = {
-						has_country_modifier = lake_federation_member
+				owner = {
+					every_known_country = {
+						limit = {
+							has_country_modifier = lake_federation_member
+						}
+						add_country_modifier = {
+							name = I90_metal_shortage
+							duration = 7305 #20 Years
+						}
+						country_event = { id = flavor_maghargma.35 }
 					}
-					add_country_modifier = {
-						name = I90_metal_shortage
-						duration = 7305 #20 Years
-					}
-					country_event = { id = flavor_maghargma.35 }
 				}
 			}
 		}
