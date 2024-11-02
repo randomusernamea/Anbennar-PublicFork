@@ -423,6 +423,14 @@ country_event = {
 			name = giberd_silverforge_relations_good
 			duration = 3650			#20 years
 		}
+		A73 = {
+			add_opinion = {
+				who = ROOT
+				modifier = giberd_potions_bribe
+				years = 10
+				multiplier = 0.5
+			}
+		}
 		if = {
 			limit = {
 				exists = A25

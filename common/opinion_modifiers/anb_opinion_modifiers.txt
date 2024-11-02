@@ -2676,15 +2676,21 @@ mb_made_mask_opinion = {
 giberd_wind_tower_opinion_up = {
 	opinion = 50
 }
+
 giberd_wind_tower_opinion_down = {
 	opinion = -50
 }
+
 giberd_potions_bribe = {
 	opinion = 100
 }
+
 giberd_is_restoring_archive = {
 	opinion = 25
+	yearly_decay = 1
 }
+
 giberd_is_stealing_archive = {
 	opinion = -30
+	yearly_decay = 1
 }
