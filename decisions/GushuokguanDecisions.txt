@@ -1,0 +1,168 @@
+country_decisions = {
+
+	gushuokguan_replenish_mercenary_manpower = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_replenish_mercenaries
+		}
+		allow = {
+			NOT = { has_country_modifier = gushuokguan_replenish_mercenaries_cooldown } 
+			num_of_hired_mercenary_companies = 1
+		}
+		effect = {
+			random_hired_mercenary_company = {
+				add_company_manpower = 0.15
+			}
+			add_country_modifier = {
+				name = gushuokguan_replenish_mercenaries_cooldown
+				duration = 1825
+			}
+		}
+	}
+
+	gushuokguan_release_guwaamud = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_guwaamud
+		}
+		allow = {
+			NOT = { exists = Y96 } #Guwaamud
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = shuvuushudi_region
+				value = 15 #15/30
+			}
+		}
+		effect = {
+			custom_tooltip = gushuokguan_release_guwaamud_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						region = shuvuushudi_region
+					}
+					cede_province = Y96 #Guwaamud
+					add_core = Y96 #Guwaamud
+				}
+				clr_country_flag = gushuokguan_can_release_guwaamud
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y96 #Guwaamud
+			}
+		}
+	}
+
+	gushuokguan_release_hubao = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_hubao
+		}
+		allow = {
+			NOT = { exists = Y03 } #Hubao
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					area = moryokang_area
+					area = jinqiu_area
+					area = jiangszun_area
+					area = bianfang_area
+					area = bianyuan_area
+				}
+				value = 10 #10/19
+			}
+		}
+		effect = {
+			custom_tooltip = gushuokguan_release_hubao_tt
+			hidden_effect = { 
+				clr_country_flag = gushuokguan_can_release_hubao
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = moryokang_area
+							area = jinqiu_area
+							area = jiangszun_area
+							area = bianfang_area
+							area = bianyuan_area
+						}
+					}
+					cede_province = Y03 #Hubao
+					add_core = Y03 #Hubao
+				}
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y03 #Hubao
+			}
+		}
+	}
+
+	gushuokguan_release_zyujyut = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_zyujyut
+		}
+		allow = {
+			NOT = { exists = Y23 } #Zyujyut
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					area = hungngon_area
+					area = wanglam_area
+					area = jyutsai_area
+					area = lamzung_area
+				}
+				value = 8 #8/15
+			}
+		}
+		effect = {
+			custom_tooltip = gushuokguan_release_zyujyut_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = hungngon_area
+							area = wanglam_area
+							area = jyutsai_area
+							area = lamzung_area
+						}
+					}
+					cede_province = Y23 #Zyujyut
+					add_core = Y23 #Zyujyut
+				}
+				clr_country_flag = gushuokguan_can_release_zyujyut
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y23 #Zyujyut
+			}
+		}
+	}
+
+	gushuokguan_release_one_xia = {
+		potential = {
+			tag = Y17 #Gushuokguan
+			has_country_flag = gushuokguan_can_release_one_xia
+		}
+		allow = {
+			NOT = { exists = Y99 } #One Xia
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = xianjie_region
+				value = 35 #35/43
+			}
+		}
+		effect = {
+			custom_tooltip = gushuokguan_release_one_xia_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						region = xianjie_region
+					}
+					cede_province = Y99 #One Xia
+					add_core = Y99 #One Xia
+				}
+				clr_country_flag = gushuokguan_can_release_one_xia
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y99 #One Xia
+			}
+		}
+	}
+}
