@@ -2237,8 +2237,6 @@ on_siege_won_country = {
 		10 = army_professionalism_events.1 #City Sacked
 		100 = 0
 	}
-	
-	kobold_dragon_cult_won_siege = yes
 	if = {
 		limit = {
 			OR = {
@@ -10254,7 +10252,6 @@ on_explore_coast = {
 		10 = exploration_events.15
 	}
 	
-	kobold_dragon_cult_exploration = yes
 }
 
 on_conquistador_empty = {
@@ -10385,7 +10382,6 @@ on_conquistador_empty = {
 		1800 = 0
 	}
 	
-	kobold_dragon_cult_exploration = yes
 }
 
 on_conquistador_native = {
@@ -10404,7 +10400,6 @@ on_conquistador_native = {
 		# 250 = 0
 	# }
 	
-	kobold_dragon_cult_exploration = yes
 }
 
 on_buy_religious_reform = {
@@ -11964,9 +11959,6 @@ on_admiral_recruited = {
 		}
 		add_navy_tradition = 1
 	}
-	
-	#Anbennar
-	kobold_dragon_cult_recruited_leader = yes
 }
 
 # country
