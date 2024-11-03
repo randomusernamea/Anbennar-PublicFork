@@ -10167,6 +10167,13 @@ on_five_year_pulse_4 = {
 
 		800 = 0
 	}
+
+	if = {
+		limit = { tag = B39 NOT = { has_country_modifier = wyvernheart_agenda_timer } }
+		country_event = {
+			id = flavour_wyvernheart.310
+		}
+	}
 }
 
 # El Dorado

@@ -434,39 +434,15 @@
 				type = all
 				is_core = ROOT
 				owned_by = ROOT
-				OR = {
-					has_province_modifier = autonomy_decreased
-					NOT = { local_autonomy = 10 } 
-					num_of_units_in_province = {
-						who = ROOT
-						amount = 3
-					}
-				}
 			}
 			middle_alen_area = {
 				type = all
 				is_core = ROOT
 				owned_by = ROOT
-				OR = {
-					has_province_modifier = autonomy_decreased
-					NOT = { local_autonomy = 10 } 
-					num_of_units_in_province = {
-						who = ROOT
-						amount = 3
-					}
-				}
 			}
 			229 = {
 				is_core = ROOT
 				owned_by = ROOT
-				OR = {
-					has_province_modifier = autonomy_decreased
-					NOT = { local_autonomy = 10 } 
-					num_of_units_in_province = {
-						who = ROOT
-						amount = 3
-					}
-				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = wyvernheart_B2_trigger_tt
@@ -725,13 +701,17 @@
 			}
 			inner_castanor_region = {
 				type = all
-				NOT = {
-					area = esshyl_area
-					area = sarwood_area
-					area = nortessord_area
-					area = clouded_wood_area
+				if = {
+					limit = {
+						NOT = {
+							area = esshyl_area
+							area = sarwood_area
+							area = nortessord_area
+							area = clouded_wood_area
+						}
+					}
+					culture = heartman
 				}
-				culture = heartman
 			}
 		} 
 
@@ -858,7 +838,10 @@
 			stability = 1
 			treasury = 100
 			army_tradition = 20
-			legitimacy = 20
+			OR = {
+				legitimacy = 20
+				devotion = 20
+			}
 		}
 
 		effect = {
@@ -908,24 +891,34 @@
 		trigger = {
 			army_size = 15
 			middle_alen_area = {
-				culture = ROOT
-				NOT = { has_construction = any }
+				OR = {
+					culture = ROOT
+					NOT = { has_construction = any }
+				}
 			}
 			athfork_area = {
-				culture = ROOT
-				NOT = { has_construction = any }
+				OR = {
+					culture = ROOT
+					NOT = { has_construction = any }
+				}
 			}
 			ebonmarck_area = {
-				culture = ROOT
-				NOT = { has_construction = any }
+				OR = {
+					culture = ROOT
+					NOT = { has_construction = any }
+				}
 			}
 			westwall_approach_area = {
-				culture = ROOT
-				NOT = { has_construction = any }
+				OR = {
+					culture = ROOT
+					NOT = { has_construction = any }
+				}
 			}
 			229 = {
-				culture = ROOT
-				NOT = { has_construction = any }
+				OR = {
+					culture = ROOT
+					NOT = { has_construction = any }
+				}
 			}
 			adm_power = 50
 			mil_power = 50
@@ -1037,7 +1030,7 @@
 			}
 			calc_true_if = {
 				amount = 10
-				any_owned_province = {
+				all_owned_province = {
 					has_orcish_minority_trigger = yes
 				}
 			}
@@ -1084,7 +1077,7 @@
 			calc_true_if = {
 				amount = 30
 				inner_castanor_region = {
-					type = any
+					type = all
 					owned_by = ROOT
 					is_core = ROOT
 				}
@@ -1132,7 +1125,7 @@
 					type = castonath_patrician_rebel
 				}
 			}
-			821 = {
+			832 = {
 				spawn_rebels = {
 					size = 2
 					type = castonath_patrician_rebel
@@ -1212,9 +1205,18 @@
 		} 
 
 		effect = {
-			set_estate_privilege = estate_wyvernheart_subservient_artificers
 			clr_country_flag = wyvernheart_burnblood_2
 			set_country_flag = wyvernheart_burnblood_3
+			custom_tooltip = wyvernheart_cleanse_burnblood_generation_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_2_1 }
+				disband_mercenary_company = THIS
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_2_2 }
+				disband_mercenary_company = THIS
+			}
+			add_treasury = 75
 			add_estate_loyalty = {
 				estate = estate_church
 				loyalty = -20
@@ -1250,6 +1252,7 @@
 			}
 			set_country_flag = artifice_set_up
 			set_country_flag = magic_artificery_mage_only
+			set_estate_privilege = estate_wyvernheart_subservient_artificers
 		} 
 	}
 
@@ -1415,14 +1418,21 @@
 			else = {
 				add_prestige = -10
 			}
-			711 = {
-				owner = {
-					add_casus_belli = {
-						type = cb_trade_war
-						target = ROOT
-						months = 12
+			if = {
+				limit = {
+					711 = {
+						NOT = { owned_by = ROOT }
 					}
-					add_historical_rival = ROOT
+				}
+				711 = {
+					owner = {
+						add_casus_belli = {
+							type = cb_trade_war
+							target = ROOT
+							months = 12
+						}
+						add_historical_rival = ROOT
+					}
 				}
 			}
 			wudhal_area = {
@@ -1529,10 +1539,8 @@
 
 		trigger = {
 			castonath_area = {
-				OR = {
-					has_province_modifier = centralize_state
-					has_courthouse_building_trigger = yes
-				}
+				type = all
+				has_courthouse_building_trigger = yes
 				culture = ROOT
 				development = 25
 				has_production_building_trigger = yes
@@ -1685,28 +1693,30 @@
 			olavlund_region = {
 				type = all
 				owner = {
-					OR = {
-						AND = {
-							capital_scope = {
-								region = olavlund_region
+					custom_trigger_tooltip = {
+						tooltip = wyvernheart_E3_trigger_tt
+						if = {
+							limit = { capital_scope = { region = olavlund_region } }
+							OR = {
+								NOT = { army_size = ROOT }
+								tag = ROOT
 							}
-							NOT = { army_size = ROOT }
 						}
-						tag = ROOT
 					}
 				}
 			}
 			alenic_reach_region = {
 				type = all
 				owner = {
-					OR = {
-						AND = {
-							capital_scope = {
-								region = alenic_reach_region
+					custom_trigger_tooltip = {
+						tooltip = wyvernheart_E3_trigger_tt
+						if = {
+							limit = { capital_scope = { region = alenic_reach_region } }
+							OR = {
+								NOT = { army_size = ROOT }
+								tag = ROOT
 							}
-							NOT = { army_size = ROOT }
 						}
-						tag = ROOT
 					}
 				}
 			}
@@ -1845,13 +1855,6 @@
 				province_id = 852
 				province_id = 853
 			}
-			NOT = {
-				has_building = mage_tower
-				OR = {
-					num_of_times_expanded_infrastructure = 2
-					development = 40
-				}
-			}
 		} 
 
 		trigger = {
@@ -1906,7 +1909,7 @@
 			}
 			calc_true_if = {
 				amount = 10
-				any_owned_province = {
+				all_owned_province = {
 					has_orcish_minority_trigger = yes
 				}
 			}
@@ -1997,7 +2000,7 @@
 			}
 			estate_influence = {
 				estate = estate_mages
-				influence = 60
+				influence = 50
 			}
 			has_government_power = {
 				mechanic_type = floodborn_council_mechanic
@@ -2027,6 +2030,20 @@
 		effect = {
 			clr_country_flag = wyvernheart_burnblood_4
 			set_country_flag = wyvernheart_burnblood_5
+			custom_tooltip = wyvernheart_cleanse_burnblood_generation_tt
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_4_1 }
+				disband_mercenary_company = THIS
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_4_2 }
+				disband_mercenary_company = THIS
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_4_3 }
+				disband_mercenary_company = THIS
+			}
+			add_treasury = 200
 			custom_tooltip = wyvernheart_E9_effect_tt
 			random_hired_mercenary_company = {
 				limit = { 
@@ -2041,7 +2058,7 @@
 						template = merc_wyvernheart_burnblood_company_4_3
 					}
 				}
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			840 = {
 				add_province_modifier = {
@@ -2166,32 +2183,48 @@
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = wyvernheart_C10_trigger_tt
-				calc_true_if = {
-					amount = 3
-					any_hired_mercenary_company = {
-						OR = {
-							template = merc_wyvernheart_burnblood_company_5_1
-							template = merc_wyvernheart_burnblood_company_5_2
-							template = merc_wyvernheart_burnblood_company_5_3
-							template = merc_wyvernheart_burnblood_company_6_1
-							template = merc_wyvernheart_burnblood_company_6_3
-							template = merc_wyvernheart_burnblood_company_6_3
-							template = merc_wyvernheart_burnblood_company_6_4
-						}
-						location = {
-							unit_has_leader = yes
-						}
+				any_hired_mercenary_company = {
+					OR = {
+						template = merc_wyvernheart_burnblood_company_5_1
+						template = merc_wyvernheart_burnblood_company_6_1
+						template = merc_wyvernheart_burnblood_company_6_4
+					}
+					location = {
+						unit_has_leader = yes
 					}
 				}
-				calc_true_if = {
-					amount = 3
-					has_leader_with = {
-						general = yes
-						shock = 7
+				any_hired_mercenary_company = {
+					OR = {
+						template = merc_wyvernheart_burnblood_company_5_2
+						template = merc_wyvernheart_burnblood_company_6_2
+						template = merc_wyvernheart_burnblood_company_6_4
+					}
+					location = {
+						unit_has_leader = yes
+					}
+				}
+				any_hired_mercenary_company = {
+					OR = {
+						template = merc_wyvernheart_burnblood_company_5_3
+						template = merc_wyvernheart_burnblood_company_6_3
+						template = merc_wyvernheart_burnblood_company_6_4
+					}
+					location = {
+						unit_has_leader = yes
 					}
 				}
 			}
-		} 
+			has_leader_with = {
+				general = yes
+				shock = 8
+			}
+			has_leaders = {
+				value = 3
+				type = general
+				include_monarch = no
+				include_heir = no
+			}
+		}
 
 		effect = {
 			every_known_country = {
@@ -2353,9 +2386,23 @@
 		} 
 
 		effect = {
+			custom_tooltip = wyvernheart_cleanse_burnblood_generation_tt
 			add_army_tradition = -20
 			set_country_flag = wyvernheart_burnblood_6
 			clr_country_flag = wyvernheart_burnblood_5
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_5_1 }
+				disband_mercenary_company = THIS
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_5_2 }
+				disband_mercenary_company = THIS
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_wyvernheart_burnblood_company_5_3 }
+				disband_mercenary_company = THIS
+			}
+			add_treasury = 500
 			custom_tooltip = wyvernheart_E10_effect_tt
 			hidden_effect = {
 				every_owned_province = {

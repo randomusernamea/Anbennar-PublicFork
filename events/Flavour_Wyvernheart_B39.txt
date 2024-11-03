@@ -56,21 +56,6 @@ country_event = {
 			hide_skills = yes
 		}
 	}
-	
-	#Keep their name
-	option = {		
-		name = "flavour_wyvernheart.1.c"
-		ai_chance = { factor = 20 }	
-		define_heir = {
-			dynasty = ROOT
-			age = 16
-			male = yes
-			change_adm = 1
-			change_dip = 1
-			change_mil = 1
-			hide_skills = yes
-		}
-	}
 }
 
 country_event = {#A Beast Unlike Any Other C4
@@ -542,6 +527,12 @@ country_event = {#A Wyvern's Heart Pumping Burning Blood E5.3
 				"
 			}
 		}
+		custom_tooltip = wyvernheart_cleanse_burnblood_generation_tt
+		random_hired_mercenary_company = {
+			limit = { template = merc_wyvernheart_burnblood_company_1 }
+			disband_mercenary_company = THIS
+		}
+		add_treasury = 25
 		set_country_flag = wyvernheart_burnblood_2
 		clr_country_flag = wyvernheart_burnblood_1
 		custom_tooltip = wyvernheart_E5_effect_tt
@@ -614,6 +605,16 @@ country_event = {#Greater than the Sum of its Parts C8.2
 	option = {
 		name = "flavour_wyvernheart.109.a"
 		ai_chance = { factor = 1 }
+		custom_tooltip = wyvernheart_cleanse_burnblood_generation_tt
+		random_hired_mercenary_company = {
+			limit = { template = merc_wyvernheart_burnblood_company_3_1 }
+			disband_mercenary_company = THIS
+		}
+		random_hired_mercenary_company = {
+			limit = { template = merc_wyvernheart_burnblood_company_3_2 }
+			disband_mercenary_company = THIS
+		}
+		add_treasury = 50
 		clr_country_flag = wyvernheart_burnblood_3
 		set_country_flag = wyvernheart_burnblood_4
 		custom_tooltip = wyvernheart_C8_event_tt
@@ -660,21 +661,21 @@ country_event = {#The Castanbane Meteor
 			change_trade_goods = damestear
 			set_province_flag = permanent_damestear
 			if = {
-				limit = { has_ruler_flag = abjuration_3 }
+				limit = { ROOT = { has_ruler_flag = abjuration_3 } }
 				add_devastation = 25
 				add_base_manpower = -4
 				add_base_production = -4
 				add_base_tax = -4
 			}
 			else_if = {
-				limit = { has_ruler_flag = abjuration_2 }
+				limit = { ROOT = { has_ruler_flag = abjuration_2 } }
 				add_devastation = 50
 				add_base_manpower = -6
 				add_base_production = -6
 				add_base_tax = -6
 			}
 			else_if = {
-				limit = { has_ruler_flag = abjuration_1 }
+				limit = { ROOT = { has_ruler_flag = abjuration_1 } }
 				add_devastation = 75
 				add_base_manpower = -8
 				add_base_production = -8
@@ -1821,7 +1822,7 @@ country_event = {#Select clique for Overseer
 	}
 }
 
-#200+ Civil war events
+#200+ Civil war events - under on_province_culture_converted
 country_event = {#The Promised Mage
 	id = flavour_wyvernheart.200
 	title = flavour_wyvernheart.200.t
@@ -2005,6 +2006,18 @@ country_event = {#Victory or Death
 	trigger = {
 		tag = B39
 	}
+
+	immediate = {
+		hidden_effect = {
+			spawn_wyvernheart_civil_war_rebels = yes
+			add_country_modifier = {
+				name = wyvernheart_war_wizard_rebels_mod
+				duration = -1
+			}
+			spawn_wyvernheart_civil_war_rebels_with_war_wizards = yes
+			remove_country_modifier = wyvernheart_war_wizard_rebels_mod
+		}
+	}
 	
 	#Option A
 	option = {
@@ -2037,33 +2050,64 @@ country_event = {#Event manager for the flavour events
 		picture = ROYAL_COUPLE_FUTURE_eventPicture
 	}
 
+	hidden = yes
 	is_triggered_only = yes
 	
 	trigger = {
 		tag = B39
 		has_country_flag = wyvernheart_council_events_enabled
 	}
-	immediate = {#decides which 3 agendas are proposed
-		
-	}
 	
 	#Option A
 	option = {
 		name = "flavour_wyvernheart.300.a"
 		ai_chance = { factor = 1 }
-	}
-	#Option B
-	option = {
-		name = "flavour_wyvernheart.300.b"
-		ai_chance = { factor = 1 }
-	}
-	#Option C
-	option = {
-		name = "flavour_wyvernheart.300.c"
-		ai_chance = { factor = 1 }
+		random_list = {
+			1000 = {
+				trigger = { NOT = { has_country_flag = wyvernheart_crisis_of_devotion has_global_flag = crimson_deluge_is_over } }
+				country_event = {
+					id = flavour_wyvernheart.302
+				}
+			}
+			1000 = {
+				trigger = { NOT = { has_country_flag = wyvernheart_new_face_of_magic mission_completed = the_red_flood } }
+				country_event = {
+					id = flavour_wyvernheart.303
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.304
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.305
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.306
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.307
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.308
+				}
+			}
+			1 = {
+				country_event = {
+					id = flavour_wyvernheart.309
+				}
+			}
+		}
 	}
 }
-
 
 country_event = {#A Divided Council #D5
 	id = flavour_wyvernheart.301
@@ -2089,7 +2133,14 @@ country_event = {#A Divided Council #D5
 	}
 
 	immediate = {
-		generate_estate_agenda = estate_mages
+		generate_estate_agenda = estate_nobles
+		hidden_effect = {
+			add_country_modifier = {
+				name = wyvernheart_agenda_timer
+				duration = 3600
+				hidden = yes
+			}
+		}
 	}
 
 	after = {
@@ -2101,7 +2152,7 @@ country_event = {#A Divided Council #D5
 		name = "flavour_wyvernheart.301.a"
 		ai_chance = { factor = 1 }
 		set_country_flag = wyvernheart_council_events_enabled
-		start_estate_agenda = estate_mages
+		start_estate_agenda = estate_nobles
 	}
 }
 
@@ -2127,6 +2178,13 @@ country_event = {#A Crisis in Devotion
 	trigger = {
 		tag = B39
 	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = wyvernheart_crisis_of_devotion
+		}
+	}
+
 
 	#Option A
 	option = {
@@ -2156,6 +2214,7 @@ country_event = {#A Crisis in Devotion
 			name = wyvernheart_faith_in_magic_reinforced
 			duration = 7300
 		}
+		custom_tooltip = wyvernheart_black_doctrine_provinces
 		for = {
 			amount = 10
 			effect = "
@@ -2189,6 +2248,12 @@ country_event = {#The New Face of the Council
 	
 	trigger = {
 		tag = B39
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = wyvernheart_new_face_of_magic
+		}
 	}
 
 	#Option A
@@ -2251,29 +2316,18 @@ country_event = {#A Change in Course
 		tag = B39
 	}
 	immediate = {
-		hidden_effect = {
-			random_list = {#Chooses a random Rivalry Agenda
-				1 = {
+		generate_estate_agenda = estate_nobles
+	}
 
-				}
-				1 = {
-
-				}
-				1 = {
-
-				}
-				1 = {
-
-				}
-			}
-		}
+	after = {
+		clear_estate_agenda_cache = ROOT
 	}
 
 	#Option A
 	option = {
 		name = "flavour_wyvernheart.304.a"
 		ai_chance = { factor = 1 }
-		#wip
+		start_estate_agenda = estate_nobles
 	}
 	#Option B
 	option = {
@@ -2489,25 +2543,410 @@ country_event = {#The Rivalries of the Council
 	
 	trigger = {
 		tag = B39
+		OR = {
+			AND = {#Hardliner vs Technocrat
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_hardliner_seat
+					}
+				}
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_technocratic_seat
+					}
+				}
+			}
+			AND = {#Ambitious vs Devout
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_ambitious_seat
+					}
+				}
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_devout_seat
+					}
+				}
+			}
+			AND = {#Heartmage vs Wealthy
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_heartmage_seat
+					}
+				}
+				OR = {
+					840 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+					728 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+					817 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+					701 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+					227 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+					777 = {
+						has_province_modifier = wyvernheart_wealthy_seat
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = wyvernheart_rivalry_hardliner_technocrat
+			clr_country_flag = wyvernheart_rivalry_ambitious_devout
+			clr_country_flag = wyvernheart_rivalry_heartmage_wealthy
+			random_list = {
+				1 = {
+					trigger = {
+						AND = {#Hardliner vs Technocrat
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_hardliner_seat
+								}
+							}
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_technocratic_seat
+								}
+							}
+						}
+					}
+					set_country_flag = wyvernheart_rivalry_hardliner_technocrat
+				}
+				1 = {
+					trigger = {
+						AND = {#Ambitious vs Devout
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_ambitious_seat
+								}
+							}
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_devout_seat
+								}
+							}
+						}
+					}
+					set_country_flag = wyvernheart_rivalry_ambitious_devout
+				}
+				1 = {
+					trigger = {
+						AND = {#Heartmage vs Wealthy
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_heartmage_seat
+								}
+							}
+							OR = {
+								840 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+								728 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+								817 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+								701 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+								227 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+								777 = {
+									has_province_modifier = wyvernheart_wealthy_seat
+								}
+							}
+						}
+					}
+					set_country_flag = wyvernheart_rivalry_heartmage_wealthy
+				}
+			}
+		}
 	}
 
 	#Option A
 	option = {
 		name = "flavour_wyvernheart.308.a"
 		ai_chance = { factor = 1 }
-		#WIP
+		if = {
+			limit = { has_country_flag = wyvernheart_rivalry_hardliner_technocrat }
+			add_stability = 1
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = wyvernheart_technocratic_seat_mod }
+				add_devastation = 15
+				spawn_rebels = {
+					size = 2
+					type = mage_duelists_rebels
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = wyvernheart_rivalry_ambitious_devout }
+			add_estate_loyalty = {
+				estate = estate_mages
+				loyalty = 10
+			}
+			add_legitimacy_equivalent = { amount = -10 }
+			add_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = 5
+			}
+			add_country_modifier = {
+				name = wyvernheart_upset_mages
+				duration = 3650
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = { has_province_modifier = wyvernheart_heartmage_seat }
+				if = {
+					limit = {
+						devastation = 1
+					}
+					add_devastation = -20
+				}
+				else = {
+					add_random_development = 1
+				}
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+			add_estate_loyalty = {
+				estate = estate_adventurers
+				loyalty = 10
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = wyvernheart_wealthy_seat }
+				add_province_modifier = {
+					name = wyvernheart_wealthy_scions_angry
+					duration = 3650
+				}
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -10
+			}
+		}
 	}
 	#Option B
 	option = {
 		name = "flavour_wyvernheart.308.b"
 		ai_chance = { factor = 1 }
-		#WIP
-	}
-	#Option B
-	option = {
-		name = "flavour_wyvernheart.308.c"
-		ai_chance = { factor = 1 }
-		#WIP
+		if = {
+			limit = { has_country_flag = wyvernheart_rivalry_hardliner_technocrat }
+			change_innovativeness = 2
+			add_estate_loyalty = {
+				estate = estate_mages
+				loyalty = 10
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = wyvernheart_hardliner_seat }
+				add_unrest = 10
+				spawn_rebels = {
+					size = 2
+					type = noble_rebels
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = wyvernheart_rivalry_ambitious_devout }
+			add_legitimacy_equivalent = { amount = 10 }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+			add_country_modifier = {
+				name = reduced_stability_cost
+				duration = 3650
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = wyvernheart_devout_seat_mod }
+				add_unrest = 10
+				spawn_rebels = {
+					size = 3
+					type = mage_duelists_rebels
+				}
+			}
+		}
+		else = {
+			add_mercantilism = 2
+			add_prestige = -15
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 15
+			}
+			add_estate_loyalty = {
+				estate = estate_mages
+				loyalty = -10
+			}
+		}
 	}
 }
 
@@ -2604,7 +3043,58 @@ country_event = {#An Upstart in the Council
 	}
 }
 
+country_event = {#Event manager for the flavour events
+	id = flavour_wyvernheart.310
+	title = flavour_wyvernheart.310.t
+	desc = flavour_wyvernheart.310.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
 
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+	
+	immediate = {
+		hidden_effect = {
+			generate_estate_agenda = estate_nobles
+			generate_estate_agenda = estate_mages
+			add_country_modifier = {
+				name = wyvernheart_agenda_timer
+				duration = 3600
+				hidden = yes
+			}
+		}
+	}
+
+	after = {
+		clear_estate_agenda_cache = ROOT
+	}
+	
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.310.a"
+		ai_chance = { factor = 1 }
+		start_estate_agenda = estate_nobles
+	}
+	#Option B
+	option = {
+		name = "flavour_wyvernheart.310.b"
+		ai_chance = { factor = 1 }
+		start_estate_agenda = estate_mages
+	}
+}
 
 
 

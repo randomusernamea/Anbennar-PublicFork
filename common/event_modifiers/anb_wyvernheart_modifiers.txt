@@ -122,6 +122,56 @@ wyvernheart_heartmage_vision_of_magic = {
 	land_morale = -0.05
 	stability_cost_modifier = 0.20
 }
+wyvernheart_spell_agenda_ambitious = {
+	trade_efficiency = -0.10
+}
+wyvernheart_spell_agenda_devouts = {
+	technology_cost = 0.05
+	tolerance_own = 2
+}
+wyvernheart_spell_agenda_heartmages = {
+	adventurers_loyalty_modifier = 0.20
+	global_monthly_devastation = -0.10
+	global_autonomy = 0.05
+	global_unrest = 2
+}
+wyvernheart_spell_agenda_hardliners = {
+	development_cost = 0.05
+}
+wyvernheart_war_agenda_hardliner = {
+	land_maintenance_modifier = 0.20
+	global_regiment_cost = 0.20
+}
+wyvernheart_war_agenda_ambitious = {
+	province_warscore_cost = -0.10
+	harsh_treatment_cost = 0.20
+	stability_cost_modifier = 0.20
+}
+wyvernheart_war_agenda_wealthy = {
+	global_foreign_trade_power = 0.15
+	tolerance_own = -2
+	legitimacy = -2
+	devotion = -2
+}
+wyvernheart_war_agenda_devout = {
+	global_missionary_strength = 0.02
+	build_cost = 0.10
+}
+wyvernheart_war_agenda_heartmage = {
+	culture_conversion_time = -0.25
+	global_monthly_devastation = -0.10
+	monthly_bloodbrand_power = -0.20
+}
+wyvernheart_war_agenda_technocrat = {
+	all_power_cost = -0.025
+	development_cost = 0.05
+}
+wyvernheart_upset_mages = {
+	global_unrest = 2
+}
+wyvernheart_wealthy_scions_angry = {
+	local_production_efficiency = -0.25
+}
 
 wyvernheart_faith_in_the_flood_questionned = {
 	stability_cost_modifier = 0.25
@@ -175,3 +225,4 @@ wyvernheart_ambitious_seat_mod = {
 wyvernheart_technocratic_seat = {}
 wyvernheart_devout_seat = {}
 wyvernheart_ambitious_seat = {}
+wyvernheart_agenda_timer = {}

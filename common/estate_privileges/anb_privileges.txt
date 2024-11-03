@@ -14051,7 +14051,7 @@ estate_wyvernheart_subservient_artificers = {
 estate_wyvernheart_floodborn_council = {
 	icon = privilege_one_faith_one_culture
 	max_absolutism = 10
-	influence = 0.10
+	influence = 0.25
 	loyalty = 0.10
 	land_share = 0
 	is_valid = { mission_completed = the_red_flood }
@@ -14059,7 +14059,7 @@ estate_wyvernheart_floodborn_council = {
 	on_granted = {
 		custom_tooltip = estate_wyvernheart_floodborn_council_tt
 		custom_tooltip = add_magic_study_modifier_25_tt
-		update_magic_study_experience_modifier = { value = 25 }
+		update_magic_study_experience_modifier = { value = 25 }  #MAGICREWORK
 	}
 	on_revoked = {
 	}

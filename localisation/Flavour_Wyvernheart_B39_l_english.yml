@@ -70,7 +70,7 @@
 
  the_wyvern_ascendant_title:0 "The Wyvern Ascendant"
  the_wyvern_ascendant_desc:0 ""
- wyvernheart_C10_trigger_tt:0 "Has at least three §YBurnblood Companies§! hired and lead by a war-wizard"
+ wyvernheart_C10_trigger_tt:0 "Has at least three §YBurnblood Companies§! hired and lead by generals"
  wyvernheart_the_wyvern_rises:0 "The Wyvern Rises"
 
  a_stronger_escann_title:0 "A Stronger Escann"
@@ -99,6 +99,7 @@
 
  towards_the_sea_title:0 "Towards the Sea"
  towards_the_sea_desc:0 ""
+ wyvernheart_E3_trigger_tt:0 "Have a smaller army than §YWyvernheart§!"
 
  soulstones_of_vroren_title:0 "The Soulstones of Vroren"
  soulstones_of_vroren_desc:0 ""
@@ -213,7 +214,7 @@
  flavour_wyvernheart.108.a:0 "... and smites a Wyvern with lightning."
 
  flavour_wyvernheart.109.t:0 "Greater Than the Sum of its Parts"
- flavour_wyvernheart.109.d:0 ""It is done"\nAn artificer rises as he pulls up his glasses, a brand drawn in blood on his forehead can be spotted.\n"Head-Arcanist please check the results", beckoning towards a thick window.\n\nA tall woman enters, vestments of a deep burgundy, symbol of her seat at the council.\n\n"Indeed, what a marvelous result"\nShe says gazing at the Bloodburn tied to the reclined table, eyes wide open itself starring back.\n\nIts eyes a burning orange and instead of pupil a cleft sclera akin to a reptile. The skin a deep red, enhanced by infernal means, magic enhancement and perfected through bio artificery. A beast deformed, hulking, muscles bulging. Claws as sharp as razors, scale as hard as steel.\n\nThe Head-Arcanist smiles and focuses on the brand of subjugation on the beasts forehead, and it relents and closes its eyes."
+ flavour_wyvernheart.109.d:0 ""It is done"\nAn artificer rises as he pulls up his glasses, a brand drawn in blood on his forehead can be spotted.\n"Head-Arcanist please check the results", beckoning towards a thick window.\n\nA tall woman enters, vestments of a deep burgundy, symbol of her seat at the council.\n\n"Indeed, what a marvelous result"\nShe says gazing at the Bloodburn tied to the reclined table, eyes wide open itself starring back.\n\nIts eyes a burning orange and instead of pupil a cleft sclera akin to a reptile. The skin a deep red, enhanced by infernal means, magic enhancement and perfected through bio artificery. A beast deformed, hulking, muscles bulging. Claws as sharp as razors, scale as hard as steel.\n\nThe Head-Arcanist smiles and focuses on the brand of subjugation on the beasts forehead, and it relents and closes its eyes.\n"
  flavour_wyvernheart.109.a:0 "Truly, we have made a perfect weapon."
 
  flavour_wyvernheart.110.t:0 "The Castanbane Meteor"
@@ -277,7 +278,7 @@
 
  flavour_wyvernheart.300.t:0 "Event Manager"
  flavour_wyvernheart.300.d:0 "placeholder"
- flavour_wyvernheart.300.a:0 "Truly we have surpassed our forebears."
+ flavour_wyvernheart.300.a:0 "A"
 
  flavour_wyvernheart.301.t:0 "A Divided Council"
  flavour_wyvernheart.301.d:0 "placeholder"
@@ -289,6 +290,7 @@
  flavour_wyvernheart.302.b:0 "Their devotion should be to Magic itself."
  wyvernheart_faith_in_the_flood_questionned:0 "Faith in the Flood questionned"
  wyvernheart_faith_in_magic_reinforced:0 "Faith in Magic reinforced"
+ wyvernheart_black_doctrine_provinces:0 "Ten random provinces will convert to §YBlack Doctrine§!"
 
  flavour_wyvernheart.303.t:0 "The New Face of the Council"
  flavour_wyvernheart.303.d:0 "placeholder"
@@ -324,6 +326,9 @@
  flavour_wyvernheart.308.t:0 "The Rivalries of the Council"
  flavour_wyvernheart.308.d:0 "placeholder"
  flavour_wyvernheart.308.a:0 "The session begins, bring forth the first agenda."
+ flavour_wyvernheart.308.b:0 "The session begins, bring forth the first agenda."
+ wyvernheart_upset_mages:0 "Upset Mages"
+ wyvernheart_wealthy_scions_angry:0 "Wealthy Scions Outraged"
 
  flavour_wyvernheart.309.t:0 "An Upstart in the Council"
  flavour_wyvernheart.309.d:0 "placeholder"
@@ -332,6 +337,10 @@
  flavour_wyvernheart.309.c:0 "... pardonned for his first, and last mistake."
  flavour_wyvernheart.309.e:0 "... branded as a Burnblood."
 
+ flavour_wyvernheart.310.t:0 "The Council's Agenda"
+ flavour_wyvernheart.310.d:0 "placeholder"
+ flavour_wyvernheart.310.a:0 "A"
+ flavour_wyvernheart.310.b:0 "B"
 
  flavour_wyvernheart.401.t:0 "A $CULTURE$ Home"
  flavour_wyvernheart.401.d:0 "placeholder"
@@ -427,6 +436,15 @@
  wyvernheart_become_illusion_2:0 "[Monarch.GetTitle] will become §YRenowned§! in §YIllusion§! Magic"
  wyvernheart_become_illusion_3:0 "[Monarch.GetTitle] will become §YLegendary§! in §YIllusion§! Magic"
 
+ ruler_not_studying_abjuration:0 "Ruler §Ynot§! studying Abjuration"
+ ruler_not_studying_conjuration:0 "Ruler §Ynot§! studying Conjuration"
+ ruler_not_studying_divination:0 "Ruler §Ynot§! studying Divination"
+ ruler_not_studying_enchantment:0 "Ruler §Ynot§! studying Enchantment"
+ ruler_not_studying_evocation:0 "Ruler §Ynot§! studying Evocation"
+ ruler_not_studying_illusion:0 "Ruler §Ynot§! studying Illusion"
+ ruler_not_studying_necromancy:0 "Ruler §Ynot§! studying Necromancy"
+ ruler_not_studying_transmutation:0 "Ruler §Ynot§! studying Transmutation"
+
  estate_mages_wyvernheart_invest_in_critical_materials:0 "Invest in the production of critical materials in [agenda_province.GetName]"
  estate_mages_wyvernheart_invest_in_critical_materials_desc:0 "The [Root.GetMagesName] requests that we fund the development of new extraction facilities in [agenda_province.GetName]. They claim that it is a priority investment."
  estate_mages_wyvernheart_wave_the_heart:0 "Wave the Heart over [agenda_province.GetAreaName]"
@@ -447,6 +465,33 @@
  wyvernheart_all_estate_lose_10_loyalty_tt:0 "All §YEstates§! lose §R10%§! loyalty equilibrium for 20 years."
  estate_mages_wyvernheart_research_new_spells:0 "Research new spells"
  estate_mages_wyvernheart_research_new_spells_desc:0 "The [Root.GetMagesName] advise the Sovereign to further their study in specific Magical Schools, depending on whose advice we follow different rewards can be reaped."
- wyvernheart_school_agenda_scion_ambitious_effect_tt:0 "Supporting the §YWealthy Scions§! (studying §Y[Root.GetSchoolTarget1]§!) will grant:\n§G-10.0%§! Construction Cost  for 10 years\n§G-10.0%§! Construction Time for 10 years\n§R+3§! Inflation\n§G+10%§! Clergy Loyalty\n§R-10%§! Adventurer and Floodborn Council loyalty\n\nSupporting the §YAmbitious Floodborns§! (studying §y[Root.GetSchoolTarget2]§!) will grant:\n§G+15.0%§! Spy Network Construction for 10 years\n§R-10%§! Trade Efficiency for 10 years\n§G+10%§! Floodborn Council Loyalty"
- wyvernheart_school_agenda_technocrat_devout_effect_tt:0 ""
- wyvernheart_school_agenda_heartmage_hardliner_effect_tt:0 "Supporting the §YHeartmages§! (studying §Y[Root.GetSchoolTarget1]§!) will grant:\n§G+20.0%§! Adventurer Loyalty Equilibrium  for 10 years\n§G-0.1%§! Monthly Devastation for 10 years\n§R+0.05§! Global Autonomy for 10 years\n§R+2§! National Unrest for 10 years\n§R-10%§! Noble and Floodborn Council loyalty\n\nSupporting the §YHardliner Mages§! (studying §Y[Root.GetSchoolTarget2]§!) will grant:\n§G+50§! Administrative Power\n§G-10§! Rebel Progress\n§R-5%§! Development Cost for 10 years\n§G+10%§! Noble Loyalty\n§R-10§! Adventurer and Clergy loyalty"
+ wyvernheart_school_agenda_scion_ambitious_effect_tt:0 "Supporting the §YWealthy Scions§! (studying §Y[Root.GetSchoolTarget1]§!) will grant:\n§G-20.0%§! Construction Cost for 10 years\n§G-20.0%§! Construction Time for 10 years\n§R+3§! Inflation\n§G+10%§! Clergy Loyalty\n§R-10%§! Adventurer and Floodborn Council loyalty\n\nSupporting the §YAmbitious Floodborns§! (studying §y[Root.GetSchoolTarget2]§!) will grant:\n§G+30.0%§! Spy Network Construction for 10 years\n§R-10%§! Trade Efficiency for 10 years\n§G+10%§! Floodborn Council Loyalty"
+ wyvernheart_school_agenda_technocrat_devout_effect_tt:0 "Supporting the §YTechnocrat Arcanists§! (studying §Y[Root.GetSchoolTarget1]§!) will grant:\n§G+200§! experience in §Y[Root.GetSchoolTarget1]§!\n§R-5§! §YBloodbrand§!\n§R-10%§! Adventurer and Clergy loyalty\n\nSupporting the §YDevouts of the Flood§! (studying §y[Root.GetSchoolTarget2]§!) will grant:\n§G+2§! Tolerance of the True Faith for 10 years\n§R+5%§! Technology Cost for 10 years\n§G+10§! Legitimacy\n§G+10%§! Clergy Loyalty"
+ wyvernheart_school_agenda_heartmage_hardliner_effect_tt:0 "Supporting the §YHeartmages§! (studying §Y[Root.GetSchoolTarget1]§!) will grant:\n§G+20.0%§! Adventurer Loyalty Equilibrium for 10 years\n§G-0.10%§! Monthly Devastation for 10 years\n§R+0.05§! Global Autonomy for 10 years\n§R+2§! National Unrest for 10 years\n§R-10%§! Noble and Floodborn Council loyalty\n\nSupporting the §YHardliner Mages§! (studying §Y[Root.GetSchoolTarget2]§!) will grant:\n§G+50§! Administrative Power\n§G-10§! Rebel Progress\n§R+5%§! Development Cost for 10 years\n§G+10%§! Noble Loyalty\n§R-10§! Adventurer and Clergy loyalty"
+ wyvernheart_spell_agenda_ambitious:0 "Wealthy Scions Interference"
+ wyvernheart_spell_agenda_devouts:0 "Devouts of the Flood Oversight"
+ wyvernheart_spell_agenda_heartmages:0 "Heartmages Pleased"
+ wyvernheart_spell_agenda_hardliners:0 "Heartmages Protests"
+ wyvernheart_study_x_or_y:0 "Study [Root.GetSchoolTarget1] or [Root.GetSchoolTarget2]"
+ wyvernheart_dont_study_x_or_y:0 "Not studying [Root.GetSchoolTarget1] or [Root.GetSchoolTarget2]"
+ 
+ estate_nobles_wyvernheart_choose_avenue_of_expansion:0 "Choose the Avenue of Expansion"
+ estate_nobles_wyvernheart_choose_avenue_of_expansion_desc:0 ""
+ wyvernheart_war_agenda_hardliner_ambitious_effect_tt:0 "Supporting the §YHardliner Mages§! (at war with §Y[agenda_country_1.GetName]§! and more than §Y50§! war score) will grant:\n§R+20.0%§! Land Maintenance Cost for 10 years\n§R+20.0%§! Land Recruitment Cost for 10 years\n§YWyvernheart§! gains a claim of §GAll Neighbouring§! provinces of §Y[agenda_country_1.GetName]§!\n§G+15%§! Merchant Loyalty\n§R-10%§! Adventurer Loyalty\n\nSupporting the §YAmbitious Floodborns§! (at war with §Y[agenda_country_2.GetName]§! and more than §Y50§! war score) will grant:\n§G-10.0%§! Province War Score Cost for 10 years\n§R+20%§! Harsh Treatment Cost for 10 years\n§R+20%§! Stability Cost for 10 years\n§G+10%§! Noble and Adventurer Loyalty"
+ wyvernheart_war_agenda_wealthy_devout_effect_tt:0 "Supporting the §YWealthy Scions§! (at war with §Y[agenda_country_1.GetName]§! and more than §Y50§! war score) will grant:\n§G+15.0%§! Trade Power Abroad for 10 years\n§R-2%§! Tolerance of the True Faith for 10 years\n§R-2§! Yearly Legitimacy Equivalent Gain for 10 years\n§G+10%§! Merchant Loyalty\n\nSupporting the §YDevouts of the Flood§! (at war with §Y[agenda_country_2.GetName]§! and more than §Y50§! war score) will grant:\n§G+2.0%§! Missionary Strength for 10 years\n§R+10.0%§! Build Cost for 10 years\n§G+15%§! Clergy Loyalty\n§R-10%§! Merchant Loyalty"
+ wyvernheart_war_agenda_heartmage_technocrat_effect_tt:0 "Supporting the §YHeartmages§! (at war with §Y[agenda_country_1.GetName]§! and more than §Y50§! war score) will grant:\n§G-25.0%§! Culture Conversion Time for 10 years\n§G-0.10§! Monthly Devastation for 10 years\n§R-0.20§! Monthly Bloodbrand Power for 10 years\n§G+20%§! Clergy Loyalty\n§R-10%§! Floodborn Council Loyalty\n\nSupporting the §YTechnocrat Arcanists§! (at war with §Y[agenda_country_2.GetName]§! and more than §Y50§! war score) will grant:\n§G-2.5%§! All Power Cost for 10 years\n§R+5.0%§! Development Cost for 10 years\n§G+15%§! Floodborn Council Loyalty\n§R-10%§! Clergy Loyalty"
+ wyvernheart_war_agenda_hardliner:0 "Measured Expansionism"
+ wyvernheart_war_agenda_ambitious:0 "Harsh Expansionism"
+ wyvernheart_war_agenda_wealthy:0 "Commercial Expansionism"
+ wyvernheart_war_agenda_devout:0 "Zealous Expansionism"
+ wyvernheart_war_agenda_heartmage:0 "Heartfelt Expansionism"
+ wyvernheart_war_agenda_technocrat:0 "Ressource Driven Expansionism"
+
+ estate_nobles_wyvernheart_remove_corrupt_overseer:0 "Remove a Corrupt Overseer"
+ estate_nobles_wyvernheart_remove_corrupt_overseer_desc:0 ""
+ wyvernheart_corrupt_agenda_trigger_tt:0 "Any §YBurnblood Company§! led by the §YSovereign§! is located in §Y[agenda_province.GetName]§!"
+ wyvernheart_corrupt_agenda_ambitious_effect_tt:0 "Supporting the corrupt §YAmbitious Overseer§! (having more than §Y5§! Corruption and increasing the autonomy in §Y[agenda_province.GetName]§!) will grant:\n§G+3§! Base Production in §Y[agenda_province.GetName]§!\n§G+50§! Military Power\n§R+2§! Corruption\n§Y50.00%§! chance of: §R-1§! Stability\n§R-10%§! Floodborn Council loyalty\n\nDeposing the corrupt §YAmbitious Overseer§! (having a any §YBurnblood Company§! led by the §YSovereign§! in §Y[agenda_province.GetName]§!) will grant:\n§G+5§! Bloodbrand\n§G+10§! Legitimacy or Devotion\n§G+10%§! Clergy Loyalty\n§Y50.00%§! chance of: §G+1§! Stability\n§R-50§! Military Power\nA §RLarge§! amount of Rebels will appear in §Y[agenda_province.GetName]§!"
+ wyvernheart_corrupt_agenda_wealthy_effect_tt:0 "Supporting the corrupt §YWealthy Scion Overseer§! (having more than §Y5§! Corruption and increasing the autonomy in §Y[agenda_province.GetName]§!) will grant:\n§G+2§! Base Production in §Y[agenda_province.GetName]§!\n§G+1§! Mercantilism\n§G+10%§! Merchant and Noble Loyalty\n§R+1§! Corruption\n§R+2§! Inflation\n§R-5§! Bloodbrand\n\nDeposing the corrupt §YWealthy Scion Overseer§! (having a any §YBurnblood Company§! led by the §YSovereign§! in §Y[agenda_province.GetName]§!) will grant:\n§G+200§! Ducats\n§G-2§! Corruption\n§R-10%§! Noble and Merchant Loyalty\nA §RMedium§! amount of Rebels will appear in §Y[agenda_province.GetName]§!"
+ wyvernheart_corrupt_agenda_technocrat_effect_tt:0 "Supporting the corrupt §YTechnocrat Overseer§! (having more than §Y5§! Corruption and increasing the autonomy in §Y[agenda_province.GetName]§!) will grant:\n§G+3§! Base Production in §Y[agenda_province.GetName]§!\n§G+5§! Bloodbrand\n§G+3§! Innovativeness\n§R-10§! Legitimacy or Devotion\n§R+3§! Corruption\n§Y50.00%§! chance of: §R-1§! Stability\n§R-10%§! Nobles and Adventurer Loyalty\n\nDeposing the corrupt §YTechnocrat Overseer§! (having a any §YBurnblood Company§! led by the §YSovereign§! in §Y[agenda_province.GetName]§!) will grant:\n§G-2§! War Exhaustion\n§G+10%§! Clergy and Floodborn Council Loyalty\n§R+10§! Devastation\n§R-2§! Innovativeness\nA §RLarge§! amount of Rebels will appear in §Y[agenda_province.GetName]§!"
+
+ wyvernheart_cleanse_burnblood_generation_tt:0 "All §YBurnblood Companies§! will be §Rdisbanded§! and a portion of the cost will be reinbursed"
