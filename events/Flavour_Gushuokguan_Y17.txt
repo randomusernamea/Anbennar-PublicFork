@@ -2102,7 +2102,6 @@ country_event = {
 				NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
 			}
 			set_country_flag = gushuokguan_already_checked_condottieri
-			log = "[GetDate]: Applied the modifier"
 		}
 		change_variable = {
 			which = gushuokguan_rented_condottieri_counter
@@ -2113,6 +2112,7 @@ country_event = {
 	option = {
 		name = gushuokguan_event.101.a
 		ai_chance = { factor = 1 }
+		country_event = { id = gushuokguan_event.102 days = 365 }
 	}
 }
 
@@ -2125,10 +2125,7 @@ country_event = {
 	
 	#There is no on_action for hiring condottieri, so I'm doing mtth for those.
 	#okman, if you have a better idea on how to do execute this - PLEASE HELP
-	mean_time_to_happen = {
-		days = 1 
-	}
-
+	is_triggered_only = yes
 	hidden = yes 
 
 	trigger = {
@@ -2146,7 +2143,6 @@ country_event = {
 				has_country_flag = gushuokguan_already_checked_condottieri
 			}
 			clr_country_flag = gushuokguan_already_checked_condottieri
-			log = "[GetDate]: Stripped the modifier"
 		}
 	}
 	
