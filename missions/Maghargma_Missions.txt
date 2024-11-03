@@ -2002,69 +2002,10 @@ maghargma_four = {
 						amount = 3
 					}
 				}
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						capital_scope = { region = west_forbidden_plains_region } 
-					}
-					ROOT = { vassalize = PREV }
-				}
-				every_known_country = {
-					limit = {
-						overlord = {
-							culture_group = ogre
-							is_subject_of = ROOT
-							is_subject_of_type = tributary_state_anb
-						}
-						culture_group = centaur
-						capital_scope = { region = west_forbidden_plains_region }
-					}
-					ROOT = { vassalize = PREV }
-				}
-				hidden_effect = {
-					every_subject_country = {
-						limit = {
-							is_subject_of_type = tributary_state_anb
-							culture_group = centaur
-							any_owned_province = {
-								region = west_forbidden_plains_region
-							}
-						}
-						every_owned_province = {
-							limit = {
-								region = west_forbidden_plains_region
-							}
-							cede_province = ROOT
-							add_core = ROOT
-						}
-					}
-				}
+				maghargama_vassalize_centaur_tributary = { region = west_forbidden_plains_region }
 			}
 			else = {
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						any_owned_province = {
-							region = west_forbidden_plains_region
-						}
-					}	
-					ROOT = { vassalize = PREV }
-					if = {
-						limit = {
-							NOT = {
-								capital_scope = { region = west_forbidden_plains_region }
-							}
-						}
-						random_owned_province = {
-							limit = {
-								region = west_forbidden_plains_region 
-							}
-							owner = { set_capital = PREV }
-						}
-					}
-				}
+				maghargama_vassalize_tributary_and_move_their_capital = { region = west_forbidden_plains_region }
 			}
 			hidden_effect = {
 				ogre_valley_region = {
@@ -2119,28 +2060,9 @@ maghargma_four = {
 
 		effect = {
 			custom_tooltip = maghargma_reorganize_the_horsemen_tt
-			random_subject_country = {
-				limit = {
-					is_subject_of_type = vassal
-					has_50_opinion_improved_relation = { target = ROOT }
-					capital_scope = { region = west_forbidden_plains_region }
-					culture_group = centaur
-				}
-				set_country_flag = I90_centaur_vassal_west
-				add_country_modifier = {
-					name = I90_favored_horse
-					duration = -1
-				}
-				every_country = {
-					limit = {
-						is_subject_of_type = vassal
-						NOT = { has_country_flag = I90_centaur_vassal_west }
-						is_subject_of = ROOT
-						capital_scope = { region = west_forbidden_plains_region }
-						culture_group = centaur
-					}
-					PREV = { inherit = PREV }
-				}
+			maghargma_consolidate_centaur_vassal = {
+				region = west_forbidden_plains_region
+				horse = west
 			}
 			add_country_modifier = {
 				name = I90_press_forward
@@ -2206,58 +2128,11 @@ maghargma_four = {
 					}
 				}
 				custom_tooltip = maghargma_lord_of_the_plains_tt_1
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						capital_scope = { region = east_forbidden_plains_region } 
-					}
-					ROOT = { vassalize = PREV }
-				}
-				hidden_effect = {
-					every_subject_country = {
-						limit = {
-							is_subject_of_type = tributary_state_anb
-							culture_group = centaur
-							any_owned_province = {
-								region = east_forbidden_plains_region
-							}
-						}
-						every_owned_province = {
-							limit = {
-								region = east_forbidden_plains_region
-							}
-							cede_province = ROOT
-							add_core = ROOT
-						}
-					}
-				}
+				maghargama_vassalize_centaur_tributary = { region = east_forbidden_plains_region }
 			}
 			else = {
 				custom_tooltip = maghargma_lord_of_the_plains_tt_2
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						any_owned_province = {
-							region = east_forbidden_plains_region
-						}
-					}	
-					ROOT = { vassalize = PREV }
-					if = {
-						limit = {
-							NOT = {
-								capital_scope = { region = east_forbidden_plains_region }
-							}
-						}
-						random_owned_province = {
-							limit = {
-								region = east_forbidden_plains_region 
-							}
-							owner = { set_capital = PREV }
-						}
-					}
-				}
+				emaghargama_vassalize_tributary_and_move_their_capital = { region = east_forbidden_plains_region }
 			}
 		}
 	}
@@ -2286,28 +2161,9 @@ maghargma_four = {
 
 		effect = { 
 			custom_tooltip = maghargma_ordering_the_steppes_tt
-			random_subject_country = {
-				limit = {
-					is_subject_of_type = vassal
-					has_50_opinion_improved_relation = { target = ROOT }
-					capital_scope = { region = east_forbidden_plains_region }
-					culture_group = centaur
-				}
-				set_country_flag = I90_centaur_vassal_east
-				add_country_modifier = {
-					name = I90_favored_horse
-					duration = -1
-				}
-				every_country = {
-					limit = {
-						is_subject_of_type = vassal
-						NOT = { has_country_flag = I90_centaur_vassal_east }
-						is_subject_of = ROOT
-						capital_scope = { region = east_forbidden_plains_region }
-						culture_group = centaur
-					}
-					PREV = { inherit = PREV }
-				}
+			maghargma_consolidate_centaur_vassal = {
+				region = east_forbidden_plains_region
+				horse = east
 			}
 			nuzurbokh_region = {
 				add_permanent_claim = ROOT 
@@ -2890,58 +2746,11 @@ maghargma_five = {
 					}
 				}
 				custom_tooltip = maghargma_sieze_the_serpent_tt_1
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						capital_scope = { region = serpent_gift_region } 
-					}
-					ROOT = { vassalize = PREV }
-				}
-				hidden_effect = {
-					every_subject_country = {
-						limit = {
-							is_subject_of_type = tributary_state_anb
-							culture_group = centaur
-							any_owned_province = {
-								region = serpent_gift_region
-							}
-						}
-						every_owned_province = {
-							limit = {
-								region = serpent_gift_region
-							}
-							cede_province = ROOT
-							add_core = ROOT
-						}
-					}
-				}
+				maghargama_vassalize_centaur_tributary = { region = serpent_gift_region }
 			}
 			else = {
 				custom_tooltip = maghargma_sieze_the_serpent_tt_2
-				every_subject_country = {
-					limit = {
-						is_subject_of_type = tributary_state_anb
-						culture_group = centaur
-						any_owned_province = {
-							region = serpent_gift_region
-						}
-					}
-					ROOT = { vassalize = PREV }
-					if = {
-						limit = {
-							NOT = {
-								capital_scope = { region = serpent_gift_region }
-							}
-						}
-						random_owned_province = {
-							limit = {
-								region = serpent_gift_region 
-							}
-							owner = { set_capital = PREV }
-						}
-					}
-				}
+				maghargama_vassalize_tributary_and_move_their_capital = { region = serpent_gift_region }
 			}
 			5102 = {
 				add_trade_modifier = {
@@ -2989,28 +2798,9 @@ maghargma_five = {
 
 		effect = {
 			custom_tooltip = maghargma_consolidate_the_riverlands_tt  
-			random_subject_country = {
-				limit = {
-					is_subject_of_type = vassal
-					has_50_opinion_improved_relation = { target = ROOT }
-					capital_scope = { region = serpent_gift_region }
-					culture_group = centaur
-				}
-				set_country_flag = I90_centaur_vassal_serpent
-				add_country_modifier = {
-					name = I90_favored_horse
-					duration = -1
-				}
-				every_country = {
-					limit = {
-						is_subject_of_type = vassal
-						NOT = { has_country_flag = I90_centaur_vassal_serpent }
-						is_subject_of = ROOT
-						capital_scope = { region = serpent_gift_region }
-						culture_group = centaur
-					}
-					PREV = { inherit = PREV }
-				}
+			maghargma_consolidate_centaur_vassal = {
+				region = serpent_gift_region
+				horse = serpent
 			}
 			if = {
 				limit = {

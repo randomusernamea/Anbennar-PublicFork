@@ -17820,6 +17820,126 @@ increase_collaboration_counter = {
 	}
 }
 
+maghargama_vassalize_centaur_tributary = {
+	hidden_effect = {
+		#Every tributary and their vassals becomes our vassal
+		every_known_country = { 
+			limit = {
+				OR = {
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = tributary_state_anb
+					}
+					overlord = {
+						capital_scope = { region = $region$ }
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = tributary_state_anb
+						}	
+					}
+				}
+				culture_group = centaur
+			}
+			ROOT = { vassalize = PREV }
+		}
+		#Every tributary inside the region should've been your vassal, if any other tribs outside owns it its ceded to you
+		every_subject_country = { 
+			limit = {
+				is_subject_of_type = tributary_state_anb
+				any_owned_province = {
+					region = $region$
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = $region$
+				}
+				cede_province = ROOT
+			}
+		}
+	}
+}
+
+maghargama_vassalize_tributary_and_move_their_capital = {
+	hidden_effect = {
+		#Incase that the region doesn't have enough centaurs with their capitals in it
+		every_known_country = { 
+			limit = {
+				OR = {
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = tributary_state_anb
+					}
+					overlord = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = tributary_state_anb
+						}	
+					}
+				}
+				culture_group = centaur
+			}
+			ROOT = { vassalize = PREV }
+			if = {
+				limit = {
+					NOT = {
+						capital_scope = { region = $region$ }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						region = $region$ 
+					}
+					owner = { set_capital = PREV }
+				}
+			}
+		}
+		#Every tributary inside the region should've been your vassal, if any other tribs outside owns it its ceded to you
+		every_subject_country = { 
+			limit = {
+				is_subject_of_type = tributary_state_anb
+				any_owned_province = {
+					region = $region$
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = $region$
+				}
+				cede_province = ROOT
+			}
+		}
+	}
+}
+
+maghargma_consolidate_centaur_vassal = {
+	random_subject_country = {
+		limit = {
+			is_subject_of_type = vassal
+			has_50_opinion_improved_relation = { target = ROOT }
+			capital_scope = { region = $region$ }
+			culture_group = centaur
+		}
+		set_country_flag = I90_centaur_vassal_$horse$
+		add_country_modifier = {
+			name = I90_favored_horse
+			duration = -1
+		}
+		every_country = {
+			limit = {
+				is_subject_of_type_with_overlord = {
+					who = ROOT
+					type = vassal
+				}
+				NOT = { has_country_flag = I90_centaur_vassal_$horse$ }
+				capital_scope = { region = $region$ }
+				culture_group = centaur
+			}
+			PREV = { inherit = PREV }
+		}
+	}
+}
+
 #Rakkaz
 rakkaz_add_fighting_pit_modifier = {
 	if = {
