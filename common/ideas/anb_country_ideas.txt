@@ -16376,6 +16376,42 @@ V19_ideas = { #Yanszin ideas
     }
 }
 
+V20_ideas = { #Zoherin Apunsorya ideas
+	start = {
+		tolerance_own = 2
+		general_cost = -0.15
+	}
+	bonus = {
+		mages_loyalty_modifier = 0.1
+	}
+	trigger = {
+		tag = V20
+	}
+	free = yes
+
+	V20_long_flight_north = {
+		prestige = 1
+	}
+	V20_new_friends_new_faces = {
+		num_accepted_cultures = 2
+	}
+	V20_wings_of_another_kind = {
+		cav_to_inf_ratio = 0.25
+	}
+	V20_magic_featherdust_trade = {
+		trade_efficiency = 0.1
+	}
+	V20_aerial_hunts = {
+		cavalry_power = 0.15
+	}
+	V20_northern_front = {
+		garrison_size = 0.2
+	}
+	V20_roost_of_waben_donpun = {
+		build_cost = -0.1
+	}
+}
+
 #Zongji Ideas
 Y25_ideas = {
 	start = {
