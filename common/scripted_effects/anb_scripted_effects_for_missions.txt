@@ -17826,9 +17826,12 @@ maghargama_vassalize_centaur_tributary = {
 		every_known_country = { 
 			limit = {
 				OR = {
-					is_subject_of_type_with_overlord = {
-						who = ROOT
-						type = tributary_state_anb
+					AND = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = tributary_state_anb
+						}
+						capital_scope = { region = $region$ }
 					}
 					overlord = {
 						capital_scope = { region = $region$ }
