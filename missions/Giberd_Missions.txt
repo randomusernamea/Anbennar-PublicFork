@@ -2493,7 +2493,10 @@ giberd_artificer = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = giberd_league_war_tt
-				corintar_league_war_started = yes
+				OR = {
+					corintar_league_war_ = yes
+					hre_leagues_enabled = yes
+				}
 			}
 			innovativeness = 60
 			OR = {
