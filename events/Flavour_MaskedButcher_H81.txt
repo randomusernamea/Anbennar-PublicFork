@@ -311,9 +311,6 @@ country_event = {
 
 	option = {
 		name = flavour_maskedbutcher.8.a
-		event_target:roypecker_province_target = {
-			mb_set_ptm = { ptm_name = mb_ap_butcherbane move_timer = 90 }
-		}
 		add_government_reform = otaric_succession_reform
 		define_ruler = {
 			name = "Anarchy!"
@@ -322,6 +319,13 @@ country_event = {
 			dip = 0
 			mil = 0
 			regency = yes
+		}
+		hidden_effect = {
+			country_event = {
+				id = flavour_maskedbutcher.9
+				days = 152
+				random = 60
+			}
 		}
 	}
 }
