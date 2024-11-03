@@ -156,18 +156,14 @@ F71_2_part1 = {
 		effect = {
 			define_ruler_to_general = {
 				fire = 0
-				shock = 4
+				shock = 5
 				manuever = 3
 				siege = 0
 				trait = born_to_the_saddle_personality
 			}
 			capital_scope = {
-				add_unit_construction = {
-					amount = 2
-					type = cavalry
-					cost = 0
-					speed = 0.75
-				}
+				cavalry = ROOT
+				cavalry = ROOT
 			}
 			custom_tooltip = " "
 			complex_dynamic_effect = {
@@ -269,72 +265,105 @@ F71_3_part1 = {
 		}
 
 		trigger = {
-			war_score_against = {
-				who = U09
-				value = 90
-			}
-			487 = { 
-				OR = {
-					controlled_by = ROOT
-					controlled_by = F69
-				} 
+			OR = {
+				AND = {
+					war_score_against = {
+						who = U09
+						value = 90
+					}
+					487 = { 
+						OR = {
+							controlled_by = ROOT
+							controlled_by = F69
+						} 
+					}
+				}
+				AND = {
+					NOT = { exists = U09 }
+					saymas_area = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					krahilyn_area = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					zeewix_area = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
 			}
 		}
 
 		effect = {
-			white_peace = U09
-			saymas_area = { cede_province = ROOT } 
-			krahilyn_area = { cede_province = ROOT } 
-			zeewix_area = { cede_province = ROOT } 
 			if = {
-				limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
-				ROOT = { add_treasury = 100 } 
-				F69 = { add_treasury = 150 } 
-				U09 = { release = L26 } 
-				golkora_stretch_area = { cede_province = L26 } 
-				golkora_stretch_area = { add_core = L26 } 
-				3196 = { cede_province = F69 } 
-				3196 = { add_core = F69 } 
-				5674 = { cede_province = F69 } 
-				5674 = { add_core = F69 } 
+				limit = { exists = U09 }
+				white_peace = U09
+				saymas_area = { cede_province = ROOT } 
+				krahilyn_area = { cede_province = ROOT } 
+				zeewix_area = { cede_province = ROOT } 
+				if = {
+					limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
+					ROOT = { add_treasury = 50 } 
+					F69 = { add_treasury = 150 } 
+					U09 = { release = L26 } 
+					golkora_stretch_area = { cede_province = L26 } 
+					golkora_stretch_area = { add_core = L26 } 
+					3196 = { cede_province = F69 } 
+					3196 = { add_core = F69 } 
+					5674 = { cede_province = F69 } 
+					5674 = { add_core = F69 } 
+				}
+				else = {
+					ROOT = { add_treasury = 200 } 
+					U09 = { release = L26 } 
+					golkora_stretch_area = { cede_province = L26 } 
+					golkora_stretch_area = { add_core = L26 } 
+					3196 = { cede_province = L26 } 
+					3196 = { add_core = L26 } 
+					5674 = { cede_province = L26 } 
+					5674 = { add_core = L26 }
+					add_prestige = 20
+				}
+				capital_scope = {
+					add_next_institution_embracement = 50
+				}
+				custom_tooltip = " "
+				complex_dynamic_effect = {
+					first_custom_tooltip = rakkaz_occupied_golkora
+					first_limit = "
+						479 = { controlled_by = ROOT }
+					"
+					first_effect = "
+						add_treasury = 300
+						add_manpower = 5
+						add_power_projection = {
+							type = mission_rewards_power_projection
+							amount = 20
+						}
+						capital_scope = { add_next_institution_embracement = 50 }
+					"
+				}
+				hidden_effect = {
+					L26 = {
+						create_unit_forcelimit_percentage = {
+							type = infantry
+							force_limit_percentage = 0.9
+						}
+						add_treasury = 300
+						add_manpower = 10
+						add_truce_with = U01
+						add_truce_with = U02
+						add_truce_with = F69
+					}
+				}
 			}
 			else = {
-				ROOT = { add_treasury = 250 } 
-				U09 = { release = L26 } 
-				golkora_stretch_area = { cede_province = L26 } 
-				golkora_stretch_area = { add_core = L26 } 
-				3196 = { cede_province = L26 } 
-				3196 = { add_core = L26 } 
-				5674 = { cede_province = L26 } 
-				5674 = { add_core = L26 } 
-			}
-			capital_scope = {
-				add_next_institution_embracement = 50
-			}
-			custom_tooltip = " "
-			complex_dynamic_effect = {
-				first_custom_tooltip = rakkaz_occupied_golkora
-				first_limit = "
-					OR = { 479 = { controlled_by = ROOT } }
-				"
-				first_effect = "
-					add_treasury = 150
-					add_manpower = 5
-					capital_scope = { add_next_institution_embracement = 50 }
-				"
-			}
-			hidden_effect = {
-				L26 = {
-					create_unit_forcelimit_percentage = {
-						type = infantry
-						force_limit_percentage = 0.9
-					}
-					add_treasury = 300
-					add_manpower = 10
-					add_truce_with = U01
-					add_truce_with = U02
-					add_truce_with = F69
-				}
+				add_treasury = 100
 			}
 		}
 	}
@@ -347,8 +376,11 @@ F71_3_part1 = {
 			province_id = 5466
 			NOT = {
 				AND = {
+					OR = {
+						has_fort_building_trigger = yes
+						NOT = { is_capital_of = ROOT }
+					}
 					development = 10
-					has_fort_building_trigger = yes
 				}
 			}
 		}
@@ -363,7 +395,10 @@ F71_3_part1 = {
 			}
 			5466 = {
 				development = 10
-				has_fort_building_trigger = yes
+				OR = {
+					is_capital_of = ROOT
+					has_fort_building_trigger = yes
+				}
 			}
 		}
 
@@ -391,42 +426,99 @@ F71_3_part1 = {
 		}
 
 		trigger = {
-			development_in_provinces = {
-				value = 30
-				culture = echenka
-				OR = {
-					NOT = { local_autonomy = 1 } 
-					has_province_modifier = autonomy_decreased
+			OR = {
+				NOT = { any_owned_province = { culture = echenka } }
+				development_in_provinces = {
+					value = 20
+					culture = echenka
+					OR = {
+						NOT = { local_autonomy = 1 } 
+						has_province_modifier = autonomy_decreased
+					}
 				}
 			}
 			reform_level = 2
 		}
 
 		effect = {
-			custom_tooltip = rakkaz_two_most_developed_provinces
-			tooltip = { change_trade_goods = slaves } 
-			pick_best_provinces = {
-				2 = yes
-				scope = every_owned_province
-				scale = higher_development_than
-				global_trigger = "
-				culture = echenka NOT = { trade_goods = slaves }
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_no_echenka
+				first_limit = "
+					NOT = { any_owned_province = { culture = echenka } }
 				"
-				event_target_name = "rakkaz_echenka_target"
+				first_effect = "
+					add_patriarch_authority = 0.1
+					add_manpower = 5
+					custom_tooltip = rakkaz_every_echenka_subject
+					hidden_effect = {
+						every_subject_country = {
+							limit = { culture = echenka }
+							add_liberty_desire = -10
+						}
+					}
+				"
+				second_custom_tooltip = rakkaz_echenka
+				second_limit = "
+					development_in_provinces = {
+						value = 20
+						culture = echenka
+						OR = {
+							NOT = { local_autonomy = 1 } 
+							has_province_modifier = autonomy_decreased
+						}
+					}
+				"
+				second_effect = "
+					custom_tooltip = rakkaz_two_most_developed_provinces_echenka
+					tooltip = { change_trade_goods = slaves } 
+					custom_tooltip = ' '
+					tooltip = { 
+						add_owned_provinces_development_ducats = {
+							multiplier = 10
+							trigger = {
+								culture = echenka
+								trade_goods = slaves
+							}
+						}
+					} 
+				"	
 			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_echenka_target_1 } 
-				event_target:rakkaz_echenka_target_1 = { change_trade_goods = slaves } 
-			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_echenka_target_2 } 
-				event_target:rakkaz_echenka_target_2 = { change_trade_goods = slaves } 
-			}
-			add_owned_provinces_development_ducats = {
-				multiplier = 10
-				trigger = {
-					culture = echenka
-					trade_goods = slaves
+			hidden_effect = {
+				if = {
+					limit = {
+						development_in_provinces = {
+							value = 20
+							culture = echenka
+							OR = {
+								NOT = { local_autonomy = 1 } 
+								has_province_modifier = autonomy_decreased
+							}
+						}
+					}
+					pick_best_provinces = {
+						2 = yes
+						scope = every_owned_province
+						scale = higher_development_than
+						global_trigger = "
+						culture = echenka NOT = { trade_goods = slaves }
+						"
+						event_target_name = "rakkaz_echenka_target"
+					}
+					if = {
+						limit = { has_saved_event_target = rakkaz_echenka_target_1 } 
+						event_target:rakkaz_echenka_target_1 = { change_trade_goods = slaves } 
+					}
+					if = {
+						limit = { has_saved_event_target = rakkaz_echenka_target_2 } 
+						event_target:rakkaz_echenka_target_2 = { change_trade_goods = slaves } 
+					}
+					add_owned_provinces_development_ducats = {
+						multiplier = 10
+						trigger = {
+							culture = echenka
+							trade_goods = slaves
+						}
+					}
 				}
 			}
 		}
@@ -484,8 +576,16 @@ F71_4_part1 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			has_estate_privilege = estate_mages_reduced_research_regulations
-			has_estate_privilege = xhazobkult_organized_sacrifices
+			OR = {
+				AND = {
+					has_estate_privilege = estate_mages_reduced_research_regulations
+					has_estate_privilege = xhazobkult_organized_sacrifices
+				}
+				AND = {
+					has_estate_privilege = estate_mages_reduced_research_regulations
+					patriarch_authority = 0.3
+				}
+			}
 			OR = {
 				current_icon = invocation_of_hellfire
 				current_icon = invocation_of_blood
@@ -561,7 +661,13 @@ F71_5_part1 = {
 		}
 
 		trigger = {
-			has_estate_privilege = estate_mages_battlemage_academies
+			OR = {
+				has_estate_privilege = estate_mages_battlemage_academies
+				estate_loyalty = {
+					estate = estate_mages
+					loyalty = 65
+				}
+			}
 			patriarch_authority = 0.2
 			5466 = { cavalry_in_province = 5 } 
 		}
@@ -1818,16 +1924,28 @@ F71_2_part3_pre_branch1 = {
 		} 
 
 		effect = {  
+			hidden_effect = { unlock_government_reform = { government_reform = rakkaz_bringers_of_suffering } }
 			yezel_mora_region = { add_permanent_claim = ROOT }
 			if = {
-				limit = { religion = shadow_pact }
-				hidden_effect = { unlock_government_reform = { government_reform = rakkaz_bringers_of_suffering } }
+				limit = { 
+					OR = {
+						AND = {
+							religion = xhazobkult
+							NOT = { has_country_modifier = monstrous_nation }
+						}
+						religion = shadow_pact 
+					}
+				}
 				add_government_reform = rakkaz_bringers_of_suffering
 			}
 			if = {
-				limit = { religion = xhazobkult }
+				limit = { 
+					has_country_modifier = monstrous_nation
+					religion = xhazobkult 
+				}
 				set_country_flag = rakkaz_gain_more_demonic_power
 				custom_tooltip = rakkaz_gain_more_demonic_power_tooltip
+				custom_tooltip = rakkaz_unlock_government_reform_xhazobkult
 			}
 		} 
 	}
@@ -2458,7 +2576,7 @@ F71_1_part3 = {
 
 		trigger = {  
 			custom_trigger_tooltip = {
-				tooltip = rakkaz_raze_100_provinces
+				tooltip = rakkaz_raze_150_provinces
 				check_variable = {
 					value = 150
 					which = nbProvincesRazed
