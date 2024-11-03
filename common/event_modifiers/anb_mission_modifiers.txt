@@ -26915,6 +26915,7 @@ F23_bahari_mint = {
 F23_religious_tolerance = {
 	local_religious_unity_contribution = -1
 	local_tolerance_of_heathens	= 3
+	local_missionary_strength = -1
 }
 F23_port_jurith_toll_1 = {
 	province_trade_power_value = 5
@@ -27011,11 +27012,11 @@ F23_loyal_subjects = {
 
 # Improved Trading Post modifiers
 # Could be one modifier, but the entire Sea Hold system works much easier when the modifiers are technically separate.
-F23_improved_trading_post_1 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
-F23_improved_trading_post_2 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
-F23_improved_trading_post_3 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
-F23_improved_trading_post_4 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
-F23_improved_trading_post_5 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_1 = { province_trade_power_value =  5  min_local_autonomy = -25 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_2 = { province_trade_power_value =  5  min_local_autonomy = -25 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_3 = { province_trade_power_value =  5  min_local_autonomy = -25 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_4 = { province_trade_power_value =  5  min_local_autonomy = -25 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_5 = { province_trade_power_value =  5  min_local_autonomy = -25 local_governing_cost_increase =  -30 }
 
 F23_improved_trading_post_granary = { local_development_cost = -0.1 }
 F23_improved_trading_post_granary_improved = { local_development_cost = -0.2 }
