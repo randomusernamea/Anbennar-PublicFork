@@ -14121,9 +14121,12 @@ estate_mages_warlock_pact_overcharge = {
 				limit = {
 					has_building = mage_tower
 				}
-				add_province_modifier = {
-					name = rakkaz_pact_overcharge
-					duration = 3650
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = rakkaz_pact_overcharge
+						duration = 3650
+					}
 				}
 			}
 		}

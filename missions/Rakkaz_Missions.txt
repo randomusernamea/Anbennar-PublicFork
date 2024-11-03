@@ -53,6 +53,7 @@ F71_1_part1 = {
 					NOT = { 5470 = { province_has_center_of_trade_of_level = 2 } }
 				"
 				first_effect = "
+					add_treasury = -100
 					5470 = { add_center_of_trade_level = 1 } 
 				"
 				second_custom_tooltip = rakkaz_already_has_level2_CoT
@@ -643,6 +644,8 @@ F71_4_part1 = {
 							capital_scope = { add_base_tax = 2 } 
 						}
 						else = {
+							add_treasury = -100
+							add_patriarch_authority = -0.1
 							capital_scope = { add_building = mage_tower } 
 						}
 					}
@@ -1076,6 +1079,7 @@ F71_1_part2 = {
 			num_of_owned_provinces_with = {
 				value = 50
 				region = horashesh_region
+				owned_by = ROOT
 				is_core = ROOT
 			}
 			OR = {
@@ -1523,6 +1527,7 @@ F71_3_part2 = {
 			country_event = { id = flavour_rakkaz.9 }
 			custom_tooltip = rakkaz_level2_advisor_tooltip
 			set_country_flag = rakkaz_level2_advisor
+			custom_tooltip = " "
 			tooltip = { swap_non_generic_missions = yes }
 		} 
 	}
