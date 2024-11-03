@@ -369,8 +369,8 @@ country_event = {
 					has_church_aspect = bronze_dragon_3_upgraded
 				}
 				if = { 
-					limit = { event_target:emperor_of_china = { religion = aakhetist } }
-					event_target:emperor_of_china = { add_mandate = 6 }
+					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
+					event_target:EmperorOfChina = { add_mandate = 6 }
 				}
 				if = { #cant use scripted effect for planetouched general b/c it's broken
 					limit = { army_tradition = 80 }
@@ -430,14 +430,14 @@ country_event = {
 					}
 				}
 				if = { 
-					limit = { event_target:emperor_of_china = { religion = aakhetist } }
-					event_target:emperor_of_china = { add_mandate = 4 }
+					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
+					event_target:EmperorOfChina = { add_mandate = 4 }
 				}
 			}
 			else = { #Only 1 upgraded active
 				if = { 
-					limit = { event_target:emperor_of_china = { religion = aakhetist } }
-					event_target:emperor_of_china = { add_mandate = 2 }
+					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
+					event_target:EmperorOfChina = { add_mandate = 2 }
 				}						
 			}
 		}
@@ -1143,14 +1143,10 @@ country_event = {
 						is_year = 1600
 					}
 					far_bulwar_region = {
-						any_province = {
-							has_discovered = ROOT
-						}
+						has_discovered = ROOT
 					}
 					middle_dwarovar_region = {
-						any_province = {
-							has_discovered = ROOT
-						}
+						has_discovered = ROOT
 					}
 				}
 			}
@@ -1196,7 +1192,7 @@ country_event = {
 							}
 						}
 					}
-					any_subject_country = { #fix this
+					any_subject_country = { 
 						capital_scope = {
 							OR = {
 								region = far_bulwar_region
@@ -1259,10 +1255,7 @@ country_event = {
 							}
 						}
 						OR = {
-							owns = 4217
-							any_subject_country = {
-								owns = 4217
-							}
+							owns_or_subject_of = 4217
 							any_ally = {
 								owns = 4217
 							}
@@ -1679,8 +1672,7 @@ country_event = {
 				}
 				AND = {
 					calc_true_if = {
-						amount = 10
-						owns = 833
+						amount = 9
 						owns = 4
 						owns = 82
 						owns = 249
@@ -2332,14 +2324,10 @@ country_event = {
 						is_year = 1600
 					}
 					far_bulwar_region = {
-						any_province = {
-							has_discovered = ROOT
-						}
+						has_discovered = ROOT
 					}
 					middle_dwarovar_region = {
-						any_province = {
-							has_discovered = ROOT
-						}
+						has_discovered = ROOT
 					}
 				}
 			}
@@ -2385,7 +2373,7 @@ country_event = {
 							}
 						}
 					}
-					any_subject_country = { #fix this
+					any_subject_country = { 
 						capital_scope = {
 							OR = {
 								region = far_bulwar_region
@@ -2443,10 +2431,7 @@ country_event = {
 							}
 						}
 						OR = {
-							owns = 4217
-							any_subject_country = {
-								owns = 4217
-							}
+							owns_or_subject_of = 4217
 							any_ally = {
 								owns = 4217
 							}
@@ -2860,8 +2845,7 @@ country_event = {
 			NOT = {
 				AND = {
 					calc_true_if = {
-						amount = 10
-						owns = 833
+						amount = 9
 						owns = 4
 						owns = 82
 						owns = 249
@@ -3138,6 +3122,11 @@ country_event = { #Hidden event for event menu
 	picture = GREAT_BUILDING_eventPicture
 	
 	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+	}
+	
 	hidden = yes
 	
 	option = {		
@@ -3393,8 +3382,8 @@ country_event = { #Brass aspect 2
 			UPGRADE = upgraded
 		}
 		add_casus_belli = {
-			type = cb_usurp_emperorship
-			target = THIS
+			type = cb_old_order
+			target = R62
 		}
 		hidden_effect = { set_country_flag = jyntas_quest_1 }
 	}
@@ -3465,7 +3454,7 @@ country_event = { #Bronze aspect 1
 	option = {		
 		name = flavour_kobold_dragon_cult.16.a
 		trigger = {
-			event_target:emperor_of_china = { religion = aakhetist }	
+			event_target:EmperorOfChina = { religion = aakhetist }	
 		}
 		if ={
 			limit = { has_church_aspect = bronze_dragon_1_base }
@@ -3477,7 +3466,7 @@ country_event = { #Bronze aspect 1
 			UPGRADE = upgraded
 		}
 		add_years_of_income = -1
-		event_target:emperor_of_china = {
+		event_target:EmperorOfChina = {
 			add_historical_friend = ROOT
 			ROOT = { add_historical_friend = PREV }
 		}
@@ -3486,7 +3475,7 @@ country_event = { #Bronze aspect 1
 		name = flavour_kobold_dragon_cult.16.b
 		trigger = {
 			any_known_country = { is_emperor_of_china = yes }
-			NOT = { event_target:emperor_of_china = { religion = aakhetist } }		
+			NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
 			NOT = { has_global_flag = ahati_disaster_began }
 		}
 		if ={
@@ -3499,7 +3488,7 @@ country_event = { #Bronze aspect 1
 			UPGRADE = upgraded
 		}
 		add_years_of_income = -1
-		event_target:emperor_of_china = {
+		event_target:EmperorOfChina = {
 			country_event = { id = ahati_events.34 days = 30 }
 			country_event = { id = ahati_events.35 days = 60 }
 			country_event = { id = ahati_events.36 days = 90 }
@@ -3679,6 +3668,7 @@ country_event = { #Gold aspect 2
 			SLOT = 2
 			UPGRADE = upgraded
 		}
+		4976 = { add_core = Y85 }
 		release = Y85
 		create_subject = {
 			subject_type = twin_empire
