@@ -1,3 +1,6 @@
+#Gushuokguan Mission Tree - Ideated by: Memegraaf
+#							Coded by: Meander
+
 gushuokguan_1 = {
 	slot = 1
 	generic = no
@@ -94,21 +97,24 @@ gushuokguan_1 = {
 					}
 				"
 			}
-			every_owned_province = {
-				limit = {
-					OR = {
-						trade_goods = grain
-						trade_goods = livestock
-						trade_goods = fish
+			custom_tooltip = gushuokguan_1_3_effect_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = grain
+							trade_goods = livestock
+							trade_goods = fish
+						}
+						has_production_building_trigger = yes
+						has_manpower_building_trigger = yes
+						has_manufactory_trigger = yes
+						base_production = 7
 					}
-					has_production_building_trigger = yes
-					has_manpower_building_trigger = yes
-					has_manufactory_trigger = yes
-					base_production = 7
-				}
-				add_province_modifier = {
-					name = gushuokguan_local_supplier
-					duration = 18250
+					add_province_modifier = {
+						name = gushuokguan_local_supplier
+						duration = 18250
+					}
 				}
 			}
 		}
@@ -122,9 +128,15 @@ gushuokguan_1 = {
 			OR = {
 				AND = {
 					superregion = yanshen_superregion
-					NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
-					devastation = 0.01
-					unrest = 0
+					OR = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
+						AND = {
+							country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+							devastation = 0.01
+							unrest = 0
+						}
+					}
+					
 				}
 				AND = {
 					OR = {
@@ -140,6 +152,7 @@ gushuokguan_1 = {
 			yanshen_superregion = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+				is_city = yes #For Aikogeoke
 			}
 			all_owned_province = {
 				superregion = yanshen_superregion
@@ -250,7 +263,7 @@ gushuokguan_1 = {
 				artillery_in_province = 10
 			}
 			Y03 = { #Hubao
-				vassal_of = ROOT
+				is_subject_of = ROOT
 				NOT = { liberty_desire = 1 }
 			}
 			custom_trigger_tooltip = {
@@ -279,6 +292,10 @@ gushuokguan_1 = {
 					type = artillery
 					amount = 10
 				}
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_dacite_dragons }
+				disband_mercenary_company = yes
 			}
 			custom_tooltip = gushuokguan_dacite_dragons_tt
 			hidden_effect = {
@@ -424,7 +441,7 @@ gushuokguan_2 = {
 			custom_tooltip = gushuokguan_stone_army_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_stone_army } 
-				disband_mercenary_company = THIS	   #Hopefully this doesn't cause a condottieri-related bug
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = { set_country_flag = gushuokguan_stone_army_tier_2 } 
 		} 
@@ -505,7 +522,8 @@ gushuokguan_2 = {
 		trigger = {  
 			num_of_mercenaries = 30
 			calc_true_if = {
-				any_known_country = {
+				all_known_country = {
+					NOT = { is_subject_of = ROOT } #Gushuokguan
 					OR = {
 						has_opinion = {
 							who = ROOT #Gushuokguan
@@ -548,6 +566,7 @@ gushuokguan_2 = {
 
 		effect = {  
 			add_years_of_income = 5
+			custom_tooltip = anb_cant_be_sacked_tt
 			set_country_flag = anb_cant_be_sacked
 		}
 	}
@@ -591,9 +610,13 @@ gushuokguan_2 = {
 			4838 = {
 				kill_units = {
 					who = ROOT #Gushuokguan
-					type = cavalry
+					type = infantry
 					amount = 20
 				}
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_whetstones }
+				disband_mercenary_company = yes
 			}
 			custom_tooltip = gushuokguan_whetstones_tt
 			hidden_effect = {
@@ -610,6 +633,7 @@ gushuokguan_2 = {
 
 		trigger = {  
 			any_known_country = {
+				NOT = { is_subject_of = ROOT } #Gushuokguan
 				num_of_owned_provinces_with = {
 					has_terrain = jungle
 					value = 3
@@ -678,7 +702,7 @@ gushuokguan_3 = {
 
 			custom_tooltip = gushuokguan_lanjinhui_is_ally_tt
 			tooltip = { country_event = { id = gushuokguan_event.1 } } #An Alliance of Convenience
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 			
 			custom_tooltip = gushuokguan_lanjinhui_is_rival_tt
 			tooltip = {
@@ -772,7 +796,7 @@ gushuokguan_3 = {
 				AND = {
 					OR = {
 						NOT = { exists = Y05 } #Lanjinhui
-						vassal_of = ROOT #Gushuokguan #This is moved here from the original draft for obvious (can't spy yourself) reasons
+						vassal_of = ROOT #Gushuokguan
 					}
 					liuminxiang_area = {
 						type = all
@@ -789,7 +813,7 @@ gushuokguan_3 = {
 		effect = {
 			custom_tooltip = gushuokguan_lanjinhui_is_ally_tt
 			tooltip = { country_event = { id = gushuokguan_event.4 }  }
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 
 			custom_tooltip = gushuokguan_lanjinhui_is_vassal_tt
 			tooltip = {
@@ -800,19 +824,19 @@ gushuokguan_3 = {
 					}
 				}
 			}
-			custom_tooltip = feitenEmpty
+			#No need for /n since country modifier already does that
 
 			custom_tooltip = gushuokguan_lanjinhui_is_rival_tt
 			tooltip = { country_event = { id = gushuokguan_event.5 } }
 			custom_tooltip = gushuokguan_incoming_war_tt
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 			
 			custom_tooltip = gushuokguan_lanjinhui_is_kil_tt
 			tooltip = {
 				create_vassal = Y05 #Lanjinhui
 				add_adm_power = 100
 			}
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 			hidden_effect = {
 				if = {
 					limit = { Y05 = { alliance_with = ROOT } } #Lanjinhui #Gushuokguan
@@ -866,18 +890,17 @@ gushuokguan_3 = {
 			}
 			AND = {
 				owned_by = ROOT 
-				OR = {
-					local_autonomy = 25
-					has_province_modifier = autonomy_increased
+				NOT = {
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
 				}
 				NOT = { devastation = 0.01 }
 				NOT = { unrest = 0 }
 				if = {
 					limit = { ROOT = { has_parliament = yes } } 
-					custom_trigger_tooltip = {
-						tooltip = thangoya_seat_in_parliament_tt
-						has_seat_in_parliament = yes 
-					}
+					has_seat_in_parliament = no
 				}
 			}
 		} 
@@ -983,8 +1006,8 @@ gushuokguan_3 = {
 							area = linyuan_area
 						}
 					}
-					cede_province = V19 #Anjiang
-					add_core = V19 #Anjiang
+					cede_province = V19 #Yanszin
+					add_core = V19 #Yanszin
 				}
 			} 
 			create_subject = {
@@ -992,7 +1015,7 @@ gushuokguan_3 = {
 				subject = V19 #Yanszin
 			}
 			custom_tooltip = gushuokguan_release_yanszin_tt
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 			add_mil_power = 50
 			add_country_modifier = {
 				name = gushuokguan_trade_power_of_the_yan
@@ -1096,8 +1119,8 @@ gushuokguan_3 = {
 		provinces_to_highlight = { } 
 
 		trigger = {  
-			Y10 = { #Yingzhen
-				vassal_of = ROOT
+			V19 = { #Yanszin
+				is_subject_of = ROOT
 				NOT = { liberty_desire = 1 }
 			}
 			4853 = { #Anjiang
@@ -1126,6 +1149,10 @@ gushuokguan_3 = {
 					type = cavalry
 					amount = 20
 				}
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_marble_mounts }
+				disband_mercenary_company = yes
 			}
 			custom_tooltip = gushuokguan_marble_mounts_tt
 			hidden_effect = {
@@ -1365,25 +1392,35 @@ gushuokguan_4 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
 			}
-			north_yanshen_region = {
-				type = all
-				culture = jiangyang
-				is_core = ROOT
-				OR = {
-					local_autonomy = 25
-					has_province_modifier = autonomy_increased
-					is_capital = yes
-				}
-				NOT = { devastation = 0.01 } 
-				NOT = { unrest = 0 }
-				if = {
-					limit = { ROOT = { has_parliament = yes } } 
-					custom_trigger_tooltip = {
-						tooltip = thangoya_seat_in_parliament_tt
-						has_seat_in_parliament = yes 
+			custom_trigger_tooltip = {
+				tooltip = gushuokguan_4_3_trigger_tt
+				north_yanshen_region = {
+					type = all
+					OR = {
+						AND = {
+							culture = jiangyang
+							is_core = ROOT
+							OR = {
+								local_autonomy = 25
+								has_province_modifier = autonomy_increased
+								is_capital = yes
+							}
+							NOT = { devastation = 0.01 } 
+							NOT = { unrest = 0 }
+							if = {
+								limit = { ROOT = { has_parliament = yes } } 
+								custom_trigger_tooltip = {
+									tooltip = thangoya_seat_in_parliament_tt
+									has_seat_in_parliament = yes 
+								}
+							}
+						}
+						NOT = { culture = jiangyang }
 					}
 				}
 			}
+
+			
 		}
 
 		effect = {  
@@ -1405,18 +1442,17 @@ gushuokguan_4 = {
 			area = iongsim_area
 			AND = {
 				owned_by = ROOT 
-				OR = {
-					local_autonomy = 25
-					has_province_modifier = autonomy_increased
+				NOT = {
+					OR = {
+						local_autonomy = 25
+						has_province_modifier = autonomy_increased
+					}
 				}
 				NOT = { devastation = 0.01 }
 				NOT = { unrest = 0 }
 				if = {
 					limit = { ROOT = { has_parliament = yes } } 
-					custom_trigger_tooltip = {
-						tooltip = thangoya_seat_in_parliament_tt
-						has_seat_in_parliament = yes 
-					}
+					has_seat_in_parliament = no
 				}
 			}
 		} 
@@ -1576,7 +1612,7 @@ gushuokguan_4 = {
 
 		trigger = {  
 			Y20 = { #Feiten
-				vassal_of = ROOT
+				is_subject_of = ROOT
 				NOT = { liberty_desire = 1 }
 			}
 			4879 = { #Feiten
@@ -1601,6 +1637,10 @@ gushuokguan_4 = {
 					type = artillery
 					amount = 10
 				}
+			}
+			random_hired_mercenary_company = {
+				limit = { template = merc_flying_pebbles }
+				disband_mercenary_company = yes
 			}
 			custom_tooltip = gushuokguan_flying_pebbles_tt
 			hidden_effect = {
@@ -1868,10 +1908,10 @@ gushuokguan_5 = {
 			}
 			army_size_percentage = 0.8
 			AND = {
-				Y03 = { vassal_of = ROOT } #Hubao
-				Y04 = { vassal_of = ROOT } #Anjiang
-				Y23 = { vassal_of = ROOT } #Zyujyut
-				Y96 = { vassal_of = ROOT } #Guwaamud
+				Y03 = { is_subject_of = ROOT } #Hubao
+				V19 = { is_subject_of = ROOT } #Yanszin
+				Y23 = { is_subject_of = ROOT } #Zyujyut
+				Y96 = { is_subject_of = ROOT } #Guwaamud
 			}
 			yanshen_superregion = {
 				type = all
@@ -1971,6 +2011,17 @@ gushuokguan_5 = {
 		} 
 
 		effect = {  
+			add_adm_power = -300
+			add_dip_power = -300
+			add_mil_power = -300
+			change_government_reform_progress = -100
+			custom_tooltip = feitenNewLine
+			xianjie_region = {
+				add_permanent_claim = ROOT #Gushuokguan
+			}
+			custom_tooltip = gushuokguan_can_release_one_xia_tt
+			custom_tooltip = feitenNewLine
+			
 			custom_tooltip = gushuokguan_inked_shields_win_tt
 			tooltip = {
 				override_country_name = "Federation of Yanshen"
@@ -1985,19 +2036,11 @@ gushuokguan_5 = {
 				}
 				custom_tooltip = gushuokguan_dao_republican_tradition_buff_tt
 			}
-			custom_tooltip = feitenEmpty
+			custom_tooltip = feitenNewLine
 
 			custom_tooltip = gushuokguan_red_scarfs_win_tt
-			#No tooltip, because it's just a flag
-			add_adm_power = -300
-			add_dip_power = -300
-			add_mil_power = -300
-			change_government_reform_progress = -100
-			custom_tooltip = feitenEmpty
-			xianjie_region = {
-				add_permanent_claim = ROOT #Gushuokguan
-			}
-			custom_tooltip = gushuokguan_can_release_one_xia_tt
+			#No second tooltip, because it's just a flag so we can do it in one
+			
 			hidden_effect = {
 				if = {
 					limit = { has_country_flag = gushuokguan_civil_war_federalist_won }

@@ -734,22 +734,21 @@ country_event = {
 				save_global_event_target_as = red_scarf_1
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:red_scarf_1 } }
 				save_global_event_target_as = inked_shield_1
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:red_scarf_1 } NOT = { tag = event_target:inked_shield_1 } }
 				save_global_event_target_as = red_scarf_2
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_2 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:red_scarf_1 } NOT = { tag = event_target:inked_shield_1 } NOT = { tag = event_target:red_scarf_2 } }
 				save_global_event_target_as = inked_shield_2
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_2 } NOT = { has_saved_global_event_target = inked_shield_2 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:red_scarf_1 } NOT = { tag = event_target:inked_shield_1 } NOT = { tag = event_target:red_scarf_2 } NOT = { tag = event_target:inked_shield_2 } }
 				save_global_event_target_as = red_scarf_3
 			}
-			set_global_flag = gushuokguan_civil_war
 		}
 	}
 
@@ -797,22 +796,21 @@ country_event = {
 				save_global_event_target_as = inked_shield_1
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:inked_shield_1 } }
 				save_global_event_target_as = red_scarf_1
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:inked_shield_1 } NOT = { tag = event_target:red_scarf_1 } }
 				save_global_event_target_as = inked_shield_2
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_2 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:inked_shield_1 } NOT = { tag = event_target:red_scarf_1 } NOT = { tag = event_target:inked_shield_2 } }
 				save_global_event_target_as = red_scarf_2
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = inked_shield_1 } NOT = { has_saved_global_event_target = red_scarf_1 } NOT = { has_saved_global_event_target = inked_shield_2 } NOT = { has_saved_global_event_target = red_scarf_2 } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:inked_shield_1 } NOT = { tag = event_target:red_scarf_1 } NOT = { tag = event_target:inked_shield_2 } NOT = { tag = event_target:red_scarf_2 } }
 				save_global_event_target_as = inked_shield_3
 			}
-			set_global_flag = gushuokguan_civil_war
 		}
 	}
 
@@ -850,16 +848,12 @@ country_event = {
 	picture = CHINESE_GENERAL_eventPicture
 	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
 
 	trigger = {
 		tag = Y17 #Gushuokguan
-		has_global_flag = gushuokguan_civil_war
-		is_in_war = {
-			attacker_leader = event_target:red_scarf_1
-			casus_belli = cb_independence_war
-			war_score = 75
-		}
+		has_country_flag = gushuokguan_chosen_inked_shields
+		NOT = { war_with = event_target:red_scarf_1 }
 	}
 
 	after = {
@@ -869,7 +863,7 @@ country_event = {
 		clear_global_event_target = red_scarf_1
 		clear_global_event_target = red_scarf_2
 		clear_global_event_target = red_scarf_3
-		clr_global_flag = gushuokguan_civil_war
+		clr_country_flag = gushuokguan_chosen_inked_shields
 	}
 
 	option = {
@@ -907,16 +901,12 @@ country_event = {
 	picture = CHINESE_GENERAL_eventPicture
 	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
 
 	trigger = {
 		tag = Y17 #Gushuokguan
-		has_global_flag = gushuokguan_civil_war
-		is_in_war = {
-			attacker_leader = event_target:inked_shield_1
-			casus_belli = cb_independence_war
-			war_score = 75
-		}
+		has_country_flag = gushuokguan_chosen_red_scarfs
+		NOT = { war_with = event_target:inked_shield_1 }
 	}
 
 	after = {
@@ -926,7 +916,8 @@ country_event = {
 		clear_global_event_target = red_scarf_1
 		clear_global_event_target = red_scarf_2
 		clear_global_event_target = red_scarf_3
-		clr_global_flag = gushuokguan_civil_war
+		clr_country_flag = gushuokguan_chosen_red_scarfs
+
 	}
 
 	option = {
@@ -940,6 +931,42 @@ country_event = {
 }
 
 ### Confederal Council Events ###
+#Event Manager
+country_event = {
+	id = gushuokguan_event.50
+	title = gushuokguan_event.51.t
+	desc = gushuokguan_event.51.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			tag = Y17 #Gushuokguan
+			was_tag = Y17 #Gushuokguan
+		}
+		has_country_flag = gushuokguan_enable_confederal_council
+	}
+
+	hidden = yes
+
+	option = {
+		name = gushuokguan_event.51.a
+		ai_chance = { factor = 1 }
+		random_list = {
+			9 = {} #Empty
+			1 = { country_event = { id = gushuokguan_event.51 } }
+			1 = { country_event = { id = gushuokguan_event.52 } }
+			1 = { country_event = { id = gushuokguan_event.53 } }
+			1 = { country_event = { id = gushuokguan_event.54 } }
+			1 = { country_event = { id = gushuokguan_event.55 } }
+			1 = { country_event = { id = gushuokguan_event.56 } }
+			1 = { country_event = { id = gushuokguan_event.57 } }
+			1 = { country_event = { id = gushuokguan_event.58 } }
+			1 = { country_event = { id = gushuokguan_event.59 } }
+		}
+	}
+}
+
 #Declaration of Hostilities
 country_event = {
 	id = gushuokguan_event.51
@@ -979,19 +1006,19 @@ country_event = {
 						} 
 					}
 				}
-				save_global_event_target_as = dao_A
+				save_global_event_target_as = dao_A_gl
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A_gl } }
 				save_event_target_as = dao_B
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A_gl } NOT = { tag = event_target:dao_B } }
 				save_event_target_as = dao_C
 			}
 			random_subject_country = {
-				limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
-				save_global_event_target_as = dao_D
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A_gl } NOT = { tag = event_target:dao_B } NOT = { tag = event_target:dao_C } }
+				save_global_event_target_as = dao_D_gl
 			}
 		}
 	}
@@ -999,7 +1026,7 @@ country_event = {
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1101,20 +1128,22 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
 		}
 	}
 
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1179,20 +1208,22 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
 		}
 	}
 
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1320,28 +1351,30 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
-			save_event_target_as = dao_C
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
-			save_event_target_as = dao_D
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } NOT = { tag = event_target:dao_B } }
+				save_event_target_as = dao_C
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } NOT = { tag = event_target:dao_B } NOT = { tag = event_target:dao_C } }
+				save_event_target_as = dao_D
+			}
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1512,28 +1545,30 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } }
-			save_event_target_as = dao_C
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } NOT = { has_saved_event_target = dao_B } NOT = { has_saved_event_target = dao_C } }
-			save_event_target_as = dao_D
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } NOT = { tag = event_target:dao_B } }
+				save_event_target_as = dao_C
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } NOT = { tag = event_target:dao_B } NOT = { tag = event_target:dao_C } }
+				save_event_target_as = dao_D
+			}
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1603,19 +1638,21 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { 
-				is_subject_of_type = dao 
-				num_of_ports = 1
+		hidden_effect = {
+			random_subject_country = {
+				limit = { 
+					is_subject_of_type = dao 
+					num_of_ports = 1
+				}
+				save_event_target_as = coastal_dao
 			}
-			save_event_target_as = coastal_dao
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1675,19 +1712,21 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { 
-				is_subject_of_type = dao 
-				NOT = { num_of_ports = 1 }
+		hidden_effect = {
+			random_subject_country = {
+				limit = { 
+					is_subject_of_type = dao 
+					NOT = { num_of_ports = 1 }
+				}
+				save_event_target_as = interior_dao
 			}
-			save_event_target_as = interior_dao
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1747,20 +1786,22 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1837,20 +1878,22 @@ country_event = {
 	}
 
 	immediate = {
-		random_subject_country = {
-			limit = { is_subject_of_type = dao }
-			save_event_target_as = dao_A
-		}
-		random_subject_country = {
-			limit = { is_subject_of_type = dao NOT = { has_saved_global_event_target = dao_A } }
-			save_event_target_as = dao_B
+		hidden_effect = {
+			random_subject_country = {
+				limit = { is_subject_of_type = dao }
+				save_event_target_as = dao_A
+			}
+			random_subject_country = {
+				limit = { is_subject_of_type = dao NOT = { tag = event_target:dao_A } }
+				save_event_target_as = dao_B
+			}
 		}
 	}
 	
 	after = {
 		hidden_effect = {
 			change_variable = {
-				which = gushokguan_event_counter
+				which = gushuokguan_event_counter
 				value = 1
 			}
 		}
@@ -1931,39 +1974,42 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
-	option = {
-		name = gushuokguan_event.61.a
-		ai_chance = { factor = 1 }
-		event_target:dao_A = {
-			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
-				add_liberty_desire = 7
-			}
-			else = { add_liberty_desire = 15 }
-			
-			add_opinion = {
-				who = PREV #Gushuokguan
-				modifier = gushuokguan_council_tensions_negative_medium
-			}
-		}
-		event_target:dao_D = {
-			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
-				add_liberty_desire = 7
-			}
-			else = { add_liberty_desire = 15 }
-			
-			add_opinion = {
-				who = PREV #Gushuokguan
-				modifier = gushuokguan_council_tensions_negative_medium
-			}
-		}
+	after = {
 		hidden_effect = {
-			clear_global_event_target = dao_A
-			clear_global_event_target = dao_D
+			clear_global_event_target = dao_A_gl
+			clear_global_event_target = dao_D_gl
 			every_claimed_province = {
 				limit = { has_province_flag = gushuokguan_claimed_for_dao }
 				clr_province_flag = gushuokguan_claimed_for_dao
+			}
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.61.a
+		ai_chance = { factor = 1 }
+		event_target:dao_A_gl = {
+			if = {
+				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				add_liberty_desire = 7
+			}
+			else = { add_liberty_desire = 15 }
+			
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
+			}
+		}
+		event_target:dao_D_gl = {
+			if = {
+				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				add_liberty_desire = 7
+			}
+			else = { add_liberty_desire = 15 }
+			
+			add_opinion = {
+				who = PREV #Gushuokguan
+				modifier = gushuokguan_council_tensions_negative_medium
 			}
 		}
 	}
@@ -1993,6 +2039,17 @@ country_event = {
 		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
+	after = {
+		hidden_effect = {
+			clear_global_event_target = dao_A_gl
+			clear_global_event_target = dao_D_gl
+			every_claimed_province = {
+				limit = { has_province_flag = gushuokguan_claimed_for_dao }
+				clr_province_flag = gushuokguan_claimed_for_dao
+			}
+		}
+	}
+
 	option = {
 		name = gushuokguan_event.62.a
 		ai_chance = { factor = 1 }
@@ -2011,15 +2068,6 @@ country_event = {
 				who = PREV #Gushuokguan
 				modifier = gushuokguan_council_tensions_positive_medium
 			}
-		}
-		hidden_effect = {
-			clear_global_event_target = dao_A
-			clear_global_event_target = dao_D
-			every_claimed_province = {
-				limit = { has_province_flag = gushuokguan_claimed_for_dao }
-				clr_province_flag = gushuokguan_claimed_for_dao
-			}
-			#Could clear the ones in my provinces, but I kinda deem those irrelevant
 		}
 	}
 }
@@ -2041,7 +2089,7 @@ country_event = {
 
 	trigger = {
 		any_known_country = {
-			ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+			is_hiring_condottiere_from = ROOT #Gushuokguan
 			NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
 		}
 	}
@@ -2050,23 +2098,21 @@ country_event = {
 	immediate = {
 		random_known_country = {
 			limit = {
-				ROOT = { is_renting_condottieri_to = PREV } #Gushuokguan
+				is_hiring_condottiere_from = ROOT #Gushuokguan
 				NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
 			}
-			save_event_target_as = gushuokguan_tag_rented_condottieri
+			set_country_flag = gushuokguan_already_checked_condottieri
+			log = "[GetDate]: Applied the modifier"
+		}
+		change_variable = {
+			which = gushuokguan_rented_condottieri_counter
+			value = 1
 		}
 	}
 	
 	option = {
 		name = gushuokguan_event.101.a
 		ai_chance = { factor = 1 }
-		event_target:gushuokguan_tag_rented_condottieri = {
-			set_country_flag = gushuokguan_already_checked_condottieri
-		}
-		change_variable = {
-			which = gushuokguan_rented_condottieri_counter
-			value = 1
-		}
 	}
 }
 
@@ -2088,7 +2134,7 @@ country_event = {
 	trigger = {
 		any_known_country = {
 			has_country_flag = gushuokguan_already_checked_condottieri
-			NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
+			NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
 		}
 	}
 
@@ -2096,18 +2142,16 @@ country_event = {
 	immediate = {
 		random_known_country = {
 			limit = {
-				NOT = { ROOT = { is_renting_condottieri_to = PREV } } #Gushuokguan
+				NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
 				has_country_flag = gushuokguan_already_checked_condottieri
 			}
-			save_event_target_as = gushuokguan_tag_rented_condottieri
+			clr_country_flag = gushuokguan_already_checked_condottieri
+			log = "[GetDate]: Stripped the modifier"
 		}
 	}
 	
 	option = {
 		name = gushuokguan_event.102.a
 		ai_chance = { factor = 1 }
-		event_target:gushuokguan_tag_rented_condottieri = {
-			clr_country_flag = gushuokguan_already_checked_condottieri
-		}
 	}
 }

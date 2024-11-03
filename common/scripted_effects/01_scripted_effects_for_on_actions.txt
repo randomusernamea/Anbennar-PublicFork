@@ -3048,12 +3048,26 @@ on_battle_won_unit_effect = {
 	}
 	if = {
 		limit = { 
+			tag = Y17 #Gushuokguan
+			any_hired_mercenary_company = {
+				template = merc_rock_raiders
+				location = { province_id = FROM }
+			}
+			FROM = {
+				has_underground_terrain = yes
+			}
+		} 
+		set_country_flag = gushuokguan_rock_raiders_battle
+	}
+	if = {
+		limit = { 
 			unit_owner = {
 				tag = Y17 #Gushuokguan
-				has_country_flag = gushuokguan_dacite_dragons
 			}
-			#I want this to check whether a certain mercenary company is in a battle
-			template = merc_dacite_dragons
+			any_hired_mercenary_company = {
+				template = merc_dacite_dragons
+				location = { province_id = FROM }
+			}
 
 			enemy_unit = {
 				unit_owner = {
@@ -3414,16 +3428,6 @@ on_battle_won_country_effect = {
 				days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
 			}
 		}
-	}
-	if = {
-		limit = { 
-			tag = Y17 #Gushuokguan
-			has_country_flag = gushuokguan_rock_raiders
-			THIS = {
-				has_underground_terrain = yes
-			}
-		} 
-		set_country_flag = gushuokguan_rock_raiders_battle
 	}
 	if = {
 		limit = { tag = Y17 } #Gushuokguan
