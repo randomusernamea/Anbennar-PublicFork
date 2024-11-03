@@ -2236,7 +2236,7 @@ guiTypes = {
 				spriteType = "temple_complex_placeholder"
 				position = { x= 250 y=-40 }
 				scripted = yes
-			}	
+			}
 			
 			instantTextBoxType = {
 				name = "church_power_label"
@@ -2975,6 +2975,32 @@ guiTypes = {
 				buttonText = "BACK"
 				buttonFont = "vic_18"
 			}
+		}
+
+		iconType = {
+			name = accretive_path_admin_blocker
+			spriteType = "accretive_path_blocker"
+			position = { x= 48 y=272 }
+			scripted = yes
+		}
+		iconType = {
+			name = accretive_path_diplo_blocker
+			spriteType = "accretive_path_blocker"
+			position = { x= 98 y=272 }
+			scripted = yes
+		}
+		iconType = {
+			name = accretive_path_mil_blocker
+			spriteType = "accretive_path_blocker"
+			position = { x= 148 y=272 }
+			scripted = yes
+		}
+		
+		iconType = {
+			name = devouring_path_blocker
+			spriteType = "GFX_devouring_path_blocker"
+			position = { x=82 y=270 }
+			scripted = yes
 		}
 		
 		################# Church aspect SELECTION for Protestant

@@ -2309,7 +2309,6 @@ jaddari_the_eternal_sun = {
 jaddari_jaddaresas_father = {
 	war_exhaustion = -0.01
 	heir_chance = -0.5
-	yearly_government_power = -0.5
 }
 
 # Elaienna
@@ -11543,10 +11542,14 @@ U18_goblin_wealth = {
 	global_tax_income = 12
 }
 U18_flux_faith = {
-		tolerance_heretic = 2
-	}
+	tolerance_heretic = 2
+}
 U18_god_king_armour = {
-		prestige = 1
+	prestige = 1
+}
+U18_administrating_officers = {
+	army_tradition_decay = -0.005
+	state_maintenance_modifier = -0.10
 }
 
 # A57 Toarnen
@@ -17426,11 +17429,11 @@ bianfang_jade_seal_fleet_modifier = {
 	global_naval_barrage_cost = -0.5
 }
 
-bianfang_lhp_tolerated_modifier = {
+bianfang_dvp_tolerated_modifier = {
 	local_unrest = -5
 }
 
-bianfang_lhp_outraged = {
+bianfang_dvp_outraged = {
 	local_unrest = 10
 }
 
@@ -17982,7 +17985,6 @@ azjakuma_teimarji_mines = {
 }
 
 azjakuma_ritual_modifier = {
-	church_power_modifier = 1
 	shock_damage = 0.25
 	administrative_efficiency = 0.05
 	max_absolutism = 25
@@ -26723,6 +26725,7 @@ F23_copper_ilatani_cooperation = {
 F23_sarhali_interests = {
 	can_chain_claim = yes
 	fabricate_claims_cost = -0.25
+	envoy_travel_time = -0.5
 }
 F23_safe_sarhali_seas_mod = {
 	trade_efficiency = 0.2
@@ -26733,29 +26736,43 @@ F23_the_copper_seaway_mod = {
 	trade_steering = 0.5
 }
 F23_debtorlords_of_bulwar = {
-	reduced_liberty_desire_on_same_continent = 50
+	vassal_income = 0.25
+	caravan_power = 0.5
+}
+F23_upriver_trade_mod = {
+	merchants = 2
+	trade_range_modifier = 1
 	caravan_power = 0.5
 }
 F23_steamers_mod = {
-	light_ship_cost = 1.0
-	global_ship_trade_power = 0.5
+	light_ship_cost = 0.25
+	global_ship_trade_power = 0.1
 }
 F23_steamers_mod_2 = {
-	light_ship_cost = 1.0
-	global_ship_trade_power = 0.5
-	transport_cost = 1.0
-	transport_attrition	= -0.75
+	light_ship_cost = 0.25
+	global_ship_trade_power = 0.1
+	transport_cost = 0.25
+	transport_attrition	= -0.25
 }
 F23_steam_powered_navy = {
-	global_ship_cost = 2.0
-	hull_size_modifier = 1.5
-	number_of_cannons_modifier = 1.0
-	global_naval_engagement_modifier = -0.5
-	global_ship_trade_power = 1
-	transport_attrition	= -1
+	global_ship_cost = 0.5
+	hull_size_modifier = 0.2
+	number_of_cannons_modifier = 0.2
+	global_naval_engagement_modifier = -0.15
+	global_ship_trade_power = 0.2
+	transport_attrition	= -0.5
 }
 free_slot_for_silver_dwarf = {
 	num_accepted_cultures = 1
+}
+F23_reform_progress_mod_1 = { monthly_reform_progress = 0.1 }
+F23_reform_progress_mod_2 = { monthly_reform_progress = 0.2 }
+F23_reform_progress_mod_3 = { monthly_reform_progress = 0.3 }
+F23_temple_custodian_country_mod = {
+	diplomats = 1
+	diplomatic_reputation = 1
+	reverse_relation_with_heathen_religion = 20
+	global_heathen_missionary_strength = -0.02
 }
 
 # Secondary/augmented hegemony.
@@ -26763,18 +26780,21 @@ F23_secondary_hegemony_eco = {
 	min_autonomy_in_territories = -0.2
 	global_trade_goods_size_modifier = 0.25 
 	development_cost_modifier = -0.05
+	cb_on_overseas = yes
 }
 F23_secondary_hegemony_naval = {
 	global_ship_trade_power = 0.2
 	global_naval_engagement_modifier = 0.1
 	global_sailors_modifier = 2.0
 	backrow_artillery_damage = 0.1
+	cb_on_overseas = yes
 }
 F23_maritime_hegemony = {
 	min_autonomy_in_territories = -0.2
 	global_trade_goods_size_modifier = 0.25 
 	global_naval_engagement_modifier = 0.1
 	global_sailors_modifier = 2.0
+	cb_on_overseas = yes
 }
 
 # Temporary country modifiers.
@@ -26807,6 +26827,10 @@ F23_clove_colonies = {
 F23_grun_strongbellow = {
 	yearly_innovativeness = 0.25
 }
+F23_commercial_expansion = {
+	center_of_trade_upgrade_cost = -0.25
+	expand_infrastructure_cost_modifier = -0.25
+}
 
 # Permanent province modifiers
 F23_flooded_depths = {
@@ -26829,33 +26853,34 @@ F23_bahari_mint = {
 	local_governing_cost = -1
 	local_governing_cost_increase = -30	
 }
+F23_religious_tolerance = {
+	local_religious_unity_contribution = -1
+	local_tolerance_of_heathens	= 3
+}
 F23_port_jurith_toll_1 = {
 	province_trade_power_value = 5
-	local_governing_cost = -1
 }
 F23_mushesh_toll_1 = {
 	province_trade_power_value = 5
-	local_governing_cost = -1
 }
 F23_port_jurith_toll_2 = {
 	province_trade_power_value = 10
-	local_governing_cost = -1
 }
 F23_mushesh_toll_2 = {
 	province_trade_power_value = 10
-	local_governing_cost = -1
 }
 F23_local_naval_base = {
-	naval_forcelimit = 5
-	local_governing_cost = -1
+	naval_forcelimit = 10
 }
 F23_divenhal_exchange = {
 	local_gold_depletion_chance_modifier = -0.5
 	trade_value = 5
-	local_governing_cost = -1.5
+	min_local_autonomy = -90
 }
 F23_copper_aegis = {
-	trade_goods_size_modifier = 0.1
+	trade_value_modifier = 0.1
+	local_build_cost = -0.25
+	local_prosperity_growth = 1
 }
 F23_strongbellow_pumps_mod = {
 	local_build_time = -0.1
@@ -26871,7 +26896,7 @@ F23_increased_food_prices = {
 	local_tax_modifier = -0.2
 }
 F23_the_mother_grain = {
-	local_development_cost = -0.1
+	local_development_cost = -0.2
 }
 F23_copper_sheathing_price_increase = {
 	trade_value_modifier = 0.5
@@ -26890,22 +26915,35 @@ F23_precursor_dredging_center = {
 	local_development_cost = -0.25
 	local_governing_cost = -1
 	local_governing_cost_increase = -30
+	local_religious_unity_contribution = -1
 }
-F23_steamer_visits = {
-	trade_value_modifier = 0.1
+F23_temple_custodian_prov_mod = {
+	local_development_cost = -0.3
+}
+F23_warship_on_display = {
+	prestige = 1
 }
 
 # Temporary province modifiers
-F23_bahari_calm = {
+F23_bahari_calm_1 = {
 	local_prosperity_growth = 0.5
-	trade_goods_size_modifier = 0.1
+	local_autonomy = -0.05
+	local_development_cost = -0.05
+}
+F23_bahari_calm_2 = {
+	local_prosperity_growth = 1
+	local_autonomy = -0.1
 	local_development_cost = -0.1
 }
 F23_steam_curios = {
 	diplomatic_reputation = 1
 	trade_value = 5
 }
-
+F23_focused_resettlement = {
+	local_build_cost = -0.5
+	local_monthly_devastation = -1
+	local_prosperity_growth = 0.5
+}
 
 # Subject loyalty modifiers
 F23_loyal_subjects = {
@@ -26914,11 +26952,11 @@ F23_loyal_subjects = {
 
 # Improved Trading Post modifiers
 # Could be one modifier, but the entire Sea Hold system works much easier when the modifiers are technically separate.
-F23_improved_trading_post_1 = { province_trade_power_value =  5   local_sailors_modifier =  1   naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 local_governing_cost = -0.3 }
-F23_improved_trading_post_2 = { province_trade_power_value =  5   local_sailors_modifier =  1   naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 local_governing_cost = -0.3 }
-F23_improved_trading_post_3 = { province_trade_power_value =  5   local_sailors_modifier =  1   naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 local_governing_cost = -0.3 }
-F23_improved_trading_post_4 = { province_trade_power_value =  5   local_sailors_modifier =  1   naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 local_governing_cost = -0.3 }
-F23_improved_trading_post_5 = { province_trade_power_value =  5   local_sailors_modifier =  1   naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 local_governing_cost = -0.3 }
+F23_improved_trading_post_1 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_2 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_3 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_4 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
+F23_improved_trading_post_5 = { province_trade_power_value =  5  naval_forcelimit =  2 min_local_autonomy = -20 local_governing_cost_increase =  -30 }
 
 F23_improved_trading_post_granary = { local_development_cost = -0.1 }
 F23_improved_trading_post_granary_improved = { local_development_cost = -0.2 }
@@ -26973,6 +27011,10 @@ F23_sea_hold_prov_mod_settlement = { local_build_cost = -0.2 local_build_time = 
 
 # Dummy helper modifier for artisan area effect.
 F23_sea_hold_artisan_marker = { }
+
+# Dummy modifiers for temp cores.
+F23_copper_offer_hostile_takeover_temp_mod = { }
+F23_copper_offer_hostile_takeover_dummy_mod = { }
 
 #Azkabar
 F35_lake_mining_operations ={
@@ -28738,7 +28780,7 @@ F30_farming_level_one = {
 }
 
 F30_ituqattar_level_1 = {
-	cavalry_power = 0.10
+	cavalry_power = 0.15
 	cav_to_inf_ratio = 0.25
 	yearly_corruption = 0.1
 }
@@ -28861,10 +28903,10 @@ F30_ituqattar_unrest = {
 }
 
 F30_ituqattar_level_2 = {
-	cavalry_power = 0.20
-	cavalry_cost = 0.10
+	cavalry_power = 0.25
 	cav_to_inf_ratio = 0.35
-	yearly_corruption = 0.2
+	cavalry_cost = 0.10
+	yearly_corruption = 0.15
 	reform_progress_growth = -0.05
 }
 
@@ -28878,6 +28920,7 @@ F30_ending_wishes = {
 }
 
 F30_karqaslu_cult = {
+	cavalry_power = 0.1
 	global_missionary_strength = 0.02
 }
 
@@ -28900,10 +28943,10 @@ F30_alusirs_bahar = {
 }
 
 F30_ituqattar_level_3 = {
-	cavalry_power = 0.33
-	cavalry_cost = 0.20
+	cavalry_power = 0.4
 	cav_to_inf_ratio = 0.5
-	yearly_corruption = 0.3
+	yearly_corruption = 0.2
+	cavalry_cost = 0.15
 	reform_progress_growth = -0.15
 }
 
@@ -29220,7 +29263,7 @@ pasiragha_mod_permanent_godlost = {
 	drill_gain_modifier = +0.25
 }
 
-pasiragha_mod_permanent_lefthand_path = {
+pasiragha_mod_permanent_devouring_path = {
 	shock_damage = +0.10
 }
 
@@ -29310,7 +29353,7 @@ pasiragha_mod_ext_scholar_godlost = {
 	drill_gain_modifier = +0.25
 }
 
-pasiragha_mod_ext_scholar_lefthand_path = {
+pasiragha_mod_ext_scholar_devouring_path = {
 	shock_damage = +0.10
 }
 
@@ -29376,6 +29419,119 @@ pasiragha_mod_thought_debate_1 = {
 
 pasiragha_mod_thought_debate_2 = {
 	production_efficiency = 0.10
+}
+
+#Duwarkani
+
+duwarkani_dam_of_shadows = {
+	local_defensiveness = 0.2
+	local_fort_maintenance_modifier = -0.2
+}
+
+duwarkani_feathers_of_maat_mercs = {
+	mercenary_discipline = 0.1
+}
+
+duwarkani_calmed_fears = {
+	local_unrest = -10
+}
+
+duwarkani_a_blessed_dynasty = {
+	#this is for magic heirs, the effect is done in the event
+}
+
+duwarkani_holy_nzeri_temple = {
+	local_development_cost_modifier = -0.2
+	local_tax_modifier = 0.3
+	statewide_governing_cost = -0.2
+}
+
+duwarkani_paladins_modifier = {
+	land_forcelimit_modifier = -0.2
+	morale_damage_received = -0.2
+	recover_army_morale_speed = 0.2
+}
+
+duwarkani_warrior_king_dynasty = {
+	monarch_military_power = 1
+}
+
+duwarkani_at_fields = {
+	fire_damage_received = -0.1
+}
+
+duwarkani_disgruntled_ahati = {
+	global_unrest = 1
+	adeen_loyalty_modifier = -0.1
+}
+
+duwarkani_opening_the_ahati = {
+	num_accepted_cultures = 1
+}
+
+duwarkani_menkaunswts_heir = {
+	is_janissary_modifier = yes
+	infantry_power = 0.1
+}
+
+duwarkani_menkaunswts_winged_heir = {
+	is_janissary_modifier = yes
+	infantry_power = 0.2
+}
+
+duwarkani_menkaunswt_the_architect = {
+	great_project_upgrade_cost = -0.25
+}
+
+duwarkani_holy_protectors_gone = {
+	morale_damage_received = 0.2
+}
+
+duwarkani_chained_paladins = {
+	movement_speed = -0.1
+}
+
+duwarkani_angry_at_gnomes = {
+	local_production_efficiency = -0.5
+}
+ 
+duwarkani_mages_undestand_the_shadows = {
+	mages_loyalty_modifier = 0.20
+	mages_influence_modifier = 0.20
+}
+
+duwarkani_hunting_for_grilax = {
+	global_unrest = 2
+}
+
+duwarkani_beastbane_lives = {
+	stability_cost_modifier = 2
+}
+
+duwarkani_she_weeps_for_all = {
+	tolerance_own = 4
+	manpower_in_true_faith_provinces = 0.2
+} 
+
+duwarkani_admin_consort = {
+	country_admin_power = 1
+}
+
+duwarkani_diplo_consort={
+	country_diplomatic_power = 1
+}
+
+duwarkani_mil_consort = {
+	country_military_power = 1
+}
+
+duwarkani_you_deserved_it = {
+	diplomatic_reputation = -2
+}
+
+duwarkani_trollish_ahati_privilege_buff = {
+	shock_damage_received = -0.2
+	is_janissary_modifier = yes
 }
 
 #Zuvavim
@@ -29446,6 +29602,55 @@ L09_vurebindu_nationalism = {
 	local_warscore_cost_modifier = -0.5
 }
 
+#Mihitarab
+L37_shrine_aid = {
+	tolerance_own = 2
+	stability_cost_modifier = -0.15
+}
+
+L37_cult_vanquished = {
+	tolerance_own = 3
+	religious_unity = 0.1
+}
+
+L37_plotting_cultists = {
+	stability_cost_modifier = 0.20
+	global_unrest = 2
+}
+
+L37_the_bottle_of_nyeekayba = {
+	monarch_lifespan = 0.33
+}
+
+L37_point_contact = {
+	local_colonial_growth = 30
+	province_trade_power_value = 5
+}
+
+L37_ruler_injured = {
+	stability_cost_modifier = 0.50
+}
+
+L37_scarred_ruler = {
+	morale_damage = 0.10
+}
+L37_death_exception = {
+	
+}
+L37_cult_stronghold = {
+	local_autonomy = 0.10
+	local_missionary_strength = -1
+	local_unrest = 3
+}
+
+L37_mihipha_college = {
+	adm_advisor_cost = -0.125
+}
+
+L37_peace_on_the_isles = {
+	development_cost = -0.075
+}
+
 #Ekha U08
 
 U08_silver_tarnish = {
@@ -29472,7 +29677,7 @@ U08_rejected_the_prince = {
 }
 
 U08_planetouched_at_home = {
-	province_trade_power_modifier = 0.15
+	global_prov_trade_power_modifier = 0.15
 }
 
 U08_planetouched_in_the_navy = {
@@ -29511,13 +29716,13 @@ U08_bringing_down_the_Swadxevir = {
 }
 
 U08_established_sisterhood = {
-	build_cost = -0.1
-	development_cost = -0.1
+	local_build_cost = -0.1
+	local_development_cost = -0.1
 }
 
 U08_the_kaino_port = {
 	province_trade_power_modifier = 0.15
-	development_cost = -0.2
+	local_development_cost = -0.2
 	local_missionary_strength = -1
 }
 
@@ -30348,7 +30553,7 @@ L70_treason_of_the_cornered_rat = {
 
 L70_triumph_of_the_sapphire_party_1 = { #full purge
 	prestige = 1
-	yearly_army_professionalism = 0.015
+	yearly_army_professionalism = 0.0015
 	technology_cost = -0.025
 	naval_morale = 0.1
 	
@@ -30364,14 +30569,14 @@ L70_triumph_of_the_sapphire_party_2 = { #full mercy
 
 L70_triumph_of_the_sapphire_party_3 = { #purge red and green, mercy gold
 	prestige = 1
-	yearly_army_professionalism = 0.015
+	yearly_army_professionalism = 0.0015
 	technology_cost = -0.025
 	global_ship_trade_power = 0.2
 }
 
 L70_triumph_of_the_sapphire_party_4 = { #purge red, mercy gold and green
 	prestige = 1
-	yearly_army_professionalism = 0.015
+	yearly_army_professionalism = 0.0015
 	idea_cost = -0.05
 	global_ship_trade_power = 0.2
 }
@@ -30392,7 +30597,7 @@ L70_triumph_of_the_sapphire_party_6 = { #purge gold, mercy red and green
 
 L70_triumph_of_the_sapphire_party_7 = { #purge red and gold, mercy green
 	prestige = 1
-	yearly_army_professionalism = 0.015
+	yearly_army_professionalism = 0.0015
 	idea_cost = -0.05
 	naval_morale = 0.1
 }
@@ -30594,4 +30799,573 @@ A75_milcorissian_renaissance = {
 A75_true_heirs_of_milcorissia = {
 	legitimacy = 1
 	mages_loyalty_modifier = 0.1
+}
+
+#Vuls Tenvach
+G79_thekvrystana_shipyard = {
+	local_ship_cost = -0.1
+	ship_recruit_speed = -0.1
+	allowed_geobukseon_fraction = 0.05
+	amount_of_geobukseon = 5
+	local_has_geobukseon = yes
+}
+
+G79_dominant_trade_route_of_taychend = {
+	local_development_cost = -0.1
+	local_friendly_movement_speed = 0.1
+	local_fort_maintenance_modifier = -0.5
+}
+
+G79_thunderous_advance = {
+	movement_speed_in_fleet_modifier = 2
+	movement_speed = 0.2
+}
+
+G79_masters_of_the_path_of_wine = {
+	global_ship_trade_power = 0.3
+}
+
+G79_masters_of_the_straight_road_mod = {
+	caravan_power = 0.3
+}
+
+G79_the_storm_approaches = {
+	manpower_recovery_speed = 0.25
+	province_warscore_cost = -0.1
+}
+
+G79_relics_of_storm_and_thunder = {
+	trade_goods_size = 1
+}
+
+G79_secured_rations = {
+	global_manpower_modifier = 0.1
+	land_attrition = -0.1
+}
+
+G79_road_banditry = {
+	local_hostile_attrition = 2
+	local_hostile_movement_speed = -0.25
+}
+
+G79_taking_a_stand = {
+	land_morale = 0.1
+	land_forcelimit = 5
+	global_manpower = 5
+}
+#themarenn
+recent_river_party = {}
+autonomy_of_the_sweetcastles = {
+	min_local_autonomy = 90
+	local_fort_maintenance_modifier = -0.5
+	nobles_loyalty_modifier = -0.1
+	nobles_influence_modifier = 0.1
+}
+vernellian_treaty = {
+	local_tax_modifier = -0.35
+	local_production_efficiency = -0.35
+	province_trade_power_modifier = -0.35
+	local_manpower_modifier = -0.5
+	nobles_loyalty_modifier = 0.05
+}
+seat_of_the_grand_duchy_of_esmaria = {
+	imperial_authority = 0.10
+}
+way_of_the_esmayral = {
+	female_advisor_chance = 0.15
+	diplomatic_annexation_cost = -0.05
+}
+the_right_of_succession = {
+	governing_capacity_modifier = 0.10
+	diplomatic_annexation_cost = -0.10
+	monthly_heir_claim_increase = 0.2
+}
+ryal_connection = {
+	local_sailors = 600
+}
+canal_provisions_a95 = {
+	local_build_time = 10
+	local_build_cost = 10
+	local_manpower_modifier = -0.5
+	local_development_cost = -0.05
+}
+origin_of_the_esmar = {
+	legitimacy = 1
+	prestige = 1
+}
+origin_of_the_hehaine = {
+	local_tax_modifier = 0.10
+	improve_relation_modifier = 0.10
+}
+origin_of_the_logdoraine = {
+	local_production_efficiency = 0.25
+	development_cost_in_primary_culture = -0.05
+}
+revoked_priviligia_2 = {
+	local_governing_cost = -0.30
+	local_fort_maintenance_modifier = -0.15
+}
+supporting_the_bastard = {
+	advisor_pool = -1
+}
+treaty_of_themarenn_local = {
+	diplomatic_reputation = 1
+}
+treaty_of_themarenn_imperial = {
+	imperial_authority_value = 0.10
+}
+cleansing_infernal_cultists = {
+	global_missionary_strength = 0.02
+}
+slow_great_palace_lake = {
+	local_great_project_upgrade_cost = 0.2
+}
+fast_great_palace_lake = {
+	local_great_project_upgrade_cost = 0.5
+}
+stewards_of_the_rivers = {
+	prestige_decay = -0.01
+}
+home_of_the_river_reavers_1 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.15
+	global_manpower_modifier = -0.10
+}
+home_of_the_river_reavers_2 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.30
+	sailors_recovery_speed = 0.10
+	global_manpower_modifier = -0.20
+	infantry_cost = 0.10
+}
+home_of_the_river_reavers_3 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.50
+	sailors_recovery_speed = 0.20
+	global_manpower_modifier = -0.30
+	infantry_cost = 0.20
+}
+river_reavers_1 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+}
+river_reavers_2 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+	discipline = 0.05
+	shock_damage_received = -0.10
+}
+river_reavers_3 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+	discipline = 0.05
+	shock_damage_received = -0.20
+	fire_damage_received = -0.10
+	military_tactics = 0.25
+}
+themaria_river_reavers = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	discipline = 0.05
+	land_attrition = -0.15
+}
+themaria_river_reavers2 = {
+	allowed_marine_fraction = 0.15
+}
+contesting_ryalan_temple = {
+	adm_advisor_cost = -0.15
+}
+a95_tier1_sailors = {
+	local_sailors = 600
+	allowed_num_of_manufactories = 1
+}
+a95_tier2_sailors = {
+	local_sailors = 900
+	allowed_num_of_manufactories = 1
+}
+a95_ryal_estuary = {
+	province_trade_power_value = 10
+}
+a95_ryal2_estuary = {
+	province_trade_power_value = 20
+	local_ship_repair = 0.25
+}
+since_times_immortal_mod = {
+	diplomatic_reputation = 1
+}
+grand_party_throwers = {}
+imperial_politics = {
+	reasons_to_elect = 20
+}
+resolving_fallout = {
+	improve_relation_modifier = -0.15
+}
+king_of_the_river = {
+	province_trade_power_value = 25
+	trade_value_modifier = 0.25
+	global_trade_power = 0.10
+}
+canal_empty_modifier = {}
+a95_esmaraine_ep2 = {}
+esmaraine_civil_unrest_a95 = {
+	local_core_creation = 1
+	local_missionary_strength = 0.04
+	local_unrest = 10
+}
+a95_esmari_circle_vassal = {
+	development_cost_in_primary_culture = -0.25
+	land_forcelimit_modifier = 0.2
+}
+a95_esmari_circle_emperor = {
+	imperial_authority = 0.10
+}
+a95_ryalan_dream = {
+	monarch_diplomatic_power = 1
+}
+a95_consort_pros_1 = {
+	global_prosperity_growth = 0.1
+}
+a95_consort_pros_2 = {
+	global_prosperity_growth = 0.2
+}
+a95_consort_pros_3 = {
+	global_prosperity_growth = 0.3
+}
+a95_consort_pros_4 = {
+	global_prosperity_growth = 0.4
+}
+a95_consort_pros_5 = {
+	global_prosperity_growth = 0.5
+}
+a95_consort_pros_6 = {
+	global_prosperity_growth = 0.6
+}
+a95_way_of_esmaryal = {
+	diplomatic_annexation_cost = -0.05
+	female_advisor_chance = 0.25
+}
+a95_way_of_esmaryal2 = {
+	diplomatic_annexation_cost = -0.05
+	female_advisor_chance = 0.25
+	relation_with_same_religion = 15
+	reverse_relation_with_same_religion = 15
+}
+a95_yarncliff_ships = {
+	local_ship_repair = 0.1
+	local_ship_cost = -0.1
+}
+a95_admin_burden = {
+	governing_capacity_modifier = -0.05
+	adm_tech_cost_modifier = 0.05
+	advisor_cost = 0.05
+}
+a95_admin2_burden = {
+	governing_capacity_modifier = -0.1
+	adm_tech_cost_modifier = 0.1
+	advisor_cost = 0.1
+	core_creation = 0.05
+}
+a95_admin3_burden = {
+	governing_capacity_modifier = -0.15
+	adm_tech_cost_modifier = 0.15
+	advisor_cost = 0.15
+	core_creation = 0.1
+	advisor_pool = -1
+}
+a95_admin4_burden = {
+	governing_capacity_modifier = -0.2
+	adm_tech_cost_modifier = 0.2
+	advisor_cost = 0.2
+	core_creation = 0.15
+	advisor_pool = -2
+}
+a95_admin5_burden = {
+	governing_capacity_modifier = -0.25
+	adm_tech_cost_modifier = 0.25
+	advisor_cost = 0.25
+	core_creation = 0.2
+	advisor_pool = -3
+}
+a95_navy_speed = {
+	movement_speed_in_fleet_modifier = 1
+	reinforce_speed = 0.15
+}
+a95_bank_investigation = {
+	yearly_corruption = -0.1
+}
+sailors_when_slacken = {
+	sailors_recovery_speed = 2
+}
+
+#Maghargma
+I90_monument_building = {
+	local_development_cost = -0.7
+	prestige = 0.1
+}
+
+I90_goblin_refugees = {
+	trade_goods_size = 0.5
+}
+
+I90_goblin_arrivals = {
+	trade_goods_size = 1
+	local_development_cost = -0.1
+}
+
+I90_goblin_kelaktar = {
+	trade_goods_size = 2
+	local_development_cost = -0.2
+	local_defensiveness = 0.15
+	local_manpower_modifier = 0.25
+}
+
+I90_goblin_auxilliaries = {
+	manpower_recovery_speed = 0.075
+	global_manpower_modifier = 0.1
+	land_forcelimit_modifier = 0.075
+	fire_damage = 0.075
+}
+
+I90_mass_goblin_conscription = {
+	manpower_recovery_speed = 0.15
+	global_manpower_modifier = 0.2
+	land_forcelimit_modifier = 0.15
+	fire_damage = 0.10
+	special_unit_forcelimit = 0.05
+}
+
+I90_ogre_officers = {
+	land_attrition = -0.2
+	siege_ability = 0.1
+	shock_damage = 0.15
+	shock_damage_received = -0.10
+	recover_army_morale_speed = 0.15
+}
+
+I90_sharing_our_burden = {
+	local_unrest = 5
+}
+
+I90_mossmouth_zeal = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+	tolerance_heretic = -3
+	tolerance_heathen = -3
+}
+
+I90_modern_moderation = {
+	tolerance_heretic = 2
+	tolerance_heathen = 2
+}
+
+I90_zealous_defenders = {
+	local_defensiveness = 0.25
+}
+
+I90_our_swamp = {
+	morale_damage_received = -0.20
+}
+
+I90_loyal_ogre = {
+	liberty_desire = -100
+}
+
+I90_great_clan_rijansavi = {
+	burghers_loyalty_modifier = 0.1
+	build_cost = -0.05
+}
+
+I90_great_clan_sripttushtef = {
+	church_loyalty_modifier = 0.1
+	idea_cost = -0.05
+}
+
+I90_great_clan_rknarnklach = {
+	adventurers_loyalty_modifier = 0.1
+	army_tradition = 0.25
+}
+
+I90_great_clan_aglurndamki = {
+	artificers_loyalty_modifier = 0.1
+	technology_cost = -0.05
+}
+
+I90_great_clan_viskaghrk = {
+	nobles_loyalty_modifier = 0.1
+	cavalry_power = 0.05
+}
+
+I90_great_clan_levilkhgan = {
+	mages_loyalty_modifier = 0.1
+	mages_influence_modifier = 0.1
+}
+
+I90_royal_woodlands = {
+	max_absolutism = 5
+}
+
+I90_troll_auxiliaries = {
+	recover_army_morale_speed = 0.25
+}
+
+I90_troll_farming = {
+	production_efficiency = 0.05
+}
+
+I90_western_fleet_buildup = {
+	global_ship_recruit_speed = -0.25
+	global_ship_cost = -0.5
+}
+
+I90_cannorian_cannons = {
+	fire_damage = 0.1
+}
+
+I90_securing_the_north = {
+	colonists = 1
+}
+
+I90_unprofitable_exports = {
+	trade_goods_size = -5
+	local_build_cost = 0.25
+}
+
+I90_metal_shortage = {
+	infantry_power = -0.15
+}
+
+I90_studied_architecture = {
+	siege_ability = 0.2
+}
+
+I90_mantle_of_the_giants = {
+	unjustified_demands = -0.2
+	liberty_desire_from_subject_development = -0.25
+	allow_client_states = yes
+}
+
+I90_sponsored_invasion = {
+	liberty_desire = -50
+}
+
+I90_ogre_silverware = {
+	tolerance_own = 1
+}
+
+I90_ogre_weapons = {
+	artillery_cost = -0.1
+}
+
+I90_decorative_statues = {
+	prestige = 1
+}
+
+I90_full_bellies = {
+	global_manpower_modifier = 0.2
+	global_supply_limit_modifier = 0.15
+}
+
+I90_industrial_farming = {
+	local_production_efficiency = 0.2
+	local_development_cost = -0.1
+}
+
+I90_second_rule_of_giants = {
+	administrative_efficiency  = 0.1
+}
+
+I90_expanding_court = {
+	diplomatic_upkeep = 3
+}
+
+I90_press_forward = {
+	movement_speed = 0.10
+}
+
+I90_favored_horse = {
+	liberty_desire = -25
+}
+
+I90_horse_free = {
+	diplomatic_upkeep = 1
+}
+
+I90_strip_mining = {
+	trade_goods_size = 1
+	local_unrest = 2
+}
+
+I90_letting_loose = {
+	global_heretic_missionary_strength = 0.03
+}
+
+I90_continental_claims = {
+	province_warscore_cost = -0.33
+}
+
+I90_serpentspine_plantations = {
+	trade_value = 1
+	local_unrest = 1
+}
+
+I90_collaborative_administration = {
+	years_of_nationalism = -5
+	num_accepted_cultures = 2
+	trade_goods_size_modifier = 0.1
+}
+
+I90_despotic_administration = {
+	garrison_size = 0.3
+	ae_impact = -0.10
+	harsh_treatment_cost = -0.25
+}
+
+I90_flexible_administration = {
+	core_creation = -0.1
+	idea_cost = -0.1
+	autonomy_change_time = -0.15
+}
+
+I90_reunification_jubilee = {
+	local_unrest = -10
+}
+
+I90_stalwart_resistance = {
+	local_unrest = 10
+	local_missionary_strength = -0.1
+}
+
+I90_culture_shock = {
+	local_unrest = 10
+}
+
+I90_mutual_understanding = {
+	local_religious_unity_contribution = -1
+}
+
+I90_fresh_recruits = {
+	land_forcelimit = 10
+}
+
+I90_independent_army = {
+	global_tax_income = 12
+	land_forcelimit_modifier = 0.25
+}
+
+I90_ogre_steel = {
+	build_cost = -0.1
+}
+
+I90_islandbreakers = {
+	artillery_power = 0.15
+}
+
+I90_loyal_troops = {
+	morale_damage_received = -0.1
 }
