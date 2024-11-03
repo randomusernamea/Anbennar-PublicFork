@@ -6056,44 +6056,103 @@ ormam_slave_market = {
 	trade_goods_size = 1
 }
 
-kherka_kherkan_forges_1 = {
-	trade_goods_size = 1
+#Kherka
+G48_expansion_efforts = {
+	local_development_cost = -0.5
+	trade_goods_size_modifier = -0.5
+	local_production_efficiency = -0.5
 }
 
-kherka_producing_iron = {
-	production_efficiency = 0.1
+G48_stalwarts_in_power = {
+	improve_relation_modifier = 0.05
+	build_cost = -0.05
 }
 
-kherka_kherkan_forges_2 = {
+G48_militants_in_power = {
+	mil_advisor_cost = -0.10
+	defensiveness = 0.05
+}
+
+G48_colonists_in_power = {
+	liberty_desire_from_subject_development = -0.10
+	global_ship_recruit_speed = -0.10
+}
+
+G48_schemers_in_power = {
+	spy_offence = 0.1
+	trade_efficiency = 0.05
+}
+
+G48_regular_navy_drills = {
+	navy_tradition = 0.25
+	navy_tradition_decay = -0.05
+}
+
+G48_heart_of_the_navy = {
+	naval_maintenance_modifier = -0.25
+	is_geobukseon_modifier = yes
+}
+
+G48_mass_degarikes = {
+	allowed_geobukseon_fraction = 0.25
+}
+
+G48_recently_sacked = {
+	local_unrest = 10
+}
+
+G48_a_better_method = {
+	build_cost = -0.15
+}
+
+G48_kheintro_challum = {
 	trade_goods_size = 3
 }
 
-kherka_kherkan_forges_3 = {
-	trade_goods_size = 4
+G48_kheintro_sidara = {
+	local_regiment_cost = -0.25
+	regiment_recruit_speed = -0.25
+	local_manpower_modifier = 0.25
 }
 
-kherka_gnomish_inventors = {
+G48_kheintro_kosphin = {
+	prestige = 0.5
+	trade_goods_size_modifier = 0.2
+}
+
+G48_magic_and_steel = {
+	trade_goods_size_modifier = 0.1
+}
+
+G48_blue_friend = {
 	technology_cost = -0.1
+	embracement_cost = -0.5
+	production_efficiency = -0.05
 }
 
-kherka_guns_of_kherka = {
-	fire_damage = 0.1
+G48_influx_of_capital = {
+	local_development_cost = -0.25
+	local_production_efficiency = -0.2
+	trade_goods_size_modifier = -0.1
 }
 
-kherka_alecandi_jewlery = {
-	prestige = 1
+G48_influx_of_capital_2 = {
+	local_development_cost = -0.50
+	local_production_efficiency = -0.4
+	trade_goods_size_modifier = -0.2
 }
 
-kherka_foundries_of_south_aelantir = {
-	global_trade_goods_size_modifier = 0.05
+G48_odegaster_cogemos = {
+	reinforce_speed = 0.20
+	regiment_manpower_usage = -0.1
 }
 
-kherka_emerald_production = {
-	global_tax_modifier = 0.10
+G48_new_mines = {
+	local_development_cost = -0.25
 }
 
-kherka_staple_port = {
-	province_trade_power_value = 15
+G48_master_of_metallu = {
+	local_production_efficiency = 0.2
 }
 
 lokemeion_new_farms = {
