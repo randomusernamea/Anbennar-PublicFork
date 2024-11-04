@@ -501,9 +501,6 @@ maghargma_one_post_westmarches = {
 						}
 					}
 				}
-				serpents_vale_region = {
-					add_permanent_claim = ROOT 
-				} 
 				amldihr_area = { 
 					add_permanent_claim = ROOT 
 				} 
@@ -921,14 +918,14 @@ maghargma_dynamic_trolls = {
 		required_missions = { maghargma_enforce_our_claims } 
 		provinces_to_highlight = {  
 			region = northern_pass_region
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
 		trigger = {
 			has_country_modifier = racial_focus_troll
 			northern_pass_region = {
 				type = all
-				owned_by = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 			if = {
 				limit = {
@@ -943,7 +940,7 @@ maghargma_dynamic_trolls = {
 					has_missionary = yes 
 				}
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 3
 				religion = ROOT
 				region = northern_pass_region
@@ -2438,7 +2435,7 @@ maghargma_four_pre_ancestor = {
 		position = 11
 		required_missions = { maghargma_the_second_ogre_valley } 
 		provinces_to_highlight = {  
-			owned_by = ROOT
+			country_or_non_sovereign_subject_holds = ROOT
 			religion = sudomegi
 			OR = {
 				has_tax_building_trigger = no
@@ -2447,10 +2444,17 @@ maghargma_four_pre_ancestor = {
 		} 
 
 		trigger = {
-			any_owned_province = {
-				religion = sudomegi
-				has_tax_building_trigger = yes
-				has_missionary = yes
+			if = {
+				limit = {
+					nomsyulhan_region = {
+						religion = sudomegi 
+					}
+				}
+				any_owned_province = {
+					religion = sudomegi
+					has_tax_building_trigger = yes
+					has_missionary = yes
+				}
 			}
 			estate_loyalty = {
 				estate = estate_church
