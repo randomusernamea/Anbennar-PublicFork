@@ -7709,15 +7709,21 @@ custom_button = {
 		}
 		else_if = {
 			limit = { tag = Z38 }
-			if = {
-				limit = {
-					artifice_can_select_invention_10 = yes
-					NOT = {
-						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-					}
-				}
-				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			}
+			set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			# if = {
+			# 	limit = {
+			# 		NOT = {
+			# 			has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			# 		}
+			# 	}
+			# 	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		has_estate_privilege = artifice_invention_bramble_burners
+			# 	}
+			# 	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			# }
 		}
 	}
 }
