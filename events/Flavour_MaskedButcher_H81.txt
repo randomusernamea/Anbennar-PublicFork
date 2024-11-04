@@ -333,7 +333,7 @@ country_event = {
 }
 
 #All The Light Touches
-province_event = {
+country_event = {
 	id = flavour_maskedbutcher.9
 	title = flavour_maskedbutcher.9.t
 	desc = flavour_maskedbutcher.9.d
@@ -343,23 +343,21 @@ province_event = {
 
 	option = {
 		name = flavour_maskedbutcher.9.a
-		owner = { 
-			set_country_flag = mb_drowninthedeep_flg 
-			swap_non_generic_missions = yes
-			if = {
-				limit = { has_ruler = "Anarchy!" }
-				define_ruler = {
-					min_age = 18
-					max_age = 35
-					change_adm = 1
-					change_dip = 1
-					change_mil = 3
-					random_gender = yes
-				}
+		set_country_flag = mb_drowninthedeep_flg 
+		swap_non_generic_missions = yes
+		if = {
+			limit = { has_ruler = "Anarchy!" }
+			define_ruler = {
+				min_age = 18
+				max_age = 35
+				change_adm = 1
+				change_dip = 1
+				change_mil = 3
+				random_gender = yes
 			}
-			custom_tooltip = summon_blood_moon_unlock_tt
-			set_country_flag = mb_blood_moon_flg
 		}
+		custom_tooltip = summon_blood_moon_unlock_tt
+		set_country_flag = mb_blood_moon_flg
 	}
 }
 
