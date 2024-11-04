@@ -17844,6 +17844,21 @@ maghargama_vassalize_centaur_tributary = {
 				culture_group = centaur
 			}
 			ROOT = { vassalize = PREV }
+			[[move_capital]
+			if = {
+				limit = {
+					NOT = {
+						capital_scope = { region = $region$ }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						region = $region$ 
+					}
+					owner = { set_capital = PREV }
+				}
+			}
+			]
 		}
 		#Every tributary inside the region should've been your vassal, if any other tribs outside owns it its ceded to you
 		every_subject_country = { 

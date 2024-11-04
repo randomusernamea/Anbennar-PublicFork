@@ -2005,7 +2005,10 @@ maghargma_four = {
 				}
 			}
 			else = {
-				maghargama_vassalize_centaur_tributary = { region = west_forbidden_plains_region }
+				maghargama_vassalize_centaur_tributary = { 
+					region = west_forbidden_plains_region 
+					move_capital = yes
+				}
 			}
 			hidden_effect = {
 				ogre_valley_region = {
@@ -2135,7 +2138,10 @@ maghargma_four = {
 			}
 			else = {
 				custom_tooltip = maghargma_lord_of_the_plains_tt_2
-				maghargama_vassalize_centaur_tributary = { region = east_forbidden_plains_region }
+				maghargama_vassalize_centaur_tributary = { 
+					region = east_forbidden_plains_region 
+					move_capital = yes
+				}
 			}
 		}
 	}
@@ -2763,7 +2769,10 @@ maghargma_five = {
 			}
 			else = {
 				custom_tooltip = maghargma_sieze_the_serpent_tt_2
-				maghargama_vassalize_centaur_tributary = { region = serpent_gift_region }
+				maghargama_vassalize_centaur_tributary = { 
+					region = serpent_gift_region 
+					move_capital = yes
+				}
 			}
 			5102 = {
 				add_trade_modifier = {
