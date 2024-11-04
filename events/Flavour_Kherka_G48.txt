@@ -91,9 +91,12 @@ country_event = { #Merchant's Beware
                 add_treasury = 200
             }
         }
-        G46 = {
-            every_owned_province = { 
-                add_permanent_claim = ROOT
+        custom_tooltip = G48_degakheion_claims_tt
+        hidden_effect = {
+            G46 = {
+                every_owned_province = { 
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
@@ -142,7 +145,7 @@ country_event = { #Shift The Tide
             }
             capital_scope = {
                 add_unit_construction = {
-                    type = geobukseon
+                    type = geobukseon_galley
                     amount = 5
                     speed = 0.5
                     cost = 0
@@ -230,18 +233,24 @@ country_event = { #Scrolls Of Knowledge
                 change_innovativeness = 3
             }
         }
-        G60 = {
-            every_owned_province = {
-                add_permanent_claim = ROOT
+        custom_tooltip = G48_eltikan_claims_tt
+        hidden_effect = {
+            G60 = {
+                every_owned_province = {
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
 
     option  = {
         name = flavour_kherka.4.b #Leave It
-        G60 = {
-            every_owned_province = {
-                add_permanent_claim = ROOT
+        custom_tooltip = G48_eltikan_claims_tt
+        hidden_effect = {
+            G60 = {
+                every_owned_province = {
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
@@ -257,9 +266,12 @@ country_event = { #Scrolls Of Knowledge
             set_country_flag = G48_institution_bonus
         }
         add_dip_power = -50
-        G60 = {
-            every_owned_province = {
-                add_permanent_claim = ROOT
+        custom_tooltip = G48_eltikan_claims_tt
+        hidden_effect = {
+            G60 = {
+                every_owned_province = {
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
