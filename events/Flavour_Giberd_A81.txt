@@ -428,7 +428,6 @@ country_event = {
 				who = ROOT
 				modifier = giberd_potions_bribe
 				years = 10
-				multiplier = 0.5
 			}
 		}
 		if = {
@@ -570,6 +569,7 @@ country_event = {
 				who = ROOT
 				modifier = giberd_potions_bribe
 				years = 10
+				multiplier = 2
 			}
 		}
 	}
@@ -599,6 +599,7 @@ country_event = {
 				who = ROOT
 				modifier = giberd_potions_bribe
 				years = 10
+				multiplier = 2
 			}
 		}
 		add_country_modifier = {
@@ -636,6 +637,8 @@ country_event = {
 			add_opinion = {
 				who = ROOT
 				modifier = giberd_potions_bribe
+				years = 10
+				multiplier = 2
 			}
 			add_treasury = 1000
 		}
@@ -664,6 +667,7 @@ country_event = {
 			add_opinion = {
 				who = ROOT
 				modifier = giberd_potions_bribe
+				multiplier = 2
 			}
 		}
 		add_country_modifier = {
@@ -695,6 +699,8 @@ country_event = {
 			add_opinion = {
 				who = ROOT
 				modifier = giberd_potions_bribe
+				years = 2
+				multiplier = 2
 			}
 		}
 		add_country_modifier = {
@@ -722,6 +728,8 @@ country_event = {
 			add_opinion = {
 				who = ROOT
 				modifier = giberd_potions_bribe
+				years = 10
+				multiplier = 2
 			}
 		}
 		add_country_modifier = {
