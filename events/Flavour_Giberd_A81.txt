@@ -15,7 +15,6 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
-		# TODO: inability to research
 		hidden_effect = {
 			#Artificery Local Setup
 			# done manually here because the loc/choice in the usual setup event doesn't fit
@@ -244,7 +243,6 @@ country_event = {
 	picture = HRE_eventPicture
 	is_triggered_only = yes
 	option = {
-		# TODO: unlock tier 2 inventions
 		name = flavor_giberd.14.a
 		custom_tooltip = giberd_increases_our_artifice_upkeep_by_20
 		custom_tooltip = artificer_points_upkeep_tt
@@ -284,8 +282,6 @@ country_event = {
 		custom_tooltip = artifice_limited_to_tier_2_tt
 		clr_country_flag = artifice_limited_to_tier_1
 		set_country_flag = artifice_limited_to_tier_2
-		# TODO: unlock level 2 inventions
-		# TODO: start river party
 	}
 }
 
@@ -1129,7 +1125,7 @@ country_event = {
 				duration = -1
 			}
 		}
-		custom_tooltip = giberd_silverforge_war_tt		# TODO: implement
+		custom_tooltip = giberd_silverforge_war_tt
 		large_increase_of_dwarven_tolerance_effect = yes
 		for = {
 			custom_tooltip = giberd_10_provinces_get_dwarves_tt
