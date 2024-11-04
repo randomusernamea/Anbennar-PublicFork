@@ -44,11 +44,18 @@ G48_slot_1 = {
 				}
 				create_admiral = { tradition = 50 }
 			}
+			custom_tooltip = G48_learning_from_the_best_tt
 			if = {
 				limit = {
-					NOT = { advisor = naval_reformer }
-					NOT = { has_country_flag = colonists_in_power }
+					NOT = { 
+						advisor = naval_reformer 
+						has_country_flag = colonists_in_power 
+					}
 				}
+				custom_tooltip = BONUS_REWARD_YES
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
 				add_dip_power = -50
 			}
 		} 
