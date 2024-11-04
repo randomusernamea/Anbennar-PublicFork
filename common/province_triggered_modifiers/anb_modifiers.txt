@@ -1,14 +1,20 @@
+
 # Province Triggered modifiers are here.
 # These are added to provinces through the add_province_triggered_modifier effect
 #
 # Effects are fully scriptable here.
+
+
 ###########################################
 # Just random test modifier
 ###########################################
+
+
 no_subterannean_race = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = no_subterannean_race_tooltip
@@ -18,9 +24,11 @@ no_subterannean_race = {
 	picture = "non_subterran"
 	local_tax_modifier = -0.5
 	local_production_efficiency = -0.5
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -29,40 +37,44 @@ dwarf_birthplace = {
 	potential = {
 		province_id = 4269
 	}
+
 	trigger = {
 		religion_group = dwarven
-		owner = {
-			religion_group = dwarven
-		}
+		owner = { religion_group = dwarven }
 	}
 	missionaries = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
+
 
 flooded_province = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		NOT = {
+		NOT = { 
 			AND = {
 				culture = mossmouth_ogre
-				owner = {
-					primary_culture = mossmouth_ogre
-				}
+				owner = { primary_culture = mossmouth_ogre } 
 			}
 		}
 	}
+
 	picture = "flooded_province"
 	local_development_cost = 0.5
 	local_state_maintenance_modifier = 0.2
 	trade_goods_size = -2
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -71,14 +83,17 @@ efficient_irrigation = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		trade_goods = grain
 	}
 	picture = "efficient_irrigation"
 	trade_goods_size = 1
 	local_development_cost = -0.1
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -86,12 +101,9 @@ efficient_irrigation = {
 harpy_roost = {
 	picture = "harpy_roost"
 	potential = {
-		OR = {
-			has_terrain = mountain
-			has_terrain = highlands
-			has_terrain = hills
-		}
+		OR = { has_terrain = mountain has_terrain = highlands has_terrain = hills }
 	}
+
 	trigger = {
 		fort_level = 1
 		culture_group = harpy
@@ -103,6 +115,7 @@ harpy_roost = {
 	local_development_cost = -0.25
 	local_defensiveness = 0.5
 	province_trade_power_value = 5
+
 	#Province scope
 	on_activation = {
 		#if = { limit = { NOT = { has_province_modifier = same_roost_owner } }
@@ -120,6 +133,7 @@ harpy_roost = {
 		#	add_province_modifier = { name = same_roost_owner duration = -1 hidden = yes }
 		#}
 	}
+
 	on_deactivation = {
 		#if = { limit = { NOT = { has_province_modifier = same_roost_owner } }
 		#	save_event_target_as = roost_province
@@ -135,37 +149,13 @@ harpy_roost = {
 		#	}
 		#	add_province_modifier = { name = same_roost_owner duration = -1 hidden = yes }
 		#}
+		
 		#Mulen
-		if = {
-			limit = {
-				has_province_modifier = mulen_hanging_city_foundation
-			}
-			remove_province_modifier = mulen_hanging_city_foundation
-		}
-		if = {
-			limit = {
-				has_province_modifier = mulen_hanging_city
-			}
-			remove_province_modifier = mulen_hanging_city
-		}
-		if = {
-			limit = {
-				has_province_modifier = mulen_hanging_city_baths
-			}
-			remove_province_modifier = mulen_hanging_city_baths
-		}
-		if = {
-			limit = {
-				has_province_modifier = mulen_hanging_city_gardens
-			}
-			remove_province_modifier = mulen_hanging_city_gardens
-		}
-		if = {
-			limit = {
-				has_province_modifier = mulen_hanging_city_libraries
-			}
-			remove_province_modifier = mulen_hanging_city_libraries
-		}
+		if = { limit = { has_province_modifier = mulen_hanging_city_foundation } remove_province_modifier = mulen_hanging_city_foundation }
+		if = { limit = { has_province_modifier = mulen_hanging_city } remove_province_modifier = mulen_hanging_city }
+		if = { limit = { has_province_modifier = mulen_hanging_city_baths } remove_province_modifier = mulen_hanging_city_baths }
+		if = { limit = { has_province_modifier = mulen_hanging_city_gardens } remove_province_modifier = mulen_hanging_city_gardens }
+		if = { limit = { has_province_modifier = mulen_hanging_city_libraries } remove_province_modifier = mulen_hanging_city_libraries }
 	}
 }
 
@@ -173,15 +163,18 @@ sareyand_the_ash_palace = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	prestige = 1
 	free_adm_policy = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -190,18 +183,19 @@ sareyand_the_blazing_temple = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		religion = bulwari_sun_cult
-		owner = {
-			religion = bulwari_sun_cult
-		}
+		owner = { religion = bulwari_sun_cult }
 	}
 	picture = "ziggurat_of_surakel_modifier"
 	tolerance_own = 2
 	global_missionary_strength = 0.01
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -210,11 +204,10 @@ jaddari_grand_temple = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		if = {
-			limit = {
-				has_global_flag = yudunyovi_sun_cult_mods
-			}
+			limit = { has_global_flag = yudunyovi_sun_cult_mods }
 			owner = {
 				OR = {
 					religion = yudunyovi
@@ -237,9 +230,11 @@ jaddari_grand_temple = {
 	missionaries = 1
 	global_missionary_strength = 0.01
 	missionary_maintenance_cost = -0.15
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -248,33 +243,29 @@ jaddari_the_mountain_of_clear_sight = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		religion = the_jadd
-		owner = {
-			religion = the_jadd
-		}
+		owner = { religion = the_jadd }
 	}
 	picture = "ziggurat_of_surakel_modifier"
 	tolerance_own = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
 
 federation_unlawful_occupation = {
 	potential = {
-		NOT = {
-			has_global_flag = lake_federation_disbanded
-		}
-		NOT = {
-			has_global_flag = lake_federation_formed
-		}
-		owner = {
-			has_country_modifier = lake_federation_member
-		}
+		NOT = { has_global_flag = lake_federation_disbanded }
+		NOT = { has_global_flag = lake_federation_formed }
+		owner = { has_country_modifier = lake_federation_member }
 	}
+
 	trigger = {
 		owner = {
 			OR = {
@@ -298,9 +289,11 @@ federation_unlawful_occupation = {
 	# picture = "federation_unlawful_occupation"
 	diplomatic_reputation = -1.5
 	prestige = -0.25
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -308,41 +301,28 @@ federation_unlawful_occupation = {
 federation_cohesion_triggers = {
 	hidden = yes
 	potential = {
-		NOT = {
-			has_global_flag = lake_federation_disbanded
-		}
-		NOT = {
-			has_global_flag = lake_federation_formed
-		}
+		NOT = { has_global_flag = lake_federation_disbanded }
+		NOT = { has_global_flag = lake_federation_formed }
 	}
+
 	trigger = {
 		has_global_flag = lake_cohesion_1
 	}
+
 	#Province scope
 	on_activation = {
 		if = {
-			limit = {
-				owner = {
-					has_country_modifier = lake_federation_member
-				}
-			}
-			owner = {
-				country_event = {
-					id = splintering.1
-				}
-			}
+			limit = { owner = { has_country_modifier = lake_federation_member } }
+			owner = { country_event = { id = splintering.1 } }
 		}
 		else = {
 			random_country = {
-				limit = {
-					has_country_modifier = lake_federation_member
-				}
-				country_event = {
-					id = splintering.1
-				}
+				limit = { has_country_modifier = lake_federation_member }
+				country_event = { id = splintering.1 }
 			}
 		}
 	}
+
 	on_deactivation = {
 		if = {
 			limit = {
@@ -354,12 +334,8 @@ federation_cohesion_triggers = {
 				}
 			}
 			every_country = {
-				limit = {
-					has_country_modifier = lake_federation_member
-				}
-				country_event = {
-					id = lake.39
-				}
+				limit = { has_country_modifier = lake_federation_member }
+				country_event = { id = lake.39 }
 			}
 		}
 	}
@@ -380,21 +356,15 @@ kalsyto_parliament_activator = {
 	on_activation = {
 		J33 = {
 			reinstate_parliament = yes
+			every_owned_province = { set_seat_in_parliament = no }
 			every_owned_province = {
-				set_seat_in_parliament = no
-			}
-			every_owned_province = {
-				limit = {
-					province_group = triunic_cities
-				}
+				limit = { province_group = triunic_cities }
 				set_seat_in_parliament = yes
 			}
 		}
 	}
 	on_deactivation = {
-		J33 = {
-			dissolve_parliament = yes
-		}
+		J33 = { dissolve_parliament = yes }
 	}
 }
 
@@ -402,11 +372,11 @@ temple_of_kalyin = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			religion = kalyin_worshippers
-		}
+		owner = { religion = kalyin_worshippers }
 	}
+
 	missionaries = 1
 }
 
@@ -414,12 +384,11 @@ jaddari_eduz_jadd = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		has_building = cathedral
 		religion = the_jadd
-		owner = {
-			religion = the_jadd
-		}
+		owner = { religion = the_jadd }
 	}
 	picture = "ziggurat_of_surakel_modifier"
 	prestige = 1
@@ -427,10 +396,12 @@ jaddari_eduz_jadd = {
 	global_missionary_strength = 0.02
 	establish_order_cost = -0.25
 	missionary_maintenance_cost = -0.15
-	local_missionary_strength = -0.1
+	local_missionary_strength = -0.10
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -439,15 +410,19 @@ jaddari_the_suraelic_barracks = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	local_manpower = 10
 	regiment_recruit_speed = -0.5
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -456,15 +431,19 @@ jaddari_the_heralds_wall = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	prestige_from_land = 0.5
 	local_defensiveness = 0.1
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -473,15 +452,18 @@ jaddari_the_jaddanzar_academy = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	free_leader_pool = 1
 	free_mil_policy = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -490,15 +472,19 @@ jaddari_the_school_of_radiant_wisdom = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	idea_cost = -0.05
 	advisor_cost = -0.2
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -507,15 +493,19 @@ jaddari_the_quarter_of_the_suns = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.25
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -524,14 +514,18 @@ jaddari_the_golden_ambon = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	# picture = "harpy_roost"
 	all_power_cost = -0.025
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -545,15 +539,18 @@ human_hold_1 = {
 			}
 		}
 	}
+
 	trigger = {
 		has_human_majority_trigger = yes
 	}
 	picture = "harpy_roost"
-	local_tax_modifier = 0.1
+	local_tax_modifier =  0.1
 	local_production_efficiency = 0.1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -567,15 +564,18 @@ human_hold_2 = {
 			}
 		}
 	}
+
 	trigger = {
 		has_human_majority_trigger = yes
 	}
 	picture = "harpy_roost"
-	local_tax_modifier = 0.25
+	local_tax_modifier =  0.25
 	local_production_efficiency = 0.25
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -589,15 +589,18 @@ human_hold_3 = {
 			}
 		}
 	}
+
 	trigger = {
 		has_human_majority_trigger = yes
 	}
 	picture = "harpy_roost"
-	local_tax_modifier = 0.5
+	local_tax_modifier =  0.5
 	local_production_efficiency = 0.5
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -606,6 +609,7 @@ Z26_falahite_temple = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		owner = {
 			OR = {
@@ -616,76 +620,75 @@ Z26_falahite_temple = {
 		}
 		has_owner_religion = yes
 	}
+
 	picture = "falahite_temple_icon"
+
 	global_missionary_strength = 0.02
 	missionaries = 1
 	global_tax_modifier = 0.05
+
 	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-	}
+    on_activation = {
+    }
+
+    on_deactivation = {
+    }
 }
+
 
 aelnar_auxiliaries_human = {
 	potential = {
-		owner = {
-			tag = Z43
-		}
+		owner =  { tag = Z43 }
 	}
 	trigger = {
 		owner = {
-			NOT = {
-				has_country_modifier = racial_pop_human_purge
-			}
-			NOT = {
-				has_country_modifier = aelnar_army_restructuration
-			}
+			NOT = { has_country_modifier = racial_pop_human_purge }
+			NOT = { has_country_modifier = aelnar_army_restructuration }
 		}
 	}
 	land_morale = 0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
 
 aelnar_auxiliaries_ruinborn = {
 	potential = {
-		owner = {
-			tag = Z43
-		}
+		owner =  { tag = Z43 }
 	}
 	trigger = {
 		owner = {
-			NOT = {
-				has_country_modifier = racial_pop_ruinborn_purge
-			}
-			NOT = {
-				has_country_modifier = aelnar_army_restructuration
-			}
+			NOT = { has_country_modifier = racial_pop_ruinborn_purge }
+			NOT = { has_country_modifier = aelnar_army_restructuration }
 		}
 	}
 	land_attrition = -0.05
 	shock_damage = 0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
+
 
 random_ibevar_disaster_result = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		always = yes
 	}
+
 	on_activation = {
-		province_event = {
-			id = ibevar.5
-		}
+		province_event = { id = ibevar.5 }
 	}
+
 	on_deactivation = {
 	}
 }
@@ -694,60 +697,55 @@ castanor_river_support = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		sieged_by = B32
 		B32 = {
 			has_country_modifier = castanor_esmar_flotilla
 		}
 	}
+
 	local_defensiveness = -0.33
+
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
 
 # Legion maintenance modifier setup - for Castanor
 castanor_legions_1_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_1
-			}
-		}
-	}
-	on_activation = {
+
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_1
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_1_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_1_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_1_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_1
-					}
+					limit = { template = merc_castanorian_legion_1 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_1_maintenance_mod
@@ -763,23 +761,14 @@ castanor_legions_1_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_1_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_1_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_1_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_1_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_1_maintenance_mod_inactive
@@ -795,54 +784,38 @@ castanor_legions_1_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_1_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_1_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_1_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_1_maintenance_mod }
+    }
 }
-
 castanor_legions_2_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_2
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_2
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_2_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_2_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_2_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_2
-					}
+					limit = { template = merc_castanorian_legion_2 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_2_maintenance_mod
@@ -858,23 +831,14 @@ castanor_legions_2_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_2_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_2_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_2_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_2_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_2_maintenance_mod_inactive
@@ -890,54 +854,38 @@ castanor_legions_2_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_2_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_2_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_2_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_2_maintenance_mod }
+    }
 }
-
 castanor_legions_3_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_3
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_3
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_3_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_3_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_3_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_3
-					}
+					limit = { template = merc_castanorian_legion_3 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_3_maintenance_mod
@@ -953,23 +901,14 @@ castanor_legions_3_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_3_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_3_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_3_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_3_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_3_maintenance_mod_inactive
@@ -985,54 +924,38 @@ castanor_legions_3_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_3_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_3_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_3_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_3_maintenance_mod }
+    }
 }
-
 castanor_legions_4_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_4
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_4
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_4_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_4_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_4_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_4
-					}
+					limit = { template = merc_castanorian_legion_4 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_4_maintenance_mod
@@ -1048,23 +971,14 @@ castanor_legions_4_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_4_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_4_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_4_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_4_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_4_maintenance_mod_inactive
@@ -1080,55 +994,39 @@ castanor_legions_4_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_4_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_4_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_4_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_4_maintenance_mod }
+    }
 }
-
 castanor_legions_5_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_5
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_5
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_5_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_5_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_5_first_hire
 				add_army_professionalism = 0.05
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_5
-					}
+					limit = { template = merc_castanorian_legion_5 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_5_maintenance_mod
@@ -1144,23 +1042,14 @@ castanor_legions_5_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_5_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_5_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_5_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_5_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_5_maintenance_mod_inactive
@@ -1176,54 +1065,39 @@ castanor_legions_5_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_5_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_5_maintenance_mod
-		}
-	}
-}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_5_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_5_maintenance_mod }
 
+    }
+}
 castanor_legions_6_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_6
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_6
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_6_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_6_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_6_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_6
-					}
+					limit = { template = merc_castanorian_legion_6 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_6_maintenance_mod
@@ -1239,23 +1113,14 @@ castanor_legions_6_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_6_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_6_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_6_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_6_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_6_maintenance_mod_inactive
@@ -1271,54 +1136,40 @@ castanor_legions_6_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_6_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_6_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_6_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_6_maintenance_mod }
+
+    }
 }
 
 castanor_legions_7_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_7
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_7
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_7_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_7_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_7_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_7
-					}
+					limit = { template = merc_castanorian_legion_7 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_7_maintenance_mod
@@ -1334,23 +1185,14 @@ castanor_legions_7_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_7_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_7_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_7_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_7_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_7_maintenance_mod_inactive
@@ -1366,54 +1208,39 @@ castanor_legions_7_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_7_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_7_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_7_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_7_maintenance_mod }
+    }
 }
 
 castanor_legions_8_maintenance_triggered = {
-	potential = {
-		B32 = {
-			exists = yes
-		}
-	}
+    potential = {
+        B32 = { exists = yes }
+    }
 	hidden = yes
-	trigger = {
-		B32 = {
-			any_hired_mercenary_company = {
-				template = merc_castanorian_legion_8
-			}
-		}
-	}
-	on_activation = {
+    trigger = {
+        B32 = {
+            any_hired_mercenary_company = {
+                template = merc_castanorian_legion_8
+            }
+        }
+    }
+
+    on_activation = {
 		# First time hire manpower fix
 		if = {
-			limit = {
-				B32 = {
-					has_country_flag = merc_castanorian_legion_8_first_hire
-				}
-			}
+			limit = { B32 = { has_country_flag = merc_castanorian_legion_8_first_hire } }
 			B32 = {
 				clr_country_flag = merc_castanorian_legion_8_first_hire
 				random_hired_mercenary_company = {
-					limit = {
-						template = merc_castanorian_legion_8
-					}
+					limit = { template = merc_castanorian_legion_8 }
 					add_company_manpower = -1
 					add_company_manpower = 0.1
 				}
 			}
 		}
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_8_maintenance_mod
@@ -1429,23 +1256,14 @@ castanor_legions_8_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_8_maintenance_mod_inactive
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_8_maintenance_mod_inactive
-		}
-		B32 = {
-			add_army_professionalism = 0.05
-		}
-	}
-	on_deactivation = {
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_8_maintenance_mod_inactive }
+		B32 = { remove_country_modifier = castanor_legions_8_maintenance_mod_inactive }
+		B32 = { add_army_professionalism = 0.05 }
+    }
+
+    on_deactivation = {
 		if = {
-			limit = {
-				B32 = {
-					has_country_modifier = castanor_legion_doctrine_full_citizen_army
-				}
-			}
+			limit = { B32 = { has_country_modifier = castanor_legion_doctrine_full_citizen_army } }
 			B32 = {
 				add_country_modifier = {
 					name = castanor_legions_citizen_army_8_maintenance_mod_inactive
@@ -1461,80 +1279,64 @@ castanor_legions_8_maintenance_triggered = {
 				}
 			}
 		}
-		B32 = {
-			remove_country_modifier = castanor_legions_citizen_army_8_maintenance_mod
-		}
-		B32 = {
-			remove_country_modifier = castanor_legions_8_maintenance_mod
-		}
-	}
+		B32 = { remove_country_modifier = castanor_legions_citizen_army_8_maintenance_mod }
+		B32 = { remove_country_modifier = castanor_legions_8_maintenance_mod }
+    }
 }
 
 castanor_south_citadel_summer_months = {
-	potential = {
-		owner = {
-			tag = B32
-		}
-	}
-	trigger = {
+    potential = {
+        owner = { tag = B32 }
+    }
+    trigger = {
 		is_month = 3
-		NOT = {
-			is_month = 9
-		}
-	}
-	on_activation = {
+		NOT = { is_month = 9 }
+    }
+
+    on_activation = {
 		# Move capital to Sapphirewatch (South Citadel)
-		B32 = {
-			834 = {
-				move_capital_effect = yes
-			}
-		}
+		B32 = { 834 = { move_capital_effect = yes } }
 	}
+
 	# Entertaining foreign dignitaries and other courtly shit
 	diplomatic_reputation = 2
 	improve_relation_modifier = 0.1
-	on_deactivation = {
-	}
+
+    on_deactivation = { }
 }
 
 castanor_north_citadel_winter_months = {
-	potential = {
-		owner = {
-			tag = B32
-		}
-	}
-	trigger = {
+    potential = {
+        owner = { tag = B32 }
+    }
+    trigger = {
 		OR = {
 			AND = {
 				is_month = 0
-				NOT = {
-					is_month = 3
-				}
+				NOT = { is_month = 3 }
 			}
 			is_month = 9
 		}
-	}
+    }
+
 	# Dealing with affairs of the realm and planning military campaigns and shit
 	reserves_organisation = 0.5
 	spy_offence = 0.2
 	global_autonomy = -0.05
-	on_activation = {
+
+    on_activation = {
 		# Move capital to the North Citadel
-		B32 = {
-			840 = {
-				move_capital_effect = yes
-			}
-		}
+		B32 = { 840 = { move_capital_effect = yes } }
 	}
-	on_deactivation = {
-	}
+
+    on_deactivation = { }
 }
 
 castanor_shield_legion_mod = {
-	potential = {
+    potential = {
 		always = yes
-	}
-	trigger = {
+    }
+    trigger = {
 		B32 = {
 			any_hired_mercenary_company = {
 				template = merc_castanorian_legion_3
@@ -1543,15 +1345,16 @@ castanor_shield_legion_mod = {
 				}
 			}
 		}
-	}
+    }
+
 	hidden = yes
-	on_activation = {
-	}
-	on_deactivation = {
+
+
+    on_activation = { }
+
+    on_deactivation = {
 		every_province = {
-			limit = {
-				has_province_flag = protected_by_shield_legion
-			}
+			limit = { has_province_flag = protected_by_shield_legion }
 			remove_province_modifier = castanor_shield_regional_buff
 			clr_province_flag = protected_by_shield_legion
 		}
@@ -1575,12 +1378,13 @@ toaren_roilsard_culture1 = {
 	}
 	production_efficiency = 0.03
 	global_tax_modifier = 0.03
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 toaren_roilsard_culture2 = {
 	potential = {
 		always = yes
@@ -1595,12 +1399,13 @@ toaren_roilsard_culture2 = {
 	}
 	production_efficiency = 0.03
 	global_tax_modifier = 0.03
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 toaren_roilsard_culture3 = {
 	potential = {
 		always = yes
@@ -1615,12 +1420,13 @@ toaren_roilsard_culture3 = {
 	}
 	production_efficiency = 0.03
 	global_tax_modifier = 0.03
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 toaren_roilsard_culture4 = {
 	potential = {
 		always = yes
@@ -1635,12 +1441,13 @@ toaren_roilsard_culture4 = {
 	}
 	production_efficiency = 0.03
 	global_tax_modifier = 0.03
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 toaren_roilsard_culture5 = {
 	potential = {
 		always = yes
@@ -1655,8 +1462,10 @@ toaren_roilsard_culture5 = {
 	}
 	production_efficiency = 0.03
 	global_tax_modifier = 0.03
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -1682,12 +1491,13 @@ venerator_purging_greens = {
 	picture = "diplomatic_reputation"
 	diplomatic_reputation = 2
 	local_development_cost = -0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 venerator_crusade = {
 	potential = {
 		owner = {
@@ -1724,12 +1534,13 @@ venerator_crusade = {
 	warscore_cost_vs_other_religion = -0.1
 	devotion = 1
 	local_development_cost = -0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 venerator_blessed = {
 	potential = {
 		owner = {
@@ -1752,12 +1563,13 @@ venerator_blessed = {
 	free_mil_policy = 1
 	possible_mil_policy = 1
 	local_development_cost = -0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 venerator_greenless = {
 	potential = {
 		owner = {
@@ -1786,12 +1598,13 @@ venerator_greenless = {
 	build_time = -0.1
 	yearly_corruption = -0.15
 	local_development_cost = -0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 venerator_mithradhum_dishonorable = {
 	potential = {
 		owner = {
@@ -1813,11 +1626,11 @@ venerator_mithradhum_dishonorable = {
 	all_power_cost = 0.1
 	yearly_corruption = 0.25
 	local_development_cost = 0.15
+
 	on_activation = {
-		owner = {
-			add_stability = -1
-		}
+		owner = { add_stability = -1 }
 	}
+
 	on_deactivation = {
 	}
 }
@@ -1826,30 +1639,31 @@ U20_the_face_of_jaher = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		religion = bulwari_sun_cult
-		owner = {
-			religion = bulwari_sun_cult
-		}
+		owner = { religion = bulwari_sun_cult }
 		#NSC_level = 1
 	}
 	missionaries = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
+
 
 U20_great_temple_azka_sur = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		if = {
-			limit = {
-				has_global_flag = yudunyovi_sun_cult_mods
-			}
+			limit = { has_global_flag = yudunyovi_sun_cult_mods }
 			owner = {
 				OR = {
 					religion = yudunyovi
@@ -1861,6 +1675,7 @@ U20_great_temple_azka_sur = {
 				religion_group = bulwari
 			}
 		}
+		
 		else = {
 			owner = {
 				religion_group = bulwari
@@ -1872,9 +1687,11 @@ U20_great_temple_azka_sur = {
 	picture = "ziggurat_of_surakel_modifier"
 	missionary_maintenance_cost = -0.15
 	tolerance_own = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -1883,19 +1700,20 @@ U20_first_temple = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		religion = bulwari_sun_cult
-		owner = {
-			religion = bulwari_sun_cult
-		}
+		owner = { religion = bulwari_sun_cult }
 		#NSC_level = 1
 	}
 	picture = "ziggurat_of_surakel_modifier"
 	missionaries = 1
 	prestige = 0.5
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -1904,105 +1722,111 @@ U20_the_south_temple = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		religion = bulwari_sun_cult
-		owner = {
-			religion = bulwari_sun_cult
-		}
+		owner = { religion = bulwari_sun_cult }
 		#NSC_level = 1
 	}
 	global_missionary_strength = 0.01
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
 
 U20_apadana_hall = {
+
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_capital = yes
 	}
 	monarch_diplomatic_power = 1
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
 
 province_carver_garrisons = {
-	potential = {
-		A73 = {
-			exists = yes
-		}
-	}
-	trigger = {
-		A73 = {
-			any_hired_mercenary_company = {
-				template = merc_carver_cartel_guns
-			}
-		}
-	}
-	#Province scope
-	on_activation = {
-		A73 = {
-			if = {
-				limit = {
-					army_professionalism = 0.0001
-				}
-				add_army_professionalism = 0.05
-			}
-		}
-	}
-	on_deactivation = {
-	}
+    potential = {
+        A73 = { exists = yes }
+    }
+
+    trigger = {
+        A73 = {
+            any_hired_mercenary_company = {
+                template = merc_carver_cartel_guns
+            }
+        }
+    }
+
+    #Province scope
+    on_activation = {
+        A73 = {
+            if = {
+                limit = { army_professionalism = 0.0001 }
+                add_army_professionalism = 0.05
+            }
+        }
+    }
+
+    on_deactivation = {
+    }
 }
 
 province_orc_recruits = {
-	potential = {
-		A73 = {
-			exists = yes
-		}
-	}
-	trigger = {
-		A73 = {
-			any_hired_mercenary_company = {
-				template = merc_carver_cartel_corps
-			}
-		}
-	}
-	#Province scope
-	on_activation = {
-		A73 = {
-			if = {
-				limit = {
-					army_professionalism = 0.0001
-				}
-				add_army_professionalism = 0.05
-			}
-		}
-	}
-	on_deactivation = {
-	}
+    potential = {
+        A73 = { exists = yes }
+    }
+
+    trigger = {
+        A73 = {
+            any_hired_mercenary_company = {
+                template = merc_carver_cartel_corps
+            }
+        }
+    }
+
+    #Province scope
+    on_activation = {
+        A73 = {
+            if = {
+                limit = { army_professionalism = 0.0001 }
+                add_army_professionalism = 0.05
+            }
+        }
+    }
+
+    on_deactivation = {
+    }
 }
 
 krak_ice_hold_triggered_modifier = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		is_prosperous = no
 	}
 	local_development_cost = -0.1
 	trade_goods_size_modifier = 0.25
 	local_autonomy = -0.05
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -2021,12 +1845,13 @@ elikhand_silvervord = {
 		is_capital = yes
 	}
 	global_own_trade_power = 0.25
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 elikhand_badeben = {
 	potential = {
 		owner = {
@@ -2039,14 +1864,15 @@ elikhand_badeben = {
 	trigger = {
 		is_capital = yes
 	}
-	defensiveness = 0.1
-	fort_maintenance_modifier = -0.1
+	defensiveness = 0.10
+	fort_maintenance_modifier = -0.10
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 elikhand_rohibon = {
 	potential = {
 		owner = {
@@ -2061,12 +1887,13 @@ elikhand_rohibon = {
 	}
 	development_cost = -0.05
 	local_development_cost = -0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
-
 elikhand_shieldrest = {
 	potential = {
 		owner = {
@@ -2081,8 +1908,10 @@ elikhand_shieldrest = {
 	}
 	governing_capacity = 25
 	governing_capacity_modifier = 0.05
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -2095,89 +1924,47 @@ phoenix_empire_timer = {
 		OR = {
 			AND = {
 				is_month = 0
-				NOT = {
-					is_month = 1
-				}
+				NOT = { is_month = 1 }
 			}
 			AND = {
 				is_month = 2
-				NOT = {
-					is_month = 3
-				}
+				NOT = { is_month = 3 }
 			}
 			AND = {
 				is_month = 4
-				NOT = {
-					is_month = 5
-				}
+				NOT = { is_month = 5 }
 			}
 			AND = {
 				is_month = 6
-				NOT = {
-					is_month = 7
-				}
+				NOT = { is_month = 7 }
 			}
 			AND = {
 				is_month = 8
-				NOT = {
-					is_month = 9
-				}
+				NOT = { is_month = 9 }
 			}
 			AND = {
 				is_month = 10
-				NOT = {
-					is_month = 11
-				}
+				NOT = { is_month = 11 }
 			}
 		}
 	}
 	on_activation = {
 		F38 = {
-			change_variable = {
-				which = phoenix_empire_timer_1
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_2
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_3
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_4
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_5
-				value = 1
-			}
+			change_variable = { which = phoenix_empire_timer_1 value = 1 }
+			change_variable = { which = phoenix_empire_timer_2 value = 1 }
+			change_variable = { which = phoenix_empire_timer_3 value = 1 }
+			change_variable = { which = phoenix_empire_timer_4 value = 1 }
+			change_variable = { which = phoenix_empire_timer_5 value = 1 }
 		}
 	}
 	hidden = yes
 	on_deactivation = {
 		F38 = {
-			change_variable = {
-				which = phoenix_empire_timer_1
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_2
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_3
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_4
-				value = 1
-			}
-			change_variable = {
-				which = phoenix_empire_timer_5
-				value = 1
-			}
+			change_variable = { which = phoenix_empire_timer_1 value = 1 }
+			change_variable = { which = phoenix_empire_timer_2 value = 1 }
+			change_variable = { which = phoenix_empire_timer_3 value = 1 }
+			change_variable = { which = phoenix_empire_timer_4 value = 1 }
+			change_variable = { which = phoenix_empire_timer_5 value = 1 }
 		}
 	}
 }
@@ -2190,11 +1977,8 @@ rahen_repairing_infrastructure = {
 		}
 	}
 	trigger = {
-		check_variable = {
-			which = rahen_months_to_repair
-			value = 1
-		}
-		infantry_in_province = 2
+		check_variable = { which = rahen_months_to_repair value = 1 }
+		infantry_in_province  = 2
 		has_siege = no
 	}
 	local_build_time = 10
@@ -2211,73 +1995,47 @@ rahen_repairing_infrastructure_monthly_tick = {
 		OR = {
 			AND = {
 				is_month = 0
-				NOT = {
-					is_month = 1
-				}
+				NOT = { is_month = 1 }
 			}
 			AND = {
 				is_month = 2
-				NOT = {
-					is_month = 3
-				}
+				NOT = { is_month = 3 }
 			}
 			AND = {
 				is_month = 4
-				NOT = {
-					is_month = 5
-				}
+				NOT = { is_month = 5 }
 			}
 			AND = {
 				is_month = 6
-				NOT = {
-					is_month = 7
-				}
+				NOT = { is_month = 7 }
 			}
 			AND = {
 				is_month = 8
-				NOT = {
-					is_month = 9
-				}
+				NOT = { is_month = 9 }
 			}
 			AND = {
 				is_month = 10
-				NOT = {
-					is_month = 11
-				}
+				NOT = { is_month = 11 }
 			}
 		}
 	}
 	on_activation = {
 		if = {
-			limit = {
-				infantry_in_province = 2
-			}
+			limit = { infantry_in_province  = 2 }
 			change_variable = {
 				which = rahen_months_to_repair
 				value = -1
 			}
 			if = {
-				limit = {
-					NOT = {
-						check_variable = {
-							which = rahen_months_to_repair
-							value = 1
-						}
-					}
-				}
+				limit = { NOT = { check_variable = { which = rahen_months_to_repair value = 1 } } }
 				if = {
-					limit = {
-						has_province_modifier = rahen_severely_neglected_infrastructure
-					}
+					limit = { has_province_modifier = rahen_severely_neglected_infrastructure }
 					remove_province_modifier = rahen_severely_neglected_infrastructure
 					add_permanent_province_modifier = {
 						name = rahen_neglected_infrastructure
 						duration = -1
 					}
-					set_variable = {
-						which = rahen_months_to_repair
-						value = 6
-					}
+					set_variable = { which = rahen_months_to_repair value = 6 }
 				}
 				else = {
 					remove_province_modifier = rahen_neglected_infrastructure
@@ -2290,27 +2048,15 @@ rahen_repairing_infrastructure_monthly_tick = {
 	hidden = yes
 	on_deactivation = {
 		if = {
-			limit = {
-				infantry_in_province = 2
-				has_siege = no
-			}
+			limit = { infantry_in_province  = 2 has_siege = no }
 			change_variable = {
 				which = rahen_months_to_repair
 				value = -1
 			}
 			if = {
-				limit = {
-					NOT = {
-						check_variable = {
-							which = rahen_months_to_repair
-							value = 1
-						}
-					}
-				}
+				limit = { NOT = { check_variable = { which = rahen_months_to_repair value = 1 } } }
 				if = {
-					limit = {
-						has_province_modifier = rahen_severely_neglected_infrastructure
-					}
+					limit = { has_province_modifier = rahen_severely_neglected_infrastructure }
 					remove_province_modifier = rahen_severely_neglected_infrastructure
 					add_permanent_province_modifier = {
 						name = rahen_neglected_infrastructure
@@ -2335,65 +2081,42 @@ ghavaanaj_monthly_tick = {
 		OR = {
 			AND = {
 				is_month = 0
-				NOT = {
-					is_month = 1
-				}
+				NOT = { is_month = 1 }
 			}
 			AND = {
 				is_month = 2
-				NOT = {
-					is_month = 3
-				}
+				NOT = { is_month = 3 }
 			}
 			AND = {
 				is_month = 4
-				NOT = {
-					is_month = 5
-				}
+				NOT = { is_month = 5 }
 			}
 			AND = {
 				is_month = 6
-				NOT = {
-					is_month = 7
-				}
+				NOT = { is_month = 7 }
 			}
 			AND = {
 				is_month = 8
-				NOT = {
-					is_month = 9
-				}
+				NOT = { is_month = 9 }
 			}
 			AND = {
 				is_month = 10
-				NOT = {
-					is_month = 11
-				}
+				NOT = { is_month = 11 }
 			}
 		}
 	}
-	on_activation = {
-		#! This will only work for one country, if there are more countries with this mechanic it breaks down, future fix?
-		event_target:ghavaanaj_herd_country = {
-			country_event = {
-				id = ghavaanaj.2002
-			}
-		}
+	on_activation = { #! This will only work for one country, if there are more countries with this mechanic it breaks down, future fix?
+		event_target:ghavaanaj_herd_country = { country_event = { id = ghavaanaj.2002 } }
 	}
 	hidden = yes
 	on_deactivation = {
-		event_target:ghavaanaj_herd_country = {
-			country_event = {
-				id = ghavaanaj.2002
-			}
-		}
+		event_target:ghavaanaj_herd_country = { country_event = { id = ghavaanaj.2002 } }
 	}
 }
 
 sharaajaghal_games_tick = {
 	potential = {
-		NOT = {
-			has_province_flag = sharaajaghal_games_finished
-		}
+		NOT = { has_province_flag = sharaajaghal_games_finished }
 	}
 	trigger = {
 		OR = {
@@ -2405,128 +2128,80 @@ sharaajaghal_games_tick = {
 			has_province_flag = sharaajaghal_games_tick_10_flag
 		}
 	}
-	on_activation = {
-		#! This will only work for one country, if there are more countries with this mechanic it breaks down, future fix?
+	on_activation = { #! This will only work for one country, if there are more countries with this mechanic it breaks down, future fix?
 		if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_0_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_0_flag }
 			clr_province_flag = sharaajaghal_games_tick_0_flag
 			set_province_flag = sharaajaghal_games_tick_1_flag
-			sharaajaghal_games_run_game = {
-				game = elephant_racing
-			}
+			sharaajaghal_games_run_game = { game = elephant_racing }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_2_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_2_flag }
 			clr_province_flag = sharaajaghal_games_tick_2_flag
 			set_province_flag = sharaajaghal_games_tick_3_flag
-			sharaajaghal_games_run_game = {
-				game = elephant_jousting
-			}
+			sharaajaghal_games_run_game = { game = elephant_jousting }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_4_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_4_flag }
 			clr_province_flag = sharaajaghal_games_tick_4_flag
 			set_province_flag = sharaajaghal_games_tick_5_flag
-			sharaajaghal_games_run_game = {
-				game = horse_archery
-			}
+			sharaajaghal_games_run_game = { game = horse_archery }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_6_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_6_flag }
 			clr_province_flag = sharaajaghal_games_tick_6_flag
 			set_province_flag = sharaajaghal_games_tick_7_flag
-			sharaajaghal_games_run_game = {
-				game = duelling_staff
-			}
+			sharaajaghal_games_run_game = { game = duelling_staff }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_8_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_8_flag }
 			clr_province_flag = sharaajaghal_games_tick_8_flag
 			set_province_flag = sharaajaghal_games_tick_9_flag
-			sharaajaghal_games_run_game = {
-				game = archery
-			}
+			sharaajaghal_games_run_game = { game = archery }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_10_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_10_flag }
 			clr_province_flag = sharaajaghal_games_tick_10_flag
 			set_province_flag = sharaajaghal_games_tick_11_flag
-			sharaajaghal_games_run_game = {
-				game = distance_running
-			}
+			sharaajaghal_games_run_game = { game = distance_running }
 		}
 	}
 	on_deactivation = {
 		if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_1_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_1_flag }
 			clr_province_flag = sharaajaghal_games_tick_1_flag
 			set_province_flag = sharaajaghal_games_tick_2_flag
-			sharaajaghal_games_run_game = {
-				game = elephant_archery
-			}
+			sharaajaghal_games_run_game = { game = elephant_archery }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_3_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_3_flag }
 			clr_province_flag = sharaajaghal_games_tick_3_flag
 			set_province_flag = sharaajaghal_games_tick_4_flag
-			sharaajaghal_games_run_game = {
-				game = horse_racing
-			}
+			sharaajaghal_games_run_game = { game = horse_racing }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_5_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_5_flag }
 			clr_province_flag = sharaajaghal_games_tick_5_flag
 			set_province_flag = sharaajaghal_games_tick_6_flag
-			sharaajaghal_games_run_game = {
-				game = horse_jousting
-			}
+			sharaajaghal_games_run_game = { game = horse_jousting }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_7_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_7_flag }
 			clr_province_flag = sharaajaghal_games_tick_7_flag
 			set_province_flag = sharaajaghal_games_tick_8_flag
-			sharaajaghal_games_run_game = {
-				game = duelling_sword
-			}
+			sharaajaghal_games_run_game = { game = duelling_sword }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_9_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_9_flag }
 			clr_province_flag = sharaajaghal_games_tick_9_flag
 			set_province_flag = sharaajaghal_games_tick_10_flag
-			sharaajaghal_games_run_game = {
-				game = javelin
-			}
+			sharaajaghal_games_run_game = { game = javelin }
 		}
 		else_if = {
-			limit = {
-				has_province_flag = sharaajaghal_games_tick_11_flag
-			}
+			limit = { has_province_flag = sharaajaghal_games_tick_11_flag }
 			clr_province_flag = sharaajaghal_games_tick_11_flag
-			sharaajaghal_games_run_game = {
-				game = sprint
-			}
+			sharaajaghal_games_run_game = { game = sprint }
+
 			4485 = {
 				remove_province_triggered_modifier = sharaajaghal_games_tick
 			}
@@ -2653,7 +2328,6 @@ raheni_school_origin_synthetic_truth = {
 	}
 	tolerance_own = 2
 }
-
 raheni_school_origin_final_paradigm = {
 	potential = {
 		always = yes
@@ -2668,7 +2342,6 @@ raheni_school_origin_final_paradigm = {
 	}
 	tolerance_own = 2
 }
-
 raheni_school_origin_piercing_fang = {
 	potential = {
 		always = yes
@@ -2688,20 +2361,23 @@ black_the_black_mark_damescrown = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	trade_efficiency = 0.2
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2711,20 +2387,24 @@ black_the_black_mark_vertesk = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	discipline = 0.025
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2734,20 +2414,24 @@ black_the_black_mark_arca_corvur = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	defensiveness = 0.2
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2757,20 +2441,24 @@ black_the_black_mark_gablaine = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	global_tax_modifier = 0.2
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2780,14 +2468,18 @@ black_the_black_grains = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		trade_goods = grain
 	}
 	picture = "black_grains"
+
 	trade_goods_size = 1
 	trade_value_modifier = 0.3
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -2796,20 +2488,23 @@ black_the_black_mark_eborthil = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	naval_morale = 0.1
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2824,6 +2519,7 @@ black_kobold_damestear_mine = {
 			}
 		}
 	}
+
 	trigger = {
 		trade_goods = damestear
 	}
@@ -2834,9 +2530,11 @@ black_kobold_damestear_mine = {
 	trade_goods_size = 1
 	trade_value_modifier = 0.33
 	local_unrest = 3
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -2845,20 +2543,24 @@ black_the_black_mark_nathalaire = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	spy_offence = 0.2
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2868,43 +2570,52 @@ black_the_black_mark_tellum = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	global_spy_defence = 0.2
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
 }
 
+
 black_the_black_mark_brasan = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	ship_durability = 0.1
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2914,20 +2625,24 @@ black_the_black_mark_bulwar = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			is_subject_of_type = acolyte_dominion
-		}
+		owner = { is_subject_of_type = acolyte_dominion }
 	}
+
 	picture = "bd_black_mark"
+
+
 	local_development_cost = -0.2
 	province_trade_power_value = 10
 	local_manpower_modifier = 0.5
 	land_morale = 0.1
+
 	#Province scope
 	on_activation = {
 		set_province_flag = black_province
 	}
+
 	on_deactivation = {
 		clr_province_flag = black_province
 	}
@@ -2937,53 +2652,51 @@ corintar_corinsfall_memorial = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
-		owner = {
-			religion = corinite
-		}
+		owner = { religion = corinite }
 	}
+
 	missionaries = 1
 	global_heretic_missionary_strength = 0.02
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
+
 
 azkare_parliament_calculations_pulse = {
 	potential = {
 		always = yes
 	}
+
 	hidden = yes
+
 	trigger = {
 		OR = {
 			AND = {
 				is_month = 3
-				NOT = {
-					is_month = 4
-				}
+				NOT = { is_month = 4 }
 			}
 			AND = {
 				is_month = 9
-				NOT = {
-					is_month = 10
-				}
+				NOT = { is_month = 10 }
 			}
 		}
 	}
+
 	#Province scope
 	on_activation = {
 		random_country = {
-			limit = {
-				OR = {
-					has_reform = azkare_court
-					has_reform = sunrise_court_reform
-				}
-			}
+			limit = { OR = { has_reform = azkare_court has_reform = sunrise_court_reform } }
 			azkare_parliament_calculations = yes
 		}
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3032,19 +2745,23 @@ azkare_parliament_calculations_pulse = {
 #		raj_monthy_calc = yes
 #	}
 #}
+
 raj_ai_raja_help = {
 	potential = {
 		always = yes
 	}
+
 	hidden = yes
+
 	trigger = {
-		owner = {
-			ai = yes
-		}
+		owner = { ai = yes }
 	}
+
 	vassal_income = 0.4
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3053,6 +2770,7 @@ demons_blood_export_mod1 = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		owner = {
 			has_reform = black_market_consortium_reform
@@ -3060,14 +2778,17 @@ demons_blood_export_mod1 = {
 			controls = 1077
 		}
 	}
+
 	local_development_cost = -0.1
 	pr_smugglers_influence = 0.001
 	province_trade_power_value = 10
 	tax_income = 24
 	yearly_patriarch_authority = 0.001
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3076,6 +2797,7 @@ demons_blood_export_mod2 = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		owner = {
 			has_reform = black_market_consortium_reform
@@ -3083,14 +2805,17 @@ demons_blood_export_mod2 = {
 			controls = 1077
 		}
 	}
+
 	local_development_cost = -0.15
 	pr_smugglers_influence = 0.002
 	province_trade_power_value = 15
 	tax_income = 48
 	yearly_patriarch_authority = 0.002
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3099,6 +2824,7 @@ demons_blood_export_mod3 = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		owner = {
 			has_reform = black_market_consortium_reform
@@ -3106,14 +2832,17 @@ demons_blood_export_mod3 = {
 			controls = 1077
 		}
 	}
+
 	local_development_cost = -0.2
 	pr_smugglers_influence = 0.005
 	province_trade_power_value = 20
 	tax_income = 74
 	yearly_patriarch_authority = 0.003
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3122,6 +2851,7 @@ demons_blood_export_mod4 = {
 	potential = {
 		always = yes
 	}
+
 	trigger = {
 		owner = {
 			has_reform = black_market_consortium_reform
@@ -3129,14 +2859,17 @@ demons_blood_export_mod4 = {
 			controls = 1077
 		}
 	}
+
 	local_development_cost = -0.25
 	pr_smugglers_influence = 0.01
 	province_trade_power_value = 25
 	tax_income = 96
 	yearly_patriarch_authority = 0.004
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3145,24 +2878,21 @@ demons_blood_export_mod4 = {
 mykx_hellfire_cannons_triggered_deactivation = {
 	hidden = yes
 	potential = {
-		G93 = {
-			exists = yes
-		}
+		G93 = { exists = yes }
 	}
+
 	trigger = {
-		owner = {
-			tag = G93
-		}
+		owner = { tag = G93 }
 		G93 = {
 			is_at_war = no
 		}
 	}
+
 	#Province scope
 	on_activation = {
-		G93 = {
-			clr_country_flag = mykx_hellfire_cannons_flag
-		}
+		G93 = { clr_country_flag = mykx_hellfire_cannons_flag }
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3170,10 +2900,9 @@ mykx_hellfire_cannons_triggered_deactivation = {
 # Mykx hellfire cannons modifier
 mykx_hellfire_cannons_triggered_mod = {
 	potential = {
-		G93 = {
-			exists = yes
-		}
+		G93 = { exists = yes }
 	}
+
 	trigger = {
 		owner = {
 			tag = G93
@@ -3181,17 +2910,21 @@ mykx_hellfire_cannons_triggered_mod = {
 			patriarch_authority = 0.01
 		}
 	}
+
 	yearly_patriarch_authority = -0.1
 	global_naval_barrage_cost = -0.2
 	heavy_ship_power = 0.25
 	galley_power = 0.25
 	sailor_maintenance_modifer = 0.25
+
 	#Province scope
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
+
 
 beikdugang_triunic = {
 	potential = {
@@ -3211,8 +2944,10 @@ beikdugang_triunic = {
 	diplomatic_reputation = 1
 	diplomatic_upkeep = 1
 	envoy_travel_time = -0.1
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3234,9 +2969,7 @@ beikdugang_nanxin_academy = {
 							has_idea_group = naval_ideas
 							has_idea_group = exploration_ideas
 						}
-						capital_scope = {
-							continent = europe
-						}
+						capital_scope = { continent = europe }
 					}
 				}
 				any_known_country = {
@@ -3245,24 +2978,14 @@ beikdugang_nanxin_academy = {
 						has_idea_group = naval_ideas
 						has_idea_group = exploration_ideas
 					}
-					capital_scope = {
-						continent = europe
-					}
-					has_opinion = {
-						who = PREV
-						value = 80
-					}
+					capital_scope = { continent = europe }
+					has_opinion = { who = PREV value = 80 }
 				}
 			}
 			else = {
 				any_known_country = {
-					has_opinion = {
-						who = PREV
-						value = 80
-					}
-					capital_scope = {
-						continent = europe
-					}
+					has_opinion = { who = PREV value = 80 }
+					capital_scope = { continent = europe }
 				}
 			}
 		}
@@ -3271,8 +2994,10 @@ beikdugang_nanxin_academy = {
 	free_leader_pool = 1
 	leader_naval_fire = 1
 	navy_tradition_decay = -0.005
+
 	on_activation = {
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3283,27 +3008,20 @@ JY_LF_activator = {
 		owner = {
 			culture_group = triunic
 		}
-		NOT = {
-			has_province_modifier = JY_LF_countdown
-		}
+		NOT = { has_province_modifier = JY_LF_countdown }
 	}
 	hidden = yes
 	trigger = {
-		NOT = {
-			has_province_modifier = JY_LF_countdown
-		}
+		NOT = { has_province_modifier = JY_LF_countdown }
 	}
 	picture = "treasure_fleet"
 	province_trade_power_value = 2
+
 	on_activation = {
-		province_event = {
-			id = treasurefleet.1
-		}
-		add_province_modifier = {
-			name = JY_LF_countdown
-			duration = 3649
-		}
+		province_event = { id = treasurefleet.1 }
+		add_province_modifier = { name = JY_LF_countdown duration = 3649 }
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3313,15 +3031,14 @@ Y15_J33_friends = {
 	potential = {
 		owner = {
 			mission_completed = Y15_guns_sword
-			NOT = {
-				has_country_flag = Y15_J33_friend
-			}
+			NOT = { has_country_flag = Y15_J33_friend }
 		}
 	}
 	hidden = yes
 	trigger = {
 		exists = J33
 	}
+
 	on_activation = {
 		owner = {
 			set_country_flag = Y15_J33_friend
@@ -3331,6 +3048,7 @@ Y15_J33_friends = {
 			}
 		}
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3346,25 +3064,19 @@ Y15_J33_friends2 = {
 	trigger = {
 		NOT = {
 			AND = {
-				owner = {
-					historical_friend_with = J33
-				}
-				owner = {
-					J33 = {
-						historical_friend_with = PREV
-					}
-				}
+				owner = { historical_friend_with = J33 }
+				owner = { J33 = { historical_friend_with = PREV } }
 			}
 		}
 	}
+
 	on_activation = {
 		owner = {
-			J33 = {
-				add_historical_friend = PREV
-			}
+			J33 = { add_historical_friend = PREV }
 			add_historical_friend = J33
 		}
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3382,26 +3094,22 @@ beikdugang_rev_sub = {
 		owner = {
 			any_subject_country = {
 				is_march = yes
-				NOT = {
-					is_revolutionary = yes
-				}
+				NOT = { is_revolutionary = yes }
 			}
 		}
 	}
+
 	on_activation = {
 		owner = {
 			every_subject_country = {
-				limit = {
-					NOT = {
-						is_revolutionary = yes
-					}
-				}
+				limit = { NOT = { is_revolutionary = yes } }
 				change_government = republic
 				add_government_reform = junior_revolutionary_republic_reform
 				add_revolutionary_zeal = 10
 			}
 		}
 	}
+
 	on_deactivation = {
 	}
 }
@@ -3456,62 +3164,58 @@ beikdugang_rev_sub = {
 #}
 
 birsartanses_25_year_plan_mod = {
-	potential = {
+    potential = {
 		owner = {
 			OR = {
 				tag = F21
 				was_tag = F21
 			}
 		}
-	}
-	trigger = {
-		owner = {
-			has_country_flag = birsartanses_preparing_plan
-		}
-	}
-	#Province scope
-	on_activation = {
-		owner = {
-			country_event = {
-				id = flavour_birsartanses.6
-			}
-		}
-	}
-	on_deactivation = {
-	}
+    }
+
+    trigger = {
+        owner = { has_country_flag = birsartanses_preparing_plan }
+    }
+
+    #Province scope
+    on_activation = {
+        owner = { country_event = { id = flavour_birsartanses.6 } }
+    }
+
+    on_deactivation = {
+
+    }
 }
 
 skurkokli_randomizer_mod = {
 	potential = {
-		J47 = {
-			exists = yes
-		}
+		J47 = { exists = yes }
 	}
+
 	hidden = yes
+
 	trigger = {
-		J47 = {
-			has_country_flag = skurkokli_randomize
-		}
+		J47 = { has_country_flag = skurkokli_randomize }
 	}
+
 	on_activation = {
-		J47 = {
-			country_event = {
-				id = ogre.100
-			}
-		}
+		J47 = { country_event = { id = ogre.100 } }
 	}
+
 	on_deactivation = {
 	}
 }
 
 tiltaghar_deal_ministries_1_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3520,24 +3224,28 @@ tiltaghar_deal_ministries_1_modifier = {
 				}
 			}
 		}
-	}
-	global_unrest = -0.25
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_deal_ministries_1_modifier
-	}
+    }
+    global_unrest = -0.25
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_deal_ministries_1_modifier
+    }
 }
 
 tiltaghar_deal_ministries_2_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3546,24 +3254,28 @@ tiltaghar_deal_ministries_2_modifier = {
 				}
 			}
 		}
-	}
-	global_unrest = -0.5
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_deal_ministries_2_modifier
-	}
+    }
+    global_unrest = -0.5
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_deal_ministries_2_modifier
+    }
 }
 
 tiltaghar_deal_ministries_3_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3572,24 +3284,28 @@ tiltaghar_deal_ministries_3_modifier = {
 				}
 			}
 		}
-	}
-	global_unrest = -1
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_deal_ministries_3_modifier
-	}
+    }
+    global_unrest = -1
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_deal_ministries_3_modifier
+    }
 }
 
 tiltaghar_deal_ministries_4_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3598,24 +3314,28 @@ tiltaghar_deal_ministries_4_modifier = {
 				}
 			}
 		}
-	}
-	global_unrest = -1.25
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_deal_ministries_4_modifier
-	}
+    }
+    global_unrest = -1.25
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_deal_ministries_4_modifier
+    }
 }
 
 tiltaghar_elephant_lords_1_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3624,24 +3344,28 @@ tiltaghar_elephant_lords_1_modifier = {
 				}
 			}
 		}
-	}
-	cavalry_cost = -0.025
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_elephant_lords_1_modifier
-	}
+    }
+    cavalry_cost = -0.025
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_elephant_lords_1_modifier
+    }
 }
 
 tiltaghar_elephant_lords_2_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
-	trigger = {
+
+    trigger = {
 		owner = {
 			NOT = {
 				had_country_flag = {
@@ -3650,22 +3374,25 @@ tiltaghar_elephant_lords_2_modifier = {
 				}
 			}
 		}
-	}
-	cavalry_cost = -0.05
-	#Province scope
-	on_activation = {
-	}
-	on_deactivation = {
-		remove_province_triggered_modifier = tiltaghar_elephant_lords_2_modifier
-	}
+    }
+    cavalry_cost = -0.05
+
+    #Province scope
+    on_activation = {
+    }
+
+    on_deactivation = {
+        remove_province_triggered_modifier = tiltaghar_elephant_lords_2_modifier
+    }
 }
 
 tiltaghar_elephant_lords_3_modifier = {
-	potential = {
+    potential = {
 		owner = {
-			tag = R08
+        	tag = R08
 		}
-	}
+    }
+
 	hidden = yes
 
     trigger = {
@@ -5338,27 +5065,6 @@ H33_dual_archprovosts = {
 	}
 }
 
-giberd_permanent_veridical = {
-	potential = {
-		religion = ravelian
-	}
-	trigger = {
-		religion = ravelian
-		has_owner_religion = yes
-		owner = {
-			capital_scope = {
-				region = esmaria_region
-			}
-		}
-	}
-	picture = "papal_influence_from_cardinals"
-
-	on_activation = {
-	}
-	on_deactivation = {
-	}
-}
-
 B34_ettalinde_clues = {
     potential = {
 		always = yes
@@ -6653,6 +6359,27 @@ mb_blood_moon_randomiser = {
 	}
 }
 
+giberd_permanent_veridical = {
+	potential = {
+		religion = ravelian
+	}
+	trigger = {
+		religion = ravelian
+		has_owner_religion = yes
+		owner = {
+			capital_scope = {
+				region = esmaria_region
+			}
+		}
+	}
+	picture = "papal_influence_from_cardinals"
+
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+
 giberd_modern_fortress = {
 	potential = {
 		always = yes
@@ -6670,7 +6397,7 @@ giberd_modern_fortress = {
 
 	on_deactivation = {
 	}
-	
+
 	local_defensiveness = 0.35
 	local_garrison_size = 0.50
 }
