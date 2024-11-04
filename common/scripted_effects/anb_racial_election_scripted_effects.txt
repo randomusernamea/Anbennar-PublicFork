@@ -919,6 +919,14 @@ get_ruler_from_majority_or_minority_kobold = {
 					}
 				}
 				ROOT = { racial_tolerance_define_ruler = { culture = steelscale_kobold } }
+				random_list = {
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = steelscale_kobold } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = steelscale_kobold } }
+					}
+				}
 			}
 			else = {
 				random_list = {
@@ -1090,7 +1098,14 @@ get_ruler_from_majority_or_minority_gnome = {
 						continent = south_america
 					}
 				}
-				ROOT = { racial_tolerance_define_ruler = { culture = tinker_gnome } }
+				random_list = {
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = tinker_gnome } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = frontier_gnome } }
+					}
+				}
 			}
 			else = {
 				ROOT = { racial_tolerance_define_ruler = { culture = creek_gnome } }
@@ -2833,6 +2848,12 @@ get_ruler_from_majority_or_minority_human = {
 					1 = {
 						ROOT = { racial_tolerance_define_ruler = { culture = neratican } }
 					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = criodhi } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = arthaman } }
+					}
 				}
 			}
 			else_if = {
@@ -2858,13 +2879,44 @@ get_ruler_from_majority_or_minority_human = {
 					1 = {
 						ROOT = { racial_tolerance_define_ruler = { culture = sarnik } }
 					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = gliosine } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = arbcoster } }
+					}
 				}
 			}
 			else_if = {
 				limit = {
-					continent = south_america
+					OR = {
+						continent = south_america
+						continent = north_america
+					}
 				}
-				ROOT = { racial_tolerance_define_ruler = { culture = dhanaenno } }
+				random_list = {
+					1 = {
+						trigger = { NOT = { continent = north_america } }
+						ROOT = { racial_tolerance_define_ruler = { culture = dhanaenno } }
+					}
+					1 = {
+						trigger = { NOT = { continent = north_america } }
+						ROOT = { racial_tolerance_define_ruler = { culture = thornish } }
+					}
+					1 = {
+						trigger = { NOT = { continent = north_america } }
+						ROOT = { racial_tolerance_define_ruler = { culture = fiadionni } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = westman } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = nariandi } }
+					}
+					1 = {
+						ROOT = { racial_tolerance_define_ruler = { culture = elnarfolk } }
+					}
+				}
 			}
 			else_if = {
 				limit = {
