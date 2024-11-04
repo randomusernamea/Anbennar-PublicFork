@@ -43,18 +43,7 @@ country_event = { #Merchant's Beware
     option  = {
         name = flavour_kherka.2.a
         2773 = { center_of_trade = 1 }
-        if = {
-            limit = { has_country_flag = schemers_in_power }
-            2738 = {
-                add_devastation = 100
-                add_province_modifier = {
-                    name = G48_recently_sacked
-                    duration = 3650 #10 Years
-                }
-            }
-            add_treasury = 400
-        }
-        else = {
+        tooltip = {
             2738 = {
                 add_devastation = 50
                 add_province_modifier = {
@@ -63,6 +52,44 @@ country_event = { #Merchant's Beware
                 }
             }
             add_treasury = 200
+        }
+        if = {
+            limit = { has_country_flag = schemers_in_power }
+            custom_tooltip = G48_schemers_bonus_explained_tt
+            custom_tooltip = BONUS_REWARD_YES
+            tooltip = {
+                2738 = {
+                    add_devastation = 100
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 400
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = { has_country_flag = schemers_in_power }
+                2738 = {
+                    add_devastation = 100
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 400
+            }
+            else = {
+                2738 = {
+                    add_devastation = 50
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 200
+            }
         }
         G46 = {
             every_owned_province = { 
@@ -126,6 +153,7 @@ country_event = { #Shift The Tide
             limit = {
                 has_country_flag = colonists_in_power 
             }
+            custom_tooltip = G48_colonists_bonus_explained_tt
             define_advisor = {
                 type = naval_reformer 
                 skill = 3
@@ -147,21 +175,7 @@ country_event = { #Scrolls Of Knowledge
 
     option  = {
         name = flavour_kherka.4.a #Sack The Library
-        if = {
-            limit = {
-                has_country_flag = militants_in_power
-            }
-            2745 = {
-                add_devastation = 50
-                add_province_modifier = {
-                    name = G48_recently_sacked
-                    duration = 3650 #10 Years
-                }
-            }
-            add_treasury = 150
-            change_innovativeness = 6   
-        }
-        else = {
+        tooltip = {
             2745 = {
                 add_devastation = 25
                 add_province_modifier = {
@@ -171,6 +185,50 @@ country_event = { #Scrolls Of Knowledge
             }
             add_treasury = 75
             change_innovativeness = 3
+        }
+        if = {
+            limit = {
+                has_country_flag = militants_in_power
+            }
+            custom_tooltip = G48_militants_bonus_explained_tt
+            tooltip = {
+                2745 = {
+                    add_devastation = 50
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 150
+                change_innovativeness = 6   
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_country_flag = militants_in_power
+                }
+                2745 = {
+                    add_devastation = 50
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 150
+                change_innovativeness = 6   
+            }
+            else = {
+                2745 = {
+                    add_devastation = 25
+                    add_province_modifier = {
+                        name = G48_recently_sacked
+                        duration = 3650 #10 Years
+                    }
+                }
+                add_treasury = 75
+                change_innovativeness = 3
+            }
         }
         G60 = {
             every_owned_province = {
