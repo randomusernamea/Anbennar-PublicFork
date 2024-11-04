@@ -4651,6 +4651,15 @@ on_war_declaration_effect = {
 		}
 		clr_country_flag = active_frenzy_flg
 	}
+
+	if = { #Kherka
+		limit = { has_country_flag = G48_odegaster_cogemos_enabled }
+		add_country_modifier = {
+			name = G48_odegaster_cogemos
+			duration = 1825 #Days
+		}
+	}
+
 }
 
 remove_all_age_of_discovery_modifiers = {
@@ -5201,7 +5210,7 @@ on_colony_finished_effect = {
 		cede_province = U42
 	}
 	
-	#Saraeddun CN
+	#Seraeddun CN
 	if= {
 		limit = {
 			OR = {
@@ -10023,6 +10032,19 @@ on_province_owner_change_effect = {
 		add_province_modifier = {
 			name = gov_empire_heretic
 			duration = -1
+		}
+	}
+	#Kherka Stuff
+	if = {
+		limit = {
+			province_id = 2666
+			owner = { has_country_flag = G48_hfaesban_conquer }
+		}
+		owner = {
+			add_country_modifier = {
+				name = G48_magic_and_steel
+				duration = -1
+			}
 		}
 	}
 }
