@@ -22,7 +22,6 @@ gather_great_host_great_aspect = {
 	
 	trigger = {
 		NOT = { manpower_percentage = 1 }
-		NOT = { has_country_modifier = slackening_modifier}
 	}
 	
 	effect = {
@@ -50,7 +49,6 @@ gather_great_host_old_aspect = {
 	
 	trigger = {
 		NOT = { manpower_percentage = 1 }
-		NOT = { has_country_modifier = slackening_modifier}
 	}
 	
 	effect = {
