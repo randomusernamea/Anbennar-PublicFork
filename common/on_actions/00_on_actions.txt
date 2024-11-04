@@ -11332,9 +11332,26 @@ on_province_owner_change = {
 			limit = { has_province_modifier = kobold_traps_lvl_2 }
 			remove_province_modifier = kobold_traps_lvl_2
 		}
-		else = {
+		else_if = {
+			limit = { has_province_modifier = kobold_traps_lvl_1 }
 			remove_province_modifier = kobold_traps_lvl_1
-		}			
+		}	
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
+			remove_province_modifier = modified_kobold_traps_lvl_4
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
+			remove_province_modifier = modified_kobold_traps_lvl_3
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
+			remove_province_modifier = modified_kobold_traps_lvl_2
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
+			remove_province_modifier = modified_kobold_traps_lvl_1
+		}		
 		if = {
 			limit = { has_building = fort_15th }
 			remove_building = fort_15th

@@ -9079,3 +9079,32 @@ racial_tolerance_reform = {
 		factor = 1
 	}
 }
+
+#kobildzan
+
+kobildzan_draconic_technopriests = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	allow_normal_conversion = no 
+	lock_level_when_selected = yes 
+	potential = { 
+		tag = Z38
+		mission_completed = Z38_the_compendium_of_dragons
+	}  
+ 
+	modifiers = { 
+		max_absolutism = 10
+		church_influence_modifier = 0.1
+	} 
+	custom_attributes = {
+		extra_artificer_capacity_20 = yes
+	}
+	effect = {
+		hidden_effect = {
+			change_variable = {
+				which = StaticArtificePoints
+				value = 20
+			}
+			update_artifice_points = yes
+		}
+	}
+}
