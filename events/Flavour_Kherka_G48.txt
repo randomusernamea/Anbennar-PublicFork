@@ -14,14 +14,17 @@ country_event = { #Starting Event
 
     option  = {
         name = flavour_kherka.1.a
-        G50 = {
-            every_owned_province = {
-                add_permanent_claim = ROOT
+        custom_tooltip = G48_enemies_at_the_gate_tt
+        hidden_effect = {
+            G50 = {
+                every_owned_province = {
+                    add_permanent_claim = ROOT
+                }
             }
-        }
-        G49 = {
-            every_owned_province = {
-                add_permanent_claim = ROOT
+            G49 = {
+                every_owned_province = {
+                    add_permanent_claim = ROOT
+                }
             }
         }
     }
