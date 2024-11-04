@@ -1157,13 +1157,13 @@ maghargma_two_post_trolls = {
 					power = 25
 				}
 			}
-			gerudian_frontier_region = { 
+			olavlund_region = { 
 				add_permanent_claim = ROOT 
 			} 
 			dalr_region = { 
 				add_permanent_claim = ROOT 
 			} 
-			alenic_frontier_region = { 
+			alenic_reach_region = { 
 				add_permanent_claim = ROOT 
 			} 
 		}
@@ -1175,15 +1175,15 @@ maghargma_two_post_trolls = {
 		required_missions = { maghargma_greater_than_giants } 
 		provinces_to_highlight = {  
 			OR = {
-				region = gerudian_frontier_region
+				region = olavlund_region
 				region = dalr_region
-				region = alenic_frontier_region
+				region = alenic_reach_region
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
 		trigger = {
-			gerudian_frontier_region = {
+			olavlund_region = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			} 
@@ -1191,14 +1191,14 @@ maghargma_two_post_trolls = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}  
-			alenic_frontier_region = {
+			alenic_reach_region = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			} 
 		}
 
 		effect = {
-			alenic_reach_region = {
+			alenic_frontier_region = {
 				add_permanent_claim = ROOT 
 			} 
 			west_castanor_region = {
