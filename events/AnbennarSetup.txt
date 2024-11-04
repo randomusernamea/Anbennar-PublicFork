@@ -1392,10 +1392,9 @@ country_event = {
 			}
 	
 			#sets up the maximum allowed simultainious active inventions
-			add_country_modifier = {
-				name = artificers_invention_slots_base
-				duration = -1
-				hidden = yes
+			set_variable = {
+				which = artificers_invention_slots_base
+				value = 7
 			}
 			set_country_flag = artifice_set_up
 		}
@@ -1433,14 +1432,14 @@ country_event = {
 					}
 				}
 			}
-			if = { #mixed mode
-				limit = {
-					OR = {
-						always = no
-					}
-				}
-				set_country_flag = magic_artificery_mixed
-			}
+			# if = { #mixed mode
+			# 	limit = {
+			# 		OR = {
+			# 			tag = XYZ
+			# 		}
+			# 	}
+			# 	set_country_flag = magic_artificery_mixed
+			# }
 			country_event = { 
 				id = magic_artificery_setup.2
 				days = 1

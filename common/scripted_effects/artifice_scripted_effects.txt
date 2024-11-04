@@ -548,6 +548,10 @@ update_artifice_points = {
 				variable_name = ArtificeMaxInventions
 				value = modifier:artificers_invention_slots
 			}
+			change_variable = {
+				which = ArtificeMaxInventions
+				which = artificers_invention_slots_base
+			}
 		}
 	}
 }
@@ -659,10 +663,9 @@ set_up_artifice_system = {
 		}
 
 		#sets up the maximum allowed simultainious active inventions
-		add_country_modifier = {
-			name = artificers_invention_slots_base
-			duration = -1
-			hidden = yes
+		set_variable = {
+			which = artificers_invention_slots_base
+			value = 7
 		}
 		set_country_flag = artifice_set_up
 	}
