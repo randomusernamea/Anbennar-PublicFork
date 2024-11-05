@@ -2087,7 +2087,9 @@ stalbor_race_opinion_trigger = {
 
 #Wyvernheart
 wyvernheart_not_floodborn_council = {
-	NOT = { has_reform = floodborn_council_reform }
-	NOT = { has_reform = floodborn_council_reform_always_mage }
-	NOT = { has_reform = floodborn_council_reform_theocracy }
+	OR = {
+		NOT = { has_reform = floodborn_council_reform }
+		NOT = { has_reform = floodborn_council_reform_always_mage }
+		NOT = { has_reform = floodborn_council_reform_theocracy }
+	}
 }
