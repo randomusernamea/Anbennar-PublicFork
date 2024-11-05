@@ -7,9 +7,7 @@ estate_nobles_hire_advisor = {
 				category = MIL
 			}
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 1
@@ -58,9 +56,7 @@ estate_nobles_fire_advisor = {
 		employed_advisor = {
 			category = MIL
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 1
@@ -137,9 +133,7 @@ estate_nobles_get_allies = {
 		NOT = { has_country_modifier = foreign_contacts }
 		is_free_or_tributary_trigger = yes
 		NOT = { has_subject_of_type = ynnic_iosahar }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 1
@@ -238,9 +232,7 @@ estate_nobles_get_allies = {
 #Befriend Rival of Rival
 estate_nobles_befriend_rival_of_rival = {
 	can_select = {
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_rival_country = {
 			any_rival_country = {
 				NOT = { tag = root }
@@ -444,9 +436,7 @@ estate_nobles_restore_legitimacy = {
 		government = monarchy
 		NOT = { has_ruler_modifier = legitimacy_defended }
 		NOT = { has_regency = yes }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 2
@@ -517,9 +507,7 @@ estate_nobles_restore_legitimacy = {
 #Improve Relations with X
 estate_nobles_relations_with_X = {
 	can_select = {
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_known_country = {
 			NOT = { is_rival = root }
 			ROOT = { NOT = { is_rival = prev } }
@@ -734,9 +722,7 @@ estate_nobles_relations_with_X = {
 #Get AE down (if there is a coalition) 
 estate_nobles_break_coalition = {
 	can_select = {
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_country = {
 			coalition_target = root
 			has_opinion_modifier = {
@@ -868,9 +854,7 @@ estate_nobles_condottieri_rivals = {
 	can_select = {
 		has_dlc = "Mare Nostrum"
 		is_at_war = no
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		NOT = {
 			any_country = {
 				root = { is_renting_condottieri_to = prev }
@@ -1065,9 +1049,7 @@ estate_nobles_support_independence = {
 				}
 			}
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 2
@@ -1176,9 +1158,7 @@ estate_nobles_retake_core = {
 			is_city = yes
 			NOT = { owner = { ROOT = { truce_with = prev } } }
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 2
@@ -1330,9 +1310,7 @@ estate_nobles_crush_revolts = {
 				has_spawned_rebels = lollard_rebels
 			}
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 2
@@ -1404,9 +1382,7 @@ estate_nobles_regain_liberty = {
 				liberty_desire = 35
 			}
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 5
@@ -1476,9 +1452,7 @@ estate_nobles_regain_liberty = {
 #Convert province culture
 estate_nobles_convert_province_culture = {
 	can_select = {
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_owned_province = {
 			NOT = { culture = root }
 			has_owner_accepted_culture = no
@@ -1623,9 +1597,7 @@ estate_nobles_protect_our_culture = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_neighbor_country = {
 			NOT = { culture_group = root }
 			any_owned_province = {
@@ -1862,9 +1834,7 @@ estate_nobles_vassalise_vulnerable_country = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		num_of_cities = 12
 		any_neighbor_country = {
 			NOT = { has_reform = free_city }
@@ -2072,9 +2042,7 @@ estate_nobles_expand_into_x = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_neighbor_country = {
 			num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -2334,9 +2302,7 @@ estate_nobles_complete_conquest_of_x = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_neighbor_country = {
 			num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -2647,9 +2613,7 @@ estate_nobles_annex_subject = {
 			}
 		}
 		NOT = { tag = Y63 }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 3
@@ -2796,9 +2760,7 @@ estate_nobles_build_an_army = {
 			}
 			NOT = { army_size_percentage = 0.35 }
 		}
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 5
@@ -2884,9 +2846,7 @@ estate_nobles_bigger_army_than_rival = {
 	can_select = {
 		NOT = { has_country_modifier = thriving_arms_industry }
 		NOT = { army_size_percentage = 1 }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 		any_rival_country = {
 			NOT = { war_with = root }
 			NOT = { root = { army_size = prev } }
@@ -2978,9 +2938,7 @@ estate_nobles_build_up_manpower_reserves = {
 	can_select = {
 		is_at_war = no
 		NOT = { manpower_percentage = 0.40 }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 5
@@ -3110,9 +3068,7 @@ estate_nobles_build_up_manpower_reserves = {
 estate_nobles_recover_abysmal_prestige = {
 	can_select = {
 		NOT = { prestige = -30 }
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 8
@@ -3196,9 +3152,7 @@ estate_nobles_improve_prestige = {
 		prestige = -30
 		NOT = { prestige = 20 }
 		
-		NOT = { has_reform = floodborn_council_reform }
-		NOT = { has_reform = floodborn_council_reform_always_mage }
-		NOT = { has_reform = floodborn_council_reform_theocracy }
+		wyvernheart_not_floodborn_council = yes
 	}
 	selection_weight = {
 		factor = 2.5
@@ -3416,12 +3370,7 @@ estate_nobles_wyvernheart_procure_burnblood_candidates = {
 			has_reform = floodborn_council_reform_theocracy
 		}
 		any_neighbor_country = {
-			any_owned_province = {
-				OR = {
-					has_orcish_minority_trigger = yes
-					has_orcish_majority_trigger = yes
-				}
-			}
+			fast_owns_num_pops_of_race = { race = orcish amount = 1 }
 		}
 	}
 	selection_weight = {
@@ -3442,12 +3391,6 @@ estate_nobles_wyvernheart_procure_burnblood_candidates = {
 		}
 		random_neighbor_country = {
 			limit = {
-				any_owned_province = {
-					OR = {
-						has_orcish_minority_trigger = yes
-						has_orcish_majority_trigger = yes
-					}
-				}
 			}
 			save_event_target_as = agenda_country
 		}
@@ -3455,10 +3398,7 @@ estate_nobles_wyvernheart_procure_burnblood_candidates = {
 	provinces_to_highlight = {
 		owner = { is_neighbor_of = ROOT }
 		NOT = { owned_by = ROOT }
-		OR = {
-			has_orcish_minority_trigger = yes
-			has_orcish_majority_trigger = yes
-		}
+		fast_has_pop_of_race = { race = orcish }
 	}
 	fail_if = {
 	}

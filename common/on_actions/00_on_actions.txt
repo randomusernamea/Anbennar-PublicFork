@@ -10898,25 +10898,25 @@ on_province_culture_changed = {
 		}
 		random_list = {
 			1 = {
-				trigger = { NOT = { has_country_flag = wyvernheart_401_recent } }
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_401_recent } } }
 				province_event = {
 					id = flavour_wyvernheart.401
 				}
 			}
 			1 = {
-				trigger = { NOT = { has_country_flag = wyvernheart_402_recent } }
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_402_recent } } }
 				province_event = {
 					id = flavour_wyvernheart.402
 				}
 			}
 			1 = {
-				trigger = { NOT = { has_country_flag = wyvernheart_403_recent } }
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_403_recent } } }
 				province_event = {
 					id = flavour_wyvernheart.403
 				}
 			}
 			1 = {
-				trigger = { NOT = { has_country_flag = wyvernheart_404_recent } }
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_404_recent } } }
 				province_event = {
 					id = flavour_wyvernheart.404
 				}
@@ -11528,10 +11528,7 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			owner = { tag = B39 }
-			OR = {
-				has_orcish_minority_trigger = yes
-				has_orcish_majority_trigger = yes
-			}
+			fast_has_pop_of_race = { race = orcish }
 		}
 		change_variable = {
 			which = acquired_orcish_pops

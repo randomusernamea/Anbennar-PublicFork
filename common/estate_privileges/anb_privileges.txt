@@ -14361,31 +14361,18 @@ estate_wyvernheart_culture_of_the_heart = {
 			limit = {
 				culture = ROOT
 			}
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
 			add_province_modifier = {
 				name = estate_wyvernheart_culture_of_the_heart_mod
 				duration = -1
 			}
 		}
-		else_if = {
-			limit = {
-				has_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
-			}
-			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
-		}
-		if = {
-			limit = {
-				NOT = { culture = ROOT }
-			}
+		else = {
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 			add_province_modifier = {
 				name = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 				duration = -1
 			}
-		}
-		else_if = {
-			limit = {
-				has_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
-			}
-			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 		}
 	}
 	on_revoked = {
@@ -14393,21 +14380,16 @@ estate_wyvernheart_culture_of_the_heart = {
 	on_revoked_province = {
 	}
 	on_invalid = {
-		custom_tooltip = estate_church_one_faith_one_culture_rta
-		custom_tooltip = estate_church_one_faith_one_culture_rtb
 	}
 	on_invalid_province = {
 		if = {
 			limit = {
-				has_province_modifier = estate_church_united_faith_and_culture
+				culture = ROOT
 			}
-			remove_province_modifier = estate_church_united_faith_and_culture
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
 		}
-		if = {
-			limit = {
-				has_province_modifier = estate_church_false_culture
-			}
-			remove_province_modifier = estate_church_false_culture
+		else = {
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 		}
 	}
 	penalties = {
