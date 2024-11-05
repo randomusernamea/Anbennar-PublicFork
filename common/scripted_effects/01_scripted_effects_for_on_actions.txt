@@ -3048,10 +3048,12 @@ on_battle_won_unit_effect = {
 	}
 	if = {
 		limit = { 
-			tag = Y17 #Gushuokguan
-			any_hired_mercenary_company = {
-				template = merc_rock_raiders
-				location = { province_id = FROM }
+			unit_owner = {
+				tag = Y17 #Gushuokguan
+				any_hired_mercenary_company = {
+					template = merc_rock_raiders
+					location = { province_id = FROM }
+				}
 			}
 			FROM = {
 				has_underground_terrain = yes
@@ -3063,12 +3065,11 @@ on_battle_won_unit_effect = {
 		limit = { 
 			unit_owner = {
 				tag = Y17 #Gushuokguan
+				any_hired_mercenary_company = {
+					template = merc_dacite_dragons
+					location = { province_id = FROM }
+				}
 			}
-			any_hired_mercenary_company = {
-				template = merc_dacite_dragons
-				location = { province_id = FROM }
-			}
-
 			enemy_unit = {
 				unit_owner = {
 					tag = REB
@@ -7628,25 +7629,28 @@ startup_1444_effects = {
 		}
 
 		#Gushuokguan
-		set_variable = {
-			which = gushuokguan_rented_condottieri_counter
-			value = 0
-		}
-		set_variable = {
-			which = gushuokguan_battle_counter
-			value = 0
-		}
-		set_variable = {
-			which = gushuokguan_siege_counter
-			value = 0
-		}
-		set_variable = {
-			which = gushuokguan_scorched_earth_counter
-			value = 0
-		}
-		set_variable = {
-			which = gushuokguan_event_counter
-			value = 0
+		if = {
+			limit = { tag = Y17 } #Gushuokguan
+			set_variable = {
+				which = gushuokguan_rented_condottieri_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_battle_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_siege_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_scorched_earth_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_event_counter
+				value = 0
+			}
 		}
 	}
 }

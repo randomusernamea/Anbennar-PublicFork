@@ -53,10 +53,14 @@ gushuokguan_1 = {
 				trade_goods = livestock
 				trade_goods = fish
 			}
-			NOT = { has_production_building_trigger = yes }
-			NOT = { has_manpower_building_trigger = yes }
-			NOT = { has_manufactory_trigger = yes }
-			NOT = { base_production = 7 }
+			NOT = {
+				AND = {
+					has_production_building_trigger = yes
+					has_manpower_building_trigger = yes
+					has_manufactory_trigger = yes
+					base_production = 7
+				}
+			}
 		} 
 
 		trigger = {
@@ -150,14 +154,20 @@ gushuokguan_1 = {
 
 		trigger = {  
 			yanshen_superregion = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
-				is_city = yes #For Aikogeoke
-			}
-			all_owned_province = {
-				superregion = yanshen_superregion
-				NOT = { devastation = 0.01 }
-				NOT = { unrest = 0 }
+                type = all
+                OR = {
+                    country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+                    is_city = no #For Aikogeoke
+                }
+            }
+			NOT = {
+				any_owned_province = {
+					superregion = yanshen_superregion
+					OR = {
+						devastation = 0.01
+						unrest = 0
+					}
+				}
 			}
 			golden_highway_upper_yanshen = {
 				type = all
@@ -239,7 +249,7 @@ gushuokguan_1 = {
 			custom_tooltip = gushuokguan_rock_raiders_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_rock_raiders }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_rock_raiders
@@ -295,7 +305,7 @@ gushuokguan_1 = {
 			}
 			random_hired_mercenary_company = {
 				limit = { template = merc_dacite_dragons }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			custom_tooltip = gushuokguan_dacite_dragons_tt
 			hidden_effect = {
@@ -318,17 +328,15 @@ gushuokguan_1 = {
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = gushuokguan_renting_to_rending_tt
-					AND = { 
-						has_global_flag = rending_active
-						any_known_country = {
-							OR = {
-								has_country_flag = rending_ward_flag
-								has_country_flag = rending_appease_flag
-							}
-							any_hired_mercenary_company = {
-								template = merc_dacite_dragons #I hope there was another way to check army name
-								location = { controller = { is_hiring_condottiere_from = ROOT } } #Gushuokguan
-							}
+					has_global_flag = rending_active
+					any_known_country = {
+						OR = {
+							has_country_flag = rending_ward_flag
+							has_country_flag = rending_appease_flag
+						}
+						any_hired_mercenary_company = {
+							template = merc_dacite_dragons #I hope there was another way to check army name
+							location = { controller = { is_hiring_condottiere_from = ROOT } } #Gushuokguan
 						}
 					}
 				}
@@ -346,7 +354,7 @@ gushuokguan_1 = {
 			custom_tooltip = gushuokguan_dacite_dragons_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_dacite_dragons }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_dacite_dragons
@@ -416,8 +424,12 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_1 } 
 		provinces_to_highlight = {  
 			is_capital_of = ROOT #Gushuokguan
-			NOT = { base_manpower = 5 }
-			NOT = { has_manpower_building_trigger = yes }
+			NOT = { 
+				AND = {
+					base_manpower = 5 
+					has_manpower_building_trigger = yes
+				}
+			}
 		} 
 
 		trigger = {
@@ -577,9 +589,11 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_7 } 
 		provinces_to_highlight = {  
 			owned_by = ROOT #Gushuokguan
-			has_terrain = jungle
-			NOT = { has_manpower_building_trigger = yes }
-			devastation = 0.01
+			AND = {
+				has_terrain = jungle
+				NOT = { has_manpower_building_trigger = yes }
+				devastation = 0.01
+			}
 		} 
 
 		trigger = {  
@@ -616,7 +630,7 @@ gushuokguan_2 = {
 			}
 			random_hired_mercenary_company = {
 				limit = { template = merc_whetstones }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			custom_tooltip = gushuokguan_whetstones_tt
 			hidden_effect = {
@@ -652,7 +666,7 @@ gushuokguan_2 = {
 			custom_tooltip = gushuokguan_whetstones_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_whetstones }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_whetstones
@@ -847,6 +861,7 @@ gushuokguan_3 = {
 						Y05 = { #Lanjinhui
 							vassal_of = ROOT #Gushuokguan
 						}
+						ai = no
 					}
 					Y05 = {
 						add_country_modifier = {
@@ -860,6 +875,7 @@ gushuokguan_3 = {
 						Y05 = { #Lanjinhui
 							is_enemy = ROOT #Gushuokguan
 						}
+						ai = no
 					}
 					country_event = { id = gushuokguan_event.5 } 
 					custom_tooltip = gushuokguan_incoming_war_tt
@@ -890,17 +906,17 @@ gushuokguan_3 = {
 			}
 			AND = {
 				owned_by = ROOT 
-				NOT = {
-					OR = {
+				AND = {
+					NOT = {
 						local_autonomy = 25
 						has_province_modifier = autonomy_increased
 					}
-				}
-				NOT = { devastation = 0.01 }
-				NOT = { unrest = 0 }
-				if = {
-					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = no
+					devastation = 0.01
+					unrest = 0
+					if = {
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = no
+					}
 				}
 			}
 		} 
@@ -1103,7 +1119,7 @@ gushuokguan_3 = {
 			custom_tooltip = gushuokguan_chrome_claws_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_chrome_claws }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_chrome_claws
@@ -1152,7 +1168,7 @@ gushuokguan_3 = {
 			}
 			random_hired_mercenary_company = {
 				limit = { template = merc_marble_mounts }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			custom_tooltip = gushuokguan_marble_mounts_tt
 			hidden_effect = {
@@ -1181,7 +1197,7 @@ gushuokguan_3 = {
 			custom_tooltip = gushuokguan_marble_mounts_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_marble_mounts }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_marble_mounts
@@ -1442,17 +1458,17 @@ gushuokguan_4 = {
 			area = iongsim_area
 			AND = {
 				owned_by = ROOT 
-				NOT = {
-					OR = {
+				AND = {
+					NOT = {
 						local_autonomy = 25
 						has_province_modifier = autonomy_increased
 					}
-				}
-				NOT = { devastation = 0.01 }
-				NOT = { unrest = 0 }
-				if = {
-					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = no
+					devastation = 0.01
+					unrest = 0
+					if = {
+						limit = { ROOT = { has_parliament = yes } } 
+						has_seat_in_parliament = no
+					}
 				}
 			}
 		} 
@@ -1640,7 +1656,7 @@ gushuokguan_4 = {
 			}
 			random_hired_mercenary_company = {
 				limit = { template = merc_flying_pebbles }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			custom_tooltip = gushuokguan_flying_pebbles_tt
 			hidden_effect = {
@@ -1676,7 +1692,7 @@ gushuokguan_4 = {
 			custom_tooltip = gushuokguan_flying_pebbles_tier_2_tt
 			random_hired_mercenary_company = {
 				limit = { template = merc_flying_pebbles }
-				disband_mercenary_company = yes
+				disband_mercenary_company = THIS
 			}
 			hidden_effect = {
 				clr_country_flag = gushuokguan_flying_pebbles
@@ -1894,8 +1910,10 @@ gushuokguan_5 = {
 		}
 		provinces_to_highlight = {  
 			superregion = yanshen_superregion
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
-			devastation = 0.01
+			AND = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
+				devastation = 0.01
+			}
 		} 
 
 		trigger = {  
@@ -1939,13 +1957,21 @@ gushuokguan_5 = {
 			OR = {
 				AND = {
 					is_capital = yes
-					NOT = { development = 30 }
-					NOT = { has_building = state_house }
+					NOT = { 
+						AND = {
+							development = 30 
+							has_building = state_house
+						}
+					}
 				}
 				AND = {
 					province_group = trade_node_provinces
-					NOT = { province_has_center_of_trade_of_level = 2 }
-					NOT = { has_trade_building_trigger = yes }	
+					NOT = { 
+						AND = {
+							province_has_center_of_trade_of_level = 2
+							has_trade_building_trigger = yes
+						} 
+					}
 				}
 			} 
 		} 
@@ -1968,10 +1994,11 @@ gushuokguan_5 = {
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_5_7_tt
 			    trade_node_provinces = {
-				   OR = {
-					   owned_by = ROOT #Gushuokguan
-					   owned_by_subject_of = ROOT #Gushuokguan
-				   }
+					type = all
+				    OR = {
+						owned_by = ROOT #Gushuokguan
+						owned_by_subject_of = ROOT #Gushuokguan
+				    }
 				   province_has_center_of_trade_of_level = 2
 				   has_trade_building_trigger = yes
 			   }
@@ -1987,17 +2014,6 @@ gushuokguan_5 = {
 						has_province_modifier = autonomy_increased
 					}
 					NOT = { unrest = 0 }
-				}
-				custom_trigger_tooltip = {
-				 	tooltip = gushuokguan_5_7_tt
-					trade_node_provinces = {
-						OR = {
-							owned_by = ROOT #Gushuokguan
-							owned_by_subject_of = ROOT #Gushuokguan
-						}
-						province_has_center_of_trade_of_level = 2
-						has_trade_building_trigger = yes
-					}
 				}
 				capital_scope = {
 					development = 30

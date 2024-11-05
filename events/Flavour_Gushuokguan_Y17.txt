@@ -953,16 +953,57 @@ country_event = {
 		name = gushuokguan_event.51.a
 		ai_chance = { factor = 1 }
 		random_list = {
-			9 = {} #Empty
-			1 = { country_event = { id = gushuokguan_event.51 } }
+			1 = { 
+				trigger = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = dao
+						}
+						amount = 4
+					}
+					any_subject_country = {
+						any_neighbor_country = {
+							NOT = { 
+								is_subject_of = ROOT #Gushuokguan
+								tag = ROOT #Gushuokguan
+							}
+						}
+					}
+				}
+				country_event = { id = gushuokguan_event.51 } }
 			1 = { country_event = { id = gushuokguan_event.52 } }
 			1 = { country_event = { id = gushuokguan_event.53 } }
-			1 = { country_event = { id = gushuokguan_event.54 } }
-			1 = { country_event = { id = gushuokguan_event.55 } }
+			1 = { 
+				trigger = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = dao
+						}
+						amount = 4
+					}
+				}
+				country_event = { id = gushuokguan_event.54 } }
+			1 = { 
+				trigger = {
+					calc_true_if = {
+						all_subject_country = {
+							is_subject_of_type = dao
+						}
+						amount = 4
+					}
+				}
+				country_event = { id = gushuokguan_event.55 } }
 			1 = { country_event = { id = gushuokguan_event.56 } }
 			1 = { country_event = { id = gushuokguan_event.57 } }
 			1 = { country_event = { id = gushuokguan_event.58 } }
-			1 = { country_event = { id = gushuokguan_event.59 } }
+			1 = { 
+				trigger = {
+					any_subject_country = {
+						is_subject_of_type = dao
+						is_not_purging_any_race_trigger = no
+					}
+				}
+				country_event = { id = gushuokguan_event.59 } }
 		}
 	}
 }
@@ -976,23 +1017,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-		calc_true_if = {
-			all_subject_country = {
-				is_subject_of_type = dao
-			}
-			amount = 4
-		}
-		any_subject_country = {
-			any_neighbor_country = {
-				NOT = { 
-					is_subject_of = ROOT #Gushuokguan
-					tag = ROOT #Gushuokguan
-				}
-			}
-		}
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1123,9 +1148,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1203,9 +1226,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1340,15 +1361,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-		calc_true_if = {
-			all_subject_country = {
-				is_subject_of_type = dao
-			}
-			amount = 4
-		}
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1534,15 +1547,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-		calc_true_if = {
-			all_subject_country = {
-				is_subject_of_type = dao
-			}
-			amount = 4
-		}
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1633,9 +1638,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1707,9 +1710,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1781,9 +1782,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1869,13 +1868,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = gushuokguan_enable_confederal_council
-		any_subject_country = {
-			is_subject_of_type = dao
-			is_not_purging_any_race_trigger = no
-		}
-	}
+	trigger = {}
 
 	immediate = {
 		hidden_effect = {
@@ -1960,18 +1953,17 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		tag = Y17 #Gushuokguan
+		#has_country_flag = gushuokguan_enable_confederal_council #This one may be redundant tbh
 		has_country_flag = gushuokguan_dao_claim
 		any_claimed_province = {
 			has_province_flag = gushuokguan_claimed_for_dao
 			owner = { 
-				OR = {
-					NOT = { truce_with = ROOT }
-					NOT = { war_with = ROOT } 
-				}
+				NOT = { truce_with = ROOT }
+				NOT = { war_with = ROOT } 
 			}
 			NOT = { owned_by = ROOT }
 		}
-		has_country_flag = gushuokguan_enable_confederal_council
 	}
 
 	after = {
@@ -2072,6 +2064,172 @@ country_event = {
 	}
 }
 
+#Release Dao
+country_event = {
+	id = gushuokguan_event.71
+	title = gushuokguan_event.71.t
+	desc = gushuokguan_event.71.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = { }
+	
+	option = {
+		name = gushuokguan_event.71.a
+		ai_chance = { factor = 1 }
+		trigger = { has_country_flag = gushuokguan_can_release_guwaamud }
+		if = {
+			limit = {
+				NOT = { exists = Y96 } #Guwaamud
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					region = shuvuushudi_region
+					value = 15 #15/30
+				}
+			}
+			custom_tooltip = gushuokguan_release_guwaamud_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						region = shuvuushudi_region
+					}
+					cede_province = Y96 #Guwaamud
+					add_core = Y96 #Guwaamud
+				}
+				clr_country_flag = gushuokguan_can_release_guwaamud
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y96 #Guwaamud
+			}
+		}
+		else = {
+			custom_tooltip = gushuokguan_explain_release_guwaamud_tt
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.71.b
+		ai_chance = { factor = 1 }
+		trigger = { has_country_flag = gushuokguan_can_release_hubao }
+		if = {
+			limit = {
+				NOT = { exists = Y03 } #Hubao
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					OR = {
+						area = moryokang_area
+						area = jinqiu_area
+						area = jiangszun_area
+						area = bianfang_area
+						area = bianyuan_area
+					}
+					value = 10 #10/19
+				}
+			}
+			custom_tooltip = gushuokguan_release_hubao_tt
+			hidden_effect = { 
+				clr_country_flag = gushuokguan_can_release_hubao
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = moryokang_area
+							area = jinqiu_area
+							area = jiangszun_area
+							area = bianfang_area
+							area = bianyuan_area
+						}
+					}
+					cede_province = Y03 #Hubao
+					add_core = Y03 #Hubao
+				}
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y03 #Hubao
+			}
+		}
+		else = {
+			custom_tooltip = gushuokguan_explain_release_hubao_tt
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.71.c
+		ai_chance = { factor = 1 }
+		trigger = { has_country_flag = gushuokguan_can_release_zyujyut }
+		if = {
+			limit = {
+				NOT = { exists = Y23 } #Zyujyut
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					OR = {
+						area = hungngon_area
+						area = wanglam_area
+						area = jyutsai_area
+						area = lamzung_area
+					}
+					value = 8 #8/15
+				}
+			}
+			custom_tooltip = gushuokguan_release_zyujyut_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = hungngon_area
+							area = wanglam_area
+							area = jyutsai_area
+							area = lamzung_area
+						}
+					}
+					cede_province = Y23 #Zyujyut
+					add_core = Y23 #Zyujyut
+				}
+				clr_country_flag = gushuokguan_can_release_zyujyut
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y23 #Zyujyut
+			}
+		}
+		else = {
+			custom_tooltip = gushuokguan_explain_release_zyujyut_tt
+		}
+	}
+
+	option = {
+		name = gushuokguan_event.71.d1
+		ai_chance = { factor = 1 }
+		trigger = { has_country_flag = gushuokguan_can_release_one_xia }
+		if = {
+			limit = {
+				NOT = { exists = Y99 } #One Xia
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					region = xianjie_region
+					value = 35 #35/43
+				}
+			}
+			custom_tooltip = gushuokguan_release_one_xia_tt
+			hidden_effect = { 
+				every_owned_province = {
+					limit = {
+						region = xianjie_region
+					}
+					cede_province = Y99 #One Xia
+					add_core = Y99 #One Xia
+				}
+				clr_country_flag = gushuokguan_can_release_one_xia
+			} 
+			create_subject = {
+				subject_type = dao
+				subject = Y99 #One Xia
+			}
+		}
+		else = {
+			custom_tooltip = gushuokguan_explain_release_one_xia_tt
+		}
+	}
+}
+
 ###Condottieri Sold Counter
 #Apply
 country_event = {
@@ -2088,6 +2246,7 @@ country_event = {
 	hidden = yes 
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		any_known_country = {
 			is_hiring_condottiere_from = ROOT #Gushuokguan
 			NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
@@ -2129,6 +2288,7 @@ country_event = {
 	hidden = yes 
 
 	trigger = {
+		tag = Y17 #Gushuokguan
 		any_known_country = {
 			has_country_flag = gushuokguan_already_checked_condottieri
 			NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
