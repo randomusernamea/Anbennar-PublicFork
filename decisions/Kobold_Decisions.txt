@@ -1,54 +1,5 @@
 
 country_decisions = {
-	contribute_to_the_dragon_cult_hoard = {
-	
-		potential = {
-			religion = kobold_dragon_cult
-			NOT = { has_country_flag = kobold_hoard_menu }
-			NOT = { has_global_flag = dragon_roar }
-			NOT = { has_country_modifier = kobold_hoard_timer }
-		}
-
-		allow = {
-			owns = 189
-			treasury = 100
-			if = {
-				limit = { ai = no }
-				NOT = { num_of_loans = 1 }
-			}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { treasury = 200 }
-			}
-			modifier = {
-				factor = 0
-				is_at_war = yes
-			}
-			modifier = {
-				factor = 0
-				num_of_loans = 10
-			}
-			modifier = {
-				factor = 0
-				is_bankrupt = yes
-			}
-		}
-		effect = {
-			country_event = { id = flavour_kobold_dragon_cult.2 }
-			hidden_effect = { set_country_flag = kobold_hoard_menu }
-			if = {
-				limit = { ai = yes }
-				add_country_modifier = {
-					name = kobold_hoard_timer
-					duration = 1825
-				}
-			}
-		}
-	}
-
 	kobold_nation = {
 		major = yes
 		potential = {
@@ -278,5 +229,120 @@ country_decisions = {
 		ai_importance = 400
 	}
 
-}
+	contribute_to_the_dragon_cult_hoard = {
+	
+		potential = {
+			religion = kobold_dragon_cult
+			NOT = { has_country_flag = kobold_hoard_menu }
+			NOT = { has_global_flag = dragon_roar }
+			NOT = { has_country_modifier = kobold_hoard_timer }
+		}
 
+		allow = {
+			owns = 189
+			treasury = 100
+			if = {
+				limit = { ai = no }
+				NOT = { num_of_loans = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { treasury = 200 }
+			}
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 0
+				num_of_loans = 10
+			}
+			modifier = {
+				factor = 0
+				is_bankrupt = yes
+			}
+		}
+		effect = {
+			country_event = { id = flavour_kobold_dragon_cult.2 }
+			hidden_effect = { set_country_flag = kobold_hoard_menu }
+			if = {
+				limit = { ai = yes }
+				add_country_modifier = {
+					name = kobold_hoard_timer
+					duration = 1825
+				}
+			}
+		}
+	}
+
+	create_kobold_traps_decision = {
+		
+		potential = {
+			OR = {
+				tag = A26
+				tag = A27
+				tag = A28
+				tag = Z38
+			}
+		}
+		
+		provinces_to_highlight = {
+			province_group = kobold_traps_provinces
+		}
+		
+		allow = {
+			hidden_trigger = {
+				OR = {
+					tag = A26
+					tag = A27
+					tag = A28
+					tag = Z38
+				}
+			}
+			years_of_manpower = 1
+			any_owned_province = {
+				province_group = kobold_traps_provinces
+				kobold_traps_individual_trigger = yes
+			}
+			hidden_trigger = {
+				NOT = { 
+					OR = {
+						has_country_flag = normal_traps_happening
+						has_country_flag = free_traps_happening
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = KoboldTrapsDynamicTooltip
+			add_yearly_manpower = -1
+			country_event = { id = kobold_traps.1 }
+			hidden_effect = {
+				add_country_modifier = {
+					name = kobold_traps_ai_cooldown
+					duration = 1825
+					hidden = yes
+				}
+				set_country_flag = normal_traps_happening
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { 
+					has_country_modifier = kobold_traps_ai_cooldown
+					NOT = { years_of_manpower = 1 }
+					NOT = { treasury = 100 }
+				}
+			} 
+		}
+		ai_importance = 400
+	}
+
+}

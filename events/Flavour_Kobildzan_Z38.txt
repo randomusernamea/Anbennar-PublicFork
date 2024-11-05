@@ -1,107 +1,141 @@
 namespace = flavor_kobildzan
 
-#Stability gain for hoard
-country_event = {
-	id = flavor_kobildzan.100
-	title = flavor_kobildzan.100.t
-	desc = flavor_kobildzan.100.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	hidden = yes
+country_event = { #The Meaning of Dragonfire
+	id = flavor_kobildzan.1
+	title = flavor_kobildzan.1.t
+	desc = flavor_kobildzan.1.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes
-	
-	after = {
-		clr_country_flag = hoard_chance_1
-		clr_country_flag = hoard_chance_2
-		clr_country_flag = hoard_chance_3
-		clr_country_flag = hoard_chance_4
-	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_1
-		}
-		ai_chance = {
-			factor = 10
-		}
-		
-		add_stability_or_adm_power = yes
-	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_1
-		}
-		ai_chance = {
-			factor = 90
+
+	option = { #Power!
+		name = flavor_kobildzan.1.a
+		custom_tooltip = dragons_mean_power_tt #LEX TO-DO
+		hidden_effect = { set_country_flag = dragons_mean_power }
+		add_country_modifier = {
+			name = Z38_dragons_mean_power
+			duration = 3650
 		}
 	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_2
-		}
-		ai_chance = {
-			factor = 25
-		}
-		
-		add_stability_or_adm_power = yes
-	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_2
-		}
-		ai_chance = {
-			factor = 75
+	option = { #Change!
+		name = flavor_kobildzan.1.b
+		custom_tooltip = dragons_mean_change_tt #LEX TO-DO
+		hidden_effect = { set_country_flag = dragons_mean_change }
+		add_country_modifier = {
+			name = Z38_dragons_mean_change
+			duration = 3650
 		}
 	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_3
+}
+
+country_event = { #To Become Dragons
+	id = flavor_kobildzan.2
+	title = flavor_kobildzan.2.t
+	desc = flavor_kobildzan.2.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes
+
+	option = { #WE ARE KOBILDZAN! OF DRAGONS AND KOBOLDS!
+		name = flavor_kobildzan.2.a
+		change_government = republic
+		add_government_reform = technocracy_republic_reform
+		if = {
+			limit = { is_tribal = no }
+			if = {
+				limit = { reform_level = 5 }
+				change_government_reform_progress = 50
+			}
+			else_if = {
+				limit = { reform_level = 4 }
+				change_government_reform_progress = 40				
+			}
+			else_if = {
+				limit = { reform_level = 3 }
+				change_government_reform_progress = 30				
+			}
+			else_if = {
+				limit = { reform_level = 2 }
+				change_government_reform_progress = 20				
+			}
 		}
-		ai_chance = {
-			factor = 50
+		custom_tooltip = gain_reform_progress_per_reform_level_tt #LEX TO-DO
+		if = {
+			limit = { NOT = { tag = Z38 } }
+			189 = {
+				move_capital_effect = yes
+				add_base_tax = 4
+				add_base_production = 4
+				add_base_manpower = 4
+			}
+			change_tag = Z38
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			custom_tooltip = tooltip_kobildzani_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = kobold
+					}
+					change_culture = kobildzani_kobold
+				}
+			}
+			primary_and_ruler_culture_change = { race = kobold new_culture = kobildzani_kobold }
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			dragon_coast_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = Z38
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_global_flag = formed_kobildzan_flag
+			lock_racial_admin = yes
 		}
-		
-		add_stability_or_adm_power = yes
 	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_3
+}
+
+country_event = { #In the Flesh
+	id = flavor_kobildzan.3
+	title = flavor_kobildzan.3.t
+	desc = flavor_kobildzan.3.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes #LEX TO-DO ON PULSE 
+
+	option = { #WE'RE GONNA MEET A DRAGON!!!
+		name = flavor_kobildzan.3.a
+		rzenta_region = {
+			discover_country = ROOT
 		}
-		ai_chance = {
-			factor = 50
-		}
-	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_4
-		}
-		ai_chance = {
-			factor = 75
-		}
-		
-		add_stability_or_adm_power = yes
-	}
-	
-	option = {		
-		name = flavor_kobildzan.100.a
-		trigger = {
-			has_country_flag = hoard_chance_4
-		}
-		ai_chance = {
-			factor = 25
+		1191 = {
+			owner = {
+				add_opinion = { 
+					who = ROOT
+					modifier = tribute_to_a_dragon
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = tribute_to_a_dragon
+				}
+				ROOT = {
+					capital_scope = {
+						discover_country = prev
+					}
+				}
+			}
 		}
 	}
 }
