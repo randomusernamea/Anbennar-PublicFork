@@ -902,13 +902,15 @@ giberd_konwell_conquest = {
 		provinces_to_highlight = {
 			province_id = 271
 			NOT = {
-				development = 50
-				num_of_times_expanded_infrastructure = 3
-				has_state_edict = edict_encourage_development
-				has_courthouse_building_trigger = yes
-				has_building = university
-				owner = {
-					papal_influence = 100
+				AND = {
+					development = 50
+					num_of_times_expanded_infrastructure = 3
+					has_state_edict = edict_encourage_development
+					has_courthouse_building_trigger = yes
+					has_building = university
+					owner = {
+						papal_influence = 100
+					}
 				}
 			}
 		}
