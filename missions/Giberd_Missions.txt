@@ -2196,27 +2196,31 @@ giberd_mercantile_shipping = {
 		position = 10
 		provinces_to_highlight = {
 			owned_by = ROOT
-			AND = {
-				NOT = {
-					has_manpower_building_trigger = yes
-				}
-				NOT = {
-					ROOT = {
-						num_of_owned_provinces_with = {
-							value = 10
-							has_manpower_building_trigger = yes
+			OR = {
+				AND = {
+					NOT = {
+						has_manpower_building_trigger = yes
+					}
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								has_manpower_building_trigger = yes
+							}
 						}
 					}
 				}
-			}
-			AND = {
-				NOT = {
-					has_forcelimit_building_trigger = yes
-				}
-				ROOT = {
-					num_of_owned_provinces_with = {
-						value = 10
+				AND = {
+					NOT = {
 						has_forcelimit_building_trigger = yes
+					}
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								has_forcelimit_building_trigger = yes
+							}
+						}
 					}
 				}
 			}

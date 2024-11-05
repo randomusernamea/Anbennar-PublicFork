@@ -13813,7 +13813,7 @@ estate_mages_organization_giberd_beacon_of_harmony = {
 		clear_mages_organization_effect = yes
 	}
 	on_revoked = {
-		update_magic_study_experience_modifier = { value = 0 } #MAGICREWORK
+		update_magic_study_experience_modifier = { value = -10 } #MAGICREWORK
 	}
 	penalties = {
 	}
