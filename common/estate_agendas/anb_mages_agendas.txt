@@ -2808,6 +2808,7 @@ estate_mages_wyvernheart_invest_in_critical_materials = { #MAGICREWORK
 			loyalty = 10
 		}
 		add_estate_influence_modifier = {#should be 0.25 mana regen for 10 year #MAGICREWORK
+			estate = estate_mages
 			influence = 10
 			duration = 3650
 		}
@@ -2890,8 +2891,7 @@ estate_mages_wyvernheart_wave_the_heart = { #MAGICREWORK
 			loyalty = 5
 		}
 		event_target:agenda_province = {
-			area_for_scope_province = {
-				type = all
+			every_province_in_state = {
 				add_province_modifier = {
 					name = wyvernheart_reduced_devastation
 					duration = 3650
