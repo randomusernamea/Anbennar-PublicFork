@@ -73,9 +73,11 @@ giberd_imperial = {
 					has_trade_building_trigger = yes
 				}
 				NOT = {
-					num_of_owned_provinces_with = {
-						value = 10
-						has_trade_building_trigger = yes
+					ROOT = {
+						num_of_owned_provinces_with = {
+							value = 10
+							has_trade_building_trigger = yes
+						}
 					}
 				}
 			}
@@ -141,13 +143,15 @@ giberd_imperial = {
 				province_id = 308
 				NOT = {
 					owned_by = ROOT
-					AND = {
-						reverse_has_opinion = {
-							who = A73
-							value = 200
-						}
-						has_25_opinion_sent_gift = {
-							target = A73
+					ROOT = {
+						AND = {
+							reverse_has_opinion = {
+								who = A73
+								value = 200
+							}
+							has_25_opinion_sent_gift = {
+								target = A73
+							}
 						}
 					}
 				}
@@ -1517,24 +1521,20 @@ giberd_ryalanar_conquest = {
 		position = 9
 		provinces_to_highlight = {
 			OR = {
-				AND = {
-					owner = {
-						capital_scope = {
-							continent = europe
-						}
+				owner = {
+					capital_scope = {
+						continent = europe
 					}
-					owner = {
-						NOT = {
-							tag = ROOT
+					NOT = {
+						tag = ROOT
+					}
+					OR = {
+						fast_owns_num_pops_of_race = {
+							race = gnomish
+							amount = 1
 						}
-						OR = {
-							fast_owns_num_pops_of_race = {
-								race = gnomish
-								amount = 1
-							}
-							culture_is_gnomish = yes
-							culture_is_dwarven = yes
-						}
+						culture_is_gnomish = yes
+						culture_is_dwarven = yes
 					}
 					NOT = {
 						has_100_opinion_improved_relation = {
@@ -1576,10 +1576,9 @@ giberd_ryalanar_conquest = {
 							capital_scope = {
 								continent = europe
 							}
-							any_owned_province = {
-								fast_has_pop_of_race = {
-									race = gnomish
-								}
+							fast_owns_num_pops_of_race = {
+								race = gnomish
+								amount = 1
 							}
 						}
 					}
@@ -2001,9 +2000,11 @@ giberd_mercantile_shipping = {
 		provinces_to_highlight = {
 			is_capital_of = ROOT
 			NOT = {
-				development = 35
-				num_of_times_expanded_infrastructure = 2
-				has_state_edict = edict_advancement_effort
+				AND = {
+					development = 35
+					num_of_times_expanded_infrastructure = 2
+					has_state_edict = edict_advancement_effort
+				}
 			}
 		}
 		trigger = {
@@ -2050,11 +2051,13 @@ giberd_mercantile_shipping = {
 		provinces_to_highlight = {
 			province_id = 271
 			NOT = {
-				province_has_current_tech_fort_trigger = yes
-				has_building = ramparts
 				AND = {
-					is_prosperous = yes
-					has_state_edict = edict_defensive_edict
+					province_has_current_tech_fort_trigger = yes
+					has_building = ramparts
+					OR = {
+						is_prosperous = yes
+						has_state_edict = edict_defensive_edict
+					}
 				}
 			}
 		}
@@ -2198,9 +2201,11 @@ giberd_mercantile_shipping = {
 					has_manpower_building_trigger = yes
 				}
 				NOT = {
-					num_of_owned_provinces_with = {
-						value = 10
-						has_manpower_building_trigger = yes
+					ROOT = {
+						num_of_owned_provinces_with = {
+							value = 10
+							has_manpower_building_trigger = yes
+						}
 					}
 				}
 			}
@@ -2208,9 +2213,11 @@ giberd_mercantile_shipping = {
 				NOT = {
 					has_forcelimit_building_trigger = yes
 				}
-				num_of_owned_provinces_with = {
-					value = 10
-					has_forcelimit_building_trigger = yes
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						has_forcelimit_building_trigger = yes
+					}
 				}
 			}
 		}
@@ -2490,6 +2497,21 @@ giberd_artificer = {
 			giberd_the_esmari_ravelians
 		}
 		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 275
+				province_id = 271
+				province_id = 911
+				province_id = 265
+				province_id = 266
+			}
+			NOT = {
+				AND = {
+					has_courthouse_building_trigger = yes
+					province_has_current_tech_fort_trigger = yes
+				}
+			}
+		}
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = giberd_league_war_tt
@@ -2609,10 +2631,10 @@ giberd_artificer = {
 							has_forcelimit_building_trigger = yes
 						}
 						NOT = {
-							NOT = {
-								has_province_modifier = ravelian_society
-								region = esmaria_region
-							}
+							has_province_modifier = ravelian_society
+						}
+						NOT = {
+							region = esmaria_region
 						}
 					}
 				}
