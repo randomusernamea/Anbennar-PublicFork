@@ -461,7 +461,7 @@ country_event = { #The Dragon's Roar
 				add_base_tax = -3
 				add_base_production = -3
 				add_base_manpower = -3
-				add_devastation = 50 #yes this stacks with the dragondepth one on purpose
+				add_devastation = 100
 			}
 			dragon_coast_region = {
 				limit = {
@@ -470,87 +470,202 @@ country_event = { #The Dragon's Roar
 							area = dragondepth_area
 							area = dragonheart_area
 							area = dragonmaw_area
+							area = dragonpoint_area
+							area = lonely_isle_area
+							area = storm_isles_area
+							area = dragondowns_area
+							area= reaver_coast_area
+							area = iochand_area
+							province_id = 174
+							province_id = 173
+							province_id = 179
+							province_id = 180
+							province_id = 345
 						}
 					}
 				}
 				remove_random_development = yes
-				add_devastation = 75
+				add_devastation = 80
 			}
-			dragondepth_area = { add_devastation = 50 }
-			dragonheart_area = { add_devastation = 50 }
-			dragonmaw_area = { add_devastation = 50 }
+
+
+			dragondowns_area = { add_devastation = 50 }
+			reaver_coast_area = { add_devastation = 50 }
+			174 = { add_devastation = 50 }
+			173 = { add_devastation = 50 }
+			180 = { add_devastation = 50 }
+			345 = { add_devastation = 50 }
+			
+			iochand_area = { add_devastation = 20 }
+			storm_isles_area = { add_devastation = 20 }
+			dragonpoint_area = { add_devastation = 20 }
+			179 = { add_devastation = 20 }
+			125 = { add_devastation = 20 }
+
 			# Small Country + upper half of West Dameshead + western half of Alenic Reach lose 1 dev, gain 75 dev
 			# Rest of Dameshead + Dalr + Esmaria + Lenceor gain 50 devastation
-			alenic_frontier_region = {
-				remove_random_development = yes
-				add_devastation = 75				
-			}
-			small_country_region = {
-				remove_random_development = yes
-				add_devastation = 75					
-			}
 			damescrown_region = {
 				remove_random_development = yes
-				add_devastation = 75				
+				add_devastation = 80				
 			}
+
 			alenic_frontier_region = {
 				limit = {
 					NOT = {
-						OR = {
-							area = cestir_area
-							area = jonsway_area
-							area = balvord_area
-						}
+						area = coddorran_heights_area
 					}
 				}
 				remove_random_development = yes
-				add_devastation = 75
+				add_devastation = 80
 			}
-			cestir_area = { add_devastation = 50 }
-			jonsway_area = { add_devastation = 50 }
-			balvord_area = { add_devastation = 50 }
-			serpentshead_area = { add_devastation = 50 }
-			balvord_area = { add_devastation = 50 }
-			northern_greatwoods_area = { add_devastation = 50 }
-			dinesck_area = { add_devastation = 50 }
-			west_chillsbay_area = { add_devastation = 50 }
-			west_dameshead_region = {
-				limit = { NOT = { area = exwes_area } }
-				add_devastation = 50
-			}
-			exwes_area = {
-				remove_random_development = yes
-				add_devastation = 75
-			}
-			west_damesear_area = { add_devastation = 50 }
-			east_damesear_area = { add_devastation = 50 }
-			the_commons_area = { add_devastation = 50 }
-			damerian_dales_area = { add_devastation = 50 }
-			silverwoods_area = { add_devastation = 50 }
-			eastneck_area = { add_devastation = 50 }
-			cann_esmar_area = { add_devastation = 50 }
-			ryalanar_area = { add_devastation = 50 }
-			konwell_area = { add_devastation = 50 }
-			lencenor_region = {
+			197 = { add_devastation = 50 }
+			200 = { add_devastation = 20 }
+			694 = { add_devastation = 20 }
+
+
+			
+
+			small_country_region = {
 				limit = {
 					NOT = {
 						OR = {
-							area = deranne_area
-							area = southroy_area
-							area = redglades_area
+							area = norley_area
+							area = lorentish_approach_area
+							area = roysfort_area
+							province_id = 66
+						}
+					}
+				}				
+				add_devastation = 50					
+			}
+			norley_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}	
+			lorentish_approach_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}		
+			66 = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			roysfort_area = { add_devastation = 20 }
+
+
+			serpentshead_area = { add_devastation = 20 }
+			northern_greatwoods_area = {
+				limit = { NOT = { province_id = 700 } }
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			700 = { add_devastation = 50 }
+			dinesck_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			west_chillsbay_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+
+			east_chillsbay_area = { add_devastation = 50 }
+			wudhal_area = { add_devastation = 50 }
+			sondaar_area = { add_devastation = 50 }
+
+			cedesck_area = { add_devastation = 20 }
+			735 = { add_devastation = 20 }
+			736 = { add_devastation = 20 }
+			740 = { add_devastation = 20 }
+			987 = { add_devastation = 20 }
+
+			exwes_area = { add_devastation = 50 }
+			wesdam_area = { add_devastation = 20 }
+
+			
+			east_damesear_area = { add_devastation = 50 }
+			west_damesear_area = { add_devastation = 50 }
+			the_commons_area = { add_devastation = 50 }
+			heartlands_area = { add_devastation = 20 }
+			upper_luna_area = { add_devastation = 20 }
+			low_esmar_area = { add_devastation = 20 }
+			damerian_dales_area = { add_devastation = 50 }
+			silverwoods_area = { add_devastation = 50 }
+			cann_esmar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			ryalanar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			konwell_area = { add_devastation = 50 }
+			bennonhill_area = { add_devastation = 50 }
+			songbarges_area = { add_devastation = 50 }
+			hearthswood_area = { add_devastation = 50 }
+			high_esmar_area = { add_devastation = 20 }
+			middle_luna_area = { add_devastation = 20 }
+			eastneck_area = { add_devastation = 20 }
+
+
+			redglades_area = { add_devastation = 20 }
+			ionnidar_area = { add_devastation = 20 }
+
+			dragondepth_area = { add_devastation = 20 }
+			dragonheart_area = { add_devastation = 20 }
+			dragonmaw_area = { add_devastation = 20 }
+			olavslund_area = { add_devastation = 20 }
+			elkaesals_slumber_area = { add_devastation = 20 }
+			nyrford_area = { add_devastation = 20 }
+			naugsvol_area = { add_devastation = 20 }
+			esfjall_area = { add_devastation = 20 }
+
+			west_castanor_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = merescker_area
+							area = nortmerewood_area
+							area = athfork_area
+							area = ebonmarck_area
+							area = balmire_area
 						}
 					}
 				}
+				add_devastation = 50 
+			}
+			balmire_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			merescker_area = { add_devastation = 20 }
+			nortmerewood_area = { add_devastation = 20 }
+			athfork_area = { add_devastation = 20 }
+			ebonmarck_area = { add_devastation = 20 }
+
+			teagansfield_area = {
+				remove_random_development = yes
+				add_devastation = 80
+			}
+			cursewood_area = { add_devastation = 50 }
+
+			north_ibevar_area = {
+				limit = { NOT = { province_id = 350 } }
 				add_devastation = 50
 			}
-			deranne_area = { add_devastation = 50 }
-			southroy_area = { add_devastation = 50 }
-			redglades_area = { add_devastation = 50 }
-			revrland_area = { add_devastation = 50 }
-			frostbridges_area = { add_devastation = 50 }
-			varheim_area = { add_devastation = 50 }
-			bjarnland_area = { add_devastation = 50 }
-			deranne_area = { add_devastation = 50 }
+			south_ibevar_area = { add_devastation = 20 }
+			350 = { add_devastation = 20 }
+			whistlevale_area = { add_devastation = 20 }
+			
+			nortmere_area = { add_devastation = 20 }
+			westgate_area = { add_devastation = 20 }
+			lower_nath_area = { add_devastation = 20 }
+			northyl_area = { add_devastation = 20 }
+			trialmount_area = { add_devastation = 20 }
+			castonath_area = { add_devastation = 20 }
+			southgate_area = { add_devastation = 20 }
+
+
 		}
 	}
 }
