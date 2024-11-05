@@ -696,6 +696,8 @@ country_event = {
 country_event = {
 	id = flavor_stalbor.10
 	title = flavor_stalbor.10.t
+	desc = flavor_stalbor.10.d
+	picture = BORDER_TENSION_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1737,7 +1739,7 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.25.c"
 		trigger = { 
-			trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
+			has_country_flag = B47_vampire_hunters_in_damescrown
 			any_province = {
 				region = damescrown_region
 				trade_goods = slaves
@@ -3166,7 +3168,7 @@ country_event = {
 					NOT = { culture_is_lizardfolk = yes }
 				}
 			}
-			all_owned_province = {
+			every_owned_province = {
 				limit = {
 					has_port = yes
 					region = daravans_folly_region
