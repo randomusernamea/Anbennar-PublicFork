@@ -1349,7 +1349,7 @@ maghargma_three = {
 				has_production_building_trigger = yes
 			}
 			5123 = { 
-				country_or_non_sovereign_subject_holds = ROOT
+				country_or_subject_holds = ROOT
 				has_trade_building_trigger = yes 
 			} 
 			J25 = {
@@ -2687,7 +2687,10 @@ maghargma_four_post_ancestor = {
 				}
 			}
 			OR = {	
-				NOT = { has_global_flag = rending_happened } 
+				custom_trigger_tooltip = {
+					tooltip = rending_has_not_happened
+					NOT = { has_global_flag = rending_happened }
+				}
 				has_country_modifier = hokuma_scoured_modifier
 			}
 		}
