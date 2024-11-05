@@ -9108,3 +9108,32 @@ kobildzan_draconic_technopriests = {
 		}
 	}
 }
+
+kobildzan_draconic_elites = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	potential = { 
+		tag = Z38
+		has_country_flag = draconic_elites
+	}  
+ 
+	modifiers = { 
+		max_absolutism = 30
+		autonomy_change_time = -0.05
+		nobles_loyalty_modifier = 0.1
+	} 
+}
+
+kobildzan_draconic_masses = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	potential = { 
+		tag = Z38
+		has_country_flag = draconic_masses
+	}  
+ 
+	modifiers = { 
+		max_absolutism = -30
+		land_morale = 0.1
+		years_of_nationalism = -5
+		burghers_loyalty_modifier = 0.1
+	} 
+}
