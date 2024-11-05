@@ -1,7 +1,7 @@
 #Designer and coder: Bruhh73
 #Regional reviewers: Visegrad, Harengus and Scamp
 #Content reviewer: Magnive
-#Balance Reviewer:
+#Balance Reviewer: Indi
 #Writers: Iceytheknight, jeck4711
 
 F71_1_part1 = {
@@ -100,7 +100,14 @@ F71_1_part1 = {
 			5667 = { country_or_non_sovereign_subject_holds = ROOT } 
 			5434 = { country_or_non_sovereign_subject_holds = ROOT } 
 			5435 = { country_or_non_sovereign_subject_holds = ROOT } 
-			has_country_modifier = kult_of_the_packmother_tradition_modifier
+			if = {
+				limit = { religion = xhazobkult }
+				has_country_modifier = kult_of_the_packmother_tradition_modifier
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				shadow_pact_has_active_portent = yes
+			}
 		}
 
 		effect = {
@@ -320,42 +327,52 @@ F71_3_part1 = {
 		effect = {
 			if = {
 				limit = { exists = U09 }
-				white_peace = U09
-				saymas_area = { cede_province = ROOT } 
-				krahilyn_area = { cede_province = ROOT } 
-				zeewix_area = { cede_province = ROOT } 
-				if = {
-					limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
-					ROOT = { add_treasury = 50 } 
-					F69 = { add_treasury = 150 } 
+				tooltip = {	
+					white_peace = U09 
+					saymas_area = { cede_province = ROOT } 
+					krahilyn_area = { cede_province = ROOT } 
+					zeewix_area = { cede_province = ROOT } 
 					U09 = { release = L26 } 
 					golkora_stretch_area = { cede_province = L26 } 
 					golkora_stretch_area = { add_core = L26 } 
-					3196 = { cede_province = F69 } 
-					3196 = { add_core = F69 } 
-					5674 = { cede_province = F69 } 
-					5674 = { add_core = F69 } 
+					if = {
+						limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
+						ROOT = { add_treasury = 50 } 
+						F69 = { add_treasury = 150 } 
+						3196 = { cede_province = F69 } 
+						3196 = { add_core = F69 } 
+						5674 = { cede_province = F69 } 
+						5674 = { add_core = F69 } 
+					}
+					else = {
+						ROOT = { add_treasury = 200 } 
+						3196 = { cede_province = L26 } 
+						3196 = { add_core = L26 } 
+						5674 = { cede_province = L26 } 
+						5674 = { add_core = L26 }
+					}
 				}
-				else = {
-					ROOT = { add_treasury = 200 } 
-					U09 = { release = L26 } 
-					golkora_stretch_area = { cede_province = L26 } 
-					golkora_stretch_area = { add_core = L26 } 
-					3196 = { cede_province = L26 } 
-					3196 = { add_core = L26 } 
-					5674 = { cede_province = L26 } 
-					5674 = { add_core = L26 }
-					add_prestige = 20
-				}
-				capital_scope = {
-					add_next_institution_embracement = 50
-				}
+				capital_scope = { add_next_institution_embracement = 50 }
 				U09 = { kill_ruler = yes }
+				custom_tooltip = " "
+				complex_dynamic_effect = {
+					first_custom_tooltip = rakkaz_no_irkorzik
+					first_limit = "
+						NOT = { has_country_flag = rakkaz_irkorzik_joined_war }
+						war_with = U09
+					"
+					first_effect = "
+						add_prestige = 20
+						add_power_projection = {
+							type = mission_rewards_power_projection
+							amount = 10
+						}
+					"
+				}
 				custom_tooltip = " "
 				complex_dynamic_effect = {
 					first_custom_tooltip = rakkaz_occupied_golkora
 					first_limit = "
-						exists = U09
 						479 = { 
 							controlled_by = ROOT 
 							owned_by = U09
@@ -364,14 +381,33 @@ F71_3_part1 = {
 					first_effect = "
 						add_treasury = 200
 						add_manpower = 5
-						add_power_projection = {
-							type = mission_rewards_power_projection
-							amount = 20
-						}
 						capital_scope = { add_next_institution_embracement = 50 }
 					"
 				}
 				hidden_effect = {
+					white_peace = U09
+					saymas_area = { cede_province = ROOT } 
+					krahilyn_area = { cede_province = ROOT } 
+					zeewix_area = { cede_province = ROOT } 
+					U09 = { release = L26 } 
+					golkora_stretch_area = { cede_province = L26 } 
+					golkora_stretch_area = { add_core = L26 } 
+					if = {
+						limit = { has_country_flag = rakkaz_irkorzik_joined_war } 
+						ROOT = { add_treasury = 50 } 
+						F69 = { add_treasury = 150 } 
+						3196 = { cede_province = F69 } 
+						3196 = { add_core = F69 } 
+						5674 = { cede_province = F69 } 
+						5674 = { add_core = F69 } 
+					}
+					else = {
+						ROOT = { add_treasury = 200 } 
+						3196 = { cede_province = L26 } 
+						3196 = { add_core = L26 } 
+						5674 = { cede_province = L26 } 
+						5674 = { add_core = L26 }
+					}
 					L26 = {
 						create_unit_forcelimit_percentage = {
 							type = infantry
@@ -385,9 +421,7 @@ F71_3_part1 = {
 					}
 				}
 			}
-			else = {
-				add_treasury = 100
-			}
+			else = { add_treasury = 100 }
 		}
 	}
 
@@ -492,7 +526,7 @@ F71_3_part1 = {
 					custom_tooltip = rakkaz_every_echenka_subject
 					hidden_effect = {
 						every_subject_country = {
-							limit = { culture = echenka }
+							limit = { primary_culture = echenka }
 							add_liberty_desire = -10
 						}
 					}
@@ -933,16 +967,24 @@ F71_3_part2_optional = {
 					owned_by = ROOT
 					is_core = ROOT
 				}
-				AND = {
-					war_score_against = {
-						who = event_target:EmperorOfChina
-						value = 90
+				if = {
+					limit = { 
+						NOT = { 
+							has_global_flag = khet_dead 
+							has_global_flag = empire_of_china_dismantled
+						} 
 					}
-					event_target:EmperorOfChina = {
-						NOT = {
-							any_owned_province = {
-								province_group = mothers_sorrow_group
-								NOT = { is_looted = yes }
+					AND = {
+						war_score_against = {
+							who = event_target:EmperorOfChina
+							value = 90
+						}
+						event_target:EmperorOfChina = {
+							NOT = {
+								any_owned_province = {
+									province_group = mothers_sorrow_group
+									NOT = { is_looted = yes }
+								}
 							}
 						}
 					}
