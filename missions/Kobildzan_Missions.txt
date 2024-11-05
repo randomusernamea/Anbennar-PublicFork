@@ -1,7 +1,8 @@
-Kob_2a = {
+kob_2_a = {
 	slot = 2
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		OR = {
 			tag = Z38
@@ -11,83 +12,73 @@ Kob_2a = {
 		}
 		
 	}
-	has_country_shield = yes
+
 	Z38_audacity_red = {
 		icon = mission_kobold
 		position = 1
-		required_missions = { 
-		}
 
 		provinces_to_highlight = {
 			OR = {
-				area = dragonpoint_area
-				area = dragondowns_area
-				province_id = 179
-				province_id = 180
-				province_id = 345
-				province_id = 173
-				province_id = 174
-				province_id = 170
+                area = dragondowns_area
+                province_id = 170
+                province_id = 173
+                province_id = 174
+                province_id = 176
+                province_id = 177
+                province_id = 178
+                province_id = 179
+                province_id = 180
+                province_id = 345
 			}
-			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
 			OR = {
-				AND = {
-					dragonpoint_area = {
-						owned_by = ROOT
-					}
-					dragondowns_area = {
-						owned_by = ROOT
-					}
-					179 = {
-						owned_by = ROOT
-					}
-					180 = {
-						owned_by = ROOT
-					}
-					345 = {
-						owned_by = ROOT
-					}
-					173 = {
-						owned_by = ROOT
-					}
-					174 = {
-						owned_by = ROOT
-					}
-					170 = {
-						owned_by = ROOT
-					}
-					#temptrap
-				}
 				power_projection = 25
+				AND = {
+					dragondowns_area = { type = all owned_by = ROOT }
+                    170 = { owned_by = ROOT }
+                    173 = { owned_by = ROOT }
+                    174 = { owned_by = ROOT }
+                    176 = { owned_by = ROOT }
+                    177 = { owned_by = ROOT }
+                    178 = { owned_by = ROOT }
+                    179 = { owned_by = ROOT }
+                    180 = { owned_by = ROOT }
+                    345 = { owned_by = ROOT }
+
+					any_owned_province = {
+                        has_province_flag = kobold_traps_lvl_2_or_more
+                        OR = {
+                            area = dragondowns_area
+                            province_id = 170
+                            province_id = 173
+                            province_id = 174
+                            province_id = 176
+                            province_id = 177
+                            province_id = 178
+                            province_id = 179
+                            province_id = 180
+                            province_id = 345
+                        }
+                    }
+				}
 			}
 		}
 		effect = {
-			add_adm_power = 100}
-			dragonmaw_area = {
-				add_permanent_claim = ROOT
-			}
-			dragonheart_area = {
-				add_permanent_claim = ROOT
-			}
-			dragondepth_area = {
-				add_permanent_claim = ROOT
-			}
-			183 = {
-				add_permanent_claim = ROOT
-			}
-			3362 = {
-				add_permanent_claim = ROOT
-			}
-			182 = {
-				add_permanent_claim = ROOT
-			}
-			184 = {
-				add_permanent_claim = ROOT
-			}
+			add_adm_power = 100
+
+			gnomish_pass_area = { add_permanent_claim = ROOT }
+			dragonmaw_area = { add_permanent_claim = ROOT }
+			dragonheart_area = { add_permanent_claim = ROOT }
+			dragondepth_area = { add_permanent_claim = ROOT }
+			183 = { add_permanent_claim = ROOT }
+			3362 = { add_permanent_claim = ROOT }
+			182 = { add_permanent_claim = ROOT }
+			184 = { add_permanent_claim = ROOT }
 		}
 	}
+
 	Z38_magic_and_the_pass = {
 		icon = mission_kobold
 		position = 2
@@ -101,32 +92,52 @@ Kob_2a = {
 				province_id = 146
 			}
 			NOT = { owned_by = ROOT }
+			NOT = { has_province_flag = has_kobold_traps }
 		}
+
 		trigger = {
-			167 = {
-				owned_by = ROOT
-				#temptrap
-			}
-			146 = {
-				owned_by = ROOT
-				#temptrap
-			}
-			has_institution = feudalism
-			OR = {
-				NOT = { has_estate = estate_mages }
-				estate_loyalty = {
-					estate = estate_mages
-					loyalty = 60
-				}
-			}
+            167 = { # Royvibobb
+                owned_by = ROOT 
+                has_province_flag = has_kobold_traps
+            }        
+            146 = { # Baycodds
+                owned_by = ROOT 
+                has_province_flag = has_kobold_traps
+            }
+            has_institution = feudalism
+            OR = {
+                estate_loyalty = {
+                    estate = estate_mages
+                    loyalty = 65
+                }
+                NOT = { has_estate = estate_mages }
+            }
 		}
 		effect = {
-			#temptrap
-			146 = {
-				add_base_production = 2
-			}
+            146 = { add_base_production = 2 }
+            146 = {
+                trigger_switch = {
+                    on_trigger = has_province_modifier
+                    
+                    kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 1 } }
+                    kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 2 } }
+                    kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 3 } }
+                    kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 4 } }
+                }
+            }
+            167 = {
+                trigger_switch = {
+                    on_trigger = has_province_modifier
+                    
+                    kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 1 } }
+                    kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 2 } }
+                    kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 3 } }
+                    kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 4 } }
+                }
+            }
 		}
 	}
+
 	Z38_technology_and_trade = {
 		icon = mission_kobold
 		position = 3
@@ -139,7 +150,7 @@ Kob_2a = {
 			NOT = {
 				trade_share = {
 					country = ROOT
-					share = 50
+					share = 40
 				}
 			}
 		}
@@ -150,6 +161,10 @@ Kob_2a = {
 					share = 40
 				}
 			}
+
+			NOT = { has_country_modifier = racial_pop_gnomish_purge }
+			NOT = { has_country_modifier = racial_pop_gnomish_expulsion }
+
 			any_known_country = {
 				NOT = { culture_group = kobold } 
 				has_opinion = {
@@ -157,18 +172,18 @@ Kob_2a = {
 					value = -50
 				}
 			}
-			NOT = { has_country_modifier = racial_pop_gnomish_purge }
-			NOT = { has_country_modifier = racial_pop_gnomish_expulsion }
 		}
 		effect = {
+            change_government_reform_progress = 20
 			capital_scope = {
-				area = { 
-					#tempmod
+				add_province_modifier = {
+					name = Z38_technology_and_trade_modifier
+					duration = 7300
 				}
 			}
-			change_government_reform_progress = 20
 		}
 	}
+
 	Z38_a_malignant_whisper = {
 		icon = mission_kobold
 		position = 4
@@ -180,26 +195,44 @@ Kob_2a = {
 			province_id = 169
 			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
 			169 = {
 				owned_by = ROOT
 				NOT = { unrest = 1 }
 			}
+
+			A06 = { exists = no }
+            A79 = { exists = no }
+
 			NOT = { has_country_modifier = racial_pop_gnomish_purge }
 			NOT = { has_country_modifier = racial_pop_gnomish_expulsion }
+
 			has_institution = renaissance
 		}
 		effect = {
-			#tempaspect
-			large_increase_of_gnomish_tolerance_effect = yes
+			if = {
+				limit = { has_church_aspect = blue_dragon_1_base }
+				remove_church_aspect = blue_dragon_1_base
+			}
+
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = blue
+                SLOT = 1
+                UPGRADE = upgraded
+            }
+
+            large_increase_of_gnomish_tolerance_effect = yes
 		
 		}
 	}
 }
-Kob_3a = {
+
+kob_3_a = {
 	slot = 3
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		OR = {
 			tag = Z38
@@ -208,12 +241,10 @@ Kob_3a = {
 			tag = A28
 		}
 	}
-	has_country_shield = yes
+	
 	Z38_sagacity_blue = {
 		icon = mission_kobold
 		position = 1
-		required_missions = { 
-		}
 
 		provinces_to_highlight = {
 			OR = {
@@ -225,37 +256,36 @@ Kob_3a = {
 				province_id = 182
 				province_id = 184
 			}
-			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
 			OR = {
+				num_of_aspects = 3
 				AND = {
-					dragonmaw_area = {
-						owned_by = ROOT
-					}
-					dragonheart_area = {
-						owned_by = ROOT
-					}
-					dragondepth_area = {
-						owned_by = ROOT
-					}
-					183 = {
-						owned_by = ROOT
-					}
-					3362 = {
-						owned_by = ROOT
-					}
-					182 = {
-						owned_by = ROOT
-					}
-					184 = {
-						owned_by = ROOT
-					}
-					#temptrap
+                    dragondepth_area = { type = all owned_by = ROOT }
+                    dragonheart_area = { type = all owned_by = ROOT }
+                    dragonmaw_area = { type = all owned_by = ROOT }
+                    182 = { owned_by = ROOT }
+                    183 = { owned_by = ROOT }
+                    184 = { owned_by = ROOT }
+                    3362 = { owned_by = ROOT }
+
+                    any_owned_province = {
+                        has_province_flag = kobold_traps_lvl_2_or_more
+                        OR = {
+                            area = dragondepth_area
+                            area = dragonheart_area
+                            area = dragonmaw_area
+                            province_id = 182
+                            province_id = 183
+                            province_id = 184
+                            province_id = 3362
+                        }
+                    }
 				}
-				#tempaspect
 			}
 		}
+
 		effect = {
 			add_dip_power = 100
 			dragon_coast_region = {
@@ -266,6 +296,7 @@ Kob_3a = {
 			}
 		}
 	}
+
 	Z38_a_purple_union = {
 		icon = mission_kobold
 		position = 2
@@ -276,56 +307,51 @@ Kob_3a = {
 
 		provinces_to_highlight = {
 			OR = {
-				area = dragonmaw_area
-				area = dragonheart_area
-				area = dragondepth_area
-				area = dragonheights_area
-				area = dragonspine_area
-				area = dragondowns_area
-				area = dragonpoint_area
-				province_id = 170
+                area = dragondepth_area
+                area = dragonheart_area
+                area = dragonmaw_area
+                area = dragonheights_area
+                area = dragonspine_area
+                area = dragondowns_area
+                province_id = 170
+                province_id = 176
+                province_id = 177
+                province_id = 178
 			}
 			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
-			dragonmaw_area = {
-				owned_by = ROOT
-			}
-			dragonheart_area = {
-				owned_by = ROOT
-			}
-			dragondepth_area = {
-				owned_by = ROOT
-			}
-			dragonheights_area = {
-				owned_by = ROOT
-			}
-			dragonspine_area = {
-				owned_by = ROOT
-			}
-			dragondowns_area = {
-				owned_by = ROOT
-			}
-			dragonpoint_area = {
-				owned_by = ROOT
-			}
-			170 = {
-				owned_by = ROOT
-			}
-			accepted_culture = redscale_kobold
-			accepted_culture = bluescale_kobold
-			OR = {
+            accepted_culture = bluescale_kobold
+            accepted_culture = redscale_kobold
+
+            OR = {
 				NOT = { has_estate = estate_monstrous_tribes }
-				estate_loyalty = {
-					estate = estate_monstrous_tribes
-					loyalty = 60
-				}
-			}
+                estate_loyalty = {
+                    estate = estate_monstrous_tribes
+                    loyalty = 60
+                }
+            }
+
+            dragondepth_area = { type = all owned_by = ROOT }
+            dragonheart_area = { type = all owned_by = ROOT }
+            dragonmaw_area = { type = all owned_by = ROOT }
+            dragonheights_area = { type = all owned_by = ROOT }
+            dragonspine_area = { type = all owned_by = ROOT }
+            dragondowns_area = { type = all owned_by = ROOT }
+            170 = { owned_by = ROOT }
+            176 = { owned_by = ROOT }
+            177 = { owned_by = ROOT }
+            178 = { owned_by = ROOT }
 		}
 		effect = {
-			#tempmodcall
+			add_country_modifier = {
+                name = Z38_call_of_the_dragon_1
+                duration = -1
+            }
 		}
 	}
+
 	Z38_malliaths_call = {
 		icon = mission_kobold
 		position = 3
@@ -333,19 +359,32 @@ Kob_3a = {
 			Z38_a_purple_union
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
-			#temphoard
+			189 = {
+                OR = {
+                    has_province_modifier = kobold_hoard_2
+                    has_province_modifier = kobold_hoard_3
+                    has_province_modifier = kobold_hoard_4
+                    has_province_modifier = kobold_hoard_5
+                    has_province_modifier = kobold_hoard_6
+                    has_province_modifier = kobold_hoard_7
+                    has_province_modifier = kobold_hoard_8
+                    has_province_modifier = kobold_hoard_9
+                    has_province_modifier = kobold_hoard_10
+                    has_province_modifier = kobold_hoard_11
+                }
+            }
 		}
+
 		effect = {
 			define_advisor = {
 				type = theologian
 				skill = 1
-				culture = bluescale
+				culture = bluescale_kobold
 				religion = kobold_dragon_cult
 				cost_multiplier = 0.5
 			}
+
 			189 = {
 				add_building_construction = {
 					building = temple
@@ -356,6 +395,7 @@ Kob_3a = {
 			}
 		}
 	}
+
 	Z38_the_meaning_of_dragonfire = {
 		icon = mission_kobold
 		position = 4
@@ -363,16 +403,15 @@ Kob_3a = {
 			Z38_malliaths_call
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
 			religious_unity = 0.8
 			num_of_missionaries = 2
 		}
 		effect = {
-		#tempevent
+			country_event = { id = flavor_kobildzan.1 }
 		}
 	}
+
 	Z38_heirs_of_dragonkind = {
 		icon = mission_kobold
 		position = 5
@@ -382,30 +421,46 @@ Kob_3a = {
 			Z38_a_malignant_whisper
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
-			#temphoard
+			189 = {
+                OR = {
+                    has_province_modifier = kobold_hoard_4
+                    has_province_modifier = kobold_hoard_5
+                    has_province_modifier = kobold_hoard_6
+                    has_province_modifier = kobold_hoard_7
+                    has_province_modifier = kobold_hoard_8
+                    has_province_modifier = kobold_hoard_9
+                    has_province_modifier = kobold_hoard_10
+                    has_province_modifier = kobold_hoard_11
+                }
+            }
+
 			OR = {
-				has_won_war_against = {
-					who = A13
-				}
-				has_won_war_against = {
-					who = A01
-				}
+				has_won_war_against = { who = A13 }
+				has_won_war_against = { who = A01 }
 			}
-			reform_level = 5
-			is_ahead_of_time_in_technology = yes
+
+            OR = {
+                has_reform_on_level = 5
+                is_tribal = no
+            }
+
+            OR = {
+                is_ahead_of_time_in_technology = { tech = adm }
+                is_ahead_of_time_in_technology = { tech = dip }
+                is_ahead_of_time_in_technology = { tech = mil }
+            }
 		}
 		effect = {
-		#tempevent
+			country_event = { id = flavor_kobildzan.2 }
 		}
 	}
 }
-Kob_4a = {
+kob_4_a = {
 	slot = 4
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		OR = {
 			tag = Z38
@@ -414,41 +469,32 @@ Kob_4a = {
 			tag = A28
 		}
 	}
-	has_country_shield = yes
+
 	Z38_tenacity_green = {
 		icon = mission_kobold
 		position = 1
-		required_missions = { 
-		}
 
 		provinces_to_highlight = {
 			area = coddorran_heights_area
-			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
 			OR = {
 				AND = {
-					coddorran_heights_area = {
-						owned_by = ROOT
-					}
-					#temptrap
+					coddorran_heights_area = { type = all owned_by = ROOT }
+					coddorran_heights_area = { has_province_flag = kobold_traps_lvl_2_or_more }
 				}
-				#temptrap
+				any_owned_province = { has_province_modifier = kobold_traps_lvl_4 }
 			}
 		}
 		effect = {
 			add_mil_power = 100
-			storm_isles_area = {
-				add_permanent_claim = ROOT
-			}
-			westmoor_proper_area = {
-				add_permanent_claim = ROOT
-			}
-			695 = {
-				add_permanent_claim = ROOT
-			}
+			storm_isles_area = { add_permanent_claim = ROOT }
+			westmoor_proper_area = { add_permanent_claim = ROOT }
+			695 = { add_permanent_claim = ROOT }
 		}
 	}
+
 	Z38_holding_on = {
 		icon = mission_kobold
 		position = 2
@@ -456,15 +502,16 @@ Kob_4a = {
 			Z38_tenacity_green
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
 			is_at_war = no
-			#temptrap
-			num_of_owned_provinces_with = {
-				value = 10
-				has_port = yes
+
+			OR = {
+				has_country_modifier = trap_mastery_lvl_1
+				has_country_modifier = trap_mastery_lvl_2
+				has_country_modifier = trap_mastery_lvl_3
 			}
+
+			num_of_total_ports = 10
 		}
 
 		effect = {
@@ -473,6 +520,7 @@ Kob_4a = {
 			add_war_exhaustion = -5
 		}
 	}
+
 	Z38_seasick_green = {
 		icon = mission_kobold
 		position = 3
@@ -489,11 +537,30 @@ Kob_4a = {
 		}
 
 		effect = {
-			#tempmod
-			#tempcolony
-			#tempestate
+			if = {
+				limit = { 1001 = { is_city = no is_colony = no } }
+				1001 = { create_colony = 200 }
+			} else_if = {
+				limit = { 1205 = { is_city = no is_colony = no } }
+				1205 = { create_colony = 200 }
+			}
+			
+			add_country_modifier = {
+				name = Z38_seasick_green_modifier
+				duration = 7300
+			}
+
+			if = {
+				limit = {
+					has_estate = estate_mages
+					has_estate = estate_monstrous_tribes
+				}
+
+				set_estate_privilege = estate_mages_monstrous_explorers
+			}
 		}
 	}
+
 	Z38_the_shape_of_dalaire = {
 		icon = mission_kobold
 		position = 4
@@ -501,29 +568,41 @@ Kob_4a = {
 			Z38_seasick_green
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
 			has_idea_group = exploration_ideas
+
 			any_subject_country = {
 				is_colonial_nation_of = ROOT
 				capital_scope = { colonial_region = colonial_dalaire }
 				num_of_cities = 5
 			}
+			
 			colonial_dalaire = {
 				type = all
-				limit = {
-					has_port = yes
+				OR = {
+					has_port = no
+					has_discovered = ROOT
 				}
-				has_discovered = ROOT
 			} 
 		}
 
 		effect = {
-			#tempcolony
+			random_subject_country = {
+				limit = {
+					is_colonial_nation_of = ROOT
+					capital_scope = { colonial_region = colonial_dalaire }
+					num_of_cities = 5
+				}
+
+				add_country_modifier = {
+					name = Z38_shape_dalaire_modifier
+					duration = 7300
+				}
+			}
 		}
 	}
 }
+
 Kob_5a = {
 	slot = 5
 	generic = no
