@@ -2934,6 +2934,7 @@ F71_3_part3 = {
 		required_missions = { F71_the_final_order }
 		provinces_to_highlight = {  
 			region = yezel_mora_region
+			NOT = { province_id = 6690 }
 			NOT = {
 				AND = {
 					owned_by = ROOT
@@ -2956,6 +2957,7 @@ F71_3_part3 = {
 				region = yezel_mora_region
 				owned_by = ROOT
 				is_core = ROOT
+				NOT = { province_id = 6690 }
 				OR = {
 					has_tax_building_trigger = yes
 					has_manufactory_trigger = yes
@@ -2983,6 +2985,7 @@ F71_3_part3 = {
 				global_trigger = "
 				region = yezel_mora_region
 				has_tax_building_trigger = yes
+				NOT = { province_id = 6690 }
 				"
 				event_target_name = "rakkaz_shadowswamp_target"
 			}
