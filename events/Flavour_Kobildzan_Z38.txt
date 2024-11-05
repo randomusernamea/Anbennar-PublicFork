@@ -381,3 +381,176 @@ country_event = { #Twin Empires
 		}
 	}
 }
+
+country_event = { #Artificery As One
+	id = flavor_kobildzan.9
+	title = flavor_kobildzan.9.t
+	desc = flavor_kobildzan.9.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Tayekan!
+		name = flavor_kobildzan.9.a
+		large_increase_of_goblin_tolerance_effect = yes
+		large_increase_of_gnomish_tolerance_effect = yes
+		custom_tooltip = gnomes_from_across_cannor_tt #LEX DO THIS
+		custom_tooltip = goblins_from_across_cannor_tt #LEX DO THIS
+		hidden_effect = {
+			for = {
+				amount = 8
+				effect = "
+					random_owned_province = {
+						limit = {
+							region = dragon_coast_region
+							NOT = { culture_group = gnomish } 
+							NOT = { has_large_gnomish_minority_trigger }
+						}
+						add_gnomish_minority_size_effect = yes 
+					}
+				"
+			}
+			for = {
+				amount = 4
+				effect = "
+					random_owned_province = {
+						limit = {
+							region = dragon_coast_region
+							NOT = { culture_group = goblin } 
+						}
+						add_goblin_minority_size_effect = yes 
+					}
+				"
+			}
+		}
+		if = { limit = { has_church_aspect = blue_dragon_2_base }
+			remove_church_aspect = blue_dragon_2_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #The Greatest Hoard on Halann
+	id = flavor_kobildzan.10
+	title = flavor_kobildzan.10.t
+	desc = flavor_kobildzan.10.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #And then, the world shook again...
+		name = flavor_kobildzan.10.a
+		country_event = { id = flavor_kobildzan.11 days = 1 }
+	}
+}
+
+country_event = { #The Dragon's Roar
+	id = flavor_kobildzan.11
+	title = flavor_kobildzan.11.t
+	desc = flavor_kobildzan.11.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Oh no.
+		name = flavor_kobildzan.11.a
+		custom_tooltip = dragons_roar_tt #LEX DO THIS
+		hidden_effect = {
+			189 = {
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 50 #yes this stacks with the dragondepth one on purpose
+			}
+			dragon_coast_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = dragondepth_area
+							area = dragonheart_area
+							area = dragonmaw_area
+						}
+					}
+				}
+				remove_random_development = yes
+				add_devastation = 75
+			}
+			dragondepth_area = { add_devastation = 50 }
+			dragonheart_area = { add_devastation = 50 }
+			dragonmaw_area = { add_devastation = 50 }
+			# Small Country + upper half of West Dameshead + western half of Alenic Reach lose 1 dev, gain 75 dev
+			# Rest of Dameshead + Dalr + Esmaria + Lenceor gain 50 devastation
+			alenic_frontier_region = {
+				remove_random_development = yes
+				add_devastation = 75				
+			}
+			small_country_region = {
+				remove_random_development = yes
+				add_devastation = 75					
+			}
+			damescrown_region = {
+				remove_random_development = yes
+				add_devastation = 75				
+			}
+			alenic_frontier_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = cestir_area
+							area = jonsway_area
+							area = balvord_area
+						}
+					}
+				}
+				remove_random_development = yes
+				add_devastation = 75
+			}
+			cestir_area = { add_devastation = 50 }
+			jonsway_area = { add_devastation = 50 }
+			balvord_area = { add_devastation = 50 }
+			serpentshead_area = { add_devastation = 50 }
+			balvord_area = { add_devastation = 50 }
+			northern_greatwoods_area = { add_devastation = 50 }
+			dinesck_area = { add_devastation = 50 }
+			west_chillsbay_area = { add_devastation = 50 }
+			west_dameshead_region = {
+				limit = { NOT = { area = exwes_area } }
+				add_devastation = 50
+			}
+			exwes_area = {
+				remove_random_development = yes
+				add_devastation = 75
+			}
+			west_damesear_area = { add_devastation = 50 }
+			east_damesear_area = { add_devastation = 50 }
+			the_commons_area = { add_devastation = 50 }
+			damerian_dales_area = { add_devastation = 50 }
+			silverwoods_area = { add_devastation = 50 }
+			eastneck_area = { add_devastation = 50 }
+			cann_esmar_area = { add_devastation = 50 }
+			ryalanar_area = { add_devastation = 50 }
+			konwell_area = { add_devastation = 50 }
+			lencenor_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = deranne_area
+							area = southroy_area
+							area = redglades_area
+						}
+					}
+				}
+				add_devastation = 50
+			}
+			deranne_area = { add_devastation = 50 }
+			southroy_area = { add_devastation = 50 }
+			redglades_area = { add_devastation = 50 }
+			revrland_area = { add_devastation = 50 }
+			frostbridges_area = { add_devastation = 50 }
+			varheim_area = { add_devastation = 50 }
+			bjarnland_area = { add_devastation = 50 }
+			deranne_area = { add_devastation = 50 }
+		}
+	}
+}
