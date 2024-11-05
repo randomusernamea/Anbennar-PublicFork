@@ -139,3 +139,245 @@ country_event = { #In the Flesh
 		}
 	}
 }
+
+country_event = { #Meeting Varlengeilt
+	id = flavor_kobildzan.4
+	title = flavor_kobildzan.4.t
+	desc = flavor_kobildzan.4.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #A DRAGON LIKES US!!!
+		name = flavor_kobildzan.4.a
+		rzenta_region = {
+			limit = { NOT = { is_empty = yes } }
+			add_claim = ROOT
+		}
+		every_subject_country = {
+			limit = {
+				capital_scope = { superregion = ynn_superregion } 
+				NOT = { capital_scope = { colonial_region = colonial_broken_sea }  }
+			}
+			change_religion = drozma_tur
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = kobold_dragon_cult }
+					change_religion = drozma_tur
+				}
+			}
+		}
+		largest_increase_of_ruinborn_tolerance_effect = yes 
+	}
+}
+
+country_event = { #To Find Tayekan
+	id = flavor_kobildzan.5
+	title = flavor_kobildzan.5.t
+	desc = flavor_kobildzan.5.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #A conflict of faith and kind.
+		name = flavor_kobildzan.5.a
+		if = {
+			limit = {
+				OR = {
+					exists = H31
+					exists = H30
+					exists = H32
+					exists = U31
+				}
+			}
+			custom_tooltip = to_find_tayekan_1_tt #LEX TO-DO
+			random_owned_province = {
+				limit = { culture_group = kobold }
+				remove_random_development = yes
+			}
+			if = {
+				limit = { exists = H31 }
+				H31 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = H30 }
+				H30 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}				
+			}
+			else_if = {
+				limit = { exists = H32 }
+				H32 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}				
+			}	
+			else = {
+				U31 = {
+					random_owned_province = {
+						add_random_development = 2
+					}					
+				}
+			}
+			hidden_effect = {
+				country_event = { id = flavor_kobildzan.6 days = 1825 }
+				country_event = { id = flavor_kobildzan.6 days = 3650 }
+				country_event = { id = flavor_kobildzan.6 days = 5475 }
+			}		
+		}
+		else = {
+			custom_tooltip = to_find_tayekan_2_tt #LEX TO-DO
+			hidden_effect = { set_country_flag = kobildzan_artificer_spawn }
+		}
+	}
+}
+
+country_event = { #Artificer Malcontents
+	id = flavor_kobildzan.6
+	title = flavor_kobildzan.6.t
+	desc = flavor_kobildzan.6.d #LEX CHANGE THIS
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	trigger = {
+		OR = {
+			exists = H31
+			exists = H30
+			exists = H32
+			exists = U31
+		}
+	}
+
+	option = { #We must conquer Haraf!
+		name = flavor_kobildzan.6.a
+		custom_tooltip = to_find_tayekan_1_tt #LEX TO-DO
+		random_owned_province = {
+			limit = { culture_group = kobold }
+			remove_random_development = yes
+		}
+		if = {
+			limit = { exists = H31 }
+			H31 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = H30 }
+			H30 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}				
+		}
+		else_if = {
+			limit = { exists = H32 }
+			H32 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}				
+		}	
+		else = {
+			U31 = {
+				random_owned_province = {
+					add_random_development = 2
+				}					
+			}
+		}		
+	}
+}
+
+country_event = { #A Meeting of Technopriests
+	id = flavor_kobildzan.7
+	title = flavor_kobildzan.7.t
+	desc = flavor_kobildzan.7.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Brillites!
+		name = flavor_kobildzan.7.a
+		add_country_modifier = {
+			name = Z38_perma_brilliance
+			duration = -1
+		}
+	}
+	option = { #Technomancers!
+		name = flavor_kobildzan.7.b
+		add_country_modifier = {
+			name = Z38_perma_technomancy
+			duration = -1
+		}
+	}
+	option = { #Mechanists!
+		name = flavor_kobildzan.7.c
+		add_country_modifier = {
+			name = Z38_perma_mechanists
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Twin Empires
+	id = flavor_kobildzan.8
+	title = flavor_kobildzan.8.t
+	desc = flavor_kobildzan.8.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Two empires, forged as kin!
+		name = flavor_kobildzan.8.a
+		hidden_effect = {	
+			1191 = {
+				cede_province = ROOT
+			}
+			every_owned_province = {
+				limit = {
+					superregion = ynn_superregion
+					NOT = { colonial_region = colonial_broken_sea }
+				}
+				add_core = H24
+			}
+		}
+		release = H24
+		create_subject = {
+			subject_type = twin_empire
+			subject = H24
+		}
+		hidden_effect = {
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						superregion = ynn_superregion
+						NOT = { colonial_region = colonial_broken_sea }
+					}
+					add_core = H24
+					cede_province = H24
+				}
+			}
+			set_country_flag = kobildzan_dragon_dominion_friends
+		}
+		hidden_effect = {
+			add_historical_friend = H24
+			H24 = { add_historical_friend = ROOT }
+		}
+		dolindha_region = {
+			add_permanent_claim = H24
+		}
+		if = {
+			limit = { has_church_aspect = green_dragon_1_base }
+			remove_church_aspect = green_dragon_1_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = green
+			SLOT = 1
+			UPGRADE = base
+		}
+	}
+}
