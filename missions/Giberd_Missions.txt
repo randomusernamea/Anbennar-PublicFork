@@ -140,16 +140,14 @@ giberd_imperial = {
 			AND = {
 				province_id = 308
 				NOT = {
-					OR = {
-						owned_by = ROOT
-						AND = {
-							reverse_has_opinion = {
-								who = A73
-								value = 200
-							}
-							has_25_opinion_sent_gift = {
-								target = A73
-							}
+					owned_by = ROOT
+					AND = {
+						reverse_has_opinion = {
+							who = A73
+							value = 200
+						}
+						has_25_opinion_sent_gift = {
+							target = A73
 						}
 					}
 				}
@@ -465,16 +463,10 @@ giberd_konwell_conquest = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					province_id = 271
-					NOT = {
-						AND = {
-							province_has_center_of_trade_of_level = 3
-							has_state_edict = edict_protect_trade
-						}
+					OR = {
+						province_id = 271
+						province_id = 266
 					}
-				}
-				AND = {
-					province_id = 266
 					NOT = {
 						AND = {
 							province_has_center_of_trade_of_level = 3
@@ -953,9 +945,11 @@ giberd_konwell_conquest = {
 		provinces_to_highlight = {
 			province_id = 275
 			NOT = {
-				development = 40
-				has_building = university
-				has_building = mage_tower
+				AND = {
+					development = 40
+					has_building = university
+					has_building = mage_tower
+				}
 			}
 		}
 		trigger = {
@@ -1524,8 +1518,10 @@ giberd_ryalanar_conquest = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					capital_scope = {
-						continent = europe
+					owner = {
+						capital_scope = {
+							continent = europe
+						}
 					}
 					owner = {
 						NOT = {
