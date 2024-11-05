@@ -1122,7 +1122,7 @@ country_event = {
 		for = {
 			custom_tooltip = giberd_10_provinces_get_dwarves_tt
 			amount = 10
-			effect = "random_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
+			effect = "random_owned_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
 		}
 	}
 	option = {
@@ -1141,7 +1141,7 @@ country_event = {
 		for = {
 			custom_tooltip = giberd_2_provinces_get_dwarves_tt
 			amount = 2
-			effect = "random_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
+			effect = "random_owned_province = { limit = { region = esmaria_region } add_dwarven_minority_size_effect = yes }"
 		}
 	}
 	option = {
@@ -1455,15 +1455,13 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					AND = {
-						check_variable = {
-							which = giberd_factions_technomancers_influence
-							which = giberd_factions_brillites_influence
-						}
-						check_variable = {
-							which = giberd_factions_technomancers_influence
-							which = giberd_factions_mechanists_influence
-						}
+					check_variable = {
+						which = giberd_factions_technomancers_influence
+						which = giberd_factions_brillites_influence
+					}
+					check_variable = {
+						which = giberd_factions_technomancers_influence
+						which = giberd_factions_mechanists_influence
 					}
 				}
 				country_event = {
