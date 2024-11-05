@@ -66,6 +66,20 @@ giberd_imperial = {
 			giberd_wind_in_our_sails
 		}
 		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			AND = {
+				NOT = {
+					has_trade_building_trigger = yes
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						has_trade_building_trigger = yes
+					}
+				}
+			}
+		}
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = giberd_the_pinklady_power_tt
@@ -90,11 +104,9 @@ giberd_imperial = {
 						901 = {
 							is_strongest_trade_power = ROOT
 						}
-						calc_true_if = {
-							amount = 10
-							all_owned_province = {
-								has_trade_building_trigger = yes
-							}
+						num_of_owned_provinces_with = {
+							value = 10
+							has_trade_building_trigger = yes
 						}
 					}
 					AND = {
@@ -2188,11 +2200,11 @@ giberd_mercantile_shipping = {
 			AND = {
 				NOT = {
 					has_manpower_building_trigger = yes
-					calc_true_if = {
-						amount = 10
-						all_owned_province = {
-							has_manpower_building_trigger = yes
-						}
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						has_manpower_building_trigger = yes
 					}
 				}
 			}
@@ -2200,30 +2212,22 @@ giberd_mercantile_shipping = {
 				NOT = {
 					has_forcelimit_building_trigger = yes
 				}
-				NOT = {
-					calc_true_if = {
-						amount = 10
-						all_owned_province = {
-							has_forcelimit_building_trigger = yes
-						}
-					}
+				num_of_owned_provinces_with = {
+					value = 10
+					has_forcelimit_building_trigger = yes
 				}
 			}
 		}
 		trigger = {
 			mission_completed = giberd_curtain_call
 			num_of_rajput = 10
-			calc_true_if = {
-				amount = 10
-				all_owned_province = {
-					has_manpower_building_trigger = yes
-				}
+			num_of_owned_provinces_with = {
+				value = 10
+				has_manpower_building_trigger = yes
 			}
-			calc_true_if = {
-				amount = 10
-				all_owned_province = {
-					has_forcelimit_building_trigger = yes
-				}
+			num_of_owned_provinces_with = {
+				value = 10
+				has_forcelimit_building_trigger = yes
 			}
 			num_military_artifice_inventions_active_tier_3 = {
 				VAL = 1
