@@ -360,6 +360,7 @@ kob_3_a = {
 		}
 
 		trigger = {
+			# SAY LEX
 			189 = {
                 OR = {
                     has_province_modifier = kobold_hoard_2
@@ -617,7 +618,8 @@ Kob_5a = {
 		}
 	}
 }
-Kob_1b = {
+
+kob_1_b = {
 	slot = 1
 	generic = no
 	ai = yes
@@ -633,12 +635,36 @@ Kob_1b = {
 		}
 
 		provinces_to_highlight = {
+			province_id = 1191
 		}
+
 		trigger = {
+			1191 = { # Svemel
+				OR = {
+					owned_by_subject_of = ROOT
+					owner = { 
+						has_opinion = {
+							who = ROOT
+							value = 50
+						} 
+					}
+				}
+			}
+
+			diplomatic_reputation = 2
+
+			any_subject_country = {
+				is_colonial_nation_of = ROOT
+				capital_scope = { colonial_region = colonial_broken_sea }
+				num_of_cities = 10
+			}
 		}
+
 		effect = {
+			country_event = { id = flavor_kobildzan.4 }
 		}
 	}
+
 	Z38_a_pledge = {
 		icon = mission_kobold
 		position = 7
@@ -647,12 +673,82 @@ Kob_1b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = rzenta_region
+					NOT = { 
+						owned_by = ROOT
+						owned_by_subject_of = ROOT 
+					}
+				}
+
+				AND = {
+					province_id = 1191
+					NOT = {
+						has_great_project = {
+							type = ynnic_grand_temple_svemel
+							tier = 1
+						}
+					}
+				}
+			}
 		}
+
 		trigger = {
+			rzenta_region = {
+				type = all
+				OR = {
+					is_city = no
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+
+			OR = {
+				treasury = 1000
+				1191 = {
+					has_great_project = {
+						type = ynnic_grand_temple_svemel
+						tier = 1
+					}
+				}
+			}
+
+			H24 = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}	
 		}
+
 		effect = {
+
+			country_event = { id = flavor_kobildzan.8 }
+
+			if = {
+				limit = {
+					NOT = {
+						1191 = {
+							has_great_project = {
+								type = ynnic_grand_temple_svemel
+								tier = 1
+							}
+						}
+					}
+				}
+				1191 = {
+					add_great_project_tier = {
+						type = ynnic_grand_temple_svemel
+						tier = 1
+					}	
+				}
+
+				add_treasury = -1000
+			}
 		}
 	}
+
 	Z38_supply_the_crusade = {
 		icon = mission_kobold
 		position = 11
@@ -668,14 +764,16 @@ Kob_1b = {
 		}
 	}
 }
-Kob_2b = {
+
+kob_2_b = {
 	slot = 2
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		tag = Z38
 	}
-	has_country_shield = yes
+
 	Z38_the_compendium_of_dragons = {
 		icon = mission_kobold
 		position = 6
@@ -683,13 +781,31 @@ Kob_2b = {
 			Z38_heirs_of_dragonkind
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
+			innovativeness = 15
+			126 = { religion = kobold_dragon_cult }
+			167 = { religion = kobold_dragon_cult }
+			169 = { religion = kobold_dragon_cult }
+
+			OR = {
+				faction_influence = { influence = 50 faction = tec_brilliance }
+				faction_influence = { influence = 50 faction = tec_mechanists }
+				faction_influence = { influence = 50 faction = tec_technomancy }
+			}
 		}
+
 		effect = {
+			country_event = { id = flavor_kobildzan.5 }
+
+			# SAY LEX
+			custom_tooltip = Z38_unlocked_draconic_technopriests_tt
+			if = {
+				limit = { reform_level = 4 }
+				add_government_reform = kobildzan_draconic_technopriests
+			}
 		}
 	}
+
 	Z38_a_step_into_the_draconic = {
 		icon = mission_kobold
 		position = 7
@@ -697,13 +813,35 @@ Kob_2b = {
 			Z38_the_compendium_of_dragons
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
+			estate_loyalty = {
+				estate = estate_artificers
+				loyalty = 60
+			} 
+
+			OR = {
+				has_estate_privilege = artifice_invention_dragonblood_gene_warriors
+				has_estate_privilege = artifice_invention_soarwing_grafts
+				has_estate_privilege = artifice_invention_burrower_arms
+				has_estate_privilege = artifice_invention_dragonscale_plating
+				has_estate_privilege = artifice_invention_prehensile_tail_attachments
+				has_estate_privilege = artifice_invention_artificial_egg_surrogates
+			}
 		}
+
 		effect = {
+			# SAY LEX
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = dragons_mean_power }
+					set_country_flag = kobildzan_claws_of_power
+				} else = {
+					set_country_flag = kobildzan_glidewing_membranes
+				}
+			}
 		}
 	}
+
 	Z38_relics_of_the_future = {
 		icon = mission_kobold
 		position = 8
@@ -713,12 +851,45 @@ Kob_2b = {
 		}
 
 		provinces_to_highlight = {
+			superregion = eordand_superregion
+			trade_goods = precursor_relics
+			OR = {
+				NOT = { owned_by_subject_of = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+				NOT = { base_production = 8 }
+				NOT = { has_production_building_trigger = yes }
+			}
 		}
+
 		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				trade_goods = precursor_relics
+				superregion = eordand_superregion
+				base_production = 8
+				has_production_building_trigger = yes
+			}
 		}
+
 		effect = {
+			mission_reward_artifice_points_5 = yes
+
+			# SAY LEX
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = dragons_mean_power }
+					set_country_flag = kobildzan_ogre_sized_kobolds
+				} else = {
+					set_country_flag = kobildzan_detachable_extra_limbs
+				}
+			}
+
+			H30 = { every_owned_province = { add_permanent_claim = ROOT } }
+			H31 = { every_owned_province = { add_permanent_claim = ROOT } }
+			H32 = { every_owned_province = { add_permanent_claim = ROOT } }			
 		}
 	}
+
 	Z38_a_technocracy_for_all = {
 		icon = mission_kobold
 		position = 9
@@ -727,10 +898,42 @@ Kob_2b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id =  2079
+						province_id =  2083
+						province_id =  2088
+					}
+					NOT = { owned_by = ROOT owned_by_subject_of = ROOT }
+				}
+
+				owned_by = H30
+				owned_by = H31
+				owned_by = H32
+			}
 		}
+
 		trigger = {
+			2079 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
+			2083 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
+			2088 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
+		
+			H30 = { exists = no }
+			H31 = { exists = no }
+			H32 = { exists = no }
+
+			OR = {
+				faction_influence = { influence = 75 faction = tec_brilliance }
+				faction_influence = { influence = 75 faction = tec_mechanists }
+				faction_influence = { influence = 75 faction = tec_technomancy }
+			}
+
 		}
+
 		effect = {
+			# TODO: change id to artificery as one
+			country_event = { id = flavor_kobildzan.1 }
 		}
 	}
 	Z38_the_artificer_ruinborn = {
@@ -748,7 +951,7 @@ Kob_2b = {
 		}
 	}
 }
-Kob_3b = {
+kob_3_b = {
 	slot = 3
 	generic = no
 	ai = yes
@@ -764,11 +967,56 @@ Kob_3b = {
 			Z38_an_artificers_dream
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
+			NOT = { has_country_modifier = monstrous_nation }
+
+			NOT = {
+				has_country_modifier = racial_pop_human_expulsion
+				has_country_modifier = racial_pop_human_purge
+			}
+
+			# SAY LEX
+			hidden_trigger = {
+				calc_true_if = {
+					amount = 12
+					has_country_flag = black_dragon_2_base
+					has_country_flag = black_dragon_3_base
+					has_country_flag = red_dragon_2_base
+					has_country_flag = red_dragon_3_base
+					has_country_flag = blue_dragon_2_base
+					has_country_flag = blue_dragon_3_base
+					has_country_flag = white_dragon_2_base
+					has_country_flag = white_dragon_3_base
+					has_country_flag = purple_dragon_2_base
+					has_country_flag = purple_dragon_3_base
+					has_country_flag = green_dragon_2_base
+					has_country_flag = green_dragon_3_base
+					has_country_flag = brown_dragon_2_base
+					has_country_flag = brown_dragon_3_base
+					has_country_flag = brass_dragon_2_base
+					has_country_flag = brass_dragon_3_base
+					has_country_flag = copper_dragon_2_base
+					has_country_flag = copper_dragon_3_base
+					has_country_flag = silver_dragon_2_base
+					has_country_flag = silver_dragon_3_base
+					has_country_flag = gold_dragon_2_base
+					has_country_flag = gold_dragon_3_base
+				}
+			}
+
+			# SAY LEX
+			hidden_trigger = {
+				has_human_accepted_culture = yes
+				has_halfling_accepted_culture = yes
+			}
 		}
+
 		effect = {
+			add_country_modifier = {
+				name = Z38_kannorized_kobold
+				duration = 7300
+			}
+			add_church_power = 200
 		}
 	}
 	Z38_a_new_face_a_new_body = {
@@ -802,14 +1050,15 @@ Kob_3b = {
 		}
 	}
 }
-Kob_4b = {
+kob_4_b = {
 	slot = 4
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		tag = Z38
 	}
-	has_country_shield = yes
+
 	Z38_a_hoard_worth_having = {
 		icon = mission_kobold
 		position = 6
@@ -819,12 +1068,84 @@ Kob_4b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				province_id = 177
+				province_id = 179
+				province_id = 186
+				province_id = 187				
+			}
+
+			NOT = {
+				has_tax_building_trigger = yes
+				has_courthouse_building_trigger = yes
+			}
 		}
+
 		trigger = {
+			177 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
+			179 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
+			186 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
+			187 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
+
+			# SAY LEX
+			189 = {
+                OR = {
+                    has_province_modifier = kobold_hoard_5
+                    has_province_modifier = kobold_hoard_6
+                    has_province_modifier = kobold_hoard_7
+                    has_province_modifier = kobold_hoard_8
+                    has_province_modifier = kobold_hoard_9
+                    has_province_modifier = kobold_hoard_10
+                    has_province_modifier = kobold_hoard_11
+                }
+            }
+
 		}
+
 		effect = {
+			179 = {
+				change_trade_goods = gold
+				add_province_modifier = {
+					name = Z38_hoardsource
+					duration = -1
+				}
+			}
+
+			177 = {
+				change_trade_goods = paper
+				add_province_modifier = {
+					name = Z38_hoard_logistics_hub
+					duration = -1
+				}
+			}
+			186 = {
+				change_trade_goods = paper
+				add_province_modifier = {
+					name = Z38_hoard_logistics_hub
+					duration = -1
+				}
+			}
+			187 = {
+				change_trade_goods = paper
+				add_province_modifier = {
+					name = Z38_hoard_logistics_hub
+					duration = -1
+				}
+			}
+
+			if = {
+				limit = { has_church_aspect = red_dragon_1_base }
+				remove_church_aspect = red_dragon_1_base
+			}
+
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = red
+                SLOT = 1
+                UPGRADE = upgraded
+            }
 		}
 	}
+
 	Z38_an_artificers_dream = {
 		icon = mission_kobold
 		position = 7
@@ -833,12 +1154,48 @@ Kob_4b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				area = dragonhills_area
+				area = gnomish_pass_area
+			}
+			NOT = { owned_by = ROOT }
 		}
+
 		trigger = {
+			dragonhills_area = { type = all owned_by = ROOT }
+			gnomish_pass_area = { type = all owned_by = ROOT }
+
+			# SAY LEX
+			check_variable = {
+				ArtificeUpkeep = 60
+			}
+
+			num_of_rajput = 20
+
+			estate_loyalty = {
+				estate = estate_artificers
+				loyalty = 60
+			}
+
+			estate_influence = {
+				estate = estate_artificers
+				influence = 30
+			}
 		}
+
 		effect = {
+			167 = { change_trade_goods = salt add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			184 = { change_trade_goods = salt add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+		
+			182 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			184 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			150 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			211 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+		
+			mission_reward_artifice_points_5 = yes
 		}
 	}
+
 	Z38_trapping_the_wealth = {
 		icon = mission_kobold
 		position = 8
@@ -848,12 +1205,82 @@ Kob_4b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				province_id = 115
+				province_id = 112
+			}
+
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { province_has_center_of_trade_of_level = 2 }
+			}
 		}
+
 		trigger = {
+			has_country_modifier = trap_mastery_lvl_3
+
+			num_of_owned_provinces_with = {
+				value = 3
+				
+				OR = {
+					region = small_country_region
+					region = lencenor_region
+				}
+
+				OR = {
+					has_province_modifier = kobold_traps_lvl_3
+					has_province_modifier = kobold_traps_lvl_4
+				}
+			}
+
+			115 = { owned_by = ROOT province_has_center_of_trade_of_level = 2 }
+			112 = { owned_by = ROOT province_has_center_of_trade_of_level = 2 }
 		}
+
 		effect = {
+			112 = {
+				hidden_effect = {
+					remove_province_modifier = kobold_traps_lvl_1
+					remove_province_modifier = kobold_traps_lvl_2
+					remove_province_modifier = kobold_traps_lvl_3
+				}
+				add_province_modifier = {
+					name = modified_kobold_traps_lvl_4
+					duration = -1
+				}
+			}
+
+			add_country_modifier = {
+				name = Z38_true_hoardbuilders
+				duration = -1
+			}
+
+			# SAY LEX
+			hidden_effect = {
+				set_country_flag = modified_kobold_traps
+				every_owned_province = {
+					if = {
+						limit = { has_province_modifier = kobold_traps_lvl_1 }
+						remove_province_modifier = kobold_traps_lvl_1
+						add_province_modifier = { name = modified_kobold_traps_lvl_1 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_2 }
+						remove_province_modifier = kobold_traps_lvl_2
+						add_province_modifier = { name = modified_kobold_traps_lvl_2 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_3 }
+						remove_province_modifier = kobold_traps_lvl_3
+						add_province_modifier = { name = modified_kobold_traps_lvl_3 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_4 }
+						remove_province_modifier = kobold_traps_lvl_4
+						add_province_modifier = { name = modified_kobold_traps_lvl_4 duration = -1 }
+					}
+				}
+			}
 		}
 	}
+
 	Z38_the_holy_caverns = {
 		icon = mission_kobold
 		position = 9
@@ -862,12 +1289,51 @@ Kob_4b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 189
+						province_id = 187					
+					}
+					NOT = { has_manufactory_trigger = yes }
+				}
+				AND = {
+					has_terrain = cavern
+					owned_by = ROOT
+					OR = {
+						NOT = { is_prosperous = yes }
+						NOT = { num_of_buildings_in_province = 1 }
+					}
+				}
+			}
 		}
+
 		trigger = {
+			189 = { has_manufactory_trigger = yes }
+			187 = { has_manufactory_trigger = yes }
+
+			all_owned_province = {
+				OR = {
+					NOT = { has_terrain = cavern }
+					AND = {
+						is_prosperous = yes
+						num_of_buildings_in_province = 1
+					}
+				}
+			}
 		}
+
 		effect = {
+			every_owned_province = {
+				limit = { has_terrain = cavern }
+				add_province_modifier = {
+					name = Z38_sanctified_through_effort
+					duration = -1
+				}
+			}
 		}
 	}
+	
 	Z38_reclaiming_the_frontier = {
 		icon = mission_kobold
 		position = 10
@@ -887,23 +1353,59 @@ Kob_5b = {
 	slot = 5
 	generic = no
 	ai = yes
+	has_country_shield = yes
 	potential = {
 		tag = Z38
 	}
-	has_country_shield = yes
+
 	Z38_the_great_revitalization = {
 		icon = mission_kobold
 		position = 5
-		required_missions = { 
-		}
 
 		provinces_to_highlight = {
+			OR = {
+				province_id = 3578
+				province_id = 4644
+				province_id = 4645
+				province_id = 4646
+			}
+			NOT = { num_of_times_improved = 1 }
 		}
+		
 		trigger = {
+			if = {
+				limit = { ai = yes }
+				# SAY LEX
+				adm_power = 300
+				is_subject = no
+			} else = {
+				3578 = { num_of_times_improved = 1 }
+				4644 = { num_of_times_improved = 1 }
+				4645 = { num_of_times_improved = 1 }
+				4646 = { num_of_times_improved = 1 }
+	
+				has_estate_privilege = estate_artificers_development_tools
+			}
+
 		}
+
 		effect = {
+			if = {
+				limit = { ai = yes }
+				# SAY LEX
+				add_adm_power = -300
+			}
+
+			4644 = { change_trade_goods = dyes }
+			3578 = { change_trade_goods = dyes }
+
+			add_country_modifier = {
+				name = Z38_the_great_revitalization
+				duration = 18250
+			}
 		}
 	}
+
 	Z38_farms_not_fish = {
 		icon = mission_kobold
 		position = 6
@@ -912,10 +1414,102 @@ Kob_5b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				province_id = 171 
+				province_id = 172 
+				province_id = 181 
+				province_id = 176 
+				province_id = 122 
+				province_id = 145 
+			}
+			NOT = { light_ships_in_province = 2 }
 		}
+
 		trigger = {
+			if = {
+				# SAY LEX
+				limit = { ai = yes }
+				treasury = 200
+				is_subject = no
+			} else = {
+				production_efficiency = 0.4
+	
+				171 = { owned_by = ROOT light_ships_in_province = 2 }
+				172 = { owned_by = ROOT light_ships_in_province = 2 }
+				181 = { owned_by = ROOT light_ships_in_province = 2 }
+				176 = { owned_by = ROOT light_ships_in_province = 2 }
+				122 = { owned_by = ROOT light_ships_in_province = 2 }
+				145 = { owned_by = ROOT light_ships_in_province = 2 }
+			}
 		}
+
 		effect = {
+			if = {
+				limit = { ai = yes }
+				add_treasury = -200
+			}
+
+			171 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+				}
+			}
+			172 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+				}
+			}
+			181 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+				}
+			}
+			176 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+			}	
+			}
+			122 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+				}
+			}
+			145 = { 
+				change_trade_goods = fungi
+				kill_units = {
+					who = ROOT
+					type = light_ship
+					amount = 2
+				}
+			}
+
+			every_owned_province = {
+				limit = { trade_goods = fungi }
+				add_province_modifier = {
+					name = Z38_enhanced_fungi_farms
+					duration = -1
+				}
+			}
+
+			add_country_modifier = {
+				name = Z38_fungal_farm_network
+				duration = -1
+			}
 		}
 	}
 	Z38_koboldquilt_cloth = {
@@ -926,12 +1520,96 @@ Kob_5b = {
 		}
 
 		provinces_to_highlight = {
+			owned_by = ROOT
+			trade_goods = wool
+			region = dragon_coast_region
+			NOT = { has_production_building_trigger = yes }
 		}
+
 		trigger = {
+			if = {
+				limit = { ai = yes }
+				# SAY LEX
+				treasury = 200
+			} else = {
+				all_owned_province = {
+					OR = {
+						NOT = { trade_goods = wool }
+						NOT = { region = dragon_coast_region }
+						has_production_building_trigger = yes
+					}
+				}
+
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					trade_goods = cloth
+				}
+
+				OR = {
+					silk = 1
+					any_subject_country = { silk = 1 }
+
+					any_known_country = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+
+						silk = 1
+					}
+				}
+			}
 		}
 		effect = {
+			if = {
+				limit = { ai = yes }
+				add_treasury = -200
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						silk = 1
+						any_subject_country = { silk = 1 }
+					}
+				}
+
+				random_known_country = {
+					limit = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+
+						silk = 1
+					}
+
+					add_spy_network_from = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+
+			dragon_coast_region = {
+				limit = { trade_goods = wool }
+				change_trade_goods = cloth
+
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			173 = { 
+				change_trade_goods = silk
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
 		}
 	}
+
 	Z38_the_kobold_krakeneers = {
 		icon = mission_kobold
 		position = 8
@@ -940,12 +1618,40 @@ Kob_5b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				province_id = 140
+				province_id = 138
+				province_id = 178
+				area = storm_isles_area
+			}
+
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
 		}
+
 		trigger = {
+			num_of_heavy_ship = 30
+
+			140 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
+			138 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
+			178 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
+			storm_isles_area = { type = all owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 		}
+
 		effect = {
+			140 = { add_building = grand_shipyard add_province_modifier = { name = Z38_seabeast_fisheries duration = -1 } }
+			138 = { add_building = grand_shipyard add_province_modifier = { name = Z38_seabeast_fisheries duration = -1 } }
+			178 = { add_building = grand_shipyard add_province_modifier = { name = Z38_seabeast_fisheries duration = -1 } }
+
+			storm_isles_area = { change_trade_goods = ivory add_province_modifier = { name = Z38_seabeast_fisheries duration = -1 } }
 		}
 	}
+
 	Z38_traders_and_traitors = {
 		icon = mission_kobold
 		position = 11

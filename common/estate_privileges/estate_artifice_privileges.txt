@@ -13092,7 +13092,7 @@ artifice_invention_kobildzan_draconic_ascension = {
 	loyalty = 0.00
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
-		has_country_flag = kobildzan_draconic_ascension
+		mission_completed = Z38_a_step_into_the_draconic
 	}
 	can_select = {
         always = yes
@@ -13132,7 +13132,8 @@ artifice_invention_kobildzan_draconic_ascension = {
 	conditional_modifier = {
 		trigger = { has_country_flag = kobildzan_claws_of_power } 
 		modifier = {
-			
+			is_rajput_modifier = yes
+			morale_damage_received = -0.1
 		} 
 	}
 	conditional_modifier = {
