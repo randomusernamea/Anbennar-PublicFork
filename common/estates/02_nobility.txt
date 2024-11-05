@@ -352,7 +352,11 @@ estate_nobles = {
 		custom_name = {
 			desc = tanizu_warrior_lodges
 			trigger = {
-				culture = tanizu
+				OR = {
+					culture = tanizu
+					culture = cyazizeta_lizardfolk
+				}
+				NOT = { tag = S83 }
 			}
 		}
 
@@ -363,6 +367,7 @@ estate_nobles = {
 					culture = kombedak
 					culture = umsozidak
 					culture = wakoodak
+					tag = S83
 				}
 			}
 		}
@@ -524,6 +529,7 @@ estate_nobles = {
 			desc = estate_ankashyi
 			trigger = {
 				culture_is_lizardfolk = yes
+				NOT = {  culture = cyazizeta_lizardfolk }
 			}
 		}
 		
