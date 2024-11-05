@@ -144,12 +144,7 @@ country_event = { #Shift The Tide
                 custom_tooltip = G48_anisikheion_degarikes_tt
             }
             capital_scope = {
-                add_unit_construction = {
-                    type = geobukseon_galley
-                    amount = 5
-                    speed = 0.5
-                    cost = 0
-                }
+                spawn_units_for = { type = geobukseon_galley who = PREV amount = 5 }
             }
         }
         if = {
@@ -194,6 +189,7 @@ country_event = { #Scrolls Of Knowledge
                 has_country_flag = militants_in_power
             }
             custom_tooltip = G48_militants_bonus_explained_tt
+            custom_tooltip = BONUS_REWARD_YES
             tooltip = {
                 2745 = {
                     add_devastation = 50
