@@ -1046,7 +1046,13 @@ country_event = {
 						value = 0.5
 					}
 				}
-				189 = { upgrade_kobold_hoard = yes } 
+				if = {
+					limit = { has_country_flag = new_hoard }
+					187 = { upgrade_kobold_hoard = yes } 
+				}
+				else = {
+					189 = { upgrade_kobold_hoard = yes } 
+				}
 			}						
 		}
 	}
