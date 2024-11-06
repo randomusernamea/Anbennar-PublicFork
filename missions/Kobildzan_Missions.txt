@@ -37,39 +37,40 @@ kob_2_a = {
 		trigger = {
 			OR = {
 				power_projection = 25
-				AND = {
-					dragondowns_area = { type = all owned_by = ROOT }
-                    170 = { owned_by = ROOT }
-                    173 = { owned_by = ROOT }
-                    174 = { owned_by = ROOT }
-                    176 = { owned_by = ROOT }
-                    177 = { owned_by = ROOT }
-                    178 = { owned_by = ROOT }
-                    179 = { owned_by = ROOT }
-                    180 = { owned_by = ROOT }
-                    345 = { owned_by = ROOT }
-
-					any_owned_province = {
-                        has_province_flag = kobold_traps_lvl_2_or_more
-                        OR = {
-                            area = dragondowns_area
-                            province_id = 170
-                            province_id = 173
-                            province_id = 174
-                            province_id = 176
-                            province_id = 177
-                            province_id = 178
-                            province_id = 179
-                            province_id = 180
-                            province_id = 345
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = owned_redscales_tt #lex todo
+					AND = {	
+						dragondowns_area = { type = all owned_by = ROOT }
+						170 = { owned_by = ROOT }
+						173 = { owned_by = ROOT }
+						174 = { owned_by = ROOT }
+						176 = { owned_by = ROOT }
+						177 = { owned_by = ROOT }
+						178 = { owned_by = ROOT }
+						179 = { owned_by = ROOT }
+						180 = { owned_by = ROOT }
+						345 = { owned_by = ROOT }
+						any_owned_province = {
+							has_province_flag = kobold_traps_lvl_2_or_more
+							OR = {
+								area = dragondowns_area
+								province_id = 170
+								province_id = 173
+								province_id = 174
+								province_id = 176
+								province_id = 177
+								province_id = 178
+								province_id = 179
+								province_id = 180
+								province_id = 345
+							}
+						}
+					}
 				}
 			}
 		}
 		effect = {
 			add_adm_power = 100
-
 			gnomish_pass_area = { add_permanent_claim = ROOT }
 			dragonmaw_area = { add_permanent_claim = ROOT }
 			dragonheart_area = { add_permanent_claim = ROOT }
@@ -148,7 +149,7 @@ kob_2_a = {
 		}
 
 		provinces_to_highlight = {
-			province_id = 1527
+			province_id = 1294
 			NOT = {
 				trade_share = {
 					country = ROOT
@@ -218,7 +219,6 @@ kob_2_a = {
                 SLOT = 1
                 UPGRADE = upgraded
             }
-
             large_increase_of_gnomish_tolerance_effect = yes
 		}
 	}
@@ -257,27 +257,31 @@ kob_3_a = {
 		trigger = {
 			OR = {
 				num_of_aspects = 3
-				AND = {
-                    dragondepth_area = { type = all owned_by = ROOT }
-                    dragonheart_area = { type = all owned_by = ROOT }
-                    dragonmaw_area = { type = all owned_by = ROOT }
-                    182 = { owned_by = ROOT }
-                    183 = { owned_by = ROOT }
-                    184 = { owned_by = ROOT }
-                    3362 = { owned_by = ROOT }
-
-                    any_owned_province = {
-                        has_province_flag = kobold_traps_lvl_2_or_more
-                        OR = {
-                            area = dragondepth_area
-                            area = dragonheart_area
-                            area = dragonmaw_area
-                            province_id = 182
-                            province_id = 183
-                            province_id = 184
-                            province_id = 3362
-                        }
-                    }
+				custom_trigger_tooltip = {
+					tooltip = owned_bluescales_tt #LEX TODO
+					AND = {
+						dragondepth_area = { type = all owned_by = ROOT }
+						dragonheart_area = { type = all owned_by = ROOT }
+						dragonmaw_area = { type = all owned_by = ROOT }
+						182 = { owned_by = ROOT }
+						183 = { owned_by = ROOT }
+						184 = { owned_by = ROOT }
+						3362 = { owned_by = ROOT }
+						AND = {
+							any_owned_province = {
+								has_province_flag = kobold_traps_lvl_2_or_more
+								OR = {
+									area = dragondepth_area
+									area = dragonheart_area
+									area = dragonmaw_area
+									province_id = 182
+									province_id = 183
+									province_id = 184
+									province_id = 3362
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -322,11 +326,11 @@ kob_3_a = {
             accepted_culture = redscale_kobold
 
             OR = {
-				NOT = { has_estate = estate_monstrous_tribes }
                 estate_loyalty = {
                     estate = estate_monstrous_tribes
                     loyalty = 60
                 }
+				NOT = { has_estate = estate_monstrous_tribes }
             }
 
             dragondepth_area = { type = all owned_by = ROOT }
@@ -357,20 +361,9 @@ kob_3_a = {
 
 		trigger = {
 			# SAY LEX
-			189 = {
-                OR = {
-                    has_province_modifier = kobold_hoard_2
-                    has_province_modifier = kobold_hoard_3
-                    has_province_modifier = kobold_hoard_4
-                    has_province_modifier = kobold_hoard_5
-                    has_province_modifier = kobold_hoard_6
-                    has_province_modifier = kobold_hoard_7
-                    has_province_modifier = kobold_hoard_8
-                    has_province_modifier = kobold_hoard_9
-                    has_province_modifier = kobold_hoard_10
-                    has_province_modifier = kobold_hoard_11
-                }
-            }
+			REB = { #lex note to self change away from REB so that tooltip can work nice 
+				check_variable = { dragon_cult_hoard = 500 }
+			}
 		}
 
 		effect = {
@@ -2121,6 +2114,7 @@ kob_1_c = {
 					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_game_of_khet } } set_country_flag = unlocked_artifice_invention_game_of_khet }
 					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_draconic_ascension } } set_country_flag = unlocked_artifice_invention_draconic_ascension }
 					# for real, LEX shall boil.
+					# I DIDNT REALIZE IT'D BE THIS BAD. I'M SORRY -lex
 				}
 				
 				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
