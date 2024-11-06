@@ -58,7 +58,7 @@ spawn_wyvernheart_civil_war_rebels = {
 	}
 }
 
-wyvernheart_define_war_wizard_hardliner = {
+wyvernheart_define_war_wizard = {
 	if = {#+1 fire, speed and siege
 		limit = {
 			has_country_flag = wyvernheart_bioimproved_mages_results
@@ -75,7 +75,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 3
 				siege = 1
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -89,7 +89,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 4
 				siege = 2
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -103,7 +103,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 5
 				siege = 3
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -116,7 +116,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 7
 				siege = 4
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 	}
@@ -136,7 +136,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 3
 				siege = 0
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -150,7 +150,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 4
 				siege = 1
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -164,7 +164,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 5
 				siege = 2
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -177,7 +177,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 7
 				siege = 3
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 	}
@@ -193,7 +193,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 2
 				siege = 0
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -207,7 +207,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 3
 				siege = 1
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -221,7 +221,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 4
 				siege = 2
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
+				name = wyvernheart_mage
 			}
 		}
 		if = {
@@ -234,912 +234,7 @@ wyvernheart_define_war_wizard_hardliner = {
 				manuever = 6
 				siege = 3
 				trait = war_wizard_personality
-				name = "Hardliner Overseer"
-			}
-		}
-	}
-}
-wyvernheart_define_war_wizard_technocrat = {
-	if = {#+1 fire, speed and siege
-		limit = {
-			has_country_flag = wyvernheart_bioimproved_mages_results
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
-				siege = 4
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-	}
-	if = {#+1 speed
-		limit = {
-			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 0
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 4
-				siege = 1
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 5
-				siege = 2
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 7
-				siege = 3
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-	}
-	else = {#Normal but special name
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 2
-				siege = 0
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 6
-				siege = 3
-				trait = war_wizard_personality
-				name = "Technocrat Overseer"
-			}
-		}
-	}
-}
-wyvernheart_define_war_wizard_heartmage = {
-	if = {#+1 fire, speed and siege
-		limit = {
-			has_country_flag = wyvernheart_bioimproved_mages_results
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
-				siege = 4
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-	}
-	if = {#+1 speed
-		limit = {
-			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 0
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 4
-				siege = 1
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 5
-				siege = 2
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 7
-				siege = 3
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-	}
-	else = {#Normal but special name
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 2
-				siege = 0
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 6
-				siege = 3
-				trait = war_wizard_personality
-				name = "Heartmage Overseer"
-			}
-		}
-	}
-}
-wyvernheart_define_war_wizard_devout = {
-	if = {#+1 fire, speed and siege
-		limit = {
-			has_country_flag = wyvernheart_bioimproved_mages_results
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
-				siege = 4
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-	}
-	if = {#+1 speed
-		limit = {
-			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 0
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 4
-				siege = 1
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 5
-				siege = 2
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 7
-				siege = 3
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-	}
-	else = {#Normal but special name
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 2
-				siege = 0
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 6
-				siege = 3
-				trait = war_wizard_personality
-				name = "Devout Overseer"
-			}
-		}
-	}
-}
-wyvernheart_define_war_wizard_wealthy = {
-	if = {#+1 fire, speed and siege
-		limit = {
-			has_country_flag = wyvernheart_bioimproved_mages_results
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
-				siege = 4
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-	}
-	if = {#+1 speed
-		limit = {
-			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 0
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 4
-				siege = 1
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 5
-				siege = 2
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 7
-				siege = 3
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-	}
-	else = {#Normal but special name
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 2
-				siege = 0
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 6
-				siege = 3
-				trait = war_wizard_personality
-				name = "Wealthy Overseer"
-			}
-		}
-	}
-}
-wyvernheart_define_war_wizard_ambitious = {
-	if = {#+1 fire, speed and siege
-		limit = {
-			has_country_flag = wyvernheart_bioimproved_mages_results
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
-				siege = 4
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-	}
-	if = {#+1 speed
-		limit = {
-			NOT = { has_country_flag = wyvernheart_bioimproved_mages_results }
-			has_estate_privilege = estate_wyvernheart_floodborn_council
-		}
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 0
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 4
-				siege = 1
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 5
-				siege = 2
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 7
-				siege = 3
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-	}
-	else = {#Normal but special name
-		if = {
-			limit = {
-				army_tradition = 0.00
-				NOT = { army_tradition = 30 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 2
-				siege = 0
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 30
-				NOT = { army_tradition = 60 }
-			}
-			define_general = {
-				fire = 1
-				shock = 7
-				manuever = 3
-				siege = 1
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 60
-				NOT = { army_tradition = 80 }
-			}
-			define_general = {
-				fire = 2
-				shock = 8
-				manuever = 4
-				siege = 2
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
-			}
-		}
-		if = {
-			limit = {
-				army_tradition = 80
-			}
-			define_general = {
-				fire = 3
-				shock = 9
-				manuever = 6
-				siege = 3
-				trait = war_wizard_personality
-				name = "Ambitious Overseer"
+				name = wyvernheart_mage
 			}
 		}
 	}
