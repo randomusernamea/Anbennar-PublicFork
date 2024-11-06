@@ -370,14 +370,10 @@ country_event = { #Twin Empires
 		dolindha_region = {
 			add_permanent_claim = H24
 		}
-		if = {
-			limit = { has_church_aspect = green_dragon_1_base }
-			remove_church_aspect = green_dragon_1_base
-		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = green
 			SLOT = 1
-			UPGRADE = base
+			UPGRADE = upgraded
 		}
 	}
 }
@@ -421,9 +417,6 @@ country_event = { #Artificery As One
 					}
 				"
 			}
-		}
-		if = { limit = { has_church_aspect = blue_dragon_2_base }
-			remove_church_aspect = blue_dragon_2_base
 		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
@@ -665,6 +658,10 @@ country_event = { #The Dragon's Roar
 			name = Z38_the_consequences_of_the_roar
 			duration = 3650
 		}
+
+		hidden_effect = {
+			set_country_flag = Z38_had_roar_happen
+		}
 		swap_non_generic_missions = yes #lex do i need a tooltip here?
 	}
 }
@@ -726,6 +723,7 @@ country_event = { #Aid from Aelantir
 				add_devastation = -10
 			}
 			var_effect = { effect = add_treasury var = dev2add sign = + }
+			set_country_flag = Z38_received_aelantir_aid
 		}
 	}
 }
@@ -744,10 +742,6 @@ country_event = { #The Prodigal Father
 			duration = -1
 		}
 		add_stability = 3
-		if = {
-			limit = { has_church_aspect = blue_dragon_3_base }
-			remove_church_aspect = blue_dragon_3_base
-		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
 			SLOT = 3
@@ -819,10 +813,6 @@ country_event = { #To Awaken the Beast
 
 	option = { #To Elkaesal, the-- wait, what?
 		name = flavor_kobildzan.16.a
-		if = {
-			limit = { has_church_aspect = white_dragon_3_base }
-			remove_church_aspect = white_dragon_3_base
-		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
 			SLOT = 3
@@ -844,10 +834,6 @@ country_event = { #A Very Angry Lecture
 		custom_tooltip = lullaby_cannon_unlock_tt
 		hidden_effect = {
 			set_country_flag = can_use_lullaby_cannon_tt
-		}
-		if = {
-			limit = { has_church_aspect = copper_dragon_2_base }
-			remove_church_aspect = copper_dragon_2_base
 		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = copper
