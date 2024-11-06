@@ -3348,34 +3348,34 @@ country_event = { #Technocracy Election
 			custom_tooltip = increase_stats_by_0_influence_tt 
 		}
 		if = {
-			limit = { army_tradition = 100 }
+			limit = { prestige = 100 }
 			hidden_effect = {
 				change_adm = 3
 				change_dip = 3
 				change_mil = 3
 			}
-			custom_tooltip = increase_stats_by_3_trad_tt 			
+			custom_tooltip = increase_stats_by_3_prestige_tt 			
 		}		
 		else_if = {
-			limit = { army_tradition = 66 }
+			limit = { prestige = 66 }
 			hidden_effect = {
 				change_adm = 2
 				change_dip = 2
 				change_mil = 2
 			}
-			custom_tooltip = increase_stats_by_2_trad_tt 			
+			custom_tooltip = increase_stats_by_2_prestige_tt 			
 		}	
 		else_if = {
-			limit = { army_tradition = 33 }
+			limit = { prestige = 33 }
 			hidden_effect = {
 				change_adm = 1
 				change_dip = 1
 				change_mil = 1
 			}
-			custom_tooltip = increase_stats_by_1_trad_tt			
+			custom_tooltip = increase_stats_by_1_prestige_tt			
 		}
 		else = { 
-			custom_tooltip = increase_stats_by_0_trad_tt 
+			custom_tooltip = increase_stats_by_0_prestige_tt 
 		}
 		hidden_effect = {
 			set_ruler_flag = technomancy_ruler
@@ -3764,34 +3764,34 @@ country_event = { #Technocracy Death Election
 			custom_tooltip = increase_stats_by_0_influence_tt 
 		}
 		if = {
-			limit = { army_tradition = 100 }
+			limit = { prestige = 100 }
 			hidden_effect = {
 				change_adm = 3
 				change_dip = 3
 				change_mil = 3
 			}
-			custom_tooltip = increase_stats_by_3_trad_tt 			
+			custom_tooltip = increase_stats_by_3_prestige_tt 			
 		}		
 		else_if = {
-			limit = { army_tradition = 66 }
+			limit = { prestige = 66 }
 			hidden_effect = {
 				change_adm = 2
 				change_dip = 2
 				change_mil = 2
 			}
-			custom_tooltip = increase_stats_by_2_trad_tt 		
+			custom_tooltip = increase_stats_by_2_prestige_tt 		
 		}	
 		else_if = {
-			limit = { army_tradition = 33 }
+			limit = { prestige = 33 }
 			hidden_effect = {
 				change_adm = 1
 				change_dip = 1
 				change_mil = 1
 			}
-			custom_tooltip = increase_stats_by_1_trad_tt 			
+			custom_tooltip = increase_stats_by_1_prestige_tt 			
 		}
 		else = { 
-			custom_tooltip = increase_stats_by_0_trad_tt 
+			custom_tooltip = increase_stats_by_0_prestige_tt 
 		}
 		hidden_effect = {
 			set_ruler_flag = technomancy_ruler
