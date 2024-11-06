@@ -18116,3 +18116,31 @@ rakkaz_make_warlock_pact_avaliables = {
 	clr_country_flag = revoke_warlock_pact_unrestricted_savagery
 	clr_country_flag = revoke_warlock_pact_battlefield_domination
 }
+
+add_racial_minority_and_dev_preferred_terrain = {
+	if = {
+		limit = {
+			any_owned_province = {
+				preferred_terrain = { $race$ = yes }
+				NOT = { culture_is_$race$ = yes }
+			}
+		}
+		random_owned_province = {
+			limit = {
+				preferred_terrain = { $race$ = yes }
+				NOT = { culture_is_$race$ = yes }
+			}
+			add_$race$_minority_size_effect = yes
+			add_random_development = $dev_amount$
+		}
+	}
+	else = {
+		random_owned_province = {
+			limit = {
+				NOT = { culture_is_$race$ = yes }
+			}
+			add_$race$_minority_size_effect = yes
+			add_random_development = $dev_amount$
+		}
+	}
+}
