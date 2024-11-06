@@ -773,7 +773,7 @@ country_event = { #The Kobildzani Conference
 		custom_tooltip = hyperdigestion_tt #lex do this
 	}
 	option = { #We must become dragons!
-		name = flavor_kobildzan.14.a
+		name = flavor_kobildzan.14.b
 		hidden_effect = {
 			set_country_flag = kobildzan_dragonfire_sacs
 			add_country_modifier = {
@@ -793,14 +793,14 @@ country_event = { #Form and Function
 	is_triggered_only = yes 
 
 	option = { #We imbue our organs with magic!
-		name = flavor_kobildzan.14.a
+		name = flavor_kobildzan.15.a
 		hidden_effect = {
 			set_country_flag = kobildzan_mana_attunement_glands
 		}
 		custom_tooltip = mana_attunement_glands_tt #lex do this
 	}
 	option = { #We inject our scales with ebonsteel!
-		name = flavor_kobildzan.14.a
+		name = flavor_kobildzan.15.b
 		hidden_effect = {
 			set_country_flag = kobildzan_ebonsteel_shieldscales
 			add_country_modifier = {
@@ -809,5 +809,143 @@ country_event = { #Form and Function
 			}
 		}
 		custom_tooltip = ebonsteel_shieldscales_tt #lex do this
+	}
+}
+
+country_event = { #To Awaken the Beast
+	id = flavor_kobildzan.16
+	title = flavor_kobildzan.16.t
+	desc = flavor_kobildzan.16.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Elkaesal, the-- wait, what?
+		name = flavor_kobildzan.16.a
+		if = {
+			limit = { has_church_aspect = white_dragon_3_base }
+			remove_church_aspect = white_dragon_3_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+		country_event = { id = flavor_kobildzan.17 days = 1 }
+	}
+}
+
+country_event = { #A Very Angry Lecture
+	id = flavor_kobildzan.17
+	title = flavor_kobildzan.17.t
+	desc = flavor_kobildzan.17.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We're so sorry!!!
+		name = flavor_kobildzan.17.a
+		custom_tooltip = lullaby_cannon_unlock_tt
+		hidden_effect = {
+			set_country_flag = can_use_lullaby_cannon_tt
+		}
+		if = {
+			limit = { has_church_aspect = copper_dragon_2_base }
+			remove_church_aspect = copper_dragon_2_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #To Control Continents
+	id = flavor_kobildzan.18
+	title = flavor_kobildzan.18.t
+	desc = flavor_kobildzan.18.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We are one people in many forms!
+		name = flavor_kobildzan.18.a
+		hidden_effect = {
+			set_country_flag = kobildzan_biocompatibility #lex add functionality
+		}
+		custom_tooltip = biocompatibility_tt #lex do this
+	}
+	option = { #We fly above our subjects!
+		name = flavor_kobildzan.18.b
+		hidden_effect = {
+			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
+		}
+		custom_tooltip = intercontinental_ballistic_kobolds_tt #lex do this
+	}
+}
+
+country_event = { #Family Reunion
+	id = flavor_kobildzan.19
+	title = flavor_kobildzan.19.t
+	desc = flavor_kobildzan.19.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Protean
+		name = flavor_kobildzan.19.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = the_protean_form_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_glidewing_membranes
+					has_country_flag = kobildzan_detachable_extra_limbs
+					has_country_flag = kobildzan_hyperdigestion
+					has_country_flag = kobildzan_biocompatibility
+					has_country_flag = kobildzan_mana_attunement_glands
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_protean_form 
+		}
+		custom_tooltip = the_protean_form_tt #lex do this
+	}
+	option = { #Holiest flesh
+		name = flavor_kobildzan.19.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = holiest_flesh_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_claws_of_power
+					has_country_flag = kobildzan_ogre_sized_kobolds
+					has_country_flag = kobildzan_dragonfire_sacs
+					has_country_flag = kobildzan_intercontinental_ballistic_kobolds
+					has_country_flag = kobildzan_ebonsteel_shieldscales
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_holiest_flesh 
+		}
+		custom_tooltip = the_holiest_flesh_tt #lex do this
+	}
+}
+
+country_event = { #A Second Family Reunion
+	id = flavor_kobildzan.20
+	title = flavor_kobildzan.20.t
+	desc = flavor_kobildzan.20.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #wahoo
+		name = flavor_kobildzan.20.a
+		remove_country_modifier = Z38_call_of_the_dragon_3
+		add_country_modifier = {
+			name = Z38_call_of_the_dragon_4
+			duration = -1
+		}
 	}
 }
