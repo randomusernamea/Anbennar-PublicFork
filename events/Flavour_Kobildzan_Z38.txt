@@ -933,3 +933,117 @@ country_event = { #A Second Family Reunion
 		}
 	}
 }
+
+country_event = { #A Single Celled Kobold
+	id = flavor_kobildzan.21
+	title = flavor_kobildzan.21.t
+	desc = flavor_kobildzan.21.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes #lex add this to pulse
+
+	option = { #Shut down the tests!
+		name = flavor_kobildzan.21.a
+		add_country_modifier = {
+			name = Z38_shut_down_tests
+			duration = 3650
+		}
+	}
+	option = { #We shall experiment with this mutation!
+		name = flavor_kobildzan.21.b
+		add_country_modifier = {
+			name = Z38_experimental_mutations
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Dragon Queens
+	id = flavor_kobildzan.22
+	title = flavor_kobildzan.22.t
+	desc = flavor_kobildzan.22.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes #lex add this to pulse
+
+	option = { #Drag is a solemn art!
+		name = flavor_kobildzan.22.a
+		add_country_modifier = {
+			name = Z38_drag_a_solemn_art
+			duration = 3650
+		}
+	}
+	option = { #All entertainment deserves dragonfire!
+		name = flavor_kobildzan.22.b
+		add_country_modifier = {
+			name = Z38_drag_for_the_masses
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Ascending to Greed
+	id = flavor_kobildzan.23
+	title = flavor_kobildzan.23.t
+	desc = flavor_kobildzan.23.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes #lex add this to pulse
+
+	option = { #Send in the army, he must be crushed!
+		name = flavor_kobildzan.23.a
+		add_yearly_manpower = -0.5
+		kill_leader = {
+			type = general
+		}
+	}
+	option = { #We embrace the Cult of Greed!
+		name = flavor_kobildzan.23.b
+		define_advisor = {
+			type = natural_scientist
+			skill = 5
+			cost_multiplier = 0.5
+		}
+		add_corruption = 2.5
+	}
+	option = { #Divert our spies to steal his research!
+		name = flavor_kobildzan.23.b
+		highlight = yes
+		trigger = {
+			has_idea_group = spy_ideas
+		}
+		add_country_modifier = {
+			name = Z38_infiltrating_the_cult_of_greed
+			duration = 3650
+		}
+	}	
+}
+
+country_event = { #The Chosen Several
+	id = flavor_kobildzan.24
+	title = flavor_kobildzan.24.t
+	desc = flavor_kobildzan.24.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes #lex add this to pulse
+
+	option = { #Dragons must rule over kobolds!
+		name = flavor_kobildzan.24.a
+		unlock_government_reform = {
+			government_reform = kobildzan_draconic_elites
+			tooltip = yes
+		}
+		if = {
+			limit = { reform_level = 9 }
+			add_government_reform = kobildzan_draconic_elites
+		}
+		
+	}
+	option = { #Everyone must become dragons!
+		name = flavor_kobildzan.24.b
+		unlock_government_reform = {
+			government_reform = kobildzan_draconic_masses
+			tooltip = yes
+		}
+		if = {
+			limit = { reform_level = 9 }
+			add_government_reform = kobildzan_draconic_masses
+		}
+	}
+}
