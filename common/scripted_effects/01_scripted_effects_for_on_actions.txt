@@ -5205,7 +5205,12 @@ on_colony_finished_effect = {
 			has_global_flag = urdea_samrad_released
 			colonial_region = colonial_haraf
 			owner = { overlord_of = U42 }
-			U42 = { is_subject_of_type = colony }
+			OR = {
+				U42 = { is_subject_of_type = colony }
+				U42 = { is_subject_of_type = crown_colony }
+				U42 = { is_subject_of_type = private_enterprise }
+				U42 = { is_subject_of_type = self_governing_colony }
+			}
 		}
 		cede_province = U42
 	}
@@ -5218,7 +5223,12 @@ on_colony_finished_effect = {
 				province_group = fograc_provinces
 			}
 			owner = { overlord_of = U43 }
-			U43 = { is_subject_of_type = colony }
+			OR = {
+				U43 = { is_subject_of_type = colony }
+				U43 = { is_subject_of_type = crown_colony }
+				U43 = { is_subject_of_type = private_enterprise }
+				U43 = { is_subject_of_type = self_governing_colony }
+			}
 		}
 		add_core = U43
 		cede_province = U43
