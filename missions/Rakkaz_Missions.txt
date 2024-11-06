@@ -2343,10 +2343,6 @@ F71_5_part3_branch2_demon = {
 			custom_tooltip = rakkaz_unlocked_horde_gov_ideas_tooltip
 			set_country_flag = rakkaz_unlocked_horde_gov_ideas
 			if = {
-				limit = { has_idea_group = aristocracy_ideas }
-				remove_idea_group = aristocracy_ideas
-			}
-			if = {
 				limit = { aristocracy_ideas = 7 }
 				add_idea_group = horde_gov_ideas
 				add_idea = a_magnanimous_empire
@@ -2380,6 +2376,10 @@ F71_5_part3_branch2_demon = {
 				limit = { aristocracy_ideas = 1 }
 				add_idea_group = horde_gov_ideas
 				add_idea = horsemen_of_the_steppe
+			}
+			if = {
+				limit = { has_idea_group = aristocracy_ideas }
+				remove_idea_group = aristocracy_ideas
 			}
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_unrestricted_savagery }
 		} 
