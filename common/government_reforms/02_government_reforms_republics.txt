@@ -9139,7 +9139,7 @@ kobildzan_draconic_elites = {
 	icon = "legislative_sejm_reform" #LEX CHANGE THIS
 	potential = { 
 		tag = Z38
-		has_country_flag = draconic_elites
+		has_unlocked_government_reform = { government_reform = kobildzan_draconic_elites }
 	}  
  
 	modifiers = { 
@@ -9153,7 +9153,7 @@ kobildzan_draconic_masses = {
 	icon = "legislative_sejm_reform" #LEX CHANGE THIS
 	potential = { 
 		tag = Z38
-		has_country_flag = draconic_masses
+		has_unlocked_government_reform = { government_reform = kobildzan_draconic_masses }
 	}  
  
 	modifiers = { 
