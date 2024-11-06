@@ -956,6 +956,10 @@ esmaryal_branching = {
 				custom_tooltip = a95_esmaryal_upgrade.tt
 				set_country_flag = lady_of_flows_esmaryal
 			}
+			hidden_effect = {
+				remove_country_modifier = a95_way_of_esmaryal2
+				add_country_modifier = { name = a95_way_of_esmaryal3 duration = -1 }
+			}
 		}
 	}
 }
