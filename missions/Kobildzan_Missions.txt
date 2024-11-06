@@ -817,8 +817,8 @@ kob_1_b = {
 		
 		effect = {
 			# TODO: ask LEX if modifier through subject conditional or just here
-			remove_country_modifier = Z38_gospodh_of_the_dominion_1
-			add_country_modifier = { name = Z38_gospodh_of_the_dominion_2 duration = -1 }
+			remove_country_modifier = Z38_gospodh_1
+			add_country_modifier = { name = Z38_gospodh_2 duration = -1 }
 
 			if = {
 				limit = { has_church_aspect = green_dragon_2_base }

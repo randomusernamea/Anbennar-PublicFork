@@ -461,7 +461,7 @@ country_event = { #The Dragon's Roar
 				add_base_tax = -3
 				add_base_production = -3
 				add_base_manpower = -3
-				add_devastation = 50 #yes this stacks with the dragondepth one on purpose
+				add_devastation = 100
 			}
 			dragon_coast_region = {
 				limit = {
@@ -470,87 +470,482 @@ country_event = { #The Dragon's Roar
 							area = dragondepth_area
 							area = dragonheart_area
 							area = dragonmaw_area
+							area = dragonpoint_area
+							area = lonely_isle_area
+							area = storm_isles_area
+							area = dragondowns_area
+							area= reaver_coast_area
+							area = iochand_area
+							province_id = 174
+							province_id = 173
+							province_id = 179
+							province_id = 180
+							province_id = 345
 						}
 					}
 				}
 				remove_random_development = yes
-				add_devastation = 75
+				add_devastation = 80
 			}
-			dragondepth_area = { add_devastation = 50 }
-			dragonheart_area = { add_devastation = 50 }
-			dragonmaw_area = { add_devastation = 50 }
-			# Small Country + upper half of West Dameshead + western half of Alenic Reach lose 1 dev, gain 75 dev
-			# Rest of Dameshead + Dalr + Esmaria + Lenceor gain 50 devastation
-			alenic_frontier_region = {
-				remove_random_development = yes
-				add_devastation = 75				
-			}
-			small_country_region = {
-				remove_random_development = yes
-				add_devastation = 75					
-			}
+
+
+			dragondowns_area = { add_devastation = 50 }
+			reaver_coast_area = { add_devastation = 50 }
+			174 = { add_devastation = 50 }
+			173 = { add_devastation = 50 }
+			180 = { add_devastation = 50 }
+			345 = { add_devastation = 50 }
+			
+			iochand_area = { add_devastation = 20 }
+			storm_isles_area = { add_devastation = 20 }
+			dragonpoint_area = { add_devastation = 20 }
+			179 = { add_devastation = 20 }
+			125 = { add_devastation = 20 }
+			128 = { add_devastation = 20 }
+
 			damescrown_region = {
 				remove_random_development = yes
-				add_devastation = 75				
+				add_devastation = 80				
 			}
+
 			alenic_frontier_region = {
 				limit = {
 					NOT = {
-						OR = {
-							area = cestir_area
-							area = jonsway_area
-							area = balvord_area
-						}
+						area = coddorran_heights_area
 					}
 				}
 				remove_random_development = yes
-				add_devastation = 75
+				add_devastation = 80
 			}
-			cestir_area = { add_devastation = 50 }
-			jonsway_area = { add_devastation = 50 }
-			balvord_area = { add_devastation = 50 }
-			serpentshead_area = { add_devastation = 50 }
-			balvord_area = { add_devastation = 50 }
-			northern_greatwoods_area = { add_devastation = 50 }
-			dinesck_area = { add_devastation = 50 }
-			west_chillsbay_area = { add_devastation = 50 }
-			west_dameshead_region = {
-				limit = { NOT = { area = exwes_area } }
-				add_devastation = 50
-			}
-			exwes_area = {
-				remove_random_development = yes
-				add_devastation = 75
-			}
-			west_damesear_area = { add_devastation = 50 }
-			east_damesear_area = { add_devastation = 50 }
-			the_commons_area = { add_devastation = 50 }
-			damerian_dales_area = { add_devastation = 50 }
-			silverwoods_area = { add_devastation = 50 }
-			eastneck_area = { add_devastation = 50 }
-			cann_esmar_area = { add_devastation = 50 }
-			ryalanar_area = { add_devastation = 50 }
-			konwell_area = { add_devastation = 50 }
-			lencenor_region = {
+			197 = { add_devastation = 50 }
+			200 = { add_devastation = 20 }
+			694 = { add_devastation = 20 }
+
+			small_country_region = {
 				limit = {
 					NOT = {
 						OR = {
-							area = deranne_area
-							area = southroy_area
-							area = redglades_area
+							area = norley_area
+							area = lorentish_approach_area
+							area = roysfort_area
+							province_id = 66
+						}
+					}
+				}				
+				add_devastation = 50					
+			}
+			norley_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}	
+			lorentish_approach_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}		
+			66 = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			roysfort_area = { add_devastation = 20 }
+
+
+			serpentshead_area = { add_devastation = 20 }
+			northern_greatwoods_area = {
+				limit = { NOT = { province_id = 700 } }
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			700 = { add_devastation = 50 }
+			dinesck_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			west_chillsbay_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+
+			east_chillsbay_area = { add_devastation = 50 }
+			wudhal_area = { add_devastation = 50 }
+			sondaar_area = { add_devastation = 50 }
+
+			cedesck_area = { add_devastation = 20 }
+			735 = { add_devastation = 20 }
+			736 = { add_devastation = 20 }
+			740 = { add_devastation = 20 }
+			987 = { add_devastation = 20 }
+
+			exwes_area = { add_devastation = 50 }
+			wesdam_area = { add_devastation = 20 }
+
+			
+			east_damesear_area = { add_devastation = 50 }
+			west_damesear_area = { add_devastation = 50 }
+			the_commons_area = { add_devastation = 50 }
+			heartlands_area = { add_devastation = 20 }
+			upper_luna_area = { add_devastation = 20 }
+			low_esmar_area = { add_devastation = 20 }
+			damerian_dales_area = { add_devastation = 50 }
+			silverwoods_area = { add_devastation = 50 }
+			cann_esmar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			ryalanar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			konwell_area = { add_devastation = 50 }
+			bennonhill_area = { add_devastation = 50 }
+			songbarges_area = { add_devastation = 50 }
+			hearthswood_area = { add_devastation = 50 }
+			high_esmar_area = { add_devastation = 20 }
+			middle_luna_area = { add_devastation = 20 }
+			eastneck_area = { add_devastation = 20 }
+
+
+			redglades_area = { add_devastation = 20 }
+			ionnidar_area = { add_devastation = 20 }
+
+			dragondepth_area = { add_devastation = 20 }
+			dragonheart_area = { add_devastation = 20 }
+			dragonmaw_area = { add_devastation = 20 }
+			olavslund_area = { add_devastation = 20 }
+			elkaesals_slumber_area = { add_devastation = 20 }
+			nyrford_area = { add_devastation = 20 }
+			naugsvol_area = { add_devastation = 20 }
+			esfjall_area = { add_devastation = 20 }
+
+			west_castanor_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = merescker_area
+							area = nortmerewood_area
+							area = athfork_area
+							area = ebonmarck_area
+							area = balmire_area
 						}
 					}
 				}
+				add_devastation = 50 
+			}
+			balmire_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			merescker_area = { add_devastation = 20 }
+			nortmerewood_area = { add_devastation = 20 }
+			athfork_area = { add_devastation = 20 }
+			ebonmarck_area = { add_devastation = 20 }
+
+			teagansfield_area = {
+				remove_random_development = yes
+				add_devastation = 80
+			}
+			cursewood_area = { add_devastation = 50 }
+
+			north_ibevar_area = {
+				limit = { NOT = { province_id = 350 } }
 				add_devastation = 50
 			}
-			deranne_area = { add_devastation = 50 }
-			southroy_area = { add_devastation = 50 }
-			redglades_area = { add_devastation = 50 }
-			revrland_area = { add_devastation = 50 }
-			frostbridges_area = { add_devastation = 50 }
-			varheim_area = { add_devastation = 50 }
-			bjarnland_area = { add_devastation = 50 }
-			deranne_area = { add_devastation = 50 }
+			south_ibevar_area = { add_devastation = 20 }
+			350 = { add_devastation = 20 }
+			whistlevale_area = { add_devastation = 20 }
+			
+			nortmere_area = { add_devastation = 20 }
+			westgate_area = { add_devastation = 20 }
+			lower_nath_area = { add_devastation = 20 }
+			northyl_area = { add_devastation = 20 }
+			trialmount_area = { add_devastation = 20 }
+			castonath_area = { add_devastation = 20 }
+			southgate_area = { add_devastation = 20 }
+			country_event = { id = flavor_kobildzan.12 days = 365 }
+		}
+		add_stability = -3
+		add_country_modifier = {
+			name = Z38_the_consequences_of_the_roar
+			duration = 3650
+		}
+		swap_non_generic_missions = yes #lex do i need a tooltip here?
+	}
+}
+
+country_event = { #Aid from Aelantir
+	id = flavor_kobildzan.12
+	title = flavor_kobildzan.12.t
+	desc = flavor_kobildzan.12.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = dev2add
+				value = 0
+			}
+			export_to_variable  = {
+				which = dev2add
+				value = total_development
+				who=ROOT
+			}
+			every_subject_country = {
+				set_variable = {
+					which = vassaldev
+					value = 0
+				}
+				export_to_variable  = {
+					which = vassaldev
+					value = total_development
+				}
+				divide_variable = {
+					which = vassaldev
+					value = 2
+				}
+				ROOT = {
+					set_variable = {
+						which = vassaldev
+						which = PREV
+					}
+					change_variable = {            
+						which = dev2add
+						which = vassaldev
+					}
+				}
+			}
+			multiply_variable = {
+				which = dev2add
+				value = 2
+			}
+		}
+	}
+
+	option = { #Thank the dragons for Varlengeilt...
+		name = flavor_kobildzan.12.a
+		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt #LEX DO THIS
+		hidden_effect = {
+			every_owned_province = {
+				add_devastation = -10
+			}
+			var_effect = { effect = add_treasury var = dev2add sign = + }
+		}
+	}
+}
+
+country_event = { #The Prodigal Father
+	id = flavor_kobildzan.13
+	title = flavor_kobildzan.13.t
+	desc = flavor_kobildzan.13.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Tayekan!
+		name = flavor_kobildzan.13.a
+		add_country_modifier = {
+			name = Z38_the_father_returned
+			duration = -1
+		}
+		add_stability = 3
+		if = {
+			limit = { has_church_aspect = blue_dragon_3_base }
+			remove_church_aspect = blue_dragon_3_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #The Kobildzani Conference
+	id = flavor_kobildzan.14
+	title = flavor_kobildzan.14.t
+	desc = flavor_kobildzan.14.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We must adapt to a volcanic world!
+		name = flavor_kobildzan.14.a
+		hidden_effect = {
+			set_country_flag = kobildzan_hyperdigestion
+		}
+		custom_tooltip = hyperdigestion_tt #lex do this
+	}
+	option = { #We must become dragons!
+		name = flavor_kobildzan.14.b
+		hidden_effect = {
+			set_country_flag = kobildzan_dragonfire_sacs
+			add_country_modifier = {
+				name = Z38_dragonfire_sacs_regiment_mod
+				duration = -1
+			}
+		}
+		custom_tooltip = dragonfire_sacs_tt #lex do this
+	}
+}
+
+country_event = { #Form and Function
+	id = flavor_kobildzan.15
+	title = flavor_kobildzan.15.t
+	desc = flavor_kobildzan.15.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We imbue our organs with magic!
+		name = flavor_kobildzan.15.a
+		hidden_effect = {
+			set_country_flag = kobildzan_mana_attunement_glands
+		}
+		custom_tooltip = mana_attunement_glands_tt #lex do this
+	}
+	option = { #We inject our scales with ebonsteel!
+		name = flavor_kobildzan.15.b
+		hidden_effect = {
+			set_country_flag = kobildzan_ebonsteel_shieldscales
+			add_country_modifier = {
+				name = Z38_ebonsteel_shieldscales_regiment_mod
+				duration = -1
+			}
+		}
+		custom_tooltip = ebonsteel_shieldscales_tt #lex do this
+	}
+}
+
+country_event = { #To Awaken the Beast
+	id = flavor_kobildzan.16
+	title = flavor_kobildzan.16.t
+	desc = flavor_kobildzan.16.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Elkaesal, the-- wait, what?
+		name = flavor_kobildzan.16.a
+		if = {
+			limit = { has_church_aspect = white_dragon_3_base }
+			remove_church_aspect = white_dragon_3_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+		country_event = { id = flavor_kobildzan.17 days = 1 }
+	}
+}
+
+country_event = { #A Very Angry Lecture
+	id = flavor_kobildzan.17
+	title = flavor_kobildzan.17.t
+	desc = flavor_kobildzan.17.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We're so sorry!!!
+		name = flavor_kobildzan.17.a
+		custom_tooltip = lullaby_cannon_unlock_tt
+		hidden_effect = {
+			set_country_flag = can_use_lullaby_cannon_tt
+		}
+		if = {
+			limit = { has_church_aspect = copper_dragon_2_base }
+			remove_church_aspect = copper_dragon_2_base
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #To Control Continents
+	id = flavor_kobildzan.18
+	title = flavor_kobildzan.18.t
+	desc = flavor_kobildzan.18.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We are one people in many forms!
+		name = flavor_kobildzan.18.a
+		hidden_effect = {
+			set_country_flag = kobildzan_biocompatibility #lex add functionality
+		}
+		custom_tooltip = biocompatibility_tt #lex do this
+	}
+	option = { #We fly above our subjects!
+		name = flavor_kobildzan.18.b
+		hidden_effect = {
+			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
+		}
+		custom_tooltip = intercontinental_ballistic_kobolds_tt #lex do this
+	}
+}
+
+country_event = { #Family Reunion
+	id = flavor_kobildzan.19
+	title = flavor_kobildzan.19.t
+	desc = flavor_kobildzan.19.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Protean
+		name = flavor_kobildzan.19.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = the_protean_form_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_glidewing_membranes
+					has_country_flag = kobildzan_detachable_extra_limbs
+					has_country_flag = kobildzan_hyperdigestion
+					has_country_flag = kobildzan_biocompatibility
+					has_country_flag = kobildzan_mana_attunement_glands
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_protean_form 
+		}
+		custom_tooltip = the_protean_form_tt #lex do this
+	}
+	option = { #Holiest flesh
+		name = flavor_kobildzan.19.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = holiest_flesh_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_claws_of_power
+					has_country_flag = kobildzan_ogre_sized_kobolds
+					has_country_flag = kobildzan_dragonfire_sacs
+					has_country_flag = kobildzan_intercontinental_ballistic_kobolds
+					has_country_flag = kobildzan_ebonsteel_shieldscales
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_holiest_flesh 
+		}
+		custom_tooltip = the_holiest_flesh_tt #lex do this
+	}
+}
+
+country_event = { #A Second Family Reunion
+	id = flavor_kobildzan.20
+	title = flavor_kobildzan.20.t
+	desc = flavor_kobildzan.20.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #wahoo
+		name = flavor_kobildzan.20.a
+		remove_country_modifier = Z38_call_of_the_dragon_3
+		add_country_modifier = {
+			name = Z38_call_of_the_dragon_4
+			duration = -1
 		}
 	}
 }

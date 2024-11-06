@@ -31408,23 +31408,21 @@ Z38_shape_dalaire_modifier = {
 	local_colonial_growth = 50
 }
 
-Z38_kannorized_kobold = {
-	tolerance_heathen = 2
-	reform_progress_growth = 0.1
+Z38_gospodh_1 = {
+	merchants = 1
+	global_trade_power = 0.05
+	naval_forcelimit = 10
+	land_forcelimit = 5
 }
 
-Z38_true_hoardbuilders = {
-	trade_efficiency = 0.1
-}
-
-Z38_gospodh_of_the_dominion_2 = {
+Z38_gospodh_2 = {
 	merchants = 2
 	global_trade_power = 0.1
 	naval_forcelimit = 20
 	land_forcelimit = 10
 }
 
-Z38_gospodh_of_the_dominion_3 = {
+Z38_gospodh_3 = {
 	merchants = 4
 	global_trade_power = 0.2
 	naval_forcelimit = 40
@@ -31432,7 +31430,20 @@ Z38_gospodh_of_the_dominion_3 = {
 	max_absolutism = 20
 }
 
-
 Z38_convert_tradecompanies_modifier = {
 	local_missionary_strength = 0.2
+}
+
+Z38_kobolds_dominion = {
+	colonists = 1
+	fire_damage = 0.2
+}
+
+Z38_kannorized_kobold = {
+	tolerance_heathen = 2
+	reform_progress_growth = 0.1
+}
+
+Z38_true_hoardbuilders = {
+	trade_efficiency = 0.1
 }
