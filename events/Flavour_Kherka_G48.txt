@@ -310,21 +310,8 @@ country_event = { #Extensive Prospecting
 
     option  = {
         name = flavour_kherka.6.a #
-        alecand_region = {
-            limit = {
-                owned_by = ROOT
-                OR = {
-                    has_terrain = mountain
-                    has_terrain = hills
-                    has_terrain = highlands
-                }
-                NOT = {
-                    trade_goods = copper
-                    trade_goods = iron
-                    trade_goods = gems
-                    trade_goods = gold
-                }
-            }
+        custom_tooltip = G48_prospecting_tt
+        tooltip = {
             random_list = {
                 35 = { change_trade_goods = copper }
                 30 = { change_trade_goods = iron }
@@ -334,6 +321,34 @@ country_event = { #Extensive Prospecting
             add_province_modifier = {
                 name = G48_new_mines
                 duration = 5475 #15 years
+            }
+        }
+        hidden_effect = {
+            alecand_region = {
+                limit = {
+                    owned_by = ROOT
+                    OR = {
+                        has_terrain = mountain
+                        has_terrain = hills
+                        has_terrain = highlands
+                    }
+                    NOT = {
+                        trade_goods = copper
+                        trade_goods = iron
+                        trade_goods = gems
+                        trade_goods = gold
+                    }
+                }
+                random_list = {
+                    35 = { change_trade_goods = copper }
+                    30 = { change_trade_goods = iron }
+                    30 = { change_trade_goods = gems }
+                    5 = { change_trade_goods = gold }
+                }
+                add_province_modifier = {
+                    name = G48_new_mines
+                    duration = 5475 #15 years
+                }
             }
         }
     }
