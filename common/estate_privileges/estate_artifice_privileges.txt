@@ -13092,17 +13092,25 @@ artifice_invention_kobildzan_draconic_ascension = {
 	loyalty = 0.00
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
-		mission_completed = Z38_a_step_into_the_draconic
+		has_country_flag = unlocked_artifice_invention_draconic_ascension
 	}
 	can_select = {
         always = yes
 	}
 	can_revoke = {
-		always = no
+		NOT = { is_subject_of = Z38 }
 	}
 	on_granted = {
 		hidden_effect = {
 			artifice_inventions_currently_used_increase = yes
+		}
+		
+		if = {
+			limit = { has_country_flag = kobildzan_claws_of_power }
+			add_country_modifier = {
+				name = Z38_claws_of_power_regiment_mod
+				duration = -1
+			}
 		}
 		# NOTE: No artificer points utilized here b/c it depends on the stage of the invention; handled during unlock / upgrade
 	}
@@ -13110,6 +13118,8 @@ artifice_invention_kobildzan_draconic_ascension = {
 		hidden_effect = {
 			artifice_inventions_currently_used_decrease = yes
 		}
+
+		remove_country_modifier = Z38_claws_of_power_regiment_mod
 	}
 	on_invalid = {
 		hidden_effect = {
@@ -13132,8 +13142,6 @@ artifice_invention_kobildzan_draconic_ascension = {
 	conditional_modifier = {
 		trigger = { has_country_flag = kobildzan_claws_of_power } 
 		modifier = {
-			is_rajput_modifier = yes
-			morale_damage_received = -0.1
 		} 
 	}
 	conditional_modifier = {

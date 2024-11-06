@@ -1,3 +1,5 @@
+# todo: invention cost upgrading?
+
 kob_2_a = {
 	slot = 2
 	generic = no
@@ -223,7 +225,6 @@ kob_2_a = {
             }
 
             large_increase_of_gnomish_tolerance_effect = yes
-		
 		}
 	}
 }
@@ -423,6 +424,7 @@ kob_3_a = {
 		}
 
 		trigger = {
+			# SAY LEX
 			189 = {
                 OR = {
                     has_province_modifier = kobold_hoard_4
@@ -757,10 +759,93 @@ kob_1_b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = dalaire_region
+					is_city = yes
+					OR = {
+						NOT = { owned_by = ROOT owned_by_subject_of = ROOT }
+						NOT = { religion = kobold_dragon_cult religion = drozma_tur }
+					}
+				}
+
+				AND = {
+					province_id = 1191
+					NOT = {
+						has_great_project = {
+							type = ynnic_grand_temple_svemel
+							tier = 2
+						}
+					}
+				}
+
+				AND = {
+					OR = {
+						province_id = 1165
+						province_id = 1492
+						province_id = 1576
+					}
+					NOT = { trade_share = { country = ROOT share = 60 } }
+				}
+			}
 		}
+
 		trigger = {
+			# SAY LEX
+			dolindha_region = {
+				type = all
+				OR = {
+					is_city = no
+					AND = {
+						OR = { owned_by = ROOT owned_by_subject_of = ROOT }
+						OR = { religion = kobold_dragon_cult religion = drozma_tur }
+					}
+				}
+			}
+
+			1191 = {
+				has_great_project = {
+					type = ynnic_grand_temple_svemel
+					tier = 2
+				}
+			}
+
+			1165 = { trade_share = { country = ROOT share = 60 } }
+			1492 = { trade_share = { country = ROOT share = 60 } }
+			1576 = { trade_share = { country = ROOT share = 60 } }
 		}
+		
 		effect = {
+			# TODO: ask LEX if modifier through subject conditional or just here
+			remove_country_modifier = Z38_gospodh_of_the_dominion_1
+			add_country_modifier = { name = Z38_gospodh_of_the_dominion_2 duration = -1 }
+
+			if = {
+				limit = { has_church_aspect = green_dragon_2_base }
+				remove_church_aspect = green_dragon_2_base
+			}
+
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = green
+                SLOT = 2
+                UPGRADE = upgraded
+            }
+
+			# SAY LEX
+			hidden_effect = {
+				H24 = {
+					if = {
+						limit = { 
+							NOT = { has_country_flag = artificery_unlocked }
+						}
+						set_country_flag = artificery_unlocked
+						country_event = {
+							id = magic_artificery_setup.2
+							days = 1
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -835,6 +920,14 @@ kob_2_b = {
 				if = {
 					limit = { has_country_flag = dragons_mean_power }
 					set_country_flag = kobildzan_claws_of_power
+
+					if = {
+						limit = { has_estate_privilege = artifice_invention_kobildzan_draconic_ascension }
+						add_country_modifier = {
+							name = Z38_claws_of_power_regiment_mod
+							duration = -1
+						}
+					}
 				} else = {
 					set_country_flag = kobildzan_glidewing_membranes
 				}
@@ -932,10 +1025,10 @@ kob_2_b = {
 		}
 
 		effect = {
-			# TODO: change id to artificery as one
-			country_event = { id = flavor_kobildzan.1 }
+			country_event = { id = flavor_kobildzan.9 }
 		}
 	}
+
 	Z38_the_artificer_ruinborn = {
 		icon = mission_kobold
 		position = 10
@@ -943,11 +1036,61 @@ kob_2_b = {
 			Z38_the_artificer_ruinborn
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
+			any_subject_country = {
+				is_colonial_nation_of = ROOT
+				capital_scope = { colonial_region = colonial_broken_sea }
+				num_of_cities = 10
+			}
+			any_subject_country = {
+				is_colonial_nation_of = ROOT
+				capital_scope = { colonial_region = colonial_haraf }
+				num_of_cities = 10
+			}
+			any_subject_country = {
+				is_colonial_nation_of = ROOT
+				capital_scope = { colonial_region = colonial_eordand }
+				num_of_cities = 10
+			}
+
+			H24 = {
+				NOT = { is_lacking_institutions = yes }
+				capital_scope = { has_province_modifier = knowledge_sharing }
+			}
+
+			has_country_modifier = racial_focus_ruinborn
 		}
+
 		effect = {
+			# SAY LEX
+			hidden_effect = {
+				while = {
+					limit = { mil_tech_is_inferior = { tag=H38 } }
+					H38 = { add_mil_tech = 1 }
+				}
+				
+				while = {
+					limit = { adm_tech_is_inferior = { tag=H38 } }
+					H38 = { add_adm_tech = 1 }
+				}
+				
+				while = {
+					limit = { dip_tech_is_inferior = { tag=H38 } }
+					H38 = { add_dip_tech = 1 }
+				}
+			}
+
+			add_country_modifier = {
+				name = Z38_technological_union_of_north_aelantir
+				duration = -1
+			}
+
+			every_subject_country = {
+				add_country_modifier = {
+					name = Z38_technological_union_of_north_aelantir
+					duration = -1
+				}
+			}
 		}
 	}
 }
@@ -1019,6 +1162,7 @@ kob_3_b = {
 			add_church_power = 200
 		}
 	}
+
 	Z38_a_new_face_a_new_body = {
 		icon = mission_kobold
 		position = 10
@@ -1027,13 +1171,40 @@ kob_3_b = {
 			Z38_a_civilzed_cult
 		}
 
-		provinces_to_highlight = {
-		}
 		trigger = {
+			high_tolerance_human_race_trigger = yes 
+			high_tolerance_gnomish_race_trigger = yes
+			OR = {
+				high_tolerance_goblin_race_trigger = yes
+				high_tolerance_halfling_race_trigger = yes
+			} 
+
+
+			religious_unity = 0.9
+			# Todo: festival helding
 		}
 		effect = {
+			remove_country_modifier = Z38_call_of_the_dragon_1
+			add_country_modifier = { name = Z38_call_of_the_dragon_2 duration = -1 }
+
+			if = {
+				limit = { has_church_aspect = copper_dragon_1_base }
+				remove_church_aspect = copper_dragon_1_base
+			}
+
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = copper
+                SLOT = 1
+                UPGRADE = upgraded
+            }
+
+			# SAY LEX
+			hidden_effect = {
+				set_country_flag = kobildzan_malliaths_chosen_disciples
+			}
 		}
 	}
+
 	Z38_a_celebration_of_kobildzan = {
 		icon = mission_kobold
 		position = 11
@@ -1043,13 +1214,42 @@ kob_3_b = {
 		}
 
 		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				religion = kobold_dragon_cult
+				is_owned_by_trade_company = yes
+			}
 		}
+
 		trigger = {
+			is_at_war = no
+			church_power = 200
+
+			# SAY LEX
+			189 = {
+                OR = {
+                    has_province_modifier = kobold_hoard_7
+                    has_province_modifier = kobold_hoard_8
+                    has_province_modifier = kobold_hoard_9
+                    has_province_modifier = kobold_hoard_10
+                    has_province_modifier = kobold_hoard_11
+                }
+            }
+
+			all_owned_province = {
+				OR = {
+					religion = kobold_dragon_cult
+					is_owned_by_trade_company = yes
+				}
+			}
 		}
+
 		effect = {
+			country_event = { id = flavor_kobildzan.10 }
 		}
 	}
 }
+
 kob_4_b = {
 	slot = 4
 	generic = no
@@ -1342,10 +1542,58 @@ kob_4_b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = westmoor_proper_area
+						area = moorhills_area
+						area = coddorran_heights_area
+						area = dragonhills_area
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = kobold_dragon_cult }
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 196
+						province_id = 694
+						province_id = 213
+					}
+					NOT = {
+						has_province_modifier = modified_kobold_traps_lvl_3 
+						has_province_modifier = modified_kobold_traps_lvl_4
+					}
+				}
+			}
 		}
+
 		trigger = {
+			westmoor_proper_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			moorhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			coddorran_heights_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			#todo: ASK LEX WHY OMMITED
+			dragonhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+
+			196 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
+			694 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
+			213 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
+
+			NOT = {
+				accepted_culture = gawedi
+				accepted_culture = moorman
+			}
 		}
+
 		effect = {
+			westmoor_proper_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			moorhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			coddorran_heights_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			dragonhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+
+			frostbridges_area = { add_permanent_claim = ROOT }
+			serpentshead_area = { add_permanent_claim = ROOT }
 		}
 	}
 }
@@ -1661,13 +1909,62 @@ Kob_5b = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				area = frostbridges_area
+				area = serpentshead_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { religion = kobold_dragon_cult }
+			}
 		}
+
 		trigger = {
+			num_of_light_ship = 40
+			num_of_transport = 20
+
+			1324 = {
+				trade_share = {
+					country = ROOT
+					share = 35
+				}
+			}
+
+			frostbridges_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			serpentshead_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
 		}
+
 		effect = {
+			dalr_region = { add_permanent_claim = ROOT }
+
+			if = {
+				limit = { has_church_aspect = white_dragon_1_base }
+				remove_church_aspect = white_dragon_1_base
+			}
+
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = white
+                SLOT = 1
+                UPGRADE = upgraded
+            }
+
+			westmoor_proper_area = { change_culture = kobildzani_kobold }
+			moorhills_area = { change_culture = kobildzani_kobold }
+			coddorran_heights_area = { change_culture = kobildzani_kobold }
+			dragonhills_area = { change_culture = kobildzani_kobold }
+
+			# SAY LEX
+			hidden_effect = {
+				set_country_flag = Z38_convert_tradecompanies
+				every_owned_province = {
+					limit = { is_owned_by_trade_company = yes }
+					add_province_modifier = { name = Z38_convert_tradecompanies_modifier duration = -1 }
+				}
+			}
 		}
 	}
 }
+
 Kob_1c = {
 	slot = 1
 	generic = no
