@@ -3868,7 +3868,41 @@ twin_empire = {
 	divert_trade = yes
 	takes_diplo_slot = no
 
+	modifier_overlord = {
+		trigger = {
+			overlord = {
+				mission_completed = Z38_a_pledge 
+				NOT = { mission_completed = Z38_supply_the_crusade }
+			} 
+		}
+		modifier = Z38_godspodh_1
+	}
+
+	modifier_overlord = {
+		trigger = {
+			overlord = {
+				mission_completed = Z38_supply_the_crusade
+				NOT = { mission_completed = Z38_aelantir_as_one }
+			} 
+		}
+		modifier = Z38_godspodh_2
+	}
+
+	modifier_overlord = {
+		trigger = {
+			overlord = { mission_completed = Z38_aelantir_as_one } 
+		}
+		modifier = Z38_godspodh_3
+	}
+
+	modifier_subject = {
+		trigger = { overlord = { mission_completed = Z38_a_pledge } }
+		modifier = Z38_kobolds_dominion
+	}
+
 	relative_power_class = 0.5
+
+
 
 	can_be_integrated = no
 }
