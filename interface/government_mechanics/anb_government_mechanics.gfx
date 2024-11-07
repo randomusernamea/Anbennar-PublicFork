@@ -398,4 +398,120 @@ spriteTypes = {
         loadType = "INGAME"
         transparencecheck = yes
     }
+	
+	
+	spriteType = {
+		name = "GFX_konolkhatep_bg"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_bg.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_konolkhatep_bar_frame"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/empty.dds"
+		loadType = "INGAME"
+	}
+
+    progressbartype = {
+        name = "GFX_konolkhatep_bar"
+        color = { 0.0 0.0 0.0 }
+        colortwo = { 1.0 1.0 1.0 }
+        textureFile1 = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_bar_full.dds"
+        textureFile2 = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_bar_empty.dds"
+        size = { x = 91 y = 24 }
+        effectFile = "gfx/FX/progress.lua"
+    }
+	
+	spriteType = {
+		name = "GFX_konolkhatep_governors"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_governors.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_konolkhatep_projects"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_projects.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_konolkhatep_horutep"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_horutep.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_konolkhatep_medasi"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_medasi.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_konolkhatep_legions"
+		texturefile = "gfx/interface/government_mechanics/konolkhatep/konolkhatep_legions.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_bg"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_bg.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_bar_frame"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/empty.dds"
+		loadType = "INGAME"
+	}
+
+    progressbartype = {
+        name = "GFX_taychendi_vainglory_bar"
+        color = { 0.0 0.0 0.0 }
+        colortwo = { 1.0 1.0 1.0 }
+        textureFile1 = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_bar_full.dds"
+        textureFile2 = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_bar_empty.dds"
+        size = { x = 300 y = 74 }
+        effectFile = "gfx/FX/progress.lua"
+    }
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_spoils_of_war"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_spoils_of_war.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_swords_to_plowshares"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_swords_to_plowshares.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_settling_veterans"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_settling_veterans.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_building_greatness"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_building_greatness.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_taychendi_vainglory_taychend_in_bloom"
+		texturefile = "gfx/interface/government_mechanics/taychendi_vainglory/taychendi_vainglory_taychend_in_bloom.dds"
+		loadType = "INGAME"
+        transparencecheck = yes
+	}
 }
