@@ -6875,6 +6875,10 @@ konolkhatep_gnolls_sorrow_reform = {
 	allow_normal_conversion = no
 	potential = {
 		tag = F66
+		OR = {
+			has_reform = konolkhatep_gnolls_sorrow_reform
+			have_had_reform = konolkhatep_gnolls_sorrow_reform
+		}
 	}
 	trigger = {
 		is_emperor_of_china = yes

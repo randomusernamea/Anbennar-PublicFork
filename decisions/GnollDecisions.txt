@@ -46,11 +46,9 @@ country_decisions = {
 				province_id = 479	# Golkora
 				province_id = 473	# Nirat
 				province_id = 463	# Koroshesh
+				province_id = 5481 #Niramit
 			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { is_core = ROOT }
-			}
+			NOT = { owned_by = ROOT }
 		}
 		
 		allow = {
@@ -101,6 +99,11 @@ country_decisions = {
 			}
 			set_country_flag = formed_konolkhatep_flag
 			swap_non_generic_missions = yes
+			hidden_effect = {
+				add_government_reform = gnoll_gnollish_monarchy
+				add_government_reform = appease_khet
+			}
+			country_event = { id = flavor_konolkhatep.8 }
 		}
 		ai_will_do = {
 			factor = 1
