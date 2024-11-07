@@ -28,7 +28,16 @@ raithtall_1 = {
 
 			if = {
 				limit = { has_dlc = "Origins" }
-				any_owned_province = { has_province_modifier = seasonal_building_embassy }
+				custom_trigger_tooltip = {	#TODO - turn into a general trigger
+					tooltip = built_embassy_tt
+					any_owned_province = {
+						OR = {
+							has_province_modifier = seasonal_equal_embassy
+							has_province_modifier = seasonal_submit_embassy
+							has_province_modifier = seasonal_ignore_embassy
+						}
+					}
+				}
 			}
 			else = { has_estate_privilege = estate_church_land_rights }
 		}
@@ -231,7 +240,7 @@ raithtall_2 = {
 	has_country_shield = yes
 
 	raithtall_twilight_oath = {
-		icon = mission_control_junkers
+		icon = control_junkers
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
