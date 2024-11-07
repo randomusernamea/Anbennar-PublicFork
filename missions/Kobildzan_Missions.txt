@@ -288,12 +288,16 @@ kob_3_a = {
 
 		effect = {
 			add_dip_power = 100
-			dragon_coast_region = {
-				limit = {
-					culture_group = kobold
+			custom_tooltip = dragon_coast_kobold_provinces_tt #lex do this #[Root.GetName] gains a permanent claim on all kobold-culture provinces in the Dragon Coast region.
+			hidden_effect = {
+				dragon_coast_region = {
+					limit = {
+						culture_group = kobold
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
+
 		}
 	}
 
@@ -333,16 +337,23 @@ kob_3_a = {
 				NOT = { has_estate = estate_monstrous_tribes }
             }
 
-            dragondepth_area = { type = all owned_by = ROOT }
-            dragonheart_area = { type = all owned_by = ROOT }
-            dragonmaw_area = { type = all owned_by = ROOT }
-            dragonheights_area = { type = all owned_by = ROOT }
-            dragonspine_area = { type = all owned_by = ROOT }
-            dragondowns_area = { type = all owned_by = ROOT }
-            170 = { owned_by = ROOT }
-            176 = { owned_by = ROOT }
-            177 = { owned_by = ROOT }
-            178 = { owned_by = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = owned_DC_peninsula_tt #lex do this
+				AND = {
+					dragondepth_area = { type = all owned_by = ROOT }
+					dragonheart_area = { type = all owned_by = ROOT }
+					dragonmaw_area = { type = all owned_by = ROOT }
+					dragonheights_area = { type = all owned_by = ROOT }
+					dragonspine_area = { type = all owned_by = ROOT }
+					dragondowns_area = { type = all owned_by = ROOT }
+					170 = { owned_by = ROOT }
+					176 = { owned_by = ROOT }
+					177 = { owned_by = ROOT }
+					178 = { owned_by = ROOT }
+				}
+			}
+
+
 		}
 		effect = {
 			add_country_modifier = {
@@ -360,8 +371,7 @@ kob_3_a = {
 		}
 
 		trigger = {
-			# SAY LEX
-			REB = { #lex note to self change away from REB so that tooltip can work nice 
+			189 = {  
 				check_variable = { dragon_cult_hoard = 500 }
 			}
 		}
@@ -412,20 +422,9 @@ kob_3_a = {
 		}
 
 		trigger = {
-			# SAY LEX
-			189 = {
-                OR = {
-                    has_province_modifier = kobold_hoard_4
-                    has_province_modifier = kobold_hoard_5
-                    has_province_modifier = kobold_hoard_6
-                    has_province_modifier = kobold_hoard_7
-                    has_province_modifier = kobold_hoard_8
-                    has_province_modifier = kobold_hoard_9
-                    has_province_modifier = kobold_hoard_10
-                    has_province_modifier = kobold_hoard_11
-                }
-            }
-
+			189 = {  
+				check_variable = { dragon_cult_hoard = 2000 }
+			}
 			OR = {
 				has_won_war_against = { who = A13 }
 				has_won_war_against = { who = A01 }
@@ -471,11 +470,17 @@ kob_4_a = {
 
 		trigger = {
 			OR = {
-				AND = {
-					coddorran_heights_area = { type = all owned_by = ROOT }
-					coddorran_heights_area = { has_province_flag = kobold_traps_lvl_2_or_more }
-				}
 				any_owned_province = { has_province_modifier = kobold_traps_lvl_4 }
+				custom_trigger_tooltip = {
+					tooltip = owned_greenscales_tt
+					AND = {
+						coddorran_heights_area = { type = all owned_by = ROOT }
+						OR = {
+							197 = { has_province_flag = has_kobold_traps }
+							694 = { has_province_flag = has_kobold_traps }
+						}
+					}
+				}
 			}
 		}
 		effect = {
@@ -787,7 +792,7 @@ kob_1_b = {
 				OR = {
 					is_city = no
 					AND = {
-						OR = { owned_by = ROOT owned_by_subject_of = ROOT }
+						owned_by_subject_of = ROOT
 						OR = { religion = kobold_dragon_cult religion = drozma_tur }
 					}
 				}
@@ -1008,9 +1013,9 @@ kob_2_b = {
 		}
 
 		trigger = {
-			2079 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
-			2083 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
-			2088 = { OR = { owned_by = ROOT owned_by_subject_of = ROOT } }
+			owns_or_subject_of = 2079
+			owns_or_subject_of = 2083
+			owns_or_subject_of = 2088
 		
 			H30 = { exists = no }
 			H31 = { exists = no }
@@ -1037,27 +1042,42 @@ kob_2_b = {
 		}
 
 		trigger = {
-			any_subject_country = {
-				is_colonial_nation_of = ROOT
-				capital_scope = { colonial_region = colonial_broken_sea }
-				num_of_cities = 10
+			#lex i think i can make this a calc_true_if
+			calc_true_if = {
+				amount = 3
+				any_subject_country = {
+					num_of_cities = 10
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_broken_sea 
+							colonial_region = colonial_haraf 
+							colonial_region = colonial_eordand
+						}
+					}
+				}
 			}
-			any_subject_country = {
-				is_colonial_nation_of = ROOT
-				capital_scope = { colonial_region = colonial_haraf }
-				num_of_cities = 10
-			}
-			any_subject_country = {
-				is_colonial_nation_of = ROOT
-				capital_scope = { colonial_region = colonial_eordand }
-				num_of_cities = 10
-			}
+			# any_subject_country = {
+			# 	is_colonial_nation_of = ROOT
+			# 	capital_scope = { colonial_region = colonial_broken_sea }
+			# 	num_of_cities = 10
+			# }
+			# any_subject_country = {
+			# 	is_colonial_nation_of = ROOT
+			# 	capital_scope = { colonial_region = colonial_haraf }
+			# 	num_of_cities = 10
+			# }
+			# any_subject_country = {
+			# 	is_colonial_nation_of = ROOT
+			# 	capital_scope = { colonial_region = colonial_eordand }
+			# 	num_of_cities = 10
+			# }
 
 			H24 = {
-				NOT = { is_lacking_institutions = yes }
-				capital_scope = { has_province_modifier = knowledge_sharing }
+				OR = {
+					NOT = { is_lacking_institutions = yes }
+					capital_scope = { has_province_modifier = knowledge_sharing }
+				}
 			}
-
 			has_country_modifier = racial_focus_ruinborn
 		}
 
@@ -1222,13 +1242,10 @@ kob_3_b = {
 
 			# SAY LEX
 			189 = {
-                OR = {
-                    has_province_modifier = kobold_hoard_7
-                    has_province_modifier = kobold_hoard_8
-                    has_province_modifier = kobold_hoard_9
-                    has_province_modifier = kobold_hoard_10
-                    has_province_modifier = kobold_hoard_11
-                }
+                check_variable = {
+					which = dragon_cult_hoard
+					value = 16000
+				}
             }
 
 			all_owned_province = {
@@ -1277,6 +1294,7 @@ kob_4_b = {
 		}
 
 		trigger = {
+			# lex tooltip this
 			177 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			179 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			186 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
@@ -1284,15 +1302,10 @@ kob_4_b = {
 
 			# SAY LEX
 			189 = {
-                OR = {
-                    has_province_modifier = kobold_hoard_5
-                    has_province_modifier = kobold_hoard_6
-                    has_province_modifier = kobold_hoard_7
-                    has_province_modifier = kobold_hoard_8
-                    has_province_modifier = kobold_hoard_9
-                    has_province_modifier = kobold_hoard_10
-                    has_province_modifier = kobold_hoard_11
-                }
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 4000
+				}
             }
 
 		}
@@ -1560,6 +1573,7 @@ kob_4_b = {
 		}
 
 		trigger = {
+			#lex tooltip this
 			westmoor_proper_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
 			moorhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
 			coddorran_heights_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
@@ -1671,7 +1685,7 @@ Kob_5b = {
 				is_subject = no
 			} else = {
 				production_efficiency = 0.4
-	
+				# LEX CUSTOM TOOLTIP
 				171 = { owned_by = ROOT light_ships_in_province = 2 }
 				172 = { owned_by = ROOT light_ships_in_province = 2 }
 				181 = { owned_by = ROOT light_ships_in_province = 2 }
@@ -1785,15 +1799,13 @@ Kob_5b = {
 
 				OR = {
 					silk = 1
-					any_subject_country = { silk = 1 }
-
 					any_known_country = {
+						silk = 1
 						has_spy_network_from = {
 							who = ROOT
 							value = 50
 						}
-
-						silk = 1
+						
 					}
 				}
 			}
@@ -1874,7 +1886,7 @@ Kob_5b = {
 
 		trigger = {
 			num_of_heavy_ship = 30
-
+			# lex tooltip this
 			140 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 			138 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 			178 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
@@ -1927,19 +1939,19 @@ Kob_5b = {
 		effect = {
 			dalr_region = { add_permanent_claim = ROOT }
 
+			westmoor_proper_area = { change_culture = kobildzani_kobold }
+			moorhills_area = { change_culture = kobildzani_kobold }
+			coddorran_heights_area = { change_culture = kobildzani_kobold }
+			dragonhills_area = { change_culture = kobildzani_kobold }
+
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = white
                 SLOT = 1
                 UPGRADE = upgraded
             }
 
-			westmoor_proper_area = { change_culture = kobildzani_kobold }
-			moorhills_area = { change_culture = kobildzani_kobold }
-			coddorran_heights_area = { change_culture = kobildzani_kobold }
-			dragonhills_area = { change_culture = kobildzani_kobold }
-
 			# SAY LEX
-			hidden_effect = {
+			hidden_effect = { #lex add this effect
 				set_country_flag = Z38_convert_tradecompanies
 				every_owned_province = {
 					limit = { is_owned_by_trade_company = yes }
@@ -2217,13 +2229,10 @@ kob_2_c = {
 
 			# SAY LEX
 			187 = {
-				has_province_modifier = kobold_hoard_5
-				has_province_modifier = kobold_hoard_6
-				has_province_modifier = kobold_hoard_7
-				has_province_modifier = kobold_hoard_8
-				has_province_modifier = kobold_hoard_9
-				has_province_modifier = kobold_hoard_10
-				has_province_modifier = kobold_hoard_11
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 4000
+				}
 			}
 
 			1746 = { light_ships_in_province = 40 }
@@ -2281,11 +2290,10 @@ kob_2_c = {
 
 			# SAY LEX
 			187 = {
-				has_province_modifier = kobold_hoard_7
-				has_province_modifier = kobold_hoard_8
-				has_province_modifier = kobold_hoard_9
-				has_province_modifier = kobold_hoard_10
-				has_province_modifier = kobold_hoard_11
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 16000
+				}
 			}
 		}
 
@@ -2331,10 +2339,10 @@ kob_2_c = {
 
 			# SAY LEX
 			187 = {
-				has_province_modifier = kobold_hoard_8
-				has_province_modifier = kobold_hoard_9
-				has_province_modifier = kobold_hoard_10
-				has_province_modifier = kobold_hoard_11
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 32000
+				}
 			}
 		}
 
@@ -2464,9 +2472,10 @@ kob_3_c = {
 
 			# SAY LEX
 			187 = {
-				has_province_modifier = kobold_hoard_9
-				has_province_modifier = kobold_hoard_10
-				has_province_modifier = kobold_hoard_11
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 64000
+				}
 			}
 
 			num_of_provinces_owned_or_owned_by_subjects_with = {
@@ -2503,7 +2512,10 @@ kob_3_c = {
 
 		trigger = {
 			187 = {
-				has_province_modifier = kobold_hoard_11
+				check_variable = {
+					which = dragon_cult_hoard
+					value = 256000
+				}
 			}
 
 			# SAY LEX
@@ -2610,6 +2622,7 @@ kob_4_c = {
 				limit = {
 					has_dlc = "Mandate of Heaven"
 				}
+				# custom tooltip this lex
 				num_of_age_rewards_taken = { amount = 5 }
 			}
 		}

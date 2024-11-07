@@ -1605,13 +1605,14 @@ province_event = { # Clan Conflicts
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
 				hidden_effect = {
 					if = {
 						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
 						187 = { upgrade_kobold_hoard = yes } 
 					}
 					else = {
+						189 = { change_variable = { dragon_cult_hoard = 100 } }
 						189 = { upgrade_kobold_hoard = yes } 
 					}
 				}
@@ -1693,13 +1694,14 @@ province_event = { # Clan Conflicts
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
 				hidden_effect = {
 					if = {
 						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
 						187 = { upgrade_kobold_hoard = yes } 
 					}
 					else = {
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
 						189 = { upgrade_kobold_hoard = yes } 
 					}
 				}
@@ -1781,13 +1783,14 @@ province_event = { # Refugee Pilgrims
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
 				hidden_effect = {
 					if = {
 						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
 						187 = { upgrade_kobold_hoard = yes } 
 					}
 					else = {
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
 						189 = { upgrade_kobold_hoard = yes } 
 					}
 				}
