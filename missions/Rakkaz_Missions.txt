@@ -17,24 +17,21 @@ F71_1_part1 = {
 		required_missions = { F71_a_hollow_claim } 
 		provinces_to_highlight = {
 			owned_by = ROOT
-			religion = xhazobkult
+			religion = ROOT
 			unrest = 0
 		}
 
 		trigger = {
-			calc_true_if = {
-				amount = 2
-				has_adm_advisor = yes
-				has_dip_advisor = yes
-				has_mil_advisor = yes
-			}
+			has_adm_advisor = yes
+			has_dip_advisor = yes
+			has_mil_advisor = yes
 			OR = {
 				NOT = { overextension_percentage = 0.01 }
 				NOT = { num_of_loans = 1 }
 			}
 			num_of_owned_provinces_with = {
 				value = 20
-				religion = xhazobkult
+				religion = ROOT
 				NOT = { unrest = 0 }
 			}
 			stability = 1
@@ -47,21 +44,21 @@ F71_1_part1 = {
 			dasmatus_area = { add_claim = ROOT } 
 			custom_tooltip = " "
 			complex_dynamic_effect = {
-				first_custom_tooltip = rakkaz_has_100_ducats
+				first_custom_tooltip = rakkaz_already_has_level2_CoT
 				first_limit = "
+					5470 = { province_has_center_of_trade_of_level = 2 }
+				"
+				first_effect = "
+					add_treasury = 100
+				"
+				second_custom_tooltip = rakkaz_has_100_ducats
+				second_limit = "
 					treasury = 100
 					NOT = { 5470 = { province_has_center_of_trade_of_level = 2 } }
 				"
-				first_effect = "
+				second_effect = "
 					add_treasury = -100
 					5470 = { add_center_of_trade_level = 1 } 
-				"
-				second_custom_tooltip = rakkaz_already_has_level2_CoT
-				second_limit = "
-					5470 = { province_has_center_of_trade_of_level = 2 }
-				"
-				second_effect = "
-					add_treasury = 100
 				"
 			}
 		}
@@ -151,8 +148,18 @@ F71_1_part1 = {
 
 		effect = {
 			add_prestige = 20
-			custom_tooltip = rakkaz_invite_scholar_bonus
-			set_country_flag = rakkaz_improved_kult_of_the_packmother
+			if = {
+				limit = { religion = xhazobkult }
+				custom_tooltip = rakkaz_invite_scholar_bonus
+				set_country_flag = rakkaz_improved_kult_of_the_packmother
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				add_country_modifier = {
+					name = rakkaz_fieldstalker_converts
+					duration = 18250
+				}
+			}
 		}
 	}
 }
@@ -619,11 +626,25 @@ F71_4_part1 = {
 				trade_goods = slaves
 				num_of_times_improved = 1
 			}
-			patriarch_authority = 0.05
+			if = {
+				limit = { religion = xhazobkult }
+				patriarch_authority = 0.05
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				church_power = 25
+			}
 		}
 
 		effect = {
-			add_patriarch_authority = -0.05
+			if = {
+				limit = { religion = xhazobkult }
+				add_patriarch_authority = -0.05
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				add_church_power = -25
+			}
 			custom_tooltip = rakkaz_a_helping_hand_tooltip
 			custom_tooltip = " "
 			complex_dynamic_effect = {
@@ -650,13 +671,24 @@ F71_4_part1 = {
 
 		trigger = {
 			has_estate_privilege = estate_mages_reduced_research_regulations
-			OR = {
-				has_estate_privilege = xhazobkult_organized_sacrifices
-				patriarch_authority = 0.3
+			if = {
+				limit = { religion = xhazobkult }
+				OR = {
+					has_estate_privilege = xhazobkult_organized_sacrifices
+					patriarch_authority = 0.3
+				}
+				OR = {
+					current_icon = invocation_of_hellfire
+					current_icon = invocation_of_blood
+				}
 			}
-			OR = {
-				current_icon = invocation_of_hellfire
-				current_icon = invocation_of_blood
+			if = {
+				limit = { religion = shadow_pact }
+				OR = {
+					has_estate_privilege = estate_monstrous_tribes_tribal_host
+					church_power = 100
+				}
+				shadow_pact_has_three_portents = yes
 			}
 		}
 
@@ -664,26 +696,55 @@ F71_4_part1 = {
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_power } 
 			hidden_effect = { country_event = { id = flavour_rakkaz.3 days = 180 }  } 
 			custom_tooltip = " "
-			complex_dynamic_effect = {
-				first_custom_tooltip = rakkaz_both_privilege_and_demonic_power
-				first_limit = "
-					has_estate_privilege = xhazobkult_organized_sacrifices
-					patriarch_authority = 0.3
-				"
-				first_effect = "
-					custom_tooltip = rakkaz_build_mage_tower
-					hidden_effect = {
-						if = {
-							limit = { capital_scope = { has_building = mage_tower }  } 
-							capital_scope = { add_base_tax = 2 } 
+			if = {
+				limit = { religion = xhazobkult }
+				complex_dynamic_effect = {
+					first_custom_tooltip = rakkaz_both_privilege_and_demonic_power
+					first_limit = "
+						has_estate_privilege = xhazobkult_organized_sacrifices
+						patriarch_authority = 0.3
+						treasury = 150
+					"
+					first_effect = "
+						custom_tooltip = rakkaz_build_mage_tower_demon
+						hidden_effect = {
+							if = {
+								limit = { capital_scope = { has_building = mage_tower }  } 
+								capital_scope = { add_base_tax = 2 } 
+							}
+							else = {
+								add_treasury = -150
+								add_patriarch_authority = -0.1
+								capital_scope = { add_building = mage_tower } 
+							}
 						}
-						else = {
-							add_treasury = -100
-							add_patriarch_authority = -0.1
-							capital_scope = { add_building = mage_tower } 
+					"
+				}
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				complex_dynamic_effect = {
+					first_custom_tooltip = rakkaz_both_privilege_and_church_power
+					first_limit = "
+						has_estate_privilege = estate_monstrous_tribes_tribal_host
+						church_power = 100
+						treasury = 150
+					"
+					first_effect = "
+						custom_tooltip = rakkaz_build_mage_tower_hag
+						hidden_effect = {
+							if = {
+								limit = { capital_scope = { has_building = mage_tower }  } 
+								capital_scope = { add_base_tax = 2 } 
+							}
+							else = {
+								add_treasury = -100
+								add_church_power = -50
+								capital_scope = { add_building = mage_tower } 
+							}
 						}
-					}
-				"
+					"
+				}
 			}
 		}
 	}
@@ -743,12 +804,26 @@ F71_5_part1 = {
 					loyalty = 65
 				}
 			}
-			patriarch_authority = 0.2
+			if = {
+				limit = { religion = xhazobkult }
+				patriarch_authority = 0.2
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				church_power = 100
+			}
 			5466 = { cavalry_in_province = 5 } 
 		}
 
 		effect = {
-			add_patriarch_authority = -0.2
+			if = {
+				limit = { religion = xhazobkult }
+				add_patriarch_authority = -0.2
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				add_church_power = -100
+			}
 			5466 = {
 				kill_units = {
 					who = owner
@@ -1797,7 +1872,14 @@ F71_4_part2 = {
 				army_tradition = 40
 			}
 			has_mil_advisor_3 = yes
-			patriarch_authority = 0.3
+			if = {
+				limit = { religion = xhazobkult }
+				patriarch_authority = 0.3
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				church_power = 150
+			}
 			num_of_owned_provinces_with = {
 				value = 5
 				culture_group = gnollish
@@ -1808,7 +1890,14 @@ F71_4_part2 = {
 		} 
 
 		effect = {  
-			add_patriarch_authority = -0.3
+			if = {
+				limit = { religion = xhazobkult }
+				add_patriarch_authority = -0.3
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				add_church_power = -150
+			}
 			add_country_modifier = {
 				name = rakkaz_demonflare_enchantment
 				duration = -1
@@ -1919,7 +2008,14 @@ F71_5_part2 = {
 				has_tax_building_trigger = yes
 				has_manpower_building_trigger = yes
 			}
-			patriarch_authority = 0.1
+			if = {
+				limit = { religion = xhazobkult }
+				patriarch_authority = 0.1
+			}
+			if = {
+				limit = { religion = shadow_pact }
+				church_power = 50
+			}
 			manpower = 10
 		} 
 
