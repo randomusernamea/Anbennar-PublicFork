@@ -7348,6 +7348,23 @@ startup_1444_effects = {
 			}
 		}
 		
+		# Dwarovar cheap colonies modifier and event to make them start colonizing
+		if = {
+			limit = {
+				OR = {
+					tag = M01 #Grizehud
+					tag = M02 #Dursikari
+				}
+			}
+			add_country_modifier = {
+				name = squatter_cheap_colonies
+				duration = 9125 #25 years
+			}
+			country_event = {
+				id = diggy.759
+			}
+		}
+		
 		#Effelai Worship Startup Events
 		if = {
 			limit = {
@@ -7584,6 +7601,12 @@ startup_1444_effects = {
 			country_event = {
 				id = flavor_duwarkani.1
 				days = 30
+			}
+		}
+		#Making Dursikari non-migratory if AI to stop them from blocking player
+		M02 = {
+			if = { limit = { ai = yes }
+				add_government_reform = dwarovar_squatter
 			}
 		}
 	}
