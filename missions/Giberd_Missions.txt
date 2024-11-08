@@ -487,6 +487,11 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
+			is_not_researching_invention = yes
+			artifice_has_points_20 = yes
+			num_artifice_inventions_discovered = {
+				VAL = 6
+			}
 			271 = {
 				province_has_center_of_trade_of_level = 3
 				has_state_edict = edict_protect_trade
@@ -497,10 +502,6 @@ giberd_konwell_conquest = {
 			}
 			901 = {
 				has_state_edict = edict_protect_trade
-			}
-			artifice_has_points_20 = yes
-			num_artifice_inventions_discovered = {
-				VAL = 6
 			}
 		}
 		effect = {
@@ -819,6 +820,7 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
+			is_not_researching_invention = yes
 			custom_trigger_tooltip = {
 				tooltip = giberd_curtain_call_tt
 				all_owned_province = {
@@ -957,12 +959,7 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
-			#TODO: buy indulgence 3 times
-			275 = {
-				development = 40
-				has_building = university
-				has_building = state_house
-			}
+			is_not_researching_invention = yes
 			num_artifice_inventions_discovered = {
 				VAL = 15
 			}
@@ -972,6 +969,12 @@ giberd_konwell_conquest = {
 					which = RemainingArtificePoints
 					value = 60
 				}
+			}
+			#TODO: buy indulgence 3 times
+			275 = {
+				development = 40
+				has_building = university
+				has_building = state_house
 			}
 			any_known_country = {
 				religion = regent_court
@@ -1834,6 +1837,7 @@ giberd_mercantile_shipping = {
 			# TODO: dlc check, alternative: marketplace
 		}
 		trigger = {
+			is_not_researching_invention = yes
 			num_artifice_inventions_discovered = {
 				VAL = 3
 			}
@@ -2125,6 +2129,7 @@ giberd_mercantile_shipping = {
 			}
 		}
 		trigger = {
+			is_not_researching_invention = yes
 			has_country_modifier = giberd_gds_loopeng_gedsandde
 			estate_loyalty = {
 				estate = estate_artificers
@@ -2614,6 +2619,7 @@ giberd_artificer = {
 			}
 		}
 		trigger = {
+			is_not_researching_invention = yes
 			custom_trigger_tooltip = {
 				tooltip = giberd_technomancer_in_power_tt
 				has_ruler_flag = technomancy_ruler
