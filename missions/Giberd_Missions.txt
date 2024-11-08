@@ -2248,7 +2248,7 @@ giberd_mercantile_shipping = {
 		}
 		trigger = {
 			mission_completed = giberd_curtain_call
-			num_of_rajput = 10
+			num_of_rajput = 20
 			num_of_owned_provinces_with = {
 				value = 10
 				has_manpower_building_trigger = yes
@@ -2307,12 +2307,17 @@ giberd_mercantile_shipping = {
 				value = 4
 			}
 			is_defender_of_faith = yes
-			num_of_rajput = 40
+			num_of_rajput = 50
 			271 = {
 				num_of_units_in_province = {
 					who = ROOT
 					type = infantry
-					amount = 40
+					amount = 50
+				}
+				num_of_units_in_province = {
+					who = ROOT
+					type = artillery
+					amount = 50
 				}
 			}
 		}
@@ -2321,7 +2326,7 @@ giberd_mercantile_shipping = {
 				kill_units = {
 					who = ROOT
 					type = infantry
-					amount = 40
+					amount = 50
 				}
 			}
 			add_country_modifier = {
