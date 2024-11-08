@@ -19,6 +19,22 @@ taychend_vainglory_mechanic = {
 					war_exhaustion = 0.1
 				}
 			}
+
+			range_modifier = {
+				trigger = { 
+					is_at_war = no 
+					NOT = { has_country_flag = J84_halve_vainglory_loss_flag }
+				}
+				modifier = { monthly_taychend_vainglory_power = -0.275 }
+			}
+
+			range_modifier = {
+				trigger = { 
+					is_at_war = no 
+					has_country_flag = J84_halve_vainglory_loss_flag
+				}
+				modifier = { monthly_taychend_vainglory_power = -0.1375 }
+			}
 		}
 	}
 
@@ -186,8 +202,20 @@ taychend_vainglory_mechanic = {
 					custom_tooltip = J84_change_religion_tt
 				}
 				hidden_effect = {
+					random_owned_province = {
+						limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+						add_province_modifier = {
+							name = J84_veteran_colonies
+							duration = 9125 #25 years
+						}
+						add_base_tax = 1
+						add_base_production = 2
+						add_base_manpower = 1
+						change_religion = ROOT
+						change_culture = ROOT
+					}
 					for = {
-						amount = 5
+						amount = 4
 						effect = "
 						random_owned_province = {
 							limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
@@ -199,7 +227,6 @@ taychend_vainglory_mechanic = {
 							add_base_production = 2
 							add_base_manpower = 1
 							change_religion = ROOT
-							change_culture = ROOT
 						}"
 					}
 				}

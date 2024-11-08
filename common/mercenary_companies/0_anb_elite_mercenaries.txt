@@ -1880,8 +1880,9 @@ merc_the_orcish_company = {
 	}
 	regiments_per_development = 0.06
 	cost_modifier = 0.8
-	cavalry_weight = 0.1
-	artillery_weight = 0.3
+	cavalry_weight = 0.2
+	max_size = 40
+	manpower_pool = 100
 	sprites = { westerngfx_sprite_pack }
 	modifier = {
 		discipline = 0.05
@@ -1897,6 +1898,7 @@ merc_shadowbound_ashama = {
 	}
 	regiments_per_development = 0.06
 	cost_modifier = 2
+	max_size = 40
 	sprites = { westerngfx_sprite_pack }
 	modifier = {
 		infantry_shock = 0.5

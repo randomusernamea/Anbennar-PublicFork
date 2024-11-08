@@ -1311,8 +1311,20 @@ custom_button = {
 			custom_tooltip = J84_change_religion_tt
 		}
 		hidden_effect = {
+			random_owned_province = {
+				limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
+				add_province_modifier = {
+					name = J84_veteran_colonies
+					duration = 9125 #25 years
+				}
+				add_base_tax = 1
+				add_base_production = 2
+				add_base_manpower = 1
+				change_religion = ROOT
+				change_culture = ROOT
+			}
 			for = {
-				amount = 5
+				amount = 4
 				effect = "
 				random_owned_province = {
 					limit = { NOT = { has_province_modifier = J84_veteran_colonies religion = ROOT } }
@@ -1324,7 +1336,6 @@ custom_button = {
 					add_base_production = 2
 					add_base_manpower = 1
 					change_religion = ROOT
-					change_culture = ROOT
 				}"
 			}
 		}

@@ -14839,6 +14839,15 @@ on_conquest = {
 			}
 		}
 	}
+
+	if = {
+		limit = { owner = { has_country_flag = J84_lost_to_vainglory_flag } }
+		owner = {
+			country_event = {
+				id = taychendi_empire_events.1000
+			}
+		}
+	}
 }
 
 on_country_creation = {
@@ -16478,6 +16487,24 @@ on_war_ended = { #ROOT - Winer FROM - Loser
 		ROOT = {
 			add_government_power = { mechanic_type = desert_legion_mechanic power_type = jaddari_zealotry value = 10 }
 		}
+	}
+	
+	if = { #Taychendi Empire
+		limit = {
+			has_country_modifier = J84_the_lizardfolk_expedition
+			NOT = {
+				any_war_enemy_country = {
+					OR = {
+						culture_group = lizardfolk
+						num_of_owned_provinces_with = {
+							value = 10
+							culture_group = lizardfolk
+						}
+					}
+				}
+			}
+		}
+		remove_country_modifier = J84_the_lizardfolk_expedition
 	}
 }
 

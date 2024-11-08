@@ -636,7 +636,7 @@ J84_1_missions = {
 			tooltip = {
 				add_province_modifier = {
 					name = J84_ashen_born_shipyard
-					duration = 9125 #25 years
+					duration = -1
 				}
 			}
 			ruined_isles_region = { add_permanent_claim = ROOT }
@@ -652,14 +652,14 @@ J84_1_missions = {
 					limit = { has_port = yes has_shipyard_building_trigger = yes }
 					add_province_modifier = {
 						name = J84_ashen_born_shipyard
-						duration = 9125 #25 years
+						duration = -1
 					}
 				}
 			}
 		}
 	}
 
-	J84_1_11_fear_on_every_state = {
+	J84_1_11_fear_on_every_shore = {
 		icon = mission_gnomish_ship
 		position = 16
 		required_missions = {
@@ -805,12 +805,85 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					province_id = 5971 #Metat Tagokag
+					NOT = {
+						AND = {
+							has_building = mage_tower
+							has_building = university
+							OR = {
+								has_building = fort_17th
+								has_building = fort_18th
+							}
+						}
+					}
+				}
+				AND = {
+					culture = ashhana_lizardfolk
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 30
+								culture = ashhana_lizardfolk
+							}
+						}
+					}
+				}
+				AND = {
+					has_terrain = shadow_swamp_terrain
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								has_terrain = shadow_swamp_terrain
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			5971 = { #Metat Tagokag
+				has_building = mage_tower
+				has_building = university
+				OR = {
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 30
+					culture = ashhana_lizardfolk
+				}
+				all_province = {
+					OR = {
+						NOT = { culture = ashhana_lizardfolk }
+						owned_by = ROOT
+					}
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				has_terrain = shadow_swamp_terrain
+			}
 		}
 
 		effect = {
+			5971 = { #Metat Tagokag
+				add_province_modifier = {
+					name = J84_tower_of_shadow_and_blood
+					duration = -1
+				}
+				change_trade_goods = slaves
+			}
+			unlock_merc_company = {
+				merc_company = merc_shadowbound_ashama
+			}
 		}
 	}
 }
@@ -1029,7 +1102,7 @@ J84_2_missions_part_1 = {
 				add_base_manpower = 1
 				add_province_modifier = {
 					name = J84_agricultural_revolution
-					duration = 1800 #50 years
+					duration = -1
 				}
 			}
 			custom_tooltip = J84_farm_estates_tt
@@ -1555,17 +1628,81 @@ J84_2_missions_part_2 = {
 		icon = mission_warrior_gold
 		position = 17
 		required_missions = {
-			J84_1_11_fear_on_every_state
+			J84_1_11_fear_on_every_shore
 			J84_3_11_an_empire_vainglorious
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					area = sil_berkhens_land_area #Adinonosy
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = far_uelos_isles_area #Velanynosy
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = tebajik_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = zohejirofo_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = tebolelmasi_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = ibibakely_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 6632 #Teramzadai
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								amount = 50
+								who = ROOT
+							}
+							has_ruler_leader_from = ROOT
+							has_building = grand_shipyard
+							OR = {
+								has_building = fort_17th
+								has_building = fort_18th
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			sil_berkhens_land_area = { type = all owned_by = ROOT } #Adinonosy
+			far_uelos_isles_area = { type = all owned_by = ROOT } #Velanynosy
+			tebajik_area = { type = all owned_by = ROOT }
+			zohejirofo_area = { type = all owned_by = ROOT }
+			tebolelmasi_area = { type = all owned_by = ROOT }
+			ibibakely_area = { type = all owned_by = ROOT }
+			6632 = { #Teramzadai
+				num_of_units_in_province = {
+					amount = 50
+					who = ROOT
+				}
+				has_ruler_leader_from = ROOT
+				has_building = grand_shipyard
+				OR = {
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.30 #The Speech at Teramzadai
+			}
 		}
 	}
 
@@ -1577,12 +1714,96 @@ J84_2_missions_part_2 = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					region = throden_gokad_region
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 40
+								region = throden_gokad_region
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 5898 #Karassk
+					NOT = {
+						num_of_units_in_province = {
+							amount = 20
+							who = ROOT
+						}
+					}
+				}
+				AND = {
+					province_id = 5941 #Nazhni
+					NOT = {
+						num_of_units_in_province = {
+							amount = 20
+							who = ROOT
+						}
+					}
+				}
+				AND = {
+					province_id = 5914 #Khugra
+					NOT = {
+						num_of_units_in_province = {
+							amount = 20
+							who = ROOT
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			num_of_owned_provinces_with = {
+				value = 40
+				region = throden_gokad_region
+			}
+			5898 = { #Karassk
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			5941 = { #Nazhni
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			5914 = { #Khugra
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = { #MAGICREWORK - Replace with having either "shock and awe" or "flaming munitions" active
+					tooltip = J84_estate_war_magic_active_tt
+					OR = {
+						has_country_modifier = magic_estate_scrying_military_intelligence_1
+						has_country_modifier = magic_estate_scrying_military_intelligence_2
+						has_country_modifier = magic_estate_scrying_military_intelligence_3
+					}
+				}
+				AND = {
+					ruler_has_mage_personality = yes
+					OR = {
+						5898 = { has_ruler_leader_from = ROOT } #Karassk
+						5941 = { has_ruler_leader_from = ROOT } #Nazhni
+						5914 = { has_ruler_leader_from = ROOT } #Khugra
+					}
+				}
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.31 #The Burning Harbours
+			}
 		}
 	}
 
@@ -1594,12 +1815,98 @@ J84_2_missions_part_2 = {
 		}
 
 		provinces_to_highlight = { 
+			OR = {
+				AND = {
+					area = noor_zerat_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						region = throden_gokad_region
+						region = katala_raz_region
+						region = odu_kherass_region
+					}
+					NOT = { owned_by = ROOT }
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 100
+								OR = {
+									region = throden_gokad_region
+									region = katala_raz_region
+									region = odu_kherass_region
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					is_capital = yes
+					owner = {
+						NOT = { tag = ROOT }
+						culture_group = lizardfolk
+						num_of_owned_provinces_with = {
+							value = 20
+							OR = {
+								region = throden_gokad_region
+								region = katala_raz_region
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 5921 #Zerat
+					NOT = {
+						AND = {
+							num_of_units_in_province = {
+								amount = 50
+								who = ROOT
+							}
+							has_ruler_leader_from = ROOT
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			noor_zerat_area = { type = all owned_by = ROOT }
+			num_of_owned_provinces_with = {
+				value = 100
+				OR = {
+					region = throden_gokad_region
+					region = katala_raz_region
+					region = odu_kherass_region
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = J84_no_big_lizards_tt
+				NOT = {
+					any_known_country = {
+						culture_group = lizardfolk
+						num_of_owned_provinces_with = {
+							value = 20
+							OR = {
+								region = throden_gokad_region
+								region = katala_raz_region
+							}
+						}
+					}
+				}
+			}
+			5921 = { #Zerat
+				num_of_units_in_province = {
+					amount = 50
+					who = ROOT
+				}
+				has_ruler_leader_from = ROOT
+			}
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.32 #The Second Usurpation
+			}
 		}
 	}
 }
@@ -1650,6 +1957,8 @@ J84_3_missions = {
 				change_government_reform_progress = -200
 			}
 			add_government_reform = taychend_warlord_empire
+			andic_reach_region = { add_permanent_claim = ROOT }
+			dry_coast_region = { add_permanent_claim = ROOT }
 		}
 	}
 
@@ -2078,8 +2387,8 @@ J84_3_missions = {
 				AND = {
 					has_country_modifier = J84_the_ironblood_reborn_1
 					OR = {
-						ruler_has_personality = mage_personality
-						#MAGICREWORK - Mage Estate has Renowned Conjuration
+						ruler_has_mage_personality = yes
+						has_estate_privilege = estate_mages_battlemage_academies #MAGICREWORK - Replace with Mage Estate has Renowned Conjuration
 					}
 				}
 			}
@@ -2296,12 +2605,57 @@ J84_3_missions = {
 		}
 
 		provinces_to_highlight = {  
+			province_id = 2492 #Pattivaram
+			NOT = {
+				AND = {
+					has_building = cathedral
+					has_building = training_fields
+					num_of_units_in_province = {
+						amount = 20
+						who = ROOT
+						type = infantry
+					}
+				}
+			}
 		}
 
 		trigger = {
+			2492 = { #Pattivaram
+				has_building = cathedral
+				has_building = training_fields
+				num_of_units_in_province = {
+					amount = 20
+					who = ROOT
+					type = infantry
+				}
+			}
+			OR = {
+				estate_loyalty = {
+					estate = estate_mages
+					loyalty = 50
+				}
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 70
+				}
+			}
 		}
 
 		effect = {
+			2492 = { #Pattivaram
+				add_province_modifier = {
+					name = J84_great_temple_of_ebenanth
+					duration = -1
+				}
+				kill_units = {
+					amount = 20
+					who = ROOT
+					type = infantry
+				}
+			}
+			country_event = {
+				id = taychendi_empire_events.400 #The Echoes of Ebenanth
+			}
 		}
 	}
 }
@@ -2325,12 +2679,58 @@ J84_3_end_game_missions = {
 		}
 
 		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					region = chendhya_region
+					NOT = {
+						area_for_scope_province = {
+							num_of_units_in_province = {
+								amount = 5
+								who = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					region = gauraddhi_region
+					NOT = {
+						area_for_scope_province = {
+							num_of_units_in_province = {
+								amount = 5
+								who = ROOT
+							}
+						}
+					}
+				}
+			}
 		}
 
 		trigger = {
+			chendhya_region = {
+				type = all
+				area_for_scope_province = {
+					num_of_units_in_province = {
+						amount = 5
+						who = ROOT
+					}
+				}
+			}
+			gauraddhi_region = {
+				type = all
+				area_for_scope_province = {
+					num_of_units_in_province = {
+						amount = 5
+						who = ROOT
+					}
+				}
+			}
+			is_scrying = yes #MAGICREWORK
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.500 #The Last City
+			}
 		}
 	}
 
@@ -2344,12 +2744,26 @@ J84_3_end_game_missions = {
 		}
 
 		provinces_to_highlight = {  
+			province_id = 2582 #Traerraden
+			NOT = { development = 50 }
 		}
 
 		trigger = {
+			has_government_power = {
+				mechanic_type = taychend_vainglory_mechanic
+				power_type = taychend_vainglory_power
+				value = 100
+			}
+			2582 = { #Traerraden
+				development = 50
+			}
+			treasury = 10000
 		}
 
 		effect = {
+			country_event = {
+				id = taychendi_empire_events.501 #To You, $YEAR$ Years from Now
+			}
 		}
 	}
 }
@@ -3018,7 +3432,7 @@ J84_4_missions = {
 					change_trade_goods = coal
 					add_province_modifier = {
 						name = J84_early_industrialisation
-						duration = 18250 #50 years
+						duration = 9125 #25 years
 					}
 				}
 			}
@@ -3139,9 +3553,14 @@ J84_4_missions = {
 		}
 
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_insyaa_placeholder_tt
+				always = yes
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_insyaa_placeholder_tt
 		}
 	}
 
@@ -3156,9 +3575,14 @@ J84_4_missions = {
 		}
 
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_insyaa_placeholder_tt
+				always = yes
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_insyaa_placeholder_tt
 		}
 	}
 
@@ -3174,9 +3598,14 @@ J84_4_missions = {
 		}
 
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_insyaa_placeholder_tt
+				always = yes
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_insyaa_placeholder_tt
 		}
 	}
 }
@@ -4064,10 +4493,30 @@ J84_5_missions = {
 		}
 
 		effect = {
+			amadia_region = {
+				limit = {
+					OR =  {
+						has_terrain = highlands
+						has_terrain = mountain
+					}
+					NOT = { trade_goods = damestear }
+				}
+				change_trade_goods = gold
+			}
+			amadia_region = {
+				limit = {
+					OR =  {
+						has_terrain = highlands
+						has_terrain = mountain
+					}
+					NOT = { trade_goods = damestear }
+				}
+				change_trade_goods = gold
+			}
 			custom_tooltip = J84_amadian_gold_tt
 			tooltip = {
 				random = {
-					chance = 25
+					chance = 15
 					change_trade_goods = gold
 				}
 			}
@@ -4380,9 +4829,14 @@ J84_5_missions = {
 		}
 
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = J84_insyaa_placeholder_tt
+				always = yes
+			}
 		}
 
 		effect = {
+			custom_tooltip = J84_insyaa_placeholder_tt
 		}
 	}
 }
