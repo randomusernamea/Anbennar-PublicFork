@@ -3390,7 +3390,22 @@ maghargma_five_post_amberlands = {
 						}
 					}
 				}
-				country_event = { id = flavor_maghargma.30 days = 5 }
+				random_known_country = {
+					limit = {
+						any_owned_province = {
+							region =  demon_hills_region
+						}
+						NOT = { is_subject_of = ROOT }
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+							has_been_insulted_by_root = yes
+						}
+					}
+					country_event = { id = flavor_maghargma.30 days = 5 }
+				}
 			}
 			else = {
 				demon_hills_region = { add_permanent_claim = ROOT }
