@@ -1176,11 +1176,12 @@ giberd_ryalanar_conquest = {
 			monthly_income = 20
 		}
 		effect = {
+			custom_tooltip = giberd_gds_loopeng_gedsandde_tt
 			add_country_modifier = {
 				name = giberd_gds_loopeng_gedsandde_research
 				duration = 1825
 			}
-			custom_tooltip = giberd_gds_loopeng_gedsandde_tt
+			custom_tooltip = giberd_20_capacity_5_years_tt
 			hidden_effect = {
 				change_variable = {
 					which = ArtificeUpkeep
@@ -2655,7 +2656,7 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			custom_tooltip = giberd_30_capaticy_10_years_tt
+			custom_tooltip = giberd_30_capacity_10_years_tt
 			hidden_effect = {
 				change_variable = {
 					which = ArtificeUpkeep
