@@ -1236,16 +1236,19 @@ giberd_ryalanar_conquest = {
 				is_prosperous = yes
 				owned_by = ROOT
 			}
-			901 = {
-				is_state_core = ROOT
-			}
-			esmaria_region = {
-				type = all
-				OR = {
-					NOT = {
-						has_terrain = city_terrain
-					}
+			custom_trigger_tooltip = {
+				tooltip = giberd_glass_stained_pink_tt
+				901 = {
 					is_state_core = ROOT
+				}
+				esmaria_region = {
+					type = all
+					OR = {
+						NOT = {
+							has_terrain = city_terrain
+						}
+						is_state_core = ROOT
+					}
 				}
 			}
 			army_size = 30
