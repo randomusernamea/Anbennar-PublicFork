@@ -15847,16 +15847,16 @@ on_adm_exploited = {
 	}
 
 	#Ayarellen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = { limit = { owner = { tag = F27 } culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
 
 	#Karakhanbar
 	if = {
@@ -15903,16 +15903,16 @@ on_dip_exploited = {
 	}
 
 	#Ayarallen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = { limit = { owner = { tag = F27 } culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
 
 	#Karakhanbar
 	if = {
@@ -15959,16 +15959,16 @@ on_mil_exploited = {
 	}
 
 	#Ayarallen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = { limit = { owner = { tag = F27 } culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
 
 	#Karakhanbar
 	if = {
