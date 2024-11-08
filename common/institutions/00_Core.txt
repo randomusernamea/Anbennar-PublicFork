@@ -88,9 +88,10 @@ feudalism = {
 							}
 						}
 						
-						tag = H72
-						tag = H73
-						tag = S23
+						tag = H72 #Shattered Crown
+						tag = H73 #Skewered Drake
+						tag = H74 #Chaingrasper
+						tag = S23 #Hisost Yamok
 					}
 					NOT = {
 						primary_culture = risbeko
@@ -305,8 +306,8 @@ renaissance = {
 			}
 			OR = {
 				superregion = yanshen_superregion
-				superregion = north_haless_superregion
-				superregion = south_haless_superregion
+				superregion = gozengun_superregion
+				superregion = vimdatrong_superregion
 			}
 		}
 		else_if = {
@@ -585,8 +586,8 @@ new_world_i = {
 			}
 			OR = {
 				superregion = yanshen_superregion
-				superregion = north_haless_superregion
-				superregion = south_haless_superregion
+				superregion = gozengun_superregion
+				superregion = vimdatrong_superregion
 			}
 		}
 		else_if = {
@@ -928,8 +929,8 @@ printing_press = {
 			}
 			OR = {
 				superregion = yanshen_superregion
-				superregion = north_haless_superregion
-				superregion = south_haless_superregion
+				superregion = gozengun_superregion
+				superregion = vimdatrong_superregion
 			}
 		}
 		else_if = {

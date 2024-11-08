@@ -901,10 +901,14 @@ moonhaven_development_missions = {
 		trigger = {
 			treasury = 700
 			OR = {
-				A31 = {
-					owns_all_provinces = {
-						is_part_of_hre = yes
-						culture = moon_elf
+				custom_trigger_tooltip = {
+					tooltip = A31_elven_expansion_tt
+					NOT = {
+						europe = {
+							is_part_of_hre = yes
+							culture = moon_elf
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
 					}
 				}
 				AND = {
@@ -930,11 +934,10 @@ moonhaven_development_missions = {
 			}
 			if = {
 				limit = {
-					NOT = {
-						owns_all_provinces = {
-							is_part_of_hre = yes
-							culture = moon_elf
-						}
+					europe = {
+						is_part_of_hre = yes
+						culture = moon_elf
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
 					}
 				}
 				add_dip_power = -200
@@ -1817,7 +1820,7 @@ moonhaven_exploration_missions = {
 		provinces_to_highlight = {
 			OR = {
 				superregion = rahen_superregion
-				superregion = south_haless_superregion
+				superregion = vimdatrong_superregion
 			}
 			trade_goods = tea
 			has_discovered = ROOT
@@ -1830,7 +1833,7 @@ moonhaven_exploration_missions = {
 					value = 3
 					OR = {
 						superregion = rahen_superregion
-						superregion = south_haless_superregion
+						superregion = vimdatrong_superregion
 					}
 					trade_goods = tea
 				}
@@ -1838,7 +1841,7 @@ moonhaven_exploration_missions = {
 					capital_scope = {
 						OR = {
 							superregion = rahen_superregion
-							superregion = south_haless_superregion
+							superregion = vimdatrong_superregion
 						}
 					}
 					has_spy_network_from = {
