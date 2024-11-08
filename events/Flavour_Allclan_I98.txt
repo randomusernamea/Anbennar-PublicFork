@@ -2631,12 +2631,12 @@ country_event = {
 }
 
 # rocket rail upgrade
-province_event = {
+country_event = {
 	id = allclan.99
 	title = allclan.99.title
 	desc = allclan.99.desc
 	picture = DWARVEN_RAIL_eventPicture
-	goto = root
+	goto = FROM
 	
 	is_triggered_only = yes
 	
@@ -2644,11 +2644,52 @@ province_event = {
 		always = yes
 	}
 	
-	option = {
+	option = { #Don't autobuild and continue as usual
         name = allclan.99.a
-        ai_chance = { factor = 100 }
-		goto = ROOT
-		owner = { add_prestige = 2 }
+        ai_chance = { factor = 0 }
+		add_prestige = 2 
+	}
+
+	option = { #Auto build for 5 years
+        name = allclan.99.b 
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_temporary_tooltip
+		custom_tooltip = upgrade_road_tooltip
+		hidden_effect = {
+			set_country_flag = temp_auto_build_rail
+			construct_every_rail_road = {
+				rail = advanced_rail
+				rocket = yes
+				speed = 1.3
+				cost = 2
+			}
+			add_prestige = 2 
+		}
+	}
+
+	option = { #Always autobuild and never notify
+        name = allclan.99.c
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_auto_tooltip
+		custom_tooltip = upgrade_road_tooltip
+		hidden_effect = {
+			set_country_flag = auto_build_rail
+			construct_every_rail_road = {
+				rail = advanced_rail
+				rocket = yes
+				speed = 1.3
+				cost = 2
+			}
+			add_prestige = 2
+		}
+	}
+
+	option = { #Never autobuild and never notify
+        name = allclan.99.d.1
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_never_tooltip
+		add_prestige = 2
+		set_country_flag = never_auto_build_rail
 	}
 }
 

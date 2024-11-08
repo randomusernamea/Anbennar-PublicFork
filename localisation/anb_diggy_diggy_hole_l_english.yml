@@ -95,9 +95,12 @@
   CavernOfInterest_21:0 "We have had to call off the exploration of our caverns."
 
 
-  diggy.36.t:0 "Rail in [Root.GetName] Restored!"
+  diggy.36.t:0 "Rail in [From.GetName] Restored!"
   diggy.36.d:0 "For the first time in millennia, wheels shift upon metal track, as a section of the ancient Dwarovar rail system has been restored. It has taken great effort, but now, surely, the vast flow of people, goods, and armies, will make all of the effort worth it."
-  diggy.36.a:0 "Reconstruction continues"
+  diggy.36.a:0 "Reconstruction Continues"
+  diggy.36.b:0 "Report Back Later"
+  diggy.36.c:0 "Reconstruct At Will"
+  diggy.36.d.1:0 "Never Bother Me Again"
 
   diggy.37.t:0 "Discovery in [Root.GetName]"
   diggy.37.d:0 "We have discovered an incredible cavern in [Root.GetName]!\n\nAn immense lake, lit by a vast flora of bioluminescent plants, laying several hundred meters below the surface. And in its middle shelters a huge island, almost unbelievable in its wonder. It is a totally independent ecosystem, feeding on unknown energy."
@@ -113,9 +116,12 @@
   diggy.39.d.2:0 "While a few people were beginning their explorations of the cavern, a huge earthquake tore out the ceiling of the cave, causing a rockfall and completely burying the cave."
   diggy.39.a:0 "Try to contain the collapse!"
 
-  diggy.42.t:0 "Rail in [Root.GetName] Upgraded!"
+  diggy.42.t:0 "Rail in [From.GetName] Upgraded!"
   diggy.42.d:0 "Building on the work of our ancestors, the next brick of a new era for the transport of goods and men across our nation has just been laid!"
   diggy.42.a:0 "Progress can't be hindered"
+  diggy.42.b:0 "Report Back Later"
+  diggy.42.c:0 "Upgrade At Will"
+  diggy.42.d.1:0 "Never Bother Me Again"
 
   diggy.43.t:0 "Serpent's Vale Irrigation"
   diggy.43.d:0 "Formerly the granary of Aul-Dwarov, the Serpent's Vale sheltered a cornucopia of farmland, single-handedly ensuring the food supply of the Dwarovar. Destroyed during the orc invasion of Amldihr, we now have the possibility of restoring the old irrigation system and bringing all its prosperity back to the Vale."
@@ -976,6 +982,9 @@
   rebuild_road_title:0 "£icon_dig_deeper£ Rebuild old Dwarovar Rail"
   rebuild_road_desc:0 "The ancient empire of Aul-Dwarov was unified and connected by the Dwarovar Highway, a prominent part of which was integrated rail along the dwarven roads—and now, we must rebuild it, province by province if we have to!"
   rebuild_road_tooltip:0 "Start the construction of §YRailway Works§! in every §Yapplicable§! province for 15¤ per province"
+  rebuild_road_temporary_tooltip:0 "Whenever a §YRailway§! finishes construction, it will automatically start another §YConstruction§! in the adjacent applicable provinces. We will §RNOT§! be notified of this event for the next §Y5§! years\n"
+  rebuild_road_auto_tooltip:0 "Whenever a §YRailway§! finishes construction, it will automatically start another §YConstruction§! in the adjacent applicable provinces. We will §RNO§! longer be notified of this event until the end of the game\n"
+  rebuild_road_never_tooltip:0 "We will §RNO§! longer be notified of this event until the end of the game\n"
   upgrade_road_title:0 "£icon_dig_deeper£ Upgrade the Dwarovar Rail"
   upgrade_road_desc:0 "Rebuilding is not enough, because like the blood of a giant, it is through our transport system that our nation breathes, and improving the circulation of each individual and goods through the Dwarovar will bring us a new era of prosperity!"
   upgrade_road_tooltip:0 "Start the construction of §YRailway Works§! in every §Yapplicable§! province for 30¤ per province"
