@@ -1231,11 +1231,15 @@ province_event = {
 	trigger = {
 		always = yes
 	}
+
+	immediate = {
+		hidden_effect = { owner = { add_prestige = 1 } }
+	}
 	
 	option = { 
         name = diggy.36.a
         ai_chance = { factor = 0 }
-		owner = { add_prestige = 1 }
+		tooltip = { owner = { add_prestige = 1 } }
 	}
 }
 
@@ -1373,10 +1377,14 @@ province_event = {
 		always = yes
 	}
 	
+	immediate = {
+		hidden_effect = { owner = { add_prestige = 1 } }
+	}
+
 	option = { 
         name = diggy.42.a
         ai_chance = { factor = 0 }
-		owner = { add_prestige = 1 }
+		tooltip = { owner = { add_prestige = 1 } }
 	}
 }
 
@@ -12256,7 +12264,7 @@ country_event = { #Event manager for autorails
 		custom_tooltip = no_notif_for_5_years
 		hidden_effect = {
 			add_country_modifier = { 
-				name = temp_no_notif_rail 
+				name = no_notif_for_5_years 
 				duration = 1825 
 				hidden = yes 
 			}

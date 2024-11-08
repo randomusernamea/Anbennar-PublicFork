@@ -3680,7 +3680,6 @@ construct_every_rail_road = { #Used in country scope
 }
 
 construct_every_adjacent_rail_road = { #Used in province scope
-	owner = { save_event_target_as = railroad_owner }
 	every_neighbor_province = {
 		limit = {
 			NOT = { has_construction = any }
@@ -3695,7 +3694,7 @@ construct_every_adjacent_rail_road = { #Used in province scope
 			speed = $speed$
 			cost = $cost$
 		}
-		event_target:railroad_owner = { add_prestige = $prestige$ }
+		FROM = { add_prestige = $prestige$ }
 	}
 }
 

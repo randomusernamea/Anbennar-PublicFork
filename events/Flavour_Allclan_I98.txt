@@ -2643,11 +2643,15 @@ province_event = {
 	trigger = {
 		always = yes
 	}
+
+	immediate = {
+		hidden_effect = { owner = { add_prestige = 2 } }
+	}
 	
 	option = {
         name = allclan.99.a
         ai_chance = { factor = 0 }
-		owner = { add_prestige = 2 }
+		tooltip = { owner = { add_prestige = 2 } }
 	}
 }
 
