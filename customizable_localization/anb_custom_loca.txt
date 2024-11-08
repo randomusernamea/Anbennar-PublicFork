@@ -18815,6 +18815,16 @@ defined_text = {
 	random = no
 
 	text = {
+		localisation_key = kobold_the_body_gestalt_loc
+		trigger = {
+            AND = {
+                has_country_flag = kobildzan_the_protean_form
+                has_country_flag = kobildzan_the_holiest_flesh
+            }     
+        }
+	}
+
+	text = {
 		localisation_key = kobold_the_protean_form_loc
 		trigger = { has_country_flag = kobildzan_the_protean_form }
 	}

@@ -2527,10 +2527,13 @@ kob_2_c = {
 		trigger = {
 			owns_or_subject_of = 2863
 			2863 = {
-				NOT = {
-					has_province_modifier = ruined_hold
-					has_province_modifier = partially_ruined_hold
-					has_province_modifier = damaged_hold
+				custom_trigger_tooltip = {
+					tooltip = damaged_hold_tt
+					NOT = {
+						has_province_modifier = ruined_hold
+						has_province_modifier = partially_ruined_hold
+						has_province_modifier = damaged_hold
+					}
 				}
 			}
 
@@ -2544,16 +2547,48 @@ kob_2_c = {
 					value = 32000
 				}
 			}
+			Z56 = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
 		}
 
 		effect = {
+			
 			if = {
-				limit = { 2863 = { owned_by = Z55 } } # Darkscale
-				2863 = { change_culture = darkscale_kobold }
-			} else = {
-				2863 = { change_culture = kobildzani_kobold }
+				limit = { NOT = { 2863 = { owned_by = Z56 } } }
+				hidden_effect = {
+					2863 = {
+						add_core = Z56
+						cede_province = ROOT
+					}
+					every_owned_province = {
+						limit = {
+							is_core = Z55
+						}
+						add_core = Z56
+						remove_core = Z55
+					}
+					release = Z56
+					Z55 = {
+						if = {
+							limit = { is_subject_of = ROOT }
+							every_owned_province = {
+								add_core = Z56
+								remove_core = Z55
+								cede_province = Z56
+							}						
+						}
+					}
+				}
+			} 
+			2863 = { change_culture = darkscale_kobold }
+			create_subject = {
+				subject_type = twin_empire
+				subject = Z56
 			}
-
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = red
                 SLOT = 3
@@ -2720,7 +2755,7 @@ kob_3_c = {
 			country_event = { id = flavor_kobildzan.19 }
 		}
 	}
-	Z38_a_second_draconic_conference = {
+	Z38_draconic_unity = {
 		icon = mission_mushroom_cloud 
 		position = 18
 		required_missions = { 
@@ -2774,9 +2809,8 @@ kob_3_c = {
 				tooltip = unlocked_gold_dragon_tt 
 				has_country_flag = unlocked_gold_dragon_3_upgraded
 			}
-
-			num_of_provinces_owned_or_owned_by_subjects_with = {
-				value = 3000
+			num_of_provinces_owned_or_owned_by_subjects_with = { #note: see if testers like this or if it's bloat
+				value = 1000 
 				OR = {
 					religion = kobold_dragon_cult
 					religion = drozma_tur

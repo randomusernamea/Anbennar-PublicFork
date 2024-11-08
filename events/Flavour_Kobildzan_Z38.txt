@@ -137,6 +137,9 @@ country_event = { #In the Flesh
 				}
 			}
 		}
+		hidden_effect = {
+			set_country_flag = freaked_out_about_dragon
+		}
 	}
 }
 
@@ -992,6 +995,30 @@ country_event = { #A Second Family Reunion
 			name = Z38_call_of_the_dragon_4
 			duration = -1
 		}
+		if = {
+			limit = { has_country_flag = kobildzan_the_protean_form }
+			hidden_effect = { set_country_flag = kobildzan_the_holiest_flesh }
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_the_holiest_flesh_dummy
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = Z38_the_holiest_flesh_regiment_mod
+				duration = -1
+			}
+		}
+		else = {
+			hidden_effect = { set_country_flag = kobildzan_the_protean_form }
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_the_protean_form_dummy
+					duration = -1
+				}
+			}
+		}
+		artifice_granted_20 = yes
 	}
 }
 
@@ -1001,6 +1028,8 @@ country_event = { #A Single Celled Kobold
 	desc = flavor_kobildzan.21.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = single_celled_kobold } }
 
 	option = { #Shut down the tests!
 		name = flavor_kobildzan.21.a
@@ -1025,6 +1054,9 @@ country_event = { #The Dragon Queens
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
+	immediate = { hidden_effect = { set_country_flag = dragon_queens } }
+
+
 	option = { #Drag is a solemn art!
 		name = flavor_kobildzan.22.a
 		add_country_modifier = {
@@ -1047,6 +1079,8 @@ country_event = { #Ascending to Greed
 	desc = flavor_kobildzan.23.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = ascending_to_greed } }
 
 	option = { #Send in the army, he must be crushed!
 		name = flavor_kobildzan.23.a
@@ -1083,6 +1117,9 @@ country_event = { #The Chosen Several
 	desc = flavor_kobildzan.24.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = chosen_several } }
+
 
 	option = { #Dragons must rule over kobolds!
 		name = flavor_kobildzan.24.a
