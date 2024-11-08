@@ -1619,6 +1619,10 @@ giberd_ryalanar_conquest = {
 		}
 		effect = {
 			add_treasury = -1000
+			add_country_modifier = {
+				name = giberd_artificers_of_cannor_modifier
+				duration = 7300
+			}
 			275 = {
 				add_gnomish_minority_size_effect = yes
 			}
