@@ -63,60 +63,6 @@ artifice_has_points_40 = {
 	}
 }
 
-num_society_artifice_inventions_discovered = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_society_artifice_inventions_discovered_tooltip
-		has_discovered_all_society_tier_1_inventions = yes
-		has_discovered_all_society_tier_2_inventions = yes
-		has_discovered_all_society_tier_3_inventions = yes
-	}
-}
-
-num_military_artifice_inventions_discovered = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_military_artifice_inventions_discovered_tooltip
-		has_discovered_all_military_tier_1_inventions = yes
-		has_discovered_all_military_tier_2_inventions = yes
-		has_discovered_all_military_tier_3_inventions = yes
-	}
-}
-
-num_economic_artifice_inventions_discovered = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_economic_artifice_inventions_discovered_tooltip
-		has_discovered_all_economic_tier_1_inventions = yes
-		has_discovered_all_economic_tier_2_inventions = yes
-		has_discovered_all_economic_tier_3_inventions = yes
-	}
-}
-
-num_artifice_inventions_discovered_tier_1 = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_artifice_inventions_discovered_tooltip_tier_1
-		has_discovered_all_tier_1_inventions = yes
-	}
-}
-
-num_artifice_inventions_discovered_tier_2 = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_artifice_inventions_discovered_tooltip_tier_2
-		has_discovered_all_tier_2_inventions = yes
-	}
-}
-
-num_artifice_inventions_discovered_tier_3 = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_artifice_inventions_discovered_tooltip_tier_3
-		has_discovered_all_tier_3_inventions = yes
-	}
-}
-
 has_active_all_economic_tier_1_inventions = {
 	has_estate_privilege = artifice_invention_artificer_exo_arms
 	has_estate_privilege = artifice_invention_spell_in_a_box
@@ -236,32 +182,6 @@ has_active_all_military_tier_3_inventions = {
 	has_estate_privilege = artifice_invention_damestear_reactor_megacannon
 }
 
-num_society_artifice_inventions_active = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_society_artifice_inventions_active_tooltip
-		has_active_all_society_tier_1_inventions = yes
-		has_active_all_society_tier_2_inventions = yes
-		has_active_all_society_tier_3_inventions = yes
-	}
-}
-
-num_society_artifice_inventions_active_tier_2 = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_society_artifice_inventions_active_tooltip_tier_2
-		has_active_all_society_tier_2_inventions = yes
-	}
-}
-
-num_military_artifice_inventions_active_tier_3 = {
-	calc_true_if = {
-		amount = $VAL$
-		desc = num_military_artifice_inventions_active_tooltip_tier_3
-		has_active_all_military_tier_3_inventions = yes
-	}
-}
-
 has_active_all_tier_1_inventions = {
 	has_active_all_economic_tier_1_inventions = yes
 	has_active_all_military_tier_1_inventions = yes
@@ -280,11 +200,99 @@ has_active_all_tier_3_inventions = {
 	has_active_all_society_tier_3_inventions = yes
 }
 
-num_artifice_inventions_active_tier_2 = {
+num_society_artifice_inventions_active = {
 	calc_true_if = {
 		amount = $VAL$
-		desc = num_artifice_inventions_active_tooltip_tier_2
-		has_active_all_tier_2_inventions = yes
+		desc = num_society_artifice_inventions_active_tooltip
+		has_active_all_society_tier_1_inventions = yes
+		has_active_all_society_tier_2_inventions = yes
+		has_active_all_society_tier_3_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_1
+		has_active_all_society_tier_1_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_2
+		has_active_all_society_tier_2_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_3
+		has_active_all_society_tier_3_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip
+		has_active_all_economic_tier_1_inventions = yes
+		has_active_all_economic_tier_2_inventions = yes
+		has_active_all_economic_tier_3_inventions = yes
+	}
+}
+num_economic_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_1
+		has_active_all_economic_tier_1_inventions = yes
+	}
+}
+num_economic_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_2
+		has_active_all_economic_tier_2_inventions = yes
+	}
+}
+num_economic_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_3
+		has_active_all_economic_tier_3_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip
+		has_active_all_military_tier_1_inventions = yes
+		has_active_all_military_tier_2_inventions = yes
+		has_active_all_military_tier_3_inventions = yes
+	}
+}
+num_military_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_1
+		has_active_all_military_tier_1_inventions = yes
+	}
+}
+num_military_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_2
+		has_active_all_military_tier_2_inventions = yes
+	}
+}
+num_military_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_3
+		has_active_all_military_tier_3_inventions = yes
 	}
 }
 
@@ -295,6 +303,82 @@ num_artifice_inventions_active = {
 		has_active_all_tier_1_inventions = yes
 		has_active_all_tier_2_inventions = yes
 		has_active_all_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_1
+		has_active_all_tier_1_inventions = yes
+	}
+}
+num_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_2
+		has_active_all_tier_2_inventions = yes
+	}
+}
+num_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_3
+		has_active_all_tier_3_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_discovered_tooltip
+		has_discovered_all_society_tier_1_inventions = yes
+		has_discovered_all_society_tier_2_inventions = yes
+		has_discovered_all_society_tier_3_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_discovered_tooltip
+		has_discovered_all_military_tier_1_inventions = yes
+		has_discovered_all_military_tier_2_inventions = yes
+		has_discovered_all_military_tier_3_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_discovered_tooltip
+		has_discovered_all_economic_tier_1_inventions = yes
+		has_discovered_all_economic_tier_2_inventions = yes
+		has_discovered_all_economic_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_1
+		has_discovered_all_tier_1_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_2
+		has_discovered_all_tier_2_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_3
+		has_discovered_all_tier_3_inventions = yes
 	}
 }
 
