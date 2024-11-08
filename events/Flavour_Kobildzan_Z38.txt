@@ -1,558 +1,1191 @@
+namespace = flavour_kobildzan
 
-
-namespace = flavor_kobildzan
-
-country_event = {
-	id = flavor_kobildzan.1
-	title = flavor_kobildzan.1.t
-	desc = flavor_kobildzan.1.d
-	picture = DIVERSE_COURT_eventPicture
-	
-	fire_only_once = yes
+country_event = { #The Meaning of Dragonfire
+	id = flavour_kobildzan.1
+	title = flavour_kobildzan.1.t
+	desc = flavour_kobildzan.1.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes
-	
-	trigger = {
-		always = yes
-	}
-	
-	# Dragon path
-	option = {		
-		name = flavor_kobildzan.1.a
-		ai_chance = { factor = 50 }	
-		hidden_effect = { set_country_flag = kobold_dragon_path }
-		swap_non_generic_missions = yes
+
+	option = { #Power!
+		name = flavour_kobildzan.1.a
+		custom_tooltip = dragons_mean_power_tt 
+		hidden_effect = { set_country_flag = dragons_mean_power }
 		add_country_modifier = {
-			name = narrowminded_modifier
+			name = Z38_dragons_mean_power
 			duration = 3650
 		}
-		country_event = {
-			id = flavor_kobildzan.20
-			days = 3650
-		}
 	}
-	
-	# Artificier path
-	option = {		
-		name = flavor_kobildzan.1.b
-		ai_chance = { factor = 50 }	
-		hidden_effect = { set_country_flag = kobold_artificier_path }
-		swap_non_generic_missions = yes
-		
+	option = { #Change!
+		name = flavour_kobildzan.1.b
+		custom_tooltip = dragons_mean_change_tt 
+		hidden_effect = { set_country_flag = dragons_mean_change }
 		add_country_modifier = {
-			name = innovative_modifier
+			name = Z38_dragons_mean_change
 			duration = 3650
 		}
-		country_event = {
-			id = flavor_kobildzan.21
-			days = 3650
-		}
 	}
 }
 
-#The DragonSpawn
-country_event = {
-	id = flavor_kobildzan.2
-	title = flavor_kobildzan.2.t
-	desc = flavor_kobildzan.2.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
+country_event = { #To Become Dragons
+	id = flavour_kobildzan.2
+	title = flavour_kobildzan.2.t
+	desc = flavour_kobildzan.2.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes
-	
-	trigger = {
-		always = yes
-	}
-	
-	# Dragon Spawn
-	option = {		
-		name = flavor_kobildzan.2.a
-		ai_chance = { factor = 50 }	
-		define_ruler = {
-			name = "Zrakar"
-			age = 18
-			adm = 4
-			dip = 4
-			mil = 5
-		}
-		add_ruler_personality = mage_personality
-		add_ruler_modifier = {
-			name = kobold_dragonspawn
-			duration = -1
-		}
-	}
-}
 
-country_event = {
-	id = flavor_kobildzan.5
-	title = flavor_kobildzan.5.t
-	desc = flavor_kobildzan.5.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	major = yes
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 5
-		
-		modifier = {
-			factor = 0.5
-			REB = { check_variable = { dragon_cult_hoard = 40000 } }
-		}
-	}
-	
-	trigger = {
-		capital_scope = { continent = europe }
-		NOT = { religion = kobold_dragon_cult }
-		REB = { check_variable = { dragon_cult_hoard = 35000 } }
-	}
-	
-	option = {		
-		name = flavor_kobildzan.5.a
-		ai_chance = { factor = 50 }	
-	}
-}
-
-#The Dragon's Roar
-country_event = {
-	id = flavor_kobildzan.6
-	title = flavor_kobildzan.6.t
-	desc = flavor_kobildzan.6.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	major = yes
-	
-	mean_time_to_happen = {
-		years = 150
-		
-		modifier = {
-			factor = 0.9
-			REB = { check_variable = { dragon_cult_hoard = 40000 } }
-		}
-		modifier = {
-			factor = 0.8
-			REB = { check_variable = { dragon_cult_hoard = 50000 } }
-		}
-		modifier = {
-			factor = 0.7
-			REB = { check_variable = { dragon_cult_hoard = 60000 } }
-		}
-		modifier = {
-			factor = 0.2
-			REB = { check_variable = { dragon_cult_hoard = 75000 } }
-		}
-	}
-	
-	trigger = {
-		owns = 189
-		REB = { check_variable = { dragon_cult_hoard = 30000 } }
-		has_country_modifier = kobold_administration
-		OR = { has_country_flag = kobold_artificier_path has_country_flag = kobold_dragon_path  }
-	}
-	
-	immediate = {
-		hidden_effect = { set_global_flag = dragon_roar }
-	}
-	
-	option = {	
-		name = flavor_kobildzan.6.a
-		ai_chance = { factor = 50 }	
-		add_yearly_manpower = -5
-		add_stability = -3
-		add_country_modifier = {
-			name = kobold_aftermath_of_the_dragon_roar
-			duration = 3650
-		}
-		189 = {
-			remove_province_modifier = kobold_hoard_1
-			remove_province_modifier = kobold_hoard_2
-			remove_province_modifier = kobold_hoard_3
-			remove_province_modifier = kobold_hoard_4
-			remove_province_modifier = kobold_hoard_5
-			remove_province_modifier = kobold_hoard_6
-			remove_province_modifier = kobold_hoard_7
-			remove_province_modifier = kobold_hoard_8
-			remove_province_modifier = kobold_hoard_9
-			remove_province_modifier = kobold_hoard_10
-			remove_province_modifier = kobold_hoard_11
-			add_base_production = -3
-			add_base_tax = -3
-			add_base_manpower = -3
-			add_devastation = 100
-			add_permanent_province_modifier = {
-				name = devasted_province
-				duration = 1825
-			}
-		}
-		custom_tooltip = dragons_roar_1_tt
-		custom_tooltip = dragons_roar_2_tt
-		hidden_effect = {
-			dragondepth_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			dragonmaw_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			dragonheart_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			dragonheights_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			westmoor_proper_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			westmounts_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			dragonhills_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			gnomish_pass_area = {
-				add_base_production = -2
-				add_base_tax = -2
-				add_base_manpower = -2
-				add_devastation = 50
-			}
-			dragon_coast_region = {
-				random_list = {
-					33 = { add_base_manpower = -1 }
-					33 = { add_base_tax = -1 }
-					33 = { add_base_production = -1 }
-				}
-				add_devastation = 25
-			}
-			alenic_frontier_region = {
-				random_list = {
-					33 = { add_base_manpower = -1 }
-					33 = { add_base_tax = -1 }
-					33 = { add_base_production = -1 }
-				}
-				add_devastation = 25
-			}
-			damescrown_region = {
-				random_list = {
-					33 = { add_base_manpower = -1 }
-					33 = { add_base_tax = -1 }
-					33 = { add_base_production = -1 }
-				}
-				add_devastation = 25
-			}
-			small_country_region = {
-				random_list = {
-					33 = { add_base_manpower = -1 }
-					33 = { add_base_tax = -1 }
-					33 = { add_base_production = -1 }
-				}
-				add_devastation = 25
-			}
-		}
-		hidden_effect = { REB = { set_variable = { dragon_cult_hoard = 0 } } }
-	}
-}
-
-#The Dragon Gift
-country_event = {
-	id = flavor_kobildzan.7
-	title = flavor_kobildzan.7.t
-	desc = flavor_kobildzan.7.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 2
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-		owns = 189
-		NOT = { 189 = { has_province_modifier = devasted_province } }
-	}
-	
-	option = {		
-		name = flavor_kobildzan.7.a
-		ai_chance = { factor = 50 }	
-		189 = {
-			add_permanent_province_modifier = {
-				name = the_dragon_gift
-				duration = -1
-			}
-			if = {
-				limit = { trade_goods = copper }
-				change_trade_goods = gems
-			}
-		}
-	}
-}
-
-#The Dragon Will
-country_event = {
-	id = flavor_kobildzan.8
-	title = flavor_kobildzan.8.t
-	desc = flavor_kobildzan.8.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 10
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-		has_country_flag = kobold_dragon_path
-	}
-	
-	option = {		
-		name = flavor_kobildzan.8.a
-		ai_chance = { factor = 50 }	
-		add_country_modifier = {
-			name = kobold_dragon_will
-			duration = -1
-		}
-	}
-}
-
-#The Dragon Fire
-country_event = {
-	id = flavor_kobildzan.9
-	title = flavor_kobildzan.9.t
-	desc = flavor_kobildzan.9.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 10
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-		has_country_flag = kobold_artificier_path
-	}
-	
-	option = {		
-		name = flavor_kobildzan.9.a
-		ai_chance = { factor = 50 }	
-		add_country_modifier = {
-			name = kobold_dragon_fire
-			duration = -1
-		}
-	}
-}
-
-#The biggest cavern
-country_event = {
-	id = flavor_kobildzan.10
-	title = flavor_kobildzan.10.t
-	desc = {
-		trigger = { has_country_flag = kobold_dragon_path }
-		desc = flavor_kobildzan.10.d
-	}
-	desc = {
-		trigger = { has_country_flag = kobold_artificier_path }
-		desc = flavor_kobildzan.10.dd
-	}
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 20
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-		owns = 189
-		OR = {
-			has_country_flag = kobold_artificier_path
-			has_country_flag = kobold_dragon_path
-		}
-	}
-	#Dragon's Heart
-	option = {		
-		name = flavor_kobildzan.10.a
-		ai_chance = { factor = 50 }	
-		trigger = { has_country_flag = kobold_dragon_path }
-		189 = {
-			change_province_name = "Dragon's Heart"
-			rename_capital = "Dragon's Heart"
-		}
-		add_country_modifier = {
-			name = kobold_dragon_heart
-			duration = -1
-		}
-	}
-	#Lava Warrens
-	option = {		
-		name = flavor_kobildzan.10.a
-		ai_chance = { factor = 50 }	
-		trigger = { has_country_flag = kobold_artificier_path }
-		189 = {
-			change_province_name = "Kobildzex City"
-			rename_capital = "Lava Warrens"
-			add_province_modifier = {
-				name = kobold_rejuvenate_capital
-				duration = 3650
-			}
-		}
-	}
-}
-#The Dragon's Spawns
-country_event = {
-	id = flavor_kobildzan.11
-	title = flavor_kobildzan.11.t
-	desc = flavor_kobildzan.11.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 5
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-		NOT = { has_country_flag = kobold_aftermath_of_the_dragon_roar }
-	}
-	
-	option = {		
-		name = flavor_kobildzan.11.a
-		ai_chance = { factor = 50 }	
-		add_country_modifier = {
-			name = kobold_dragon_spawn
-			duration = 7300
-		}
-	}
-}
-
-#The Fire Touched, dude with stronger scale
-country_event = {
-	id = flavor_kobildzan.12
-	title = flavor_kobildzan.12.t
-	desc = flavor_kobildzan.12.d
-	picture = GREAT_BUILDING_eventPicture
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		years = 25
-	}
-	
-	trigger = {
-		tag = Z38
-		has_global_flag = dragon_roar
-	}
-	
-	option = {		
-		name = flavor_kobildzan.12.a
-		ai_chance = { factor = 50 }	
-		add_country_modifier = {
-			name = kobold_fire_touched
-			duration = -1
-		}
-	}
-}
-
-country_event = { #dragon path govt-change
-	id = flavor_kobildzan.20
-	title = flavor_kobildzan.20.t
-	desc = flavor_kobildzan.20.d
-	picture = WITCHBURNING_eventPicture
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-		
-	option = {		
-		name = flavor_kobildzan.20.a
-		ai_chance = { factor = 1 }	
-		change_government = theocracy
-		add_government_reform = leading_clergy_reform
-	}
-	option = {
-		name = flavor_kobildzan.20.b
-		ai_chance = { factor = 5 }
-		reduce_legitimacy_medium_effect = yes
-	}
-}
-
-country_event = { #artificer path govt-change
-	id = flavor_kobildzan.21
-	title = flavor_kobildzan.21.t
-	desc = flavor_kobildzan.21.d
-	picture = BIG_BOOK_eventPicture
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-		
-	option = {		
-		name = flavor_kobildzan.21.a
-		ai_chance = { factor = 1 }	
+	option = { #WE ARE KOBILDZAN! OF DRAGONS AND KOBOLDS!
+		name = flavour_kobildzan.2.a
 		change_government = republic
 		add_government_reform = technocracy_republic_reform
-	}
-	option = {
-		name = flavor_kobildzan.21.b
-		ai_chance = { factor = 5 }
-		reduce_legitimacy_medium_effect = yes
-	}
-}
-
-country_event = {
-	id = flavor_kobildzan.30
-	title = flavor_kobildzan.30.t
-	desc = flavor_kobildzan.30.d
-	picture = COUNTRY_COLLAPSE_eventPicture
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	
-	option = {
-		name = flavor_kobildzan.30.a
-		ai_chance = { factor = 1 }
-		213 = { 
-			change_culture = ROOT
-			change_religion = ROOT
-			add_devastation = 75
-			add_base_production = -2
-			add_base_manpower = -2
+		if = {
+			limit = { is_tribal = no }
+			if = {
+				limit = { reform_level = 5 }
+				change_government_reform_progress = 50
+			}
+			else_if = {
+				limit = { reform_level = 4 }
+				change_government_reform_progress = 40				
+			}
+			else_if = {
+				limit = { reform_level = 3 }
+				change_government_reform_progress = 30				
+			}
+			else_if = {
+				limit = { reform_level = 2 }
+				change_government_reform_progress = 20				
+			}
 		}
-		reverse_add_opinion = {
-			who = A13
-			modifier = kobold_eagle_slaughter
-		}
-		add_country_modifier = { 
-			name = kobold_avenged_on_barbarism
-			duration = 7300
-		}
+		custom_tooltip = gain_reform_progress_per_reform_level_tt 
 	}
 }
 
+country_event = { #In the Flesh
+	id = flavour_kobildzan.3
+	title = flavour_kobildzan.3.t
+	desc = flavour_kobildzan.3.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #WE'RE GONNA MEET A DRAGON!!!
+		name = flavour_kobildzan.3.a
+		rzenta_region = {
+			discover_country = ROOT
+		}
+		1191 = {
+			owner = {
+				add_opinion = { 
+					who = ROOT
+					modifier = tribute_to_a_dragon
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = tribute_to_a_dragon
+				}
+				ROOT = {
+					capital_scope = {
+						discover_country = prev
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = freaked_out_about_dragon
+		}
+	}
+}
+
+country_event = { #Meeting Varlengeilt
+	id = flavour_kobildzan.4
+	title = flavour_kobildzan.4.t
+	desc = flavour_kobildzan.4.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #A DRAGON LIKES US!!!
+		name = flavour_kobildzan.4.a
+		rzenta_region = {
+			limit = { NOT = { is_empty = yes } }
+			add_claim = ROOT
+		}
+		every_subject_country = {
+			limit = {
+				capital_scope = { superregion = ynn_superregion } 
+				NOT = { capital_scope = { colonial_region = colonial_broken_sea }  }
+			}
+			change_religion = drozma_tur
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = kobold_dragon_cult }
+					change_religion = drozma_tur
+				}
+			}
+		}
+		largest_increase_of_ruinborn_tolerance_effect = yes 
+	}
+}
+
+country_event = { #To Find Tayekan
+	id = flavour_kobildzan.5
+	title = flavour_kobildzan.5.t
+	desc = flavour_kobildzan.5.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #A conflict of faith and kind.
+		name = flavour_kobildzan.5.a
+		if = {
+			limit = {
+				OR = {
+					exists = H31
+					exists = H30
+					exists = H32
+					exists = U31
+				}
+			}
+			custom_tooltip = to_find_tayekan_1_tt 
+			random_owned_province = {
+				limit = { culture_group = kobold }
+				remove_random_development = yes
+			}
+			if = {
+				limit = { exists = H31 }
+				H31 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = H30 }
+				H30 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}				
+			}
+			else_if = {
+				limit = { exists = H32 }
+				H32 = {
+					random_owned_province = {
+						add_random_development = 2
+					}
+				}				
+			}	
+			else = {
+				U31 = {
+					random_owned_province = {
+						add_random_development = 2
+					}					
+				}
+			}
+			hidden_effect = {
+				country_event = { id = flavour_kobildzan.6 days = 1825 }
+				country_event = { id = flavour_kobildzan.6 days = 3650 }
+				country_event = { id = flavour_kobildzan.6 days = 5475 }
+			}		
+		}
+		else = {
+			custom_tooltip = to_find_tayekan_2_tt 
+			random_owned_province = {
+				limit = { culture_group = kobold }
+				remove_random_development = yes
+			}
+			hidden_effect = { set_country_flag = kobildzan_artificer_spawn }
+		}
+	}
+}
+
+country_event = { #Artificer Malcontents
+	id = flavour_kobildzan.6
+	title = flavour_kobildzan.6.t
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					189 = { has_province_flag = kobold_name_11 }
+					189 = { has_province_flag = kobold_name_12 }
+					189 = { has_province_flag = kobold_name_13 }
+					189 = { has_province_flag = kobold_name_14 }
+					189 = { has_province_flag = kobold_name_15 }
+					189 = { has_province_flag = kobold_name_16 }
+					189 = { has_province_flag = kobold_name_17 }
+					189 = { has_province_flag = kobold_name_18 }
+					189 = { has_province_flag = kobold_name_19 }
+					189 = { has_province_flag = kobold_name_20 }
+					189 = { has_province_flag = kobold_name_21 }					
+				}
+			}
+		}
+		desc = flavour_kobildzan.6.desc1
+	}
+	desc = {
+		trigger = {
+			OR = {
+				189 = { has_province_flag = kobold_name_11 }
+				189 = { has_province_flag = kobold_name_12 }
+				189 = { has_province_flag = kobold_name_13 }
+				189 = { has_province_flag = kobold_name_14 }
+				189 = { has_province_flag = kobold_name_15 }
+				189 = { has_province_flag = kobold_name_16 }
+				189 = { has_province_flag = kobold_name_17 }
+				189 = { has_province_flag = kobold_name_18 }
+				189 = { has_province_flag = kobold_name_19 }
+				189 = { has_province_flag = kobold_name_20 }
+				189 = { has_province_flag = kobold_name_21 }
+			}
+		}
+		desc = flavour_kobildzan.6.desc2
+	}
+	 
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	trigger = {
+		OR = {
+			exists = H31
+			exists = H30
+			exists = H32
+			exists = U31
+		}
+	}
+
+	option = { #We must conquer Haraf!
+		name = flavour_kobildzan.6.a
+		custom_tooltip = to_find_tayekan_1_tt 
+		random_owned_province = {
+			limit = { culture_group = kobold }
+			remove_random_development = yes
+		}
+		if = {
+			limit = { exists = H31 }
+			H31 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}
+		}
+		else_if = {
+			limit = { exists = H30 }
+			H30 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}				
+		}
+		else_if = {
+			limit = { exists = H32 }
+			H32 = {
+				random_owned_province = {
+					add_random_development = 2
+				}
+			}				
+		}	
+		else = {
+			U31 = {
+				random_owned_province = {
+					add_random_development = 2
+				}					
+			}
+		}		
+	}
+}
+
+country_event = { #A Meeting of Technopriests
+	id = flavour_kobildzan.7
+	title = flavour_kobildzan.7.t
+	desc = flavour_kobildzan.7.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Brillites!
+		name = flavour_kobildzan.7.a
+		add_country_modifier = {
+			name = Z38_perma_brilliance
+			duration = -1
+		}
+	}
+	option = { #Technomancers!
+		name = flavour_kobildzan.7.b
+		add_country_modifier = {
+			name = Z38_perma_technomancy
+			duration = -1
+		}
+	}
+	option = { #Mechanists!
+		name = flavour_kobildzan.7.c
+		add_country_modifier = {
+			name = Z38_perma_mechanists
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Twin Empires
+	id = flavour_kobildzan.8
+	title = flavour_kobildzan.8.t
+	desc = flavour_kobildzan.8.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Two empires, forged as kin!
+		goto = 1191	
+		name = flavour_kobildzan.8.a
+		hidden_effect = {	
+			1191 = {
+				cede_province = ROOT
+			}
+			every_owned_province = {
+				limit = {
+					superregion = ynn_superregion
+					NOT = { colonial_region = colonial_broken_sea }
+				}
+				add_core = H24
+			}
+		}
+		release = H24
+		create_subject = {
+			subject_type = twin_empire
+			subject = H24
+		}
+		hidden_effect = {
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						superregion = ynn_superregion
+						NOT = { colonial_region = colonial_broken_sea }
+					}
+					add_core = H24
+					cede_province = H24
+				}
+			}
+			set_country_flag = kobildzan_dragon_dominion_friends
+		}
+		hidden_effect = {
+			add_historical_friend = H24
+			H24 = { add_historical_friend = ROOT }
+		}
+		dolindha_region = {
+			add_permanent_claim = H24
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = green
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Artificery As One
+	id = flavour_kobildzan.9
+	title = flavour_kobildzan.9.t
+	desc = flavour_kobildzan.9.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Tayekan!
+		name = flavour_kobildzan.9.a
+		large_increase_of_goblin_tolerance_effect = yes
+		large_increase_of_gnomish_tolerance_effect = yes
+		custom_tooltip = gnomes_from_across_cannor_tt 
+		custom_tooltip = goblins_from_across_cannor_tt 
+		hidden_effect = {
+			for = {
+				amount = 8
+				effect = "
+					random_owned_province = {
+						limit = {
+							region = dragon_coast_region
+							NOT = { culture_group = gnomish } 
+							NOT = { has_large_gnomish_minority_trigger }
+						}
+						add_gnomish_minority_size_effect = yes 
+					}
+				"
+			}
+			for = {
+				amount = 4
+				effect = "
+					random_owned_province = {
+						limit = {
+							region = dragon_coast_region
+							NOT = { culture_group = goblin } 
+						}
+						add_goblin_minority_size_effect = yes 
+					}
+				"
+			}
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #The Greatest Hoard on Halann
+	id = flavour_kobildzan.10
+	title = flavour_kobildzan.10.t
+	desc = flavour_kobildzan.10.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #And then, the world shook again...
+		name = flavour_kobildzan.10.a
+		goto = 189
+		country_event = { id = flavour_kobildzan.11 days = 1 }
+	}
+}
+
+country_event = { #The Dragon's Roar
+	id = flavour_kobildzan.11
+	title = flavour_kobildzan.11.t
+	desc = flavour_kobildzan.11.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Oh no.
+		name = flavour_kobildzan.11.a
+		custom_tooltip = dragons_roar_tt 
+		hidden_effect = {
+			189 = {
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 100
+				set_variable = {
+					which = dragon_cult_hoard
+					value = 0
+				}
+				upgrade_kobold_hoard = yes	
+				remove_province_modifier = kobold_hoard_0
+			}
+			dragon_coast_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = dragondepth_area
+							area = dragonheart_area
+							area = dragonmaw_area
+							area = dragonpoint_area
+							area = lonely_isle_area
+							area = storm_isles_area
+							area = dragondowns_area
+							area= reaver_coast_area
+							area = iochand_area
+							province_id = 174
+							province_id = 173
+							province_id = 179
+							province_id = 180
+							province_id = 345
+						}
+					}
+				}
+				remove_random_development = yes
+				add_devastation = 80
+			}
+			dragondowns_area = { add_devastation = 50 }
+			reaver_coast_area = { add_devastation = 50 }
+			174 = { add_devastation = 50 }
+			173 = { add_devastation = 50 }
+			180 = { add_devastation = 50 }
+			345 = { add_devastation = 50 }
+			
+			iochand_area = { add_devastation = 20 }
+			storm_isles_area = { add_devastation = 20 }
+			dragonpoint_area = { add_devastation = 20 }
+			179 = { add_devastation = 20 }
+			125 = { add_devastation = 20 }
+			128 = { add_devastation = 20 }
+
+			damescrown_region = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+
+			alenic_frontier_region = {
+				limit = {
+					NOT = {
+						area = coddorran_heights_area
+					}
+				}
+				remove_random_development = yes
+				add_devastation = 80
+			}
+			197 = { add_devastation = 50 }
+			200 = { add_devastation = 20 }
+			694 = { add_devastation = 20 }
+
+			small_country_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = norley_area
+							area = lorentish_approach_area
+							area = roysfort_area
+							province_id = 66
+						}
+					}
+				}				
+				add_devastation = 50					
+			}
+			norley_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}	
+			lorentish_approach_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}		
+			66 = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			roysfort_area = { add_devastation = 20 }
+
+
+			serpentshead_area = { add_devastation = 20 }
+			northern_greatwoods_area = {
+				limit = { NOT = { province_id = 700 } }
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			700 = { add_devastation = 50 }
+			dinesck_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+			west_chillsbay_area = {
+				remove_random_development = yes
+				add_devastation = 80 
+			}
+
+			east_chillsbay_area = { add_devastation = 50 }
+			wudhal_area = { add_devastation = 50 }
+			sondaar_area = { add_devastation = 50 }
+
+			cedesck_area = { add_devastation = 20 }
+			735 = { add_devastation = 20 }
+			736 = { add_devastation = 20 }
+			740 = { add_devastation = 20 }
+			987 = { add_devastation = 20 }
+
+			exwes_area = { add_devastation = 50 }
+			wesdam_area = { add_devastation = 20 }
+
+			
+			east_damesear_area = { add_devastation = 50 }
+			west_damesear_area = { add_devastation = 50 }
+			the_commons_area = { add_devastation = 50 }
+			heartlands_area = { add_devastation = 20 }
+			upper_luna_area = { add_devastation = 20 }
+			low_esmar_area = { add_devastation = 20 }
+			damerian_dales_area = { add_devastation = 50 }
+			silverwoods_area = { add_devastation = 50 }
+			cann_esmar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			ryalanar_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			konwell_area = { add_devastation = 50 }
+			bennonhill_area = { add_devastation = 50 }
+			songbarges_area = { add_devastation = 50 }
+			hearthswood_area = { add_devastation = 50 }
+			high_esmar_area = { add_devastation = 20 }
+			middle_luna_area = { add_devastation = 20 }
+			eastneck_area = { add_devastation = 20 }
+
+
+			redglades_area = { add_devastation = 20 }
+			ionnidar_area = { add_devastation = 20 }
+
+			dragondepth_area = { add_devastation = 20 }
+			dragonheart_area = { add_devastation = 20 }
+			dragonmaw_area = { add_devastation = 20 }
+			olavslund_area = { add_devastation = 20 }
+			elkaesals_slumber_area = { add_devastation = 20 }
+			nyrford_area = { add_devastation = 20 }
+			naugsvol_area = { add_devastation = 20 }
+			esfjall_area = { add_devastation = 20 }
+
+			west_castanor_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = merescker_area
+							area = nortmerewood_area
+							area = athfork_area
+							area = ebonmarck_area
+							area = balmire_area
+						}
+					}
+				}
+				add_devastation = 50 
+			}
+			balmire_area = {
+				remove_random_development = yes
+				add_devastation = 80				
+			}
+			merescker_area = { add_devastation = 20 }
+			nortmerewood_area = { add_devastation = 20 }
+			athfork_area = { add_devastation = 20 }
+			ebonmarck_area = { add_devastation = 20 }
+
+			teagansfield_area = {
+				remove_random_development = yes
+				add_devastation = 80
+			}
+			cursewood_area = { add_devastation = 50 }
+
+			north_ibevar_area = {
+				limit = { NOT = { province_id = 350 } }
+				add_devastation = 50
+			}
+			south_ibevar_area = { add_devastation = 20 }
+			350 = { add_devastation = 20 }
+			whistlevale_area = { add_devastation = 20 }
+			
+			nortmere_area = { add_devastation = 20 }
+			westgate_area = { add_devastation = 20 }
+			lower_nath_area = { add_devastation = 20 }
+			northyl_area = { add_devastation = 20 }
+			trialmount_area = { add_devastation = 20 }
+			castonath_area = { add_devastation = 20 }
+			southgate_area = { add_devastation = 20 }
+			country_event = { id = flavour_kobildzan.12 days = 365 }
+		}
+		add_stability = -3
+		add_country_modifier = {
+			name = Z38_the_consequences_of_the_roar
+			duration = 3650
+		}
+
+		hidden_effect = {
+			set_country_flag = Z38_had_roar_happen
+		}
+		swap_non_generic_missions = yes 
+	}
+}
+
+country_event = { #Aid from Aelantir
+	id = flavour_kobildzan.12
+	title = flavour_kobildzan.12.t
+	desc = flavour_kobildzan.12.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = dev2add
+				value = 0
+			}
+			export_to_variable  = {
+				which = dev2add
+				value = total_development
+				who=ROOT
+			}
+			every_subject_country = {
+				set_variable = {
+					which = vassaldev
+					value = 0
+				}
+				export_to_variable  = {
+					which = vassaldev
+					value = total_development
+				}
+				divide_variable = {
+					which = vassaldev
+					value = 2
+				}
+				ROOT = {
+					set_variable = {
+						which = vassaldev
+						which = PREV
+					}
+					change_variable = {            
+						which = dev2add
+						which = vassaldev
+					}
+				}
+			}
+			multiply_variable = {
+				which = dev2add
+				value = 2
+			}
+		}
+	}
+
+	option = { #Thank the dragons for Varlengeilt...
+		name = flavour_kobildzan.12.a
+		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt 
+		hidden_effect = {
+			every_owned_province = {
+				add_devastation = -10
+			}
+			set_country_flag = Z38_received_aelantir_aid
+			var_effect = { effect = add_treasury var = dev2add sign = + }
+		}
+	}
+}
+
+country_event = { #The Prodigal Father
+	id = flavour_kobildzan.13
+	title = flavour_kobildzan.13.t
+	desc = flavour_kobildzan.13.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Tayekan!
+		name = flavour_kobildzan.13.a
+		add_country_modifier = {
+			name = Z38_the_father_returned
+			duration = -1
+		}
+		add_stability = 3
+		hidden_effect = { set_country_flag = new_hoard }
+		187 = {
+			move_capital_effect = yes 
+			custom_tooltip = new_hoard_in_revenarki_tt
+			hidden_effect = {
+				set_variable = { 
+					which = dragon_cult_hoard 
+					value = 500 
+				} 		
+				upgrade_kobold_hoard = yes	
+			}
+		}	
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #The Kobildzani Conference
+	id = flavour_kobildzan.14
+	title = flavour_kobildzan.14.t
+	desc = flavour_kobildzan.14.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We must adapt to a volcanic world!
+		name = flavour_kobildzan.14.a
+		hidden_effect = {
+			set_country_flag = kobildzan_hyperdigestion
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_hyperdigestion_dummy
+				duration = -1
+			}
+		}
+		artifice_granted_10 = yes
+	}
+	option = { #We must become dragons!
+		name = flavour_kobildzan.14.b
+		hidden_effect = {
+			set_country_flag = kobildzan_dragonfire_sacs
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_dragonfire_sacs_dummy
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = Z38_dragonfire_sacs_regiment_mod
+			duration = -1
+		}
+		artifice_granted_10 = yes
+	}
+}
+
+country_event = { #Form and Function
+	id = flavour_kobildzan.15
+	title = flavour_kobildzan.15.t
+	desc = flavour_kobildzan.15.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We imbue our organs with magic!
+		name = flavour_kobildzan.15.a
+		hidden_effect = {
+			set_country_flag = kobildzan_mana_attunement_glands
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_mana_attunement_glands_dummy
+				duration = -1
+			}
+		}
+		artifice_granted_20 = yes
+	}
+	option = { #We inject our scales with ebonsteel!
+		name = flavour_kobildzan.15.b
+		hidden_effect = {
+			set_country_flag = kobildzan_ebonsteel_shieldscales
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_ebonsteel_shieldscales_dummy
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = Z38_ebonsteel_shieldscales_regiment_mod
+			duration = -1
+		}
+		artifice_granted_20 = yes
+	}
+}
+
+country_event = { #To Awaken the Beast
+	id = flavour_kobildzan.16
+	title = flavour_kobildzan.16.t
+	desc = flavour_kobildzan.16.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #To Elkaesal, the-- wait, what?
+		goto = 6271
+		name = flavour_kobildzan.16.a
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = white
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+		country_event = { id = flavour_kobildzan.17 days = 1 }
+	}
+}
+
+country_event = { #A Very Angry Lecture
+	id = flavour_kobildzan.17
+	title = flavour_kobildzan.17.t
+	desc = flavour_kobildzan.17.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We're so sorry!!!
+		name = flavour_kobildzan.17.a
+		custom_tooltip = lullaby_cannon_unlock_tt
+		hidden_effect = {
+			set_country_flag = can_use_lullaby_cannon
+		}
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #To Control Continents
+	id = flavour_kobildzan.18
+	title = flavour_kobildzan.18.t
+	desc = flavour_kobildzan.18.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #We are one people in many forms!
+		name = flavour_kobildzan.18.a
+		hidden_effect = {
+			set_country_flag = kobildzan_biocompatibility 
+		}
+		
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_biocompatibility_dummy
+				duration = -1
+			}
+		}
+		custom_tooltip = biocompatibility_explainer_tt
+		artifice_granted_20 = yes
+	}
+	option = { #We fly above our subjects!
+		name = flavour_kobildzan.18.b
+		hidden_effect = {
+			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_intercontinental_ballistic_kobolds_dummy
+				duration = -1
+			}
+		}
+		artifice_granted_20 = yes
+	}
+}
+
+country_event = { #Family Reunion
+	id = flavour_kobildzan.19
+	title = flavour_kobildzan.19.t
+	desc = flavour_kobildzan.19.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #Protean
+		name = flavour_kobildzan.19.a
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = the_protean_form_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_glidewing_membranes
+					has_country_flag = kobildzan_detachable_extra_limbs
+					has_country_flag = kobildzan_hyperdigestion
+					has_country_flag = kobildzan_biocompatibility
+					has_country_flag = kobildzan_mana_attunement_glands
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_protean_form 
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_the_protean_form_dummy
+				duration = -1
+			}
+		}
+		artifice_granted_20 = yes
+	}
+	option = { #Holiest flesh
+		name = flavour_kobildzan.19.b
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = the_holiest_flesh_trigger_tt #lex do this
+				calc_true_if = {
+					amount = 3
+					has_country_flag = kobildzan_claws_of_power
+					has_country_flag = kobildzan_ogre_sized_kobolds
+					has_country_flag = kobildzan_dragonfire_sacs
+					has_country_flag = kobildzan_intercontinental_ballistic_kobolds
+					has_country_flag = kobildzan_ebonsteel_shieldscales
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = kobildzan_the_holiest_flesh 
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_the_holiest_flesh_dummy
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = Z38_the_holiest_flesh_regiment_mod
+			duration = -1
+		}
+		artifice_granted_20 = yes
+	}
+}
+
+country_event = { #A Second Family Reunion
+	id = flavour_kobildzan.20
+	title = flavour_kobildzan.20.t
+	desc = flavour_kobildzan.20.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #wahoo
+		name = flavour_kobildzan.20.a
+		remove_country_modifier = Z38_call_of_the_dragon_3
+		add_country_modifier = {
+			name = Z38_call_of_the_dragon_4
+			duration = -1
+		}
+		if = {
+			limit = { has_country_flag = kobildzan_the_protean_form }
+			hidden_effect = { set_country_flag = kobildzan_the_holiest_flesh }
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_the_holiest_flesh_dummy
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = Z38_the_holiest_flesh_regiment_mod
+				duration = -1
+			}
+		}
+		else = {
+			hidden_effect = { set_country_flag = kobildzan_the_protean_form }
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_the_protean_form_dummy
+					duration = -1
+				}
+			}
+		}
+		artifice_granted_20 = yes
+	}
+}
+
+country_event = { #A Single Celled Kobold
+	id = flavour_kobildzan.21
+	title = flavour_kobildzan.21.t
+	desc = flavour_kobildzan.21.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = single_celled_kobold } }
+
+	option = { #Shut down the tests!
+		name = flavour_kobildzan.21.a
+		add_country_modifier = {
+			name = Z38_shut_down_tests
+			duration = 3650
+		}
+	}
+	option = { #We shall experiment with this mutation!
+		name = flavour_kobildzan.21.b
+		add_country_modifier = {
+			name = Z38_experimental_mutations
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Dragon Queens
+	id = flavour_kobildzan.22
+	title = flavour_kobildzan.22.t
+	desc = flavour_kobildzan.22.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = dragon_queens } }
+
+
+	option = { #Drag is a solemn art!
+		name = flavour_kobildzan.22.a
+		add_country_modifier = {
+			name = Z38_drag_a_solemn_art
+			duration = 3650
+		}
+	}
+	option = { #All entertainment deserves dragonfire!
+		name = flavour_kobildzan.22.b
+		add_country_modifier = {
+			name = Z38_drag_for_the_masses
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Ascending to Greed
+	id = flavour_kobildzan.23
+	title = flavour_kobildzan.23.t
+	desc = flavour_kobildzan.23.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = ascending_to_greed } }
+
+	option = { #Send in the army, he must be crushed!
+		name = flavour_kobildzan.23.a
+		add_yearly_manpower = -0.5
+		kill_leader = {
+			type = general
+		}
+	}
+	option = { #We embrace the Cult of Greed!
+		name = flavour_kobildzan.23.b
+		define_advisor = {
+			type = natural_scientist
+			skill = 5
+			cost_multiplier = 0.5
+		}
+		add_corruption = 2.5
+	}
+	option = { #Divert our spies to steal his research!
+		name = flavour_kobildzan.23.b
+		highlight = yes
+		trigger = {
+			has_idea_group = spy_ideas
+		}
+		add_country_modifier = {
+			name = Z38_infiltrating_the_cult_of_greed
+			duration = 3650
+		}
+	}	
+}
+
+country_event = { #The Chosen Several
+	id = flavour_kobildzan.24
+	title = flavour_kobildzan.24.t
+	desc = flavour_kobildzan.24.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	immediate = { hidden_effect = { set_country_flag = chosen_several } }
+
+
+	option = { #Dragons must rule over kobolds!
+		name = flavour_kobildzan.24.a
+		unlock_government_reform = {
+			government_reform = kobildzan_draconic_elites
+			tooltip = yes
+		}
+		if = {
+			limit = { reform_level = 9 }
+			add_government_reform = kobildzan_draconic_elites
+		}
+		
+	}
+	option = { #Everyone must become dragons!
+		name = flavour_kobildzan.24.b
+		unlock_government_reform = {
+			government_reform = kobildzan_draconic_masses
+			tooltip = yes
+		}
+		if = {
+			limit = { reform_level = 9 }
+			add_government_reform = kobildzan_draconic_masses
+		}
+	}
+}
+
+country_event = { #Biocompatibility Event
+	id = flavour_kobildzan.25
+	title = flavour_kobildzan.25.t
+	desc = flavour_kobildzan.25.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+	immediate = {
+		random_owned_province = {
+			save_event_target_as = biocompatibility_province
+		}
+	}
+
+	option = { #What a beautiful thing!
+		name = flavour_kobildzan.25.a
+		goto = biocompatibility_province
+		event_target:biocompatibility_province = {
+			area = {
+				biocompatibility_effect = yes
+			}
+		}
+		
+	}
+	option = { #Don't show me this again.
+		name = flavour_kobildzan.25.b
+		goto = biocompatibility_province
+		hidden_effect = { set_country_flag = hidden_biocompatibility }
+		custom_tooltip = hide_biocompatibility_tt 
+		event_target:biocompatibility_province = {
+			area = {
+				biocompatibility_effect = yes
+			}
+		}
+	}
+}

@@ -9225,3 +9225,61 @@ forge_council_reform = {
 		max_absolutism = -20
 	}
 }
+
+#kobildzan
+
+kobildzan_draconic_technopriests = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	allow_normal_conversion = no 
+	lock_level_when_selected = yes 
+	potential = { 
+		tag = Z38
+		mission_completed = Z38_the_compendium_of_dragons
+	}  
+ 
+	modifiers = { 
+		max_absolutism = 10
+		church_influence_modifier = 0.1
+	} 
+	custom_attributes = {
+		extra_artificer_capacity_20 = yes
+	}
+	effect = {
+		hidden_effect = {
+			change_variable = {
+				which = StaticArtificePoints
+				value = 20
+			}
+			update_artifice_points = yes
+		}
+	}
+}
+
+kobildzan_draconic_elites = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	potential = { 
+		tag = Z38
+		has_unlocked_government_reform = { government_reform = kobildzan_draconic_elites }
+	}  
+ 
+	modifiers = { 
+		max_absolutism = 30
+		autonomy_change_time = -0.05
+		nobles_loyalty_modifier = 0.1
+	} 
+}
+
+kobildzan_draconic_masses = {
+	icon = "legislative_sejm_reform" #LEX CHANGE THIS
+	potential = { 
+		tag = Z38
+		has_unlocked_government_reform = { government_reform = kobildzan_draconic_masses }
+	}  
+ 
+	modifiers = { 
+		max_absolutism = -30
+		land_morale = 0.1
+		years_of_nationalism = -5
+		burghers_loyalty_modifier = 0.1
+	} 
+}

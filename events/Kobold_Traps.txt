@@ -36,6 +36,10 @@ country_event = {
 				which = dameshead_available_traps
 				value = 0
 			}
+			set_variable = {
+				which = gerudia_available_traps
+				value = 0
+			}			
 			every_owned_province = { #Count how many forts there are
 				if = {
 					limit = { 
@@ -96,6 +100,18 @@ country_event = {
 								which = dameshead_available_traps
 								value = 1
 							}							
+						}					
+					}
+				}
+				else_if = {
+					limit = {
+						province_group = gerudian_kobold_traps
+						kobold_traps_individual_trigger = yes
+					}
+					ROOT = {
+						change_variable = {
+							which = gerudia_available_traps
+							value = 1
 						}
 					}
 				}
@@ -193,6 +209,22 @@ country_event = {
 		country_event = { id = kobold_traps.5 }
 		ai_chance = {
 			factor = 4
+		}
+	}
+	option = {
+		name = kobold_traps.1.g
+		trigger = {
+			has_country_flag = gerudian_traps_for_kobolds
+			any_owned_province = {
+				province_group = gerudian_kobold_traps
+				superregion = gerudia_superregion
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		custom_tooltip = kobold_traps.1.g.tt
+		country_event = { id = kobold_traps.33 }
+		ai_chance = {
+			factor = 0
 		}
 	}
 	option = {
@@ -978,7 +1010,6 @@ country_event = {
 	}
 }
 
-
 province_event = { # Our trap exploded!
 	id = kobold_traps.6
 	title = kobold_traps.6.title
@@ -1005,8 +1036,25 @@ province_event = { # Our trap exploded!
 				limit = { has_province_modifier = kobold_traps_lvl_2 }
 				remove_province_modifier = kobold_traps_lvl_2
 			}
-			else = {
+			else_if = {
+				limit = { has_province_modifier = kobold_traps_lvl_1 }
 				remove_province_modifier = kobold_traps_lvl_1
+			}	
+			else_if = {
+				limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
+				remove_province_modifier = modified_kobold_traps_lvl_4
+			}
+			else_if = {
+				limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
+				remove_province_modifier = modified_kobold_traps_lvl_3
+			}
+			else_if = {
+				limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
+				remove_province_modifier = modified_kobold_traps_lvl_2
+			}
+			else_if = {
+				limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
+				remove_province_modifier = modified_kobold_traps_lvl_1
 			}	
 			hidden_effect = { clr_province_flag = has_kobold_traps }
 			if = {
@@ -1060,23 +1108,39 @@ province_event = { # We're removing our traps!
 	option = { #Yeah, get rid of the traps.
 		name = kobold_traps.8.a
 		goto = ROOT
-			if = {
-				limit = { has_province_modifier = kobold_traps_lvl_4 }
-				remove_province_modifier = kobold_traps_lvl_4 
-			}
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_3 }
-				remove_province_modifier = kobold_traps_lvl_3 
-			}			
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_2 }
-				remove_province_modifier = kobold_traps_lvl_2 
-			}	
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_1 }
-				remove_province_modifier = kobold_traps_lvl_1 
-			}	
-			hidden_effect = { clr_province_flag = has_kobold_traps }
+		if = {
+			limit = { has_province_modifier = kobold_traps_lvl_4 }
+			remove_province_modifier = kobold_traps_lvl_4
+		}
+		else_if = {
+			limit = { has_province_modifier = kobold_traps_lvl_3 }
+			remove_province_modifier = kobold_traps_lvl_3
+		}
+		else_if = {
+			limit = { has_province_modifier = kobold_traps_lvl_2 }
+			remove_province_modifier = kobold_traps_lvl_2
+		}
+		else_if = {
+			limit = { has_province_modifier = kobold_traps_lvl_1 }
+			remove_province_modifier = kobold_traps_lvl_1
+		}	
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
+			remove_province_modifier = modified_kobold_traps_lvl_4
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
+			remove_province_modifier = modified_kobold_traps_lvl_3
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
+			remove_province_modifier = modified_kobold_traps_lvl_2
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
+			remove_province_modifier = modified_kobold_traps_lvl_1
+		}	
+		hidden_effect = { clr_province_flag = has_kobold_traps }
 		ai_chance = {
 			factor = 1
 		}
@@ -1104,19 +1168,35 @@ province_event = { # We're removing our traps!
 		}
 		if = {
 			limit = { has_province_modifier = kobold_traps_lvl_4 }
-			remove_province_modifier = kobold_traps_lvl_4 
+			remove_province_modifier = kobold_traps_lvl_4
 		}
 		else_if = {
 			limit = { has_province_modifier = kobold_traps_lvl_3 }
-			remove_province_modifier = kobold_traps_lvl_3 
-		}			
+			remove_province_modifier = kobold_traps_lvl_3
+		}
 		else_if = {
 			limit = { has_province_modifier = kobold_traps_lvl_2 }
-			remove_province_modifier = kobold_traps_lvl_2 
-		}	
+			remove_province_modifier = kobold_traps_lvl_2
+		}
 		else_if = {
 			limit = { has_province_modifier = kobold_traps_lvl_1 }
-			remove_province_modifier = kobold_traps_lvl_1 
+			remove_province_modifier = kobold_traps_lvl_1
+		}	
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
+			remove_province_modifier = modified_kobold_traps_lvl_4
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
+			remove_province_modifier = modified_kobold_traps_lvl_3
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
+			remove_province_modifier = modified_kobold_traps_lvl_2
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
+			remove_province_modifier = modified_kobold_traps_lvl_1
 		}	
 		hidden_effect = { 
 			clr_province_flag = has_kobold_traps 
@@ -1556,8 +1636,17 @@ province_event = { # Clan Conflicts
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
-				hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+				hidden_effect = {
+					if = {
+						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
+						187 = { upgrade_kobold_hoard = yes } 
+					}
+					else = {
+						189 = { change_variable = { dragon_cult_hoard = 100 } }
+						189 = { upgrade_kobold_hoard = yes } 
+					}
+				}
 			}
 			else = {
 				add_treasury = 100
@@ -1636,8 +1725,17 @@ province_event = { # Clan Conflicts
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
-				hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+				hidden_effect = {
+					if = {
+						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
+						187 = { upgrade_kobold_hoard = yes } 
+					}
+					else = {
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
+						189 = { upgrade_kobold_hoard = yes } 
+					}
+				}
 			}
 			else = {
 				add_treasury = 100
@@ -1716,8 +1814,17 @@ province_event = { # Refugee Pilgrims
 				}
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
-				hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
-				hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+				hidden_effect = {
+					if = {
+						limit = { has_country_flag = new_hoard }
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
+						187 = { upgrade_kobold_hoard = yes } 
+					}
+					else = {
+						187 = { change_variable = { dragon_cult_hoard = 100 } }
+						189 = { upgrade_kobold_hoard = yes } 
+					}
+				}
 			}
 			else = {
 				add_treasury = 100
@@ -2104,7 +2211,7 @@ country_event = { # Handler Event
 	immediate = {
 		hidden_effect = {
 			random_list = {
-				1 = { }
+				10 = { }
 				10 = { #Garrison Proves Potential
 					trigger = { NOT = { has_country_flag = garrison_proves_potential } }
 					country_event = { id = kobold_traps.20 } 
@@ -2234,6 +2341,59 @@ country_event = { # Handler Event
 						}
 					}
 					country_event = { id = kobold_traps.30 } 
+				}
+				300 = { #In the Flesh
+					trigger = {
+						NOT = { has_country_flag = freaked_out_about_dragon }
+						OR = {
+							any_owned_province = {
+								OR = {
+									region = broken_isles_region
+									region = rzenta_region
+								}
+							}
+							any_subject_country = {
+								any_owned_province = {
+									OR = {
+										region = broken_isles_region
+										region = rzenta_region
+									}
+								}						
+							}
+						}
+					}
+					country_event = { id = flavour_kobildzan.3 }
+				}
+				10 = { #Single Celled Kobold
+					trigger = {
+						NOT = { has_country_flag = single_celled_kobold }
+						mission_completed = Z38_acts_of_ascension 
+					}
+					country_event = { id = flavour_kobildzan.21 }
+				}
+				10 = { #The Dragon Queens
+					trigger = {
+						NOT = { has_country_flag = dragon_queens }
+						mission_completed = Z38_acts_of_ascension 
+					}
+					country_event = { id = flavour_kobildzan.22 }
+				}
+				10 = { #Ascending to Greed
+				trigger = {
+					NOT = { has_country_flag = ascending_to_greed }
+					mission_completed = Z38_acts_of_ascension 
+				}
+					country_event = { id = flavour_kobildzan.23 }
+				}
+				10 = { #The Chosen Several
+					trigger = {
+						NOT = { has_country_flag = chosen_several }
+						OR = {
+							mission_completed = Z38_last_gasps_of_heresy
+							mission_completed = Z38_interview_with_a_dragon
+						}
+					}
+					country_event = { id = flavour_kobildzan.24 }
 				}
 			}			
 		}
@@ -2869,6 +3029,243 @@ country_event = { # Trials and Trapulations
 					}
 				}
 			}
+		}
+	}
+}
+
+# Build the traps! (Gerudia)
+country_event = {
+	id = kobold_traps.33
+	title = kobold_traps.33.title
+	desc = kobold_traps.33.desc
+	picture = FAT_LOOT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { 
+		name = kobold_traps.33.a
+		trigger = {
+			733 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		kobold_trap_mastery_effect = yes
+		goto = 733
+		733 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				733 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.b
+		trigger = {
+			740 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		kobold_trap_mastery_effect = yes
+		goto = 740
+		740 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				740 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.c
+		trigger = {
+			952 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 952
+		kobold_trap_mastery_effect = yes
+		952 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				952 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.d
+		trigger = {
+			979 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 979
+		kobold_trap_mastery_effect = yes
+		979 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 8
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				979 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.e
+		trigger = {
+			984 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 984
+		kobold_trap_mastery_effect = yes
+		984 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 6
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				984 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.f
+		trigger = {
+			997 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		kobold_trap_mastery_effect = yes
+		goto = 997
+		997 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 4
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				997 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.g
+		trigger = {
+			998 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 998
+		kobold_trap_mastery_effect = yes
+		998 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				998 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.h
+		trigger = {
+			3187 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 3187
+		kobold_trap_mastery_effect = yes
+		3187 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				3187 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = { 
+		name = kobold_traps.33.i
+		trigger = {
+			4185 = { 
+				owned_by = ROOT 
+				kobold_traps_individual_trigger = yes
+			}
+		}
+		goto = 4185
+		kobold_trap_mastery_effect = yes
+		4185 = {
+			create_kobold_traps = yes
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_country_flag = not_cleared_for_new_traps 
+				4185 = {
+					has_fort_building_trigger = no
+				}
+			}
+		}
+	}
+	option = {
+		name = kobold_traps.1.f
+		if = {
+			limit = { ai = no }
+			country_event = { id = kobold_traps.1 }
+		}
+		ai_chance = {
+			factor = 1
 		}
 	}
 }

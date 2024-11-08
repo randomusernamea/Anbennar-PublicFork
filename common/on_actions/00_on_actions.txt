@@ -2050,7 +2050,7 @@ on_battle_lost_unit = {
 
 # province
 # root = location, from = country doing it
-on_added_to_trade_company ={
+on_added_to_trade_company = {
 	if = { #1.35
 		limit = { 
 			owner = { has_country_flag = adding_provinces_to_trade_c_merc_prod_flag } 
@@ -2058,11 +2058,19 @@ on_added_to_trade_company ={
 		owner = { add_mercantilism = 1 } 
 		add_base_production = 1 
 	}
+
+	# Kobilzdan MT
+	if = {
+		limit = {
+			owner = { has_country_flag = Z38_convert_tradecompanies }
+		}
+		add_province_modifier = { name = Z38_convert_tradecompanies_modifier duration = -1 }
+	}
 }
 
 # province
 # root = location, from = country doing it
-on_removed_from_company ={
+on_removed_from_company = {
 	if = { #1.35
 		limit = { 
 			owner = { has_country_flag = adding_provinces_to_trade_c_merc_prod_flag } 
@@ -2070,6 +2078,9 @@ on_removed_from_company ={
 		owner = { add_mercantilism = -1 } 
 		add_base_production = -1 
 	}
+
+	# Kobilzdan MT
+	remove_province_modifier = Z38_convert_tradecompanies_modifier
 }
 
 # province
@@ -10098,6 +10109,24 @@ on_five_year_pulse_3 = {
 				}
 				country_event = { id = kobold_traps.10 days = 60 }
 			}
+			if = {
+				limit = { has_country_flag = kobildzan_biocompatibility }
+				if = {
+					limit = { has_country_flag = hidden_biocompatibility }
+					random_owned_area = {
+						biocompatibility_effect = yes
+					}
+				}
+				else = {
+					country_event = { id = flavour_kobildzan.25 days = 90 }
+				}
+				every_subject_country = {
+					limit = { has_country_flag = kobildzan_biocompatibility }
+					random_owned_area = {
+						biocompatibility_effect = yes
+					}
+				}
+			}
 		}
 		country_event = { id = kobold_traps.15 } #whether kobold or not, check for kobildzan formation
 	}
@@ -11348,9 +11377,26 @@ on_province_owner_change = {
 			limit = { has_province_modifier = kobold_traps_lvl_2 }
 			remove_province_modifier = kobold_traps_lvl_2
 		}
-		else = {
+		else_if = {
+			limit = { has_province_modifier = kobold_traps_lvl_1 }
 			remove_province_modifier = kobold_traps_lvl_1
-		}			
+		}	
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
+			remove_province_modifier = modified_kobold_traps_lvl_4
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
+			remove_province_modifier = modified_kobold_traps_lvl_3
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
+			remove_province_modifier = modified_kobold_traps_lvl_2
+		}
+		else_if = {
+			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
+			remove_province_modifier = modified_kobold_traps_lvl_1
+		}		
 		if = {
 			limit = { has_building = fort_15th }
 			remove_building = fort_15th
@@ -12577,6 +12623,20 @@ on_culture_demoted = {
 			}
 		add_accepted_culture = moon_elf
 	 }
+	 if = {
+		limit = {
+			has_country_modifier = Z38_accepting_funny_gerudians
+			OR = {
+				NOT = { accepted_culture = west_dalr }
+				NOT = { accepted_culture = east_dalr }
+				NOT = { accepted_culture = olavish }
+			}
+		}
+		remove_country_modifier = Z38_accepting_funny_gerudians
+		remove_accepted_culture = west_dalr
+		remove_accepted_culture = east_dalr
+		remove_accepted_culture = olavish
+	}
 }
 
 # ROOT = country
@@ -13080,6 +13140,7 @@ on_dependency_gained = {
 			FROM = {
 				NOT = { tag = U43 }
 				culture_group = eordan_ruinborn_elf
+
 			}
 		}
 		FROM = {
@@ -13088,6 +13149,16 @@ on_dependency_gained = {
 			remove_historical_rival = H07
 			add_historical_friend = H07
 		}
+	}
+
+	# Kobilzdan
+	if = {
+		limit = {
+			tag = Z38
+			mission_completed = Z38_the_artificer_ruinborn
+		}
+
+		FROM = { add_country_modifier = { name = Z38_technological_union_of_north_aelantir duration = -1 } }
 	}
 }
 # ROOT = Overlord, FROM = Minor

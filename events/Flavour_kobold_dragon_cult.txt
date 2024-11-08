@@ -57,7 +57,16 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.b
 		
 		trigger = {
-			owns = 189
+			OR = {
+				AND = {
+					owns = 189
+					NOT = { has_country_flag = new_hoard }
+				}
+				AND = {
+					owns = 187
+					has_country_flag = new_hoard
+				}
+			}
 		}
 		if = { #Blue dragon upgrade proc
 			limit = { has_church_aspect = blue_dragon_1_upgraded }
@@ -541,13 +550,11 @@ country_event = {
 				add_legitimacy_equivalent = { amount = 3 republican_tradition = 3 }
 			}
 		}	
-		if = { #Actual hoard effect
-			limit = {
-				NOT = { has_global_flag = dragon_roar }
-			}
-			custom_tooltip = church_power_hoard_donation
-			hidden_effect = { 
-				REB = { 
+		# Actual hoard effect
+		if = {
+			limit = { has_country_flag = new_hoard }
+			hidden_effect = {
+				187 = {
 					set_variable = {
 						which = dev2add
 						which = PREV
@@ -556,12 +563,34 @@ country_event = {
 						which = dragon_cult_hoard 
 						which = dev2add 
 					} 
+					upgrade_kobold_hoard = yes 
 				} 
 			}
-			hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+			custom_tooltip = church_power_hoard_donation
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = Z38_had_roar_happen } }
+			hidden_effect = {
+				189 = {
+					set_variable = {
+						which = dev2add
+						which = PREV
+					}
+					change_variable = { 
+						which = dragon_cult_hoard 
+						which = dev2add 
+					} 
+					upgrade_kobold_hoard = yes 
+				} 
+				change_variable = {
+					which = kdc_festivals_held
+					value = 1
+				}
+			}			
+			custom_tooltip = church_power_hoard_donation
 		}
 		else = {
-			var_effect = { effect = add_treasury var = dev2add sign = + } 
+			var_effect = { effect = add_treasury var = dev2add sign = + }
 		}
 		ai_chance = { factor = 400 }	
 	}
@@ -1801,6 +1830,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
+						has_country_flag = green_dragon_3_upgraded
+						has_country_flag = brass_dragon_3_upgraded
 					}
 				}			
 			}
@@ -2973,6 +3004,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
+						has_country_flag = green_dragon_3_upgraded
+						has_country_flag = brass_dragon_3_upgraded
 					}
 				}
 			}
@@ -3015,7 +3048,12 @@ country_event = {
 	
 	trigger = {
 		religion = kobold_dragon_cult
-		NOT = { has_global_flag = dragon_roar }
+		NOT = {
+			AND = {
+				has_global_flag = dragon_roar 
+				has_country_flag = new_hoard
+			}
+		}
 	}
 	
 	# little investment
@@ -3025,11 +3063,20 @@ country_event = {
 		trigger = { treasury = 100 }
 		add_treasury = -100
 		add_church_power = 10
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
 		tooltip = { random = { chance = 10 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_1
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 100 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 100 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3040,12 +3087,21 @@ country_event = {
 		trigger = { treasury = 250 }
 		add_treasury = -250
 		add_church_power = 25
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 250 } } }
 		add_prestige = 2
 		tooltip = { random = { chance = 25 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_2
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 250 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 250 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3056,12 +3112,21 @@ country_event = {
 		trigger = { treasury = 500 }
 		add_treasury = -500
 		add_church_power = 50
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 500 } } }
 		add_prestige = 5
 		tooltip = { random = { chance = 50 add_stability_or_adm_power = yes } }
 		set_country_flag = hoard_chance_3
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 500 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 500 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3072,10 +3137,19 @@ country_event = {
 		trigger = { treasury = 1000 }
 		add_treasury = -1000
 		add_church_power = 100
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 1000 } } }
 		add_prestige = 10
 		add_stability_or_adm_power = yes
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 1000 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 1000 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3086,11 +3160,20 @@ country_event = {
 		trigger = { treasury = 2000 }
 		add_treasury = -2000
 		add_church_power = 200
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 2000 } } }
 		add_prestige = 25
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 2000 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 2000 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3100,14 +3183,23 @@ country_event = {
 		trigger = { treasury = 5000 }
 		add_treasury = -5000
 		add_church_power = 200
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 5300 } } }
 		add_prestige = 50
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 5300 } }
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 5300 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
@@ -3445,7 +3537,35 @@ country_event = { #Brass aspect 3
 country_event = { #Bronze aspect 1
 	id = flavour_kobold_dragon_cult.16
 	title = flavour_kobold_dragon_cult.16.t
-	desc = flavour_kobold_dragon_cult.16.d
+	desc = {
+		trigger = {
+			event_target:EmperorOfChina = { religion = aakhetist }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc1
+	}
+	desc = {
+		trigger = {
+			any_known_country = { is_emperor_of_china = yes }
+			NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+			NOT = { has_global_flag = ahati_disaster_began }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc2
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					event_target:EmperorOfChina = { religion = aakhetist }
+					AND = {
+						any_known_country = { is_emperor_of_china = yes }
+						NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+						NOT = { has_global_flag = ahati_disaster_began }
+					}
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.16.desc3
+	}	
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	
@@ -3553,13 +3673,27 @@ country_event = { #Bronze aspect 3
 		}
 		custom_tooltip = lose_fourth_of_hoard_tt
 		hidden_effect = {
-			REB = { 
-				multiply_variable = {
-					which = dragon_cult_hoard
-					value = 0.75
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = new_hoard }
+					187 = { 
+						multiply_variable = {
+							which = dragon_cult_hoard
+							value = 0.75
+						}
+					}
+					187 = { upgrade_kobold_hoard = yes } 
 				}
-			}
-			189 = { upgrade_kobold_hoard = yes } 
+				else = {
+					189 = { 
+						multiply_variable = {
+							which = dragon_cult_hoard
+							value = 0.75
+						}
+					}
+					189 = { upgrade_kobold_hoard = yes } 
+				}
+			} 
 		}
 	}
 }
@@ -3610,6 +3744,26 @@ country_event = { #Silver aspect 3
 	id = flavour_kobold_dragon_cult.21
 	title = flavour_kobold_dragon_cult.21.t
 	desc = flavour_kobold_dragon_cult.21.d
+	desc = {
+		trigger = {
+			AND = {
+				has_country_flag = blue_dragon_3_upgraded
+				has_country_flag = copper_dragon_3_upgraded
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc1
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				AND = {
+					has_country_flag = blue_dragon_3_upgraded
+					has_country_flag = copper_dragon_3_upgraded
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc2
+	}
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	
@@ -3724,6 +3878,10 @@ country_event = { #Notified about Ahati disaster
 	id = flavour_kobold_dragon_cult.25
 	title = flavour_kobold_dragon_cult.25.t
 	desc = flavour_kobold_dragon_cult.25.d
+	desc = {
+		trigger = {  }
+		desc = flavour_kobold_dragon_cult.25.desc_2
+	}
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	fire_only_once = yes

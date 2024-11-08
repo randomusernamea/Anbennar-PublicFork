@@ -520,6 +520,13 @@ province_event = {
 				
 				save_event_target_as = spawn_province
 			}
+			Z38 = {
+				if = { limit = { has_country_flag = kobildzan_artificer_spawn } }
+				country_event = { id = flavour_kobildzan.6 days = 825 }
+				country_event = { id = flavour_kobildzan.6 days = 2650 }
+				country_event = { id = flavour_kobildzan.6 days = 4475 }
+
+			}
 		}
 	}
 	
