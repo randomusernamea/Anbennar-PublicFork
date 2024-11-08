@@ -27,6 +27,8 @@ country_decisions = {
    	 	}
 		allow = {
 			hidden_trigger = {
+				culture_group = halfling # cannorian halflings are a subset of this, eliminates most nations immediately with 1 check
+				capital_scope = { continent = europe }
 				is_cannorian_halfling_primary_culture = yes
 			}
 			is_free_or_tributary_trigger = yes
