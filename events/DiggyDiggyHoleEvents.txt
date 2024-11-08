@@ -12253,7 +12253,6 @@ country_event = { #Event manager for autorails
 	option = { #Continue as usual and don't notify for 5 years
         name = diggy.760.a
         ai_chance = { factor = 0 }
-		add_prestige = 1 
 		custom_tooltip = no_notif_for_5_years
 		hidden_effect = {
 			add_country_modifier = { 
@@ -12281,7 +12280,6 @@ country_event = { #Event manager for autorails
 				speed = 1
 				cost = 1
 			}
-			add_prestige = 1 
 		}
 	}
 
@@ -12298,7 +12296,6 @@ country_event = { #Event manager for autorails
 				speed = 1
 				cost = 1
 			}
-			add_prestige = 1 
 		}
 	}
 
@@ -12306,7 +12303,6 @@ country_event = { #Event manager for autorails
         name = diggy.760.d.1
         ai_chance = { factor = 0 }
 		custom_tooltip = rebuild_road_never_tooltip
-		add_prestige = 1 
 		set_country_flag = never_auto_build_rail
 	}
 }
