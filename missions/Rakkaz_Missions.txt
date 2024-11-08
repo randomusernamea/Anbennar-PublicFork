@@ -1644,8 +1644,9 @@ F71_3_part2 = {
 			country_event = { id = flavour_rakkaz.9 }
 			custom_tooltip = rakkaz_level2_advisor_tooltip
 			set_country_flag = rakkaz_level2_advisor
+			set_country_flag = rakkaz_unlock_mission_3
 			custom_tooltip = " "
-			tooltip = { swap_non_generic_missions = yes }
+			swap_non_generic_missions = yes
 		} 
 	}
 }
@@ -2215,6 +2216,58 @@ F71_4_part3_pre_branch2 = {
 		} 
 	}
 }
+F71_2_part3_branch1_no = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		NOT = { has_country_flag = F71_demon_missions }
+		NOT = { has_country_flag = F71_hag_missions }
+		has_country_flag = rakkaz_unlock_mission_3
+	}
+
+	F71_branching_1_1 = {
+		icon = mission_unknown_mission
+		position = 13
+		required_missions = { F71_the_final_order }
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_branching_mission_tooltip
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = rakkaz_branching_mission_tooltip
+		}
+	}
+
+	F71_branching_1_2 = {
+		icon = mission_unknown_mission
+		position = 14
+		required_missions = {
+			F71_bringers_of_suffering
+			F71_domain_of_suffering
+			F71_branching_1_1
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_branching_mission_tooltip
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = rakkaz_branching_mission_tooltip
+		}
+	}
+}
 F71_2_part3_branch1_demon = {
 	slot = 2
 	generic = no
@@ -2385,6 +2438,75 @@ F71_2_part3_branch1_hag = {
 				type = manpower
 			}
 		} 
+	}
+}
+F71_5_part3_branch2_no = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = F71
+		NOT = { has_country_flag = F71_demon_missions }
+		NOT = { has_country_flag = F71_hag_missions }
+		has_country_flag = rakkaz_unlock_mission_3
+	}
+
+	F71_branching_2_1 = {
+		icon = mission_unknown_mission
+		position = 13
+		required_missions = { F71_profane_army }
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_branching_mission_tooltip
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = rakkaz_branching_mission_tooltip
+		}
+	}
+
+	F71_branching_2_2 = {
+		icon = mission_unknown_mission
+		position = 14
+		required_missions = {
+			F71_branching_2_1 
+			F71_domain_of_suffering
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_branching_mission_tooltip
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = rakkaz_branching_mission_tooltip
+		}
+	}
+
+	F71_branching_2_3 = {
+		icon = mission_unknown_mission
+		position = 15
+		required_missions = { F71_branching_2_2 }
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = rakkaz_branching_mission_tooltip
+				always = no
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = rakkaz_branching_mission_tooltip
+		}
 	}
 }
 F71_5_part3_branch2_demon = {
