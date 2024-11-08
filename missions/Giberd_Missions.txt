@@ -340,10 +340,8 @@ giberd_konwell_conquest = {
 				add_base_tax = -2
 				add_devastation = 25
 				owner = {
-					country_event = {
-						id = free_cities.2
-					}
-					set_country_flag = free_city_disabled
+					remove_government_reform = free_city
+					add_government_reform = merchants_reform
 				}
 			}
 			271 = {
