@@ -18116,3 +18116,186 @@ rakkaz_make_warlock_pact_avaliables = {
 	clr_country_flag = revoke_warlock_pact_unrestricted_savagery
 	clr_country_flag = revoke_warlock_pact_battlefield_domination
 }
+
+gophira_var_effect_add = {
+	custom_tooltip = gophira_change_tt
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 12
+			}
+			NOT = { has_country_modifier = gophira_stance_5 }
+		}
+		remove_country_modifier = gophira_stance_4
+		add_country_modifier = {
+			name = gophira_stance_5
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 9
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_4
+				check_variable = {
+					which = gophira_court
+					value = 12
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_3
+		add_country_modifier = {
+			name = gophira_stance_4
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 6
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_3
+				check_variable = {
+					which = gophira_court
+					value = 9
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_2
+		add_country_modifier = {
+			name = gophira_stance_3
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 3
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_2
+				check_variable = {
+					which = gophira_court
+					value = 6
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_1
+		add_country_modifier = {
+			name = gophira_stance_2
+			duration = -1
+		}
+	}
+	hidden_effect = {
+		change_variable = {
+			which = gophira_court
+			value = 1
+		}	
+	}
+}
+
+gophira_var_effect_subtract = {
+	custom_tooltip = gophira_subtract_tt
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 11
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_4
+				check_variable = {
+					which = gophira_court
+					value = 14
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_5
+		add_country_modifier = {
+			name = gophira_stance_4
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 8
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_3
+				check_variable = {
+					which = gophira_court
+					value = 11
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_4
+		add_country_modifier = {
+			name = gophira_stance_3
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = gophira_court
+				value = 5
+			}
+			NOT = {
+				has_country_modifier = gophira_stance_2
+				check_variable = {
+					which = gophira_court
+					value = 8
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_3
+		add_country_modifier = {
+			name = gophira_stance_2
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_modifier = gophira_stance_1
+				check_variable = {
+					which = gophira_court
+					value = 5
+				}
+			}
+		}
+		remove_country_modifier = gophira_stance_2
+		add_country_modifier = {
+			name = gophira_stance_1
+			duration = -1
+		}
+	}
+	hidden_effect = {
+		change_variable = {
+			which = gophira_court
+			value = -1
+		}
+	}
+}
+
+gophira_heir_effect = {
+	if = {
+		limit = { has_heir_flag = gophira_heir }
+		if = {
+			limit = { 
+				NOT = { heir_$pow$ = 6 }
+			}
+			change_heir_$pow$ = $amount$
+		}
+		else = { add_$pow$_power = $amount$00 }
+	}
+}
