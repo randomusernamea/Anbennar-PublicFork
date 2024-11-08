@@ -316,34 +316,54 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = giberd_replacing_the_pane_tt
-				historical_rival_with = A44
+			if = {
+				limit = {
+					NOT = {
+						owns = 266
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = giberd_replacing_the_pane_tt
+					historical_rival_with = A44
+				}
+				has_spy_network_in = {
+					who = A44
+					value = 30
+				}
+				trade_embargoing = A44
+				army_strength = {
+					who = A44
+					value = 3
+				}
 			}
-			has_spy_network_in = {
-				who = A44
-				value = 30
-			}
-			trade_embargoing = A44
-			army_strength = {
-				who = A44
-				value = 3
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = giberd_replacing_the_pane_tt
+					always = yes
+				}
 			}
 			271 = {
 				base_production = 12
 			}
 		}
 		effect = {
-			266 = {
-				add_center_of_trade_level = -1
-				add_base_production = -4
-				add_base_tax = -2
-				add_devastation = 25
-				owner = {
-					custom_tooltip = giberd_replacing_the_pane_effect_tt
-					hidden_effect = {
-						remove_government_reform = free_city
-						add_government_reform = merchants_reform
+			if = {
+				limit = {
+					NOT = {
+						owns = 266
+					}
+				}
+				266 = {
+					add_center_of_trade_level = -1
+					add_base_production = -4
+					add_base_tax = -2
+					add_devastation = 25
+					owner = {
+						custom_tooltip = giberd_replacing_the_pane_effect_tt
+						hidden_effect = {
+							remove_government_reform = free_city
+							add_government_reform = merchants_reform
+						}
 					}
 				}
 			}
