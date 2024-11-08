@@ -565,7 +565,7 @@ giberd_konwell_conquest = {
 						AND = {
 							has_manpower_building_trigger = yes
 							has_building = farm_estate
-							base_production = 8
+							base_production = 12
 						}
 					}
 				}
@@ -578,7 +578,7 @@ giberd_konwell_conquest = {
 								has_building = farm_estate
 								has_building = soldier_households
 							}
-							base_manpower = 8
+							base_manpower = 12
 						}
 					}
 				}
@@ -600,7 +600,7 @@ giberd_konwell_conquest = {
 							trade_goods = grain
 							has_manpower_building_trigger = yes
 							has_building = farm_estate
-							base_production = 8
+							base_production = 12
 						}
 					}
 				}
@@ -623,7 +623,7 @@ giberd_konwell_conquest = {
 								has_building = farm_estate
 								has_building = soldier_households
 							}
-							base_manpower = 8
+							base_manpower = 12
 						}
 					}
 				}
@@ -716,7 +716,7 @@ giberd_konwell_conquest = {
 				AND = {
 					province_id = 911
 					NOT = {
-						base_production = 10
+						base_production = 14
 						development = 25
 						has_manufactory_trigger = yes
 					}
@@ -759,7 +759,7 @@ giberd_konwell_conquest = {
 				}
 			}
 			911 = {
-				base_production = 10
+				base_production = 14
 				development = 25
 				has_manufactory_trigger = yes
 			}
@@ -817,7 +817,7 @@ giberd_konwell_conquest = {
 					AND = {
 						has_trade_building_trigger = yes
 						has_production_building_trigger = yes
-						base_production = 8
+						base_production = 12
 					}
 				}
 			}
@@ -846,13 +846,13 @@ giberd_konwell_conquest = {
 							trade_goods = cloth
 							has_production_building_trigger = yes
 							has_trade_building_trigger = yes
-							base_production = 8
+							base_production = 12
 						}
 					}
 				}
 			}
 			260 = {
-				base_production = 12
+				base_production = 14
 				has_building = textile
 				has_state_edict = edict_centralization_effort
 			}
