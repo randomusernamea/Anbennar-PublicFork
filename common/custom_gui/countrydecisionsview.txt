@@ -7709,21 +7709,22 @@ custom_button = {
 		}
 		else_if = {
 			limit = { tag = Z38 }
-			set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			# if = {
-			# 	limit = {
-			# 		NOT = {
-			# 			has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			# 		}
-			# 	}
-			# 	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			# }
-			# else_if = {
-			# 	limit = {
-			# 		has_estate_privilege = artifice_invention_bramble_burners
-			# 	}
-			# 	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			# }
+			if = {
+				limit = {
+					NOT = {
+						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+					}
+				}
+				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_draconic_ascension
+				}
+				tooltip = {
+					remove_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+				}
+			}
 		}
 	}
 }

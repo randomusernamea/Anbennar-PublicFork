@@ -13098,19 +13098,18 @@ artifice_invention_kobildzan_draconic_ascension = {
         always = yes
 	}
 	can_revoke = {
-		NOT = { is_subject_of = Z38 }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					tag = Z38
+					is_subject_of = Z38
+				}
+			}			
+		}
 	}
 	on_granted = {
 		hidden_effect = {
 			artifice_inventions_currently_used_increase = yes
-		}
-		
-		if = {
-			limit = { has_country_flag = kobildzan_claws_of_power }
-			add_country_modifier = {
-				name = Z38_claws_of_power_regiment_mod
-				duration = -1
-			}
 		}
 		# NOTE: No artificer points utilized here b/c it depends on the stage of the invention; handled during unlock / upgrade
 	}
@@ -13118,8 +13117,12 @@ artifice_invention_kobildzan_draconic_ascension = {
 		hidden_effect = {
 			artifice_inventions_currently_used_decrease = yes
 		}
-
 		remove_country_modifier = Z38_claws_of_power_regiment_mod
+		remove_country_modifier = Z38_ogre_sized_kobolds_regiment_mod
+		remove_country_modifier = Z38_malliaths_chosen_disciples_regiment_mod
+		remove_country_modifier = Z38_dragonfire_sacs_regiment_mod
+		remove_country_modifier = Z38_ebonsteel_shieldscales_regiment_mod
+		remove_country_modifier = Z38_the_holiest_flesh_regiment_mod
 	}
 	on_invalid = {
 		hidden_effect = {

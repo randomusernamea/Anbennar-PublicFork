@@ -290,7 +290,13 @@ country_decisions = {
 		}
 		
 		provinces_to_highlight = {
-			province_group = kobold_traps_provinces
+			OR = {
+				province_group = kobold_traps_provinces
+				AND = {
+					ROOT = { has_country_flag = gerudian_traps_for_kobolds }
+					province_group = gerudian_kobold_traps
+				}
+			}
 		}
 		
 		allow = {
@@ -303,9 +309,21 @@ country_decisions = {
 				}
 			}
 			years_of_manpower = 1
-			any_owned_province = {
-				province_group = kobold_traps_provinces
-				kobold_traps_individual_trigger = yes
+			if = {
+				limit = { has_country_flag = gerudian_traps_for_kobolds }
+				any_owned_province = {
+					OR = {
+						province_group = kobold_traps_provinces
+						province_group = gerudian_kobold_traps
+					}
+					kobold_traps_individual_trigger = yes
+				}
+			}
+			else = {
+				any_owned_province = {
+					province_group = kobold_traps_provinces
+					kobold_traps_individual_trigger = yes
+				}
 			}
 			hidden_trigger = {
 				NOT = { 

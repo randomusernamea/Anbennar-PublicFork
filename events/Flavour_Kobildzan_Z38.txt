@@ -113,7 +113,7 @@ country_event = { #In the Flesh
 	title = flavor_kobildzan.3.t
 	desc = flavor_kobildzan.3.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
-	is_triggered_only = yes #LEX TO-DO ON PULSE 
+	is_triggered_only = yes 
 
 	option = { #WE'RE GONNA MEET A DRAGON!!!
 		name = flavor_kobildzan.3.a
@@ -763,6 +763,7 @@ country_event = { #The Kobildzani Conference
 			set_country_flag = kobildzan_hyperdigestion
 		}
 		custom_tooltip = hyperdigestion_tt #lex do this
+		artifice_granted_10 = yes
 	}
 	option = { #We must become dragons!
 		name = flavor_kobildzan.14.b
@@ -774,6 +775,7 @@ country_event = { #The Kobildzani Conference
 			}
 		}
 		custom_tooltip = dragonfire_sacs_tt #lex do this
+		artifice_granted_10 = yes
 	}
 }
 
@@ -790,6 +792,7 @@ country_event = { #Form and Function
 			set_country_flag = kobildzan_mana_attunement_glands
 		}
 		custom_tooltip = mana_attunement_glands_tt #lex do this
+		artifice_granted_20 = yes
 	}
 	option = { #We inject our scales with ebonsteel!
 		name = flavor_kobildzan.15.b
@@ -801,6 +804,7 @@ country_event = { #Form and Function
 			}
 		}
 		custom_tooltip = ebonsteel_shieldscales_tt #lex do this
+		artifice_granted_20 = yes
 	}
 }
 
@@ -856,6 +860,7 @@ country_event = { #To Control Continents
 			set_country_flag = kobildzan_biocompatibility #lex add functionality
 		}
 		custom_tooltip = biocompatibility_tt #lex do this
+		artifice_granted_20 = yes
 	}
 	option = { #We fly above our subjects!
 		name = flavor_kobildzan.18.b
@@ -863,6 +868,7 @@ country_event = { #To Control Continents
 			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
 		}
 		custom_tooltip = intercontinental_ballistic_kobolds_tt #lex do this
+		artifice_granted_20 = yes
 	}
 }
 
@@ -893,6 +899,7 @@ country_event = { #Family Reunion
 			set_country_flag = kobildzan_the_protean_form 
 		}
 		custom_tooltip = the_protean_form_tt #lex do this
+		artifice_granted_20 = yes
 	}
 	option = { #Holiest flesh
 		name = flavor_kobildzan.19.b
@@ -914,6 +921,11 @@ country_event = { #Family Reunion
 			set_country_flag = kobildzan_the_holiest_flesh 
 		}
 		custom_tooltip = the_holiest_flesh_tt #lex do this
+		add_country_modifier = {
+			name = Z38_the_holiest_flesh_regiment_mod
+			duration = -1
+		}
+		artifice_granted_20 = yes
 	}
 }
 
@@ -939,7 +951,7 @@ country_event = { #A Single Celled Kobold
 	title = flavor_kobildzan.21.t
 	desc = flavor_kobildzan.21.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
-	is_triggered_only = yes #lex add this to pulse
+	is_triggered_only = yes 
 
 	option = { #Shut down the tests!
 		name = flavor_kobildzan.21.a
@@ -962,7 +974,7 @@ country_event = { #The Dragon Queens
 	title = flavor_kobildzan.22.t
 	desc = flavor_kobildzan.22.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
-	is_triggered_only = yes #lex add this to pulse
+	is_triggered_only = yes 
 
 	option = { #Drag is a solemn art!
 		name = flavor_kobildzan.22.a
@@ -985,7 +997,7 @@ country_event = { #Ascending to Greed
 	title = flavor_kobildzan.23.t
 	desc = flavor_kobildzan.23.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
-	is_triggered_only = yes #lex add this to pulse
+	is_triggered_only = yes 
 
 	option = { #Send in the army, he must be crushed!
 		name = flavor_kobildzan.23.a
@@ -1021,7 +1033,7 @@ country_event = { #The Chosen Several
 	title = flavor_kobildzan.24.t
 	desc = flavor_kobildzan.24.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
-	is_triggered_only = yes #lex add this to pulse
+	is_triggered_only = yes 
 
 	option = { #Dragons must rule over kobolds!
 		name = flavor_kobildzan.24.a
@@ -1045,5 +1057,24 @@ country_event = { #The Chosen Several
 			limit = { reform_level = 9 }
 			add_government_reform = kobildzan_draconic_masses
 		}
+	}
+}
+
+country_event = { #Biocompatibility Event
+	id = flavor_kobildzan.25
+	title = flavor_kobildzan.25.t
+	desc = flavor_kobildzan.25.d
+	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
+	is_triggered_only = yes 
+
+	option = { #What a beautiful thing!
+		name = flavor_kobildzan.25.a
+		biocompatibility_effect = yes
+	}
+	option = { #Don't show me this again.
+		name = flavor_kobildzan.25.b
+		hidden_effect = { set_country_flag = hidden_biocompatibility }
+		custom_tooltip = hide_biocompatibility_tt #lex
+		biocompatibility_effect = yes
 	}
 }

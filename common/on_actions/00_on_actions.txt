@@ -10100,6 +10100,20 @@ on_five_year_pulse_3 = {
 				}
 				country_event = { id = kobold_traps.10 days = 60 }
 			}
+			if = {
+				limit = { has_country_flag = kobildzan_biocompatibility }
+				if = {
+					limit = { has_country_flag = hidden_biocompatibility }
+					biocompatibility_effect = yes
+				}
+				else = {
+					country_event = { id = flavor_kobildzan.25 days = 90 }
+				}
+				every_subject_country = {
+					limit = { has_country_flag = kobildzan_biocompatibility }
+					biocompatibility_effect = yes
+				}
+			}
 		}
 		country_event = { id = kobold_traps.15 } #whether kobold or not, check for kobildzan formation
 	}
