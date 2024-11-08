@@ -1830,8 +1830,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
-						has_country_flag = green_dragon_3_upgraded
-						has_country_flag = brass_dragon_3_upgraded
+						has_country_flag = unlocked_green_dragon_3_upgraded
+						has_country_flag = unlocked_brass_dragon_3_upgraded
 					}
 				}			
 			}
@@ -3004,8 +3004,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
-						has_country_flag = green_dragon_3_upgraded
-						has_country_flag = brass_dragon_3_upgraded
+						has_country_flag = unlocked_green_dragon_3_upgraded
+						has_country_flag = unlocked_brass_dragon_3_upgraded
 					}
 				}
 			}
@@ -3757,8 +3757,8 @@ country_event = { #Silver aspect 3
 		trigger = {
 			NOT = {
 				AND = {
-					has_country_flag = blue_dragon_3_upgraded
-					has_country_flag = copper_dragon_3_upgraded
+					has_country_flag = unlocked_blue_dragon_3_upgraded
+					has_country_flag = unlocked_copper_dragon_3_upgraded
 				}
 			}
 		}

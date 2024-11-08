@@ -230,7 +230,7 @@ kob_2_a = {
                 SLOT = 1
                 UPGRADE = upgraded
             }
-            large_increase_of_gnomish_tolerance_effect = yes
+            medium_increase_of_gnomish_tolerance_effect = yes
 		}
 	}
 }
@@ -425,7 +425,11 @@ kob_3_a = {
 
 		trigger = {
 			religious_unity = 0.8
-			num_of_missionaries = 2
+			custom_trigger_tooltip = {
+				tooltip = missionaries_two_hint_tt
+				num_of_missionaries = 2
+			}
+			
 		}
 		effect = {
 			country_event = { id = flavour_kobildzan.1 }
@@ -449,11 +453,6 @@ kob_3_a = {
 				has_won_war_against = { who = A13 }
 				has_won_war_against = { who = A01 }
 			}
-
-            OR = {
-                has_reform_on_level = 5
-                is_tribal = no
-            }
 
             OR = {
                 is_ahead_of_time_in_technology = { tech = adm }
@@ -1208,7 +1207,7 @@ kob_3_b = {
 		tag = Z38
 	}
 	has_country_shield = yes
-	Z38_a_civilzed_cult = {
+	Z38_a_civilized_cult = {
 		icon = mission_court_education
 		position = 8
 		required_missions = { 
@@ -1225,34 +1224,29 @@ kob_3_b = {
 			}
 				calc_true_if = {
 					amount = 12
-					custom_trigger_tooltip = {
-						tooltip = 12_aspects_unlocked_tt 
-						OR = {
-							has_country_flag = black_dragon_2_base
-							has_country_flag = black_dragon_3_base
-							has_country_flag = red_dragon_2_base
-							has_country_flag = red_dragon_3_base
-							has_country_flag = blue_dragon_2_base
-							has_country_flag = blue_dragon_3_base
-							has_country_flag = white_dragon_2_base
-							has_country_flag = white_dragon_3_base
-							has_country_flag = purple_dragon_2_base
-							has_country_flag = purple_dragon_3_base
-							has_country_flag = green_dragon_2_base
-							has_country_flag = green_dragon_3_base
-							has_country_flag = brown_dragon_2_base
-							has_country_flag = brown_dragon_3_base
-							has_country_flag = brass_dragon_2_base
-							has_country_flag = brass_dragon_3_base
-							has_country_flag = copper_dragon_2_base
-							has_country_flag = copper_dragon_3_base
-							has_country_flag = silver_dragon_2_base
-							has_country_flag = silver_dragon_3_base
-							has_country_flag = gold_dragon_2_base
-							has_country_flag = gold_dragon_3_base
-						}
-
-					}
+					desc = 12_aspects_unlocked_tt
+					has_country_flag = unlocked_black_dragon_2_base
+					has_country_flag = unlocked_black_dragon_3_base
+					has_country_flag = unlocked_red_dragon_2_base
+					has_country_flag = unlocked_red_dragon_3_base
+					has_country_flag = unlocked_blue_dragon_2_base
+					has_country_flag = unlocked_blue_dragon_3_base
+					has_country_flag = unlocked_white_dragon_2_base
+					has_country_flag = unlocked_white_dragon_3_base
+					has_country_flag = unlocked_purple_dragon_2_base
+					has_country_flag = unlocked_purple_dragon_3_base
+					has_country_flag = unlocked_green_dragon_2_base
+					has_country_flag = unlocked_green_dragon_3_base
+					has_country_flag = unlocked_brown_dragon_2_base
+					has_country_flag = unlocked_brown_dragon_3_base
+					has_country_flag = unlocked_brass_dragon_2_base
+					has_country_flag = unlocked_brass_dragon_3_base
+					has_country_flag = unlocked_copper_dragon_2_base
+					has_country_flag = unlocked_copper_dragon_3_base
+					has_country_flag = unlocked_silver_dragon_2_base
+					has_country_flag = unlocked_silver_dragon_3_base
+					has_country_flag = unlocked_gold_dragon_2_base
+					has_country_flag = unlocked_gold_dragon_3_base
 				}
 
 			custom_trigger_tooltip = {
@@ -1276,7 +1270,7 @@ kob_3_b = {
 		position = 10
 		required_missions = { 
 			Z38_a_technocracy_for_all
-			Z38_a_civilzed_cult
+			Z38_a_civilized_cult
 		}
 
 		trigger = {
@@ -2756,28 +2750,28 @@ kob_3_c = {
 			
 				custom_trigger_tooltip = {
 					tooltip = unlocked_all_aspects_tt 
-					has_country_flag = black_dragon_2_base
-					has_country_flag = black_dragon_3_base
-					has_country_flag = red_dragon_2_base
-					has_country_flag = red_dragon_3_base
-					has_country_flag = blue_dragon_2_base
-					has_country_flag = blue_dragon_3_base
-					has_country_flag = white_dragon_2_base
-					has_country_flag = white_dragon_3_base
-					has_country_flag = purple_dragon_2_base
-					has_country_flag = purple_dragon_3_base
-					has_country_flag = green_dragon_2_base
-					has_country_flag = green_dragon_3_base
-					has_country_flag = brown_dragon_2_base
-					has_country_flag = brown_dragon_3_base
-					has_country_flag = brass_dragon_2_base
-					has_country_flag = brass_dragon_3_base
-					has_country_flag = copper_dragon_2_base
-					has_country_flag = copper_dragon_3_base
-					has_country_flag = silver_dragon_2_base
-					has_country_flag = silver_dragon_3_base
-					has_country_flag = gold_dragon_2_base
-					has_country_flag = gold_dragon_3_base					
+					has_country_flag = unlocked_black_dragon_2_base
+					has_country_flag = unlocked_black_dragon_3_base
+					has_country_flag = unlocked_red_dragon_2_base
+					has_country_flag = unlocked_red_dragon_3_base
+					has_country_flag = unlocked_blue_dragon_2_base
+					has_country_flag = unlocked_blue_dragon_3_base
+					has_country_flag = unlocked_white_dragon_2_base
+					has_country_flag = unlocked_white_dragon_3_base
+					has_country_flag = unlocked_purple_dragon_2_base
+					has_country_flag = unlocked_purple_dragon_3_base
+					has_country_flag = unlocked_green_dragon_2_base
+					has_country_flag = unlocked_green_dragon_3_base
+					has_country_flag = unlocked_brown_dragon_2_base
+					has_country_flag = unlocked_brown_dragon_3_base
+					has_country_flag = unlocked_brass_dragon_2_base
+					has_country_flag = unlocked_brass_dragon_3_base
+					has_country_flag = unlocked_copper_dragon_2_base
+					has_country_flag = unlocked_copper_dragon_3_base
+					has_country_flag = unlocked_silver_dragon_2_base
+					has_country_flag = unlocked_silver_dragon_3_base
+					has_country_flag = unlocked_gold_dragon_2_base
+					has_country_flag = unlocked_gold_dragon_3_base					
 				}
 
 

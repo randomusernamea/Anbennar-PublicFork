@@ -2211,7 +2211,7 @@ country_event = { # Handler Event
 	immediate = {
 		hidden_effect = {
 			random_list = {
-				10 = { }
+				50 = { }
 				10 = { #Garrison Proves Potential
 					trigger = { NOT = { has_country_flag = garrison_proves_potential } }
 					country_event = { id = kobold_traps.20 } 
