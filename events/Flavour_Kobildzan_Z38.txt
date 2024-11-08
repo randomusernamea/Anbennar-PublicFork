@@ -9,7 +9,7 @@ country_event = { #The Meaning of Dragonfire
 
 	option = { #Power!
 		name = flavor_kobildzan.1.a
-		custom_tooltip = dragons_mean_power_tt #LEX TO-DO
+		custom_tooltip = dragons_mean_power_tt 
 		hidden_effect = { set_country_flag = dragons_mean_power }
 		add_country_modifier = {
 			name = Z38_dragons_mean_power
@@ -18,7 +18,7 @@ country_event = { #The Meaning of Dragonfire
 	}
 	option = { #Change!
 		name = flavor_kobildzan.1.b
-		custom_tooltip = dragons_mean_change_tt #LEX TO-DO
+		custom_tooltip = dragons_mean_change_tt 
 		hidden_effect = { set_country_flag = dragons_mean_change }
 		add_country_modifier = {
 			name = Z38_dragons_mean_change
@@ -57,7 +57,7 @@ country_event = { #To Become Dragons
 				change_government_reform_progress = 20				
 			}
 		}
-		custom_tooltip = gain_reform_progress_per_reform_level_tt #LEX TO-DO
+		custom_tooltip = gain_reform_progress_per_reform_level_tt 
 		if = {
 			limit = { NOT = { tag = Z38 } }
 			189 = {
@@ -188,7 +188,7 @@ country_event = { #To Find Tayekan
 					exists = U31
 				}
 			}
-			custom_tooltip = to_find_tayekan_1_tt #LEX TO-DO
+			custom_tooltip = to_find_tayekan_1_tt 
 			random_owned_province = {
 				limit = { culture_group = kobold }
 				remove_random_development = yes
@@ -231,7 +231,11 @@ country_event = { #To Find Tayekan
 			}		
 		}
 		else = {
-			custom_tooltip = to_find_tayekan_2_tt #LEX TO-DO
+			custom_tooltip = to_find_tayekan_2_tt 
+			random_owned_province = {
+				limit = { culture_group = kobold }
+				remove_random_development = yes
+			}
 			hidden_effect = { set_country_flag = kobildzan_artificer_spawn }
 		}
 	}
@@ -240,7 +244,7 @@ country_event = { #To Find Tayekan
 country_event = { #Artificer Malcontents
 	id = flavor_kobildzan.6
 	title = flavor_kobildzan.6.t
-	desc = flavor_kobildzan.6.d #LEX CHANGE THIS
+	desc = flavor_kobildzan.6.d 
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
@@ -255,7 +259,7 @@ country_event = { #Artificer Malcontents
 
 	option = { #We must conquer Haraf!
 		name = flavor_kobildzan.6.a
-		custom_tooltip = to_find_tayekan_1_tt #LEX TO-DO
+		custom_tooltip = to_find_tayekan_1_tt 
 		random_owned_province = {
 			limit = { culture_group = kobold }
 			remove_random_development = yes
@@ -390,8 +394,8 @@ country_event = { #Artificery As One
 		name = flavor_kobildzan.9.a
 		large_increase_of_goblin_tolerance_effect = yes
 		large_increase_of_gnomish_tolerance_effect = yes
-		custom_tooltip = gnomes_from_across_cannor_tt #LEX DO THIS
-		custom_tooltip = goblins_from_across_cannor_tt #LEX DO THIS
+		custom_tooltip = gnomes_from_across_cannor_tt 
+		custom_tooltip = goblins_from_across_cannor_tt 
 		hidden_effect = {
 			for = {
 				amount = 8
@@ -450,7 +454,7 @@ country_event = { #The Dragon's Roar
 
 	option = { #Oh no.
 		name = flavor_kobildzan.11.a
-		custom_tooltip = dragons_roar_tt #LEX DO THIS
+		custom_tooltip = dragons_roar_tt 
 		hidden_effect = {
 			189 = {
 				add_base_tax = -3
@@ -719,14 +723,14 @@ country_event = { #Aid from Aelantir
 
 	option = { #Thank the dragons for Varlengeilt...
 		name = flavor_kobildzan.12.a
-		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt #LEX DO THIS
+		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt 
 		hidden_effect = {
 			every_owned_province = {
 				add_devastation = -10
 			}
-			var_effect = { effect = add_treasury var = dev2add sign = + }
 			set_country_flag = Z38_received_aelantir_aid
 		}
+		var_effect = { effect = add_treasury var = dev2add sign = + }
 	}
 }
 
@@ -764,7 +768,12 @@ country_event = { #The Kobildzani Conference
 		hidden_effect = {
 			set_country_flag = kobildzan_hyperdigestion
 		}
-		custom_tooltip = hyperdigestion_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_hyperdigestion_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_10 = yes
 	}
 	option = { #We must become dragons!
@@ -776,7 +785,12 @@ country_event = { #The Kobildzani Conference
 				duration = -1
 			}
 		}
-		custom_tooltip = dragonfire_sacs_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_dragonfire_sacs_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_10 = yes
 	}
 }
@@ -793,7 +807,12 @@ country_event = { #Form and Function
 		hidden_effect = {
 			set_country_flag = kobildzan_mana_attunement_glands
 		}
-		custom_tooltip = mana_attunement_glands_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_mana_attunement_glands_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_20 = yes
 	}
 	option = { #We inject our scales with ebonsteel!
@@ -805,7 +824,12 @@ country_event = { #Form and Function
 				duration = -1
 			}
 		}
-		custom_tooltip = ebonsteel_shieldscales_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_ebonsteel_shieldscales_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_20 = yes
 	}
 }
@@ -860,9 +884,16 @@ country_event = { #To Control Continents
 	option = { #We are one people in many forms!
 		name = flavor_kobildzan.18.a
 		hidden_effect = {
-			set_country_flag = kobildzan_biocompatibility #lex add functionality
+			set_country_flag = kobildzan_biocompatibility 
 		}
-		custom_tooltip = biocompatibility_tt #lex do this
+		
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_biocompatibility_dummy
+				duration = -1
+			}
+		}
+		custom_tooltip = biocompatibility_explainer_tt
 		artifice_granted_20 = yes
 	}
 	option = { #We fly above our subjects!
@@ -870,7 +901,12 @@ country_event = { #To Control Continents
 		hidden_effect = {
 			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
 		}
-		custom_tooltip = intercontinental_ballistic_kobolds_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_intercontinental_ballistic_kobolds_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_20 = yes
 	}
 }
@@ -901,7 +937,12 @@ country_event = { #Family Reunion
 		hidden_effect = {
 			set_country_flag = kobildzan_the_protean_form 
 		}
-		custom_tooltip = the_protean_form_tt #lex do this
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_the_protean_form_dummy
+				duration = -1
+			}
+		}
 		artifice_granted_20 = yes
 	}
 	option = { #Holiest flesh
@@ -909,7 +950,7 @@ country_event = { #Family Reunion
 		highlight = yes
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = holiest_flesh_trigger_tt #lex do this
+				tooltip = the_holiest_flesh_trigger_tt #lex do this
 				calc_true_if = {
 					amount = 3
 					has_country_flag = kobildzan_claws_of_power
@@ -923,10 +964,15 @@ country_event = { #Family Reunion
 		hidden_effect = {
 			set_country_flag = kobildzan_the_holiest_flesh 
 		}
-		custom_tooltip = the_holiest_flesh_tt #lex do this
 		add_country_modifier = {
 			name = Z38_the_holiest_flesh_regiment_mod
 			duration = -1
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = Z38_the_holiest_flesh_dummy
+				duration = -1
+			}
 		}
 		artifice_granted_20 = yes
 	}
@@ -1089,7 +1135,7 @@ country_event = { #Biocompatibility Event
 		name = flavor_kobildzan.25.b
 		goto = biocompatibility_province
 		hidden_effect = { set_country_flag = hidden_biocompatibility }
-		custom_tooltip = hide_biocompatibility_tt #lex
+		custom_tooltip = hide_biocompatibility_tt 
 		event_target:biocompatibility_province = {
 			area = {
 				biocompatibility_effect = yes

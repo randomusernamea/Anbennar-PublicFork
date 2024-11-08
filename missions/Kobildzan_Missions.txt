@@ -35,9 +35,9 @@ kob_2_a = {
 		trigger = {
 			OR = {
 				power_projection = 25
-				custom_trigger_tooltip = {
-					tooltip = owned_redscales_tt #lex todo
-					AND = {	
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = owned_redscales_tt 
 						dragondowns_area = { type = all owned_by = ROOT }
 						170 = { owned_by = ROOT }
 						173 = { owned_by = ROOT }
@@ -48,6 +48,9 @@ kob_2_a = {
 						179 = { owned_by = ROOT }
 						180 = { owned_by = ROOT }
 						345 = { owned_by = ROOT }
+					}
+					custom_trigger_tooltip = {
+						tooltip = redscales_traps_tt
 						any_owned_province = {
 							has_province_flag = kobold_traps_lvl_2_or_more
 							OR = {
@@ -100,14 +103,14 @@ kob_2_a = {
             167 = { # Royvibobb
                 owned_by = ROOT 
 				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt #lex
+					tooltip = has_kobold_traps_tt 
 					has_province_flag = has_kobold_traps
 				}
             }        
             146 = { # Baycodds
                 owned_by = ROOT 
 				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt #lex
+					tooltip = has_kobold_traps_tt 
 					has_province_flag = has_kobold_traps
 				}
             }
@@ -122,7 +125,7 @@ kob_2_a = {
 		}
 		effect = {
             146 = { add_base_production = 2 }
-			custom_tooltip = innovation_per_trap_level #lex
+			custom_tooltip = innovation_per_trap_level_tt 
             146 = {
                 trigger_switch = {
                     on_trigger = has_province_modifier
@@ -262,9 +265,9 @@ kob_3_a = {
 		trigger = {
 			OR = {
 				num_of_aspects = 3
-				custom_trigger_tooltip = {
-					tooltip = owned_bluescales_tt #LEX TODO
-					AND = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = owned_bluescales_tt
 						dragondepth_area = { type = all owned_by = ROOT }
 						dragonheart_area = { type = all owned_by = ROOT }
 						dragonmaw_area = { type = all owned_by = ROOT }
@@ -272,18 +275,19 @@ kob_3_a = {
 						183 = { owned_by = ROOT }
 						184 = { owned_by = ROOT }
 						3362 = { owned_by = ROOT }
-						AND = {
-							any_owned_province = {
-								has_province_flag = kobold_traps_lvl_2_or_more
-								OR = {
-									area = dragondepth_area
-									area = dragonheart_area
-									area = dragonmaw_area
-									province_id = 182
-									province_id = 183
-									province_id = 184
-									province_id = 3362
-								}
+					}
+					custom_trigger_tooltip = {
+						tooltip = bluescales_traps_tt
+						any_owned_province = {
+							has_province_flag = kobold_traps_lvl_2_or_more
+							OR = {
+								area = dragondepth_area
+								area = dragonheart_area
+								area = dragonmaw_area
+								province_id = 182
+								province_id = 183
+								province_id = 184
+								province_id = 3362
 							}
 						}
 					}
@@ -293,7 +297,7 @@ kob_3_a = {
 
 		effect = {
 			add_dip_power = 100
-			custom_tooltip = dragon_coast_kobold_provinces_tt #lex do this #[Root.GetName] gains a permanent claim on all kobold-culture provinces in the Dragon Coast region.
+			custom_tooltip = dragon_coast_kobold_provinces_tt 
 			hidden_effect = {
 				dragon_coast_region = {
 					limit = {
@@ -343,7 +347,7 @@ kob_3_a = {
             }
 
 			custom_trigger_tooltip = {
-				tooltip = owned_DC_peninsula_tt #lex do this
+				tooltip = owned_DC_peninsula_tt 
 				AND = {
 					dragondepth_area = { type = all owned_by = ROOT }
 					dragonheart_area = { type = all owned_by = ROOT }
@@ -476,14 +480,18 @@ kob_4_a = {
 		trigger = {
 			OR = {
 				any_owned_province = { has_province_modifier = kobold_traps_lvl_4 }
-				custom_trigger_tooltip = {
-					tooltip = owned_greenscales_tt
-					AND = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = owned_greenscales_tt
 						coddorran_heights_area = { type = all owned_by = ROOT }
+					}
+					custom_trigger_tooltip = {
+						tooltip = greenscales_traps_tt
 						OR = {
 							197 = { has_province_flag = kobold_traps_lvl_2_or_more }
 							694 = { has_province_flag = kobold_traps_lvl_2_or_more }
 						}
+
 					}
 				}
 			}
@@ -581,7 +589,7 @@ kob_4_a = {
 			colonial_dalaire = {
 				type = all
 				custom_trigger_tooltip = {
-					tooltip = has_discovered_tt #lex
+					tooltip = has_discovered_coastal_tt 
 					OR = {
 						has_port = no
 						has_discovered = ROOT
@@ -654,7 +662,7 @@ kob_1_b = {
 				}
 			}
 
-			diplomatic_reputation = 2
+			diplomatic_reputation = 1
 
 			any_subject_country = {
 				is_colonial_nation_of = ROOT
@@ -795,7 +803,7 @@ kob_1_b = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = dolindha_controls_all_tt #lex
+				tooltip = dolindha_controls_all_tt 
 				dolindha_region = {
 					type = all
 					OR = {
@@ -830,7 +838,6 @@ kob_1_b = {
 		}
 		
 		effect = {
-			# SAY LEX
 			if = {
 				limit = {
 					NOT = { has_dlc = "Leviathan" }
@@ -838,8 +845,21 @@ kob_1_b = {
 				add_treasury = -1000
 			}
 
-			custom_tooltip = dd_unlock_artificery_tt #lex
-			custom_tooltip = enhanced_dominion_tt #lex just add + tooltip the modifier
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_godspodh_1
+					duration = -1
+				}
+			}
+			H24 = {
+				custom_tooltip = dd_unlock_artificery_tt 
+				tooltip = {
+					add_country_modifier = {
+						name = Z38_kobolds_dominion
+						duration = -1
+					}
+				}
+			}
 			hidden_effect = {
 				H24 = {
 					if = {
@@ -930,7 +950,6 @@ kob_2_b = {
 		}
 
 		effect = {
-			# SAY LEX
 			if = {
 				limit = { has_country_flag = dragons_mean_power }
 				add_country_modifier = {
@@ -938,15 +957,14 @@ kob_2_b = {
 					duration = -1
 				}
 				hidden_effect = { set_country_flag = kobildzan_claws_of_power }
-				tooltip = {
-					#LEX MAKE DUMMY MODIFIERS FOR TOOLTIP
-				}
 			}
 			else = {
-				set_country_flag = kobildzan_glidewing_membranes
 				hidden_effect = { set_country_flag = kobildzan_glidewing_membranes }
 				tooltip = {
-					#LEX MAKE DUMMY MODIFIERS FOR TOOLTIP
+					add_country_modifier = {
+						name = Z38_glidewing_membranes_dummy
+						duration = -1
+					}
 				}
 			}
 			artifice_granted_10 = yes
@@ -992,15 +1010,15 @@ kob_2_b = {
 					duration = -1
 				}
 				hidden_effect = { set_country_flag = kobildzan_ogre_sized_kobolds }
-				tooltip = {
-					#LEX MAKE DUMMY MODIFIERS FOR TOOLTIP
-				}
+	
 			}
 			else = {
-				set_country_flag = kobildzan_glidewing_membranes
 				hidden_effect = { set_country_flag = kobildzan_detachable_extra_limbs }
 				tooltip = {
-					#LEX MAKE DUMMY MODIFIERS FOR TOOLTIP
+					add_country_modifier = {
+						name = Z38_detachable_extra_limbs_dummy
+						duration = -1
+					}
 				}
 			}
 			artifice_granted_10 = yes
@@ -1065,12 +1083,11 @@ kob_2_b = {
 		}
 
 		trigger = {
-			#lex check to see if thsi works ingame
 			calc_true_if = {
 				amount = 3
 				any_subject_country = {
 					custom_trigger_tooltip = {
-						tooltip = 10_cities_in_broken_haraf_or_eordand_tt #lex
+						tooltip = 10_cities_in_broken_haraf_or_eordand_tt 
 						num_of_cities = 10
 						capital_scope = {
 							OR = {
@@ -1083,22 +1100,6 @@ kob_2_b = {
 
 				}
 			}
-			# any_subject_country = {
-			# 	is_colonial_nation_of = ROOT
-			# 	capital_scope = { colonial_region = colonial_broken_sea }
-			# 	num_of_cities = 10
-			# }
-			# any_subject_country = {
-			# 	is_colonial_nation_of = ROOT
-			# 	capital_scope = { colonial_region = colonial_haraf }
-			# 	num_of_cities = 10
-			# }
-			# any_subject_country = {
-			# 	is_colonial_nation_of = ROOT
-			# 	capital_scope = { colonial_region = colonial_eordand }
-			# 	num_of_cities = 10
-			# }
-
 			H24 = {
 				OR = {
 					NOT = { is_lacking_institutions = yes }
@@ -1109,7 +1110,7 @@ kob_2_b = {
 		}
 
 		effect = {
-			custom_tooltip = DD_brought_to_tech_level_tt #lex
+			custom_tooltip = DD_brought_to_tech_level_tt 
 			hidden_effect = {
 				while = {
 					limit = { mil_tech_is_inferior = { tag=H38 } }
@@ -1164,37 +1165,37 @@ kob_3_b = {
 				has_country_modifier = racial_pop_human_expulsion
 				has_country_modifier = racial_pop_human_purge
 			}
-			custom_trigger_tooltip = {
-				tooltip = 12_aspects_unlocked_tt #lex
 				calc_true_if = {
 					amount = 12
-					has_country_flag = black_dragon_2_base
-					has_country_flag = black_dragon_3_base
-					has_country_flag = red_dragon_2_base
-					has_country_flag = red_dragon_3_base
-					has_country_flag = blue_dragon_2_base
-					has_country_flag = blue_dragon_3_base
-					has_country_flag = white_dragon_2_base
-					has_country_flag = white_dragon_3_base
-					has_country_flag = purple_dragon_2_base
-					has_country_flag = purple_dragon_3_base
-					has_country_flag = green_dragon_2_base
-					has_country_flag = green_dragon_3_base
-					has_country_flag = brown_dragon_2_base
-					has_country_flag = brown_dragon_3_base
-					has_country_flag = brass_dragon_2_base
-					has_country_flag = brass_dragon_3_base
-					has_country_flag = copper_dragon_2_base
-					has_country_flag = copper_dragon_3_base
-					has_country_flag = silver_dragon_2_base
-					has_country_flag = silver_dragon_3_base
-					has_country_flag = gold_dragon_2_base
-					has_country_flag = gold_dragon_3_base
+					custom_trigger_tooltip = {
+						tooltip = 12_aspects_unlocked_tt 
+						has_country_flag = black_dragon_2_base
+						has_country_flag = black_dragon_3_base
+						has_country_flag = red_dragon_2_base
+						has_country_flag = red_dragon_3_base
+						has_country_flag = blue_dragon_2_base
+						has_country_flag = blue_dragon_3_base
+						has_country_flag = white_dragon_2_base
+						has_country_flag = white_dragon_3_base
+						has_country_flag = purple_dragon_2_base
+						has_country_flag = purple_dragon_3_base
+						has_country_flag = green_dragon_2_base
+						has_country_flag = green_dragon_3_base
+						has_country_flag = brown_dragon_2_base
+						has_country_flag = brown_dragon_3_base
+						has_country_flag = brass_dragon_2_base
+						has_country_flag = brass_dragon_3_base
+						has_country_flag = copper_dragon_2_base
+						has_country_flag = copper_dragon_3_base
+						has_country_flag = silver_dragon_2_base
+						has_country_flag = silver_dragon_3_base
+						has_country_flag = gold_dragon_2_base
+						has_country_flag = gold_dragon_3_base
+					}
 				}
-			}
 
 			custom_trigger_tooltip = {
-				tooltip = human_and_halfling_culture_tt #lex
+				tooltip = human_and_halfling_culture_tt 
 				has_human_accepted_culture = yes
 				has_halfling_accepted_culture = yes
 			}
@@ -1242,7 +1243,10 @@ kob_3_b = {
 
 			hidden_effect = { set_country_flag = kobildzan_malliaths_chosen_disciples }
 			tooltip = {
-				#lex make dummy modifier
+				add_country_modifier = {
+					name = Z38_malliaths_chosen_disciples_dummy
+					duration = -1
+				}
 			}
 			add_country_modifier = {
 				name = Z38_malliaths_chosen_disciples_regiment_mod
@@ -1326,25 +1330,23 @@ kob_4_b = {
 		}
 
 		trigger = {
-			# lex tooltip this
 			custom_trigger_tooltip = {
-				tooltip = 177_tax_or_court_tt #lex
+				tooltip = 177_tax_or_court_tt 
 				177 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}
 			custom_trigger_tooltip = {
-				tooltip = 179_tax_or_court_tt #lex
+				tooltip = 179_tax_or_court_tt 
 				179 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}			
 			custom_trigger_tooltip = {
-				tooltip = 186_tax_or_court_tt #lex
+				tooltip = 186_tax_or_court_tt 
 				186 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}	
 			custom_trigger_tooltip = {
-				tooltip = 187_tax_or_court_tt #lex
+				tooltip = 187_tax_or_court_tt 
 				187 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}				
 
-			# SAY LEX
 			189 = {
 				check_variable = {
 					which = dragon_cult_hoard
@@ -1412,7 +1414,6 @@ kob_4_b = {
 			dragonhills_area = { type = all owned_by = ROOT }
 			gnomish_pass_area = { type = all owned_by = ROOT }
 
-			# SAY LEX do i need to tooltip this?
 			check_variable = {
 				ArtificeUpkeep = 60
 			}
@@ -1479,7 +1480,7 @@ kob_4_b = {
 
 			115 = { 
 				custom_trigger_tooltip = {
-					tooltip = level_2_cot_owned_by_root_tt #lex
+					tooltip = level_2_cot_owned_by_root_tt 
 					owned_by = ROOT 
 					province_has_center_of_trade_of_level = 2 
 
@@ -1487,7 +1488,7 @@ kob_4_b = {
 			}
 			112 = { 
 				custom_trigger_tooltip = {
-					tooltip = level_2_cot_owned_by_root_tt #lex
+					tooltip = level_2_cot_owned_by_root_tt 
 					owned_by = ROOT 
 					province_has_center_of_trade_of_level = 2 
 
@@ -1528,7 +1529,7 @@ kob_4_b = {
 				duration = -1
 			}
 
-			custom_tooltip = modified_traps_tt #lex
+			custom_tooltip = modified_traps_tt 
 			hidden_effect = {
 				set_country_flag = modified_kobold_traps
 				every_owned_province = {
@@ -1586,7 +1587,7 @@ kob_4_b = {
 			187 = { has_manufactory_trigger = yes }
 
 			custom_trigger_tooltip = {
-				tooltip = caverns_are_prosperous_tt #lex
+				tooltip = caverns_are_prosperous_tt 
 				all_owned_province = {
 					OR = {
 						NOT = { has_terrain = cavern }
@@ -1658,7 +1659,6 @@ kob_4_b = {
 		}
 
 		trigger = {
-			#lex tooltip this
 			custom_trigger_tooltip = {
 				tooltip = westmoor_moorhills_coddorran_dragonhills_tt
 				westmoor_proper_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
@@ -1670,19 +1670,19 @@ kob_4_b = {
 
 			196 = {
 				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more #lex
+					tooltip = kobold_traps_lvl_2_or_more 
 					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}
 			694 = {
 				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more #lex
+					tooltip = kobold_traps_lvl_2_or_more 
 					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}	
 			213 = {
 				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more #lex
+					tooltip = kobold_traps_lvl_2_or_more 
 					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}	
@@ -1785,7 +1785,7 @@ Kob_5b = {
 			} else = {
 				production_efficiency = 0.4
 				custom_trigger_tooltip = {
-					tooltip = fish_provinces_tt #lex
+					tooltip = fish_provinces_tt 
 					171 = { owned_by = ROOT light_ships_in_province = 2 }
 					172 = { owned_by = ROOT light_ships_in_province = 2 }
 					181 = { owned_by = ROOT light_ships_in_province = 2 }
@@ -1874,9 +1874,16 @@ Kob_5b = {
 
 		provinces_to_highlight = {
 			owned_by = ROOT
-			trade_goods = wool
-			region = dragon_coast_region
-			NOT = { has_production_building_trigger = yes }
+			AND = {
+				OR = {
+					province_id = 175
+					province_id = 173
+					province_id = 174
+					province_id = 183
+					province_id = 170
+				}
+				NOT = { has_production_building_trigger = yes }
+			}
 		}
 
 		trigger = {
@@ -1885,14 +1892,12 @@ Kob_5b = {
 				treasury = 600
 			} else = {
 				custom_trigger_tooltip = {
-					tooltip = all_wool_provinces_tt #lex
-					all_owned_province = {
-						OR = {
-							NOT = { trade_goods = wool }
-							NOT = { region = dragon_coast_region }
-							has_production_building_trigger = yes
-						}
-					}
+					tooltip = all_wool_provinces_tt 
+					175 = { has_production_building_trigger = yes }
+					173 = { has_production_building_trigger = yes }
+					174 = { has_production_building_trigger = yes }
+					183 = { has_production_building_trigger = yes }
+					170 = { has_production_building_trigger = yes }
 				}
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 3
@@ -1988,13 +1993,12 @@ Kob_5b = {
 		trigger = {
 			num_of_heavy_ship = 30
 			custom_trigger_tooltip = {
-				tooltip = dock_buildings_in_kobildzan_tt #lex
+				tooltip = dock_buildings_in_kobildzan_tt 
 				140 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 				138 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 				178 = { owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
+				storm_isles_area = { type = all owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 			}
-
-			storm_isles_area = { type = all owned_by = ROOT OR = { has_dock_building_trigger = yes has_shipyard_building_trigger = yes } }
 		}
 
 		effect = {
@@ -2068,7 +2072,7 @@ Kob_5b = {
                 UPGRADE = upgraded
             }
 
-			custom_tooltip = convert_tradecompanies_tt #lex
+			custom_tooltip = convert_tradecompanies_tt 
 			hidden_effect = { 
 				set_country_flag = Z38_convert_tradecompanies
 				every_owned_province = {
@@ -2117,10 +2121,12 @@ kob_1_c = {
 		}
 
 		effect = {
-			# SAY LEX
-			custom_tooltip = gospodh_thing_tt
-
-			# SAY LEX
+			tooltip = {
+				add_country_modifier = {
+					name = Z38_godspodh_2
+					duration = -1
+				}
+			}
 			every_subject_country = {
 				limit = {
 					OR = {
@@ -2128,7 +2134,7 @@ kob_1_c = {
 						tag = H24
 					}
 				}
-				custom_tooltip = tech_sharing_tt #lex
+				custom_tooltip = tech_sharing_tt 
 				# LEX will boil.
 				hidden_effect = {
 					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_portable_turrets } } set_country_flag = unlocked_artifice_invention_portable_turrets }
@@ -2271,6 +2277,12 @@ kob_1_c = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_group = cannorian_holy_sites
+					NOT = { owned_by = ROOT }
+				}
+			}
 		}
 
 		trigger = {
@@ -2288,20 +2300,20 @@ kob_1_c = {
 
 			OR = {
 				custom_trigger_tooltip = {
-					tooltip = unlocked_silver_dragon_tt #lex
-					has_country_flag = unlocked_silver_dragon_3_upgraded
-				}
-				custom_trigger_tooltip = {
-					tooltip = unlocked_bronze_dragon_tt #lex
-					has_country_flag = unlocked_bronze_dragon_3_upgraded
-				}
-				custom_trigger_tooltip = {
-					tooltip = unlocked_brass_dragon_tt #lex
+					tooltip = unlocked_brass_dragon_tt 
 					has_country_flag = unlocked_brass_dragon_3_upgraded
 				}
 				custom_trigger_tooltip = {
-					tooltip = unlocked_purple_dragon_tt #lex
+					tooltip = unlocked_bronze_dragon_tt 
+					has_country_flag = unlocked_bronze_dragon_3_upgraded
+				}
+				custom_trigger_tooltip = {
+					tooltip = unlocked_purple_dragon_tt 
 					has_country_flag = unlocked_purple_dragon_3_upgraded
+				}
+				custom_trigger_tooltip = {
+					tooltip = unlocked_silver_dragon_tt 
+					has_country_flag = unlocked_silver_dragon_3_upgraded
 				}
 			}
 		}
@@ -2377,7 +2389,7 @@ kob_2_c = {
 
 		effect = {
 			large_increase_of_ruinborn_tolerance_effect = yes
-			custom_tooltip = ruinborn_migration_to_dc_tt #lex
+			custom_tooltip = ruinborn_migration_to_dc_tt 
 			hidden_effect = {
 				for = {
 					amount = 20
@@ -2389,7 +2401,6 @@ kob_2_c = {
 				}				
 			}
 
-
 			1746 = {
 				kill_units = {
 					who = ROOT
@@ -2398,7 +2409,6 @@ kob_2_c = {
 				}
 			}
 
-			custom_tooltip = 3_festivals_tooltip_tt #lex
 			hidden_effect = {
 				set_variable = {
 					which = dev2add
@@ -2571,7 +2581,7 @@ kob_3_c = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = Z38_received_aelantir_aid_tt #lex
+				tooltip = Z38_received_aelantir_aid_tt 
 				has_country_flag = Z38_received_aelantir_aid
 			}
 
@@ -2624,7 +2634,7 @@ kob_3_c = {
 			religious_unity = 1
 			
 				custom_trigger_tooltip = {
-					tooltip = unlocked_all_aspects_tt #lex
+					tooltip = unlocked_all_aspects_tt 
 
 					has_country_flag = unlocked_brown_dragon_2_base
 					has_country_flag = unlocked_brown_dragon_3_base
@@ -2726,33 +2736,32 @@ kob_3_c = {
 					value = 256000
 				}
 			}
-
 			custom_trigger_tooltip = {
-				tooltip = unlocked_silver_dragon_tt #lex
-				has_country_flag = unlocked_silver_dragon_3_upgraded
-			}
-			custom_trigger_tooltip = {
-				tooltip = unlocked_bronze_dragon_tt #lex
-				has_country_flag = unlocked_bronze_dragon_3_upgraded
-			}
-			custom_trigger_tooltip = {
-				tooltip = unlocked_brass_dragon_tt #lex
+				tooltip = unlocked_brass_dragon_tt 
 				has_country_flag = unlocked_brass_dragon_3_upgraded
 			}
 			custom_trigger_tooltip = {
-				tooltip = unlocked_purple_dragon_tt #lex
+				tooltip = unlocked_bronze_dragon_tt 
+				has_country_flag = unlocked_bronze_dragon_3_upgraded
+			}
+			custom_trigger_tooltip = {
+				tooltip = unlocked_purple_dragon_tt 
 				has_country_flag = unlocked_purple_dragon_3_upgraded
 			}
 			custom_trigger_tooltip = {
-				tooltip = unlocked_brown_dragon_tt #lex
+				tooltip = unlocked_silver_dragon_tt 
+				has_country_flag = unlocked_silver_dragon_3_upgraded
+			}
+			custom_trigger_tooltip = {
+				tooltip = unlocked_brown_dragon_tt 
 				has_country_flag = unlocked_brown_dragon_3_upgraded
 			}
 			custom_trigger_tooltip = {
-				tooltip = unlocked_black_dragon_tt #lex
+				tooltip = unlocked_black_dragon_tt 
 				has_country_flag = unlocked_black_dragon_3_upgraded
 			}
 			custom_trigger_tooltip = {
-				tooltip = unlocked_gold_dragon_tt #lex
+				tooltip = unlocked_gold_dragon_tt 
 				has_country_flag = unlocked_gold_dragon_3_upgraded
 			}
 
@@ -2797,7 +2806,7 @@ kob_4_c = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = artifice_unlocked_expert_tt #lex
+				tooltip = artifice_unlocked_expert_tt 
 				has_country_flag = artifice_unlocked_expert
 			}
 			dragon_coast_region = { has_courthouse_building_trigger = yes }
@@ -2853,7 +2862,7 @@ kob_4_c = {
 		}
 
 		effect = {
-			custom_tooltip = ebonsteel_extraction_tt #lex
+			custom_tooltip = ebonsteel_extraction_tt 
 			hidden_effect = {
 				every_owned_province = {
 					limit = { province_group = ebonsteel_provinces }
@@ -2904,7 +2913,7 @@ kob_4_c = {
 					has_dlc = "Mandate of Heaven"
 				}
 				custom_trigger_tooltip = {
-					tooltip = age_rewards_5_tt #lex
+					tooltip = age_rewards_5_tt 
 					num_of_age_rewards_taken = { amount = 5 }
 				}
 			}
@@ -2985,7 +2994,7 @@ kob_5_c = {
 			varheim_area = {
 				type = all 
 				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt #lex
+					tooltip = owned_and_dragon_cult_tt 
 					owned_by = ROOT 
 					religion = kobold_dragon_cult 
 				}
@@ -2993,14 +3002,14 @@ kob_5_c = {
 			blodfjell_area = {
 				type = all 
 				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt #lex
+					tooltip = owned_and_dragon_cult_tt 
 					owned_by = ROOT 
 					religion = kobold_dragon_cult 
 				}
 			}			
 
 			custom_trigger_tooltip = {
-				tooltip = all_skaldhyrric_nations_insulted #lex
+				tooltip = all_skaldhyrric_nations_insulted 
 				all_known_country = {
 					OR = {		
 						NOT = { religion = skaldhyrric_faith }
@@ -3015,7 +3024,7 @@ kob_5_c = {
 			olavlund_region = { add_devastation = 20 }
 			gerudian_frontier_region = { add_devastation = 20 }
 
-			custom_tooltip = all_skaldhyrric_claims_tt #lex
+			custom_tooltip = all_skaldhyrric_claims_tt 
 			hidden_effect = {
 				every_province = {
 					limit = { religion = skaldhyrric_faith }
@@ -3084,7 +3093,7 @@ kob_5_c = {
 				type = all
 				owned_by = ROOT
 				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt #lex
+					tooltip = has_kobold_traps_tt 
 					has_province_flag = has_kobold_traps
 				}
 				has_manufactory_trigger = yes
@@ -3103,7 +3112,7 @@ kob_5_c = {
 				duration = -1
 			}
 
-			custom_tooltip = gerudian_culture_tt #lex do this (INFO THAT YOULL LOSE FREE IF YOU DEMOTE)
+			custom_tooltip = gerudian_culture_tt 
 			hidden_effect = {
 				add_accepted_culture = west_dalr
 				add_accepted_culture = east_dalr
@@ -3117,7 +3126,7 @@ kob_5_c = {
                 UPGRADE = upgraded
             }
 
-			custom_tooltip = ebonsteel_extraction_tt #lex
+			custom_tooltip = ebonsteel_extraction_tt 
 			hidden_effect = {
 				every_owned_province = {
 					limit = { province_group = ebonsteel_provinces }
