@@ -5117,12 +5117,12 @@ custom_button = {
 			}
 			if = {
 				limit = {
-					artifice_can_select_invention_10= yes
+					artifice_can_select_invention_10 = yes
 					NOT = {
 						has_estate_privilege = artifice_invention_war_rigs
 					}
 				}
-				set_estate_privilege = artifice_invention_t_wave_transceivers
+				set_estate_privilege = artifice_invention_war_rigs
 			}
 			else_if = {
 				limit = {
