@@ -58,53 +58,6 @@ country_event = { #To Become Dragons
 			}
 		}
 		custom_tooltip = gain_reform_progress_per_reform_level_tt 
-		if = {
-			limit = { NOT = { tag = Z38 } }
-			189 = {
-				move_capital_effect = yes
-				add_base_tax = 4
-				add_base_production = 4
-				add_base_manpower = 4
-			}
-			change_tag = Z38
-			hidden_effect = { restore_country_name = yes }
-			swap_non_generic_missions = yes
-			custom_tooltip = tooltip_kobildzani_culture_provinces
-			hidden_effect = {
-				every_owned_province = {
-					limit = {
-						culture_group = kobold
-					}
-					change_culture = kobildzani_kobold
-				}
-			}
-			primary_and_ruler_culture_change = { race = kobold new_culture = kobildzani_kobold }
-			remove_non_electors_emperors_from_empire_effect = yes
-			if = {
-				limit = {
-					NOT = { government_rank = 3 }
-				}
-				set_government_rank = 3
-			}
-			dragon_coast_region = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = Z38
-			}
-			add_prestige = 25
-			if = {
-				limit = { has_custom_ideas = no }
-				country_event = { id = ideagroups.1 } #Swap Ideas
-			}
-			add_country_modifier = {
-				name = "centralization_modifier"
-				duration = 7300
-			}
-			set_global_flag = formed_kobildzan_flag
-			lock_racial_admin = yes
-		}
 	}
 }
 
@@ -502,6 +455,12 @@ country_event = { #The Dragon's Roar
 				add_base_production = -3
 				add_base_manpower = -3
 				add_devastation = 100
+				set_variable = {
+					which = dragon_cult_hoard
+					value = 0
+				}
+				upgrade_kobold_hoard = yes	
+				remove_province_modifier = kobold_hoard_0
 			}
 			dragon_coast_region = {
 				limit = {
@@ -770,8 +729,8 @@ country_event = { #Aid from Aelantir
 				add_devastation = -10
 			}
 			set_country_flag = Z38_received_aelantir_aid
+			var_effect = { effect = add_treasury var = dev2add sign = + }
 		}
-		var_effect = { effect = add_treasury var = dev2add sign = + }
 	}
 }
 
@@ -789,19 +748,18 @@ country_event = { #The Prodigal Father
 			duration = -1
 		}
 		add_stability = 3
-		hidden_effect = {
-			187 = {
-				set_variable = { 
-					which = dragon_cult_hoard 
-					value = 500 
-				} 
-			}
-			upgrade_kobold_hoard = yes				
-		}
+		hidden_effect = { set_country_flag = new_hoard }
 		187 = {
 			move_capital_effect = yes 
 			custom_tooltip = new_hoard_in_revenarki_tt
-		}
+			hidden_effect = {
+				set_variable = { 
+					which = dragon_cult_hoard 
+					value = 500 
+				} 		
+				upgrade_kobold_hoard = yes	
+			}
+		}	
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
 			SLOT = 3
@@ -834,16 +792,16 @@ country_event = { #The Kobildzani Conference
 		name = flavour_kobildzan.14.b
 		hidden_effect = {
 			set_country_flag = kobildzan_dragonfire_sacs
-			add_country_modifier = {
-				name = Z38_dragonfire_sacs_regiment_mod
-				duration = -1
-			}
 		}
 		tooltip = {
 			add_country_modifier = {
 				name = Z38_dragonfire_sacs_dummy
 				duration = -1
 			}
+		}
+		add_country_modifier = {
+			name = Z38_dragonfire_sacs_regiment_mod
+			duration = -1
 		}
 		artifice_granted_10 = yes
 	}
@@ -873,16 +831,16 @@ country_event = { #Form and Function
 		name = flavour_kobildzan.15.b
 		hidden_effect = {
 			set_country_flag = kobildzan_ebonsteel_shieldscales
-			add_country_modifier = {
-				name = Z38_ebonsteel_shieldscales_regiment_mod
-				duration = -1
-			}
 		}
 		tooltip = {
 			add_country_modifier = {
 				name = Z38_ebonsteel_shieldscales_dummy
 				duration = -1
 			}
+		}
+		add_country_modifier = {
+			name = Z38_ebonsteel_shieldscales_regiment_mod
+			duration = -1
 		}
 		artifice_granted_20 = yes
 	}
@@ -918,7 +876,7 @@ country_event = { #A Very Angry Lecture
 		name = flavour_kobildzan.17.a
 		custom_tooltip = lullaby_cannon_unlock_tt
 		hidden_effect = {
-			set_country_flag = can_use_lullaby_cannon_tt
+			set_country_flag = can_use_lullaby_cannon
 		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = copper
@@ -1018,15 +976,15 @@ country_event = { #Family Reunion
 		hidden_effect = {
 			set_country_flag = kobildzan_the_holiest_flesh 
 		}
-		add_country_modifier = {
-			name = Z38_the_holiest_flesh_regiment_mod
-			duration = -1
-		}
 		tooltip = {
 			add_country_modifier = {
 				name = Z38_the_holiest_flesh_dummy
 				duration = -1
 			}
+		}
+		add_country_modifier = {
+			name = Z38_the_holiest_flesh_regiment_mod
+			duration = -1
 		}
 		artifice_granted_20 = yes
 	}

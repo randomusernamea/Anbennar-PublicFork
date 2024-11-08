@@ -569,7 +569,7 @@ country_event = {
 			custom_tooltip = church_power_hoard_donation
 		}
 		else_if = {
-			limit = { NOT = { has_country_flag = dragon_roar } }
+			limit = { NOT = { has_country_flag = Z38_had_roar_happen } }
 			hidden_effect = {
 				189 = {
 					set_variable = {

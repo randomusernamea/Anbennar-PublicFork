@@ -5380,7 +5380,11 @@ artifice_invention_lullaby_cannon = {
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
 		has_country_flag = unlocked_artifice_invention_lullaby_cannon
-		religion = skaldhyrric_faith
+		OR = {
+			religion = skaldhyrric_faith
+			has_country_flag = can_use_lullaby_cannon
+		}
+		
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_lullaby_cannon
@@ -5389,7 +5393,10 @@ artifice_invention_lullaby_cannon = {
 	can_select = {
         ai = yes
 		artifice_has_points_30 = yes
-		religion = skaldhyrric_faith
+		OR = {
+			religion = skaldhyrric_faith
+			has_country_flag = can_use_lullaby_cannon
+		}
 	}
 	can_revoke = {
 		hidden_trigger = {
