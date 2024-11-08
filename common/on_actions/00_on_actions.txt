@@ -10104,14 +10104,18 @@ on_five_year_pulse_3 = {
 				limit = { has_country_flag = kobildzan_biocompatibility }
 				if = {
 					limit = { has_country_flag = hidden_biocompatibility }
-					biocompatibility_effect = yes
+					random_owned_area = {
+						biocompatibility_effect = yes
+					}
 				}
 				else = {
 					country_event = { id = flavor_kobildzan.25 days = 90 }
 				}
 				every_subject_country = {
 					limit = { has_country_flag = kobildzan_biocompatibility }
-					biocompatibility_effect = yes
+					random_owned_area = {
+						biocompatibility_effect = yes
+					}
 				}
 			}
 		}

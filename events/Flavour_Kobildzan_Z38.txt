@@ -332,6 +332,7 @@ country_event = { #Twin Empires
 	is_triggered_only = yes 
 
 	option = { #Two empires, forged as kin!
+		goto = 1191	
 		name = flavor_kobildzan.8.a
 		hidden_effect = {	
 			1191 = {
@@ -435,6 +436,7 @@ country_event = { #The Greatest Hoard on Halann
 
 	option = { #And then, the world shook again...
 		name = flavor_kobildzan.10.a
+		goto = 189
 		country_event = { id = flavor_kobildzan.11 days = 1 }
 	}
 }
@@ -662,7 +664,7 @@ country_event = { #The Dragon's Roar
 		hidden_effect = {
 			set_country_flag = Z38_had_roar_happen
 		}
-		swap_non_generic_missions = yes #lex do i need a tooltip here?
+		swap_non_generic_missions = yes 
 	}
 }
 
@@ -816,6 +818,7 @@ country_event = { #To Awaken the Beast
 	is_triggered_only = yes 
 
 	option = { #To Elkaesal, the-- wait, what?
+		goto = 6271
 		name = flavor_kobildzan.16.a
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
@@ -1066,15 +1069,31 @@ country_event = { #Biocompatibility Event
 	desc = flavor_kobildzan.25.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
+	immediate = {
+		random_owned_province = {
+			save_event_target_as = biocompatibility_province
+		}
+	}
 
 	option = { #What a beautiful thing!
 		name = flavor_kobildzan.25.a
-		biocompatibility_effect = yes
+		goto = biocompatibility_province
+		event_target:biocompatibility_province = {
+			area = {
+				biocompatibility_effect = yes
+			}
+		}
+		
 	}
 	option = { #Don't show me this again.
 		name = flavor_kobildzan.25.b
+		goto = biocompatibility_province
 		hidden_effect = { set_country_flag = hidden_biocompatibility }
 		custom_tooltip = hide_biocompatibility_tt #lex
-		biocompatibility_effect = yes
+		event_target:biocompatibility_province = {
+			area = {
+				biocompatibility_effect = yes
+			}
+		}
 	}
 }

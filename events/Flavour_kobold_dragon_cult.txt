@@ -582,6 +582,10 @@ country_event = {
 					} 
 					upgrade_kobold_hoard = yes 
 				} 
+				change_variable = {
+					which = kdc_festivals_held
+					value = 1
+				}
 			}			
 			custom_tooltip = church_power_hoard_donation
 		}

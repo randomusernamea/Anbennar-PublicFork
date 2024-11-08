@@ -99,11 +99,17 @@ kob_2_a = {
 		trigger = {
             167 = { # Royvibobb
                 owned_by = ROOT 
-                has_province_flag = has_kobold_traps
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt #lex
+					has_province_flag = has_kobold_traps
+				}
             }        
             146 = { # Baycodds
                 owned_by = ROOT 
-                has_province_flag = has_kobold_traps
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt #lex
+					has_province_flag = has_kobold_traps
+				}
             }
             has_institution = feudalism
             OR = {
@@ -116,6 +122,7 @@ kob_2_a = {
 		}
 		effect = {
             146 = { add_base_production = 2 }
+			custom_tooltip = innovation_per_trap_level #lex
             146 = {
                 trigger_switch = {
                     on_trigger = has_province_modifier
@@ -573,9 +580,12 @@ kob_4_a = {
 			
 			colonial_dalaire = {
 				type = all
-				OR = {
-					has_port = no
-					has_discovered = ROOT
+				custom_trigger_tooltip = {
+					tooltip = has_discovered_tt #lex
+					OR = {
+						has_port = no
+						has_discovered = ROOT
+					}
 				}
 			} 
 		}
@@ -784,16 +794,20 @@ kob_1_b = {
 		}
 
 		trigger = {
-			dolindha_region = {
-				type = all
-				OR = {
-					is_city = no
-					AND = {
-						owned_by_subject_of = ROOT
-						OR = { religion = kobold_dragon_cult religion = drozma_tur }
+			custom_trigger_tooltip = {
+				tooltip = dolindha_controls_all_tt #lex
+				dolindha_region = {
+					type = all
+					OR = {
+						is_city = no
+						AND = {
+							owned_by_subject_of = ROOT
+							OR = { religion = kobold_dragon_cult religion = drozma_tur }
+						}
 					}
 				}
 			}
+			
 
 			if = {
 				limit = {
@@ -1055,14 +1069,18 @@ kob_2_b = {
 			calc_true_if = {
 				amount = 3
 				any_subject_country = {
-					num_of_cities = 10
-					capital_scope = {
-						OR = {
-							colonial_region = colonial_broken_sea 
-							colonial_region = colonial_haraf 
-							colonial_region = colonial_eordand
+					custom_trigger_tooltip = {
+						tooltip = 10_cities_in_broken_haraf_or_eordand_tt #lex
+						num_of_cities = 10
+						capital_scope = {
+							OR = {
+								colonial_region = colonial_broken_sea 
+								colonial_region = colonial_haraf 
+								colonial_region = colonial_eordand
+							}
 						}
 					}
+
 				}
 			}
 			# any_subject_country = {
@@ -1206,10 +1224,11 @@ kob_3_b = {
 				high_tolerance_goblin_race_trigger = yes
 				high_tolerance_halfling_race_trigger = yes
 			} 
-
-
 			religious_unity = 0.9
-			# Todo: festival helding
+			check_variable = {
+				which = kdc_festivals_held
+				value = 20
+			}
 		}
 		effect = {
 			remove_country_modifier = Z38_call_of_the_dragon_1
@@ -1239,6 +1258,7 @@ kob_3_b = {
 		required_missions = { 
 			Z38_the_artificer_ruinborn
 			Z38_reclaiming_the_frontier
+			Z38_a_new_face_a_new_body
 		}
 
 		provinces_to_highlight = {
@@ -1449,19 +1469,30 @@ kob_4_b = {
 			num_of_owned_provinces_with = {
 				value = 3
 				
+				has_province_modifier = kobold_traps_lvl_4
 				OR = {
 					region = small_country_region
 					region = lencenor_region
 				}
-
-				OR = {
-					has_province_modifier = kobold_traps_lvl_3
-					has_province_modifier = kobold_traps_lvl_4
-				}
+				
 			}
 
-			115 = { owned_by = ROOT province_has_center_of_trade_of_level = 2 }
-			112 = { owned_by = ROOT province_has_center_of_trade_of_level = 2 }
+			115 = { 
+				custom_trigger_tooltip = {
+					tooltip = level_2_cot_owned_by_root_tt #lex
+					owned_by = ROOT 
+					province_has_center_of_trade_of_level = 2 
+
+				}
+			}
+			112 = { 
+				custom_trigger_tooltip = {
+					tooltip = level_2_cot_owned_by_root_tt #lex
+					owned_by = ROOT 
+					province_has_center_of_trade_of_level = 2 
+
+				}
+			}
 		}
 
 		effect = {
@@ -1470,6 +1501,21 @@ kob_4_b = {
 					remove_province_modifier = kobold_traps_lvl_1
 					remove_province_modifier = kobold_traps_lvl_2
 					remove_province_modifier = kobold_traps_lvl_3
+					set_province_flag = has_kobold_traps
+					set_province_flag = kobold_traps_lvl_2_or_more
+				}
+				add_province_modifier = {
+					name = modified_kobold_traps_lvl_4
+					duration = -1
+				}
+			}
+			115 = {
+				hidden_effect = {
+					remove_province_modifier = kobold_traps_lvl_1
+					remove_province_modifier = kobold_traps_lvl_2
+					remove_province_modifier = kobold_traps_lvl_3
+					set_province_flag = has_kobold_traps
+					set_province_flag = kobold_traps_lvl_2_or_more
 				}
 				add_province_modifier = {
 					name = modified_kobold_traps_lvl_4
@@ -1539,24 +1585,39 @@ kob_4_b = {
 			189 = { has_manufactory_trigger = yes }
 			187 = { has_manufactory_trigger = yes }
 
-			all_owned_province = {
-				OR = {
-					NOT = { has_terrain = cavern }
-					AND = {
-						is_prosperous = yes
-						num_of_buildings_in_province = 1
+			custom_trigger_tooltip = {
+				tooltip = caverns_are_prosperous_tt #lex
+				all_owned_province = {
+					OR = {
+						NOT = { has_terrain = cavern }
+						AND = {
+							is_prosperous = yes
+							num_of_buildings_in_province = 1
+						}
 					}
 				}
 			}
+
 		}
 
 		effect = {
-			every_owned_province = {
-				limit = { has_terrain = cavern }
+			dragonmaw_area = {
 				add_province_modifier = {
 					name = Z38_sanctified_through_effort
 					duration = -1
-				}
+				}	
+			}
+			dragonheart_area = {
+				add_province_modifier = {
+					name = Z38_sanctified_through_effort
+					duration = -1
+				}	
+			}
+			dragondepth_area = {
+				add_province_modifier = {
+					name = Z38_sanctified_through_effort
+					duration = -1
+				}	
 			}
 		}
 	}
@@ -1607,10 +1668,24 @@ kob_4_b = {
 			}
 			
 
-			196 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
-			694 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
-			213 = { OR = { has_province_modifier = modified_kobold_traps_lvl_3 has_province_modifier = modified_kobold_traps_lvl_4 } }
-
+			196 = {
+				custom_trigger_tooltip = {
+					tooltip = kobold_traps_lvl_2_or_more #lex
+					has_province_flag = kobold_traps_lvl_2_or_more
+				}
+			}
+			694 = {
+				custom_trigger_tooltip = {
+					tooltip = kobold_traps_lvl_2_or_more #lex
+					has_province_flag = kobold_traps_lvl_2_or_more
+				}
+			}	
+			213 = {
+				custom_trigger_tooltip = {
+					tooltip = kobold_traps_lvl_2_or_more #lex
+					has_province_flag = kobold_traps_lvl_2_or_more
+				}
+			}	
 			NOT = {
 				accepted_culture = gawedi
 				accepted_culture = moorman
@@ -1809,14 +1884,16 @@ Kob_5b = {
 				limit = { ai = yes }
 				treasury = 600
 			} else = {
-				all_owned_province = {
-					OR = {
-						NOT = { trade_goods = wool }
-						NOT = { region = dragon_coast_region }
-						has_production_building_trigger = yes
+				custom_trigger_tooltip = {
+					tooltip = all_wool_provinces_tt #lex
+					all_owned_province = {
+						OR = {
+							NOT = { trade_goods = wool }
+							NOT = { region = dragon_coast_region }
+							has_production_building_trigger = yes
+						}
 					}
 				}
-
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 3
 					trade_goods = cloth
@@ -1959,8 +2036,22 @@ Kob_5b = {
 				}
 			}
 
-			frostbridges_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-			serpentshead_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			frostbridges_area = { 
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt 
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				} 
+			}
+			serpentshead_area = { 
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt 
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				} 
+			}
 		}
 
 		effect = {
@@ -2017,13 +2108,8 @@ kob_1_c = {
 		trigger = {
 			ynn_superregion = {
 				type = all
-				AND = {
-					is_city = no
-					AND = {
-						OR = { owned_by = ROOT owned_by_subject_of = ROOT }
-						OR = { religion = kobold_dragon_cult religion = drozma_tur }
-					}
-				}
+				owned_by_subject_of = ROOT
+				OR = { religion = kobold_dragon_cult religion = drozma_tur }
 			}
 			has_church_aspect = green_dragon_1_upgraded
 			has_church_aspect = green_dragon_2_upgraded
@@ -2042,7 +2128,7 @@ kob_1_c = {
 						tag = H24
 					}
 				}
-
+				custom_tooltip = tech_sharing_tt #lex
 				# LEX will boil.
 				hidden_effect = {
 					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_portable_turrets } } set_country_flag = unlocked_artifice_invention_portable_turrets }
@@ -2384,7 +2470,7 @@ kob_2_c = {
 		}
 
 		trigger = {
-			1576 = { highest_value_trade_node = yes }
+			1294 = { highest_value_trade_node = yes }
 			
 			1165 = { is_strongest_trade_power = ROOT } 
 			1690 = { is_strongest_trade_power = ROOT } 
@@ -2877,15 +2963,49 @@ kob_5_c = {
 		}
 
 		trigger = {
-			sidaett_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-			bjarnland_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-			varheim_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-			blodfjell_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			custom_trigger_tooltip = {
+				tooltip = sidaett_bjarnland_varheim_blodfjell_owned
+			}
+			sidaett_area = {
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				}
+			}
+			bjarnland_area = {
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				}
+			}
+			varheim_area = {
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt #lex
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				}
+			}
+			blodfjell_area = {
+				type = all 
+				custom_trigger_tooltip = {
+					tooltip = owned_and_dragon_cult_tt #lex
+					owned_by = ROOT 
+					religion = kobold_dragon_cult 
+				}
+			}			
 
-			all_known_country = {
-				OR = {
-					NOT = { religion = skaldhyrric_faith }
-					has_been_insulted_by_root = yes
+			custom_trigger_tooltip = {
+				tooltip = all_skaldhyrric_nations_insulted #lex
+				all_known_country = {
+					OR = {		
+						NOT = { religion = skaldhyrric_faith }
+						has_been_insulted_by_root = yes
+					}
 				}
 			}
 		}
@@ -2963,7 +3083,10 @@ kob_5_c = {
 			gerudian_kobold_traps = {
 				type = all
 				owned_by = ROOT
-				has_province_flag = has_kobold_traps
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt #lex
+					has_province_flag = has_kobold_traps
+				}
 				has_manufactory_trigger = yes
 			}
 			has_church_aspect = copper_dragon_1_upgraded
