@@ -823,7 +823,15 @@ giberd_konwell_conquest = {
 			}
 		}
 		trigger = {
-			is_not_researching_invention = yes
+			num_economic_artifice_inventions_active_tier_1 = {
+				VAL = 1
+			}
+			num_economic_artifice_inventions_active_tier_2 = {
+				VAL = 1
+			}
+			num_economic_artifice_inventions_discovered_tier_2 = {
+				VAL = 3
+			}
 			custom_trigger_tooltip = {
 				tooltip = giberd_curtain_call_tt
 				all_owned_province = {
@@ -848,7 +856,6 @@ giberd_konwell_conquest = {
 				has_building = textile
 				has_state_edict = edict_centralization_effort
 			}
-			is_not_researching_invention = yes
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = esmari_fashion_happened_tt
@@ -858,12 +865,12 @@ giberd_konwell_conquest = {
 			}
 		}
 		effect = {
-			custom_tooltip = giberd_unable_to_research_20
+			custom_tooltip = giberd_curtain_call_effect_tt
 			hidden_effect = {
-				set_country_flag = artifice_research_temporarily_disabled
-				country_event = {
-					id = flavor_giberd.50
-					days = 7300
+				add_country_modifier = {
+					name = giberd_curtain_call_inventions
+					duration = 7300
+					hidden = yes
 				}
 			}
 			260 = {
