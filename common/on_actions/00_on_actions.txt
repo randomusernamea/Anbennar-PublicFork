@@ -11199,7 +11199,7 @@ on_province_owner_change = {
 					add_province_modifier = { name = centaur_tiger_bane_territory duration = -1 }
 				}
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				if = {
 					limit = { owner = { NOT = { has_country_flag = tiger_bane_revolt } has_faction = tiger_bane } }
 					add_province_modifier = { name = centaur_tiger_bane_territory duration = -1 }
@@ -14933,7 +14933,7 @@ on_pillaged_capital = {
 				OR = {
 					superregion = rahen_superregion
 					superregion = yanshen_superregion
-					superregion = south_haless_superregion
+					superregion = vimdatrong_superregion
 				}
 			}
 		}
