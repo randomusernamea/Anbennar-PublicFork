@@ -14041,6 +14041,16 @@ estate_mages_organization_rule_of_warlocks = {
 		}	
 		custom_tooltip = rakkaz_rule_of_warlocks_tooltip
 		hidden_effect = { country_event = { id = flavour_rakkaz.6 } }
+		custom_tooltip = " "
+		complex_dynamic_effect = {
+			first_custom_tooltip = rakkaz_has_invocation_of_chains
+			first_limit = "
+				full_idea_group = religious_ideas
+			"
+			first_effect = "
+				custom_tooltip = rakkaz_has_religious_ideas
+			"
+		}
 	}
 	penalties = {
 		ae_impact = 0.1
@@ -14181,9 +14191,12 @@ estate_mages_warlock_pact_overcharge = {
 				limit = {
 					has_building = mage_tower
 				}
-				add_province_modifier = {
-					name = rakkaz_pact_overcharge
-					duration = 3650
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = rakkaz_pact_overcharge
+						duration = 3650
+					}
 				}
 			}
 		}
