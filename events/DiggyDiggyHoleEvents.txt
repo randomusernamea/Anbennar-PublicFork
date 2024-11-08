@@ -1219,12 +1219,12 @@ country_event = {
 }
 
 ##Restoring a Rail
-country_event = {
+province_event = {
 	id = diggy.36
 	title = diggy.36.t
 	desc = diggy.36.d
 	picture = DWARVEN_RAIL_eventPicture
-	goto = FROM
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
@@ -1232,56 +1232,10 @@ country_event = {
 		always = yes
 	}
 	
-	option = { #Don't autobuild and continue as usual
+	option = { 
         name = diggy.36.a
         ai_chance = { factor = 0 }
 		add_prestige = 1 
-	}
-
-	option = { #Auto build for 5 years
-        name = diggy.36.b 
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_temporary_tooltip
-		custom_tooltip = rebuild_road_tooltip
-		hidden_effect = {
-			add_country_modifier = { 
-				name = temp_auto_build_rail 
-				duration = 1825 
-				hidden = yes 
-			}
-			construct_every_rail_road = {
-				rail = dwarovar_rail
-				repair = yes
-				speed = 1
-				cost = 1
-			}
-			add_prestige = 1 
-		}
-	}
-
-	option = { #Always autobuild and never notify
-        name = diggy.36.c
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_auto_tooltip
-		custom_tooltip = rebuild_road_tooltip
-		hidden_effect = {
-			set_country_flag = auto_build_rail
-			construct_every_rail_road = {
-				rail = dwarovar_rail
-				repair = yes
-				speed = 1
-				cost = 1
-			}
-			add_prestige = 1 
-		}
-	}
-
-	option = { #Never autobuild and never notify
-        name = diggy.36.d.1
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_never_tooltip
-		add_prestige = 1 
-		set_country_flag = never_auto_build_rail
 	}
 }
 
@@ -1406,12 +1360,12 @@ country_event = {
 }
 
 ##Upgrading a Rail
-country_event = {
+province_event = {
 	id = diggy.42
 	title = diggy.42.t
 	desc = diggy.42.d
 	picture = DWARVEN_RAIL_eventPicture
-	goto = FROM
+	goto = ROOT
 	
 	is_triggered_only = yes
 	
@@ -1419,56 +1373,10 @@ country_event = {
 		always = yes
 	}
 	
-		option = { #Don't autobuild and continue as usual
+	option = { 
         name = diggy.42.a
         ai_chance = { factor = 0 }
 		add_prestige = 1 
-	}
-
-	option = { #Auto build for 5 years
-        name = diggy.42.b 
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_temporary_tooltip
-		custom_tooltip = upgrade_road_tooltip
-		hidden_effect = {
-			add_country_modifier = { 
-				name = temp_auto_build_rail 
-				duration = 1825 
-				hidden = yes 
-			}
-			construct_every_rail_road = {
-				rail = restored_rail
-				upgrade = yes
-				speed = 1.3
-				cost = 2
-			}
-			add_prestige = 1 
-		}
-	}
-
-	option = { #Always autobuild and never notify
-        name = diggy.42.c
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_auto_tooltip
-		custom_tooltip = upgrade_road_tooltip
-		hidden_effect = {
-			set_country_flag = auto_build_rail
-			construct_every_rail_road = {
-				rail = restored_rail
-				upgrade = yes
-				speed = 1.3
-				cost = 2
-			}
-			add_prestige = 1 
-		}
-	}
-
-	option = { #Never autobuild and never notify
-        name = diggy.42.d.1
-        ai_chance = { factor = 0 }
-		custom_tooltip = rebuild_road_never_tooltip
-		add_prestige = 1 
-		set_country_flag = never_auto_build_rail
 	}
 }
 
@@ -12331,5 +12239,74 @@ country_event = { #Hidden event to make the squatters start colonizing
 		4288 = { #Greatbeard Cavern
             create_colony = 50
         }
+	}
+}
+
+country_event = { #Event manager for autorails
+	id = diggy.760
+	title = diggy.760.t
+	desc = diggy.760.d
+	picture = DWARVEN_RAIL_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { #Continue as usual and don't notify for 5 years
+        name = diggy.760.a
+        ai_chance = { factor = 0 }
+		add_prestige = 1 
+		custom_tooltip = no_notif_for_5_years
+		hidden_effect = {
+			add_country_modifier = { 
+				name = temp_no_notif_rail 
+				duration = 1825 
+				hidden = yes 
+			}
+		}
+	}
+
+	option = { #Auto build and don't notify for 5 years 
+        name = diggy.760.b 
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_temporary_tooltip
+		custom_tooltip = rebuild_road_tooltip
+		hidden_effect = {
+			add_country_modifier = { 
+				name = temp_auto_build_rail 
+				duration = 1825 
+				hidden = yes 
+			}
+			construct_every_rail_road = {
+				rail = dwarovar_rail
+				repair = yes
+				speed = 1
+				cost = 1
+			}
+			add_prestige = 1 
+		}
+	}
+
+	option = { #Always autobuild and never notify
+        name = diggy.760.c
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_auto_tooltip
+		custom_tooltip = rebuild_road_tooltip
+		hidden_effect = {
+			set_country_flag = auto_build_rail
+			construct_every_rail_road = {
+				rail = dwarovar_rail
+				repair = yes
+				speed = 1
+				cost = 1
+			}
+			add_prestige = 1 
+		}
+	}
+
+	option = { #Never autobuild and never notify
+        name = diggy.760.d.1
+        ai_chance = { factor = 0 }
+		custom_tooltip = rebuild_road_never_tooltip
+		add_prestige = 1 
+		set_country_flag = never_auto_build_rail
 	}
 }

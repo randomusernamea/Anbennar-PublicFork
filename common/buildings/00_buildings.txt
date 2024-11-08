@@ -3884,12 +3884,11 @@ railway_work = {
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_notif_for_5_years }
 						}
 					}
-					FROM = { 
-						clr_country_flag = temp_auto_build_rail 
-						country_event = { id = diggy.36 }
-					}
+					FROM = { country_event = { id = diggy.760 } }
+					province_event = { id = diggy.36 }
 				}
 				else_if = {
 					limit = {
@@ -3922,12 +3921,11 @@ railway_work = {
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_notif_for_5_years }
 						}
 					}
-					FROM = { 
-						clr_country_flag = temp_auto_build_rail 
-						country_event = { id = diggy.42 }
-					}
+					FROM = { country_event = { id = diggy.760 } }
+					province_event = { id = diggy.42 }
 				}
 				else_if = {
 					limit = {
@@ -3960,12 +3958,11 @@ railway_work = {
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_notif_for_5_years }
 						}
 					}
-					FROM = { 
-						clr_country_flag = temp_auto_build_rail 
-						country_event = { id = allclan.99 }
-					} 
+					FROM = { country_event = { id = diggy.760 } } 
+					province_event = { id = allclan.99 }
 				}
 				else_if = {
 					limit = {
