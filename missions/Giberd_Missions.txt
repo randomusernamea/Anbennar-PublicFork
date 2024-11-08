@@ -1170,8 +1170,8 @@ giberd_ryalanar_conquest = {
 		trigger = {
 			artifice_has_points_20 = yes
 			artifice_has_invention_slot = yes			# TODO: two invention slots withour using a VAT?
-			num_society_artifice_inventions_discovered = {
-				VAL = 2
+			num_society_artifice_inventions_active = {
+				VAL = 1
 			}
 			monthly_income = 20
 		}
