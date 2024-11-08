@@ -697,6 +697,31 @@ on_religion_change = {
 			id = flavour_maskedbutcher.17
 		}
 	}
+
+	#Stalbor
+	if = {
+		limit = {
+			is_or_was_tag = { tag = B47 }
+			any_subject_country = {
+				OR = {
+					has_country_modifier = B47_deepwoods_accord_I
+					has_country_modifier = B47_deepwoods_accord_II
+				}
+			}
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					has_country_modifier = B47_deepwoods_accord_I
+					has_country_modifier = B47_deepwoods_accord_II
+				}
+			}
+			change_religion = ROOT
+			capital_scope = {
+				change_religion = ROOT
+			}
+		}
+	}
 }
 
 # country.
