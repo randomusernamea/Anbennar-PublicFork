@@ -13457,6 +13457,10 @@ estate_merchants_gnollish_caravans = {
 	}
 	ai_will_do = { factor = 10 }
 
+	can_revoke = {
+		always = no
+	}
+
 	conditional_modifier = {
 		trigger = {
 			high_tolerance_gnollish_race_trigger = yes
@@ -13492,6 +13496,10 @@ estate_nobility_nzeri_standard_bearers = {
 	}
 	ai_will_do = { factor = 10 }
 
+	can_revoke = {
+		always = no
+	}
+
 	conditional_modifier = {
 		trigger = {
 			high_tolerance_harpy_race_trigger = yes
@@ -13525,6 +13533,10 @@ estate_clergy_architects_at_a_scale = {
 	}
 	ai_will_do = { factor = 10 }
 
+	can_revoke = {
+		always = no
+	}
+
 	conditional_modifier = {
 		trigger = {
 			high_tolerance_lizardfolk_race_trigger = yes
@@ -13552,6 +13564,10 @@ estate_mages_delta_orbs = {
 
 	is_valid = { has_estate_privilege = estate_mages_delta_orbs }
 	can_select = { has_estate_privilege = estate_mages_delta_orbs }
+
+	can_revoke = {
+		always = no
+	}
 
 	benefits = {
 		artillery_levels_available_vs_fort = 1
@@ -13588,6 +13604,10 @@ estate_ahati_trollish_ahati = {
 
 	benefits = { }
 	ai_will_do = { factor = 10 }
+
+	can_revoke = {
+		always = no
+	}
 
 	on_granted = {
 		add_country_modifier = {
