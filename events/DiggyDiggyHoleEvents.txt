@@ -1244,7 +1244,11 @@ country_event = {
 		custom_tooltip = rebuild_road_temporary_tooltip
 		custom_tooltip = rebuild_road_tooltip
 		hidden_effect = {
-			set_country_flag = temp_auto_build_rail
+			add_country_modifier = { 
+				name = temp_auto_build_rail 
+				duration = 1825 
+				hidden = yes 
+			}
 			construct_every_rail_road = {
 				rail = dwarovar_rail
 				repair = yes
@@ -1426,8 +1430,12 @@ country_event = {
         ai_chance = { factor = 0 }
 		custom_tooltip = rebuild_road_temporary_tooltip
 		custom_tooltip = upgrade_road_tooltip
-		set_country_flag = temp_auto_build_rail
 		hidden_effect = {
+			add_country_modifier = { 
+				name = temp_auto_build_rail 
+				duration = 1825 
+				hidden = yes 
+			}
 			construct_every_rail_road = {
 				rail = restored_rail
 				upgrade = yes

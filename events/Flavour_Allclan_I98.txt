@@ -2656,7 +2656,11 @@ country_event = {
 		custom_tooltip = rebuild_road_temporary_tooltip
 		custom_tooltip = upgrade_road_tooltip
 		hidden_effect = {
-			set_country_flag = temp_auto_build_rail
+			add_country_modifier = { 
+				name = temp_auto_build_rail 
+				duration = 1825 
+				hidden = yes 
+			}
 			construct_every_rail_road = {
 				rail = advanced_rail
 				rocket = yes

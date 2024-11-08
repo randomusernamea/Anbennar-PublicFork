@@ -3883,13 +3883,7 @@ railway_work = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
-							OR = {
-								NOT = { has_country_flag = temp_auto_build_rail }
-								had_country_flag = {
-									flag = temp_auto_build_rail
-									days = 1825 #5 Years
-								}
-							}
+							NOT = { has_country_modifier = temp_auto_build_rail }
 						}
 					}
 					FROM = { 
@@ -3900,9 +3894,10 @@ railway_work = {
 				else_if = {
 					limit = {
 						FROM = { 
+							treasury = 15
 							OR = { 
 								has_country_flag = auto_build_rail 
-								has_country_flag = temp_auto_build_rail
+								has_country_modifier = temp_auto_build_rail
 							}
 						}
 					}
@@ -3926,24 +3921,21 @@ railway_work = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
-							OR = {
-								NOT = { has_country_flag = temp_auto_build_rail }
-								had_country_flag = {
-									flag = temp_auto_build_rail
-									days = 1825 #5 Years
-								}
-							}
+							NOT = { has_country_modifier = temp_auto_build_rail }
 						}
 					}
-					FROM = { clr_country_flag = temp_auto_build_rail }
-					country_event = { id = diggy.42 }
+					FROM = { 
+						clr_country_flag = temp_auto_build_rail 
+						country_event = { id = diggy.42 }
+					}
 				}
 				else_if = {
 					limit = {
 						FROM = { 
+							treasury = 30
 							OR = { 
 								has_country_flag = auto_build_rail 
-								has_country_flag = temp_auto_build_rail
+								has_country_modifier = temp_auto_build_rail
 							}
 						}
 					}
@@ -3967,24 +3959,21 @@ railway_work = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
-							OR = {
-								NOT = { has_country_flag = temp_auto_build_rail }
-								had_country_flag = {
-									flag = temp_auto_build_rail
-									days = 1825 #5 Years
-								}
-							}
+							NOT = { has_country_modifier = temp_auto_build_rail }
 						}
 					}
-					FROM = { clr_country_flag = temp_auto_build_rail }
-					country_event = { id = allclan.99 }
+					FROM = { 
+						clr_country_flag = temp_auto_build_rail 
+						country_event = { id = allclan.99 }
+					} 
 				}
 				else_if = {
 					limit = {
 						FROM = { 
+							treasury = 30
 							OR = { 
 								has_country_flag = auto_build_rail 
-								has_country_flag = temp_auto_build_rail
+								has_country_modifier = temp_auto_build_rail
 							}
 						}
 					}
