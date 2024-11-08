@@ -3375,8 +3375,8 @@ maghargma_five_post_amberlands = {
 				Y01  = { country_event = { id = flavor_maghargma.30 days = 5 } } #Oni Subjugation
 			}
 			else_if = {
-				random_known_country = {
-					limit = {
+				limit = {
+					any_known_country = {
 						any_owned_province = {
 							region =  demon_hills_region
 						}
@@ -3389,8 +3389,8 @@ maghargma_five_post_amberlands = {
 							has_been_insulted_by_root = yes
 						}
 					}
-					country_event = { id = flavor_maghargma.30 days = 5 }
 				}
+				country_event = { id = flavor_maghargma.30 days = 5 }
 			}
 			else = {
 				demon_hills_region = { add_permanent_claim = ROOT }
