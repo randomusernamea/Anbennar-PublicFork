@@ -1830,6 +1830,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
+						has_country_flag = green_dragon_3_upgraded
+						has_country_flag = brass_dragon_3_upgraded
 					}
 				}			
 			}
@@ -3002,6 +3004,8 @@ country_event = {
 					AND = {
 						owns_or_subject_of = 4323
 						Y85 = { is_subject_of = ROOT }
+						has_country_flag = green_dragon_3_upgraded
+						has_country_flag = brass_dragon_3_upgraded
 					}
 				}
 			}
@@ -3533,7 +3537,35 @@ country_event = { #Brass aspect 3
 country_event = { #Bronze aspect 1
 	id = flavour_kobold_dragon_cult.16
 	title = flavour_kobold_dragon_cult.16.t
-	desc = flavour_kobold_dragon_cult.16.d
+	desc = {
+		trigger = {
+			event_target:EmperorOfChina = { religion = aakhetist }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc1
+	}
+	desc = {
+		trigger = {
+			any_known_country = { is_emperor_of_china = yes }
+			NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+			NOT = { has_global_flag = ahati_disaster_began }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc2
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					event_target:EmperorOfChina = { religion = aakhetist }
+					AND = {
+						any_known_country = { is_emperor_of_china = yes }
+						NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+						NOT = { has_global_flag = ahati_disaster_began }
+					}
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.16.desc3
+	}	
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	
@@ -3712,6 +3744,26 @@ country_event = { #Silver aspect 3
 	id = flavour_kobold_dragon_cult.21
 	title = flavour_kobold_dragon_cult.21.t
 	desc = flavour_kobold_dragon_cult.21.d
+	desc = {
+		trigger = {
+			AND = {
+				has_country_flag = blue_dragon_3_upgraded
+				has_country_flag = copper_dragon_3_upgraded
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc1
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				AND = {
+					has_country_flag = blue_dragon_3_upgraded
+					has_country_flag = copper_dragon_3_upgraded
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc2
+	}
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	
@@ -3826,6 +3878,10 @@ country_event = { #Notified about Ahati disaster
 	id = flavour_kobold_dragon_cult.25
 	title = flavour_kobold_dragon_cult.25.t
 	desc = flavour_kobold_dragon_cult.25.d
+	desc = {
+		trigger = {  }
+		desc = flavour_kobold_dragon_cult.25.desc_2
+	}
 	picture = GREAT_BUILDING_eventPicture #choose this
 	is_triggered_only = yes
 	fire_only_once = yes

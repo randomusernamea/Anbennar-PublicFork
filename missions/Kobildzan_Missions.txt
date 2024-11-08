@@ -417,7 +417,7 @@ kob_3_a = {
 			num_of_missionaries = 2
 		}
 		effect = {
-			country_event = { id = flavor_kobildzan.1 }
+			country_event = { id = flavour_kobildzan.1 }
 		}
 	}
 
@@ -451,7 +451,7 @@ kob_3_a = {
             }
 		}
 		effect = {
-			country_event = { id = flavor_kobildzan.2 }
+			country_event = { id = flavour_kobildzan.2 }
 		}
 	}
 }
@@ -672,7 +672,7 @@ kob_1_b = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.4 }
+			country_event = { id = flavour_kobildzan.4 }
 		}
 	}
 
@@ -736,7 +736,7 @@ kob_1_b = {
 
 		effect = {
 
-			country_event = { id = flavor_kobildzan.8 }
+			country_event = { id = flavour_kobildzan.8 }
 
 			if = {
 				limit = {
@@ -914,7 +914,7 @@ kob_2_b = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.5 }
+			country_event = { id = flavour_kobildzan.5 }
 			unlock_government_reform = {
 				government_reform = kobildzan_draconic_technopriests
 				tooltip = yes
@@ -1071,7 +1071,7 @@ kob_2_b = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.9 }
+			country_event = { id = flavour_kobildzan.9 }
 		}
 	}
 
@@ -1296,7 +1296,7 @@ kob_3_b = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.10 }
+			country_event = { id = flavour_kobildzan.10 }
 		}
 	}
 }
@@ -2286,6 +2286,43 @@ kob_1_c = {
 					province_group = cannorian_holy_sites
 					NOT = { owned_by = ROOT }
 				}
+				AND = {
+					OR = {
+						area = dhenbasana_estuary_area
+						area = kharunyana_estuary_area
+						area = reanthung_area
+					}
+					has_port = yes
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 466
+						province_id = 4217
+					}
+					NOT = {
+						OR = {
+							owned_by = ROOT
+							owned_by_subject_of = ROOT
+						}
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 1133
+						province_id = 1138
+						province_id = 1165
+						province_id = 1186
+					}
+					NOT = {
+						OR = {
+							has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 }
+							has_great_project = { type = ynnic_dam_vels_bacar tier = 3 }
+							has_great_project = { type = ynnic_dam_bosancovac tier = 3 }
+							has_great_project = { type = ynnic_dam_mocbarja tier = 3 }
+						}
+					}
+				}
 			}
 		}
 
@@ -2294,10 +2331,10 @@ kob_1_c = {
 				limit = {
 					has_dlc = "Leviathan"
 				}
-				1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3  } }
-				1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3  } }
-				1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3  } }
-				1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3  } }
+				1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } }
+				1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } }
+				1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } }
+				1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } }
 			} else = {
 				treasury = 10000
 			}
@@ -2633,20 +2670,7 @@ kob_3_c = {
 		}
 		
 		effect = {
-			country_event = { id = flavor_kobildzan.13 }	
-			hidden_effect = {
-				187 = {
-					set_variable = { 
-						which = dragon_cult_hoard 
-						value = 500 
-					} 
-				}
-				upgrade_kobold_hoard = yes				
-			}
-			187 = {
-				move_capital_effect = yes 
-				custom_tooltip = new_hoard_in_revenarki_tt
-			}
+			country_event = { id = flavour_kobildzan.13 }	
 		}
 	}
 
@@ -2706,7 +2730,7 @@ kob_3_c = {
 		}
 	
 		effect = {
-			country_event = { id = flavor_kobildzan.18 }
+			country_event = { id = flavour_kobildzan.18 }
 		}
 	}
 
@@ -2752,7 +2776,7 @@ kob_3_c = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.19 }
+			country_event = { id = flavour_kobildzan.19 }
 		}
 	}
 	Z38_draconic_unity = {
@@ -2763,14 +2787,33 @@ kob_3_c = {
 		}
 
 		provinces_to_highlight = {
-			OR = {
-				owned_by = ROOT
-				owned_by_subject_of = ROOT
+			AND = {
+				province_group = cannorian_holy_sites
+				NOT = { owned_by = ROOT }
 			}
+			AND = {
+				OR = {
+					area = dhenbasana_estuary_area
+					area = kharunyana_estuary_area
+					area = reanthung_area
+				}
+				has_port = yes
+				NOT = { owned_by = ROOT }
+			}
+			AND = {
+				OR = {
+					province_id = 466
+					province_id = 4217
+					province_id = 4976
+					province_id = 4323
 
-			NOT = {
-				religion = kobold_dragon_cult
-				religion = drozma_tur
+				}
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
 			}
 		}
 
@@ -2819,7 +2862,7 @@ kob_3_c = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.20 }
+			country_event = { id = flavour_kobildzan.20 }
 		}
 	}
 }
@@ -2865,7 +2908,7 @@ kob_4_c = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.14 }
+			country_event = { id = flavour_kobildzan.14 }
 		}
 	}
 
@@ -2964,7 +3007,7 @@ kob_4_c = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.15 }
+			country_event = { id = flavour_kobildzan.15 }
 
 			add_adm_power = 100
 			add_dip_power = 100
@@ -3114,7 +3157,7 @@ kob_5_c = {
 		}
 
 		effect = {
-			country_event = { id = flavor_kobildzan.16 }
+			country_event = { id = flavour_kobildzan.16 }
 		}
 	}
 

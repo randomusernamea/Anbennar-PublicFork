@@ -1,14 +1,14 @@
-namespace = flavor_kobildzan
+namespace = flavour_kobildzan
 
 country_event = { #The Meaning of Dragonfire
-	id = flavor_kobildzan.1
-	title = flavor_kobildzan.1.t
-	desc = flavor_kobildzan.1.d
+	id = flavour_kobildzan.1
+	title = flavour_kobildzan.1.t
+	desc = flavour_kobildzan.1.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes
 
 	option = { #Power!
-		name = flavor_kobildzan.1.a
+		name = flavour_kobildzan.1.a
 		custom_tooltip = dragons_mean_power_tt 
 		hidden_effect = { set_country_flag = dragons_mean_power }
 		add_country_modifier = {
@@ -17,7 +17,7 @@ country_event = { #The Meaning of Dragonfire
 		}
 	}
 	option = { #Change!
-		name = flavor_kobildzan.1.b
+		name = flavour_kobildzan.1.b
 		custom_tooltip = dragons_mean_change_tt 
 		hidden_effect = { set_country_flag = dragons_mean_change }
 		add_country_modifier = {
@@ -28,14 +28,14 @@ country_event = { #The Meaning of Dragonfire
 }
 
 country_event = { #To Become Dragons
-	id = flavor_kobildzan.2
-	title = flavor_kobildzan.2.t
-	desc = flavor_kobildzan.2.d
+	id = flavour_kobildzan.2
+	title = flavour_kobildzan.2.t
+	desc = flavour_kobildzan.2.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes
 
 	option = { #WE ARE KOBILDZAN! OF DRAGONS AND KOBOLDS!
-		name = flavor_kobildzan.2.a
+		name = flavour_kobildzan.2.a
 		change_government = republic
 		add_government_reform = technocracy_republic_reform
 		if = {
@@ -109,14 +109,14 @@ country_event = { #To Become Dragons
 }
 
 country_event = { #In the Flesh
-	id = flavor_kobildzan.3
-	title = flavor_kobildzan.3.t
-	desc = flavor_kobildzan.3.d
+	id = flavour_kobildzan.3
+	title = flavour_kobildzan.3.t
+	desc = flavour_kobildzan.3.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #WE'RE GONNA MEET A DRAGON!!!
-		name = flavor_kobildzan.3.a
+		name = flavour_kobildzan.3.a
 		rzenta_region = {
 			discover_country = ROOT
 		}
@@ -144,14 +144,14 @@ country_event = { #In the Flesh
 }
 
 country_event = { #Meeting Varlengeilt
-	id = flavor_kobildzan.4
-	title = flavor_kobildzan.4.t
-	desc = flavor_kobildzan.4.d
+	id = flavour_kobildzan.4
+	title = flavour_kobildzan.4.t
+	desc = flavour_kobildzan.4.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #A DRAGON LIKES US!!!
-		name = flavor_kobildzan.4.a
+		name = flavour_kobildzan.4.a
 		rzenta_region = {
 			limit = { NOT = { is_empty = yes } }
 			add_claim = ROOT
@@ -174,14 +174,14 @@ country_event = { #Meeting Varlengeilt
 }
 
 country_event = { #To Find Tayekan
-	id = flavor_kobildzan.5
-	title = flavor_kobildzan.5.t
-	desc = flavor_kobildzan.5.d
+	id = flavour_kobildzan.5
+	title = flavour_kobildzan.5.t
+	desc = flavour_kobildzan.5.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #A conflict of faith and kind.
-		name = flavor_kobildzan.5.a
+		name = flavour_kobildzan.5.a
 		if = {
 			limit = {
 				OR = {
@@ -228,9 +228,9 @@ country_event = { #To Find Tayekan
 				}
 			}
 			hidden_effect = {
-				country_event = { id = flavor_kobildzan.6 days = 1825 }
-				country_event = { id = flavor_kobildzan.6 days = 3650 }
-				country_event = { id = flavor_kobildzan.6 days = 5475 }
+				country_event = { id = flavour_kobildzan.6 days = 1825 }
+				country_event = { id = flavour_kobildzan.6 days = 3650 }
+				country_event = { id = flavour_kobildzan.6 days = 5475 }
 			}		
 		}
 		else = {
@@ -245,9 +245,47 @@ country_event = { #To Find Tayekan
 }
 
 country_event = { #Artificer Malcontents
-	id = flavor_kobildzan.6
-	title = flavor_kobildzan.6.t
-	desc = flavor_kobildzan.6.d 
+	id = flavour_kobildzan.6
+	title = flavour_kobildzan.6.t
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					189 = { has_province_flag = kobold_name_11 }
+					189 = { has_province_flag = kobold_name_12 }
+					189 = { has_province_flag = kobold_name_13 }
+					189 = { has_province_flag = kobold_name_14 }
+					189 = { has_province_flag = kobold_name_15 }
+					189 = { has_province_flag = kobold_name_16 }
+					189 = { has_province_flag = kobold_name_17 }
+					189 = { has_province_flag = kobold_name_18 }
+					189 = { has_province_flag = kobold_name_19 }
+					189 = { has_province_flag = kobold_name_20 }
+					189 = { has_province_flag = kobold_name_21 }					
+				}
+			}
+		}
+		desc = flavour_kobildzan.6.desc1
+	}
+	desc = {
+		trigger = {
+			OR = {
+				189 = { has_province_flag = kobold_name_11 }
+				189 = { has_province_flag = kobold_name_12 }
+				189 = { has_province_flag = kobold_name_13 }
+				189 = { has_province_flag = kobold_name_14 }
+				189 = { has_province_flag = kobold_name_15 }
+				189 = { has_province_flag = kobold_name_16 }
+				189 = { has_province_flag = kobold_name_17 }
+				189 = { has_province_flag = kobold_name_18 }
+				189 = { has_province_flag = kobold_name_19 }
+				189 = { has_province_flag = kobold_name_20 }
+				189 = { has_province_flag = kobold_name_21 }
+			}
+		}
+		desc = flavour_kobildzan.6.desc2
+	}
+	 
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
@@ -261,7 +299,7 @@ country_event = { #Artificer Malcontents
 	}
 
 	option = { #We must conquer Haraf!
-		name = flavor_kobildzan.6.a
+		name = flavour_kobildzan.6.a
 		custom_tooltip = to_find_tayekan_1_tt 
 		random_owned_province = {
 			limit = { culture_group = kobold }
@@ -302,28 +340,28 @@ country_event = { #Artificer Malcontents
 }
 
 country_event = { #A Meeting of Technopriests
-	id = flavor_kobildzan.7
-	title = flavor_kobildzan.7.t
-	desc = flavor_kobildzan.7.d
+	id = flavour_kobildzan.7
+	title = flavour_kobildzan.7.t
+	desc = flavour_kobildzan.7.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #Brillites!
-		name = flavor_kobildzan.7.a
+		name = flavour_kobildzan.7.a
 		add_country_modifier = {
 			name = Z38_perma_brilliance
 			duration = -1
 		}
 	}
 	option = { #Technomancers!
-		name = flavor_kobildzan.7.b
+		name = flavour_kobildzan.7.b
 		add_country_modifier = {
 			name = Z38_perma_technomancy
 			duration = -1
 		}
 	}
 	option = { #Mechanists!
-		name = flavor_kobildzan.7.c
+		name = flavour_kobildzan.7.c
 		add_country_modifier = {
 			name = Z38_perma_mechanists
 			duration = -1
@@ -332,15 +370,15 @@ country_event = { #A Meeting of Technopriests
 }
 
 country_event = { #Twin Empires
-	id = flavor_kobildzan.8
-	title = flavor_kobildzan.8.t
-	desc = flavor_kobildzan.8.d
+	id = flavour_kobildzan.8
+	title = flavour_kobildzan.8.t
+	desc = flavour_kobildzan.8.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #Two empires, forged as kin!
 		goto = 1191	
-		name = flavor_kobildzan.8.a
+		name = flavour_kobildzan.8.a
 		hidden_effect = {	
 			1191 = {
 				cede_province = ROOT
@@ -387,14 +425,14 @@ country_event = { #Twin Empires
 }
 
 country_event = { #Artificery As One
-	id = flavor_kobildzan.9
-	title = flavor_kobildzan.9.t
-	desc = flavor_kobildzan.9.d
+	id = flavour_kobildzan.9
+	title = flavour_kobildzan.9.t
+	desc = flavour_kobildzan.9.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #To Tayekan!
-		name = flavor_kobildzan.9.a
+		name = flavour_kobildzan.9.a
 		large_increase_of_goblin_tolerance_effect = yes
 		large_increase_of_gnomish_tolerance_effect = yes
 		custom_tooltip = gnomes_from_across_cannor_tt 
@@ -435,28 +473,28 @@ country_event = { #Artificery As One
 }
 
 country_event = { #The Greatest Hoard on Halann
-	id = flavor_kobildzan.10
-	title = flavor_kobildzan.10.t
-	desc = flavor_kobildzan.10.d
+	id = flavour_kobildzan.10
+	title = flavour_kobildzan.10.t
+	desc = flavour_kobildzan.10.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #And then, the world shook again...
-		name = flavor_kobildzan.10.a
+		name = flavour_kobildzan.10.a
 		goto = 189
-		country_event = { id = flavor_kobildzan.11 days = 1 }
+		country_event = { id = flavour_kobildzan.11 days = 1 }
 	}
 }
 
 country_event = { #The Dragon's Roar
-	id = flavor_kobildzan.11
-	title = flavor_kobildzan.11.t
-	desc = flavor_kobildzan.11.d
+	id = flavour_kobildzan.11
+	title = flavour_kobildzan.11.t
+	desc = flavour_kobildzan.11.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #Oh no.
-		name = flavor_kobildzan.11.a
+		name = flavour_kobildzan.11.a
 		custom_tooltip = dragons_roar_tt 
 		hidden_effect = {
 			189 = {
@@ -660,7 +698,7 @@ country_event = { #The Dragon's Roar
 			trialmount_area = { add_devastation = 20 }
 			castonath_area = { add_devastation = 20 }
 			southgate_area = { add_devastation = 20 }
-			country_event = { id = flavor_kobildzan.12 days = 365 }
+			country_event = { id = flavour_kobildzan.12 days = 365 }
 		}
 		add_stability = -3
 		add_country_modifier = {
@@ -676,9 +714,9 @@ country_event = { #The Dragon's Roar
 }
 
 country_event = { #Aid from Aelantir
-	id = flavor_kobildzan.12
-	title = flavor_kobildzan.12.t
-	desc = flavor_kobildzan.12.d
+	id = flavour_kobildzan.12
+	title = flavour_kobildzan.12.t
+	desc = flavour_kobildzan.12.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
@@ -725,7 +763,7 @@ country_event = { #Aid from Aelantir
 	}
 
 	option = { #Thank the dragons for Varlengeilt...
-		name = flavor_kobildzan.12.a
+		name = flavour_kobildzan.12.a
 		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt 
 		hidden_effect = {
 			every_owned_province = {
@@ -738,19 +776,32 @@ country_event = { #Aid from Aelantir
 }
 
 country_event = { #The Prodigal Father
-	id = flavor_kobildzan.13
-	title = flavor_kobildzan.13.t
-	desc = flavor_kobildzan.13.d
+	id = flavour_kobildzan.13
+	title = flavour_kobildzan.13.t
+	desc = flavour_kobildzan.13.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #To Tayekan!
-		name = flavor_kobildzan.13.a
+		name = flavour_kobildzan.13.a
 		add_country_modifier = {
 			name = Z38_the_father_returned
 			duration = -1
 		}
 		add_stability = 3
+		hidden_effect = {
+			187 = {
+				set_variable = { 
+					which = dragon_cult_hoard 
+					value = 500 
+				} 
+			}
+			upgrade_kobold_hoard = yes				
+		}
+		187 = {
+			move_capital_effect = yes 
+			custom_tooltip = new_hoard_in_revenarki_tt
+		}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
 			SLOT = 3
@@ -760,14 +811,14 @@ country_event = { #The Prodigal Father
 }
 
 country_event = { #The Kobildzani Conference
-	id = flavor_kobildzan.14
-	title = flavor_kobildzan.14.t
-	desc = flavor_kobildzan.14.d
+	id = flavour_kobildzan.14
+	title = flavour_kobildzan.14.t
+	desc = flavour_kobildzan.14.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #We must adapt to a volcanic world!
-		name = flavor_kobildzan.14.a
+		name = flavour_kobildzan.14.a
 		hidden_effect = {
 			set_country_flag = kobildzan_hyperdigestion
 		}
@@ -780,7 +831,7 @@ country_event = { #The Kobildzani Conference
 		artifice_granted_10 = yes
 	}
 	option = { #We must become dragons!
-		name = flavor_kobildzan.14.b
+		name = flavour_kobildzan.14.b
 		hidden_effect = {
 			set_country_flag = kobildzan_dragonfire_sacs
 			add_country_modifier = {
@@ -799,14 +850,14 @@ country_event = { #The Kobildzani Conference
 }
 
 country_event = { #Form and Function
-	id = flavor_kobildzan.15
-	title = flavor_kobildzan.15.t
-	desc = flavor_kobildzan.15.d
+	id = flavour_kobildzan.15
+	title = flavour_kobildzan.15.t
+	desc = flavour_kobildzan.15.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #We imbue our organs with magic!
-		name = flavor_kobildzan.15.a
+		name = flavour_kobildzan.15.a
 		hidden_effect = {
 			set_country_flag = kobildzan_mana_attunement_glands
 		}
@@ -819,7 +870,7 @@ country_event = { #Form and Function
 		artifice_granted_20 = yes
 	}
 	option = { #We inject our scales with ebonsteel!
-		name = flavor_kobildzan.15.b
+		name = flavour_kobildzan.15.b
 		hidden_effect = {
 			set_country_flag = kobildzan_ebonsteel_shieldscales
 			add_country_modifier = {
@@ -838,33 +889,33 @@ country_event = { #Form and Function
 }
 
 country_event = { #To Awaken the Beast
-	id = flavor_kobildzan.16
-	title = flavor_kobildzan.16.t
-	desc = flavor_kobildzan.16.d
+	id = flavour_kobildzan.16
+	title = flavour_kobildzan.16.t
+	desc = flavour_kobildzan.16.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #To Elkaesal, the-- wait, what?
 		goto = 6271
-		name = flavor_kobildzan.16.a
+		name = flavour_kobildzan.16.a
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
 			SLOT = 3
 			UPGRADE = upgraded
 		}
-		country_event = { id = flavor_kobildzan.17 days = 1 }
+		country_event = { id = flavour_kobildzan.17 days = 1 }
 	}
 }
 
 country_event = { #A Very Angry Lecture
-	id = flavor_kobildzan.17
-	title = flavor_kobildzan.17.t
-	desc = flavor_kobildzan.17.d
+	id = flavour_kobildzan.17
+	title = flavour_kobildzan.17.t
+	desc = flavour_kobildzan.17.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #We're so sorry!!!
-		name = flavor_kobildzan.17.a
+		name = flavour_kobildzan.17.a
 		custom_tooltip = lullaby_cannon_unlock_tt
 		hidden_effect = {
 			set_country_flag = can_use_lullaby_cannon_tt
@@ -878,14 +929,14 @@ country_event = { #A Very Angry Lecture
 }
 
 country_event = { #To Control Continents
-	id = flavor_kobildzan.18
-	title = flavor_kobildzan.18.t
-	desc = flavor_kobildzan.18.d
+	id = flavour_kobildzan.18
+	title = flavour_kobildzan.18.t
+	desc = flavour_kobildzan.18.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #We are one people in many forms!
-		name = flavor_kobildzan.18.a
+		name = flavour_kobildzan.18.a
 		hidden_effect = {
 			set_country_flag = kobildzan_biocompatibility 
 		}
@@ -900,7 +951,7 @@ country_event = { #To Control Continents
 		artifice_granted_20 = yes
 	}
 	option = { #We fly above our subjects!
-		name = flavor_kobildzan.18.b
+		name = flavour_kobildzan.18.b
 		hidden_effect = {
 			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
 		}
@@ -915,14 +966,14 @@ country_event = { #To Control Continents
 }
 
 country_event = { #Family Reunion
-	id = flavor_kobildzan.19
-	title = flavor_kobildzan.19.t
-	desc = flavor_kobildzan.19.d
+	id = flavour_kobildzan.19
+	title = flavour_kobildzan.19.t
+	desc = flavour_kobildzan.19.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #Protean
-		name = flavor_kobildzan.19.a
+		name = flavour_kobildzan.19.a
 		highlight = yes
 		trigger = {
 			custom_trigger_tooltip = {
@@ -949,7 +1000,7 @@ country_event = { #Family Reunion
 		artifice_granted_20 = yes
 	}
 	option = { #Holiest flesh
-		name = flavor_kobildzan.19.b
+		name = flavour_kobildzan.19.b
 		highlight = yes
 		trigger = {
 			custom_trigger_tooltip = {
@@ -982,14 +1033,14 @@ country_event = { #Family Reunion
 }
 
 country_event = { #A Second Family Reunion
-	id = flavor_kobildzan.20
-	title = flavor_kobildzan.20.t
-	desc = flavor_kobildzan.20.d
+	id = flavour_kobildzan.20
+	title = flavour_kobildzan.20.t
+	desc = flavour_kobildzan.20.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	option = { #wahoo
-		name = flavor_kobildzan.20.a
+		name = flavour_kobildzan.20.a
 		remove_country_modifier = Z38_call_of_the_dragon_3
 		add_country_modifier = {
 			name = Z38_call_of_the_dragon_4
@@ -1023,23 +1074,23 @@ country_event = { #A Second Family Reunion
 }
 
 country_event = { #A Single Celled Kobold
-	id = flavor_kobildzan.21
-	title = flavor_kobildzan.21.t
-	desc = flavor_kobildzan.21.d
+	id = flavour_kobildzan.21
+	title = flavour_kobildzan.21.t
+	desc = flavour_kobildzan.21.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	immediate = { hidden_effect = { set_country_flag = single_celled_kobold } }
 
 	option = { #Shut down the tests!
-		name = flavor_kobildzan.21.a
+		name = flavour_kobildzan.21.a
 		add_country_modifier = {
 			name = Z38_shut_down_tests
 			duration = 3650
 		}
 	}
 	option = { #We shall experiment with this mutation!
-		name = flavor_kobildzan.21.b
+		name = flavour_kobildzan.21.b
 		add_country_modifier = {
 			name = Z38_experimental_mutations
 			duration = 3650
@@ -1048,9 +1099,9 @@ country_event = { #A Single Celled Kobold
 }
 
 country_event = { #The Dragon Queens
-	id = flavor_kobildzan.22
-	title = flavor_kobildzan.22.t
-	desc = flavor_kobildzan.22.d
+	id = flavour_kobildzan.22
+	title = flavour_kobildzan.22.t
+	desc = flavour_kobildzan.22.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
@@ -1058,14 +1109,14 @@ country_event = { #The Dragon Queens
 
 
 	option = { #Drag is a solemn art!
-		name = flavor_kobildzan.22.a
+		name = flavour_kobildzan.22.a
 		add_country_modifier = {
 			name = Z38_drag_a_solemn_art
 			duration = 3650
 		}
 	}
 	option = { #All entertainment deserves dragonfire!
-		name = flavor_kobildzan.22.b
+		name = flavour_kobildzan.22.b
 		add_country_modifier = {
 			name = Z38_drag_for_the_masses
 			duration = 3650
@@ -1074,23 +1125,23 @@ country_event = { #The Dragon Queens
 }
 
 country_event = { #Ascending to Greed
-	id = flavor_kobildzan.23
-	title = flavor_kobildzan.23.t
-	desc = flavor_kobildzan.23.d
+	id = flavour_kobildzan.23
+	title = flavour_kobildzan.23.t
+	desc = flavour_kobildzan.23.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
 	immediate = { hidden_effect = { set_country_flag = ascending_to_greed } }
 
 	option = { #Send in the army, he must be crushed!
-		name = flavor_kobildzan.23.a
+		name = flavour_kobildzan.23.a
 		add_yearly_manpower = -0.5
 		kill_leader = {
 			type = general
 		}
 	}
 	option = { #We embrace the Cult of Greed!
-		name = flavor_kobildzan.23.b
+		name = flavour_kobildzan.23.b
 		define_advisor = {
 			type = natural_scientist
 			skill = 5
@@ -1099,7 +1150,7 @@ country_event = { #Ascending to Greed
 		add_corruption = 2.5
 	}
 	option = { #Divert our spies to steal his research!
-		name = flavor_kobildzan.23.b
+		name = flavour_kobildzan.23.b
 		highlight = yes
 		trigger = {
 			has_idea_group = spy_ideas
@@ -1112,9 +1163,9 @@ country_event = { #Ascending to Greed
 }
 
 country_event = { #The Chosen Several
-	id = flavor_kobildzan.24
-	title = flavor_kobildzan.24.t
-	desc = flavor_kobildzan.24.d
+	id = flavour_kobildzan.24
+	title = flavour_kobildzan.24.t
+	desc = flavour_kobildzan.24.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
@@ -1122,7 +1173,7 @@ country_event = { #The Chosen Several
 
 
 	option = { #Dragons must rule over kobolds!
-		name = flavor_kobildzan.24.a
+		name = flavour_kobildzan.24.a
 		unlock_government_reform = {
 			government_reform = kobildzan_draconic_elites
 			tooltip = yes
@@ -1134,7 +1185,7 @@ country_event = { #The Chosen Several
 		
 	}
 	option = { #Everyone must become dragons!
-		name = flavor_kobildzan.24.b
+		name = flavour_kobildzan.24.b
 		unlock_government_reform = {
 			government_reform = kobildzan_draconic_masses
 			tooltip = yes
@@ -1147,9 +1198,9 @@ country_event = { #The Chosen Several
 }
 
 country_event = { #Biocompatibility Event
-	id = flavor_kobildzan.25
-	title = flavor_kobildzan.25.t
-	desc = flavor_kobildzan.25.d
+	id = flavour_kobildzan.25
+	title = flavour_kobildzan.25.t
+	desc = flavour_kobildzan.25.d
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 	immediate = {
@@ -1159,7 +1210,7 @@ country_event = { #Biocompatibility Event
 	}
 
 	option = { #What a beautiful thing!
-		name = flavor_kobildzan.25.a
+		name = flavour_kobildzan.25.a
 		goto = biocompatibility_province
 		event_target:biocompatibility_province = {
 			area = {
@@ -1169,7 +1220,7 @@ country_event = { #Biocompatibility Event
 		
 	}
 	option = { #Don't show me this again.
-		name = flavor_kobildzan.25.b
+		name = flavour_kobildzan.25.b
 		goto = biocompatibility_province
 		hidden_effect = { set_country_flag = hidden_biocompatibility }
 		custom_tooltip = hide_biocompatibility_tt 
