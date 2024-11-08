@@ -12335,6 +12335,7 @@ blorc_monarchy_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		dwarovar_orc_culture_primary = yes
+		NOT = { tag = H73 }
 	}
 	trigger = {
 		dwarovar_orc_culture_primary = yes
