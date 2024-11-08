@@ -2244,6 +2244,20 @@ giberd_mercantile_shipping = {
 						}
 					}
 				}
+				AND = {
+					province_id = 267
+					NOT = {
+						AND = {
+							has_great_project = {
+								type = the_lake_palace
+								tier = 3
+							}
+							num_free_building_slots = 1
+							has_manpower_building_trigger = yes
+							has_forcelimit_building_trigger = yes
+						}
+					}
+				}
 			}
 		}
 		trigger = {
