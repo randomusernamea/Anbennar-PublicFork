@@ -1974,10 +1974,8 @@ giberd_mercantile_shipping = {
 			}
 		}
 		effect = {
-			add_estate_loyalty_modifier = {
-				estate = estate_mages
-				desc = giberd_dealing_with_the_magisterium
-				loyalty = 10
+			add_country_modifier = {
+				name = giberd_dealing_with_the_magisterium
 				duration = -1
 			}
 			if = {
