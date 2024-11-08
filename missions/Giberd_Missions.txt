@@ -340,8 +340,11 @@ giberd_konwell_conquest = {
 				add_base_tax = -2
 				add_devastation = 25
 				owner = {
-					remove_government_reform = free_city
-					add_government_reform = merchants_reform
+					custom_tooltip = giberd_replacing_the_pane_effect_tt
+					hidden_effect = {
+						remove_government_reform = free_city
+						add_government_reform = merchants_reform
+					}
 				}
 			}
 			271 = {
