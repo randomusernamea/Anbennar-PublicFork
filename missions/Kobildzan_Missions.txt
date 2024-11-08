@@ -118,7 +118,7 @@ kob_2_a = {
             OR = {
                 estate_loyalty = {
                     estate = estate_mages
-                    loyalty = 65
+                    loyalty = 50
                 }
                 NOT = { has_estate = estate_mages }
             }
@@ -191,6 +191,9 @@ kob_2_a = {
 					name = Z38_technology_and_trade_modifier
 					duration = 7300
 				}
+			}
+			169 = {
+				add_permanent_claim = ROOT
 			}
 		}
 	}
