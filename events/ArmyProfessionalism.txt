@@ -43,10 +43,10 @@ country_event = {
 				OR = {
 					NOT = { has_country_flag = was_plundered }
 					had_country_flag = { flag = was_plundered days = 14600 } #40 Years
-					#Anbennar
-					NOT = { has_country_flag = anb_cant_be_sacked }
 				}
 				NOT = { tag = ROOT }
+				#Anbennar
+				NOT = { has_country_flag = anb_cant_be_sacked }
 			}
 		}
 	}

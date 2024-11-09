@@ -231,6 +231,36 @@ country_event = {
 	}
 }
 
+#Migration Event Manager
+country_event = {
+	id = gushuokguan_event.10
+	title = gushuokguan_event.51.t
+	desc = gushuokguan_event.51.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		tag = Y17 #Gushuokguan
+		has_country_flag = gushuokguan_enable_migration_events
+	}
+
+	hidden = yes
+
+	option = {
+		name = gushuokguan_event.51.a
+		ai_chance = { factor = 1 }
+		random_list = {
+			#No empty
+			1 = { country_event = { id = gushuokguan_event.11 } }
+			1 = { country_event = { id = gushuokguan_event.12 } }
+			1 = { country_event = { id = gushuokguan_event.13 } }
+			1 = { country_event = { id = gushuokguan_event.14 } }
+			1 = { country_event = { id = gushuokguan_event.15 } }
+			1 = { country_event = { id = gushuokguan_event.16 } }
+		}
+	}
+}
+
 #Migrants come to X
 country_event = {
 	id = gushuokguan_event.11
@@ -513,16 +543,6 @@ country_event = {
 
 	trigger = {}
 
-	immediate = {
-		hidden_effect = {
-			set_saved_name = {
-				key = gushuokguan_lubei
-				type = simple
-				name = "Lubei 'the Honorable'"
-			}
-		}
-	}
-
 	after = {
 		hidden_effect = {
 			set_country_flag = gushuokguan_jade_pub_incident
@@ -534,7 +554,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		define_advisor = {
 			type = army_reformer
-			name = gushuokguan_lubei
+			name = "Lubei 'the Honorable'"
 			skill = 2
 			discount = yes
 		}
@@ -548,7 +568,7 @@ country_event = {
 			fire = 4
 			manuever = 2
 			siege = 2
-			name = gushuokguan_lubei
+			name = "Lubei 'the Honorable'"
 		}
 	}
 }
@@ -589,6 +609,28 @@ country_event = {
 			name = gushuokguan_the_code_of_lubei_morale
 			duration = -1
 		}
+	}
+}
+
+#Flag clear
+country_event = {
+	id = gushuokguan_event.21
+	title = gushuokguan_event.51.t
+	desc = gushuokguan_event.51.d
+	picture = CHINESE_GENERAL_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		tag = Y17 #Gushuokguan
+		has_country_flag = gushuokguan_enable_migration_events
+	}
+
+	hidden = yes
+
+	option = {
+		name = gushuokguan_event.51.a
+		ai_chance = { factor = 1 }
+		clr_country_flag = gushuokguan_enable_migration_events
 	}
 }
 
@@ -953,6 +995,7 @@ country_event = {
 		name = gushuokguan_event.51.a
 		ai_chance = { factor = 1 }
 		random_list = {
+			4 = {} #Empty
 			1 = { 
 				trigger = {
 					calc_true_if = {
@@ -2227,6 +2270,12 @@ country_event = {
 		else = {
 			custom_tooltip = gushuokguan_explain_release_one_xia_tt
 		}
+	}
+	
+	option = {
+		name = gushuokguan_event.71.b
+		ai_chance = { factor = 1 }
+		#Leave the menu
 	}
 }
 

@@ -39,6 +39,10 @@ gushuokguan_1 = {
 				1 = { country_event = { id = gushuokguan_event.15 } } #Stronger Together
 				1 = { country_event = { id = gushuokguan_event.16 } } #Migratory Mercenaries
 			}
+			hidden_effect = {
+				set_country_flag = gushuokguan_enable_migration_events
+				country_event = { id = gushuokguan_event.21 days = 18250 } #Clear the flag
+			}
 		} 
 	}
 
@@ -205,10 +209,10 @@ gushuokguan_1 = {
 				custom_trigger_tooltip = {
 					tooltip = gushuokguan_1_6_tt
 					capital_scope = {
-						ROOT = {
-							PREV = {
-								cavalry_in_province = 20
-							}
+						num_of_units_in_province = {
+							who = ROOT #Gushuokguan
+							type = cavalry
+							amount = 20
 						}
 					}
 				}
@@ -269,8 +273,16 @@ gushuokguan_1 = {
 		trigger = {  
 			4901 = { #Hubao
 				country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
-				infantry_in_province = 10
-				artillery_in_province = 10
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = infantry
+					amount = 20
+				}				
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = artillery
+					amount = 20
+				}
 			}
 			Y03 = { #Hubao
 				is_subject_of = ROOT
@@ -589,10 +601,12 @@ gushuokguan_2 = {
 		required_missions = { gushuokguan_2_7 } 
 		provinces_to_highlight = {  
 			owned_by = ROOT #Gushuokguan
-			AND = {
-				has_terrain = jungle
-				NOT = { has_manpower_building_trigger = yes }
-				devastation = 0.01
+			has_terrain = jungle
+			NOT = {
+				AND = {
+					has_manpower_building_trigger = yes
+					NOT = { devastation = 0.01 }
+				}
 			}
 		} 
 
@@ -604,7 +618,11 @@ gushuokguan_2 = {
 				value = 4
 			}
 			4838 = { #Wongpou
-				infantry_in_province = 20
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = cavalry
+					amount = 20
+				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_4_stone_army_challenges_tt
@@ -777,10 +795,10 @@ gushuokguan_3 = {
 						custom_trigger_tooltip = {
 							tooltip = gushuokguan_3_2_tt
 							capital_scope = {
-								ROOT = {
-									PREV = {
-										infantry_in_province = 6
-									}
+								num_of_units_in_province = {
+									who = ROOT #Gushuokguan
+									type = infantry
+									amount = 6
 								}
 							}
 						}
@@ -801,7 +819,11 @@ gushuokguan_3 = {
 						}
 						any_neighbor_province = {
 							owned_by = ROOT #Gushuokguan
-							infantry_in_province = 6
+							num_of_units_in_province = {
+								who = ROOT #Gushuokguan
+								type = infantry
+								amount = 6
+							}
 						}
 					}
 				}
@@ -904,19 +926,17 @@ gushuokguan_3 = {
 				province_id = 4850 #Hunxiang
 				province_id = 4892 #Lamcue
 			}
-			AND = {
-				owned_by = ROOT 
-				AND = {
-					NOT = {
-						local_autonomy = 25
-						has_province_modifier = autonomy_increased
-					}
-					devastation = 0.01
-					unrest = 0
-					if = {
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = no
-					}
+			owned_by = ROOT
+			OR = {
+				NOT = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
+				}
+				devastation = 0.01
+				unrest = 0
+				if = {
+					limit = { ROOT = { has_parliament = yes } } 
+					has_seat_in_parliament = no
 				}
 			}
 		} 
@@ -1051,7 +1071,11 @@ gushuokguan_3 = {
 			high_tolerance_harimari_race_trigger = yes
 			accepted_culture = serene_harimari
 			4925 = { #Jiantsiang
-				infantry_in_province = 20
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = infantry
+					amount = 20
+				}
 				NOT = { unrest = 0 }
 				has_tax_building_trigger = yes
 				has_production_building_trigger = yes
@@ -1140,7 +1164,11 @@ gushuokguan_3 = {
 				NOT = { liberty_desire = 1 }
 			}
 			4853 = { #Anjiang
-				cavalry_in_province = 20
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = cavalry
+					amount = 20
+				}
 				has_production_building_trigger = yes
 				has_manpower_building_trigger = yes
 			}
@@ -1379,22 +1407,26 @@ gushuokguan_4 = {
 				AND = {
 					region = north_yanshen_region
 					culture = jiangyang
-					NOT = { 
+					OR = {
+						NOT = { owned_by = ROOT } #Gushuokguan
 						AND = {
-							is_core = ROOT 
+							owned_by = ROOT #Gushuokguan
 							OR = {
-								local_autonomy = 25
-								has_province_modifier = autonomy_increased 
-								is_capital = yes
-							}
-							NOT = { devastation = 0.01 }
-							NOT = { unrest = 0 }
-							if = { 
-								limit = { ROOT = { has_parliament = yes } } 
-								has_seat_in_parliament = yes
+								NOT = {
+									local_autonomy = 25
+									has_province_modifier = autonomy_increased
+									is_capital = yes
+								}
+								devastation = 0.01
+								unrest = 0
+								if = {
+									limit = { ROOT = { has_parliament = yes } } 
+									has_seat_in_parliament = no
+								}
 							}
 						}
 					}
+					
 				}
 			}
 		} 
@@ -1456,19 +1488,18 @@ gushuokguan_4 = {
 		required_missions = { gushuokguan_4_3 } 
 		provinces_to_highlight = {  
 			area = iongsim_area
-			AND = {
-				owned_by = ROOT 
-				AND = {
-					NOT = {
-						local_autonomy = 25
-						has_province_modifier = autonomy_increased
-					}
-					devastation = 0.01
-					unrest = 0
-					if = {
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = no
-					}
+			owned_by = ROOT #Gushuokguan
+			OR = {
+				NOT = {
+					local_autonomy = 25
+					has_province_modifier = autonomy_increased
+					is_capital = yes
+				}
+				devastation = 0.01
+				unrest = 0
+				if = {
+					limit = { ROOT = { has_parliament = yes } } 
+					has_seat_in_parliament = no
 				}
 			}
 		} 
@@ -1636,8 +1667,16 @@ gushuokguan_4 = {
 				has_shipyard_building_trigger = yes
 				has_dock_building_trigger = yes
 				has_building = impressment_offices
-				infantry_in_province = 10
-				artillery_in_province = 10
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = infantry
+					amount = 10
+				}
+				num_of_units_in_province = {
+					who = ROOT #Gushuokguan
+					type = artillery
+					amount = 10
+				}
 			}
 		} 
 
@@ -1910,9 +1949,11 @@ gushuokguan_5 = {
 		}
 		provinces_to_highlight = {  
 			superregion = yanshen_superregion
-			AND = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT } #Gushuokguan
-				devastation = 0.01
+			NOT = {
+				AND = {
+					country_or_non_sovereign_subject_holds = ROOT #Gushuokguan
+					NOT = { devastation = 0.01 }
+				}
 			}
 		} 
 
@@ -1993,15 +2034,26 @@ gushuokguan_5 = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_5_7_tt
-			    trade_node_provinces = {
-					type = all
-				    OR = {
-						owned_by = ROOT #Gushuokguan
-						owned_by_subject_of = ROOT #Gushuokguan
-				    }
-				   province_has_center_of_trade_of_level = 2
-				   has_trade_building_trigger = yes
-			   }
+				all_owned_province = {
+					OR = {
+						NOT = { province_group = trade_node_provinces }
+						AND = {
+							province_has_center_of_trade_of_level = 2
+				   			has_trade_building_trigger = yes
+						}
+					}
+				}
+				all_subject_country = {
+					all_owned_province = {
+						OR = {
+							NOT = { province_group = trade_node_provinces }
+							AND = {
+								province_has_center_of_trade_of_level = 2
+								has_trade_building_trigger = yes
+							}
+						}
+					}
+				}
 		    }
 			capital_scope = {
 				development = 30
