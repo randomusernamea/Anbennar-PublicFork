@@ -58,6 +58,7 @@ country_event = { #To Become Dragons
 			}
 		}
 		custom_tooltip = gain_reform_progress_per_reform_level_tt 
+		swap_non_generic_missions = yes
 	}
 }
 
@@ -716,18 +717,15 @@ country_event = { #Aid from Aelantir
 			}
 			multiply_variable = {
 				which = dev2add
-				value = 2
+				value = 3
 			}
 		}
 	}
 
 	option = { #Thank the dragons for Varlengeilt...
 		name = flavour_kobildzan.12.a
-		custom_tooltip = lose_10_global_devastation_and_get_two_festivals_tt 
+		custom_tooltip = get_three_festivals_tt 
 		hidden_effect = {
-			every_owned_province = {
-				add_devastation = -10
-			}
 			set_country_flag = Z38_received_aelantir_aid
 			var_effect = { effect = add_treasury var = dev2add sign = + }
 		}

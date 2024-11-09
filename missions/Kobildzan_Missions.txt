@@ -380,6 +380,19 @@ kob_3_a = {
                 name = Z38_call_of_the_dragon_1
                 duration = -1
             }
+			custom_tooltip = lowered_autonomy_blue_red_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = bluescale_kobold
+							culture = redscale_kobold
+						}
+					}
+					add_local_autonomy = -25
+				}
+			}
+
 		}
 	}
 
@@ -444,10 +457,11 @@ kob_3_a = {
 			189 = {  
 				check_variable = { dragon_cult_hoard = 2000 }
 			}
-
-			OR = {
-				has_won_war_against = { who = A13 }
-				has_won_war_against = { who = A01 }
+			any_owned_province = {
+				OR = {
+					culture_group = alenic
+					culture_group= halfling
+				}
 			}
             OR = {
                 is_ahead_of_time_in_technology = { tech = adm }
@@ -467,7 +481,6 @@ kob_3_a = {
 				}
 				change_tag = Z38
 				hidden_effect = { restore_country_name = yes }
-				swap_non_generic_missions = yes
 				custom_tooltip = tooltip_kobildzani_culture_provinces
 				hidden_effect = {
 					every_owned_province = {
@@ -660,7 +673,7 @@ kob_4_a = {
 
 				add_country_modifier = {
 					name = Z38_shape_dalaire_modifier
-					duration = 7300
+					duration = 18250
 				}
 			}
 		}
@@ -969,7 +982,6 @@ kob_2_b = {
 			country_event = { id = flavour_kobildzan.5 }
 			unlock_government_reform = {
 				government_reform = kobildzan_draconic_technopriests
-				tooltip = yes
 			}
 			if = {
 				limit = { has_reform_on_level = 4 }
@@ -1496,9 +1508,9 @@ kob_4_b = {
 			184 = { change_trade_goods = salt add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
 		
 			182 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
-			184 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
-			150 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
-			211 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			150 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			211 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
+			148 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
 		
 			mission_reward_artifice_points_5 = yes
 		}
@@ -1931,17 +1943,23 @@ Kob_5b = {
 		}
 
 		provinces_to_highlight = {
-			owned_by = ROOT
-			AND = {
-				OR = {
-					province_id = 175
-					province_id = 173
-					province_id = 174
-					province_id = 183
-					province_id = 170
+			OR = {
+				province_id = 115
+				province_id = 116
+				province_id = 117
+				AND = {
+					owned_by = ROOT
+					OR = {
+						province_id = 175
+						province_id = 173
+						province_id = 174
+						province_id = 183
+						province_id = 170
+					}
+					NOT = { has_production_building_trigger = yes }
 				}
-				NOT = { has_production_building_trigger = yes }
 			}
+
 		}
 
 		trigger = {
@@ -1962,15 +1980,23 @@ Kob_5b = {
 					trade_goods = cloth
 				}
 
+				
 				OR = {
 					silk = 1
-					any_known_country = {
-						silk = 1
-						has_spy_network_from = {
-							who = ROOT
-							value = 50
+					custom_trigger_tooltip = {
+						tooltip = silk_spy_tt 
+						any_known_country = {
+							OR = {
+								silk = 1
+								any_subject_country = {
+									silk = 1
+								}
+							}
+							has_spy_network_from = {
+								who = ROOT
+								value = 50
+							}
 						}
-						
 					}
 				}
 			}
