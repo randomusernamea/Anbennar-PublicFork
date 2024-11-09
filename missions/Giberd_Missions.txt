@@ -319,7 +319,7 @@ giberd_konwell_conquest = {
 			if = {
 				limit = {
 					NOT = {
-						owns = 266
+						owns_or_subject_of = 266
 					}
 				}
 				custom_trigger_tooltip = {
@@ -337,6 +337,7 @@ giberd_konwell_conquest = {
 				}
 			}
 			else = {
+				owns_or_subject_of = 266
 				custom_trigger_tooltip = {
 					tooltip = giberd_replacing_the_pane_tt
 					always = yes
@@ -350,7 +351,7 @@ giberd_konwell_conquest = {
 			if = {
 				limit = {
 					NOT = {
-						owns = 266
+						owns_or_subject_of = 266
 					}
 				}
 				266 = {
@@ -2191,7 +2192,6 @@ giberd_mercantile_shipping = {
 					}
 				}
 			}
-			is_not_researching_invention = yes
 		}
 		effect = {
 			add_country_modifier = {
