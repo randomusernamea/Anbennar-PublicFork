@@ -189,17 +189,20 @@ country_event = {
 		create_march = J72
 		if = {
 			limit = { has_country_flag = gophira_pay_ae }
-			every_known_country = {
-				limit = {
-					capital_scope = { superregion = taychend_superregion }
+			custom_tooltip = gophira.4.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = { superregion = taychend_superregion }
+					}
+					add_aggressive_expansion = {
+						who = ROOT
+						value = 5
+						apply_calc = no
+					}
 				}
-				add_aggressive_expansion = {
-					who = ROOT
-					value = 5
-					apply_calc = no
-				}
+				clr_country_flag = gophira_pay_ae
 			}
-			clr_country_flag = gophira_pay_ae
 		}
 		J72 = {
 			add_trust = {
