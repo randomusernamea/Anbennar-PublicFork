@@ -41,19 +41,19 @@ country_event = { #To Become Dragons
 		if = {
 			limit = { is_tribal = no }
 			if = {
-				limit = { reform_level = 5 }
+				limit = { has_reform_on_level = 5 }
 				change_government_reform_progress = 50
 			}
 			else_if = {
-				limit = { reform_level = 4 }
+				limit = { has_reform_on_level = 4 }
 				change_government_reform_progress = 40				
 			}
 			else_if = {
-				limit = { reform_level = 3 }
+				limit = { has_reform_on_level = 3 }
 				change_government_reform_progress = 30				
 			}
 			else_if = {
-				limit = { reform_level = 2 }
+				limit = { has_reform_on_level = 2 }
 				change_government_reform_progress = 20				
 			}
 		}
@@ -1137,7 +1137,7 @@ country_event = { #The Chosen Several
 			tooltip = yes
 		}
 		if = {
-			limit = { reform_level = 9 }
+			limit = { has_reform_on_level = 9 }
 			add_government_reform = kobildzan_draconic_elites
 		}
 		
@@ -1149,7 +1149,7 @@ country_event = { #The Chosen Several
 			tooltip = yes
 		}
 		if = {
-			limit = { reform_level = 9 }
+			limit = { has_reform_on_level = 9 }
 			add_government_reform = kobildzan_draconic_masses
 		}
 	}

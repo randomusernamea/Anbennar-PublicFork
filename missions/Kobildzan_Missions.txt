@@ -398,7 +398,7 @@ kob_3_a = {
 
 		effect = {
 			define_advisor = {
-				type = theologian
+				type = inquisitor
 				skill = 1
 				culture = bluescale_kobold
 				religion = kobold_dragon_cult
@@ -406,12 +406,7 @@ kob_3_a = {
 			}
 
 			189 = {
-				add_building_construction = {
-					building = temple
-					speed = 1.0
-					cost = 0
-				}
-			
+				add_or_upgrade_tax_building = yes
 			}
 		}
 	}
@@ -613,7 +608,7 @@ kob_4_a = {
 			
 			add_country_modifier = {
 				name = Z38_seasick_green_modifier
-				duration = 7300
+				duration = 18250
 			}
 
 			if = {
@@ -977,7 +972,7 @@ kob_2_b = {
 				tooltip = yes
 			}
 			if = {
-				limit = { reform_level = 4 }
+				limit = { has_reform_on_level = 4 }
 				add_government_reform = kobildzan_draconic_technopriests
 			}
 		}
@@ -1140,22 +1135,32 @@ kob_2_b = {
 		}
 
 		trigger = {
-			calc_true_if = {
-				amount = 3
+			custom_trigger_tooltip = {
+				tooltip = subject_broken_sea_tt
 				any_subject_country = {
-					custom_trigger_tooltip = {
-						tooltip = 10_cities_in_broken_haraf_or_eordand_tt 
-						num_of_cities = 10
-						capital_scope = {
-							OR = {
-								colonial_region = colonial_broken_sea 
-								colonial_region = colonial_haraf 
-								colonial_region = colonial_eordand
-							}
-						}
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_broken_sea 
 					}
-
+				}	
+			}
+			custom_trigger_tooltip = {
+				tooltip = subject_eordand_tt
+				any_subject_country = {
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_eordand
+					}
 				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = subject_haraf_tt
+				any_subject_country = {
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_haraf 
+					}
+				}	
 			}
 			H24 = {
 				OR = {
@@ -1216,8 +1221,10 @@ kob_3_b = {
 		}
 
 		trigger = {
-			NOT = { has_country_modifier = monstrous_nation }
-
+			OR = {
+				has_country_flag = semi_monstrous
+				NOT = { has_country_modifier = monstrous_nation }
+			}
 			NOT = {
 				has_country_modifier = racial_pop_human_expulsion
 				has_country_modifier = racial_pop_human_purge
@@ -1999,7 +2006,13 @@ Kob_5b = {
 			}
 
 			dragon_coast_region = {
-				limit = { trade_goods = wool }
+				limit = {
+					province_id = 175
+					province_id = 173 
+					province_id = 174
+					province_id = 183 
+					province_id = 170
+				}
 				change_trade_goods = cloth
 
 				add_province_modifier = {
