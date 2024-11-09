@@ -912,7 +912,7 @@ kob_1_b = {
 
 			tooltip = {
 				add_country_modifier = {
-					name = Z38_godspodh_1
+					name = Z38_gospodh_1
 					duration = -1
 				}
 			}
@@ -982,6 +982,7 @@ kob_2_b = {
 			country_event = { id = flavour_kobildzan.5 }
 			unlock_government_reform = {
 				government_reform = kobildzan_draconic_technopriests
+				tooltip = yes
 			}
 			if = {
 				limit = { has_reform_on_level = 4 }
@@ -1014,6 +1015,10 @@ kob_2_b = {
 		}
 
 		effect = {
+			hidden_effect = {
+				set_country_flag = artifice_invention_kobildzan_draconic_ascension
+			}
+			set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			if = {
 				limit = { has_country_flag = dragons_mean_power }
 				add_country_modifier = {
@@ -2214,7 +2219,7 @@ kob_1_c = {
 		effect = {
 			tooltip = {
 				add_country_modifier = {
-					name = Z38_godspodh_2
+					name = Z38_gospodh_2
 					duration = -1
 				}
 			}

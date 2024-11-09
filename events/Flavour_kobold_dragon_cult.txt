@@ -76,7 +76,14 @@ country_event = {
 					has_church_aspect = blue_dragon_2_upgraded
 					has_church_aspect = blue_dragon_3_upgraded
 				}
-				mission_reward_artifice_points_3 = yes
+				custom_tooltip = festival_reward_artificer_3_tt
+				hidden_effect = {
+					change_variable = {
+						which = StaticArtificePoints
+						value = 1.5
+					}
+					update_artifice_points = yes
+				}
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -85,12 +92,26 @@ country_event = {
 						has_church_aspect = blue_dragon_3_upgraded
 					}
 				}
-				mission_reward_artifice_points_2 = yes
+				custom_tooltip = festival_reward_artificer_2_tt
+				hidden_effect = {
+					change_variable = {
+						which = StaticArtificePoints
+						value = 1
+					}
+					update_artifice_points = yes
+				}
 			}
 			else = { #Only 1 upgraded active
 				if = {
 					limit = { has_estate = estate_artificers }
-					mission_reward_artifice_points_1 = yes
+					custom_tooltip = festival_reward_artificer_1_tt
+					hidden_effect = {
+						change_variable = {
+							which = StaticArtificePoints
+							value = 0.5
+						}
+						update_artifice_points = yes
+					}
 				}
 				else = {
 					custom_tooltip = blue_dragon_hinting_effect_tt
@@ -1490,6 +1511,7 @@ country_event = {
 	option = {
 		name = flavour_kobold_dragon_cult.1.c
 		highlight = yes
+		goto = 463
 		trigger = {
 			hidden_trigger = {
 				can_unlock_kobold_cult_for_color_slot_upgrade = {
@@ -1503,7 +1525,10 @@ country_event = {
 						has_global_flag = delete_north_sarhal_region
 						is_year = 1600
 					}					
-					has_discovered = 466
+					kheterata_region = {
+						type = any
+						has_discovered = ROOT
+					}
 				}		
 			}
 		}
@@ -2664,7 +2689,7 @@ country_event = {
 
 	option = {
 		name = flavour_kobold_dragon_cult.1.e
-		
+		goto = 463
 		trigger = {
 			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
@@ -2678,7 +2703,10 @@ country_event = {
 						has_global_flag = delete_north_sarhal_region
 						is_year = 1600
 					}					
-					has_discovered = 466
+					kheterata_region = {
+						type = any
+						has_discovered = ROOT
+					}
 				}
 			}
 		}

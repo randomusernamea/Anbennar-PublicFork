@@ -362,6 +362,26 @@ country_event = { #Twin Empires
 				}
 			}
 			set_country_flag = kobildzan_dragon_dominion_friends
+			1191 = {
+				owner = {
+					add_opinion = { 
+						who = ROOT
+						modifier = tribute_to_a_dragon
+					}
+					reverse_add_opinion = {
+						who = ROOT
+						modifier = tribute_to_a_dragon
+					}
+					ROOT = {
+						capital_scope = {
+							discover_country = prev
+						}
+					}
+					largest_increase_of_kobold_tolerance_effect = yes
+					largest_increase_of_kobold_tolerance_effect = yes
+					add_government_reform = autocracy_reform
+				}
+			}
 		}
 		hidden_effect = {
 			add_historical_friend = H24
