@@ -228,9 +228,14 @@ country_event = {
 				add_rebel_progress = {
 					value = -30
 				}
-				every_owned_province = {
-					clear_rebels = yes
+				custom_tooltip = "Clears all Rebels in owned Provinces"
+				hidden_effect = {
+					every_owned_province = {
+					
+						clear_rebels = yes
+					}					
 				}
+
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -1608,7 +1613,7 @@ country_event = {
 					}	
 					had_country_flag = {
 						flag = met_aakhet
-						days = 7300
+						days = 1825
 					}
 				}		
 			}
@@ -2786,7 +2791,7 @@ country_event = {
 					}	
 					had_country_flag = {
 						flag = met_aakhet
-						days = 7300
+						days = 1825
 					}
 				}
 			}

@@ -10110,6 +10110,10 @@ on_five_year_pulse_3 = {
 				country_event = { id = kobold_traps.10 days = 60 }
 			}
 			if = {
+				limit = { has_country_flag = kobildzan_artificer_spawn }
+				country_event = { id = flavour_kobildzan.6 days = 100  }
+			}
+			else_if = {
 				limit = { has_country_flag = kobildzan_biocompatibility }
 				if = {
 					limit = { has_country_flag = hidden_biocompatibility }

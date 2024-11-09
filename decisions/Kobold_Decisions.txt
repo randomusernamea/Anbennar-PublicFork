@@ -313,21 +313,8 @@ country_decisions = {
 				}
 			}
 			years_of_manpower = 1
-			if = {
-				limit = { has_country_flag = gerudian_traps_for_kobolds }
-				any_owned_province = {
-					OR = {
-						province_group = kobold_traps_provinces
-						province_group = gerudian_kobold_traps
-					}
-					kobold_traps_individual_trigger = yes
-				}
-			}
-			else = {
-				any_owned_province = {
-					province_group = kobold_traps_provinces
-					kobold_traps_individual_trigger = yes
-				}
+			any_owned_province = {
+				province_group = kobold_traps_provinces
 			}
 			hidden_trigger = {
 				NOT = { 

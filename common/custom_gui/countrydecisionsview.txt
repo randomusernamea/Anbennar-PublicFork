@@ -6357,6 +6357,7 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix
 					has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
 					has_country_flag = unlocked_artifice_invention_game_of_khet
+					has_country_flag = unlocked_artifice_invention_draconic_ascension
 				}
 			}
 		}
@@ -6418,6 +6419,7 @@ custom_button = {
 				has_estate_privilege = artifice_invention_think_quik_drink_mix
 				has_estate_privilege = artifice_invention_demonflame_flamethrowers
 				has_estate_privilege = artifice_invention_game_of_khet
+				has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			}
 		}
 	}
@@ -6435,6 +6437,7 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
 				has_country_flag = unlocked_artifice_invention_power_fists
 				has_country_flag = unlocked_artifice_invention_game_of_khet
+				has_country_flag = unlocked_artifice_invention_draconic_ascension
 			}
 		}
 	}
@@ -6896,6 +6899,25 @@ custom_button = {
 				remove_estate_privilege = artifice_invention_game_of_khet
 			}
 		}
+		else_if = {
+			limit = { religion = kobold_dragon_cult }
+			if = {
+				limit = {
+					NOT = {
+						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+					}
+				}
+				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+				}
+				tooltip = {
+					remove_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+				}
+			}
+		}
 	}
 }
 
@@ -6904,13 +6926,19 @@ custom_button = {
 	tooltip = religion_invention_2_tt
 	potential = {
 		has_country_flag = artifice_invention_menu_open_cultural
-		religion = ravelian
+		OR = {
+			religion = ravelian
+			has_country_flag = can_use_lullaby_cannon
+		}
 	}
 	frame = {
 		number = 1
 		trigger = {
 			NOT = {
-				has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+				OR = {
+					has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+					has_country_flag = can_use_lullaby_cannon
+				}				
 			}
 		}
 	}
@@ -6918,20 +6946,32 @@ custom_button = {
 		number = 2
 		trigger = {
 			NOT = {
-				has_estate_privilege = artifice_invention_god_fragment_decoder
+				OR = {
+					has_estate_privilege = artifice_invention_god_fragment_decoder
+					has_estate_privilege = artifice_invention_lullaby_cannon
+				}
 			}
-			has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+			OR = {
+				has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+				has_country_flag = can_use_lullaby_cannon
+			}
 		}
 	}
 	frame = {
 		number = 3
 		trigger = {
-			has_estate_privilege = artifice_invention_god_fragment_decoder
+			OR = {
+				has_estate_privilege = artifice_invention_god_fragment_decoder
+				has_estate_privilege = artifice_invention_lullaby_cannon
+			}
 		}
 	}
 	trigger = {
 		hidden_trigger = {
-			has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+			OR = {
+				has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+				has_country_flag = can_use_lullaby_cannon
+			}
 		}
 	}
 	effect = { 
@@ -6965,6 +7005,36 @@ custom_button = {
 					has_estate_privilege = artifice_invention_god_fragment_decoder
 				}
 				remove_estate_privilege = artifice_invention_god_fragment_decoder
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = can_use_lullaby_cannon }
+			if = {
+				limit = {
+					artifice_can_select_invention_20 = yes
+					NOT = {
+						has_estate_privilege = artifice_invention_lullaby_cannon
+					}
+				}
+				set_estate_privilege = artifice_invention_lullaby_cannon
+			}
+			else_if = {
+				limit = {
+					artifice_can_select_invention_20 = no
+					NOT = {
+						has_estate_privilege = artifice_invention_lullaby_cannon
+					}
+				}
+				custom_tooltip = artifice_cannot_afford_invention
+				tooltip = {
+					set_estate_privilege = artifice_invention_lullaby_cannon
+				}
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_lullaby_cannon
+				}
+				remove_estate_privilege = artifice_invention_lullaby_cannon
 			}
 		}
 	}
@@ -7248,7 +7318,6 @@ custom_button = {
 					has_estate_privilege = artifice_invention_the_carousel
 					has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 					has_estate_privilege = artifice_invention_bramble_burners
-					has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 				}
 			}
 			OR = {
@@ -7287,7 +7356,6 @@ custom_button = {
 				has_estate_privilege = artifice_invention_the_carousel
 				has_estate_privilege = artifice_invention_ironwraith_weapons_platform
 				has_estate_privilege = artifice_invention_bramble_burners
-				has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			}
 		}
 	}
@@ -7811,25 +7879,6 @@ custom_button = {
 					has_estate_privilege = artifice_invention_bramble_burners
 				}
 				remove_estate_privilege = artifice_invention_bramble_burners
-			}
-		}
-		else_if = {
-			limit = { tag = Z38 }
-			if = {
-				limit = {
-					NOT = {
-						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-					}
-				}
-				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-			}
-			else_if = {
-				limit = {
-					has_estate_privilege = artifice_invention_draconic_ascension
-				}
-				tooltip = {
-					remove_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-				}
 			}
 		}
 	}
