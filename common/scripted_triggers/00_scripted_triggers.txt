@@ -2667,6 +2667,7 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_sarraka_three }
 		NOT = { mercenary_company = merc_daughters_of_akasik_elite }
 		NOT = { mercenary_company = merc_larankarha_household_cavalry }
+		NOT = { mercenary_company = merc_wolfguard }
 	}
 }
 
@@ -5017,6 +5018,7 @@ eligble_for_harpy_harem_events = {
 		has_reform = harpy_matriarchy_ayarallen_early_gov_mechanic_reform
 		has_reform = siadan_harpy_empire
 		has_reform = harpy_queendom_reform
+		has_reform = naleni_thalassocracy_reform
 	}
 }
 
@@ -5221,7 +5223,7 @@ is_in_mesoamerica_trigger = {
 	}
 }
 
-num_of_battles = {
+num_of_battles = {			#anbennar: to use it you need to set_country_flag = count_battles_won
 	custom_trigger_tooltip = {
 		tooltip = has_won_at_least_$amount$_battles #in case of adding a new number, localize
 		check_variable = {
@@ -5231,7 +5233,7 @@ num_of_battles = {
 	}
 }
 
-num_of_wars = {
+num_of_wars = {		#anbennar: to use it you need to set_country_flag = count_wars_won
 	custom_trigger_tooltip = {
 		tooltip = has_won_at_least_$amount$_wars #in case of adding a new number, localize
 		check_variable = {
