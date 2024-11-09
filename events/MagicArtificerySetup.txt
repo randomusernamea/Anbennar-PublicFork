@@ -9,6 +9,12 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+		set_country_flag = artificery_change_mode_cooldown
+		}
+	}
+
 	#mage only
 	option = {
 		name = magic_artificery_setup.1.a

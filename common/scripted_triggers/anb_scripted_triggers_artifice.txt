@@ -718,3 +718,10 @@ is_not_researching_invention = {
 		}
 	}
 }
+
+artifice_forced_mixed_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_forced_mixed_mode_tt
+	}
+	has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+}
