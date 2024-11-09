@@ -452,6 +452,15 @@ update_artifice_points = {
 			#liches and witch kings have no need for artifice and are distrustful of the threat it represents to them
 			if = {
 				limit = {
+					has_country_flag = orlghelovar_science_mages_privilege
+				}
+				change_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
 					has_country_flag = magic_artificery_mixed
 				}
 				subtract_variable = {

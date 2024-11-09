@@ -27,6 +27,13 @@ defined_text = {
 	random = no
 	
 	text = {
+        localisation_key = artifice_multipliers_orlghelovar_science_mages
+        trigger = {
+			has_country_flag = orlghelovar_science_mages_privilege
+        }
+    }
+	
+	text = {
         localisation_key = artifice_multipliers_mixed_mode
         trigger = {
 			has_country_flag = magic_artificery_mixed
