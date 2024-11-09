@@ -22,7 +22,7 @@ moonhaven_annbencost_missions = {
 			dip_power = 50
 			A32 = {
 				has_opinion = {
-					who = A31
+					who = ROOT
 					value = 150
 				}
 			}
@@ -33,7 +33,7 @@ moonhaven_annbencost_missions = {
 			add_dip_power = -50
 			A32 = {
 				add_trust = {
-					who = A31
+					who = ROOT
 					value = 10
 					mutual = yes
 				}
@@ -53,7 +53,7 @@ moonhaven_annbencost_missions = {
 			OR = {
 				A38 = {
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 150
 					}
 				}
@@ -68,7 +68,7 @@ moonhaven_annbencost_missions = {
 				limit = { NOT = { is_rival = A38 }  } 
 				A38 = {
 					add_trust = {
-						who = A31
+						who = ROOT
 						value = 10
 						mutual = yes
 					}
@@ -187,7 +187,7 @@ moonhaven_regent_court_missions = {
 				all_ally = {
 					religion = regent_court
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 175
 					}
 				}
@@ -201,11 +201,11 @@ moonhaven_regent_court_missions = {
 			every_country = {
 				limit = {
 					religion = regent_court
-					alliance_with = A31
+					alliance_with = ROOT
 				}
 				add_army_tradition = 10
 				add_trust = {
-					who = A31
+					who = ROOT
 					value = 30
 					mutual = yes
 				}
@@ -477,7 +477,7 @@ moonhaven_corinite_missions = {
 			treasury = 200
 			A45 = {
 				has_opinion = {
-					who = A31
+					who = ROOT
 					value = 200
 				}
 				army_size = 20
@@ -610,8 +610,7 @@ moonhaven_corinite_missions = {
 				A58 = { is_emperor = yes } 
 			}
 			calc_true_if = {
-				all_province = {
-					is_part_of_hre = yes
+				starting_elf_provinces = {
 					culture = moon_elf
 					religion = corinite
 				}
@@ -630,16 +629,14 @@ moonhaven_corinite_missions = {
 			}
 			custom_tooltip = A31_tax_elf
 			hidden_effect = {
-				europe = {
-					starting_elf_provinces = {
-						limit = {
-							is_part_of_hre = yes
-							culture = moon_elf
-						}
-						add_base_tax = 1
-						add_base_manpower = 1
-						add_base_production = 1
+				starting_elf_provinces = {
+					limit = {
+						is_part_of_hre = yes
+						culture = moon_elf
 					}
+					add_base_tax = 1
+					add_base_manpower = 1
+					add_base_production = 1
 				}
 			}
 		}
@@ -719,10 +716,12 @@ moonhaven_ravelian_missions = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			all_owned_province = {
-				is_part_of_hre = yes
-				culture_group = elven
-				development = 30
+			NOT = {
+				any_owned_province = {
+					is_part_of_hre = yes
+					culture_group = elven
+					NOT = { development = 30 }
+				}
 			}
 		}
 
@@ -742,10 +741,12 @@ moonhaven_ravelian_missions = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			all_owned_province = {
-				superregion = western_cannor_superregion
-				culture_group = elven
-				has_manufactory_trigger = yes
+			NOT = {
+				any_owned_province = {
+					NOT = { has_manufactory_trigger = yes }
+					culture_group = elven
+					superregion = western_cannor_superregion
+				}
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 5
@@ -770,9 +771,9 @@ moonhaven_ravelian_missions = {
 		trigger = {
 			government_reform_progress = 200
 			stability = 3
-			calc_true_if = {
-				any_owned_province = { has_tax_building_trigger = yes } 
-				amount = 10
+			num_of_owned_provinces_with = {
+				has_tax_building_trigger = yes
+				value = 10
 			}
 			estate_loyalty = {
 				estate = estate_artificers
@@ -818,9 +819,9 @@ moonhaven_ravelian_missions = {
 							}
 						}
 						amount = 5
-						prestige = 90
-						num_artifice_inventions_discovered = { VAL = 10 } 
 					}
+					prestige = 90
+					num_artifice_inventions_discovered = { VAL = 10 } 
 				}
 			}
 		}
@@ -850,7 +851,7 @@ moonhaven_sarhal_missions = {
 			any_ally = { tag = A45 } 
 			A45 = {
 				has_opinion = {
-					who = A31
+					who = ROOT
 					value = 170
 				}
 			}
@@ -859,7 +860,7 @@ moonhaven_sarhal_missions = {
 		effect = {
 			A45 = {
 				add_trust = {
-					who = A31
+					who = ROOT
 					value = 20
 					mutual = yes
 				}
@@ -885,24 +886,21 @@ moonhaven_sarhal_missions = {
 		}
 
 		trigger = {
-			OR = {
-				if = {
-					limit = { ai = no } 
-					monthly_dip = 8
-				}
+			IF = {
+				monthly_dip = 8
 				A45 = {
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 200
 					}
 				}
 			}
-			OR = {
+			Else = {
 				AND = {
 					exists = Z42
 					Z42 = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 150
 						}
 					}
@@ -911,7 +909,7 @@ moonhaven_sarhal_missions = {
 					NOT = { exists = Z42 } 
 					A30 = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 100
 						}
 					}
@@ -1024,24 +1022,22 @@ moonhaven_sarhal_missions = {
 			}
 			
 			else = { custom_tooltip = A31_cannor_adean_bad.tt } 
-			tooltip = {
-				add_adm_power = 50
-				add_dip_power = 50
-				add_mil_power = 50
-				add_prestige = 20
-				hidden_effect = {
-					every_ally = {
-						add_opinion = {
-							who = ROOT
-							modifier = A31_religious_ally
-						}
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_prestige = 20
+			hidden_effect = {
+				every_ally = {
+					add_opinion = {
+						who = ROOT
+						modifier = A31_religious_ally
 					}
-					every_country = {
-						limit = { religion = ROOT } 
-						add_opinion = {
-							who = ROOT
-							modifier = A31_religious_brethren
-						}
+				}
+				every_country = {
+					limit = { religion = ROOT } 
+					add_opinion = {
+						who = ROOT
+						modifier = A31_religious_brethren
 					}
 				}
 			}
@@ -1062,22 +1058,20 @@ moonhaven_sarhal_missions = {
 				custom_tooltip = A31_cannor_corin_good.tt
 			}
 			else = { custom_tooltip = A31_cannor_corin_bad.tt } 
-			tooltip = {
-				add_stability = 1
-				add_prestige = 20
-				hidden_effect = {
-					every_ally = {
-						add_opinion = {
-							who = ROOT
-							modifier = A31_religious_ally
-						}
+			add_stability = 1
+			add_prestige = 20
+			hidden_effect = {
+				every_ally = {
+					add_opinion = {
+						who = ROOT
+						modifier = A31_religious_ally
 					}
-					every_country = {
-						limit = { religion = ROOT } 
-						add_opinion = {
-							who = ROOT
-							modifier = A31_religious_brethren
-						}
+				}
+				every_country = {
+					limit = { religion = ROOT } 
+					add_opinion = {
+						who = ROOT
+						modifier = A31_religious_brethren
 					}
 				}
 			}
@@ -1111,22 +1105,18 @@ moonhaven_sarhal_missions = {
 				custom_tooltip = A31_cannor_adean_good.tt
 			}
 			else = { custom_tooltip = A31_cannor_adean_bad.tt } 
-			tooltip = {
-				add_country_modifier = {
-					name = "A31_adeans_loyal"
-					duration = 9125
-				}
+			add_country_modifier = {
+				name = "A31_adeans_loyal"
+				duration = 9125
 			}
 			if = {
 				limit = { religion = corinite } 
 				custom_tooltip = A31_cannor_corin_good.tt
 			}
 			else = { custom_tooltip = A31_cannor_corin_bad.tt } 
-			tooltip = {
-				add_country_modifier = {
-					name = "A31_corins_loyal"
-					duration = 9125
-				}
+			add_country_modifier = {
+				name = "A31_corins_loyal"
+				duration = 9125
 			}
 		}
 	}
@@ -1193,12 +1183,9 @@ moonhaven_sarhal_missions = {
 									primary_culture = zohebidi
 								}
 							}
-							calc_true_if = {
-								any_owned_province = { 
-									region = fahvanosy_region
-									trade_goods = cloves
-								}
-								amount = 1
+							any_owned_province = { 
+								region = fahvanosy_region
+								trade_goods = cloves
 							}
 							amount = 2
 						}
@@ -1216,11 +1203,9 @@ moonhaven_sarhal_missions = {
 									primary_culture = vyoronsi
 									primary_culture = zohebidi
 								}
-								calc_true_if = {
-									any_owned_province = { 
-										region = fahvanosy_region
-										trade_goods = cloves
-									}
+								any_owned_province = { 
+									region = fahvanosy_region
+									trade_goods = cloves
 									amount = 2
 								}
 							}
@@ -1228,12 +1213,10 @@ moonhaven_sarhal_missions = {
 						}
 					}
 				}
-				calc_true_if = {
-					any_owned_province = {
-						region = fahvanosy_region
-						trade_goods = cloves
-						base_production = 8
-					}
+				num_of_owned_provinces_with = {
+					region = fahvanosy_region
+					trade_goods = cloves
+					base_production = 8
 					amount = 5
 				}
 			}
@@ -1486,7 +1469,7 @@ moonhaven_development_missions = {
 			OR = {
 				A83 = {
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 150
 					}
 				}
@@ -1496,7 +1479,7 @@ moonhaven_development_missions = {
 					350 = {
 						owner = {
 							has_opinion = {
-								who = A31
+								who = ROOT
 								value = 120
 							}
 						}
@@ -1680,7 +1663,7 @@ moonhaven_development_missions = {
 					dip_power = 200
 					emperor = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 175
 						}
 					}
@@ -1816,8 +1799,10 @@ moonhaven_development_missions = {
 				trade_goods = wool
 				trade_goods = coffee
 			}
-			NOT = { owned_by = ROOT }
-			NOT = { base_production = 8 }
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { base_production = 8 }
+			}
 		}
 
 		trigger = {
@@ -1905,7 +1890,7 @@ moonhaven_colonial_missions = {
 					NOT = { exists = A21 } 
 					A21 = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 130
 						}
 					}
@@ -1951,7 +1936,7 @@ moonhaven_colonial_missions = {
 				all_elector = {
 					NOT = { tag = A31 } 
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 100
 					}
 				}
@@ -1966,7 +1951,12 @@ moonhaven_colonial_missions = {
 
 		effect = {
 			if = {
-				limit = { has_country_modifier = elven_administration } 
+				limit = { 
+					OR = {
+						has_country_modifier = elven_administration 
+						has_country_modifier = half_elven_administration
+					} 
+				}
 				add_country_modifier = {
 					name = "A31_empire_colonial_office"
 					duration = 10950
@@ -1981,8 +1971,10 @@ moonhaven_colonial_missions = {
 		position = 5
 		required_missions = { A31_colonial_office } 
 		provinces_to_highlight = {
-			region = turtleback_isle_region
-			region = severed_coast_region
+			OR = {
+				region = turtleback_isle_region
+				region = severed_coast_region
+			}
 			has_discovered = ROOT
 		}
 
@@ -2026,20 +2018,20 @@ moonhaven_colonial_missions = {
 
 		trigger = {
 			any_subject_country = {
-				is_colonial_nation_of = A31
+				is_colonial_nation_of = ROOT
 				capital_scope = { colonial_region = colonial_taychend } 
-				OR = {
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						value = 3
-						trade_goods = tea
-						colonial_region = colonial_taychend
-					}
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						value = 1
-						trade_goods = tea
-						colonial_region = colonial_taychend
-						base_production = 15
-					}
+			}
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					trade_goods = tea
+					colonial_region = colonial_taychend
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 1
+					trade_goods = tea
+					colonial_region = colonial_taychend
+					base_production = 15
 				}
 			}
 		}
@@ -2047,7 +2039,12 @@ moonhaven_colonial_missions = {
 		effect = {
 			remove_country_modifier = A31_empire_colonial_office
 			if = {
-				limit = { has_country_modifier = elven_administration } 
+				limit = { 					
+					OR = {
+						has_country_modifier = elven_administration 
+						has_country_modifier = half_elven_administration
+					}
+				} 
 				add_country_modifier = {
 					name = "A31_traders_invest_economy"
 					duration = 18250
@@ -2322,7 +2319,7 @@ moonhaven_exploration_missions = {
 					treasury = 75
 					A03 = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 150
 						}
 					}
@@ -2332,7 +2329,7 @@ moonhaven_exploration_missions = {
 					NOT = { exists = A03 } 
 					A01 = {
 						has_opinion = {
-							who = A31
+							who = ROOT
 							value = 120
 						}
 					}
@@ -2350,7 +2347,7 @@ moonhaven_exploration_missions = {
 				add_prestige = 15
 				A03 = {
 					add_trust = {
-						who = A31
+						who = ROOT
 						value = 10
 						mutual = yes
 					}
@@ -2375,7 +2372,7 @@ moonhaven_exploration_missions = {
 			dip_tech = 6
 			Z22 = {
 				has_opinion = {
-					who = A31
+					who = ROOT
 					value = 150
 				}
 			}
@@ -2386,7 +2383,7 @@ moonhaven_exploration_missions = {
 			add_sailors = 500
 			Z22 = {
 				add_trust = {
-					who = A31
+					who = ROOT
 					value = 10
 					mutual = yes
 				}
@@ -2507,7 +2504,7 @@ moonhaven_exploration_missions = {
 					2008 = {
 						owner = {
 							has_opinion = {
-								who = A31
+								who = ROOT
 								value = 120
 							}
 						}
@@ -2518,14 +2515,14 @@ moonhaven_exploration_missions = {
 					2008 = {
 						owner = {
 							has_spy_network_from = {
-								who = A31
+								who = ROOT
 								value = 100
 							}
 						}
 					}
 				}
 				any_subject_country = {
-					is_colonial_nation_of = A31
+					is_colonial_nation_of = ROOT
 					capital_scope = { colonial_region = colonial_eordand } 
 					any_owned_province = { trade_goods = tea } 
 				}
@@ -2574,7 +2571,12 @@ moonhaven_exploration_missions = {
 		effect = {
 			remove_country_modifier = A31_traders_invest_economy
 			if = {
-				limit = { has_country_modifier = elven_administration } 
+				limit = { 					
+					OR = {
+						has_country_modifier = elven_administration 
+						has_country_modifier = half_elven_administration
+					}
+				} 
 				add_country_modifier = {
 					name = "A31_aiecoca_expanded"
 					duration = -1
@@ -2597,7 +2599,7 @@ moonhaven_exploration_missions = {
 				any_known_country = {
 					capital_scope = { continent = asia } 
 					has_opinion = {
-						who = A31
+						who = ROOT
 						value = 120
 					}
 				}
@@ -2641,7 +2643,7 @@ moonhaven_exploration_missions = {
 						}
 					}
 					has_spy_network_from = {
-						who = A31
+						who = ROOT
 						value = 100
 					}
 					any_owned_province = { trade_goods = tea } 

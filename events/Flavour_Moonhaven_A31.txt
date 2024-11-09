@@ -6,7 +6,7 @@ country_event = { #Unraveling
 	title = A31_flavour.1.t
 	desc = A31_flavour.1.d
 	picture = ANGRY_MOB_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -14,7 +14,7 @@ country_event = { #Unraveling
 		#mission
 
 	}
-	
+
 	option = { #Stay RC
 		name = A31_flavour.1.a
 		ai_chance = {
@@ -26,13 +26,13 @@ country_event = { #Unraveling
 		}
 		change_religion = regent_court
 		remove_historical_friend = A45
-		A45 = { 
+		A45 = {
 			remove_historical_friend = A31
 			add_trust = {
 				who = A31
 				value = -100
-				mutual = yes 
-			} 
+				mutual = yes
+			}
 		}
 		random_owned_province = {
 			change_religion = corinite
@@ -82,7 +82,7 @@ country_event = { #Istralore 1
 	title = A31_flavour.2.t
 	desc = A31_flavour.2.d
 	picture = DIPLOMACY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -90,7 +90,7 @@ country_event = { #Istralore 1
 		#mission
 
 	}
-	
+
 	option = { #money is good
 	 	name = A31_flavour.2.a
 	}
@@ -101,7 +101,7 @@ country_event = { #Istralore 2
 	title = A31_flavour.3.t
 	desc = A31_flavour.3.d
 	picture = DIPLOMACY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -109,7 +109,7 @@ country_event = { #Istralore 2
 		#mission
 
 	}
-	
+
 	option = { #dev is good
 			name = A31_flavour.3.a
 	}
@@ -120,7 +120,7 @@ country_event = { #Istralore 3
 	title = A31_flavour.4.t
 	desc = A31_flavour.4.d
 	picture = DIPLOMACY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -128,7 +128,7 @@ country_event = { #Istralore 3
 		#mission
 
 	}
-	
+
 	option = { #troops is good
 			name = A31_flavour.4.a
 	}
@@ -139,7 +139,7 @@ country_event = { #Istralore 4
 	title = A31_flavour.5.t
 	desc = A31_flavour.5.d
 	picture = DIPLOMACY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -147,7 +147,7 @@ country_event = { #Istralore 4
 		#mission
 
 	}
-	
+
 	option = { #wood is good
 			name = A31_flavour.5.a
 	}
@@ -158,7 +158,7 @@ country_event = { #Wex Petition
 	title = A31_flavour.6.t
 	desc = A31_flavour.6.d
 	picture = DEBATE_REPUBLICAN_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -166,7 +166,7 @@ country_event = { #Wex Petition
 		#mission
 
 	}
-	
+
 	option = { #accept petition
 		name = A31_flavour.6.a
 		add_prestige = -10
@@ -186,7 +186,7 @@ country_event = { #Wex Accepts
 	title = A31_flavour.7.t
 	desc = A31_flavour.7.d
 	picture = DIPLOMACY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -194,7 +194,7 @@ country_event = { #Wex Accepts
 		#mission
 
 	}
-	
+
 	option = { #good
 		name = A31_flavour.7.a
 		add_prestige = 15
@@ -206,7 +206,7 @@ country_event = { #Wex Rejects
 	title = A31_flavour.8.t
 	desc = A31_flavour.8.d
 	picture = ACCUSATION_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -214,7 +214,7 @@ country_event = { #Wex Rejects
 		#mission
 
 	}
-	
+
 	option = { #bad
 		name = A31_flavour.8.a
 		add_prestige = -15
@@ -227,7 +227,7 @@ country_event = { #Haless Claims
 	title = A31_flavour.9.t
 	desc = A31_flavour.9.d
 	picture = SHIP_SAILING_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -235,7 +235,7 @@ country_event = { #Haless Claims
 		#mission
 
 	}
-	
+
 	option = {
 		name = A31_flavour.9.a
 		lower_yanshen_region = {
@@ -255,20 +255,20 @@ country_event = { #Start
 	title = A31_flavour.15.t
 	desc = A31_flavour.15.d
 	picture = INVENTION_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	trigger = {
 		#mission
 	}
-	
+
 	option = { #Expensive
 		name = A31_flavour.15.a
-		
+
 		if = {
-			limit = { 
-				Root = { has_country_flag = magic_artificery_mage_only }
+			limit = {
+				has_country_flag = magic_artificery_mage_only
 			}
 			add_treasury = -2500
 			add_adm_power = -600
@@ -276,8 +276,8 @@ country_event = { #Start
 			add_mil_power = -600
 			custom_tooltip = A31_expensive_damestear.tt
 			hidden_effect = {
-				every_province = { 
-					limit = { 
+				every_province = {
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -285,10 +285,10 @@ country_event = { #Start
 				}
 			}
 		}
-		
-		if = {
+
+		else_if = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_mix }
+				has_country_flag = magic_artificery_mixed
 			}
 			add_treasury = -3750
 			add_adm_power = -400
@@ -297,7 +297,7 @@ country_event = { #Start
 			custom_tooltip = A31_expensive_mixed.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						or = {
 							trade_goods = damestear
@@ -309,10 +309,10 @@ country_event = { #Start
 			}
 		}
 
-		
-		if = {
+
+		else = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_artificery_only }
+				has_country_flag = magic_artificery_artificery_only
 			}
 			add_treasury = -5000
 			add_adm_power = -200
@@ -321,7 +321,7 @@ country_event = { #Start
 			custom_tooltip = A31_expensive_relics.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -334,13 +334,13 @@ country_event = { #Start
 		}
 		custom_tooltip = A31_rial_thae_experiments.tt
 	}
-	
+
 		option = { #Medium
 		name = A31_flavour.15.b
-		
+
 		if = {
-			limit = { 
-				Root = { has_country_flag = magic_artificery_mage_only }
+			limit = {
+				has_country_flag = magic_artificery_mage_only
 			}
 			add_treasury = -1250
 			add_adm_power = -300
@@ -348,8 +348,8 @@ country_event = { #Start
 			add_mil_power = -300
 			custom_tooltip = A31_medium_damestear.tt
 			hidden_effect = {
-				every_province = { 
-					limit = { 
+				every_province = {
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -357,10 +357,10 @@ country_event = { #Start
 				}
 			}
 		}
-		
-		if = {
+
+		else_if = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_mix }
+				has_country_flag = magic_artificery_mixed
 			}
 			add_treasury = -1875
 			add_adm_power = -200
@@ -369,7 +369,7 @@ country_event = { #Start
 			custom_tooltip = A31_medium_mixed.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						or = {
 							trade_goods = damestear
@@ -381,10 +381,10 @@ country_event = { #Start
 			}
 		}
 
-		
-		if = {
+
+		else = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_artificery_only }
+				has_country_flag = magic_artificery_artificery_only
 			}
 			add_treasury = -2500
 			add_adm_power = -100
@@ -393,7 +393,7 @@ country_event = { #Start
 			custom_tooltip = A31_medium_relics.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -406,13 +406,13 @@ country_event = { #Start
 		}
 		custom_tooltip = A31_mediocre_experiments.tt
 	}
-	
+
 		option = { #Cheap
 		name = A31_flavour.15.c
-		
+
 		if = {
-			limit = { 
-				Root = { has_country_flag = magic_artificery_mage_only }
+			limit = {
+				has_country_flag = magic_artificery_mage_only
 			}
 			add_treasury = -200
 			add_adm_power = -150
@@ -420,8 +420,8 @@ country_event = { #Start
 			add_mil_power = -150
 			custom_tooltip = A31_cheap_mix.tt
 			hidden_effect = {
-				every_province = { 
-					limit = { 
+				every_province = {
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -429,10 +429,10 @@ country_event = { #Start
 				}
 			}
 		}
-		
-		if = {
+
+		else_if = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_mix }
+				has_country_flag = magic_artificery_mixed
 			}
 			add_treasury = -500
 			add_adm_power = -100
@@ -441,7 +441,7 @@ country_event = { #Start
 			custom_tooltip = A31_cheap_damestear.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						or = {
 							trade_goods = damestear
@@ -453,10 +453,10 @@ country_event = { #Start
 			}
 		}
 
-		
-		if = {
+
+		else = {
 			limit = {
-				Root = { has_country_flag = magic_artificery_artificery_only }
+				has_country_flag = magic_artificery_artificery_only
 			}
 			add_treasury = -1000
 			add_adm_power = -50
@@ -465,7 +465,7 @@ country_event = { #Start
 			custom_tooltip = A31_cheap_relics.tt
 			hidden_effect = {
 				every_province = {
-					limit = { 
+					limit = {
 						country_or_subject_holds = ROOT
 						trade_goods = damestear
 					}
@@ -492,13 +492,13 @@ country_event = { #WEIRD TEA
 	title = A31_flavour.16.t
 	desc = A31_flavour.16.d
 	picture = ELVEN_EYE_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	trigger = {
 	}
-	
+
 	option = {
 		name = A31_flavour.16.a
 
@@ -514,7 +514,7 @@ country_event = { #CHEAP TEA
 	title = A31_flavour.17.t
 	desc = A31_flavour.17.d
 	picture = MAGES_ESTATE_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -522,10 +522,10 @@ country_event = { #CHEAP TEA
 		#mission
 
 	}
-	
-	option = { 
+
+	option = {
 		name = A31_flavour.17.a
-		
+
 		add_country_modifier = {
 			name = A31_mediocre_tea
 			duration = -1
@@ -538,7 +538,7 @@ country_event = { #MEDIOCRE TEA
 	title = A31_flavour.18.t
 	desc = A31_flavour.18.d
 	picture = ANB_GLOBAL_TRADE_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -546,10 +546,10 @@ country_event = { #MEDIOCRE TEA
 		#mission
 
 	}
-	
+
 	option = {
 		name = A31_flavour.18.a
-		
+
 		add_country_modifier = {
 			name = A31_very_good_tea
 			duration = -1
@@ -562,7 +562,7 @@ country_event = { #RIAL THAE
 	title = A31_flavour.19.t
 	desc = A31_flavour.19.d
 	picture = BIG_STAR_IN_SKY_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -570,10 +570,10 @@ country_event = { #RIAL THAE
 		#mission
 	}
 
-	
+
 	option = {
 		name = A31_flavour.19.a
-		
+
 		add_country_modifier = {
 				name = "A31_rial_thae"
 				duration = -1
@@ -586,7 +586,7 @@ country_event = {
 	title = A31_flavour.20.t
 	desc = A31_flavour.20.d
 	picture = NOBLE_ESTATE_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -594,8 +594,8 @@ country_event = {
 		#mission
 
 	}
-	
-	option = { 
+
+	option = {
 	 	name = A31_flavour.20.a
 	}
 }
@@ -605,15 +605,15 @@ country_event = { #ibevar
 	title = A31_flavour.21.t
 	desc = A31_flavour.21.d
 	picture = KINGS_CHOICE_eventPicture
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	trigger = {
 		#mission
 	}
-	
-	option = { 
+
+	option = {
 	 	name = A31_flavour.21.a
 	}
 }
@@ -623,17 +623,17 @@ country_event = { #introduction
 	title = A31_flavour.22.t
 	desc = A31_flavour.22.d
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = A31
 	}
-	
+
 	mean_time_to_happen = {
 		days = 14
 	}
-	
+
 	option = {
 		name = A31_flavour.22.a
 	}
@@ -656,9 +656,9 @@ country_event = { #Ravelian event, the main Ravelian conversion event won't fire
 	option = {
 		name = A31_flavour.23.a
 		ai_chance = { factor = 20 }
-		
+
 		change_religion = ravelian
-		
+
 		hidden_effect = {
 			clr_country_flag = A31_corin
 			clr_country_flag = A31_regent
@@ -668,11 +668,11 @@ country_event = { #Ravelian event, the main Ravelian conversion event won't fire
 			A58 = { country_event = { id = A31_flavour.25 } }
 		}
 	}
-	
+
 	option = {
 		name = A31_flavour.23.b
 		ai_chance = { factor = 80 }
-		
+
 		add_prestige = 20
 	}
 }
@@ -685,19 +685,19 @@ country_event = { #Baashidi diplomats
 
 	is_triggered_only = yes
 	fire_only_once = yes
-	
+
 	option = {
 		name = A31_flavour.24.a
 		ai_chance = { factor = 50 }
-		
+
 		merfolk_add_opinion_effect_large = yes
 		set_country_flag = A31_baashidi_positive_flag
 	}
-		
+
 	option = {
 		name = A31_flavour.24.b
 		ai_chance = { factor = 50 }
-		
+
 		merfolk_subtract_opinion_effect_large = yes
 		dhebij_janab_area = { add_permanent_claim = ROOT }
 		suhratba_yahin_area = { add_permanent_claim = ROOT }
@@ -713,54 +713,54 @@ country_event = { #Istralore/Dameria Ravelian
 	title = A31_flavour.25.t
 	desc = A31_flavour.25.d
 	picture = GOD_FRAGMENT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = A31_flavour.25.a
 		ai_chance = {
 			factor = 20
 			modifier = {
-				factor = 80
+				factor = 5
 				ROOT = { alliance_with = A31 }
 				A31 = { AI = no }
 			}
 		}
 		change_religion = ravelian
 	}
-	
+
 	option = {
 		name = A31_flavour.25.b
 		ai_chance = {
 			factor = 80
-			modifier = { 
-				factor = -100
+			modifier = {
+				factor = 0
 				is_enemy = A31
 			}
 		}
-		
+
 		add_prestige = 30
 	}
 }
 
 
-country_event = { 
+country_event = {
 	id = A31_flavour.26
 	title = A31_flavour.26.t
 	desc = A31_flavour.26.d
 	picture = GOD_FRAGMENT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = A31_flavour.26.a
-		ai_chance = { 
+		ai_chance = {
 			factor = 100
 		}
-		
+
 		add_government_reform = technocracy_republic_reform
 	}
-	
+
 	option = {
 		name = A31_flavour.26.b
 		ai_chance = {
@@ -772,14 +772,14 @@ country_event = {
 country_event = {
 	id = A31_flavour.27
 	picture = GOD_FRAGMENT_eventPicture
-	
+
 	is_triggered_only = yes
 	hidden = yes
-	
-	trigger = { 
+
+	trigger = {
 
 	}
-	
+
 	option = {
 		remove_country_modifier = A31_empire_colonial_office
 		remove_country_modifier = A31_traders_invest_economy
