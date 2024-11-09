@@ -449,11 +449,11 @@ kob_3_a = {
 			189 = {  
 				check_variable = { dragon_cult_hoard = 2000 }
 			}
+
 			OR = {
 				has_won_war_against = { who = A13 }
 				has_won_war_against = { who = A01 }
 			}
-
             OR = {
                 is_ahead_of_time_in_technology = { tech = adm }
                 is_ahead_of_time_in_technology = { tech = dip }
@@ -1469,11 +1469,9 @@ kob_4_b = {
 			dragonhills_area = { type = all owned_by = ROOT }
 			gnomish_pass_area = { type = all owned_by = ROOT }
 
-			check_variable = {
-				ArtificeUpkeep = 60
-			}
-
 			num_of_rajput = 20
+
+			has_estate_privilege = estate_artificers_development_tools
 
 			estate_loyalty = {
 				estate = estate_artificers
@@ -1791,8 +1789,6 @@ Kob_5b = {
 				4644 = { num_of_times_improved = 1 }
 				4645 = { num_of_times_improved = 1 }
 				4646 = { num_of_times_improved = 1 }
-	
-				has_estate_privilege = estate_artificers_development_tools
 			}
 
 		}
