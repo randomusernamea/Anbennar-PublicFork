@@ -1125,6 +1125,7 @@ kob_2_b = {
 				owned_by = H30
 				owned_by = H31
 				owned_by = H32
+				owned_by = U31
 			}
 		}
 
@@ -1136,6 +1137,8 @@ kob_2_b = {
 			H30 = { exists = no }
 			H31 = { exists = no }
 			H32 = { exists = no }
+			U31 = { exists = no }
+
 
 			OR = {
 				faction_influence = { influence = 75 faction = tec_brilliance }
@@ -2663,16 +2666,6 @@ kob_2_c = {
 
 		trigger = {
 			owns_or_subject_of = 2863
-			2863 = {
-				custom_trigger_tooltip = {
-					tooltip = damaged_hold_tt
-					NOT = {
-						has_province_modifier = ruined_hold
-						has_province_modifier = partially_ruined_hold
-						has_province_modifier = damaged_hold
-					}
-				}
-			}
 
 			has_church_aspect = red_dragon_1_upgraded
 			has_church_aspect = red_dragon_2_upgraded
@@ -2718,6 +2711,12 @@ kob_2_c = {
 								cede_province = Z56
 							}						
 						}
+					}
+					Z56 = {
+						change_government = monarchy
+						#monstrous?
+						add_government_reform = autocracy_reform
+						
 					}
 				}
 			} 

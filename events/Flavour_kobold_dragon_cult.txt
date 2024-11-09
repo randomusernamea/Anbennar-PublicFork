@@ -3855,6 +3855,12 @@ country_event = { #Gold aspect 2
 		}
 		4976 = { add_core = Y85 }
 		release = Y85
+		hidden_effect = {
+			Y85 = {
+				change_government = monarchy
+				add_government_reform = autocracy_reform
+			}
+		}
 		create_subject = {
 			subject_type = twin_empire
 			subject = Y85
