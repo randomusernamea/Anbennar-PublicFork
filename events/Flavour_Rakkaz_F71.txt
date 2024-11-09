@@ -157,7 +157,7 @@ country_event = {
 		trigger = { NOT = { has_reform = magocracy_reform } }
 		desc = flavour_rakkaz.6.d
 	}
-	picture = BIG_BOOK_eventPicture
+	picture = KINGS_CHOICE_eventPicture
 
 	is_triggered_only = yes
 
@@ -410,7 +410,6 @@ country_event = {
 	option = {
 		name = flavour_rakkaz.9.a
 		set_country_flag = F71_demon_missions
-		set_country_flag = rakkaz_unlock_mission_3
 		swap_non_generic_missions = yes
 		if = {
 			limit = { religion = xhazobkult }
@@ -449,7 +448,6 @@ country_event = {
 	option = {
 		name = flavour_rakkaz.9.b
 		set_country_flag = F71_hag_missions
-		set_country_flag = rakkaz_unlock_mission_3
 		swap_non_generic_missions = yes
 		if = {
 			limit = { religion = shadow_pact }
@@ -529,7 +527,7 @@ country_event = {
 	id = flavour_rakkaz.11
 	title = flavour_rakkaz.11.t
 	desc = flavour_rakkaz.11.d
-	picture = DIPLOMACY_eventPicture
+	picture = HUMAN_SACRIFICE_eventPicture
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -776,7 +774,7 @@ country_event = {
 	id = flavour_rakkaz.23
 	title = flavour_rakkaz.7.t
 	desc = flavour_rakkaz.23.d
-	picture = BIG_BOOK_eventPicture
+	picture = KINGS_CHOICE_eventPicture
 
 	is_triggered_only = yes
 
