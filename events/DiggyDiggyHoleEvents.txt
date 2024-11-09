@@ -1236,9 +1236,9 @@ province_event = {
 		hidden_effect = { owner = { add_prestige = 1 } }
 	}
 	
-	option = { 
+	option = {
         name = diggy.36.a
-        ai_chance = { factor = 0 }
+        ai_chance = { factor = 100 }
 		tooltip = { owner = { add_prestige = 1 } }
 	}
 }
@@ -1381,9 +1381,9 @@ province_event = {
 		hidden_effect = { owner = { add_prestige = 1 } }
 	}
 
-	option = { 
+	option = {
         name = diggy.42.a
-        ai_chance = { factor = 0 }
+        ai_chance = { factor = 100 }
 		tooltip = { owner = { add_prestige = 1 } }
 	}
 }
