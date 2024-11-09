@@ -6381,6 +6381,7 @@ custom_button = {
 					has_estate_privilege = artifice_invention_think_quik_drink_mix
 					has_estate_privilege = artifice_invention_demonflame_flamethrowers
 					has_estate_privilege = artifice_invention_game_of_khet
+					has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 				}
 			}
 			OR = {
@@ -6398,6 +6399,7 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix
 				has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
 				has_country_flag = unlocked_artifice_invention_game_of_khet
+				has_country_flag = unlocked_artifice_invention_draconic_ascension
 			}
 		}
 	}
@@ -6907,7 +6909,9 @@ custom_button = {
 						has_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 					}
 				}
-				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+				tooltip = {
+					set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+				}
 			}
 			else_if = {
 				limit = {

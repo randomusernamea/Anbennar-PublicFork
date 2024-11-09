@@ -1127,6 +1127,13 @@ defined_text = {
 			religion_group = khetist
 		}
 	}
+
+	text = {
+		localisation_key = artifice_invention_kobildzan_draconic_ascension
+		trigger = {
+			religion_group = kobold_dragon_cult
+		}
+	}	
 }
 
 defined_text = {
@@ -1138,6 +1145,14 @@ defined_text = {
 			religion = ravelian
 		}
 	}
+
+	text = {
+		localisation_key = artifice_invention_lullaby_cannon
+		trigger = {
+			has_country_flag = can_use_lullaby_cannon
+		}
+	}
+
 }
 
 defined_text = {
