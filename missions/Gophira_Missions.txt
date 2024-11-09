@@ -404,6 +404,10 @@ gophira_1_march = {
 				}
 				if = {
 					limit = {
+						num_of_units_in_province = {
+							amount = 5
+							who = ROOT
+						}
 						NOT = { has_fort_building_trigger = yes }
 					}
 					kill_units = {
@@ -861,6 +865,7 @@ gophira_3 = {
 						add_manpower = 3
 					}
 					set_country_flag = gophira_bad_coalition
+					custom_tooltip = gophira_coalition_tt
 				}
 				else = {
 					if = {
@@ -897,9 +902,9 @@ gophira_3 = {
 						add_manpower = 3
 					}
 					set_country_flag = gophira_good_coalition
+					custom_tooltip = gophira_coalition_tt
 				}
 				country_event = { id = gophira.6 }
-				custom_tooltip = gophira_coalition_tt
 			}
 		}
 	}
