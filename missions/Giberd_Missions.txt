@@ -2321,15 +2321,19 @@ giberd_mercantile_shipping = {
 		}
 		position = 12
 		provinces_to_highlight = {
-			is_capital_of = Z97
+			owner = {
+				tag = Z97
+			}
 			NOT = {
-				ROOT = {
-					alliance_with = Z97
-				}
-				ROOT = {
-					reverse_has_opinion = {
-						who = Z97
-						value = 100
+				AND = {
+					ROOT = {
+						alliance_with = Z97
+					}
+					ROOT = {
+						reverse_has_opinion = {
+							who = Z97
+							value = 100
+						}
 					}
 				}
 				ROOT = {
