@@ -821,13 +821,7 @@ country_event = {#Calm After the Storm
 		set_country_flag = had_court_and_country
 		if = {
 			limit = {
-				has_country_flag = wyvernheart_victory_or_death
-				NOT = {
-					had_country_flag = {
-						flag = wyvernheart_victory_or_death
-						days = 1825
-					}
-				}
+				has_country_modifier = wyvernheart_victory_or_death
 				has_ruler_flag = wyvernheart_the_regent
 			}
 			add_country_modifier = {
@@ -2080,7 +2074,11 @@ country_event = {#Victory or Death
 		ai_chance = { factor = 1 }
 		
 		custom_tooltip = wyvernheart_203_event_tt
-		set_country_flag = wyvernheart_victory_or_death
+		add_country_modifier = {
+			name = wyvernheart_victory_or_death
+			duration = 1825
+			hidden = yes
+		}
 		swap_non_generic_missions = yes
 	}
 }
