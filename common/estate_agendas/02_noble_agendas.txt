@@ -3390,7 +3390,7 @@ estate_nobles_wyvernheart_procure_burnblood_candidates = {
 			}
 		}
 		random_neighbor_country = {
-			limit = { fast_has_pop_of_race = { race = orcish } }
+			limit = { fast_owns_num_pops_of_race = { race = orcish } }
 			save_event_target_as = agenda_country
 		}
 	}

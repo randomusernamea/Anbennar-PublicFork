@@ -10244,10 +10244,17 @@ on_five_year_pulse_4 = {
 		800 = 0
 	}
 
+	#Wyvernheart
 	if = {
 		limit = { tag = B39 NOT = { has_country_modifier = wyvernheart_agenda_timer } }
 		country_event = {
 			id = flavour_wyvernheart.310
+		}
+	}
+	if = { #Council event handler
+		limit = { tag = B39 }
+		country_event = {
+			id = flavour_wyvernheart.300
 		}
 	}
 }
@@ -10902,8 +10909,10 @@ on_province_culture_changed = {
     }
 	if = {
 		limit = {
-			is_or_was_tag = { tag = B39 }
-			has_country_modifier = wyvernheart_cultural_events_timer
+			owner = {
+				is_or_was_tag = { tag = B39 }
+				NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			}
 		}
 		random_list = {
 			1 = {

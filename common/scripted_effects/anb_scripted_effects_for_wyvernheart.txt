@@ -2,7 +2,7 @@ spawn_wyvernheart_civil_war_rebels = {
 	if = {
 		limit = {
 			any_owned_province = { region = $target_region$ }
-			$seat_id$ = {#North Citadel is used to store modifiers
+			$seat_id$ = {
 				NOT = {
 					has_province_modifier = wyvernheart_hardliner_seat
 					has_province_modifier = wyvernheart_technocratic_seat

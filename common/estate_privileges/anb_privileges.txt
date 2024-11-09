@@ -1877,7 +1877,7 @@ estate_adventurers_heroes_in_the_army = {
 	}
 	conditional_modifier = {
 		trigger = {
-			has_country_flag = wyvernheart_legacy_of_the_wyvern_reward
+			mission_completed = legacy_of_the_wvyern
 		}
 		modifier = {
 			adventurers_loyalty_modifier = 0.2
@@ -14467,14 +14467,14 @@ estate_wyvernheart_culture_of_the_heart = {
 			limit = {
 				culture = ROOT
 			}
-			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 			add_province_modifier = {
 				name = estate_wyvernheart_culture_of_the_heart_mod
 				duration = -1
 			}
 		}
 		else = {
-			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
 			add_province_modifier = {
 				name = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
 				duration = -1

@@ -35,6 +35,7 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					ruler_age = 40
+					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
 					monthly_bloodbrand_power = -0.25
@@ -43,6 +44,7 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					ruler_age = 50
+					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
 					monthly_bloodbrand_power = -0.25
@@ -51,6 +53,25 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					ruler_age = 60
+					NOT = { has_reform = floodborn_council_reform_theocracy }
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 60
+					has_reform = floodborn_council_reform_theocracy
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.25
+				}
+			}
+			range_modifier = {
+				trigger = {
+					ruler_age = 70
+					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
 					monthly_bloodbrand_power = -0.5
@@ -59,9 +80,10 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					ruler_age = 70
+					has_reform = floodborn_council_reform_theocracy
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.5
+					monthly_bloodbrand_power = -0.25
 				}
 			}
 			range_modifier = {
@@ -83,7 +105,7 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					ruler_has_mage_personality = yes
-					NOT = { check_variable = { which = pointsWitchKing value = 4 } }
+					NOT = { check_variable = { which = pointsWitchKing value = 1 } }
 				}
 				modifier = {
 					monthly_bloodbrand_power = -0.5
@@ -198,6 +220,23 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
+					NOT = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 60
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.30
+				}
+			}
+			range_modifier = {
+				trigger = {
 					estate_loyalty = {
 						estate = estate_mages
 						loyalty = 40
@@ -253,6 +292,21 @@ floodborn_council_mechanic = {
 				}
 				modifier = {
 					monthly_bloodbrand_power = 0.50
+				}
+			}
+			range_modifier = {
+				trigger = {
+					estate_loyalty = {
+						estate = estate_mages
+						loyalty = 40
+					}
+					estate_influence = {
+						estate = estate_mages
+						influence = 60
+					}
+				}
+				modifier = {
+					monthly_bloodbrand_power = 0.75
 				}
 			}
 			range_modifier = {
