@@ -2044,11 +2044,13 @@ Kob_5b = {
 
 			dragon_coast_region = {
 				limit = {
-					province_id = 175
-					province_id = 173 
-					province_id = 174
-					province_id = 183 
-					province_id = 170
+					OR = {
+						province_id = 175
+						province_id = 173 
+						province_id = 174
+						province_id = 183 
+						province_id = 170
+					}
 				}
 				change_trade_goods = cloth
 
