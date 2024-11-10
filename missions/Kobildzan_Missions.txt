@@ -187,42 +187,44 @@ kob_2_a = {
 		effect = {
             add_adm_power = 50
 			custom_tooltip = institution_from_diplomacy_tt 
-			every_known_country = {
-				limit = {
-					NOT = { culture_group = kobold } 
-					has_opinion = {
-						who = ROOT
-						value = -50
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						NOT = { culture_group = kobold } 
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
 					}
-				}
-				ROOT = {
-					capital_scope = {
-						area = {
-							if = {
-								limit = { is_institution_enabled = printing_press }
-								add_institution_embracement = {
-									which = printing_press
-									value = 20
+					ROOT = {
+						capital_scope = {
+							area = {
+								if = {
+									limit = { is_institution_enabled = printing_press }
+									add_institution_embracement = {
+										which = printing_press
+										value = 20
+									}
 								}
-							}
-							if = {
-								limit = { is_institution_enabled = new_world_i }
-								add_institution_embracement = {
-									which = new_world_i
-									value = 20
+								if = {
+									limit = { is_institution_enabled = new_world_i }
+									add_institution_embracement = {
+										which = new_world_i
+										value = 20
+									}
 								}
-							}
-							if = {
-								limit = { is_institution_enabled = renaissance }
-								add_institution_embracement = {
-									which = renaissance
-									value = 20
+								if = {
+									limit = { is_institution_enabled = renaissance }
+									add_institution_embracement = {
+										which = renaissance
+										value = 20
+									}
 								}
+								add_institution_embracement = {
+									which = feudalism
+									value = 20
+								}								
 							}
-							add_institution_embracement = {
-								which = feudalism
-								value = 20
-							}								
 						}
 					}
 				}
@@ -1616,7 +1618,11 @@ kob_4_b = {
 			num_of_owned_provinces_with = {
 				value = 3
 				
-				has_province_modifier = kobold_traps_lvl_4
+				custom_trigger_tooltip = {
+					tooltip = kobold_traps_lvl_2_or_more
+					has_country_flag = kobold_traps_lvl_2_or_more
+				}
+				
 				OR = {
 					region = small_country_region
 					region = lencenor_region
@@ -1899,6 +1905,9 @@ Kob_5b = {
 				name = Z38_the_great_revitalization
 				duration = 18250
 			}
+			kobold_traps_provinces = {
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -2056,16 +2065,11 @@ Kob_5b = {
 
 				
 				OR = {
-					silk = 1
+					owns_or_subject_of = 115
 					custom_trigger_tooltip = {
 						tooltip = silk_spy_tt 
 						any_known_country = {
-							OR = {
-								silk = 1
-								any_subject_country = {
-									silk = 1
-								}
-							}
+							owns_or_subject_of = 115
 							has_spy_network_from = {
 								who = ROOT
 								value = 50
@@ -2082,20 +2086,14 @@ Kob_5b = {
 			}
 
 			if = {
-				limit = {
-					NOT = {
-						silk = 1
-						any_subject_country = { silk = 1 }
-					}
-				}
-
+				limit = { NOT = { owns_or_subject_of = 115 } }
 				random_known_country = {
 					limit = {
+						owns_or_subject_of = 115
 						has_spy_network_from = {
 							who = ROOT
 							value = 50
 						}
-						silk = 1
 					}
 
 					add_spy_network_from = {
@@ -2210,7 +2208,10 @@ Kob_5b = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt 
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					}
 					religion = kobold_dragon_cult 
 				} 
 			}
@@ -2218,7 +2219,10 @@ Kob_5b = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt 
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					} 
 					religion = kobold_dragon_cult 
 				} 
 			}
@@ -2304,128 +2308,8 @@ kob_1_c = {
 				custom_tooltip = tech_sharing_tt 
 				# LEX will boil.
 				hidden_effect = {
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_portable_turrets } } set_country_flag = unlocked_artifice_invention_portable_turrets }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_sparkdrive_rifles } } set_country_flag = unlocked_artifice_invention_sparkdrive_rifles }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_artificer_exo_arms } } set_country_flag = unlocked_artifice_invention_artificer_exo_arms }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_viewcatcher } } set_country_flag = unlocked_artifice_invention_viewcatcher }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_vendorless_stall } } set_country_flag = unlocked_artifice_invention_vendorless_stall }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_sending_stones } } set_country_flag = unlocked_artifice_invention_sending_stones }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_vorpal_bullets } } set_country_flag = unlocked_artifice_invention_vorpal_bullets }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_war_golems } } set_country_flag = unlocked_artifice_invention_war_golems }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_black_damestear_bullets } } set_country_flag = unlocked_artifice_invention_black_damestear_bullets }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_brass_prosthesis } } set_country_flag = unlocked_artifice_invention_brass_prosthesis }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_crierless_crier_device } } set_country_flag = unlocked_artifice_invention_crierless_crier_device }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_spell_in_a_box } } set_country_flag = unlocked_artifice_invention_spell_in_a_box }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_t_wave_transceivers } } set_country_flag = unlocked_artifice_invention_t_wave_transceivers }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_living_mirrors } } set_country_flag = unlocked_artifice_invention_living_mirrors }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_remedial_tinctures } } set_country_flag = unlocked_artifice_invention_remedial_tinctures }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_wandlocks } } set_country_flag = unlocked_artifice_invention_wandlocks }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_artillery_autoloader } } set_country_flag = unlocked_artifice_invention_artillery_autoloader }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_elemental_locomotives } } set_country_flag = unlocked_artifice_invention_elemental_locomotives }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_pathway_transmutation } } set_country_flag = unlocked_artifice_invention_pathway_transmutation }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_commercial_sky_galleons } } set_country_flag = unlocked_artifice_invention_commercial_sky_galleons }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_bioartificed_ascension } } set_country_flag = unlocked_artifice_invention_bioartificed_ascension }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_prototype_tanks } } set_country_flag = unlocked_artifice_invention_prototype_tanks }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_personal_mageshields } } set_country_flag = unlocked_artifice_invention_personal_mageshields }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_military_sky_galleons  } } set_country_flag = unlocked_artifice_invention_military_sky_galleons  }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_apparitional_communicator } } set_country_flag = unlocked_artifice_invention_apparitional_communicator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_growth_beans } } set_country_flag = unlocked_artifice_invention_growth_beans }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_magic_missile_deployer } } set_country_flag = unlocked_artifice_invention_magic_missile_deployer }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_arithmatons } } set_country_flag = unlocked_artifice_invention_arithmatons }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_arcane_blaster } } set_country_flag = unlocked_artifice_invention_arcane_blaster }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_naval_mageshields } } set_country_flag = unlocked_artifice_invention_naval_mageshields }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_balloonboost_packs } } set_country_flag = unlocked_artifice_invention_balloonboost_packs }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_self_cleaning_parchment } } set_country_flag = unlocked_artifice_invention_self_cleaning_parchment }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_gene_food_cultivation } } set_country_flag = unlocked_artifice_invention_gene_food_cultivation }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_box_of_holding } } set_country_flag = unlocked_artifice_invention_box_of_holding }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_mystic_ciphers } } set_country_flag = unlocked_artifice_invention_mystic_ciphers }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_wind_invokers } } set_country_flag = unlocked_artifice_invention_wind_invokers }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_chi_cultivation_charm } } set_country_flag = unlocked_artifice_invention_chi_cultivation_charm }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_great_processor } } set_country_flag = unlocked_artifice_invention_great_processor }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_fey_spray } } set_country_flag = unlocked_artifice_invention_fey_spray }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_god_fragment_decoder } } set_country_flag = unlocked_artifice_invention_god_fragment_decoder }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_sunblotter_cream } } set_country_flag = unlocked_artifice_invention_sunblotter_cream }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_talking_god_temples } } set_country_flag = unlocked_artifice_invention_talking_god_temples }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix } } set_country_flag = unlocked_artifice_invention_thinkquik_drink_mix }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_ancestral_guardian_golems } } set_country_flag = unlocked_artifice_invention_ancestral_guardian_golems }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_artifice_hunting_masks } } set_country_flag = unlocked_artifice_invention_artifice_hunting_masks }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_antimagic_field_generator } } set_country_flag = unlocked_artifice_invention_antimagic_field_generator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum } } set_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers } } set_country_flag = unlocked_artifice_invention_demonflame_flamethrowers }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_lullaby_cannon } } set_country_flag = unlocked_artifice_invention_lullaby_cannon }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_sunbeam_armaments } } set_country_flag = unlocked_artifice_invention_sunbeam_armaments }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_power_fists } } set_country_flag = unlocked_artifice_invention_power_fists }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_warfare_simulator } } set_country_flag = unlocked_artifice_invention_warfare_simulator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_war_rigs } } set_country_flag = unlocked_artifice_invention_war_rigs }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_scrap_mechs } } set_country_flag = unlocked_artifice_invention_scrap_mechs }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_predator_exoskeleton } } set_country_flag = unlocked_artifice_invention_predator_exoskeleton }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_platinum_warsuit } } set_country_flag = unlocked_artifice_invention_platinum_warsuit }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels } } set_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_gyrocopters } } set_country_flag = unlocked_artifice_invention_gyrocopters }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_eplusplus_compound } } set_country_flag = unlocked_artifice_invention_eplusplus_compound }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_gu_boats } } set_country_flag = unlocked_artifice_invention_gu_boats }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_dragonscale_plating } } set_country_flag = unlocked_artifice_invention_dragonscale_plating }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_giantshape_warframe } } set_country_flag = unlocked_artifice_invention_giantshape_warframe }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_veykoda_rune_protections } } set_country_flag = unlocked_artifice_invention_veykoda_rune_protections }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors } } set_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_chase_em_rockets } } set_country_flag = unlocked_artifice_invention_chase_em_rockets }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_vernman_hero_tonic } } set_country_flag = unlocked_artifice_invention_vernman_hero_tonic }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_elemental_gunpowder } } set_country_flag = unlocked_artifice_invention_elemental_gunpowder }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit } } set_country_flag = unlocked_artifice_invention_codorran_powered_exosuit }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_controlled_rage_serum } } set_country_flag = unlocked_artifice_invention_controlled_rage_serum }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb } } set_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_scrapperclaws } } set_country_flag = unlocked_artifice_invention_scrapperclaws }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_wondrous_lunchbox } } set_country_flag = unlocked_artifice_invention_wondrous_lunchbox }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_divendancer_speedboat } } set_country_flag = unlocked_artifice_invention_divendancer_speedboat }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_burrower_arms } } set_country_flag = unlocked_artifice_invention_burrower_arms }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_wine_ageifier } } set_country_flag = unlocked_artifice_invention_wine_ageifier }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_conversation_calibrator } } set_country_flag = unlocked_artifice_invention_conversation_calibrator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_centipedal_chests } } set_country_flag = unlocked_artifice_invention_centipedal_chests }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_superfast_elevators } } set_country_flag = unlocked_artifice_invention_superfast_elevators }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_pearl_cultivators } } set_country_flag = unlocked_artifice_invention_pearl_cultivators }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_soarwing_grafts } } set_country_flag = unlocked_artifice_invention_soarwing_grafts }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_prehensile_tail_attachments } } set_country_flag = unlocked_artifice_invention_prehensile_tail_attachments }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_automated_translator } } set_country_flag = unlocked_artifice_invention_automated_translator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_prefabricated_city_constructors } } set_country_flag = unlocked_artifice_invention_prefabricated_city_constructo }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_fine_print_obfuscator } } set_country_flag = unlocked_artifice_invention_fine_print_obfuscator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_weather_predicticator } } set_country_flag = unlocked_artifice_invention_weather_predicticator }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_artificial_egg_surrogates } } set_country_flag = unlocked_artifice_invention_artificial_egg_surrogates }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_city_maintenance_bots } } set_country_flag = unlocked_artifice_invention_city_maintenance_bots }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_artifice_powered_magnate_factories } } set_country_flag = unlocked_artifice_invention_artifice_powered_magnate_fact }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_high_velocity_irrigation } } set_country_flag = unlocked_artifice_invention_high_velocity_irrigation }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_super_boots } } set_country_flag = unlocked_artifice_invention_super_boots }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_drill_shells } } set_country_flag = unlocked_artifice_invention_drill_shells }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_market_mender } } set_country_flag = unlocked_artifice_invention_market_mender }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_arcane_battery_capital_complex } } set_country_flag = unlocked_artifice_invention_arcane_battery_capital_comple }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_plane_of_water_teleporter } } set_country_flag = unlocked_artifice_invention_plane_of_water_teleporter }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_think_thought_transmitters } } set_country_flag = unlocked_artifice_invention_think_thought_transmitters }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_mirage_detector_3000 } } set_country_flag = unlocked_artifice_invention_mirage_detector_3000 }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_empire_engine } } set_country_flag = unlocked_artifice_invention_empire_engine }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_subterrenes } } set_country_flag = unlocked_artifice_invention_subterrenes }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_bureaucratizer } } set_country_flag = unlocked_artifice_invention_bureaucratizer }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_runethought_network } } set_country_flag = unlocked_artifice_invention_runethought_network }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_negotiation_nexus } } set_country_flag = unlocked_artifice_invention_negotiation_nexus }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon } } set_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_game_of_khet } } set_country_flag = unlocked_artifice_invention_game_of_khet }
-					if = { limit = { ROOT = { has_country_flag = unlocked_artifice_invention_draconic_ascension } } set_country_flag = unlocked_artifice_invention_draconic_ascension }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_glidewing_membranes } } set_country_flag = kobildzan_glidewing_membranes }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_claws_of_power } } set_country_flag = kobildzan_claws_of_power }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_detachable_extra_limbs } } set_country_flag = kobildzan_detachable_extra_limbs }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_ogre_sized_kobolds } } set_country_flag = kobildzan_ogre_sized_kobolds }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_malliaths_chosen_disciples } } set_country_flag = kobildzan_malliaths_chosen_disciples }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_hyperdigestion } } set_country_flag = kobildzan_hyperdigestions }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_dragonfire_sacs } } set_country_flag = kobildzan_dragonfire_sacs }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_biocompatibility } } set_country_flag = kobildzan_biocompatibility }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds } } set_country_flag = kobildzan_intercontinental_ballistic_kobolds }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_mana_attunement_glands } } set_country_flag = kobildzan_mana_attunement_glands }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_ebonsteel_shieldscales } } set_country_flag = kobildzan_ebonsteel_shieldscales }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_the_protean_form } } set_country_flag = kobildzan_the_protean_form }
-					if = { limit = { ROOT = { has_country_flag = kobildzan_the_holiest_flesh } } set_country_flag = kobildzan_the_holiest_flesh }
-					# for real, LEX shall boil.
-					# I DIDNT REALIZE IT'D BE THIS BAD. I'M SORRY -lex
+					subject_ascension_effect = yes
 				}
-				
-				set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
 			}
 
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
@@ -2752,6 +2636,9 @@ kob_2_c = {
 				hidden_effect = {
 					2863 = {
 						add_core = Z56
+						Z56 = {
+							set_country_flag = no_longer_monstrous
+						}
 						cede_province = ROOT
 					}
 					every_owned_province = {
@@ -2774,7 +2661,7 @@ kob_2_c = {
 					}
 					Z56 = {
 						change_government = monarchy
-						#monstrous?
+						
 						add_government_reform = autocracy_reform
 						
 					}
@@ -2790,6 +2677,11 @@ kob_2_c = {
                 SLOT = 3
                 UPGRADE = upgraded
             }
+			hidden_effect = {
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 		}
 	}
 }
@@ -3225,7 +3117,10 @@ kob_5_c = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					}  
 					religion = kobold_dragon_cult 
 				}
 			}
@@ -3233,7 +3128,10 @@ kob_5_c = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					} 
 					religion = kobold_dragon_cult 
 				}
 			}
@@ -3241,7 +3139,10 @@ kob_5_c = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt 
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					} 
 					religion = kobold_dragon_cult 
 				}
 			}
@@ -3249,7 +3150,10 @@ kob_5_c = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt 
-					owned_by = ROOT 
+					OR = {
+						owned_by = ROOT 
+						owned_by_subject_of = ROOT
+					}  
 					religion = kobold_dragon_cult 
 				}
 			}			

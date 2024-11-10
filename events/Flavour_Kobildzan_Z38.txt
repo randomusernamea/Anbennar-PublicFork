@@ -797,6 +797,9 @@ country_event = { #The Kobildzani Conference
 		name = flavour_kobildzan.14.a
 		hidden_effect = {
 			set_country_flag = kobildzan_hyperdigestion
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -810,6 +813,9 @@ country_event = { #The Kobildzani Conference
 		name = flavour_kobildzan.14.b
 		hidden_effect = {
 			set_country_flag = kobildzan_dragonfire_sacs
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -916,6 +922,9 @@ country_event = { #To Control Continents
 		name = flavour_kobildzan.18.a
 		hidden_effect = {
 			set_country_flag = kobildzan_biocompatibility 
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
 		}
 		
 		tooltip = {
@@ -936,6 +945,9 @@ country_event = { #To Control Continents
 			add_country_modifier = {
 				name = Z38_intercontinental_ballistic_kobolds_dummy
 				duration = -1
+			}
+			every_subject_country = {
+				subject_ascension_effect = yes
 			}
 		}
 		artifice_granted_20 = yes
@@ -967,6 +979,9 @@ country_event = { #Family Reunion
 		}
 		hidden_effect = {
 			set_country_flag = kobildzan_the_protean_form 
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -994,6 +1009,9 @@ country_event = { #Family Reunion
 		}
 		hidden_effect = {
 			set_country_flag = kobildzan_the_holiest_flesh 
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -1025,7 +1043,12 @@ country_event = { #A Second Family Reunion
 		}
 		if = {
 			limit = { has_country_flag = kobildzan_the_protean_form }
-			hidden_effect = { set_country_flag = kobildzan_the_holiest_flesh }
+			hidden_effect = {
+				set_country_flag = kobildzan_the_holiest_flesh 
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 			tooltip = {
 				add_country_modifier = {
 					name = Z38_the_holiest_flesh_dummy
@@ -1038,7 +1061,12 @@ country_event = { #A Second Family Reunion
 			}
 		}
 		else = {
-			hidden_effect = { set_country_flag = kobildzan_the_protean_form }
+			hidden_effect = {
+				set_country_flag = kobildzan_the_protean_form 
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 			tooltip = {
 				add_country_modifier = {
 					name = Z38_the_protean_form_dummy

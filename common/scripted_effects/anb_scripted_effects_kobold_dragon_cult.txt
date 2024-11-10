@@ -368,3 +368,34 @@ biocompatibility_effect = {
 	}	
 }
 
+subject_ascension_effect = {
+	if = {
+		limit = { 
+			NOT = { has_country_flag = artificery_unlocked }
+		}
+		set_country_flag = artificery_unlocked
+		set_country_flag = magic_artificery_artificery_only
+		country_event = {
+			id = magic_artificery_setup.2
+			days = 1
+		}
+	}
+	if = { limit = { Z38 = { has_country_flag = kobildzan_glidewing_membranes } } set_country_flag = kobildzan_glidewing_membranes }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_claws_of_power } } set_country_flag = kobildzan_claws_of_power }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_detachable_extra_limbs } } set_country_flag = kobildzan_detachable_extra_limbs }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_ogre_sized_kobolds } } set_country_flag = kobildzan_ogre_sized_kobolds }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_malliaths_chosen_disciples } } set_country_flag = kobildzan_malliaths_chosen_disciples }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_hyperdigestion } } set_country_flag = kobildzan_hyperdigestions }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_dragonfire_sacs } } set_country_flag = kobildzan_dragonfire_sacs }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_biocompatibility } } set_country_flag = kobildzan_biocompatibility }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds } } set_country_flag = kobildzan_intercontinental_ballistic_kobolds }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_mana_attunement_glands } } set_country_flag = kobildzan_mana_attunement_glands }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_ebonsteel_shieldscales } } set_country_flag = kobildzan_ebonsteel_shieldscales }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_the_protean_form } } set_country_flag = kobildzan_the_protean_form }
+	if = { limit = { Z38 = { has_country_flag = kobildzan_the_holiest_flesh } } set_country_flag = kobildzan_the_holiest_flesh }
+	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+	set_country_modifier = {
+		name = Z38_technological_union_of_north_aelantir 
+		duration = -1
+	}
+}

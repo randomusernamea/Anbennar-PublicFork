@@ -340,14 +340,14 @@ country_event = {
 	option = { #Stormpoint
 		name = kobold_traps.2.d
 		trigger = {
-			140 = { 
+			138 = { 
 				owned_by = ROOT 
 				kobold_traps_individual_trigger = yes
 			}
 		}
-		goto = 140
+		goto = 138
 		kobold_trap_mastery_effect = yes
-		140 = {
+		138 = {
 			create_kobold_traps = yes
 		}
 		ai_chance = {
@@ -355,7 +355,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_country_flag = not_cleared_for_new_traps
-				140 = {
+				138 = {
 					has_fort_building_trigger = no
 				}
 			}
@@ -810,17 +810,17 @@ country_event = {
 			}
 		}
 	}
-	option = { #Winterglade
+	option = { #Ioriellin
 		name = kobold_traps.4.c
 		trigger = {
-			120 = { 
+			115 = { 
 				owned_by = ROOT 
 				kobold_traps_individual_trigger = yes
 			}
 		}
-		goto = 120
+		goto = 115
 		kobold_trap_mastery_effect = yes
-		120 = {
+		115 = {
 			create_kobold_traps = yes
 		}
 		ai_chance = {
@@ -828,7 +828,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_country_flag = not_cleared_for_new_traps 
-				120 = {
+				115 = {
 					has_fort_building_trigger = no
 				}
 			}
@@ -906,6 +906,30 @@ country_event = {
 			}
 		}
 	}
+	option = { #Westport
+	name = kobold_traps.4.g
+	trigger = {
+		112 = { 
+			owned_by = ROOT 
+			kobold_traps_individual_trigger = yes
+		}
+	}
+	kobold_trap_mastery_effect = yes
+	goto = 112
+	112 = {
+		create_kobold_traps = yes
+	}
+	ai_chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			has_country_flag = not_cleared_for_new_traps 
+			112 = {
+				has_fort_building_trigger = no
+			}
+		}
+	}
+}
 	option = {
 		name = kobold_traps.1.f
 		if = {
@@ -2243,7 +2267,7 @@ country_event = { # Handler Event
 						any_owned_province = {
 							has_province_flag = kobold_traps_lvl_2_or_more
 							OR = { #Any of the human ones
-								province_id = 140
+								province_id = 138
 								province_id = 71
 								province_id = 213
 								province_id = 216
@@ -2315,7 +2339,7 @@ country_event = { # Handler Event
 								calc_true_if = {
 									amount = 3
 									126 = { has_province_flag = kobold_traps_lvl_2_or_more }
-									120 = { has_province_flag = kobold_traps_lvl_2_or_more }
+									115 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									71 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									65 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									155 = { has_province_flag = kobold_traps_lvl_2_or_more }
@@ -2608,7 +2632,7 @@ country_event = { # The Reverse Baby Heist
 				limit = { 
 					has_province_flag = kobold_traps_lvl_2_or_more 
 					OR = { #Any of the human ones
-						province_id = 140
+						province_id = 138
 						province_id = 71
 						province_id = 213
 						province_id = 216
@@ -2925,7 +2949,7 @@ country_event = { # The Center of the Web
 		calc_true_if = {
 			amount = 3
 			126 = { has_province_flag = kobold_traps_lvl_2_or_more }
-			120 = { has_province_flag = kobold_traps_lvl_2_or_more }
+			115 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			71 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			65 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			155 = { has_province_flag = kobold_traps_lvl_2_or_more }
