@@ -934,8 +934,8 @@ gushuokguan_3 = {
 				}
 				devastation = 0.01
 				unrest = 0
-				if = {
-					limit = { ROOT = { has_parliament = yes } } 
+				AND = {
+					ROOT = { has_parliament = yes }
 					has_seat_in_parliament = no
 				}
 			}
@@ -953,9 +953,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 				yanzhong_area = {
@@ -967,9 +967,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 				anjiang_area = {
@@ -981,9 +981,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 				tianszi_area = {
@@ -995,9 +995,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 				4850 = { #Hunxiang
@@ -1008,9 +1008,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 				4892 = { #Lamcue
@@ -1021,9 +1021,9 @@ gushuokguan_3 = {
 					}
 					NOT = { devastation = 0.01 }
 					NOT = { unrest = 0 }
-					if = { 
-						limit = { ROOT = { has_parliament = yes } } 
-						has_seat_in_parliament = yes 
+					OR = {
+						ROOT = { has_parliament = no }
+						has_seat_in_parliament = yes
 					}
 				}
 			}
@@ -1419,8 +1419,8 @@ gushuokguan_4 = {
 								}
 								devastation = 0.01
 								unrest = 0
-								if = {
-									limit = { ROOT = { has_parliament = yes } } 
+								AND = {
+									ROOT = { has_parliament = yes }
 									has_seat_in_parliament = no
 								}
 							}
@@ -1455,12 +1455,9 @@ gushuokguan_4 = {
 							}
 							NOT = { devastation = 0.01 } 
 							NOT = { unrest = 0 }
-							if = {
-								limit = { ROOT = { has_parliament = yes } } 
-								custom_trigger_tooltip = {
-									tooltip = thangoya_seat_in_parliament_tt
-									has_seat_in_parliament = yes 
-								}
+							OR = {
+								ROOT = { has_parliament = no }
+								has_seat_in_parliament = yes 
 							}
 						}
 						NOT = { culture = jiangyang }
@@ -1497,8 +1494,8 @@ gushuokguan_4 = {
 				}
 				devastation = 0.01
 				unrest = 0
-				if = {
-					limit = { ROOT = { has_parliament = yes } } 
+				AND = {
+					ROOT = { has_parliament = yes }
 					has_seat_in_parliament = no
 				}
 			}
@@ -1516,9 +1513,9 @@ gushuokguan_4 = {
 				}
 				NOT = { devastation = 0.01 }
 				NOT = { unrest = 0 }
-				if = { 
-					limit = { ROOT = { has_parliament = yes } } 
-					has_seat_in_parliament = yes 
+				OR = {
+					ROOT = { has_parliament = no }
+					has_seat_in_parliament = yes
 				}
 			}
 		} 
@@ -1955,7 +1952,7 @@ gushuokguan_5 = {
 					NOT = { devastation = 0.01 }
 				}
 			}
-		} 
+		}
 
 		trigger = {  
 			custom_trigger_tooltip = {
@@ -2034,23 +2031,12 @@ gushuokguan_5 = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = gushuokguan_5_7_tt
-				all_owned_province = {
-					OR = {
-						NOT = { province_group = trade_node_provinces }
-						AND = {
-							province_has_center_of_trade_of_level = 2
-				   			has_trade_building_trigger = yes
-						}
-					}
-				}
-				all_subject_country = {
-					all_owned_province = {
+				NOT = {
+					trade_node_provinces = {
+						country_or_subject_holds = ROOT
 						OR = {
-							NOT = { province_group = trade_node_provinces }
-							AND = {
-								province_has_center_of_trade_of_level = 2
-								has_trade_building_trigger = yes
-							}
+							NOT = { province_has_center_of_trade_of_level = 2 }
+							NOT = { has_trade_building_trigger = yes }
 						}
 					}
 				}
@@ -2122,7 +2108,14 @@ gushuokguan_5 = {
 						name = gushuokguan_dao_republican_tradition_buff
 						duration = -1
 					}
-					set_country_flag = gushuokguan_dao_republican_tradition
+					every_subject_country = {
+						limit = { is_subject_of_type = dao }
+						ROOT = { vassalize = THIS } #Demoting from Dao to vassals
+						add_country_modifier = {
+							name = gushuokguan_dao_republican_tradition_buff
+							duration = -1
+						}
+					}
 				}
 				if = {
 					limit = { has_country_flag = gushuokguan_civil_war_confederalist_won }

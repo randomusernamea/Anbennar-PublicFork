@@ -597,7 +597,7 @@ country_event = {
 		if = {
 			limit = { has_leader = "Lubei 'the Honorable'" }
 			add_country_modifier = {
-				name = gushuokguan_advisor_lubei
+				name = gushuokguan_general_lubei
 				duration = 9125
 			}
 		}
@@ -799,9 +799,9 @@ country_event = {
 		ai_chance = { factor = 1 }
 		custom_tooltip = gushuokguan_civil_war_tt
 		hidden_effect = {
-			release = event_target:red_scarf_1
-			release = event_target:red_scarf_2
-			release = event_target:red_scarf_3
+			event_target:red_scarf_1 = { grant_independence = yes }
+			event_target:red_scarf_2 = { grant_independence = yes } 
+			event_target:red_scarf_3 = { grant_independence = yes }
 			event_target:red_scarf_3 = {
 				create_alliance = event_target:red_scarf_1
 			}
@@ -861,9 +861,9 @@ country_event = {
 		ai_chance = { factor = 1 }
 		custom_tooltip = gushuokguan_civil_war_tt
 		hidden_effect = {
-			release = event_target:inked_shield_1
-			release = event_target:inked_shield_2
-			release = event_target:inked_shield_3
+			event_target:inked_shield_1 = { grant_independence = yes }
+			event_target:inked_shield_2 = { grant_independence = yes } 
+			event_target:inked_shield_3 = { grant_independence = yes } 
 			event_target:inked_shield_3 = {
 				create_alliance = event_target:inked_shield_1
 			}
@@ -912,7 +912,7 @@ country_event = {
 		name = gushuokguan_event.38.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_confederalist_won }
-		create_subject = { #Version - Inked Shield Win
+		create_subject = {
 			subject_type = dao 
 			subject = event_target:red_scarf_1
 		}
@@ -923,14 +923,6 @@ country_event = {
 		create_subject = {
 			subject_type = dao 
 			subject = event_target:red_scarf_3
-		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:inked_shield_1
-		}
-		create_subject = {
-			subject_type = dao 
-			subject = event_target:inked_shield_2
 		}
 	}
 }
@@ -966,9 +958,18 @@ country_event = {
 		name = gushuokguan_event.39.a
 		ai_chance = { factor = 1 }
 		hidden_effect = { set_country_flag = gushuokguan_civil_war_federalist_won }
-		event_target:inked_shield_1 = { ROOT = { create_subject = { subject_type = dao subject = PREV } } }
-		event_target:inked_shield_2 = { ROOT = { create_subject = { subject_type = dao subject = PREV } } }
-		event_target:inked_shield_3 = { ROOT = { create_subject = { subject_type = dao subject = PREV } } }
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:inked_shield_1
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:inked_shield_2
+		}
+		create_subject = {
+			subject_type = dao 
+			subject = event_target:inked_shield_3
+		}
 	}
 }
 
@@ -1044,6 +1045,7 @@ country_event = {
 					any_subject_country = {
 						is_subject_of_type = dao
 						is_not_purging_any_race_trigger = no
+						is_not_expelling_any_race_trigger = no
 					}
 				}
 				country_event = { id = gushuokguan_event.59 } }
@@ -1105,7 +1107,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:dao_B = { 
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10  }
@@ -1117,7 +1119,7 @@ country_event = {
 		}
 		event_target:dao_C = { 
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1149,7 +1151,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:dao_A = { 
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 1
 			}
 			else = { add_liberty_desire = 10 }
@@ -1160,7 +1162,7 @@ country_event = {
 		}
 		event_target:dao_D = { 
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 1
 			}
 			else = { add_liberty_desire = 10 }
@@ -1311,7 +1313,7 @@ country_event = {
 		}
 		event_target:dao_B = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1328,7 +1330,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:dao_A = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1360,7 +1362,7 @@ country_event = {
 			add_adm_power = 25
 			add_years_of_income = 0.1
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1378,7 +1380,7 @@ country_event = {
 			add_adm_power = 25
 			add_years_of_income = 0.1
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1457,7 +1459,7 @@ country_event = {
 		}
 		event_target:dao_B = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1468,7 +1470,7 @@ country_event = {
 		}
 		event_target:dao_D = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1500,7 +1502,7 @@ country_event = {
 		}
 		event_target:dao_A = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1512,7 +1514,7 @@ country_event = {
 		}
 		event_target:dao_C = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1532,7 +1534,7 @@ country_event = {
 
 		event_target:dao_A = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1544,7 +1546,7 @@ country_event = {
 		}
 		event_target:dao_C = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1556,7 +1558,7 @@ country_event = {
 		}
 		event_target:dao_B = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1568,7 +1570,7 @@ country_event = {
 		}
 		event_target:dao_D = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -1724,7 +1726,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:coastal_dao = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1796,7 +1798,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:interior_dao = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 5
 			}
 			else = { add_liberty_desire = 10 }
@@ -1862,7 +1864,7 @@ country_event = {
 				modifier = gushuokguan_council_tensions_negative_large
 			}
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 12
 			}
 			else = { add_liberty_desire = 25 }
@@ -1886,7 +1888,7 @@ country_event = {
 				modifier = gushuokguan_council_tensions_negative_large
 			}
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 12
 			}
 			else = { add_liberty_desire = 25 }
@@ -1916,7 +1918,11 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			random_subject_country = {
-				limit = { is_subject_of_type = dao }
+				limit = { 
+					is_subject_of_type = dao 
+					is_not_purging_any_race_trigger = no
+					is_not_expelling_any_race_trigger = no
+				}
 				save_event_target_as = dao_A
 			}
 			random_subject_country = {
@@ -1944,7 +1950,7 @@ country_event = {
 				modifier = gushuokguan_council_tensions_negative_large
 			}
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 10
 			}
 			else = { add_liberty_desire = 20 }
@@ -1977,7 +1983,7 @@ country_event = {
 				modifier = gushuokguan_council_tensions_negative_large
 			}
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 10
 			}
 			else = { add_liberty_desire = 20 }
@@ -2025,7 +2031,7 @@ country_event = {
 		ai_chance = { factor = 1 }
 		event_target:dao_A_gl = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -2037,7 +2043,7 @@ country_event = {
 		}
 		event_target:dao_D_gl = {
 			if = {
-				limit = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+				limit = { ROOT = { has_country_flag = gushuokguan_dao_diplomatic_relations } } #Gushuokguan
 				add_liberty_desire = 7
 			}
 			else = { add_liberty_desire = 15 }
@@ -2064,10 +2070,8 @@ country_event = {
 		any_claimed_province = {
 			has_province_flag = gushuokguan_claimed_for_dao
 			owner = { 
-				OR = {
-					NOT = { truce_with = ROOT }
-					NOT = { war_with = ROOT } 
-				}
+				NOT = { truce_with = ROOT }
+				NOT = { war_with = ROOT } 
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -2280,7 +2284,6 @@ country_event = {
 }
 
 ###Condottieri Sold Counter
-#Apply
 country_event = {
 	id = gushuokguan_event.101
 	title = gushuokguan_event.101.t
@@ -2296,67 +2299,33 @@ country_event = {
 
 	trigger = {
 		tag = Y17 #Gushuokguan
-		any_known_country = {
-			is_hiring_condottiere_from = ROOT #Gushuokguan
-			NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
-		}
-	}
-
-
-	immediate = {
-		random_known_country = {
-			limit = {
-				is_hiring_condottiere_from = ROOT #Gushuokguan
-				NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
-			}
-			set_country_flag = gushuokguan_already_checked_condottieri
-		}
-		change_variable = {
-			which = gushuokguan_rented_condottieri_counter
-			value = 1
-		}
+		ai = no
 	}
 	
 	option = {
 		name = gushuokguan_event.101.a
 		ai_chance = { factor = 1 }
-		country_event = { id = gushuokguan_event.102 days = 365 }
-	}
-}
-
-#Strip
-country_event = {
-	id = gushuokguan_event.102
-	title = gushuokguan_event.102.t
-	desc = gushuokguan_event.102.d
-	picture = CHINESE_GENERAL_eventPicture
-	
-	#There is no on_action for hiring condottieri, so I'm doing mtth for those.
-	#okman, if you have a better idea on how to do execute this - PLEASE HELP
-	is_triggered_only = yes
-	hidden = yes 
-
-	trigger = {
-		tag = Y17 #Gushuokguan
-		any_known_country = {
-			has_country_flag = gushuokguan_already_checked_condottieri
-			NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
-		}
-	}
-
-
-	immediate = {
-		random_known_country = {
-			limit = {
-				NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
-				has_country_flag = gushuokguan_already_checked_condottieri
+		every_known_country = {
+			#Strip Modifier
+			if = {
+				limit = {
+					NOT = { is_hiring_condottiere_from = ROOT } #Gushuokguan
+					has_country_flag = gushuokguan_already_checked_condottieri
+				}
+				clr_country_flag = gushuokguan_already_checked_condottieri
 			}
-			clr_country_flag = gushuokguan_already_checked_condottieri
+			#Apply Modifier
+			if = {
+				limit = {
+					is_hiring_condottiere_from = ROOT #Gushuokguan
+					NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
+				}
+				set_country_flag = gushuokguan_already_checked_condottieri
+				change_variable = {
+					which = gushuokguan_rented_condottieri_counter
+					value = 1
+				}
+			}
 		}
-	}
-	
-	option = {
-		name = gushuokguan_event.102.a
-		ai_chance = { factor = 1 }
 	}
 }

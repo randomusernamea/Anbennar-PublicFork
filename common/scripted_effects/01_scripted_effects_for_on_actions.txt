@@ -3075,7 +3075,9 @@ on_battle_won_unit_effect = {
 				has_underground_terrain = yes
 			}
 		} 
-		set_country_flag = gushuokguan_rock_raiders_battle
+		unit_owner = {
+			set_country_flag = gushuokguan_rock_raiders_battle
+		}
 	}
 	if = {
 		limit = { 
@@ -3093,9 +3095,11 @@ on_battle_won_unit_effect = {
 				}
 			}
 		}
-		change_variable = {
-			which = gushuokguan_dacite_dragons_death_toll
-			which = land_units_killed
+		unit_owner = {
+			change_variable = {
+				which = gushuokguan_dacite_dragons_death_toll
+				which = land_units_killed
+			}
 		}
 	}
 }
