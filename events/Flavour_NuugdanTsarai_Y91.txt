@@ -655,6 +655,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		always = no #THIS EVENT SHOULD ALSO BE REMOVED
 		is_year = 1490
 		owns_core_province = 5338
 		religion = saanorgegh
