@@ -629,7 +629,7 @@ kob_4_a = {
 			storm_isles_area = { add_permanent_claim = ROOT }
 			westmoor_proper_area = { add_permanent_claim = ROOT }
 			695 = { add_permanent_claim = ROOT }
-			1324 = { discover_province = ROOT }
+			discover_province = 1324
 		}
 	}
 
@@ -1615,6 +1615,29 @@ kob_4_b = {
 		trigger = {
 			has_country_modifier = trap_mastery_lvl_3
 
+			
+			112 = {
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
+				}	
+			}
+
+			120 = {
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
+				}	
+			}		
+
+			any_owned_province = {
+				region = small_country_region
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
+				}
+			}
+			
 			num_of_owned_provinces_with = {
 				value = 3
 				
@@ -1650,30 +1673,19 @@ kob_4_b = {
 
 		effect = {
 			112 = {
-				hidden_effect = {
-					remove_province_modifier = kobold_traps_lvl_1
-					remove_province_modifier = kobold_traps_lvl_2
-					remove_province_modifier = kobold_traps_lvl_3
-					set_province_flag = has_kobold_traps
-					set_province_flag = kobold_traps_lvl_2_or_more
-				}
 				add_province_modifier = {
 					name = modified_kobold_traps_lvl_4
 					duration = -1
 				}
+				change_culture = kobildzani_kobold
 			}
+			120 = {
+				center_of_trade = 2
+				change_trade_goods = silk
+			}
+
 			115 = {
-				hidden_effect = {
-					remove_province_modifier = kobold_traps_lvl_1
-					remove_province_modifier = kobold_traps_lvl_2
-					remove_province_modifier = kobold_traps_lvl_3
-					set_province_flag = has_kobold_traps
-					set_province_flag = kobold_traps_lvl_2_or_more
-				}
-				add_province_modifier = {
-					name = modified_kobold_traps_lvl_4
-					duration = -1
-				}
+				add_center_of_trade_level = -2
 			}
 
 			add_country_modifier = {
@@ -2028,8 +2040,6 @@ Kob_5b = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 115
-				province_id = 116
-				province_id = 117
 				AND = {
 					owned_by = ROOT
 					OR = {

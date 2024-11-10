@@ -813,14 +813,14 @@ country_event = {
 	option = { #Ioriellin
 		name = kobold_traps.4.c
 		trigger = {
-			115 = { 
+			120 = { 
 				owned_by = ROOT 
 				kobold_traps_individual_trigger = yes
 			}
 		}
-		goto = 115
+		goto = 120
 		kobold_trap_mastery_effect = yes
-		115 = {
+		120 = {
 			create_kobold_traps = yes
 		}
 		ai_chance = {
@@ -828,7 +828,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_country_flag = not_cleared_for_new_traps 
-				115 = {
+				120 = {
 					has_fort_building_trigger = no
 				}
 			}
@@ -2339,7 +2339,7 @@ country_event = { # Handler Event
 								calc_true_if = {
 									amount = 3
 									126 = { has_province_flag = kobold_traps_lvl_2_or_more }
-									115 = { has_province_flag = kobold_traps_lvl_2_or_more }
+									120 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									71 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									65 = { has_province_flag = kobold_traps_lvl_2_or_more }
 									155 = { has_province_flag = kobold_traps_lvl_2_or_more }
@@ -2949,7 +2949,7 @@ country_event = { # The Center of the Web
 		calc_true_if = {
 			amount = 3
 			126 = { has_province_flag = kobold_traps_lvl_2_or_more }
-			115 = { has_province_flag = kobold_traps_lvl_2_or_more }
+			120 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			71 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			65 = { has_province_flag = kobold_traps_lvl_2_or_more }
 			155 = { has_province_flag = kobold_traps_lvl_2_or_more }

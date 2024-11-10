@@ -13275,13 +13275,14 @@ artifice_invention_kobildzan_draconic_ascension = {
         always = yes
 	}
 	can_revoke = {
-		hidden_trigger = {
+		custom_trigger_tooltip = {
+			tooltip = upgrading_ascension_tt
 			NOT = {
 				OR = {
 					tag = Z38
 					is_subject_of = Z38
 				}
-			}			
+			}	
 		}
 	}
 	on_granted = {
@@ -13307,10 +13308,11 @@ artifice_invention_kobildzan_draconic_ascension = {
 		}
 	}
 	penalties = {
-		#foo
+		
 	}
 	benefits = {
 		artificers_privilege_slots = 1
+		
 	}
 	conditional_modifier = {
 		trigger = { has_country_flag = kobildzan_glidewing_membranes } 
@@ -13403,6 +13405,6 @@ artifice_invention_kobildzan_draconic_ascension = {
 		} 
 	}
 	ai_will_do = {
-		factor = 5
+		factor = 400
 	}
 }
