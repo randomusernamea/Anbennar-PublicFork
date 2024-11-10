@@ -2110,7 +2110,8 @@ gushuokguan_5 = {
 					}
 					every_subject_country = {
 						limit = { is_subject_of_type = dao }
-						ROOT = { vassalize = THIS } #Demoting from Dao to vassals
+						grant_independence = yes
+						ROOT = { vassalize = PREV } #Demoting from Dao to vassals
 						add_country_modifier = {
 							name = gushuokguan_dao_republican_tradition_buff
 							duration = -1
