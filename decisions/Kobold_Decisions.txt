@@ -246,7 +246,7 @@ country_decisions = {
 			owns = 189
 			treasury = 100
 			if = {
-				limit = { ai = no }
+				limit = { ai = yes }
 				NOT = { num_of_loans = 1 }
 			}
 		}
