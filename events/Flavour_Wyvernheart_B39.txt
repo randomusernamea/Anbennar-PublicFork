@@ -3568,3 +3568,139 @@ country_event = {#remove Overseer General when PM isn't here
 		}
 	}
 }
+country_event = {#Rolls magic schools for the manifest the flood gov power
+	id = flavour_wyvernheart.501
+	title = flavour_wyvernheart.501.t
+	desc = flavour_wyvernheart.501.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = COURT_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Rights of Man"
+		}
+		picture = ROYAL_COUPLE_FUTURE_eventPicture
+	}
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = B39
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.501.a"
+		ai_chance = { factor = 1 }
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_country_flag = wyvernheart_manifest_the_flood_divination
+						has_country_flag = wyvernheart_manifest_the_flood_abjuration
+						has_country_flag = wyvernheart_manifest_the_flood_conjuration
+						has_country_flag = wyvernheart_manifest_the_flood_necromancy
+						has_country_flag = wyvernheart_manifest_the_flood_enchantment
+						has_country_flag = wyvernheart_manifest_the_flood_transmutation
+						has_country_flag = wyvernheart_manifest_the_flood_evocation
+						has_country_flag = wyvernheart_manifest_the_flood_illusion
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_divination
+						is_divination_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_abjuration
+						is_abjuration_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_conjuration
+						is_conjuration_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_necromancy
+						is_necromancy_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_enchantment
+						is_enchantment_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_transmutation
+						is_transmutation_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_evocation
+						is_evocation_3 = yes
+					}
+					AND = {
+						has_country_flag = wyvernheart_manifest_the_flood_illusion
+						is_illusion_3 = yes
+					}
+				}
+			}
+			clr_country_flag = wyvernheart_manifest_the_flood_divination
+			clr_country_flag = wyvernheart_manifest_the_flood_abjuration
+			clr_country_flag = wyvernheart_manifest_the_flood_conjuration
+			clr_country_flag = wyvernheart_manifest_the_flood_necromancy
+			clr_country_flag = wyvernheart_manifest_the_flood_enchantment
+			clr_country_flag = wyvernheart_manifest_the_flood_transmutation
+			clr_country_flag = wyvernheart_manifest_the_flood_evocation
+			clr_country_flag = wyvernheart_manifest_the_flood_illusion
+			random_list = {
+				1 = {
+					trigger = {
+						NOT = { is_divination_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_divination }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_abjuration_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_abjuration }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_conjuration_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_conjuration }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_necromancy_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_necromancy }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_enchantment_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_enchantment }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_transmutation_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_transmutation }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_evocation_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_evocation }
+				}
+				1 = {
+					trigger = {
+						NOT = { is_illusion_3 = yes }
+					}
+					ROOT = { set_country_flag = wyvernheart_manifest_the_flood_illusion }
+				}
+			}
+		}
+	}
+}
