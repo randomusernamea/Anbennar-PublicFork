@@ -13476,9 +13476,11 @@ on_raid_coast = {
 			religion = xhazobkult
 		}
 		add_patriarch_authority = 0.005
-		change_variable = {
-			which = demonicPowerGained
-			value = 1
+		hidden_effect = {
+			change_variable = {
+				which = demonicPowerGained
+				value = 0.5
+			}
 		}
 	}
 }
