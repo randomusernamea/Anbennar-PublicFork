@@ -3795,7 +3795,7 @@ estate_nobles_wyvernheart_remove_corrupt_overseer = {
 					event_target:agenda_province = {
 						add_base_manpower = 3
 					}
-					add_legitimacy_equivalent = { amount = -10 }
+					add_legitimacy_equivalent = { amount = -10 republican_tradition = -5 }
 					add_estate_loyalty = {
 						estate = estate_mages
 						loyalty = -10
@@ -3822,7 +3822,7 @@ estate_nobles_wyvernheart_remove_corrupt_overseer = {
 						power_type = bloodbrand_power
 						value = 5
 					}
-					add_legitimacy_equivalent = { amount = 10 }
+					add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 					random = {
 						add_stability = 1
 						chance = 50
@@ -3882,7 +3882,7 @@ estate_nobles_wyvernheart_remove_corrupt_overseer = {
 					227 = { remove_province_modifier = wyvernheart_wealthy_seat }
 					777 = { remove_province_modifier = wyvernheart_wealthy_seat }
 					add_corruption = -2
-					add_legitimacy_equivalent = { amount = 10 }
+					add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 					random = {
 						add_stability = 1
 						chance = 50
@@ -3924,7 +3924,7 @@ estate_nobles_wyvernheart_remove_corrupt_overseer = {
 						add_base_production = 3
 					}
 					add_corruption = 3
-					add_legitimacy_equivalent = { amount = -10 }
+					add_legitimacy_equivalent = { amount = -10 republican_tradition = -5 }
 					add_estate_loyalty = {
 						estate = estate_nobles
 						loyalty = -10

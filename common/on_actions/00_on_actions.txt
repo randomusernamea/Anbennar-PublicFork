@@ -11536,9 +11536,11 @@ on_province_owner_change = {
 			owner = { tag = B39 }
 			fast_has_pop_of_race = { race = orcish }
 		}
-		change_variable = {
-			which = acquired_orcish_pops
-			value = 1
+		owner = {
+			change_variable = {
+				which = acquired_orcish_pops
+				value = 1
+			}
 		}
 	}
 

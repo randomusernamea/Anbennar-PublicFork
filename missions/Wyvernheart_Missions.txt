@@ -1264,14 +1264,12 @@ wyvernheart_column_3 = {
 			729 = {
 				spawn_rebels = {
 					size = 2
-					leader = local_noble_name
 					type = noble_rebels
 				}
 			}
 			831 = {
 				spawn_rebels = {
 					size = 2
-					leader = local_noble_name
 					type = noble_rebels
 				}
 			}
@@ -1717,7 +1715,6 @@ wyvernheart_column_4 = {
 				spawn_rebels = {
 					size = 2
 					type = pretender_rebels
-					leader = pretender
 				}
 			}
 		} 
@@ -2203,9 +2200,9 @@ wyvernheart_column_1_endgame = {
 			crown_land_share = 60
 			custom_trigger_tooltip = {
 				tooltip = wyvernheart_A10_trigger_tt
-				if = {
-					limit = { NOT = { has_ruler_flag = wyvernheart_regent } }
-					mil_power = -200
+				OR = {
+					has_ruler_flag = wyvernheart_regent
+					mil_power = 200
 				}
 			}
 			custom_trigger_tooltip = {

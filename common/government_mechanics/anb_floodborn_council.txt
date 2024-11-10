@@ -34,7 +34,7 @@ floodborn_council_mechanic = {
 					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.25
+					monthly_bloodbrand_power = -0.10
 				}
 			}
 			range_modifier = {
@@ -43,7 +43,7 @@ floodborn_council_mechanic = {
 					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.25
+					monthly_bloodbrand_power = -0.10
 				}
 			}
 			range_modifier = {
@@ -52,7 +52,7 @@ floodborn_council_mechanic = {
 					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.5
+					monthly_bloodbrand_power = -0.25
 				}
 			}
 			range_modifier = {
@@ -61,7 +61,7 @@ floodborn_council_mechanic = {
 					has_reform = floodborn_council_reform_theocracy
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.25
+					monthly_bloodbrand_power = -0.10
 				}
 			}
 			range_modifier = {
@@ -70,7 +70,7 @@ floodborn_council_mechanic = {
 					NOT = { has_reform = floodborn_council_reform_theocracy }
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.5
+					monthly_bloodbrand_power = -0.25
 				}
 			}
 			range_modifier = {
@@ -79,7 +79,7 @@ floodborn_council_mechanic = {
 					has_reform = floodborn_council_reform_theocracy
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.25
+					monthly_bloodbrand_power = -0.10
 				}
 			}
 			range_modifier = {
@@ -87,7 +87,7 @@ floodborn_council_mechanic = {
 					ruler_age = 80
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.5
+					monthly_bloodbrand_power = -0.25
 				}
 			}
 			range_modifier = {
@@ -95,7 +95,7 @@ floodborn_council_mechanic = {
 					ruler_age = 90
 				}
 				modifier = {
-					monthly_bloodbrand_power = -0.5
+					monthly_bloodbrand_power = -0.25
 				}
 			}
 			range_modifier = {
@@ -798,109 +798,61 @@ floodborn_council_mechanic = {
 									}
 								}
 							}
+							clr_country_flag = wyvernheart_manifest_the_flood_divination
+							clr_country_flag = wyvernheart_manifest_the_flood_abjuration
+							clr_country_flag = wyvernheart_manifest_the_flood_conjuration
+							clr_country_flag = wyvernheart_manifest_the_flood_necromancy
+							clr_country_flag = wyvernheart_manifest_the_flood_enchantment
+							clr_country_flag = wyvernheart_manifest_the_flood_transmutation
+							clr_country_flag = wyvernheart_manifest_the_flood_evocation
+							clr_country_flag = wyvernheart_manifest_the_flood_illusion
 							random_list = {
 								1 = {
 									trigger = {
 										NOT = { is_divination_3 = yes }
 									}
 									set_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_abjuration_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
 									set_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_conjuration_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
 									set_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_necromancy_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
 									set_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_enchantment_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
 									set_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_transmutation_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
 									set_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_evocation_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
 									set_country_flag = wyvernheart_manifest_the_flood_evocation
-									clr_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 								1 = {
 									trigger = {
 										NOT = { is_illusion_3 = yes }
 									}
-									clr_country_flag = wyvernheart_manifest_the_flood_divination
-									clr_country_flag = wyvernheart_manifest_the_flood_abjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_conjuration
-									clr_country_flag = wyvernheart_manifest_the_flood_necromancy
-									clr_country_flag = wyvernheart_manifest_the_flood_enchantment
-									clr_country_flag = wyvernheart_manifest_the_flood_transmutation
-									clr_country_flag = wyvernheart_manifest_the_flood_evocation
 									set_country_flag = wyvernheart_manifest_the_flood_illusion
 								}
 							}
