@@ -685,49 +685,49 @@ floodborn_council_mechanic = {
 									trigger = {
 										NOT = { is_divination_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_divination
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_divination }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_abjuration_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_abjuration
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_abjuration }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_conjuration_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_conjuration
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_conjuration }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_necromancy_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_necromancy
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_necromancy }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_enchantment_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_enchantment
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_enchantment }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_transmutation_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_transmutation
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_transmutation }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_evocation_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_evocation
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_evocation }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_illusion_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_illusion
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_illusion }
 								}
 							}
 						}
@@ -815,49 +815,49 @@ floodborn_council_mechanic = {
 									trigger = {
 										NOT = { is_divination_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_divination
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_divination }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_abjuration_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_abjuration
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_abjuration }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_conjuration_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_conjuration
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_conjuration }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_necromancy_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_necromancy
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_necromancy }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_enchantment_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_enchantment
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_enchantment }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_transmutation_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_transmutation
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_transmutation }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_evocation_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_evocation
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_evocation }
 								}
 								1 = {
 									trigger = {
 										NOT = { is_illusion_3 = yes }
 									}
-									set_country_flag = wyvernheart_manifest_the_flood_illusion
+									ROOT = { set_country_flag = wyvernheart_manifest_the_flood_illusion }
 								}
 							}
 						}
@@ -867,15 +867,15 @@ floodborn_council_mechanic = {
 					random_list = {
 						1 = {
 							trigger = { NOT = { adm = 6 } }
-							change_adm = 1
+							ROOT = { change_adm = 1 }
 						}
 						1 = {
 							trigger = { NOT = { dip = 6 } }
-							change_dip = 1
+							ROOT = { change_dip = 1 }
 						}
 						1 = {
 							trigger = { NOT = { mil = 6 } }
-							change_mil = 1
+							ROOT = { change_mil = 1 }
 						}
 					}
 				}
