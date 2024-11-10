@@ -1262,7 +1262,7 @@ orlghelovar_2p2s = {
 		
 		provinces_to_highlight = { 
 			area = zagnabad_area
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		
 		trigger = {
@@ -1279,6 +1279,9 @@ orlghelovar_2p2s = {
 					AND = {
 						country_or_non_sovereign_subject_holds = F23
 						is_core = owner
+						NOT = {
+							culture = exodus_goblin
+						}
 					}
 				}
 			}
