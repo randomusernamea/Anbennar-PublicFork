@@ -10217,6 +10217,8 @@ on_five_year_pulse_4 = {
 		precursor_relics.4
 		precursor_relics.5
 		precursor_relics.6
+		flavour_wyvernheart.300 #Council flavour event manager
+		flavour_wyvernheart.310 #Wyvernheart Estate agenda manager
 	}
 
 	random_events = { #for all migration/pop change events
@@ -10242,20 +10244,6 @@ on_five_year_pulse_4 = {
 		800 = racial_pop_events_mechanim.0
 
 		800 = 0
-	}
-
-	#Wyvernheart
-	if = {
-		limit = { tag = B39 NOT = { has_country_modifier = wyvernheart_agenda_timer } }
-		country_event = {
-			id = flavour_wyvernheart.310
-		}
-	}
-	if = { #Council event handler
-		limit = { tag = B39 }
-		country_event = {
-			id = flavour_wyvernheart.300
-		}
 	}
 }
 

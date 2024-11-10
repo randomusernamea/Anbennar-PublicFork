@@ -11,7 +11,7 @@ estate_mages_fire_advisor = {
 				type = court_mage
 			}
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 	}
 	selection_weight = {
 		factor = 1
@@ -168,7 +168,7 @@ estate_mages_relations_with_magisterium = {
 #Improve Relations with Pro Mage Countries
 estate_mages_relations_with_pro_mage_countries = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		NOT = { has_estate_privilege = estate_mages_organization_ice_smiths }
 		any_known_country = {
 			has_estate = estate_mages
@@ -257,7 +257,7 @@ estate_mages_relations_with_pro_mage_countries = {
 #Spy Network on Rival
 estate_mages_spy_on_rival = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_rival_country = {
 			NOT = { war_with = root }
 			NOT = {
@@ -341,7 +341,7 @@ estate_mages_spy_on_rival = {
 estate_mages_build_university_in_y = {
 	can_select = {
 		adm_tech = 17
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
 			has_any_blorc_camp = no #anbennar
@@ -476,7 +476,7 @@ estate_mages_conquer_damestear = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_neighbor_country = {
 			#num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -671,7 +671,7 @@ estate_mages_conquer_precursor_relics = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_neighbor_country = {
 			#num_of_cities = 6
 			is_free_or_tributary_trigger = yes
@@ -865,7 +865,7 @@ estate_mages_conquer_precursor_relics = {
 #Fort on Desired Tradegood
 estate_mages_build_fort_building_on_damestear = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			trade_goods = damestear
 			OR = {
@@ -1216,7 +1216,7 @@ estate_mages_build_fort_building_on_damestear = {
 
 estate_mages_build_fort_building_on_precursor_relics = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			trade_goods = precursor_relics
 			OR = {
@@ -1861,7 +1861,7 @@ estate_mages_condottieri_rivals = {
 				root = { is_renting_condottieri_to = prev }
 			}
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_rival_country = {
 			is_at_war = yes
 			NOT = {
@@ -2030,7 +2030,7 @@ estate_mages_ally_pro_mage_countries = {
 			is_subject_of_type = daimyo_xiaken_vassal
 			is_subject_of_type = tributary_state_anb
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_known_country = {
 			has_estate = estate_mages # has loyal mages
 			estate_loyalty = {
@@ -2191,7 +2191,7 @@ estate_mages_develop_damestear_in_y = {
 		factor = 1
 	}
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			trade_goods = damestear
 		}
@@ -2287,7 +2287,7 @@ estate_mages_develop_precursor_relics_in_y = {
 		any_owned_province = {
 			trade_goods = precursor_relics
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 	}
 	pre_effect = {
 		random_owned_province = {
@@ -2579,7 +2579,7 @@ estate_mages_develop_x = {
 		capital_scope = {
 			is_state_core = root
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 	}
 	pre_effect = {
 		random_list = {
@@ -2726,11 +2726,7 @@ estate_mages_wyvernheart_invest_in_critical_materials = { #MAGICREWORK
 	}
 	can_select = {
 		tag = B39
-		OR = {
-			has_reform = floodborn_council_reform
-			has_reform = floodborn_council_reform_always_mage
-			has_reform = floodborn_council_reform_theocracy
-		}
+		wyvernheart_is_floodborn_council = yes
 		OR = {
 			227 = { owned_by = ROOT }
 			736 = { owned_by = ROOT }
@@ -2849,11 +2845,7 @@ estate_mages_wyvernheart_wave_the_heart = { #MAGICREWORK
 	}
 	can_select = {
 		tag = B39
-		OR = {
-			has_reform = floodborn_council_reform
-			has_reform = floodborn_council_reform_always_mage
-			has_reform = floodborn_council_reform_theocracy
-		}
+		wyvernheart_is_floodborn_council = yes
 		any_owned_province = {
 			NOT = { culture = ROOT }
 		}
@@ -2930,11 +2922,7 @@ estate_mages_wyvernheart_spread_vision_of_magic = { #MAGICREWORK
 	}
 	can_select = {
 		tag = B39
-		OR = {
-			has_reform = floodborn_council_reform
-			has_reform = floodborn_council_reform_always_mage
-			has_reform = floodborn_council_reform_theocracy
-		}
+		wyvernheart_is_floodborn_council = yes
 	}
 	pre_effect = {
 		random_owned_province = {
@@ -3133,11 +3121,7 @@ estate_mages_wyvernheart_research_new_spells = { #MAGICREWORK
 	}
 	can_select = {
 		tag = B39
-		OR = {
-			has_reform = floodborn_council_reform
-			has_reform = floodborn_council_reform_always_mage
-			has_reform = floodborn_council_reform_theocracy
-		}
+		wyvernheart_is_floodborn_council = yes
 		ruler_has_mage_personality = yes
 		NOT = { ruler_studying_magic = yes }
 	}

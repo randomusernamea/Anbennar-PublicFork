@@ -421,22 +421,30 @@ wyvernheart_column_2 = {
 		required_missions = { roar_in_the_greatwoods } 
 		provinces_to_highlight = {
 			OR = {
-				area = westwall_approach_area
-				area = middle_alen_area
-				province_id = 229
-				province_id = 749
-				province_id = 729
-			}
-			OR = {
-				NOT = {
-					AND = {
-						is_core = ROOT
-						owned_by = ROOT
+				AND = {
+					OR = {
+						area = westwall_approach_area
+						area = middle_alen_area
+						province_id = 229
+						province_id = 749
+						province_id = 729
+					}
+					NOT = {
+						AND = {
+							is_core = ROOT
+							owned_by = ROOT
+						}
 					}
 				}
-				if = {
-					limit = {
-						province_group = upper_alen_river_banks
+				AND = {
+					OR = {
+						province_id = 229
+						province_id = 726
+						province_id = 725
+						province_id = 729
+						province_id = 749
+						province_id = 751
+						province_id = 753
 					}
 					NOT = { #NOR
 						local_autonomy = 10
@@ -1070,18 +1078,34 @@ wyvernheart_column_3 = {
 			beast_unlike_any_other
 		}
 		provinces_to_highlight = {
-			province_id = 833
-		} 
+			OR = {
+				province_id = 833
+				AND = {
+					region = inner_castanor_region
+					NOT = {
+						AND = {
+							owned_by = ROOT
+							is_core = ROOT
+						}
+				}
+				NOT = {
+					ROOT = {
+						num_of_owned_provinces_with = {
+							region = inner_castanor_region
+							is_core = ROOT
+							value = 30
+						}
+					}
+				}
+			}
+		}
 
 		trigger = {
 			mil_power = 50
-			calc_true_if = {
-				amount = 30
-				inner_castanor_region = {
-					type = all
-					owned_by = ROOT
-					is_core = ROOT
-				}
+			num_of_owned_provinces_with = {
+				value = 30
+				region = inner_castanor_region
+				is_core = ROOT
 			}
 			castonath_area = {
 				type = all
@@ -1735,20 +1759,13 @@ wyvernheart_column_5 = {
 			olavlund_region = {
 				type = all
 				owner = {
-					OR = {
-						tag = ROOT
-						AND = {
-							NOT = { tag = ROOT }
-							NOT = { army_size = ROOT }
-						}
-					}
 					custom_trigger_tooltip = {
 						tooltip = wyvernheart_E3_trigger_tt
-						if = {
-							limit = { capital_scope = { region = olavlund_region } }
-							OR = {
+						OR = {
+							tag = ROOT
+							AND = {
+								NOT = { tag = ROOT }
 								NOT = { army_size = ROOT }
-								tag = ROOT
 							}
 						}
 					}
@@ -1757,20 +1774,13 @@ wyvernheart_column_5 = {
 			alenic_reach_region = {
 				type = all
 				owner = {
-					OR = {
-						tag = ROOT
-						AND = {
-							NOT = { tag = ROOT }
-							NOT = { army_size = ROOT }
-						}
-					}
 					custom_trigger_tooltip = {
 						tooltip = wyvernheart_E3_trigger_tt
-						if = {
-							limit = { capital_scope = { region = alenic_reach_region } }
-							OR = {
+						OR = {
+							tag = ROOT
+							AND = {
+								NOT = { tag = ROOT }
 								NOT = { army_size = ROOT }
-								tag = ROOT
 							}
 						}
 					}

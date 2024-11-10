@@ -523,7 +523,7 @@ estate_brahmins_build_temple_in_y = {
 estate_nobles_build_army_building_in_y = {
 	can_select = {
 		mil_tech = 6
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
 			has_any_blorc_camp = no #anbennar
@@ -2544,7 +2544,7 @@ estate_maratha_build_army_building_in_y = {
 
 estate_nobles_build_fort_building_in_y = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			OR = {
 				AND = {
@@ -8614,7 +8614,7 @@ estate_vaisyas_build_production_building_in_y = {
 
 estate_nobles_build_manufactory_in_y = {
 	can_select = {
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
 			has_any_blorc_camp = no #anbennar
@@ -10542,7 +10542,7 @@ estate_nobles_build_university_in_y = {
 	can_select = {
 		government = monarchy
 		adm_tech = 17
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
 			has_any_blorc_camp = no #anbennar
@@ -11682,7 +11682,7 @@ estate_nobles_develop_x = {
 		capital_scope = {
 			is_state_core = root
 		}
-		wyvernheart_not_floodborn_council = yes
+		NOT = { wyvernheart_is_floodborn_council = yes }
 	}
 	pre_effect = {
 		random_list = {

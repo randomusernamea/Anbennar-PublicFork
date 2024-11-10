@@ -3107,7 +3107,7 @@ country_event = {#An Upstart in the Council
 	}
 }
 
-country_event = {#Event manager for the flavour events
+country_event = {#Estate agenda manager
 	id = flavour_wyvernheart.310
 	title = flavour_wyvernheart.310.t
 	desc = flavour_wyvernheart.310.d
@@ -3128,6 +3128,7 @@ country_event = {#Event manager for the flavour events
 	
 	trigger = {
 		tag = B39
+		NOT = { has_country_modifier = wyvernheart_agenda_timer }
 	}
 	
 	immediate = {
