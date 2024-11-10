@@ -23,25 +23,30 @@ defined_text = {
 }
 
 defined_text = {
-	name = getArtificeMultipliers
+	name = getArtificeMultipliersPositive
 	random = no
 	
 	text = {
-        localisation_key = artifice_multipliers_orlghelovar_science_mages
+        localisation_key = artifice_positive_multipliers_orlghelovar_science_mages
         trigger = {
 			has_country_flag = orlghelovar_science_mages_privilege
         }
     }
+}
+
+defined_text = {
+	name = getArtificeMultipliersNegative
+	random = no
 	
 	text = {
-        localisation_key = artifice_multipliers_mixed_mode
+        localisation_key = artifice_negative_multipliers_mixed_mode
         trigger = {
 			has_country_flag = magic_artificery_mixed
         }
     }
 
 	text = {
-        localisation_key = artifice_multipliers_mage_ruler
+        localisation_key = artifice_negative_multipliers_mage_ruler
         trigger = {
 			has_country_flag = magic_artificery_artificery_only 
 			ruler_has_mage_personality = yes

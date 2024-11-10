@@ -6357,18 +6357,7 @@ estate_mages_organization_science_mages = {
 	}
 	on_granted = {
 		custom_tooltip = mages_benefits_tt
-		custom_tooltip = orlghelovar_science_mages_tt_1
-		custom_tooltip = orlghelovar_science_mages_tt_2
-		hidden_effect = {
-			mission_reward_artifice_points_10 = yes
-			mission_reward_artifice_points_2 = yes
-		}
-		clear_mages_organization_effect = yes
-	}
-	on_revoked = {
-		custom_tooltip = mages_benefits_tt
-		custom_tooltip = orlghelovar_science_mages_tt_1
-		custom_tooltip = orlghelovar_science_mages_tt_2
+		custom_tooltip = orlghelovar_science_mages_tt
 		hidden_effect = {
 			mission_reward_artifice_points_10 = yes
 			mission_reward_artifice_points_2 = yes
