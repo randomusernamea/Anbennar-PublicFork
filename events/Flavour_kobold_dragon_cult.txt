@@ -3620,7 +3620,13 @@ country_event = { #Bronze aspect 1
 		add_years_of_income = -1
 		event_target:EmperorOfChina = {
 			add_historical_friend = ROOT
-			ROOT = { add_historical_friend = PREV }
+			ROOT = {
+				add_historical_friend = PREV
+				capital_scope = {
+					discover_country = PREV
+				} 
+			}
+			
 		}
 	}
 	option = {		
@@ -3935,7 +3941,12 @@ country_event = { #Notified about Ahati disaster
 		name = flavour_kobold_dragon_cult.25.b
 		trigger = { has_global_flag = ahati_rebellion_succeeded } 
 		U04 = { add_historical_friend = ROOT }
-		ROOT = { add_historical_friend = U04 }
+		ROOT = {
+			add_historical_friend = U04
+			capital_scope = {
+				discover_country = prev
+			}
+	 	}
 	}
 }
 

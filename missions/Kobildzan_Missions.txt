@@ -185,16 +185,49 @@ kob_2_a = {
 			}
 		}
 		effect = {
-            change_government_reform_progress = 20
-			capital_scope = {
-				add_province_modifier = {
-					name = Z38_technology_and_trade_modifier
-					duration = 7300
+            add_adm_power = 50
+			custom_tooltip = institution_from_diplomacy_tt 
+			every_known_country = {
+				limit = {
+					NOT = { culture_group = kobold } 
+					has_opinion = {
+						who = ROOT
+						value = -50
+					}
+				}
+				ROOT = {
+					capital_scope = {
+						area = {
+							if = {
+								limit = { is_institution_enabled = printing_press }
+								add_institution_embracement = {
+									which = printing_press
+									value = 20
+								}
+							}
+							if = {
+								limit = { is_institution_enabled = new_world_i }
+								add_institution_embracement = {
+									which = new_world_i
+									value = 20
+								}
+							}
+							if = {
+								limit = { is_institution_enabled = renaissance }
+								add_institution_embracement = {
+									which = renaissance
+									value = 20
+								}
+							}
+							add_institution_embracement = {
+								which = feudalism
+								value = 20
+							}								
+						}
+					}
 				}
 			}
-			169 = {
-				add_permanent_claim = ROOT
-			}
+			169 = { add_permanent_claim = ROOT }
 		}
 	}
 
@@ -346,7 +379,35 @@ kob_3_a = {
 		}
 
 		trigger = {
-            accepted_culture = bluescale_kobold
+            
+			custom_trigger_tooltip = {
+				tooltip = accepts_a_kobold_not_your_own_tt
+				OR = {
+					AND = {
+						tag = A28
+						OR = {
+							accepted_culture = bluescale_kobold
+							accepted_culture = redscale_kobold
+						}
+					}
+					AND = {
+						tag = A27
+						OR = {
+							accepted_culture = redscale_kobold
+							accepted_culture = greenscale_kobold
+						}
+					}
+					AND = {
+						tag = A26
+						OR = {
+							accepted_culture = bluescale_kobold
+							accepted_culture = greenscale_kobold
+						}
+					}
+					tag = Z38
+				}
+			}
+			accepted_culture = bluescale_kobold
             accepted_culture = redscale_kobold
 
             OR = {
@@ -650,8 +711,6 @@ kob_4_a = {
 		}
 
 		trigger = {
-			has_idea_group = exploration_ideas
-
 			any_subject_country = {
 				is_colonial_nation_of = ROOT
 				capital_scope = { colonial_region = colonial_dalaire }
