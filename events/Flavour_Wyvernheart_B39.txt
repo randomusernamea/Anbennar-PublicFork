@@ -3592,10 +3592,7 @@ country_event = {#Rolls magic schools for the manifest the flood gov power
 		tag = B39
 	}
 
-	#Option A
-	option = {
-		name = "flavour_wyvernheart.501.a"
-		ai_chance = { factor = 1 }
+	immediate = {
 		if = {
 			limit = {
 				OR = {
@@ -3702,5 +3699,11 @@ country_event = {#Rolls magic schools for the manifest the flood gov power
 				}
 			}
 		}
+	}
+
+	#Option A
+	option = {
+		name = "flavour_wyvernheart.501.a"
+		ai_chance = { factor = 1 }
 	}
 }
