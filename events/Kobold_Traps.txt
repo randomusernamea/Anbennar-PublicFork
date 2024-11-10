@@ -1226,11 +1226,8 @@ province_event = { # We're removing our traps!
 			clr_province_flag = has_kobold_traps 
 		}
 		owner = {
-			if = {
-				limit = { ai = yes }
-				hidden_effect = { set_country_flag = free_traps_happening }
-				country_event = { id = kobold_traps.1 }
-			}
+			hidden_effect = { set_country_flag = free_traps_happening }
+			country_event = { id = kobold_traps.1 }
 		}
 		ai_chance = {
 			factor = 100

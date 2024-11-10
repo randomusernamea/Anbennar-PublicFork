@@ -800,7 +800,6 @@ kob_1_b = {
 			any_subject_country = {
 				is_colonial_nation_of = ROOT
 				capital_scope = { colonial_region = colonial_broken_sea }
-				num_of_cities = 10
 			}
 		}
 
@@ -1469,7 +1468,7 @@ kob_4_b = {
 			OR = {
 				province_id = 177
 				province_id = 179
-				province_id = 186
+				province_id = 189
 				province_id = 187				
 			}
 
@@ -1489,8 +1488,8 @@ kob_4_b = {
 				179 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}			
 			custom_trigger_tooltip = {
-				tooltip = 186_tax_or_court_tt 
-				186 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
+				tooltip = 189_tax_or_court_tt 
+				189 = { OR = { has_tax_building_trigger = yes has_courthouse_building_trigger = yes }}
 			}	
 			custom_trigger_tooltip = {
 				tooltip = 187_tax_or_court_tt 
@@ -1522,7 +1521,7 @@ kob_4_b = {
 					duration = -1
 				}
 			}
-			186 = {
+			189 = {
 				change_trade_goods = paper
 				add_province_modifier = {
 					name = Z38_hoard_logistics_hub
