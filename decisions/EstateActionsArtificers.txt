@@ -80,22 +80,21 @@ country_decisions = {
 	estate_artificers_change_mode_decision = {
 		color = { 195 160 20 }
 		potential = {
-			OR = {
-				has_country_flag = artificery_unlocked
-				has_institution = manufactories
-			}
+			ai = no
+			has_country_flag = artificery_unlocked
+			NOT = { has_country_flag = magic_artificery_mixed }
+			NOT = { has_country_flag = artificery_change_mode_cooldown }
 		}
 		allow = {
+			ai = no
+			has_country_flag = artificery_unlocked
+			NOT = { has_country_flag = magic_artificery_mixed }
+			NOT = { has_country_flag = artificery_change_mode_cooldown }
 			stability = 2
-			had_country_flag = {
-				flag = artificery_change_mode_cooldown
-				days = 18250 # 50 years
-			}
-			artifice_forced_mixed_mode = no
 		}
 		effect = {
 			add_stability = -3
-			clr_country_flag = artificery_change_mode_cooldown
+			set_country_flag = artificery_change_mode_cooldown
 			country_event = {
 				id = magic_artificery_setup.1
 			}
