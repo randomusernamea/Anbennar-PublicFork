@@ -4614,7 +4614,7 @@ dao = { #Gushuokguan vassals
 
 
 	modifier_overlord = {
-		trigger = { has_country_flag = gushuokguan_dao_diplomatic_relations }
+		trigger = { overlord = { has_country_flag = gushuokguan_dao_diplomatic_relations } }
 		modifier = gushuokguan_dao_diplomatic_relations_buff
 	}
 }

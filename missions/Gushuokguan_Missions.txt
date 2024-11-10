@@ -84,26 +84,24 @@ gushuokguan_1 = {
 
 		effect = {  
 			for = {
-				#custom_tooltip = gushuokguan_smth_tt
-				amount = 5
-				effect = "
-					random_owned_province = {
-						limit = {
-							OR = {
-								trade_goods = grain
-								trade_goods = livestock
-								trade_goods = fish
-							}
-							has_production_building_trigger = yes
-							has_manpower_building_trigger = yes
-							has_manufactory_trigger = yes
-							base_production = 7
-						}
-						add_base_production = 1
-						if = { limit = { has_building = training_fields } add_mil_power = 100 }
-						else = { remove_building = barracks add_building = training_fields }
-					}
-				"
+				amount = 5 #Cursed indentation, because strings like these are max 512 characters
+				effect = " 
+random_owned_province = {
+limit = {
+OR = {
+trade_goods = grain
+trade_goods = livestock
+trade_goods = fish
+}
+has_production_building_trigger = yes
+has_manpower_building_trigger = yes
+has_manufactory_trigger = yes
+base_production = 7
+}
+add_base_production = 1
+if = { limit = { has_building = training_fields } add_mil_power = 100 }
+else = { remove_building = barracks add_building = training_fields }
+}"
 			}
 			custom_tooltip = gushuokguan_1_3_effect_tt
 			hidden_effect = {
@@ -2110,8 +2108,12 @@ gushuokguan_5 = {
 					}
 					every_subject_country = {
 						limit = { is_subject_of_type = dao }
-						grant_independence = yes
-						ROOT = { vassalize = PREV } #Demoting from Dao to vassals
+						ROOT = { #Gushuokguan
+							create_subject = {
+								subject_type = vassal
+								subject = PREV
+							}
+						}
 						add_country_modifier = {
 							name = gushuokguan_dao_republican_tradition_buff
 							duration = -1

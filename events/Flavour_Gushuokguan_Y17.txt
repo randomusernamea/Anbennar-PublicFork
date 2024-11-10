@@ -1044,8 +1044,10 @@ country_event = {
 				trigger = {
 					any_subject_country = {
 						is_subject_of_type = dao
-						is_not_purging_any_race_trigger = no
-						is_not_expelling_any_race_trigger = no
+						OR = {
+							is_not_purging_any_race_trigger = no
+							is_not_expelling_any_race_trigger = no
+						}
 					}
 				}
 				country_event = { id = gushuokguan_event.59 } }
@@ -1920,8 +1922,10 @@ country_event = {
 			random_subject_country = {
 				limit = { 
 					is_subject_of_type = dao 
-					is_not_purging_any_race_trigger = no
-					is_not_expelling_any_race_trigger = no
+					OR = {
+						is_not_purging_any_race_trigger = no
+						is_not_expelling_any_race_trigger = no
+					}
 				}
 				save_event_target_as = dao_A
 			}
@@ -2290,11 +2294,7 @@ country_event = {
 	desc = gushuokguan_event.101.d
 	picture = CHINESE_GENERAL_eventPicture
 	
-	#I wish there was an on_action for hiring condotierri
-	mean_time_to_happen = {
-		days = 1
-	}
-
+	is_triggered_only = yes
 	hidden = yes 
 
 	trigger = {
@@ -2321,9 +2321,11 @@ country_event = {
 					NOT = { has_country_flag = gushuokguan_already_checked_condottieri }
 				}
 				set_country_flag = gushuokguan_already_checked_condottieri
-				change_variable = {
-					which = gushuokguan_rented_condottieri_counter
-					value = 1
+				ROOT = {
+					change_variable = {
+						which = gushuokguan_rented_condottieri_counter
+						value = 1
+					}
 				}
 			}
 		}
