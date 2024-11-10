@@ -1648,19 +1648,58 @@ country_event = {
 				}
 				calc_true_if = {
 					amount = 2
-					owns = 833
-					owns = 4
-					owns = 82
-					owns = 249
-					owns = 151
-					owns = 97
-					owns = 227
-					owns = 266
-					owns = 265
-					owns = 332
-					owns = 52
-					owns = 451
-					owns = 308
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+					OR = {
+						owns_or_subject_of = 4
+						any_ally = { owns = 4 }
+					}					
+					OR = {
+						owns_or_subject_of = 82
+						any_ally = { owns = 82 }
+					}
+					OR = {
+						owns_or_subject_of = 249
+						any_ally = { owns = 249 }
+					}
+					OR = {
+						owns_or_subject_of = 151
+						any_ally = { owns = 151 }
+					}
+					OR = {
+						owns_or_subject_of = 97
+						any_ally = { owns = 97 }
+					}
+					OR = {
+						owns_or_subject_of = 227
+						any_ally = { owns = 227 }
+					}
+					OR = {
+						owns_or_subject_of = 266
+						any_ally = { owns = 266 }
+					}
+					OR = {
+						owns_or_subject_of = 265
+						any_ally = { owns = 265 }
+					}
+					OR = {
+						owns_or_subject_of = 332
+						any_ally = { owns = 332 }
+					}
+					OR = {
+						owns_or_subject_of = 52
+						any_ally = { owns = 52 }
+					}
+					OR = {
+						owns_or_subject_of = 451
+						any_ally = { owns = 451 }
+					}
+					OR = {
+						owns_or_subject_of = 308
+						any_ally = { owns = 308 }
+					}
 				}		
 			}
 		}
@@ -1688,19 +1727,58 @@ country_event = {
 				}
 				calc_true_if = {
 					amount = 5
-					owns = 833
-					owns = 4
-					owns = 82
-					owns = 249
-					owns = 151
-					owns = 97
-					owns = 227
-					owns = 266
-					owns = 265
-					owns = 332
-					owns = 52
-					owns = 451
-					owns = 308
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+					OR = {
+						owns_or_subject_of = 4
+						any_ally = { owns = 4 }
+					}					
+					OR = {
+						owns_or_subject_of = 82
+						any_ally = { owns = 82 }
+					}
+					OR = {
+						owns_or_subject_of = 249
+						any_ally = { owns = 249 }
+					}
+					OR = {
+						owns_or_subject_of = 151
+						any_ally = { owns = 151 }
+					}
+					OR = {
+						owns_or_subject_of = 97
+						any_ally = { owns = 97 }
+					}
+					OR = {
+						owns_or_subject_of = 227
+						any_ally = { owns = 227 }
+					}
+					OR = {
+						owns_or_subject_of = 266
+						any_ally = { owns = 266 }
+					}
+					OR = {
+						owns_or_subject_of = 265
+						any_ally = { owns = 265 }
+					}
+					OR = {
+						owns_or_subject_of = 332
+						any_ally = { owns = 332 }
+					}
+					OR = {
+						owns_or_subject_of = 52
+						any_ally = { owns = 52 }
+					}
+					OR = {
+						owns_or_subject_of = 451
+						any_ally = { owns = 451 }
+					}
+					OR = {
+						owns_or_subject_of = 308
+						any_ally = { owns = 308 }
+					}
 				}
 			}
 
@@ -1730,20 +1808,59 @@ country_event = {
 				AND = {
 					calc_true_if = {
 						amount = 9
-						owns = 4
-						owns = 82
-						owns = 249
-						owns = 151
-						owns = 97
-						owns = 227
-						owns = 266
-						owns = 265
-						owns = 332
-						owns = 52
-						owns = 451
-						owns = 308
+						OR = {
+							owns_or_subject_of = 4
+							any_ally = { owns = 4 }
+						}					
+						OR = {
+							owns_or_subject_of = 82
+							any_ally = { owns = 82 }
+						}
+						OR = {
+							owns_or_subject_of = 249
+							any_ally = { owns = 249 }
+						}
+						OR = {
+							owns_or_subject_of = 151
+							any_ally = { owns = 151 }
+						}
+						OR = {
+							owns_or_subject_of = 97
+							any_ally = { owns = 97 }
+						}
+						OR = {
+							owns_or_subject_of = 227
+							any_ally = { owns = 227 }
+						}
+						OR = {
+							owns_or_subject_of = 266
+							any_ally = { owns = 266 }
+						}
+						OR = {
+							owns_or_subject_of = 265
+							any_ally = { owns = 265 }
+						}
+						OR = {
+							owns_or_subject_of = 332
+							any_ally = { owns = 332 }
+						}
+						OR = {
+							owns_or_subject_of = 52
+							any_ally = { owns = 52 }
+						}
+						OR = {
+							owns_or_subject_of = 451
+							any_ally = { owns = 451 }
+						}
+						OR = {
+							owns_or_subject_of = 308
+							any_ally = { owns = 308 }
+						}
 					}
-					owns = 833
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
 				}		
 			}
 		}
@@ -2826,19 +2943,58 @@ country_event = {
 			NOT = {
 				calc_true_if = {
 					amount = 2
-					owns = 833
-					owns = 4
-					owns = 82
-					owns = 249
-					owns = 151
-					owns = 97
-					owns = 227
-					owns = 266
-					owns = 265
-					owns = 332
-					owns = 52
-					owns = 451
-					owns = 308
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+					OR = {
+						owns_or_subject_of = 4
+						any_ally = { owns = 4 }
+					}					
+					OR = {
+						owns_or_subject_of = 82
+						any_ally = { owns = 82 }
+					}
+					OR = {
+						owns_or_subject_of = 249
+						any_ally = { owns = 249 }
+					}
+					OR = {
+						owns_or_subject_of = 151
+						any_ally = { owns = 151 }
+					}
+					OR = {
+						owns_or_subject_of = 97
+						any_ally = { owns = 97 }
+					}
+					OR = {
+						owns_or_subject_of = 227
+						any_ally = { owns = 227 }
+					}
+					OR = {
+						owns_or_subject_of = 266
+						any_ally = { owns = 266 }
+					}
+					OR = {
+						owns_or_subject_of = 265
+						any_ally = { owns = 265 }
+					}
+					OR = {
+						owns_or_subject_of = 332
+						any_ally = { owns = 332 }
+					}
+					OR = {
+						owns_or_subject_of = 52
+						any_ally = { owns = 52 }
+					}
+					OR = {
+						owns_or_subject_of = 451
+						any_ally = { owns = 451 }
+					}
+					OR = {
+						owns_or_subject_of = 308
+						any_ally = { owns = 308 }
+					}
 				}
 			}
 		}
@@ -2866,19 +3022,58 @@ country_event = {
 			NOT = {
 				calc_true_if = {
 					amount = 5
-					owns = 833
-					owns = 4
-					owns = 82
-					owns = 249
-					owns = 151
-					owns = 97
-					owns = 227
-					owns = 266
-					owns = 265
-					owns = 332
-					owns = 52
-					owns = 451
-					owns = 308
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+					OR = {
+						owns_or_subject_of = 4
+						any_ally = { owns = 4 }
+					}					
+					OR = {
+						owns_or_subject_of = 82
+						any_ally = { owns = 82 }
+					}
+					OR = {
+						owns_or_subject_of = 249
+						any_ally = { owns = 249 }
+					}
+					OR = {
+						owns_or_subject_of = 151
+						any_ally = { owns = 151 }
+					}
+					OR = {
+						owns_or_subject_of = 97
+						any_ally = { owns = 97 }
+					}
+					OR = {
+						owns_or_subject_of = 227
+						any_ally = { owns = 227 }
+					}
+					OR = {
+						owns_or_subject_of = 266
+						any_ally = { owns = 266 }
+					}
+					OR = {
+						owns_or_subject_of = 265
+						any_ally = { owns = 265 }
+					}
+					OR = {
+						owns_or_subject_of = 332
+						any_ally = { owns = 332 }
+					}
+					OR = {
+						owns_or_subject_of = 52
+						any_ally = { owns = 52 }
+					}
+					OR = {
+						owns_or_subject_of = 451
+						any_ally = { owns = 451 }
+					}
+					OR = {
+						owns_or_subject_of = 308
+						any_ally = { owns = 308 }
+					}
 				}
 			}
 		}
@@ -2907,21 +3102,59 @@ country_event = {
 			NOT = {
 				AND = {
 					calc_true_if = {
-						amount = 9
-						owns = 4
-						owns = 82
-						owns = 249
-						owns = 151
-						owns = 97
-						owns = 227
-						owns = 266
-						owns = 265
-						owns = 332
-						owns = 52
-						owns = 451
-						owns = 308
+						OR = {
+							owns_or_subject_of = 4
+							any_ally = { owns = 4 }
+						}					
+						OR = {
+							owns_or_subject_of = 82
+							any_ally = { owns = 82 }
+						}
+						OR = {
+							owns_or_subject_of = 249
+							any_ally = { owns = 249 }
+						}
+						OR = {
+							owns_or_subject_of = 151
+							any_ally = { owns = 151 }
+						}
+						OR = {
+							owns_or_subject_of = 97
+							any_ally = { owns = 97 }
+						}
+						OR = {
+							owns_or_subject_of = 227
+							any_ally = { owns = 227 }
+						}
+						OR = {
+							owns_or_subject_of = 266
+							any_ally = { owns = 266 }
+						}
+						OR = {
+							owns_or_subject_of = 265
+							any_ally = { owns = 265 }
+						}
+						OR = {
+							owns_or_subject_of = 332
+							any_ally = { owns = 332 }
+						}
+						OR = {
+							owns_or_subject_of = 52
+							any_ally = { owns = 52 }
+						}
+						OR = {
+							owns_or_subject_of = 451
+							any_ally = { owns = 451 }
+						}
+						OR = {
+							owns_or_subject_of = 308
+							any_ally = { owns = 308 }
+						}
 					}
-					owns = 833
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
 				}
 			}
 		}
