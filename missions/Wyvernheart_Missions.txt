@@ -1087,13 +1087,14 @@ wyvernheart_column_3 = {
 							owned_by = ROOT
 							is_core = ROOT
 						}
-				}
-				NOT = {
-					ROOT = {
-						num_of_owned_provinces_with = {
-							region = inner_castanor_region
-							is_core = ROOT
-							value = 30
+					}
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								region = inner_castanor_region
+								is_core = ROOT
+								value = 30
+							}
 						}
 					}
 				}
