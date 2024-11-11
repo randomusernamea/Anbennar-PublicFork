@@ -121,7 +121,7 @@ moonhaven_question_mark_missions = {
 	has_country_shield = yes
 	potential = {
 		tag = A31
-		NOT = { has_country_flag = A31_corinite } 
+		NOT = { has_country_flag = A31_corin } 
 		NOT = { has_country_flag = A31_regent } 
 		NOT = { has_country_flag = A31_ravelian } 
 	}
@@ -323,7 +323,7 @@ moonhaven_regent_court_missions = {
 				province_id = 314
 			}
 			OR = {
-				NOT = { owned_by = A31 } 
+				NOT = { owned_by = ROOT } 
 				NOT = { culture = moon_elf } 
 				NOT = { religion = regent_court } 
 			}
@@ -331,32 +331,32 @@ moonhaven_regent_court_missions = {
 
 		trigger = {
 			335 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
 			5 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
 			357 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
 			900 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
 			256 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
 			314 = {
-				owned_by = A31
+				owned_by = ROOT
 				culture = moon_elf
 				religion = regent_court
 			}
@@ -1535,7 +1535,7 @@ moonhaven_development_missions = {
 			dip_power = 100
 			treasury = 100
 			any_ally = { primary_culture = east_damerian } 
-			any_subject_country = { is_colonial_nation_of = A31 } 
+			any_subject_country = { is_colonial_nation_of = ROOT } 
 		}
 
 		effect = {
@@ -1543,7 +1543,7 @@ moonhaven_development_missions = {
 			add_treasury = -100
 			add_mercantilism = 3
 			random_subject_country = {
-				limit = { is_colonial_nation_of = A31 } 
+				limit = { is_colonial_nation_of = ROOT	} 
 				random_owned_province = {
 					add_base_tax = 1
 					add_base_manpower = 1
@@ -1599,7 +1599,7 @@ moonhaven_development_missions = {
 				province_id = 52
 			}
 			OR = {
-				NOT = { owned_by = A31 } 
+				NOT = { owned_by = ROOT } 
 				NOT = { base_production = 12 } 
 				NOT = { has_production_building_trigger = yes } 
 			}
@@ -1607,12 +1607,12 @@ moonhaven_development_missions = {
 
 		trigger = {
 			56 = {
-				owned_by = A31
+				owned_by = ROOT
 				base_production = 12
 				has_production_building_trigger = yes
 			}
 			52 = {
-				owned_by = A31
+				owned_by = ROOT
 				base_production = 15
 				has_production_building_trigger = yes
 			}
@@ -1705,7 +1705,7 @@ moonhaven_development_missions = {
 			}
 			54 = {
 				trade_share = {
-					country = A31
+					country = ROOT
 					share = 25
 				}
 			}
@@ -1934,7 +1934,7 @@ moonhaven_colonial_missions = {
 		trigger = {
 			calc_true_if = {
 				all_elector = {
-					NOT = { tag = A31 } 
+					NOT = { tag = ROOT } 
 					has_opinion = {
 						who = ROOT
 						value = 100
@@ -1980,7 +1980,7 @@ moonhaven_colonial_missions = {
 
 		trigger = {
 			any_subject_country = {
-				is_colonial_nation_of = A31
+				is_colonial_nation_of = ROOT
 				num_of_owned_provinces_with = {
 					value = 5
 					OR = {
@@ -2181,7 +2181,7 @@ moonhaven_colonial_missions = {
 			}
 			every_province = {
 				limit = {
-					owner = { is_colonial_nation_of = A31 } 
+					owner = { is_colonial_nation_of = ROOT } 
 					trade_goods = precursor_relics
 				}
 				add_base_production = -3
@@ -2428,7 +2428,7 @@ moonhaven_exploration_missions = {
 			custom_tooltip = A31_tea_plantations
 			hidden_effect = {
 				random_subject_country = {
-					limit = { is_colonial_nation_of = A31 } 
+					limit = { is_colonial_nation_of = ROOT } 
 					capital_scope = {
 						change_trade_goods = tea
 						add_base_production = 2
@@ -2462,12 +2462,12 @@ moonhaven_exploration_missions = {
 		trigger = {
 			treasury = 200
 			any_subject_country = {
-				is_colonial_nation_of = A31
+				is_colonial_nation_of = ROOT
 				capital_scope = { colonial_region = colonial_taychend } 
 			}
 			any_known_country = {
 				culture_group = taychendi_ruinborn_elf
-				truce_with = A31
+				truce_with = ROOT
 			}
 		}
 
@@ -2534,7 +2534,7 @@ moonhaven_exploration_missions = {
 				limit = {
 					NOT = {
 						any_subject_country = {
-							is_colonial_nation_of = A31
+							is_colonial_nation_of = ROOT
 							capital_scope = { colonial_region = colonial_eordand } 
 						}
 					}
