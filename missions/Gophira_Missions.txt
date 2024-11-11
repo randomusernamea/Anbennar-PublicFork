@@ -5,7 +5,7 @@ gophira_1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = G64
+			tag = G74
 			AND = {
 				tag = J84 #Taychendi Empire
 				was_tag = G74
@@ -101,7 +101,17 @@ gophira_1_fren = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		tag = G74
+		OR = {
+			tag = G74
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
 		has_country_flag = gophira_fren
 	}
 
@@ -362,7 +372,17 @@ gophira_1_march = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		tag = G74
+		OR = {
+			tag = G74
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
 		has_country_flag = gophira_march
 	}
 
@@ -538,7 +558,7 @@ gophira_2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = G64
+			tag = G74
 			AND = {
 				tag = J84 #Taychendi Empire
 				was_tag = G74
@@ -605,7 +625,7 @@ gophira_3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = G64
+			tag = G74
 			AND = {
 				tag = J84 #Taychendi Empire
 				was_tag = G74
@@ -1156,7 +1176,17 @@ gophira_cap = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		tag = G74
+		OR = {
+			tag = G74
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
 		NOT = {
 			has_country_flag = gophira_fren
 			has_country_flag = gophira_march
@@ -1203,7 +1233,17 @@ gophira_cap_fren = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		tag = G74
+		OR = {
+			tag = G74
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
 		has_country_flag = gophira_fren
 	}
 
@@ -1248,7 +1288,17 @@ gophira_cap_march = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		tag = G74
+		OR = {
+			tag = G74
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
 		has_country_flag = gophira_march
 	}
 
@@ -1294,7 +1344,7 @@ gophira_4 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = G64
+			tag = G74
 			AND = {
 				tag = J84 #Taychendi Empire
 				was_tag = G74
@@ -1574,7 +1624,7 @@ gophira_5 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = G64
+			tag = G74
 			AND = {
 				tag = J84 #Taychendi Empire
 				was_tag = G74
