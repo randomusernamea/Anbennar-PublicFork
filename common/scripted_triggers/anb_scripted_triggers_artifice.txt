@@ -754,7 +754,6 @@ artificery_locked_artificery_mode = {
 		OR = {
 			is_or_was_tag = { tag = I98 } #Allclan
 			is_or_was_tag = { tag = Y20 } #Feiten
-			is_or_was_tag = { tag = A05 } #Reveria
 			is_or_was_tag = { tag = R62 } #The Command
 			is_or_was_tag = { tag = Z54 } #Karakhanbar
 			is_or_was_tag = { tag = A06 } #Nimscodd
@@ -767,6 +766,7 @@ artificery_locked_artificery_mode = {
 	}
 }
 
+#Tags that can choose artificery via MT
 artificery_mt_locked_mode = {
 	custom_trigger_tooltip = {
 		tooltip = artifice_mt_locked_mode_tt
@@ -802,6 +802,7 @@ artificery_tag_needs_artificers = {
 		OR = {
 			is_or_was_tag = { tag = A99 } #Varaine
 			is_or_was_tag = { tag = G27 } #Brelar
+			is_or_was_tag = { tag = A05 } #Reveria
 		}
 	}
 }
