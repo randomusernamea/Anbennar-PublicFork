@@ -2310,6 +2310,8 @@ kob_1_c = {
 					duration = -1
 				}
 			}
+			custom_tooltip = tech_sharing_tt 
+
 			every_subject_country = {
 				limit = {
 					OR = {
@@ -2317,7 +2319,6 @@ kob_1_c = {
 						tag = H24
 					}
 				}
-				custom_tooltip = tech_sharing_tt 
 				hidden_effect = {
 					subject_ascension_effect = yes
 				}
