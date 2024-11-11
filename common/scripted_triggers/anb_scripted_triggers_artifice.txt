@@ -719,9 +719,85 @@ is_not_researching_invention = {
 	}
 }
 
-artifice_forced_mixed_mode = {
+artificery_locked_mage_mode = {
 	custom_trigger_tooltip = {
-		tooltip = artifice_forced_mixed_mode_tt
+		tooltip = artifice_locked_mage_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I46 } #Emerald Orc
+			AND = {
+				has_government_attribute = is_magocracy #magocracies are locked to mage only
+				NOT = { culture_group = eordan_ruinborn_elf } #eordan elves are mixed
+			}
+			has_ruler_flag = is_a_lich #everyone, including eordan elves, becomes mage only if a lich
+		}
 	}
-	has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+}
+
+artificery_locked_mixed_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_locked_mixed_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I02 } #Krakdhumvror goes mixed
+			is_or_was_tag = { tag = I20 } #Hul az krakazol goes mixed
+			is_or_was_tag = { tag = I12 } #orlghelovar is mixed
+			AND = {
+				culture_group = eordan_ruinborn_elf #Eordan Elves are mixed
+				NOT = { has_ruler_flag = is_a_lich }
+			}
+		}
+	}
+}
+
+artificery_locked_artificery_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_locked_artificery_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I98 } #Allclan
+			is_or_was_tag = { tag = Y20 } #Feiten
+			is_or_was_tag = { tag = A05 } #Reveria
+			is_or_was_tag = { tag = R62 } #The Command
+			is_or_was_tag = { tag = Z54 } #Karakhanbar
+			AND = {
+				has_government_attribute = is_technocracy #technocracies are locked to artificery_only
+				NOT = { is_or_was_tag = { tag = I12 } } #orlghelovar is mixed
+			}
+		}
+	}
+}
+
+artificery_mt_locked_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_mt_locked_mode_tt
+		OR = {
+			is_or_was_tag = { tag = A81 } #Giberd
+			is_or_was_tag = { tag = H16 } #Gemradcurt
+			is_or_was_tag = { tag = H74 } #Chaingrasper
+			is_or_was_tag = { tag = B39 } #Wyvernheart
+		}
+	}
+}
+
+artificery_tag_needs_mages = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_tag_needs_mages_tt
+		OR = {
+			is_or_was_tag = { tag = F69 } #Irkorzik
+			is_or_was_tag = { tag = I22 } #Gronstunad
+			is_or_was_tag = { tag = H81 } #Masked Butcher
+			is_or_was_tag = { tag = F71 } #Rakkaz
+			OR = {
+				has_ruler_modifier = witch_king_modifier
+				has_country_flag = witch_king_flag
+			}
+			has_country_flag = nsc_sun_elf_artificery 
+		}
+	}
+}
+
+artificery_tag_needs_artificers = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_tag_needs_artificers_tt
+		is_or_was_tag = { tag = A99 } #Varaine
+		is_or_was_tag = { tag = G27 } #Brelar
+	}
 }

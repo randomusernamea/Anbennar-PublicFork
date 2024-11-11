@@ -81,24 +81,39 @@ country_decisions = {
 		color = { 195 160 20 }
 		potential = {
 			ai = no
-			has_country_flag = artificery_unlocked
+			OR = {
+				has_country_flag = magic_artificery_artificery_only
+				AND = {
+					has_country_flag = magic_artificery_mage_only
+					has_institution = manufactories
+				}
+			}
 			NOT = { has_country_flag = magic_artificery_mixed }
-			NOT = { has_country_flag = artificery_change_mode_cooldown }
+			NOT = { has_country_flag = artificery_reset_mode }
+			artificery_locked_mage_mode = no
+			artificery_locked_artificery_mode = no
+			artificery_mt_locked_mode = no
 		}
 		allow = {
 			ai = no
-			has_country_flag = artificery_unlocked
+			OR = {
+				has_country_flag = magic_artificery_artificery_only
+				AND = {
+					has_country_flag = magic_artificery_mage_only
+					has_institution = manufactories
+				}
+			}
 			NOT = { has_country_flag = magic_artificery_mixed }
-			NOT = { has_country_flag = artificery_change_mode_cooldown }
+			NOT = { has_country_flag = artificery_reset_mode }
 			stability = 2
+			artificery_locked_mage_mode = no
+			artificery_locked_artificery_mode = no
+			artificery_mt_locked_mode = no
 		}
 		effect = {
 			add_stability = -3
-			set_country_flag = artificery_change_mode_cooldown
-			country_event = {
-				id = magic_artificery_setup.1
-			}
-
+			artifice_magic_switch_to_mixed_mode = yes
+			set_country_flag = artificery_reset_mode
 		}
 		ai_will_do = {
 			factor = 0
