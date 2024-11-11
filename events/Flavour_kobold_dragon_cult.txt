@@ -1591,7 +1591,7 @@ country_event = {
 						is_year = 1600
 					}	
 					had_country_flag = {
-						flag = met_aakhet
+						flag = unlocked_bronze_dragon_2_upgraded
 						days = 1825
 					}
 				}		
@@ -1911,7 +1911,7 @@ country_event = {
 						is_year = 1600
 					}
 					AND = {
-						owns = 4976
+						owns_or_subject_of = 4976
 						OR = {
 							NOT = { exists = Y85 }
 							Y85 = { is_subject_of = ROOT }
@@ -2864,7 +2864,7 @@ country_event = {
 						is_year = 1600
 					}	
 					had_country_flag = {
-						flag = met_aakhet
+						flag = unlocked_bronze_dragon_2_upgraded
 						days = 1825
 					}
 				}
@@ -3183,7 +3183,7 @@ country_event = {
 						is_year = 1600
 					}
 					AND = {
-						owns = 4976
+						owns_or_subject_of = 4976
 						OR = {
 							NOT = { exists = Y85 }
 							Y85 = { is_subject_of = ROOT }
