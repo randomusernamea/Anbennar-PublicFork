@@ -3695,6 +3695,7 @@ country_event = { #Brass aspect 2
 			SLOT = 2
 			UPGRADE = upgraded
 		}
+		hidden_effect = { set_country_flag = Y85_old_order_cb_flag }
 		add_casus_belli = {
 			type = cb_old_order
 			target = R62
