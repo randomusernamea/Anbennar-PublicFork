@@ -2915,13 +2915,6 @@ kob_3_c = {
 				tooltip = unlocked_gold_dragon_tt 
 				has_country_flag = unlocked_gold_dragon_3_upgraded
 			}
-			num_of_provinces_owned_or_owned_by_subjects_with = { #note: see if testers like this or if it's bloat
-				value = 1000 
-				OR = {
-					religion = kobold_dragon_cult
-					religion = drozma_tur
-				}
-			}
 		}
 
 		effect = {
