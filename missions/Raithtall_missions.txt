@@ -28,16 +28,7 @@ raithtall_1 = {
 
 			if = {
 				limit = { has_dlc = "Origins" }
-				custom_trigger_tooltip = {	#TODO - turn into a general trigger
-					tooltip = built_embassy_tt
-					any_owned_province = {
-						OR = {
-							has_province_modifier = seasonal_equal_embassy
-							has_province_modifier = seasonal_submit_embassy
-							has_province_modifier = seasonal_ignore_embassy
-						}
-					}
-				}
+				built_fey_embassy_trigger = yes
 			}
 			else = { has_estate_privilege = estate_church_land_rights }
 		}
@@ -410,7 +401,27 @@ raithtall_2 = {
 				limit = { has_any_fey_spring_aspect = no }
 				add_dip_power = -100
 			}
-			#TODO - add government reform triggers and corresponding effects
+			if = {
+				limit = { is_statists_in_power = yes } #Monarchist
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 20
+				}
+				change_estate_land_share = {
+					estate = estate_church
+					share = -2.5
+				}
+			}
+			else = { #Theocrats
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 20
+				}
+				change_estate_land_share = {
+					estate = estate_nobles
+					share = -2.5
+				}
+			}
 		}
 	}
 
@@ -529,13 +540,39 @@ raithtall_2 = {
 					add_base_manpower = 1
 					set_province_flag = raithtall_peitar_boost
 				}
-				#TODO - repeat three more times if the monarchy faction is in charge.
+				if = {
+					limit = { is_statists_in_power = yes } #Monarchist
+					random_owned_province = {
+						limit = {
+							culture = peitar
+							NOT = { has_province_flag = raithtall_peitar_boost }
+						}
+						add_base_manpower = 1
+						set_province_flag = raithtall_peitar_boost
+					}
+					random_owned_province = {
+						limit = {
+							culture = peitar
+							NOT = { has_province_flag = raithtall_peitar_boost }
+						}
+						add_base_manpower = 1
+						set_province_flag = raithtall_peitar_boost
+					}
+					random_owned_province = {
+						limit = {
+							culture = peitar
+							NOT = { has_province_flag = raithtall_peitar_boost }
+						}
+						add_base_manpower = 1
+						set_province_flag = raithtall_peitar_boost
+					}
+					add_country_modifier = { 
+						name = raithtall_chivalrous_knights
+						duration = -1  
+					}
+				}
 			}
-
-			add_country_modifier = {
-				name = raithtall_chivalrous_knights
-				duration = -1
-			}
+			
 		}
 	}
 }
@@ -912,7 +949,17 @@ raithtall_3 = {
 			}
 
 			custom_tooltip = raithtall_autumn_tolerance_tt
-			hidden_effect = { set_country_flag = raithtall_autumn_tolerance }	#TODO - upgrade province modifiers manually if they don't upgrade automatically
+			hidden_effect = { 
+				set_country_flag = raithtall_autumn_tolerance 
+				every_owned_province = {
+					limit = { has_province_modifier = estate_church_autumn_tolerance_mod }
+					add_province_modifier = {
+						name = estate_church_autumn_tolerance_mod_upgraded
+						duration = -1
+					}
+					remove_province_modifier = estate_church_autumn_tolerance_mod
+				}
+			}
 		}
 	}
 
@@ -1310,18 +1357,29 @@ raithtall_4 = {
 							NOT = { has_province_flag = raithtall_snecboth_boost }
 						}
 						if = {
-							limit = { is_prosperous = yes }
-							ROOT = { add_treasury = 20 }
+							limit = { is_statists_in_power = yes }
+							if = {
+								limit = { is_prosperous = yes }
+								ROOT = { add_treasury = 20 }
+							}
+							else = {
+								add_prosperity = 15
+							}
+							every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
 						}
 						else = {
-							add_prosperity = 15
+							if = {
+								limit = { is_prosperous = yes }
+								ROOT = { add_treasury = 25 }
+							}
+							else = {
+								add_prosperity = 20
+							}
+							every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
 						}
-						every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
 					}
 				}
 			}
-			
-			#TODO - boost the effect if the theocracy faction is in charge.
 			add_country_modifier = {
 				name = raithtall_winter_quelled
 				duration = -1
@@ -1463,18 +1521,18 @@ raithtall_5 = {
 					limit = {
 						check_variable = {
 							which = raithtall_winter_battle_won
-							value = 1
+							value = 8
 						}
 					}
 					custom_trigger_tooltip = {
 						tooltip = raithtall_0_winter_battles_won_tt	
-						always = no
+						always = yes
 					}
 				}
 				else = {
-					check_variable = {
-						which = raithtall_winter_battle_won
-						value = 8
+					custom_trigger_tooltip = {
+						tooltip = raithtall_0_winter_battles_won_tt	
+						always = no
 					}
 				}
 			}

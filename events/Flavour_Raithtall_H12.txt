@@ -108,8 +108,6 @@ country_event = {
 	option = { 
 		name = flavor_raithtall.4.a
 		custom_tooltip = raithtall_gelcolle_tt1
-		#H18 = { country_event = { id = flavor_raithtall.5 } }
-		#test
 		H18 = { country_event = { id = flavor_raithtall.5 days = 1 } }
 	}
 	option = { 
@@ -122,13 +120,11 @@ country_event = {
 			type = cb_vassalize_mission
 			months = 96
 		}
-		#H18 = { country_event = { id = flavor_raithtall.8 } }
-		#test
 		H18 = { country_event = { id = flavor_raithtall.8 days = 1 } }
 	}
 }
 
-country_event = {	#TODO - make the the event save the tag you got it from
+country_event = {
 	id = flavor_raithtall.5
 	title = flavor_raithtall.5.t
 	desc = flavor_raithtall.5.d
@@ -136,23 +132,57 @@ country_event = {	#TODO - make the the event save the tag you got it from
 	
 	is_triggered_only = yes
 	
-	option = { 	#TODO - fix AI weight for the options
+	option = {
 		name = flavor_raithtall.5.a
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 0.5
+				NOT = { trust = { who = H12 value = 50 }  }
+			}
+			modifier = {
+				factor = 0
+				army_strength = { who = H12 value = 1.5 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {	who = H12 value = 150 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {	who = H12 value = 200 }
+			}
+			modifier = {
+				factor = 2
+				trust = { who = H12 value = 75 }
+			}
+		}
 		custom_tooltip = raithtall_gelcolle_tt2
-		#H12 = { country_event = { id = flavor_raithtall.6 } }
-		#test
 		H12 = { country_event = { id = flavor_raithtall.6 days = 1 } }
 	}
-	option = { #TODO - fix AI weight for the options
+	option = {
 		name = flavor_raithtall.5.b
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 2
+				NOT = { has_opinion = {	who = H12 value = 50 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { trust = { who = H12 value = 40 }  }
+			}
+			modifier = {
+				factor = 100
+				army_strength = { who = H12 value = 1.5 }
+			}
+		}
 		custom_tooltip = raithtall_gelcolle_tt3
-		#H12 = { country_event = { id = flavor_raithtall.7 } }
-		#test
 		H12 = { country_event = { id = flavor_raithtall.7 days = 1 } }
 	}
 }
 
-country_event = {	#TODO - make the the event save the tag you got it from
+country_event = {
 	id = flavor_raithtall.6
 	title = flavor_raithtall.6.t
 	desc = flavor_raithtall.6.d
@@ -170,7 +200,7 @@ country_event = {	#TODO - make the the event save the tag you got it from
 	}
 }
 
-country_event = {	#TODO - make the the event save the tag you got it from
+country_event = {
 	id = flavor_raithtall.7
 	title = flavor_raithtall.7.t
 	desc = flavor_raithtall.7.d
@@ -191,7 +221,7 @@ country_event = {	#TODO - make the the event save the tag you got it from
 	}
 }
 
-country_event = {	#TODO - make the the event save the tag you got it from
+country_event = {
 	id = flavor_raithtall.8
 	title = flavor_raithtall.8.t
 	desc = flavor_raithtall.8.d
@@ -279,29 +309,61 @@ country_event = {
 	
 	option = {
 		name = flavor_raithtall.11.a
-		define_advisor = {
-			type = theologian
-			culture = selphereg
+		if = {
+			limit = { is_statists_in_power = yes }
+			define_advisor = {
+				type = theologian
+				culture = selphereg
+			}
 		}
-		#TODO - Make the advisor discounted depending on faciton balance
+		else = {
+			define_advisor = {
+				type = theologian
+				culture = selphereg
+				discount = yes
+			}
+		}
+		
 	}
 
 	option = {
 		name = flavor_raithtall.11.b
-		define_advisor = {
-			type = artist
-			culture = selphereg
+		if = {
+			limit = { is_statists_in_power = yes }
+			define_advisor = {
+				type = artist
+				culture = selphereg
+				discount = yes
+			}
 		}
-		#TODO - Make the advisor discounted depending on faciton balance
+		else = {
+			define_advisor = {
+				type = artist
+				culture = selphereg
+			}
+		}
+		
 	}
 
 	option = {
 		name = flavor_raithtall.11.c
-		define_advisor = {
-			type = philosopher
-			culture = selphereg
+		if = {
+			limit = { 
+				NOT = { statists_vs_orangists = 0.67 }
+				statists_vs_orangists = 0.33
+			}
+			define_advisor = {
+				type = philosopher
+				culture = selphereg
+				discount = yes
+			}
 		}
-		#TODO - Make the advisor discounted depending on faciton balance
+		else = {
+			define_advisor = {
+				type = philosopher
+				culture = selphereg
+			}
+		}
 	}
 }
 
