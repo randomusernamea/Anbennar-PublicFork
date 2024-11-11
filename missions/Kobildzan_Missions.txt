@@ -1007,6 +1007,9 @@ kob_1_b = {
 					}
 				}
 			}
+			ynn_superregion = {
+				add_permanent_claim = H24
+			}
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = green
                 SLOT = 2
@@ -2315,7 +2318,6 @@ kob_1_c = {
 					}
 				}
 				custom_tooltip = tech_sharing_tt 
-				# LEX will boil.
 				hidden_effect = {
 					subject_ascension_effect = yes
 				}
@@ -3119,9 +3121,6 @@ kob_5_c = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = sidaett_bjarnland_varheim_blodfjell_owned
-			}
 			sidaett_area = {
 				type = all 
 				custom_trigger_tooltip = {
@@ -3168,7 +3167,7 @@ kob_5_c = {
 			}			
 
 			custom_trigger_tooltip = {
-				tooltip = all_skaldhyrric_nations_insulted 
+				tooltip = all_skaldhyrric_nations_insulted_tt 
 				all_known_country = {
 					OR = {		
 						NOT = { religion = skaldhyrric_faith }

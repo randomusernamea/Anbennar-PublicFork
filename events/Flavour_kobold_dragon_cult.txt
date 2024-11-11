@@ -1398,28 +1398,7 @@ country_event = {
 					1361 = {
 						is_strongest_trade_power = ROOT
 					}
-					AND = {
-						dhenbasana_estuary_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
-						kharunyana_estuary_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
-						reanthung_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
+					owns_or_subject_of = 4420
 					}
 				}
 			}
@@ -2694,29 +2673,7 @@ country_event = {
 					1361 = {
 						is_strongest_trade_power = ROOT
 					}
-					AND = {
-						dhenbasana_estuary_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
-						kharunyana_estuary_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
-						reanthung_area = { 
-							type = all
-							OR = {
-								has_port = no 
-								owned_by = ROOT
-							}
-						}
-					}
+					owns_or_subject_of = 4420
 				}
 			}
 		}
@@ -3710,6 +3667,7 @@ country_event = { #Brass aspect 1
 			SLOT = 1
 			UPGRADE = upgraded
 		}
+		add_permanent_claim = 4420
 	}
 }
 
@@ -3897,6 +3855,7 @@ country_event = { #Bronze aspect 1
 			SLOT = 1
 			UPGRADE = upgraded
 		}
+		add_permanent_claim = 466
 	}
 }
 
@@ -4072,6 +4031,9 @@ country_event = { #Gold aspect 1
 			SLOT = 1
 			UPGRADE = upgraded
 		}
+		add_permanent_claim = 4871
+		add_permanent_claim = 4879
+		add_permanent_claim = 4976
 	}
 }
 
@@ -4112,6 +4074,7 @@ country_event = { #Gold aspect 2
 				subject_ascension_effect = yes
 			}
 		}
+		add_permanent_claim = 4323
 	}
 }
 
@@ -4174,6 +4137,7 @@ country_event = { #Notified about Ahati disaster
 		name = flavour_kobold_dragon_cult.25.a
 		trigger = { NOT = { has_global_flag = ahati_rebellion_succeeded } }
 		add_prestige = -5
+		add_permanent_claim = 466
 	}
 	option = {		
 		name = flavour_kobold_dragon_cult.25.b
