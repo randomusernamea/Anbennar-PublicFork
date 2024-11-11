@@ -394,7 +394,7 @@ subject_ascension_effect = {
 	if = { limit = { Z38 = { has_country_flag = kobildzan_the_protean_form } } set_country_flag = kobildzan_the_protean_form }
 	if = { limit = { Z38 = { has_country_flag = kobildzan_the_holiest_flesh } } set_country_flag = kobildzan_the_holiest_flesh }
 	set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
-	set_country_modifier = {
+	add_country_modifier = {
 		name = Z38_technological_union_of_north_aelantir 
 		duration = -1
 	}
