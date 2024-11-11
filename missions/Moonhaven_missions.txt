@@ -441,7 +441,7 @@ moonhaven_corinite_missions = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = A31_went_corinite
-				has_country_flag = A31_corinite
+				has_country_flag = A31_corin
 			}
 			religious_unity = 1
 			religion = corinite
@@ -554,6 +554,7 @@ moonhaven_corinite_missions = {
 			}
 			A45 = {
 				country_event = { id = A31_flavour.3 } 
+				custom_tooltip = A31_insight.9:0
 				add_country_modifier = {
 					name = "A31_damerian_development"
 					duration = 1825
