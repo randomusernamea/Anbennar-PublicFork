@@ -757,6 +757,8 @@ artificery_locked_artificery_mode = {
 			is_or_was_tag = { tag = A05 } #Reveria
 			is_or_was_tag = { tag = R62 } #The Command
 			is_or_was_tag = { tag = Z54 } #Karakhanbar
+			is_or_was_tag = { tag = A06 } #Nimscodd
+			is_or_was_tag = { tag = A19 } #Portnamm
 			AND = {
 				has_government_attribute = is_technocracy #technocracies are locked to artificery_only
 				NOT = { is_or_was_tag = { tag = I12 } } #orlghelovar is mixed
@@ -797,7 +799,9 @@ artificery_tag_needs_mages = {
 artificery_tag_needs_artificers = {
 	custom_trigger_tooltip = {
 		tooltip = artifice_tag_needs_artificers_tt
-		is_or_was_tag = { tag = A99 } #Varaine
-		is_or_was_tag = { tag = G27 } #Brelar
+		OR = {
+			is_or_was_tag = { tag = A99 } #Varaine
+			is_or_was_tag = { tag = G27 } #Brelar
+		}
 	}
 }
