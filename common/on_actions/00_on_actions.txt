@@ -4126,7 +4126,12 @@ on_adm_development = {
 
 	merfolk_dynamic_settlement_effect = yes
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 }
 
 # province
@@ -4145,7 +4150,12 @@ on_dip_development = {
 
 	owner = { accretive_path_naamjyut_chi_stacking_effect = { amount = 10 } }
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 
 }
 
@@ -4164,7 +4174,12 @@ on_mil_development = {
 	owner = { accretive_path_harimari_chi_stacking_effect = { amount = 10 } }
 	merfolk_dynamic_settlement_effect = yes
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 }
 
 on_overextension_pulse = {
