@@ -3,7 +3,19 @@ gophira_1 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		OR = {
+			tag = G64
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
+	} 
 
 	G74_a_throne_for_the_queen = {
 		icon = mission_a_crown
@@ -524,7 +536,19 @@ gophira_2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		OR = {
+			tag = G64
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
+	} 
 
 	G74_our_weapons_their_riders = {
 		icon = mission_the_tiger_triumphant
@@ -579,7 +603,19 @@ gophira_3 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		OR = {
+			tag = G64
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
+	} 
 
 	G74_rekindle_the_forges = {
 		icon = mission_smith
@@ -1256,7 +1292,19 @@ gophira_4 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		OR = {
+			tag = G64
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
+	} 
 
 	G74_a_relic_for_the_fort = {
 		icon = mission_magisterium_fold_one
@@ -1524,7 +1572,19 @@ gophira_5 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { tag = G74 } 
+	potential = {
+		OR = {
+			tag = G64
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G74
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G74
+			}
+		}
+	} 
 
 	G74_lean_on_the_warlords = {
 		icon = mission_noble_council
