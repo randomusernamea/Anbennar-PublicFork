@@ -3878,16 +3878,22 @@ railway_work = {
 					name = restored_rail
 					duration = -1
 				}
+				FROM = { add_prestige = 1 }
 				if = { 
 					limit = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
-							NOT = { has_country_modifier = no_notif_for_5_years }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
 						}
 					}
-					FROM = { country_event = { id = diggy.760 } }
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					}
 					province_event = { id = diggy.36 }
 				}
 				else_if = {
@@ -3904,7 +3910,6 @@ railway_work = {
 						rail = dwarovar_rail
 						speed = 1
 						cost = 1
-						prestige = 1
 					}
 				}
 			}
@@ -3915,16 +3920,22 @@ railway_work = {
 					name = advanced_rail
 					duration = -1
 				}
+				FROM = { add_prestige = 2 }
 				if = { 
 					limit = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
-							NOT = { has_country_modifier = no_notif_for_5_years }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
 						}
 					}
-					FROM = { country_event = { id = diggy.760 } }
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					}
 					province_event = { id = diggy.42 }
 				}
 				else_if = {
@@ -3941,7 +3952,6 @@ railway_work = {
 						rail = restored_rail
 						speed = 1.3
 						cost = 2
-						prestige = 1
 					}
 				}
 			}
@@ -3952,16 +3962,22 @@ railway_work = {
 					name = rocket_rail
 					duration = -1
 				}
+				FROM = { add_prestige = 2 }
 				if = { 
 					limit = {
 						FROM = { 
 							NOT = { has_country_flag = auto_build_rail }
 							NOT = { has_country_flag = never_auto_build_rail }
 							NOT = { has_country_modifier = temp_auto_build_rail }
-							NOT = { has_country_modifier = no_notif_for_5_years }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
 						}
 					}
-					FROM = { country_event = { id = diggy.760 } } 
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					} 
 					province_event = { id = allclan.99 }
 				}
 				else_if = {
@@ -3978,7 +3994,6 @@ railway_work = {
 						rail = advanced_rail
 						speed = 1.3
 						cost = 2
-						prestige = 2
 					}
 				}
 			}
