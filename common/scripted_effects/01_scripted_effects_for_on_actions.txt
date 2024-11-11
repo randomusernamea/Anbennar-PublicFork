@@ -3062,6 +3062,46 @@ on_battle_won_unit_effect = {
 			}
 		}
 	}
+	if = {
+		limit = { 
+			unit_owner = {
+				tag = Y17 #Gushuokguan
+				any_hired_mercenary_company = {
+					template = merc_rock_raiders
+					location = { province_id = FROM }
+				}
+			}
+			FROM = {
+				has_underground_terrain = yes
+			}
+		} 
+		unit_owner = {
+			set_country_flag = gushuokguan_rock_raiders_battle
+		}
+	}
+	if = {
+		limit = { 
+			unit_owner = {
+				tag = Y17 #Gushuokguan
+				any_hired_mercenary_company = {
+					template = merc_dacite_dragons
+					location = { province_id = FROM }
+				}
+			}
+			enemy_unit = {
+				unit_owner = {
+					tag = REB
+					is_rebel_type = spirit_swarms 
+				}
+			}
+		}
+		unit_owner = {
+			change_variable = {
+				which = gushuokguan_dacite_dragons_death_toll
+				which = land_units_killed
+			}
+		}
+	}
 }
 
 on_battle_lost_unit_effect = { #this triggers on every unit present 
@@ -3414,6 +3454,13 @@ on_battle_won_country_effect = {
 				id = flavor_stalbor.12
 				days = 7 #Need to wait a few days for 'NOT = { num_of_rebel_armies = 1 }' to trigger correctly
 			}
+		}
+	}
+	if = {
+		limit = { tag = Y17 } #Gushuokguan
+		change_variable = {
+			which = gushuokguan_battle_counter
+			value = 1
 		}
 	}
 }
@@ -7737,6 +7784,31 @@ startup_1444_effects = {
 		M02 = {
 			if = { limit = { ai = yes }
 				add_government_reform = dwarovar_squatter
+			}
+		}
+
+		#Gushuokguan
+		if = {
+			limit = { tag = Y17 } #Gushuokguan
+			set_variable = {
+				which = gushuokguan_rented_condottieri_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_battle_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_siege_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_scorched_earth_counter
+				value = 0
+			}
+			set_variable = {
+				which = gushuokguan_event_counter
+				value = 0
 			}
 		}
 	}
