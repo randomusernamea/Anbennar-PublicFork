@@ -1875,6 +1875,14 @@ estate_adventurers_heroes_in_the_army = {
 			infantry_power = 0.1
 		}
 	}
+	conditional_modifier = {
+		trigger = {
+			mission_completed = legacy_of_the_wvyern
+		}
+		modifier = {
+			adventurers_loyalty_modifier = 0.2
+		}
+	}
 	ai_will_do = {
 		factor = 5
 		modifier = {
@@ -14437,5 +14445,132 @@ estate_nobles_ironblood_officer_corp = { #gophira
 	}
 	ai_will_do = {
 		factor = 100
+	}
+}
+
+
+#Wyvernheart
+estate_wyvernheart_culture_of_the_heart = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 0
+	influence = 0.1
+	loyalty = 0.05
+	land_share = 5
+	is_valid = { mission_completed = the_hearter_homeland }
+	can_select = { mission_completed = the_hearter_homeland }
+	on_granted = {
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_tta
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_ttb
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				culture = ROOT
+			}
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+			add_province_modifier = {
+				name = estate_wyvernheart_culture_of_the_heart_mod
+				duration = -1
+			}
+		}
+		else = {
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
+			add_province_modifier = {
+				name = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+				duration = -1
+			}
+		}
+	}
+	on_revoked = {
+	}
+	on_revoked_province = {
+	}
+	on_invalid = {
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				culture = ROOT
+			}
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_mod
+		}
+		else = {
+			remove_province_modifier = estate_wyvernheart_culture_of_the_heart_weak_culture_mod
+		}
+	}
+	penalties = {
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+	benefits = {
+		global_missionary_strength = 0.01
+	}
+	can_revoke = {
+		always = no
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_wyvernheart_subservient_artificers = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 0
+	influence = -0.05
+	loyalty = -0.05
+	land_share = 0
+	is_valid = { mission_completed = welcoming_the_immoral }
+	can_select = { mission_completed = welcoming_the_immoral }
+	on_granted = {
+		custom_tooltip = estate_wyvernheart_subservient_artificers_tt
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		same_culture_advisor_cost = -0.10
+		monthly_bloodbrand_power = 0.25
+	}
+	can_revoke = {
+		always = no
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_wyvernheart_floodborn_council = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 10
+	influence = 0.25
+	loyalty = 0.10
+	land_share = 0
+	is_valid = { mission_completed = the_red_flood }
+	can_select = { mission_completed = the_red_flood }
+	on_granted = {
+		custom_tooltip = estate_wyvernheart_floodborn_council_tt
+		custom_tooltip = add_magic_study_modifier_25_tt
+		update_magic_study_experience_modifier = { value = 25 }  #MAGICREWORK
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		monthly_bloodbrand_power = 0.25
+		#+1 movement for war wizards #included in the wyvernheart war warwizard scripted effect
+	}
+	can_revoke = {
+		always = no
+	}
+	ai_will_do = {
+		factor = 1
 	}
 }

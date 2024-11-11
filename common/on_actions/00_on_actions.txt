@@ -10232,6 +10232,8 @@ on_five_year_pulse_4 = {
 		precursor_relics.4
 		precursor_relics.5
 		precursor_relics.6
+		flavour_wyvernheart.300 #Council flavour event manager
+		flavour_wyvernheart.310 #Wyvernheart Estate agenda manager
 	}
 
 	random_events = { #for all migration/pop change events
@@ -10908,6 +10910,40 @@ on_province_culture_changed = {
             change_culture = metobesebi
         }
     }
+	if = {
+		limit = {
+			owner = {
+				is_or_was_tag = { tag = B39 }
+				NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			}
+		}
+		random_list = {
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_401_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.401
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_402_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.402
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_403_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.403
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_404_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.404
+				}
+			}
+		}
+	}
 }
 
 
@@ -11504,6 +11540,20 @@ on_province_owner_change = {
 				808 = {
 					add_random_development = 1
 				}
+			}
+		}
+	}
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = { tag = B39 }
+			fast_has_pop_of_race = { race = orcish }
+		}
+		owner = {
+			change_variable = {
+				which = acquired_orcish_pops
+				value = 1
 			}
 		}
 	}
@@ -15903,6 +15953,17 @@ on_adm_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_dip_exploited = {
@@ -15962,6 +16023,17 @@ on_dip_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_mil_exploited = {
@@ -16021,6 +16093,17 @@ on_mil_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+	
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_raze = {
