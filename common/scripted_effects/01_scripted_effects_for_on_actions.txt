@@ -1656,6 +1656,24 @@ on_new_monarch_effect = { #1.35
 		}
 		country_event = { id = fangaulan_pantheon.1 }
 	}
+
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					tag = J72
+					has_ruler_flag = gophira_heir
+					G74 = { has_ruler_flag = gophira_heir }
+				}
+				AND = {
+					tag = G74
+					has_ruler_flag = gophira_heir
+					J72 = { has_ruler_flag = gophira_heir }
+				}
+			}
+		}
+		G74 = { country_event = { id = gophira.9 } }
+	}
 }
 
 anb_scripted_effects_for_ruler_death  = {
@@ -2417,9 +2435,7 @@ on_province_religion_changed_effect = {
 			}
 		}
 	}
-	
-	kobold_dragon_cult_conversion = yes
-	
+		
 	# Plumstead
 	if = {
 		limit = { religion = ravelian culture = epednar owner = { tag = H61 religion = ravelian } }
@@ -3186,6 +3202,13 @@ on_battle_won_country_effect = {
 			}
 		}
 	}
+	if = {	#for pdx num_of_battles scripted trigger. need to set the country_flag to begin counting
+		limit = { has_country_flag = count_battles_won }
+		change_variable = {
+			which = num_of_battles_won_var
+			value = 1
+		}
+	}
 	if = {
 		limit = { religion = goblinic_shamanism  NOT = { FROM = { OR = { tag = REB tag = NAT } } } }
 		FROM = { goblinic_shamanism_event = yes } # Fires events for a cult spreading upon winning a battle
@@ -3209,7 +3232,6 @@ on_battle_won_country_effect = {
 		}
 
 		#Anbennar
-		kobold_dragon_cult_won_battle = yes
 		centaur_battle_won = yes
 	}
 	if = { limit = { has_country_flag = has_nsc_disaster }
@@ -4654,6 +4676,95 @@ on_war_declaration_effect = {
 		}
 		clr_country_flag = active_frenzy_flg
 	}
+	if = { #Kherka
+		limit = { has_country_flag = G48_odegaster_cogemos_enabled }
+		add_country_modifier = {
+			name = G48_odegaster_cogemos
+			duration = 1825 #Days
+		}
+	}
+	if = {
+		limit = {
+			tag = A81
+		}
+		if = {
+			limit = {
+				FROM = {
+					owns = 234 #Damescrown
+				}
+			}
+			234 = {
+				remove_province_modifier = giberd_damescrown_wind_tower
+				owner = {
+					add_opinion = {
+						who = ROOT
+						modifier = giberd_wind_tower_opinion_up
+						years = 20
+					}
+				}
+			}
+			remove_country_modifier = giberd_damescrown_trade
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owns = 9 #Moonisle
+				}
+				has_country_modifier = giberd_paying_the_moonisle
+			}
+			265 = {
+				change_trade_goods = cloth
+				clr_province_flag = permanent_damestear
+				remove_province_modifier = giberd_damestear_port_high
+			}
+			remove_country_modifier = giberd_paying_the_moonisle
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owns = 280 #Estallen
+				}
+				has_country_modifier = giberd_estallen_share
+			}
+			remove_country_modifier = giberd_estallen_share
+			home_trade_node_effect_scope = {
+				remove_trade_modifier = {
+					who = ROOT
+					key = giberd_estallen_trade_deal
+				}
+				remove_trade_modifier = {
+					who = A93
+					key = giberd_estallen_trade_deal
+				}
+				every_trade_node_member_province = {
+					limit = { owned_by = A93 }
+					remove_province_modifier = giberd_business_ventures
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owns = 268 #Bennon
+				}
+				has_country_flag = giberd_bennon_forts_explode
+			}
+			clr_country_flag = giberd_bennon_forts_explode
+			268 = {
+				owner = {
+					every_owned_province = {
+						limit = {
+							fort_level = 1
+						}
+						add_province_modifier = {
+							name = giberd_options_war_bennon
+							duration = 1825
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 remove_all_age_of_discovery_modifiers = {
@@ -5199,12 +5310,17 @@ on_colony_finished_effect = {
 			has_global_flag = urdea_samrad_released
 			colonial_region = colonial_haraf
 			owner = { overlord_of = U42 }
-			U42 = { is_subject_of_type = colony }
+			OR = {
+				U42 = { is_subject_of_type = colony }
+				U42 = { is_subject_of_type = crown_colony }
+				U42 = { is_subject_of_type = private_enterprise }
+				U42 = { is_subject_of_type = self_governing_colony }
+			}
 		}
 		cede_province = U42
 	}
 	
-	#Saraeddun CN
+	#Seraeddun CN
 	if= {
 		limit = {
 			OR = {
@@ -5212,7 +5328,12 @@ on_colony_finished_effect = {
 				province_group = fograc_provinces
 			}
 			owner = { overlord_of = U43 }
-			U43 = { is_subject_of_type = colony }
+			OR = {
+				U43 = { is_subject_of_type = colony }
+				U43 = { is_subject_of_type = crown_colony }
+				U43 = { is_subject_of_type = private_enterprise }
+				U43 = { is_subject_of_type = self_governing_colony }
+			}
 		}
 		add_core = U43
 		cede_province = U43
@@ -6096,8 +6217,6 @@ on_main_war_won_effect = {
 	g27_boats_uprising_check_effect = yes
 	#feast_of_the_gods stuff
 	feast_of_the_gods_won_war_count = yes
-	#dragon cult
-	kobold_dragon_cult_won_war = yes
 	if = {
 		limit = {
 			religion = autumn_court
@@ -6339,8 +6458,6 @@ on_general_recruited_effect = {
 		limit = { has_estate_privilege = estate_lion_command_war_room_rights }
 		add_legitimacy = 1
 	}
-	
-	kobold_dragon_cult_recruited_leader = yes
 	
 	if = {
 		limit = {
@@ -7346,6 +7463,23 @@ startup_1444_effects = {
 			}
 		}
 		
+		# Dwarovar cheap colonies modifier and event to make them start colonizing
+		if = {
+			limit = {
+				OR = {
+					tag = M01 #Grizehud
+					tag = M02 #Dursikari
+				}
+			}
+			add_country_modifier = {
+				name = squatter_cheap_colonies
+				duration = 9125 #25 years
+			}
+			country_event = {
+				id = diggy.759
+			}
+		}
+		
 		#Effelai Worship Startup Events
 		if = {
 			limit = {
@@ -7450,7 +7584,7 @@ startup_1444_effects = {
 					OR = {
 						superregion = rahen_superregion
 						superregion = yanshen_superregion
-						superregion = south_haless_superregion
+						superregion = vimdatrong_superregion
 					}
 				}
 			}
@@ -7584,6 +7718,18 @@ startup_1444_effects = {
 				days = 30
 			}
 		}
+
+		if = {	#Gophira starting event
+			limit = { tag = G74 }
+			country_event = { id = gophira.1 }
+		}
+		
+		#Making Dursikari non-migratory if AI to stop them from blocking player
+		M02 = {
+			if = { limit = { ai = yes }
+				add_government_reform = dwarovar_squatter
+			}
+		}
 	}
 }
 
@@ -7644,9 +7790,6 @@ on_province_owner_change_effect = {
 		}
 		4462 = { owner = { country_event = { id = rahen.1 days = 60 } } } #delay so ai attitude switches from unknown
 	}
-	
-	#Anbennar
-	kobold_dragon_cult_conquered_province = yes
 
 	if = {
 		limit = {
@@ -9973,6 +10116,23 @@ on_province_owner_change_effect = {
 			}
 		}
 	}
+	if = { #Giberd
+		limit = {
+			owner = {
+				has_country_flag = giberd_gnomes_ae
+			}
+			OR = {
+				has_gnomish_majority_trigger = yes
+				has_gnomish_minority_trigger = yes
+			}
+		}
+		every_known_country = {
+			add_aggressive_expansion = {
+				who = ROOT
+				value = -5
+			}
+		}
+	}
 	else_if = { #Raheni holy sites
 		limit = {
 			province_group = raheni_school_origin_provinces
@@ -10033,6 +10193,19 @@ on_province_owner_change_effect = {
 		add_province_modifier = {
 			name = gov_empire_heretic
 			duration = -1
+		}
+	}
+	#Kherka Stuff
+	if = {
+		limit = {
+			province_id = 2666
+			owner = { has_country_flag = G48_hfaesban_conquer }
+		}
+		owner = {
+			add_country_modifier = {
+				name = G48_magic_and_steel
+				duration = -1
+			}
 		}
 	}
 }
