@@ -10121,15 +10121,16 @@ on_province_owner_change_effect = {
 			owner = {
 				has_country_flag = giberd_gnomes_ae
 			}
-			OR = {
-				has_gnomish_majority_trigger = yes
-				has_gnomish_minority_trigger = yes
-			}
+			fast_has_pop_of_race = { race = gnomish }
+		}
+		owner = {
+			save_event_target_as = owner_event_target
 		}
 		every_known_country = {
 			add_aggressive_expansion = {
-				who = ROOT
+				who = event_target:owner_event_target
 				value = -5
+				apply_calc = no
 			}
 		}
 	}
