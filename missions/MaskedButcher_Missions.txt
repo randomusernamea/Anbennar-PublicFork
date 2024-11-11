@@ -1895,6 +1895,13 @@ maskedbutcher_missions_4d = {
 						NOT = { has_province_modifier = blorc_plunder_camp has_province_modifier = blorc_war_camp }
 					}
 				}
+				AND = {
+					continent = serpentspine
+					has_great_project = {
+						type = any
+						tier = 0
+					}
+				}
 			}
 		}
 
