@@ -172,6 +172,19 @@ l_english:
  J84_5_13_the_greatest_hunt_desc: "PLACEHOLDER UNTIL INSYAA\n\nOur ancestors certainly had a sense of monumentality. The glory of Nanru Nakar showed us that a long time ago, but the monumental constructions of Insyaa remind us clearly.\n\nNone remind us more than their living constructions. The Holohana, gigantic beasts that move like mountains, shake the earth with every step. They seem immortal – divine – and yet, we have found their corpses.\n\nThat only means one thing – these Holohana offer the greatest hunt imaginable. It is time to sharpen our blades."
 
  #Events
+ taychendi_empire_events.0.t: "Changing Style of Rule"
+ taychendi_empire_events.0.desc: "It is normal for Taychendi rulers to model their reigns off those of past rulers, so that they have both a guideline for which policies to pursue in order to gain their own place in the heavens, and so that they can patronise a solid selection of rulers to help them do so. However, Mihaela is a vampire – possessing immortality, she will never see the gates of Dhivumanhu.\n\nInstead, her religious duty lies in her role of facilitating the apotheosis of her non-vampiric subjects. To that end, the style of her rule, and therefore the gods she patronises, encourages her subjects to follow that same path to apotheosis – naturally, switching up the style of her rule would be advantageous in dictating the direction of our empire."
+ taychendi_empire_events.0.none: "Do not change ruler style."
+ taychendi_empire_events.0.a: "Change style to the Temperate"
+ taychendi_empire_events.0.b: "Change style to the Prosperous"
+ taychendi_empire_events.0.c: "Change style to the Patron"
+ taychendi_empire_events.0.d: "Change style to the Eminence"
+ taychendi_empire_events.0.e: "Change style to the Conqueror"
+ taychendi_empire_events.0.f: "Change style to the Dreamer"
+ taychendi_empire_events.0.g: "Change style to the Dynast"
+ taychendi_empire_events.0.h: "Change style to the Universalist"
+ taychendi_empire_events.0.i: "Change style to the Vainglorious"
+ 
  taychendi_empire_events.1.t: "Fate of the Chendhya"
  taychendi_empire_events.1.da: "The Grandmaster, kneeling, bowed his head low as he finished his appeal. The Bloodcloaks arrayed behind him in the throne room, faces hidden behind their plate-and-mail helmets, shrouded in capes of dark red cloth, bowed in unison as well. On the millennial anniversary of the Ruin, Olhokar the Fortuitous had received a similar appeal – to grant the Brotherhood of the Bloody Cloak stewardship of the Chendhya.\n\nToday, the [Root.Monarch.GetTitle] was flanked by two trusted warlords – Teshekar Takasangamar stood to one side, Andyzha Vakyrlana, of Darkalyndar, to the other. Teshekar leaned in first. “These elves are noble, [Root.Monarch.GetTitle]. They guarded the frontier for centuries – even during Gophira’s fall, they upheld their sacred vows, never took sides! My family have sent many of our members to join their ranks – I know they’ll make good stewards, loyal and true.”\n\nAndzyha scoffed at that. “These Bloodcloaks are villains, renegades! Simply the worst people imaginable! They use their “vows” as excuses to terrorise innocent Chendhyans for fun – if “protecting the steppe” means riding around cutting tents, slaughtering livestock and whisking away women and children as slaves, then they “protect” very well indeed!”\n\n“Slander!” the Grandmaster called, as he rose to challenge Andyzha’s words. “We work only to protect Taychend from the Chendhyan hordes! For fun? You think we exact pleasure from our work?” When the warlord of Darkalyndar ostentatiously mouthed a “yes”, the Grandmaster drew the Greatsabre hanging on his back. “The steel of vengeance knows no pleasure, you barbarous, cat-riding whore–! I’ll have your–!”\n\n“Enough!” [Root.Monarch.GetName] stood suddenly, and the hall calmed at an instant. The Grandmaster shrunk back at the admonishment. “The Brotherhood’s appeal…”"
  taychendi_empire_events.1.db: "From Ebenanth Starshear’s Western Expedition, to the intervention of the Three Tribes in the Lanahine War, the pacification campaigns of the Mudaliar Empire, or Darakash Threadsworn’s stunning expedition through the steppe, Taychendi-Chendhyan history was as bloody as it was storied – and stagnant. Then, Ultarlan the Decimator arose.\n\nUltarlan united the Chendhyan tribes, and over the course of a decade conquered all Taychend. Though he was assassinated soon after, and his son Geladhlan – variously known as both “the Stoneburner” and “the Emancipator” – would fall victim to inter-tribal feuds, his empire collapsing with his death, the leftover Chendhyan kingdoms – Ezhudars – remained in power for decades. It would be these remnant kingdoms that would truly see Chendhyans adapt to Taychendi ways.\n\nBy the time Olhokar the Fortuitous rose and swept the remnant kingdoms away, a significant proportion of the Chendhyans in Taychend had adopted Taychendi religion, fighting wars for glory rather than simply defence. Most importantly, they had also adopted slavery – though they would never stoop so low as to enslave other Chendhyans, these “Chainforger” Chendhyans became active participants in the Andeiosian slave trade, selling Taychendi or Kheionai captives taken in raids to whoever would buy them.\n\nBe it the Ezhudar of Zaernmaera, who ravaged the Taychendi frontier in the early 1400s, Darkalyndar, who have served the Gophirans faithfully for centuries, or the Haebyziae tribe, who formed the backbone of Oremvand’s military, these Chainforger Chendhyans have proven themselves powerful and amenable to our ways time and time again. Perhaps we can cultivate this strength, and either give them more autonomy or sponsor the further adoption of Taychendi practices among their people?"
@@ -534,11 +547,8 @@ l_english:
  J84_urban_boom: "Urban Boom"
  desc_J84_urban_boom: "§Y25%§! chance to gain §G2§! dev points on click"
  J84_ravelian_resources: "Ravelian Resources"
- desc_J84_ravelian_resources: "Grants §G+5§! Artifice Capacity"
  J84_artificer_aided_colonisation: "Artificer-Aided Colonisation"
- desc_J84_artificer_aided_colonisation: "Grants §R-20§! Artifice Capacity"
  J84_artificery_unleashed: "Artificery Unleashed"
- desc_J84_artificery_unleashed: "Grants §R-40§! Artifice Capacity"
  J84_disassembling_windward: "Disassembling Windward"
  desc_J84_disassembling_windward: "Grants §R-2§! Windward Level"
  J84_disassembled_windward: "Disassembled Windward"
@@ -600,7 +610,6 @@ l_english:
  J84_soldiers_households_buff: "Improved Soldier's Households"
  desc_J84_soldiers_households_buff: "This modifier will be lost if the §YSoldier's Households§! in this province is §Rdestroyed§!"
  J84_trade_station_buff: "Improved Trade Station"
- desc_J84_trade_station_buff: "Grants §G+2§! Artifice Capacity"
  J84_free_accepted_orc_culture: "Accepted Orc Culture"
  desc_J84_free_accepted_orc_culture: "This modifier will be removed if §YOzgar Orc§! becomes no longer accepted"
  J84_orcs_in_the_mines: "Orcs in the Mines"
@@ -729,6 +738,9 @@ l_english:
  use_starshear_title: "Wield Starshear"
  use_starshear_desc: "The united Starshear, the powerful Precursor relic once wielded by Ebenanth, the First Emperor, is now under our control. Now, we can wield its power against our enemies, annihilating any fortification that dares to stand in our way."
 
+ change_rule_style_title: "Change Ruler Style"
+ change_rule_style_desc: "As Mihaela is a vampire, she cannot die – therefore, should we wish to change the gods we patronise, and therefore our style of rule, Mihaela will have to make a concerted effort to do so."
+
  #Province Groups
  J84_cannor_nuke_red: ""
  J84_cannor_nuke_orange: ""
@@ -745,6 +757,7 @@ l_english:
 
  #Flags
  J84_used_starshear_flag: "Used Starshear"
+ J84_changed_rule_style_flag: "Changed Style of Rule"
 
  #Custom Tooltips
  enabled_patron_ruler_style_tt: "Gain the §GPatron§! Ruler Style:"
@@ -765,8 +778,8 @@ l_english:
  J84_colonialism_yes_tt: "£yes£ If §YColonialism§! hasn't spawned the following effects happen:"
  J84_expelling_elves_no_tt: "£no£ If §YExpelling§! or §YPurging§! Elves the following effects happen:"
  J84_expelling_elves_yes_tt: "£yes£ If §YExpelling§! or §YPurging§! Elves the following effects happen:"
- J84_oren_enabled_no_tt: "£no£ If §YOren Nayiru§! exists are there are §Y5§! Oren Nayiru provinces that aren't Reformation Centers, they will convert to §GTaychendi Hero Worship§!"
- J84_oren_enabled_yes_tt: "£yes£ If §YOren Nayiru§! exists are there are §Y5§! Oren Nayiru provinces that aren't Reformation Centers, they will convert to §GTaychendi Hero Worship§!"
+ J84_oren_enabled_no_tt: "£no£ If §YOren Nayiru§! exists and there are §Y5§! Oren Nayiru provinces that aren't Reformation Centers, they will convert to §GTaychendi Hero Worship§!"
+ J84_oren_enabled_yes_tt: "£yes£ If §YOren Nayiru§! exists and there are §Y5§! Oren Nayiru provinces that aren't Reformation Centers, they will convert to §GTaychendi Hero Worship§!"
  J84_plant_growth_tt: "Our mages have cast any plant growth spell, and it is affecting at least one owned province."
  J84_agricultural_revolution_tt: "Every §YGrain§!, §YWine§!, and §YFish§! province in §YTaychend§! with §Y6§! Production and a §YChurch§! has the following effects happen:"
  J84_farm_estates_tt: "For every province with a §YFarm Estate§! in §YTaychend§! gain §G3,000§! Manpower"
@@ -804,7 +817,6 @@ l_english:
  J84_effelai_bloom_ended_tt: "The §YEffelai Bloom§! has Ended"
  J84_aelantir_claims_tt: "§Y[Root.GetName]§! gains a permanent claim on §YAelantir§!"
  J84_subjugate_aelantir_tt: "Gain a §GSubjugation§! Casus Belli on every country with their capital on §YAelantir§!"
- J84_has_3_military_artifice_intentions_tt: "Have §Y3§! Active Military Artificer Inventions"
  J84_chose_yodhan_no_tt: "£no£ If previously chose '§YThe Heirs of Yodhan§!' modifier, it upgrades to become the following:"
  J84_chose_yodhan_yes_tt: "£yes£ If previously chose '§YThe Heirs of Yodhan§!' modifier, it upgrades to become the following:"
  J84_chose_oremvand_no_tt: "£no£ If previously chose '§YThe Oremvandian Way§!' modifier, it upgrades to become the following:"
@@ -840,8 +852,6 @@ l_english:
  J84_ravelian_tolerated_tt: "\nEvery current and future §YRavelian§! province have the following effects happen:"
  J84_thw_rise_up_tt: "\n§R15§! §YTaychend§! provinces have the following effects happen:"
  J84_thw_rise_up_more_tt: "§R30§! §YTaychend§! provinces have the following effects happen:"
- J84_5_artificer_capacity_tt: "§G+5§! Artificer Capacity"
- J84_20_artificer_capacity_tt: "§R-20§! Artificer Capacity"
  J84_40_artificer_capacity_tt: "§R-40§! Artificer Capacity"
  J84_largest_ravel_like_tt: "Largest §YRavelian§! Country:\n      Opinion of §Y[Root.GetName]§! is at least §Y100§!."
  J84_not_researching_artifice_tt: "Is NOT researching an §YArtifice Invention§!"
@@ -878,4 +888,5 @@ l_english:
  J84_cannor_hates_you_tt: "\nEvery country with their capital in §YCannor§! have the following effects happen:"
  J84_haless_hates_you_tt: "\nEvery country with their capital in §YHaless§! have the following effects happen:"
  J84_set_vampires_tt: "The following effects will happen in a couple days:"
+ J84_25_percent_artifice_capacity_tt: "Gain §G+25%§! Artificer Capacity Permanently\n"
  J84_thank_you_tt: ""

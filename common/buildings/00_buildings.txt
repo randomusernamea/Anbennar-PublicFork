@@ -2509,7 +2509,6 @@ tradecompany = {
 				name = J84_trade_station_buff
 				duration = -1
 			}
-			FROM = { mission_reward_artifice_points_2 = yes }
 		}
 	}
 
@@ -2535,7 +2534,6 @@ tradecompany = {
 				trade_goods = precursor_relics
 			}
 			remove_province_modifier = J84_trade_station_buff
-			FROM = { debuff_artifice_points_2 = yes }
 		}
 	}
 	on_obsolete = {

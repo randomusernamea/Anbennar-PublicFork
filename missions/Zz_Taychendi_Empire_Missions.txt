@@ -397,13 +397,37 @@ J84_1_missions = {
 		}
 
 		provinces_to_highlight = { 
-			NOT = { owned_by = ROOT }
-			superregion = effelai_superregion
-			ROOT = {
-				NOT = {
-					num_of_owned_provinces_with = {
-						value = 100
-						superregion = effelai_superregion
+			OR = {
+				AND = {
+					NOT = { owned_by = ROOT }
+					superregion = effelai_superregion
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 100
+								superregion = effelai_superregion
+							}
+						}
+					}
+				}
+				AND = {
+					NOT = { owned_by = ROOT }
+					OR = {
+						region = leechdens_region
+						region = soruin_region
+						region = west_effelai_region
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 20
+								OR = {
+									region = leechdens_region
+									region = soruin_region
+									region = west_effelai_region
+								}
+							}
+						}
 					}
 				}
 			}
@@ -413,6 +437,14 @@ J84_1_missions = {
 			num_of_owned_provinces_with = {
 				value = 100
 				superregion = effelai_superregion
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				OR = {
+					region = leechdens_region
+					region = soruin_region
+					region = west_effelai_region
+				}
 			}
 			OR = {
 				custom_trigger_tooltip = {
@@ -455,7 +487,6 @@ J84_1_missions = {
 					remove_country_modifier = J84_plants_vs_warlords
 					remove_country_modifier = J84_artificer_aided_colonisation
 					remove_country_modifier = J84_artificery_unleashed
-					country_event = { id = taychendi_empire_events.0 days = 1 }
 				}
 			}
 			else = { custom_tooltip = J84_effelai_ended_no_tt }
@@ -1480,9 +1511,11 @@ J84_2_missions_part_2 = {
 					amount = 25
 				}
 			}
-			trading_bonus = { trade_goods = grain value = yes }
-			trading_bonus = { trade_goods = wine value = yes }
-			trading_bonus = { trade_goods = fish value = yes }
+			OR = {
+				trading_bonus = { trade_goods = grain value = yes }
+				trading_bonus = { trade_goods = wine value = yes }
+				trading_bonus = { trade_goods = fish value = yes }
+			}
 			manpower = 500
 			all_country = {
 				OR = {
@@ -2361,29 +2394,7 @@ J84_3_missions = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = J84_has_3_military_artifice_intentions_tt
-				calc_true_if = {
-					amount = 3
-					has_estate_privilege = artifice_invention_portable_turrets
-					has_estate_privilege = artifice_invention_sparkdrive_rifles
-					has_estate_privilege = artifice_invention_artificer_exo_arms
-					has_estate_privilege = artifice_invention_vorpal_bullets
-					has_estate_privilege = artifice_invention_magic_missile_deployer
-					has_estate_privilege = artifice_invention_commercial_sky_galleons
-					has_estate_privilege = artifice_invention_wandlocks
-					has_estate_privilege = artifice_invention_balloonboost_packs
-					has_estate_privilege = artifice_invention_war_golems
-					has_estate_privilege = artifice_invention_prototype_tanks
-					has_estate_privilege = artifice_invention_arcane_blaster
-					has_estate_privilege = artifice_invention_black_damestear_bullets
-					has_estate_privilege = artifice_invention_artillery_autoloader
-					has_estate_privilege = artifice_invention_bioartificed_ascension
-					has_estate_privilege = artifice_invention_personal_mageshields
-					has_estate_privilege = artifice_invention_military_sky_galleons
-					has_estate_privilege = artifice_invention_damestear_reactor_megacannon
-				}
-			}
+			num_military_artifice_inventions_discovered = { VAL = 3 }
 			num_of_rajput = 25
 			OR = {
 				AND = {
@@ -2405,6 +2416,11 @@ J84_3_missions = {
 		}
 
 		effect = {
+			custom_tooltip = J84_25_percent_artifice_capacity_tt
+			hidden_effect = {
+				set_country_flag = J84_increased_percent_artifice_capacity_flag
+				update_artifice_points = yes
+			}
 			if = {
 				limit = { has_country_modifier = J84_the_heirs_of_yodhan_1 }
 				custom_tooltip = J84_chose_yodhan_yes_tt
@@ -2452,6 +2468,8 @@ J84_3_missions = {
 					duration = -1
 				}
 			}
+
+			
 		}
 	}
 
@@ -3515,9 +3533,15 @@ J84_4_missions = {
 				amount = 25
 			}
 			production_leader = { trade_goods = precursor_relics }
-			trading_bonus = {
-				trade_goods = damestear
-				value = yes
+			OR = {
+				trading_bonus = {
+					trade_goods = damestear
+					value = yes
+				}
+				trade_goods_produced_amount = {
+					trade_goods = damestear
+					amount = 8
+				}
 			}
 			monthly_income = 500
 			all_country = {
@@ -3546,7 +3570,6 @@ J84_4_missions = {
 						name = J84_trade_station_buff
 						duration = -1
 					}
-					ROOT = { mission_reward_artifice_points_2 = yes }
 				}
 			}
 		}
@@ -4714,6 +4737,11 @@ J84_5_missions = {
 						is_capital_of = H30
 						H30 = { liberty_desire = 50 }
 					}
+					else_if = {
+						limit = { exists = U31 } #The Triarchy
+						is_capital_of = U31
+						U31 = { liberty_desire = 50 }
+					}
 					else = {
 						province_id = 2088 #Tolalkal/Gommoport
 						NOT = {
@@ -4734,6 +4762,11 @@ J84_5_missions = {
 						is_capital_of = H31
 						H31 = { liberty_desire = 50 }
 					}
+					else_if = {
+						limit = { exists = U31 } #The Triarchy
+						is_capital_of = U31
+						U31 = { liberty_desire = 50 }
+					}
 					else = {
 						province_id = 2078 #Léembalkal/Zurzumexia
 						NOT = {
@@ -4753,6 +4786,11 @@ J84_5_missions = {
 						limit = { exists = H32 } #Mestikardu
 						is_capital_of = H32
 						H32 = { liberty_desire = 50 }
+					}
+					else_if = {
+						limit = { exists = U31 } #The Triarchy
+						is_capital_of = U31
+						U31 = { liberty_desire = 50 }
 					}
 					else = {
 						province_id = 2083 #K'il'uiolob/Mestikardu
@@ -4777,6 +4815,10 @@ J84_5_missions = {
 					is_subject_of = ROOT
 					NOT = { liberty_desire = 50 }
 				}
+				U31 = { #The Triarchy
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
 				2088 = { #Tolalkal/Gommoport
 					NOT = { local_autonomy = 25 }
 					OR = {
@@ -4791,6 +4833,10 @@ J84_5_missions = {
 					is_subject_of = ROOT
 					NOT = { liberty_desire = 50 }
 				}
+				U31 = { #The Triarchy
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
 				2078 = { #Léembalkal/Zurzumexia
 					NOT = { local_autonomy = 25 }
 					OR = {
@@ -4802,6 +4848,10 @@ J84_5_missions = {
 			}
 			OR = {
 				H32 = { #Mestikardu
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+				}
+				U31 = { #The Triarchy
 					is_subject_of = ROOT
 					NOT = { liberty_desire = 50 }
 				}

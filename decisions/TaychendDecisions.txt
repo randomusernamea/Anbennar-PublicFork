@@ -795,4 +795,34 @@ country_decisions = {
 		}
 	}
 
+	change_rule_style = {
+		potential = {
+			tag = J84 #Taychendi Empire
+			has_country_flag = J84_is_mihaela_flag
+		}
+		
+		provinces_to_highlight = {
+		}
+		
+		allow = {
+			hidden_trigger = {
+				tag = J84 #Taychendi Empire
+				has_country_flag = J84_is_mihaela_flag
+			}
+			if = {
+				limit = { has_country_flag = J84_changed_rule_style_flag }
+				had_country_flag = {
+					flag = J84_changed_rule_style_flag
+					days = 7300 #20 years
+				}
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = taychendi_empire_events.0
+			}
+		}
+	}
+
 }

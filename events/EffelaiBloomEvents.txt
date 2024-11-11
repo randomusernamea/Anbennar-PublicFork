@@ -969,7 +969,6 @@ country_event = { #Enough of the effelai has been calmed it returns to dormancy
 		remove_country_modifier = J84_artificer_aided_colonisation
 		remove_country_modifier = J84_artificery_unleashed
 		hidden_effect = {
-			country_event = { id = taychendi_empire_events.0 days = 1 }
 			every_country = {
 				limit = {
 					has_country_modifier = effelai_bloom_in_progress
@@ -3122,7 +3121,6 @@ country_event = { #Effelai burned so hard it returns to being dormant
 		remove_country_modifier = J84_artificer_aided_colonisation
 		remove_country_modifier = J84_artificery_unleashed
 		hidden_effect = {
-			country_event = { id = taychendi_empire_events.0 days = 1 }
 			every_country = {
 				limit = {
 					has_country_modifier = effelai_bloom_in_progress

@@ -11612,7 +11612,6 @@ on_province_owner_change = {
 			name = J84_trade_station_buff
 			duration = -1
 		}
-		owner = { mission_reward_artifice_points_2 = yes }
 	}
 
 	if = { #Taychendi Empire
@@ -11622,7 +11621,6 @@ on_province_owner_change = {
 			trade_goods = precursor_relics
 		}
 		remove_province_modifier = J84_trade_station_buff
-		FROM = { debuff_artifice_points_2 = yes }
 	}
 }
 

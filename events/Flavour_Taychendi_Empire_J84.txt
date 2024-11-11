@@ -4,47 +4,96 @@
 namespace = taychendi_empire_events
 
 country_event = {
-	id = taychendi_empire_events.0 #Hidden event to remove Artificer Capacity tied to modifiers
+	id = taychendi_empire_events.0 #Change Personal Deity
 	title = taychendi_empire_events.0.t
-	desc = taychendi_empire_events.0.d
-	picture = PORT_BLOCKADED_eventPicture
+	desc = taychendi_empire_events.0.desc
+	picture = wihgfx_FEMALE_RULER_eventPicture
 
 	is_triggered_only = yes
-	hidden = yes
 
-	trigger = {
-		OR = {
-			tag = J84 #Taychendi Empire
-			was_tag = J84 #Taychendi Empire
-		}
+	option = {
+		name = taychendi_empire_events.0.none
 	}
 
 	option = {
 		name = taychendi_empire_events.0.a
-		if = {
-			limit = {
-				NOT = { has_country_modifier = J84_ravelian_resources }
-				has_country_flag = J84_ravelian_resources_artifice_flag
-			}
-			debuff_artifice_points_5 = yes
-			clr_country_flag = J84_ravelian_resources_artifice_flag
+		trigger = { NOT = { has_personal_deity = taychend_style_temperate } }
+		change_personal_deity = taychend_style_temperate
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.b
+		trigger = { NOT = { has_personal_deity = taychend_style_prosperous } }
+		change_personal_deity = taychend_style_prosperous
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.c
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_patron } 
+			has_country_flag = enabled_patron_ruler_style_flag
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = J84_artificer_aided_colonisation }
-				has_country_flag = J84_artificer_aided_colonisation_artifice_flag
-			}
-			mission_reward_artifice_points_20 = yes
-			clr_country_flag = J84_artificer_aided_colonisation_artifice_flag
+		change_personal_deity = taychend_style_patron
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.d
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_eminence } 
+			has_country_flag = enabled_eminence_ruler_style_flag
 		}
-		if = {
-			limit = {
-				NOT = { has_country_modifier = J84_artificery_unleashed }
-				has_country_flag = J84_artificery_unleashed_artifice_flag
-			}
-			mission_reward_artifice_points_40 = yes
-			clr_country_flag = J84_artificery_unleashed_artifice_flag
+		change_personal_deity = taychend_style_eminence
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.e
+		trigger = { NOT = { has_personal_deity = taychend_style_conqueror } }
+		change_personal_deity = taychend_style_conqueror
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.f
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_dreamer } 
+			has_country_flag = enabled_dreamer_ruler_style_flag
 		}
+		change_personal_deity = taychend_style_dreamer
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.g
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_dynast } 
+			has_country_flag = enabled_dynast_ruler_style_flag
+		}
+		change_personal_deity = taychend_style_dynast
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.h
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_universalist } 
+			has_country_flag = enabled_universalist_ruler_style_flag
+		}
+		change_personal_deity = taychend_style_universalist
+		set_country_flag = J84_changed_rule_style_flag
+	}
+
+	option = {
+		name = taychendi_empire_events.0.i
+		trigger = { 
+			NOT = { has_personal_deity = taychend_style_vainglorious } 
+			has_country_flag = enabled_vainglorious_ruler_style_flag
+		}
+		change_personal_deity = taychend_style_vainglorious
+		set_country_flag = J84_changed_rule_style_flag
 	}
 }
 
@@ -1035,7 +1084,6 @@ country_event = {
 			name = J84_ravelian_resources
 			duration = -1
 		}
-		custom_tooltip = J84_5_artificer_capacity_tt
 		if = {
 			limit = { is_religion_enabled = ravelian }
 			custom_tooltip = J84_ravelian_provinces_spawn_tt
@@ -1048,8 +1096,6 @@ country_event = {
 			}
 			hidden_effect = {
 				set_country_flag = J84_ravelianism_tolerated_flag
-				set_country_flag = J84_ravelian_resources_artifice_flag
-				mission_reward_artifice_points_5 = yes
 				for = {
 					amount = 10
 					effect = "
@@ -1072,8 +1118,6 @@ country_event = {
 		else = {
 			custom_tooltip = J84_ravelian_societies_spawn_tt
 			hidden_effect = {
-				set_country_flag = J84_ravelian_resources_artifice_flag
-				mission_reward_artifice_points_5 = yes
 				for = {
 					amount = 10
 					effect = "
@@ -1127,7 +1171,6 @@ country_event = {
 			name = J84_ravelian_resources
 			duration = -1
 		}
-		custom_tooltip = J84_5_artificer_capacity_tt
 		if = {
 			limit = { is_religion_enabled = ravelian }
 			custom_tooltip = J84_ravelian_provinces_spawn_tt
@@ -1140,8 +1183,6 @@ country_event = {
 			}
 			hidden_effect = {
 				set_country_flag = J84_ravelianism_tolerated_flag
-				set_country_flag = J84_ravelian_resources_artifice_flag
-				mission_reward_artifice_points_5 = yes
 				for = {
 					amount = 10
 					effect = "
@@ -1164,8 +1205,6 @@ country_event = {
 		else = {
 			custom_tooltip = J84_ravelian_societies_spawn_tt
 			hidden_effect = {
-				set_country_flag = J84_ravelian_resources_artifice_flag
-				mission_reward_artifice_points_5 = yes
 				for = {
 					amount = 10
 					effect = "
@@ -1328,15 +1367,6 @@ country_event = {
 			name = J84_artificer_aided_colonisation
 			duration = 18250 #50 years
 		}
-		custom_tooltip = J84_20_artificer_capacity_tt
-		hidden_effect = {
-			debuff_artifice_points_20 = yes
-			set_country_flag = J84_artificer_aided_colonisation_artifice_flag
-			country_event = {
-				id = taychendi_empire_events.0
-				days = 18251 #50 years 1 day
-			}
-		}
 	}
 
 	option = {
@@ -1351,12 +1381,6 @@ country_event = {
 		}
 		custom_tooltip = J84_40_artificer_capacity_tt
 		hidden_effect = {
-			debuff_artifice_points_40 = yes
-			set_country_flag = J84_artificery_unleashed_artifice_flag
-			country_event = {
-				id = taychendi_empire_events.0
-				days = 18251 #50 years 1 day
-			}
 			country_event = {
 				id = taychendi_empire_events.17 #Against Fire
 				days = 3650 #10 years

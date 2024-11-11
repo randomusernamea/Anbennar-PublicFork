@@ -469,6 +469,16 @@ update_artifice_points = {
 					value = 0.5
 				}
 			}
+			if = {
+				limit = { 
+					tag = J84 #Taychendi Empire
+					has_country_flag = J84_increased_percent_artifice_capacity_flag
+				}
+				change_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.25
+				}
+			}
 			
 			# Floor at 0
 			if = {
