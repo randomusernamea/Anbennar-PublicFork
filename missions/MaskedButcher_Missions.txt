@@ -2148,7 +2148,10 @@ maskedbutcher_missions_5d = {
 		position = 8
 
 		provinces_to_highlight = {
-			superregion = deepwoods_superregion
+			OR = {
+				province_group = deepwoods_arrow_grove
+				province_group = deepwoods_river_grove
+			}
 			NOT = { owned_by = ROOT }
 		}
 
