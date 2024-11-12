@@ -2264,7 +2264,6 @@ imperial_technocracy_republic_reform = {
 	icon = "giberd_technocracy"
 	# allow_normal_conversion = no
 	# lock_level_when_selected = yes
-	locked_government_type = yes
 	potential = {
 		OR = {
 			has_reform = imperial_technocracy_republic_reform
@@ -2315,6 +2314,7 @@ imperial_technocracy_republic_reform = {
 		is_technocracy = yes
 		anb_special_elections = yes
 		cannot_become_dictatorship = yes
+		locked_government_type = yes
 	}
 	effect = {
 		add_country_modifier = {
