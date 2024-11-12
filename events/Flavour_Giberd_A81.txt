@@ -1057,6 +1057,20 @@ country_event = {
 			}
 		}
 		custom_tooltip = giberds_bonus_disappear_tt
+		if = {
+			limit = {
+				AND = {
+					280 = {
+						owned_by = ROOT
+					}
+					576 = {
+						owned_by = ROOT
+					}
+				}
+			}
+			custom_tooltip = giberd_pinklady_conquered_tt
+			giberd_factions_mechanists_increase = yes
+		}
 	}
 	option = {
 		name = flavor_giberd.33.b
@@ -1074,6 +1088,20 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				AND = {
+					280 = {
+						owned_by = ROOT
+					}
+					576 = {
+						owned_by = ROOT
+					}
+				}
+			}
+			custom_tooltip = giberd_pinklady_conquered_tt
+			giberd_factions_mechanists_increase = yes
+		}
 	}
 	option = {
 		name = flavor_giberd.33.c
@@ -1083,6 +1111,26 @@ country_event = {
 		}
 		576 = {
 			add_permanent_claim = ROOT
+		}
+		280 = {
+			add_permanent_province_modifier = {
+				name = giberd_pinklady_tradepost
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					280 = {
+						owned_by = ROOT
+					}
+					576 = {
+						owned_by = ROOT
+					}
+				}
+			}
+			custom_tooltip = giberd_pinklady_conquered_tt
+			giberd_factions_mechanists_increase = yes
 		}
 	}
 }

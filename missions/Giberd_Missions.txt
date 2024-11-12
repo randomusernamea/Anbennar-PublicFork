@@ -91,7 +91,7 @@ giberd_imperial = {
 							owned_by = ROOT
 						}
 						576 = {
-							owned_by = root
+							owned_by = ROOT
 						}
 					}
 					AND = {
@@ -1029,6 +1029,7 @@ giberd_konwell_conquest = {
 			}
 		}
 		effect = {
+			disable_all_artifice_inventions = yes
 			custom_tooltip = giberd_60_capacity_10_years_tt
 			hidden_effect = {
 				change_variable = {
@@ -1048,7 +1049,6 @@ giberd_konwell_conquest = {
 					days = 3650
 				}
 			}
-			# TODO: disable all inventions
 			random_owned_province = {
 				limit = {
 					has_cardinal = yes
@@ -1734,8 +1734,10 @@ giberd_ryalanar_conquest = {
 				name = giberd_the_grg
 				duration = -1
 			}
-			# TODO: decreased negative outcomes during the river party
-			# (the player will have a decreased chance for negative events during the river party event chain)
+			custom_tooltip = giberd_sails_on_the_streams_effect_tt
+			hidden_effect = {
+				add_country_flag = a95_disable_bad_party2
+			}
 			country_event = {
 				id = flavor_giberd.38
 			}
@@ -1805,7 +1807,6 @@ giberd_ryalanar_conquest = {
 			country_event = {
 				id = flavor_giberd.41
 			}
-			# TODO: start river party evetn chain
 		}
 	}
 	giberd_to_name_a_hierarchy = {
@@ -2611,7 +2612,7 @@ giberd_artificer = {
 				}
 				AND = {
 					religion = corinite
-					karma = 0
+					is_defender_of_faith = yes
 				}
 			}
 			275 = {
@@ -2853,6 +2854,9 @@ giberd_artificer = {
 			add_country_modifier = {
 				name = giberd_factions_united
 				duration = -1
+			}
+			country_event = {
+				name = ravelian.4
 			}
 		}
 	}
