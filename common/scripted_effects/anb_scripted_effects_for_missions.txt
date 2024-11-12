@@ -17965,7 +17965,10 @@ kherka_remove_faction_flags = {
 #Rakkaz
 rakkaz_add_fighting_pit_modifier = {
 	if = {
-		limit = { owner = { has_country_flag = rakkaz_fighting_pit_more_cav_unlocked } }
+		limit = { owner = { 
+			has_country_flag = rakkaz_fighting_pit_more_cav_unlocked 
+			NOT = { has_country_flag = rakkaz_fighting_pit_more_cav_upgrade_unlocked }
+		} }
 		add_permanent_province_modifier = {
 			name = rakkaz_fighting_pit_more_cav
 			duration = -1

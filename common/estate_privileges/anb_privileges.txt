@@ -14352,7 +14352,15 @@ estate_mages_warlock_pact_demonic_possession = {
 		add_patriarch_authority = -0.1
 		change_adm = -3
 		change_dip = -3
-		change_mil = 6
+		tooltip = { change_mil = 6 }
+		hidden_effect = {
+			increase_ruler_mil_effect = yes
+			increase_ruler_mil_effect = yes
+			increase_ruler_mil_effect = yes
+			increase_ruler_mil_effect = yes
+			increase_ruler_mil_effect = yes
+			increase_ruler_mil_effect = yes
+		}
 		custom_tooltip = rakkaz_demonic_possession_tooltip
 		hidden_effect = {
 			country_event = { id = flavour_rakkaz.24 } #Can't add ruler personalities here, so I made it in a hidden event.
@@ -14381,9 +14389,9 @@ estate_mages_warlock_pact_night_coven = {
 	}
 	on_granted = {
 		add_church_power = -100
-		change_adm = 1
-		change_dip = 1
-		change_mil = 1
+		increase_ruler_adm_effect = yes
+		increase_ruler_dip_effect = yes
+		increase_ruler_mil_effect = yes
 		custom_tooltip = rakkaz_night_coven_tooltip
 		hidden_effect = {
 			country_event = { id = flavour_rakkaz.25 } #Can't add ruler personalities here, so I made it in a hidden event.

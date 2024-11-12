@@ -147,7 +147,7 @@ F71_1_part1 = {
 		}
 
 		effect = {
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 20 }
 			if = {
 				limit = { religion = xhazobkult }
 				custom_tooltip = rakkaz_invite_scholar_bonus
@@ -369,7 +369,7 @@ F71_3_part1 = {
 						war_with = U09
 					"
 					first_effect = "
-						add_prestige = 20
+						add_prestige_or_monarch_power = { amount = 20 }
 						add_power_projection = {
 							type = mission_rewards_power_projection
 							amount = 10
@@ -1403,7 +1403,7 @@ F71_2_part2 = {
 
 		effect = {  
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_overcharge }
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 		} 
 	}
 
@@ -2116,7 +2116,8 @@ F71_2_part3_pre_branch1 = {
 					}
 					else = { development = 45 }
 					has_building = state_house
-					num_free_building_slots = 0
+					num_of_buildings_in_province = 7
+					manufactories = 2
 				}
 			}
 		} 
@@ -2129,7 +2130,8 @@ F71_2_part3_pre_branch1 = {
 				}
 				else = { development = 45 }
 				has_building = state_house
-				num_free_building_slots = 0
+				num_of_buildings_in_province = 7
+				manufactories = 2
 			}
 		} 
 
