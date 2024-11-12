@@ -62,18 +62,7 @@ country_event = {#A Beast Unlike Any Other C4
 	id = flavour_wyvernheart.100
 	title = flavour_wyvernheart.100.t
 	desc = flavour_wyvernheart.100.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = BAD_WITH_MONARCH_eventPicture
 
 	is_triggered_only = yes
 	
@@ -104,18 +93,7 @@ country_event = {#Rumours of Power A7
 	id = flavour_wyvernheart.101
 	title = flavour_wyvernheart.101.t
 	desc = flavour_wyvernheart.101.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = THE_COVENANT_eventPicture
 
 	is_triggered_only = yes
 	
@@ -298,15 +276,15 @@ country_event = {#A Tower on High B3
 	desc = flavour_wyvernheart.102.d
 	picture = {
 		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
+			NOT = { has_dlc = "Lions of the North" }
 		}
-		picture = COURT_eventPicture
+		picture = EP_ISLAND_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Lions of the North"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = FROZEN_VILLAGE_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -342,18 +320,7 @@ country_event = {#A Grand Breakthrough B3
 	id = flavour_wyvernheart.103
 	title = flavour_wyvernheart.103.t
 	desc = flavour_wyvernheart.103.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = ACCUSATION_eventPicture
 
 	is_triggered_only = yes
 	
@@ -373,18 +340,7 @@ country_event = {#The New Face of Magic D5
 	id = flavour_wyvernheart.104
 	title = flavour_wyvernheart.104.t
 	desc = flavour_wyvernheart.104.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = REFORM_eventPicture
 
 	is_triggered_only = yes
 	
@@ -411,15 +367,15 @@ country_event = {#A Morbid Fascination E5.1
 	desc = flavour_wyvernheart.105.d
 	picture = {
 		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
+			NOT = { has_dlc = "Lions of the North" }
 		}
-		picture = COURT_eventPicture
+		picture = EP_ISLAND_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Lions of the North"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = FORESTS_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -444,18 +400,7 @@ country_event = {#The Means of Experimentation E5.2
 	id = flavour_wyvernheart.106
 	title = flavour_wyvernheart.106.t
 	desc = flavour_wyvernheart.106.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = BATTLE_eventPicture
 
 	is_triggered_only = yes
 	
@@ -483,18 +428,7 @@ country_event = {#A Wyvern's Heart Pumping Burning Blood E5.3
 	id = flavour_wyvernheart.107
 	title = flavour_wyvernheart.107.t
 	desc = flavour_wyvernheart.107.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = SPELL_LIST_eventPicture
 
 	is_triggered_only = yes
 	
@@ -552,18 +486,7 @@ country_event = {#Raiding the Citadel C8.1
 	id = flavour_wyvernheart.108
 	title = flavour_wyvernheart.108.t
 	desc = flavour_wyvernheart.108.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = FIREBALL_eventPicture
 
 	is_triggered_only = yes
 	
@@ -592,18 +515,7 @@ country_event = {#Greater than the Sum of its Parts C8.2
 	id = flavour_wyvernheart.109
 	title = flavour_wyvernheart.109.t
 	desc = flavour_wyvernheart.109.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = ADVISOR_eventPicture
 
 	is_triggered_only = yes
 	
@@ -644,18 +556,7 @@ country_event = {#The Castanbane Meteor
 	id = flavour_wyvernheart.110
 	title = flavour_wyvernheart.110.t
 	desc = flavour_wyvernheart.110.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = BIG_STAR_IN_SKY_eventPicture
 
 	is_triggered_only = yes
 	
@@ -755,18 +656,7 @@ country_event = {#Magic and Artificery unbound
 	id = flavour_wyvernheart.111
 	title = flavour_wyvernheart.111.t
 	desc = flavour_wyvernheart.111.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = THE_COVENANT_eventPicture
 
 	is_triggered_only = yes
 	
@@ -804,18 +694,7 @@ country_event = {#Calm After the Storm
 		}
 		desc = flavour_wyvernheart.112.d2
 	}
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = WOUNDED_SOLDIERS_eventPicture
 
 	is_triggered_only = yes
 	
@@ -848,18 +727,7 @@ country_event = {#The Heart of Halann
 	id = flavour_wyvernheart.113
 	title = flavour_wyvernheart.113.t
 	desc = flavour_wyvernheart.113.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = FAR_AND_WIDE_eventPicture
 
 	is_triggered_only = yes
 	
@@ -886,18 +754,7 @@ province_event = {#Free Core from gov mechanic
 	id = flavour_wyvernheart.114
 	title = flavour_wyvernheart.114.t
 	desc = flavour_wyvernheart.114.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = GENERALS_DISCUSSING_eventPicture
 
 	is_triggered_only = yes
 	
@@ -925,18 +782,7 @@ country_event = {#Select region for Overseer
 	id = flavour_wyvernheart.115
 	title = flavour_wyvernheart.115.t
 	desc = flavour_wyvernheart.115.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = GENERALS_DISCUSSING_eventPicture
 
 	is_triggered_only = yes
 	
@@ -1153,18 +999,7 @@ country_event = {#Select clique for Overseer
 	id = flavour_wyvernheart.116
 	title = flavour_wyvernheart.116.t
 	desc = flavour_wyvernheart.116.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = DIPLOMACY_SIGNING_eventPicture
 
 	is_triggered_only = yes
 	
@@ -1916,18 +1751,7 @@ country_event = {#The Promised Mage
 	id = flavour_wyvernheart.200
 	title = flavour_wyvernheart.200.t
 	desc = flavour_wyvernheart.200.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = NEW_HEIR_eventPicture
 
 	is_triggered_only = yes
 	
@@ -1959,15 +1783,15 @@ country_event = {#A Simple Accident
 	desc = flavour_wyvernheart.201.d
 	picture = {
 		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
+			NOT = { has_dlc = "Cradle of Civilization" }
 		}
-		picture = COURT_eventPicture
+		picture = SPY_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Cradle of Civilization"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = THREE_HEIRS_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -2006,18 +1830,7 @@ country_event = {#Tyrant's Fall
 	id = flavour_wyvernheart.202
 	title = flavour_wyvernheart.202.t
 	desc = flavour_wyvernheart.202.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = DEFENESTRATION_PRAGUE_eventPicture
 
 	is_triggered_only = yes
 	
@@ -2089,15 +1902,15 @@ country_event = {#Victory or Death
 	desc = flavour_wyvernheart.203.d
 	picture = {
 		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
+			NOT = { has_dlc = "The Cossacks" }
 		}
-		picture = COURT_eventPicture
+		picture = REVOLT_HUNGARIAN_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "The Cossacks"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = COSSACK_ESTATE_UPSET_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -2357,18 +2170,8 @@ country_event = {#A Divided Council #D5
 	id = flavour_wyvernheart.301
 	title = flavour_wyvernheart.301.t
 	desc = flavour_wyvernheart.301.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = COURT_eventPicture
+
 	fire_only_once = yes
 	is_triggered_only = yes
 	
@@ -2408,13 +2211,13 @@ country_event = {#A Crisis in Devotion
 		trigger = {
 			NOT = { has_dlc = "Rights of Man" }
 		}
-		picture = COURT_eventPicture
+		picture = RELIGIOUS_TURMOIL_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Common Sense"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
 	}
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -2479,13 +2282,13 @@ country_event = {#The New Face of the Council
 		trigger = {
 			NOT = { has_dlc = "Rights of Man" }
 		}
-		picture = COURT_eventPicture
+		picture = STREET_SPEECH_eventPicture
 	}
 	picture = {
 		trigger = {
 			has_dlc = "Rights of Man"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
 	}
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -2545,13 +2348,13 @@ country_event = {#A Change in Course
 		trigger = {
 			NOT = { has_dlc = "Rights of Man" }
 		}
-		picture = COURT_eventPicture
+		picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Star and Crescent"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = muslimgfx_DEBATE_REPUBLICAN_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -2589,18 +2392,7 @@ country_event = {#The Floodborn Machine
 	id = flavour_wyvernheart.305
 	title = flavour_wyvernheart.305.t
 	desc = flavour_wyvernheart.305.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = COURT_eventPicture
 
 	is_triggered_only = yes
 	
@@ -2631,18 +2423,7 @@ country_event = {#The Council's Challenge
 	id = flavour_wyvernheart.306
 	title = flavour_wyvernheart.306.t
 	desc = flavour_wyvernheart.306.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = BURGHER_ESTATE_UPSET_eventPicture
 
 	is_triggered_only = yes
 	
@@ -2697,18 +2478,7 @@ country_event = {#The Heart of an Adventurer
 	id = flavour_wyvernheart.307
 	title = flavour_wyvernheart.307.t
 	desc = flavour_wyvernheart.307.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = CONQUEST_eventPicture
 
 	is_triggered_only = yes
 	
@@ -2761,18 +2531,7 @@ country_event = {#The Rivalries of the Council
 	id = flavour_wyvernheart.308
 	title = flavour_wyvernheart.308.t
 	desc = flavour_wyvernheart.308.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
 
 	is_triggered_only = yes
 	
@@ -3061,18 +2820,7 @@ country_event = {#An Upstart in the Council
 	id = flavour_wyvernheart.309
 	title = flavour_wyvernheart.309.t
 	desc = flavour_wyvernheart.309.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = ACCUSATION_eventPicture
 
 	is_triggered_only = yes
 	
@@ -3148,18 +2896,7 @@ country_event = {#Estate agenda manager
 	id = flavour_wyvernheart.310
 	title = flavour_wyvernheart.310.t
 	desc = flavour_wyvernheart.310.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = LIBERUM_VETO_eventPicture
 
 	is_triggered_only = yes
 	
@@ -3207,18 +2944,7 @@ province_event = {#A Heartman Home
 	id = flavour_wyvernheart.401
 	title = flavour_wyvernheart.401.t
 	desc = flavour_wyvernheart.401.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = PEASANTS_BARTERING_eventPicture
 
 	is_triggered_only = yes
 	
@@ -3254,18 +2980,7 @@ province_event = {#A Dream Realised
 	id = flavour_wyvernheart.402
 	title = flavour_wyvernheart.402.t
 	desc = flavour_wyvernheart.402.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = RELIGIOUS_CONVERSION_eventPicture
 
 	is_triggered_only = yes
 	
@@ -3304,15 +3019,15 @@ province_event = {#Away With the Old
 	desc = flavour_wyvernheart.403.d
 	picture = {
 		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
+			NOT = { has_dlc = "Emperor" }
 		}
-		picture = COURT_eventPicture
+		picture = BORDER_TENSION_eventPicture
 	}
 	picture = {
 		trigger = {
-			has_dlc = "Rights of Man"
+			has_dlc = "Emperor"
 		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
+		picture = latin_RELIGIOUS_TURMOIL_eventPicture
 	}
 
 	is_triggered_only = yes
@@ -3350,18 +3065,7 @@ province_event = {#A Forceful Assimilation
 	id = flavour_wyvernheart.404
 	title = flavour_wyvernheart.404.t
 	desc = flavour_wyvernheart.404.d
-	picture = {
-		trigger = {
-			NOT = { has_dlc = "Rights of Man" }
-		}
-		picture = COURT_eventPicture
-	}
-	picture = {
-		trigger = {
-			has_dlc = "Rights of Man"
-		}
-		picture = ROYAL_COUPLE_FUTURE_eventPicture
-	}
+	picture = BORDER_TENSION_eventPicture
 
 	is_triggered_only = yes
 	
