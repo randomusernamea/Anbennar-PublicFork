@@ -296,7 +296,7 @@ country_event = { # cult of vherenar instigates revolts
 		event_target:tf_vherenar_slave_unrest = {
 			add_devastation = 15
 			spawn_rebels = {
-				type = peasant_rebels
+				type = anti_tax_rebels
 				size = 2
 			}
 		}
@@ -306,7 +306,7 @@ country_event = { # cult of vherenar instigates revolts
 			event_target:tf_vherenar_slave_unrest2 = {
 				add_devastation = 15
 				spawn_rebels = {
-					type = peasant_rebels
+					type = anti_tax_rebels
 					size = 2
 				}
 			}
@@ -317,7 +317,7 @@ country_event = { # cult of vherenar instigates revolts
 			event_target:tf_vherenar_slave_unrest3 = {
 				add_devastation = 15
 				spawn_rebels = {
-					type = peasant_rebels
+					type = anti_tax_rebels
 					size = 2
 				}
 			}
@@ -329,7 +329,7 @@ country_event = { # cult of vherenar instigates revolts
 		
 		event_target:tf_vherenar_slave_unrest = {
 			spawn_rebels = {
-				type = peasant_rebels
+				type = anti_tax_rebels
 				size = 2
 			}
 		}
