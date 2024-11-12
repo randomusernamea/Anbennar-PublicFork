@@ -489,6 +489,7 @@ moonhaven_corinite_missions = {
 				add_treasury = 200
 				country_event = { id = A31_flavour.2 } 
 			}
+			custom_tooltip = A31_insight.10:0
 			add_treasury = -200
 			add_mil_power = 300
 			add_country_modifier = {
@@ -554,12 +555,12 @@ moonhaven_corinite_missions = {
 			}
 			A45 = {
 				country_event = { id = A31_flavour.3 } 
-				custom_tooltip = A31_insight.9:0
 				add_country_modifier = {
 					name = "A31_damerian_development"
 					duration = 1825
 				}
 			}
+			custom_tooltip = A31_insight.9:0
 		}
 	}
 
@@ -661,7 +662,7 @@ moonhaven_ravelian_missions = {
 
 		trigger = {
 			calc_true_if = {
-				all_province = {
+				europe = {
 					is_part_of_hre = yes
 					culture = moon_elf
 					religion = ravelian
@@ -888,30 +889,35 @@ moonhaven_sarhal_missions = {
 
 		trigger = {
 			IF = {
-				monthly_dip = 8
-				A45 = {
-					has_opinion = {
-						who = ROOT
-						value = 200
+				limit { NOT = { exists = Z42 } }
+				OR = {
+					monthly_dip = 8
+					A45 = {
+						has_opinion = {
+							who = ROOT
+							value = 200
+						}
 					}
 				}
 			}
 			Else = {
-				AND = {
-					exists = Z42
-					Z42 = {
-						has_opinion = {
-							who = ROOT
-							value = 150
+				OR = {
+					AND = {
+						exists = Z42
+						Z42 = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
 						}
 					}
-				}
-				AND = {
-					NOT = { exists = Z42 } 
-					A30 = {
-						has_opinion = {
-							who = ROOT
-							value = 100
+					AND = {
+						NOT = { exists = Z42 } 
+						A30 = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
 						}
 					}
 				}
@@ -1005,74 +1011,51 @@ moonhaven_sarhal_missions = {
 		}
 
 		effect = {
-			if = {
+			IF = {
 				limit = {
 					religion = regent_court
-					calc_true_if = {
-						all_ally = {
-							religion = ROOT
-							trust = {
-								who = ROOT
-								value = 80
-							}
+				}
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+				add_prestige = 20
+				custom_tooltip = A31_religious_ally.tt
+				hidden_effect = {
+					every_ally = {
+						add_opinion = {
+							who = ROOT
+							modifier = A31_religious_ally
 						}
-						amount = 2
 					}
-				}
-				custom_tooltip = A31_cannor_adean_good.tt
-			}
-			
-			else = { custom_tooltip = A31_cannor_adean_bad.tt } 
-			add_adm_power = 50
-			add_dip_power = 50
-			add_mil_power = 50
-			add_prestige = 20
-			hidden_effect = {
-				every_ally = {
-					add_opinion = {
-						who = ROOT
-						modifier = A31_religious_ally
-					}
-				}
-				every_country = {
-					limit = { religion = ROOT } 
-					add_opinion = {
-						who = ROOT
-						modifier = A31_religious_brethren
+					every_country = {
+						limit = { religion = ROOT } 
+						add_opinion = {
+							who = ROOT
+							modifier = A31_religious_brethren
+						}
 					}
 				}
 			}
-			if = {
+			IF = {
 				limit = {
 					religion = corinite
-					calc_true_if = {
-						all_ally = {
-							religion = ROOT
-							trust = {
-								who = ROOT
-								value = 80
-							}
+				}
+				add_stability = 1
+				add_prestige = 20
+				custom_tooltip = A31_religious_ally.tt
+				hidden_effect = {
+					every_ally = {
+						add_opinion = {
+							who = ROOT
+							modifier = A31_religious_ally
 						}
-						amount = 3
 					}
-				}
-				custom_tooltip = A31_cannor_corin_good.tt
-			}
-			else = { custom_tooltip = A31_cannor_corin_bad.tt } 
-			add_stability = 1
-			add_prestige = 20
-			hidden_effect = {
-				every_ally = {
-					add_opinion = {
-						who = ROOT
-						modifier = A31_religious_ally
-					}
-				}
-				every_country = {
-					limit = { religion = ROOT } 
-					add_opinion = {
-						who = ROOT
-						modifier = A31_religious_brethren
+					every_country = {
+						limit = { religion = ROOT } 
+						add_opinion = {
+							who = ROOT
+							modifier = A31_religious_brethren
+						}
 					}
 				}
 			}
@@ -1086,6 +1069,10 @@ moonhaven_sarhal_missions = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
+			OR = {
+				religion = regent_court
+				religion = corinite
+			}
 			OR = {
 				religious_unity = 1
 				AND = {
@@ -1101,23 +1088,18 @@ moonhaven_sarhal_missions = {
 		}
 
 		effect = {
-			if = {
+			IF = {
 				limit = { religion = regent_court } 
-				custom_tooltip = A31_cannor_adean_good.tt
+				add_country_modifier = {
+					name = A31_adeans_loyal
+					duration = 9125
+				}
 			}
-			else = { custom_tooltip = A31_cannor_adean_bad.tt } 
-			add_country_modifier = {
-				name = "A31_adeans_loyal"
-				duration = 9125
-			}
-			if = {
-				limit = { religion = corinite } 
-				custom_tooltip = A31_cannor_corin_good.tt
-			}
-			else = { custom_tooltip = A31_cannor_corin_bad.tt } 
-			add_country_modifier = {
-				name = "A31_corins_loyal"
-				duration = 9125
+			ELSE = {
+				add_country_modifier = {
+					name = A31_corins_loyal
+					duration = 9125
+				}
 			}
 		}
 	}
@@ -1135,11 +1117,14 @@ moonhaven_sarhal_missions = {
 		}
 
 		trigger = {
-			owns_all_provinces = { area = salahad_islands_area } 
-			calc_true_if = {
+			salahad_islands_area = { 
+				type = ALL
+				owned_by = ROOT
+			}
+			num_of_owned_provinces_with = {
 				region = fahvanosy_region
 				owned_by = ROOT
-				amount = 5
+				value = 5
 			}
 		}
 
@@ -1168,49 +1153,13 @@ moonhaven_sarhal_missions = {
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = A31_fahvanosy_requirements
-					OR = {
-						calc_true_if = {
-							all_known_country = {
-								has_opinion = {
-									who = ROOT
-									value = 100
-								}
-								OR = {
-									primary_culture = amezatany
-									primary_culture = mboala
-									primary_culture = mazava
-									primary_culture = fomarati
-									primary_culture = vyoronsi
-									primary_culture = zohebidi
-								}
+					fahvanosy_region = {
+						trade_goods = cloves
+						owner = {
+							has_opinion = {
+								who = ROOT
+								value = 100
 							}
-							any_owned_province = { 
-								region = fahvanosy_region
-								trade_goods = cloves
-							}
-							amount = 2
-						}
-						calc_true_if = {
-							all_known_country = {
-								has_opinion = {
-									who = ROOT
-									value = 100
-								}
-								OR = {
-									primary_culture = amezatany
-									primary_culture = mboala
-									primary_culture = mazava
-									primary_culture = fomarati
-									primary_culture = vyoronsi
-									primary_culture = zohebidi
-								}
-								num_of_owned_provinces_with = { 
-									region = fahvanosy_region
-									trade_goods = cloves
-									value = 2
-								}
-							}
-							amount = 1
 						}
 					}
 				}
@@ -1224,7 +1173,8 @@ moonhaven_sarhal_missions = {
 		}
 
 		effect = {
-			if = {
+			custom_tooltip = A31_spice_trade_alliance.tt
+			IF = {
 				limit = {
 					any_country = {
 						has_opinion = {
@@ -1234,40 +1184,20 @@ moonhaven_sarhal_missions = {
 						capital_scope = { region = fahvanosy_region } 
 					}
 				}
-				custom_tooltip = A31_spice_trade_alliance_good.tt
-			}
-			else = { custom_tooltip = A31_spice_trade_alliance_bad.tt } 
-			tooltip = {
 				add_country_modifier = {
-					name = "A31_spices_cannor"
+					name = A31_spices_cannor
 					duration = 18250
 				}
 			}
-			if = {
-				limit = {
-					calc_true_if = {
-						any_owned_province = {
-							trade_goods = cloves
-							base_production = 8
-						}
-						amount = 5
-					}
-				}
-				custom_tooltip = A31_spice_trade_conquest_good.tt
-			}
-			else = { custom_tooltip = A31_spice_trade_conquest_bad.tt } 
-			tooltip = {
+			Else = {
+				custom_tooltip = A31_spice_trade_conquest.tt
 				custom_tooltip = A31_spice_upgrade.tt
-				random_owned_province = {
-					limit = {
-						region = fahvanosy_region
-						base_production = 8
-						trade_goods = cloves
-					}
-					add_province_modifier = {
-						name = "A31_spice_investment"
-						duration = -1
-					}
+				hidden_effect = {
+					random_owned_province = { limit = { region = fahvanosy_region base_production = 8 trade_goods = cloves NOT = { has_province_modifier = A31_spice_investment }}} add_province_modifier = { name = A31_spice_investment duration = -1 }
+					random_owned_province = { limit = { region = fahvanosy_region base_production = 8 trade_goods = cloves NOT = { has_province_modifier = A31_spice_investment }}} add_province_modifier = { name = A31_spice_investment duration = -1 }
+					random_owned_province = { limit = { region = fahvanosy_region base_production = 8 trade_goods = cloves NOT = { has_province_modifier = A31_spice_investment }}} add_province_modifier = { name = A31_spice_investment duration = -1 }
+					random_owned_province = { limit = { region = fahvanosy_region base_production = 8 trade_goods = cloves NOT = { has_province_modifier = A31_spice_investment }}} add_province_modifier = { name = A31_spice_investment duration = -1 }
+					random_owned_province = { limit = { region = fahvanosy_region base_production = 8 trade_goods = cloves NOT = { has_province_modifier = A31_spice_investment }}} add_province_modifier = { name = A31_spice_investment duration = -1 }
 				}
 			}
 		}
@@ -1319,28 +1249,15 @@ moonhaven_sarhal_missions = {
 
 		trigger = {
 			OR = {
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = A31_baashidi_mission
-						has_country_flag = A31_baashidi_positive_flag
-						any_known_country = {
-							capital_scope = { region = jasiir_jadid_region } 
-							has_opinion = {
-								who = ROOT
-								value = 150
-							}
-							OR = {
-								primary_culture = suhratbi
-								primary_culture = dhebiji
-								primary_culture = guryadagga
-								primary_culture = ashamadi
-							}
-							OR = {
-								alliance_with = ROOT
-								is_subject_of = ROOT
-							}
+				custom_trigger_tooltip = {
+					tooltip = A31_baashidi_mission
+					has_country_flag = A31_baashidi_positive_flag
+					any_ally = {
+						capital_scope = { region = jasiir_jadid_region }
+						has_opinion = {
+							who = ROOT
+							value = 150
 						}
-						treasury = 1000
 					}
 				}
 				AND = {
@@ -1369,82 +1286,27 @@ moonhaven_sarhal_missions = {
 		}
 
 		effect = {
-			if = {
-				limit = {
-					any_known_country = {
-						capital_scope = { region = jasiir_jadid_region } 
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-						OR = {
-							primary_culture = suhratbi
-							primary_culture = dhebiji
-							primary_culture = guryadagga
-							primary_culture = ashamadi
-						}
-						OR = {
-							alliance_with = ROOT
-							is_subject_of = ROOT
-						}
-					}
-					treasury = 1000
-				}
-				custom_tooltip = A31_baashidi_alliance_good.tt
-			}
-			else = { custom_tooltip = A31_baashidi_alliance_bad.tt } 
-			tooltip = {
-				add_country_modifier = {
-					name = "A31_dominate_sarhal_markets"
-					duration = -1
-				}
-				random_known_country = {
+			IF = {
+				LIMIT = { has_country_flag = A31_baashidi_positive_flag }
+				random_ally = {
 					limit = {
-						capital_scope = { region = jasiir_jadid_region } 
+						capital_scope = { region = jasiir_jadid_region }
 						has_opinion = {
 							who = ROOT
 							value = 150
-						}
-						OR = {
-							primary_culture = suhratbi
-							primary_culture = dhebiji
-							primary_culture = guryadagga
-							primary_culture = ashamadi
-						}
-						OR = {
-							alliance_with = ROOT
-							is_subject_of = ROOT
 						}
 					}
 					add_historical_friend = ROOT
+					ROOT = { add_historical_friend = PREV }
 				}
-				add_treasury = -1000
-			}
-			if = {
-				limit = {
-					dhebij_janab_area = {
-						type = all
-						owned_by = ROOT
-					}
-					suhratba_yahin_area = {
-						type = all
-						owned_by = ROOT
-					}
-					suhratba_yaj_area = {
-						type = all
-						owned_by = ROOT
-					}
-					baashi_badda_area = {
-						type = all
-						owned_by = ROOT
-					}
-				}
-				custom_tooltip = A31_baashidi_conquest_good.tt
-			}
-			else = { custom_tooltip = A31_baashidi_conquest_bad.tt } 
-			tooltip = {
 				add_country_modifier = {
-					name = "A31_dominate_sarhal_markets"
+					name = A31_dominate_sarhal_markets
+					duration = -1
+				}
+			}
+			ELSE = {
+				add_country_modifier = {
+					name = A31_dominate_sarhal_markets
 					duration = -1
 				}
 				jasiir_jadid_region = { add_permanent_claim = ROOT } 

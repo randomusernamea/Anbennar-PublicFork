@@ -15173,17 +15173,17 @@ on_colony_established = {
 	
 	if = {
 		limit = {
-			OR = {
-				has_country_modifier = A31_empire_colonial_office
-				has_country_modifier = A31_traders_invest_economy
-				has_country_modifier = A31_aiecoca_expanded
-			}
-			OR = { 
+			A31 = {
+				OR = {
+					has_country_modifier = A31_empire_colonial_office
+					has_country_modifier = A31_traders_invest_economy
+					has_country_modifier = A31_aiecoca_expanded
+				} 
 				NOT = { has_country_modifier = elven_administration }
 				NOT = {	has_country_modifier = half_elven_administration }
-			}
+			}	
 		}
-		country_event = { id = A31_flavour.27 }
+		A31 = { country_event = { id = A31_flavour.27 } }
 	}
 }
 

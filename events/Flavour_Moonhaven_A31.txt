@@ -689,7 +689,14 @@ country_event = { #Baashidi diplomats
 	option = {
 		name = A31_flavour.24.a
 		ai_chance = { factor = 50 }
-
+		
+		every_known_country = { 
+			limit = { any_owned_province = { region = jasiir_jadid_region } }
+			add_opinion = {
+				modifier = A31_baashidi_positive
+				who = ROOT
+			}
+		}
 		merfolk_add_opinion_effect_large = yes
 		set_country_flag = A31_baashidi_positive_flag
 	}
@@ -698,6 +705,13 @@ country_event = { #Baashidi diplomats
 		name = A31_flavour.24.b
 		ai_chance = { factor = 50 }
 
+		every_known_country = { 
+			limit = { any_owned_province = { region = jasiir_jadid_region } }
+			add_opinion = {
+				modifier = A31_baashidi_negative
+				who = ROOT
+			}
+		}
 		merfolk_subtract_opinion_effect_large = yes
 		dhebij_janab_area = { add_permanent_claim = ROOT }
 		suhratba_yahin_area = { add_permanent_claim = ROOT }
