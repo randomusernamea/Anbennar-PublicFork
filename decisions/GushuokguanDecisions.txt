@@ -35,14 +35,12 @@ country_decisions = {
 			}
 		}
 		allow = {
-			hidden_trigger = {
-				tag = Y17 #Gushuokguan
-				OR = {
-					has_country_flag = gushuokguan_can_release_guwaamud
-					has_country_flag = gushuokguan_can_release_hubao
-					has_country_flag = gushuokguan_can_release_zyujyut
-					has_country_flag = gushuokguan_can_release_one_xia
-				}
+			tag = Y17 #Gushuokguan
+			OR = {
+				has_country_flag = gushuokguan_can_release_guwaamud
+				has_country_flag = gushuokguan_can_release_hubao
+				has_country_flag = gushuokguan_can_release_zyujyut
+				has_country_flag = gushuokguan_can_release_one_xia
 			}
 		}
 		provinces_to_highlight = {
