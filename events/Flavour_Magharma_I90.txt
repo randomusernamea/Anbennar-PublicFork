@@ -1350,7 +1350,10 @@ country_event = {
 			}
 		}
 		FROM = { 
-			vassalize = ROOT 
+			create_subject = {
+				subject_type = maghargma_special_subject
+				subject = ROOT
+			} 
 			set_country_flag = I90_oni_yes
 			country_event = { id = flavor_maghargma.31 }
 		}
@@ -1520,6 +1523,13 @@ country_event = {
 			}
 		}
 		demon_hills_region = { add_permanent_claim = ROOT }
+	}
+
+	after = { #Removing bloat flags
+		clr_country_flag = I90_oni_yes
+		clr_country_flag = I90_oni_no
+		clr_country_flag = I90_demonhill_yes
+		clr_country_flag = I90_demonhill_no
 	}
 } 
 

@@ -17843,7 +17843,12 @@ maghargama_vassalize_centaur_tributary = {
 				}
 				culture_group = centaur
 			}
-			ROOT = { vassalize = PREV }
+			ROOT = { 
+				create_subject = {
+					subject_type = maghargma_special_subject
+					who = PREV
+				}
+			}
 			[[move_capital]
 			if = {
 				limit = {
@@ -17882,21 +17887,23 @@ maghargama_vassalize_centaur_tributary = {
 maghargma_consolidate_centaur_vassal = {
 	random_subject_country = {
 		limit = {
-			is_subject_of_type = vassal
+			is_subject_of_type = maghargma_special_subject
 			has_50_opinion_improved_relation = { target = ROOT }
 			capital_scope = { region = $region$ }
 			culture_group = centaur
 		}
 		set_country_flag = I90_centaur_vassal_$horse$
-		add_country_modifier = {
-			name = I90_favored_horse
-			duration = -1
-		}
 		every_country = {
 			limit = {
-				is_subject_of_type_with_overlord = {
-					who = ROOT
-					type = vassal
+				OR = {
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = vassal
+					}
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = maghargma_special_subject
+					}
 				}
 				NOT = { has_country_flag = I90_centaur_vassal_$horse$ }
 				capital_scope = { region = $region$ }
@@ -17906,6 +17913,17 @@ maghargma_consolidate_centaur_vassal = {
 		}
 	}
 }
+
+maghargma_create_special_subject = {
+	ROOT = { 
+		create_subject = {
+			subject_type = maghargma_special_subject
+			who = PREV
+		}
+	}
+}
+
+
 
 #Kherka
 kherka_set_ruler = {

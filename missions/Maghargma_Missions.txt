@@ -59,8 +59,11 @@ maghargma_one = {
 		}
 
 		trigger = {
+			OR = {
+				treasury = 100
+				5037 = { has_tax_building_trigger = yes }
+			}
 			5037 = {
-				has_tax_building_trigger = yes
 				NOT = { devastation = 1 } 
 			}
 			OR = {
@@ -70,10 +73,25 @@ maghargma_one = {
 		}
 
 		effect = {
-			5037 = {
-				add_province_modifier = {
-					name = I90_monument_building
-					duration = 3650
+			if = {
+				limit = {
+					NOT = { 5037 = { has_tax_building_trigger = yes } }
+				}
+				add_treasury = -100
+				5037 = {
+					add_latest_building = { tax = yes }
+					add_province_modifier = {
+						name = I90_monument_building
+						duration = 3650
+					}
+				}
+			}
+			else = {
+				5037 = {
+					add_province_modifier = {
+						name = I90_monument_building
+						duration = 3650
+					}
 				}
 			}
 		}
@@ -386,7 +404,9 @@ maghargma_dynamic_westmarches_2 = {
 						add_core = J51
 					}
 					release = J51
-					vassalize = J51
+					J51 = {
+						maghargma_create_special_subject = yes
+					}
 					if = {
 						limit = {
 							fp_westmarches = { #Incase it is own by another subject
@@ -410,6 +430,9 @@ maghargma_dynamic_westmarches_2 = {
 						}
 						cede_province = J51
 						add_core = J51
+					}
+					J51 = {
+						maghargma_create_special_subject = yes
 					}
 				}
 				fp_westmarches = {
@@ -479,7 +502,7 @@ maghargma_one_post_westmarches = {
 						ai = yes
 					}
 				} 
-				vassalize = J32
+				J32 = { maghargma_create_special_subject = yes }
 				serpents_vale_region = {
 					add_permanent_claim = J32 
 				} 
@@ -869,7 +892,9 @@ maghargma_dynamic_heartlands_2 = {
 						add_core = J50
 					}
 					release = J50
-					vassalize = J50
+					J50 = {
+						maghargma_create_special_subject = yes
+					}
 					if = {
 						limit = {
 							fp_heartlands = { #Incase it is own by another subject
@@ -893,6 +918,9 @@ maghargma_dynamic_heartlands_2 = {
 						}
 						cede_province = J50
 						add_core = J50
+					}
+					J50 = {
+						maghargma_create_special_subject = yes
 					}
 				}
 				fp_heartlands = {
@@ -1662,10 +1690,7 @@ maghargma_three = {
 					culture = ghanzamh_centaur
 					hide_skills = yes
 				}
-				add_country_modifier = {
-					name = I90_sponsored_invasion
-					duration = -1
-				}
+				maghargma_create_special_subject = yes
 			}
 			bulwar_superregion = {
 				limit = {
@@ -2351,7 +2376,9 @@ maghargma_dynamic_brightmarch_1 = {
 						add_core = J50
 					}
 					release = J50
-					vassalize = J50
+					J50 = {
+						maghargma_create_special_subject = yes
+					}
 					if = {
 						limit = {
 							fp_brightmarch = { #Incase it is own by another subject
@@ -2375,6 +2402,9 @@ maghargma_dynamic_brightmarch_1 = {
 						}
 						cede_province = J50
 						add_core = J50
+					}
+					J50 = {
+						maghargma_create_special_subject = yes
 					}
 				}
 				fp_brightmarch = {
@@ -3161,7 +3191,9 @@ maghargma_dynamic_amberlands_2 = {
 						add_core = J52
 					}
 					release = J52
-					vassalize = J52
+					J52 = {
+						maghargma_create_special_subject = yes
+					}
 					if = {
 						limit = {
 							fp_amberlands = { #Incase it is own by another subject
@@ -3185,6 +3217,9 @@ maghargma_dynamic_amberlands_2 = {
 						}
 						cede_province = J52
 						add_core = J52
+					}
+					J52 = {
+						maghargma_create_special_subject = yes
 					}
 				}
 				fp_amberlands = {
