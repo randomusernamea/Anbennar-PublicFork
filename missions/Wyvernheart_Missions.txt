@@ -1396,7 +1396,7 @@ wyvernheart_column_3 = {
 				power_type = bloodbrand_power
 				value = -80
 			}
-		} 
+		}
 	}
 }
 wyvernheart_column_4 = {
@@ -1922,6 +1922,8 @@ wyvernheart_column_5 = {
 			treasury = 100
 			mil_power = 50
 			728 = {
+				owned_by = ROOT
+				is_core = ROOT
 				has_building = mage_tower
 				OR = {
 					num_of_times_expanded_infrastructure = 1
