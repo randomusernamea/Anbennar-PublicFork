@@ -1155,10 +1155,12 @@ kob_2_b = {
 			}
 			artifice_granted_10 = yes
 			custom_tooltip = haraf_claims_tt
-			H30 = { every_owned_province = { add_permanent_claim = ROOT } }
-			H31 = { every_owned_province = { add_permanent_claim = ROOT } }
-			H32 = { every_owned_province = { add_permanent_claim = ROOT } }			
-			U31 = { every_owned_province = { add_permanent_claim = ROOT } }
+			hidden_effect = {
+				H30 = { every_owned_province = { add_permanent_claim = ROOT } }
+				H31 = { every_owned_province = { add_permanent_claim = ROOT } }
+				H32 = { every_owned_province = { add_permanent_claim = ROOT } }			
+				U31 = { every_owned_province = { add_permanent_claim = ROOT } }
+			}
 		}
 	}
 	Z38_the_artificer_ruinborn = {
