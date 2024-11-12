@@ -1,0 +1,287 @@
+namespace = tolerance_generic
+
+#flavour events manager
+country_event = {
+	id = tolerance_generic.0
+	title = tolerance_generic.0.t
+	desc = tolerance_generic.0.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	trigger = {}		
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			has_government_attribute = more_migration_and_tolerance
+		}
+	}
+	
+	option = {
+		name = tolerance_generic.0.a
+		random_list = {
+			20 = { }
+			# ensure there's an empty option first in case none of the others are available
+			# and also because this one should be picked rarely even if the others are available. High right now, lower when more events get added
+			15 = {
+				trigger = {
+					OR = {
+						has_country_modifier = just_lost_war_timer
+						average_unrest = 10
+						is_bankrupt = yes
+					}
+					is_not_purging_or_expelling_any_race_trigger = yes
+					any_owned_province = { has_minority_trigger = yes }
+				}
+				country_event = { id = tolerance_generic.1 }
+			}
+			10 = {
+				trigger = {
+					has_wartaxes = yes
+					is_in_deficit = yes
+					any_owned_province = { has_minority_trigger = yes }
+				}
+				country_event = { id = tolerance_generic.3 }
+			}
+			5 = {
+				trigger = {
+					num_of_colonists = 1
+					any_owned_province = {
+						has_owner_culture = no
+						OR = {
+							culture_is_goblin = yes
+							culture_is_halfling = yes
+							culture_is_kobold = yes
+						}
+					}
+					any_owned_province = { is_colony = yes }
+				}
+				country_event = { id = tolerance_generic.4 }
+			}
+		}
+	}
+}
+
+country_event = {	#Scapegoats
+	id = tolerance_generic.1
+	title = tolerance_generic.1.t
+	desc = tolerance_generic.1.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {	}
+	immediate = {
+		hidden_effect = {
+			save_random_present_race_as_flag_effect = { scripted_trigger = generic_has_non_integrated_minority_trigger flag = propflag1 }
+			save_random_present_race_as_flag_effect = { scripted_trigger = generic_has_non_integrated_minority_trigger flag = propflag2 prevflag = propflag1 }
+		}
+	}
+
+	option = {
+		name = tolerance_generic.1.1
+		trigger = { NOT = { ruler_has_personality = cruel_personality }	}
+		reduce_stability_or_adm_power = yes
+		add_prestige = -10
+	}
+
+	option = {
+		name = tolerance_generic.1.2
+		trigger = {
+			NOT = {
+				ruler_has_personality = just_personality
+				ruler_has_personality = kind_hearted_personality
+			}
+			any_owned_province = {
+				OR = {
+					has_any_coexisting_minority_trigger = yes
+					has_any_oppressed_minority_trigger = yes
+				}
+			}	
+		}
+		effect_for_random_race = { flag = propflag1 scripted_effect = tolerance_generic_1_effect }
+	}
+
+	option = {
+		name = tolerance_generic.1.3
+		trigger = {
+			NOT = {
+				ruler_has_personality = just_personality
+				ruler_has_personality = kind_hearted_personality
+			}
+			any_owned_province = {
+				OR = {
+					has_any_coexisting_minority_trigger = yes
+					has_any_oppressed_minority_trigger = yes
+				}
+			}
+			has_country_flag = random_race_selected2			
+		}
+		effect_for_random_race = { flag = propflag2 scripted_effect = tolerance_generic_1_effect }
+	}
+
+	option = {
+		name = tolerance_generic.1.4
+		trigger = { 
+			NOT = {
+				any_owned_province = {
+					has_any_coexisting_minority_trigger = yes
+					has_any_oppressed_minority_trigger = yes
+				}
+			}
+		}
+		add_stability_or_adm_power = yes
+	}
+
+	after = {
+		clear_random_race_flags = { flag = propflag1 prevflag = propflag2 }
+	}
+}
+
+country_event = {	#Tragedy Strikes!
+	id = tolerance_generic.2
+	title = tolerance_generic.2.t
+	desc = tolerance_generic.2.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	trigger = { 
+		any_owned_province = { has_province_flag = mob_province }
+	}
+	
+	immediate = {
+		random_owned_province = { 
+			limit = { has_province_flag = mob_province }
+			hidden_effect = { save_event_target_as = mob_province }
+		}
+	}
+
+	option = {
+		name = tolerance_generic.2.1		
+		goto = mob_province		
+		effect_for_random_race = { flag = mob scripted_effect = tolerance_generic_2_effect }
+		clear_random_race_flags = { flag = mob }
+	}
+}
+
+country_event = {	#An Additional Tax?
+	id = tolerance_generic.3
+	title = tolerance_generic.3.t
+	desc = tolerance_generic.3.d
+	picture = muslimgfx_ECONOMY_eventPicture
+	is_triggered_only = yes
+	trigger = {}
+
+	immediate = {
+		hidden_effect = {
+			save_random_present_race_as_flag_effect = { scripted_trigger = fast_has_pop_of_race flag = wt1 }
+			save_random_present_race_as_flag_effect = { scripted_trigger = fast_has_pop_of_race flag = wt2 prevflag = wt1 }
+		}
+		effect_for_random_race = { flag = wt1 scripted_effect = tolerance_generic_3_effect effectargument = varname argumentvalue = wtvariable_a }
+		effect_for_random_race = { flag = wt2 scripted_effect = tolerance_generic_3_effect effectargument = varname argumentvalue = wtvariable_b }
+	}
+
+	option = {
+		name = tolerance_generic.3.1
+		effect_for_random_race = { flag = wt1 scripted_effect = tolerance_generic_3.2_effect effectargument = varname argumentvalue = wtvariable_a }
+	}
+
+	option = {
+		name = tolerance_generic.3.2
+		trigger = { has_country_flag = random_race_selected2 }
+		effect_for_random_race = { flag = wt2 scripted_effect = tolerance_generic_3.2_effect effectargument = varname argumentvalue = wtvariable_b }
+	}
+
+	option = {
+		name = tolerance_generic.3.3
+		add_prestige = 5
+	}
+
+	after = {
+		clear_random_race_flags = { flag = wt1 prevflag = wt2 }
+	}
+}
+
+country_event = {	#Send Smallfolks to Aelantir
+	id = tolerance_generic.4
+	title = tolerance_generic.4.t
+	desc = tolerance_generic.4.d
+	picture = muslimgfx_COLONIZATION_eventPicture
+	is_triggered_only = yes
+	trigger = {}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				1 = {
+					trigger = {
+						any_owned_province = { culture_is_goblin = yes }
+					}
+					random_owned_province = {
+						limit = { culture_is_goblin = yes }
+						save_event_target_as = goblin_origin
+					}
+				}
+				1 = {
+					trigger = {
+						any_owned_province = { culture_is_halfling = yes }
+					}
+					random_owned_province = {
+						limit = { culture_is_halfling = yes }
+						save_event_target_as = halfling_origin
+					}
+				}
+				1 = {
+					trigger = {
+						any_owned_province = { culture_is_kobold = yes }
+					}
+					random_owned_province = {
+						limit = { culture_is_kobold = yes }
+						save_event_target_as = kobold_origin
+					}
+				}
+			}
+			random_owned_province = {
+				limit = { is_colony = yes }
+				save_event_target_as = settlers_destinations
+			}
+		}
+	}
+
+	option = {
+		name = tolerance_generic.4.1
+		goto = settlers_destinations
+		add_treasury = -50
+		if = {
+			limit = { has_saved_event_target = goblin_origin }
+			tolerance_generic_4_effect = { race = goblin }
+		}
+		else_if = {
+			limit = { has_saved_event_target = halfling_origin }
+			tolerance_generic_4_effect = { race = halfling }
+		}
+		else = {
+			tolerance_generic_4_effect = { race = kobold }
+		}
+	}
+
+	option = {
+		name = tolerance_generic.4.2
+		goto = settlers_destinations
+		if = {
+			limit = { has_saved_event_target = goblin_origin }
+			tolerance_generic_4_effect = { race = goblin }
+			medium_decrease_of_goblin_tolerance_effect = yes
+		}
+		else_if = {
+			limit = { has_saved_event_target = halfling_origin }
+			tolerance_generic_4_effect = { race = halfling }
+			medium_decrease_of_halfling_tolerance_effect = yes
+		}
+		else = {
+			tolerance_generic_4_effect = { race = kobold }
+			medium_decrease_of_kobold_tolerance_effect = yes
+		}
+	}
+}
