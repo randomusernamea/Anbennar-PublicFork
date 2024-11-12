@@ -1210,6 +1210,13 @@ giberd_ryalanar_conquest = {
 				duration = 1825
 			}
 			custom_tooltip = giberd_20_capacity_5_years_tt
+			custom_tooltip = giberd_after_5_years_tt
+			tooltip = {
+				add_country_modifier = {
+					name = giberd_gds_loopeng_gedsandde
+					duration = -1
+				}
+			}
 			hidden_effect = {
 				change_variable = {
 					which = ArtificeUpkeep
