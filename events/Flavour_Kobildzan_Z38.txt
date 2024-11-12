@@ -181,11 +181,6 @@ country_event = { #To Find Tayekan
 					}					
 				}
 			}
-			hidden_effect = {
-				country_event = { id = flavour_kobildzan.6 days = 1825 }
-				country_event = { id = flavour_kobildzan.6 days = 3650 }
-				country_event = { id = flavour_kobildzan.6 days = 5475 }
-			}		
 		}
 		else = {
 			custom_tooltip = to_find_tayekan_2_tt 
@@ -193,8 +188,8 @@ country_event = { #To Find Tayekan
 				limit = { culture_group = kobold }
 				remove_random_development = yes
 			}
-			hidden_effect = { set_country_flag = kobildzan_artificer_spawn }
 		}
+		hidden_effect = { set_country_flag = kobildzan_artificer_spawn }
 	}
 }
 
@@ -799,7 +794,7 @@ country_event = { #The Kobildzani Conference
 			set_country_flag = kobildzan_hyperdigestion
 			every_subject_country = {
 				subject_ascension_effect = yes
-			}
+			}			
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -946,9 +941,13 @@ country_event = { #To Control Continents
 				name = Z38_intercontinental_ballistic_kobolds_dummy
 				duration = -1
 			}
+
+		}
+		hidden_effect = {
 			every_subject_country = {
+				set_country_flag = kobildzan_intercontinental_ballistic_kobolds
 				subject_ascension_effect = yes
-			}
+			}			
 		}
 		artifice_granted_20 = yes
 	}
