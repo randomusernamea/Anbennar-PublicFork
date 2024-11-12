@@ -657,6 +657,8 @@ wyvernheart_column_2 = {
 				modifier = trade_conflict
 			}
 			upper_alen_river_banks = { add_permanent_claim = ROOT }
+			241 = { add_permanent_claim = ROOT }
+			343 = { add_permanent_claim = ROOT }
 		}
 	}
 
@@ -1399,7 +1401,10 @@ wyvernheart_column_4 = {
 
 		trigger = {
 			has_estate_privilege = estate_adventurers_generous_quest_rewards
-			num_of_mercenaries = 4
+			custom_trigger_tooltip = {
+				tooltip = wyvernheart_D1_trigger_tt
+				num_of_mercenaries = 4
+			}
 			num_of_estate_agendas_completed = {
 				estate = estate_adventurers
 				value = 1
@@ -1747,10 +1752,12 @@ wyvernheart_column_5 = {
 
 		trigger = {
 			cedesck_area = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
 			wudhal_area = {
+				type = all
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -1761,6 +1768,9 @@ wyvernheart_column_5 = {
 						tooltip = wyvernheart_E3_trigger_tt
 						OR = {
 							tag = ROOT
+							capital_scope = {
+									NOT = { region = olavlund_region }
+							}
 							AND = {
 								NOT = { tag = ROOT }
 								NOT = { army_size = ROOT }
@@ -1776,6 +1786,9 @@ wyvernheart_column_5 = {
 						tooltip = wyvernheart_E3_trigger_tt
 						OR = {
 							tag = ROOT
+							capital_scope = {
+								NOT = { region = alenic_reach_region }
+							}
 							AND = {
 								NOT = { tag = ROOT }
 								NOT = { army_size = ROOT }
