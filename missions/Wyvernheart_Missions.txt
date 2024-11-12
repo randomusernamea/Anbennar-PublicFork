@@ -1717,9 +1717,10 @@ wyvernheart_column_4 = {
 				influence = 10
 				duration = 3650 
 			}
-			change_variable = {
-				which = pointsWitchKing
-				value = 6
+			
+			increase_witch_king_points_large = yes #3 point
+			hidden_effect = {
+				increase_witch_king_points_large = yes #3 point
 			}
 			if = {
 				limit = {

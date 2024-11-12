@@ -104,6 +104,14 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
+					ruler_age = 100
+				}
+				modifier = {
+					monthly_bloodbrand_power = -0.5
+				}
+			}
+			range_modifier = {
+				trigger = {
 					ruler_has_mage_personality = yes
 					NOT = { check_variable = { which = pointsWitchKing value = 1 } }
 				}
@@ -417,24 +425,6 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
-					absolutism = 10
-					NOT = { absolutism = 20 }
-				}
-				modifier = {
-					monthly_bloodbrand_power = 0.10
-				}
-			}
-			range_modifier = {
-				trigger = {
-					absolutism = 20
-					NOT = { absolutism = 30 }
-				}
-				modifier = {
-					monthly_bloodbrand_power = 0.20
-				}
-			}
-			range_modifier = {
-				trigger = {
 					absolutism = 30
 					NOT = { absolutism = 40 }
 				}
@@ -490,9 +480,18 @@ floodborn_council_mechanic = {
 			range_modifier = {
 				trigger = {
 					absolutism = 90
+					NOT = { absolutism = 100 }
 				}
 				modifier = {
 					monthly_bloodbrand_power = 0.90
+				}
+			}
+			range_modifier = {
+				trigger = {
+					absolutism = 100
+				}
+				modifier = {
+					monthly_bloodbrand_power = 1.00
 				}
 			}
 		}
