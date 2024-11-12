@@ -239,6 +239,14 @@ country_event = { #Artificer Malcontents
 			H31 = {
 				random_owned_province = {
 					add_random_development = 2
+					if = {
+						limit = { NOT = { culture_group = kobold } }
+						add_kobold_minority_size_effect = yes
+					}
+					if = {
+						limit = { NOT = { culture_group = gnomish } }
+						add_gnomish_minority_size_effect = yes
+					}
 				}
 			}
 		}
@@ -247,6 +255,14 @@ country_event = { #Artificer Malcontents
 			H30 = {
 				random_owned_province = {
 					add_random_development = 2
+					if = {
+						limit = { NOT = { culture_group = kobold } }
+						add_kobold_minority_size_effect = yes
+					}
+					if = {
+						limit = { NOT = { culture_group = gnomish } }
+						add_gnomish_minority_size_effect = yes
+					}
 				}
 			}				
 		}
@@ -255,6 +271,14 @@ country_event = { #Artificer Malcontents
 			H32 = {
 				random_owned_province = {
 					add_random_development = 2
+					if = {
+						limit = { NOT = { culture_group = kobold } }
+						add_kobold_minority_size_effect = yes
+					}
+					if = {
+						limit = { NOT = { culture_group = gnomish } }
+						add_gnomish_minority_size_effect = yes
+					}
 				}
 			}				
 		}	
@@ -262,9 +286,23 @@ country_event = { #Artificer Malcontents
 			U31 = {
 				random_owned_province = {
 					add_random_development = 2
+					if = {
+						limit = { NOT = { culture_group = kobold } }
+						add_kobold_minority_size_effect = yes
+					}
+					if = {
+						limit = { NOT = { culture_group = gnomish } }
+						add_gnomish_minority_size_effect = yes
+					}
 				}					
 			}
-		}		
+		}	
+		hidden_effect = {
+			change_variable = {
+				which = artificer_malcontents_var
+				value = 1
+			}
+		}	
 	}
 }
 
@@ -365,6 +403,23 @@ country_event = { #Twin Empires
 		dolindha_region = {
 			add_permanent_claim = H24
 		}
+		if = {
+			limit = {
+				NOT = {
+					1191 = {
+						has_great_project = {
+							type = ynnic_grand_temple_svemel
+							tier = 1
+						}
+					}
+				}
+			}
+			1191 = {
+				add_great_project_tier = {
+					type = ynnic_grand_temple_svemel
+					tier = 1
+				}	
+			}
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = green
 			SLOT = 1

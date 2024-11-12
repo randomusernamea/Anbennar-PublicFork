@@ -619,7 +619,6 @@ kob_4_a = {
 							197 = { has_province_flag = kobold_traps_lvl_2_or_more }
 							694 = { has_province_flag = kobold_traps_lvl_2_or_more }
 						}
-
 					}
 				}
 			}
@@ -882,13 +881,6 @@ kob_1_b = {
 						}
 					}
 				}
-				1191 = {
-					add_great_project_tier = {
-						type = ynnic_grand_temple_svemel
-						tier = 1
-					}	
-				}
-
 				add_treasury = -1000
 			}
 		}
@@ -1162,10 +1154,11 @@ kob_2_b = {
 				}
 			}
 			artifice_granted_10 = yes
-
+			custom_tooltip = haraf_claims_tt
 			H30 = { every_owned_province = { add_permanent_claim = ROOT } }
 			H31 = { every_owned_province = { add_permanent_claim = ROOT } }
 			H32 = { every_owned_province = { add_permanent_claim = ROOT } }			
+			U31 = { every_owned_province = { add_permanent_claim = ROOT } }
 		}
 	}
 	Z38_the_artificer_ruinborn = {
@@ -1299,6 +1292,36 @@ kob_2_b = {
 
 		effect = {
 			country_event = { id = flavour_kobildzan.9 }
+			if = {
+				limit = {
+					check_variable = {
+						which = artificer_malcontents_var
+						value = 1
+					}
+				}
+				custom_tooltip = recoup_losses_tt 
+				hidden_effect = {
+					while = {
+						limit = {
+							check_variable = {
+								which = artificer_malcontents_var
+								value = 1
+							}
+						}
+						random_owned_province = {
+							limit = { region = dragon_coast_region }
+							add_random_development = 1
+						}
+						random_subject_country = {
+							limit = { capital_scope = { region = haraf_region } }
+							random_owned_province = {
+								remove_random_development = yes
+								remove_random_development = yes
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -1829,18 +1852,19 @@ kob_4_b = {
 					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}
-			694 = {
-				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more 
-					has_province_flag = kobold_traps_lvl_2_or_more
-				}
-			}	
 			213 = {
 				custom_trigger_tooltip = {
 					tooltip = kobold_traps_lvl_2_or_more 
 					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}	
+			custom_trigger_tooltip = {
+				tooltip = greenscales_traps_tt
+				OR = {
+					197 = { has_province_flag = kobold_traps_lvl_2_or_more }
+					694 = { has_province_flag = kobold_traps_lvl_2_or_more }
+				}
+			}
 			NOT = {
 				accepted_culture = gawedi
 				accepted_culture = moorman
@@ -3248,14 +3272,16 @@ kob_5_c = {
 		}
 
 		trigger = {
-			gerudian_kobold_traps = {
-				type = all
-				owned_by = ROOT
-				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt 
-					has_province_flag = has_kobold_traps
+			calc_true_if = {
+				amount = 8
+				any_owned_province = {
+					owned_by = ROOT
+					custom_trigger_tooltip = {
+						tooltip = has_kobold_traps_tt 
+						has_province_flag = has_kobold_traps
+					}
+					has_manufactory_trigger = yes
 				}
-				has_manufactory_trigger = yes
 			}
 			has_church_aspect = copper_dragon_1_upgraded
 			has_church_aspect = copper_dragon_2_upgraded
