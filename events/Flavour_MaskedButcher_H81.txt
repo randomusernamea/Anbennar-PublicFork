@@ -1263,23 +1263,6 @@ province_event = {
 	}
 }
 
-#DEBUG
-country_event = {
-	id = flavour_maskedbutcher.69
-	title = flavour_maskedbutcher.69.t
-	desc = flavour_maskedbutcher.69.d
-	picture = ARTWORK_eventPicture
-	
-	is_triggered_only = yes
-
-	option = {
-		name = flavour_maskedbutcher.69.a
-		set_country_flag = mb_blood_moon_flg
-		set_country_flag = mb_prepare_mask_flg
-		set_country_flag = buffed_blood_frenzy_flag
-	}
-}
-
 #New Ruler Event
 country_event = {
 	id = flavour_maskedbutcher.100
