@@ -182,7 +182,7 @@ giberd_imperial = {
 					}
 				}
 				custom_trigger_tooltip = {
-					tooltip = giberd_to_strike_an_anvil_tt					# TODO: check that this works
+					tooltip = giberd_to_strike_an_anvil_tt
 					any_known_country = {
 						AND = {
 							A73 = {
@@ -2821,7 +2821,6 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			# TODO: spawn ravelian religion early
 			custom_tooltip = giberd_all_capacity_10_years_tt
 			hidden_effect = {
 				set_variable = {
