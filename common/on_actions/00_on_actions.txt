@@ -4151,7 +4151,12 @@ on_adm_development = {
 
 	merfolk_dynamic_settlement_effect = yes
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 }
 
 # province
@@ -4170,7 +4175,12 @@ on_dip_development = {
 
 	owner = { accretive_path_naamjyut_chi_stacking_effect = { amount = 10 } }
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 
 }
 
@@ -4189,7 +4199,12 @@ on_mil_development = {
 	owner = { accretive_path_harimari_chi_stacking_effect = { amount = 10 } }
 	merfolk_dynamic_settlement_effect = yes
 
-	add_chi_wellspring_to_size = yes
+	if = {
+		limit = {
+			transmutative_path_has_chi_wellspring_trigger = yes
+		}
+		add_chi_wellspring_to_size = yes
+	}
 }
 
 on_overextension_pulse = {
@@ -10245,6 +10260,8 @@ on_five_year_pulse_4 = {
 		precursor_relics.4
 		precursor_relics.5
 		precursor_relics.6
+		flavour_wyvernheart.300 #Council flavour event manager
+		flavour_wyvernheart.310 #Wyvernheart Estate agenda manager
 	}
 
 	random_events = { #for all migration/pop change events
@@ -10921,6 +10938,40 @@ on_province_culture_changed = {
             change_culture = metobesebi
         }
     }
+	if = {
+		limit = {
+			owner = {
+				is_or_was_tag = { tag = B39 }
+				NOT = { has_country_modifier = wyvernheart_cultural_events_timer }
+			}
+		}
+		random_list = {
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_401_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.401
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_402_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.402
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_403_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.403
+				}
+			}
+			1 = {
+				trigger = { owner = { NOT = { has_country_flag = wyvernheart_404_recent } } }
+				province_event = {
+					id = flavour_wyvernheart.404
+				}
+			}
+		}
+	}
 }
 
 
@@ -10940,7 +10991,6 @@ on_province_owner_change = {
 		rahenraj.1
 		unraveling.10
 		spirits.006 #Temple restoration/corruption/purification cleanup
-		spirits.010 #More temple stuff
 		flavor_nuugdan_tsarai.84 #fanwang system
 		flavor_nuugdan_tsarai.8	#giving land to subjects part of scripted peace with daengun
 		anb_miscevents.20 #Command warcamp replacement
@@ -11518,6 +11568,20 @@ on_province_owner_change = {
 				808 = {
 					add_random_development = 1
 				}
+			}
+		}
+	}
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = { tag = B39 }
+			fast_has_pop_of_race = { race = orcish }
+		}
+		owner = {
+			change_variable = {
+				which = acquired_orcish_pops
+				value = 1
 			}
 		}
 	}
@@ -15500,10 +15564,18 @@ on_capital_moved = {
 						}
 						remove_province_modifier = centaur_COT_capital
 					}
-					capital_scope = {
-						add_province_modifier = {
-							name = centaur_COT_capital
-							duration = -1
+					if = {
+						limit = {
+							capital_scope = {
+								province_has_center_of_trade_of_level = 1
+							}
+						}
+						capital_scope = {
+							add_province_modifier = {
+								name = centaur_COT_capital
+								duration = -1
+							}
+							add_base_production = 1
 						}
 					}
 				}
@@ -15875,16 +15947,19 @@ on_adm_exploited = {
 	}
 
 	#Ayarellen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = {
+		limit = { owner = { OR = { tag = F27 was_tag = F27 } } }
+		if = { limit = { culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+		if = { limit = { culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+		if = { limit = { culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+		if = { limit = { culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+		if = { limit = { culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+		if = { limit = { culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+		if = { limit = { culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+		if = { limit = { culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+		if = { limit = { culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+		if = { limit = { culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
+	}
 
 	#Karakhanbar
 	if = {
@@ -15914,6 +15989,17 @@ on_adm_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_dip_exploited = {
@@ -15931,16 +16017,19 @@ on_dip_exploited = {
 	}
 
 	#Ayarallen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = {
+		limit = { owner = { OR = { tag = F27 was_tag = F27 } } }
+		if = { limit = { culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+		if = { limit = { culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+		if = { limit = { culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+		if = { limit = { culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+		if = { limit = { culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+		if = { limit = { culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+		if = { limit = { culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+		if = { limit = { culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+		if = { limit = { culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+		if = { limit = { culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
+	}
 
 	#Karakhanbar
 	if = {
@@ -15970,6 +16059,17 @@ on_dip_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_mil_exploited = {
@@ -15987,16 +16087,19 @@ on_mil_exploited = {
 	}
 
 	#Ayarallen
-	if = { limit = { owner = { tag = F27 } culture = sadnatu } change_variable = { which = f27_sadnatu_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = surani } change_variable = { which = f27_surani_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = masnsih } change_variable = { which = f27_masnsih_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = brasanni } change_variable = { which = f27_brasanni_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = zanite } change_variable = { which = f27_zanite_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = kuzarami } change_variable = { which = f27_kuzarami_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = bahari } change_variable = { which = f27_bahari_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = gelkar } change_variable = { which = f27_gelkar_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = maqeti } change_variable = { which = f27_maqeti_development value = -1 } }
-	if = { limit = { owner = { tag = F27 } culture = sandfang_gnoll } change_variable = { which = f27_sandfang_development value = -1 } }
+	if = {
+		limit = { owner = { OR = { tag = F27 was_tag = F27 } } }
+		if = { limit = { culture = sadnatu } owner = { change_variable = { which = f27_sadnatu_development value = -1 } } }
+		if = { limit = { culture = surani } owner = { change_variable = { which = f27_surani_development value = -1 } } }
+		if = { limit = { culture = masnsih } owner = { change_variable = { which = f27_masnsih_development value = -1 } } }
+		if = { limit = { culture = brasanni } owner = { change_variable = { which = f27_brasanni_development value = -1 } } }
+		if = { limit = { culture = zanite } owner = { change_variable = { which = f27_zanite_development value = -1 } } }
+		if = { limit = { culture = kuzarami } owner = { change_variable = { which = f27_kuzarami_development value = -1 } } }
+		if = { limit = { culture = bahari } owner = { change_variable = { which = f27_bahari_development value = -1 } } }
+		if = { limit = { culture = gelkar } owner = { change_variable = { which = f27_gelkar_development value = -1 } } }
+		if = { limit = { culture = maqeti } owner = { change_variable = { which = f27_maqeti_development value = -1 } } }
+		if = { limit = { culture = sandfang_gnoll } owner = { change_variable = { which = f27_sandfang_development value = -1 } } }
+	}
 
 	#Karakhanbar
 	if = {
@@ -16026,6 +16129,17 @@ on_mil_exploited = {
 
 	giberd_exploit_benonhill = yes
 	transmutative_path_lower_chi_wellspring_to_size_effect = yes
+	
+	#Wyvernheart
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = wyvernheart_exploit_culture
+			}
+			has_construction = culture
+		}
+		add_construction_progress = 0.33
+	}
 }
 
 on_raze = {

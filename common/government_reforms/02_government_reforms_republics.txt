@@ -1055,11 +1055,6 @@ free_city = {
 	potential = {
 		has_reform = free_city
 	}
-	trigger = {
-		hidden_trigger = {
-			NOT = { has_country_flag = free_city_disabled }
-		}
-	}
 	legacy_equivalent = imperial_city
 	valid_for_nation_designer = yes
 	lock_level_when_selected = yes

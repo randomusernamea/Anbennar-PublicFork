@@ -6123,7 +6123,7 @@ G48_kheintro_kosphin = {
 }
 
 G48_magic_and_steel = {
-	trade_goods_size_modifier = 0.1
+	global_trade_goods_size_modifier = 0.1
 }
 
 G48_blue_friend = {
@@ -7426,6 +7426,9 @@ giberd_the_fragment_guard_ravelian = {
 	land_morale = 0.10
 	prestige = 1
 }
+giberd_dealing_with_the_magisterium = {
+	mages_loyalty_modifier = 0.10
+}
 
 # giberd_objectionale_oversight = {} # artificer estate organization
 
@@ -7580,6 +7583,8 @@ giberd_demands_enclaves_promises_made = {
 
 giberd_construction_of_gds_loopeng_gedsandde = {
 	# -20 artificer cap, can't remove society invenstions
+}
+giberd_curtain_call_inventions = {
 }
 giberd_gds_loopeng_gedsandde_research = {
 	artificers_invention_slots = -2
@@ -7761,7 +7766,7 @@ giberd_leader_brillites = {
 giberd_leader_mechanists = {
 	tec_mechanists_influence = 0.33
 	artificers_loyalty_modifier = 0.10
-	artificers_research_time = -0.20
+	artificers_research_time = -0.10
 	global_unrest = 2
 	prestige = -1
 	ae_impact = 0.20
@@ -7815,7 +7820,9 @@ giberd_statesmen_occupied = {
 	diplomats = -10
 	merchants = -10
 }
-
+giberd_artificers_of_cannor_modifier = {
+	artificers_research_time = -0.20
+}
 giberd_deluge_of_investment = {
 	development_cost = -0.10
 }
@@ -7827,6 +7834,7 @@ giberd_language_of_esmar = {
 giberd_show_our_might = {
 	fire_damage = 0.10
 }
+
 
 #Irrliam
 irrliam_newfound_zeal = {
@@ -31769,7 +31777,7 @@ I90_serpentspine_plantations = {
 I90_collaborative_administration = {
 	years_of_nationalism = -5
 	num_accepted_cultures = 2
-	trade_goods_size_modifier = 0.1
+	global_trade_goods_size_modifier = 0.1
 }
 
 I90_despotic_administration = {
