@@ -38,26 +38,6 @@ country_event = { #To Become Dragons
 		name = flavour_kobildzan.2.a
 		change_government = republic
 		add_government_reform = technocracy_republic_reform
-		if = {
-			limit = { is_tribal = no }
-			if = {
-				limit = { has_reform_on_level = 5 }
-				change_government_reform_progress = 50
-			}
-			else_if = {
-				limit = { has_reform_on_level = 4 }
-				change_government_reform_progress = 40				
-			}
-			else_if = {
-				limit = { has_reform_on_level = 3 }
-				change_government_reform_progress = 30				
-			}
-			else_if = {
-				limit = { has_reform_on_level = 2 }
-				change_government_reform_progress = 20				
-			}
-		}
-		custom_tooltip = gain_reform_progress_per_reform_level_tt 
 		swap_non_generic_missions = yes
 	}
 }
@@ -802,7 +782,7 @@ country_event = { #The Kobildzani Conference
 				duration = -1
 			}
 		}
-		artifice_granted_10 = yes
+		artifice_granted_20 = yes
 	}
 	option = { #We must become dragons!
 		name = flavour_kobildzan.14.b
@@ -822,7 +802,7 @@ country_event = { #The Kobildzani Conference
 			name = Z38_dragonfire_sacs_regiment_mod
 			duration = -1
 		}
-		artifice_granted_10 = yes
+		artifice_granted_20 = yes
 	}
 }
 

@@ -76,14 +76,17 @@ country_event = {
 					has_church_aspect = blue_dragon_2_upgraded
 					has_church_aspect = blue_dragon_3_upgraded
 				}
-				custom_tooltip = festival_reward_artificer_3_tt
+				custom_tooltip = festival_reward_artificer_1_tt
 				hidden_effect = {
 					change_variable = {
 						which = StaticArtificePoints
-						value = 1.5
+						value = 1
 					}
 					update_artifice_points = yes
 				}
+				add_adm_power = 30
+				add_dip_power = 30
+				add_mil_power = 30
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -92,33 +95,14 @@ country_event = {
 						has_church_aspect = blue_dragon_3_upgraded
 					}
 				}
-				custom_tooltip = festival_reward_artificer_2_tt
-				hidden_effect = {
-					change_variable = {
-						which = StaticArtificePoints
-						value = 1
-					}
-					update_artifice_points = yes
-				}
+				add_adm_power = 20
+				add_dip_power = 20
+				add_mil_power = 20
 			}
 			else = { #Only 1 upgraded active
-				if = {
-					limit = { has_estate = estate_artificers }
-					custom_tooltip = festival_reward_artificer_1_tt
-					hidden_effect = {
-						change_variable = {
-							which = StaticArtificePoints
-							value = 0.5
-						}
-						update_artifice_points = yes
-					}
-				}
-				else = {
-					custom_tooltip = blue_dragon_hinting_effect_tt
-					add_dip_power = 10
-					add_adm_power = 10
-					add_mil_power = 10
-				}
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10	
 			}
 		}
 		if = { #Red dragon upgrade proc
@@ -403,10 +387,7 @@ country_event = {
 					has_church_aspect = bronze_dragon_2_upgraded
 					has_church_aspect = bronze_dragon_3_upgraded
 				}
-				if = { 
-					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
-					event_target:EmperorOfChina = { add_mandate = 6 }
-				}
+				add_army_professionalism = 0.03
 				if = { #cant use scripted effect for planetouched general b/c it's broken
 					limit = { army_tradition = 80 }
 					define_general = {
@@ -464,15 +445,12 @@ country_event = {
 						has_church_aspect = bronze_dragon_3_upgraded
 					}
 				}
-				if = { 
-					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
-					event_target:EmperorOfChina = { add_mandate = 4 }
-				}
+				add_army_professionalism = 0.02
 			}
 			else = { #Only 1 upgraded active
 				if = { 
 					limit = { event_target:EmperorOfChina = { religion = aakhetist } }
-					event_target:EmperorOfChina = { add_mandate = 2 }
+					add_army_professionalism = 0.01
 				}						
 			}
 		}

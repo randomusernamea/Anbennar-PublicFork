@@ -365,7 +365,7 @@ purple_dragon_1_base= {
 	}
 	monarch_power = adm
 	modifier = {
-		development_cost = -0.1
+		development_cost = -0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -717,7 +717,7 @@ silver_dragon_1_base= {
 	monarch_power = adm
 	modifier = {
 		yearly_corruption = -0.10
-		church_power_modifier = 0.25
+		church_power_modifier = 0.125
 	}
 	ai_will_do = {
 		factor = 15
@@ -1410,8 +1410,7 @@ red_dragon_1_upgraded = {
 	}
     monarch_power = adm
     modifier = {
-		global_trade_goods_size_modifier = 0.05
-		fire_damage = 0.1
+		global_trade_goods_size_modifier = 0.075
     }
     ai_will_do = {
         factor = 15
@@ -1563,7 +1562,7 @@ green_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		ship_durability = 0.1
+		hull_size_modifier = 0.05
     }
     ai_will_do = {
         factor = 15
@@ -1619,7 +1618,7 @@ black_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		core_creation = -0.1
+		core_creation = -0.05
 		max_absolutism = 15
     }
     ai_will_do = {
@@ -1694,8 +1693,8 @@ purple_dragon_1_upgraded= {
 	}
     monarch_power = adm
     modifier = {
-		development_cost = -0.1
-		artillery_power = 0.05
+		development_cost = -0.05
+		artillery_cost = -0.1
     }
     ai_will_do = {
         factor = 15
@@ -1809,7 +1808,7 @@ brass_dragon_1_upgraded= {
     monarch_power = adm
     modifier = {
 		global_unrest = -2
-		province_warscore_cost = -0.15
+		production_efficiency = 0.1
     }
     ai_will_do = {
         factor = 15
@@ -1979,7 +1978,7 @@ silver_dragon_1_upgraded= {
     monarch_power = adm
     modifier = {
 		yearly_corruption = -0.2
-		church_power_modifier = 0.4
+		church_power_modifier = 0.25
     }
     ai_will_do = {
         factor = 15
@@ -1998,7 +1997,7 @@ silver_dragon_2_upgraded= {
     monarch_power = dip
     modifier = {
 		governing_capacity_modifier = 0.1
-		min_autonomy_in_territories = -0.1
+		min_autonomy_in_territories = -0.05
     }
     ai_will_do = {
         factor = 15

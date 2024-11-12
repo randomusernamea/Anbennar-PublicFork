@@ -9242,13 +9242,13 @@ kobildzan_draconic_technopriests = {
 		church_influence_modifier = 0.1
 	} 
 	custom_attributes = {
-		extra_artificer_capacity_20 = yes
+		extra_artificer_capacity_10 = yes
 	}
 	effect = {
 		hidden_effect = {
 			change_variable = {
 				which = StaticArtificePoints
-				value = 20
+				value = 10
 			}
 			update_artifice_points = yes
 		}

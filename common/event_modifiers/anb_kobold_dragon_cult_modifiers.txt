@@ -41,6 +41,10 @@ white_dragon_3_base = {
     war_exhaustion = -0.03
 }
 
+purple_dragon_1_base = {
+    development_cost = -0.05
+}
+
 purple_dragon_2_base = {
     technology_cost = -0.025
 }
@@ -98,8 +102,7 @@ gold_dragon_3_base = {
 }
 
 red_dragon_1_upgraded = {
-	global_trade_goods_size_modifier = 0.05
-	fire_damage = 0.1
+	global_trade_goods_size_modifier = 0.075
 }
 
 red_dragon_2_upgraded = {
@@ -139,7 +142,7 @@ green_dragon_2_upgraded = {
 }
 
 green_dragon_3_upgraded = {
-    ship_durability = 0.1
+    hull_size_modifier = 0.05
 }
 
 black_dragon_1_upgraded = {
@@ -153,7 +156,7 @@ black_dragon_2_upgraded = {
 }
 
 black_dragon_3_upgraded = {
-    core_creation = -0.1
+    core_creation = -0.05
 	max_absolutism = 15
 }
 
@@ -172,8 +175,8 @@ white_dragon_3_upgraded = {
 }
 
 purple_dragon_1_upgraded = {
-	development_cost = -0.1
-	artillery_power = 0.05
+	development_cost = -0.05
+	artillery_cost = -0.1
 }
 
 purple_dragon_2_upgraded = {
@@ -203,7 +206,7 @@ brown_dragon_3_upgraded = {
 
 brass_dragon_1_upgraded = {
 	global_unrest = -2
-	province_warscore_cost = -0.15
+	production_efficiency = 0.1
 }
 
 brass_dragon_2_upgraded = {
@@ -247,12 +250,12 @@ bronze_dragon_3_upgraded = {
 
 silver_dragon_1_upgraded = {
 	yearly_corruption = -0.2
-	church_power_modifier = 0.4
+	church_power_modifier = 0.25
 }
 
 silver_dragon_2_upgraded = {
     governing_capacity_modifier = 0.1
-	min_autonomy_in_territories = -0.1
+	min_autonomy_in_territories = -0.05
 }
 
 silver_dragon_3_upgraded = {

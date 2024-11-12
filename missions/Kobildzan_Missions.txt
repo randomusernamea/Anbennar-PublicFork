@@ -678,6 +678,7 @@ kob_4_a = {
 			NOT = { A13 = { navy_size = ROOT } }
 			NOT = { Z22 = { navy_size = ROOT } }
 			NOT = { A06 = { navy_size = ROOT } }
+			num_of_colonists = 1
 		}
 
 		effect = {
@@ -691,7 +692,7 @@ kob_4_a = {
 			
 			add_country_modifier = {
 				name = Z38_seasick_green_modifier
-				duration = 18250
+				duration = 10950
 			}
 
 			if = {
@@ -1167,12 +1168,96 @@ kob_2_b = {
 			H32 = { every_owned_province = { add_permanent_claim = ROOT } }			
 		}
 	}
-
-	Z38_a_technocracy_for_all = {
-		icon = mission_tech_stuff
+	Z38_the_artificer_ruinborn = {
+		icon = mission_ynnic_knights
 		position = 9
 		required_missions = { 
 			Z38_relics_of_the_future
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = subject_broken_sea_tt
+				any_subject_country = {
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_broken_sea 
+					}
+				}	
+			}
+			custom_trigger_tooltip = {
+				tooltip = subject_eordand_tt
+				any_subject_country = {
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_eordand
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = subject_haraf_tt
+				any_subject_country = {
+					num_of_cities = 10 
+					capital_scope = {
+					colonial_region = colonial_haraf 
+					}
+				}	
+			}
+			H24 = {
+				OR = {
+					capital_scope = {
+						OR = {
+							current_institution = 100
+							custom_trigger_tooltip = {
+								tooltip = institution_spread_tt
+								current_institution_growth = 12 
+							}
+						}
+					}
+				}
+			}
+			has_country_modifier = racial_focus_ruinborn
+		}
+
+		effect = {
+			custom_tooltip = DD_brought_to_tech_level_tt 
+			hidden_effect = {
+				while = {
+					limit = { mil_tech_is_inferior = { tag=H38 } }
+					H38 = { add_mil_tech = 1 }
+				}
+				
+				while = {
+					limit = { adm_tech_is_inferior = { tag=H38 } }
+					H38 = { add_adm_tech = 1 }
+				}
+				
+				while = {
+					limit = { dip_tech_is_inferior = { tag=H38 } }
+					H38 = { add_dip_tech = 1 }
+				}
+			}
+
+			add_country_modifier = {
+				name = Z38_technological_union_of_north_aelantir
+				duration = -1
+			}
+
+			every_subject_country = {
+				add_country_modifier = {
+					name = Z38_technological_union_of_north_aelantir
+					duration = -1
+				}
+			}
+		}
+	}
+
+
+	Z38_a_technocracy_for_all = {
+		icon = mission_tech_stuff
+		position = 10
+		required_missions = { 
+			Z38_the_artificer_ruinborn
 		}
 
 		provinces_to_highlight = {
@@ -1217,82 +1302,6 @@ kob_2_b = {
 		}
 	}
 
-	Z38_the_artificer_ruinborn = {
-		icon = mission_ynnic_knights
-		position = 10
-		required_missions = { 
-			Z38_a_technocracy_for_all
-		}
-
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = subject_broken_sea_tt
-				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_broken_sea 
-					}
-				}	
-			}
-			custom_trigger_tooltip = {
-				tooltip = subject_eordand_tt
-				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_eordand
-					}
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = subject_haraf_tt
-				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_haraf 
-					}
-				}	
-			}
-			H24 = {
-				OR = {
-					NOT = { is_lacking_institutions = yes }
-					capital_scope = { has_province_modifier = knowledge_sharing }
-				}
-			}
-			has_country_modifier = racial_focus_ruinborn
-		}
-
-		effect = {
-			custom_tooltip = DD_brought_to_tech_level_tt 
-			hidden_effect = {
-				while = {
-					limit = { mil_tech_is_inferior = { tag=H38 } }
-					H38 = { add_mil_tech = 1 }
-				}
-				
-				while = {
-					limit = { adm_tech_is_inferior = { tag=H38 } }
-					H38 = { add_adm_tech = 1 }
-				}
-				
-				while = {
-					limit = { dip_tech_is_inferior = { tag=H38 } }
-					H38 = { add_dip_tech = 1 }
-				}
-			}
-
-			add_country_modifier = {
-				name = Z38_technological_union_of_north_aelantir
-				duration = -1
-			}
-
-			every_subject_country = {
-				add_country_modifier = {
-					name = Z38_technological_union_of_north_aelantir
-					duration = -1
-				}
-			}
-		}
-	}
 }
 kob_3_b = {
 	slot = 3
@@ -1366,17 +1375,14 @@ kob_3_b = {
 		icon = mission_kobold
 		position = 10
 		required_missions = { 
-			Z38_a_technocracy_for_all
+			Z38_the_artificer_ruinborn
 			Z38_a_civilized_cult
 		}
 
 		trigger = {
 			high_tolerance_human_race_trigger = yes 
 			high_tolerance_gnomish_race_trigger = yes
-			OR = {
-				high_tolerance_goblin_race_trigger = yes
-				high_tolerance_halfling_race_trigger = yes
-			} 
+			high_tolerance_halfling_race_trigger = yes
 			religious_unity = 0.9
 			check_variable = {
 				which = kdc_festivals_held
@@ -1404,7 +1410,7 @@ kob_3_b = {
 				name = Z38_malliaths_chosen_disciples_regiment_mod
 				duration = -1
 			}
-			artifice_granted_20 = yes
+			artifice_granted_10 = yes
 		}
 	}
 
@@ -1412,7 +1418,7 @@ kob_3_b = {
 		icon = mission_mushroom_cloud
 		position = 11
 		required_missions = { 
-			Z38_the_artificer_ruinborn
+			Z38_a_technocracy_for_all
 			Z38_reclaiming_the_frontier
 			Z38_a_new_face_a_new_body
 		}
@@ -1588,9 +1594,7 @@ kob_4_b = {
 			182 = { change_trade_goods = iron add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
 			150 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
 			211 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
-			148 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}
-		
-			mission_reward_artifice_points_5 = yes
+			148 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}		
 		}
 	}
 
@@ -1638,21 +1642,6 @@ kob_4_b = {
 					tooltip = has_kobold_traps_tt
 					has_province_flag = has_kobold_traps
 				}
-			}
-			
-			num_of_owned_provinces_with = {
-				value = 3
-				
-				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more
-					has_country_flag = kobold_traps_lvl_2_or_more
-				}
-				
-				OR = {
-					region = small_country_region
-					region = lencenor_region
-				}
-				
 			}
 
 			115 = { 
@@ -2462,6 +2451,12 @@ kob_2_c = {
 					}
 				}
 				AND = {
+					region = rzenta_region
+					OR = {
+						NOT = { development = 25 }
+					}
+				}
+				AND = {
 					province_id = 1746
 					NOT = { light_ships_in_province = 40 }
 				}
@@ -2469,13 +2464,18 @@ kob_2_c = {
 		}
 
 		trigger = {
+			NOT = { dragon_coast_region = { devastation = 1 } }
+			
 			num_of_owned_provinces_with = {
 				value = 15
 				region = dragon_coast_region
 				development = 25
 			}
-
-			NOT = { dragon_coast_region = { devastation = 1 } }
+			num_of_owned_provinces_with = {
+				value = 15
+				region = rzenta_region
+				development = 25
+			}
 
 			187 = {
 				check_variable = {
@@ -3012,7 +3012,14 @@ kob_4_c = {
 					add_province_modifier = { name = Z38_ebonsteel_extraction duration = -1 }
 				}
 			}
-			mission_reward_artifice_points_5 = yes
+			custom_tooltip = permanently_increases_our_artifice_points_by_25_tt
+			hidden_effect = {
+				change_variable = {
+					which = StaticArtificePoints
+					value = 25
+				}
+			}
+			update_artifice_points = yes
 		}
 	}
 
