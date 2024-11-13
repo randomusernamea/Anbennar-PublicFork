@@ -883,6 +883,14 @@ kob_1_b = {
 				}
 				add_treasury = -1000
 			}
+			custom_tooltip = eordand_discovering_tt
+			hidden_effect = {
+				eordand_superregion = {
+					limit = { trade_goods = precursor_relics }
+					add_permanent_claim = ROOT
+					discover_country = ROOT
+				}
+			}
 		}
 	}
 
@@ -946,14 +954,17 @@ kob_1_b = {
 				limit = {
 					has_dlc = "Leviathan"
 				}
-				1191 = {
-					has_great_project = {
-						type = ynnic_grand_temple_svemel
-						tier = 2
+				OR = {
+					treasury = 6000
+					1191 = {
+						has_great_project = {
+							type = ynnic_grand_temple_svemel
+							tier = 2
+						}
 					}
 				}
 			} else = {
-				treasury = 1000
+				treasury = 6000
 			}
 
 
@@ -965,11 +976,17 @@ kob_1_b = {
 		effect = {
 			if = {
 				limit = {
-					NOT = { has_dlc = "Leviathan" }
+					NOT = { 					
+						1191 = {
+							has_great_project = {
+								type = ynnic_grand_temple_svemel
+								tier = 2
+							}
+						} 
+					}
 				}
-				add_treasury = -1000
+				add_treasury = -6000
 			}
-
 			tooltip = {
 				add_country_modifier = {
 					name = Z38_gospodh_1
@@ -2403,19 +2420,23 @@ kob_1_c = {
 			}
 		}
 
-		trigger = {
-			if = {
-				limit = {
-					has_dlc = "Leviathan"
-				}
+		trigger = {		
+			OR = {
 				1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } }
-				1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } }
-				1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } }
-				1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } }
-			} else = {
 				treasury = 10000
 			}
-
+			OR = {
+				1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } }
+				treasury = 10000
+			}
+			OR = {
+				1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } }
+				treasury = 10000
+			}
+			OR = {
+				1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } }
+				treasury = 10000
+			}				
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = unlocked_brass_dragon_tt 
@@ -2451,7 +2472,19 @@ kob_1_c = {
 				amount = 25
 			}
 			if = {
-				limit = { NOT = { has_dlc = "Leviathan" } }
+				limit = { NOT = { 1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } } } }
+				add_treasury = -10000
+			}
+			if = {
+				limit = { NOT = { 1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } } } }
+				add_treasury = -10000
+			}
+			if = {
+				limit = { NOT = { 1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } } } }
+				add_treasury = -10000
+			}
+			if = {
+				limit = { NOT = { 1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } } } }
 				add_treasury = -10000
 			}
 		}
