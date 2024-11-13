@@ -1964,9 +1964,10 @@ maghargma_four = {
 						}
 						all_known_country = {
 							overlord = {
-								culture_group = ogre
-								is_subject_of = ROOT
-								is_subject_of_type = tributary_state_anb
+								is_subject_of_type_with_overlord = {
+									who = ROOT
+									type = tributary_state_anb
+								}
 							}
 							culture_group = centaur
 							capital_scope = { region = west_forbidden_plains_region }
@@ -1987,7 +1988,6 @@ maghargma_four = {
 					}
 				}
 			}
-
 			dip_power = 100
 			all_subject_country = {
 				NOT = { liberty_desire = 50 }
@@ -2103,7 +2103,10 @@ maghargma_four = {
 		icon = mission_unite_home_region
 		position = 4
 		required_missions = { maghargma_reorganize_the_horsemen } 
-		provinces_to_highlight = {  } 
+		provinces_to_highlight = {  
+			region = east_forbidden_plains_region
+			NOT = { country_or_subject_holds = ROOT }
+		} 
 
 		trigger = {
 			if = {

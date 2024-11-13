@@ -17825,28 +17825,49 @@ maghargama_vassalize_centaur_tributary = {
 		#Every tributary and their vassals becomes our vassal
 		every_known_country = { 
 			limit = {
-				OR = {
-					AND = {
-						is_subject_of_type_with_overlord = {
-							who = ROOT
-							type = tributary_state_anb
-						}
-						[[check_capital] capital_scope = { region = $region$ } ]
-					}
-					overlord = {
-						[[check_capital] capital_scope = { region = $region$ } ]
-						is_subject_of_type_with_overlord = {
-							who = ROOT
-							type = tributary_state_anb
-						}	
-					}
+				overlord = {
+					[[check_capital] capital_scope = { region = $region$ } ]
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = tributary_state_anb
+					}	
 				}
 				culture_group = centaur
 			}
 			ROOT = { 
 				create_subject = {
 					subject_type = maghargma_special_subject
-					who = PREV
+					subject = PREV
+				}
+			}
+			[[move_capital]
+			if = {
+				limit = {
+					NOT = {
+						capital_scope = { region = $region$ }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						region = $region$ 
+					}
+					owner = { set_capital = PREV }
+				}
+			}
+			]
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type_with_overlord = {
+					who = ROOT
+					type = tributary_state_anb
+				}
+				[[check_capital] capital_scope = { region = $region$ } ]
+			}
+			ROOT = { 
+				create_subject = {
+					subject_type = maghargma_special_subject
+					subject = PREV
 				}
 			}
 			[[move_capital]
