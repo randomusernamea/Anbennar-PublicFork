@@ -255,13 +255,7 @@ country_event = { #Handler event
 						has_country_flag = merfolk_opinion_allied
 						has_country_flag = merfolk_opinion_neutral
 					}
-					any_owned_province = { 
-						OR = {
-							has_province_modifier = offcoast_merfolk_allied
-							has_province_modifier = offcoast_merfolk_neutral
-						}
-						NOT = { has_province_modifier = merfolk_flotsam_gratitude } 
-					}
+					NOT = { has_country_modifier = merfolk_flotsam_gratitude }
 				}
 				country_event = {
 					id = merfolk_events.15
