@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 #missions
  raithtall_golden_memory_title:0 "The Golden Memory"
  raithtall_golden_memory_desc:0 "A cool intro that sets the scene with the fall of Dorcurt 30(?) years ago and prepares you to retake it."
@@ -125,11 +125,10 @@
  raithtall_gelcolle_tt1:0 "We will send Gelcolle an offer to become our subjects."
  raithtall_gelcolle_tt2:0 "We will become a vassal of [H12.GetName] and convert to Autumn Court."  #TODO - make it look like regular ingame tooltips
  raithtall_gelcolle_tt3:0 "[H12.GetName] will get a permanent claim on our capital and a casus belli to vassalise us."  #TODO - make it look like regular ingame tooltips
- raithtall_0_winter_battles_won_tt:0 "Win 8 battles against Winter Court nations\nCurrent: 0"  #TODO - make it look like regular ingame tooltips
+ raithtall_0_winter_battles_won_tt:0 "Win 8 battles against Winter Court nations\n      Current: [Root.raithtall_winter_battle_won.GetValue]"  #TODO - make it look like regular ingame tooltips
  raithtall_disarmed_population_tt:0 "This modifier will be removed once we convert the province."
  raithtall_superb_harvest_tt:0 "This modifier will repeat every year for four years."
  raithtall_peitar_boost_tt:0 "Five of our Peitar provinces will get +1 base manpower. If the monarchists are in charge, it applies to eight provinces instead."
  raithtall_autumn_tolerance_tt:0 "Protection of Autumn will now also give +2 Local Tolerance of Heretics."
  raithtall_snecboth_boost_tt:0 "All states in the Randrunnse region with Snecboth or Tuathak culture owned by us or our subjects gain +15 prosperity progress. If they were already prsoperous, they instead give you 20 gold. If the theocrats are in charge, the effect is boosted to +20 prosperity progress and +20 gold."
  raithtall_yearly_harvest_tt: "The Superb Harvest modifier will be reapplied every autumn for the Iadth and Raithlos areas."
- built_embassy_tt: "We have built a fey embassy in our capital."  #TODO - turn into a general tooltip

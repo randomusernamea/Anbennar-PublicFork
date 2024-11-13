@@ -2166,8 +2166,10 @@ country_event = {
 		}
 		define_ruler = {
 			dynasty = original_dynasty
+			random_gender = yes
 		}
-		change_statists_vs_orangists = -0.33
+		set_ruler_flag = raithtallTwilightMonarchist
+		change_statists_vs_orangists = -0.2
 	}
 
 	option = {
@@ -2176,8 +2178,10 @@ country_event = {
 		}
 		name = elections.720.twilightTheocrat
 		define_ruler = {
+			random_gender = yes
 		}
-		change_statists_vs_orangists = 0.33
+		set_ruler_flag = raithtallTwilightTheocrat
+		change_statists_vs_orangists = 0.2
 	}
 }
 
@@ -2423,8 +2427,10 @@ country_event = {
 		}
 		define_ruler = {
 			dynasty = original_dynasty
+			random_gender = yes
 		}
-		change_statists_vs_orangists = -0.33
+		set_ruler_flag = raithtallTwilightMonarchist
+		change_statists_vs_orangists = -0.2
 	}
 
 	option = {
@@ -2433,8 +2439,10 @@ country_event = {
 		}
 		name = elections.720.twilightTheocrat
 		define_ruler = {
+			random_gender = yes
 		}
-		change_statists_vs_orangists = 0.33
+		set_ruler_flag = raithtallTwilightTheocrat
+		change_statists_vs_orangists = 0.2
 	}
 }
 
