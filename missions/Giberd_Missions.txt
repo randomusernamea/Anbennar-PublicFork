@@ -1043,10 +1043,9 @@ giberd_konwell_conquest = {
 			}
 			custom_tooltip = giberd_unable_to_research_10
 			hidden_effect = {
-				set_country_flag = artifice_research_temporarily_disabled
-				country_event = {
-					id = flavor_giberd.50
-					days = 3650
+				add_country_modifier = {
+					name = artifice_research_temporarily_disabled
+					duration = 3650
 				}
 			}
 			random_owned_province = {
@@ -1906,10 +1905,9 @@ giberd_mercantile_shipping = {
 		effect = {
 			custom_tooltip = giberd_unable_to_research_10
 			hidden_effect = {
-				set_country_flag = artifice_research_temporarily_disabled
-				country_event = {
-					id = flavor_giberd.50
-					days = 3650
+				add_country_modifier = {
+					name = artifice_research_temporarily_disabled
+					duration = 3650
 				}
 			}
 			custom_tooltip = giberd_after_5_years_tt

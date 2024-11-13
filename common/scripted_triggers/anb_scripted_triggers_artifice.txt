@@ -824,12 +824,12 @@ is_not_researching_invention = {
 	}
 	if = {
 		limit = {
-			has_country_flag = artifice_research_temporarily_disabled
+			has_country_modifier = artifice_research_temporarily_disabled
 		}
 		custom_trigger_tooltip = {
 			tooltip = researching_invention_not_disabled_tt
 			NOT = {
-				has_country_flag = artifice_research_temporarily_disabled
+				has_country_modifier = artifice_research_temporarily_disabled
 			}
 		}
 	}

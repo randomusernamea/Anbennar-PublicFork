@@ -54,9 +54,9 @@ country_event = {
 		}
 		custom_tooltip = giberd_unable_to_research_10
 		hidden_effect = {
-			country_event = {
-				id = flavor_giberd.50
-				days = 3650
+			add_country_modifier = {
+				name = artifice_research_temporarily_disabled
+				duration = 3650
 			}
 		}
 		tooltip = {
@@ -100,9 +100,9 @@ country_event = {
 		}
 		custom_tooltip = giberd_unable_to_research_10
 		hidden_effect = {
-			country_event = {
-				id = flavor_giberd.50
-				days = 3650
+			add_country_modifier = {
+				name = artifice_research_temporarily_disabled
+				duration = 3650
 			}
 		}
 		tooltip = {
@@ -135,9 +135,6 @@ country_event = {
 		custom_tooltip = giberd_magisterium_oversight_tt
 		custom_tooltip = has_already_happened_tt
 		set_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
-		hidden_effect = {
-			clr_country_flag = artifice_research_temporarily_disabled
-		}
 	}
 	after = {
 		research_speed = yes
@@ -1360,10 +1357,9 @@ country_event = {
 		giberd_factions_technomancers_increase = yes
 		custom_tooltip = giberd_unable_to_research_20
 		hidden_effect = {
-			set_country_flag = artifice_research_temporarily_disabled
-			country_event = {
-				id = flavor_giberd.50
-				days = 7300
+			add_country_modifier = {
+				name = artifice_research_temporarily_disabled
+				duration = 7300
 			}
 		}
 		add_estate_loyalty_modifier = {
@@ -1595,20 +1591,6 @@ country_event = {
 
 ##########
 # Cleanup events
-# cleanup for "unable to resarch for X years"
-country_event = {
-	id = flavor_giberd.50
-	title = flavor_giberd.50.t
-	desc = flavor_giberd.50.d
-	picture = HRE_eventPicture
-	is_triggered_only = yes
-	hidden = yes
-	option = {
-		name = flavor_giberd.50.a
-		clr_country_flag = artifice_research_temporarily_disabled
-	}
-}
-
 # cleanup for "take -30 artificer cap for X years"
 country_event = {
 	id = flavor_giberd.51
