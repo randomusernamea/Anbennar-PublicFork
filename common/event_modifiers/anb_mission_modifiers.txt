@@ -31945,7 +31945,11 @@ Z38_technology_and_trade_modifier = {
 Z38_seasick_green_modifier = {
 	range = 0.5
 	global_colonial_growth = 35
-	colony_cost_modifier = -0.5
+	colonist_placement_chance = 0.1
+}
+
+Z38_kobold_migration_wave = {
+	local_colonial_growth = 25
 }
 
 Z38_shape_dalaire_modifier = {

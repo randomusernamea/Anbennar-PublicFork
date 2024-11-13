@@ -469,6 +469,7 @@ kob_3_a = {
 		trigger = {
 			189 = {  
 				check_variable = { dragon_cult_hoard = 500 }
+				has_no_ongoing_construction = yes
 			}
 		}
 
@@ -531,9 +532,25 @@ kob_3_a = {
                 is_ahead_of_time_in_technology = { tech = dip }
                 is_ahead_of_time_in_technology = { tech = mil }
             }
+			any_subject_country = {
+				capital_scope = { colonial_region = colonial_dalaire }
+				is_colonial_nation = yes
+			}
 		}
 		effect = {
 			country_event = { id = flavour_kobildzan.2 }
+			random_subject_country = {
+				limit = {
+					is_colonial_nation_of = ROOT
+					capital_scope = { colonial_region = colonial_dalaire }
+					num_of_cities = 5
+				}
+
+				add_country_modifier = {
+					name = Z38_shape_dalaire_modifier
+					duration = 18250
+				}
+			}
 			if = {
 				limit = { NOT = { tag = Z38 } }
 				189 = {
@@ -653,7 +670,6 @@ kob_4_a = {
 
 		effect = {
 			add_stability_or_adm_power = yes
-			add_army_tradition = 20
 			add_war_exhaustion = -5
 			random_owned_province = {
 				limit = {
@@ -683,10 +699,10 @@ kob_4_a = {
 		effect = {
 			if = {
 				limit = { 1001 = { is_city = no is_colony = no } }
-				create_colony_mission_reward = { province = 1001 }
+				1001 = { create_colony = 400 }
 			} else_if = {
 				limit = { 1205 = { is_city = no is_colony = no } }
-				create_colony_mission_reward = { province = 1205 }
+				1205 = { create_colony = 400 }
 			}
 			
 			add_country_modifier = {
@@ -712,11 +728,31 @@ kob_4_a = {
 			Z38_seasick_green
 		}
 
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					colonial_region = colonial_dalaire
+					NOT = { has_discovered = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 1202
+						province_id = 1214
+					}
+					NOT = {
+						OR = {
+							owned_by = ROOT
+							owned_by_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+
 		trigger = {
-			any_subject_country = {
-				is_colonial_nation_of = ROOT
-				capital_scope = { colonial_region = colonial_dalaire }
-				num_of_cities = 5
+			OR = {
+				owns_or_subject_of = 1202
+				owns_or_subject_of = 1214
 			}
 			
 			colonial_dalaire = {
@@ -732,18 +768,42 @@ kob_4_a = {
 		}
 
 		effect = {
-			random_subject_country = {
-				limit = {
-					is_colonial_nation_of = ROOT
-					capital_scope = { colonial_region = colonial_dalaire }
-					num_of_cities = 5
-				}
-
-				add_country_modifier = {
-					name = Z38_shape_dalaire_modifier
-					duration = 18250
+			if = {
+				limit = { owns_or_subject_of = 1202 }
+				1202 = {
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 2
 				}
 			}
+			if = {
+				limit = { owns_or_subject_of = 1214 }
+				1214 = {
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 2
+				}
+			}
+			frondvagr_area = {
+				add_province_modifier = {
+					name = Z38_kobold_migration_wave
+					duration = 10950
+				}
+				if = {
+					limit = { NOT = { culture_group = kobold } }
+					add_kobold_minority_size_effect = yes
+				}
+			}
+			flottnord_area = {
+				add_province_modifier = {
+					name = Z38_kobold_migration_wave
+					duration = 10950
+				}
+				if = {
+					limit = { NOT = { culture_group = kobold } }
+					add_kobold_minority_size_effect = yes
+				}
+			}			
 		}
 	}
 }

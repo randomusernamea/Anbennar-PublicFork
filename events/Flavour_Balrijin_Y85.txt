@@ -2790,6 +2790,7 @@ country_event = {
 					limit = {
 						culture = shamadhan
 					}
+					add_core = R78
 					cede_province = R78
 				}
 				every_owned_province = {
@@ -2802,6 +2803,7 @@ country_event = {
 							area = nadida_area
 						}
 					}
+					add_core = R78
 					cede_province = R78
 				}
 			}
@@ -2811,6 +2813,7 @@ country_event = {
 					limit = {
 						culture = kamtarhid
 					}
+					add_core = R79
 					cede_province = R79
 				}
 				every_owned_province = {
@@ -2822,6 +2825,7 @@ country_event = {
 							area = tamvihar_area
 						}
 					}
+					add_core = R79
 					cede_province = R79
 				}
 			}
@@ -2831,6 +2835,7 @@ country_event = {
 					limit = {
 						culture = khedarid
 					}
+					add_core = R11
 					cede_province = R11
 				}
 				every_owned_province = {
@@ -2842,6 +2847,7 @@ country_event = {
 							area = khadisrapur_area
 						}
 					}
+					add_core = R11
 					cede_province = R11
 				}
 			}
@@ -2853,6 +2859,7 @@ country_event = {
 						}
 						PREV = { cede_province = PREV }
 						set_country_flag = Y85_capital_fix_flag
+						add_truce_with = R62
 					}
 				}
 			}
