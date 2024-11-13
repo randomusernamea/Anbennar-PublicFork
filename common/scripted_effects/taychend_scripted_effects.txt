@@ -426,6 +426,10 @@ aercel_scaling_rewards = {
 }
 
 calc_sanguosynthesis_modifier = {
+	remove_country_modifier = J84_sanguosynthesis_4
+	remove_country_modifier = J84_sanguosynthesis_3
+	remove_country_modifier = J84_sanguosynthesis_2
+	remove_country_modifier = J84_sanguosynthesis_1
 	if = {
 		limit = {
 			num_of_owned_provinces_with = {
@@ -433,7 +437,6 @@ calc_sanguosynthesis_modifier = {
 				has_building = farm_estate
 			}
 		}
-		clear_sanguosynthesis_modifier = yes
 		add_country_modifier = {
 			name = J84_sanguosynthesis_4
 			duration = -1
@@ -446,7 +449,6 @@ calc_sanguosynthesis_modifier = {
 				has_building = farm_estate
 			}
 		}
-		clear_sanguosynthesis_modifier = yes
 		add_country_modifier = {
 			name = J84_sanguosynthesis_3
 			duration = -1
@@ -459,24 +461,15 @@ calc_sanguosynthesis_modifier = {
 				has_building = farm_estate
 			}
 		}
-		clear_sanguosynthesis_modifier = yes
 		add_country_modifier = {
 			name = J84_sanguosynthesis_2
 			duration = -1
 		}
 	}
 	else = {
-		clear_sanguosynthesis_modifier = yes
 		add_country_modifier = {
 			name = J84_sanguosynthesis_1
 			duration = -1
 		}
 	}
-}
-
-clear_sanguosynthesis_modifier = {
-	remove_country_modifier = J84_sanguosynthesis_4
-	remove_country_modifier = J84_sanguosynthesis_3
-	remove_country_modifier = J84_sanguosynthesis_2
-	remove_country_modifier = J84_sanguosynthesis_1
 }

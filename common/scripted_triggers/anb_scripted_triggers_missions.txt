@@ -2162,13 +2162,11 @@ taychendi_empire_has_production_or_vainglory = {
 					has_government_power = {
 						mechanic_type = taychend_vainglory_mechanic
 						power_type = taychend_vainglory_power
-						value = 80
+						value = 10
 					}
 				}
 			}
-			AND = {
-				base_production = 8
-			}
+			base_production = 8
 		}
 	}
 }

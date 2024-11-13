@@ -174,15 +174,11 @@ estate_vampire_law_relic_shrouded_masquerade = {
 		custom_tooltip = producing_relics_masquerade
 		hidden_effect = {
 			every_owned_province = {
-				if = {
-					limit = {
-						trade_goods = precursor_relics
-					}
-					add_province_modifier = { 
-						name = J84_masquerade_relics
-						duration = -1
-						hidden = yes
-					}
+				limit = { trade_goods = precursor_relics }
+				add_province_modifier = { 
+					name = J84_masquerade_relics
+					duration = -1
+					hidden = yes
 				}
 			}
 		}

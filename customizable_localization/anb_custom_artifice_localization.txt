@@ -40,6 +40,14 @@ defined_text = {
 			ruler_has_mage_personality = yes
         }
     }
+	
+	text = {
+        localisation_key = taychend_artifice_multiplier
+        trigger = {
+			tag = J84 #Taychendi Empire
+			has_country_flag = J84_increased_percent_artifice_capacity_flag
+        }
+    }
 
 	text = {
         localisation_key = artifice_mode_none

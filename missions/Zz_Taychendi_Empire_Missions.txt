@@ -1699,7 +1699,10 @@ J84_2_missions_part_2 = {
 								amount = 50
 								who = ROOT
 							}
-							has_ruler_leader_from = ROOT
+							OR = {
+								has_ruler_leader_from = ROOT
+								ROOT = { has_country_flag = J84_is_mihaela_flag }
+							}
 							has_building = grand_shipyard
 							OR = {
 								has_building = fort_17th
@@ -1723,7 +1726,15 @@ J84_2_missions_part_2 = {
 					amount = 50
 					who = ROOT
 				}
-				has_ruler_leader_from = ROOT
+				OR = {
+					has_ruler_leader_from = ROOT
+					ROOT = {
+						custom_trigger_tooltip = {
+							tooltip = J84_mihaela_is_ruler_tt
+							has_country_flag = J84_is_mihaela_flag
+						}
+					}
+				}
 				has_building = grand_shipyard
 				OR = {
 					has_building = fort_17th
@@ -1828,6 +1839,10 @@ J84_2_missions_part_2 = {
 						5898 = { has_ruler_leader_from = ROOT } #Karassk
 						5941 = { has_ruler_leader_from = ROOT } #Nazhni
 						5914 = { has_ruler_leader_from = ROOT } #Khugra
+						custom_trigger_tooltip = {
+							tooltip = J84_mihaela_is_ruler_tt
+							has_country_flag = J84_is_mihaela_flag
+						}
 					}
 				}
 			}
@@ -1895,7 +1910,10 @@ J84_2_missions_part_2 = {
 								amount = 50
 								who = ROOT
 							}
-							has_ruler_leader_from = ROOT
+							OR = {
+								has_ruler_leader_from = ROOT
+								ROOT = { has_country_flag = J84_is_mihaela_flag }
+							}
 						}
 					}
 				}
@@ -1932,7 +1950,15 @@ J84_2_missions_part_2 = {
 					amount = 50
 					who = ROOT
 				}
-				has_ruler_leader_from = ROOT
+				OR = {
+					has_ruler_leader_from = ROOT
+					ROOT = {
+						custom_trigger_tooltip = {
+							tooltip = J84_mihaela_is_ruler_tt
+							has_country_flag = J84_is_mihaela_flag
+						}
+					}
+				}
 			}
 		}
 
@@ -2526,6 +2552,7 @@ J84_3_missions = {
 		}
 
 		effect = {
+			hidden_effect = { set_country_flag = J84_unlocked_supreme_imperial_cult_privilege }
 			set_estate_privilege = estate_church_supreme_imperial_cult
 			if = {
 				limit = { religion = gods_of_the_taychend_reformed }
@@ -3229,7 +3256,10 @@ J84_4_missions = {
 						who = ROOT
 						type = infantry
 					}
-					has_ruler_leader_from = ROOT
+					OR = {
+						has_ruler_leader_from = ROOT
+						ROOT = { has_country_flag = J84_is_mihaela_flag }
+					}
 				}
 			}
 		}
@@ -3241,7 +3271,15 @@ J84_4_missions = {
 					who = ROOT
 					type = infantry
 				}
-				has_ruler_leader_from = ROOT
+				OR = {
+					has_ruler_leader_from = ROOT
+					ROOT = {
+						custom_trigger_tooltip = {
+							tooltip = J84_mihaela_is_ruler_tt
+							has_country_flag = J84_is_mihaela_flag
+						}
+					}
+				}
 			}
 		}
 

@@ -7750,23 +7750,6 @@ startup_1444_effects = {
 				add_government_reform = dwarovar_squatter
 			}
 		}
-
-		#Taychendi Empire
-		if = {
-			limit = {
-				has_estate_privilege = estate_vampire_law_relic_shrouded_masquerade
-			}
-			every_owned_province = {
-				limit = {
-					trade_goods = precursor_relics
-				}
-				add_province_modifier = {
-					name = J84_masquerade_relics
-					duration = -1
-					hidden = yes
-				}
-			}
-		}
 	}
 }
 
@@ -7882,18 +7865,12 @@ on_province_owner_change_effect = {
 		limit = {
 			NOT = { has_province_modifier = J84_masquerade_relics }
 			owner = { has_estate_privilege = estate_vampire_law_relic_shrouded_masquerade }
+			trade_goods = precursor_relics
 		}
-		hidden_effect = {
-			if = {
-				limit = {
-					trade_goods = precursor_relics
-				}
-				add_province_modifier = {
-					name = J84_masquerade_relics
-					duration = -1
-					hidden = yes
-				}
-			}
+		add_province_modifier = {
+			name = J84_masquerade_relics
+			duration = -1
+			hidden = yes
 		}
 	}
 

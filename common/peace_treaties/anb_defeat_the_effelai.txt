@@ -39,6 +39,7 @@ po_defeat_the_effelai = {
 	
 	is_visible = { # Defaults to equivalent of "always = yes"
 		is_in_war = { casus_belli = cb_war_for_the_singing_jungle }
+		FROM = { tag = G20 } #Araya
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		always = yes
