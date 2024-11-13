@@ -2124,7 +2124,7 @@ F71_2_part3_pre_branch1 = {
 					else = { development = 45 }
 					has_building = state_house
 					num_of_buildings_in_province = 7
-					manufactories = 2
+					has_multiple_manufactory_trigger = { VAL = 3 }
 				}
 			}
 		} 
@@ -2138,7 +2138,7 @@ F71_2_part3_pre_branch1 = {
 				else = { development = 45 }
 				has_building = state_house
 				num_of_buildings_in_province = 7
-				manufactories = 2
+				has_multiple_manufactory_trigger = { VAL = 3 }
 			}
 		} 
 
@@ -3297,7 +3297,7 @@ F71_4_part3 = {
 					}
 					else = {
 						development = 20
-						manufactories = 2
+						has_multiple_manufactory_trigger = { VAL = 2 }
 					}
 				}
 			}
@@ -3321,7 +3321,7 @@ F71_4_part3 = {
 			else = {
 				6690 = {
 					development = 20
-					manufactories = 2
+					has_multiple_manufactory_trigger = { VAL = 2 }
 				}
 			}
 		} 
