@@ -1700,8 +1700,10 @@ giberd_ryalanar_conquest = {
 			has_flagship = yes
 			OR = {
 				has_personal_deity = minara
-				A10 = {
-					has_25_opinion_sent_gift = yes
+				97 = {
+					owner = {
+						has_25_opinion_sent_gift = ROOT
+					}
 				}
 			}
 			num_of_owned_provinces_with = {
