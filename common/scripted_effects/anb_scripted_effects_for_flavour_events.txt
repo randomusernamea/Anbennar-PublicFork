@@ -31,79 +31,6 @@ tolerance_generic_2_effect = {
 }
 
 tolerance_generic_3_effect = {
-	hidden_effect = {
-		set_variable = {
-			which = $varname$
-			value = 0
-		}
-		every_owned_province = {
-			limit = { fast_has_pop_of_race = { race = $race$ } }  
-			if = {
-				limit = {
-					owner = { PREV = { has_$race$_majority_trigger = yes } }		#without this change of scope log is angry
-				}
-				ROOT = {
-					change_variable = {
-						which = $varname$
-						value = 30
-					}
-				}
-			}
-			if = {
-				limit = { 
-					owner = { PREV = { has_small_$race$_minority_trigger = yes } }
-				}	
-				ROOT = {
-					change_variable = {
-						which = $varname$
-						value = 10
-					}
-				}
-			}
-			if = {
-				limit = { 
-					owner = { PREV = { has_large_$race$_minority_trigger = yes } }
-				}
-				ROOT = {
-					change_variable = {
-						which = $varname$
-						value = 20
-					}
-				}
-			}
-		}
-		export_to_variable = {
-			which = tolgen3_moneycap
-			value = years_of_income
-		}
-		round_variable = {
-			which = tolgen3_moneycap
-			value = 0
-		}
-		if = {
-			limit = {
-				check_variable = {
-					which = $varname$
-					which = tolgen3_moneycap
-				}
-			}
-			set_variable = {
-				which = $varname$
-				which = tolgen3_moneycap
-			}
-		}
-	}
-}
-
-tolerance_generic_3.2_effect = {
-	custom_tooltip = tolerance_generic.3.$varname$.tt
-	hidden_effect = {
-		var_effect = { effect = add_treasury var = $varname$ sign = + }
-	}
-	medium_decrease_of_$race$_tolerance_effect = yes	
-}
-
-tolerance_generic_4_effect = {
 	event_target:settlers_destinations = {
 		add_colonysize = 100
 		add_province_modifier = {
@@ -112,7 +39,7 @@ tolerance_generic_4_effect = {
 		}
 		custom_tooltip = add_$race$_minority_size_effect_tooltip
 		hidden_effect = {
-			add_minority_with_correct_tolerance = { race = $race$ size = large}
+			add_minority_with_correct_tolerance = { race = $race$ size = large }
 			random = {
 				chance = 30
 				change_culture = event_target:$race$_origin
