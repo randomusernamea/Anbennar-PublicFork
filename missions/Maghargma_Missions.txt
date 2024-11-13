@@ -687,7 +687,7 @@ maghargma_two = {
 		provinces_to_highlight = {  
 			province_group = wild_clan_lands
 			OR = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { owned_by = ROOT }
 				unrest = 0.01
 			}
 		} 
@@ -695,7 +695,7 @@ maghargma_two = {
 		trigger = {
 			wild_clan_lands = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 				NOT = { unrest = 0.01 }
 			}
 			wild_clan_lands = {
