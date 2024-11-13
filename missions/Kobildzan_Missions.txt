@@ -785,23 +785,29 @@ kob_4_a = {
 				}
 			}
 			frondvagr_area = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = Z38_kobold_migration_wave
 					duration = 10950
 				}
 				if = {
-					limit = { NOT = { culture_group = kobold } }
-					add_kobold_minority_size_effect = yes
+					limit = { is_empty = yes }
+					add_permanent_province_modifier = {
+						name = kobold_minority_oppressed_small
+						duration = -1
+					}
 				}
 			}
 			flottnord_area = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = Z38_kobold_migration_wave
 					duration = 10950
 				}
 				if = {
-					limit = { NOT = { culture_group = kobold } }
-					add_kobold_minority_size_effect = yes
+					limit = { is_empty = yes }
+					add_permanent_province_modifier = {
+						name = kobold_minority_oppressed_small
+						duration = -1
+					}
 				}
 			}			
 		}
