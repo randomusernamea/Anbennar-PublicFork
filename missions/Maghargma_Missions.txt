@@ -2070,7 +2070,7 @@ maghargma_four = {
 				}
 			}
 			any_subject_country = {
-				is_subject_of_type = vassal
+				is_subject_of_type = maghargma_special_subject
 				capital_scope = { region = west_forbidden_plains_region } 
 				culture_group = centaur 
 				has_50_opinion_improved_relation = { target = ROOT }
@@ -2176,11 +2176,20 @@ maghargma_four = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			any_subject_country = {
-				is_subject_of_type = vassal
-				capital_scope = { region = east_forbidden_plains_region } 
-				culture_group = centaur 
-				has_50_opinion_improved_relation = { target = ROOT }
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = maghargma_special_subject
+						capital_scope = { region = east_forbidden_plains_region } 
+						culture_group = centaur 
+					}
+				}
+				any_subject_country = {
+					is_subject_of_type = maghargma_special_subject
+					capital_scope = { region = east_forbidden_plains_region } 
+					culture_group = centaur 
+					has_50_opinion_improved_relation = { target = ROOT }
+				}
 			}
 		}
 
@@ -2828,13 +2837,13 @@ maghargma_five = {
 			if = {
 				limit = {
 					any_subject_country = {
-						is_subject_of_type = vassal
+						is_subject_of_type = maghargma_special_subject
 						culture_group = centaur
 						capital_scope = { region = serpent_gift_region } 
 					}
 				}
 				any_subject_country = {
-					is_subject_of_type = vassal
+					is_subject_of_type = maghargma_special_subject
 					capital_scope = { region = serpent_gift_region } 
 					has_50_opinion_improved_relation = { target  = ROOT }
 					culture_group = centaur
