@@ -1471,21 +1471,25 @@ maghargma_three = {
 			} 
 			add_legitimacy = 10
 			custom_tooltip = maghargma_shatter_the_mirror_tt
+			if = {
+				limit = { artillery_fraction = 0.5 }
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					add_country_modifier = {
+						name = I90_islandbreakers
+						duration = 3650 
+					}
+				}	
+			}
+			else = {
+				custom_tooltip = BONUS_REWARD_NO
+			}
 			tooltip = {
 				add_country_modifier = {
 					name = I90_islandbreakers
 					duration = 3650 
 				}
 			}
-			hidden_effect = {
-				if = {
-					limit = { artillery_fraction = 0.5 }
-					add_country_modifier = {
-						name = I90_islandbreakers
-						duration = 3650 
-					}
-				}
-			}							
 		}
 	}
 
