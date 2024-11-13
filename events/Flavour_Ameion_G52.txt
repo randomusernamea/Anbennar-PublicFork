@@ -404,7 +404,6 @@ country_event = {
 			age = 65
 		}
 		define_general = {
-			define_general = {
 			fire = 1
 			shock = 3
 			manuever = 4
@@ -1017,6 +1016,7 @@ country_event = {
 				duration = 9125
 			}
 			hidden_effect = {
+				change_religion = kheionism
 				change_religion = gods_of_the_taychend
 				change_primary_culture = thekvrystana
 				every_owned_province = {
@@ -1034,7 +1034,6 @@ country_event = {
 					personality = ai_colonialist
 					locked = yes
 				}
-				set_primitive = no
 			}
 		}
 		custom_tooltip = ameion_colony

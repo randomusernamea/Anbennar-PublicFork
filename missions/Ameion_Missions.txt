@@ -308,7 +308,6 @@ G52_1 = {
 				owned_by = ROOT
 				is_core = ROOT
 			}
-			NOT = { has_country_modifier = G52_peaceful_reprieve }
 		}
 		
 		effect = {
@@ -1053,28 +1052,28 @@ G52_2 = {
 				limit = {
 					any_known_country = {
 						culture_group = effelai_ruinborn_elf
-						reverse_has_opinion = { has_opinion = { who = ROOT value = 100 } }
+						has_opinion = { who = ROOT value = 100 } }
 					}
-					set_country_flag = G52_summit_effelai
 				}
+				set_country_flag = G52_summit_effelai
 			}
 			if = {
 				limit = {
 					any_known_country = {
 						culture_group = amadian_ruinborn_elf
-						reverse_has_opinion = { has_opinion = { who = ROOT value = 100 } }
+						has_opinion = { who = ROOT value = 100 } }
 					}
-					set_country_flag = G52_summit_amadia
 				}
+				set_country_flag = G52_summit_amadia
 			}
 			if = {
 				limit = {
 					any_known_country = {
 						technology_group = tech_cannorian
-						reverse_has_opinion = { has_opinion = { who = ROOT value = 100 } }
+						has_opinion = { who = ROOT value = 100 } }
 					}
-					set_country_flag = G52_summit_cannor
 				}
+				set_country_flag = G52_summit_cannor
 			}
 		}
 	}
@@ -1856,7 +1855,7 @@ G52_3 = {
 				superregion = taychend_superregion
 				NOT = { area = ameionavil_area }
 			}
-			has_estate_privilege =
+			has_estate_privilege = estate_nobles_land_rights
 			estate_loyalty = { estate = estate_nobles loyalty = 50 }
 			estate_influence = { estate = estate_nobles influence = 50 }
 		}

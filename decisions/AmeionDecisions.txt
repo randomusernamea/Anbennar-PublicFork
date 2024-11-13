@@ -85,7 +85,7 @@ country_decisions = {
 				tag = G52
 				tag = G00
 			}
-			mission_completed = G52_rising_state
+			mission_completed = G52_nation_state
 			NOT = { mission_completed = G52_last_port }
 			OR = {
 				1607 = { any_trade_node_member_country = { NOT = { has_country_modifier = ruinborn_administration } } }
