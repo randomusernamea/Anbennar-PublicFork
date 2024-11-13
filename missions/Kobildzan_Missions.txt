@@ -35,36 +35,31 @@ kob_2_a = {
 		trigger = {
 			OR = {
 				power_projection = 25
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = owned_redscales_tt 
-						dragondowns_area = { type = all owned_by = ROOT }
-						170 = { owned_by = ROOT }
-						173 = { owned_by = ROOT }
-						174 = { owned_by = ROOT }
-						176 = { owned_by = ROOT }
-						177 = { owned_by = ROOT }
-						178 = { owned_by = ROOT }
-						179 = { owned_by = ROOT }
-						180 = { owned_by = ROOT }
-						345 = { owned_by = ROOT }
-					}
-					custom_trigger_tooltip = {
-						tooltip = redscales_traps_tt
-						any_owned_province = {
-							has_province_flag = kobold_traps_lvl_2_or_more
-							OR = {
-								area = dragondowns_area
-								province_id = 170
-								province_id = 173
-								province_id = 174
-								province_id = 176
-								province_id = 177
-								province_id = 178
-								province_id = 179
-								province_id = 180
-								province_id = 345
-							}
+				custom_trigger_tooltip = {
+					tooltip = owned_redscales_tt
+					dragondowns_area = { type = all owned_by = ROOT }
+					170 = { owned_by = ROOT }
+					173 = { owned_by = ROOT }
+					174 = { owned_by = ROOT }
+					176 = { owned_by = ROOT }
+					177 = { owned_by = ROOT }
+					178 = { owned_by = ROOT }
+					179 = { owned_by = ROOT }
+					180 = { owned_by = ROOT }
+					345 = { owned_by = ROOT }
+					any_owned_province = {
+						has_province_flag = kobold_traps_lvl_2_or_more
+						OR = {
+							area = dragondowns_area
+							province_id = 170
+							province_id = 173
+							province_id = 174
+							province_id = 176
+							province_id = 177
+							province_id = 178
+							province_id = 179
+							province_id = 180
+							province_id = 345
 						}
 					}
 				}
@@ -306,30 +301,25 @@ kob_3_a = {
 					tooltip = num_of_aspects_tt
 					num_of_aspects = 3
 				}
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = owned_bluescales_tt
-						dragondepth_area = { type = all owned_by = ROOT }
-						dragonheart_area = { type = all owned_by = ROOT }
-						dragonmaw_area = { type = all owned_by = ROOT }
-						182 = { owned_by = ROOT }
-						183 = { owned_by = ROOT }
-						184 = { owned_by = ROOT }
-						3362 = { owned_by = ROOT }
-					}
-					custom_trigger_tooltip = {
-						tooltip = bluescales_traps_tt
-						any_owned_province = {
-							has_province_flag = kobold_traps_lvl_2_or_more
-							OR = {
-								area = dragondepth_area
-								area = dragonheart_area
-								area = dragonmaw_area
-								province_id = 182
-								province_id = 183
-								province_id = 184
-								province_id = 3362
-							}
+				custom_trigger_tooltip = {
+					tooltip = owned_bluescales_tt
+					dragondepth_area = { type = all owned_by = ROOT }
+					dragonheart_area = { type = all owned_by = ROOT }
+					dragonmaw_area = { type = all owned_by = ROOT }
+					182 = { owned_by = ROOT }
+					183 = { owned_by = ROOT }
+					184 = { owned_by = ROOT }
+					3362 = { owned_by = ROOT }
+					any_owned_province = {
+						has_province_flag = kobold_traps_lvl_2_or_more
+						OR = {
+							area = dragondepth_area
+							area = dragonheart_area
+							area = dragonmaw_area
+							province_id = 182
+							province_id = 183
+							province_id = 184
+							province_id = 3362
 						}
 					}
 				}
@@ -625,17 +615,12 @@ kob_4_a = {
 		trigger = {
 			OR = {
 				any_owned_province = { has_province_modifier = kobold_traps_lvl_4 }
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = owned_greenscales_tt
-						coddorran_heights_area = { type = all owned_by = ROOT }
-					}
-					custom_trigger_tooltip = {
-						tooltip = greenscales_traps_tt
-						OR = {
-							197 = { has_province_flag = kobold_traps_lvl_2_or_more }
-							694 = { has_province_flag = kobold_traps_lvl_2_or_more }
-						}
+				custom_trigger_tooltip = {
+					tooltip = owned_greenscales_tt
+					coddorran_heights_area = { type = all owned_by = ROOT }
+					OR = {
+						197 = { has_province_flag = kobold_traps_lvl_2_or_more }
+						694 = { has_province_flag = kobold_traps_lvl_2_or_more }
 					}
 				}
 			}
