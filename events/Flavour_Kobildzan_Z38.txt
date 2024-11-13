@@ -227,76 +227,45 @@ country_event = { #Artificer Malcontents
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { exists = H31 }
+				H31 = { random_owned_province = { save_event_target_as = malcontents_province } }
+			}
+			else_if = {
+				limit = { exists = H30 }
+				H30 = { random_owned_province = { save_event_target_as = malcontents_province } }
+			}
+			else_if = {
+				limit = { exists = H32 }
+				H32 = { random_owned_province = { save_event_target_as = malcontents_province } }
+			}
+			else = {
+				U31 = { random_owned_province = { save_event_target_as = malcontents_province } }
+			}
+		}
+	}
+
 	option = { #We must conquer Haraf!
 		name = flavour_kobildzan.6.a
+		goto = malcontents_province
 		custom_tooltip = to_find_tayekan_1_tt 
 		random_owned_province = {
 			limit = { culture_group = kobold }
 			remove_random_development = yes
 		}
-		if = {
-			limit = { exists = H31 }
-			H31 = {
-				random_owned_province = {
-					add_random_development = 2
-					if = {
-						limit = { NOT = { culture_group = kobold } }
-						add_kobold_minority_size_effect = yes
-					}
-					if = {
-						limit = { NOT = { culture_group = gnomish } }
-						add_gnomish_minority_size_effect = yes
-					}
-				}
+		event_target:malcontents_province = {
+			add_random_development = 2
+			if = {
+				limit = { NOT = { culture_group = kobold } }
+				add_kobold_minority_size_effect = yes
+			}
+			if = {
+				limit = { NOT = { culture_group = gnomish } }
+				add_gnomish_minority_size_effect = yes
 			}
 		}
-		else_if = {
-			limit = { exists = H30 }
-			H30 = {
-				random_owned_province = {
-					add_random_development = 2
-					if = {
-						limit = { NOT = { culture_group = kobold } }
-						add_kobold_minority_size_effect = yes
-					}
-					if = {
-						limit = { NOT = { culture_group = gnomish } }
-						add_gnomish_minority_size_effect = yes
-					}
-				}
-			}				
-		}
-		else_if = {
-			limit = { exists = H32 }
-			H32 = {
-				random_owned_province = {
-					add_random_development = 2
-					if = {
-						limit = { NOT = { culture_group = kobold } }
-						add_kobold_minority_size_effect = yes
-					}
-					if = {
-						limit = { NOT = { culture_group = gnomish } }
-						add_gnomish_minority_size_effect = yes
-					}
-				}
-			}				
-		}	
-		else = {
-			U31 = {
-				random_owned_province = {
-					add_random_development = 2
-					if = {
-						limit = { NOT = { culture_group = kobold } }
-						add_kobold_minority_size_effect = yes
-					}
-					if = {
-						limit = { NOT = { culture_group = gnomish } }
-						add_gnomish_minority_size_effect = yes
-					}
-				}					
-			}
-		}	
 		hidden_effect = {
 			change_variable = {
 				which = artificer_malcontents_var

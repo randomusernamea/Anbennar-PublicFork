@@ -2327,15 +2327,18 @@ kob_1_c = {
 			}
 			custom_tooltip = tech_sharing_tt 
 
-			every_subject_country = {
-				limit = {
-					OR = {
-						is_colonial_nation = yes
-						tag = H24
-					}
-				}
-				hidden_effect = {
+			hidden_effect = {
+				every_subject_country = {
 					subject_ascension_effect = yes
+				}
+			}
+
+			H24 = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = ynn_urban_decline
+					}
+					remove_province_modifier = ynn_urban_decline
 				}
 			}
 
@@ -2429,6 +2432,10 @@ kob_1_c = {
 				custom_trigger_tooltip = {
 					tooltip = unlocked_silver_dragon_tt 
 					has_country_flag = unlocked_silver_dragon_3_upgraded
+				}
+				custom_trigger_tooltip = {
+					tooltip = instructions_festivals_tt
+					always = no
 				}
 			}
 		}
@@ -2742,6 +2749,8 @@ kob_3_c = {
 		}
 
 		provinces_to_highlight = {
+			region = dragon_coast_region
+			devastation = 50
 		}
 
 		trigger = {
