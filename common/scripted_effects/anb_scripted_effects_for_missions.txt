@@ -17832,7 +17832,6 @@ maghargama_vassalize_centaur_tributary = {
 						type = tributary_state_anb
 					}	
 				}
-				culture_group = centaur
 			}
 			ROOT = { 
 				create_subject = {
@@ -17931,6 +17930,12 @@ maghargma_consolidate_centaur_vassal = {
 				culture_group = centaur
 			}
 			PREV = { inherit = PREV }
+		}
+		every_owned_province = {
+			limit = { 
+				NOT = { region = $region$ }
+			}
+			cede_province = ROOT
 		}
 	}
 }

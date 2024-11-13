@@ -686,7 +686,10 @@ maghargma_two = {
 		required_missions = { maghargma_the_carrot } 
 		provinces_to_highlight = {  
 			province_group = wild_clan_lands
-			country_or_non_sovereign_subject_holds = ROOT
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				unrest = 0.01
+			}
 		} 
 
 		trigger = {
