@@ -228,19 +228,28 @@ wyvernheart_column_1 = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				has_province_modifier = scorched_earth
+				OR = {
+					has_state_edict = edict_centralization_effort
+					has_province_modifier = scorched_earth
+				}
 			}
 			balvord_area = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				has_province_modifier = scorched_earth
+				OR = {
+					has_state_edict = edict_centralization_effort
+					has_province_modifier = scorched_earth
+				}
 			}
 			jonsway_area = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT
-				has_province_modifier = scorched_earth
+				OR = {
+					has_state_edict = edict_centralization_effort
+					has_province_modifier = scorched_earth
+				}
 			}
 		}
 
@@ -1022,6 +1031,7 @@ wyvernheart_column_3 = {
 					}
 				}
 			}
+			custom_tooltip = wyvernheart_C3_effect_tt
 		} 
 	}
 
@@ -1424,6 +1434,7 @@ wyvernheart_column_4 = {
 		}
 
 		effect = {
+			custom_tooltip = wyvernheart_D1_effect_tt
 			set_estate_privilege = estate_adventurers_heroes_in_the_army
 			set_country_flag = wyvernheart_legacy_of_the_wyvern_reward
 			add_army_tradition = 15

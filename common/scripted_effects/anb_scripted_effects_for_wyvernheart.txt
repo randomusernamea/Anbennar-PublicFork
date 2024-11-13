@@ -27,22 +27,8 @@ spawn_wyvernheart_civil_war_rebels = {
 				type = $rebels$
 			}
 		}
-		random_owned_province = {
-			limit = { region = $target_region$ }
-			spawn_rebels = {
-				size = 2
-				type = $rebels$
-			}
-		}
 	}
 	else = {
-		random_owned_province = {
-			limit = { region = $target_region$ }
-			spawn_rebels = {
-				size = 2
-				type = $rebels$
-			}
-		}
 		random_owned_province = {
 			limit = { region = $target_region$ }
 			spawn_rebels = {

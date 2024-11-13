@@ -994,6 +994,16 @@ country_event = {#Select region for Overseer
 			id = flavour_wyvernheart.116
 		}
 	}
+	#Go Back
+	option = {
+		name = "flavour_wyvernheart.115.h"
+		ai_chance = { factor = 1 }
+		add_government_power = {
+			mechanic_type = floodborn_council_mechanic
+			power_type = bloodbrand_power
+			value = 60
+		}
+	}
 }
 country_event = {#Select clique for Overseer
 	id = flavour_wyvernheart.116
@@ -1840,12 +1850,12 @@ country_event = {#Tyrant's Fall
 	
 	immediate = {
 		hidden_effect = {
-			spawn_wyvernheart_civil_war_rebels = { target_region = inner_castanor_region seat_id = 840 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = south_castanor_region seat_id = 817 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = west_castanor_region seat_id = 728 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_reach_region seat_id = 701 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_frontier_region seat_id = 227 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = forlorn_vale_region seat_id = 777 rebels = pretenders }
+			spawn_wyvernheart_civil_war_rebels = { target_region = inner_castanor_region seat_id = 840 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = south_castanor_region seat_id = 817 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = west_castanor_region seat_id = 728 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_reach_region seat_id = 701 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_frontier_region seat_id = 227 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = forlorn_vale_region seat_id = 777 rebels = pretender_rebels }
 			add_country_modifier = {
 				name = wyvernheart_war_wizard_rebels_mod
 				duration = -1
@@ -1921,12 +1931,12 @@ country_event = {#Victory or Death
 
 	immediate = {
 		hidden_effect = {
-			spawn_wyvernheart_civil_war_rebels = { target_region = inner_castanor_region seat_id = 840 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = south_castanor_region seat_id = 817 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = west_castanor_region seat_id = 728 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_reach_region seat_id = 701 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_frontier_region seat_id = 227 rebels = pretenders }
-			spawn_wyvernheart_civil_war_rebels = { target_region = forlorn_vale_region seat_id = 777 rebels = pretenders }
+			spawn_wyvernheart_civil_war_rebels = { target_region = inner_castanor_region seat_id = 840 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = south_castanor_region seat_id = 817 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = west_castanor_region seat_id = 728 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_reach_region seat_id = 701 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = alenic_frontier_region seat_id = 227 rebels = pretender_rebels }
+			spawn_wyvernheart_civil_war_rebels = { target_region = forlorn_vale_region seat_id = 777 rebels = pretender_rebels }
 			add_country_modifier = {
 				name = wyvernheart_war_wizard_rebels_mod
 				duration = -1
@@ -2903,6 +2913,7 @@ country_event = {#Estate agenda manager
 	trigger = {
 		tag = B39
 		NOT = { has_country_modifier = wyvernheart_agenda_timer }
+		wyvernheart_is_floodborn_council = yes
 	}
 	
 	immediate = {
