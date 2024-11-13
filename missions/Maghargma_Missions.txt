@@ -68,7 +68,7 @@ maghargma_one = {
 			}
 			OR = {
 				has_reformed_feast_of_the_gods = yes
-				doom = 50 
+				NOT = { doom = 50 }
 			}
 		}
 
