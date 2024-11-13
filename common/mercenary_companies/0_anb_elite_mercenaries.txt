@@ -2147,3 +2147,21 @@ merc_flying_pebbles_tier_2 = {
 		reinforce_speed = 0.4
 	}
 }
+
+#Ameion Kattyam Auxiliary, unlocked via "Roof of Taychend" mission.
+merc_ameion_kattyam_auxiliary = {
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+    regiments_per_development = 0.05
+    home_province = 2477 #Ethanan
+	cavalry_weight = 0.5
+	max_size = 20
+	sprites = { westerngfx_sprite_pack }
+    trigger = {
+		has_unlocked_merc_company = { merc_company = merc_ameion_kattyam_auxiliary }
+	}
+	cost_modifier = 1.5
+	modifier = {
+		morale_damage = 0.1
+		discipline = 0.05
+	}
+}
