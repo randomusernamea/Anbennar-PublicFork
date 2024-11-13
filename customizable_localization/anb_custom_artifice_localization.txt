@@ -40,6 +40,18 @@ defined_text = {
 			ruler_has_mage_personality = yes
         }
     }
+
+	text = {
+        localisation_key = artifice_mode_none
+        trigger = {
+			always = yes
+		}
+    }
+}
+
+defined_text = {
+	name = getTaychendArtificeMultiplier
+	random = no
 	
 	text = {
         localisation_key = taychend_artifice_multiplier
