@@ -244,7 +244,7 @@ country_decisions = {
 
 		allow = {
 			owns = 189
-			treasury = 100
+			treasury = 250
 			if = {
 				limit = { ai = yes }
 				NOT = { num_of_loans = 1 }
@@ -254,7 +254,7 @@ country_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { treasury = 200 }
+				NOT = { treasury = 500 }
 			}
 			modifier = {
 				factor = 0

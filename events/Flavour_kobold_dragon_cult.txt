@@ -3258,36 +3258,11 @@ country_event = {
 	option = {		
 		name = flavour_kobold_dragon_cult.2.a
 		ai_chance = { factor = 50 }	
-		trigger = { treasury = 100 }
-		add_treasury = -100
-		add_church_power = 10
-		tooltip = { random = { chance = 10 add_stability_or_adm_power = yes } }
-		set_country_flag = hoard_chance_1
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = { change_variable = { dragon_cult_hoard = 100 } } 
-				187 = { upgrade_kobold_hoard = yes } 
-			}
-			else = {
-				189 = { change_variable = { dragon_cult_hoard = 100 } }
-				189 = { upgrade_kobold_hoard = yes } 
-			}
-		}
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
-	}
-	
-	# Normal investment
-	option = {		
-		name = flavour_kobold_dragon_cult.2.b
-		ai_chance = { factor = 50 }	
 		trigger = { treasury = 250 }
 		add_treasury = -250
-		add_church_power = 25
-		add_prestige = 2
-		tooltip = { random = { chance = 25 add_stability_or_adm_power = yes } }
-		set_country_flag = hoard_chance_2
+		add_church_power = 10
+		tooltip = { random = { chance = 10 add_stability = 1 } }
+		set_country_flag = hoard_chance_1
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
 			if = {
@@ -3303,16 +3278,16 @@ country_event = {
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
-	# Big investment
+	# Normal investment
 	option = {		
-		name = flavour_kobold_dragon_cult.2.c
+		name = flavour_kobold_dragon_cult.2.b
 		ai_chance = { factor = 50 }	
 		trigger = { treasury = 500 }
 		add_treasury = -500
-		add_church_power = 50
-		add_prestige = 5
-		tooltip = { random = { chance = 50 add_stability_or_adm_power = yes } }
-		set_country_flag = hoard_chance_3
+		add_church_power = 25
+		add_prestige = 2
+		tooltip = { random = { chance = 25 add_stability = 1 } }
+		set_country_flag = hoard_chance_2
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
 			if = {
@@ -3328,15 +3303,17 @@ country_event = {
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
-	# Huge investment
+	# Big investment
 	option = {		
-		name = flavour_kobold_dragon_cult.2.e
+		name = flavour_kobold_dragon_cult.2.c
 		ai_chance = { factor = 50 }	
 		trigger = { treasury = 1000 }
 		add_treasury = -1000
-		add_church_power = 100
-		add_prestige = 10
-		add_stability_or_adm_power = yes
+		add_church_power = 50
+		add_prestige = 5
+		tooltip = { random = { chance = 50 add_stability = 1 } }
+		set_country_flag = hoard_chance_3
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = new_hoard }
@@ -3351,15 +3328,14 @@ country_event = {
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
-	# Colossal investment
+	# Huge investment
 	option = {		
-		name = flavour_kobold_dragon_cult.2.f
-		ai_chance = { factor = 50 }
+		name = flavour_kobold_dragon_cult.2.e
+		ai_chance = { factor = 50 }	
 		trigger = { treasury = 2000 }
 		add_treasury = -2000
-		add_church_power = 200
-		add_prestige = 25
-		add_stability_or_adm_power = yes
+		add_church_power = 100
+		add_prestige = 10
 		add_stability_or_adm_power = yes
 		hidden_effect = {
 			if = {
@@ -3375,26 +3351,49 @@ country_event = {
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
+	# Enourmous investment
 	option = {		
+		name = flavour_kobold_dragon_cult.2.f
+		ai_chance = { factor = 50 }
+		trigger = { treasury = 4000 }
+		add_treasury = -4000
+		add_church_power = 200
+		add_prestige = 25
+		add_stability = 1
+		add_stability_or_adm_power = yes
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = new_hoard }
+				187 = { change_variable = { dragon_cult_hoard = 4000 } } 
+				187 = { upgrade_kobold_hoard = yes } 
+			}
+			else = {
+				189 = { change_variable = { dragon_cult_hoard = 4000 } }
+				189 = { upgrade_kobold_hoard = yes } 
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
+	}
+	
+	option = { #Colossal investment	
 		name = flavour_kobold_dragon_cult.2.g
 		ai_chance = { factor = 50 }
-		trigger = { treasury = 5000 }
-		add_treasury = -5000
+		trigger = { treasury = 8000 }
+		add_treasury = -8000
 		add_church_power = 200
 		add_prestige = 50
-		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
+		add_stability = 1
+		add_stability = 1
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = new_hoard }
-				187 = { change_variable = { dragon_cult_hoard = 5300 } }
+				187 = { change_variable = { dragon_cult_hoard = 8000 } }
 				187 = { upgrade_kobold_hoard = yes } 
 			}
 			else = {
-				189 = { change_variable = { dragon_cult_hoard = 5300 } }
+				189 = { change_variable = { dragon_cult_hoard = 8000 } }
 				189 = { upgrade_kobold_hoard = yes } 
 			}
 		}
@@ -4153,7 +4152,7 @@ country_event = {
 			factor = 10
 		}
 		
-		add_stability_or_adm_power = yes
+		add_stability = 1
 	}
 	
 	option = {		
@@ -4175,7 +4174,7 @@ country_event = {
 			factor = 25
 		}
 		
-		add_stability_or_adm_power = yes
+		add_stability = 1
 	}
 	
 	option = {		
@@ -4197,7 +4196,7 @@ country_event = {
 			factor = 50
 		}
 		
-		add_stability_or_adm_power = yes
+		add_stability = 1
 	}
 	
 	option = {		
