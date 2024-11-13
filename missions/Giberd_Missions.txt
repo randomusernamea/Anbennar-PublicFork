@@ -1702,7 +1702,9 @@ giberd_ryalanar_conquest = {
 				has_personal_deity = minara
 				97 = {
 					owner = {
-						has_25_opinion_sent_gift = ROOT
+						has_25_opinion_sent_gift = {
+							target = ROOT
+						}
 					}
 				}
 			}
