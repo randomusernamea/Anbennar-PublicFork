@@ -8,8 +8,8 @@
  G52_common_military_desc: "Our friends in the Échate League are useful to have as allies, but as Laskaris ruled our city alone they lack the military standards we have come to expect. We shall organize their armies to our standards, and in the process take the opportunity to cross-reference tactics and mutually develop more effective methods of combat."
  G52_united_diplomacy_title: "United Diplomacy"
  G52_united_diplomacy_desc: "The Échate League settles along common borders, fights with common tactics, and champions the same causes. The only thing left is to unify our efforts diplomatically once and for all.\n\nNaturally, as the largest member of the League, we are the one best suited to lead this common effort, and under our guidance our two compatriots will share in our glory."
- G52_ehcate_union_title: "Échate Union"
- G52_ehcate_union_desc: "Many already consider the Échate nations as one, even those that live within them. As we centralize the Devand into one nation, the cities of [G62.GetName] and [G56.GetName] shall always hold a special place within it. They saw the merit of unity amongst the Kheionai people, led by the Devandi rather than the Alecandi. With them by our side, Ameion shall bring its peace to all Kheionai."
+ G52_echate_union_title: "Échate Union"
+ G52_echate_union_desc: "Many already consider the Échate nations as one, even those that live within them. As we centralize the Devand into one nation, the cities of [G62.GetName] and [G56.GetName] shall always hold a special place within it. They saw the merit of unity amongst the Kheionai people, led by the Devandi rather than the Alecandi. With them by our side, Ameion shall bring its peace to all Kheionai."
  G52_liberate_mainland_title: "Liberate the Mainland"
  G52_liberate_mainland_desc: "The nékheis, founded centuries ago by the kheions, have never known self rule. They have served as colonies of the kheions, existing to take in those who could not fit within the warded walls. We too seek dominion over these cities, but as our ancestors once hailed from them, we know them to be our kin. We once tried to unite them under a crown, but now they shall rule autonomously under our wing."
  G52_southern_toll_title: "End the Southern Toll"
@@ -54,7 +54,7 @@
  G52_basis_civilization_title: "Basis of Civilization"
  G52_basis_civilization_desc: "As we continue to bring the Taychendi people away from their destructive deities, they have begun to adopt the ways of the kheion. Their farms are now managed from centralized towns instead of by whatever warlord recently killed the other, irrigation has begun to allow their already mighty population to blossom, and the turmoil once in these lands is becoming a thing of the past.\n\nThis is what total victory looks like, when even those defeated celebrate your victory."
  G52_closing_cycle_title: "Closing of the Cycle"
- G52_closing_cycle_desc: ""
+ G52_closing_cycle_desc: "taychendi cycles and how ameion is going to end it"
  G52_ways_of_west_title: "Ways of the West"
  G52_ways_of_west_desc: "The Taychendi refer to us as the west, and Taychendi who have adopted our customs proudly style themselves as Klereyen, westerners. The preservation of the kheions in the face of armageddon has established them as the truest conservation of what came before, and as the Taychendi tore each other apart, us Kheionai set out to rebuild this world.\n\nWe have honed this craft over centuries, and now in the face of the ruins of Taychend, we have the expertise to restore these lands to the glory that once existed here. We may be from their West, but with our guidance they will some day be the people pushing outwards to rebuild in another direction, and truly be Klereyen."
  G52_roof_taychend_title: "Roof of Taychend"
@@ -119,6 +119,7 @@
  G52_destiny_desc: "Laskaris the Conqueror's death has been foretold, and shall occur at age 61."
  G52_laskaris_legacy: "Laskaris' Legacy"
  G52_tolerating_gods: "Tolerating Gods"
+ G52_ending_divine: "Ending Divine Reign"
  G52_laskaris_gods_d: "Considerations Towards Taychendi Gods"
  G52_laskaris_essence_d: "Essence of a Nation"
  G52_laskaris_destiny_d: "Memory of the Conqueror"
@@ -140,16 +141,34 @@
  G52_empire_ruin: "Empire Born of Ruin"
  G52_local_capital: "Local Capital"
  G52_kheionai_settlement: "Kheionai Settlement"
+ G52_amadian_tolerance: "Tolerating Amadians"
  
  G52_recognized_kheion: "Recognized Kheion"
  G52_ambhen_city: "Ambhen City"
  G52_delivering_civilized: "Delivering Civilized Life"
  G52_conquest_taychend: "Conquest of Taychend"
  G52_mandated_kheionization: "Mandated Kheionization"
+ G52_kheionai_immigrants: "Kheionai Immigration"
+ G52_eiried_ameioni: "Eiriéd Ameioni"
  G52_reunifiying_old_home: "Reunifying the Old Home"
  G52_reborn_ruin: "Reborn from Ruin"
  
+ G52_regional_capital: "Regional Capital"
+ G52_first_steps: "First Steps"
+ G52_tolerated_cults: "Tolerated Cults of Neravali"
  G52_fotistrepei_mod: "Fotistrépei"
+ G52_laskaris_vision: "Laskaris' Vision Fulfilled"
+ G52_free_port_losses: "Free Port Losses"
+ G52_orenkoraim_buff: "The Last Free Port"
+ FREE_PORT_DEBUFF: "Free Port Undermining"
+ G52_warship_manufactories: "Warship Manufactories"
+ G52_bloombound_warships: "Bloombound Warships"
+ 
+ G52_work_continues: "Laskaris' Work Continues"
+ G52_storming_taychend: "Storming Taychend"
+ G52_spoils_taychend: "Spoils of Taychend"
+ G52_defiance_destiny: "In Defiance of Destiny"
+ G52_destiny_fulfilled: "Destiny Fulfilled"
  
  G52_interior_development: "Interior Development"
  G52_exiling_uncivilized: "Exiling the Uncivilized"
@@ -157,8 +176,7 @@
  G52_G79_loyalty: "Loyalty Through Agreement"
  G52_continued_deportations: "Continued Deportations"
  G52_severing_uncivilizable: "Severing the Uncivilizable"
- 
- 
+ G52_effelai_siphon: "Mustering Effelai's Strength"
  
  G52_birth_kheion: "Birth of a Kheion"
  G52_integrating_kin: "Integrating Kin"
@@ -166,7 +184,6 @@
  G52_education: "Kheionai Education"
  G52_securing_trade: "Securing Local Trade"
  
-
  G52_kheion_worlds: "Kheion Between Worlds"
  G52_closed_ports: "Closed Ports"
  G52_G71_closed_ports: "The Last Free Port"
@@ -182,9 +199,8 @@
  G52_gylkheion_cooldown: "Timer" #hidden
 
  G52_expanded_navy: "Expanded Navy"
- G52_eiried_ameioni: "Eiriéd Ameioni"
  
- G52_first_steps: "First Steps"
+ 
  G52_straw_brick: "From Straw to Brick"
  G52_player_laranakar: "Pushing back Larankar"
  G52_regional_capital: "Regional Capital"
@@ -192,13 +208,12 @@
  G52_western_protection: "Safety of Kheyeana"
  G52_peaceful_reprieve: "Peaceful Reprieve"
  
- G52_laskaris_vision: "Laskaris' Vision Fulfilled"
  G52_highlanders_conquered: "Highlanders Conquered"
  G52_free_port: "Free Port Resistance"
  G52_free_port_war: "War of the Free Port"
  G52_free_port_slow: "Preparing Offensive"
  
- G52_work_continues: "Laskaris' Work Continues"
+ 
  G52_cutting_ailing: "Cutting the Ailing Hand"
  G52_last_stand: "Taychendi Last Stand"
  G52_saboteurs: "Local Saboteurs"
@@ -218,11 +233,17 @@
  G52_mage_6: "Harnessing Relics"
  G52_mage_7: "Harnessing Relics"
  G52_mage_8: "Harnessing Relics"
+ G52_mage_9: "Harnessing Relics"
+ G52_mage_10: "Harnessing Relics"
+ G52_mage_11: "Harnessing Relics"
  
  G52_elven_rebirth: "Rebirth of Elven Culture"
  G52_magical_discovery: "Ancient Keyanilián"
  G52_precursor_ancestry: "Precursor Architecture"
  G52_elven_longevity: "Medical Longevity"
+ G52_mana_flow: "Mana Flow"
+ G52_precursor_campaigns: "Imperial Campaigns"
+ G52_dust_tear: "Dust Tear"
  
  G52_ai_dig: "AI Spam Prevention" #hidden
  G52_search_tacenie: "The Search for Tacenie"
@@ -231,9 +252,7 @@
  #Laskaris Tooltips
  ameion_exempt: "The §YIncreased Levies§! privilege cannot be revoked while this modifier lasts."
  ameion_destiny: "Laskaris is expected to §Rdie§! at age §Y61§!, but no sooner."
- ameion_destiny_2: "Laskaris shall seek to avoid his predetermined death."
- ameion_laskaris_perk: "The following benefit applies if §YLaskaris§! is still alive."
- ameion_accept_destiny: "Laskaris shall no longer seek to avoid his predetermined death."
+ ameion_laskaris_perk: "The following benefit applies if §YLaskaris§! is still alive:"
  
  #Mission Tooltips
  
@@ -263,69 +282,56 @@
  
  ameion_renaissance_relic_tt: "Owning any §YPrecursor Relics§! province will increase the progress gained to §G75§!."
  ameion_crownland_tt: "If you are already §YKingdom§! rank, gain §G10§! crownland instead of §Y5§!."
+ ameion_ambhen_cities: "This modifier will be applied to two provinces fulfilling the conditions."
  ameion_faith_privledges_tt: "§YReligious Culture§! no longer costs §YAbsolutism§! and now gives §G-15%§! §YEmbracement Cost§!\n§YEnforced Unity of the Faith§! no longer costs §YAbsolutism§! and now gives §G+1.00%§! §YTolerance of the True Faith§!\n"
  ameion_kheionization_tt: "Whenever a province in §YMteibas Valley§!, §YChendhya§!, or §YTaychend§! is converted, it will attempt §TKheionization§!.\nThis gives is a base chance of §Y25%§! for the province to immediately convert to either §YKlereyen§! or §YAstólbhen§!.\nThis chance is §Ydoubled§! if the province has at least §Y20§! development, and/or §Y1.33§! times higher if §YReligious§! ideas have been completed (§Y66%§! chance if both conditions are met).\n\nAll provinces with §YFotistrépei§! will attempt §TKheionization§!, but the §YFotistrépei§! effect, and modifier, will be §Rdisabled§!.\nAny accepted §YTaychendi§! culture will be §Rdemoted§!."
  ameion_advahkalla_tt: "Up to §Y6§! provinces meeting the conditions, and not already Kheionai cultured, will convert to §YKlereyen§!."
  ameion_nobles_land_tt: "§YNobility Land Rights§! no longer costs §YAbsolutism§!."
- G52_aelantir_cores: "§YAmeion§! gains core on §YNorth Aelantir§!."
+ ameion_nakyra_capital: "These benefits apply so long as §Y[2497.GetName]§! is the capital."
+ ameion_administration_tt: "Up to §Y15§! provinces fulfilling the conditions gain the benefit seen below."
+ ameion_aelantir_cores: "§YAmeion§! gains core on §YNorth Aelantir§!."
  
+ ameion_korrimutren_tt: "\nIf §Y[G83.GetName]§! owns §Y[2562.GetName]§! and §Y[2526.GetName]§!, gain §Gcores§! on those two provinces, and they each lose §G10§! §YYears of Seperatism§!.\n"
  ameion_fotistrepei_tt: "The above modifier will be applied to any province which meets the requirements of this mission, and those which meet it in the future."
+ ameion_taychendi_subjugation_tt: "Unlock §YDeyodéikakaupos§! flagship.\nGain §YSubjugation§! Casus Belli on all independent Taychendi nations with less than §Y60§! development."
+ ameion_strong_duchies_tt: "§YStrong Duchies§! no longer costs §YAbsolutism§!, and provides §G+1§! §YDiplomatic Relations§! and §G+1.00§! §YDiplomatic Reputation§!.\n\nAll subjects in Taychend will convert to §YKheionist§!."
+ ameion_rezankand_subjugation_tt: "Gain §YSubjugation§! Casus Belli on §YRezankand§! or §YJaherian Exemplars§!, should they exist."
+ ameion_rezankand_event_tt: "If we or a subject own an §YElven§! province in §YDry Coast§! region, we will have an event concerning them."
+ ameion_greatest_ships_tt: "§gThe modifier will display the appropiate forcelimit when Degárikes are unlocked§!\nThis modifier will persist regardless of total owned §YKheionai Shipyards§!.\n"
+ ameion_found_tacenie: "Has found §YTacenie§!."
+ ameion_lteidhano_over: "Has resolved the Monarchist question once and for all."
+ ameion_mage_privledges: "§YPatronage of Magical Arts§!, §YBattlemage Academies§!, §YReduced Research Regulations§!, and §YMage Organization: Guilds§! no longer cost §YAbsolutism§!."
  
  ameion_colony: "§YLiteibhar§! shall receive any city owned in §YSevered Coast§! region. Should it ever become a subject that is not a colony, it will regain its §Ycolony§! status."
- ameion_liteibhar_convert_3: "§YLiteibhar§! shall convert three non-Taychendi provinces to Taychendi."
- ameion_liteibhar_convert_4: "§YLiteibhar§! shall convert four non-Taychendi provinces to Taychendi."
+ ameion_liteibhar_convert_all: "§YLiteibhar§! shall convert all owned non-Taychendi provinces in §YSevered Coast§! region to Taychendi."
+ ameion_all_hubs_tt: "All §YEffelai Network Hub§! provinces are owned by us or a subject, and have less than §Y1§! Devastation."
  
- ameion_mteibhar_kheion: "All owned §YMteibhar§! provinces must be §YKheionism§!. This requirement changes if §YMteibhara§! is a subject."
- ameion_chendhyan_kheion: "All owned §YChendhyan§! provinces must be §YKheionism§!. This requirement changes if you have a §YChendhyan§! subject."
- ameion_universities: "Every owned province with a §YUniversity§! shall gain the following benefit:"
- ameion_administration_tt: "Up to §Y15§! provinces fulfilling the conditions gain the benefit(s) seen below."
- 
- ameion_independance: "\n§GEvent Insight§!\n§Y[G56.GetName]§! will declare independence. §Y[G52.GetName]§! and §Y[G62.GetName]§! shall join their war.\n§gIf [G62.GetName] has allied [G56.GetName]'s overlord, they shall still join the war, but any other support Deyeion may have shall not.§!"
- ameion_ambhen_cities: "This modifier will be applied to two provinces fulfilling the conditions."
  ameion_no_outsider_allies: "Cannot form alliances with non-§YRuinborn§! nations. §RThis is permanent.§!"
  ameion_closed_ports: "Cannot form alliances with non-Ruinborn nations."
- ameion_klereyen_2: "Two random provinces following §YKheionism§! in the §YTaychend§! region will become §YKlereyen§!."
- ameion_shipyards: "Up to §Y5 Shipyards§! shall be built in random eligible provinces held by us or a subject, at §Yhalf§! cost and normal time."
- ameion_astolbhen_shift: "\nFrom now on, any owned §YKheionai§! cultured non-coastal province in §YThe Chendhya§! or §YMteibas Valley§! regions will shift to §YAstólbhen§!.\n§YAstólbhen§! provinces receive §G10%§! §YFriendly Movement Speed§!.\n"
- 
- ameion_klereyen_shift: "\nFrom now on, any owned §YKheionai§! cultured province in mainland §YTaychend§! or §YLarankarha Highlands§! regions will shift to §YKlereyen§!.\n§YKlereyen§! provinces receive §G25%§! §YInstitution Spread§!.\n"
- ameion_treaty_tt: "If Larankar accepts our offer: §YLarankarha§! or §YKalavendhi§! provinces, and §YMarhed Rayodana§! & §YBettagophira§! areas controlled by us and our subjects shall be ceded to them, but other Taychendi lands controlled by Larankar and their subjects shall be ceded to us.\nThey shall also abandon any allies or subjects outside these areas, but vassalize any ally within said areas."
- ameion_G64_vassals: "Allies which are §YLarankarha§!, §YKalavendhi§!, or §Y[G77.GetName]§! shall become vassalized.\nOther §YTaychendi§! alliances will be broken and lose §R100§! trust with us, as shall any subject not meeting these conditions.\nRemaining subjects shall receive the following benefits:"
- ameion_G64_land: "Owned §YYodhanpir§! and §YThekvrystana§! provinces outside the §YMarhed Rayodana§! & §YBettagophira§! areas shall be §Rceded§! to §Y[G52.GetName]§!.\nThis includes subjects!\n\n§YAmeion§! shall §Gcede§! lands matching the conditions to us."
- ameion_transfer: "§YLarankarha§! or §YKalavendhi§! provinces, and §YMarhed Rayodana§! & §YBettagophira§! areas controlled by us and our subjects shall be ceded to them, but other Taychendi lands controlled by Larankar and their subjects shall be ceded to us."
- ameion_claim_south: "§YAmeion§! gains a permanent claim on §YYodhanpir§! and §YThekvrystana§! provinces in §YTaychend§! region §RNOT§! owned by §YAmeion§!, §Y[G64.GetName]§!, or their subjects."
+
  ameion_dev_t: "A random province fulfilling the conditions gain §G2§! Base Tax, §G2§! Base Production, and §G2§! Base Manpower."
  ameion_kelindas_perk: "The following benefit applies if §YKelindas Laskaris§! is still an active general."
- ameion_orenkoraim_war_1: "\n§GEvent Insight§!\n§TWe shall conquer Orenkoraim once and for all!§!\n§RWe expect Cannorians to support them.§!\n§gShould any other nation hold land here, one shall randomly become Orenkoraim's overlord.§!"
- ameion_orenkoraim_war_2: "\n§GEvent Insight§!\n§ROrenkoraim shall revolt against our rule.§!\n§TWe must drive out any remaining opposition!§!\n§RWe expect Cannorians to support them.§!"
- ameion_orenkoraim_war_3: "§TThe modifiers shall last until we annex the§! §Y[6559.GetAreaName]§! §Tand§! §Y[2510.GetAreaName]§! §TAreas.§!\n§TEvery Cannorian with either a South Aelantiri subject, 150 development, or Luck that has completed§! §YExploration Ideas§! §Tshall be asked to aid Orenkoraim.§!"
- ameion_G71_threat: "Free Port Concession"
- ameion_G71_win: "Free Port Closed"
  
- ameion_claim: "Has a claim of §Y[Root.GetName]§!"
- ameion_claim_upgrade: "Existing claims in these areas will become §YPermanent§!"
- ameion_taychend_rally: "§GEvent Insight§!\n§TWe shall crush Larankar and any who may aid them in one fell swoop. They will recover any of their cultural land if they have lost it.§!\n§RThe Kalavendhi will also side with them.§!"
- ameion_taychend_rises: "All §YKalavendhi§! provinces owned by us abandon us to join Larankar's side.\n\nAny independent §YTaychendi§! nation not already supporting Larankar does so."
- ameion_taychend_rises_2: "All §YTaychendi§! nations at war with us receive these benefits.\nCompleting §YOne Stands, One Falls§! shall remove §YTaychendi Last Stand§! from them."
- ameion_taychend_restored: "All §YKalavendhi§! provinces without our cores return to their original borders, with the exception of §Y[G67.GetName]§! released as our march.\n§Y[G64.GetName]§! cancels all subjects and releases §Y[G65.GetName]§!.\n§Y[G52.GetName]§! gains Bettagophira area.\n§Y[G52.GetName]§! also gains §Y[G77.GetName]§! as a vassal with its original borders.\n"
- ameion_taychend_restored_2: "Any §YTaychendi§! province with our core shall instead be returned to us, but gain §Rautonomy§! and §Runrest§! for §Y10§! years.\n"
- ameion_nanru_kheionization: "§YNanru Nakar§! Area shall be set to §Y4§! Base Tax, §Y4§! Base Production, and §Y4§! Base Manpower. This only applies if the provinces are currently above those values."
- #ameion_nakyra_capital: "§YNanru Nakar§! Area shall receive §G15%§! §YLocal Fort Defense§!, §Y[2496.GetName]§! and §Y[2495.GetName]§! receive §G-50%§! §YLocal Development Cost Reduction§!, and the nation recieves §G5%§! §YAll Estates Loyalty Equilibrium§!.\nThese benefits apply so long as §Y[2497.GetName]§! is the capital."
- ameion_nakyra_capital: "These benefits apply so long as §Y[2497.GetName]§! is the capital."
  
  #Event Insights
- G52_leaders_meeting_tt: "\n§GEvent Insight§!\n[Root.Monarch.GetName] will meet with the Mteibhar to learn about their customs and the possibility of subjugating them peacefully."
- G52_a_trip_north_tt: "\n§GEvent Insight§!\nOur [Root.Monarch.GetTitle] will meet with the Chendhyans and see if they can be reasoned with. These discussions may go better if Laskaris still rules our country."
+ ameion_independance: "\n§GEvent Insight§!\n§Y[G56.GetName]§! will declare independence. §Y[G52.GetName]§! and §Y[G62.GetName]§! shall join their war.\n§gIf [G62.GetName] has allied [G56.GetName]'s overlord, they shall still join the war, but any other support Deyeion may have shall not.§!"
  G52_echate_league_agrees_to_borders_tt: "\n§GEvent Insight§!\nThe Échate League will meet to divide the Andic Reach between them, which they will now consider their core lands. This increased organization will also allow them to colonize faster."
- G52_civilization_of_exiles_tt: "§GEvent Insight§!\nThe Taychendi that refuse to acknowledge our rule will be sent to start a colony on the island to the east and granted any land we own or will own in the Severed Coast."
- G52_summit_of_ameion_tt: "\n§GEvent Insight§!\nWe will meet with all the groups in our empire to increase the unity among our people, though to do this we will likely have to make some minor concessions, but we will also gain some concessions. This will make our subjects more loyal, and allow us to convert more people faster."
- G52_fall_of_larankar_tt: "§GEvent Insight§!\nWe will reshape the landscape of Taychend, forcing Larankar to release all their subjects and Sedragenhi along with giving us monetary concessions. We’ll also gain a small amount of land §Rbut release all Kalavendhi land not yet our core land§"
- G52_finishing_laskaris_ambition_tt: "§GEvent Insight§!\nWith a powerful new general rising through the ranks of our army, and new claims on the continent, it’s time we finish our conquest of Taychend."
  G52_the_nekheis_of_devand_tt: "\n§GEvent Insight§!\nWe will choose between reorganizing the Nékheis into a different, more independent type of subject, along with reorganizing their borders and ceding any land they hold outside of the Devand to us.\nAlternatively, we can unite them as an ordinary march, or simply hold onto the lands for ourselves."
  G52_cleaved_sea_admirality_tt: "§GEvent Insight§!\nWe will decide whether to grant Anisíkheion on islands of the Cleaved Sea, giving them much stronger abilities in the sea, or disperse them amongst our existing subject(s)."
  G52_motherland_tt: "\n§GEvent Insight§!\nWe will choose between reorganizing the Kheions into a different, more independent type of subject, along with reorganizing their borders and ceding any land they hold outside of the Devand to us.\nAlternatively, we can unite them as an ordinary march, or simply hold onto the lands for ourselves."
  G52_custodian_tt: "\n§GEvent Insight§!\nWe will choose a significant modifier with options available on how we have, or have not, made subjects of our western kheionai brethren."
+ 
+ G52_leaders_meeting_tt: "\n§GEvent Insight§!\n[Root.Monarch.GetName] will meet with the Mteibhar to learn about their customs and the possibility of subjugating them peacefully."
+ G52_summit_of_ameion_tt: "\n§GEvent Insight§!\nWe will meet with all the groups in our empire to increase the unity among our people, though to do this we will likely have to make some minor concessions, but we will also gain some concessions. This will make our subjects more loyal, and allow us to convert more people faster.\n\nIf an §YAmadian§!, §YEffelai§!, and/or §YCannorian§! (by tech group) nation has 100 opinion of us, they will be represented at the Summit.\n§gSaid nation will be highlighted by the mission if they fulfill the condition§!"
+ 
  G52_westernization_tt: "\n§GEvent Insight§!\nThe process of §TKheionization§! shall begin, supplanting the §YFotistrépei§! organization in our efforts to bring Kheionai way of life to the Taychendi and Devandi."
+ 
+ G52_finishing_laskaris_ambition_tt: "§GEvent Insight§!\nWith a powerful new general rising through the ranks of our army, and new claims on the continent, it's time we finish our conquest of Taychend."
+ ameion_orenkoraim_war_tt: "\n§GEvent Insight§!\n§ROrenkoraim shall revolt against our rule.§!\nOnce dealt with, this will alleviate any issues the port is facing."
+ 
+ G52_wars_of_heroes_tt: "§GEvent Insight§!\n§YLarankar§! will attack us, with particular zeal if §YErenkar 'the Defiant'§! still lives. They will conclude any current war before doing so."
+ G52_civilization_of_exiles_tt: "§GEvent Insight§!\nThe Taychendi that refuse to acknowledge our rule will be sent to start a colony on the island to the east and granted any land we own or will own in the Severed Coast."
+ G52_araya_subject_tt: "§GEvent Insight§!\nWe will decide whether to grant the Effelai Ruinborn autonomy within their jungle, to make use of their expertise to derive benefit from an otherwise hostile environment."
  
  #Archeology Tooltips
  ameion_no_excavation: "There is no ongoing §YExcavation§!."
@@ -334,7 +340,7 @@
  ameion_site_not_kheionai: "£no£ Province is §YKheionai§! cultured"
  ameion_site_kheionai: "£yes£ Province is §YKheionai§! cultured"
  ameion_more_mages: "§YThis increases the chance of getting a Powerful Mage Ruler§!"
- ameion_battlemages: "The §YBattle Academy§! privilege is §Genchanced§!, no longer giving Yearly Army Tradition Decay, and §YWar Wizard§! Generals are far more common."
+ ameion_battlemages: "The §YBattle Academy§! privilege is §Genchanced§!, no longer giving Yearly Army Tradition Decay nor Costing Monthly Military Power, and §YWar Wizard§! Generals are far more common."
  ameion_search_possible_tt: "We can begin the §OSearch for Tacenie§! once every Site has been excavated."
  ameion_no_gnomes: "This event shall not fire again."
  ameion_no_elves: "This event shall not fire again."
@@ -351,12 +357,9 @@
  
  #Disaster/Wargoal
  ameion_monarchist: "Liteidhano"
- desc_ameion_monarchist: "Kelindas Laskaris' rise to power has called into the question the nature of Ameion's government. Many Kheions practice republicanism as the best way to represent the interests of the government, but the line of Laskaris and practices of the Taychendi have pushed Ameion towards monarchism far more than her western counterparts."
+ desc_ameion_monarchist: "Thirendires Laskaris' rise to power has called into the question the nature of Ameion's government. Many Kheions practice republicanism as the best way to represent the interests of the government, but the line of Laskaris and practices of the Taychendi have pushed Ameion towards monarchism far more than her western counterparts."
  
  ameion_nakyra_done: "§YNákyra§! is a proper Kheion."
- ameion_kelindas_done: "Kelindas Laskaris has entered politics."
- ameion_free_port: "Are putting an end to the Free Port."
- ameion_kheions_incorporation: "Are subjugating the Kheions."
  ameion_nakyra_capital_t: "We have moved the capital to §YNákyra§!"
  ameion_war_begining: "The War is not just begining."
  
@@ -367,11 +370,8 @@
  G52_G00_later_chendhyan_tt: "We shall have the opportunity to strike §Y[H00.GetName]§! after we have reunified our nation."
  ameion_gly_rally: "All §YGylíkheion§! shall join the war with the §YRepublican Zeal§! modifier."
  
- G52_republican_zeal_1: "Republican Zeal"
- G52_republican_zeal_2: "Republican Zeal"
- G52_monarchist_zeal_1: "Monarchist Zeal"
- G52_monarchist_zeal_2: "Monarchist Zeal"
- G52_monarchist_zeal_3: "Reign of Kelindas"
+ G52_opposition_zeal: "Opposition Zeal"
+ G52_monarchist_zeal: "Reign of Thirendires"
  G52_G00_victory: "One Nation, One Government"
  ameion_kheionization_continues: "Kheionization efforts begun with §YGrand Kheionization§! mission shall continue."
  ameion_gly_agree: "All §YGylíkheion§! shall adopt our style of government."
@@ -398,17 +398,10 @@
  G52_precursor_excavation_title: "Precursor Site Excavation"
  G52_precursor_excavation_desc: "When the Ashen skies darkened the Kheions, they too cast into darkness our ancestors' knowledge of what came before them. But in these kheions the light of civilization endured, and with our arrival in Taychend it has fallen to us to reclaim the birthright of our peoples. But first, it must be rediscovered..."
  
- #G52_larankar_treaty_title: "Treaty of Masialendi"
- #G52_larankar_treaty_desc: "Taychend has become increasingly consolidated by ourselves and the Amarayam of Larankar. While some may argue they have the strength to drive us from the continent, it is obvious they struggle to maintain their grasp on the Kalavendhi.\n\nAs we focus our efforts in the south, we may find room to negotiate with the Larankarha to stick to agreed spheres of influence, so that we can each consolidate our holdings."
- 
- G52_nakyra_capital_title: "Make Nákyra Capital"
- G52_nakyra_capital_desc: "Nákyra, the Crown Jewel of Taychend, is wasted by its current inhabitants who know it as Nanru Nakar. The origins of the city are tied to the Precursors who came before us, and under our leadership the city shall see such splendor again.\n\nKelindas intends to rule the city personally, and shall do so even if his tenure as a general ends before its conquest."
- 
  G52_close_ports_title: "Close the Taychendi Ports"
  G52_close_ports_desc: "In 1718, Kylakas Thalanthenes Dranikes decreed a total ban on trade with nations not native to Aelantir in order to prevent Cannorians from influencing our nation to ruin and collapse. These outsiders have demonstrated their desire to usurp our rule and see our people reduced to a means of production for their empires, and any tolerance of their actions shall only serve as a means to share the same fate of our distant kin abroad."
  
  #Province Groups
- initial_invasion: "Initial Invasion"
  excavation_sites: "Excavation Site"
  
  #Laskaris Events
@@ -416,47 +409,41 @@
  flavor_ameion.1.d: "''Many of my men now rest back home, but I sail back across the sea to plan their next steps when they rejoin me. I remember my first voyage across these waters; seeking the city of Nanru Nakar, from which the region's magical trinkets originated. After the hostility of the local warlords forced me to turn back, I learned my fate in Korrimutren.\n\nI would bring Ameioni rule to these lands, replacing their war-torn fields with bountiful farms, and setting the stage for those after me to bring prosperity to their people. \n\nMore interestingly, I learned the exact age and cause of my death, indicating I would survive all else thrown at me.\n\nBoth of these have proved true thus far, but my work continues. I am in a race against a calendar to establish my city's rule here before my passing, and while I may never lay eyes on Nakar myself, I must ensure my descendants do.''\n\n -Journal of Laskaris"
  flavor_ameion.1.a: "The foothold is only the beginning!"
  
- flavor_ameion.2.t: "An Important Decision"
- flavor_ameion.2.d: "''As I spend more time amongst the locals of Taychend, I learn more of their folklore. Their so-called 'Gods' are figures not too different than myself, those scant few with the martial prowess to command authority over a large portion of Taychend.\n\nHowever, they claim their gods hold sway over destiny, while destiny in turn holds sway over mortals. As I learned my fate from one of their seers, it may be possible some among them hold the secret to avoiding my planned demise. The thought weighed on me for some time, and I ultimately decided...''\n\n -Journal of Laskaris"
- flavor_ameion.2.a: "''...My destiny is to lead Ameion.''"
- flavor_ameion.2.b: "''...I shall overcome destiny.''"
-  
- flavor_ameion.3.t: "Fate Fulfilled"
- flavor_ameion.3.d1: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found slumped over a tree stump with a content smile upon his lips, as if content with all he has accomplished with the time afforded to him.\n\nHe is buried per his requests: alongside the soldiers who died fulfilling his destiny, almost in eyesight of where his forces first landed in Taychend. His grave is adorned by those in mourning, but in time will resemble all those around it."
- flavor_ameion.3.d2: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found over a tree stump, as though he were kneeling by it.\n\nHe is buried per his requests: in the traditional style of the Taychendi upper caste, in a crypt overlooking the beach his forces first landed in these lands. The foreign gods, if at all powerful, did ultimately not take pity upon Laskaris.\nNo matter, the dusk of their era approaches."
- flavor_ameion.3.d3: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found slouched on a tree stump, as though he was meditating upon it.\n\nHe is buried per his requests: a modest arrangement made by his descendants, placed not too far from where he first set foot in Taychend during his invasion. He died a very different man from when he first came to these lands as a conqueror, but his destiny was fulfilled all the same."
- flavor_ameion.3.a: "So passes the Conqueror who put Ameion on the map."
+ flavor_ameion.2.t: "Essence of Governance"
+ flavor_ameion.2.d: "Laskaris and Kerodinsis Arpedan were discussing military matters when an albino Kheionai sauntered into the tent. Irenthenes Gakones, late as always, took a seat besides Kerodinsis like he owned the place. ''Long time no see, fellow Eilastes!''\n''Finally decided to grace us with your presence?'' Laskaris teased, grinning. Kerodinsis scoffed.\n\n''Well...'' the albino Kheionai chuckled, clapped his hands together, ''shall we start? The reason I'm here in Taychend, instead of walking the halls of power back in Ameion and schmoozing with your beautiful, neglected, cheated-on, Ormabhen-hustler of a wife, is that I've come up with a bit of what I call ''legal brilliance.'' You want to bring Kheionai-style cities to Taychend, but you want to keep your conquests Ameion's conquests, right? Well, under these proposals, the new Taychendi provinces, the Epaidía? They'll be legislatively autonomous – but their elected governors will be hooked in right to your office. You like them? They'll be confirmed by the Synkletos. You don't? You get to appoint one yourself.''\nKerodinsis cut in. ''These governors, they a strictly civilian role?''\nIrenthenes nodded. ''Eligible provincials will be conscripted straight into the state military. So civilisation for the guys on the ground – but the Kylakas, Ameion, and the army still in a position to dominate! There are a few preparatory questions, though...'' Irenthenes passed some papers over. ''Things I wanted your opinion on.''\n\nLaskaris skimmed the documents – they were proposals for new military governors, and ways the eventual new provinces could be tweaked to his liking. For a moment, he grimaced - the ability to affect such change with a single pen stroke felt like the power of a warlord, not a Kylakas. But he pushed the concern aside - authority was the essence of governance, after all - and the decisions he made today might define governance for quite a while. ''Alright...'' Laskaris picked up a quill. ''Let's focus on...''"
+ flavor_ameion.2.a: "''...appointing enlightened governors... can't integrate the Taychendi by ignoring them.''"
+ flavor_ameion.2.b: "''...improving their ties with our western neighbours. Ameion doesn't exist in a vacuum.''"
+ flavor_ameion.2.c: "''...improving their military capabilities. Military expansion and suppression is a priority.''"
  
- flavor_ameion.4.t: "Legacy of Laskaris"
- flavor_ameion.4.d: "When Laskaris began preparations for our invasion of Taychend, he recruited the nobility and troops loyal to them by promising land and influence at the expense of the locals. This policy worked for the moment, however some have become concerned about the power this noble class now yields. Now that Laskaris is gone, his successor must decide whether to continue such policies, or re-assert the principles of the republic."
- flavor_ameion.4.a: "Why turn against those who have loyally served?"
- flavor_ameion.4.b: "I am no Laskaris, I am a servant of the republic."
+ flavor_ameion.3.t: "Will of the Gods"
+ flavor_ameion.3.d: "Laskaris was looking out over Amphragma when Jaherios Lykos found him. Even a decade after he took it, the grandeur of the ruins amazed him, a vast expanse of blackened stone buildings. One could easily mistake it for the ruins of the Precursors. But at the close of the Gophiran Empire, it had been systematically sacked - its people killed or enslaved.\n\n''If they could accomplish this,'' Lykos began, ''how can we possibly call them 'barbarians''?'\n''The Taychendi accomplished this...'' Laskaris replied, exactly as Kerodinsis Arpedan had a decade earlier. ''And then the Taychendi tore it all down.'' The answer had never sat right with him, though. ''They just need correction, that's all...''\n\nFor ten years, Jaherios had served him faithfully, the greatest nightblade and rogue alive. The elf had even married the Conqueror's daughter. ''Correction...? Is that what you call what the Synkletos want to do?'' But Lykos had views the Kheionai weren't supposed to have - views that Laskaris tried his hardest to hide his sympathies for. ''I've read the reports from the Oúraskheion. Irenthenes wants to abolish temple privileges in the provinces – start seizing their lands!''\n\nLaskaris turned to his son-in-law, his face a mask. ''What do you think Kheionai rule means? Its a key part of establishing control... order. Saving Taychend from itself.''\nLykos scowled. ''You've travelled Taychend as much as I have – you've seen the festivals, the sacrifices, the games... if we start, soon the Taychend you loved will be gone. You won't save it – you'll destroy it. And...'' He lowered his voice to a whisper. ''...what do you think the gods will think of that?''\n\nThe gods who gave you that prophecy. The gods who rendered you immortal. Laskaris turned away as irrational thoughts assaulted him. As years of doubts and inner struggle resurfaced. Finally, he spoke."
+ flavor_ameion.3.a: "The gods will think nothing. The gods are not real. Do not talk about that again."
+ flavor_ameion.3.b: "I'll send a message to Irenthenes... the temples will be protected."
  
- flavor_ameion.5.t: "[From.GetCapitalName] Falls"
- flavor_ameion.5.d: "''The siege of [From.GetCapitalName] concludes, with its defenders dead from starvation or wounds. As my men march in to establish order, I take a closer look at the defenses and how they were manned. With this information in mind, I am able to conclude my methods of siege warfare...''\n\n -Journal of Laskaris"
- flavor_ameion.5.a: "''...were effective.''"
- flavor_ameion.5.b: "''...could use improvement.''"
+ flavor_ameion.4.t: "Heated Argument"
+ flavor_ameion.4.d: ""
+ flavor_ameion.4.a: ""
+ flavor_ameion.4.b: ""
  
- flavor_ameion.6.t: "The Toll of Conquest"
- flavor_ameion.6.d: "''As I walk about the camps of my men, I take note of how many of them are no longer here. Men who fought for glory, land, or even loyalty to me have met their end in this foreign land. We came here to put an end to their bloodshed, but this has come at the cost of our own blood.\n\nI have become accustomed to my inability to die in battle, but my greatest sorrow is that this luxury is not afforded to them.''\n\n -Journal of Laskaris"
- flavor_ameion.6.a: "What is the price of victory?"
+ flavor_ameion.5.t: "Fate Fulfilled"
+ flavor_ameion.5.d1: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found slumped over a tree stump with a content smile upon his lips, as if content with all he has accomplished with the time afforded to him.\n\nHe is buried per his requests: alongside the soldiers who died fulfilling his destiny, almost in eyesight of where his forces first landed in Taychend. His grave is adorned by those in mourning, but in time will resemble all those around it."
+ flavor_ameion.5.d2: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found over a tree stump, as though he were kneeling by it.\n\nHe is buried per his requests: in the traditional style of the Taychendi upper caste, in a crypt overlooking the beach his forces first landed in these lands. The foreign gods, if at all powerful, did ultimately not take pity upon Laskaris.\nNo matter, the dusk of their era approaches."
+ flavor_ameion.5.d3: "How exactly Laskaris passed is unknown, he kept the destined means of his demise a secret for almost three decades. He was found slouched on a tree stump, as though he was meditating upon it.\n\nHe is buried per his requests: a modest arrangement made by his descendants, placed not too far from where he first set foot in Taychend during his invasion. He died a very different man from when he first came to these lands as a conqueror, but his destiny was fulfilled all the same."
+ flavor_ameion.5.a: "So passes the Conqueror who put Ameion on the map."
  
- flavor_ameion.7.t: "A Heated Argument"
- flavor_ameion.7.d: "''This morning, while making preparations on the outskirts of town, I came across two locals having a discussion on the ramifications of destiny. One, seemingly a holy man, argues that proving yourself to the gods allows you to receive a new destiny from them. The other, a thinking man, argues that one's destiny is tied to their individuality, and changes in personality can allow their place in the world to change. It is clear that their methods could hold the answer I seek, but as their ideas contradict in some ways I cannot realistically pursue both. As they conclude, I decide to...''\n\n -Journal of Laskaris"
- flavor_ameion.7.a: "''...ask the holy man about the will of his gods.''"
- flavor_ameion.7.b: "''...ask the philosopher about an individuals essence.''"
+ flavor_ameion.6.t:0 "The Wolf's Gambit"
+ flavor_ameion.6.d:0 "Jaherios Lýkos, the roguish illusion mage and infiltrator, was one of Laskaris' most loyal supporters, even marrying the Conqueror's daughter Istradora. There were always fears about his beliefs, however – whispered gossip that he worshipped Laskaris as divine, and that he believed his descendants would one day rule from Nanru Nakar a great empire, a synthesis of Taychendi and Kheionai culture. Incredibly – inconceivably, to even his greatest detractors – those fears have been proven true. The Conqueror's son in law is a heretic – and to make matters impossibly worse, a murderer and a traitor! [Root.Monarch.GetName] is slain by his hand, and now Lýkos has moved to overthrow the republic!\n\nThe capital has been thrown into chaos, as Taychendi auxiliaries and Lýkos' die-hard Kheionai loyalists, smuggled into Ameion as servants and dock-hands, fight to seize the Oúraskheion and the gates of the city. To make matters worse, Lýkos has joined forces with Shacytia Arachne, the bodyguard and long-time mistress of Laskaris, to place the Conqueror's bastard son Kelesades on the throne of Ameion, as King! All know the power truly with Lýkos however. Should he succeed, it is likely that the true power base of the empire will move to Taychend – where already the Hero-Cult of Laskaris has thrown its support behind Lýkos' effort – and the capital to Nagar Vyechei, whose own assembly, the Valhathikutta, sees the opportunity to reassert Taychendi influence.With much of the army on campaign, only veterans, raw recruits and dusty old senators are available to hold the capital – though should we fight with everything we have, that may well be enough. Regardless, even if we stop him in Ameion, it is likely Lýkos and Shachytia will flee back to Taychend and attempt to gather an army. The fate of both Taychend and Ameion are on the line!"
+ flavor_ameion.6.a:0 "Lýkos is stopped and flees the capital!"
+ flavor_ameion.6.b:0 "Lýkos' gambit succeeds – the Kheionai rise in revolt!"
+
+ flavor_ameion.8.t: "[From.GetCapitalName] Falls"
+ flavor_ameion.8.d: "''The siege of [From.GetCapitalName] concludes, with its defenders dead from starvation or wounds. As my men march in to establish order, I take a closer look at the defenses and how they were manned. With this information in mind, I am able to conclude my methods of siege warfare...''\n\n -Journal of Laskaris"
+ flavor_ameion.8.a: "''...were effective.''"
+ flavor_ameion.8.b: "''...could use improvement.''"
  
- flavor_ameion.8.t: "The Will of Pagan Gods"
- flavor_ameion.8.d: "''I have spent the past couple years familiarizing myself with the local Theology, and Seronrin has studied by methods and behaviors to determine how I may earn the favor of his gods. He has claimed I have not respected his gods' sovereignty over Taychend, and if I wish to change the destiny they have laid for me I should my attitude towards them. As the leader of Ameion my own actions ripple across my nation, and to fit my nation into these lands I should...''\n\n -Journal of Laskaris"
- flavor_ameion.8.a: "''...adopt their local customs for myself.''"
- flavor_ameion.8.b: "''...respect their ways and allow their worship.''"
- flavor_ameion.8.c: "''...ignore his words, we are Kheionai, and I will bow to no god.''"
- 
- flavor_ameion.9.t: "The Individual Essence"
- flavor_ameion.9.d: "''How one behaves impacts the world around them, and in turn the world impacts the individual. Urakash has seen the ways I change this world to my image, and has suggested I change my ways in the pursuit of changing my destiny. After contemplation of myself, I have decided that...''\n\n -Journal of Laskaris"
- flavor_ameion.9.a: "''...I should embrace other ideas instead of replacing them.''"
- flavor_ameion.9.b: "''...my leadership skills should be used in the palace, not the battlefield.''"
- flavor_ameion.9.c: "''...I am truly Laskaris, the Conqueror.''"
+ flavor_ameion.9.t: "The Toll of Conquest"
+ flavor_ameion.9.d: "''As I walk about the camps of my men, I take note of how many of them are no longer here. Men who fought for glory, land, or even loyalty to me have met their end in this foreign land. We came here to put an end to their bloodshed, but this has come at the cost of our own blood.\n\nI have become accustomed to my inability to die in battle, but my greatest sorrow is that this luxury is not afforded to them.''\n\n -Journal of Laskaris"
+ flavor_ameion.9.a: "What is the price of victory?"
  
  #Mission Events
  flavor_ameion.11.t: "Leaders' Meeting"
@@ -492,32 +479,6 @@
  flavor_ameion.16.a: "Allow them to purchase the land."
  flavor_ameion.16.b: "Deny their request of autonomy."
  
- flavor_ameion.17.t: "Larankar's Empire Rallies"
- flavor_ameion.17.d: "Larankar, the next warlord in the line of many seeking to unite their subcontinent, makes one last stand against our dominance of the region. In the face of what they consider a common enemy, many men who would have otherwise stood aside rise to defend their way of life.\n\nIdeally they would see the error of their ways and join us in striking down the very tyrants who oppress them, but no matter. We shall drag them screaming into a better life."
- flavor_ameion.17.a: "Strike them at their strongest."
- 
- flavor_ameion.18.t: "Taychend Defiant"
- flavor_ameion.18.d: "Across Taychend, many have taken up arms to join the efforts of Larankar to drive us out of the region. Especially along the Kalavend, a region dominated by Larankarha puppet states, they align with their master against us. One can only assume they would rather live in slavery under one of their own than live free under a foreigner.\n\nHow whipped must a slave be to come to crave the lashing?"
- flavor_ameion.18.a: "One domino shall knock them all over!"
- 
- flavor_ameion.19.t: "[G79.GetName] Supports Mainland Liberty"
- flavor_ameion.19.d: "When we sent the extremists within our own borders to exist within their own autonomy, we intended to let them live by their own ways and leave us to our more worthy affairs. However, it unfortunately is not surprising that they hold sympathies for those not yet in our borders, and have refused to contribute anything to our efforts. There are even growing concerns they will turn tail and side with them in the hopes that throwing enough men at our weapons will let them return to their barbaric ways."
- flavor_ameion.19.a: "Crush this."
- flavor_ameion.19.b: "They will learn their lesson too!"
- flavor_ameion.19.c: "Respect Their Will"
- 
- flavor_ameion.20.t: "Local Saboteurs"
- flavor_ameion.20.d: "If the Taychendi have one advantage over us, it is that they know their own terrain better than we do. The brighter among them have exploited this knowledge to determine weak points in our fortifications, and cover up their own.\n\nOne could say they have learned from us one way or another, for tactics of this quality were unthinkable before our arrival here."
- flavor_ameion.20.a: "Damn!"
- 
- flavor_ameion.21.t: "Taychendi Insurgents"
- flavor_ameion.21.d: "Emboldened by the on-going fighting, several movements across Taychend have taken the opportunity to rise against us. Fortunately, this exposure has made it easier for us to stamp them out."
- flavor_ameion.21.a: "Wipe them out!"
- 
- flavor_ameion.22.t: "Fall of Larankar"
- flavor_ameion.22.d: "[2487.GetName] has fallen to our forces, and its leadership is brought to [G52.Monarch.GetTitle] [G52.Monarch.GetName] to discuss the fate of Taychend. [G64.Monarch.GetTitle] [G64.Monarch.GetName] expects torture, either for [G64.Monarch.GetHerselfHimself] or [G64.Monarch.GetHerHis] family members to force [G64.Monarch.GetHerHis] compliance, but we do not partake in [G64.Monarch.GetHerHis] methods. We sit [G64.Monarch.GetHerHim] down, offer [G64.Monarch.GetHerHim] a variety of teas, and bring [G64.Monarch.GetHerHim] a map. On this map, lies the borders of the remaining Taychendi states and where they fall in relation to Ameion.\n\nSome will be made to kneel immediately, but for many this peace is a beneficial one in the short term. Importantly, it removes any semblance of unity across the land, an opening to be filled by us.\n\nThe [G64.Monarch.GetTitle] knows they have no room to negotiate anything to their benefit, so in due time [G64.Monarch.GetSheHe] is sent home to deliver the news to [G64.Monarch.GetHerHis] allies."
- flavor_ameion.22.a: "It is not enough to defeat them, we must show our ways are superior."
- 
  flavor_ameion.23.t: "The Delegations Arrive"
  flavor_ameion.23.d: "The Chendhyans, with their swift feline mounts and proximity to Ameion, are the first to arrive for the Summit. Their mounts seem timid in an urban environment unfamiliar to these steppe-native animals. The tribal leaders are reminiscent of their mounts, tame but eyeing those unfamiliar to them with suspicion.\n\nOur fellow kheionai arrive next, the [G56.GetAdjective] and [G62.GetAdjective] of our League are the most familiar with Ameion proper, a city much like their own but showing its magnificence and influence in the streets alone.\n\nThe Mteibhar come also by boat, but in smaller river vessels following the river from their lands to ours. They are the most familiar with the style of gathering this Summit invokes, with their own tribes partaking a smaller scale activity within their valley.\n\nThe most distant of our subjects, the Taychendi arrive last, their numerous delegation representing their densely populated lands, but their awkwardness betraying their people's lack of formal diplomacy, while they are used to ancient cities, they are not used to seeing ours in such a well kept condition."
  flavor_ameion.23.a: "The Summit begins..."
@@ -546,23 +507,20 @@
  flavor_ameion.28.d: "After two months of fraternizing, the representatives return to their homelands, laden with goods from their counterparts. The city's alcohol reserves may be empty, but groups that once considered each other alien and hostile will remember these days of diplomacy and nights of revelry. Some are even eager to learn our language to foster communication between their new found friends.\n\nThe time now turns to work, however. Promises were made to our subjects, and fulfilling them will necessitate keeping the goblets empty."
  flavor_ameion.28.a: "From strangers to family."
  
- flavor_ameion.29.t: "Ameion Offers Treaty"
- flavor_ameion.29.d: "The Kheionai invaders remain our main obstacle to unifying Taychend under our rule, but with our struggles to keep the Kalavendhi under heel they have provided us an interesting opportunity. Our rebellious subjects have now begun to view us as a natural deterrent against the Ameioni conquerors.\n\nThey have reached out to us recently offering us the opportunity to consolidate our authority without their interference, in exchange for a set border."
- flavor_ameion.29.a: "We accept their bargain, and will vanquish them as a united force."
- flavor_ameion.29.b: "We do not need their interference!"
+ flavor_ameion.29.t: "The Effelai Delegation"
+ flavor_ameion.29.d: "idk"
+ flavor_ameion.29.a: ""
+ flavor_ameion.29.b: ""
  
- flavor_ameion.30.t: ""
- flavor_ameion.30.d: ""
+ flavor_ameion.30.t: "The Amadian Delegation"
+ flavor_ameion.30.d: "idk"
  flavor_ameion.30.a: ""
+ flavor_ameion.30.b: ""
  
- flavor_ameion.31.t: ""
- flavor_ameion.31.d: ""
+ flavor_ameion.31.t: "The Cannorian Delegation"
+ flavor_ameion.31.d: "idk"
  flavor_ameion.31.a: ""
- 
- flavor_ameion.32.t: "Kalavendhi Align with Larankar"
- flavor_ameion.32.d: "The sides have been drawn across Taychend, every man knows which nation they would prefer unite these lands. For the Kalavendhi, this is unwaveringly Larankar. While the Amarayam has mistreated them as subjects, they prefer a familiar tyranny to our foreign liberty."
- flavor_ameion.32.a: "Have they no notion of liberty?"
- flavor_ameion.32.b: "They will kneel once their Amarayam falls."
+ flavor_ameion.31.b: ""
  
  flavor_ameion.33.t: "Finishing Laskaris' Ambition"
  flavor_ameion.33.d: "As we reorganize our forces to complete our unification of Taychend, a familiar name has risen through the ranks. Kelindas Laskaris, a descendant of Laskaris the Conqueror, has emerged as a formidable commander of the Ameioni forces, and professes his eagerness to complete what his ancestor has started in these lands.\n\nAs the Conqueror lived over a century ago, some have questioned the legitimacy of Kelindas' dynastic claims, but his skills are comparable to the original, so perhaps he may prove himself to be a Conqueror yet."
@@ -614,27 +572,28 @@
  flavor_ameion.48.d: "Aelantir is a land known for its chaos. Its modern history is defined by its apocalyptic destruction over a thousand years ago. For most of the time since then, the lands we now encompass never settled away from this chaos, raiders and warlords dominated the region, the kheions were bombarded by the Kaydhano, even the city of Ameion was once humble, a riverside patch of dirt settled by the losing faction of a war.\n\nIn more recent times, we took it upon ourselves to end this chaos, to restore the peace our ancestors held for millenia. Those who found comfort in the disorder resisted us, afraid of the bright future we had in mind, but just as eyes adjust to daylight after time indoors, they found themselves living lives of comfort their grand-parents could not comprehend.\n\nEven still, we are but one corner of Aelantir. The chaos has not been vanquished in the Effelai to our north, the Kaydhano still rages, and many of the Elves reborn in the Ruin find themselves subjugated by powers who have no right to these lands. Our victory stands regardless, for we have made ourselves the bedrock of Aelantir, the foundation from which the Ruinborn shall rebuild the legacy our ancestors destroyed."
  flavor_ameion.48.a: "Laskaris drew out the sword, and now we sheathe it."
  
- flavor_ameion.50.t: "Kelindas Holds Rally"
- flavor_ameion.50.d: "Kelindas Laskaris, the would-be inheritor of Laskaris the Conqueror's legacy, has taken to holding military parades in the recently conquered Nákyra. While such events are not unheard of, some have raised the concern that Kelindas may be promoting his own leadership over that of Ameion's. We could put a stop to the gatherings, but the local forces would not take kindly to it."
+ #Disaster Events
+ flavor_ameion.50.t: "Thirendires Holds Rally"
+ flavor_ameion.50.d: "Thirendires Laskaris, the would-be inheritor of Laskaris the Conqueror's legacy, has taken to holding military parades in the recently conquered Nákyra. While such events are not unheard of, some have raised the concern that Thirendires may be promoting his own leadership over that of Ameion's. We could put a stop to the gatherings, but the local forces would not take kindly to it."
  flavor_ameion.50.a: "Our armies deserve this victory."
  flavor_ameion.50.b: "Suppress this propaganda."
  
- flavor_ameion.51.t: "Kelindas in Politics"
- flavor_ameion.51.d: "As the governor of Nákyra, Kelindas has overseen the transformation of the city from a war-torn heap into a kheion surpassing any other. This has continued to bolster his standing with the residents of the city and surrounding countryside. His most recent proposal shall standardize the taxation across the city, and is arguably a good implementation, but the political victory may provide him more leverage should he attempt to act against against the nation."
+ flavor_ameion.51.t: "Thirendires in Politics"
+ flavor_ameion.51.d: "As the governor of Nákyra, Thirendires has overseen the transformation of the city from a war-torn heap into a kheion surpassing any other. This has continued to bolster his standing with the residents of the city and surrounding countryside. His most recent proposal shall standardize the taxation across the city, and is arguably a good implementation, but the political victory may provide him more leverage should he attempt to act against against the nation."
  flavor_ameion.51.a: "He is a citizen like any other, let it pass."
  flavor_ameion.51.b: "Curb his power, a republic must distribute power."
  
- flavor_ameion.52.t: "Nákyra Supports Kelindas"
- flavor_ameion.52.d: "Nákyra, now a major hub within Ameion, is bustling with political fervor. Either for him or against him, many ponder the political actions of Kelindas. A good number have even taken to the streets distributing pamphlets encouraging their fellow citizens to provide Kelindas further political powers, some amongst them have even gone as far as to encourage Kelindas to proclaim leadership over not only the city, but the nation as a whole.\n\nPoliticians in [2620.GetName] have called for him to be arrested to prevent further unrest, but some worry that may only spark further controversy."
+ flavor_ameion.52.t: "Nákyra Supports Thirendires"
+ flavor_ameion.52.d: "Nákyra, now a major hub within Ameion, is bustling with political fervor. Either for him or against him, many ponder the political actions of Thirendires. A good number have even taken to the streets distributing pamphlets encouraging their fellow citizens to provide Thirendires further political powers, some amongst them have even gone as far as to encourage Thirendires to proclaim leadership over not only the city, but the nation as a whole.\n\nPoliticians in [2620.GetName] have called for him to be arrested to prevent further unrest, but some worry that may only spark further controversy."
  flavor_ameion.52.a: "It is only politics, they have a right to it."
  flavor_ameion.52.b: "This has gone on long enough!"
  
- flavor_ameion.53.t: "Rebels Free Kelindas"
- flavor_ameion.53.d: "Mere weeks after Kelindas was imprisoned for his undemocratic views, his supporters have laid siege to the prisons and allowed him to walk out of its walls!\n\nDeclined the means of peaceful politics, they have now taken an armed resistance to our rule, demanding Kelindas be instated as our ruler!"
+ flavor_ameion.53.t: "Rebels Free Thirendires"
+ flavor_ameion.53.d: "Mere weeks after Thirendires was imprisoned for his undemocratic views, his supporters have laid siege to the prisons and allowed him to walk out of its walls!\n\nDeclined the means of peaceful politics, they have now taken an armed resistance to our rule, demanding Thirendires be instated as our ruler!"
  flavor_ameion.53.a: "We stand at the edge of conflict."
  
- flavor_ameion.54.t: "Kelindas Proclaims Emperorship"
- flavor_ameion.54.d: "Many had watched Kelindas Laskaris' rise to political power with concern, but many also watched with enthusiasm. While the Klereyen have adopted our customs, one which has not yet settled in is the idea of the republic. They believe authority should come from one man, and Kelindas has claimed that role.\n\nFrom his new seat of power in Nákyra, he has vowed to reforge Ameion into an empire never seen before by the Kheionai."
+ flavor_ameion.54.t: "Thirendires Proclaims Emperorship"
+ flavor_ameion.54.d: "Many had watched Thirendires Laskaris' rise to political power with concern, but many also watched with enthusiasm. While the Klereyen have adopted our customs, one which has not yet settled in is the idea of the republic. They believe authority should come from one man, and Thirendires has claimed that role.\n\nFrom his new seat of power in Nákyra, he has vowed to reforge Ameion into an empire never seen before by the Kheionai."
  flavor_ameion.54.a: "For the Republic!"
  flavor_ameion.54.b: "For Laskaris!"
  
@@ -646,17 +605,16 @@
  flavor_ameion.56.d: "The exiled Taychendi rarely exhibit true loyalty to the mainland government. This is a fact of life we have accepted so long as they pay their taxes and exist under our rulership.\n\nAs there is no external force for them to be called against, they have notified us they have no intention of involving themselves in what they view as an internal affair."
  flavor_ameion.56.a: "They may not be loyal, but they are not traitors."
  
- flavor_ameion.57.t: "The Chendhyans Revolt" #Republic
- flavor_ameion.57.d: "The Chendhyan peoples have benefitted greatly from the prosperity they have lived through under Ameioni rule, but now that the Ambhen state is divided and on the brin of ruin, they have decided to proclaim themselves independent.\n\nThey have defended their independence before, but now they do it on political grounds rather than some zeal for backwards ways."
- flavor_ameion.57.a: "We cannot fight two fronts, let them be for now."
- flavor_ameion.57.b: "They will rejoin the Republic!"
+ flavor_ameion.57.t: "Chendhyan Revolt"
+ flavor_ameion.57.d: "The Chendhyan peoples have benefitted greatly from the prosperity they have lived through under Ameioni rule, but now that the Ambhen state is divided and on the brink of ruin, they have decided to proclaim themselves independent.\n\nThey have defended their independence before, but now they do it on political grounds rather than some zeal for backwards ways."
+ flavor_ameion.57.b: "Strike them Down!"
  
  flavor_ameion.58.t: "The Gylíkheion Answer the Call"
  flavor_ameion.58.d: "Over a millennium ago, the Kheions overthrew their monarchs after The League War showed such figureheads to be incompetent. Since that time, no Kheionai bloodline has worn a crown, and the Laskaris-descended claimant shall be no exception."
  flavor_ameion.58.a: "The Kheion is ruled by a Kylakas, not an Emperor!"
  
  flavor_ameion.59.t: "A God of Taychend"
- flavor_ameion.59.d: "Even as we have sought to undo their pagan faith, the Taychendi still murmur about the potential divinity of Kelindas. Such rumors spread centuries ago regarding the original Laskaris, but after his death persisted only in niche circles.\n\nKelindas' constructions within Nákyra have earned him not only the loyalty of the locals, but the worship as well. A proclamation on his part would earn him the fealty of Taychend, but sow chaos within the Kleryen. He has returned to the city briefly from the frontlines to settle the matter, and as his city waits with in-drawn breath, he proclaims:"
+ flavor_ameion.59.d: "Even as we have sought to undo their pagan faith, the Taychendi still murmur about the potential divinity of Thirendires. Such rumors spread centuries ago regarding the original Laskaris, but after his death persisted only in niche circles.\n\nThirendires' constructions within Nákyra have earned him not only the loyalty of the locals, but the worship as well. A proclamation on his part would earn him the fealty of Taychend, but sow chaos within the Kleryen. He has returned to the city briefly from the frontlines to settle the matter, and as his city waits with in-drawn breath, he proclaims:"
  flavor_ameion.59.a: "''I am your king. I am your god.''"
  flavor_ameion.59.b: "''I am your king, but I am no god."
  
@@ -664,9 +622,9 @@
  flavor_ameion.60.d: "Following the war in the nation's interior, those in the more remote regions have taken the opportunity to seek their own rule."
  flavor_ameion.60.a: "Crush them!"
  
- flavor_ameion.61.t: "The New Throne Challenged"
- flavor_ameion.61.d: "Following the death of Kelindas, many claimants to the new throne have arisen, claiming the new government would be better ruled by their own dynasty. Some have now seen fit to rise up and march to Nákyra."
- flavor_ameion.61.a: "There is only one crown of Taychend, and it is not theirs to take."
+ #flavor_ameion.61.t: "The New Throne Challenged"
+ #flavor_ameion.61.d: "Following the death of Thirendires, many claimants to the new throne have arisen, claiming the new government would be better ruled by their own dynasty. Some have now seen fit to rise up and march to Nákyra."
+ #flavor_ameion.61.a: "There is only one crown of Taychend, and it is not theirs to take."
  
  flavor_ameion.62.t: "Opposition Rises"
  flavor_ameion.62.d1: "While the battle-lines between the Devand and Taychend may be easy to see, the ideological struggle exists across these borders. Many within Ameion view the monarchy of Nákyra as their rightful rulers, and have risen up in support of them."
@@ -695,24 +653,15 @@
  flavor_ameion.67.a: "They have bled for this land, and have earned it."
  flavor_ameion.67.b: "They will serve their nation!"
  
- flavor_ameion.68.t: "Pandemonium"
- flavor_ameion.68.d: "The fabric of our society has become unraveled by the recent conflict, once prosperous cities now prepare defenses. Men once farmers and artisans are now equipped for war. Disorder has become the new order, and just as we push our societal ideas upon our foes, we must push our own to not collapse from underneath us."
- flavor_ameion.68.a: "When will this chaos end?!"
+ #flavor_ameion.68.t: "Pandemonium"
+ #flavor_ameion.68.d: "The fabric of our society has become unraveled by the recent conflict, once prosperous cities now prepare defenses. Men once farmers and artisans are now equipped for war. Disorder has become the new order, and just as we push our societal ideas upon our foes, we must push our own to not collapse from underneath us."
+ #flavor_ameion.68.a: "When will this chaos end?!"
  
- flavor_ameion.69.t: "[Root.GetName] Whole Again" #:)
+ flavor_ameion.69.t: "[Root.GetName] Whole Again"
  flavor_ameion.69.d: "At long last, this war has ended, and we have proven triumphant. The politics of our age shall be defined by our success, but there are still those who will resist our rule. [Root.GetName] may no longer be bleeding, but the scars of this nation must still heal."
  flavor_ameion.69.a: "The pieces are together, but not quite mended."
  
- flavor_ameion.70.t: "The Chendhyan Revolt" #Monarhchy
- flavor_ameion.70.d: "The Chendhyans have used the recent divisions in the nation to attempt to create one of their own. While our new government never ruled over them directly, they are still a rightful part of the realm."
- flavor_ameion.70.a: "They will have their liberties, but not their own nation!"
- flavor_ameion.70.b: "We will defeat the Republic first, then the Chendhyans."
- 
- flavor_ameion.71.t: "Return to the Chendhya" 
- flavor_ameion.71.d: "With the nature of our government no longer in question, it is time to turn our gaze back to the rebellious Chendhyan steppes. There is little apetite for war but the question is only if this conflict shall happen sooner or later."
- flavor_ameion.71.a: "Now it is their turn to return to the fold!"
- flavor_ameion.71.b: "Leave them be for now, we must recover."
- 
+ #Rework Mission Events
  flavor_ameion.80.t: "Foreign Intervention"
  flavor_ameion.80.d: "amadians need our protection"
  flavor_ameion.80.a: "let them self rule"
@@ -726,13 +675,48 @@
  flavor_ameion.82.d: "teleport Tacenie into the sky and let it feather fall slowly down, precursor larp while it's in the air"
  flavor_ameion.82.a: "We're so back Empire bros"
  
- #Archeology Events (VERY WIP)
+ flavor_ameion.83.t: "Cult of Shadow"
+ flavor_ameion.83.d: "Describe cults of Neravali and their nfluence in the city"
+ flavor_ameion.83.a: "Accept them"
+ flavor_ameion.83.b: "Deny them"
+ 
+ flavor_ameion.84.t: "City of Destiny"
+ flavor_ameion.84.d: "Nanru Nakar based, Nakyra will be better"
+ flavor_ameion.84.a: "yooo"
+ 
+ flavor_ameion.85.t: "The Last Free Port"
+ flavor_ameion.85.d: "Orenkoraim defiant, open gate for cannorians to plunder taychend"
+ flavor_ameion.85.a: "cringe!"
+ 
+ flavor_ameion.86.t: "Deserters"
+ flavor_ameion.86.d: "these elves fled their homes and as such lost their claim to it"
+ flavor_ameion.86.a: "if they want to stay they will follow our customs"
+ 
+ flavor_ameion.87.t: "Treason of Na'Vaidana"
+ flavor_ameion.87.d: "those absolute bastards are still selling relics to cannorians, traitors to their people"
+ flavor_ameion.87.a: "tolerate this"
+ flavor_ameion.87.a: "obliterate them"
+ 
+ flavor_ameion.88.t: "Taming the Guaraddhi"
+ flavor_ameion.88.d: "Laskaris owned the chendhyans epic style, others now submit"
+ flavor_ameion.88.a: "gottem"
+ 
+ flavor_ameion.89.t: "Wars of Two Heroes"
+ flavor_ameion.89.d: "Ladies and gentlemen... let's get ready to rumblleeeeeeeeeeeeeee!!!!"
+ flavor_ameion.89.a: "Holy Shit"
+ 
+ flavor_ameion.90.t: "The Jungle Without Civilization"
+ flavor_ameion.90.d: "this place is fucking hell and not even worth the effort to build cities in. there is a lot of power here though and the locals seem to at least kinda get it so if they're autonomous they could do some cool shit with our mages"
+ flavor_ameion.90.a: "they arent civilized but they can be useful"
+ flavor_ameion.90.b: "nah we're built different"
+ 
+ #Archeology Events
  flavor_ameion.100.t: "Choosing Excavation Site"
  flavor_ameion.100.d: "Certain locations have preserved fragments of our Precursor legacy, and by civilizing these places we lay the groundwork to uncover the secrets of our past.\n\n§B(The Site must be converted to Kheionism religion and Kheionai culture before excavation can begin)§!"
  flavor_ameion.100.a: "Commence Excavation at [2633.GetName]."
  flavor_ameion.100.an: "Commence Excavation at [2633.GetName]."
- flavor_ameion.100.b: "Commence Excavation at [2545.GetName]."
- flavor_ameion.100.bn: "Commence Excavation at [2545.GetName]."
+ flavor_ameion.100.b: "Commence Excavation at [1791.GetName]."
+ flavor_ameion.100.bn: "Commence Excavation at [1791.GetName]."
  flavor_ameion.100.c: "Commence Excavation at [2586.GetName]."
  flavor_ameion.100.cn: "Commence Excavation at [2586.GetName]."
  flavor_ameion.100.e: "Commence Excavation at [2500.GetName]."
@@ -743,6 +727,12 @@
  flavor_ameion.100.gn: "Commence Excavation at [2467.GetName]."
  flavor_ameion.100.h: "Commence Excavation at [2495.GetName]."
  flavor_ameion.100.hn: "Commence Excavation at [2495.GetName]."
+ flavor_ameion.100.j: "Commence Excavation at [2534.GetName]."
+ flavor_ameion.100.jn: "Commence Excavation at [2534.GetName]."
+ flavor_ameion.100.k: "Commence Excavation at [2477.GetName]."
+ flavor_ameion.100.kn: "Commence Excavation at [2477.GetName]."
+ flavor_ameion.100.m: "Commence Excavation at [6753.GetName]."
+ flavor_ameion.100.mn: "Commence Excavation at [6753.GetName]."
  flavor_ameion.100.i: "Begin the Search for Tacenie."
  flavor_ameion.100.in: "Begin the Search for Tacenie."
  flavor_ameion.100.l: "Nevermind."
@@ -777,7 +767,7 @@
  flavor_ameion.111.d: "The excavation in [2633.GetName] has completed, and what we have to show for it is very simple: a statue of an elf sitting, seemingly watching the nearby flow of the river. What is exciting about this is the extraordinary skill that has gone into the work, such that even after centuries covered in dirt it still seems as though it may come to life and walk away from the water.\n\nAfter meticulous cleaning we have uncovered that the statues are unpainted, and the colorings of the stone were either carefully selected or possibly even altered by magic to match the intended image.\n\nWhile the pale skin coloration does not match our own, are the blue sky and white cloud not both part of the same wonderous sky?"
  flavor_ameion.111.a: "From one seed shall our cultural legacy regrow."
  
- flavor_ameion.112.t: "[2545.GetName] Dig Complete"
+ flavor_ameion.112.t: "[1791.GetName] Dig Complete"
  flavor_ameion.112.d: "Our mages are familiar with the use of keyanilián, a material known as damestear to some, but the variety found in [2545.GetName] is unlike any we have encountered before. It seems to be especially made to be converted into magical energy at a moment's notice, flowing much more naturally through the mage than the normal material. While mages normally find themselves allured and drawn to the magical energies of keyanilián, ours find themselves calm and sharp witted in the presence of this supply.\n\nThe only downside to this material is that we cannot determine how to make more of it, so while it lasts our mages may find themselves the most capable in the world. While the brightest candle does burn out fastest, that candle is nonetheless a spectacle to behold."
  flavor_ameion.112.a: "One can only wonder of their magical prowess."
  
@@ -799,8 +789,16 @@
  flavor_ameion.116.a: "A million eternities ended so our lifetimes could begin."
  
  flavor_ameion.117.t: "[2495.GetName] Dig Complete"
- flavor_ameion.117.d: "Even Laskaris knew that Nanru Nakar carried more to it than many realized, and underneath [2495.GetName] this truth is now evident. Underneath the shoddy Taychendi infrastructure lies sublime architecture undoubtedly built by those that came before us. Ruins of this city have told us her name was once ‘Aerecel', and she carried the means to store an unprecedented load of goods and supplies. Stations seem built to transport these goods to a place called ‘Tacenie', but the magnitude of such facilities would imply that Tacenie was a paired city.\n\nWhile teleportation was surely more commonplace for the Precursors, the logistics involved would render it impractical outside of a short distance, meaning that unless we have somehow missed the presence of another entire city nearby, this Tacenie must have been capable of movement. With the Kalavend's waters not wide enough, and the ground too stagnant, the only explanation is that Tacenie once flew through the skies, likely coming to visit Aerecel. The only question that remains, is where did Tacenie go when the skies turned to ash?"
+ flavor_ameion.117.d: "Even Laskaris knew that Nanru Nakar carried more to it than many realized, and underneath [2495.GetName] this truth is now evident. Underneath the shoddy Taychendi infrastructure lies sublime architecture undoubtedly built by those that came before us. Ruins of this city have told us her name was once 'Aerecel', and she carried the means to store an unprecedented load of goods and supplies. Stations seem built to transport these goods to a place called 'Tacenie', but the magnitude of such facilities would imply that Tacenie was a paired city.\n\nWhile teleportation was surely more commonplace for the Precursors, the logistics involved would render it impractical outside of a short distance, meaning that unless we have somehow missed the presence of another entire city nearby, this Tacenie must have been capable of movement. With the Kalavend's waters not wide enough, and the ground too stagnant, the only explanation is that Tacenie once flew through the skies, likely coming to visit Aerecel. The only question that remains, is where did Tacenie go when the skies turned to ash?"
  flavor_ameion.117.a: "This elven kheion must be found!"
+ 
+ flavor_ameion.118.t: "[2534.GetName] Dig Complete"
+ flavor_ameion.118.d: "mana shit idk"
+ flavor_ameion.118.a: "yeet"
+ 
+ flavor_ameion.119.t: "[2477.GetName] Dig Complete"
+ flavor_ameion.119.d: "precursor campaigns post doas"
+ flavor_ameion.119.a: "they were based"
  
  flavor_ameion.120.t: "Gommo Interested in Relics"
  flavor_ameion.120.d: "The International Gommo, an organization founded by short-statured gnomes from Cannor, has sent representatives requesting access to a cultural site of ours to better learn about the Precursors. We are well aware of their hoarding of elven cultural artifacts across Aelantir, but with appropriate oversight may prove a useful resource of information regarding what we find here."
@@ -813,6 +811,10 @@
  flavor_ameion.121.a: "They are also descended from these lands."
  flavor_ameion.121.b: "They abandoned these lands, and are not welcome."
  flavor_ameion.121.c: "They will never be welcome here."
+
+ flavor_ameion.122.t: "[6753.GetName] Dig Complete"
+ flavor_ameion.122.d: "dust tear, whole desert turns green"
+ flavor_ameion.122.a: "holy shit"
 
  flavor_ameion.130.t: "The Search for Tacenie"
  flavor_ameion.130.d1: "Tacenie, a floating bastion of Precursor civilization which evidently fell from the skies as their civilization ended, almost certainly exists in ruins somewhere in the vicinity of our territory. As it has not been found by chance in the centuries since, this grand prize of our ancestors must be found by a dedicated effort in her secluded resting place.\n\nEvery valley, every forest, every mound of sand may contain the remains of our birthright, and so this will likely take years. The only question is where to begin our search?"
@@ -866,7 +868,7 @@
  
  flavor_ameion.138.t: "Tacenie, a Gleam in Darkness"
  flavor_ameion.138.d: "[GetYear] years ago, the skies from which we ruled this world were cast to shadow. While the warmth of the sun would return, the civilization elvenkind built remained in darkness.\n\nIt was within this umbra Tacenie awaited us, and we found her perched between two hills already explored and known to be hiding no such secrets. Several were convinced it was a mirage, for on first sighting it seemed to be untouched, as though we had wandered into the past to the world of our ancestors.\n\nAs we approached, however, the lucid dream returned to reality, as we were met with grayed stones and rotted wood."
- flavor_ameion.138.a: "At last…"
+ flavor_ameion.138.a: "At last..."
 
  flavor_ameion.139.t: "Tacenie, a Kheion Awoken"
  flavor_ameion.139.d: "A hollow wind took to the air as we surveyed our surroundings, unaccompanied until a singular bird emerged and began to sing. Turn your head left and you see a tower still standing and glinting in the sunlight, turn it right and see a similar tower decayed to rubble.\n\nIt is clear that Tacenie did not survive the Ruin in one piece, but she was not obliterated in the same manner as the rest of her civilization. As far as one can tell the city has slept here unperturbed since she landed, scant records indicating her surviving inhabitants abandoned her for Aerecel, where supplies could be found. Even as they left her, they left her in peace, using what could have been the last of their great magics to conceal her so that she may remain in grandeur when they return. So too did they leave their dead, gently but swiftly laying their departed so they may rest alongside their city.\n\nThe chaos invoked by the Ruin would not see them return to their city, but after many years we have come in their stead. She may never again be spotted in the cerulean skies, but what remains of her buoyant architecture will see us raise our own civilization to new heights."
@@ -874,8 +876,18 @@
 
  
  #Government
- ameion_conquerers_reform: "Conqueror's Council"
- ameion_conquerers_reform_desc: "Laskaris the Conqueror spends the vast majority of his time in Taychend, planning or enacting his conquests in the region, and has left the majority of duties in Ameion proper to a council of talented individuals. His leadership on the field has allowed Ameion to overcome incredible odds, but his disregard of the Republic's nature has called its very foundation into question."
+ ameion_republic: "Ameioni Republic"
+ ameion_republic_desc: "The Republic of Ameion, founded after a failed attempt by the Nékheis to create a united monarchy free from the kheions, has been the only kheionai nation to even entertain the notion of monarchism. While none have been so bold as to declare themselves a king, a Kylakas remaining in power for far longer than the normal election period is relatively common occurance in Ameion's history, whether by demonstrated competency, charisma and appeal to the masses, or often both."
+ ability_ameion_keintagogists_mechanic: "§YMóloísts vs Keintagogísts§!"
+ ameion_keintagogists_mechanic: "Móloísts vs Keintagogísts"
+ ameion_keintagogists_mechanic_desc: "The Móloísts, or Popularists, adhere to the traditional republican values of Kheionism. Keintagogísts, or Descentists, adhere to the merits of long reigning, competent, and stable rulership."
+ ameion_keintagogists_power: "Móloísts vs Keintagogísts Scale"
+ flavor_ameion.98.t:0 "Election in the [Root.GovernmentName]"
+ flavor_ameion.98.d:0 "The strengthening of the Móloísts has forced $MONARCH$ to accept the election of a new [Root.Monarch.GetTitle]. Both the Móloísts and the Keintagogísts have put forward a new candidate."
+ flavor_ameion.99.d:0 "The unfortunate passing of $MONARCH$ forces us to hold a premature election. Both the Móloísts and the Keintagogísts have put forward a new candidate."
+ flavor_ameion.98.a:0 "A Móloísts Candidate"
+ flavor_ameion.98.b:0 "A Keintagogísts Candidate"
+ 
  ameion_parliamentary_reform: "Ameioni Parliament"
  ameion_parliamentary_reform_desc: "The Parliament of Ameion is dedicated to the efficient governance of the numerous cities across the state, allowing them to enact their own policies and voice concerns on the national level."
  
@@ -887,7 +899,9 @@
  thamlimos: "Thamlímos"
  thamlimos_ADJ: "Thamlímosi"
  aesrialos: "Aesrialos"
- aesrialos: "Aesrialosi"
+ aesrialos_ADJ: "Aesrialosi"
+ zoubyos: "Zoúbyos"
+ zoubyos_ADJ: "Zoúbyosi"
  
  #Province Triggered Modifiers
  G52_nakyra_capital_1: "Nákyra Capital Center"

@@ -3165,6 +3165,7 @@ on_new_term_election = {
 		naleni.44 #naleni special election
 		flavour_kherka.1000 #Kherka Election
 		gushuokguan_event.61 #Gushuokguan Failed to Declare War
+		flavor_ameion.98 #Ameion Election
 	}
 
 	if = {
@@ -3265,6 +3266,7 @@ on_death_election = {
 		elections.1000 ##Racial tolerance death special 
 		flavour_maskedbutcher.100 #Masked Butcher election
 		flavour_kherka.1000 #Kherka Election
+		flavor_ameion.99 #Ameion Election
 	}
 
 	if = {
@@ -11455,6 +11457,7 @@ on_province_owner_change = {
 		if = {
 			limit = {
 				owner = { has_country_flag = has_degarikes }
+				owner = { NOT = { mission_completed = G52_naval_dominance } }
 			}
 			owner = {
 				gaining_kheionai_shipyard_effect = yes
@@ -11463,6 +11466,7 @@ on_province_owner_change = {
 		if = {
 			limit = {
 				FROM = { has_country_flag = has_degarikes }
+				FROM = { NOT = { mission_completed = G52_naval_dominance } }
 			}
 			FROM = {
 				losing_kheionai_shipyard_effect = yes

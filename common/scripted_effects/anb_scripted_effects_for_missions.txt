@@ -11404,6 +11404,21 @@ ameion_advahkalla_effect = {
 
 ameion_site_mage_buff = {
 	if = {
+		limit = { has_country_modifier = G52_mage_10 }
+		hidden_effect = { remove_country_modifier = G52_mage_10 }
+		add_country_modifier = { name = G52_mage_11 duration = -1 }
+	}
+	else_if = {
+		limit = { has_country_modifier = G52_mage_9 }
+		hidden_effect = { remove_country_modifier = G52_mage_9 }
+		add_country_modifier = { name = G52_mage_10 duration = -1 }
+	}
+	else_if = {
+		limit = { has_country_modifier = G52_mage_8 }
+		hidden_effect = { remove_country_modifier = G52_mage_8 }
+		add_country_modifier = { name = G52_mage_9 duration = -1 }
+	}
+	else_if = {
 		limit = { has_country_modifier = G52_mage_7 }
 		hidden_effect = { remove_country_modifier = G52_mage_7 }
 		add_country_modifier = { name = G52_mage_8 duration = -1 }
@@ -11538,54 +11553,6 @@ ameion_gly_clear_claim_core = {
 	}
 }
 
-ameion_G71_reinforce = {
-	add_treasury = 250
-	add_manpower = 10
-	if = {
-		limit = { NOT = { army_size_percentage = 0.4 } }
-		6559 = {
-			build_to_forcelimit = {
-				infantry = 0.6
-				cavalry = 0.1
-				artillery = 0.3
-			}
-			infantry = PREV
-			infantry = PREV
-		}
-	}
-	else = {
-		6559 = {
-			infantry = PREV
-			infantry = PREV
-			infantry = PREV
-			infantry = PREV
-			infantry = PREV
-			infantry = PREV
-		}
-	}
-	if = {
-		limit = { NOT = { navy_size_percentage = 0.9 } }
-		6559 = {
-			build_to_forcelimit = {
-				heavy_ship = 0.5
-				light_ship = 0.5
-			}
-			heavy_ship = PREV
-			light_ship = PREV
-		}
-	}
-	else = {
-		6559 = {
-			heavy_ship = PREV
-			heavy_ship = PREV
-			heavy_ship = PREV
-			light_ship = PREV
-			light_ship = PREV
-			light_ship = PREV
-		}
-	}
-}
-
 ameion_G00_war = {
 	custom_tooltip = ameion_G00_prep
 	hidden_effect = {
@@ -11692,6 +11659,9 @@ ameion_G00_war = {
 			create_general = { tradition = 30 }
 			create_general = { tradition = 50 }
 			create_general = { tradition = 70 }
+			add_army_professionalism = 0.5
+			add_army_tradition = 80
+			add_navy_tradition = 90
 			country_event = { id = flavor_ameion.55 days = 35 }
 		}
 	}

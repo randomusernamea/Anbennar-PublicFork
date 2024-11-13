@@ -1223,6 +1223,14 @@ estate_nobles_strong_duchies = {
 			nobles_loyalty_modifier = 0.05
 		}
 	}
+	conditional_modifier = {
+		trigger = { mission_completed = G52_across_hills }
+		modifier = {
+			max_absolutism = 5
+			diplomatic_upkeep = 1
+			diplomatic_reputation = 1
+		}
+	}
 	ai_will_do = {
 		factor = 2
 		modifier = {

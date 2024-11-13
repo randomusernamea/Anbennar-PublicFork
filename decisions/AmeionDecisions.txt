@@ -7,7 +7,7 @@ country_decisions = {
 				tag = G00
 			}
 			religion = kheionism
-			NOT = { has_country_modifier = G52_mage_8 }
+			NOT = { has_country_modifier = G52_mage_11 }
 			NOT = { has_country_modifier = G52_ai_dig }
 			NOT = { has_country_modifier = G52_search_tacenie }
 		}
@@ -71,102 +71,6 @@ country_decisions = {
 		}
 		effect = {
 			country_event = { id = flavor_ameion.100 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		ai_importance = 400
-	}
-	
-#	G52_larankar_treaty = {
-#		major = yes
-#		potential = {
-#			tag = G52
-#			mission_completed = G52_prepare_push
-#			NOT = { mission_completed = G52_civilization_taychend }
-#			NOT = { has_country_flag = ameion_treaty }
-#			exists = G64
-#		}
-#		provinces_to_highlight = {
-#		    region = yodhanchend_region
-#			OR = {
-#				country_or_non_sovereign_subject_holds = G64
-#				owner = { alliance_with = G64 }
-#			}
-#			NOT = {
-#				area = marhed_rayodana_area
-#				area = kattisangamar_area
-#				culture = kalavendhi
-#			}
-#		}
-#		allow = {
-#			tag = G52
-#			mission_completed = G52_prepare_push
-#			NOT = { mission_completed = G52_civilization_taychend }
-#			yodhanchend_region = {
-#				OR = {
-#					country_or_non_sovereign_subject_holds = G64
-#					owner = { alliance_with = G64 }
-#				}
-#				NOT = {
-#					area = marhed_rayodana_area
-#					area = kattisangamar_area
-#					culture = kalavendhi
-#				}
-#			}
-#			NOT = { is_at_war = yes }
-#			dip_power = 200
-#		}
-#		effect = {
-#			set_country_flag = ameion_treaty
-#			add_dip_power = -200
-#			G64 = { country_event = { id = flavor_ameion.29 days = 1 } }
-#			custom_tooltip = ameion_treaty_tt
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		ai_importance = 400
-#	}
-	
-	G52_nakyra_capital = {
-		major = yes
-		potential = {
-			OR = {
-				tag = G52
-				tag = G00
-			}
-			mission_completed = G52_amassing_forces
-			NOT = { has_country_flag = ameion_nakyra }
-		}
-		provinces_to_highlight = {
-		    area = nanru_nakar_area
-			NOT = { owned_by = ROOT }
-		}
-		allow = {
-			mission_completed = G52_amassing_forces
-			2497 = { owned_by = ROOT }
-			2496 = { owned_by = ROOT }
-			2495 = { owned_by = ROOT }
-		}
-		effect = {
-			set_country_flag = ameion_nakyra
-			2497 = {
-				move_capital_effect = yes
-				add_core = ROOT
-				change_culture = klereyen
-				change_religion = ROOT
-			}
-			add_prestige = 25
-			if = {
-				limit = { has_leader = "Kelindas Laskaris" }
-				kill_leader = { type = "Kelindas Laskaris" }
-				custom_tooltip = ameion_kelindas_perk
-				add_country_modifier = {
-					name = G52_laskaris_vision
-					duration = 7300
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 1

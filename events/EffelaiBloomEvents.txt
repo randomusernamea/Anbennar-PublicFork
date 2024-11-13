@@ -3211,6 +3211,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							}
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 					}
@@ -3221,6 +3223,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							}
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 						save_event_target_as = effelai_target_country
@@ -3338,6 +3342,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							has_country_flag = effelai_has_effelai_province
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 					}
@@ -3346,6 +3352,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							has_country_flag = effelai_has_effelai_province
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 						save_event_target_as = effelai_target_country
