@@ -686,24 +686,14 @@ maghargma_two = {
 		required_missions = { maghargma_the_carrot } 
 		provinces_to_highlight = {  
 			province_group = wild_clan_lands
-			is_city = yes
-			OR =  {
-				NOT = { owned_by = ROOT }
-				NOT = {	is_core = ROOT }
-			}
+			country_or_non_sovereign_subject_holds = ROOT
 		} 
 
 		trigger = {
 			wild_clan_lands = {
 				type = all
-				OR = {
-					is_city = no
-					AND = {
-						owned_by = ROOT
-						is_core = ROOT
-						NOT = { unrest = 0.01 }
-					}
-				}
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { unrest = 0.01 }
 			}
 			wild_clan_lands = {
 				has_fort_building_trigger = yes
