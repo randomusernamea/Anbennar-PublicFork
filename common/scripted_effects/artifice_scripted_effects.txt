@@ -252,11 +252,40 @@ update_artifice_points = {
 				which = ModifierArtificePoints
 				value = modifier:artificers_capacity
 			}
-			change_variable = {
-				which = MaxArtificePoints
-				which = ModifierArtificePoints
+			if = {
+				limit = {
+					check_variable = {
+						which = ModifierArtificePoints
+						value = 0
+					}
+				}
+				change_variable = {
+					which = MaxArtificePoints
+					which = ModifierArtificePoints
+				}
+				set_country_flag = artificers_capacity_modifier_positive
+				clr_country_flag = artificers_capacity_modifier_negative
 			}
-
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = ModifierArtificePoints
+							value = 0
+						}
+					}
+				}
+				multiply_variable = {
+					which = ModifierArtificePoints
+					value = -1
+				}
+				subtract_variable = {
+					which = MaxArtificePoints
+					which = ModifierArtificePoints
+				}
+				set_country_flag = artificers_capacity_modifier_negative
+				clr_country_flag = artificers_capacity_modifier_positive
+			}
 			# Feiten's mercs cost artificer cap
 			if = {
 				limit = { any_hired_mercenary_company = { template = merc_feiten_lightning_jellyfish } }

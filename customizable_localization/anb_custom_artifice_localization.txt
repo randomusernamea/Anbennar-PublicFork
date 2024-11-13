@@ -411,12 +411,23 @@ defined_text = {
 	random = no
 
 	text = {
-		localisation_key = artifice_modifier_points
+		localisation_key = artifice_modifier_points_pos
 		trigger = {
 			check_variable = {
 				which = ModifierArtificePoints
 				value = 1
 			}
+			has_country_flag = artificers_capacity_modifier_positive
+		}
+	}
+	text = {
+		localisation_key = artifice_modifier_points_neg
+		trigger = {
+			check_variable = {
+				which = ModifierArtificePoints
+				value = 1
+			}
+			has_country_flag = artificers_capacity_modifier_negative
 		}
 	}
 }
