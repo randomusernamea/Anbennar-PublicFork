@@ -1030,16 +1030,9 @@ giberd_konwell_conquest = {
 		}
 		effect = {
 			disable_all_artifice_inventions = yes
-			custom_tooltip = giberd_60_capacity_10_years_tt
-			hidden_effect = {
-				change_variable = {
-					which = ArtificeUpkeep
-					value = 60
-				}
-				country_event = {
-					id = flavor_giberd.53
-					days = 3650
-				}
+			add_or_extend_country_modifier = {
+				name = artificers_busy_120
+				duration = 3650
 			}
 			custom_tooltip = giberd_unable_to_research_10
 			hidden_effect = {
@@ -1208,7 +1201,6 @@ giberd_ryalanar_conquest = {
 				name = giberd_gds_loopeng_gedsandde_research
 				duration = 1825
 			}
-			custom_tooltip = giberd_20_capacity_5_years_tt
 			custom_tooltip = giberd_after_5_years_tt
 			tooltip = {
 				add_country_modifier = {
@@ -1216,13 +1208,13 @@ giberd_ryalanar_conquest = {
 					duration = -1
 				}
 			}
+			add_or_extend_country_modifier = {
+				name = artificers_busy_40
+				duration = 1825
+			}
 			hidden_effect = {
-				change_variable = {
-					which = ArtificeUpkeep
-					value = 20
-				}
 				country_event = {
-					id = flavor_giberd.13
+					id = flavor_giberd.57
 					days = 1825
 				}
 			}
@@ -2734,16 +2726,9 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			custom_tooltip = giberd_30_capacity_10_years_tt
-			hidden_effect = {
-				change_variable = {
-					which = ArtificeUpkeep
-					value = 30
-				}
-				country_event = {
-					id = flavor_giberd.51
-					days = 1825
-				}
+			add_or_extend_country_modifier = {
+				name = artificers_busy_60
+				duration = 1825
 			}
 			add_country_modifier = {
 				name = giberd_atypical_artificers_research
@@ -2826,20 +2811,9 @@ giberd_artificer = {
 			}
 		}
 		effect = {
-			custom_tooltip = giberd_all_capacity_10_years_tt
-			hidden_effect = {
-				set_variable = {
-					which = giberd_understanding_the_fragment_capacity
-					which = MaxArtificePoints
-				}
-				change_variable = {
-					which = ArtificeUpkeep
-					which = giberd_understanding_the_fragment_capacity
-				}
-				country_event = {
-					id = flavor_giberd.52
-					days = 3650
-				}
+			add_or_extend_country_modifier = {
+				name = artificers_busy_all
+				duration = 3650
 			}
 			271 = {
 				add_province_modifier = {
