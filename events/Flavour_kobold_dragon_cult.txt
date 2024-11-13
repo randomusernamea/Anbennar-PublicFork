@@ -3034,6 +3034,7 @@ country_event = {
 			NOT = {
 				AND = {
 					calc_true_if = {
+						amount = 9
 						OR = {
 							owns_or_subject_of = 4
 							any_ally = { owns = 4 }
