@@ -1393,6 +1393,7 @@ kob_2_b = {
 	}
 
 }
+
 kob_3_b = {
 	slot = 3
 	generic = no
@@ -2328,21 +2329,12 @@ Kob_5b = {
 			coddorran_heights_area = { change_culture = kobildzani_kobold }
 			dragonhills_area = { change_culture = kobildzani_kobold }
 
-			custom_tooltip = convert_tradecompanies_tt 
 
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = white
                 SLOT = 1
                 UPGRADE = upgraded
             }
-
-			hidden_effect = { 
-				set_country_flag = Z38_convert_tradecompanies
-				every_owned_province = {
-					limit = { is_owned_by_trade_company = yes }
-					add_province_modifier = { name = Z38_convert_tradecompanies_modifier duration = -1 }
-				}
-			}
 		}
 	}
 }
@@ -2585,7 +2577,7 @@ kob_2_c = {
 				region = dragon_coast_region
 				development = 25
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
 				value = 15
 				region = rzenta_region
 				development = 25

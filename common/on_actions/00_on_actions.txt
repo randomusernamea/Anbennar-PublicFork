@@ -2060,14 +2060,6 @@ on_added_to_trade_company = {
 		owner = { add_mercantilism = 1 } 
 		add_base_production = 1 
 	}
-
-	# Kobilzdan MT
-	if = {
-		limit = {
-			owner = { has_country_flag = Z38_convert_tradecompanies }
-		}
-		add_province_modifier = { name = Z38_convert_tradecompanies_modifier duration = -1 }
-	}
 }
 
 # province
@@ -2080,9 +2072,6 @@ on_removed_from_company = {
 		owner = { add_mercantilism = -1 } 
 		add_base_production = -1 
 	}
-
-	# Kobilzdan MT
-	remove_province_modifier = Z38_convert_tradecompanies_modifier
 }
 
 # province
