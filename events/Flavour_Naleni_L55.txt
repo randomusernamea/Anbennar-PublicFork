@@ -348,50 +348,52 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	immediate = {
-		random_owned_province = {
-			save_event_target_as = rebel_spawn_l55
-		}
-		if = {
-			limit = { has_country_flag = L55_low_authority }
-			capital_scope = {
-				spawn_rebels = {
-					size = 3
-					type = particularist_rebels
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = rebel_spawn_l55
+			}
+			if = {
+				limit = { has_country_flag = L55_low_authority }
+				capital_scope = {
+					spawn_rebels = {
+						size = 3
+						type = particularist_rebels
+					}
+				}
+				event_target:rebel_spawn_l55 = {
+					spawn_rebels = {
+						size = 3
+						type = particularist_rebels
+					}
 				}
 			}
-			event_target:rebel_spawn_l55 = {
-				spawn_rebels = {
-					size = 3
-					type = particularist_rebels
+			else_if = {
+				limit = { has_country_flag = L55_med_authority }
+				capital_scope = {
+					spawn_rebels = {
+						size = 2
+						type = particularist_rebels
+					}
+				}
+				event_target:rebel_spawn_l55 = {
+					spawn_rebels = {
+						size = 2
+						type = particularist_rebels
+					}
 				}
 			}
-		}
-		else_if = {
-			limit = { has_country_flag = L55_med_authority }
-			capital_scope = {
-				spawn_rebels = {
-					size = 2
-					type = particularist_rebels
+			else = { 
+				capital_scope = {
+					spawn_rebels = {
+						size = 1
+						type = particularist_rebels
+					}
 				}
-			}
-			event_target:rebel_spawn_l55 = {
-				spawn_rebels = {
-					size = 2
-					type = particularist_rebels
-				}
-			}
-		}
-		else = { 
-			capital_scope = {
-				spawn_rebels = {
-					size = 1
-					type = particularist_rebels
-				}
-			}
-			event_target:rebel_spawn_l55 = {
-				spawn_rebels = {
-					size = 1
-					type = particularist_rebels
+				event_target:rebel_spawn_l55 = {
+					spawn_rebels = {
+						size = 1
+						type = particularist_rebels
+					}
 				}
 			}
 		}
@@ -863,13 +865,13 @@ country_event = {
 	option = {
 		name = naleni.29.a  #revoke their license
 		ai_chance = { factor = 50 }
-		add_navy_tradition = 10
-		add_army_professionalism = 0.01
+		add_navy_tradition = 15
+		add_army_professionalism = 0.03
 	}
 	option = {
 		name = naleni.29.b #let it slide
 		ai_chance = { factor = 50 }
-		add_years_of_income = 0.5
+		add_years_of_income = 1
 	}
 }
 
@@ -909,7 +911,7 @@ country_event = {
 	option = {
 		name = naleni.31.a  #expand access
 		ai_chance = { factor = 50 }
-		add_years_of_income = -1
+		add_years_of_income = -0.5
 	}
 	option = {
 		name = naleni.31.b #its not really our problem
