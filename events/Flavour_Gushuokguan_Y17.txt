@@ -148,12 +148,6 @@ country_event = {
 		name = gushuokguan_event.6.a
 		ai_chance = { factor = 1 }
 		add_government_reform = the_stone_jun
-		hidden_effect = {
-			set_variable = {
-				which = election_term
-				value = 1
-			}
-		}
 	}
 }
 
@@ -200,6 +194,18 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {}
+
+	after = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = north_yanshen_region
+					culture = jiangyang
+				}
+				set_seat_in_parliament = yes
+			}
+		}
+	}
 
 	option = {
 		name = gushuokguan_event.8.a
