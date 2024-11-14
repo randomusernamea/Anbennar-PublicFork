@@ -1,58 +1,6 @@
 namespace = tolerance_generic
 
-#flavour events manager
-country_event = {
-	id = tolerance_generic.0
-	title = tolerance_generic.0.t
-	desc = tolerance_generic.0.d
-	picture = DEBATE_REPUBLICAN_eventPicture
-	
-	hidden = yes
-	
-	is_triggered_only = yes
-
-	trigger = {}		
-	
-	mean_time_to_happen = {
-		days = 1
-		modifier = {
-			factor = 1.5
-			has_government_attribute = more_migration_and_tolerance
-		}
-	}
-	
-	option = {
-		name = tolerance_generic.0.a
-		random_list = {
-			20 = { }
-			# ensure there's an empty option first in case none of the others are available
-			# and also because this one should be picked rarely even if the others are available. High right now, lower when more events get added
-			15 = {
-				trigger = {
-					OR = {
-						has_country_modifier = just_lost_war_timer
-						average_unrest = 10
-						is_bankrupt = yes
-					}
-					is_not_purging_or_expelling_any_race_trigger = yes
-					any_owned_province = { has_minority_trigger = yes }
-				}
-				country_event = { id = tolerance_generic.1 }
-			}
-			10 = {
-				trigger = {
-					num_of_colonists = 1
-					any_owned_province = {
-						culture_is_goblin = yes
-					}
-					any_owned_province = { is_colony = yes }
-				}
-				country_event = { id = tolerance_generic.3 }
-			}
-		}
-	}
-}
-
+#Flavour events valid for multiple races
 country_event = {	#Scapegoats
 	id = tolerance_generic.1
 	title = tolerance_generic.1.t
@@ -61,6 +9,20 @@ country_event = {	#Scapegoats
 	is_triggered_only = yes
 	trigger = {	}
 	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { 
+					OR = {
+						has_any_oppressed_minority_trigger = yes
+						has_any_coexisting_minority_trigger = yes
+					}
+				}
+				save_random_present_race_as_flag_effect = { flag = propflag2 prevflag = propflag }
+			}
+		}
+	}
+
 	option = {
 		name = tolerance_generic.1.1
 		trigger = { NOT = { ruler_has_personality = cruel_personality }	}
@@ -80,15 +42,41 @@ country_event = {	#Scapegoats
 	}
 
 	option = {
+		name = tolerance_generic.1.3
+		trigger = {
+			NOT = {
+				ruler_has_personality = just_personality
+				ruler_has_personality = kind_hearted_personality
+			}
+			any_owned_province = {
+				OR = {
+					has_any_coexisting_minority_trigger = yes
+					has_any_oppressed_minority_trigger = yes
+				}
+			}
+			NOT = { has_country_flag = no_second_minority }			
+		}
+		effect_for_saved_race = { flag = propflag2 scripted_effect = tolerance_generic_1_effect }
+	}
+
+	option = {
 		name = tolerance_generic.1.4
 		highlight = yes
-		trigger = { full_idea_group = humanist_ideas }
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					has_any_coexisting_minority_trigger = yes
+					has_any_oppressed_minority_trigger = yes
+				}
+			}
+		}
 		add_stability_or_adm_power = yes
 		add_prestige = -10
 	}
 
 	after = {
 		clear_random_race_flags = { flag = propflag }
+		clear_random_race_flags = { flag = propflag2 }
 	}
 }
 

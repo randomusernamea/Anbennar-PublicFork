@@ -264,6 +264,7 @@ country_event = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10
 						is_bankrupt = yes
+						NOT = { stability = 0 }
 					}
 					NOT = { high_tolerance_harimari_race_trigger = yes }
 					is_not_purging_or_expelling_any_race_trigger = yes
