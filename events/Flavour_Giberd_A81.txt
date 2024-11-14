@@ -305,12 +305,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = flavor_giberd.17.a
-		if = {
-			limit = {
-				tag = A81
-			}
-			artifice_remove_20 = yes
-		}
 		emperor = {
 			add_country_modifier = {
 				name = giberd_mechanical_dragon
