@@ -9294,18 +9294,9 @@ kobildzan_draconic_technopriests = {
 	modifiers = { 
 		max_absolutism = 10
 		church_influence_modifier = 0.1
+		artificers_capacity = 10
 	} 
-	custom_attributes = {
-		extra_artificer_capacity_10 = yes
-	}
 	effect = {
-		hidden_effect = {
-			change_variable = {
-				which = StaticArtificePoints
-				value = 10
-			}
-			update_artifice_points = yes
-		}
 		country_event = { id = flavour_kobildzan.7 }
 	}
 }
