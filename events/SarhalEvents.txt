@@ -1340,7 +1340,7 @@ country_event = {
                     1 = {
                         trigger = { 
                             unrest = 5 
-                            NOT = { overextension_percentage = 1 } 
+                            NOT = { overextension_percentage = 0.01 } 
                         }
                         country_event = { id = sarhalevents.34 }
                     }
