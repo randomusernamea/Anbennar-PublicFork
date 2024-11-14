@@ -398,7 +398,7 @@ giberd_konwell_conquest = {
 				}
 				AND = {
 					area = songbarges_area
-					AND = {
+					OR = {
 						NOT = {
 							OR = {
 								owned_by = ROOT
