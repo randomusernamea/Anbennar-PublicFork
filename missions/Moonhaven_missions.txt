@@ -663,6 +663,7 @@ moonhaven_ravelian_missions = {
 		trigger = {
 			calc_true_if = {
 				europe = {
+					type = ALL
 					is_part_of_hre = yes
 					culture = moon_elf
 					religion = ravelian
@@ -888,36 +889,31 @@ moonhaven_sarhal_missions = {
 		}
 
 		trigger = {
-			IF = {
-				limit { NOT = { exists = Z42 } }
-				OR = {
-					monthly_dip = 8
-					A45 = {
-						has_opinion = {
-							who = ROOT
-							value = 200
-						}
+			OR = {
+				monthly_dip = 8
+				A45 = {
+					has_opinion = {
+						who = ROOT
+						value = 200
 					}
 				}
 			}
-			Else = {
-				OR = {
-					AND = {
-						exists = Z42
-						Z42 = {
-							has_opinion = {
-								who = ROOT
-								value = 150
-							}
+			OR = {
+				AND = {
+					exists = Z42
+					Z42 = {
+						has_opinion = {
+							who = ROOT
+							value = 150
 						}
 					}
-					AND = {
-						NOT = { exists = Z42 } 
-						A30 = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
+				}
+				AND = {
+					NOT = { exists = Z42 } 
+					A30 = {
+						has_opinion = {
+							who = ROOT
+							value = 100
 						}
 					}
 				}
@@ -1153,14 +1149,18 @@ moonhaven_sarhal_missions = {
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = A31_fahvanosy_requirements
-					fahvanosy_region = {
-						trade_goods = cloves
-						owner = {
-							has_opinion = {
-								who = ROOT
-								value = 100
+					calc_true_if = {
+						fahvanosy_region = {
+							type = ALL
+							trade_goods = cloves
+							owner = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
 							}
 						}
+						amount = 2
 					}
 				}
 				num_of_owned_provinces_with = {
@@ -1176,12 +1176,18 @@ moonhaven_sarhal_missions = {
 			custom_tooltip = A31_spice_trade_alliance.tt
 			IF = {
 				limit = {
-					any_country = {
-						has_opinion = {
-							who = ROOT
-							value = 100
+					calc_true_if = {
+						fahvanosy_region = {
+							type = ALL
+							trade_goods = cloves
+							owner = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
 						}
-						capital_scope = { region = fahvanosy_region } 
+						amount = 2
 					}
 				}
 				add_country_modifier = {

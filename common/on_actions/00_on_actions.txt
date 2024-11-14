@@ -15173,7 +15173,7 @@ on_colony_established = {
 	
 	if = {
 		limit = {
-			A31 = {
+			owner = {
 				OR = {
 					has_country_modifier = A31_empire_colonial_office
 					has_country_modifier = A31_traders_invest_economy
@@ -15183,7 +15183,9 @@ on_colony_established = {
 				NOT = {	has_country_modifier = half_elven_administration }
 			}	
 		}
-		A31 = { country_event = { id = A31_flavour.27 } }
+		remove_country_modifier = A31_empire_colonial_office
+		remove_country_modifier = A31_traders_invest_economy
+		remove_country_modifier = A31_aiecoca_expanded
 	}
 }
 

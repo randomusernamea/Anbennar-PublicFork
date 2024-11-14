@@ -783,24 +783,3 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = A31_flavour.27
-	title = A31_flavour.27.t
-	desc = A31_flavour.27.d
-	picture = GOD_FRAGMENT_eventPicture
-
-	is_triggered_only = yes
-	hidden = yes
-
-	trigger = {
-
-	}
-
-	option = {
-		name = A31_flavour.27.a
-		
-		remove_country_modifier = A31_empire_colonial_office
-		remove_country_modifier = A31_traders_invest_economy
-		remove_country_modifier = A31_aiecoca_expanded
-	}
-}
