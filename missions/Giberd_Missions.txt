@@ -737,9 +737,11 @@ giberd_konwell_conquest = {
 				AND = {
 					province_id = 911
 					NOT = {
-						base_production = 14
-						development = 25
-						has_manufactory_trigger = yes
+						AND = {
+							base_production = 14
+							development = 25
+							has_manufactory_trigger = yes
+						}
 					}
 				}
 				AND = {
