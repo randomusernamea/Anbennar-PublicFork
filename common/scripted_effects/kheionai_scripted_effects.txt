@@ -1582,7 +1582,6 @@ losing_kheionai_shipyard_effect = {
 }
 
 save_kheionism_holy_orders = {
-	log = "save_kheionism_holy_orders fired"
 	every_owned_province = {
 		clr_province_flag = has_maederitic_rule_order_flag
 		clr_province_flag = has_schaal_onitheia_order_flag
@@ -1594,51 +1593,42 @@ save_kheionism_holy_orders = {
 		clr_province_flag = has_drivos_rochos_order_flag
 		clr_province_flag = has_laskaris_creed_order_flag
 		if = {
-			limit = { has_maederitic_rule_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = maederitic_rule } }
 			set_province_flag = has_maederitic_rule_order_flag
-			log = "Set has_maederitic_rule_order_flag flag"
 		}
 		if = {
-			limit = { has_schaal_onitheia_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = schaal_onitheia } }
 			set_province_flag = has_schaal_onitheia_order_flag
-			log = "Set has_schaal_onitheia_order_flag flag"
 		}
 		if = {
-			limit = { has_teachings_of_varamelas_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = teachings_of_varamelas } }
 			set_province_flag = has_teachings_of_varamelas_order_flag
-			log = "Set has_teachings_of_varamelas_order_flag flag"
 		}
 		
 		if = {
-			limit = { has_dictats_of_isparokaeus_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = dictats_of_isparokaeus } }
 			set_province_flag = has_dictats_of_isparokaeus_order_flag
-			log = "Set has_dictats_of_isparokaeus_order_flag flag"
 		}
 		if = {
-			limit = { has_archatiradist_doctrine_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = archatiradist_doctrine } }
 			set_province_flag = has_archatiradist_doctrine_order_flag
-			log = "Set has_archatiradist_doctrine_order_flag flag"
 		}
 		if = {
-			limit = { has_anagbheism_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = anagbheism } }
 			set_province_flag = has_anagbheism_order_flag
-			log = "Set has_anagbheism_order_flag flag"
 		}
 		
 		if = {
-			limit = { has_axierophonic_mandate_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = axierophonic_mandate } }
 			set_province_flag = has_axierophonic_mandate_order_flag
-			log = "Set has_axierophonic_mandate_order_flag flag"
 		}
 		if = {
-			limit = { has_drivos_rochos_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = drivos_rochos } }
 			set_province_flag = has_drivos_rochos_order_flag
-			log = "Set has_drivos_rochos_order_flag flag"
 		}
 		if = {
-			limit = { has_laskaris_creed_holy_order = yes }
+			limit = { has_kheionist_holy_order = { holy_order = laskaris_creed } }
 			set_province_flag = has_laskaris_creed_order_flag
-			log = "Set has_laskaris_creed_order_flag flag"
 		}
 	}
 }
@@ -1704,6 +1694,14 @@ update_kheionism_provinces_variables = {
 		which = kheionism_75_provinces_var
 		value = 4
 	}
+	set_variable = {
+		which = kheionism_75_provinces_display_var
+		which = kheionism_75_provinces_var
+	}
+	round_variable = {
+		which = kheionism_75_provinces_display_var
+		value = 1
+	}
 
 	set_variable = {
 		which = kheionism_half_provinces_var
@@ -1713,12 +1711,20 @@ update_kheionism_provinces_variables = {
 		which = kheionism_half_provinces_var
 		value = 2
 	}
+	set_variable = {
+		which = kheionism_half_provinces_display_var
+		which = kheionism_half_provinces_var
+	}
+	round_variable = {
+		which = kheionism_half_provinces_display_var
+		value = 1
+	}
 
 }
 
 upgrade_kheionism_deity = {
 	if = {
-		limit = { has_$deity$_deity = yes }
+		limit = { has_kheionist_deity = { deity = $deity$ } }
 		if = {
 			limit = {
 				check_variable = {

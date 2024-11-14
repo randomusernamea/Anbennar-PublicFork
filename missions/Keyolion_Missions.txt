@@ -111,7 +111,7 @@ G58_1_missions = {
 		trigger = {
 			reform_level = 2
 			adm_power = 50
-			has_adm_kheionism_deity = yes
+			has_adm_kheionist_deity = yes
 		}
 
 		effect = {
@@ -541,7 +541,7 @@ G58_2_missions = {
 				estate = estate_mages
 				loyalty = 50
 			}
-			has_adm_kheionism_deity = yes
+			has_adm_kheionist_deity = yes
 			treasury = 200
 			crown_land_share = 20
 			2671 = { #Rgesdeam
@@ -1232,7 +1232,7 @@ G58_3_missions = {
 		}
 
 		trigger = {
-			has_adm_kheionism_deity = yes
+			has_adm_kheionist_deity = yes
 			2669 = { #Keyolion
 				development = 30
 				has_trade_building_trigger = yes
@@ -1332,7 +1332,7 @@ G58_4_missions = {
 		}
 
 		trigger = {
-			has_dip_kheionism_deity = yes
+			has_dip_kheionist_deity = yes
 			hidden_trigger = {
 				num_of_light_ship = 2
 			}
@@ -1752,7 +1752,7 @@ G58_4_missions = {
 		}
 
 		trigger = {
-			has_adm_kheionism_deity = yes
+			has_adm_kheionist_deity = yes
 			custom_trigger_tooltip = {
 				tooltip = G58_coastal_utopia_trigger_tt
 				all_owned_province = {
@@ -1916,7 +1916,7 @@ G58_5_missions = {
 		}
 
 		trigger = {
-			has_mil_kheionism_deity = yes
+			has_mil_kheionist_deity = yes
 			army_size_percentage = 1
 			if = {
 				limit = {

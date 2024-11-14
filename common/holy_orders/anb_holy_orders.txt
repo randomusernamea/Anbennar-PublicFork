@@ -1533,13 +1533,13 @@ furdanhund_order = {
     localization = runefather_allegiance
 }
 
-#Kheionism
+#Kheionist
 #Adm Orders
 maederitic_rule_order_level_1 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_adm_kheionism_deity = no
+        has_adm_kheionist_deity = no
     }
     color = { 0 255 0 }
     cost = 0
@@ -1582,7 +1582,7 @@ maederitic_rule_order_level_1 = {
     }
     modifier = {
         local_tax_modifier = 0.15
-        local_governing_cost = -0.2
+        local_governing_cost = -0.15
     }
     ai_priority = {
         factor = 10
@@ -1595,8 +1595,8 @@ maederitic_rule_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_schaal_onitheia_deity = yes
-            has_teachings_of_varamelas_deity = yes
+            has_kheionist_deity = { deity = schaal_onitheia }
+            has_kheionist_deity = { deity = teachings_of_varamelas }
         }
     }
     color = { 0 255 0 }
@@ -1639,8 +1639,8 @@ maederitic_rule_order_level_2 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.225
-        local_governing_cost = -0.3
+        local_tax_modifier = 0.25
+        local_governing_cost = -0.15
     }
     ai_priority = {
         factor = 10
@@ -1652,7 +1652,7 @@ maederitic_rule_order_level_3 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_maederitic_rule_deity = yes
+        has_kheionist_deity = { deity = maederitic_rule }
     }
     color = { 0 255 0 }
     cost = 0
@@ -1694,8 +1694,9 @@ maederitic_rule_order_level_3 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.3
-        local_governing_cost = -0.4
+        local_tax_modifier = 0.25
+        local_governing_cost = -0.15
+        local_centralize_state_cost = -0.25
     }
     ai_priority = {
         factor = 10
@@ -1707,7 +1708,7 @@ schaal_onitheia_order_level_1 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_adm_kheionism_deity = no
+        has_adm_kheionist_deity = no
     }
     color = { 0 128 0 }
     cost = 0
@@ -1763,8 +1764,8 @@ schaal_onitheia_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_maederitic_rule_deity = yes
-            has_teachings_of_varamelas_deity = yes
+            has_kheionist_deity = { deity = maederitic_rule }
+            has_kheionist_deity = { deity = teachings_of_varamelas }
         }
     }
     color = { 0 128 0 }
@@ -1807,8 +1808,8 @@ schaal_onitheia_order_level_2 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.225
-        local_monthly_devastation = -0.075
+        local_tax_modifier = 0.25
+        local_monthly_devastation = -0.05
     }
     ai_priority = {
         factor = 10
@@ -1820,7 +1821,7 @@ schaal_onitheia_order_level_3 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_schaal_onitheia_deity = yes
+        has_kheionist_deity = { deity = schaal_onitheia }
     }
     color = { 0 128 0 }
     cost = 0
@@ -1862,8 +1863,9 @@ schaal_onitheia_order_level_3 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.3
-        local_monthly_devastation = -0.1
+        local_tax_modifier = 0.25
+        local_monthly_devastation = -0.05
+        local_development_cost = -0.05
     }
     ai_priority = {
         factor = 10
@@ -1875,7 +1877,7 @@ teachings_of_varamelas_order_level_1 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_adm_kheionism_deity = no
+        has_adm_kheionist_deity = no
     }
     color = { 0 64 0 }
     cost = 0
@@ -1918,7 +1920,7 @@ teachings_of_varamelas_order_level_1 = {
     }
     modifier = {
         local_tax_modifier = 0.15
-        local_build_cost = -0.25
+        local_build_cost = -0.1
     }
     ai_priority = {
         factor = 10
@@ -1931,8 +1933,8 @@ teachings_of_varamelas_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_maederitic_rule_deity = yes
-            has_schaal_onitheia_deity = yes
+            has_kheionist_deity = { deity = maederitic_rule }
+            has_kheionist_deity = { deity = schaal_onitheia }
         }
     }
     color = { 0 64 0 }
@@ -1975,8 +1977,8 @@ teachings_of_varamelas_order_level_2 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.225
-        local_build_cost = -0.375
+        local_tax_modifier = 0.25
+        local_build_cost = -0.1
     }
     ai_priority = {
         factor = 10
@@ -1988,7 +1990,7 @@ teachings_of_varamelas_order_level_3 = {
     icon = GFX_holy_order_Corinite_Adm_Order
     trigger = {
         religion = kheionism
-        has_teachings_of_varamelas_deity = yes
+        has_kheionist_deity = { deity = teachings_of_varamelas }
     }
     color = { 0 64 0 }
     cost = 0
@@ -2030,8 +2032,9 @@ teachings_of_varamelas_order_level_3 = {
         }
     }
     modifier = {
-        local_tax_modifier = 0.3
-        local_build_cost = -0.5
+        local_tax_modifier = 0.25
+        local_build_cost = -0.1
+        local_build_time = -0.15
     }
     ai_priority = {
         factor = 10
@@ -2044,7 +2047,7 @@ dictats_of_isparokaeus_order_level_1 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_dip_kheionism_deity = no
+        has_dip_kheionist_deity = no
     }
     color = { 0 0 255 }
     cost = 0
@@ -2086,8 +2089,8 @@ dictats_of_isparokaeus_order_level_1 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.15
-        local_institution_spread = 0.25
+        province_trade_power_modifier = 0.1
+        local_sailors_modifier = 0.2
     }
     ai_priority = {
         factor = 10
@@ -2100,8 +2103,8 @@ dictats_of_isparokaeus_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_archatiradist_doctrine_deity = yes
-            has_anagbheism_deity = yes
+            has_kheionist_deity = { deity = archatiradist_doctrine }
+            has_kheionist_deity = { deity = anagbheism }
         }
     }
     color = { 0 0 255 }
@@ -2144,8 +2147,8 @@ dictats_of_isparokaeus_order_level_2 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.225
-        local_institution_spread = 0.375
+        province_trade_power_modifier = 0.2
+        local_sailors_modifier = 0.2
     }
     ai_priority = {
         factor = 10
@@ -2157,7 +2160,7 @@ dictats_of_isparokaeus_order_level_3 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_dictats_of_isparokaeus_deity = yes
+        has_kheionist_deity = { deity = dictats_of_isparokaeus }
     }
     color = { 0 0 255 }
     cost = 0
@@ -2199,8 +2202,9 @@ dictats_of_isparokaeus_order_level_3 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.3
-        local_institution_spread = 0.5
+        province_trade_power_modifier = 0.2
+        local_sailors_modifier = 0.2
+        local_ship_repair = 0.2
     }
     ai_priority = {
         factor = 10
@@ -2212,7 +2216,7 @@ archatiradist_doctrine_order_level_1 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_dip_kheionism_deity = no
+        has_dip_kheionist_deity = no
     }
     color = { 0 0 128 }
     cost = 0
@@ -2254,7 +2258,7 @@ archatiradist_doctrine_order_level_1 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.15
+        province_trade_power_modifier = 0.1
         local_missionary_strength = 0.02
     }
     ai_priority = {
@@ -2268,8 +2272,8 @@ archatiradist_doctrine_order_level_2 = {
     trigger = {
         religion = kheionism
         OR ={
-            has_dictats_of_isparokaeus_deity = yes
-            has_anagbheism_deity = yes
+            has_kheionist_deity = { deity = dictats_of_isparokaeus }
+            has_kheionist_deity = { deity = anagbheism }
         }
     }
     color = { 0 0 128 }
@@ -2312,8 +2316,8 @@ archatiradist_doctrine_order_level_2 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.225
-        local_missionary_strength = 0.03
+        province_trade_power_modifier = 0.2
+        local_missionary_strength = 0.02
     }
     ai_priority = {
         factor = 10
@@ -2325,7 +2329,7 @@ archatiradist_doctrine_order_level_3 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_archatiradist_doctrine_deity = yes
+        has_kheionist_deity = { deity = archatiradist_doctrine }
     }
     color = { 0 0 128 }
     cost = 0
@@ -2367,8 +2371,9 @@ archatiradist_doctrine_order_level_3 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.3
-        local_missionary_strength = 0.04
+        province_trade_power_modifier = 0.2
+        local_missionary_strength = 0.02
+        local_missionary_maintenance_cost = -0.5
     }
     ai_priority = {
         factor = 10
@@ -2380,7 +2385,7 @@ anagbheism_order_level_1 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_dip_kheionism_deity = no
+        has_dip_kheionist_deity = no
     }
     color = { 0 0 64 }
     cost = 0
@@ -2422,9 +2427,8 @@ anagbheism_order_level_1 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.15
-        local_religious_unity_contribution = -0.5
-        local_colonial_growth = 15
+        province_trade_power_modifier = 0.1
+        trade_value_modifier = 0.1
     }
     ai_priority = {
         factor = 10
@@ -2437,8 +2441,8 @@ anagbheism_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_dictats_of_isparokaeus_deity = yes
-            has_archatiradist_doctrine_deity = yes
+            has_kheionist_deity = { deity = dictats_of_isparokaeus }
+            has_kheionist_deity = { deity = archatiradist_doctrine }
         }
     }
     color = { 0 0 64 }
@@ -2481,9 +2485,8 @@ anagbheism_order_level_2 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.225
-        local_religious_unity_contribution = -0.75
-        local_colonial_growth = 22.5
+        province_trade_power_modifier = 0.2
+        trade_value_modifier = 0.1
     }
     ai_priority = {
         factor = 10
@@ -2495,7 +2498,7 @@ anagbheism_order_level_3 = {
     icon = GFX_holy_order_Corinite_Dip_Order
     trigger = {
         religion = kheionism
-        has_anagbheism_deity = yes
+        has_kheionist_deity = { deity = anagbheism }
     }
     color = { 0 0 64 }
     cost = 0
@@ -2537,9 +2540,9 @@ anagbheism_order_level_3 = {
         }
     }
     modifier = {
-        province_trade_power_modifier = 0.3
-        local_religious_unity_contribution = -1
-        local_colonial_growth = 30
+        province_trade_power_modifier = 0.2
+        trade_value_modifier = 0.1
+        local_institution_spread = 0.25
     }
     ai_priority = {
         factor = 10
@@ -2552,7 +2555,7 @@ axierophonic_mandate_order_level_1 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_mil_kheionism_deity = no
+        has_mil_kheionist_deity = no
     }
     color = { 255 0 0 }
     cost = 0
@@ -2594,8 +2597,8 @@ axierophonic_mandate_order_level_1 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.1
-        local_fort_maintenance_modifier = -0.75
+        local_manpower_modifier = 0.075
+        local_garrison_size = 0.15
     }
     ai_priority = {
         factor = 10
@@ -2608,8 +2611,8 @@ axierophonic_mandate_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_drivos_rochos_deity = yes
-            has_laskaris_creed_deity = yes
+            has_kheionist_deity = { deity = drivos_rochos }
+            has_kheionist_deity = { deity = laskaris_creed }
         }
     }
     color = { 255 0 0 }
@@ -2653,7 +2656,7 @@ axierophonic_mandate_order_level_2 = {
     }
     modifier = {
         local_manpower_modifier = 0.15
-        local_fort_maintenance_modifier = -0.875
+        local_garrison_size = 0.15
     }
     ai_priority = {
         factor = 10
@@ -2665,7 +2668,7 @@ axierophonic_mandate_order_level_3 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_axierophonic_mandate_deity = yes
+        has_kheionist_deity = { deity = axierophonic_mandate }
     }
     color = { 255 0 0 }
     cost = 0
@@ -2707,8 +2710,9 @@ axierophonic_mandate_order_level_3 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.2
-        local_fort_maintenance_modifier = -1
+        local_manpower_modifier = 0.15
+        local_garrison_size = 0.15
+        local_hostile_movement_speed = -0.1
     }
     ai_priority = {
         factor = 10
@@ -2720,7 +2724,7 @@ drivos_rochos_order_level_1 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_mil_kheionism_deity = no
+        has_mil_kheionist_deity = no
     }
     color = { 128 0 0 }
     cost = 0
@@ -2762,7 +2766,7 @@ drivos_rochos_order_level_1 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.1
+        local_manpower_modifier = 0.075
         local_hostile_attrition = 2
     }
     ai_priority = {
@@ -2776,8 +2780,8 @@ drivos_rochos_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_axierophonic_mandate_deity = yes
-            has_laskaris_creed_deity = yes
+            has_kheionist_deity = { deity = axierophonic_mandate }
+            has_kheionist_deity = { deity = laskaris_creed }
         }
     }
     color = { 128 0 0 }
@@ -2821,7 +2825,7 @@ drivos_rochos_order_level_2 = {
     }
     modifier = {
         local_manpower_modifier = 0.15
-        local_hostile_attrition = 3
+        local_hostile_attrition = 2
     }
     ai_priority = {
         factor = 10
@@ -2833,7 +2837,7 @@ drivos_rochos_order_level_3 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_drivos_rochos_deity = yes
+        has_kheionist_deity = { deity = drivos_rochos }
     }
     color = { 128 0 0 }
     cost = 0
@@ -2875,8 +2879,9 @@ drivos_rochos_order_level_3 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.2
-        local_hostile_attrition = 4
+        local_manpower_modifier = 0.15
+        local_hostile_attrition = 2
+        supply_limit_modifier = 0.25
     }
     ai_priority = {
         factor = 10
@@ -2888,7 +2893,7 @@ laskaris_creed_order_level_1 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_mil_kheionism_deity = no
+        has_mil_kheionist_deity = no
     }
     color = { 64 0 0 }
     cost = 0
@@ -2930,9 +2935,8 @@ laskaris_creed_order_level_1 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.1
-        local_regiment_cost = -0.2
-        regiment_recruit_speed = -0.5
+        local_manpower_modifier = 0.075
+        local_regiment_cost = -0.15
     }
     ai_priority = {
         factor = 10
@@ -2945,8 +2949,8 @@ laskaris_creed_order_level_2 = {
     trigger = {
         religion = kheionism
         OR = {
-            has_axierophonic_mandate_deity = yes
-            has_drivos_rochos_deity = yes
+            has_kheionist_deity = { deity = axierophonic_mandate }
+            has_kheionist_deity = { deity = drivos_rochos }
         }
     }
     color = { 64 0 0 }
@@ -2990,8 +2994,7 @@ laskaris_creed_order_level_2 = {
     }
     modifier = {
         local_manpower_modifier = 0.15
-        local_regiment_cost = -0.3
-        regiment_recruit_speed = -0.75
+        local_regiment_cost = -0.15
     }
     ai_priority = {
         factor = 10
@@ -3003,7 +3006,7 @@ laskaris_creed_order_level_3 = {
     icon = GFX_holy_order_Corinite_Mil_Order
     trigger = {
         religion = kheionism
-        has_laskaris_creed_deity = yes
+        has_kheionist_deity = { deity = laskaris_creed }
     }
     color = { 64 0 0 }
     cost = 0
@@ -3045,9 +3048,9 @@ laskaris_creed_order_level_3 = {
         }
     }
     modifier = {
-        local_manpower_modifier = 0.2
-        local_regiment_cost = -0.4
-        regiment_recruit_speed = -1
+        local_manpower_modifier = 0.15
+        local_regiment_cost = -0.15
+        regiment_recruit_speed = -0.2
     }
     ai_priority = {
         factor = 10
