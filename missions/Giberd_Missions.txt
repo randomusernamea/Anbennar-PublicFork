@@ -1696,6 +1696,18 @@ giberd_ryalanar_conquest = {
 		}
 		position = 10
 		provinces_to_highlight = {
+			region = esmaria_region
+			has_port = yes
+			NOT = {
+				has_shipyard_building_trigger = yes
+			}
+			NOT = {
+				num_of_owned_provinces_with = {
+					value = 5
+					has_shipyard_building_trigger = yes
+					region = esmaria_region
+				}
+			}
 		}
 		trigger = {
 			mission_completed = giberd_to_strike_an_anvil
