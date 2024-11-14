@@ -748,6 +748,12 @@ wyvernheart_column_2 = {
 		effect = {
 			hidden_effect = {
 				remove_estate_privilege = estate_church_one_faith_one_culture
+				inner_castanor_region = {
+					limit = {
+						has_province_modifier = wyvernheart_home_in_our_hearts
+					}
+					remove_province_modifier = wyvernheart_home_in_our_hearts
+				}
 			}
 			set_estate_privilege = estate_wyvernheart_culture_of_the_heart
 			add_prestige = 20
@@ -1151,17 +1157,20 @@ wyvernheart_column_3 = {
 			add_prestige = -50
 			castonath_area = {
 				add_devastation = 20
-				add_base_manpower = -1 
-				add_base_production = -1
-				add_base_tax = -1
+				if = {
+					limit = { NOT = { culture = ROOT } }
+					add_base_manpower = -1 
+					add_base_production = -1
+					add_base_tax = -1
+					add_culture_construction = {
+						cost = 0
+						speed = 0.5
+					}
+				}
 				remove_province_modifier = castonath_patrician_influence_significant
 				remove_province_modifier = castonath_patrician_influence_considerable
 				remove_province_modifier = castonath_patrician_influence_some
 				remove_province_modifier = castonath_patrician_influence_full
-				add_culture_construction = {
-					cost = 0
-					speed = 0.5
-				}
 			}
 			831 = {
 				spawn_rebels = {
@@ -1173,6 +1182,16 @@ wyvernheart_column_3 = {
 				spawn_rebels = {
 					size = 2
 					type = castonath_patrician_rebel
+				}
+			}
+			inner_castanor_region = {
+				limit = {
+					owned_by = ROOT
+					NOT = { culture = ROOT }
+				}
+				add_province_modifier = {
+					name = wyvernheart_home_in_our_hearts
+					duration = 7300
 				}
 			}
 		} 

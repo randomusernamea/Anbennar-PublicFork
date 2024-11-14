@@ -10895,7 +10895,7 @@ on_province_culture_converted = {
 	#imperial_modifiers_on_province_change_culture_or_change_owner_effect = yes
 	on_province_culture_converted_effect = yes
 	# don't use this, it doesn't account for culture change by effect, use on_province_culture_changed
-	if = {
+	if = { #This is here on purpose, it is only supposed to be activated on MANUAL culture conversion
 		limit = {
 			owner = {
 				is_or_was_tag = { tag = B39 }
