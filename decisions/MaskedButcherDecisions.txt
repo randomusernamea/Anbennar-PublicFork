@@ -59,13 +59,16 @@ country_decisions = {
 									owned_by = ROOT
 								}
 							}
-							OR = {
-								fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-								any_known_country = {
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
 									fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-									has_spy_network_from = {
-										who = ROOT
-										value = 50
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
 									}
 								}
 							}
@@ -88,13 +91,16 @@ country_decisions = {
 									owned_by = ROOT
 								}
 							}
-							OR = {
-								fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-								any_known_country = {
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
 									fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-									has_spy_network_from = {
-										who = ROOT
-										value = 50
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
 									}
 								}
 							}
@@ -113,17 +119,20 @@ country_decisions = {
 									owned_by = ROOT
 								}
 							}
-							OR = {
-								fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-								any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
-								any_known_country = {
-									OR = {
-										fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-										any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
-									}
-									has_spy_network_from = {
-										who = ROOT
-										value = 50
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
+									fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+									any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
+									any_known_country = {
+										OR = {
+											fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+											any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
+										}
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
 									}
 								}
 							}
@@ -143,13 +152,16 @@ country_decisions = {
 									owned_by = ROOT
 								}
 							}
-							OR = {
-								fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-								any_known_country = {
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
 									fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-									has_spy_network_from = {
-										who = ROOT
-										value = 50
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
 									}
 								}
 							}
