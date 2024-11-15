@@ -362,7 +362,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = flavour_rakkaz.14.a
+		name = flavour_rakkaz.8.a
 		white_peace = event_target:EmperorOfChina
 		add_treasury = 1000
 		add_patriarch_authority = 0.5
@@ -379,12 +379,22 @@ country_event = {
 				} 
 			}
 			event_target:EmperorOfChina = {
-				every_owned_province = {
+				custom_tooltip = rakkaz_every_owned_province
+				tooltip = {
 					remove_loot = {
 						who = ROOT
 						amount = 100
 					}
 					add_devastation = 30
+				}
+				hidden_effect = {
+					every_owned_province = {
+						remove_loot = {
+							who = ROOT
+							amount = 100
+						}
+						add_devastation = 30
+					}
 				}
 				add_mandate = -50
 			}
