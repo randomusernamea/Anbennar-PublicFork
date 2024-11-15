@@ -2053,6 +2053,7 @@ clear_mages_organization_effect = {
 		remove_estate_privilege = estate_mages_organization_onyxguard
 		remove_estate_privilege = estate_mages_organization_proffesional_mihipha
 		remove_estate_privilege = estate_mages_organization_orda_aldresia
+		remove_estate_privilege = estate_mages_organization_rule_of_warlocks
 	}
 }
 
@@ -2066,6 +2067,7 @@ clear_adventurers_organization_effect = {
 		remove_estate_privilege = estate_adventurers_organization_scp_bureau
 		remove_estate_privilege = estate_adventurers_organization_exploration_society
 		remove_estate_privilege = estate_adventurers_suhuskar_palace
+		remove_estate_privilege = estate_adventurers_organization_stone_army
 	}
 }
 
@@ -5078,12 +5080,6 @@ anbennar_building_effect = {
 			limit = { religion = corinite }
 			hidden_effect = { add_karma = 0.3 }
 		}
-		if = {
-			limit = {
-				has_church_aspect = purple_dragon_1
-			} 
-			add_church_power = 10 
-		}
 	}
 	if = {
 		limit = {
@@ -5263,12 +5259,6 @@ anb_on_development_effect = {
 		if = {
 			limit = { religion = corinite }
 			add_karma = 0.1
-		}
-		if = {
-			limit = {
-				has_church_aspect = copper_dragon_1
-			}
-			add_church_power = 4
 		}
 		if = {
 			limit = {
