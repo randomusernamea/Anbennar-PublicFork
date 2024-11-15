@@ -2624,15 +2624,11 @@ country_event = {
 			has_country_flag = mb_new_reserves_flg
 			NOT = { has_country_flag = hobgoblin_reserve_done_flg }
 			fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-			kradhungur_area = {
+			seghdihr_area = {
 				type = all
 				owned_by = ROOT
 			}
-			tamvihar_area = {
-				type = all
-				owned_by = ROOT
-			}
-			gronstunad_area = {
+			azka_sur_area = {
 				type = all
 				owned_by = ROOT
 			}
@@ -2642,7 +2638,7 @@ country_event = {
 		custom_tooltip = hobgoblin_reserve_tt
 		hidden_effect = {
 			every_owned_province = {
-				limit = { OR = { area = kradhungur_area area = tamvihar_area area = gronstunad_area } }
+				limit = { OR = { area = seghdihr_area area = azka_sur_area } }
 				change_culture = wolf_command
 				add_province_modifier = {
 					name = mb_reserve
