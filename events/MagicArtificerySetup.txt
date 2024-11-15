@@ -14,9 +14,9 @@ country_event = {
 	option = {
 		name = magic_artificery_setup.1.a
 		trigger = {
+			artificery_locked_mixed_mode = no
 			artificery_locked_artificery_mode = no
 			artificery_tag_needs_artificers = no
-			artificery_locked_mixed_mode = no
 		}
 		artifice_magic_switch_to_magic_only_mode = yes
 	}

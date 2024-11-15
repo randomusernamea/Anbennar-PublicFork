@@ -11652,46 +11652,61 @@ on_province_owner_change = {
 		}
 	}
 
-
-	if = { #Taychendi Empire
+	if = {
+		limit = { owner = { tag = J84 } } #Taychendi Empire
+		if = { 
+			limit = { has_building = farm_estate }
+			owner = { 
+				change_variable = {
+					which = J84_num_of_farm_estates_var
+					value = 1
+				}
+			}
+			if = { 
+				limit = {
+					owner = { has_country_flag = J84_sanguosynthesis_enabled_flag }
+				}
+				owner = { calc_sanguosynthesis_modifier = yes }
+			}
+		}
+		if = { 
+			limit = { 
+				owner = { has_country_flag = J84_soldiers_households_buff_flag } 
+				has_building = soldier_households
+			}
+			add_province_modifier = {
+				name = J84_soldiers_households_buff
+				duration = -1
+			}
+		}
+		if = { 
+			limit = {
+				owner = { has_country_flag = J84_trade_station_bonus_flag }
+				has_building = tradecompany
+				trade_goods = precursor_relics
+			}
+			add_province_modifier = {
+				name = J84_trade_station_buff
+				duration = -1
+			}
+		}
+	}
+	if = { 
 		limit = {
-			tag = J84
-			owner = { has_country_flag = J84_sanguosynthesis_enabled_flag }
+			FROM = { tag = J84 } #Taychendi Empire
 			has_building = farm_estate
 		}
-		owner = { calc_sanguosynthesis_modifier = yes }
-	}
-	if = { #Taychendi Empire
-		limit = {
-			tag = J84
-			FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag }
-			has_building = farm_estate
+		FROM = { 
+			change_variable = {
+				which = J84_num_of_farm_estates_var
+				value = -1
+			}
 		}
-		FROM = { calc_sanguosynthesis_modifier = yes }
-	}
-
-	if = { #Taychendi Empire
-		limit = { 
-			tag = J84
-			owner = { has_country_flag = J84_soldiers_households_buff_flag } 
-			has_building = soldier_households
-		}
-		add_province_modifier = {
-			name = J84_soldiers_households_buff
-			duration = -1
-		}
-	}
-
-	if = { #Taychendi Empire
-		limit = {
-			tag = J84
-			owner = { has_country_flag = J84_trade_station_bonus_flag }
-			has_building = tradecompany
-			trade_goods = precursor_relics
-		}
-		add_province_modifier = {
-			name = J84_trade_station_buff
-			duration = -1
+		if = {
+			limit = {
+				FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag }
+			}
+			FROM = { calc_sanguosynthesis_modifier = yes }
 		}
 	}
 }

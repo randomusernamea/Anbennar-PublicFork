@@ -432,9 +432,9 @@ calc_sanguosynthesis_modifier = {
 	remove_country_modifier = J84_sanguosynthesis_1
 	if = {
 		limit = {
-			num_of_owned_provinces_with = {
+			check_variable = {
+				which = J84_num_of_farm_estates_var
 				value = 60
-				has_building = farm_estate
 			}
 		}
 		add_country_modifier = {
@@ -444,9 +444,9 @@ calc_sanguosynthesis_modifier = {
 	}
 	else_if = {
 		limit = {
-			num_of_owned_provinces_with = {
+			check_variable = {
+				which = J84_num_of_farm_estates_var
 				value = 45
-				has_building = farm_estate
 			}
 		}
 		add_country_modifier = {
@@ -456,9 +456,9 @@ calc_sanguosynthesis_modifier = {
 	}
 	else_if = {
 		limit = {
-			num_of_owned_provinces_with = {
+			check_variable = {
+				which = J84_num_of_farm_estates_var
 				value = 30
-				has_building = farm_estate
 			}
 		}
 		add_country_modifier = {

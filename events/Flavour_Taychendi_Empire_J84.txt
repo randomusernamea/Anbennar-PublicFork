@@ -247,9 +247,9 @@ country_event = {
 		trigger = { 
 			has_country_flag = J84_accept_chendhyans_flag 
 			NOT = {
-				tag = J73 #Zaernmaera
-				tag = J72 #Darkalydar
-				tag = J74 #Caergaraen
+				was_tag = J73 #Zaernmaera
+				was_tag = J72 #Darkalydar
+				was_tag = J74 #Caergaraen
 			}
 		}
 		chendhya_region = {
@@ -752,20 +752,12 @@ country_event = {
 	picture = GOBLIN_GUNNER_event_picture
 
 	desc = {
-		trigger = {
-			OR = { #PUT MISSIONS THAT REPLACE ORENKORAIM STATUE HEAD HERE
-				mission_completed = J73_3_5_end_ebenanths_legacy
-			}
-		}
+		trigger = { has_country_flag = replaced_orenkoraim_statue_head_flag }
 		desc = taychendi_empire_events.11.da
 	}
 
 	desc = {
-		trigger = {
-			NOT = { #PUT MISSIONS THAT REPLACE ORENKORAIM STATUE HEAD HERE
-				mission_completed = J73_3_5_end_ebenanths_legacy
-			}
-		}
+		trigger = { NOT = { has_country_flag = replaced_orenkoraim_statue_head_flag } }
 		desc = taychendi_empire_events.11.db
 	}
 
@@ -798,8 +790,7 @@ country_event = {
 
 	option = {
 		name = taychendi_empire_events.12.a
-		trigger = { NOT = { was_tag = G63 } } #Korrimutren
-		# G83 = Korrimutren
+		trigger = { NOT = { was_tag = G83 } } #Korrimutren
 		alecand_region = {
 			limit = { NOT = { culture = eltibhar } }
 			cede_province = G83 #Korrimutren
@@ -1916,7 +1907,15 @@ country_event = {
 		hidden_effect = {
 			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
 			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
+				limit = { 
+					NOT = { tag = ROOT }
+					capital_scope = { 
+						OR = { 
+							continent = north_america 
+							continent = south_america 
+						} 
+					} 
+				}
 				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
 			}
 		}
@@ -2206,6 +2205,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		tag = J84
 		has_government_power = {
 			mechanic_type = taychend_vainglory_mechanic
 			power_type = taychend_vainglory_power
@@ -2267,6 +2267,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		tag = J84
 		has_government_power = {
 			mechanic_type = taychend_vainglory_mechanic
 			power_type = taychend_vainglory_power
@@ -2356,6 +2357,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		tag = J84
 		has_government_power = {
 			mechanic_type = taychend_vainglory_mechanic
 			power_type = taychend_vainglory_power
@@ -2363,21 +2365,24 @@ country_event = {
 		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			pick_best_province = {
+				scope = every_owned_province
+				scale = higher_development_than
+				global_trigger = "
+					superregion = taychend_superregion
+					NOT = { is_capital_of = ROOT }
+				"
+				event_target_name = J84_vainglory_pretender_target
+				number = 1
+			}
+		}
+	}
+
 	option = {
 		name = taychendi_empire_events.102.a
-		random_owned_province = {
-			limit = {
-				superregion = taychend_superregion
-				NOT = { is_capital_of = ROOT }
-				taychend_superregion = {
-					type = all
-					OR = {
-						is_capital_of = ROOT
-						NOT = { higher_development_than = PREV }
-						NOT = { owned_by = ROOT }
-					}
-				}
-			}
+		event_target:J84_vainglory_pretender_target_1 = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 3
@@ -2395,6 +2400,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		tag = J84
 		has_government_power = {
 			mechanic_type = taychend_vainglory_mechanic
 			power_type = taychend_vainglory_power

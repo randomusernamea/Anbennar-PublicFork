@@ -361,6 +361,17 @@ country_decisions = {
 				}
 			}
 			hidden_effect = {
+				set_variable = {
+					which = J84_num_of_farm_estates_var
+					value = 0
+				}
+				every_owned_province = {
+					limit = { has_building = farm_estate }
+					change_variable = {
+						which = J84_num_of_farm_estates_var
+						value = 1
+					}
+				}
 				country_event = {
 					id = taychendi_empire_events.2 #The Chendhyans Unite Once More!
 					days = 1825 #5 years

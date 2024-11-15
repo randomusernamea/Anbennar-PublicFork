@@ -2601,14 +2601,28 @@ farm_estate = {
 		owner = { accretive_path_jiangyang_chi_stacking_effect = { amount = 20 } }
 
 		gronstunad_building_authority_effect = { value = 5 }
-
-		if = { #Taychendi Empire
-			limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
-			FROM = { calc_sanguosynthesis_modifier = yes }
+		if = {
+			limit = {
+				FROM = { tag = J84 } #Taychendi Empire
+			}
+			FROM = {
+				change_variable = {
+					which = J84_num_of_farm_estates_var
+					value = 1
+				}
+			}
+			if = { 
+				limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
+				FROM = { calc_sanguosynthesis_modifier = yes }
+			}
 		}
 	}
 
 	on_destroyed = {
+		change_variable = {
+			which = num_of_farm_estates
+			value = -1
+		}
 		remove_development_from_building = {
 			building = manufactory
 			type = production
@@ -2624,9 +2638,20 @@ farm_estate = {
 			anb_manufactory_discount_remove = yes
 		}
 
-		if = { #Taychendi Empire
-			limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
-			FROM = { calc_sanguosynthesis_modifier = yes }
+		if = {
+			limit = {
+				FROM = { tag = J84 } #Taychendi Empire
+			}
+			FROM = {
+				change_variable = {
+					which = J84_num_of_farm_estates_var
+					value = -1
+				}
+			}
+			if = { #Taychendi Empire
+				limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
+				FROM = { calc_sanguosynthesis_modifier = yes }
+			}
 		}
 	}
 	on_obsolete = {
