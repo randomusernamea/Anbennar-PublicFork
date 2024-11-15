@@ -1719,7 +1719,7 @@ moonhaven_development_missions = {
 					duration = -1
 				}
 			}
-			if = {
+			else_if = {
 				limit = { has_country_modifier = A31_tea_hegemony_4 } 
 				remove_country_modifier = A31_tea_hegemony_4
 				add_country_modifier = {
@@ -2539,7 +2539,7 @@ moonhaven_exploration_missions = {
 					duration = -1
 				}
 			}
-			if = {
+			else_if = {
 				limit = { has_country_modifier = A31_tea_hegemony_4 } 
 				remove_country_modifier = A31_tea_hegemony_4
 				add_country_modifier = {
