@@ -323,17 +323,11 @@ kob_3_a = {
 			add_dip_power = 100
 			custom_tooltip = dragon_coast_kobold_provinces_tt 
 			hidden_effect = {
-				dragon_coast_region = {
+				western_cannor_superregion = {
 					limit = {
 						culture_group = kobold
 					}
-					add_permanent_claim = ROOT
-				}
-				coddorran_heights_area = {
-					limit = {
-						culture_group = kobold
-					}
-					add_permanent_claim = ROOT				
+					add_permanent_claim = ROOT		
 				}
 			}
 		}
@@ -2551,16 +2545,11 @@ kob_2_c = {
 			OR = {
 				AND = {
 					region = dragon_coast_region
-					OR = {
-						NOT = { development = 25 }
-						devastation = 1
-					}
+					NOT = { development = 25 }
 				}
 				AND = {
-					region = rzenta_region
-					OR = {
-						NOT = { development = 25 }
-					}
+					owned_by = H24
+					NOT = { development = 25 }
 				}
 				AND = {
 					province_id = 1746
@@ -2570,19 +2559,18 @@ kob_2_c = {
 		}
 
 		trigger = {
-			NOT = { dragon_coast_region = { devastation = 1 } }
 			
 			num_of_owned_provinces_with = {
 				value = 15
 				region = dragon_coast_region
 				development = 25
 			}
-			num_of_provinces_owned_or_owned_by_subjects_with = {
-				value = 15
-				region = rzenta_region
-				development = 25
+			H24 = {
+				num_of_owned_provinces_with = {
+					value = 15
+					development = 25
+				}
 			}
-
 			187 = {
 				check_variable = {
 					which = dragon_cult_hoard
@@ -2664,6 +2652,9 @@ kob_2_c = {
 					} 
 					upgrade_kobold_hoard = yes 
 				} 
+				every_owned_province = {
+					remove_province_modifier = Z38_a_new_ashen_skies
+				}
 			}
 		}
 	}
@@ -2895,7 +2886,7 @@ kob_3_c = {
 
 
 			development_in_provinces = {
-				value = 800
+				value = 1000
 				region = dragon_coast_region
 			}
 		}
@@ -3356,17 +3347,7 @@ kob_5_c = {
 		}
 
 		trigger = {
-			calc_true_if = {
-				amount = 8
-				any_owned_province = {
-					owned_by = ROOT
-					custom_trigger_tooltip = {
-						tooltip = has_kobold_traps_tt 
-						has_province_flag = has_kobold_traps
-					}
-					has_manufactory_trigger = yes
-				}
-			}
+			
 			has_church_aspect = copper_dragon_1_upgraded
 			has_church_aspect = copper_dragon_2_upgraded
 			has_church_aspect = copper_dragon_3_base

@@ -472,9 +472,9 @@ country_event = { #The Dragon's Roar
 		custom_tooltip = dragons_roar_tt 
 		hidden_effect = {
 			189 = {
-				add_base_tax = -3
-				add_base_production = -3
-				add_base_manpower = -3
+				add_base_tax = -9
+				add_base_production = -9
+				add_base_manpower = -9
 				add_devastation = 100
 				set_variable = {
 					which = dragon_cult_hoard
@@ -482,6 +482,12 @@ country_event = { #The Dragon's Roar
 				}
 				upgrade_kobold_hoard = yes	
 				remove_province_modifier = kobold_hoard_0
+				remove_province_modifier = Z38_sanctified_through_effort
+				remove_province_modifier = Z38_hoard_logistics_hub
+				add_permanent_province_modifier = {
+					name = Z38_a_husk_of_a_hoard
+					duration = -1
+				}
 			}
 			dragon_coast_region = {
 				limit = {
@@ -504,26 +510,146 @@ country_event = { #The Dragon's Roar
 						}
 					}
 				}
-				remove_random_development = yes
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
 				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}
 			}
-			dragondowns_area = { add_devastation = 50 }
-			reaver_coast_area = { add_devastation = 50 }
-			174 = { add_devastation = 50 }
-			173 = { add_devastation = 50 }
-			180 = { add_devastation = 50 }
-			345 = { add_devastation = 50 }
+			dragondowns_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				} 
+			}
+			reaver_coast_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			174 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			173 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			180 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			345 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
 			
-			iochand_area = { add_devastation = 20 }
-			storm_isles_area = { add_devastation = 20 }
-			dragonpoint_area = { add_devastation = 20 }
-			179 = { add_devastation = 20 }
-			125 = { add_devastation = 20 }
-			128 = { add_devastation = 20 }
+			iochand_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				}  
+			} 
+			storm_isles_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			dragonpoint_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			179 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			125 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			}
+			128 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 			damescrown_region = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}
 
 			alenic_frontier_region = {
@@ -532,12 +658,45 @@ country_event = { #The Dragon's Roar
 						area = coddorran_heights_area
 					}
 				}
-				remove_random_development = yes
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
 				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}
 			}
-			197 = { add_devastation = 50 }
-			200 = { add_devastation = 20 }
-			694 = { add_devastation = 20 }
+			197 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			200 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			694 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 			small_country_region = {
 				limit = {
@@ -550,89 +709,486 @@ country_event = { #The Dragon's Roar
 						}
 					}
 				}				
-				add_devastation = 50					
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				} 					
 			}
 			norley_area = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}	
 			lorentish_approach_area = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}		
 			66 = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}
-			roysfort_area = { add_devastation = 20 }
+			roysfort_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 
-			serpentshead_area = { add_devastation = 20 }
+			serpentshead_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 			northern_greatwoods_area = {
 				limit = { NOT = { province_id = 700 } }
-				remove_random_development = yes
-				add_devastation = 80 
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				} 
 			}
-			700 = { add_devastation = 50 }
+			700 = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
 			dinesck_area = {
-				remove_random_development = yes
-				add_devastation = 80 
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				} 
 			}
 			west_chillsbay_area = {
-				remove_random_development = yes
-				add_devastation = 80 
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				} 
 			}
 
-			east_chillsbay_area = { add_devastation = 50 }
-			wudhal_area = { add_devastation = 50 }
-			sondaar_area = { add_devastation = 50 }
+			east_chillsbay_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			wudhal_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			sondaar_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
 
-			cedesck_area = { add_devastation = 20 }
-			735 = { add_devastation = 20 }
-			736 = { add_devastation = 20 }
-			740 = { add_devastation = 20 }
-			987 = { add_devastation = 20 }
+			cedesck_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			735 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			736 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			740 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			987 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
-			exwes_area = { add_devastation = 50 }
-			wesdam_area = { add_devastation = 20 }
+			exwes_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			wesdam_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 			
-			east_damesear_area = { add_devastation = 50 }
-			west_damesear_area = { add_devastation = 50 }
-			the_commons_area = { add_devastation = 50 }
-			heartlands_area = { add_devastation = 20 }
-			upper_luna_area = { add_devastation = 20 }
-			low_esmar_area = { add_devastation = 20 }
-			damerian_dales_area = { add_devastation = 50 }
-			silverwoods_area = { add_devastation = 50 }
+			east_damesear_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			west_damesear_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			the_commons_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			heartlands_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			upper_luna_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			low_esmar_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			damerian_dales_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			silverwoods_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
 			cann_esmar_area = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}
 			ryalanar_area = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}
-			konwell_area = { add_devastation = 50 }
-			bennonhill_area = { add_devastation = 50 }
-			songbarges_area = { add_devastation = 50 }
-			hearthswood_area = { add_devastation = 50 }
-			high_esmar_area = { add_devastation = 20 }
-			middle_luna_area = { add_devastation = 20 }
-			eastneck_area = { add_devastation = 20 }
+			konwell_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			bennonhill_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			songbarges_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			hearthswood_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
+			high_esmar_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			middle_luna_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			eastneck_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 
-			redglades_area = { add_devastation = 20 }
-			ionnidar_area = { add_devastation = 20 }
+			redglades_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			ionnidar_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
-			dragondepth_area = { add_devastation = 20 }
-			dragonheart_area = { add_devastation = 20 }
-			dragonmaw_area = { add_devastation = 20 }
-			olavslund_area = { add_devastation = 20 }
-			elkaesals_slumber_area = { add_devastation = 20 }
-			nyrford_area = { add_devastation = 20 }
-			naugsvol_area = { add_devastation = 20 }
-			esfjall_area = { add_devastation = 20 }
+			dragondepth_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			dragonheart_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			dragonmaw_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			olavslund_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			elkaesals_slumber_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			nyrford_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			naugsvol_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			esfjall_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 			west_castanor_region = {
 				limit = {
@@ -646,45 +1202,202 @@ country_event = { #The Dragon's Roar
 						}
 					}
 				}
-				add_devastation = 50 
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
 			}
 			balmire_area = {
-				remove_random_development = yes
-				add_devastation = 80				
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}				
 			}
-			merescker_area = { add_devastation = 20 }
-			nortmerewood_area = { add_devastation = 20 }
-			athfork_area = { add_devastation = 20 }
-			ebonmarck_area = { add_devastation = 20 }
+			merescker_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			nortmerewood_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			athfork_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			ebonmarck_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 
 			teagansfield_area = {
-				remove_random_development = yes
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
 				add_devastation = 80
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 10950
+				}
 			}
-			cursewood_area = { add_devastation = 50 }
+			cursewood_area = {
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				}  
+			}
 
 			north_ibevar_area = {
 				limit = { NOT = { province_id = 350 } }
 				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 7300
+				} 
 			}
-			south_ibevar_area = { add_devastation = 20 }
-			350 = { add_devastation = 20 }
-			whistlevale_area = { add_devastation = 20 }
+			south_ibevar_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			350 = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			whistlevale_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 			
-			nortmere_area = { add_devastation = 20 }
-			westgate_area = { add_devastation = 20 }
-			lower_nath_area = { add_devastation = 20 }
-			northyl_area = { add_devastation = 20 }
-			trialmount_area = { add_devastation = 20 }
-			castonath_area = { add_devastation = 20 }
-			southgate_area = { add_devastation = 20 }
+			nortmere_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			westgate_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			lower_nath_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			northyl_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			trialmount_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			castonath_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
+			southgate_area = {
+				add_devastation = 20
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1 
+				add_permanent_province_modifier = {
+					name = Z38_a_new_ashen_skies
+					duration = 3650
+				} 
+			} 
 			country_event = { id = flavour_kobildzan.12 days = 365 }
 		}
 		add_stability = -3
-		add_country_modifier = {
-			name = Z38_the_consequences_of_the_roar
-			duration = 3650
-		}
 
 		hidden_effect = {
 			set_country_flag = Z38_had_roar_happen
@@ -737,18 +1450,22 @@ country_event = { #Aid from Aelantir
 			}
 			multiply_variable = {
 				which = dev2add
-				value = 3
+				value = 2
 			}
 		}
 	}
 
 	option = { #Thank the dragons for Varlengeilt...
 		name = flavour_kobildzan.12.a
-		custom_tooltip = get_three_festivals_tt 
+		custom_tooltip = get_two_festivals_tt 
 		hidden_effect = {
 			set_country_flag = Z38_received_aelantir_aid
 			var_effect = { effect = add_treasury var = dev2add sign = + }
 		}
+		every_owned_province = {
+			add_devastation = -10
+		}
+		
 	}
 }
 

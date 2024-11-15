@@ -594,7 +594,7 @@ country_event = {
 			custom_tooltip = church_power_hoard_donation
 		}
 		else = {
-			var_effect = { effect = add_treasury var = dev2add sign = + }
+			currency_effect = { currency=treasury addTo=ROOT which=dev2add }
 		}
 		ai_chance = { factor = 400 }	
 	}
