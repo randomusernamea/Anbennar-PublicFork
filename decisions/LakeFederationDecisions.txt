@@ -363,6 +363,12 @@ country_decisions = {
 			has_country_modifier = human_administration
 			NOT = { exists = J33 }
 			NOT = { has_global_flag = lake_federation_disbanded }
+			if = { #Prevents released subjects from joining the fed unless you are also part of it
+				limit = { is_subject = yes }
+				overlord = {
+					has_country_modifier = lake_federation_member 
+				}
+			}
 			#ai = yes
 		}
 

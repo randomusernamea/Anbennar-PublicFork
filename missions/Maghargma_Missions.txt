@@ -559,7 +559,11 @@ maghargma_one_post_westmarches = {
 		}
 
 		effect = { 
-			serpents_vale_region = { change_culture = mossmouth_ogre }
+			custom_tooltip = maghargma_sieze_the_swamps_tt
+			tooltip = {
+				serpents_vale_region = { change_culture = mossmouth_ogre }
+			}
+			hidden_effect = { serpents_vale_region = { change_culture = mossmouth_ogre } }
 		}
 	}
 
@@ -573,7 +577,7 @@ maghargma_one_post_westmarches = {
 				religion = feast_of_the_gods
 				religion = reformed_feast_of_the_gods
 			}
-			NOT = { has_building = cathedral }
+			NOT = { has_tax_building_trigger = yes }
 		} 
 
 		trigger = {
@@ -584,7 +588,7 @@ maghargma_one_post_westmarches = {
 					religion = feast_of_the_gods
 					religion = reformed_feast_of_the_gods
 				}
-				has_building = cathedral
+				has_tax_building_trigger = yes
 			}
 		}
 
@@ -1124,7 +1128,7 @@ maghargma_two_post_trolls = {
 				AND = {
 					area = amldihr_area
 					OR = {
-						NOT = { owned_by = ROOT }
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
 						NOT = { num_of_buildings_in_province = 3 }
 					}
 				}
@@ -1138,7 +1142,7 @@ maghargma_two_post_trolls = {
 		trigger = {
 			amldihr_area = {
 				type = all
-				owned_by = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
 				num_of_buildings_in_province = 3
 			}
 			4119 = { 
@@ -1777,7 +1781,8 @@ maghargma_three = {
 				limit = { 
 					owns = 4119
 					culture_is_goblin = no
-				} 
+				}
+				maghargma_create_special_subject = yes 
 				change_primary_culture = crawler_goblin
 				add_country_modifier = {
 					name = restructuring_administration
@@ -2231,15 +2236,22 @@ maghargma_four = {
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				AND = {
 					country_or_non_sovereign_subject_holds = ROOT
+					OR = {
+						trade_goods = iron
+						trade_goods = copper
+					}
 					NOT = { has_building = weapons }
 				}
 			}
 		} 
 
 		trigger = {
-			nuzurbokh_region = {
-				type = all 
-				country_or_non_sovereign_subject_holds = ROOT
+			NOT = {
+				nuzurbokh_region = {
+					type = all 
+					is_city = yes
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 3
@@ -2249,24 +2261,33 @@ maghargma_four = {
 		}
 
 		effect = {
-			nuzurbokh_region = {
-				limit = {
-					OR = {
-						trade_goods = copper
-						trade_goods = iron
-						trade_goods = mithril
-					}
-				}
+			custom_tooltip = maghargma_the_eastern_edge_tt
+			tooltip = {
 				add_province_modifier = {
 					name = I90_strip_mining
 					duration = -1
 				}
-				if = {
-					limit = { ROOT = { mission_completed = maghargma_new_subjects } }
-					add_goblin_minority_size_effect = yes
-				}
-				add_ogre_minority_size_effect = yes
 			}
+			hidden_effect = {
+				nuzurbokh_region = {
+					limit = {
+						OR = {
+							trade_goods = copper
+							trade_goods = iron
+							trade_goods = mithril
+						}
+					}
+					add_province_modifier = {
+						name = I90_strip_mining
+						duration = -1
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { mission_completed = maghargma_new_subjects } }
+				add_goblin_minority_size_effect = yes
+			}
+			add_ogre_minority_size_effect = yes
 		}
 	}
 }
@@ -2885,34 +2906,51 @@ maghargma_five = {
 		icon = mission_green_village
 		position = 5
 		required_missions = { maghargma_consolidate_the_riverlands } 
-		provinces_to_highlight = {  
-			owner = {
-				OR = {
-					trading_bonus = {
-						trade_goods = sugar
-						value = yes
+		provinces_to_highlight = {
+			OR = {  
+				owner = {
+					OR = {
+						trading_bonus = {
+							trade_goods = sugar
+							value = yes
+						}
+						trading_bonus = {
+							trade_goods = cotton
+							value = yes
+						}
+						trading_bonus = {
+							trade_goods = tobacco
+							value = yes
+						}
+						trading_bonus = {
+							trade_goods = tea
+							value = yes
+						}
+						trading_bonus = {
+							trade_goods = silk
+							value = yes
+						}
 					}
-					trading_bonus = {
-						trade_goods = cotton
-						value = yes
-					}
-					trading_bonus = {
-						trade_goods = tobacco
-						value = yes
-					}
-					trading_bonus = {
-						trade_goods = tea
-						value = yes
-					}
-					trading_bonus = {
-						trade_goods = silk
-						value = yes
+					NOT = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
 					}
 				}
-				NOT = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+				AND = {
+					OR = {
+						area = salrun_goilust_area
+						area = alrodgaersp_area
+						area = domn_filaenan_area
+						area = eamschemb_area
+						area = itorelgea_area
+						area = egoirnasgh_area
+						area = nac_magthaal_area
+					}
+					NOT = {
+						development = 12
+						has_production_building_trigger = yes
 					}
 				}
 			}
@@ -3156,8 +3194,11 @@ maghargma_dynamic_amberlands_2 = {
 		required_missions = { maghargma_control_the_amberlands } 
 		provinces_to_highlight = {  
 			province_id = 5235
-			NOT = { local_autonomy = 25 }
-			NOT = { num_of_times_improved_by_owner = 4 }
+			OR = {
+				NOT = { local_autonomy = 25 }
+				NOT = { num_of_times_improved_by_owner = 4 }
+				NOT = { has_manpower_building_trigger = yes }
+			}
 		} 
 
 		trigger = { 
