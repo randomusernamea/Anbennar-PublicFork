@@ -3738,6 +3738,10 @@ country_event = {
 				}
 				set_country_flag = J84_mp_nuke_flag
 			}
+			europe = { ROOT = { discover_province = PREV } }
+			dameshead_sea_region = { ROOT = { discover_province = PREV } }
+			divenhal_sea_region = { ROOT = { discover_province = PREV } }
+			giants_grave_sea_region = { ROOT = { discover_province = PREV } }
 		}
 	}
 
@@ -3880,6 +3884,12 @@ country_event = {
 				}
 				set_country_flag = J84_mp_nuke_flag
 			}
+			asia = { 
+				limit = { NOT = { superregion = forbidden_lands_superregion } }
+				ROOT = { discover_province = PREV } 
+			}
+			gulf_of_rahen_region = { ROOT = { discover_province = PREV } }
+			telekenid_islands_area = { ROOT = { discover_province = PREV } }
 		}
 	}
 

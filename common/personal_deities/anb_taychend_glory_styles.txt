@@ -168,10 +168,14 @@ taychend_style_dreamer = {
 		has_country_flag = enabled_dreamer_ruler_style_flag
 	}
 	effect = {
-		hidden_effect = { update_artifice_points = yes }
+		hidden_effect = { 
+			mission_reward_artifice_points_50 = yes
+		}
 	}
 	removed_effect = {
-		hidden_effect = { update_artifice_points = yes }
+		hidden_effect = { 
+			debuff_artifice_points_50 = yes
+		}
 	}
 	sprite = 1
 	
