@@ -1029,10 +1029,7 @@ country_event = {
 		}		
 		else_if = {
 			limit = { religion = kobold_dragon_cult }
-			if ={
-				limit = { has_church_aspect = bronze_dragon_3_base }
-				remove_church_aspect = bronze_dragon_3_base
-			}
+			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 				COLOUR = bronze
 				SLOT = 3
@@ -1072,10 +1069,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { religion = kobold_dragon_cult }
-			if ={
-				limit = { has_church_aspect = bronze_dragon_3_base }
-				remove_church_aspect = bronze_dragon_3_base
-			}
+			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 				COLOUR = bronze
 				SLOT = 3

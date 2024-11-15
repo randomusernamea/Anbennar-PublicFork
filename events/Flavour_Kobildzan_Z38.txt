@@ -390,6 +390,7 @@ country_event = { #Twin Empires
 				}	
 			}
 		}
+		kdc_remove_aspect_1 = yes
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = green
 			SLOT = 1
@@ -438,6 +439,7 @@ country_event = { #Artificery As One
 				"
 			}
 		}
+		kdc_remove_aspect_2 = yes
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
 			SLOT = 2
@@ -1495,6 +1497,7 @@ country_event = { #The Prodigal Father
 				upgrade_kobold_hoard = yes	
 			}
 		}	
+		kdc_remove_aspect_3 = yes
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
 			SLOT = 3
@@ -1597,6 +1600,7 @@ country_event = { #To Awaken the Beast
 	option = { #To Elkaesal, the-- wait, what?
 		goto = 6271
 		name = flavour_kobildzan.16.a
+		kdc_remove_aspect_3 = yes
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
 			SLOT = 3
@@ -1620,6 +1624,7 @@ country_event = { #A Very Angry Lecture
 			set_country_flag = unlocked_artifice_invention_lullaby_cannon
 			set_country_flag = can_use_lullaby_cannon
 		}
+		kdc_remove_aspect_2 = yes
 		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = copper
 			SLOT = 2

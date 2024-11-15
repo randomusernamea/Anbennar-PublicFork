@@ -248,7 +248,8 @@ kob_2_a = {
 			has_institution = renaissance
 		}
 		effect = {
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			kdc_remove_aspect_1 = yes
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = blue
                 SLOT = 1
                 UPGRADE = upgraded
@@ -1058,6 +1059,7 @@ kob_1_b = {
 			ynn_superregion = {
 				add_permanent_claim = H24
 			}
+			kdc_remove_aspect_2 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = green
                 SLOT = 2
@@ -1478,7 +1480,8 @@ kob_3_b = {
 			remove_country_modifier = Z38_call_of_the_dragon_1
 			add_country_modifier = { name = Z38_call_of_the_dragon_2 duration = -1 }
 
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+            kdc_remove_aspect_1 = yes
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = copper
                 SLOT = 1
                 UPGRADE = upgraded
@@ -1629,7 +1632,7 @@ kob_4_b = {
 					duration = -1
 				}
 			}
-
+			kdc_remove_aspect_1 = yes
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = red
                 SLOT = 1
@@ -2323,7 +2326,7 @@ Kob_5b = {
 			coddorran_heights_area = { change_culture = kobildzani_kobold }
 			dragonhills_area = { change_culture = kobildzani_kobold }
 
-
+			kdc_remove_aspect_1 = yes
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = white
                 SLOT = 1
@@ -2393,6 +2396,7 @@ kob_1_c = {
 				}
 			}
 
+			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = green
                 SLOT = 3
@@ -2698,6 +2702,7 @@ kob_2_c = {
 			
 			2863 = { add_permanent_claim = ROOT }
 
+			kdc_remove_aspect_2 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = red
                 SLOT = 2
@@ -2781,6 +2786,7 @@ kob_2_c = {
 				subject_type = twin_empire
 				subject = Z56
 			}
+			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = red
                 SLOT = 3
@@ -3300,6 +3306,7 @@ kob_5_c = {
 			custom_tooltip = unlock_gerudian_kobold_traps_tt
 			hidden_effect = { set_country_flag = gerudian_traps_for_kobolds }
 
+			kdc_remove_aspect_2 = yes
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = white
                 SLOT = 2
@@ -3369,7 +3376,7 @@ kob_5_c = {
 				add_accepted_culture = olavish
 			}
 
-
+			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
                 COLOUR = copper
                 SLOT = 3

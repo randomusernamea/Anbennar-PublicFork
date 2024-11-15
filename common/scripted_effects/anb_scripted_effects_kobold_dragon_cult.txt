@@ -1,11 +1,6 @@
 unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 	set_country_flag = unlocked_$COLOUR$_dragon_$SLOT$_$UPGRADE$
 
-	if = {
-		limit = { has_church_aspect = $COLOUR$_dragon_$SLOT$_base }
-		remove_church_aspect = $COLOUR$_dragon_$SLOT$_base
-	}
-
 	tooltip = { 
 		add_country_modifier = {
 			name = $COLOUR$_dragon_$SLOT$_$UPGRADE$
@@ -14,6 +9,87 @@ unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 		}
 	}
 	add_church_aspect = $COLOUR$_dragon_$SLOT$_$UPGRADE$
+}
+
+kdc_remove_aspect_1 = {
+	remove_church_aspect = red_dragon_1_base
+	remove_church_aspect = red_dragon_1_upgraded
+	remove_church_aspect = blue_dragon_1_base
+	remove_church_aspect = blue_dragon_1_upgraded
+	remove_church_aspect = green_dragon_1_base
+	remove_church_aspect = green_dragon_1_upgraded
+	remove_church_aspect = black_dragon_1_base
+	remove_church_aspect = black_dragon_1_upgraded		
+	remove_church_aspect = white_dragon_1_base
+	remove_church_aspect = white_dragon_1_upgraded	
+	remove_church_aspect = purple_dragon_1_base
+	remove_church_aspect = purple_dragon_1_upgraded
+	remove_church_aspect = brown_dragon_1_base
+	remove_church_aspect = brown_dragon_1_upgraded
+	remove_church_aspect = brass_dragon_1_base
+	remove_church_aspect = brass_dragon_1_upgraded
+	remove_church_aspect = copper_dragon_1_base
+	remove_church_aspect = copper_dragon_1_upgraded
+	remove_church_aspect = bronze_dragon_1_base
+	remove_church_aspect = bronze_dragon_1_upgraded
+	remove_church_aspect = silver_dragon_1_base
+	remove_church_aspect = silver_dragon_1_upgraded
+	remove_church_aspect = gold_dragon_1_base
+	remove_church_aspect = gold_dragon_1_upgraded
+}
+
+kdc_remove_aspect_2 = {
+    remove_church_aspect = red_dragon_2_base
+    remove_church_aspect = red_dragon_2_upgraded
+    remove_church_aspect = blue_dragon_2_base
+    remove_church_aspect = blue_dragon_2_upgraded
+    remove_church_aspect = green_dragon_2_base
+    remove_church_aspect = green_dragon_2_upgraded
+    remove_church_aspect = black_dragon_2_base
+    remove_church_aspect = black_dragon_2_upgraded      
+    remove_church_aspect = white_dragon_2_base
+    remove_church_aspect = white_dragon_2_upgraded  
+    remove_church_aspect = purple_dragon_2_base
+    remove_church_aspect = purple_dragon_2_upgraded
+    remove_church_aspect = brown_dragon_2_base
+    remove_church_aspect = brown_dragon_2_upgraded
+    remove_church_aspect = brass_dragon_2_base
+    remove_church_aspect = brass_dragon_2_upgraded
+    remove_church_aspect = copper_dragon_2_base
+    remove_church_aspect = copper_dragon_2_upgraded
+    remove_church_aspect = bronze_dragon_2_base
+    remove_church_aspect = bronze_dragon_2_upgraded
+    remove_church_aspect = silver_dragon_2_base
+    remove_church_aspect = silver_dragon_2_upgraded
+    remove_church_aspect = gold_dragon_2_base
+    remove_church_aspect = gold_dragon_2_upgraded
+}
+
+kdc_remove_aspect_3 = {
+    remove_church_aspect = red_dragon_3_base
+    remove_church_aspect = red_dragon_3_upgraded
+    remove_church_aspect = blue_dragon_3_base
+    remove_church_aspect = blue_dragon_3_upgraded
+    remove_church_aspect = green_dragon_3_base
+    remove_church_aspect = green_dragon_3_upgraded
+    remove_church_aspect = black_dragon_3_base
+    remove_church_aspect = black_dragon_3_upgraded      
+    remove_church_aspect = white_dragon_3_base
+    remove_church_aspect = white_dragon_3_upgraded  
+    remove_church_aspect = purple_dragon_3_base
+    remove_church_aspect = purple_dragon_3_upgraded
+    remove_church_aspect = brown_dragon_3_base
+    remove_church_aspect = brown_dragon_3_upgraded
+    remove_church_aspect = brass_dragon_3_base
+    remove_church_aspect = brass_dragon_3_upgraded
+    remove_church_aspect = copper_dragon_3_base
+    remove_church_aspect = copper_dragon_3_upgraded
+    remove_church_aspect = bronze_dragon_3_base
+    remove_church_aspect = bronze_dragon_3_upgraded
+    remove_church_aspect = silver_dragon_3_base
+    remove_church_aspect = silver_dragon_3_upgraded
+    remove_church_aspect = gold_dragon_3_base
+    remove_church_aspect = gold_dragon_3_upgraded
 }
 
 upgrade_kobold_hoard = {
