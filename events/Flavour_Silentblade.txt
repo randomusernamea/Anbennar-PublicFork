@@ -219,11 +219,11 @@ country_event = {
 		name = silentblade.8.a
 		kill_ruler = yes
 		define_ruler = {
-			name = "Krakhorn"
-			dynasty = "Brokentusk"
-			adm = 1
-			dip = 1
-			mil = 3
+			name = "Lazga"
+			dynasty = "Cursed Howl"
+			adm = 2
+			dip = 0
+			mil = 4
 			age = 31
 			claim = 50
 		}
@@ -238,7 +238,8 @@ country_event = {
 	}
 	option = {
 		name = silentblade.8.b
-		add_stability = -1
+		add_stability = -2
+		add_legitimacy = -50
 		hidden_effect = {
 			I43 = {
 				country_event = { 
@@ -262,7 +263,8 @@ country_event = {
 	
 	trigger = {}
 	option = {
-		name = silentblade.9.b
+		name = silentblade.9.a
+		custom_tooltip = silentblade.9.a.tt
 	}
 }
 
@@ -279,6 +281,7 @@ country_event = {
 	trigger = {}
 	option = {
 		name = silentblade.10.a
+		custom_tooltip = silentblade.10.a.tt
 	}
 }
 
@@ -326,7 +329,7 @@ country_event = {
 
 	option = {
 		name = silentblade.11.c
-		add_stability = -1
+		add_mil_power = 10
 	}
 }
 
@@ -497,10 +500,6 @@ country_event = {
 		name = silentblade.17.a
 
 		kill_ruler = yes
-	}
-	option = {
-		name = silentblade.17.b
-		add_stability = -1
 	}
 }
 
