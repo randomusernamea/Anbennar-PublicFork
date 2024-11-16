@@ -3063,28 +3063,7 @@ country_event = { #Technocracy Election
 			NOT = { has_country_flag = technocracy_death_election }
 		}
 		name = elections.900.a # Current ruler stays
-		ai_chance = { 
-			factor = 60
-			modifier = {
-				factor = 0
-				NOT = {
-					OR = {
-						AND = {
-							faction_in_power = tec_brilliance
-							has_ruler_flag = brillite_ruler
-						}
-						AND = {
-							faction_in_power = tec_technomancy
-							has_ruler_flag = technomancy_ruler
-						}
-						AND = {
-							faction_in_power = tec_mechanists
-							has_ruler_flag = mechanists_ruler
-						}
-					}				
-				}
-			}
-		}
+		ai_chance = { factor = 0 }
 
 		if = {
 			limit = {
@@ -3110,26 +3089,7 @@ country_event = { #Technocracy Election
 			}
 		}
 		if = {
-			limit = { 
-				OR = {
-					AND = {
-						faction_in_power = tec_brilliance
-						has_ruler_flag = brillite_ruler
-					}
-					AND = {
-						faction_in_power = tec_technomancy
-						has_ruler_flag = technomancy_ruler
-					}
-					AND = {
-						faction_in_power = tec_mechanists
-						has_ruler_flag = mechanists_ruler
-					}
-				}
-			}
-			custom_tooltip = right_faction_tooltip
-		}
-		else = {
-			custom_tooltip = wrong_ruler_faction_tooltip
+			limit = { ai = no }
 			if = {	#long-lived races
 				limit = {
 					OR = {
@@ -3138,25 +3098,24 @@ country_event = { #Technocracy Election
 						has_country_modifier = dwarven_administration
 					}
 				}
-				add_scaled_republican_tradition = -3
+				add_scaled_republican_tradition = -1.5
 			}
 			else = {
 				if = {
 					limit = {
 						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -15
+					add_scaled_republican_tradition = -7.5
 					clr_country_flag = increased_election_cost
 				}
 				else = {
-					add_scaled_republican_tradition = -10
+					add_scaled_republican_tradition = -5
 				}
 			}
-		}	
+		}
 	}
 	option = {
 		name = elections.900.b # Brillite Ruler
-
 		if = {
 			limit = {
 				has_country_flag = giberd_faction_competition_enabled
@@ -3165,7 +3124,10 @@ country_event = { #Technocracy Election
 		}
 
 		if = { 
-			limit = { NOT = { faction_in_power = tec_brilliance } }
+			limit = {
+				ai = no
+				faction_in_power = tec_brilliance 
+			}
 			custom_tooltip = wrong_ruler_faction_tooltip 
 			if = {	#long-lived races
 				limit = {
@@ -3191,9 +3153,9 @@ country_event = { #Technocracy Election
 			}
 		}
 		define_ruler = {
-			adm = 3
-			dip = 1
-			mil = 0
+			adm = 2
+			dip = 0
+			mil = 1
 		}
 		if = {
 			limit = {
@@ -3299,7 +3261,10 @@ country_event = { #Technocracy Election
 		}
 
 		if = { 
-			limit = { NOT = { faction_in_power = tec_technomancy } }
+			limit = {
+				ai = no
+				faction_in_power = tec_technomancy 
+			}
 			custom_tooltip = wrong_ruler_faction_tooltip 
 			if = {	#long-lived races
 				limit = {
@@ -3432,7 +3397,10 @@ country_event = { #Technocracy Election
 		}
 
 		if = { 
-			limit = { NOT = { faction_in_power = tec_mechanists } }
+			limit = {
+				ai = no
+				faction_in_power = tec_mechanists 
+			} 
 			custom_tooltip = wrong_ruler_faction_tooltip
 			if = {	#long-lived races
 				limit = {
@@ -3460,7 +3428,7 @@ country_event = { #Technocracy Election
 		define_ruler = {
 			adm = 0
 			dip = 1
-			mil = 3
+			mil = 2
 		}
 		if = {
 			limit = {
