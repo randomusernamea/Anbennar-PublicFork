@@ -627,7 +627,6 @@ floodborn_council_mechanic = {
 				random_hired_mercenary_company = { limit = { template = merc_wyvernheart_burnblood_company_6_2 } add_company_manpower = 0.25 }
 				random_hired_mercenary_company = { limit = { template = merc_wyvernheart_burnblood_company_6_3 } add_company_manpower = 0.25 }
 				random_hired_mercenary_company = { limit = { template = merc_wyvernheart_burnblood_company_6_4 } add_company_manpower = 0.25 }
-				clr_country_flag = wyvernheart_free_core
 				if = {
 					limit = { any_owned_province = { NOT = { is_core = ROOT } } NOT = { has_country_flag = wyvernheart_free_core } }
 					hidden_effect = {
