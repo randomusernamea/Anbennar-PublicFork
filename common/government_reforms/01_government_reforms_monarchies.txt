@@ -5090,7 +5090,7 @@ drakonshani_dominion = { #skewered drake
 	valid_for_nation_designer = no
 
 	modifiers = {
-		cav_to_inf_ratio = 0.25
+		cav_to_inf_ratio = 0.30
 		special_unit_forcelimit = 0.15
 		max_absolutism = 10
 	}
@@ -5503,7 +5503,7 @@ phoenix_akalate = {
 }
 
 damerian_monarchy = {
-	icon = "british_queen"
+	icon = "damerian_monarchy"
 	allow_normal_conversion = no
 	potential = {
 		OR = {
@@ -11852,6 +11852,7 @@ harpy_matriarchy_reform = {
 			ruler_culture = firanyan_harpy
 			ruler_culture = siadunan_harpy
 			ruler_culture = nzeri_harpy
+			ruler_culture = nuzenapu_harpy
 		}
 	}
 	legacy_equivalent = ottoman_government_legacy
@@ -11889,6 +11890,7 @@ harpy_matriarchy_ayarallen_early_gov_mechanic_reform = {
 			ruler_culture = firanyan_harpy
 			ruler_culture = siadunan_harpy
 			ruler_culture = nzeri_harpy
+			ruler_culture = nuzenapu_harpy
 		}
 	}
 	legacy_equivalent = ottoman_government_legacy
@@ -12333,6 +12335,7 @@ blorc_monarchy_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		dwarovar_orc_culture_primary = yes
+		NOT = { tag = H73 }
 	}
 	trigger = {
 		dwarovar_orc_culture_primary = yes
@@ -12581,7 +12584,7 @@ lotus_seat_reform = {
 			AND = {
 				culture_group = harimari
 				religion = high_philosophy
-				capital_scope = { superregion = north_haless_superregion }
+				capital_scope = { superregion = gozengun_superregion }
 			}
 			have_had_reform = lotus_seat_reform
 		}
@@ -12591,7 +12594,7 @@ lotus_seat_reform = {
 	nation_designer_trigger = {
 		culture_group = harimari
 		religion = high_philosophy
-		capital_scope = { superregion = north_haless_superregion }
+		capital_scope = { superregion = gozengun_superregion }
 	}
 	legacy_equivalent = shogunate_legacy
 	maintain_dynasty = yes
@@ -13252,6 +13255,7 @@ honor_the_senators = {
 	effect = {
 		custom_tooltip = new_parliament_issues_tt
 	}
+	ai = { factor = 2 }
 }
 
 ties_with_anbennarian_nobility = {
@@ -13261,13 +13265,13 @@ ties_with_anbennarian_nobility = {
 	potential = {
 		NOT = { culture_group = anbennarian }
 		OR = {
-		is_part_of_hre = yes
-		is_emperor = yes
-		tag = Z01 # Anbennar
+			is_part_of_hre = yes
+			is_emperor = yes
+			tag = Z01 # Anbennar
 		}
 		OR = {
-		capital_scope = { superregion = western_cannor_superregion }
-		tag = Z01 # Anbennar
+			capital_scope = { superregion = western_cannor_superregion }
+			tag = Z01 # Anbennar
 		}
 	}
 	modifiers = {
@@ -13283,14 +13287,14 @@ ties_with_anbennarian_nobility = {
 				hidden = yes
 			}
 			every_heretic_province = {
-					limit = {is_anbennarian_imperial_culture = yes}
-					add_province_modifier = { 
-						name = gov_empire_heretic
-						duration = -1
-					}
+				limit = { is_anbennarian_imperial_culture = yes }
+				add_province_modifier = { 
+					name = gov_empire_heretic
+					duration = -1
 				}
 			}
 		}
+	}
 	removed_effect = {
 		hidden_effect = {
 			remove_country_modifier = gov_ties_with_anbennarian_I
@@ -13298,11 +13302,12 @@ ties_with_anbennarian_nobility = {
 			remove_country_modifier = gov_ties_with_anbennarian_III
 			remove_country_modifier = gov_ties_with_anbennarian_IV
 			every_heretic_province = {
-				limit = {is_anbennarian_imperial_culture = yes}
+				limit = { is_anbennarian_imperial_culture = yes }
 				remove_province_modifier = gov_empire_heretic
 			}
 		}
 	}
+	ai = { factor = 1 }
 }
 
 strengthen_elves_privileges = {
@@ -13310,14 +13315,14 @@ strengthen_elves_privileges = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-		culture = farrani_half_elf
-		culture_group = lencori
-		culture_group = anbennarian
+			culture = farrani_half_elf
+			culture_group = lencori
+			culture_group = anbennarian
 		}
 	}
 	trigger = {
-		NOT = {has_country_modifier = racial_pop_elven_purge}
-		NOT = {has_country_modifier = racial_pop_elven_expulsion}
+		NOT = { has_country_modifier = racial_pop_elven_purge }
+		NOT = { has_country_modifier = racial_pop_elven_expulsion }
 	}
 	modifiers = {
 		ae_impact = -0.10
@@ -13364,6 +13369,7 @@ strengthen_elves_privileges = {
 			}
 		}
 	}
+	ai = { factor = 1 }
 }
 
 empower_magnate_council = {
@@ -13387,5 +13393,82 @@ empower_magnate_council = {
 		primacy_of_nobility_harsher = yes
 		disable_noble_land_right = yes
 		burghers_land_right_streghtened = yes
+	}
+	ai = { factor = 1 }
+}
+
+imperial_esmari_circle = {
+	icon = "map"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = unlocked_imperial_esmari_circle
+		capital_scope = { region = esmaria_region }
+	}
+	modifiers = {
+		trade_efficiency = 0.1
+		development_cost_in_primary_culture = -0.10
+		diplomatic_annexation_cost = -0.1
+	}
+	conditional = {
+		allow = { has_dlc = "Mandate of Heaven" }
+		custom_attributes = {
+			unlock_special_state_edicts = yes
+		}
+	}
+}
+
+floodborn_council_reform = {
+	icon = "asian_scripture"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	block_cultural_union = yes
+	legacy_equivalent = despotic_monarchy
+	potential = {
+		mission_completed = the_red_flood
+		NOT = { mission_completed = imbue_the_royals }
+	}
+	valid_for_nation_designer = yes
+	modifiers = {
+		governing_capacity_modifier = 0.15
+		global_unrest = 2
+	}
+	government_abilities = {
+		floodborn_council_mechanic
+	}
+	custom_attributes = {
+		disabled_expelling = yes
+		disabled_purging = yes
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 0.75 #generic
+	}
+}
+floodborn_council_reform_always_mage = {
+	icon = "asian_scripture"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	block_cultural_union = yes
+	legacy_equivalent = despotic_monarchy
+	potential = {
+		mission_completed = imbue_the_royals
+	}
+	valid_for_nation_designer = yes
+	modifiers = {
+		governing_capacity_modifier = 0.15
+		global_unrest = 2
+	}
+	government_abilities = {
+		floodborn_council_mechanic
+	}
+	custom_attributes = {
+		always_mage = yes
+		disabled_expelling = yes
+		disabled_purging = yes
+		locked_government_type = yes
+		blocked_call_diet = yes
+	}
+	ai = {
+		factor = 0.75 #generic
 	}
 }
