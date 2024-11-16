@@ -581,18 +581,48 @@ maghargma_one_post_westmarches = {
 		} 
 
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 4
-				region = serpents_vale_region
-				OR = {
-					religion = feast_of_the_gods
-					religion = reformed_feast_of_the_gods
+			OR = {
+				AND = {
+					treasury = 1000
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 4
+						region = serpents_vale_region
+						OR = {
+							religion = feast_of_the_gods
+							religion = reformed_feast_of_the_gods
+						}
+						has_building = temple
+					}
 				}
-				has_tax_building_trigger = yes
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					region = serpents_vale_region
+					OR = {
+						religion = feast_of_the_gods
+						religion = reformed_feast_of_the_gods
+					}
+					has_building = cathedral
+				}
 			}
 		}
 
-		effect = { country_event = { id = flavor_maghargma.8 }  } #Shared Tastes
+		effect = { 
+			if = {
+				limit = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 4
+						region = serpents_vale_region
+						OR = {
+							religion = feast_of_the_gods
+							religion = reformed_feast_of_the_gods
+						}
+						has_building = cathedral
+					}
+				}
+			}
+			else = { add_treasury = -1000 }
+			country_event = { id = flavor_maghargma.8 }  #Shared Tastes
+		} 
 	}
 
 	maghargma_far_far_away = { #Hey Now You're a......
