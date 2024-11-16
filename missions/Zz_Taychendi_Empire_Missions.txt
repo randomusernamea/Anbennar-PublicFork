@@ -367,13 +367,7 @@ J84_1_missions = {
 					loyalty = 50
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = J84_30_artifice_capacity
-				check_variable = {
-					which = MaxArtificePoints
-					value = 30
-				}
-			}
+			artifice_has_points_30 = yes
 		}
 
 		effect = {
