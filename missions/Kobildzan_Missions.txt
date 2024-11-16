@@ -1007,7 +1007,7 @@ kob_1_b = {
 			}
 
 
-			1165 = { trade_share = { country = ROOT share = 60 } }
+			1165 = { trade_share = { country = ROOT share = 50 } }
 			1492 = { trade_share = { country = ROOT share = 60 } }
 			1576 = { trade_share = { country = ROOT share = 60 } }
 		}
@@ -3035,6 +3035,7 @@ kob_3_c = {
 			Z38_eclipsing_a_dragon
 			Z38_pilgrimage_to_the_hoard
 			Z38_the_alosian_skald_cult
+			Z38_interview_with_a_dragon
 			Z38_last_gasps_of_heresy
 		}
 
@@ -3061,7 +3062,7 @@ kob_3_c = {
 			}
 
 			num_of_provinces_owned_or_owned_by_subjects_with = {
-				value = 300
+				value = 500
 				OR = {
 					religion = kobold_dragon_cult
 					religion = drozma_tur
@@ -3183,14 +3184,14 @@ kob_4_c = {
 				tooltip = artifice_unlocked_expert_tt 
 				has_country_flag = artifice_unlocked_expert
 			}
-			dragon_coast_region = { has_courthouse_building_trigger = yes }
-			coddorran_heights_area = { has_courthouse_building_trigger = yes }
-			crown_land_share = 50
-
+			dragon_coast_region = { type = all has_courthouse_building_trigger = yes }
+			coddorran_heights_area = { type = all has_courthouse_building_trigger = yes }
+			crown_land_share = 70
+			check_variable = { which = MaxArtificePoints value = 100 }
 			OR = {
-				faction_influence = { influence = 90 faction = tec_brilliance }
-				faction_influence = { influence = 90 faction = tec_mechanists }
-				faction_influence = { influence = 90 faction = tec_technomancy }
+				innovativeness = 100
+				army_tradition = 90
+				army_professionalism = 1
 			}
 		}
 
@@ -3283,29 +3284,50 @@ kob_4_c = {
 					employed_advisor = { category = MIL skill = 3 }
 				}
 			}
-
-			trading_bonus = {
-				trade_goods = precursor_relics
-				value = yes
+			calc_true_if = {
+				amount = 4
+				trading_bonus = {
+					trade_goods = precursor_relics
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = damestear
+					value = yes
+				}	
+				trading_bonus = {
+					trade_goods = chinaware
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = ivory
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = dyes
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = cloth
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = paper
+					value = yes
+				}
+				trading_bonus = {
+					trade_goods = fungi
+					value = yes
+				}
 			}
-
-			if = {
-				limit = {
-					has_dlc = "Mandate of Heaven"
-				}
-				custom_trigger_tooltip = {
-					tooltip = age_rewards_5_tt 
-					num_of_age_rewards_taken = { amount = 5 }
-				}
+			OR = {
+				has_reform_on_level = 13
+				trade_efficiency = 1
+				num_of_missionaries = 5
 			}
 		}
 
 		effect = {
 			country_event = { id = flavour_kobildzan.15 }
-
-			add_adm_power = 100
-			add_dip_power = 100
-			add_mil_power = 100
 		}
 	}
 }
@@ -3325,6 +3347,7 @@ kob_5_c = {
 		position = 13
 		required_missions = { 
 			Z38_traders_and_traitors
+			Z38_in_raw_desperation
 		}
 
 		provinces_to_highlight = {
@@ -3449,12 +3472,52 @@ kob_5_c = {
 		}
 
 		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 6271
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { infantry_in_province = 40 }
+					}
+				}
+				AND = {
+					religion = skaldhyrric_faith
+					OR = {
+						continent = europe
+						continent = north_america
+						region = northern_pass_region
+					}
+				}
+			}
 		}
 
 		trigger = {
-			NOT = { any_province = { religion = skaldhyrric_faith } }
-			6271 = { infantry_in_province = 40 }
 			
+			custom_trigger_tooltip = {
+				tooltip = skaldy_province_tt
+				NOT = {
+					europe = {
+						type = any
+						religion = skaldhyrric_faith
+					}
+				}
+				NOT = {
+					north_america = {
+						type = any
+						religion = skaldhyrric_faith
+					}
+				}
+				NOT = {
+					northern_pass_region = {
+						type = any
+						religion = skaldhyrric_faith
+					}
+				}
+			}
+			6271 = {
+				owned_by = ROOT
+				infantry_in_province = 40 
+			}
 			has_church_aspect = white_dragon_1_upgraded
 			has_church_aspect = white_dragon_2_upgraded
 			has_church_aspect = white_dragon_3_base

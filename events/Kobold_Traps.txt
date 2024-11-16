@@ -2236,7 +2236,7 @@ country_event = { # Handler Event
 	immediate = {
 		hidden_effect = {
 			random_list = {
-				50 = { }
+				35 = { }
 				10 = { #Garrison Proves Potential
 					trigger = { NOT = { has_country_flag = garrison_proves_potential } }
 					country_event = { id = kobold_traps.20 } 
@@ -2599,19 +2599,19 @@ country_event = { # Massive Malfunction
 				}
 			}
 		}
-		add_manpower = -0.05
+		add_yearly_manpower = -0.05
 	}
 	option = { # We'll extract them, but the trap must stay!
 		name = kobold_traps.24.b 
 		random_list = {
 			70 = {
 				custom_tooltip = "We rescue the trapped kobolds with minimal losses!"
-				add_manpower = -0.1
+				add_yearly_manpower = -0.5
 				add_army_tradition = 5
 			}
 			30 = {
 				custom_tooltip = "It's a disaster! The traps break everything and everyone!"
-				add_manpower = -1
+				add_yearly_manpower = -1
 				add_army_tradition = -5
 			}
 		}
