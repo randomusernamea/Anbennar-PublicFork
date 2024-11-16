@@ -1315,11 +1315,21 @@ country_decisions = {
 	uanced_nation = {
 		major = yes
 		potential = {
+			OR = {
+				has_country_flag = reformed_escanni_adventurer
+				has_country_flag = formed_adenica_flag
+				has_country_flag = formed_castellyr_flag
+				has_country_flag = formed_farranean_flag
+				has_country_flag = formed_corintar_flag
+				tag = B36
+			}
 			capital_scope = { province_group = escann_proper }
 			796 = { owned_by = ROOT }
-			NOT = { is_or_was_tag = { tag = B32 } } #Castanor cannot into Uanced
-			NOT = { is_or_was_tag = { tag = Z34 } }	#Black Castanor cannot into Uanced
+			was_never_end_game_tag_trigger = yes
+			NOT = { tag = B33 } #Blademarches
+			NOT = { is_or_was_tag = { tag = B95 } }
 			has_disaster = internal_conflicts
+			
 		}
 		
 		provinces_to_highlight = {
@@ -1335,8 +1345,6 @@ country_decisions = {
 					has_rebel_faction = particularist_rebels
 				}
 			}
-			NOT = { is_or_was_tag = { tag = B32 }} #Castanor cannot into Uanced
-			NOT = { is_or_was_tag = { tag = Z34 } }	#Black Castanor cannot into Uanced
 			has_disaster = internal_conflicts
 		}
 		effect = {
