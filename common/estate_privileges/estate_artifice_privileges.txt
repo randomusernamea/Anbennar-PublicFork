@@ -6740,7 +6740,10 @@ artifice_invention_elemental_gunpowder = {
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
 		has_country_flag = unlocked_artifice_invention_elemental_gunpowder
-		has_country_modifier = goblin_military
+		OR = {
+			has_country_modifier = goblin_military
+			has_country_flag = can_use_elemental_gunpowder
+		}
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_elemental_gunpowder
@@ -6749,7 +6752,10 @@ artifice_invention_elemental_gunpowder = {
 	can_select = {
         ai = yes
 		artifice_has_points_30 = yes
-		has_country_modifier = goblin_military
+		OR = {
+			has_country_modifier = goblin_military
+			has_country_flag = can_use_elemental_gunpowder
+		}
 	}
 	can_revoke = {
 		hidden_trigger = {

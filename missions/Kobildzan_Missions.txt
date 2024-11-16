@@ -2517,22 +2517,35 @@ kob_1_c = {
 		}
 
 		trigger = {		
-			OR = {
-				1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } }
-				treasury = 10000
+			custom_trigger_tooltip = {
+				tooltip = dam1_or_money_tt
+				OR = {
+					1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } }
+					treasury = 10000
+				}
 			}
-			OR = {
-				1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } }
-				treasury = 10000
+			custom_trigger_tooltip = {
+				tooltip = dam2_or_money_tt
+				OR = {
+					1138 = { has_great_project = { type = ynnic_dam_vels_bacar tier = 3 } }
+					treasury = 10000
+				}
 			}
-			OR = {
-				1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } }
-				treasury = 10000
+			custom_trigger_tooltip = {
+				tooltip = dam3_or_money_tt
+				OR = {
+					1165 = { has_great_project = { type = ynnic_dam_bosancovac tier = 3 } }
+					treasury = 10000
+				}
 			}
-			OR = {
-				1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } }
-				treasury = 10000
-			}				
+			custom_trigger_tooltip = {
+				tooltip = dam4_or_money_tt
+				OR = {
+					1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } }
+					treasury = 10000
+				}
+			}
+				
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = unlocked_brass_dragon_tt 
@@ -2558,15 +2571,6 @@ kob_1_c = {
 		}
 
 		effect = {
-			add_country_modifier = {
-				name = Z38_eclipising_dragon_modifier
-				duration = 7300
-			}
-
-			add_permanent_power_projection = {
-				type = 25_permanent_power_projection
-				amount = 25
-			}
 			if = {
 				limit = { NOT = { 1133 = { has_great_project = { type = ynnic_dam_adbrabohvi tier = 3 } } } }
 				add_treasury = -10000
@@ -2583,7 +2587,71 @@ kob_1_c = {
 				limit = { NOT = { 1186 = { has_great_project = { type = ynnic_dam_mocbarja tier = 3 } } } }
 				add_treasury = -10000
 			}
+			complex_dynamic_effect_without_alternative = {
+				first_custom_tooltip = brass_quest_2_if_tt
+				first_limit = "has_country_flag = unlocked_brass_dragon_2_upgraded"
+				first_effect = "
+					custom_tooltip = command_screwed_tt
+					hidden_effect = {
+						R62 = {
+							add_country_modifier = {
+								name = Z38_brass_sabotage #lex
+								duration = 7300
+							}
+						}
+					}
+				"
+				second_custom_tooltip = bronze_quest_2_if_tt
+				second_limit = "has_country_flag = unlocked_bronze_dragon_2_upgraded"
+				second_effect = "
+					custom_tooltip = planetouched_general_tt
+					hidden_effect = {
+						define_general = {
+							fire = 4
+							shock = 5
+							manuever = 5
+							siege = 2
+							trait = planetouched_commander_personality
+						}					
+					}				
+				"
+				third_custom_tooltip = purple_quest_2_if_tt
+				third_limit = "has_country_flag = unlocked_purple_dragon_2_upgraded"
+				third_effect = "
+					custom_tooltip = unlock_gunpowder_tt 
+					hidden_effect = {
+						set_country_flag = unlocked_artifice_invention_elemental_gunpowder  
+						set_country_flag = can_use_elemental_gunpowder
+					}
+				"
+				fourth_custom_tooltip = silver_quest_2_if_tt
+				fourth_limit = "has_country_flag = unlocked_silver_dragon_2_upgraded"
+				fourth_effect = "
+					custom_tooltip = all_silver_countries 
+					hidden_effect = {
+						cannorian_holy_sites = {
+							owner = {
+								change_religion = kobold_dragon_cult
+							}
+						}
+					}
+				"
+				fifth_custom_tooltip = gold_quest_2_if_tt
+				fifth_limit = "has_country_flag = unlocked_gold_dragon_2_upgraded"
+				fifth_effect = "
+					custom_tooltip = kobold_gold_cores_tt
+					hidden_effect = {
+						yanshen_superregion = {
+							limit = {
+								has_any_kobold_pop_trigger = yes
+							}
+							add_core = Y85
+						}
+					}
+				"
+			}
 		}
+
 	}
 }
 kob_2_c = {

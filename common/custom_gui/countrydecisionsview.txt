@@ -6312,13 +6312,19 @@ custom_button = {
 	tooltip = racial_military_invention_3_tt
 	potential = {
 		has_country_flag = artifice_invention_menu_open_cultural
-		has_country_modifier = goblin_military
+		OR = {
+			has_country_modifier = goblin_military
+			has_country_flag = can_use_elemental_gunpowder
+		}	
 	}
 	frame = {
 		number = 1
 		trigger = {
 			NOT = {
-				has_country_flag = unlocked_artifice_invention_eplusplus_compound
+				OR = {
+					has_country_modifier = goblin_military
+					has_country_flag = can_use_elemental_gunpowder
+				}	
 			}
 		}
 	}
@@ -6326,20 +6332,33 @@ custom_button = {
 		number = 2
 		trigger = {
 			NOT = {
-				has_estate_privilege = artifice_invention_eplusplus_compound
+				OR = {
+					has_estate_privilege = artifice_invention_eplusplus_compound
+					has_estate_privilege = artifice_invention_elemental_gunpowder
+				}	
 			}
-			has_country_flag = unlocked_artifice_invention_eplusplus_compound
+			OR = {
+				has_country_flag = unlocked_artifice_invention_eplusplus_compound
+				has_country_flag = can_use_elemental_gunpowder
+			}	
 		}
 	}
 	frame = {
 		number = 3
 		trigger = {
-			has_estate_privilege = artifice_invention_eplusplus_compound
+			OR = {
+				has_estate_privilege = artifice_invention_eplusplus_compound
+				has_estate_privilege = artifice_invention_elemental_gunpowder
+			}
 		}
 	}
 	trigger = {
 		hidden_trigger = {
-			has_country_flag = unlocked_artifice_invention_eplusplus_compound
+			OR = {
+				has_country_flag = unlocked_artifice_invention_eplusplus_compound
+				has_country_flag = can_use_elemental_gunpowder
+			}
+			
 		}
 	}
 	effect = { 
@@ -6373,6 +6392,38 @@ custom_button = {
 					has_estate_privilege = artifice_invention_eplusplus_compound
 				}
 				remove_estate_privilege = artifice_invention_eplusplus_compound
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = can_use_elemental_gunpowder
+			}
+			if = {
+				limit = {
+					artifice_can_select_invention_30 = yes
+					NOT = {
+						has_estate_privilege = artifice_invention_elemental_gunpowder
+					}
+				}
+				set_estate_privilege = artifice_invention_elemental_gunpowder
+			}
+			else_if = {
+				limit = {
+					artifice_can_select_invention_30 = no
+					NOT = {
+						has_estate_privilege = artifice_invention_elemental_gunpowder
+					}
+				}
+				custom_tooltip = artifice_cannot_afford_invention
+				tooltip = {
+					set_estate_privilege = artifice_invention_elemental_gunpowder
+				}
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = artifice_invention_elemental_gunpowder
+				}
+				remove_estate_privilege = artifice_invention_elemental_gunpowder
 			}
 		}
 	}
