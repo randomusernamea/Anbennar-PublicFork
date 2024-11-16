@@ -1886,22 +1886,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = taychendi_empire_events.29.aa #Generic
-		trigger = {
-			NOT = {
-				has_country_flag = J84_is_mihaela_flag
-				was_tag = G64 #Larankar
-				was_tag = G74 #Gophira
-				was_tag = G81 #Sthanan ith Vussam
-				was_tag = J85 #Nanru Nakar
-	
-				#Evil 1444 Tags
-				was_tag = G80 #Imarchend
-				was_tag = J75 #Rakkabuttai
-				was_tag = G75 #Sibisimra
-				was_tag = J81 #Parahechend
-			}
-		}
+		name = taychendi_empire_events.29.a #Generic
 		custom_tooltip = J84_aelantir_claims_tt
 		custom_tooltip = J84_subjugate_aelantir_tt
 		hidden_effect = {
@@ -1916,111 +1901,6 @@ country_event = {
 						} 
 					} 
 				}
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.aevil #Evil
-		trigger = {
-			NOT = { has_country_flag = J84_is_mihaela_flag }
-			OR = {
-				#Evil 1444 Tags
-				was_tag = G80 #Imarchend
-				was_tag = J75 #Rakkabuttai
-				was_tag = G75 #Sibisimra
-				was_tag = J81 #Parahechend
-			}
-		}
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.avampire #Mihaela
-		trigger = { has_country_flag = J84_is_mihaela_flag }
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.alarankar #Larankar
-		trigger = {
-			NOT = { has_country_flag = J84_is_mihaela_flag }
-			was_tag = G64 #Larankar
-		}
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.agophira #Gophira
-		trigger = {
-			NOT = { has_country_flag = J84_is_mihaela_flag }
-			was_tag = G74 #Gophira
-		}
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.asthanan #Sthanan
-		trigger = {
-			NOT = { has_country_flag = J84_is_mihaela_flag }
-			was_tag = G81 #Sthanan ith Vussam
-		}
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
-				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
-			}
-		}
-	}
-
-	option = {
-		name = taychendi_empire_events.29.anakar #Nanru Nakar
-		trigger = {
-			NOT = { has_country_flag = J84_is_mihaela_flag }
-			was_tag = J85 #Nanru Nakar
-		}
-		custom_tooltip = J84_aelantir_claims_tt
-		custom_tooltip = J84_subjugate_aelantir_tt
-		hidden_effect = {
-			north_america = { add_permanent_claim = ROOT } south_america = { add_permanent_claim = ROOT }
-			every_country = {
-				limit = { capital_scope = { OR = { continent = north_america continent = south_america } } }
 				reverse_add_casus_belli = { target = ROOT type = cb_vassalize_mission months = 1200 } #100 years
 			}
 		}
@@ -3654,16 +3534,6 @@ country_event = {
 	desc = taychendi_empire_events.502.da
 	picture = ANB_GLOBAL_TRADE_eventPicture
 
-	# desc = {
-	# 	desc = taychendi_empire_events.502.da
-	# 	trigger = { NOT = { has_country_flag = J84_enable_vainglory_decision_flag } }
-	# }
-
-	# desc = {
-	# 	desc = taychendi_empire_events.502.db
-	# 	trigger = { has_country_flag = J84_enable_vainglory_decision_flag }
-	# }
-
 	is_triggered_only = yes
 
 	option = {
@@ -3738,10 +3608,10 @@ country_event = {
 				}
 				set_country_flag = J84_mp_nuke_flag
 			}
-			europe = { ROOT = { discover_province = PREV } }
-			dameshead_sea_region = { ROOT = { discover_province = PREV } }
-			divenhal_sea_region = { ROOT = { discover_province = PREV } }
-			giants_grave_sea_region = { ROOT = { discover_province = PREV } }
+			europe = { discover_country = ROOT }
+			dameshead_sea_region = { discover_country = ROOT }
+			divenhal_sea_region = { discover_country = ROOT }
+			giants_grave_sea_region = { discover_country = ROOT }
 		}
 	}
 
@@ -3886,10 +3756,10 @@ country_event = {
 			}
 			asia = { 
 				limit = { NOT = { superregion = forbidden_lands_superregion } }
-				ROOT = { discover_province = PREV } 
+				discover_country = ROOT 
 			}
-			gulf_of_rahen_region = { ROOT = { discover_province = PREV } }
-			telekenid_islands_area = { ROOT = { discover_province = PREV } }
+			gulf_of_rahen_region = { discover_country = ROOT }
+			telekenid_islands_area = { discover_country = ROOT }
 		}
 	}
 
@@ -3930,7 +3800,6 @@ country_event = {
 					set_base_tax = 1
 					set_base_production = 1
 					set_base_manpower = 1
-					kill_units = { who = owner }
 					decolonize = yes
 				}
 				J84_mp_haless_nuke_orange = {
@@ -3956,7 +3825,6 @@ country_event = {
 					set_base_tax = 1
 					set_base_production = 1
 					set_base_manpower = 1
-					kill_units = { who = owner }
 					decolonize = yes
 				}
 				J84_haless_nuke_orange = {

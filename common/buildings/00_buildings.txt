@@ -2619,10 +2619,6 @@ farm_estate = {
 	}
 
 	on_destroyed = {
-		change_variable = {
-			which = num_of_farm_estates
-			value = -1
-		}
 		remove_development_from_building = {
 			building = manufactory
 			type = production
