@@ -19,6 +19,7 @@ country_event = {
 		name = taychendi_empire_events.0.a
 		trigger = { NOT = { has_personal_deity = taychend_style_temperate } }
 		change_personal_deity = taychend_style_temperate
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -26,6 +27,7 @@ country_event = {
 		name = taychendi_empire_events.0.b
 		trigger = { NOT = { has_personal_deity = taychend_style_prosperous } }
 		change_personal_deity = taychend_style_prosperous
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -36,6 +38,7 @@ country_event = {
 			has_country_flag = enabled_patron_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_patron
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -46,6 +49,7 @@ country_event = {
 			has_country_flag = enabled_eminence_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_eminence
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -53,6 +57,7 @@ country_event = {
 		name = taychendi_empire_events.0.e
 		trigger = { NOT = { has_personal_deity = taychend_style_conqueror } }
 		change_personal_deity = taychend_style_conqueror
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -63,6 +68,7 @@ country_event = {
 			has_country_flag = enabled_dreamer_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_dreamer
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -73,6 +79,7 @@ country_event = {
 			has_country_flag = enabled_dynast_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_dynast
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -83,6 +90,7 @@ country_event = {
 			has_country_flag = enabled_universalist_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_universalist
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 
@@ -93,6 +101,7 @@ country_event = {
 			has_country_flag = enabled_vainglorious_ruler_style_flag
 		}
 		change_personal_deity = taychend_style_vainglorious
+		clr_country_flag = J84_changed_rule_style_flag
 		set_country_flag = J84_changed_rule_style_flag
 	}
 }
