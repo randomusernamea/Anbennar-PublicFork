@@ -1790,7 +1790,7 @@ maghargma_three = {
 		required_missions = { maghargma_greater_than_giants } 
 		provinces_to_highlight = {  
 			area = amldihr_area
-			hold_condition = { Repaired = no }
+			hold_condition = { Damaged = yes }
 		} 
 
 		trigger = {
@@ -3267,7 +3267,10 @@ maghargma_dynamic_amberlands_2 = {
 					}
 					forbidden_lands_superregion = { remove_core = J52 } 
 					fp_amberlands = {
-						limit = { NOT = { has_terrain = city_terrain }  } 
+						limit = { 
+							NOT = { has_terrain = city_terrain }
+							NOT = { province_id = 5239 }  
+						} 
 						add_core = J52
 					}
 					release = J52
