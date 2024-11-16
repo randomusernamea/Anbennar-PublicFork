@@ -6384,7 +6384,7 @@ estate_mages_organization_science_mages = {
 	loyalty = -0.05
 	influence = 0.1
 	is_valid = {
-		has_country_flag = orlghelovar_science_mages_priviledge
+		has_country_flag = orlghelovar_science_mages_privilege
 	}
 	can_revoke = {
 		always = no
@@ -6393,8 +6393,7 @@ estate_mages_organization_science_mages = {
 		custom_tooltip = mages_benefits_tt
 		custom_tooltip = orlghelovar_science_mages_tt
 		hidden_effect = {
-			mission_reward_artifice_points_5 = yes
-			mission_reward_artifice_points_5 = yes
+			mission_reward_artifice_points_10 = yes
 			mission_reward_artifice_points_2 = yes
 		}
 		clear_mages_organization_effect = yes
