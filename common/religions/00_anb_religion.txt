@@ -5645,6 +5645,8 @@ raheni = {
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = starry_eye }
 
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = starry_eye_scholar_modifier duration = 7300 }
@@ -5699,6 +5701,8 @@ raheni = {
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = radiant_sun }
 
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = radiant_sun_scholar_modifier duration = 7300 }
@@ -5752,6 +5756,8 @@ raheni = {
 				}
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = orange_sash }
+
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
 
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
@@ -5809,6 +5815,8 @@ raheni = {
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = golden_palace }
 
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = golden_palace_scholar_modifier duration = 7300 }
@@ -5862,6 +5870,8 @@ raheni = {
 				}
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = unbroken_claw }
+
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
 
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
@@ -5917,6 +5927,8 @@ raheni = {
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = silk_turban }
 
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = silk_turban_scholar_modifier duration = 7300 }
@@ -5970,6 +5982,8 @@ raheni = {
 				}
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = ascendant_soul }
+
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
 
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
@@ -6025,6 +6039,8 @@ raheni = {
 				#Pasiragha_scholar_system
 				pasiragha_scholar_system = { HP_SCHOOL = synthetic_truth }
 
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = synthetic_truth_scholar_modifier duration = 7300 }
@@ -6076,6 +6092,9 @@ raheni = {
 					}
 					add_adm_power = -50
 				}
+
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				#add_country_modifier = { name = final_paradigm_scholar_modifier duration = 7300 }
@@ -6131,6 +6150,9 @@ raheni = {
 					}
 					add_adm_power = -50
 				}
+
+				if = { limit = { has_country_flag = L62_invite_scholar } vandipha_retreat_of_scholars_effect = yes } #Vandipha
+
 				clear_religious_scholar_modifiers_effect = yes
 				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
 				add_country_modifier = { name = piercing_fang_scholar_modifier duration = 7300 }
