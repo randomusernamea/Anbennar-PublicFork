@@ -1,0 +1,117 @@
+namespace = un_khudai_flavour
+
+country_event = {
+	id = un_khudai_flavour.1
+	title = un_khudai_flavour.1.t
+	desc = un_khudai_flavour.1.d
+	picture = ARTWORK_eventPicture
+
+
+	is_triggered_only = yes
+	
+	
+	# Insight Into Foundations
+	option = {
+		name = un_khudai.1.a
+		
+		
+		trigger = {
+		has_church_aspect = earth_1
+		has_church_aspect = metal_2
+		has_church_aspect = insight_foundations
+		}
+		
+	
+	}
+	# A Way Between People
+	option = {
+		name = un_khudai.1.b
+		
+		trigger = {
+		has_church_aspect = metal_1
+		has_church_aspect = water_2
+		has_church_aspect = way_between_people
+		
+		}
+	
+	}
+	# Plentiful Harvests
+	option = {
+		trigger = {
+	
+			has_church_aspect = water_1
+			has_church_aspect = wood_2
+			has_church_aspect = plentiful_harvests
+		}
+	
+	
+	
+	
+	
+	}
+	# Lighting The Path
+	option = {
+	
+		trigger = {
+			has_church_aspect = wood_1	
+			has_church_aspect = fire_2
+			has_church_aspect = pathways
+		}
+	
+	
+	
+	}
+	# A Spark of Inspiration
+	option = {
+	
+		trigger = {
+			has_church_aspect = fire_1
+			has_church_aspect = earth_2
+			has_church_aspect = spark_of_inspiration
+			
+			}
+	
+	
+	}
+	# Fierce Blows
+	option = {
+	
+	
+	
+	}
+	# A Tide of Fury
+	option = {
+	
+	
+	
+	
+	
+	}
+	# A Well Made Land
+	option = {
+	
+	
+	
+	
+	}
+	# Roar of Pride
+	option = {
+	
+	
+	
+	
+	
+	}
+	# A Stone Ship 
+	option = { 
+	
+	
+	
+	
+	}
+	# Disharmony
+	option = {
+	
+
+	}
+}
