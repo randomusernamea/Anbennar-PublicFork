@@ -32,6 +32,7 @@ floodborn_council_mechanic = {
 					global_unrest = 2
 				}
 			}
+			#Age
 			range_modifier = {
 				trigger = {
 					ruler_age = 40
@@ -110,6 +111,7 @@ floodborn_council_mechanic = {
 					monthly_bloodbrand_power = -0.5
 				}
 			}
+			#Magical Infamy
 			range_modifier = {
 				trigger = {
 					ruler_has_mage_personality = yes
@@ -161,6 +163,7 @@ floodborn_council_mechanic = {
 					monthly_bloodbrand_power = 0.50
 				}
 			}
+			#Mage or Acolyte Loyalty
 			range_modifier = {
 				trigger = {
 					NOT = {
@@ -168,10 +171,18 @@ floodborn_council_mechanic = {
 							estate = estate_mages
 							loyalty = 40
 						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
+							influence = 20
+						}
+						estate_influence = {
+							estate = estate_acolytes
 							influence = 20
 						}
 					}
@@ -187,16 +198,30 @@ floodborn_council_mechanic = {
 							estate = estate_mages
 							loyalty = 40
 						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
 							influence = 40
 						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 40
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 20
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 20
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 20
+						}
 					}
 				}
 				modifier = {
@@ -210,16 +235,30 @@ floodborn_council_mechanic = {
 							estate = estate_mages
 							loyalty = 40
 						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
 							influence = 60
 						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 60
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 40
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 40
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 40
+						}
 					}
 				}
 				modifier = {
@@ -233,10 +272,20 @@ floodborn_council_mechanic = {
 							estate = estate_mages
 							loyalty = 40
 						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 60
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 60
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 60
+						}
 					}
 				}
 				modifier = {
@@ -245,13 +294,23 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
-					estate_loyalty = {
-						estate = estate_mages
-						loyalty = 40
+					OR = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
+							influence = 20
+						}
+						estate_influence = {
+							estate = estate_acolytes
 							influence = 20
 						}
 					}
@@ -262,19 +321,35 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
-					estate_loyalty = {
-						estate = estate_mages
-						loyalty = 40
+					OR = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
 							influence = 40
 						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 40
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 20
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 20
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 20
+						}
 					}
 				}
 				modifier = {
@@ -283,19 +358,35 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
-					estate_loyalty = {
-						estate = estate_mages
-						loyalty = 40
+					OR = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
 					NOT = {
 						estate_influence = {
 							estate = estate_mages
 							influence = 60
 						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 60
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 40
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 40
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 40
+						}
 					}
 				}
 				modifier = {
@@ -304,19 +395,32 @@ floodborn_council_mechanic = {
 			}
 			range_modifier = {
 				trigger = {
-					estate_loyalty = {
-						estate = estate_mages
-						loyalty = 40
+					OR = {
+						estate_loyalty = {
+							estate = estate_mages
+							loyalty = 40
+						}
+						estate_loyalty = {
+							estate = estate_acolytes
+							loyalty = 40
+						}
 					}
-					estate_influence = {
-						estate = estate_mages
-						influence = 60
+					OR = {
+						estate_influence = {
+							estate = estate_mages
+							influence = 60
+						}
+						estate_influence = {
+							estate = estate_acolytes
+							influence = 60
+						}
 					}
 				}
 				modifier = {
 					monthly_bloodbrand_power = 0.75
 				}
 			}
+			#Mage Towers
 			range_modifier = {
 				trigger = {
 					num_of_owned_provinces_with = {
@@ -405,6 +509,7 @@ floodborn_council_mechanic = {
 					monthly_bloodbrand_power = 0.10
 				}
 			}
+			#Absolutism
 			range_modifier = {
 				trigger = {
 					absolutism = 10
@@ -524,7 +629,7 @@ floodborn_council_mechanic = {
 				random_hired_mercenary_company = { limit = { template = merc_wyvernheart_burnblood_company_6_4 } add_company_manpower = 0.25 }
 				clr_country_flag = wyvernheart_free_core
 				if = {
-					limit = { any_owned_province = { NOT = { is_core = ROOT } } }
+					limit = { any_owned_province = { NOT = { is_core = ROOT } } NOT = { has_country_flag = wyvernheart_free_core } }
 					hidden_effect = {
 						random_owned_province = {
 							limit = { NOT = { is_core = ROOT } }
@@ -533,7 +638,7 @@ floodborn_council_mechanic = {
 					}
 					custom_tooltip = wyvernheart_brand_burnbloods_tt
 				}
-				else = { custom_tooltip = wyvernheart_brand_burnbloods_tt2 }
+				else = { custom_tooltip = wyvernheart_brand_burnbloods_tt2 clr_country_flag = wyvernheart_free_core }
 				if = {
 					limit = { check_variable = { which = pointsWitchKing value = 26 } }
 					add_estate_loyalty = {

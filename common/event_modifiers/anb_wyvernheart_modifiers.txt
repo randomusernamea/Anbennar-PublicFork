@@ -26,8 +26,8 @@ wyvernheart_remove_the_weak = {
 	local_culture_conversion_cost = -0.25
 }
 wyvernheart_monsterized_army = {
-	land_maintenance_modifier = 0.20
-	merc_maintenance_modifier = -0.20
+	infantry_cost = 0.20
+	merc_maintenance_modifier = -0.25
 }
 wyvernheart_infernal_bleed = {
 	local_monthly_devastation = 0.33
@@ -143,7 +143,6 @@ wyvernheart_spell_agenda_hardliners = {
 	development_cost = 0.05
 }
 wyvernheart_war_agenda_hardliner = {
-	land_maintenance_modifier = 0.20
 	global_regiment_cost = 0.20
 }
 wyvernheart_war_agenda_ambitious = {

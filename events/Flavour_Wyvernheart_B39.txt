@@ -164,6 +164,8 @@ country_event = {#Rumours of Power A7
 		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
+
+		increase_witch_king_points_large = yes
 	}
 	option = {
 		name = "flavour_wyvernheart.101.b"
@@ -218,6 +220,8 @@ country_event = {#Rumours of Power A7
 		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
+
+		increase_witch_king_points_large = yes
 	}
 	option = {
 		name = "flavour_wyvernheart.101.c"
@@ -268,6 +272,8 @@ country_event = {#Rumours of Power A7
 		large_decrease_of_half_orcish_tolerance_effect = yes
 		large_decrease_of_orcish_tolerance_effect = yes
 		large_decrease_of_goblin_tolerance_effect = yes
+
+		increase_witch_king_points_large = yes
 	}
 }
 country_event = {#A Tower on High B3
@@ -359,9 +365,13 @@ country_event = {#The New Face of Magic D5
 		custom_tooltip = wyvernheart_D5_event_tt
 		hidden_effect = {
 			set_country_flag = floodborn_council_rename
+			country_event = {#Prerolls schools for the third button
+				id = flavour_wyvernheart.501
+			}
 		}
 		set_estate_privilege = estate_wyvernheart_floodborn_council
 		add_stability = -1
+		increase_witch_king_points_small = yes
 	}
 }
 country_event = {#A Morbid Fascination E5.1
@@ -553,6 +563,7 @@ country_event = {#Greater than the Sum of its Parts C8.2
 			estate = estate_mages
 			loyalty = 20
 		}
+		increase_witch_king_points_large = yes
 	}
 }
 country_event = {#The Castanbane Meteor
@@ -653,6 +664,11 @@ country_event = {#The Castanbane Meteor
 			amount = 10
 		}
 		custom_tooltip = wyvernheart_no_more_castanor
+
+		increase_witch_king_points_large = yes #3
+		hidden_effect = {
+			increase_witch_king_points_large = yes #3
+		}
 	}
 }
 country_event = {#Magic and Artificery unbound
@@ -709,7 +725,7 @@ country_event = {#Calm After the Storm
 	option = {
 		name = "flavour_wyvernheart.112.a"
 		ai_chance = { factor = 1 }
-		add_stability = 1
+		add_stability_or_adm_power = yes
 		add_devotion = 20
 		custom_tooltip = wyvernheart_A9_event_tt
 		set_country_flag = had_court_and_country
@@ -763,7 +779,7 @@ province_event = {#Free Core from gov mechanic
 	
 	trigger = {
 		owner = {
-			tag = B39
+			is_or_was_tag = { tag = B39 }
 		}
 	}
 	
@@ -773,6 +789,7 @@ province_event = {#Free Core from gov mechanic
 		ai_chance = { factor = 1 }
 		add_core = owner
 		add_random_development = -3
+		custom_tooltip = wyvernheart_no_separatism_tt
 		owner = { set_country_flag = wyvernheart_free_core }
 	}
 	#Option B
@@ -790,7 +807,7 @@ country_event = {#Select region for Overseer
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 	
 	#Alenic Reach
@@ -1017,7 +1034,7 @@ country_event = {#Select clique for Overseer
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	immediate = {
@@ -1758,6 +1775,84 @@ country_event = {#Select clique for Overseer
 		}
 	}
 }
+country_event = {#The Scions of Wyvernheart
+	id = flavour_wyvernheart.117
+	title = flavour_wyvernheart.117.t
+	desc = flavour_wyvernheart.117.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_or_was_tag = { tag = B39 }
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { crown_land_share = 60 }
+				add_government_power = {
+					mechanic_type = floodborn_council_mechanic
+					power_type = bloodbrand_power
+					value = 20
+				}
+			}
+			country_event = {#Prerolls schools for the third button
+				id = flavour_wyvernheart.501
+			}
+		}
+	}
+
+	
+	option = {
+		name = "flavour_wyvernheart.117.a"
+		ai_chance = { factor = 1 }
+		if = {
+			limit = { NOT = { has_ruler_flag = wyvernheart_the_regent } }
+			add_mil_power = -200
+		}
+		set_country_flag = scions_completed
+		add_government_reform = floodborn_council_reform_theocracy
+		increase_witch_king_points_large = yes
+	}
+	option = {
+		name = "flavour_wyvernheart.117.b"
+		ai_chance = { factor = 1 }
+		trigger = { 
+			num_of_owned_provinces_with = {
+				value = 20
+				has_building = mage_tower
+			}
+		}
+		if = {
+			limit = { NOT = { has_ruler_flag = wyvernheart_the_regent } }
+			add_mil_power = -200
+		}
+		take_estate_land_share_gigantic = { estate = all } #10%
+		set_country_flag = scions_completed
+		add_government_reform = floodborn_council_reform_theocracy
+		increase_witch_king_points_large = yes
+	}
+	option = {
+		name = "flavour_wyvernheart.117.c"
+		ai_chance = { factor = 1 }
+		trigger = { crown_land_share = 60 }
+		if = {
+			limit = { NOT = { has_ruler_flag = wyvernheart_the_regent } }
+			add_mil_power = -200
+		}
+		tooltip = {
+			add_government_power = {
+				mechanic_type = floodborn_council_mechanic
+				power_type = bloodbrand_power
+				value = 20
+			}
+		}
+		set_country_flag = scions_completed
+		add_government_reform = floodborn_council_reform_theocracy
+		increase_witch_king_points_large = yes
+	}
+}
 
 #200+ Civil war events - under on_province_culture_changed
 country_event = {#The Promised Mage
@@ -1998,8 +2093,9 @@ country_event = {#Event manager for the flavour events
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 		has_country_flag = wyvernheart_council_events_enabled
+		wyvernheart_is_floodborn_council = yes
 	}
 	
 	#Option A
@@ -2414,7 +2510,7 @@ country_event = {#The Floodborn Machine
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	#Option A
@@ -2445,7 +2541,7 @@ country_event = {#The Council's Challenge
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	#Option A
@@ -2500,7 +2596,7 @@ country_event = {#The Heart of an Adventurer
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	#Option A
@@ -2553,7 +2649,7 @@ country_event = {#The Rivalries of the Council
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	immediate = {
@@ -2713,7 +2809,7 @@ country_event = {#The Rivalries of the Council
 		ai_chance = { factor = 1 }
 		if = {
 			limit = { has_country_flag = wyvernheart_rivalry_hardliner_technocrat }
-			add_stability = 1
+			add_stability_or_adm_power = yes
 			add_estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 10
@@ -2854,7 +2950,7 @@ country_event = {#An Upstart in the Council
 			estate = estate_church
 			loyalty = 10
 		}
-		add_war_exhaustion = 4
+		add_war_exhaustion = 2
 		add_government_power = {
 			mechanic_type = floodborn_council_mechanic
 			power_type = bloodbrand_power
@@ -2929,7 +3025,7 @@ country_event = {#Estate agenda manager
 			generate_estate_agenda = estate_mages
 			add_country_modifier = {
 				name = wyvernheart_agenda_timer
-				duration = 3600
+				duration = 2900
 				hidden = yes
 			}
 		}
@@ -3139,7 +3235,7 @@ country_event = {#remove Overseer General when PM isn't here
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	#Option A
@@ -3349,7 +3445,7 @@ country_event = {#Rolls magic schools for the manifest the flood gov power
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = B39
+		is_or_was_tag = { tag = B39 }
 	}
 
 	immediate = {

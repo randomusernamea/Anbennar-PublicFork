@@ -182,7 +182,7 @@ wyvernheart_column_1 = {
 		}
 
 		effect = {
-			add_stability = 1
+			add_stability_or_adm_power = yes
 			229 = {
 				add_province_modifier = {
 					name = "wyvernheart_anti_wereworlf_fortifications"
@@ -264,6 +264,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 				}
 				balvord_area = {
 					add_nationalism = -20
@@ -272,6 +273,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 				}
 				jonsway_area = {
 					add_nationalism = -20
@@ -280,6 +282,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 				}
 			}
 			else = {
@@ -291,6 +294,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 					nationalist_rebels = 1
 				}
 				custom_tooltip = wyvernheart_blank_tt
@@ -301,6 +305,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 					nationalist_rebels = 1
 				}
 				custom_tooltip = wyvernheart_blank_tt
@@ -311,6 +316,7 @@ wyvernheart_column_1 = {
 						name = "wyvernheart_remove_the_weak"
 						duration = 10950
 					}
+					remove_province_modifier = religious_zeal_at_conv
 					nationalist_rebels = 1
 				}
 				custom_tooltip = wyvernheart_remove_the_weak_tt
@@ -849,6 +855,7 @@ wyvernheart_column_2 = {
 				id = flavour_wyvernheart.111
 				days = 3650
 			}
+			increase_witch_king_points_large = yes
 		} 
 	}
 }
@@ -1194,6 +1201,7 @@ wyvernheart_column_3 = {
 					duration = 7300
 				}
 			}
+			set_country_flag = patricians_wiped_event_fired_flag
 		} 
 	}
 
@@ -1314,6 +1322,8 @@ wyvernheart_column_3 = {
 			set_country_flag = artifice_set_up
 			set_country_flag = magic_artificery_mage_only
 			set_estate_privilege = estate_wyvernheart_subservient_artificers
+
+			increase_witch_king_points_large = yes
 		} 
 	}
 
@@ -1611,6 +1621,7 @@ wyvernheart_column_4 = {
 					days = 730
 				}
 			}
+			custom_tooltip = wyvernheart_lich_vampire_warning_tt
 		}
 	}
 
@@ -2080,6 +2091,7 @@ wyvernheart_column_5 = {
 				power_type = bloodbrand_power
 				value = -65
 			}
+			increase_witch_king_points_medium = yes
 		} 
 	}
 
@@ -2093,11 +2105,11 @@ wyvernheart_column_5 = {
 
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = divination_legendary
+				tooltip = is_divination_3_tt
 				has_ruler_flag = divination_3
 			}
 			custom_trigger_tooltip = {
-				tooltip = evocation_legendary
+				tooltip = is_evocation_3_tt
 				has_ruler_flag = evocation_3
 			}
 			840 = {
@@ -2214,6 +2226,7 @@ wyvernheart_column_5 = {
 				power_type = bloodbrand_power
 				value = -50
 			}
+			increase_witch_king_points_large = yes
 		} 
 	}
 
@@ -2247,56 +2260,10 @@ wyvernheart_column_1_civilwar = {
 				id = flavour_wyvernheart.112
 			}
 			custom_tooltip = wyvernheart_A9_effect_tt
-		}
-	}
-}
-wyvernheart_column_1_endgame = {
-	slot = 1
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		tag = B39
-		mission_completed = the_dust_settles
-	}
-
-	the_scions = {
-		icon = mission_star_ascendency
-		position = 10
-		required_missions = { the_dust_settles } 
-		provinces_to_highlight = {  } 
-
-		trigger = {
-			stability = 2
-			mage_tower = 20
-			crown_land_share = 60
-			custom_trigger_tooltip = {
-				tooltip = wyvernheart_A10_trigger_tt
-				OR = {
-					has_ruler_flag = wyvernheart_the_regent
-					mil_power = 200
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = wyvernheart_A10_trigger_tt2
-			}
-		} 
-
-		effect = {
-			if = {
-				limit = { NOT = { has_ruler_flag = wyvernheart_the_regent } }
-				add_mil_power = -200
-			}
-			set_country_flag = scions_completed
-			add_government_reform = floodborn_council_reform_theocracy
-			if = {
-				limit = {
-					crown_land_share = 0.65
-				}
-				add_government_power = {
-					mechanic_type = floodborn_council_mechanic
-					power_type = bloodbrand_power
-					value = 20
+			hidden_effect = {
+				country_event = {
+					id = flavour_wyvernheart.117
+					days = 365
 				}
 			}
 		}
@@ -2396,7 +2363,6 @@ wyvernheart_column_3_endgame = {
 		icon = mission_italian_condottiere
 		position = 11
 		required_missions = {
-			the_scions
 			the_wyvern_ascendant
 		}
 		provinces_to_highlight = {
@@ -2575,6 +2541,7 @@ wyvernheart_column_5_endgame = {
 					add_orcish_minority_size_effect = yes
 				}
 			}
+			increase_witch_king_points_large = yes
 		}
 	}
 }
