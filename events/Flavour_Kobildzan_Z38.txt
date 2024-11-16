@@ -501,14 +501,8 @@ country_event = { #The Dragon's Roar
 							area = dragonpoint_area
 							area = lonely_isle_area
 							area = storm_isles_area
-							area = dragondowns_area
 							area= reaver_coast_area
 							area = iochand_area
-							province_id = 174
-							province_id = 173
-							province_id = 179
-							province_id = 180
-							province_id = 345
 						}
 					}
 				}
@@ -521,16 +515,6 @@ country_event = { #The Dragon's Roar
 					duration = 10950
 				}
 			}
-			dragondowns_area = {
-				add_devastation = 50
-				add_base_tax = -2
-				add_base_production = -2
-				add_base_manpower = -2
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 7300
-				} 
-			}
 			reaver_coast_area = {
 				add_devastation = 50
 				add_base_tax = -2
@@ -541,47 +525,6 @@ country_event = { #The Dragon's Roar
 					duration = 7300
 				}  
 			}
-			174 = {
-				add_devastation = 50
-				add_base_tax = -2
-				add_base_production = -2
-				add_base_manpower = -2
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 7300
-				}  
-			}
-			173 = {
-				add_devastation = 50
-				add_base_tax = -2
-				add_base_production = -2
-				add_base_manpower = -2
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 7300
-				}  
-			}
-			180 = {
-				add_devastation = 50
-				add_base_tax = -2
-				add_base_production = -2
-				add_base_manpower = -2
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 7300
-				}  
-			}
-			345 = {
-				add_devastation = 50
-				add_base_tax = -2
-				add_base_production = -2
-				add_base_manpower = -2
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 7300
-				}  
-			}
-			
 			iochand_area = {
 				add_devastation = 20
 				add_base_tax = -1
@@ -603,25 +546,15 @@ country_event = { #The Dragon's Roar
 				} 
 			} 
 			dragonpoint_area = {
-				add_devastation = 20
-				add_base_tax = -1
-				add_base_production = -1
-				add_base_manpower = -1 
+				add_devastation = 50
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
 				add_permanent_province_modifier = {
 					name = Z38_a_new_ashen_skies
-					duration = 3650
+					duration = 7300
 				} 
-			} 
-			179 = {
-				add_devastation = 20
-				add_base_tax = -1
-				add_base_production = -1
-				add_base_manpower = -1 
-				add_permanent_province_modifier = {
-					name = Z38_a_new_ashen_skies
-					duration = 3650
-				} 
-			} 
+			}  
 			125 = {
 				add_devastation = 20
 				add_base_tax = -1
@@ -1403,58 +1336,57 @@ country_event = { #Aid from Aelantir
 	picture = GREAT_BUILDING_eventPicture #LEX CHANGE THIS
 	is_triggered_only = yes 
 
-	immediate = {
-		hidden_effect = {
-			set_variable = {
-				which = dev2add
-				value = 0
-			}
-			export_to_variable  = {
-				which = dev2add
-				value = total_development
-				who=ROOT
-			}
-			every_subject_country = {
-				set_variable = {
-					which = vassaldev
-					value = 0
-				}
-				export_to_variable  = {
-					which = vassaldev
-					value = total_development
-				}
-				divide_variable = {
-					which = vassaldev
-					value = 2
-				}
-				ROOT = {
-					set_variable = {
-						which = vassaldev
-						which = PREV
-					}
-					change_variable = {            
-						which = dev2add
-						which = vassaldev
-					}
-				}
-			}
-			multiply_variable = {
-				which = dev2add
-				value = 2
-			}
-		}
-	}
+	# immediate = {
+	# 	hidden_effect = {
+	# 		set_variable = {
+	# 			which = dev2add
+	# 			value = 0
+	# 		}
+	# 		export_to_variable  = {
+	# 			which = dev2add
+	# 			value = total_development
+	# 			who=ROOT
+	# 		}
+	# 		every_subject_country = {
+	# 			set_variable = {
+	# 				which = vassaldev
+	# 				value = 0
+	# 			}
+	# 			export_to_variable  = {
+	# 				which = vassaldev
+	# 				value = total_development
+	# 			}
+	# 			divide_variable = {
+	# 				which = vassaldev
+	# 				value = 2
+	# 			}
+	# 			ROOT = {
+	# 				set_variable = {
+	# 					which = vassaldev
+	# 					which = PREV
+	# 				}
+	# 				change_variable = {            
+	# 					which = dev2add
+	# 					which = vassaldev
+	# 				}
+	# 			}
+	# 		}
+	# 		multiply_variable = {
+	# 			which = dev2add
+	# 			value = 2
+	# 		}
+	# 	}
+	# }
 
 	option = { #Thank the dragons for Varlengeilt...
 		name = flavour_kobildzan.12.a
-		custom_tooltip = get_two_festivals_tt 
+		custom_tooltip = varlengeilts_aid_tt
 		hidden_effect = {
-			set_country_flag = Z38_received_aelantir_aid
-			var_effect = { effect = add_treasury var = dev2add sign = + }
+			every_owned_province = {
+				add_devastation = -10
+			}		
 		}
-		every_owned_province = {
-			add_devastation = -10
-		}
+
 		
 	}
 }
