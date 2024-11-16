@@ -1865,7 +1865,7 @@ maghargma_three = {
 				area = amldihr_area 
 			}
 			OR = {
-				has_production_building_trigger = no
+				has_production_or_gold_building_trigger = no
 				can_build = farm_estate
 				is_prosperous = no
 			}
@@ -1874,13 +1874,13 @@ maghargma_three = {
 		trigger = {
 			serpents_vale_region = {
 				type = all
-				has_production_building_trigger = yes
+				has_production_or_gold_building_trigger = yes
 				NOT = { can_build = farm_estate } 
 				is_prosperous = yes
 			}
 			amldihr_area = {
 				type = all
-				has_production_building_trigger = yes
+				has_production_or_gold_building_trigger = yes
 				NOT = { can_build = farm_estate } 
 				is_prosperous = yes
 			}
