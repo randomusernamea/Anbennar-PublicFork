@@ -1396,10 +1396,19 @@ country_event = {
 						has_global_flag = delete_rahen_region
 						is_year = 1600
 					}
-					1361 = {
-						is_strongest_trade_power = ROOT
+					OR = {
+						AND = {
+							has_global_flag = delete_rahen_region
+							is_year = 1600
+						}
+						any_owned_province = {
+							continent = asia
+							OR = {
+								trade_goods = slaves
+								province_id = 4420
+							}
+						}
 					}
-					owns_or_subject_of = 4420
 				}
 			}
 		}
@@ -2670,8 +2679,13 @@ country_event = {
 						has_global_flag = delete_rahen_region
 						is_year = 1600
 					}
-					1361 = { is_strongest_trade_power = ROOT }
-					owns_or_subject_of = 4420
+					any_owned_province = {
+						continent = asia
+						OR = {
+							trade_goods = slaves
+							province_id = 4420
+						}
+					}
 				}
 			}
 		}
@@ -3627,6 +3641,13 @@ country_event = { #Brass aspect 1
 			UPGRADE = upgraded
 		}
 		add_permanent_claim = 4420
+		asia = {
+			limit = {
+				has_port = yes
+				trade_goods = slaves
+			}
+			add_claim = ROOT
+		}	
 	}
 }
 
@@ -3658,6 +3679,10 @@ country_event = { #Brass aspect 2
 			months = -1
 		}
 		hidden_effect = { set_country_flag = jyntas_quest_1 }
+		add_country_modifier = {
+			name = the_abolish_slavery_act
+			duration = -1
+		}
 	}
 	option = {		
 		name = flavour_kobold_dragon_cult.14.b
