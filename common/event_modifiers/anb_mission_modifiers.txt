@@ -31982,16 +31982,15 @@ Z38_hoard_logistics_hub = {
 
 Z38_enhanced_fungi_farms = {
 	local_manpower_modifier = 0.25
-	local_development_cost = -0.1
-}
-
-Z38_arsenal_of_artificery = {
-	fire_damage = 0.0125
+	trade_goods_size = 0.5
 }
 
 Z38_fungal_dye_supplies = {
 	trade_goods_size_modifier = 0.25
-	local_development_cost = -0.2
+}
+
+Z38_arsenal_of_artificery = {
+	fire_damage = 0.0125
 }
 
 Z38_seabeast_fisheries = {
@@ -31999,7 +31998,7 @@ Z38_seabeast_fisheries = {
 }
 
 Z38_sanctified_through_effort = {
-	local_development_cost = -0.8
+	local_development_cost = -1
 	local_unrest = -2
 }
 
@@ -32196,7 +32195,7 @@ Z38_gospodh_3 = {
 	global_trade_power = 0.2
 	naval_forcelimit = 40
 	land_forcelimit = 20
-	max_absolutism = 20
+	max_absolutism = 10
 }
 
 Z38_kobolds_dominion = {

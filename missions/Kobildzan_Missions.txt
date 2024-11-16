@@ -1826,8 +1826,12 @@ kob_4_b = {
 		}
 
 		trigger = {
-			189 = { has_manufactory_trigger = yes }
-			187 = { has_manufactory_trigger = yes }
+			189 = { has_building = state_house }
+			187 = { has_building = state_house }
+			trading_bonus = {
+				trade_goods = fungi
+				value = yes
+			}
 
 			custom_trigger_tooltip = {
 				tooltip = caverns_are_prosperous_tt 
@@ -1862,6 +1866,48 @@ kob_4_b = {
 					name = Z38_sanctified_through_effort
 					duration = -1
 				}	
+			}
+			186 = {
+				change_trade_goods = fungi
+				add_province_modifier = {
+					name = Z38_enhanced_fungi_farms
+					duration = -1
+				}
+			}
+			4643 = {
+				change_trade_goods = fungi
+				add_province_modifier = {
+					name = Z38_enhanced_fungi_farms
+					duration = -1
+				}
+			}
+			3999 = {
+				change_trade_goods = fungi
+				add_province_modifier = {
+					name = Z38_enhanced_fungi_farms
+					duration = -1
+				}
+			}
+			3577 = {
+				change_trade_goods = dyes
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			3998 = {
+				change_trade_goods = dyes
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			185 = {
+				change_trade_goods = dyes
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
 			}
 		}
 	}
@@ -2212,6 +2258,18 @@ Kob_5b = {
 			}
 			173 = { 
 				change_trade_goods = silk
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			4644 = {
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}			
+			}
+			3578 = {
 				add_province_modifier = {
 					name = Z38_fungal_dye_supplies
 					duration = -1
