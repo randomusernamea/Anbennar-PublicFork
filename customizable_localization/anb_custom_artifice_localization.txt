@@ -32,6 +32,21 @@ defined_text = {
 			has_country_flag = orlghelovar_science_mages_privilege
         }
     }
+	
+	text = {
+        localisation_key = taychend_positive_artifice_multiplier
+        trigger = {
+			tag = J84 #Taychendi Empire
+			has_country_flag = J84_increased_percent_artifice_capacity_flag
+        }
+    }
+
+	text = {
+        localisation_key = artifice_mode_none
+        trigger = {
+			always = yes
+		}
+    }
 }
 
 defined_text = {
@@ -50,26 +65,6 @@ defined_text = {
         trigger = {
 			has_country_flag = magic_artificery_artificery_only 
 			ruler_has_mage_personality = yes
-        }
-    }
-
-	text = {
-        localisation_key = artifice_mode_none
-        trigger = {
-			always = yes
-		}
-    }
-}
-
-defined_text = {
-	name = getTaychendArtificeMultiplier
-	random = no
-	
-	text = {
-        localisation_key = taychend_artifice_multiplier
-        trigger = {
-			tag = J84 #Taychendi Empire
-			has_country_flag = J84_increased_percent_artifice_capacity_flag
         }
     }
 
