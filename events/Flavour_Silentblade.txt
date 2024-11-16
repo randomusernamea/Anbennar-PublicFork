@@ -37,6 +37,9 @@ country_event = {
 		name = silentblade.2.a
 		change_religion = ashentree_pact
 		add_stability_or_adm_power = yes
+		hidden_effect = {
+			add_prestige = 100
+		}
 		add_dip_power = 50
 		add_country_modifier = {
 			name = silentblade_a_glimmer_of_green_reward
@@ -46,13 +49,18 @@ country_event = {
 			limit = {
 				trust = {
 					who = I43
-					value = 65
-				}
-				capital_scope = {
-					units_in_province = I43
+					value = 60
 				}
 			}
 			change_religion = ashentree_pact
+			hidden_effect = {
+				add_prestige = 100
+			}
+		}
+		hidden_effect = { 
+			deepwoods_superregion = {
+				remove_province_modifier = religious_zeal_at_conv
+			}
 		}
 	}
 }

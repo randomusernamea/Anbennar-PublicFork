@@ -153,12 +153,16 @@ silentblade_col_2 = {
 			any_ally = {
 				trust = {
 					who = I43
-					value = 65
+					value = 60
 				}
 				capital_scope = {
-					units_in_province = I43
+					num_of_units_in_province = {
+						who = I43
+						amount = 1
+					}
 				}
 			}
+
 		} 
 
 		effect = {
@@ -345,7 +349,7 @@ silentblade_col_3 = {
 			any_ally = {
 				culture = green_orc
 				capital_scope = { superregion = deepwoods_superregion }
-				trust = { who = I43 value = 65 }
+				trust = { who = I43 value = 60 }
 			}
 		}
 
@@ -371,7 +375,6 @@ silentblade_col_3 = {
 				calc_true_if = {
 					all_subject_country = {
 							primary_culture = green_orc
-							capital_scope = { superregion = deepwoods_superregion }
 							NOT = { liberty_desire = 50 }
 					}
 					amount = 2
@@ -476,7 +479,12 @@ silentblade_col_4 = {
 				limit = { I40 = { vassal_of = I43 } }
 				I40 = {
 					add_liberty_desire = -25
+					add_trust = {
+						who = I43
+						value = 15
+					}
 					remove_historical_rival = I43
+					kill_ruler = yes
 				}
 				add_country_modifier = {
 					name = silentblade_rival_clan_vassalized_reward
@@ -669,6 +677,11 @@ silentblade_col_5 = {
 				I42 = {
 					add_liberty_desire = -25
 					remove_historical_rival = I43
+					add_trust = {
+						who = I43
+						value = 15
+					}
+					kill_ruler = yes
 				}
 				add_country_modifier = {
 					name = silentblade_rival_clan_vassalized_reward
