@@ -964,11 +964,14 @@ kob_1_b = {
 
 				AND = {
 					OR = {
-						province_id = 1165
 						province_id = 1492
 						province_id = 1576
 					}
 					NOT = { trade_share = { country = ROOT share = 60 } }
+				}
+				AND = {
+					province_id = 1165
+					NOT = { trade_share = { country = ROOT share = 50 } }
 				}
 			}
 		}
@@ -3543,7 +3546,22 @@ kob_5_c = {
 		}
 
 		trigger = {
-			
+			dalr_region = {
+				owned_by = ROOT
+				religion = kobold_dragon_cult
+			}
+			olavlund_region = {
+				owned_by = ROOT
+				religion = kobold_dragon_cult
+			}
+			num_of_owned_provinces_with = {
+				value = 9
+				province_group = gerudian_kobold_traps
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt 
+					has_province_flag = has_kobold_traps
+				}
+			}
 			has_church_aspect = copper_dragon_1_upgraded
 			has_church_aspect = copper_dragon_2_upgraded
 			has_church_aspect = copper_dragon_3_base
@@ -3572,11 +3590,12 @@ kob_5_c = {
                 UPGRADE = upgraded
             }
 
-			custom_tooltip = ebonsteel_extraction_tt 
+			custom_tooltip = ebonsteel_extraction_and_mage_tt 
 			hidden_effect = {
 				every_owned_province = {
 					limit = { province_group = ebonsteel_provinces }
 					add_province_modifier = { name = Z38_ebonsteel_extraction duration = -1 }
+					add_building = mage_tower
 				}
 			}
 		}
