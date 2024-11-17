@@ -14033,13 +14033,13 @@ estate_mages_warlock_pact_power = {
 	}
 	can_select = {
 		rakkaz_warlock_pact_limit = yes
-		years_of_manpower = 0.8
+		years_of_manpower = 0.5
 	}
 	can_revoke = {
 		always = no
 	}
 	on_granted = {
-		add_yearly_manpower = -0.8
+		add_yearly_manpower = -0.5
 	}
 	benefits = {
 		land_morale = 0.05
@@ -14117,7 +14117,14 @@ estate_mages_warlock_pact_exploitation = {
 		rakkaz_warlock_pact_limit = yes
 		any_owned_province = {
 			trade_goods = slaves
-			base_tax = 2
+		}
+		if = {
+			limit = { religion = xhazobkult }
+			patriarch_authority = 0.01
+		}
+		if = {
+			limit = { religion = shadow_pact }
+			church_power = 50
 		}
 	}
 	can_revoke = {
@@ -14162,19 +14169,24 @@ estate_mages_warlock_pact_exploitation = {
 		}
 		custom_tooltip = rakkaz_exploitation_effect_tooltip
 		tooltip = {
-			add_base_tax = -1
 			add_province_modifier = {
 				name = rakkaz_slave_exploitation
 				duration = 3650
 			}
 		}
+		if = {
+			limit = { religion = xhazobkult }
+			add_patriarch_authority = -0.01
+		}
+		if = {
+			limit = { religion = shadow_pact }
+			add_church_power = -50
+		}
 		hidden_effect = {
 			every_owned_province = {
 				limit = {
 					trade_goods = slaves
-					base_tax = 2
 				}
-				add_base_tax = -1
 				add_province_modifier = {
 					name = rakkaz_slave_exploitation
 					duration = 3650
@@ -14237,8 +14249,7 @@ estate_mages_warlock_pact_overcharge = {
 	}
 	benefits = {}
 	penalties = {
-		global_unrest = 2
-		global_monthly_devastation = 0.1
+		global_unrest = 4
 	}
 	ai_will_do = {
 		factor = 1
@@ -14321,9 +14332,7 @@ estate_mages_warlock_pact_unrestricted_savagery = {
 	benefits = {
 		global_attacker_dice_roll_bonus = 1
 	}
-	penalties = {
-		morale_damage_received = 0.1
-	}
+	penalties = { }
 	ai_will_do = {
 		factor = 1
 	}
