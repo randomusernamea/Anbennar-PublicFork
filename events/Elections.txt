@@ -3138,18 +3138,18 @@ country_event = { #Technocracy Election
 						has_country_modifier = dwarven_administration
 					}
 				}
-				add_scaled_republican_tradition = -1.5
+				add_scaled_republican_tradition = -3
 			}
 			else = {
 				if = {
 					limit = {
 						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -7.5
+					add_scaled_republican_tradition = -15
 					clr_country_flag = increased_election_cost
 				}
 				else = {
-					add_scaled_republican_tradition = -5
+					add_scaled_republican_tradition = -10
 				}
 			}
 		}
