@@ -1691,7 +1691,7 @@ F71_4_part2 = {
 			OR = {
 				AND = {
 					6734 = { is_city = no }
-					treasury = 100
+					treasury = 50
 					6690 = {
 						owner = {
 							OR = {
@@ -1706,7 +1706,7 @@ F71_4_part2 = {
 				}
 				AND = {
 					6734 = { is_city = yes }
-					treasury = 100
+					treasury = 50
 					adm_power = 50
 					dip_power = 50
 					mil_power = 50
@@ -1727,7 +1727,7 @@ F71_4_part2 = {
 						is_city = yes 
 						owned_by = ROOT
 					}
-					treasury = 100
+					treasury = 50
 					adm_power = 50
 					dip_power = 50
 					mil_power = 50
@@ -1743,13 +1743,13 @@ F71_4_part2 = {
 						is_city = yes 
 						owned_by = ROOT
 					}
-					treasury = 100
+					treasury = 50
 					adm_power = 50
 					dip_power = 50
 					mil_power = 50
 				"
 				first_effect = "
-					add_treasury = -100
+					add_treasury = -50
 					add_adm_power = -50
 					add_dip_power = -50
 					add_mil_power = -50
@@ -1762,7 +1762,7 @@ F71_4_part2 = {
 				second_custom_tooltip = rakkaz_colonize
 				second_limit = "
 					6734 = { is_city = no }
-					treasury = 100
+					treasury = 50
 					6690 = {
 						owner = {
 							OR = {
@@ -1776,13 +1776,13 @@ F71_4_part2 = {
 					}
 				"
 				second_effect = "
-					add_treasury = -100
-					6734 = { add_siberian_construction = 200 }
+					add_treasury = -50
+					6734 = { add_siberian_construction = 700 }
 				"
 				third_custom_tooltip = rakkaz_annex
 				third_limit = "
 					6734 = { is_city = yes }
-					treasury = 100
+					treasury = 50
 					adm_power = 50
 					dip_power = 50
 					mil_power = 50
@@ -1799,11 +1799,12 @@ F71_4_part2 = {
 					}
 				"
 				third_effect = "
-					add_treasury = -100
+					add_treasury = -50
 					add_adm_power = -50
 					add_dip_power = -50
 					add_mil_power = -50
 					6734 = { cede_province = ROOT }
+					6734 = { add_core = ROOT }
 				"
 			}
 		} 
