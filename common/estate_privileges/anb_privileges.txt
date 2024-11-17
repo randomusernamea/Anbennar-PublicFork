@@ -14120,11 +14120,11 @@ estate_mages_warlock_pact_exploitation = {
 		}
 		if = {
 			limit = { religion = xhazobkult }
-			patriarch_authority = 0.01
+			patriarch_authority = 0.2
 		}
 		if = {
 			limit = { religion = shadow_pact }
-			church_power = 50
+			church_power = 100
 		}
 	}
 	can_revoke = {
@@ -14176,11 +14176,11 @@ estate_mages_warlock_pact_exploitation = {
 		}
 		if = {
 			limit = { religion = xhazobkult }
-			add_patriarch_authority = -0.01
+			add_patriarch_authority = -0.2
 		}
 		if = {
 			limit = { religion = shadow_pact }
-			add_church_power = -50
+			add_church_power = -100
 		}
 		hidden_effect = {
 			every_owned_province = {

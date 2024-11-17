@@ -2071,7 +2071,6 @@ F71_5_part2 = {
 						amount = 3
 					}
 					has_manpower_building_trigger = yes
-					has_building = mage_tower
 				}
 			}
 		} 
@@ -2093,7 +2092,6 @@ F71_5_part2 = {
 					amount = 3
 				}
 				has_manpower_building_trigger = yes
-				has_building = mage_tower
 			}
 		} 
 
@@ -2116,7 +2114,6 @@ F71_5_part2 = {
 							amount = 3
 						}
 						has_manpower_building_trigger = yes
-						has_building = mage_tower
 					}
 					kill_units = {
 						who = owner
@@ -2647,6 +2644,7 @@ F71_5_part3_branch2_demon = {
 				remove_idea_group = aristocracy_ideas
 			}
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_unrestricted_savagery }
+			add_mil_power = 100
 		} 
 	}
 
@@ -2844,6 +2842,7 @@ F71_5_part3_branch2_hag = {
 				add_adm_power = 200
 			}
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_battlefield_domination }
+			add_mil_power = 100
 		} 
 	}
 
