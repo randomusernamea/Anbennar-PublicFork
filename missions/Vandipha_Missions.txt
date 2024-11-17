@@ -340,31 +340,33 @@ vandipha_2 = {
 				custom_tooltip = L62_across_the_pass_countries_tt
 				hidden_effect = {
 					capital_scope = {
-						transport_ship = ROOT
-						transport_ship = ROOT
-						transport_ship = ROOT
-						transport_ship = ROOT
+						transport = ROOT
+						transport = ROOT
+						transport = ROOT
+						transport = ROOT
 					}
 				}
 			}
 			else = {
 				custom_tooltip = L62_across_the_pass_countries_tt
-				every_known_country = {
-					limit = {
-						is_subject = no
-						capital_scope = {
-							OR = {
-								superregion = vimdatrong_superregion
-								superregion = rahen_superregion
+				hidden_effect = {
+					every_known_country = {
+						limit = {
+							is_subject = no
+							capital_scope = {
+								OR = {
+									superregion = vimdatrong_superregion
+									superregion = rahen_superregion
+								}
+							}
+							has_opinion = {
+								who = ROOT
+								value = 75
 							}
 						}
-						has_opinion = {
-							who = ROOT
-							value = 75
+						6592 = {
+							transport = ROOT
 						}
-					}
-					hidden_effect = {
-						transport_ship = ROOT
 					}
 				}
 			}
