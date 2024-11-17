@@ -3392,6 +3392,8 @@ maghargma_five_post_amberlands = {
 		required_missions = { maghargma_back_into_the_fold } 
 		provinces_to_highlight = {  
 			superregion = gozengun_superregion
+			NOT = { province_id = 6838 }
+			is_city = yes
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
@@ -3400,6 +3402,7 @@ maghargma_five_post_amberlands = {
 				type = all
 				OR = {
 					province_id = 6838 #Rift Bearer
+					is_city = no
 					country_or_non_sovereign_subject_holds = ROOT
 				}
 			}
