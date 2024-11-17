@@ -609,18 +609,20 @@ maghargma_one_post_westmarches = {
 		effect = { 
 			if = {
 				limit = {
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						value = 4
-						region = serpents_vale_region
-						OR = {
-							religion = feast_of_the_gods
-							religion = reformed_feast_of_the_gods
+					NOT = {
+						num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+							value = 4
+							region = serpents_vale_region
+							OR = {
+								religion = feast_of_the_gods
+								religion = reformed_feast_of_the_gods
+							}
+							has_building = cathedral
 						}
-						has_building = cathedral
 					}
 				}
+				add_treasury = -1000
 			}
-			else = { add_treasury = -1000 }
 			country_event = { id = flavor_maghargma.8 }  #Shared Tastes
 		} 
 	}
@@ -2278,7 +2280,6 @@ maghargma_four = {
 		trigger = {
 			NOT = {
 				nuzurbokh_region = {
-					type = all 
 					is_city = yes
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
