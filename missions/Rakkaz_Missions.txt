@@ -2057,7 +2057,14 @@ F71_5_part2 = {
 			owned_by = ROOT
 			NOT = {
 				AND = {
-					has_state_patriach = yes
+					if = {
+						limit = { ROOT = { religion = xhazobkult } }
+						has_state_patriach = yes
+					}
+					if = {
+						limit = { ROOT = { religion = shadow_pact } }
+						base_tax = 3
+					}
 					has_state_edict = edict_centralization_effort
 					num_of_units_in_province = {
 						who = ROOT
@@ -2072,7 +2079,14 @@ F71_5_part2 = {
 		trigger = {  
 			num_of_owned_provinces_with = {
 				value = 5
-				has_state_patriach = yes
+				if = {
+					limit = { ROOT = { religion = xhazobkult } }
+					has_state_patriach = yes
+				}
+				if = {
+					limit = { ROOT = { religion = shadow_pact } }
+					base_tax = 3
+				}
 				has_state_edict = edict_centralization_effort
 				num_of_units_in_province = {
 					who = ROOT
@@ -2088,7 +2102,14 @@ F71_5_part2 = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_state_patriach = yes
+						if = {
+							limit = { ROOT = { religion = xhazobkult } }
+							has_state_patriach = yes
+						}
+						if = {
+							limit = { ROOT = { religion = shadow_pact } }
+							base_tax = 3
+						}
 						has_state_edict = edict_centralization_effort
 						num_of_units_in_province = {
 							who = ROOT
