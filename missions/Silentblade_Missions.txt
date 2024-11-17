@@ -387,6 +387,7 @@ silentblade_col_3 = {
 		} 
 
 		effect = {
+			add_adm_power = 100
 			if = {
 				limit = {
 					calc_true_if = {
@@ -397,6 +398,9 @@ silentblade_col_3 = {
 						}
 						amount = 2
 					}
+				}
+				country_event = {
+					id = silentblade.7
 				}
 			} else = {
 				add_country_modifier = {
@@ -481,13 +485,13 @@ silentblade_col_4 = {
 					add_liberty_desire = -25
 					add_trust = {
 						who = I43
-						value = 15
+						value = 25
 					}
 					remove_historical_rival = I43
 					kill_ruler = yes
 				}
 				add_country_modifier = {
-					name = silentblade_rival_clan_vassalized_reward
+					name = silentblade_rival_clan_cursed_howl_vassalized_reward
 					duration = 7300
 				}
 			} else = {
@@ -516,12 +520,13 @@ silentblade_col_4 = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
+			religion = ashentree_pact
 			OR = {
-				temple = 5
+				religious_unity = 0.5
 				AND = {
-					capital_scope = { has_building  = temple }
-					I40 = { capital_scope = { has_building  = temple } }
-					I42 = { capital_scope = { has_building  = temple } }
+					capital_scope = { religion = ashentree_pact }
+					I40 = { capital_scope = { religion = ashentree_pact } }
+					I42 = { capital_scope = { religion = ashentree_pact } }
 				}
 			}
 		}
@@ -548,20 +553,15 @@ silentblade_col_4 = {
 		trigger = {
 			any_known_country = {
 				primary_culture = wood_elf
-				OR = {
-					has_opinion = {
-						who = I43
-						value = 0
-					}
-					has_spy_network_from = {
-						who = I43
-						value = 45
-					}
+				has_spy_network_from = {
+					who = I43
+					value = 40
 				}
 			}
 		} 
 
 		effect = {
+			add_dip_power = 100 
 			country_event = {
 				id = silentblade.12
 			}
@@ -679,12 +679,12 @@ silentblade_col_5 = {
 					remove_historical_rival = I43
 					add_trust = {
 						who = I43
-						value = 15
+						value = 25
 					}
 					kill_ruler = yes
 				}
 				add_country_modifier = {
-					name = silentblade_rival_clan_vassalized_reward
+					name = silentblade_rival_clan_blackmoon_vassalized_reward
 					duration = 7300
 				}
 			} else = {

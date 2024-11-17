@@ -57,6 +57,16 @@ country_event = {
 				add_prestige = 100
 			}
 		}
+		every_subject_country = {
+			limit = {
+				primary_culture = green_orc
+				capital_scope = { superregion = deepwoods_superregion }
+			}
+			change_religion = ashentree_pact
+			hidden_effect = {
+				add_prestige = 100
+			}
+		}
 		hidden_effect = { 
 			deepwoods_superregion = {
 				remove_province_modifier = religious_zeal_at_conv
@@ -357,21 +367,12 @@ country_event = {
 			random_known_country = {
 				limit = {
 					culture = wood_elf
-					OR = {
-						has_opinion = {
-							who = I43
-							value = 75
-						}
-						has_spy_network_from = {
-							who = I43
-							value = 50
-						}
+					has_spy_network_from = {
+						who = I43
+						value = 40
 					}
 				}
-				random_owned_province = {
-					limit = {
-						is_neighbor_of = I43
-					}
+				capital_scope = {
 					save_event_target_as = silentblade_inflitrator_province
 				}
 			}
