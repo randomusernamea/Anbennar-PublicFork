@@ -1904,6 +1904,7 @@ estate_adventurers_heroes_in_the_army = {
 		}
 		modifier = {
 			adventurers_loyalty_modifier = 0.2
+			yearly_army_professionalism = 0.01
 		}
 	}
 	ai_will_do = {
@@ -14499,7 +14500,15 @@ estate_wyvernheart_culture_of_the_heart = {
 	influence = 0.1
 	loyalty = 0.05
 	land_share = 5
-	is_valid = { mission_completed = the_hearter_homeland }
+	is_valid = {
+		OR = {
+			mission_completed = the_hearter_homeland
+			AND = {
+				tag = Z99
+				was_tag = B39
+			}
+		}
+	}
 	can_select = { mission_completed = the_hearter_homeland }
 	on_granted = {
 		custom_tooltip = estate_wyvernheart_culture_of_the_heart_tta
@@ -14525,6 +14534,8 @@ estate_wyvernheart_culture_of_the_heart = {
 		}
 	}
 	on_revoked = {
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_rta
+		custom_tooltip = estate_wyvernheart_culture_of_the_heart_rtb
 	}
 	on_revoked_province = {
 	}
