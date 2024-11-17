@@ -662,7 +662,7 @@ country_event = {
 country_event = {
 	id = flavor_ameion.1100
 	title = flavor_ameion.1100.t
-	desc = flavor_ameion.11d1.d
+	desc = flavor_ameion.11.d1
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
@@ -1568,50 +1568,29 @@ country_event = {
 		create_subject = { subject_type = gylikheion subject = G57 } #Apikhoxi
 		custom_tooltip = ameion_nekhis_gyli_2
 		hidden_effect = {
-			every_subject_country = { #Cede outside territory to Ameion
+			south_america = { #Cede outside territory to Ameion
 				limit = {
 					OR = {
-						tag = G53
-						tag = G58
-						tag = G55
-						tag = G54
-						tag = G57
+						owned_by = G53
+						owned_by = G58
+						owned_by = G55
+						owned_by = G54
+						owned_by = G57
 					}
-				}
-				south_america = { #every_owned_province bug workaround
-					limit = {
-						owned_by = PREV
-						OR = {
-							NOT = { region = devand_region }
-							is_island = yes
-							area = vothelisi_area
-							province_id = 2650
-							province_id = 2651
-						}
-					}
-					if = {
-						limit = { is_core = owner }
-						remove_core = owner
-						add_core = ROOT
-					}
-					cede_province = ROOT
-				}
-			}
-			south_america = { #Remove Excess claims/cores
-				limit = { 
 					OR = {
-						is_claim = G53
-						is_claim = G58
-						is_claim = G54
-						is_claim = G55
-						is_claim = G57
+						NOT = { region = devand_region }
+						is_island = yes
+						area = vothelisi_area
+						province_id = 2650
+						province_id = 2651
 					}
 				}
-				remove_claim = G53
-				remove_claim = G58
-				remove_claim = G54
-				remove_claim = G55
-				remove_claim = G57
+				if = {
+					limit = { is_core = owner }
+					remove_core = owner
+					add_core = ROOT
+				}
+				cede_province = ROOT
 			}
 			ameion_gly_clear_claim_core = { TAG = G53 }
 			ameion_gly_clear_claim_core = { TAG = G58 }
@@ -1726,10 +1705,6 @@ country_event = {
 					}
 					cede_province = ROOT
 				}
-			}
-			every_province = { #Remove Excess claims/cores
-				limit = { is_claim = G59 }
-				remove_claim = G59
 			}
 			ameion_gly_clear_claim_core = { TAG = G59 }
 		}
@@ -2007,7 +1982,6 @@ country_event = {
 					}
 				}
 				alecand_region = {
-					#limit = { region = alecand_region }
 					if = {
 						limit = { area = arpedifer_area }
 						add_core = G51
@@ -2073,59 +2047,25 @@ country_event = {
 			create_subject = { subject_type = gylikheion subject = G49 } #Lokemeion
 			custom_tooltip = ameion_nekhis_gyli_6
 			hidden_effect = {
-				every_subject_country = { #Cede outside territory to Ameion
+				south_america = { #Cede outside territory to Ameion
 					limit = {
 						OR = {
-							tag = G51
-							tag = G47
-							tag = G61
-							tag = G46
-							tag = G50
-							tag = G48
-							tag = G49
+							owned_by = G51
+							owned_by = G47
+							owned_by = G61
+							owned_by = G46
+							owned_by = G50
+							owned_by = G48
+							owned_by = G49
 						}
+						NOT = { region = alecand_region }
 					}
-					south_america = { #every_owned_province bug workaround
-						limit = {
-							owned_by = PREV
-							NOT = {
-								area = arpedifer_area
-								area = oktikheion_area
-								area = kimanis_area
-								area = kheinos_area
-								area = degakheion_area
-								area = ormam_area
-								area = kherka_area
-								area = lokemeion_area
-							}
-						}
-						if = {
-							limit = { is_core = owner }
-							remove_core = owner
-							add_core = ROOT
-						}
-						cede_province = ROOT
+					if = {
+						limit = { is_core = owner }
+						remove_core = owner
+						add_core = ROOT
 					}
-				}
-				south_america = { #Remove Excess claims/cores
-					limit = { 
-						OR = {
-							is_claim = G51
-							is_claim = G47
-							is_claim = G61
-							is_claim = G46
-							is_claim = G50
-							is_claim = G48
-							is_claim = G49
-						}
-					}
-					remove_claim = G51
-					remove_claim = G47
-					remove_claim = G61
-					remove_claim = G46
-					remove_claim = G50
-					remove_claim = G48
-					remove_claim = G49
+					cede_province = ROOT
 				}
 				ameion_gly_clear_claim_core = { TAG = G51 }
 				ameion_gly_clear_claim_core = { TAG = G47 }
@@ -2210,10 +2150,6 @@ country_event = {
 							cost = 0
 						}
 					}
-				}
-				every_province = { #Remove Excess claims/cores
-					limit = { is_claim = G60 }
-					remove_claim = G60
 				}
 				ameion_gly_clear_claim_core = { TAG = G60 }
 			}

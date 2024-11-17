@@ -541,7 +541,7 @@ G52_1 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					province_group = kheion_capital_provinces
+					province_group = alecandi_capital_provinces
 					NOT = { development = 30 }
 				}
 				AND = {
@@ -557,7 +557,7 @@ G52_1 = {
 		}
 		
 		trigger = {
-			kheion_capital_provinces = {
+			alecandi_capital_provinces = {
 				type = all
 				development = 30 
 			}
@@ -1055,6 +1055,7 @@ G52_2 = {
 						has_opinion = { who = ROOT value = 100 }
 					}
 				}
+				custom_tooltip = ameion_summit_effelai_tt
 				set_country_flag = G52_summit_effelai
 			}
 			if = {
@@ -1064,6 +1065,7 @@ G52_2 = {
 						has_opinion = { who = ROOT value = 100 }
 					}
 				}
+				custom_tooltip = ameion_summit_amadian_tt
 				set_country_flag = G52_summit_amadia
 			}
 			if = {
@@ -1073,6 +1075,7 @@ G52_2 = {
 						has_opinion = { who = ROOT value = 100 }
 					}
 				}
+				custom_tooltip = ameion_summit_cannorian_tt
 				set_country_flag = G52_summit_cannor
 			}
 		}
@@ -1131,16 +1134,18 @@ G52_2 = {
 		
 		provinces_to_highlight = {
 			country_or_non_sovereign_subject_holds = ROOT
-			AND = {
-				OR = {
-					province_id = 2577
-					province_id = 2665
+			OR = {
+				AND = {
+					OR = {
+						province_id = 2577
+						province_id = 2665
+					}
+					NOT = { development = 25 }
 				}
-				NOT = { development = 25 }
-			}
-			AND = {
-				region = mteibas_valley_region
-				NOT = { religion = kheionism }
+				AND = {
+					region = mteibas_valley_region
+					NOT = { religion = kheionism }
+				}
 			}
 			has_discovered = ROOT
 		}
@@ -1180,10 +1185,17 @@ G52_2 = {
 			add_army_tradition = 10
 			if = {
 				limit = { has_country_flag = G52_mteibhar_tributary }
-				
+				custom_tooltip = ameion_mteibas_kheionization_tt
+				hidden_effect = {
+					mteibas_valley_region = { 
+						limit = { religion = kheionism }
+						ameion_kheionization_effect = yes
+					}
+				}
 			}
-			else = {
-			
+			else_if = {
+				limit = { NOT = { mission_completed = G52_approach_mteibhar } }
+				custom_tooltip = ameion_mteibas_kheionization_no_tt 
 			}
 		}
 	}
@@ -2067,7 +2079,10 @@ G52_3 = {
 		provinces_to_highlight = {
 			NOT = { superregion = ruin_proper_superregion }
 			continent = south_america
-			NOT = { is_sea = yes }
+			NOT = {
+				is_sea = yes
+				is_wasteland = yes
+			}
 			OR = {
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				NOT = { culture_is_ruinborn = yes }
@@ -2082,6 +2097,7 @@ G52_3 = {
 					superregion = ruin_proper_superregion
 					country_or_non_sovereign_subject_holds = ROOT
 					is_sea = yes
+					is_wasteland = yes
 				}
 			}
 			all_owned_province = { culture_is_ruinborn = yes }
@@ -2092,8 +2108,24 @@ G52_3 = {
 			country_event = { id = flavor_ameion.82 }
 			custom_tooltip = ameion_aelantir_cores
 			hidden_effect = {
-				north_america = { add_core = ROOT }
-				ruin_proper_superregion = { add_core = ROOT }
+				north_america = {
+					limit = {
+						NOT = {
+							is_sea = yes
+							is_wasteland = yes
+						}
+					}
+					add_core = ROOT 
+				}
+				ruin_proper_superregion = { 
+					limit = {
+						NOT = {
+							is_sea = yes
+							is_wasteland = yes
+						}
+					}
+					add_core = ROOT 
+				}
 			}
 			add_country_modifier = {
 				name = G52_reunifiying_old_home
@@ -2570,6 +2602,7 @@ G52_4 = {
 			owns_or_non_sovereign_subject_of = ROOT
 			superregion = effelai_superregion
 			trade_goods = tropical_wood
+			NOT = { has_building = mage_tower }
 			has_discovered = ROOT
 		}
 		

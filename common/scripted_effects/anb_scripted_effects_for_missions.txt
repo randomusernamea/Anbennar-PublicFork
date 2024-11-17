@@ -11318,6 +11318,24 @@ ameion_fotistrepei_effect = {
 	}
 }
 
+ameion_fotistrepei_effect_prov = {
+	hidden_effect = {
+		if = {
+			limit = {
+				superregion = taychend_superregion
+				culture_group = taychendi_ruinborn_elf
+				religion = kheionism
+				has_owner_accepted_culture = yes
+			}
+			add_province_modifier = {
+				name = G52_fotistrepei_mod
+				duration = -1
+			}
+		}
+		else = { remove_province_modifier = G52_fotistrepei_mod }
+	}
+}
+
 ameion_kheionization_effect = {
 	random_list = {
 		25 = {
@@ -11548,6 +11566,12 @@ ameion_gly_clear_claim_core = {
 			if = {
 				limit = { NOT = { owned_by = $TAG$ } }
 				remove_core = $TAG$
+			}
+		}
+		every_claimed_province = {
+			if = {
+				limit = { NOT = { owned_by = $TAG$ } }
+				remove_claim = $TAG$
 			}
 		}
 	}

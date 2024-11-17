@@ -11588,7 +11588,10 @@ on_province_owner_change = {
 			}
 		}
 	}
-
+	if = {
+		limit = { owner = { has_country_flag = ameion_fotistrepei_flag } }
+		ameion_fotistrepei_effect_prov = yes
+	}
 }
 
 # country 1.35

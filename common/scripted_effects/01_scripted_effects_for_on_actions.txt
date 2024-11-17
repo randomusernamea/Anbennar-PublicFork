@@ -2379,7 +2379,7 @@ on_province_religion_changed_effect = {
 	#Ameion
 	if = {
 		limit = { owner = { has_country_flag = ameion_fotistrepei_flag } }
-		owner = { ameion_fotistrepei_effect = yes }
+		ameion_fotistrepei_effect_prov = yes
 	}
 	if = {
 		limit = {
@@ -5115,7 +5115,7 @@ on_province_culture_change_effect = {
 	#Ameion
 	if = {
 		limit = { owner = { has_country_flag = ameion_fotistrepei_flag } }
-		owner = { ameion_fotistrepei_effect = yes }
+		ameion_fotistrepei_effect_prov = yes
 	}
 	if = {
 		limit = {
