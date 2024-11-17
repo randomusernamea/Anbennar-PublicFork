@@ -2085,6 +2085,15 @@ stalbor_race_opinion_trigger = {
     }
 }
 
+#Wyvernheart
+wyvernheart_is_floodborn_council = {
+	OR = {
+		has_reform = floodborn_council_reform
+		has_reform = floodborn_council_reform_always_mage
+		has_reform = floodborn_council_reform_theocracy
+	}
+}
+
 owned_by_country_subject_or_trade_league = {
 	custom_trigger_tooltip = {
 		tooltip = owned_by_country_subject_or_trade_league_tooltip
