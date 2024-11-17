@@ -218,7 +218,10 @@ silentblade_col_2 = {
 		}
 
 		trigger = {
-			deepwoods_feytouched_gladeways = { type = all owned_by = I43 }
+			num_of_owned_provinces_with = {
+				value = 5
+				province_group = deepwoods_feytouched_gladeways
+			}
 		}
 
 		effect = {

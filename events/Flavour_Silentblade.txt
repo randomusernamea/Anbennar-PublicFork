@@ -147,8 +147,6 @@ country_event = {
 
 	option = {
 		name = silentblade.6.a
-		reduce_stability_or_adm_power = yes
-		add_prestige = -11
 		add_yearly_manpower = 2
 		custom_tooltip = emerald_orc_appearance
 		hidden_effect = {
@@ -169,23 +167,40 @@ country_event = {
 			primary_and_ruler_culture_change = { race = orcish new_culture = emerald_orc }
 			set_ruler_religion = ashentree_pact
 			change_religion = ashentree_pact
-			every_owned_province = {
-				if = {
-					limit = { religion = ashentree_pact }
-					50 = {
-						change_culture = emerald_orc
-						add_permanent_province_modifier = {
-							name = "religious_zeal_at_conv"
-							duration = 9000
-						}
-					}
-					50 = {}
-				}
-			}
-
 			set_global_flag = emerald_orcs_are_created
 			set_country_flag = fey_offering_accepted
 			country_event = { id = ideagroups.1 } #Swap Ideas
+
+			every_subject_country = {
+				limit = { 
+					religion = ashentree_pact 
+					capital_scope = { superregion = deepwoods_superregion }
+				}
+				every_owned_province = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			every_ally = {
+				limit = { 
+					religion = ashentree_pact 
+					capital_scope = { superregion = deepwoods_superregion }
+				}
+				every_owned_province = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+
+			every_owned_province = {
+				if = {
+					limit = { religion = ashentree_pact }
+					random_list = {
+						80 = { change_culture = emerald_orc }
+						20 = {}
+					}
+				}
+			}
 		}
 	}
 }
