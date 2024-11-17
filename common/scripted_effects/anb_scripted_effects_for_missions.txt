@@ -12192,35 +12192,35 @@ add_cult_aw_to_random_province = {
 
 give_all_embraced_institutions_to_province_effect = {
 	if = {
-		limit = { ROOT = { has_institution = feudalism } }
+		limit = { $tag$ = { has_institution = feudalism } }
 		add_institution_embracement = { which = feudalism value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = renaissance } }
+		limit = { $tag$ = { has_institution = renaissance } }
 		add_institution_embracement = { which = renaissance value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = new_world_i } }
+		limit = { $tag$ = { has_institution = new_world_i } }
 		add_institution_embracement = { which = new_world_i value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = printing_press } }
+		limit = { $tag$ = { has_institution = printing_press } }
 		add_institution_embracement = { which = printing_press value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = global_trade } }
+		limit = { $tag$ = { has_institution = global_trade } }
 		add_institution_embracement = { which = global_trade value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = manufactories } }
+		limit = { $tag$ = { has_institution = manufactories } }
 		add_institution_embracement = { which = manufactories value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = enlightenment } }
+		limit = { $tag$ = { has_institution = enlightenment } }
 		add_institution_embracement = { which = enlightenment value = 100 }
 	}
 	if = {
-		limit = { ROOT = { has_institution = industrialization } }
+		limit = { $tag$ = { has_institution = industrialization } }
 		add_institution_embracement = { which = industrialization value = 100 }
 	}
 }

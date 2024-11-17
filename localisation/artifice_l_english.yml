@@ -29,7 +29,7 @@
  
  artifice_breakdown:0 "[Root.getArtificeryBreakdownShort]\n§L================ Artifice Research ================§!\nResearch Years Multiplier: §Y[Root.ResearchSpeedMultiplier.GetValue]§!\nResearch Years Left:          §Y[Root.ResearchSpeed.GetValue] years§!\n\n§L============ Maximum Capacity Sources ===========§!\n[Root.getArtificeGlobal][Root.getEarlyArtificeBonus][Root.getArtificeRelics][Root.getArtificeDamestear][Root.getArtificeHolds][Root.getArtificeDungeons][Root.getArtificeMissions][Root.getArtificeModifiers][Root.getArtificeFeitenLightningShuimuHired][Root.getArtificeFeitenStasisShuimuHired][Root.getArtificeFeitenFirestormShuimuHired][Root.getArtificeFeitenSkyFactoryShuimuHired][Root.getArtificeFeitenActiveFirestorm][Root.getArtificeFeitenActiveStasis][Root.getArtificeFeitenActiveSkyFactory][Root.getArtificeFeitenTotalInvestments][Root.getArtificeVaraineAllies][Root.getArtificeVaraineForeignAllies][Root.getArtificeBrelarWatermillBuild][Root.getArtificeBrelarWatermillPoints][Root.getArtificeBrelarRiverwayBuild][Root.getArtificeHasMultipliers]§L===============================================§!\n§RGoing beyond your Artifice Capacity will result in a negative modifier!§!"
  artifice_breakdown_short:0 "§L================ Artifice Capacity ================§!\nUsed Capacity:                 §o[Root.ArtificeUpkeep.GetValue]§!\nMaxium Capacity:            §Y[Root.MaxArtificePoints.GetValue]§!\nAvailable Capacity:           §G[Root.RemainingArtificePoints.GetValue]§!\n"
- artifice_multipliers:0 "\n§L=========== Artifice Capacity Multipliers ===========§!\n[Root.getArtificeMultipliers]\n"
+ artifice_multipliers:0 "\n§L=========== Artifice Capacity Multipliers ===========§!\n[Root.getArtificeMultipliersPositive][Root.getArtificeMultipliersNegative]\n"
  artifice_no_multpliers:0 ""
 
  artifice_has_invention_slot_tt:0 "Has at least §Y1§! free invention slot"
@@ -79,8 +79,11 @@
  
  artifice_breakdown_decision_tt:0 "\n[Root.getArtificeryBreakdownFull]\n\nClick to update your Artifice Capacity breakdown!"
  
- artifice_multipliers_mixed_mode:0 "§R-50%§! - State is in mixed mode.\n"
- artifice_multipliers_mage_ruler:0 "§R-50%§! - Mage Ruler in Artificery only mode\n"
+ artifice_positive_multipliers_orlghelovar_science_mages:0 "§G+50%§! - Integrated the mages as Orlghelovar!\n"
+ taychend_positive_artifice_multiplier:0 "§G+25%§! - The New Relic-Lords\n"
+
+ artifice_negative_multipliers_mixed_mode:0 "§R-50%§! - State is in mixed mode.\n"
+ artifice_negative_multipliers_mage_ruler:0 "§R-50%§! - Mage Ruler in Artificery only mode\n"
  artifice_mode_none:0 ""
  
  artifice_capacity_global:0 "§G[Root.GlobalArtificeLimit.GetValue]§! - Global Artificery Capacity, increases over time from 1650 onwards.\n"
@@ -143,8 +146,14 @@
  permanently_increases_our_artifice_points_by_4_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G4§!"
  permanently_increases_our_artifice_points_by_5_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G5§!"
  permanently_increases_our_artifice_points_by_10_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G10§!"
+ permanently_increases_our_artifice_points_by_20_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G20§!"
+ permanently_increases_our_artifice_points_by_40_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G40§!"
+ permanently_increases_our_artifice_points_by_50_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G50§!"
  permanently_decreases_our_artifice_points_by_10_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R10§!"
  permanently_decreases_our_artifice_points_by_5_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R5§!"
+ permanently_decreases_our_artifice_points_by_20_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R20§!"
+ permanently_decreases_our_artifice_points_by_40_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R40§!"
+ permanently_decreases_our_artifice_points_by_50_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R50§!"
 
  mechanic_is_technocracy_yes:0 "Technocratic governments are forced into Artificery only mode and will automatically unlock Artificery"
  mechanic_is_magocracy_yes:0 "Magocratic governments are forced into Mage only mode."

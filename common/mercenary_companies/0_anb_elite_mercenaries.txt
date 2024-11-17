@@ -2147,3 +2147,39 @@ merc_flying_pebbles_tier_2 = {
 		reinforce_speed = 0.4
 	}
 }
+
+#Taychendi Empire
+merc_the_orcish_company = {
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	home_province = 2197 #Hidden Hills (Ozgarom's Spawn Point)
+	trigger = {
+		has_unlocked_merc_company = { merc_company = merc_the_orcish_company }
+	}
+	regiments_per_development = 0.06
+	cost_modifier = 0.8
+	cavalry_weight = 0.2
+	max_size = 40
+	manpower_pool = 100
+	sprites = { westerngfx_sprite_pack }
+	modifier = {
+		discipline = 0.05
+		morale_damage_received = -0.1
+	}
+}
+
+merc_shadowbound_ashama = {
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	home_province = 5971 #Metat Tagokag
+	trigger = {
+		has_unlocked_merc_company = { merc_company = merc_shadowbound_ashama }
+	}
+	regiments_per_development = 0.06
+	cost_modifier = 2
+	max_size = 40
+	sprites = { westerngfx_sprite_pack }
+	modifier = {
+		infantry_shock = 0.5
+		shock_damage_received = -0.25
+		movement_speed = -0.2
+	}
+}
