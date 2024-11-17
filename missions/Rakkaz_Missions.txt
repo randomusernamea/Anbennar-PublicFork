@@ -22,15 +22,12 @@ F71_1_part1 = {
 		}
 
 		trigger = {
-			has_adm_advisor = yes
-			has_dip_advisor = yes
-			has_mil_advisor = yes
 			OR = {
 				NOT = { overextension_percentage = 0.01 }
 				NOT = { num_of_loans = 1 }
 			}
 			num_of_owned_provinces_with = {
-				value = 20
+				value = 15
 				religion = ROOT
 				NOT = { unrest = 0 }
 			}
