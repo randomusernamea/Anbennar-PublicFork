@@ -15438,6 +15438,24 @@ on_colony_established = {
 			duration = 7300
 		}
 	}
+	
+	owner = {
+		if = {
+			limit = {
+				OR = {
+					has_country_modifier = A31_empire_colonial_office
+					has_country_modifier = A31_traders_invest_economy
+					has_country_modifier = A31_aiecoca_expanded
+				}
+				NOT = { has_country_modifier = elven_administration }
+				NOT = {	has_country_modifier = half_elven_administration }
+
+			}
+			remove_country_modifier = A31_empire_colonial_office
+			remove_country_modifier = A31_traders_invest_economy
+			remove_country_modifier = A31_aiecoca_expanded
+		}
+	}
 }
 
 #scope = new country, FROM = parent country 1.35

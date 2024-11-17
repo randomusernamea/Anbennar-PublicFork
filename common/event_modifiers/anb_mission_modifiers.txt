@@ -10319,7 +10319,7 @@ A31_rc_resistance = {
 }
 
 A31_shield_of_munas = {
-	diplomatic_reputation = 1
+	diplomatic_reputation = 2
 	diplomatic_upkeep = 1
 	reduced_liberty_desire = 15
 }
@@ -10357,8 +10357,7 @@ A31_wood_moonhaven = {
 }
 
 A31_elven_home = {
-	candidate_random_bonus = 1
-	free_adm_policy = 1
+	free_policy = 1
 }
 
 A31_better_range = {
@@ -10406,27 +10405,145 @@ A31_tea_hegemony_5 = {
 	merchants = 1
 }
 
-A31_refined_tea = {
-	province_trade_power_modifier = 0.1
+A31_tea_hegemony_6 = {
+	global_trade_power = 0.20
+	trade_steering = 0.15
+	merchants = 2
 }
 
-A31_magical_tea = {
+A31_weirdly_good_tea = {
+	trade_efficiency = 0.1
+	liberty_desire_from_subject_development = -0.5
 	advisor_cost = -0.10
-	mages_loyalty_modifier = 0.1
+}
+
+A31_mediocre_tea = {
+	trade_efficiency = 0.1
+	liberty_desire_from_subject_development = -0.5
+}
+
+A31_very_good_tea = {
+	trade_efficiency = 0.1
+	liberty_desire_from_subject_development = -0.15
+	all_power_cost = -0.025
 }
 
 A31_rial_thae = {
-	prestige = 1
-	church_loyalty_modifier = 0.05
-	mages_loyalty_modifier = 0.05
-	nobles_loyalty_modifier = 0.05
-	adventurers_loyalty_modifier = 0.05
-	artificers_loyalty_modifier = 0.05
-	global_trade_power = 0.1
+	trade_efficiency = 0.1
+	liberty_desire_from_subject_development = -0.15
+	all_power_cost = -0.05
 }
 
 A31_taken_relics = {
 	liberty_desire = 15
+}
+
+A31_empire_colonial_office = {
+	global_colonial_growth = 40
+}
+
+A31_traders_invest_economy = {
+	global_colonial_growth = 60
+	colonists = 1
+}
+
+A31_spice_investment = {
+	local_production_efficiency = 0.1
+	trade_goods_size_modifier = 0.1
+}
+
+A31_early_enlightenment = {
+	global_missionary_strength = 0.02
+	monthly_splendor = 5
+}
+
+A31_spread_truth = {
+	enforce_religion_cost = -0.35
+}
+
+A31_adeans_loyal = {
+	global_missionary_strength = 0.02
+	defensiveness = 0.25
+	ae_impact = -0.1
+}
+
+A31_corins_loyal = {
+	global_missionary_strength = 0.02
+	land_morale = 0.10
+	prestige_decay = -0.005	
+}
+
+A31_elven_merchants_south = {
+	trade_range_modifier = 0.1
+	trade_efficiency = 0.1
+}
+
+A31_dominate_sarhal_markets = {
+	global_ship_trade_power = 0.2
+}
+
+A31_spices_cannor = {
+	diplomatic_reputation = 1
+	global_trade_power = 0.1
+}
+
+A31_aiecoca_expanded = {
+	colonists = 1
+	global_colonial_growth = 60
+	colony_cost_modifier = -0.25
+}
+
+A31_patrons_anbennar_elves = {
+	republican_tradition = 0.15
+	global_unrest = -2
+	diplomatic_upkeep = 2
+}
+
+A31_coringuard = {
+	diplomatic_reputation = 1
+	land_morale = 0.10
+	manpower_recovery_speed = 0.10
+}
+
+A31_ship_production = {
+	naval_forcelimit_modifier = 0.2
+}
+
+A31_modern_guns = {
+	infantry_fire = 0.20
+	infantry_power = 0.10
+
+	is_rajput_modifier = yes
+}
+
+A31_haven_school_arificery = {
+	local_development_cost = -0.2
+	production_efficiency = 0.2
+	innovativeness_gain = 0.25
+}
+
+A31_global_elven_navy = {
+	heavy_ship_power = 0.1
+}
+
+A31_banking_reform = {
+	inflation_reduction = 0.1
+	interest = -0.5
+}
+
+A31_modern_haven = {
+	technology_cost = -0.05
+}
+
+A31_elven_naval_prowess = {
+	heavy_ship_cost = -0.1
+	ship_trade_power_modifier = 0.2
+}
+
+A31_elven_ascension = {
+	improve_relation_modifier = 0.25
+	development_cost_in_primary_culture = -0.1
+	manpower_in_true_faith_provinces= 0.10
 }
 
 # Cheshoshi	#Made this a net loss to tribal development growth
