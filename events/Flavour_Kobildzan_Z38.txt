@@ -1386,7 +1386,9 @@ country_event = { #Aid from Aelantir
 				add_devastation = -10
 			}		
 		}
-
+		hidden_effect = {
+			set_country_flag = Z38_received_aelantir_aid
+		}
 		
 	}
 }
