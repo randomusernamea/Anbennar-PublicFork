@@ -305,7 +305,7 @@ country_event = {
 		}
 
 		if = {
-			limit = { primary_culture = bekauta }
+			limit = { NOT = { primary_culture = bekauta } }
 			custom_tooltip = J84_convert_chendhyan_no_tt
 			hidden_effect = {
 				every_owned_province = {

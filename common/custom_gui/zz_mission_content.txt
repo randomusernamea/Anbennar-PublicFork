@@ -1178,6 +1178,13 @@ custom_button = {
 			value = 10
 			NOT = { is_core = ROOT }
 		}
+		if = {
+			limit = { has_country_flag = vainglory_spoil_of_war_flag }
+			had_country_flag = {
+				flag = vainglory_spoil_of_war_flag
+				days = 912 #2.5 years
+			}
+		}
 	}
 	effect = {
 		add_government_power = {
@@ -1186,30 +1193,80 @@ custom_button = {
 			value = -10
 		}
 		custom_tooltip = taychend_spoil_of_war_tt
+		if = {
+			limit = {
+				all_owned_province = {
+					OR = {
+						NOT = { trade_goods = slaves }
+						NOT = { continent = south_america }
+						is_city = no
+						development = 40
+					}
+				}
+			}
+			custom_tooltip = taychend_spoil_of_war_max_yes_tt
+		}
+		else = { custom_tooltip = taychend_spoil_of_war_max_no_tt }
+		tooltip = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
 		hidden_effect = {
 			for = {
 				amount = 10
 				effect = "
 				random_owned_province = { #10
-					limit = { NOT = { is_core = ROOT trade_goods = slaves has_province_flag = J84_vainglory_temp_flag } }
+					limit = { 
+						NOT = { 
+							is_core = ROOT 
+							trade_goods = slaves 
+							has_province_flag = J84_vainglory_temp_flag 
+						} 
+						is_city = yes
+					}
 					add_devastation = 25
 					random_list = { 1 = { add_base_tax = -1 } 1 = { add_base_production = -1 } 1 = { add_base_manpower = -1 } }
 					spawn_rebels = { type = nationalist_rebels size = 1 }
 					set_province_flag = J84_vainglory_temp_flag
 				}"
 			}
-			for = {
-				amount = 10
-				effect = "
-				random_owned_province = { #10
-					limit = { trade_goods = slaves continent = south_america NOT = { base_production = 40 } }
-					add_base_production = 1
-				}"
+			if = {
+				limit = {
+					all_owned_province = {
+						OR = {
+							NOT = { trade_goods = slaves }
+							NOT = { continent = south_america }
+							is_city = no
+							development = 40
+						}
+					}
+				}
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+			else = {
+				for = {
+					amount = 10
+					effect = "
+					random_owned_province = { #10
+						limit = { 
+							trade_goods = slaves 
+							continent = south_america 
+							NOT = { base_production = 40 } 
+							is_city = yes
+						}
+						add_base_production = 1
+					}"
+				}
 			}
 			every_owned_province = {
 				limit = { has_province_flag = J84_vainglory_temp_flag }
 				clr_province_flag = J84_vainglory_temp_flag
 			}
+			clr_country_flag = vainglory_spoil_of_war_flag
+			set_country_flag = vainglory_spoil_of_war_flag
 		}
 	}
 }

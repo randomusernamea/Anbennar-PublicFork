@@ -128,6 +128,15 @@ J84_1_missions = {
 						religion = gods_of_the_taychend_reformed
 						has_tax_building_trigger = yes
 					}
+					south_america = {
+						type = all
+						NOT = {
+							culture = sun_elf
+							culture = dawn_elf
+						}
+						religion = gods_of_the_taychend_reformed
+						has_tax_building_trigger = yes
+					}
 				}
 			}
 		}
@@ -139,14 +148,29 @@ J84_1_missions = {
 						accepted_culture = sun_elf
 						accepted_culture = dawn_elf
 					}
-					num_of_owned_provinces_with = {
-						value = 10
-						OR = {
-							culture = sun_elf
-							culture = dawn_elf
+					OR = {
+						num_of_owned_provinces_with = {
+							value = 10
+							OR = {
+								culture = sun_elf
+								culture = dawn_elf
+							}
+							religion = gods_of_the_taychend_reformed
+							has_tax_building_trigger = yes
 						}
-						religion = gods_of_the_taychend_reformed
-						has_tax_building_trigger = yes
+						south_america = {
+							type = all
+							OR = {
+								NOT = {
+									culture = sun_elf
+									culture = dawn_elf
+								}
+								AND = {
+									religion = gods_of_the_taychend_reformed
+									has_tax_building_trigger = yes
+								}
+							}
+						}
 					}
 				}
 				AND = {

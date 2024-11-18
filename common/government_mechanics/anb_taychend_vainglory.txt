@@ -44,7 +44,7 @@ taychend_vainglory_mechanic = {
 			icon = GFX_taychendi_vainglory_spoils_of_war
 			cost_type = taychend_vainglory_power
 			cost = 0
-			cooldown_years = 5
+			cooldown_years = 2.5
 			trigger = {
 				has_government_power = {
 					mechanic_type = taychend_vainglory_mechanic
@@ -54,6 +54,13 @@ taychend_vainglory_mechanic = {
 				num_of_owned_provinces_with = {
 					value = 10
 					NOT = { is_core = ROOT }
+				}
+				if = {
+					limit = { has_country_flag = vainglory_spoil_of_war_flag }
+					had_country_flag = {
+						flag = vainglory_spoil_of_war_flag
+						days = 912 #2.5 years
+					}
 				}
 			}
 			effect = { } #Effects in zz_mission_content.txt
