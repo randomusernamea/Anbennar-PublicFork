@@ -14,7 +14,7 @@ red_dragon_1_base = {
 	}
 	monarch_power = adm
 	modifier = {
-		global_trade_goods_size_modifier = 0.1 
+		global_trade_goods_size_modifier = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -390,7 +390,7 @@ purple_dragon_2_base= {
 	}
 	monarch_power = dip
 	modifier = {
-		technology_cost = -0.025
+		global_autonomy = -0.025
 	}
 	ai_will_do = {
 		factor = 15
@@ -415,7 +415,7 @@ purple_dragon_3_base= {
 	}
 	monarch_power = mil
 	modifier = {
-		global_autonomy = -0.025
+		embracement_cost = -0.2
 	}
 	ai_will_do = {
 		factor = 15
@@ -505,7 +505,7 @@ brass_dragon_1_base= {
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -2
+		spy_offence = 0.25
 	}
 	ai_will_do = {
 		factor = 15
@@ -742,7 +742,7 @@ silver_dragon_2_base= {
 	}
 	monarch_power = dip
 	modifier = {
-		governing_capacity_modifier = 0.05
+		tolerance_own = 1
 	}
 	ai_will_do = {
 		factor = 15
@@ -767,7 +767,7 @@ silver_dragon_3_base= {
 	}
 	monarch_power = mil
 	modifier = {
-		tolerance_heathen = 2
+		global_missionary_strength = 0.01
 	}
 	ai_will_do = {
 		factor = 15
@@ -813,6 +813,7 @@ gold_dragon_2_base= {
 	monarch_power = dip
 	modifier = {
 		diplomatic_annexation_cost = -0.1
+		diplomatic_reputation = 1
 	}
 	ai_will_do = {
 		factor = 15
@@ -1094,7 +1095,7 @@ purple_dragon_2_locked = {
 	}
 	monarch_power = dip
 	modifier = {
-		technology_cost = -0.025
+		global_autonomy = -0.025
 	}
 }
 
@@ -1117,7 +1118,7 @@ purple_dragon_3_locked = {
 	}
 	monarch_power = mil
 	modifier = {
-		global_autonomy = -0.025
+		embracement_cost = -0.2
 	}
 }
 
@@ -1324,7 +1325,7 @@ silver_dragon_2_locked = {
 	}
 	monarch_power = dip
 	modifier = {
-		governing_capacity_modifier = 0.05
+		tolerance_own = 1
 	}
 }
 
@@ -1347,7 +1348,7 @@ silver_dragon_3_locked = {
 	}
 	monarch_power = mil
 	modifier = {
-		tolerance_heathen = 2
+		global_missionary_strength = 0.01
 	}
 }
 
@@ -1371,6 +1372,7 @@ gold_dragon_2_locked = {
 	monarch_power = dip
 	modifier = {
 		diplomatic_annexation_cost = -0.1
+		diplomatic_reputation = 1
 	}
 }
 
@@ -1411,6 +1413,7 @@ red_dragon_1_upgraded = {
     monarch_power = adm
     modifier = {
 		global_trade_goods_size_modifier = 0.075
+		interest = -0.25
     }
     ai_will_do = {
         factor = 15
@@ -1428,8 +1431,8 @@ red_dragon_2_upgraded = {
     }
     monarch_power = dip
     modifier = {
-		global_own_trade_power = 0.15
-		merchants = 1
+		global_trade_power = 0.075
+		fire_damage = 0.025
     }
     ai_will_do = {
         factor = 15
@@ -1448,7 +1451,7 @@ red_dragon_3_upgraded= {
     monarch_power = mil
     modifier = {
 		inflation_reduction = 0.1
-		interest = -0.25
+		fire_damage_received = -0.05
     }
     ai_will_do = {
         factor = 15
@@ -1467,8 +1470,7 @@ blue_dragon_1_upgraded= {
     monarch_power = adm
     modifier = {
 		leader_land_fire = 1
-		leader_naval_fire = 1
-		technology_cost = -0.05
+		technology_cost = -0.025
     }
     ai_will_do = {
         factor = 15
@@ -1505,8 +1507,7 @@ blue_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		ae_impact = -0.05
-		free_policy = 1
+		ae_impact = -0.1
     }
     ai_will_do = {
         factor = 15
@@ -1525,7 +1526,7 @@ green_dragon_1_upgraded= {
     monarch_power = adm
     modifier = {
 		heavy_ship_power = 0.1
-		prestige = 1	
+		republican_tradition = 0.3
     }
     ai_will_do = {
         factor = 15
@@ -1563,6 +1564,7 @@ green_dragon_3_upgraded= {
     monarch_power = mil
     modifier = {
 		hull_size_modifier = 0.05
+		vassal_forcelimit_bonus = 0.4
     }
     ai_will_do = {
         factor = 15
@@ -1713,7 +1715,7 @@ purple_dragon_2_upgraded= {
     monarch_power = dip
     modifier = {
 		global_autonomy = -0.025
-		artillery_barrage_cost = -0.5
+		artillery_levels_available_vs_fort = 1
     }
     ai_will_do = {
         factor = 15
@@ -1731,8 +1733,8 @@ purple_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		technology_cost = -0.05
-		artillery_levels_available_vs_fort = 1
+		embracement_cost = -0.2
+		artillery_power = 0.05
     }
     ai_will_do = {
         factor = 15
@@ -1769,8 +1771,7 @@ brown_dragon_2_upgraded= {
     }
     monarch_power = dip
     modifier = {
-		culture_conversion_cost = -0.1
-		num_accepted_cultures = 2
+		culture_conversion_cost = -0.2
     }
     ai_will_do = {
         factor = 15
@@ -1788,8 +1789,8 @@ brown_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		siege_ability = 0.15
-		diplomatic_reputation = 2
+		siege_ability = 0.1
+		diplomatic_reputation = 1
     }
     ai_will_do = {
         factor = 15
@@ -1807,8 +1808,8 @@ brass_dragon_1_upgraded= {
 	}
     monarch_power = adm
     modifier = {
-		global_unrest = -2
-		production_efficiency = 0.1
+		spy_offence = 0.25
+		spy_action_cost_modifier = -0.25
     }
     ai_will_do = {
         factor = 15
@@ -1845,8 +1846,7 @@ brass_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		manpower_recovery_speed = 0.1
-		ae_impact = -0.1
+		province_warscore_cost = -0.075
     }
     ai_will_do = {
         factor = 15
@@ -1865,7 +1865,7 @@ copper_dragon_1_upgraded= {
     monarch_power = adm
     modifier = {
 		idea_cost = -0.1
-		movement_speed = 0.15
+		movement_speed = 0.075
     }
     ai_will_do = {
         factor = 15
@@ -1901,8 +1901,7 @@ copper_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		tolerance_heathen = 2
-		years_of_nationalism = -5
+		tolerance_heathen = 4
     }
     ai_will_do = {
         factor = 15
@@ -1940,7 +1939,7 @@ bronze_dragon_2_upgraded= {
     monarch_power = dip
     modifier = {
 		backrow_artillery_damage = 0.05
-		stability_cost_modifier = -0.15
+		drill_gain_modifier = 0.25
     }
     ai_will_do = {
         factor = 15
@@ -1959,7 +1958,7 @@ bronze_dragon_3_upgraded= {
     monarch_power = mil
     modifier = {
 		discipline = 0.025
-		global_tax_modifier = 0.1
+		leader_cost = -0.1
     }
     ai_will_do = {
         factor = 15
@@ -1996,8 +1995,8 @@ silver_dragon_2_upgraded= {
     }
     monarch_power = dip
     modifier = {
-		governing_capacity_modifier = 0.1
-		min_autonomy_in_territories = -0.05
+		tolerance_own = 1
+		overextension_impact_modifier = -0.1
     }
     ai_will_do = {
         factor = 15
@@ -2015,8 +2014,8 @@ silver_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		tolerance_heathen = 2
-		stability_cost_modifier = -0.2
+		global_missionary_strength = 0.01
+		country_admin_power = 1
     }
     ai_will_do = {
         factor = 15
@@ -2054,6 +2053,7 @@ gold_dragon_2_upgraded= {
     monarch_power = dip
     modifier = {
 		diplomatic_annexation_cost = -0.2
+		diplomatic_reputation = 2
     }
     ai_will_do = {
         factor = 15
@@ -2071,8 +2071,8 @@ gold_dragon_3_upgraded= {
     }
     monarch_power = mil
     modifier = {
-		advisor_cost = -0.05
-		inflation_reduction = 0.1
+		advisor_cost = -0.1
+		morale_damage_received = -0.1
     }
     ai_will_do = {
         factor = 15
