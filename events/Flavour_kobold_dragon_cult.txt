@@ -84,9 +84,9 @@ country_event = {
 					}
 					update_artifice_points = yes
 				}
-				add_adm_power = 30
-				add_dip_power = 30
-				add_mil_power = 30
+				add_adm_power = 20
+				add_dip_power = 20
+				add_mil_power = 20
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -95,9 +95,9 @@ country_event = {
 						has_church_aspect = blue_dragon_3_upgraded
 					}
 				}
-				add_adm_power = 20
-				add_dip_power = 20
-				add_mil_power = 20
+				add_adm_power = 15
+				add_dip_power = 15
+				add_mil_power = 15
 			}
 			else = { #Only 1 upgraded active
 				add_adm_power = 10
@@ -146,7 +146,7 @@ country_event = {
 					has_church_aspect = green_dragon_3_upgraded
 				}
 				every_subject_country = {
-					add_liberty_desire = -10
+					add_liberty_desire = -20
 				}
 			}
 			else_if = { #Has 2/3 upgraded + active
@@ -157,12 +157,12 @@ country_event = {
 					}
 				}
 				every_subject_country = {
-					add_liberty_desire = -6
+					add_liberty_desire = -15
 				}
 			}
 			else = { #Only 1 upgraded active
 				every_subject_country = {
-					add_liberty_desire = -3
+					add_liberty_desire = -10
 				}
 			}
 		}
@@ -179,6 +179,16 @@ country_event = {
 					skill = 5
 					cost_multiplier = 0.5
 				}
+				define_advisor = {
+					type = diplomat
+					skill = 5
+					cost_multiplier = 0.5
+				}
+				define_advisor = {
+					type = fortification_expert
+					skill = 5
+					cost_multiplier = 0.5
+				}
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -189,6 +199,11 @@ country_event = {
 				}
 				define_advisor = {
 					type = natural_scientist
+					skill = 4
+					cost_multiplier = 0.5
+				}
+				define_advisor = {
+					type = diplomat
 					skill = 4
 					cost_multiplier = 0.5
 				}
@@ -249,8 +264,13 @@ country_event = {
 				every_war_enemy_country = {
 					every_owned_province = {
 						limit = { sieged_by = ROOT }
-						change_siege = 3
+						change_siege = 1
 					}
+				}
+				event_target:jyntas_kobold_target = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1				
 				}
 			}
 			else_if = { #Has 2/3 upgraded + active
@@ -260,19 +280,14 @@ country_event = {
 						has_church_aspect = purple_dragon_3_upgraded
 					}
 				}
-				every_war_enemy_country = {
-					every_owned_province = {
-						limit = { sieged_by = ROOT }
-						change_siege = 2
-					}
+				event_target:jyntas_kobold_target = {
+					add_base_tax = 1
+					add_base_production = 1			
 				}
 			}
 			else = { #Only 1 upgraded active
-				every_war_enemy_country = {
-					every_owned_province = {
-						limit = { sieged_by = ROOT }
-						change_siege = 1
-					}
+				event_target:jyntas_kobold_target = {
+					add_base_production = 1
 				}
 			}
 		}
@@ -307,36 +322,16 @@ country_event = {
 					has_church_aspect = brass_dragon_2_upgraded
 					has_church_aspect = brass_dragon_3_upgraded
 				}
-				event_target:jyntas_kobold_target = {
-					if = {
-						limit = { NOT = { has_building = temple } }
-						add_building = temple
-					}
-					else_if = {
-						limit = { NOT = { has_building = workshop } }
-						add_building = workshop						
-					}
-					else_if = {
-						limit = { NOT = { has_building = courthouse } }
-						add_building = courthouse						
-					}
-					else_if = {
-						limit = { NOT = { has_building = cathedral } }
-						add_building = cathedral						
-					}
-					else_if = {
-						limit = { NOT = { has_building = town_hall } }
-						add_building = town_hall						
-					}		
-					else_if = {
-						limit = { NOT = { has_building = counting_house } }
-						add_building = counting_house						
-					}			
-					add_base_tax = 1
-					add_base_production = 1
-					add_base_manpower = 1
+				custom_tooltip = jyntas_lose_ae_tt_3
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = 15
+							apply_calc = yes
+						}
+					}					
 				}
-
 			}
 			else_if = { #Has 2/3 upgraded + active
 				limit = {
@@ -345,14 +340,27 @@ country_event = {
 						has_church_aspect = brass_dragon_3_upgraded
 					}
 				}
-				event_target:jyntas_kobold_target = {
-					add_base_production = 1
-					add_base_tax = 1
+				custom_tooltip = jyntas_lose_ae_tt_2
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = 10
+							apply_calc = yes
+						}
+					}				
 				}
 			}
 			else = { #Only 1 upgraded active
-				event_target:jyntas_kobold_target = {
-					add_base_tax = 1
+				custom_tooltip = jyntas_lose_ae_tt_1
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = 5
+							apply_calc = yes
+						}
+					}				
 				}
 			}
 		}
