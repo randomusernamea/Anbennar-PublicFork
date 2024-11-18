@@ -383,6 +383,12 @@ country_event = {
 					cede_province = F33
 				}
                 vassalize = F33
+				F33 = {
+					limit = {
+						area = traz_buranun_area
+                    }
+					cede_province = F30
+				}
             }
 			every_war_enemy_country = {
 				white_peace = ROOT
