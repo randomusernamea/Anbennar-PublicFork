@@ -2241,17 +2241,31 @@ Kob_5b = {
 					}
 				}
 			}
+			175 = {
+				change_trade_goods = cloth
 
-			dragon_coast_region = {
-				limit = {
-					OR = {
-						province_id = 175
-						province_id = 173 
-						province_id = 174
-						province_id = 183 
-						province_id = 170
-					}
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
 				}
+			}
+			174 = {
+				change_trade_goods = cloth
+
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			183 = {
+				change_trade_goods = cloth
+
+				add_province_modifier = {
+					name = Z38_fungal_dye_supplies
+					duration = -1
+				}
+			}
+			170 = {
 				change_trade_goods = cloth
 
 				add_province_modifier = {
