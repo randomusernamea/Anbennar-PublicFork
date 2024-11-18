@@ -451,14 +451,6 @@ country_event = {
 				add_treasury = 600
 			}
 			else = {
-				limit = {
-					2502 = { #Uesrennu
-						check_variable = {
-							which = taychend_oren_nayiru_provinces
-							value = 15
-						}
-					}
-				}
 				capital_scope = {
 					for = {
 						amount = 20
