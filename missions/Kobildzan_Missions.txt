@@ -2024,6 +2024,10 @@ Kob_5b = {
 				limit = { ai = yes }
 				adm_power = 300
 				is_subject = no
+				owns = 3578
+				owns = 4644
+				owns = 4645
+				owns = 4646
 			} else = {
 				3578 = { num_of_times_improved = 1 }
 				4644 = { num_of_times_improved = 1 }
@@ -2076,6 +2080,15 @@ Kob_5b = {
 				limit = { ai = yes }
 				treasury = 600
 				is_subject = no
+				calc_true_if = {
+					amount = 4
+					owns = 171
+					owns = 172
+					owns = 181
+					owns = 176
+					owns = 122
+					owns = 145
+				}
 			} else = {
 				production_efficiency = 0.4
 				custom_trigger_tooltip = {
@@ -2096,55 +2109,72 @@ Kob_5b = {
 				add_treasury = -600
 			}
 
-			171 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
+			if = {
+				limit = { owns = 171 }
+				171 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
 				}
 			}
-			172 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
+			if = {
+				limit = { owns = 172 }
+				172 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
 				}
 			}
-			181 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
+			if = {
+				limit = { owns = 181 }
+				181 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
 				}
 			}
-			176 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
-			}	
-			}
-			122 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
+			if = {
+				limit = { owns = 176 }
+				176 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
 				}
 			}
-			145 = { 
-				change_trade_goods = fungi
-				kill_units = {
-					who = ROOT
-					type = light_ship
-					amount = 2
+			if = {
+				limit = { owns = 122 }
+				122 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
 				}
 			}
-
+			if = {
+				limit = { owns = 145 }
+				145 = { 
+					change_trade_goods = fungi
+					kill_units = {
+						who = ROOT
+						type = light_ship
+						amount = 2
+					}
+				}
+			}
 			every_owned_province = {
 				limit = { trade_goods = fungi }
 				add_province_modifier = {
@@ -2188,6 +2218,14 @@ Kob_5b = {
 			if = {
 				limit = { ai = yes }
 				treasury = 600
+				calc_true_if = {
+					amount = 4
+					owns = 175
+					owns = 173
+					owns = 174
+					owns = 183
+					owns = 170
+				}
 			} else = {
 				custom_trigger_tooltip = {
 					tooltip = all_wool_provinces_tt 
@@ -2241,55 +2279,77 @@ Kob_5b = {
 					}
 				}
 			}
-			175 = {
-				change_trade_goods = cloth
-
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 175 }
+				175 = {
+					change_trade_goods = cloth
+	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
-			174 = {
-				change_trade_goods = cloth
-
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 174 }
+				174 = {
+					change_trade_goods = cloth
+	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
+				}
+			}			
+			if = {
+				limit = { owns = 183 }
+				183 = {
+					change_trade_goods = cloth
+	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
-			183 = {
-				change_trade_goods = cloth
-
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 170 }
+				170 = {
+					change_trade_goods = cloth
+	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
-			170 = {
-				change_trade_goods = cloth
-
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 173 }
+				173 = {
+					change_trade_goods = cloth
+	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
-			173 = { 
-				change_trade_goods = silk
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 4644 }
+				4644 = {	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
-			4644 = {
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
-				}			
-			}
-			3578 = {
-				add_province_modifier = {
-					name = Z38_fungal_dye_supplies
-					duration = -1
+			if = {
+				limit = { owns = 3578 }
+				3578 = {	
+					add_province_modifier = {
+						name = Z38_fungal_dye_supplies
+						duration = -1
+					}
 				}
 			}
 		}
