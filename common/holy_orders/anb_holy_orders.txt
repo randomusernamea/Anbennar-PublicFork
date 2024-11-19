@@ -1545,40 +1545,10 @@ maederitic_rule_order_level_1 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_added_effect = { deity = maederitic_rule }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_maederitic_rule_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_maederitic_rule_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
     }
     modifier = {
         local_tax_modifier = 0.15
@@ -1603,40 +1573,10 @@ maederitic_rule_order_level_2 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_added_effect = { deity = maederitic_rule }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_maederitic_rule_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_maederitic_rule_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -1658,40 +1598,10 @@ maederitic_rule_order_level_3 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_added_effect = { deity = maederitic_rule }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_maederitic_rule_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_maederitic_rule_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_maederitic_rule_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = maederitic_rule }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -1714,40 +1624,10 @@ schaal_onitheia_order_level_1 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_schaal_onitheia_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_schaal_onitheia_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
     }
     modifier = {
         local_tax_modifier = 0.15
@@ -1772,40 +1652,10 @@ schaal_onitheia_order_level_2 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_schaal_onitheia_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_schaal_onitheia_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -1827,40 +1677,10 @@ schaal_onitheia_order_level_3 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_schaal_onitheia_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_schaal_onitheia_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_schaal_onitheia_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = schaal_onitheia }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -1883,40 +1703,10 @@ teachings_of_varamelas_order_level_1 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_teachings_of_varamelas_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_teachings_of_varamelas_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
     }
     modifier = {
         local_tax_modifier = 0.15
@@ -1941,40 +1731,10 @@ teachings_of_varamelas_order_level_2 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_teachings_of_varamelas_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_teachings_of_varamelas_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -1996,40 +1756,10 @@ teachings_of_varamelas_order_level_3 = {
     cost = 0
     cost_type = adm_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_teachings_of_varamelas_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_teachings_of_varamelas_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_teachings_of_varamelas_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
     }
     modifier = {
         local_tax_modifier = 0.25
@@ -2053,40 +1783,10 @@ dictats_of_isparokaeus_order_level_1 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_dictats_of_isparokaeus_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_dictats_of_isparokaeus_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
     }
     modifier = {
         province_trade_power_modifier = 0.1
@@ -2111,40 +1811,10 @@ dictats_of_isparokaeus_order_level_2 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_dictats_of_isparokaeus_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_dictats_of_isparokaeus_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2166,40 +1836,10 @@ dictats_of_isparokaeus_order_level_3 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_dictats_of_isparokaeus_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_dictats_of_isparokaeus_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_dictats_of_isparokaeus_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2222,40 +1862,10 @@ archatiradist_doctrine_order_level_1 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_archatiradist_doctrine_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_archatiradist_doctrine_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
     }
     modifier = {
         province_trade_power_modifier = 0.1
@@ -2280,40 +1890,10 @@ archatiradist_doctrine_order_level_2 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_archatiradist_doctrine_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_archatiradist_doctrine_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2335,40 +1915,10 @@ archatiradist_doctrine_order_level_3 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_archatiradist_doctrine_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_archatiradist_doctrine_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_archatiradist_doctrine_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2391,40 +1941,10 @@ anagbheism_order_level_1 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_added_effect = { deity = anagbheism }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_anagbheism_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_anagbheism_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = anagbheism }
     }
     modifier = {
         province_trade_power_modifier = 0.1
@@ -2449,40 +1969,10 @@ anagbheism_order_level_2 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_added_effect = { deity = anagbheism }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_anagbheism_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_anagbheism_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = anagbheism }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2504,40 +1994,10 @@ anagbheism_order_level_3 = {
     cost = 0
     cost_type = dip_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_added_effect = { deity = anagbheism }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_anagbheism_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_anagbheism_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_anagbheism_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = anagbheism }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = anagbheism }
     }
     modifier = {
         province_trade_power_modifier = 0.2
@@ -2561,40 +2021,10 @@ axierophonic_mandate_order_level_1 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_axierophonic_mandate_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_axierophonic_mandate_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
     }
     modifier = {
         local_manpower_modifier = 0.075
@@ -2619,40 +2049,10 @@ axierophonic_mandate_order_level_2 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_axierophonic_mandate_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_axierophonic_mandate_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
     }
     modifier = {
         local_manpower_modifier = 0.15
@@ -2674,40 +2074,10 @@ axierophonic_mandate_order_level_3 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_axierophonic_mandate_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_axierophonic_mandate_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_axierophonic_mandate_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = axierophonic_mandate }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
     }
     modifier = {
         local_manpower_modifier = 0.15
@@ -2730,40 +2100,10 @@ drivos_rochos_order_level_1 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_added_effect = { deity = drivos_rochos }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_drivos_rochos_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_drivos_rochos_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
     }
     modifier = {
         local_manpower_modifier = 0.075
@@ -2788,40 +2128,10 @@ drivos_rochos_order_level_2 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_added_effect = { deity = drivos_rochos }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_drivos_rochos_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_drivos_rochos_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
     }
     modifier = {
         local_manpower_modifier = 0.15
@@ -2843,40 +2153,10 @@ drivos_rochos_order_level_3 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_added_effect = { deity = drivos_rochos }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_drivos_rochos_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_drivos_rochos_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_drivos_rochos_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = drivos_rochos }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
     }
     modifier = {
         local_manpower_modifier = 0.15
@@ -2899,40 +2179,10 @@ laskaris_creed_order_level_1 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_added_effect = { deity = laskaris_creed }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_laskaris_creed_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_laskaris_creed_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
     }
     modifier = {
         local_manpower_modifier = 0.075
@@ -2957,40 +2207,10 @@ laskaris_creed_order_level_2 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_added_effect = { deity = laskaris_creed }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_laskaris_creed_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_laskaris_creed_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
     }
     modifier = {
         local_manpower_modifier = 0.15
@@ -3012,40 +2232,10 @@ laskaris_creed_order_level_3 = {
     cost = 0
     cost_type = mil_power
     per_province_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = 1
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_added_effect = { deity = laskaris_creed }
     }
     per_province_abandon_effect = {
-        hidden_effect = {
-            owner = {
-                change_variable = {
-                    which = kheionism_laskaris_creed_var
-                    value = -1
-                }
-                if = {
-                    limit = {
-                        NOT = {
-                            check_variable = {
-                                which = kheionism_laskaris_creed_var
-                                value = 0
-                            }
-                        }
-                    }
-                    set_variable = {
-                        which = kheionism_laskaris_creed_var
-                        value = 0
-                    }
-                }
-                upgrade_kheionism_deity = { deity = laskaris_creed }
-            }
-        }
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
     }
     modifier = {
         local_manpower_modifier = 0.15
