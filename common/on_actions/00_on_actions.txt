@@ -15170,6 +15170,15 @@ on_colony_established = {
 			duration = 7300
 		}
 	}
+	if = { #Devandi Anglican Ability
+		limit = { FROM = { has_country_flag = seismic_sense_flag } }
+		random_list = {
+			55 = { change_trade_goods = copper }
+			30 = { change_trade_goods = iron }
+			15 = { change_trade_goods = gold }
+		}
+		FROM = { clr_country_flag = seismic_sense_flag }
+	}
 }
 
 #scope = new country, FROM = parent country 1.35
