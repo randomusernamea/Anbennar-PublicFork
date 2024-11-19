@@ -10293,33 +10293,11 @@ on_province_owner_change_effect = {
 	#Kheionist
 	if = {
 		limit = { owner = { religion = kheionism } }
-		owner = { 
-			update_kheionism_provinces_variables = yes 
-			upgrade_kheionism_deity = { deity = maederitic_rule }
-			upgrade_kheionism_deity = { deity = schaal_onitheia }
-			upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-			upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-			upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-			upgrade_kheionism_deity = { deity = anagbheism }
-			upgrade_kheionism_deity = { deity = axierophonic_mandate }
-			upgrade_kheionism_deity = { deity = drivos_rochos }
-			upgrade_kheionism_deity = { deity = laskaris_creed }
-		}
+		owner = { country_event = { id = kheionism.5 } }
 	}
 	if = {
 		limit = { FROM = { religion = kheionism } }
-		FROM = { 
-			update_kheionism_provinces_variables = yes 
-			upgrade_kheionism_deity = { deity = maederitic_rule }
-			upgrade_kheionism_deity = { deity = schaal_onitheia }
-			upgrade_kheionism_deity = { deity = teachings_of_varamelas }
-			upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
-			upgrade_kheionism_deity = { deity = archatiradist_doctrine }
-			upgrade_kheionism_deity = { deity = anagbheism }
-			upgrade_kheionism_deity = { deity = axierophonic_mandate }
-			upgrade_kheionism_deity = { deity = drivos_rochos }
-			upgrade_kheionism_deity = { deity = laskaris_creed }
-		}
+		FROM = { country_event = { id = kheionism.5 } }
 	}
 }
 

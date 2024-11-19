@@ -655,3 +655,29 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+
+#Setting the variable to num_of_cities in the first scripted effect doesn't work, 
+#it sets it to the amount you have before taking the provinces not after. This delays a bit it so it works
+country_event = {
+	id = kheionism.5
+	title = kheionism.5.t
+	desc = kheionism.5.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+        name = kheionism.5.a
+		update_kheionism_provinces_variables = yes 
+		upgrade_kheionism_deity = { deity = maederitic_rule }
+		upgrade_kheionism_deity = { deity = schaal_onitheia }
+		upgrade_kheionism_deity = { deity = teachings_of_varamelas }
+		upgrade_kheionism_deity = { deity = dictats_of_isparokaeus }
+		upgrade_kheionism_deity = { deity = archatiradist_doctrine }
+		upgrade_kheionism_deity = { deity = anagbheism }
+		upgrade_kheionism_deity = { deity = axierophonic_mandate }
+		upgrade_kheionism_deity = { deity = drivos_rochos }
+		upgrade_kheionism_deity = { deity = laskaris_creed }
+	}
+}

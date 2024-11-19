@@ -1781,22 +1781,16 @@ kheionist_ho_added_effect = {
 kheionist_ho_removed_effect = {
 	hidden_effect = {
 		owner = {
-			change_variable = {
-				which = kheionism_$deity$_var
-				value = -1
-			}
 			if = {
 				limit = {
-					NOT = {
-						check_variable = {
-							which = kheionism_$deity$_var
-							value = 0
-						}
+					check_variable = {
+						which = kheionism_$deity$_var
+						value = 1
 					}
 				}
-				set_variable = {
+				change_variable = {
 					which = kheionism_$deity$_var
-					value = 0
+					value = -1
 				}
 			}
 			upgrade_kheionism_deity = { deity = $deity$ }
