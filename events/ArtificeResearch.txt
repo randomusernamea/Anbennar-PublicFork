@@ -30,6 +30,9 @@ country_event = {
 
 	immediate = {
 		set_country_flag = artifice_research_menu_open
+
+		#sets the correct research speed
+		research_speed = yes
 	}
 
 	#Gimme that research
@@ -54,9 +57,6 @@ country_event = {
 		}
 		hidden_effect = {
 			set_country_flag = artifice_research_in_progress
-
-			#sets the correct research speed
-			research_speed = yes
 		}
 		add_adm_power = -30
 		add_dip_power = -30
@@ -1138,6 +1138,21 @@ country_event = {
 		}
 		tooltip = {
 			set_estate_privilege = artifice_invention_gu_boats
+		}
+				ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = artifice_research.3.m218
+		trigger = {
+			has_country_flag = research_artifice_invention_veykoda_rune_protections
+		}
+		hidden_effect = {
+			set_country_flag = researching_artifice_invention_veykoda_rune_protections
+		}
+		tooltip = {
+			set_estate_privilege = artifice_invention_veykoda_rune_protections
 		}
 				ai_chance = {
 			factor = 5
@@ -2587,6 +2602,14 @@ country_event = {
 			clr_country_flag = researching_artifice_invention_gu_boats
 			country_event = {
 				id = artifice_inventions.902
+			}
+		}
+		if = {
+			limit = { has_country_flag = researching_artifice_invention_veykoda_rune_protections }
+			set_country_flag = unlocked_artifice_invention_veykoda_rune_protections
+			clr_country_flag = researching_artifice_invention_veykoda_rune_protections
+			country_event = {
+				id = artifice_inventions.608
 			}
 		}
 		#Tier 2 Society

@@ -83,6 +83,7 @@ tag_needs_cannor = {
 		#conquest
 		culture_group = centaur
 		culture_group = ogre
+		tag = F23	#Ovdal Tûngr
 		
 		#other
 		tag = Y86	#Azkare
@@ -118,7 +119,7 @@ tag_needs_bulwar = {
 		capital_scope = { superregion = south_salahad_superregion }
 		capital_scope = { superregion = north_salahad_superregion }
 		capital_scope = { superregion = rahen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
 		
 		#for the adventurers
 		capital_scope = { continent = north_america }	
@@ -140,10 +141,11 @@ tag_needs_north_sarhal = {
 		capital_scope = { superregion = western_cannor_superregion }
 		capital_scope = { superregion = bulwar_superregion }
 		capital_scope = { superregion = rahen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
 		capital_scope = { superregion = fangaula_superregion }
 		capital_scope = { superregion = east_sarhal_superregion }
-		capital_scope = { superregion = south_sarhal_superregion }
+		capital_scope = { superregion = djinnakah_superregion }
+		capital_scope = { superregion = taneyas_superregion }
 		capital_scope = { region = horashesh_region }
 		capital_scope = { region = fahvanosy_region }
 		
@@ -154,6 +156,7 @@ tag_needs_north_sarhal = {
 		tag = H73 #Skewered Drake
 		religion = the_jadd	#Jadd Empire
 		capital_scope = { superregion = escann_superregion } #Castanor/Black Demesne
+		tag = F23	#Ovdal Tûngr
 		
 		#other interactions
 		tag = Y86	#Azkare
@@ -176,6 +179,7 @@ tag_needs_south_sarhal = {
 		tag = F50	#Mulen
 		tag = F43	#Zansap
 		tag = U17	#Crathanor
+		tag = F23	#Ovdal Tûngr
 	}
 }
 
@@ -190,12 +194,13 @@ tag_needs_east_sarhal = {
 		capital_scope = { region = throden_gokad_region }
 		capital_scope = { region = odu_kherass_region }
 		capital_scope = { superregion = rahen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
 
 		#conquest
 		religion = the_jadd	#Jadd Empire
 		tag = Y20	#Feiten
 		tag = F50	#Mulen
+		tag = F23	#Ovdal Tûngr
 	}
 }
 
@@ -222,8 +227,8 @@ tag_needs_east_serpentspine = {
 		capital_scope = { superregion = west_serpentspine_superregion }
 		capital_scope = { superregion = rahen_superregion }
 		capital_scope = { superregion = yanshen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
-		capital_scope = { superregion = north_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
+		capital_scope = { superregion = gozengun_superregion }
 		capital_scope = { superregion = bulwar_superregion }
 		tag = U05	#Elizna
 		
@@ -236,8 +241,8 @@ tag_needs_forbidden_plains = {
 		#proximity
 		capital_scope = { continent = serpentspine }
 		capital_scope = { superregion = yanshen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
-		capital_scope = { superregion = north_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
+		capital_scope = { superregion = gozengun_superregion }
 		
 		#conquest
 		capital_scope = { superregion = escann_superregion }	#Castanor
@@ -252,12 +257,13 @@ tag_needs_rahen = {
 		capital_scope = { continent = serpentspine }
 		capital_scope = { superregion = bulwar_superregion }
 		capital_scope = { superregion = yanshen_superregion }
-		capital_scope = { superregion = south_haless_superregion }
-		capital_scope = { superregion = north_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
+		capital_scope = { superregion = gozengun_superregion }
 		tag = U05	#Elizna
 		
 		#conquest
 		culture_group = centaur
+		tag = F23	#Ovdal Tûngr
 	}
 }
 
@@ -266,12 +272,13 @@ tag_needs_haless = {
 		#proximity
 		capital_scope = { superregion = rahen_superregion }
 		capital_scope = { superregion = forbidden_lands_superregion }
-		capital_scope = { superregion = north_haless_superregion }
+		capital_scope = { superregion = gozengun_superregion }
 		
 		#conquest
 		capital_scope = { continent = serpentspine }
 		culture = sun_elf	#Pheonix Empire
 		religion = the_jadd	#Jadd Empire
+		tag = F23	#Ovdal Tûngr
 	}
 }
 
@@ -280,7 +287,7 @@ tag_needs_gozenguun = {
 		#Proximity
 		capital_scope = { superregion = rahen_superregion }
 		capital_scope = { superregion = forbidden_lands_superregion }
-		capital_scope = { superregion = south_haless_superregion }
+		capital_scope = { superregion = vimdatrong_superregion }
 		capital_scope = { superregion = yanshen_superregion }
 		
 		#conquest
