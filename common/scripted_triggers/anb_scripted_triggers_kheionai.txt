@@ -251,10 +251,13 @@ taychend_hero_cult_has_passed_reform = {
 #Kheionist
 #Holy Order Triggers
 has_kheionist_holy_order = {
-	OR = {
-		holy_order = $holy_order$_order_level_1
-		holy_order = $holy_order$_order_level_2
-		holy_order = $holy_order$_order_level_3
+	custom_trigger_tooltip = {
+		tooltip = has_$holy_order$_kheionist_holy_order_tt
+		OR = {
+			holy_order = $holy_order$_order_level_1
+			holy_order = $holy_order$_order_level_2
+			holy_order = $holy_order$_order_level_3
+		}
 	}
 }
 
@@ -310,10 +313,13 @@ has_kheionist_holy_order_of_level = {
 
 #Deity Triggers
 has_kheionist_deity = {
-	OR = {
-		has_personal_deity = $deity$_deity_level_1
-		has_personal_deity = $deity$_deity_level_2
-		has_personal_deity = $deity$_deity_level_3
+	custom_trigger_tooltip = {
+		tooltip = has_$deity$_kheionist_deity_tt
+		OR = {
+			has_personal_deity = $deity$_deity_level_1
+			has_personal_deity = $deity$_deity_level_2
+			has_personal_deity = $deity$_deity_level_3
+		}
 	}
 }
 
