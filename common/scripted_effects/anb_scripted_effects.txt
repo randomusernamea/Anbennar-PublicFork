@@ -2067,6 +2067,7 @@ clear_adventurers_organization_effect = {
 		remove_estate_privilege = estate_adventurers_organization_scp_bureau
 		remove_estate_privilege = estate_adventurers_organization_exploration_society
 		remove_estate_privilege = estate_adventurers_suhuskar_palace
+		remove_estate_privilege = estate_adventurers_organization_stone_army
 	}
 }
 
@@ -5079,12 +5080,6 @@ anbennar_building_effect = {
 			limit = { religion = corinite }
 			hidden_effect = { add_karma = 0.3 }
 		}
-		if = {
-			limit = {
-				has_church_aspect = purple_dragon_1
-			} 
-			add_church_power = 10 
-		}
 	}
 	if = {
 		limit = {
@@ -5194,6 +5189,28 @@ anb_on_development_effect = {
 			add_base_$development$ = 1
 		}
 	}
+
+	if = { #Taychend Vainglory
+		limit = { 
+			owner = {
+				has_country_modifier = J84_taychend_in_bloom
+			}
+		}
+		random = {
+			chance = 25
+			add_base_$development$ = 1
+			add_next_institution_embracement_scaled = 5
+		}
+	}
+
+	if = { #Taychendi Empire
+		limit = { has_province_modifier = J84_urban_boom }
+		random = {
+			chance = 25
+			add_base_$development$ = 1
+			add_next_institution_embracement_scaled = 5
+		}
+	}
 	
 	jaddari_deioderan_dev_counter_update = yes
 	# if = {
@@ -5264,12 +5281,6 @@ anb_on_development_effect = {
 		if = {
 			limit = { religion = corinite }
 			add_karma = 0.1
-		}
-		if = {
-			limit = {
-				has_church_aspect = copper_dragon_1
-			}
-			add_church_power = 4
 		}
 		if = {
 			limit = {
