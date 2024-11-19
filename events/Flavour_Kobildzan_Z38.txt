@@ -220,25 +220,46 @@ country_event = { #Artificer Malcontents
 
 	trigger = {
 		OR = {
-			exists = H31
-			exists = H30
-			exists = H32
-			exists = U31
+			AND = {
+				exists = H31
+				NOT = { truce_with = H31 }
+			}
+			AND = {
+				exists = H30
+				NOT = { truce_with = H30 }
+			}			
+			AND = {
+				exists = H33
+				NOT = { truce_with = H33 }
+			}
+			AND = {
+				exists = U31
+				NOT = { truce_with = U31 }
+			}
 		}
 	}
 
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { exists = H31 }
+				limit = {
+					exists = H31
+					NOT = { truce_with = H31 }
+				}
 				H31 = { random_owned_province = { save_event_target_as = malcontents_province } }
 			}
 			else_if = {
-				limit = { exists = H30 }
+				limit = {
+					exists = H30
+					NOT = { truce_with = H30 }
+				}
 				H30 = { random_owned_province = { save_event_target_as = malcontents_province } }
 			}
 			else_if = {
-				limit = { exists = H32 }
+				limit = {
+					exists = H32
+					NOT = { truce_with = H32 }
+				}
 				H32 = { random_owned_province = { save_event_target_as = malcontents_province } }
 			}
 			else = {
