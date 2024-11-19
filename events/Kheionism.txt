@@ -34,6 +34,10 @@ country_event = {
 	
 	is_triggered_only = yes
 
+	immediate = {
+		clr_country_flag = save_kheionist_province_flags
+	}
+
 	#Leave as is
 	option = {
         name = kheionism.2.a 
@@ -439,6 +443,16 @@ country_event = {
 				limit = { has_province_flag = has_maederitic_rule_order_flag }
 				holy_order = maederitic_rule_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
+			}
 		}
 		else_if = {
 			limit = { has_kheionist_deity = { deity = schaal_onitheia } }
@@ -446,12 +460,32 @@ country_event = {
 				limit = { has_province_flag = has_schaal_onitheia_order_flag }
 				holy_order = schaal_onitheia_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
+			}
 		}
 		else_if = {
 			limit = { has_kheionist_deity = { deity = teachings_of_varamelas } }
 			every_owned_province = {
 				limit = { has_province_flag = has_teachings_of_varamelas_order_flag }
 				holy_order = teachings_of_varamelas_order_level_3
+			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 		}
 		
@@ -461,6 +495,16 @@ country_event = {
 				limit = { has_province_flag = has_dictats_of_isparokaeus_order_flag }
 				holy_order = dictats_of_isparokaeus_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
+			}
 		}
 		else_if = {
 			limit = { has_kheionist_deity = { deity = archatiradist_doctrine } }
@@ -468,12 +512,32 @@ country_event = {
 				limit = { has_province_flag = has_archatiradist_doctrine_order_flag }
 				holy_order = archatiradist_doctrine_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
+			}
 		}
 		else_if = {
 			limit = { has_kheionist_deity = { deity = anagbheism } }
 			every_owned_province = {
 				limit = { has_province_flag = has_anagbheism_order_flag }
 				holy_order = anagbheism_order_level_3
+			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 		}
 		
@@ -483,12 +547,32 @@ country_event = {
 				limit = { has_province_flag = has_axierophonic_mandate_order_flag }
 				holy_order = axierophonic_mandate_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
+			}
 		}
 		else_if = {
 			limit = { has_kheionist_deity = { deity = drivos_rochos } }
 			every_owned_province = {
 				limit = { has_province_flag = has_drivos_rochos_order_flag }
 				holy_order = drivos_rochos_order_level_3
+			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 		}
 		else_if = {
@@ -497,6 +581,16 @@ country_event = {
 				limit = { has_province_flag = has_laskaris_creed_order_flag }
 				holy_order = laskaris_creed_order_level_3
 			}
+			every_owned_province = {
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+			}
 		}
 	}
 
@@ -504,6 +598,17 @@ country_event = {
 	option = {
         name = kheionism.2.c 
 		ai_chance = { factor = 1 }
+		every_owned_province = {
+			clr_province_flag = has_maederitic_rule_order_flag
+			clr_province_flag = has_schaal_onitheia_order_flag
+			clr_province_flag = has_teachings_of_varamelas_order_flag
+			clr_province_flag = has_dictats_of_isparokaeus_order_flag
+			clr_province_flag = has_archatiradist_doctrine_order_flag
+			clr_province_flag = has_anagbheism_order_flag
+			clr_province_flag = has_axierophonic_mandate_order_flag
+			clr_province_flag = has_drivos_rochos_order_flag
+			clr_province_flag = has_laskaris_creed_order_flag
+		}
 	}
 }
 
@@ -519,7 +624,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			save_kheionism_holy_orders = yes
+			set_country_flag = save_kheionist_province_flags
 			every_owned_province = { holy_order = no_holy_order }
 			set_variable = { which = kheionism_ruler_adm value = 0 }
 			set_variable = { which = kheionism_ruler_dip value = 0 }

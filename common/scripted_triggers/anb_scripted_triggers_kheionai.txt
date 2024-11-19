@@ -253,11 +253,7 @@ taychend_hero_cult_has_passed_reform = {
 has_kheionist_holy_order = {
 	custom_trigger_tooltip = {
 		tooltip = has_$holy_order$_kheionist_holy_order_tt
-		OR = {
-			holy_order = $holy_order$_order_level_1
-			holy_order = $holy_order$_order_level_2
-			holy_order = $holy_order$_order_level_3
-		}
+		has_province_flag = has_$holy_order$_order_flag
 	}
 }
 
@@ -265,9 +261,9 @@ has_adm_kheionist_holy_order = {
 	custom_trigger_tooltip = {
 		tooltip = has_adm_kheionist_holy_order_tt
 		OR = {
-			has_kheionist_holy_order = { holy_order = maederitic_rule }
-			has_kheionist_holy_order = { holy_order = schaal_onitheia }
-			has_kheionist_holy_order = { holy_order = teachings_of_varamelas }
+			has_province_flag = has_maederitic_rule_order_flag
+			has_province_flag = has_schaal_onitheia_order_flag
+			has_province_flag = has_teachings_of_varamelas_order_flag
 		}
 	}
 }
@@ -276,9 +272,9 @@ has_dip_kheionist_holy_order = {
 	custom_trigger_tooltip = {
 		tooltip = has_dip_kheionist_holy_order_tt
 		OR = {
-			has_kheionist_holy_order = { holy_order = dictats_of_isparokaeus }
-			has_kheionist_holy_order = { holy_order = archatiradist_doctrine }
-			has_kheionist_holy_order = { holy_order = anagbheism }
+			has_province_flag = has_dictats_of_isparokaeus_order_flag
+			has_province_flag = has_archatiradist_doctrine_order_flag
+			has_province_flag = has_anagbheism_order_flag
 		}
 	}
 }
@@ -287,9 +283,9 @@ has_mil_kheionist_holy_order = {
 	custom_trigger_tooltip = {
 		tooltip = has_mil_kheionist_holy_order_tt
 		OR = {
-			has_kheionist_holy_order = { holy_order = axierophonic_mandate }
-			has_kheionist_holy_order = { holy_order = drivos_rochos }
-			has_kheionist_holy_order = { holy_order = laskaris_creed }
+			has_province_flag = has_axierophonic_mandate_order_flag
+			has_province_flag = has_drivos_rochos_order_flag
+			has_province_flag = has_laskaris_creed_order_flag
 		}
 	}
 }
@@ -311,48 +307,11 @@ has_kheionist_holy_order_of_level = {
 	}
 }
 
-#Deity Triggers
+#Deity Triggers - Works for specific deities or mana type
 has_kheionist_deity = {
 	custom_trigger_tooltip = {
 		tooltip = has_$deity$_kheionist_deity_tt
-		OR = {
-			has_personal_deity = $deity$_deity_level_1
-			has_personal_deity = $deity$_deity_level_2
-			has_personal_deity = $deity$_deity_level_3
-		}
-	}
-}
-
-has_adm_kheionist_deity = {
-	custom_trigger_tooltip = {
-		tooltip = has_adm_kheionist_deity_tt
-		OR = {
-			has_kheionist_deity = { deity = maederitic_rule }
-			has_kheionist_deity = { deity = schaal_onitheia }
-			has_kheionist_deity = { deity = teachings_of_varamelas }
-		}
-	}
-}
-
-has_dip_kheionist_deity = {
-	custom_trigger_tooltip = {
-		tooltip = has_dip_kheionist_deity_tt
-		OR = {
-			has_kheionist_deity = { deity = dictats_of_isparokaeus }
-			has_kheionist_deity = { deity = archatiradist_doctrine }
-			has_kheionist_deity = { deity = anagbheism }
-		}
-	}
-}
-
-has_mil_kheionist_deity = {
-	custom_trigger_tooltip = {
-		tooltip = has_mil_kheionist_deity_tt
-		OR = {
-			has_kheionist_deity = { deity = axierophonic_mandate }
-			has_kheionist_deity = { deity = drivos_rochos }
-			has_kheionist_deity = { deity = laskaris_creed }
-		}
+		has_country_flag = has_$deity$_kheionist_deity
 	}
 }
 

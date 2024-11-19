@@ -1581,58 +1581,6 @@ losing_kheionai_shipyard_effect = {
 	}
 }
 
-save_kheionism_holy_orders = {
-	every_owned_province = {
-		clr_province_flag = has_maederitic_rule_order_flag
-		clr_province_flag = has_schaal_onitheia_order_flag
-		clr_province_flag = has_teachings_of_varamelas_order_flag
-		clr_province_flag = has_dictats_of_isparokaeus_order_flag
-		clr_province_flag = has_archatiradist_doctrine_order_flag
-		clr_province_flag = has_anagbheism_order_flag
-		clr_province_flag = has_axierophonic_mandate_order_flag
-		clr_province_flag = has_drivos_rochos_order_flag
-		clr_province_flag = has_laskaris_creed_order_flag
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = maederitic_rule } }
-			set_province_flag = has_maederitic_rule_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = schaal_onitheia } }
-			set_province_flag = has_schaal_onitheia_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = teachings_of_varamelas } }
-			set_province_flag = has_teachings_of_varamelas_order_flag
-		}
-		
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = dictats_of_isparokaeus } }
-			set_province_flag = has_dictats_of_isparokaeus_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = archatiradist_doctrine } }
-			set_province_flag = has_archatiradist_doctrine_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = anagbheism } }
-			set_province_flag = has_anagbheism_order_flag
-		}
-		
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = axierophonic_mandate } }
-			set_province_flag = has_axierophonic_mandate_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = drivos_rochos } }
-			set_province_flag = has_drivos_rochos_order_flag
-		}
-		if = {
-			limit = { has_kheionist_holy_order = { holy_order = laskaris_creed } }
-			set_province_flag = has_laskaris_creed_order_flag
-		}
-	}
-}
-
 initialize_kheionism_variables = {
 	set_variable = {
 		which = kheionism_maederitic_rule_var
@@ -1768,6 +1716,7 @@ upgrade_kheionism_deity = {
 
 kheionist_ho_added_effect = {
 	hidden_effect = {
+		set_province_flag = has_$deity$_order_flag
 		owner = {
 			change_variable = {
 				which = kheionism_$deity$_var
@@ -1780,6 +1729,10 @@ kheionist_ho_added_effect = {
 
 kheionist_ho_removed_effect = {
 	hidden_effect = {
+		if = {
+			limit = { owner = { NOT = { has_country_flag = save_kheionist_province_flags } } }
+			clr_province_flag = has_$deity$_order_flag
+		}
 		owner = {
 			if = {
 				limit = {
