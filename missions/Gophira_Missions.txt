@@ -31,7 +31,10 @@ gophira_1 = {
 					white_peace = J72
 					set_country_flag = gophira_pay_ae
 				}
-				else = { release = J72 } 
+				else = {
+					release_with_religion_and_culture = { tag = J72 religion = gods_of_the_taychend culture = chendhyan }
+					add_government_reform = taychend_duchy
+				}
 			}
 			country_event = { id = gophira.4 } 
 			J72 = {

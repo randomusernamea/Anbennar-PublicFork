@@ -3,6 +3,7 @@ tolerance_generic_1_effect = {
 	if = {
 		limit = {
 			low_tolerance_$race$_race_trigger = yes
+			any_owned_province = { has_$race$_minority_trigger = yes }
 		}
 		hidden_effect = {
 			country_event = {
@@ -39,11 +40,12 @@ tolerance_generic_3_effect = {
 		}
 		custom_tooltip = add_$race$_minority_size_effect_tooltip
 		hidden_effect = {
-			add_minority_with_correct_tolerance = { race = $race$ size = large }
+			add_$race$_minority_size_effect = yes
+			add_$race$_minority_size_effect = yes
 			random = {
 				chance = 30
-				change_culture = event_target:$race$_origin
-				change_religion = event_target:$race$_origin
+				change_culture = event_target:settlers_origin
+				change_religion = event_target:settlers_origin
 			}
 		}
 	}

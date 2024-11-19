@@ -222,8 +222,9 @@ country_event = {
 					id = harpy_tolerance_events.11
 				}
 			}
-			20 = {
+			30 = {
 				trigger = {
+					ai = no
 					OR = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10

@@ -307,8 +307,9 @@ country_event = {
 				}
 				country_event = { id = ruinborn_tolerance_events.13 }
 			}
-			20 = {
+			30 = {
 				trigger = {
+					ai = no
 					OR = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10

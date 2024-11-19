@@ -173,8 +173,9 @@ country_event = {
 					id = ogre_tolerance_events.8
 				}
 			}
-			20 = {
+			30 = {
 				trigger = {
+					ai = no
 					OR = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10

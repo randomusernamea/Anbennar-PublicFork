@@ -488,8 +488,9 @@ country_event = {
 					id = kobold_tolerance_events.19
 				}
 			}
-			20 = {
+			30 = {
 				trigger = {
+					ai = no
 					OR = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10
@@ -501,16 +502,6 @@ country_event = {
 				}
 				set_country_flag = propflag_kobold
 				country_event = { id = tolerance_generic.1 }
-			}
-			10 = {
-				trigger = {
-					num_of_colonists = 1
-					any_owned_province = {
-						culture_is_kobold = yes
-					}
-					any_owned_province = { is_colony = yes }
-				}
-				country_event = { id = tolerance_generic.3 }
 			}
 		}
 	}

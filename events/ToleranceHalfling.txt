@@ -264,8 +264,9 @@ country_event = {
 					id = halfling_tolerance_events.11
 				}
 			}
-			20 = {
+			30 = {
 				trigger = {
+					ai = no
 					OR = {
 						has_country_modifier = just_lost_war_timer
 						average_unrest = 10
@@ -277,17 +278,6 @@ country_event = {
 				}
 				set_country_flag = propflag_halfling
 				country_event = { id = tolerance_generic.1 }
-			}
-			10 = {
-				trigger = {
-					num_of_colonists = 1
-					any_owned_province = {
-						culture_is_halfling = yes
-					}
-					any_owned_province = { is_colony = yes }
-				}
-				set_country_flag = tolgen3_halfling
-				country_event = { id = tolerance_generic.3 }
 			}
 		}
 	}
