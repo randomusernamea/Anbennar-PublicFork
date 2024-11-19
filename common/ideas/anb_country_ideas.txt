@@ -43155,3 +43155,47 @@ V03_ideas = {
 		diplomats = 1
 	} 
 }
+U44_ideas = {
+	start = {
+    		production_efficiency = 0.1
+    		defensiveness = 0.15
+	}
+    
+	bonus = {
+    		land_morale = 0.1
+	}
+    
+	trigger = {
+    		tag = U44
+	}
+	free = yes
+    
+	U44_ideas_oppressed_people = {
+    		recover_army_morale_speed = 0.15
+	}#We've been occupied by rulers of many different courts so we had to get use to other culture and find ways to keep our traditions alive despite that
+    
+	U44_ice_architecture = {
+    		build_cost = -0.1
+	}#We use enchanted ice to build houses, basically igloo and if we were allowed to like palaces made out of ice
+    
+	U44_land_of_drakes= {
+		cavalry_power = 0.1
+	}#The land Snecdach inhabits is famous for the presence of drakes, compared to their fey cousins the drakes are quite bestial, long ago a giant drake took residency in the region terrorizing all elves, fey and fauna, nobody could defeat it and unlike fey there where no negotiating with it either. When hope seemed lost and that the land might be abandoned a Gladewarden stood up to the challenge and fought off the mighty beast, slaying it. And said beast body was then used to forge the legendary sword Dracball. Many details are lost but Snecdach account of the tale say the Gladewarden was of Snecboth heritage, and that the mighty drakes had eggs the gladewarden truste to Snecdath's ancestor. No matter what the truth may be, drakes can still be found in the area if rare, in a sort of semi domesticated state.
+    
+	U44_midwinter_feast = {
+    		land_attrition = -0.1
+		reinforce_speed = 0.15
+	}#Our overlord stopped our nomadic way of life so we had to learn to become sedentary, thankfully the midwinter chef helped us in our our need, showing how we could keep food production in winter and many preservation technique, which enchanted ice helps a lot
+    
+	U44_big_family = {
+    		global_unrest = -2
+	}#Midwinter feast is a time of gathering for whole tribes, clan or families. As we had to settle the size of feasts grew as more people lived in the same place, and eventually, we invited Peitar and Tuathak
+    
+	U44_fey_friends = {
+		 global_trade_power = 0.1
+	}#Having been forced to be stuck nearest the dromandrodd and through interaction with our Eordellon overlord we learned to make the most of the local fauna to help with our works and befriended local feys
+    
+	U44_resisting_gnomes = {
+    		fire_damage_received = -0.1
+	}#Gnomes colonized us after everyone else, which shall punt their evil colonial asses back to cannor
+}
