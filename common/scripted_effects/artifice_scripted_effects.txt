@@ -673,10 +673,10 @@ set_up_artifice_system = {
 		limit = {
 			NOT = { has_country_flag = artificery_unlocked }
 			NOT = { has_country_flag = artificery_choice }
+			NOT = { tag = H74 } #dak special
 			OR = {
 				AND = {
 					is_tribal = no
-					NOT = { tag = H74 } #dak special
 					OR = {
 						culture_group = kobold
 						culture_group = goblin
@@ -686,7 +686,6 @@ set_up_artifice_system = {
 				}
 				AND = {
 					has_institution = manufactories
-					NOT = { tag = H74 } #dak special
 					OR = {
 						NOT = { religion = bulwari_sun_cult }
 						is_chosen_country = no
