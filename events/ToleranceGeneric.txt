@@ -24,22 +24,12 @@ country_event = {	#Scapegoats
 
 	option = {
 		name = tolerance_generic.1.2
-		trigger = {
-			NOT = {
-				ruler_has_personality = just_personality
-				ruler_has_personality = kind_hearted_personality
-			}	
-		}
 		effect_for_saved_race = { flag = propflag scripted_effect = tolerance_generic_1_effect }
 	}
 
 	option = {
 		name = tolerance_generic.1.3
 		trigger = {
-			NOT = {
-				ruler_has_personality = just_personality
-				ruler_has_personality = kind_hearted_personality
-			}
 			NOT = { has_country_flag = no_second_minority }			
 		}
 		effect_for_saved_race = { flag = propflag2 scripted_effect = tolerance_generic_1_effect }
