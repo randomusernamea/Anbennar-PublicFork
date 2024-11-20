@@ -219,6 +219,7 @@ country_event = { #Artificer Malcontents
 	is_triggered_only = yes 
 
 	trigger = {
+		NOT = { mission_completed = Z38_a_technocracy_for_all }
 		OR = {
 			AND = {
 				exists = H31

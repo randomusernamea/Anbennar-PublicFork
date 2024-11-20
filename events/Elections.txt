@@ -3130,69 +3130,26 @@ country_event = { #Technocracy Election
 		}
 		if = {
 			limit = { ai = no }
-			if = {
+			if = {	#long-lived races
 				limit = {
 					OR = {
-						faction_influence = {
-							faction = tec_brilliance
-							influence = 75
-						}
-						faction_influence = {
-							faction = tec_technomancy
-							influence = 75
-						}
-						faction_influence = {
-							faction = tec_mechanists
-							influence = 75
-						}
+						has_country_modifier = gnomish_administration
+						has_country_modifier = elven_administration
+						has_country_modifier = dwarven_administration
 					}
 				}
-				custom_tooltip = extra_rt_loss_tt
-				if = {	#long-lived races
-					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
-					}
-					add_scaled_republican_tradition = -4.5
-				}
-				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -22.5
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -15
-					}
-				}
+				add_scaled_republican_tradition = -3
 			}
 			else = {
-				if = {	#long-lived races
+				if = {
 					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
+						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -3
+					add_scaled_republican_tradition = -15
+					clr_country_flag = increased_election_cost
 				}
 				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -15
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -10
-					}
+					add_scaled_republican_tradition = -10
 				}
 			}
 		}
@@ -3212,59 +3169,26 @@ country_event = { #Technocracy Election
 				faction_in_power = tec_brilliance 
 			}
 			custom_tooltip = wrong_ruler_faction_tooltip 
-			if = {
+			if = {	#long-lived races
 				limit = {
-					faction_influence = {
-						faction = tec_brilliance
-						influence = 75
+					OR = {
+						has_country_modifier = gnomish_administration
+						has_country_modifier = elven_administration
+						has_country_modifier = dwarven_administration
 					}
 				}
-				custom_tooltip = extra_rt_loss_tt
-				if = {	#long-lived races
-					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
-					}
-					add_scaled_republican_tradition = -4.5
-				}
-				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -22.5
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -15
-					}
-				}
+				add_scaled_republican_tradition = -3
 			}
 			else = {
-				if = {	#long-lived races
+				if = {
 					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
+						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -3
+					add_scaled_republican_tradition = -15
+					clr_country_flag = increased_election_cost
 				}
 				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -15
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -10
-					}
+					add_scaled_republican_tradition = -10
 				}
 			}
 		}
@@ -3379,62 +3303,29 @@ country_event = { #Technocracy Election
 		if = { 
 			limit = {
 				ai = no
-				faction_in_power = tec_technomancy 
+				faction_in_power = tec_technomancy
 			}
 			custom_tooltip = wrong_ruler_faction_tooltip 
-			if = {
+			if = {	#long-lived races
 				limit = {
-					faction_influence = {
-						faction = tec_technomancy
-						influence = 75
+					OR = {
+						has_country_modifier = gnomish_administration
+						has_country_modifier = elven_administration
+						has_country_modifier = dwarven_administration
 					}
 				}
-				custom_tooltip = extra_rt_loss_tt
-				if = {	#long-lived races
-					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
-					}
-					add_scaled_republican_tradition = -4.5
-				}
-				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -22.5
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -15
-					}
-				}
+				add_scaled_republican_tradition = -3
 			}
 			else = {
-				if = {	#long-lived races
+				if = {
 					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
+						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -3
+					add_scaled_republican_tradition = -15
+					clr_country_flag = increased_election_cost
 				}
 				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -15
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -10
-					}
+					add_scaled_republican_tradition = -10
 				}
 			}
 		}
@@ -3548,62 +3439,29 @@ country_event = { #Technocracy Election
 		if = { 
 			limit = {
 				ai = no
-				faction_in_power = tec_mechanists 
-			} 
-			custom_tooltip = wrong_ruler_faction_tooltip
-			if = {
+				faction_in_power = tec_mechanists
+			}
+			custom_tooltip = wrong_ruler_faction_tooltip 
+			if = {	#long-lived races
 				limit = {
-					faction_influence = {
-						faction = tec_mechanists
-						influence = 75
+					OR = {
+						has_country_modifier = gnomish_administration
+						has_country_modifier = elven_administration
+						has_country_modifier = dwarven_administration
 					}
 				}
-				custom_tooltip = extra_rt_loss_tt
-				if = {	#long-lived races
-					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
-					}
-					add_scaled_republican_tradition = -4.5
-				}
-				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -22.5
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -15
-					}
-				}
+				add_scaled_republican_tradition = -3
 			}
 			else = {
-				if = {	#long-lived races
+				if = {
 					limit = {
-						OR = {
-							has_country_modifier = gnomish_administration
-							has_country_modifier = elven_administration
-							has_country_modifier = dwarven_administration
-						}
+						has_country_flag = increased_election_cost
 					}
-					add_scaled_republican_tradition = -3
+					add_scaled_republican_tradition = -15
+					clr_country_flag = increased_election_cost
 				}
 				else = {
-					if = {
-						limit = {
-							has_country_flag = increased_election_cost
-						}
-						add_scaled_republican_tradition = -15
-						clr_country_flag = increased_election_cost
-					}
-					else = {
-						add_scaled_republican_tradition = -10
-					}
+					add_scaled_republican_tradition = -10
 				}
 			}
 		}
