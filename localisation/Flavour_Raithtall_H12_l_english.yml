@@ -1,7 +1,7 @@
-l_english:
+﻿l_english:
 #missions
  raithtall_golden_memory_title:0 "The Golden Memory"
- raithtall_golden_memory_desc:0 "A cool intro that sets the scene with the fall of Dorcurt 30(?) years ago and prepares you to retake it."
+ raithtall_golden_memory_desc:0 "A cool intro that sets the scene with the fall of Dorcurt 10-ish years ago and prepares you to retake it."
  raithtall_court_anew_title:0 "The Court Anew"
  raithtall_court_anew_desc:0 "Rebuilding the capital with some "help" from the Peitar who destroyed it."
  raithtall_gate_stewards_title:0 "Stewards of the Gate"
@@ -19,17 +19,17 @@ l_english:
  raithtall_example_of_einnsag_title:0 "An Example of Einnsag"
  raithtall_example_of_einnsag_desc:0 "Einnsag has the gall to claim rulership over the Autumn Court, fuck them and their dumb shiny gems that we're totally not jealous of!"
  raithtall_reunite_crusaders_title:0 "Reunite the Crusaders"
- raithtall_reunite_crusaders_desc:0 "The Hibernal Crusaders were gonna conquer Winter together, but everything changed when the Strutmar nation attacked. Only the [Root.Ruler.GetName], master of the Autumn Court, can fix this mess."
+ raithtall_reunite_crusaders_desc:0 "The Hibernal Crusaders were gonna conquer Winter together, but everything changed when the Strutmar nation attacked. Only the [Root.Monarch.GetName], master of the Autumn Court, can fix this mess."
  raithtall_resume_crusades_title:0 "Resume the Crusades"
- raithtall_resume_crusades_desc:0 "ladrana Emberborn had just declared the Hibernal Crusade when Dorcurt got destroyed. Let's pick up where she left off."
+ raithtall_resume_crusades_desc:0 "Ladrana Emberborn had just declared the Hibernal Crusade when Dorcurt got destroyed. Let's pick up where she left off."
  raithtall_break_oath_title:0 "Break Their Oath"
- raithtall_break_oath_desc:0 "It is time to end the Eordellon Crusades at their source. This is naother of those scenes that I've had for over a year and made me want to do this MT."
+ raithtall_break_oath_desc:0 "It is time to end the Eordellon Crusades at their source. This is another of those scenes that I've had for over a year and made me want to do this MT."
  raithtall_vernal_harmony_title:0 "Vernal Harmony"
  raithtall_vernal_harmony_desc:0 "Arakeprun had a big civil war about the balance of power between the nobles and the clergy. Sure would be nice if someone had an entire government mechanic about exactly that."
  raithtall_autumn_invincible_title:0 "Autumn Invincible"
  raithtall_autumn_invincible_desc:0 "You've reaunited the Autumn Court, stronger than ever! This will likely have an effect on Eordand's seasons."
  raithtall_winter_defied_title:0 "Winter Defied"
- raithtall_winter_defied_desc:0 "The Hibernal Crusade has conquered Gemradcurt, which is great! Wouldhave happened far sooner if not for those evil Eordellon Crusaders ruining everything. Self-awareness, what's that?"
+ raithtall_winter_defied_desc:0 "The Hibernal Crusade has conquered Gemradcurt, which is great! Would have happened far sooner if not for those evil Eordellon Crusaders ruining everything. Self-awareness, what's that?"
  raithtall_release_prisoners_title:0 "Release the Prisoners"
  raithtall_release_prisoners_desc:0 "Releasing all the guys arrested for heresy up by the Seasons Unchanging Inquisition"
  raithtall_true_chivalry_title:0 "True Chivalry"
@@ -48,7 +48,7 @@ l_english:
 
 #events
  flavor_raithtall.1.t:0 "Audience with the Fey"
- flavor_raithtall.1.d:0 "This is my most anticipated event to finally write the loc for, and one of the biggest reasons I wanted to make Raithtall/Dorcurt my next MT project. I think i first came up with it sometime in 2023, though it could have been all the way back in 2022. You ask the fey to make you the new guardians of the gate. They're reluctant at first, but then you bring them proof of all the illegal shit the Iadthi nobles poached from the Domandrod. I'm wondering extreme Jhorgas will let me go on this, cosnidering that there's a bunch of animalistic and plantlike fey with human-level sapience that could be hunted and harvested. The fey agree to make you the new guardians, and damn the name of Iadth forever, on th eocndition that you get all the nobles responsible and make them pay."
+ flavor_raithtall.1.d:0 "This is my most anticipated event to finally write the loc for, and one of the biggest reasons I wanted to make Raithtall/Dorcurt my next MT project. I think i first came up with it sometime in 2023, though it could have been all the way back in 2022. You ask the fey to make you the new guardians of the gate. They're reluctant at first, but then you bring them proof of all the illegal shit the Iadthi nobles poached from the Domandrod. I'm wondering extreme Jhorgas will let me go on this, cosnidering that there's a bunch of animalistic and plantlike fey with human-level sapience that could be hunted and harvested. The fey agree to make you the new guardians, and damn the name of Iadth forever, on the condition that you get all the nobles responsible and make them pay."
  flavor_raithtall.1.a:0 "Damn"
  flavor_raithtall.2.t:0 "Domandrod Guardians"
  flavor_raithtall.2.d:0 "As the new protectors of the Autumn Glade, you of course need to send out patrols to protect against poachers and any future surprise attacks."
@@ -107,6 +107,10 @@ l_english:
  raithtall_expanded_praisegranting:0 "Expanded Praisegranting Festival"
  raithtall_winter_quelled:0 "Winter Quelled"
  raithtall_golden_dream_mod:0 "Golden Dream"
+ raithtall_gloam_praised_mod:0 "Ruler Praised"
+ raithtall_gloam_christmas_weak_mod:0 "Weak Example"
+ raithtall_gloam_christmas_mid_mod:0 "Fine Example"
+ raithtall_gloam_christmas_strong_mod:0 "Ideal Example"
 
 #government reforms
  raithtall_twilight_court_reform:0 "Twilight Court"
@@ -119,16 +123,24 @@ l_english:
 #tooltips
  raithtall_iadth_tt:0 "All Iadthi core provinces in Eordand with Peitar culture or Eordellon religion lose 100 years of separatism\nAll Iadthi cores in Eordand are removed"
  autumn_tolerance_locked_tt:0 "Autumn's Protection clergy privilege is always active"
- raithtall_dorcurt_ideas_tt:0 "Our first national idea "Memory of Dorcurt" will be upgraded into "Shield of Autumn"\n"Our second national idea "Appreciation of Superiors" will be upgraded into "The Gloam Knight’s Court""
- raithtall_sglard_tt1:0 "If Reunite the Crusaders has been completed, Sglard gains the Sworn Fealty modifier for 30 years"  #TODO - make it look like regular modifier tooltips
- raithtall_sglard_tt2:0 "If Securing the Copperlord has been completed and Sglard is still our subject, Sglard will also gain this modifier."
+ raithtall_dorcurt_ideas_tt:0 "Our first national idea "§YMemory of Dorcurt§!" will be upgraded into "§YShield of Autumn§!"\nOur second national idea "§YAppreciation of Superiors§!" will be upgraded into "§YThe Gloam Knight’s Court§!""
+ raithtall_sglard_tt1:0 "If §YReunite the Crusaders§! has been completed, §YSglard§! gains the '§YSworn Fealty§!' modifier for §Y30 years§!, giving the following effects:\nLiberty Desire: §G-0.20%§!"  #TODO - make it look like regular modifier tooltips
+ raithtall_sglard_tt2:0 "If §YSecuring the Copperlord§! has been completed and §YSglard§! is still our subject, §YSglard§! will also gain this modifier."
  raithtall_gelcolle_tt1:0 "We will send Gelcolle an offer to become our subjects."
  raithtall_gelcolle_tt2:0 "We will become a vassal of [H12.GetName] and convert to Autumn Court."  #TODO - make it look like regular ingame tooltips
  raithtall_gelcolle_tt3:0 "[H12.GetName] will get a permanent claim on our capital and a casus belli to vassalise us."  #TODO - make it look like regular ingame tooltips
  raithtall_0_winter_battles_won_tt:0 "Win 8 battles against Winter Court nations\n      Current: [Root.raithtall_winter_battle_won.GetValue]"  #TODO - make it look like regular ingame tooltips
- raithtall_disarmed_population_tt:0 "This modifier will be removed once we convert the province."
+ raithtall_winter_claims_tt:0 "We will gain permanent claims on all Winter Court cities in Eordand."
+ raithtall_disarmed_population_tt:0 "§YThese modifiers will be removed once we convert the provinces.§!"
+ raithtall_vernal_harmony_tt1:0 "These rewards will improve if we better balance the Monarchist and Theocrat factions."
+ raithtall_vernal_harmony_tt2:0 "These rewards will be reduced if we disrupt the balance the Monarchist and Theocrat factions."
  raithtall_superb_harvest_tt:0 "This modifier will repeat every year for four years."
- raithtall_peitar_boost_tt:0 "Five of our Peitar provinces will get +1 base manpower. If the monarchists are in charge, it applies to eight provinces instead."
+ raithtall_release_prisoners_tt:0 "The rewards from this event will depend on the balance of power between the Monarchist and Theocrat factions."
+ raithtall_theologian_discount_tt:0 "This advisor is discounted since the Theocrats are in charge."
+ raithtall_artist_discount_tt:0 "This advisor is discounted since the Monarchists are in charge."
+ raithtall_philosopher_discount_tt:0 "This advisor is discounted due to the balance between the Monarchist and Theocrat factions."
+ raithtall_peitar_boost_tt:0 "Five of our Peitar provinces will get +1 base manpower. If the Monarchists are in charge, it applies to eight provinces instead."
  raithtall_autumn_tolerance_tt:0 "Protection of Autumn will now also give +2 Local Tolerance of Heretics."
- raithtall_snecboth_boost_tt:0 "All states in the Randrunnse region with Snecboth or Tuathak culture owned by us or our subjects gain +15 prosperity progress. If they were already prsoperous, they instead give you 20 gold. If the theocrats are in charge, the effect is boosted to +20 prosperity progress and +20 gold."
+ raithtall_snecboth_boost_tt:0 "All states in the Randrunnse region with Snecboth or Tuathak culture owned by us or our subjects gain +15 prosperity progress. If they were already prsoperous, they instead give you 20 gold. If the Theocrats are in charge, the effect is boosted to +20 prosperity progress and +20 gold."
  raithtall_yearly_harvest_tt: "The Superb Harvest modifier will be reapplied every autumn for the Iadth and Raithlos areas."
+ raithtall_foreign_fey_tt: "You don't know what the result of this action will be..."

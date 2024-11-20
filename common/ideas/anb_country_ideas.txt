@@ -20524,7 +20524,7 @@ H10_ideas = {
 	}
 }
 
-#Dorcurt Ideas
+#Raithtall Ideas
 H12_ideas = {
 	start = {
 		infantry_power = 0.1 #Tuathak legions
@@ -42923,20 +42923,6 @@ S74_ideas = {
 		global_ship_trade_power = 0.2	
 	}
 }
-#Raithtall Ideas
-H12_D_ideas = {
-	start = {
-		infantry_power = 0.1 #Tuathak legions
-		tolerance_own = 2 #bulwark against Peitar and Snecboth invasion
-	}
-	bonus = {
-		shock_damage = 0.1 #study the blade
-	}
-	trigger = {
-		tag = H12
-		has_country_flag = raithtall_dorcurt_restored
-	}
-	free = yes
 
 # Esmaryan Temple
 B92_ideas = {
@@ -43171,6 +43157,21 @@ V03_ideas = {
 	} 
 }
 
+#Dorcurt Ideas
+H12_D_ideas = {
+	start = {
+		infantry_power = 0.1 #Tuathak legions
+		tolerance_own = 2 #bulwark against Peitar and Snecboth invasion
+	}
+	bonus = {
+		shock_damage = 0.1 #study the blade
+	}
+	trigger = {
+		tag = H12
+		has_country_flag = raithtall_dorcurt_restored
+	}
+	free = yes
+	
 	H12_D_shield_of_autumn = { #Telling the story of how the Tuathak first encountered the Golden Acres.
 		manpower_recovery_speed = 0.15
 		war_exhaustion = -0.03

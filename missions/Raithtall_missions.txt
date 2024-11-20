@@ -159,6 +159,10 @@ raithtall_1 = {
 					custom_tooltip = raithtall_disarmed_population_tt
 				}
 			}
+			if = {
+				limit = { any_owned_province = { religion = eordellon } }
+				custom_tooltip = raithtall_disarmed_population_tt
+			}
 
 			if = {
 				limit = {
@@ -171,9 +175,9 @@ raithtall_1 = {
 				H08 = {
 					kill_ruler = yes
 					change_religion = ROOT
-					set_ruler_religion = ROOT
-					set_consort_religion = ROOT
-					set_heir_religion = ROOT
+					#set_ruler_religion = ROOT
+					#set_consort_religion = ROOT
+					#set_heir_religion = ROOT
 					add_liberty_desire = 30
 				}
 
@@ -191,7 +195,7 @@ raithtall_1 = {
 			province_id = 2049
 			OR = {
 				NOT = { owned_by = ROOT }
-				devastation = 0.01
+				devastation = 0.1
 				religion = eordellon
 			}
 		}
@@ -231,7 +235,8 @@ raithtall_2 = {
 	has_country_shield = yes
 
 	raithtall_twilight_oath = {
-		icon = control_junkers
+		#icon = control_junkers (this icon doesn't work in the mod for some reason
+		icon = mission_swear_fealty_knight
 		required_missions = { raithtall_court_anew }
 		position = 3
 		
@@ -264,6 +269,8 @@ raithtall_2 = {
 				owned_by = ROOT
 			}
 
+			2014 = { has_tax_building_trigger = yes }
+
 			estate_loyalty = {
 				estate = estate_nobles
 				loyalty = 60
@@ -274,17 +281,18 @@ raithtall_2 = {
 			}
 
 			if = {
-				has_dlc = "Origins"
+				limit = { has_dlc = "Origins" }
 				church_power = 50
 			}
-			#TODO - find replacement trigger
+			else = { treasury = 150 }
 		}
 		
 		effect = {
 			if = {
-				has_dlc = "Origins"
+				limit = { has_dlc = "Origins" }
 				add_church_power = -50
 			}
+			else = { add_treasury = -150 }
 
 			country_event = { id = flavor_raithtall.3 }
 
@@ -402,7 +410,52 @@ raithtall_2 = {
 				add_dip_power = -100
 			}
 			if = {
-				limit = { is_statists_in_power = yes } #Monarchist
+				limit = { has_dlc = "Res Publica" }
+				if = {
+					limit = { NOT = { statists_vs_orangists = -0.49 } } #Monarchist
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 20
+					}
+					change_estate_land_share = {
+						estate = estate_church
+						share = -2.5
+					}
+					custom_tooltip = raithtall_vernal_harmony_tt1
+				}
+				else_if = {
+					limit = { statists_vs_orangists = 0.5 } #Theocrats
+					add_estate_loyalty = {
+						estate = estate_church
+						loyalty = 20
+					}
+					change_estate_land_share = {
+						estate = estate_nobles
+						share = -2.5
+					}
+					custom_tooltip = raithtall_vernal_harmony_tt1
+				}
+				else = { #Balance
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 20
+					}
+					change_estate_land_share = {
+						estate = estate_church
+						share = -2.5
+					}
+					add_estate_loyalty = {
+						estate = estate_church
+						loyalty = 20
+					}
+					change_estate_land_share = {
+						estate = estate_nobles
+						share = -2.5
+					}
+					custom_tooltip = raithtall_vernal_harmony_tt2
+				}
+			}
+			else = { #No DLC bypass
 				add_estate_loyalty = {
 					estate = estate_nobles
 					loyalty = 20
@@ -411,8 +464,6 @@ raithtall_2 = {
 					estate = estate_church
 					share = -2.5
 				}
-			}
-			else = { #Theocrats
 				add_estate_loyalty = {
 					estate = estate_church
 					loyalty = 20
@@ -493,6 +544,36 @@ raithtall_2 = {
 				has_tax_building_trigger = yes
 				development = 12
 			}
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 5
+						eordand_superregion = {
+							type = all
+							culture = peitar
+							is_city = yes
+							NOT = { owner = { is_subject_of = ROOT } }
+						}
+					}
+				}
+				num_of_owned_provinces_with = {
+					value = 5
+					culture = peitar
+					has_tax_building_trigger = yes
+					development = 12
+				}
+			}
+			else = {
+				NOT = {
+					any_owned_province = {
+						culture = peitar
+						OR  = {
+							has_tax_building_trigger = no
+							NOT = { development = 12 }
+						}
+					}
+				}
+			}
 		}
 		
 		effect = {
@@ -566,13 +647,12 @@ raithtall_2 = {
 						add_base_manpower = 1
 						set_province_flag = raithtall_peitar_boost
 					}
-					add_country_modifier = { 
-						name = raithtall_chivalrous_knights
-						duration = -1  
-					}
 				}
 			}
-			
+			add_country_modifier = { 
+				name = raithtall_chivalrous_knights
+				duration = -1  
+			}
 		}
 	}
 }
@@ -940,12 +1020,10 @@ raithtall_3 = {
 		effect = {
 			add_treasury = -300
 
-			every_subject_country = {
-				remove_country_modifier = raithtall_sworn_fealty
-				add_country_modifier = {
-					name = raithtall_expanded_praisegranting
-					duration = -1
-				}
+			every_subject_country = { remove_country_modifier = raithtall_sworn_fealty }
+			add_country_modifier = {
+				name = raithtall_expanded_praisegranting
+				duration = -1
 			}
 
 			custom_tooltip = raithtall_autumn_tolerance_tt
@@ -1147,10 +1225,10 @@ raithtall_4 = {
 		trigger = {
 			NOT = { exists = H14 }
 
-			NOT = {
-				any_owned_province = {
-					is_core = H14
-					NOT = { is_state_core = ROOT }
+			all_owned_province = {
+				OR = {
+					NOT = { is_core = H14 }
+					is_state_core = ROOT
 				}
 			}
 
@@ -1335,10 +1413,31 @@ raithtall_4 = {
 				}
 			}
 
-			num_of_owned_provinces_with = {
-				value = 5
-				culture = snecboth
-				has_tax_building_trigger = yes
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 5
+						eordand_superregion = {
+							type = all
+							culture = snecboth
+							is_city = yes
+							NOT = { owner = { is_subject_of = ROOT } }
+						}
+					}
+				}
+				num_of_owned_provinces_with = {
+					value = 5
+					culture = snecboth
+					has_tax_building_trigger = yes
+				}
+			}
+			else = {
+				NOT = {
+					any_owned_province = {
+						culture = snecboth
+						has_tax_building_trigger = no
+					}
+				}
 			}
 		}
 		
@@ -1543,6 +1642,19 @@ raithtall_5 = {
 				name = raithtall_crusader_vigilance
 				duration = 3650
 			}
+			hidden_effect = {
+				eordand_superregion = {
+					type = all
+					if = {
+						limit = {
+							religion = winter_court
+							is_city = yes
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			custom_tooltip = raithtall_winter_claims_tt
 		}
 	}
 
@@ -1572,11 +1684,9 @@ raithtall_5 = {
 		}
 		
 		trigger = {
-			NOT = {
-				H16 = {
-					exists = yes
-					religion = winter_court
-				}
+			OR = {
+				NOT = { H16 = { exists = yes } }
+				NOT = { H16 = { religion = winter_court } }
 			}
 
 			1775 = {

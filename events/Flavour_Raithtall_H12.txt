@@ -85,6 +85,7 @@ country_event = {
 		name = flavor_raithtall.3.a
 		change_government = theocracy
 		add_government_reform = raithtall_twilight_court_reform
+		hidden_effect = { set_ruler_flag = raithtallTwilightMonarchist }
 		override_country_name = DORCURT
 		change_country_color = { color = { 255 170 0 } }
 		#Add Gloam Knight as patron (once patron system is in)
@@ -108,7 +109,7 @@ country_event = {
 	option = { 
 		name = flavor_raithtall.4.a
 		custom_tooltip = raithtall_gelcolle_tt1
-		H18 = { country_event = { id = flavor_raithtall.5 days = 1 } }
+		H18 = { country_event = { id = flavor_raithtall.5 } }
 	}
 	option = { 
 		name = flavor_raithtall.4.b
@@ -120,7 +121,7 @@ country_event = {
 			type = cb_vassalize_mission
 			months = 96
 		}
-		H18 = { country_event = { id = flavor_raithtall.8 days = 1 } }
+		H18 = { country_event = { id = flavor_raithtall.8 } }
 	}
 }
 
@@ -158,7 +159,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = raithtall_gelcolle_tt2
-		H12 = { country_event = { id = flavor_raithtall.6 days = 1 } }
+		H12 = { country_event = { id = flavor_raithtall.6 } }
 	}
 	option = {
 		name = flavor_raithtall.5.b
@@ -178,7 +179,7 @@ country_event = {
 			}
 		}
 		custom_tooltip = raithtall_gelcolle_tt3
-		H12 = { country_event = { id = flavor_raithtall.7 days = 1 } }
+		H12 = { country_event = { id = flavor_raithtall.7 } }
 	}
 }
 
@@ -322,6 +323,7 @@ country_event = {
 				culture = selphereg
 				discount = yes
 			}
+			custom_tooltip = raithtall_theologian_discount_tt
 		}
 		
 	}
@@ -335,6 +337,7 @@ country_event = {
 				culture = selphereg
 				discount = yes
 			}
+			custom_tooltip = raithtall_artist_discount_tt
 		}
 		else = {
 			define_advisor = {
@@ -349,14 +352,15 @@ country_event = {
 		name = flavor_raithtall.11.c
 		if = {
 			limit = { 
-				NOT = { statists_vs_orangists = 0.67 }
-				statists_vs_orangists = 0.33
+				NOT = { statists_vs_orangists = 0.34 }
+				statists_vs_orangists = 0.-33
 			}
 			define_advisor = {
 				type = philosopher
 				culture = selphereg
 				discount = yes
 			}
+			custom_tooltip = raithtall_philosopher_discount_tt
 		}
 		else = {
 			define_advisor = {
@@ -378,6 +382,8 @@ country_event = { #Ruler Praised
 	is_triggered_only = yes
 	
 	trigger = {
+		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 		NOT = { has_ruler_modifier = raithtall_gloam_praised_mod }
 		OR = {
 			ruler_has_personality = just_personality
@@ -392,7 +398,6 @@ country_event = { #Ruler Praised
 			ruler_has_personality = bold_fighter_personality
 			ruler_has_personality = secretive_personality
 		}
-		has_reform = raithtall_twilight_court_reform
 	}
 	
 	mean_time_to_happen = {
@@ -465,6 +470,8 @@ country_event = { #Ruler sentenced
 	is_triggered_only = yes
 	
 	trigger = {
+		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 		OR = {
 			ruler_has_personality = babbling_buffoon_personality
 			ruler_has_personality = embezzler_personality
@@ -474,7 +481,6 @@ country_event = { #Ruler sentenced
 			ruler_has_personality = loose_lips_personality
 			ruler_has_personality = malevolent_personality
 		}
-		has_reform = raithtall_twilight_court_reform
 	}
 	
 	mean_time_to_happen = {
@@ -527,7 +533,7 @@ country_event = { #Ruler sentenced
 
 }
 
-country_event = { #Dromandrodd Emissary
+country_event = { #Domandrod Emissary
 	id = flavor_raithtall.14
 	title = flavor_raithtall.14.t
 	desc = flavor_raithtall.14.d
@@ -537,6 +543,7 @@ country_event = { #Dromandrodd Emissary
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 	}
 	
 	mean_time_to_happen = {
@@ -566,9 +573,10 @@ country_event = { #Something Rotten
 	is_triggered_only = yes
 	
 	trigger = {
+		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 		NOT = { has_country_modifier = raithtall_cleansing_rot }
 		has_advisor = yes
-		has_reform = raithtall_twilight_court_reform
 	}
 	
 	mean_time_to_happen = {
@@ -641,6 +649,7 @@ country_event = { # Foreign Fey
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 	}
 	
 	mean_time_to_happen = {
@@ -649,6 +658,7 @@ country_event = { # Foreign Fey
 	
 	option = {
 		name = flavor_raithtall.16.a
+		custom_tooltip = raithtall_foreign_fey_tt
 		hidden_effect = {
 			random_list = {
 				10 = {
@@ -688,18 +698,18 @@ country_event = { # Foreign Fey - Outcome 1
 	
 	option = {
 		name = flavor_raithtall.161.a
+		trigger = { has_ruler_flag = raithtallTwilightTheocrat }
 		change_statists_vs_orangists = 0.2
-		if = {
-			limit =  { 
-				has_ruler_flag = raithtallTwilightMonarchist 
-			}
-			add_stability = -1
-		}
-		else = {
-			increase_ruler_adm_effect = yes
-			increase_ruler_dip_effect = yes
-			increase_ruler_mil_effect = yes
-		}
+		increase_ruler_adm_effect = yes
+		increase_ruler_dip_effect = yes
+		increase_ruler_mil_effect = yes
+	}
+
+	option = {
+		name = flavor_raithtall.161.b
+		trigger = { NOT = { has_ruler_flag = raithtallTwilightTheocrat } }
+		change_statists_vs_orangists = 0.2
+		add_stability = -1
 	}
 }
 country_event = { # Foreign Fey - Outcome 2
@@ -768,18 +778,18 @@ country_event = { # Foreign Fey - Outcome 6
 	
 	option = {
 		name = flavor_raithtall.166.a
+		trigger = { has_ruler_flag = raithtallTwilightMonarchist }
 		change_statists_vs_orangists = -0.2
-		if = {
-			limit =  { 
-				has_ruler_flag = raithtallTwilightMonarchist 
-			}
-			increase_ruler_adm_effect = yes
-			increase_ruler_dip_effect = yes
-			increase_ruler_mil_effect = yes
-		}
-		else = {
-			add_stability = -1
-		}
+		increase_ruler_adm_effect = yes
+		increase_ruler_dip_effect = yes
+		increase_ruler_mil_effect = yes
+	}
+
+	option = {
+		name = flavor_raithtall.166.b
+		trigger = { NOT = { has_ruler_flag = raithtallTwilightMonarchist } }
+		change_statists_vs_orangists = -0.2
+		add_stability = -1
 	}
 }
 
@@ -793,6 +803,7 @@ country_event = { #Get pranked lol
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 	}
 	
 	mean_time_to_happen = {
@@ -826,7 +837,8 @@ country_event = { #I roll to seduce the fey
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
-		has_ruler_flag = raithtallTwilightMonarchist 
+		has_dlc = "Res Publica"
+		has_ruler_flag = raithtallTwilightMonarchist
 	}
 	
 	mean_time_to_happen = {
@@ -851,6 +863,7 @@ country_event = { #Disaster adverted
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 		has_ruler_flag = raithtallTwilightTheocrat 
 	}
 	
@@ -876,6 +889,7 @@ country_event = { #Fey christmas
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 	}
 	
 	mean_time_to_happen = {
@@ -907,6 +921,7 @@ country_event = { #Christmas with the knight
 	
 	trigger = {
 		has_reform = raithtall_twilight_court_reform
+		has_dlc = "Res Publica"
 		NOT = { has_country_modifier = raithtall_gloam_christmas_weak_mod }
 		NOT = { has_country_modifier = raithtall_gloam_christmas_mid_mod }
 		NOT = { has_country_modifier = raithtall_gloam_christmas_strong_mod }
@@ -968,4 +983,35 @@ country_event = { #Christmas with the knight
 		}
 	}
 
+}
+
+#Debug event
+country_event = {
+	id = flavor_raithtall.100
+	title = flavor_raithtall.100.t
+	desc = flavor_raithtall.100.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = flavor_raithtall.100.a
+		change_statists_vs_orangists = 0.10
+	}
+	option = {
+		name = flavor_raithtall.100.b
+		change_statists_vs_orangists = 0.50
+	}
+	option = {
+		name = flavor_raithtall.100.c
+		change_statists_vs_orangists = -0.10
+	}
+	option = {
+		name = flavor_raithtall.100.e
+		change_statists_vs_orangists = -0.50
+	}
 }
