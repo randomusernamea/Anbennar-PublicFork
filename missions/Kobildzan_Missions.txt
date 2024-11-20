@@ -1476,7 +1476,7 @@ kob_3_b = {
 			religious_unity = 0.9
 			check_variable = {
 				which = kdc_festivals_held
-				value = 20
+				value = 15
 			}
 		}
 		effect = {
@@ -2487,7 +2487,10 @@ kob_1_c = {
 		trigger = {
 			ynn_superregion = {
 				type = all
-				owned_by_subject_of = ROOT
+				OR = {
+					owned_by_subject_of = ROOT
+					is_empty = yes
+				}	
 				OR = { religion = kobold_dragon_cult religion = drozma_tur }
 			}
 			has_church_aspect = green_dragon_1_upgraded
@@ -3328,9 +3331,9 @@ kob_4_c = {
 		}
 
 		trigger = {
-			adm = 6
-			dip = 6
-			mil = 6
+			adm = 5
+			dip = 5
+			mil = 5
 
 			if = {
 				limit = { has_dlc = "Cradle of Civilization" }

@@ -3683,7 +3683,7 @@ country_event = { #Brass aspect 2
 		add_casus_belli = {
 			type = cb_old_order
 			target = R62
-			months = -1
+			months = 100000
 		}
 		hidden_effect = { set_country_flag = jyntas_quest_1 }
 		add_country_modifier = {
