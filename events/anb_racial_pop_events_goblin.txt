@@ -194,6 +194,13 @@ country_event = {
 					any_owned_province = {
 						culture_is_goblin = yes
 					}
+					any_owned_province = {
+						is_colony = yes
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+					}
 				}
 				country_event = { id = racial_pop_events_goblin.100 }
 			}
