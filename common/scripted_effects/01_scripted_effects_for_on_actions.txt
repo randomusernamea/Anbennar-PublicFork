@@ -1819,12 +1819,6 @@ anb_scripted_effects_for_ruler_death  = {
 		country_event = { id = ynn_zodiac.3 }
 	}
 
-	#Kheionism set deity
-	if = {
-		limit = { religion = kheionism }
-		country_event = { id = kheionism.3 }
-	}
-
 	#Nakavy Avo shrine reset
 	if = {
 		limit = {
@@ -2667,6 +2661,26 @@ on_province_religion_changed_effect = {
 			remove_province_modifier = gov_empire_heretic
 		}
 	}	
+	if = { #Taychendi Empire
+		limit = {
+			owner = { 
+				has_country_flag = J84_ravelianism_tolerated_flag 
+				religion = ravelian
+			}
+			religion = ravelian
+		}
+		add_province_modifier = {
+			name = J84_ravelianism_tolerated
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			has_province_modifier = J84_ravelianism_tolerated
+			NOT = { religion = ravelian }
+		}
+		remove_province_modifier = J84_ravelianism_tolerated
+	}
 }
 
 on_province_religion_converted_effect = {
@@ -7940,6 +7954,19 @@ on_province_owner_change_effect = {
 
 	if = {
 		limit = {
+			NOT = { has_province_modifier = J84_masquerade_relics }
+			owner = { has_estate_privilege = estate_vampire_law_relic_shrouded_masquerade }
+			trade_goods = precursor_relics
+		}
+		add_province_modifier = {
+			name = J84_masquerade_relics
+			duration = -1
+			hidden = yes
+		}
+	}
+
+	if = {
+		limit = {
 			NOT = { has_province_modifier = livestock_boost_frontier }
 			owner = { has_reform = frontier_republic_reform }
 		}
@@ -10311,6 +10338,15 @@ on_province_owner_change_effect = {
 				duration = -1
 			}
 		}
+	}
+	#Kheionist
+	if = {
+		limit = { owner = { religion = kheionism } }
+		owner = { country_event = { id = kheionism.5 } }
+	}
+	if = {
+		limit = { FROM = { religion = kheionism } }
+		FROM = { country_event = { id = kheionism.5 } }
 	}
 }
 
