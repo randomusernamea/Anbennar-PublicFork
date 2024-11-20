@@ -13292,27 +13292,21 @@ G68_ideas = {
     G68_the_elder_brother = { #unchanged loc
         reduced_liberty_desire = 10
     }
-    
     G68_the_silk_district = { #one of the few areas in Andeios where silk is mass produced, the other 2 being Kimanis and Oremvand
         production_efficiency = 0.1
     }
-    
     G68_of_the_highest_class = { #arrogant fucks, take great pains to maintain their supposed superiority over the other branches via art and patronage
         prestige = 1
     }
-    
     G68_lessons_of_the_larankar_wars = { #shared, lessons learnt from losing to larankar a lot
         army_tradition = 0.5
     }
-    
     G68_the_loyal_collaborator = { #seemingly collaborates with larankar to control the city
         global_autonomy = -0.05
     }
-    
     G68_sack_of_nanru_nakar = { #rezankand sacks nanru nakar, never again
         morale_damage_received = -0.1
     }
-    
     G68_the_face_of_the_triple_alliance = {
         monarch_admin_power = 1
     }
@@ -13338,27 +13332,21 @@ G70_ideas = {
     G70_the_middle_brother = { #unchanged loc
         spy_action_cost_modifier = -0.25
     }
-    
     G70_the_relic_district = { #the underground can be most easily accessed through Kriadvai, so scavenger guilds make their HQ here. Taxes relic scavenging
         global_tax_modifier = 0.15
     }
-    
     G70_by_the_pen_and_dagger = { #attempts to subvert the other 2 rival nakars via diplomacy and sibterfuge
         diplomats = 1
     }
-    
     G70_lessons_of_the_larankar_wars = { #shared, lessons learnt from losing to larankar a lot
         army_tradition = 0.5
     }
-    
     G70_forging_a_new_nakar = { #forges the triple alliance under Larankar once they realize subterfuge wouldnt reunite nanru nakar
         improve_relation_modifier = 0.2
     }
-    
     G70_sack_of_nanru_nakar = { #rezankand sacks nanru nakar, never again
         morale_damage_received = -0.1
     }
-    
     G70_the_heart_of_the_triple_alliance = { #maintains the triple alliance and soothes over any conflicts
         monarch_diplomatic_power = 1
     }
@@ -13379,32 +13367,25 @@ G69_ideas = {
         tag = G69 #Kilaiek
     }
     free = yes
-    
     G69_the_younger_brother = { #unchanged loc
         mil_advisor_cost = -0.25
     }
-    
     G69_the_warrior_district = { # lots of tournaments here, warriors gather here
         drill_decay_modifier = -0.25
     }
-    
     G69_fierce_and_bold = { #militariest branch of the family, bold and not afraid to hide their opinions of others
         power_projection_from_insults = 1
     }
-    
     G69_lessons_of_the_larankar_wars = { #shared, lessons learnt from losing to larankar a lot
         army_tradition = 0.5
     }
-    
     G69_seething_compliance = { #during subjugation by larankar, Kilaiek begrudgingly complied, though only after being compelled to by the other Mudaliar branches. Builds up the resources and planning for the day they can rise up against Larankar
         land_forcelimit_modifier = 0.15
     }
-    
     G69_sack_of_nanru_nakar = { #rezankand sacks nanru nakar, never again
         morale_damage_received = -0.1
     }
-    
-    G69_the_fist_of_the_triple_alliance = { #primary enforcer of the triple alliance’s will outside the city
+    G69_the_fist_of_the_triple_alliance = { #primary enforcer of the triple alliances will outside the city
         monarch_military_power = 1
     }
 }
