@@ -179,13 +179,13 @@ country_event = {
 				country_event = { id = racial_pop_events_kobold.7 }
 			}
 			#events 100-200 are reserved for custom migration events, put their triggers here
-			20 = {
+			3 = {
 				trigger = {
 					num_of_colonists = 1
+					num_of_colonies = 1
 					any_owned_province = {
 						culture_is_kobold = yes
 					}
-					num_of_colonies = 1
 				}
 				country_event = { id = racial_pop_events_kobold.100 }
 			}
