@@ -249,9 +249,14 @@ country_event = {
 			clr_country_flag = normal_traps_happening
 			custom_tooltip = "You're slackening recruitment standards, so you aren't getting any manpower back. You already have enough!"
 		}
-		else = {	
-			add_yearly_manpower = 1
+		else_if = {	
+			limit = { has_country_flag = modified_kobold_traps }
+			add_yearly_manpower = 0.5
 			clr_country_flag = normal_traps_happening
+		}
+		else = {
+			add_yearly_manpower = 1
+			clr_country_flag = normal_traps_happening		
 		}
 		ai_chance = {
 			factor = 1
