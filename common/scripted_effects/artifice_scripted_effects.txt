@@ -1957,7 +1957,7 @@ artifice_research_select_innovation_options_effect = {
 					value = 1
 				}
 			}
-			1 = {
+			3 = {
 				trigger = {
 					NOT = {
 						OR = {
@@ -2464,7 +2464,7 @@ artifice_research_select_innovation_options_effect = {
 			}
 			#Special Inventions  - Tier 2
 			#Economic
-			1 = {
+			3 = {
 				trigger = {
 					NOT = {
 						OR = {
@@ -2793,7 +2793,7 @@ artifice_research_select_innovation_options_effect = {
 					value = 1
 				}
 			}
-			1 = {
+			3 = {
 				trigger = {
 					NOT = {
 						OR = {
@@ -2806,6 +2806,24 @@ artifice_research_select_innovation_options_effect = {
 					culture_group = kobold
 				}
 				set_country_flag = research_artifice_invention_burrower_arms
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			3 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_soarwing_grafts
+							has_country_flag = unlocked_artifice_invention_soarwing_grafts
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					culture_group = kobold
+				}
+				set_country_flag = research_artifice_invention_soarwing_grafts
 				subtract_variable = {
 					which = artificeResearchOptionsTier2
 					value = 1
@@ -3245,7 +3263,7 @@ artifice_research_select_innovation_options_effect = {
 					value = 1
 				}
 			}
-			1 = {
+			3 = {
 				trigger = {
 					NOT = {
 						OR = {
@@ -4213,7 +4231,7 @@ artifice_unlock_random_invention_effect = {
 					}
 					set_country_flag = unlocked_artifice_invention_vernman_hero_tonic
 				}
-				1 = {
+				3 = {
 					trigger = {
 						NOT = {
 							OR = {
@@ -4530,7 +4548,7 @@ artifice_unlock_random_invention_effect = {
 				}
 				#Special Inventions  - Tier 2
 				#Economic
-				1 = {
+				3 = {
 					trigger = {
 						NOT = {
 							OR = {
@@ -4751,7 +4769,7 @@ artifice_unlock_random_invention_effect = {
 					}
 					set_country_flag = unlocked_artifice_invention_game_of_khet
 				}
-				1 = {
+				3 = {
 					trigger = {
 						NOT = {
 							OR = {
