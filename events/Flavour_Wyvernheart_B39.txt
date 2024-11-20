@@ -689,12 +689,13 @@ country_event = {#Magic and Artificery unbound
 		ai_chance = { factor = 1 }
 		custom_tooltip = wyvernheart_B9_event_tt #rulers defined as war-wizard are considered to have +1 mil, war wizard generated with imbue mage have +1 fire and siege 
 		set_country_flag = wyvernheart_bioimproved_mages_results
-		define_general = {
+		define_general = { #MAGICREWORK
 			shock = 8
 			fire = 3
 			manuever = 2
 			siege = 4 
 			name = "Guillam 'the First'"
+			trait = war_wizard_personality
 		}
 	}
 }
@@ -790,7 +791,6 @@ province_event = {#Free Core from gov mechanic
 		add_core = owner
 		add_random_development = -3
 		custom_tooltip = wyvernheart_no_separatism_tt
-		owner = { set_country_flag = wyvernheart_free_core }
 	}
 	#Option B
 	option = {
