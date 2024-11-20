@@ -32,7 +32,7 @@ country_event = { #Start with low republican tradition
 			}
 			country_event = {
 				id = flavor_ameion.2
-				days = 1400
+				days = 1300
 				random = 40 #Late 1448
 			}
 			add_government_power = {
@@ -681,101 +681,31 @@ country_event = {
 	}
 }
 
-#Meeting Chendhyans
+#Mteibhara Frontiers
 country_event = {
-	id = flavor_ameion.12
-	title = flavor_ameion.12.t
-	desc = {
-		trigger = { NOT = { has_ruler_modifier = G52_destiny } }
-		desc = "flavor_ameion.12.d1"
-	}
-	desc = {
-		trigger = { 
-			has_ruler_modifier = G52_destiny
-			exists = H29
-		}
-		desc = "flavor_ameion.12.d2"
-	}
-	desc = {
-		trigger = { 
-			has_ruler_modifier = G52_destiny
-			NOT = { exists = H29 }
-		}
-		desc = "flavor_ameion.12.d3"
-	}
-	picture = CIVIL_WAR_eventPicture
+	id = flavor_ameion.1100
+	title = flavor_ameion.1100.t
+	desc = flavor_ameion.11.d1
+	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			kill_ruler = yes
-		}
-	}
+	hidden = yes
 	
 	option = {
-		name = flavor_ameion.12.a
-		trigger = {
-			NOT = { has_ruler_modifier = G52_destiny }
-		}
-		add_prestige = -10
-		add_army_tradition = 5
-	}
-	
-	option = {
-		name = flavor_ameion.12.b
-		highlight = yes
-		trigger = {
-			has_ruler_modifier = G52_destiny
+		name = flavor_ameion.1101.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { 2648 = { is_empty = yes } }
+			2648 = { add_siberian_construction = 5 }
 		}
 		if = {
-			limit = { exists = H29 }
-			vassalize = H29
-			H29 = { add_liberty_desire = -50 }
+			limit = { 2649 = { is_empty = yes } }
+			2649 = { add_siberian_construction = 5 }
 		}
-		else = {
-			if = {
-				limit = { 
-					2579 = {
-						NOT = { is_colony = yes }
-						NOT = { is_city = yes }
-					}
-				}
-				2579 = { add_colonysize = 999 add_base_tax = 2 }
-			}
-			else_if = {
-				limit = { 
-					2579 = {
-						owned_by = ROOT
-						NOT = { is_city = yes }
-					}
-				}
-				2579 = { add_colonysize = 900 }
-			}
-			else_if = {
-				limit = { 
-					2579 = {
-						owned_by = ROOT
-						is_city = yes
-					}
-				}
-				2579 = { add_base_tax = 2 }
-			}
-			else_if = {
-				limit = { 
-					2579 = {
-						NOT = { owned_by = ROOT }
-						OR = {
-							is_city = yes
-							is_colony = yes
-						}
-					}
-				}
-				2579 = { add_core = ROOT }
-			}
+		if = {
+			limit = { 2658 = { is_empty = yes } }
+			2658 = { add_siberian_construction = 5 }
 		}
-		add_prestige = 10
-		add_dip_power = 50
 	}
 }
 
@@ -4411,7 +4341,7 @@ country_event = {
 			custom_trigger_tooltip = {
 				tooltip = ameion_yes_tacenie
 				has_country_flag = ameion_search_possible
-				has_country_modifier = G52_mage_7
+				has_country_modifier = G52_mage_10
 			}
 		}
 		ameion_site_cost = yes
@@ -4428,7 +4358,7 @@ country_event = {
 			custom_trigger_tooltip = {
 				tooltip = ameion_no_tacenie
 				has_country_flag = ameion_search_possible
-				NOT = { has_country_modifier = G52_mage_7 }
+				NOT = { has_country_modifier = G52_mage_10 }
 			}
 		}
 		tooltip = {

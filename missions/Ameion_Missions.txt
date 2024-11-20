@@ -593,7 +593,7 @@ G52_2 = {
 	
 	G52_approach_mteibhar = {
 		icon = trade_with_the_natives
-		required_missions = { G52_state_city G52_city_state }
+		required_missions = { }
 		position = 1
 		
 		provinces_to_highlight = {
@@ -716,18 +716,21 @@ G52_2 = {
 					}
 				}
 				G63 = {
-					if = {
-						limit = { 2648 = { is_empty = yes } }
-						2648 = { add_siberian_construction = 5 }
+					tooltip = {
+						if = {
+							limit = { 2648 = { is_empty = yes } }
+							2648 = { add_siberian_construction = 5 }
+						}
+						if = {
+							limit = { 2649 = { is_empty = yes } }
+							2649 = { add_siberian_construction = 5 }
+						}
+						if = {
+							limit = { 2658 = { is_empty = yes } }
+							2658 = { add_siberian_construction = 5 }
+						}
 					}
-					if = {
-						limit = { 2649 = { is_empty = yes } }
-						2649 = { add_siberian_construction = 5 }
-					}
-					if = {
-						limit = { 2658 = { is_empty = yes } }
-						2658 = { add_siberian_construction = 5 }
-					}
+					hidden_effect = { country_event = { id = flavor_ameion.1101 } }
 				}
 			}
 			if = {
