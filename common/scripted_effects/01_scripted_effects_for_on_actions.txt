@@ -3065,14 +3065,17 @@ on_battle_won_unit_effect = {
 	if = {
 		limit = { 
 			unit_owner = {
-				tag = Y17 #Gushuokguan
+				OR = {
+					tag = Y17 #Gushuokguan
+					was_tag = Y17 #Gushuokguan
+				}
 				any_hired_mercenary_company = {
 					template = merc_rock_raiders
-					location = { province_id = FROM }
+					location = { 
+						province_id = THIS 
+						has_underground_terrain = yes
+					}
 				}
-			}
-			FROM = {
-				has_underground_terrain = yes
 			}
 		} 
 		unit_owner = {
@@ -3082,10 +3085,13 @@ on_battle_won_unit_effect = {
 	if = {
 		limit = { 
 			unit_owner = {
-				tag = Y17 #Gushuokguan
+				OR = {
+					tag = Y17 #Gushuokguan
+					was_tag = Y17 #Gushuokguan
+				}
 				any_hired_mercenary_company = {
 					template = merc_dacite_dragons
-					location = { province_id = FROM }
+					location = { province_id = THIS }
 				}
 			}
 			enemy_unit = {

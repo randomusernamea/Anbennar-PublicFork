@@ -2331,7 +2331,10 @@ on_siege_won_country = {
 	if = {
 		limit = {
 			OR = {
-				tag = Y17 #Gushuokguan
+				OR = {
+					tag = Y17 #Gushuokguan
+					was_tag = Y17 #Gushuokguan
+				}
 				is_in_war = { participants = Y17 } #Another country is the siege leader
 			}
 			Y17 = {
@@ -16569,7 +16572,12 @@ on_scorch_earth = { #ROOT - scorching country, FROM - scorched province
 	}
 	ROOT = { accretive_path_beikling_chi_stacking_effect = { amount = 10 } }
 	if = {
-		limit = { tag = Y17 } #Gushuokguan
+		limit = { 
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
+		}
 		change_variable = {
 			which = gushuokguan_scorched_earth_counter
 			value = 1
@@ -16616,7 +16624,10 @@ on_war_ended = { #ROOT - Winer FROM - Loser
 	#Gushuokguan Promise of War
 	if = {
 		limit = {
-			tag = Y17 #Gushuokguan
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
 			has_country_flag = gushuokguan_enable_confederal_council
 		}
 		country_event = {
