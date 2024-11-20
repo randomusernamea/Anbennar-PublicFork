@@ -924,10 +924,10 @@ A26_ideas = {
 		global_ship_cost = -0.05
 		technology_cost = -0.02
 	}
-	A26_trapherders = { # The Kobolds  use their trapping skills to their advantage: livestock has nowhere to go to when it’s time to get harvested. The lands of the Redscales became known for its woolen amenities, such as bedding and other assortment of covers to keep their supplies dry and the wind away.
+	A26_trapherders = { # The Kobolds  use their trapping skills to their advantage: livestock has nowhere to go to when itï¿½s time to get harvested. The lands of the Redscales became known for its woolen amenities, such as bedding and other assortment of covers to keep their supplies dry and the wind away.
 		production_efficiency = 0.1
 	}
-	A26_make_them_fear_the_red = { # During the Little Wars; the Battle of Besurzalay gave such notoriety to a collection of tribes had coated their already-red scales with warpaints of scarlet, and charged into battle with horrific vigor. This completely broke the other tribe’s lines, and, more importantly, permanently linked the red scale, the red warpaint, and the ferocity of the red kobold. 
+	A26_make_them_fear_the_red = { # During the Little Wars; the Battle of Besurzalay gave such notoriety to a collection of tribes had coated their already-red scales with warpaints of scarlet, and charged into battle with horrific vigor. This completely broke the other tribeï¿½s lines, and, more importantly, permanently linked the red scale, the red warpaint, and the ferocity of the red kobold. 
 		morale_damage = 0.1
 	}
 	A26_born_through_cunning = { # Aakax Sozax, legendary founder of the Redscale clan, was responsible for many reforms in it. he used rediscovered military tactics he had found in Gnomish ruins to gain the edge he needed for a successful coup. This let him quickly gain support of the neighboring tribes, and let him solidify himself as the leader of the newly formed Redscale clan..
@@ -43177,4 +43177,89 @@ V03_ideas = {
 	V03_not_all_who_wander_are_lost  = { 
 		diplomats = 1
 	} 
+}
+
+U44_ideas = {
+	start = {
+    		production_efficiency = 0.1
+    		defensiveness = 0.15
+	}
+    
+	bonus = {
+    		land_morale = 0.1
+	}
+    
+	trigger = {
+    		tag = U44
+	}
+	free = yes
+    
+	U44_ideas_oppressed_people = {
+    		recover_army_morale_speed = 0.15
+	}#We've been occupied by rulers of many different courts so we had to get use to other culture and find ways to keep our traditions alive despite that
+    
+	U44_ice_architecture = {
+    		build_cost = -0.1
+	}#We use enchanted ice to build houses, basically igloo and if we were allowed to like palaces made out of ice
+    
+	U44_land_of_drakes= {
+		cavalry_power = 0.1
+	}#The land Snecdach inhabits is famous for the presence of drakes, compared to their fey cousins the drakes are quite bestial, long ago a giant drake took residency in the region terrorizing all elves, fey and fauna, nobody could defeat it and unlike fey there where no negotiating with it either. When hope seemed lost and that the land might be abandoned a Gladewarden stood up to the challenge and fought off the mighty beast, slaying it. And said beast body was then used to forge the legendary sword Dracball. Many details are lost but Snecdach account of the tale say the Gladewarden was of Snecboth heritage, and that the mighty drakes had eggs the gladewarden truste to Snecdath's ancestor. No matter what the truth may be, drakes can still be found in the area if rare, in a sort of semi domesticated state.
+    
+	U44_midwinter_feast = {
+    		land_attrition = -0.1
+		reinforce_speed = 0.15
+	}#Our overlord stopped our nomadic way of life so we had to learn to become sedentary, thankfully the midwinter chef helped us in our our need, showing how we could keep food production in winter and many preservation technique, which enchanted ice helps a lot
+    
+	U44_big_family = {
+    		global_unrest = -2
+	}#Midwinter feast is a time of gathering for whole tribes, clan or families. As we had to settle the size of feasts grew as more people lived in the same place, and eventually, we invited Peitar and Tuathak
+    
+	U44_fey_friends = {
+		 global_trade_power = 0.1
+	}#Having been forced to be stuck nearest the dromandrodd and through interaction with our Eordellon overlord we learned to make the most of the local fauna to help with our works and befriended local feys
+    
+	U44_resisting_gnomes = {
+    		fire_damage_received = -0.1
+	}#Gnomes colonized us after everyone else, which shall punt their evil colonial asses back to cannor
+}
+
+#Uanced
+B95_ideas = {
+    start = {
+        land_morale = 0.1
+        republican_tradition = 0.3
+    }
+    bonus = {
+		land_maintenance_modifier = -0.1
+    }
+
+    trigger = {
+        tag = B95
+    }
+    free = yes        #will be added at load.
+
+    B95_uanced_freedoms = { 
+		manpower_in_own_culture_provinces = 0.2
+		hostile_attrition = 1
+    }
+    B95_the_last_resistance = { 
+        prestige_from_land = 1
+    }
+    B95_the_peasant_republic = { 
+		war_exhaustion = -0.03
+		defensiveness = 0.1
+    }
+    B95_the_republic_of_estaire = { 
+		stability_cost_modifier = -0.2
+    }
+    B95_no_lord_doth_rule_us = {
+		global_unrest = -2
+    }
+    B95_do_you_hear_your_people_sing = { 
+		power_projection_from_insults = 1.5
+    }
+    B95_the_uanarchists = { 
+		idea_cost = -0.1
+    }
 }
