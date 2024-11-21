@@ -1056,55 +1056,7 @@ province_event = { # Our trap exploded!
 			controller = {
 				country_event = { id = kobold_traps.7 }
 			}
-			if = {
-				limit = { has_province_modifier = kobold_traps_lvl_4 }
-				remove_province_modifier = kobold_traps_lvl_4
-			}
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_3 }
-				remove_province_modifier = kobold_traps_lvl_3
-			}
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_2 }
-				remove_province_modifier = kobold_traps_lvl_2
-			}
-			else_if = {
-				limit = { has_province_modifier = kobold_traps_lvl_1 }
-				remove_province_modifier = kobold_traps_lvl_1
-			}	
-			else_if = {
-				limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
-				remove_province_modifier = modified_kobold_traps_lvl_4
-			}
-			else_if = {
-				limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
-				remove_province_modifier = modified_kobold_traps_lvl_3
-			}
-			else_if = {
-				limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
-				remove_province_modifier = modified_kobold_traps_lvl_2
-			}
-			else_if = {
-				limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
-				remove_province_modifier = modified_kobold_traps_lvl_1
-			}	
-			hidden_effect = { clr_province_flag = has_kobold_traps }
-			if = {
-				limit = { has_building = fort_15th }
-				remove_building = fort_15th
-			}		
-			else_if = {
-				limit = { has_building = fort_16th }
-				remove_building = fort_16th
-			}	
-			else_if = {
-				limit = { has_building = fort_17th }
-				remove_building = fort_17th
-			}		
-			else_if = {
-				limit = { has_building = fort_18th }
-				remove_building = fort_18th
-			}
+			kobold_traps_removal_effect = yes
 		}
 	}
 	option = {
@@ -1140,39 +1092,7 @@ province_event = { # We're removing our traps!
 	option = { #Yeah, get rid of the traps.
 		name = kobold_traps.8.a
 		goto = ROOT
-		if = {
-			limit = { has_province_modifier = kobold_traps_lvl_4 }
-			remove_province_modifier = kobold_traps_lvl_4
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_3 }
-			remove_province_modifier = kobold_traps_lvl_3
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_2 }
-			remove_province_modifier = kobold_traps_lvl_2
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_1 }
-			remove_province_modifier = kobold_traps_lvl_1
-		}	
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
-			remove_province_modifier = modified_kobold_traps_lvl_4
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
-			remove_province_modifier = modified_kobold_traps_lvl_3
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
-			remove_province_modifier = modified_kobold_traps_lvl_2
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
-			remove_province_modifier = modified_kobold_traps_lvl_1
-		}	
-		hidden_effect = { clr_province_flag = has_kobold_traps }
+		kobold_traps_removal_effect = yes
 		ai_chance = {
 			factor = 1
 		}
@@ -1198,41 +1118,7 @@ province_event = { # We're removing our traps!
 				}
 			}
 		}
-		if = {
-			limit = { has_province_modifier = kobold_traps_lvl_4 }
-			remove_province_modifier = kobold_traps_lvl_4
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_3 }
-			remove_province_modifier = kobold_traps_lvl_3
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_2 }
-			remove_province_modifier = kobold_traps_lvl_2
-		}
-		else_if = {
-			limit = { has_province_modifier = kobold_traps_lvl_1 }
-			remove_province_modifier = kobold_traps_lvl_1
-		}	
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_4 }
-			remove_province_modifier = modified_kobold_traps_lvl_4
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_3 }
-			remove_province_modifier = modified_kobold_traps_lvl_3
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_2 }
-			remove_province_modifier = modified_kobold_traps_lvl_2
-		}
-		else_if = {
-			limit = { has_province_modifier = modified_kobold_traps_lvl_1 }
-			remove_province_modifier = modified_kobold_traps_lvl_1
-		}	
-		hidden_effect = { 
-			clr_province_flag = has_kobold_traps 
-		}
+		kobold_traps_removal_effect = yes
 		owner = {
 			hidden_effect = { set_country_flag = free_traps_happening }
 			country_event = { id = kobold_traps.1 }
