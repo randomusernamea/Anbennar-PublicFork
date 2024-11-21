@@ -921,8 +921,6 @@ gushuokguan_3 = {
 				area = yanzhong_area
 				area = anjiang_area
 				area = tianszi_area
-				province_id = 4850 #Hunxiang
-				province_id = 4892 #Lamcue
 			}
 			owned_by = ROOT #Gushuokguan
 			OR = {
@@ -1757,6 +1755,7 @@ gushuokguan_5 = {
 
 		trigger = {
 			any_known_country = {
+				NOT = { tag = R62 } #The Command
 				OR = {
 					war_with = R62 #The Command
 					capital_scope = {
