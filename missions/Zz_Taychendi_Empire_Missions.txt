@@ -130,12 +130,16 @@ J84_1_missions = {
 					}
 					south_america = {
 						type = all
-						NOT = {
-							culture = sun_elf
-							culture = dawn_elf
+						OR = {
+							NOT = {
+								culture = sun_elf
+								culture = dawn_elf
+							}
+							AND = {
+								religion = gods_of_the_taychend_reformed
+								has_tax_building_trigger = yes
+							}
 						}
-						religion = gods_of_the_taychend_reformed
-						has_tax_building_trigger = yes
 					}
 				}
 			}

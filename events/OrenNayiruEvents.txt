@@ -1148,6 +1148,7 @@ country_event = {
 	
 	trigger = {
 		owns = 2551 #Kattisangamar
+		NOT = { has_global_flag = kamrayakvals_war_ticking }
 		OR = {
 			2502 = { #Uesrennu
 				check_variable = {
@@ -1157,48 +1158,43 @@ country_event = {
 			}
 			is_year = 1575
 		}
-		if = {
-			limit = {
-				any_country = {
-					OR = {
-						religion = oren_nayiru
-						religion = oren_nayiru_reformed
-					}
-					ai = no
-					OR = {
-						capital_scope = { superregion = taychend_superregion }
-						num_of_owned_provinces_with = {
-							value = 10
-							superregion = taychend_superregion
-						}
+		NOT = {
+			any_country = {
+				ai = no
+				OR = {
+					religion = oren_nayiru
+					religion = oren_nayiru_reformed
+				}
+				OR = {
+					capital_scope = { superregion = taychend_superregion }
+					num_of_owned_provinces_with = {
+						value = 10
+						superregion = taychend_superregion
 					}
 				}
 			}
-			always = no
 		}
 		OR = {
 			is_year = 1575
-			if = {
-				limit = {
-					OR = {
-						any_country = {
-							ai = no
-							OR = {
-								capital_scope = { superregion = taychend_superregion }
-								num_of_owned_provinces_with = {
-									value = 10
-									superregion = taychend_superregion
-								}
+			AND = {
+				OR = {
+					any_country = {
+						ai = no
+						OR = {
+							capital_scope = { superregion = taychend_superregion }
+							num_of_owned_provinces_with = {
+								value = 10
+								superregion = taychend_superregion
 							}
 						}
-						ROOT = {
-							ai = no
-							OR = {
-								capital_scope = { superregion = taychend_superregion }
-								num_of_owned_provinces_with = {
-									value = 10
-									superregion = taychend_superregion
-								}
+					}
+					ROOT = {
+						ai = no
+						OR = {
+							capital_scope = { superregion = taychend_superregion }
+							num_of_owned_provinces_with = {
+								value = 10
+								superregion = taychend_superregion
 							}
 						}
 					}
@@ -1210,12 +1206,10 @@ country_event = {
 					}
 				}
 			}
-			else = {
-				2502 = { #Uesrennu
-					check_variable = {
-						which = taychend_oren_nayiru_provinces
-						value = 80
-					}
+			2502 = { #Uesrennu
+				check_variable = {
+					which = taychend_oren_nayiru_provinces
+					value = 80
 				}
 			}
 			AND = {
