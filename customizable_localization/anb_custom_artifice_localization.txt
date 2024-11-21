@@ -1166,13 +1166,6 @@ defined_text = {
 		trigger = {
 			religion_group = khetist
 		}
-	}
-
-	text = {
-		localisation_key = artifice_invention_kobildzan_draconic_ascension
-		trigger = {
-			religion_group = kobold_dragon_cult
-		}
 	}	
 }
 
@@ -1183,13 +1176,6 @@ defined_text = {
 		localisation_key = artifice_invention_god_fragment_decoder
 		trigger = {
 			religion = ravelian
-		}
-	}
-
-	text = {
-		localisation_key = artifice_invention_lullaby_cannon
-		trigger = {
-			has_country_flag = can_use_lullaby_cannon
 		}
 	}
 
@@ -1349,6 +1335,12 @@ defined_text = {
 			}
 		}
 	}
+	text = {
+		localisation_key = artifice_invention_kobildzan_draconic_ascension
+		trigger = {
+			has_country_flag = unlocked_artifice_invention_kobildzan_draconic_ascension
+		}
+	}
 }
 
 defined_text = {
@@ -1403,6 +1395,12 @@ defined_text = {
 			}
 		}
 	}
+	text = {
+		localisation_key = artifice_invention_lullaby_cannon
+		trigger = {
+			has_country_flag = can_use_lullaby_cannon
+		}
+	}
 }
 
 defined_text = {
@@ -1415,6 +1413,12 @@ defined_text = {
 				tag =  H61
 				was_tag = H61
 			}
+		}
+	}
+	text = {
+		localisation_key = artifice_invention_elemental_gunpowder
+		trigger = {
+			has_country_flag = can_use_elemental_gunpowder
 		}
 	}
 }

@@ -13338,8 +13338,11 @@ on_dependency_gained = {
 			tag = Z38
 			mission_completed = Z38_the_artificer_ruinborn
 		}
-
 		FROM = { add_country_modifier = { name = Z38_technological_union_of_north_aelantir duration = -1 } }
+		if = {
+			limit = { mission_completed = Z38_aelantir_as_one }
+			FROM = { subject_ascension_effect = yes }
+		}
 	}
 }
 # ROOT = Overlord, FROM = Minor
