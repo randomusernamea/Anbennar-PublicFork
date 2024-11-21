@@ -1457,10 +1457,11 @@ custom_button = {
 			power_type = taychend_vainglory_power
 			value = 60
 		}
-		OR = {
-			years_of_income = 2.5
+		if = {
+			limit = { monthly_income = 167 }
 			treasury = 5000
 		}
+		else = { years_of_income = 2.5 }
 		NOT = { has_country_modifier = J84_building_greatness }
 	}
 	effect = {
@@ -1470,22 +1471,7 @@ custom_button = {
 			value = -60
 		}
 		if = {
-			limit = { 
-				variable_arithmetic_trigger = {
-					export_to_variable = {
-						value = years_of_income
-						which = J84_yoi_value
-					}
-					multiply_variable = {
-						which = J84_yoi_value
-						value = 2.5
-					}
-					check_variable = {
-						which = J84_yoi_value
-						value = 5000
-					}
-				}
-			}
+			limit = { monthly_income = 167 }
 			add_treasury = -5000
 		}
 		else = { add_years_of_income = -2.5 }
@@ -1509,10 +1495,11 @@ custom_button = {
 			value = 80
 		}
 		NOT = { has_country_modifier = J84_taychend_in_bloom }
-		OR = {
-			years_of_income = 5
+		if = {
+			limit = { monthly_income = 167 }
 			treasury = 10000
 		}
+		else = { years_of_income = 5 }
 		if = {
 			limit = { max_manpower = 20 }
 			manpower = 50
@@ -1526,22 +1513,7 @@ custom_button = {
 			value = -80
 		}
 		if = {
-			limit = { 
-				variable_arithmetic_trigger = {
-					export_to_variable = {
-						value = years_of_income
-						which = J84_yoi_value
-					}
-					multiply_variable = {
-						which = J84_yoi_value
-						value = 5
-					}
-					check_variable = {
-						which = J84_yoi_value
-						value = 10000
-					}
-				}
-			}
+			limit = { monthly_income = 167 }
 			add_treasury = -10000
 		}
 		else = { add_years_of_income = -5 }

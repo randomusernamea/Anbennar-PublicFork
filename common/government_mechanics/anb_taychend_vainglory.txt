@@ -118,10 +118,11 @@ taychend_vainglory_mechanic = {
 					power_type = taychend_vainglory_power
 					value = 60
 				}
-				OR = {
-					years_of_income = 2.5
+				if = {
+					limit = { monthly_income = 167 }
 					treasury = 5000
 				}
+				else = { years_of_income = 2.5 }
 				NOT = { has_country_modifier = J84_building_greatness }
 			}
 			effect = { } #Effects in zz_mission_content.txt
@@ -139,10 +140,11 @@ taychend_vainglory_mechanic = {
 					value = 80
 				}
 				NOT = { has_country_modifier = J84_taychend_in_bloom }
-				OR = {
-					years_of_income = 5
+				if = {
+					limit = { monthly_income = 167 }
 					treasury = 10000
 				}
+				else = { years_of_income = 5 }
 				if = {
 					limit = { max_manpower = 20 }
 					manpower = 50
