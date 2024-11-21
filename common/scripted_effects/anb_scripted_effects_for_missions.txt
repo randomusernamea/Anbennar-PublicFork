@@ -18457,7 +18457,7 @@ vandipha_slave_selling_effect = {
 				}
 				reverse_add_casus_belli = {
 					type = cb_restore_personal_union
-					target = THIS
+					target = ROOT
 				}
 			}
 		}
@@ -18470,7 +18470,7 @@ vandipha_slave_selling_effect = {
 				}
 				reverse_add_casus_belli = {
 					type = cb_vassalize_mission
-					target = THIS
+					target = ROOT
 				}
 			}
 		}
@@ -18598,11 +18598,20 @@ vandipha_retreat_of_scholars_effect = {
 	if = {
 		limit = { NOT = { has_country_modifier = L62_retreat_of_scholars } }
 		random_owned_province = {
+			limit = {
+				OR = {
+					NOT = { religion = ROOT }
+					NOT = { culture = ROOT }
+				}
+			}
 			change_religion = ROOT
 			change_culture = ROOT
 		}
 		random_subject_country = {
 			random_owned_province = {
+				limit = {
+					has_harimari_minority_trigger = no
+				}
 				add_harimari_minority_size_effect = yes
 			}
 		}

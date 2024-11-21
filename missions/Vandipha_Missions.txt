@@ -58,7 +58,7 @@ vandipha_1 = {
 			}
 			igerya_isles_area = {
 				add_permanent_claim = ROOT
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = L62_encouraged_harimari_migration
 					duration = -1
 				}
@@ -116,10 +116,21 @@ vandipha_1 = {
 		} 
 	}
 
-	L62_chasing_the_sun = { #
+	L62_chasing_the_sun = {
 		icon = mission_arabian_sea_trade
 		position = 6
-		required_missions = { L62_slave_islands } 
+		required_missions = { L62_slave_islands }
+		provinces_to_highlight = {
+			owner = {
+				culture_group = baashidi
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = 125
+					}
+				}
+			}
+		} 
 	
 		trigger = {
 			if = {
@@ -141,11 +152,7 @@ vandipha_1 = {
 				num_of_owned_provinces_with = {
 					value = 2
 					trade_company_region = trade_company_bamakembta
-					OR = {
-						province_has_center_of_trade_of_level = 1
-						province_has_center_of_trade_of_level = 2
-						province_has_center_of_trade_of_level = 3
-					}
+					province_has_center_of_trade_of_level = 1
 				}
 			}
 		} 
@@ -155,28 +162,20 @@ vandipha_1 = {
 			hidden_effect = {
 				east_sarhal_superregion = {
 					limit = {
-						OR = {
-							province_has_center_of_trade_of_level = 1
-							province_has_center_of_trade_of_level = 2
-							province_has_center_of_trade_of_level = 3
-						}
+						province_has_center_of_trade_of_level = 1
 						has_port = yes
 					}
 					add_permanent_claim = ROOT
 				}
 				djinnakah_superregion = {
 					limit = {
-						OR = {
-							province_has_center_of_trade_of_level = 1
-							province_has_center_of_trade_of_level = 2
-							province_has_center_of_trade_of_level = 3
-						}
+						province_has_center_of_trade_of_level = 1
 						has_port = yes
 					}
 					add_permanent_claim = ROOT
 				}
 			}
-			random_ally = {
+			random_known_country = {
 				limit = {
 					culture_group = baashidi
 					has_opinion = {
@@ -225,7 +224,7 @@ vandipha_1 = {
 			custom_tooltip = L62_coffee_coast_effect_tt
 			hidden_effect = {
 				select_highest_dev_province_with_limit = { 
-					limit = "region = ardimya_region owned_by = ROOT" 
+					limit = "region = ardimya_region" 
 					effect = "change_culture = roaming_harimari"
 				}
 			}
@@ -233,7 +232,7 @@ vandipha_1 = {
 				limit = {
 					is_city = no
 				}
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = L62_encouraged_harimari_migration
 					duration = -1
 				}
@@ -339,6 +338,7 @@ vandipha_2 = {
 				}
 				custom_tooltip = L62_across_the_pass_countries_tt
 				hidden_effect = {
+					set_country_flag = L62_help_from_rahen
 					capital_scope = {
 						transport = ROOT
 						transport = ROOT
@@ -350,6 +350,7 @@ vandipha_2 = {
 			else = {
 				custom_tooltip = L62_across_the_pass_countries_tt
 				hidden_effect = {
+					set_country_flag = L62_help_from_rahen
 					every_known_country = {
 						limit = {
 							is_subject = no
@@ -381,6 +382,7 @@ vandipha_2 = {
 					}
 				}
 				custom_tooltip = L62_across_the_pass_raja_yes_tt
+				set_country_flag = L62_help_from_rahen
 				capital_scope = { 
 					heavy_ship = ROOT 
 				}
@@ -738,6 +740,7 @@ vandipha_2 = {
 					}
 				}
 			}
+			owned_by_country_subject_or_trade_league = no
 		} 
 
 		trigger = {
@@ -848,7 +851,7 @@ vandipha_3 = {
 			}
 			OR = {
 				devastation = 1
-				OR = {
+				AND = {
 					NOT = { religion = high_philosophy }
 					NOT = { religion = sky_domain }
 				}
@@ -936,6 +939,7 @@ vandipha_3 = {
 							capital_scope = {
 								superregion = rahen_superregion
 							}
+							NOT = { is_subject_of = ROOT }
 						}
 					}
 					add_permanent_claim = ROOT
@@ -1244,8 +1248,8 @@ vandipha_3 = {
 				all_known_country = {
 					OR = {
 						NOT = { navy_size = ROOT }
-						any_owned_province = {
-							NOT = {
+						NOT = {
+							any_owned_province = {
 								sea_zone = {
 									OR = {
 										region = gulf_of_rahen_region
@@ -1255,7 +1259,7 @@ vandipha_3 = {
 									}
 								}
 							}
-						}	
+						}
 					}
 				}
 			}
@@ -1307,19 +1311,41 @@ vandipha_3 = {
 			L62_protectors_of_seas
 		}
 		provinces_to_highlight = {
-			owner = {
-				OR = {
-					NOT = { has_country_modifier = L62_decree_of_tranquil_waves }
-					NOT = { has_country_modifier = L62_decree_of_tranquil_waves_severe }
+			OR = {
+				AND = {
+					owner = {
+						OR = {
+							NOT = { has_country_modifier = L62_decree_of_tranquil_waves }
+							NOT = { has_country_modifier = L62_decree_of_tranquil_waves_severe }
+						}
+					}
+					has_port = yes
+					sea_zone = {
+						OR = {
+							region = gulf_of_rahen_region
+							region = ringlet_sea_region
+							region = kedwali_gulf_region
+							region = punctured_coast_region
+						}
+					}
 				}
-			}
-			has_port = yes
-			sea_zone = {
-				OR = {
-					region = gulf_of_rahen_region
-					region = ringlet_sea_region
-					region = kedwali_gulf_region
-					region = punctured_coast_region
+				AND = {
+					superregion = tanib_dajek_superregion
+					NOT = {
+						tanib_dajek_superregion = {
+							type = any
+							owned_by_country_subject_or_trade_league = yes
+						}
+					}
+				}
+				AND = {
+					superregion = fangaula_superregion
+					NOT = {
+						fangaula_superregion = {
+							type = any
+							owned_by_country_subject_or_trade_league = yes
+						}
+					}
 				}
 			}
 		} 
@@ -1341,8 +1367,8 @@ vandipha_3 = {
 							has_country_modifier = L62_decree_of_tranquil_waves
 							has_country_modifier = L62_decree_of_tranquil_waves_severe
 						}
-						any_owned_province = {
-							NOT = {
+						NOT = {
+							any_owned_province = {
 								sea_zone = {
 									OR = {
 										region = gulf_of_rahen_region
@@ -1352,7 +1378,7 @@ vandipha_3 = {
 									}
 								}
 							}
-						}	
+						}
 					}
 				}
 			}
@@ -1464,13 +1490,13 @@ vandipha_4 = {
 				area = berihrica_area
 				area = pegosi_area
 			}
-			NOT = { country_or_vassal_holds = ROOT }
+			NOT = { country_or_subject_holds = ROOT }
 		} 
 
 		trigger = {
 			berihrica_area = {
 				type = all
-				country_or_vassal_holds = ROOT
+				country_or_subject_holds = ROOT
 			}
 			pegosi_area = {
 				type = all
@@ -1517,8 +1543,10 @@ vandipha_4 = {
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { religion = high_philosophy }
-				local_autonomy = 25
-				NOT = { has_province_modifier = autonomy_decreased }
+				AND = {
+					local_autonomy = 25
+					NOT = { has_province_modifier = autonomy_decreased }
+				}
 			}
 		} 
 
@@ -1593,8 +1621,10 @@ vandipha_4 = {
 						}
 					}
 					capital_scope = {
-						has_courthouse_building_trigger = no
-						has_forcelimit_building_trigger = no
+						OR = {
+							has_courthouse_building_trigger = no
+							has_forcelimit_building_trigger = no
+						}
 					}
 				}
 			}
@@ -1642,8 +1672,10 @@ vandipha_4 = {
 			}
 			OR = {
 				NOT = { country_or_subject_holds = ROOT }
-				NOT = { religion = high_philosophy }
-				pure_unrest = 1
+				AND = {
+					NOT = { religion = high_philosophy }
+					pure_unrest = 1
+				}
 			}
 		} 
 
@@ -1946,8 +1978,10 @@ vandipha_5 = {
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { religion = high_philosophy }
-				has_dock_building_trigger = no
-				has_shipyard_building_trigger = no
+				AND = {
+					has_dock_building_trigger = no
+					has_shipyard_building_trigger = no
+				}
 			}
 		} 
 
@@ -2004,9 +2038,21 @@ vandipha_5 = {
 		icon = mission_malayan_viceroyalty
 		position = 7
 		required_missions = { L62_tiger_isles } 
-		provinces_to_highlight = {  
-			province_id = 4963
-			NOT = { owned_by = ROOT }
+		provinces_to_highlight = {
+			OR = {
+				owner = {
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					province_id = 4963
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = high_philosophy }
+						has_fort_building_trigger = no
+						has_trade_building_trigger = no
+					}
+				}
+			}  
 		} 
 
 		trigger = {
@@ -2120,8 +2166,15 @@ vandipha_5 = {
 		position = 9
 		required_missions = { L62_protectors_of_seas } 
 		provinces_to_highlight = {
-			province_id = 4871
-			NOT = { owned_by = ROOT }
+			OR = {
+				AND = {
+					province_id = 4871
+					NOT = { owned_by = ROOT }
+				}
+				trade_company_region = trade_company_yemakai
+				trade_company_region = trade_company_feiten
+				trade_company_region = trade_company_tianlou
+			}
 		} 
 
 		trigger = {
