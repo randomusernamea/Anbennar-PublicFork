@@ -1500,10 +1500,15 @@ country_decisions = {
 		color = { 33 64 96 }
 		major = yes
 		potential = {
-		capital_scope = { continent = serpentspine }
-		has_country_modifier = accepted_runefather_2
+			capital_scope = { continent = serpentspine }
+			if = {
+				limit = { ai = no }
+				has_country_modifier = accepted_runefather_2
+			}
+			else = {
+				has_country_modifier = ai_runefather_accept
+			}
 		}
-		
 		provinces_to_highlight = {
 		}
 		

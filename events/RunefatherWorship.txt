@@ -1157,7 +1157,10 @@ country_event = {
 			}
 		}
 		else = {
-			add_treasury = -1
+			add_country_modifier = {
+				name = ai_runefather_accept 
+				duration = -1
+			}
 		}
 		custom_tooltip = runefather_conversion_decision_tt
 	}
