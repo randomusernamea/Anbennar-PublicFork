@@ -2737,23 +2737,57 @@ giberd_artificer = {
 				has_ruler_flag = technomancy_ruler
 			}
 			artifice_has_points_30 = yes
-			any_owned_province = {
-				has_province_modifier = ravelian_society
-				base_production = 12
+			if = {
+				limit = {
+					exists = Z97
+				}
+				OR = {
+					exists = Z97
+					any_owned_province = {
+						has_province_modifier = ravelian_society
+						base_production = 12
+					}
+				}
+				OR = {
+					exists = Z97
+					custom_trigger_tooltip = {
+						tooltip = giberd_atypical_artificers_tt
+						all_owned_province = {
+							OR = {
+								AND = {
+									base_production = 8
+									has_forcelimit_building_trigger = yes
+								}
+								NOT = {
+									has_province_modifier = ravelian_society
+								}
+								NOT = {
+									region = esmaria_region
+								}
+							}
+						}
+					}
+				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = giberd_atypical_artificers_tt
-				all_owned_province = {
-					OR = {
-						AND = {
-							base_production = 8
-							has_forcelimit_building_trigger = yes
-						}
-						NOT = {
-							has_province_modifier = ravelian_society
-						}
-						NOT = {
-							region = esmaria_region
+			else = {
+				any_owned_province = {
+					has_province_modifier = ravelian_society
+					base_production = 12
+				}
+				custom_trigger_tooltip = {
+					tooltip = giberd_atypical_artificers_tt
+					all_owned_province = {
+						OR = {
+							AND = {
+								base_production = 8
+								has_forcelimit_building_trigger = yes
+							}
+							NOT = {
+								has_province_modifier = ravelian_society
+							}
+							NOT = {
+								region = esmaria_region
+							}
 						}
 					}
 				}
