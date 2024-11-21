@@ -2871,7 +2871,6 @@ country_event = {
 	picture = CIVIL_WAR_eventPicture
 	
 	is_triggered_only = yes
-	major = yes
 	
 	trigger = {
 		any_owned_province = {
@@ -3604,7 +3603,15 @@ country_event = {
 		name = flavor_ameion.86.a
 		dry_coast_region = {
 			limit = { culture_group = elven }
-			change_culture = kalavendhi
+			change_culture = vaikazelhi
+		}
+		if = {
+			limit = { H66 = { is_subject_of = ROOT } }
+			H66 = { change_primary_culture = vaikazelhi }
+		}
+		if = {
+			limit = { H67 = { is_subject_of = ROOT } }
+			H67 = { change_primary_culture = vaikazelhi }
 		}
 		2302 = { change_trade_goods = precursor_relics }
 	}
