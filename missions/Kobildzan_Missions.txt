@@ -935,7 +935,7 @@ kob_1_b = {
 
 	Z38_supply_the_crusade = {
 		icon = support_the_bulk_trades
-		position = 11
+		position = 9
 		required_missions = { 
 			Z38_a_pledge
 		}
@@ -1510,7 +1510,7 @@ kob_3_b = {
 		position = 11
 		required_missions = { 
 			Z38_a_technocracy_for_all
-			Z38_reclaiming_the_frontier
+			Z38_traders_and_traitors
 			Z38_a_new_face_a_new_body
 		}
 
@@ -1688,112 +1688,12 @@ kob_4_b = {
 			148 = { change_trade_goods = copper add_province_modifier = { name = Z38_arsenal_of_artificery duration = -1 }}		
 		}
 	}
-
-	Z38_trapping_the_wealth = {
-		icon = mission_war_chest
+	Z38_the_holy_caverns = {
+		icon = mission_underground_cave
 		position = 8
 		required_missions = { 
 			Z38_an_artificers_dream
 			Z38_koboldquilt_cloth
-		}
-
-		provinces_to_highlight = {
-			OR = {
-				province_id = 115
-				province_id = 112
-			}
-
-			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { province_has_center_of_trade_of_level = 2 }
-			}
-		}
-
-		trigger = {
-			has_country_modifier = trap_mastery_lvl_3
-
-			
-			112 = {
-				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt
-					has_province_flag = has_kobold_traps
-				}	
-			}
-
-			120 = {
-				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt
-					has_province_flag = has_kobold_traps
-				}	
-			}		
-
-			any_owned_province = {
-				region = small_country_region
-				custom_trigger_tooltip = {
-					tooltip = has_kobold_traps_tt
-					has_province_flag = has_kobold_traps
-				}
-			}
-
-			115 = { 
-				custom_trigger_tooltip = {
-					tooltip = level_2_cot_owned_by_root_tt 
-					owned_by = ROOT 
-					province_has_center_of_trade_of_level = 2 
-
-				}
-			}
-			112 = { 
-				custom_trigger_tooltip = {
-					tooltip = level_2_cot_owned_by_root_tt 
-					owned_by = ROOT 
-					province_has_center_of_trade_of_level = 2 
-
-				}
-			}
-		}
-
-		effect = {
-			120 = {
-				center_of_trade = 2
-				change_trade_goods = silk
-			}
-
-			115 = {
-				add_center_of_trade_level = -2
-			}
-
-			custom_tooltip = modified_traps_tt 
-			hidden_effect = {
-				set_country_flag = modified_kobold_traps
-				every_owned_province = {
-					if = {
-						limit = { has_province_modifier = kobold_traps_lvl_1 }
-						remove_province_modifier = kobold_traps_lvl_1
-						add_province_modifier = { name = modified_kobold_traps_lvl_1 duration = -1 }
-					} else_if = {
-						limit = { has_province_modifier = kobold_traps_lvl_2 }
-						remove_province_modifier = kobold_traps_lvl_2
-						add_province_modifier = { name = modified_kobold_traps_lvl_2 duration = -1 }
-					} else_if = {
-						limit = { has_province_modifier = kobold_traps_lvl_3 }
-						remove_province_modifier = kobold_traps_lvl_3
-						add_province_modifier = { name = modified_kobold_traps_lvl_3 duration = -1 }
-					} else_if = {
-						limit = { has_province_modifier = kobold_traps_lvl_4 }
-						remove_province_modifier = kobold_traps_lvl_4
-						add_province_modifier = { name = modified_kobold_traps_lvl_4 duration = -1 }
-					}
-				}
-			}
-		}
-	}
-
-	Z38_the_holy_caverns = {
-		icon = mission_underground_cave
-		position = 9
-		required_missions = { 
-			Z38_trapping_the_wealth
 		}
 
 		provinces_to_highlight = {
@@ -1902,85 +1802,157 @@ kob_4_b = {
 			}
 		}
 	}
-	
-	Z38_reclaiming_the_frontier = {
-		icon = mission_duel_snow
-		position = 10
+
+	Z38_trapping_the_wealth = {
+		icon = mission_war_chest
+		position = 9
 		required_missions = { 
 			Z38_the_holy_caverns
 		}
 
 		provinces_to_highlight = {
 			OR = {
-				AND = {
-					OR = {
-						area = westmoor_proper_area
-						area = moorhills_area
-						area = coddorran_heights_area
-						area = dragonhills_area
-					}
-					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { religion = kobold_dragon_cult }
-					}
-				}
-				AND = {
-					OR = {
-						province_id = 196
-						province_id = 694
-						province_id = 213
-					}
-					NOT = {
-						has_province_modifier = modified_kobold_traps_lvl_3 
-						has_province_modifier = modified_kobold_traps_lvl_4
-					}
-				}
+				province_id = 115
+				province_id = 112
+			}
+
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { province_has_center_of_trade_of_level = 2 }
 			}
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = westmoor_moorhills_coddorran_dragonhills_tt
-				westmoor_proper_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-				moorhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-				coddorran_heights_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-				dragonhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
-			}
-			
+			has_country_modifier = trap_mastery_lvl_3
 
-			196 = {
+			
+			112 = {
 				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more 
-					has_province_flag = kobold_traps_lvl_2_or_more
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
+				}	
+			}
+
+			120 = {
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
+				}	
+			}		
+
+			any_owned_province = {
+				region = small_country_region
+				custom_trigger_tooltip = {
+					tooltip = has_kobold_traps_tt
+					has_province_flag = has_kobold_traps
 				}
 			}
-			213 = {
+
+			115 = { 
 				custom_trigger_tooltip = {
-					tooltip = kobold_traps_lvl_2_or_more 
-					has_province_flag = kobold_traps_lvl_2_or_more
-				}
-			}	
-			custom_trigger_tooltip = {
-				tooltip = greenscales_traps_tt
-				OR = {
-					197 = { has_province_flag = kobold_traps_lvl_2_or_more }
-					694 = { has_province_flag = kobold_traps_lvl_2_or_more }
+					tooltip = level_2_cot_owned_by_root_tt 
+					owned_by = ROOT 
+					province_has_center_of_trade_of_level = 2 
+
 				}
 			}
-			NOT = {
-				accepted_culture = gawedi
-				accepted_culture = moorman
+			112 = { 
+				custom_trigger_tooltip = {
+					tooltip = level_2_cot_owned_by_root_tt 
+					owned_by = ROOT 
+					province_has_center_of_trade_of_level = 2 
+
+				}
 			}
 		}
 
 		effect = {
-			westmoor_proper_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
-			moorhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
-			coddorran_heights_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
-			dragonhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			120 = {
+				center_of_trade = 2
+				change_trade_goods = silk
+			}
 
-			frostbridges_area = { add_permanent_claim = ROOT }
-			serpentshead_area = { add_permanent_claim = ROOT }
+			115 = {
+				add_center_of_trade_level = -2
+			}
+
+			custom_tooltip = modified_traps_tt 
+			hidden_effect = {
+				set_country_flag = modified_kobold_traps
+				every_owned_province = {
+					if = {
+						limit = { has_province_modifier = kobold_traps_lvl_1 }
+						remove_province_modifier = kobold_traps_lvl_1
+						add_province_modifier = { name = modified_kobold_traps_lvl_1 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_2 }
+						remove_province_modifier = kobold_traps_lvl_2
+						add_province_modifier = { name = modified_kobold_traps_lvl_2 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_3 }
+						remove_province_modifier = kobold_traps_lvl_3
+						add_province_modifier = { name = modified_kobold_traps_lvl_3 duration = -1 }
+					} else_if = {
+						limit = { has_province_modifier = kobold_traps_lvl_4 }
+						remove_province_modifier = kobold_traps_lvl_4
+						add_province_modifier = { name = modified_kobold_traps_lvl_4 duration = -1 }
+					}
+				}
+			}
+		}
+	}
+	Z38_traders_and_traitors = {
+		icon = mission_horde_trade
+		position = 10
+		required_missions = { 
+			Z38_reclaiming_the_frontier
+			Z38_trapping_the_wealth
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = frostbridges_area
+				area = serpentshead_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { religion = kobold_dragon_cult }
+			}
+		}
+
+		trigger = {
+			num_of_light_ship = 40
+			num_of_transport = 20
+
+			1324 = {
+				trade_share = {
+					country = ROOT
+					share = 65
+				}
+			}
+
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 3
+				superregion = gerudia_superregion
+				province_has_center_of_trade_of_level = 2
+				religion = kobold_dragon_cult
+			}
+		}
+
+		effect = {
+			dalr_region = { add_permanent_claim = ROOT }
+
+			westmoor_proper_area = { change_culture = kobildzani_kobold }
+			moorhills_area = { change_culture = kobildzani_kobold }
+			coddorran_heights_area = { change_culture = kobildzani_kobold }
+			dragonhills_area = { change_culture = kobildzani_kobold }
+
+			kdc_remove_aspect_1 = yes
+            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+                COLOUR = white
+                SLOT = 1
+                UPGRADE = upgraded
+            }
 		}
 	}
 }
@@ -2386,75 +2358,84 @@ Kob_5b = {
 			storm_isles_area = { change_trade_goods = ivory add_province_modifier = { name = Z38_seabeast_fisheries duration = -1 } }
 		}
 	}
-
-	Z38_traders_and_traitors = {
-		icon = mission_horde_trade
-		position = 11
+	Z38_reclaiming_the_frontier = {
+		icon = mission_duel_snow
+		position = 9
 		required_missions = { 
-			Z38_reclaiming_the_frontier
 			Z38_the_kobold_krakeneers
 		}
 
 		provinces_to_highlight = {
 			OR = {
-				area = frostbridges_area
-				area = serpentshead_area
-			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				NOT = { religion = kobold_dragon_cult }
+				AND = {
+					OR = {
+						area = westmoor_proper_area
+						area = moorhills_area
+						area = coddorran_heights_area
+						area = dragonhills_area
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = kobold_dragon_cult }
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 196
+						province_id = 694
+						province_id = 213
+					}
+					NOT = {
+						has_province_modifier = modified_kobold_traps_lvl_3 
+						has_province_modifier = modified_kobold_traps_lvl_4
+					}
+				}
 			}
 		}
 
 		trigger = {
-			num_of_light_ship = 40
-			num_of_transport = 20
+			custom_trigger_tooltip = {
+				tooltip = westmoor_moorhills_coddorran_dragonhills_tt
+				westmoor_proper_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+				moorhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+				coddorran_heights_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+				dragonhills_area = { type = all owned_by = ROOT religion = kobold_dragon_cult }
+			}
+			
 
-			1324 = {
-				trade_share = {
-					country = ROOT
-					share = 35
+			196 = {
+				custom_trigger_tooltip = {
+					tooltip = kobold_traps_lvl_2_or_more 
+					has_province_flag = kobold_traps_lvl_2_or_more
 				}
 			}
-
-			frostbridges_area = { 
-				type = all 
+			213 = {
 				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt 
-					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
-					}
-					religion = kobold_dragon_cult 
-				} 
+					tooltip = kobold_traps_lvl_2_or_more 
+					has_province_flag = kobold_traps_lvl_2_or_more
+				}
+			}	
+			custom_trigger_tooltip = {
+				tooltip = greenscales_traps_tt
+				OR = {
+					197 = { has_province_flag = kobold_traps_lvl_2_or_more }
+					694 = { has_province_flag = kobold_traps_lvl_2_or_more }
+				}
 			}
-			serpentshead_area = { 
-				type = all 
-				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt 
-					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
-					} 
-					religion = kobold_dragon_cult 
-				} 
+			NOT = {
+				accepted_culture = gawedi
+				accepted_culture = moorman
 			}
 		}
 
 		effect = {
-			dalr_region = { add_permanent_claim = ROOT }
+			westmoor_proper_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			moorhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			coddorran_heights_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
+			dragonhills_area = { add_kobold_minority_size_effect = yes add_kobold_minority_size_effect = yes }
 
-			westmoor_proper_area = { change_culture = kobildzani_kobold }
-			moorhills_area = { change_culture = kobildzani_kobold }
-			coddorran_heights_area = { change_culture = kobildzani_kobold }
-			dragonhills_area = { change_culture = kobildzani_kobold }
-
-			kdc_remove_aspect_1 = yes
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = white
-                SLOT = 1
-                UPGRADE = upgraded
-            }
+			frostbridges_area = { add_permanent_claim = ROOT }
+			serpentshead_area = { add_permanent_claim = ROOT }
 		}
 	}
 }
@@ -3414,7 +3395,6 @@ kob_5_c = {
 		icon = mission_protect_white_sea_trade
 		position = 13
 		required_missions = { 
-			Z38_traders_and_traitors
 			Z38_in_raw_desperation
 		}
 
