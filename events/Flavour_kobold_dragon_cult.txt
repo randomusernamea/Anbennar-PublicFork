@@ -1249,20 +1249,20 @@ country_event = {
 						is_year = 1600
 					}
 					any_ally = {
-						capital_scope = {
+						any_owned_province = {
 							OR = {
 								region = far_bulwar_region
 								region = middle_dwarovar_region
 							}
-						}
+						}	
 					}
 					any_subject_country = { 
-						capital_scope = {
+						any_owned_province = {
 							OR = {
 								region = far_bulwar_region
 								region = middle_dwarovar_region
 							}
-						}					
+						}				
 					}
 					any_owned_province = {
 						OR = {
@@ -1273,7 +1273,6 @@ country_event = {
 							has_terrain = dwarven_hold
 							has_terrain = dwarven_hold_surface
 						}
-						NOT = { province_id = 2863 }
 					}
 				}
 			}
