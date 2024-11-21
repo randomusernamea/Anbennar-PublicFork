@@ -5856,7 +5856,7 @@ custom_button = {
 				OR = {
 					has_country_flag = unlocked_artifice_invention_gyrocopters
 					has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
-					AND = {
+					AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 						has_country_flag = unlocked_artifice_invention_elemental_gunpowder
 						has_country_modifier = goblin_military
 					}
@@ -5875,7 +5875,7 @@ custom_button = {
 				OR = {
 					has_estate_privilege = artifice_invention_gyrocopters
 					has_estate_privilege = artifice_invention_codorran_powered_exosuit
-					AND = {
+					AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 						has_estate_privilege = artifice_invention_elemental_gunpowder
 						has_country_modifier = goblin_military
 					}
@@ -5888,7 +5888,7 @@ custom_button = {
 			OR = {
 				has_country_flag = unlocked_artifice_invention_gyrocopters
 				has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
-				AND = {
+				AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 					has_country_flag = unlocked_artifice_invention_elemental_gunpowder
 					has_country_modifier = goblin_military
 				}
@@ -5905,7 +5905,7 @@ custom_button = {
 			OR = {
 				has_estate_privilege = artifice_invention_gyrocopters
 				has_estate_privilege = artifice_invention_codorran_powered_exosuit
-				AND = {
+				AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 					has_estate_privilege = artifice_invention_elemental_gunpowder
 					has_country_modifier = goblin_military
 				}
@@ -5921,7 +5921,7 @@ custom_button = {
 			OR = {
 				has_country_flag = unlocked_artifice_invention_gyrocopters
 				has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
-				AND = {
+				AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 					has_country_flag = unlocked_artifice_invention_elemental_gunpowder
 					has_country_modifier = goblin_military
 				}
@@ -6327,17 +6327,13 @@ custom_button = {
 	tooltip = racial_military_invention_3_tt
 	potential = {
 		has_country_flag = artifice_invention_menu_open_cultural
-		OR = {
-			has_country_modifier = goblin_military
-		}	
+		has_country_modifier = goblin_military
 	}
 	frame = {
 		number = 1
 		trigger = {
 			NOT = {
-				OR = {
-					has_country_modifier = goblin_military
-				}	
+				has_country_flag = unlocked_artifice_invention_eplusplus_compound
 			}
 		}
 	}
@@ -6345,29 +6341,20 @@ custom_button = {
 		number = 2
 		trigger = {
 			NOT = {
-				OR = {
-					has_estate_privilege = artifice_invention_eplusplus_compound
-				}	
+				has_estate_privilege = artifice_invention_eplusplus_compound
 			}
-			OR = {
-				has_country_flag = unlocked_artifice_invention_eplusplus_compound
-			}	
+			has_country_flag = unlocked_artifice_invention_eplusplus_compound
 		}
 	}
 	frame = {
 		number = 3
 		trigger = {
-			OR = {
-				has_estate_privilege = artifice_invention_eplusplus_compound
-			}
+			has_estate_privilege = artifice_invention_eplusplus_compound
 		}
 	}
 	trigger = {
 		hidden_trigger = {
-			OR = {
-				has_country_flag = unlocked_artifice_invention_eplusplus_compound
-			}
-			
+			has_country_flag = unlocked_artifice_invention_eplusplus_compound
 		}
 	}
 	effect = { 
@@ -6563,7 +6550,10 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_artifice_hunting_masks
 					has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
 					has_country_flag = unlocked_artifice_invention_power_fists
-					has_country_flag = unlocked_artifice_invention_lullaby_cannon
+					AND = { #special trigger here b/c kobildzan can unlock lullaby cannons as Unique
+						has_country_flag = unlocked_artifice_invention_lullaby_cannon
+						religion = skaldhyrric_faith
+					}
 					has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix
 					has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
 					has_country_flag = unlocked_artifice_invention_game_of_khet
@@ -6586,7 +6576,10 @@ custom_button = {
 					has_estate_privilege = artifice_invention_artifice_hunting_masks
 					has_estate_privilege = artifice_invention_chi_cultivation
 					has_estate_privilege = artifice_invention_power_fists
-					has_estate_privilege = artifice_invention_lullaby_cannon
+					AND = { #special trigger here b/c kobildzan can unlock lullaby cannons as Unique
+						has_estate_privilege = artifice_invention_lullaby_cannon
+						religion = skaldhyrric_faith
+					}
 					has_estate_privilege = artifice_invention_think_quik_drink_mix
 					has_estate_privilege = artifice_invention_demonflame_flamethrowers
 					has_estate_privilege = artifice_invention_game_of_khet
@@ -6603,7 +6596,10 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_artifice_hunting_masks
 				has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
 				has_country_flag = unlocked_artifice_invention_power_fists
-				has_country_flag = unlocked_artifice_invention_lullaby_cannon
+				AND = { #special trigger here b/c kobildzan can unlock lullaby cannons as Unique
+					has_country_flag = unlocked_artifice_invention_lullaby_cannon
+					religion = skaldhyrric_faith
+				}
 				has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix
 				has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
 				has_country_flag = unlocked_artifice_invention_game_of_khet
@@ -6624,7 +6620,10 @@ custom_button = {
 				has_estate_privilege = artifice_invention_artifice_hunting_masks
 				has_estate_privilege = artifice_invention_chi_cultivation
 				has_estate_privilege = artifice_invention_power_fists
-				has_estate_privilege = artifice_invention_lullaby_cannon
+				AND = { #special trigger here b/c kobildzan can unlock lullaby cannons as Unique
+					has_estate_privilege = artifice_invention_lullaby_cannon
+					religion = skaldhyrric_faith
+				}
 				has_estate_privilege = artifice_invention_think_quik_drink_mix
 				has_estate_privilege = artifice_invention_demonflame_flamethrowers
 				has_estate_privilege = artifice_invention_game_of_khet
@@ -6645,6 +6644,10 @@ custom_button = {
 				has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
 				has_country_flag = unlocked_artifice_invention_power_fists
 				has_country_flag = unlocked_artifice_invention_game_of_khet
+				AND = { #special trigger here b/c kobildzan can unlock lullaby cannons as Unique
+					has_country_flag = unlocked_artifice_invention_lullaby_cannon
+					religion = skaldhyrric_faith
+				}
 			}
 		}
 	}
@@ -7139,28 +7142,20 @@ custom_button = {
 		number = 2
 		trigger = {
 			NOT = {
-				OR = {
-					has_estate_privilege = artifice_invention_god_fragment_decoder
-				}
+				has_estate_privilege = artifice_invention_god_fragment_decoder
 			}
-			OR = {
-				has_country_flag = unlocked_artifice_invention_god_fragment_decoder
-			}
+			has_country_flag = unlocked_artifice_invention_god_fragment_decoder
 		}
 	}
 	frame = {
 		number = 3
 		trigger = {
-			OR = {
-				has_estate_privilege = artifice_invention_god_fragment_decoder
-			}
+			has_estate_privilege = artifice_invention_god_fragment_decoder
 		}
 	}
 	trigger = {
 		hidden_trigger = {
-			OR = {
-				has_country_flag = unlocked_artifice_invention_god_fragment_decoder
-			}
+			has_country_flag = unlocked_artifice_invention_god_fragment_decoder
 		}
 	}
 	effect = { 
@@ -8398,7 +8393,7 @@ custom_button = {
 			NOT = {
 				OR = {
 					has_estate_privilege = artifice_everlasting_fertilizer
-					AND = {
+					AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 						NOT = { has_country_modifier = goblin_military }
 						has_estate_privilege = artifice_invention_elemental_gunpowder
 					}
@@ -8415,7 +8410,7 @@ custom_button = {
 		trigger = {
 			OR = {
 				has_estate_privilege = artifice_everlasting_fertilizer
-				AND = {
+				AND = { #this one's special b/c kobildzan can unlock it as a Unique invention, so not having this check makes the UI bug out
 					NOT = { has_country_modifier = goblin_military }
 					has_estate_privilege = artifice_invention_elemental_gunpowder
 				}
