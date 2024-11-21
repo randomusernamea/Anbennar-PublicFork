@@ -1254,7 +1254,7 @@ custom_button = {
 						limit = { 
 							trade_goods = slaves 
 							continent = south_america 
-							NOT = { base_production = 40 } 
+							NOT = { development = 40 } 
 							is_city = yes
 						}
 						add_base_production = 1
@@ -1320,11 +1320,9 @@ custom_button = {
 							NOT = { trade_goods = slaves } 
 							is_state_core = ROOT 
 						}
-						random_list = { 
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-						}
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
 					}"
 				}
 			}
@@ -1346,11 +1344,9 @@ custom_button = {
 							NOT = { trade_goods = slaves } 
 							is_state_core = ROOT 
 						}
-						random_list = { 
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-						}
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
 					}"
 				}
 			}
