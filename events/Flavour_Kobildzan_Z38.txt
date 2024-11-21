@@ -1931,3 +1931,72 @@ country_event = { #Biocompatibility Event
 		}
 	}
 }
+
+country_event = { #Elkaesal Stirs, Gerudia Awakens
+	id = flavour_kobildzan.26
+	title = flavour_kobildzan.26.t
+	desc = flavour_kobildzan.26.d
+	picture = SIERRA_DE_LA_PLATA_eventPicture
+	is_triggered_only = yes 
+
+	option = { #Do they think this will be enough?
+		name = flavour_kobildzan.26.a
+		custom_tooltip = unlock_gerudian_kobold_traps_tt
+		hidden_effect = { set_country_flag = gerudian_traps_for_kobolds }
+		dalr_region = {
+			custom_tooltip = gerudians_rebels_tt #lex
+			hidden_effect = {
+				if = {
+					limit = { owned_by = ROOT }
+					random_list = {
+						3 = {
+
+						}
+						2 = {
+							spawn_rebels = {
+								size = 3
+								type = skaldhyrric_faith_rebels
+							}
+						}
+					}
+				}
+			}
+		}
+		olavlund_region = {
+			custom_tooltip = gerudians_rebels_tt #lex			
+			hidden_effect = {
+				if = {
+					limit = { owned_by = ROOT }
+					random_list = {
+						3 = {	}
+						2 = {
+							spawn_rebels = {
+								size = 3
+								type = skaldhyrric_faith_rebels
+							}
+						}
+					}
+				}
+			}
+		}
+		gerudian_frontier_region = {
+			custom_tooltip = gerudians_rebels_tt #lex
+			hidden_effect = {
+				if = {
+					limit = { owned_by = ROOT }
+					random_list = {
+						3 = {
+
+						}
+						2 = {
+							spawn_rebels = {
+								size = 3
+								type = skaldhyrric_faith_rebels
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

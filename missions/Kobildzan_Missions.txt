@@ -3401,15 +3401,11 @@ kob_5_c = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					OR = {
-						area = sidaett_area
-						area = bjarnland_area
-						area = varheim_area
-						area = blodfjell_area
-					}
+					region = dalr_region
 					OR = {
 						NOT = { owned_by = ROOT }
 						NOT = { religion = kobold_dragon_cult }
+						is_empty = no
 					}
 				}
 
@@ -3424,46 +3420,14 @@ kob_5_c = {
 		}
 
 		trigger = {
-			sidaett_area = {
+			dalr_region = {
 				type = all 
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt
 					OR = {
 						owned_by = ROOT 
 						owned_by_subject_of = ROOT
-					}  
-					religion = kobold_dragon_cult 
-				}
-			}
-			bjarnland_area = {
-				type = all 
-				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt
-					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
-					} 
-					religion = kobold_dragon_cult 
-				}
-			}
-			varheim_area = {
-				type = all 
-				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt 
-					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
-					} 
-					religion = kobold_dragon_cult 
-				}
-			}
-			blodfjell_area = {
-				type = all 
-				custom_trigger_tooltip = {
-					tooltip = owned_and_dragon_cult_tt 
-					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
+						is_empty = yes
 					}  
 					religion = kobold_dragon_cult 
 				}
@@ -3481,27 +3445,34 @@ kob_5_c = {
 		}
 
 		effect = {
-			dalr_region = { add_devastation = 20 }
-			olavlund_region = { add_devastation = 20 }
-			gerudian_frontier_region = { add_devastation = 20 }
-
 			custom_tooltip = all_skaldhyrric_claims_tt 
 			hidden_effect = {
 				every_province = {
 					limit = { religion = skaldhyrric_faith }
 					add_claim = ROOT 
 				}
+				vaengrheim_area = {
+					add_claim = ROOT
+				}
+				nyrford_area = {
+					add_claim = ROOT
+				}
 			}
-
-			vaengrheim_area = {
-				add_claim = ROOT
+			dalr_region = {
+				add_devastation = 20
 			}
-			nyrford_area = {
-				add_claim = ROOT
+			olavlund_region = {
+				add_devastation = 20
 			}
-
+			gerudian_frontier_region = {
+				add_devastation = 20
+			}
+			custom_tooltip = gerudians_dont_like_this_tt 
+			hidden_effect = {
+				country_event = { id = flavour_kobildzan.26 days = 400 }
+			}
 			custom_tooltip = unlock_gerudian_kobold_traps_tt
-			hidden_effect = { set_country_flag = gerudian_traps_for_kobolds }
+			hidden_effect = { set_country_flag = gerudian_traps_for_kobolds }	
 
 			kdc_remove_aspect_2 = yes
             unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
@@ -3565,6 +3536,14 @@ kob_5_c = {
 			6271 = {
 				owned_by = ROOT
 				infantry_in_province = 40 
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_dealt_with_fallout_tt
+				had_country_flag = {
+					flag = gerudian_traps_for_kobolds
+					days = 730
+				}
+				
 			}
 			has_church_aspect = white_dragon_1_upgraded
 			has_church_aspect = white_dragon_2_upgraded
