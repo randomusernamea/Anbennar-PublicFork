@@ -542,6 +542,12 @@ country_decisions = {
 	horizona_nation = {
 		major = yes
 		potential = {
+			capital_scope = {
+				OR = {
+					region = epednan_expanse_region
+					region = ekyunimoy_region
+				}
+			}
 			OR = {
 				culture = dustman
 				culture = steadsman
@@ -551,12 +557,6 @@ country_decisions = {
 					OR = {
 						is_former_colonial_nation = yes
 						is_colonial_nation = yes
-					}
-					capital_scope = {
-						OR = {
-							region = epednan_expanse_region
-							region = ekyunimoy_region
-						}
 					}
 				}
 			}
