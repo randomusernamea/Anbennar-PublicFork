@@ -3078,26 +3078,6 @@ on_battle_won_unit_effect = {
 			}
 		}
 	}
-	if = {
-		limit = { 
-			unit_owner = {
-				OR = {
-					tag = Y17 #Gushuokguan
-					was_tag = Y17 #Gushuokguan
-				}
-				any_hired_mercenary_company = {
-					template = merc_rock_raiders
-					location = { 
-						province_id = THIS 
-						has_underground_terrain = yes
-					}
-				}
-			}
-		} 
-		unit_owner = {
-			set_country_flag = gushuokguan_rock_raiders_battle
-		}
-	}
 }
 
 on_battle_lost_unit_effect = { #this triggers on every unit present 
@@ -3719,14 +3699,16 @@ on_battle_won_province_effect = {
 				is_rebel_type = spirit_swarms 
 			}
 		}
-		overlord = {
-			set_variable = {
-				which = land_units_killed
-				which = PREV
-			}
-			change_variable = {
-				which = gushuokguan_dacite_dragons_death_toll
-				which = land_units_killed
+		owner = {
+			overlord = {
+				set_variable = {
+					which = land_units_killed
+					which = PREV
+				}
+				change_variable = {
+					which = gushuokguan_dacite_dragons_death_toll
+					which = land_units_killed
+				}
 			}
 		}
 	}
@@ -3794,7 +3776,7 @@ on_battle_lost_province_effect = {
 				}
 			}
 		} 
-		unit_owner = {
+		FROM = {
 			set_country_flag = gushuokguan_rock_raiders_battle
 		}
 	}
