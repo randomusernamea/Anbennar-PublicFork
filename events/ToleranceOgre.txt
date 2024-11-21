@@ -21,6 +21,10 @@ country_event = {
 			factor = 10
 			has_country_modifier = racial_focus_ogre
 		}
+		modifier = {
+			factor = 1.5
+			has_government_attribute = more_migration_and_tolerance
+		}
 	}
 	option = {
 		random_list = {
@@ -856,8 +860,8 @@ country_event = {
 			limit = { 
 				capital_scope = {
 					OR = {
-						#superregion = north_haless_superregion
-						superregion = south_haless_superregion
+						#superregion = gozengun_superregion
+						superregion = vimdatrong_superregion
 						superregion = yanshen_superregion
 					}
 				}
@@ -935,7 +939,7 @@ country_event = {
 			limit = { 
 				capital_scope = {
 					OR = {
-						superregion = north_haless_superregion
+						superregion = gozengun_superregion
 					}
 				}
 			}
