@@ -6648,6 +6648,8 @@ custom_button = {
 					has_country_flag = unlocked_artifice_invention_lullaby_cannon
 					religion = skaldhyrric_faith
 				}
+				has_country_flag = unlocked_artifice_invention_thinkquik_drink_mix
+				has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
 			}
 		}
 	}
@@ -7124,17 +7126,13 @@ custom_button = {
 	tooltip = religion_invention_2_tt
 	potential = {
 		has_country_flag = artifice_invention_menu_open_cultural
-		OR = {
-			religion = ravelian
-		}
+		religion = ravelian
 	}
 	frame = {
 		number = 1
 		trigger = {
 			NOT = {
-				OR = {
-					has_country_flag = unlocked_artifice_invention_god_fragment_decoder
-				}				
+				has_country_flag = unlocked_artifice_invention_god_fragment_decoder			
 			}
 		}
 	}
