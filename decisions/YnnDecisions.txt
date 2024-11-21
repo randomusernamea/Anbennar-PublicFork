@@ -35,6 +35,7 @@ country_decisions = {
 			NOT = { has_reform = aelantir_adventurer_reform }
 			NOT = { has_country_flag = formed_dolindha_flag }
 			NOT = { has_country_flag = formed_sarda_flag }
+			NOT = { has_country_flag = formed_rzenta_flag }
 			NOT = { has_country_flag = formed_ynnic_empire_flag }
 			NOT = { has_country_flag = formed_dragon_dominion_flag }
 			NOT = { tag = U32 }
@@ -182,6 +183,7 @@ country_decisions = {
 			NOT = { has_reform = aelantir_adventurer_reform }
 			NOT = { has_country_flag = formed_dolindha_flag }
 			NOT = { has_country_flag = formed_sarda_flag }
+			NOT = { has_country_flag = formed_rzenta_flag }
 			NOT = { has_country_flag = formed_ynnic_empire_flag }
 			NOT = { has_country_flag = formed_dragon_dominion_flag }
 			NOT = { tag = U32 }
@@ -310,13 +312,17 @@ country_decisions = {
 				}
 				NOT = { exists = U71 } #Rzenta doesn't exist
 			}
+			OR = {
+				religion = ynn_river_reformed
+				religion = ynn_river_worship
+			}
 			is_colonial_nation = no
 			NOT = { has_reform = aelantir_adventurer_reform }
+			NOT = { has_country_flag = formed_rzenta_flag }
 			NOT = { has_country_flag = formed_dolindha_flag }
 			NOT = { has_country_flag = formed_sarda_flag }
 			NOT = { has_country_flag = formed_ynnic_empire_flag }
 			NOT = { has_country_flag = formed_dragon_dominion_flag }
-			NOT = { tag = U32 }
 			normal_or_historical_nations = yes
 			was_never_end_game_tag_trigger = yes
 		}

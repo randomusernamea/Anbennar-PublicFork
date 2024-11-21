@@ -30202,7 +30202,7 @@ L62_ideas = {
 		adventurers_loyalty_modifier =0.05
  	}
 	L62_umsadapti_fleets = {
-		Galley_hull_size_modifier = 0.20
+		galley_hull_size_modifier = 0.20
 	}
 	L62_are_lost = {
 		stability_cost_modifier = -0.15 
@@ -43045,22 +43045,21 @@ U43_ideas = {
 		idea_cost = -0.1 #Astrology and rejection of fey.  
 		movement_speed = 0.1 #Apt at maneuvering through difficult terrain.  
 	}  
-	  
+
 	bonus = {  
 		land_morale = 0.1 #Fograc nationalism.  
     }  
-	  
+
 	trigger = {  
 		tag = U43 #Seraeddun  
 	}  
 	free = yes  
-  
+
 	U43_people_of_the_stars = {  
 		same_culture_advisor_cost = -0.15 #The Fograc, or Seraedak as they call themselves, worship the stars and are great astronomers. Talks about clan-based Fograc society.  
 	}  
 	U43_the_tricksters = {   
         global_unrest = -2 #Explanation of the origin of the Fograc and how they aren't fond of fey.  
-        global_unrest = -2 #Explanation of the origin of the Fograc and how they aren�t fond of fey.  
 	}  
     U43_leatherskin_armors = {   
         shock_damage_received = -0.1  
@@ -43069,7 +43068,6 @@ U43_ideas = {
     U43_united_in_harshness = {  
 		caravan_power = 0.1  
 		improve_relation_modifier = 0.15 #Friends with the Haraf'ne on the other side of the desert, both live in a relatively harsh environment.  
-		improve_relations_modifier = 0.15 #Friends with the Haraf�ne on the other side of the desert, both live in a relatively harsh environment.  
 	}  
     U43_the_summer_expeditions = {  
 		global_prov_trade_power_modifier = 0.1 #Summer Court expeditions into Fograc, mainly from Bagcatir and Murdkather. Rather friendly with Caamasi, even though they disagree in religious manners.  
@@ -43079,7 +43077,6 @@ U43_ideas = {
 	}  
 	U43_struggle_for_the_peninsula = {  
         fire_damage_received = -0.05  
-		war_exhaustion = -0.02 #In the late 1700s, the Vanbury Guild seizes the Fograc peninsula from Murdkather. Fograc mostly support Murdkather, and they aren't content with Vanbury rule at all.  
 		war_exhaustion = -0.02 #In the late 1700s, the Vanbury Guild seizes the Fograc peninsula from Murdkather. Fograc mostly support Murdkather, and they aren�t content with Vanbury rule at all.  
     }  
 }
