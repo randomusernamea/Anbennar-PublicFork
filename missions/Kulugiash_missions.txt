@@ -410,9 +410,15 @@ L08_kulugiash_2 = {
 				OR = {
 					any_known_country = {
 						religion = elikhetist
-						root = {
-							has_won_war_against = {
-								who = PREV
+						OR = {
+							root = {
+								has_won_war_against = {
+									who = PREV
+								}
+							}
+							has_opinion_modifier = {
+								modifier = had_war_with_us
+								who = root
 							}
 						}
 					}
