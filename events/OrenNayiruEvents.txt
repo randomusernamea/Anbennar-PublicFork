@@ -1173,6 +1173,20 @@ country_event = {
 					}
 				}
 			}
+			ROOT = {
+				ai = no
+				OR = {
+					religion = oren_nayiru
+					religion = oren_nayiru_reformed
+				}
+				OR = {
+					capital_scope = { superregion = taychend_superregion }
+					num_of_owned_provinces_with = {
+						value = 10
+						superregion = taychend_superregion
+					}
+				}
+			}
 		}
 		OR = {
 			is_year = 1575
