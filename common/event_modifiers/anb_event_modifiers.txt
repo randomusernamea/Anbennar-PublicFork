@@ -3302,9 +3302,9 @@ rakkaz_new_recruits = {
 }
 
 rakkaz_fighting_pit = {
-	local_defensiveness = 0.1
 	trade_goods_size = 1
 	local_governing_cost = -0.25
+	local_development_cost = -0.05
 }
 
 rakkaz_the_shadow_womb = {
@@ -3341,11 +3341,13 @@ rakkaz_pact_overcharge = {
 
 rakkaz_channeling_suffering = {
 	trade_goods_size = 2
+	local_development_cost = -0.05
 	local_monthly_devastation = 0.4
 }
 
 rakkaz_channeling_suffering_upgrade = {
 	trade_goods_size = 2
+	local_development_cost = -0.05
 	local_monthly_devastation = 0.4
 	local_manpower_modifier = 1
 }
@@ -3421,12 +3423,7 @@ rakkaz_soldier_households_2 = {
 }
 
 rakkaz_soldier_households_3 = {
-	land_forcelimit = 3
-}
-
-rakkaz_fieldstalker_converts = {
-	yearly_corruption = -0.1
-	church_power_modifier = 0.15
+	land_forcelimit = 4
 }
 #
 
