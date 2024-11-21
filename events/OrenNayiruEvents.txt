@@ -1155,7 +1155,7 @@ country_event = {
 					value = 60
 				}
 			}
-			is_year = 1600
+			is_year = 1575
 		}
 		if = {
 			limit = {
@@ -1177,7 +1177,7 @@ country_event = {
 			always = no
 		}
 		OR = {
-			is_year = 1600
+			is_year = 1575
 			if = {
 				limit = {
 					OR = {
@@ -1215,6 +1215,20 @@ country_event = {
 					check_variable = {
 						which = taychend_oren_nayiru_provinces
 						value = 80
+					}
+				}
+			}
+			AND = {
+				had_global_flag = {
+					flag = oren_nayiru_reform_center_1
+					days = 18250 #50 years
+				}
+				2502 = {
+					NOT = {
+						check_variable = {
+							which = taychend_oren_nayiru_provinces
+							value = 20
+						}
 					}
 				}
 			}
@@ -1390,7 +1404,6 @@ country_event = {
 				add_core = U39
 				cede_province = U39
 			}
-
 		}
 		else = {
 			random_province = {
@@ -1427,6 +1440,56 @@ country_event = {
 					add_core = U39 
 					cede_province = U39
 				}
+			}
+		}
+		U39 = { #Orenvalyam
+			random_neighbor_country = {
+				random_owned_area = {
+					limit = {
+						area_for_scope_province = {
+							type = all
+							is_capital = no
+						}
+						any_neighbor_province = {
+							owned_by = U39
+						}
+					}
+					add_core = U39
+					cede_province = U39
+				}
+			}
+			random_neighbor_country = {
+				random_owned_area = {
+					limit = {
+						area_for_scope_province = {
+							type = all
+							is_capital = no
+						}
+						any_neighbor_province = {
+							owned_by = U39
+						}
+					}
+					add_core = U39
+					cede_province = U39
+				}
+			}
+		}
+		taychend_superregion = {
+			limit = {
+				has_province_flag = oren_nayiru_reformation_center
+				is_capital = no
+				owner = {
+					NOT = {
+						religion = oren_nayiru
+						religion = oren_nayiru_reformed
+					}
+				}
+			}
+			add_core = U39 
+			cede_province = U39
+			add_province_modifier = {
+				name = on_kamrayakvals_citadel
+				duration = -1
 			}
 		}
 		U39 = { #Orenvalyam
@@ -1559,6 +1622,9 @@ country_event = {
 				duration = 9125 #25 years
 			}
 		}
+		kheionai_superregion = { add_permanent_claim = U39 }
+		taychend_superregion = { add_permanent_claim = U39 }
+		dry_coast_region = { add_permanent_claim = U39 }
 		hidden_effect = {
 			if = {
 				limit = { ai = yes }
