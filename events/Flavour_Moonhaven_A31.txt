@@ -658,6 +658,16 @@ country_event = { #Ravelian event, the main Ravelian conversion event won't fire
 		ai_chance = { factor = 20 }
 
 		change_religion = ravelian
+		
+		convert_all_lodges_and_societies = yes
+		capital_scope = {
+			area = {
+				limit = {
+					NOT = { has_province_modifier = religious_zeal_at_conv }
+				}
+				change_religion = ravelian
+			}
+		}
 
 		hidden_effect = {
 			clr_country_flag = A31_corin
@@ -741,6 +751,16 @@ country_event = { #Istralore/Dameria Ravelian
 			}
 		}
 		change_religion = ravelian
+		convert_all_lodges_and_societies = yes
+		
+		capital_scope = {
+			area = {
+				limit = {
+					NOT = { has_province_modifier = religious_zeal_at_conv }
+				}
+				change_religion = ravelian
+			}
+		}
 	}
 
 	option = {
