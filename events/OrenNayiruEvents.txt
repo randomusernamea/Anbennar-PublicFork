@@ -1401,6 +1401,7 @@ country_event = {
 			}
 			kattisangamar_area = {
 				random_province_in_state = { save_global_event_target_as = orenvalyam_spawn_point }
+				change_religion = oren_nayiru
 				add_core = U39
 				cede_province = U39
 			}
@@ -1437,6 +1438,7 @@ country_event = {
 				}
 				save_global_event_target_as = orenvalyam_spawn_point
 				area = { 
+					change_religion = oren_nayiru
 					add_core = U39 
 					cede_province = U39
 				}
@@ -1454,6 +1456,7 @@ country_event = {
 							owned_by = U39
 						}
 					}
+					change_religion = oren_nayiru
 					add_core = U39
 					cede_province = U39
 				}
@@ -1469,6 +1472,7 @@ country_event = {
 							owned_by = U39
 						}
 					}
+					change_religion = oren_nayiru
 					add_core = U39
 					cede_province = U39
 				}
@@ -1485,6 +1489,7 @@ country_event = {
 					}
 				}
 			}
+			change_religion = oren_nayiru
 			add_core = U39 
 			cede_province = U39
 			add_province_modifier = {
