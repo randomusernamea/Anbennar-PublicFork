@@ -380,7 +380,7 @@ country_decisions = {
 					limit = {
 						has_country_flag = G81_changed_name_to_dumrusvarn_flag
 					}
-					#Keep your rename
+					override_country_name = DUMRUSVARN
 				}
 				else_if = {
 					limit = {
@@ -814,6 +814,7 @@ country_decisions = {
 		potential = {
 			tag = J84 #Taychendi Empire
 			has_country_flag = J84_is_mihaela_flag
+			religion = gods_of_the_taychend_reformed
 		}
 		
 		provinces_to_highlight = {
@@ -823,6 +824,7 @@ country_decisions = {
 			hidden_trigger = {
 				tag = J84 #Taychendi Empire
 				has_country_flag = J84_is_mihaela_flag
+				religion = gods_of_the_taychend_reformed
 			}
 			if = {
 				limit = { has_country_flag = J84_changed_rule_style_flag }
