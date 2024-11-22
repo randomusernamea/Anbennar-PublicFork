@@ -2825,12 +2825,14 @@ country_event = {
 				requirebasic = yes
 			}
 			NOT = {
-				silver_dragon_upgrade_trigger = {
-					AMOUNT = 9
-				}
-				OR = {
-					owns_or_subject_of = 833
-					any_ally = { owns = 833 }
+				AND = {
+					silver_dragon_upgrade_trigger = {
+						AMOUNT = 9
+					}
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
 				}
 			}
 		}
