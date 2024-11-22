@@ -596,15 +596,13 @@ country_decisions = {
 					}
 				}
 			}
-			NOT = {
-				exists = H65
-				exists = H49
-				exists = H53
-				exists = H59
-				exists = H61
-				exists = H34
-				exists = H45
-			}
+			if = { limit = { tag = H65 } NOT = { exists = H49 exists = H53 exists = H59 exists = H61 exists = H34 exists = H45 } }
+			if = { limit = { tag = H49 } NOT = { exists = H65 exists = H53 exists = H59 exists = H61 exists = H34 exists = H45 } }
+			if = { limit = { tag = H53 } NOT = { exists = H49 exists = H65 exists = H59 exists = H61 exists = H34 exists = H45 } }
+			if = { limit = { tag = H59 } NOT = { exists = H49 exists = H53 exists = H65 exists = H61 exists = H34 exists = H45 } }
+			if = { limit = { tag = H61 } NOT = { exists = H49 exists = H53 exists = H59 exists = H65 exists = H34 exists = H45 } }
+			if = { limit = { tag = H34 } NOT = { exists = H49 exists = H53 exists = H59 exists = H61 exists = H65 exists = H45 } }
+			if = { limit = { tag = H45 } NOT = { exists = H49 exists = H53 exists = H59 exists = H61 exists = H34 exists = H65 } }
 		}
 
 		effect = {

@@ -43313,8 +43313,8 @@ U71_ideas = {
 U76_ideas = {
 	
 	start = {
-		cavalry_power = 0.1 #honse
-		leader_land_fire = 1 #rootin tootin and shootin
+		cavalry_power = 0.15 #honse
+		max_general_fire = 1 #rootin tootin and shootin
 	}
 
 	bonus = {
@@ -43341,7 +43341,7 @@ U76_ideas = {
     }
     
     U76_gold_rush_relic_rush = { #gold and precursor vaults have been found by steadsmen prospectors and academics respectively, such great potential for wealth has resulted in the state to begin efforts to expand into the region, but unlike years before its one great coordinated effort to account for the hundreds of thousands of people moving in hoping to make it rich. To this end a ministry of the interior is made to manage all of this.
-        colonist_placement_chance = 0.05
+        development_cost = -0.05
         inflation_reduction = 0.5
     }
     
@@ -43352,11 +43352,12 @@ U76_ideas = {
     
     U76_legend_of_the_frontier = { #the expanse for much of its history has been seen as a dangerous backwater. While true, it has always been a legendary frontier known far and wide around the world by word and song, even beyond the lands of cannor. Ever calling the wanderer, the traveler, and the adventurer. Perhaps even to become part of the legend themselves.
         monthly_splendor = 1
-		adventurers_estate_loyalty = 0.05
+		adventurers_loyalty_modifier = 0.05
     }
     
     U76_riding_into_the_sunset = { #the ending of every western film ever, emblematic of riding into the future. Idea should be themed around moving onto haraf as the next ambition after eclipsing the ynnics and colonizing the Ekyunimoy. Note for loca: the path of gold should be important for this as an ancient trade route into haraf and building a train line along it.
-        movement_speed = 0.2
+        movement_speed = 0.15
+		cavalry_fire = 0.5
     }
 
 }
