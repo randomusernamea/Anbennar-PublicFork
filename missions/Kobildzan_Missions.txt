@@ -2732,7 +2732,7 @@ kob_2_c = {
 				}
 				AND = {
 					province_id = 1746
-					NOT = { light_ships_in_province = 40 }
+					NOT = { transports_in_province = 40 }
 				}
 			}
 		}
@@ -2757,7 +2757,7 @@ kob_2_c = {
 				}
 			}
 
-			1746 = { light_ships_in_province = 40 }
+			1746 = { transports_in_province = 40 }
 		}
 
 		effect = {
@@ -2773,14 +2773,44 @@ kob_2_c = {
 					}"
 				}				
 			}
-
+			H24 = {
+				add_country_modifier = {
+					name = Z38_dominion_fleet
+					duration = -1
+				}
+			}
 			1746 = {
 				kill_units = {
 					who = ROOT
 					type = light_ship
 					amount = 40
 				}
+				add_core = H24
+				cede_province = H24
+				transport = H24
+				hidden_effect = {
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+					transport = H24
+				}
 			}
+
 
 			hidden_effect = {
 				set_variable = {
