@@ -1977,3 +1977,151 @@ country_event = { #Elkaesal Stirs, Gerudia Awakens
 		}
 	}
 }
+
+country_event = { #Hidden event for subject ascension
+	id = flavour_kobildzan.27
+	title = flavour_kobold_dragon_cult.26.t
+	desc = flavour_kobold_dragon_cult.26.d
+	picture = GREAT_BUILDING_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		if = {
+			limit = { NOT = { has_estate_privilege = artifice_invention_kobildzan_draconic_ascension } }
+			set_estate_privilege = artifice_invention_kobildzan_draconic_ascension
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_glidewing_membranes }
+				NOT = { has_country_flag = kobildzan_glidewing_membranes } 
+			}
+			set_country_flag = kobildzan_glidewing_membranes
+			artifice_granted_10 = yes
+		}
+		else_if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_claws_of_power }
+				NOT = { has_country_flag = kobildzan_claws_of_power } 
+			}
+			set_country_flag = kobildzan_claws_of_power
+			add_country_modifier = {
+				name = Z38_claws_of_power_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_detachable_extra_limbs }
+				NOT = { has_country_flag = kobildzan_detachable_extra_limbs } 
+			}
+			set_country_flag = kobildzan_detachable_extra_limbs
+			artifice_granted_10 = yes
+		}
+		else_if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_ogre_sized_kobolds }
+				NOT = { has_country_flag = kobildzan_ogre_sized_kobolds } 
+			}
+			set_country_flag = kobildzan_ogre_sized_kobolds
+			add_country_modifier = {
+				name = Z38_ogre_sized_kobolds_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_malliaths_chosen_disciples }
+				NOT = { has_country_flag = kobildzan_malliaths_chosen_disciples } 
+			}
+			set_country_flag = kobildzan_malliaths_chosen_disciples
+			add_country_modifier = {
+				name = Z38_malliaths_chosen_disciples_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_hyperdigestion }
+				NOT = { has_country_flag = kobildzan_hyperdigestion } 
+			}
+			set_country_flag = kobildzan_hyperdigestion
+			artifice_granted_10 = yes
+		}
+		else_if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_dragonfire_sacs }
+				NOT = { has_country_flag = kobildzan_dragonfire_sacs } 
+			}
+			set_country_flag = kobildzan_dragonfire_sacs
+			add_country_modifier = {
+				name = Z38_dragonfire_sacs_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_biocompatibility }
+				NOT = { has_country_flag = kobildzan_biocompatibility } 
+			}
+			set_country_flag = kobildzan_biocompatibility
+			artifice_granted_10 = yes
+		}
+		else_if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds }
+				NOT = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds } 
+			}
+			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
+			artifice_granted_10 = yes
+		}	
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_mana_attunement_glands }
+				NOT = { has_country_flag = kobildzan_mana_attunement_glands } 
+			}
+			set_country_flag = kobildzan_mana_attunement_glands
+			artifice_granted_10 = yes
+		}	
+		else_if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_ebonsteel_shieldscales }
+				NOT = { has_country_flag = kobildzan_ebonsteel_shieldscales } 
+			}
+			set_country_flag = kobildzan_ebonsteel_shieldscales
+			add_country_modifier = {
+				name = Z38_ebonsteel_shieldscales_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_the_protean_form }
+				NOT = { has_country_flag = kobildzan_the_protean_form } 
+			}
+			set_country_flag = kobildzan_the_protean_form
+			artifice_granted_10 = yes
+		}
+		if = {
+			limit = {
+				Z38 = { has_country_flag = kobildzan_the_holiest_flesh }
+				NOT = { has_country_flag = kobildzan_the_holiest_flesh } 
+			}
+			set_country_flag = kobildzan_the_holiest_flesh
+			add_country_modifier = {
+				name = Z38_the_holiest_flesh_regiment_mod
+				duration = -1
+			}
+			artifice_granted_10 = yes
+		}
+	}
+}

@@ -935,7 +935,7 @@ kob_1_b = {
 					region = dalaire_region
 					is_city = yes
 					OR = {
-						NOT = { owned_by = ROOT owned_by_subject_of = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
 						NOT = { religion = kobold_dragon_cult religion = drozma_tur }
 					}
 				}
@@ -1035,17 +1035,7 @@ kob_1_b = {
 			}
 			hidden_effect = {
 				H24 = {
-					if = {
-						limit = { 
-							NOT = { has_country_flag = artificery_unlocked }
-						}
-						set_country_flag = artificery_unlocked
-						set_country_flag = magic_artificery_artificery_only
-						country_event = {
-							id = magic_artificery_setup.2
-							days = 1
-						}
-					}
+					artifice_magic_switch_to_artificery_only_mode = yes
 				}
 			}
 			ynn_superregion = {
@@ -1248,14 +1238,12 @@ kob_2_b = {
 				}	
 			}
 			H24 = {
-				OR = {
-					capital_scope = {
-						OR = {
-							current_institution = 100
-							custom_trigger_tooltip = {
-								tooltip = institution_spread_tt
-								current_institution_growth = 12 
-							}
+				capital_scope = {
+					OR = {
+						current_institution = 100
+						custom_trigger_tooltip = {
+							tooltip = institution_spread_tt
+							current_institution_growth = 12 
 						}
 					}
 				}
