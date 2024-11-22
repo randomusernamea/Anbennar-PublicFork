@@ -603,6 +603,9 @@ country_decisions = {
 			if = { limit = { tag = H61 } NOT = { exists = H49 exists = H53 exists = H59 exists = H65 exists = H34 exists = H45 } }
 			if = { limit = { tag = H34 } NOT = { exists = H49 exists = H53 exists = H59 exists = H61 exists = H65 exists = H45 } }
 			if = { limit = { tag = H45 } NOT = { exists = H49 exists = H53 exists = H59 exists = H61 exists = H34 exists = H65 } }
+			NOT = {
+				exists = U76
+			}
 		}
 
 		effect = {
