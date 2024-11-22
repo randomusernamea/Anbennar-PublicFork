@@ -1819,12 +1819,6 @@ anb_scripted_effects_for_ruler_death  = {
 		country_event = { id = ynn_zodiac.3 }
 	}
 
-	#Kheionism set deity
-	if = {
-		limit = { religion = kheionism }
-		country_event = { id = kheionism.3 }
-	}
-
 	#Nakavy Avo shrine reset
 	if = {
 		limit = {
@@ -10344,6 +10338,15 @@ on_province_owner_change_effect = {
 				duration = -1
 			}
 		}
+	}
+	#Kheionist
+	if = {
+		limit = { owner = { religion = kheionism } }
+		owner = { country_event = { id = kheionism.5 } }
+	}
+	if = {
+		limit = { FROM = { religion = kheionism } }
+		FROM = { country_event = { id = kheionism.5 } }
 	}
 }
 
