@@ -208,7 +208,11 @@ country_event = { #command accepts
 			R62 = { #command
 				add_truce_with = Y01
 				add_truce_with = Y89 #yuantsai
-				command_change_korashi_supply = { increase = yes }
+				add_government_power = {
+					mechanic_type = command_korashi_mechanic
+					power_type = korashi_reserves
+					value = 10
+				}
 			}
 		}
 		5430 = { #shinukhorchi
@@ -227,7 +231,6 @@ country_event = {#command rejects
 	picture = CONSPIRACY_eventpicture
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = {
 		name = flavor_azjakuma.17.a
@@ -241,9 +244,9 @@ country_event = { #Azjakuma Deal initial offer recieved
 	title = flavor_azjakuma.18.t
 	desc = flavor_azjakuma.18.d
 	picture = WESTERNISATION_eventPicture
+	goto = 5430
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = { #accept offer
 		name = flavor_azjakuma.18.a
@@ -252,9 +255,14 @@ country_event = { #Azjakuma Deal initial offer recieved
 		}
 		highlight = yes
 		
+		custom_tooltip = command_check_gov_bar_hint_tt
 		add_truce_with = Y01
 		add_truce_with = Y89 #yuantsai
-		command_change_korashi_supply = { increase = yes }
+		add_government_power = {
+			mechanic_type = command_korashi_mechanic
+			power_type = korashi_reserves
+			value = 10
+		}
 		Y01 = {
 			country_event = {
 				id = flavor_azjakuma.16
@@ -272,10 +280,6 @@ country_event = { #Azjakuma Deal initial offer recieved
 						id = flavor_azjakuma.105
 						days = 1825
 					}
-				}
-				country_event = {
-					id = flavor_azjakuma.110
-					days = 1825
 				}
 			}
 		}
@@ -967,36 +971,20 @@ country_event = { #adds claims to temples in yanshen, xianjie, and the command
 
 	option = {
 		name = flavor_azjakuma.35.a
-		asia = {
-			limit = {
-				OR = {
-					AND = {
+		temple_province_group = {
+			if = {
+				limit = {
+					OR = {
 						superregion = yanshen_superregion
-						OR = {
-							has_province_modifier = temple_complex
-							has_province_modifier = damaged_temple_complex
-							has_province_modifier = derelict_temple_complex
-							has_province_modifier = ruined_temple_complex
-							has_province_modifier = corrupted_temple_complex
-						}
-					}
-					AND = {
 						region = xianjie_region
-						OR = {
-							has_province_modifier = temple_complex
-							has_province_modifier = damaged_temple_complex
-							has_province_modifier = derelict_temple_complex
-							has_province_modifier = ruined_temple_complex
-							has_province_modifier = corrupted_temple_complex
-						}
 					}
-					province_id = 4630
-					province_id = 4546
-					province_id = 4633
 				}
+				add_permanent_claim = ROOT
 			}
-			add_permanent_claim = ROOT
 		}
+		4630 = { add_permanent_claim = ROOT }
+		4546 = { add_permanent_claim = ROOT }
+		4633 = { add_permanent_claim = ROOT }
 	}
 }
 
@@ -1182,7 +1170,11 @@ country_event = { #command recieves renewal
 			}
 			add_truce_with = Y89
 		}
-		command_change_korashi_supply = { increase = yes }
+		add_government_power = {
+			mechanic_type = command_korashi_mechanic
+			power_type = korashi_reserves
+			value = 10
+		}
 		Y01 = {
 			country_event = {
 				id = flavor_azjakuma.108
@@ -1194,10 +1186,6 @@ country_event = { #command recieves renewal
 					id = flavor_azjakuma.105
 					days = 1825
 				}
-			}
-			country_event = {
-				id = flavor_azjakuma.110
-				days = 1825
 			}
 		}
 		if = {
@@ -1253,7 +1241,11 @@ country_event = { #command accepts renewal
 			R62 = {
 				add_truce_with = Y01
 				add_truce_with = Y89
-				command_change_korashi_supply = { increase = yes }
+				add_government_power = {
+					mechanic_type = command_korashi_mechanic
+					power_type = korashi_reserves
+					value = 10
+				}
 			}
 		}
 		5430 = {
@@ -1279,23 +1271,6 @@ country_event = { #command rejects renewal
 		ai_chance = { factor = 90 }	
 
 		add_stability = -1
-	}
-}
-
-country_event = { #reset command korashi imports
-	id = flavor_azjakuma.110
-	title = flavor_azjakuma.110.t
-	desc = flavor_azjakuma.110.d
-	picture = CONSPIRACY_eventpicture
-	
-	is_triggered_only = yes
-	hidden = yes
-	
-	option = { 
-		name = flavor_azjakuma.110.a
-		ai_chance = { factor = 90 }	
-		
-		command_change_korashi_supply = { decrease = yes }
 	}
 }
 
@@ -5161,11 +5136,7 @@ country_event = {
 					is_core = ROOT
 					superregion = yanshen_superregion
 					has_terrain = jungle
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCount value = 1 }
@@ -5183,11 +5154,7 @@ country_event = {
 					has_terrain = jungle
 					is_core = Y23
 				}
-				NOT = { has_province_modifier = temple_complex }
-				NOT = { has_province_modifier = damaged_temple_complex }
-				NOT = { has_province_modifier = derelict_temple_complex }
-				NOT = { has_province_modifier = ruined_temple_complex }
-				NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y23
 		}
@@ -5268,11 +5235,7 @@ country_event = {
 			limit = {
 				superregion = yanshen_superregion
 				has_terrain = jungle
-				NOT = { has_province_modifier = temple_complex }
-				NOT = { has_province_modifier = damaged_temple_complex }
-				NOT = { has_province_modifier = derelict_temple_complex }
-				NOT = { has_province_modifier = ruined_temple_complex }
-				NOT = { has_province_modifier = corrupted_temple_complex }
+				NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y23
 		}
@@ -5374,11 +5337,7 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCountY value = 1 }
@@ -5408,11 +5367,7 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y10
 			}
@@ -5460,11 +5415,7 @@ country_event = {
 						area = linyuan_area
 						area = yanzhong_area
 					}
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y10
 			}
@@ -5564,11 +5515,7 @@ country_event = {
 					is_core = ROOT
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				PREV = {
 					change_variable = { which = provinceCountYu value = 1 }
@@ -5600,11 +5547,7 @@ country_event = {
 					}
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y89
 			}
@@ -5655,11 +5598,7 @@ country_event = {
 					}
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = Y89
 			}
@@ -5751,11 +5690,7 @@ country_event = {
 			every_owned_province = {
 				limit = {
 					area = sir_area
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -5825,11 +5760,7 @@ country_event = {
 					area = sir_area
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -5928,11 +5859,7 @@ country_event = {
 			every_owned_province = {
 				limit = {
 					area = sir_area
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -6003,11 +5930,7 @@ country_event = {
 					area = sir_area
 					NOT = { trade_goods = gold }
 					NOT = { trade_goods = damestear }
-					NOT = { has_province_modifier = temple_complex }
-					NOT = { has_province_modifier = damaged_temple_complex }
-					NOT = { has_province_modifier = derelict_temple_complex }
-					NOT = { has_province_modifier = ruined_temple_complex }
-					NOT = { has_province_modifier = corrupted_temple_complex }
+					NOT = { province_group = temple_province_group }
 				}
 				cede_province = R78
 			}
@@ -6204,14 +6127,7 @@ country_event = {
 					region = xianjie_region
 					area = rangadevi_area
 				}
-				NOT = {
-					OR = {
-						has_province_modifier = temple_complex
-						has_province_modifier = damaged_temple_complex
-						has_province_modifier = ruined_temple_complex
-						has_province_modifier = corrupted_temple_complex
-					}
-				}
+				NOT = { province_group = temple_province_group }
 			}
 			cede_province = Y89
 		}
@@ -6283,7 +6199,7 @@ country_event = {
 		rahen_superregion = {
 			discover_country = Y99
 		}
-		south_haless_superregion = {
+		vimdatrong_superregion = {
 			discover_country = Y99
 		}
 		add_treasury = 5000
