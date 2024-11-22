@@ -953,6 +953,17 @@ mission_reward_artifice_points_20 = {
 	update_artifice_points = yes
 }
 
+mission_reward_artifice_points_25 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_25_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 25
+		}
+	}
+	update_artifice_points = yes
+}
+
 mission_reward_artifice_points_40 = {
 	custom_tooltip = permanently_increases_our_artifice_points_by_40_tt
 	hidden_effect = {

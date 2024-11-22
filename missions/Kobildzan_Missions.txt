@@ -2438,8 +2438,9 @@ kob_1_c = {
 		provinces_to_highlight = {
 			superregion = ynn_superregion
 			OR = {
-				NOT = { owned_by = ROOT owned_by_subject_of = ROOT }
-				NOT = { religion = kobold_dragon_cult religion = drozma_tur }			}
+				NOT = { owned_by_subject_of = ROOT }
+				NOT = { religion = kobold_dragon_cult religion = drozma_tur }
+			}
 		}
 
 		trigger = {
@@ -2449,7 +2450,7 @@ kob_1_c = {
 					owned_by_subject_of = ROOT
 					is_empty = yes
 				}	
-				OR = { religion = kobold_dragon_cult religion = drozma_tur }
+				OR = { religion = kobold_dragon_cult religion = drozma_tur is_empty = yes }
 			}
 			has_church_aspect = green_dragon_1_upgraded
 			has_church_aspect = green_dragon_2_upgraded
@@ -3236,10 +3237,7 @@ kob_4_c = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = artifice_unlocked_expert_tt 
-				has_country_flag = artifice_unlocked_expert
-			}
+			tier_3_artificer_estate = yes
 			dragon_coast_region = { type = all has_courthouse_building_trigger = yes }
 			coddorran_heights_area = { type = all has_courthouse_building_trigger = yes }
 			crown_land_share = 70
@@ -3300,13 +3298,7 @@ kob_4_c = {
 					add_province_modifier = { name = Z38_ebonsteel_extraction duration = -1 }
 				}
 			}
-			custom_tooltip = permanently_increases_our_artifice_points_by_25_tt
-			hidden_effect = {
-				change_variable = {
-					which = StaticArtificePoints
-					value = 25
-				}
-			}
+			mission_reward_artifice_points_25 = yes
 			update_artifice_points = yes
 		}
 	}
@@ -3436,7 +3428,10 @@ kob_5_c = {
 						owned_by_subject_of = ROOT
 						is_empty = yes
 					} 
-					religion = kobold_dragon_cult 
+					OR = {
+						religion = kobold_dragon_cult 
+						is_empty = yes
+					}
 				}
 			}			
 
