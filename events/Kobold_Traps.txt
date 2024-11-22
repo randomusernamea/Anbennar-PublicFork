@@ -1553,15 +1553,9 @@ province_event = { # Clan Conflicts
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
 				hidden_effect = {
-					if = {
-						limit = { has_country_flag = new_hoard }
-						187 = { change_variable = { dragon_cult_hoard = 100 } }
-						187 = { upgrade_kobold_hoard = yes } 
-					}
-					else = {
-						189 = { change_variable = { dragon_cult_hoard = 100 } }
-						189 = { upgrade_kobold_hoard = yes } 
-					}
+					kobold_hoard_increase_at_target = {
+						AMOUNT = 100
+					} 
 				}
 			}
 			else = {
@@ -1642,14 +1636,8 @@ province_event = { # Clan Conflicts
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
 				hidden_effect = {
-					if = {
-						limit = { has_country_flag = new_hoard }
-						187 = { change_variable = { dragon_cult_hoard = 100 } }
-						187 = { upgrade_kobold_hoard = yes } 
-					}
-					else = {
-						189 = { change_variable = { dragon_cult_hoard = 100 } }
-						189 = { upgrade_kobold_hoard = yes } 
+					kobold_hoard_increase_at_target = {
+						AMOUNT = 100
 					}
 				}
 			}
@@ -1731,14 +1719,8 @@ province_event = { # Refugee Pilgrims
 				custom_tooltip = church_power_hoard_donation_100
 				add_prestige = 5
 				hidden_effect = {
-					if = {
-						limit = { has_country_flag = new_hoard }
-						187 = { change_variable = { dragon_cult_hoard = 100 } }
-						187 = { upgrade_kobold_hoard = yes } 
-					}
-					else = {
-						189 = { change_variable = { dragon_cult_hoard = 100 } }
-						189 = { upgrade_kobold_hoard = yes } 
+					kobold_hoard_increase_at_target = {
+						AMOUNT = 100
 					}
 				}
 			}

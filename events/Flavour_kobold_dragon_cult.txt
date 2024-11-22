@@ -1642,61 +1642,10 @@ country_event = {
 					UPGRADE = upgraded
 					requirebasic = yes
 				}
-				calc_true_if = {
-					amount = 2
-					OR = {
-						owns_or_subject_of = 833
-						any_ally = { owns = 833 }
-					}
-					OR = {
-						owns_or_subject_of = 4
-						any_ally = { owns = 4 }
-					}					
-					OR = {
-						owns_or_subject_of = 82
-						any_ally = { owns = 82 }
-					}
-					OR = {
-						owns_or_subject_of = 249
-						any_ally = { owns = 249 }
-					}
-					OR = {
-						owns_or_subject_of = 151
-						any_ally = { owns = 151 }
-					}
-					OR = {
-						owns_or_subject_of = 97
-						any_ally = { owns = 97 }
-					}
-					OR = {
-						owns_or_subject_of = 227
-						any_ally = { owns = 227 }
-					}
-					OR = {
-						owns_or_subject_of = 266
-						any_ally = { owns = 266 }
-					}
-					OR = {
-						owns_or_subject_of = 265
-						any_ally = { owns = 265 }
-					}
-					OR = {
-						owns_or_subject_of = 332
-						any_ally = { owns = 332 }
-					}
-					OR = {
-						owns_or_subject_of = 52
-						any_ally = { owns = 52 }
-					}
-					OR = {
-						owns_or_subject_of = 451
-						any_ally = { owns = 451 }
-					}
-					OR = {
-						owns_or_subject_of = 308
-						any_ally = { owns = 308 }
-					}
-				}		
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 2
+					basic = yes
+				}
 			}
 		}
 		custom_tooltip = silver_dragon_upgrade_1_tt_yes
@@ -1721,60 +1670,9 @@ country_event = {
 					UPGRADE = upgraded
 					requirebasic = yes
 				}
-				calc_true_if = {
-					amount = 5
-					OR = {
-						owns_or_subject_of = 833
-						any_ally = { owns = 833 }
-					}
-					OR = {
-						owns_or_subject_of = 4
-						any_ally = { owns = 4 }
-					}					
-					OR = {
-						owns_or_subject_of = 82
-						any_ally = { owns = 82 }
-					}
-					OR = {
-						owns_or_subject_of = 249
-						any_ally = { owns = 249 }
-					}
-					OR = {
-						owns_or_subject_of = 151
-						any_ally = { owns = 151 }
-					}
-					OR = {
-						owns_or_subject_of = 97
-						any_ally = { owns = 97 }
-					}
-					OR = {
-						owns_or_subject_of = 227
-						any_ally = { owns = 227 }
-					}
-					OR = {
-						owns_or_subject_of = 266
-						any_ally = { owns = 266 }
-					}
-					OR = {
-						owns_or_subject_of = 265
-						any_ally = { owns = 265 }
-					}
-					OR = {
-						owns_or_subject_of = 332
-						any_ally = { owns = 332 }
-					}
-					OR = {
-						owns_or_subject_of = 52
-						any_ally = { owns = 52 }
-					}
-					OR = {
-						owns_or_subject_of = 451
-						any_ally = { owns = 451 }
-					}
-					OR = {
-						owns_or_subject_of = 308
-						any_ally = { owns = 308 }
-					}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 5
+					basic = yes
 				}
 			}
 
@@ -1802,56 +1700,9 @@ country_event = {
 					requirebasic = yes
 				}
 				AND = {
-					calc_true_if = {
-						amount = 9
-						OR = {
-							owns_or_subject_of = 4
-							any_ally = { owns = 4 }
-						}					
-						OR = {
-							owns_or_subject_of = 82
-							any_ally = { owns = 82 }
-						}
-						OR = {
-							owns_or_subject_of = 249
-							any_ally = { owns = 249 }
-						}
-						OR = {
-							owns_or_subject_of = 151
-							any_ally = { owns = 151 }
-						}
-						OR = {
-							owns_or_subject_of = 97
-							any_ally = { owns = 97 }
-						}
-						OR = {
-							owns_or_subject_of = 227
-							any_ally = { owns = 227 }
-						}
-						OR = {
-							owns_or_subject_of = 266
-							any_ally = { owns = 266 }
-						}
-						OR = {
-							owns_or_subject_of = 265
-							any_ally = { owns = 265 }
-						}
-						OR = {
-							owns_or_subject_of = 332
-							any_ally = { owns = 332 }
-						}
-						OR = {
-							owns_or_subject_of = 52
-							any_ally = { owns = 52 }
-						}
-						OR = {
-							owns_or_subject_of = 451
-							any_ally = { owns = 451 }
-						}
-						OR = {
-							owns_or_subject_of = 308
-							any_ally = { owns = 308 }
-						}
+					silver_dragon_upgrade_trigger = {
+						AMOUNT = 9
+						castonathspecial = yes
 					}
 					OR = {
 						owns_or_subject_of = 833
@@ -2918,60 +2769,9 @@ country_event = {
 				requirebasic = yes
 			}
 			NOT = {
-				calc_true_if = {
-					amount = 2
-					OR = {
-						owns_or_subject_of = 833
-						any_ally = { owns = 833 }
-					}
-					OR = {
-						owns_or_subject_of = 4
-						any_ally = { owns = 4 }
-					}					
-					OR = {
-						owns_or_subject_of = 82
-						any_ally = { owns = 82 }
-					}
-					OR = {
-						owns_or_subject_of = 249
-						any_ally = { owns = 249 }
-					}
-					OR = {
-						owns_or_subject_of = 151
-						any_ally = { owns = 151 }
-					}
-					OR = {
-						owns_or_subject_of = 97
-						any_ally = { owns = 97 }
-					}
-					OR = {
-						owns_or_subject_of = 227
-						any_ally = { owns = 227 }
-					}
-					OR = {
-						owns_or_subject_of = 266
-						any_ally = { owns = 266 }
-					}
-					OR = {
-						owns_or_subject_of = 265
-						any_ally = { owns = 265 }
-					}
-					OR = {
-						owns_or_subject_of = 332
-						any_ally = { owns = 332 }
-					}
-					OR = {
-						owns_or_subject_of = 52
-						any_ally = { owns = 52 }
-					}
-					OR = {
-						owns_or_subject_of = 451
-						any_ally = { owns = 451 }
-					}
-					OR = {
-						owns_or_subject_of = 308
-						any_ally = { owns = 308 }
-					}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 2
+					basic = yes
 				}
 			}
 		}
@@ -2997,60 +2797,9 @@ country_event = {
 				requirebasic = yes
 			}
 			NOT = {
-				calc_true_if = {
-					amount = 5
-					OR = {
-						owns_or_subject_of = 833
-						any_ally = { owns = 833 }
-					}
-					OR = {
-						owns_or_subject_of = 4
-						any_ally = { owns = 4 }
-					}					
-					OR = {
-						owns_or_subject_of = 82
-						any_ally = { owns = 82 }
-					}
-					OR = {
-						owns_or_subject_of = 249
-						any_ally = { owns = 249 }
-					}
-					OR = {
-						owns_or_subject_of = 151
-						any_ally = { owns = 151 }
-					}
-					OR = {
-						owns_or_subject_of = 97
-						any_ally = { owns = 97 }
-					}
-					OR = {
-						owns_or_subject_of = 227
-						any_ally = { owns = 227 }
-					}
-					OR = {
-						owns_or_subject_of = 266
-						any_ally = { owns = 266 }
-					}
-					OR = {
-						owns_or_subject_of = 265
-						any_ally = { owns = 265 }
-					}
-					OR = {
-						owns_or_subject_of = 332
-						any_ally = { owns = 332 }
-					}
-					OR = {
-						owns_or_subject_of = 52
-						any_ally = { owns = 52 }
-					}
-					OR = {
-						owns_or_subject_of = 451
-						any_ally = { owns = 451 }
-					}
-					OR = {
-						owns_or_subject_of = 308
-						any_ally = { owns = 308 }
-					}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 5
+					basic = yes
 				}
 			}
 		}
@@ -3077,62 +2826,9 @@ country_event = {
 				requirebasic = yes
 			}
 			NOT = {
-				AND = {
-					calc_true_if = {
-						amount = 9
-						OR = {
-							owns_or_subject_of = 4
-							any_ally = { owns = 4 }
-						}					
-						OR = {
-							owns_or_subject_of = 82
-							any_ally = { owns = 82 }
-						}
-						OR = {
-							owns_or_subject_of = 249
-							any_ally = { owns = 249 }
-						}
-						OR = {
-							owns_or_subject_of = 151
-							any_ally = { owns = 151 }
-						}
-						OR = {
-							owns_or_subject_of = 97
-							any_ally = { owns = 97 }
-						}
-						OR = {
-							owns_or_subject_of = 227
-							any_ally = { owns = 227 }
-						}
-						OR = {
-							owns_or_subject_of = 266
-							any_ally = { owns = 266 }
-						}
-						OR = {
-							owns_or_subject_of = 265
-							any_ally = { owns = 265 }
-						}
-						OR = {
-							owns_or_subject_of = 332
-							any_ally = { owns = 332 }
-						}
-						OR = {
-							owns_or_subject_of = 52
-							any_ally = { owns = 52 }
-						}
-						OR = {
-							owns_or_subject_of = 451
-							any_ally = { owns = 451 }
-						}
-						OR = {
-							owns_or_subject_of = 308
-							any_ally = { owns = 308 }
-						}
-					}
-					OR = {
-						owns_or_subject_of = 833
-						any_ally = { owns = 833 }
-					}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 9
+					castonathspecial = yes
 				}
 			}
 		}
@@ -3251,6 +2947,7 @@ country_event = {
 						has_country_flag = unlocked_green_dragon_3_upgraded
 						has_country_flag = unlocked_brass_dragon_3_upgraded
 					}
+					has_country_flag = balris_begun
 				}
 			}
 		}
@@ -3310,18 +3007,8 @@ country_event = {
 		set_country_flag = hoard_chance_1
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 250 } 
-					upgrade_kobold_hoard = yes
-				} 
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 250 } 
-					upgrade_kobold_hoard = yes
-				}
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 250
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3337,18 +3024,8 @@ country_event = {
 		set_country_flag = hoard_chance_2
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 500 }
-					upgrade_kobold_hoard = yes 
-				} 
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 500 }
-					upgrade_kobold_hoard = yes 
-				} 
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 500
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3364,18 +3041,8 @@ country_event = {
 		set_country_flag = hoard_chance_3
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 1000 }
-					upgrade_kobold_hoard = yes 
-				} 
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 1000 }
-					upgrade_kobold_hoard = yes 
-				}  
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 1000
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3389,18 +3056,8 @@ country_event = {
 		add_treasury = -2000
 		add_stability_or_adm_power = yes
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 2000 }
-					upgrade_kobold_hoard = yes 
-				} 
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 2000 }
-					upgrade_kobold_hoard = yes 
-				} 
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 2000
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3415,18 +3072,8 @@ country_event = {
 		add_stability = 1
 		add_stability_or_adm_power = yes
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 4000 }
-					upgrade_kobold_hoard = yes 
-				}
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 4000 }
-					upgrade_kobold_hoard = yes 
-				}
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 4000
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3443,18 +3090,8 @@ country_event = {
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = new_hoard }
-				187 = {
-					change_variable = { dragon_cult_hoard = 8000 }
-					upgrade_kobold_hoard = yes 
-				} 
-			}
-			else = {
-				189 = {
-					change_variable = { dragon_cult_hoard = 8000 }
-					upgrade_kobold_hoard = yes 
-				} 
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 8000
 			}
 		}
 		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
@@ -3778,7 +3415,10 @@ country_event = { #Bronze aspect 1
 	desc = {
 		trigger = {
 			any_known_country = { is_emperor_of_china = yes }
-			NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+			event_target:EmperorOfChina = {
+				NOT = { religion = aakhetist }
+				has_estate = estate_ahati
+			}	
 			NOT = { has_global_flag = ahati_disaster_began }
 		}
 		desc = flavour_kobold_dragon_cult.16.desc2
@@ -3790,7 +3430,10 @@ country_event = { #Bronze aspect 1
 					event_target:EmperorOfChina = { religion = aakhetist }
 					AND = {
 						any_known_country = { is_emperor_of_china = yes }
-						NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+						event_target:EmperorOfChina = {
+							NOT = { religion = aakhetist }
+							has_estate = estate_ahati
+						}	
 						NOT = { has_global_flag = ahati_disaster_began }
 					}
 				}
@@ -3827,7 +3470,10 @@ country_event = { #Bronze aspect 1
 		name = flavour_kobold_dragon_cult.16.b
 		trigger = {
 			any_known_country = { is_emperor_of_china = yes }
-			NOT = { event_target:EmperorOfChina = { religion = aakhetist } }		
+			event_target:EmperorOfChina = {
+				NOT = { religion = aakhetist }
+				has_estate = estate_ahati
+			}	
 			NOT = { has_global_flag = ahati_disaster_began }
 		}
 		kdc_remove_aspect_1 = yes
@@ -3904,8 +3550,8 @@ country_event = { #Bronze aspect 3
 							which = dragon_cult_hoard
 							value = 0.75
 						}
+						upgrade_kobold_hoard = yes
 					}
-					187 = { upgrade_kobold_hoard = yes } 
 				}
 				else = {
 					189 = { 
@@ -3913,8 +3559,8 @@ country_event = { #Bronze aspect 3
 							which = dragon_cult_hoard
 							value = 0.75
 						}
+						upgrade_kobold_hoard = yes
 					}
-					189 = { upgrade_kobold_hoard = yes } 
 				}
 			} 
 		}
@@ -4060,6 +3706,12 @@ country_event = { #Gold aspect 3
 	picture = STRELTSY_MARCHING_eventPicture
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = balris_begun
+		}
+	}
+
 	option = {		
 		name = flavour_kobold_dragon_cult.24.a
 		if = {

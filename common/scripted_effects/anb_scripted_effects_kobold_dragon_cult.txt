@@ -92,6 +92,23 @@ kdc_remove_aspect_3 = {
     remove_church_aspect = gold_dragon_3_upgraded
 }
 
+kobold_hoard_increase_at_target = {
+	if = {
+		limit = { has_country_flag = new_hoard }
+		187 = {
+			change_variable = { dragon_cult_hoard = $AMOUNT$ } 
+			upgrade_kobold_hoard = yes
+		} 
+	}
+	else = {
+		189 = {
+			change_variable = { dragon_cult_hoard = $AMOUNT$ } 
+			upgrade_kobold_hoard = yes
+		}
+	}
+}
+
+
 upgrade_kobold_hoard = {
 	hidden_effect = {
 		remove_province_modifier = kobold_hoard_1
