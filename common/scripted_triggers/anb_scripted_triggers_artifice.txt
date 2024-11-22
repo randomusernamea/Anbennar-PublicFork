@@ -462,6 +462,7 @@ num_artifice_inventions_discovered = {
 		has_country_flag = unlocked_artifice_invention_imitation_seedthralls
 		has_country_flag = unlocked_artifice_invention_artifice_augmented_kotakompu
 		has_country_flag = unlocked_artifice_invention_relic_lord_prototype_power_armour
+		has_country_flag = unlocked_artifice_invention_kobildzan_draconic_ascension
 	}
 }
 
@@ -807,6 +808,8 @@ artifice_has_unique_invention = {
 		#Taychendi Empire
 		tag = J84
 		was_tag = J84
+		#Kobildzan
+		tag = Z38
 	}
 }
 
@@ -883,6 +886,10 @@ artificery_locked_artificery_mode = {
 			is_or_was_tag = { tag = Z54 } #Karakhanbar
 			is_or_was_tag = { tag = A06 } #Nimscodd
 			is_or_was_tag = { tag = A19 } #Portnamm
+			is_or_was_tag = { tag = A26 } #Redscale
+			is_or_was_tag = { tag = A27 } #Bluescale
+			is_or_was_tag = { tag = A28 } #Greenscale
+			is_or_was_tag = { tag = Z38 } #Kobildzan
 			AND = {
 				has_government_attribute = is_technocracy #technocracies are locked to artificery_only
 				NOT = { is_or_was_tag = { tag = I12 } } #orlghelovar is mixed
@@ -900,6 +907,7 @@ artificery_mt_locked_mode = {
 			is_or_was_tag = { tag = H16 } #Gemradcurt
 			is_or_was_tag = { tag = H74 } #Chaingrasper
 			is_or_was_tag = { tag = B39 } #Wyvernheart
+			is_subject_of = Z38
 		}
 	}
 }
@@ -929,5 +937,12 @@ artificery_tag_needs_artificers = {
 			is_or_was_tag = { tag = G27 } #Brelar
 			is_or_was_tag = { tag = A05 } #Reveria
 		}
+	}
+}
+
+tier_3_artificer_estate = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_unlocked_expert_tt 
+		has_country_flag = artifice_unlocked_expert
 	}
 }
