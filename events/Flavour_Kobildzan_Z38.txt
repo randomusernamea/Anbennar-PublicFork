@@ -64,10 +64,8 @@ country_event = { #In the Flesh
 					who = ROOT
 					modifier = tribute_to_a_dragon
 				}
-				ROOT = {
-					capital_scope = {
-						discover_country = prev
-					}
+				dragon_coast_region = {
+					discover_country = prev
 				}
 			}
 		}
@@ -442,7 +440,7 @@ country_event = { #Artificery As One
 						limit = {
 							region = dragon_coast_region
 							NOT = { culture_group = gnomish } 
-							NOT = { has_large_gnomish_minority_trigger }
+							NOT = { has_large_gnomish_minority_trigger = yes }
 						}
 						add_gnomish_minority_size_effect = yes 
 					}
@@ -455,6 +453,7 @@ country_event = { #Artificery As One
 						limit = {
 							region = dragon_coast_region
 							NOT = { culture_group = goblin } 
+							NOT = { has_large_goblin_minority_trigger = yes }
 						}
 						add_goblin_minority_size_effect = yes 
 					}
@@ -1358,48 +1357,6 @@ country_event = { #Aid from Aelantir
 	picture = BYZ_HARBOUR_eventPicture
 	is_triggered_only = yes 
 
-	# immediate = {
-	# 	hidden_effect = {
-	# 		set_variable = {
-	# 			which = dev2add
-	# 			value = 0
-	# 		}
-	# 		export_to_variable  = {
-	# 			which = dev2add
-	# 			value = total_development
-	# 			who=ROOT
-	# 		}
-	# 		every_subject_country = {
-	# 			set_variable = {
-	# 				which = vassaldev
-	# 				value = 0
-	# 			}
-	# 			export_to_variable  = {
-	# 				which = vassaldev
-	# 				value = total_development
-	# 			}
-	# 			divide_variable = {
-	# 				which = vassaldev
-	# 				value = 2
-	# 			}
-	# 			ROOT = {
-	# 				set_variable = {
-	# 					which = vassaldev
-	# 					which = PREV
-	# 				}
-	# 				change_variable = {            
-	# 					which = dev2add
-	# 					which = vassaldev
-	# 				}
-	# 			}
-	# 		}
-	# 		multiply_variable = {
-	# 			which = dev2add
-	# 			value = 2
-	# 		}
-	# 	}
-	# }
-
 	option = { #Thank the dragons for Varlengeilt...
 		name = flavour_kobildzan.12.a
 		custom_tooltip = varlengeilts_aid_tt
@@ -1461,9 +1418,12 @@ country_event = { #A Surgical Conversation
 		name = flavour_kobildzan.14.a
 		hidden_effect = {
 			set_country_flag = kobildzan_hyperdigestion
-			every_subject_country = {
-				subject_ascension_effect = yes
-			}			
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}		
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -1477,8 +1437,11 @@ country_event = { #A Surgical Conversation
 		name = flavour_kobildzan.14.b
 		hidden_effect = {
 			set_country_flag = kobildzan_dragonfire_sacs
-			every_subject_country = {
-				subject_ascension_effect = yes
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
 			}
 		}
 		tooltip = {
@@ -1506,6 +1469,12 @@ country_event = { #Interview with a Different Dragon
 		name = flavour_kobildzan.15.a
 		hidden_effect = {
 			set_country_flag = kobildzan_mana_attunement_glands
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -1519,6 +1488,12 @@ country_event = { #Interview with a Different Dragon
 		name = flavour_kobildzan.15.b
 		hidden_effect = {
 			set_country_flag = kobildzan_ebonsteel_shieldscales
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
@@ -1588,8 +1563,11 @@ country_event = { #To Control Continents
 		name = flavour_kobildzan.18.a
 		hidden_effect = {
 			set_country_flag = kobildzan_biocompatibility 
-			every_subject_country = {
-				subject_ascension_effect = yes
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
 			}
 		}
 		
@@ -1606,19 +1584,18 @@ country_event = { #To Control Continents
 		name = flavour_kobildzan.18.b
 		hidden_effect = {
 			set_country_flag = kobildzan_intercontinental_ballistic_kobolds
+			if = {
+				limit = { mission_completed = Z38_aelantir_as_one }
+				every_subject_country = {
+					subject_ascension_effect = yes
+				}
+			}
 		}
 		tooltip = {
 			add_country_modifier = {
 				name = Z38_intercontinental_ballistic_kobolds_dummy
 				duration = -1
 			}
-
-		}
-		hidden_effect = {
-			every_subject_country = {
-				set_country_flag = kobildzan_intercontinental_ballistic_kobolds
-				subject_ascension_effect = yes
-			}			
 		}
 		artifice_granted_20 = yes
 	}

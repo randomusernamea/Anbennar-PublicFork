@@ -2295,10 +2295,10 @@ country_event = { # Handler Event
 					country_event = { id = flavour_kobildzan.22 }
 				}
 				10 = { #Ascending to Greed
-				trigger = {
-					NOT = { has_country_flag = ascending_to_greed }
-					mission_completed = Z38_acts_of_ascension 
-				}
+					trigger = {
+						NOT = { has_country_flag = ascending_to_greed }
+						mission_completed = Z38_acts_of_ascension 
+					}
 					country_event = { id = flavour_kobildzan.23 }
 				}
 				10 = { #The Chosen Several
