@@ -619,8 +619,10 @@ country_decisions = {
 				}
 			}
 			change_tag = U76
-			restore_country_name = yes
-			on_change_tag_effect = yes
+			hidden_effect = {
+				restore_country_name = yes
+				on_change_tag_effect = yes
+			}
 			set_country_flag = formed_horizona_flag
 			if = {
 				limit = {
