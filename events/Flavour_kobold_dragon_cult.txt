@@ -1644,7 +1644,7 @@ country_event = {
 				}
 				silver_dragon_upgrade_trigger = {
 					AMOUNT = 2
-					basic = yes
+					castonathspecial = yes
 				}
 			}
 		}
@@ -1672,7 +1672,7 @@ country_event = {
 				}
 				silver_dragon_upgrade_trigger = {
 					AMOUNT = 5
-					basic = yes
+					castonathspecial = yes
 				}
 			}
 
@@ -1702,7 +1702,6 @@ country_event = {
 				AND = {
 					silver_dragon_upgrade_trigger = {
 						AMOUNT = 9
-						castonathspecial = yes
 					}
 					OR = {
 						owns_or_subject_of = 833
@@ -2771,7 +2770,7 @@ country_event = {
 			NOT = {
 				silver_dragon_upgrade_trigger = {
 					AMOUNT = 2
-					basic = yes
+					castonathspecial = yes
 				}
 			}
 		}
@@ -2799,7 +2798,7 @@ country_event = {
 			NOT = {
 				silver_dragon_upgrade_trigger = {
 					AMOUNT = 5
-					basic = yes
+					castonathspecial = yes
 				}
 			}
 		}
@@ -2828,7 +2827,10 @@ country_event = {
 			NOT = {
 				silver_dragon_upgrade_trigger = {
 					AMOUNT = 9
-					castonathspecial = yes
+				}
+				OR = {
+					owns_or_subject_of = 833
+					any_ally = { owns = 833 }
 				}
 			}
 		}
