@@ -1035,29 +1035,23 @@ country_event = { #Offer
 			factor = 1
 			modifier = {
 				factor = 0
-				if = {
-					limit = {
+				OR = {
+					AND = {
 						has_country_flag = L62_offer_to_ally
+						years_of_income = 0.25
 					}
-					years_of_income = 0.25
-				}
-				else_if = {
-					limit = {
+					AND = {
 						has_country_flag = L62_offer_to_raja
+						years_of_income = 0.50
 					}
-					years_of_income = 0.50
-				}
-				else_if = {
-					limit = {
+					AND = {
 						has_country_flag = L62_offer_to_powerful
+						years_of_income = 0.75
 					}
-					years_of_income = 0.75
-				}
-				else_if = {
-					limit = {
+					AND = {
 						has_country_flag = L62_offer_to_wealthy
+						years_of_income = 1.00
 					}
-					years_of_income = 1.00
 				}
 			}
 		}

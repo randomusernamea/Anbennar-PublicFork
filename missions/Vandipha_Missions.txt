@@ -829,10 +829,19 @@ vandipha_3 = {
 				id = flavour_vandipha.1
 			}
 			custom_tooltip = L62_ending_the_seagulls_ei_tt
-			simple_dynamic_effect_without_alternative = {
-				first_custom_tooltip = L62_ending_the_seagulls_effect_tt
-				first_limit = "NOT = { has_country_flag = L62_help_from_rahen }"
-				first_effect = "add_adm_power = 100 add_dip_power = 100 add_mil_power = 100 add_splendor = 200"
+			if = {
+				limit = {
+					NOT = { has_country_flag = L62_help_from_rahen } 
+				}
+				custom_tooltip = L62_ending_the_seagulls_effect_yes_tt
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+				add_splendor = 200
+			}
+			else = {
+				custom_tooltip = L62_ending_the_seagulls_effect_no_tt
+				tooltip = { add_adm_power = 100 add_dip_power = 100 add_mil_power = 100 add_splendor = 200 }
 			}
 		} 
 	}
@@ -1430,30 +1439,46 @@ vandipha_4 = {
 			army_size_percentage = 0.9
 			num_of_generals = 1
 			OR = {
-				treasury = 50
-				OR = {
-					L55 = {
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = insulted
+				AND = {
+					treasury = 50
+					OR = {
+						L55 = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
 							}
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
+						}
+						Y64 = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
 							}
 						}
 					}
+				}
+				AND = {
+					L55 = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
+						}
+					}
 					Y64 = {
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = insulted
-							}
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
-							}
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
 						}
 					}
 				}

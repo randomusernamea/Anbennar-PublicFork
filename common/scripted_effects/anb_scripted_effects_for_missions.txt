@@ -18610,7 +18610,7 @@ vandipha_retreat_of_scholars_effect = {
 		random_subject_country = {
 			random_owned_province = {
 				limit = {
-					has_harimari_minority_trigger = no
+					NOT = { culture_is_harimari = yes }
 				}
 				add_harimari_minority_size_effect = yes
 			}
