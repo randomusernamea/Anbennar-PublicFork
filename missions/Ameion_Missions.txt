@@ -665,7 +665,10 @@ G52_2 = {
 		trigger = {
 			if = {
 				limit = { has_country_flag = G52_mteibhar_tributary }
-				G63 = { NOT = { liberty_desire = 20 } }
+				G63 = {
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 20 }
+				}
 				treasury = 100
 			}
 			else_if = {
@@ -1793,7 +1796,6 @@ G52_3 = {
 		provinces_to_highlight = {
 			region = larankarha_highlands_region
 			NOT = { area = airoa_naditari_area }
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			if = {
 				limit = {
 					OR = {
@@ -1806,8 +1808,10 @@ G52_3 = {
 					NOT = { has_manpower_building_trigger = yes }
 					NOT = { has_forcelimit_building_trigger = yes }
 					NOT = { religion = kheionism }
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
 			}
+			else = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
 			has_discovered = ROOT
 		}
 		
@@ -2461,12 +2465,7 @@ G52_4 = {
 		position = 9
 		
 		provinces_to_highlight = {
-			owner = {
-				OR = {
-					tag = H66
-					tag = H67
-				}
-			}
+			region = dry_coast_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			has_discovered = ROOT
 		}
@@ -2475,6 +2474,7 @@ G52_4 = {
 			num_of_provinces_owned_or_owned_by_subjects_with = {
 				value = 10
 			 	region = dry_coast_region
+				is_city = yes
 			}
 			2302 = { country_or_non_sovereign_subject_holds = ROOT }
 			NOT = {

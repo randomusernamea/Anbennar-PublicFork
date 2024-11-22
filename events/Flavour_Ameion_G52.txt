@@ -630,6 +630,10 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = { set_country_flag = G52_mteibhar_tributary } #Needed to let the tributary option be visible
+	}
+	
 	option = {
 		name = flavor_ameion.11.a
 		trigger = { exists = G63 }
@@ -637,7 +641,6 @@ country_event = {
 			create_subject = { subject_type = tributary_state_anb subject = G63 }
 			mteibas_valley_region = { add_core = G63 }
 		}
-		set_country_flag = G52_mteibhar_tributary
 		hidden_effect = { G63 = { country_event = { id = flavor_ameion.1100 } } }
 	}
 	option = {
@@ -650,12 +653,14 @@ country_event = {
 			months = 300
 		}
 		set_country_flag = G52_mteibhar_vassal
+		clr_country_flag = G52_mteibhar_tributary
 	}
 	option = {
 		name = flavor_ameion.11.c
 		add_mil_power = -50
 		mteibas_valley_region = { add_claim = ROOT }
 		set_country_flag = G52_mteibhar_conquest
+		clr_country_flag = G52_mteibhar_tributary
 	}
 }
 
@@ -3408,6 +3413,7 @@ country_event = {
 		2525 = { change_culture = klereyen }
 		2520 = { change_culture = klereyen }
 		clr_country_flag = ameion_fotistrepei_flag
+		set_country_flag = ameion_kheionization
 		custom_tooltip = ameion_kheionization_tt
 		hidden_effect = {
 			every_owned_province = {

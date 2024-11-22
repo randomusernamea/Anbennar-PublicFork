@@ -5524,7 +5524,7 @@ G52_ideas = {
 G00_ideas = {
 	start = {
 		discipline = 0.05 #Same as Ameion
-		culture_conversion_cost = -0.15
+		colonists = 1
 	}
 	bonus = {
 		global_manpower_modifier = 0.20
@@ -5549,6 +5549,7 @@ G00_ideas = {
 	}
 	G00_klereyen_in_the_government = {
 		same_culture_advisor_cost = -0.15
+		culture_conversion_cost = -0.15
 	}
 	G00_the_krypharpedan = {
 		global_spy_defence = 0.2
