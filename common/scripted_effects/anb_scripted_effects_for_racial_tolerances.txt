@@ -1354,7 +1354,10 @@ generic_add_race_minority_size_effect = {
 			#Impact Oppressed
 			else_if = {
 				limit = {
-					owner = { low_tolerance_$race$_race_trigger = yes }
+					OR = {
+						is_empty = yes
+						owner = { low_tolerance_$race$_race_trigger = yes }
+					}
 				}
 				add_permanent_province_modifier = {
 					name = $race$_minority_oppressed_small
