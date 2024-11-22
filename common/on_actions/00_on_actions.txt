@@ -12794,6 +12794,13 @@ on_culture_demoted = {
 	}
 	if = {
 		limit = {
+			has_country_modifier = J84_duguhi_accepted
+			NOT = { accepted_culture = duguihi }
+		}
+		remove_country_modifier = J84_duguhi_accepted
+	}
+	if = {
+		limit = {
 			has_country_modifier = G52_amadian_tolerance
 			OR = {
 				NOT = { accepted_culture = quchamar }
