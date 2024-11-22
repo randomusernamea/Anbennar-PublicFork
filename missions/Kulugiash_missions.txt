@@ -407,31 +407,24 @@ L08_kulugiash_2 = {
 
 		trigger = {
 			OR = {
-				OR = {
-					any_known_country = {
-						religion = elikhetist
-						OR = {
-							root = {
-								has_won_war_against = {
-									who = PREV
-								}
+				any_known_country = {
+					religion = elikhetist
+					OR = {
+						root = {
+							has_won_war_against = {
+								who = PREV
 							}
+						}
+						AND = {
 							has_opinion_modifier = {
 								modifier = had_war_with_us
 								who = root
 							}
-						}
-					}
-					any_known_country = {
-						religion = elikhetist
-						has_opinion_modifier = {
-							modifier = had_war_with_us
-							who = root
-						}
-						any_ally = {
-							root = {
-								has_won_war_against = {
-									who = PREV
+							any_ally = {
+								root = {
+									has_won_war_against = {
+										who = PREV
+									}
 								}
 							}
 						}
