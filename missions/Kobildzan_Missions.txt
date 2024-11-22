@@ -2437,6 +2437,7 @@ kob_1_c = {
 
 		provinces_to_highlight = {
 			superregion = ynn_superregion
+			is_empty = no
 			OR = {
 				NOT = { owned_by_subject_of = ROOT }
 				NOT = { religion = kobold_dragon_cult religion = drozma_tur }
@@ -2447,10 +2448,15 @@ kob_1_c = {
 			ynn_superregion = {
 				type = all
 				OR = {
-					owned_by_subject_of = ROOT
+					AND = {
+						owned_by_subject_of = ROOT
+						OR = {
+							religion = kobold_dragon_cult
+							religion = drozma_tur
+						}
+					}
 					is_empty = yes
 				}	
-				OR = { religion = kobold_dragon_cult religion = drozma_tur is_empty = yes }
 			}
 			has_church_aspect = green_dragon_1_upgraded
 			has_church_aspect = green_dragon_2_upgraded
@@ -3401,10 +3407,10 @@ kob_5_c = {
 			OR = {
 				AND = {
 					region = dalr_region
+					is_empty = no
 					OR = {
 						NOT = { owned_by = ROOT }
 						NOT = { religion = kobold_dragon_cult }
-						is_empty = no
 					}
 				}
 
@@ -3424,12 +3430,10 @@ kob_5_c = {
 				custom_trigger_tooltip = {
 					tooltip = owned_and_dragon_cult_tt
 					OR = {
-						owned_by = ROOT 
-						owned_by_subject_of = ROOT
-						is_empty = yes
-					} 
-					OR = {
-						religion = kobold_dragon_cult 
+						AND = {
+							religion = kobold_dragon_cult 
+							country_or_subject_holds = ROOT
+						}
 						is_empty = yes
 					}
 				}
