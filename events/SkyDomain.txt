@@ -560,11 +560,8 @@ country_event = {
 				hidden = yes
 				duration = 3650
 			}
-			country_event = {
-				id = sky_domain.9
-				days = 365
-			}
 		}
+		custom_tooltip = expand_the_holy_realm_option_tt
 		set_country_flag = mengi_expand_realm
 		add_country_modifier = {
 			name = mengi_mobilized_army
@@ -573,23 +570,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = sky_domain.9 #removing the cb
-	title = sky_domain.7.t
-	desc = sky_domain.7.d
-	picture = AMILAK_eventPicture
-	is_triggered_only = yes
-	hidden = yes
-	immediate = {
-	}
-	option = {
-		name = sky_domain.7.a
-		ai_chance = 100
-	}
-	after = {
-		clr_country_flag = mengi_expand_realm
-	}
-}
 
 #enforce amilak's supremacy
 country_event = {
