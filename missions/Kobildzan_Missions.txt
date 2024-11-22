@@ -19,16 +19,16 @@ kob_2_a = {
 
 		provinces_to_highlight = {
 			OR = {
-                area = dragondowns_area
-                province_id = 170
-                province_id = 173
-                province_id = 174
-                province_id = 176
-                province_id = 177
-                province_id = 178
-                province_id = 179
-                province_id = 180
-                province_id = 345
+				area = dragondowns_area
+				province_id = 170
+				province_id = 173
+				province_id = 174
+				province_id = 176
+				province_id = 177
+				province_id = 178
+				province_id = 179
+				province_id = 180
+				province_id = 345
 			}
 		}
 
@@ -83,57 +83,58 @@ kob_2_a = {
 				province_id = 167
 				province_id = 146
 			}
-			NOT = { owned_by = ROOT }
-			NOT = { has_province_flag = has_kobold_traps }
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { has_province_flag = has_kobold_traps }
+			}
 		}
 
 		trigger = {
-            167 = { # Royvibobb
-                owned_by = ROOT 
+			167 = { # Royvibobb
+			owned_by = ROOT 
 				custom_trigger_tooltip = {
 					tooltip = has_kobold_traps_tt 
 					has_province_flag = has_kobold_traps
 				}
-            }        
-            146 = { # Baycodds
-                owned_by = ROOT 
+			}
+			146 = { # Baycodds
+			owned_by = ROOT 
 				custom_trigger_tooltip = {
 					tooltip = has_kobold_traps_tt 
 					has_province_flag = has_kobold_traps
 				}
-            }
-            has_institution = feudalism
-            OR = {
-                estate_loyalty = {
-                    estate = estate_mages
-                    loyalty = 50
-                }
-                NOT = { has_estate = estate_mages }
-            }
+			}
+			has_institution = feudalism
+			OR = {
+				estate_loyalty = {
+					estate = estate_mages
+					loyalty = 50
+				}
+				NOT = { has_estate = estate_mages }
+			}
 		}
 		effect = {
-            146 = { add_base_production = 2 }
+			146 = { add_base_production = 2 }
 			custom_tooltip = innovation_per_trap_level_tt 
-            146 = {
-                trigger_switch = {
-                    on_trigger = has_province_modifier
-                    
-                    kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 2 } }
-                    kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 4 } }
-                    kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 6 } }
-                    kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 8 } }
-                }
-            }
-            167 = {
-                trigger_switch = {
-                    on_trigger = has_province_modifier
-                    
-                    kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 2 } }
-                    kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 4 } }
-                    kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 6 } }
-                    kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 8 } }
-                }
-            }
+			146 = {
+				trigger_switch = {
+					on_trigger = has_province_modifier
+					kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 2 } }
+					kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 4 } }
+					kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 6 } }
+					kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 8 } }
+				}
+			}
+			167 = {
+				trigger_switch = {
+					on_trigger = has_province_modifier
+					
+					kobold_traps_lvl_1 = { ROOT = { change_innovativeness = 2 } }
+					kobold_traps_lvl_2 = { ROOT = { change_innovativeness = 4 } }
+					kobold_traps_lvl_3 = { ROOT = { change_innovativeness = 6 } }
+					kobold_traps_lvl_4 = { ROOT = { change_innovativeness = 8 } }
+				}
+			}
 		}
 	}
 
@@ -173,7 +174,7 @@ kob_2_a = {
 			}
 		}
 		effect = {
-            add_adm_power = 50
+			add_adm_power = 50
 			custom_tooltip = institution_from_diplomacy_tt 
 			hidden_effect = {
 				every_known_country = {
@@ -240,7 +241,7 @@ kob_2_a = {
 			}
 
 			A06 = { exists = no }
-            A79 = { exists = no }
+			A79 = { exists = no }
 
 			NOT = { has_country_modifier = racial_pop_gnomish_purge }
 			NOT = { has_country_modifier = racial_pop_gnomish_expulsion }
@@ -250,11 +251,11 @@ kob_2_a = {
 		effect = {
 			kdc_remove_aspect_1 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = blue
-                SLOT = 1
-                UPGRADE = upgraded
-            }
-            medium_increase_of_gnomish_tolerance_effect = yes
+				COLOUR = blue
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+			medium_increase_of_gnomish_tolerance_effect = yes
 		}
 	}
 }
@@ -344,22 +345,22 @@ kob_3_a = {
 
 		provinces_to_highlight = {
 			OR = {
-                area = dragondepth_area
-                area = dragonheart_area
-                area = dragonmaw_area
-                area = dragonheights_area
-                area = dragonspine_area
-                area = dragondowns_area
-                province_id = 170
-                province_id = 176
-                province_id = 177
-                province_id = 178
+				area = dragondepth_area
+				area = dragonheart_area
+				area = dragonmaw_area
+				area = dragonheights_area
+				area = dragonspine_area
+				area = dragondowns_area
+				province_id = 170
+				province_id = 176
+				province_id = 177
+				province_id = 178
 			}
 			NOT = { owned_by = ROOT }
 		}
 
 		trigger = {
-            
+			
 			custom_trigger_tooltip = {
 				tooltip = accepts_a_kobold_not_your_own_tt
 				OR = {
@@ -388,15 +389,15 @@ kob_3_a = {
 				}
 			}
 			accepted_culture = bluescale_kobold
-            accepted_culture = redscale_kobold
+			accepted_culture = redscale_kobold
 
-            OR = {
-                estate_loyalty = {
-                    estate = estate_monstrous_tribes
-                    loyalty = 60
-                }
+			OR = {
+				estate_loyalty = {
+					estate = estate_monstrous_tribes
+					loyalty = 60
+				}
 				NOT = { has_estate = estate_monstrous_tribes }
-            }
+			}
 
 			custom_trigger_tooltip = {
 				tooltip = owned_DC_peninsula_tt 
@@ -418,9 +419,9 @@ kob_3_a = {
 		}
 		effect = {
 			add_country_modifier = {
-                name = Z38_call_of_the_dragon_1
-                duration = -1
-            }
+				name = Z38_call_of_the_dragon_1
+				duration = -1
+			}
 			custom_tooltip = lowered_autonomy_blue_red_tt
 			hidden_effect = {
 				every_owned_province = {
@@ -445,7 +446,7 @@ kob_3_a = {
 		}
 
 		trigger = {
-			189 = {  
+			189 = {
 				check_variable = { dragon_cult_hoard = 500 }
 				has_no_ongoing_construction = yes
 			}
@@ -496,7 +497,7 @@ kob_3_a = {
 		}
 
 		trigger = {
-			189 = {  
+			189 = {
 				check_variable = { dragon_cult_hoard = 2000 }
 			}
 			any_owned_province = {
@@ -505,11 +506,11 @@ kob_3_a = {
 					culture_group= halfling
 				}
 			}
-            OR = {
-                is_ahead_of_time_in_technology = { tech = adm }
-                is_ahead_of_time_in_technology = { tech = dip }
-                is_ahead_of_time_in_technology = { tech = mil }
-            }
+			OR = {
+				is_ahead_of_time_in_technology = { tech = adm }
+				is_ahead_of_time_in_technology = { tech = dip }
+				is_ahead_of_time_in_technology = { tech = mil }
+			}
 			any_subject_country = {
 				capital_scope = { colonial_region = colonial_dalaire }
 				is_colonial_nation = yes
@@ -521,7 +522,6 @@ kob_3_a = {
 				limit = {
 					is_colonial_nation_of = ROOT
 					capital_scope = { colonial_region = colonial_dalaire }
-					num_of_cities = 5
 				}
 
 				add_country_modifier = {
@@ -712,12 +712,7 @@ kob_4_a = {
 						province_id = 1202
 						province_id = 1214
 					}
-					NOT = {
-						OR = {
-							owned_by = ROOT
-							owned_by_subject_of = ROOT
-						}
-					}
+					NOT = { country_or_subject_holds = ROOT }
 				}
 			}
 		}
@@ -764,10 +759,7 @@ kob_4_a = {
 				}
 				if = {
 					limit = { is_empty = yes }
-					add_permanent_province_modifier = {
-						name = kobold_minority_oppressed_small
-						duration = -1
-					}
+					add_kobold_minority_size_effect = yes
 				}
 			}
 			flottnord_area = {
@@ -777,10 +769,7 @@ kob_4_a = {
 				}
 				if = {
 					limit = { is_empty = yes }
-					add_permanent_province_modifier = {
-						name = kobold_minority_oppressed_small
-						duration = -1
-					}
+					add_kobold_minority_size_effect = yes
 				}
 			}			
 		}
@@ -1064,10 +1053,10 @@ kob_1_b = {
 			}
 			kdc_remove_aspect_2 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = green
-                SLOT = 2
-                UPGRADE = upgraded
-            }
+				COLOUR = green
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 }
@@ -1319,9 +1308,9 @@ kob_2_b = {
 			OR = {
 				AND = {
 					OR = {
-						province_id =  2079
-						province_id =  2083
-						province_id =  2088
+						province_id = 2079
+						province_id = 2083
+						province_id = 2088
 					}
 					NOT = { owned_by = ROOT owned_by_subject_of = ROOT }
 				}
@@ -1483,12 +1472,12 @@ kob_3_b = {
 			remove_country_modifier = Z38_call_of_the_dragon_1
 			add_country_modifier = { name = Z38_call_of_the_dragon_2 duration = -1 }
 
-            kdc_remove_aspect_1 = yes
+			kdc_remove_aspect_1 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = copper
-                SLOT = 1
-                UPGRADE = upgraded
-            }
+				COLOUR = copper
+				SLOT = 1
+				UPGRADE = upgraded
+			}
 
 			hidden_effect = { set_country_flag = kobildzan_malliaths_chosen_disciples }
 			tooltip = {
@@ -1527,11 +1516,11 @@ kob_3_b = {
 			church_power = 200
 
 			189 = {
-                check_variable = {
+				check_variable = {
 					which = dragon_cult_hoard
 					value = 32000
 				}
-            }
+			}
 
 			all_owned_province = {
 				OR = {
@@ -1601,7 +1590,7 @@ kob_4_b = {
 					which = dragon_cult_hoard
 					value = 4000
 				}
-            }
+			}
 
 		}
 
@@ -1636,11 +1625,11 @@ kob_4_b = {
 				}
 			}
 			kdc_remove_aspect_1 = yes
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = red
-                SLOT = 1
-                UPGRADE = upgraded
-            }
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = red
+				SLOT = 1
+				UPGRADE = upgraded
+			}
 		}
 	}
 
@@ -1948,11 +1937,11 @@ kob_4_b = {
 			dragonhills_area = { change_culture = kobildzani_kobold }
 
 			kdc_remove_aspect_1 = yes
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = white
-                SLOT = 1
-                UPGRADE = upgraded
-            }
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = white
+				SLOT = 1
+				UPGRADE = upgraded
+			}
 		}
 	}
 }
@@ -2505,10 +2494,10 @@ kob_1_c = {
 
 			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = green
-                SLOT = 3
-                UPGRADE = upgraded
-            }
+				COLOUR = green
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 
@@ -2669,7 +2658,7 @@ kob_1_c = {
 				third_effect = "
 					custom_tooltip = unlock_gunpowder_tt 
 					hidden_effect = {
-						set_country_flag = unlocked_artifice_invention_elemental_gunpowder  
+						set_country_flag = unlocked_artifice_invention_elemental_gunpowder 
 						set_country_flag = can_use_elemental_gunpowder
 					}
 				"
@@ -2817,7 +2806,7 @@ kob_2_c = {
 					which = dev2add
 					value = 0
 				}
-				export_to_variable  = {
+				export_to_variable = {
 					which = dev2add
 					value = total_development
 					who=ROOT
@@ -2827,7 +2816,7 @@ kob_2_c = {
 						which = vassaldev
 						value = 0
 					}
-					export_to_variable  = {
+					export_to_variable = {
 						which = vassaldev
 						value = total_development
 					}
@@ -2840,7 +2829,7 @@ kob_2_c = {
 							which = vassaldev
 							which = PREV
 						}
-						change_variable = {            
+						change_variable = {
 							which = dev2add
 							which = vassaldev
 						}
@@ -2909,10 +2898,10 @@ kob_2_c = {
 
 			kdc_remove_aspect_2 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = red
-                SLOT = 2
-                UPGRADE = upgraded
-            }
+				COLOUR = red
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 
@@ -2993,10 +2982,10 @@ kob_2_c = {
 			}
 			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = red
-                SLOT = 3
-                UPGRADE = upgraded
-            }
+				COLOUR = red
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 			hidden_effect = {
 				every_subject_country = {
 					subject_ascension_effect = yes
@@ -3293,7 +3282,7 @@ kob_4_c = {
 				NOT = { owned_by = ROOT }
 				NOT = { has_manufactory_trigger = yes }
 				NOT = { has_production_building_trigger = yes }
-				NOT = { has_courthouse_building_trigger = yes  }
+				NOT = { has_courthouse_building_trigger = yes }
 			}
 		}
 
@@ -3458,7 +3447,7 @@ kob_5_c = {
 						owned_by = ROOT 
 						owned_by_subject_of = ROOT
 						is_empty = yes
-					}  
+					} 
 					religion = kobold_dragon_cult 
 				}
 			}			
@@ -3505,11 +3494,11 @@ kob_5_c = {
 			hidden_effect = { set_country_flag = gerudian_traps_for_kobolds }	
 
 			kdc_remove_aspect_2 = yes
-            unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = white
-                SLOT = 2
-                UPGRADE = upgraded
-            }
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = white
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 
@@ -3639,10 +3628,10 @@ kob_5_c = {
 
 			kdc_remove_aspect_3 = yes
 			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
-                COLOUR = copper
-                SLOT = 3
-                UPGRADE = upgraded
-            }
+				COLOUR = copper
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 
 			custom_tooltip = ebonsteel_extraction_and_mage_tt 
 			hidden_effect = {
