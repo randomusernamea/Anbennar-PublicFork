@@ -2,6 +2,7 @@ taric_hidden_event_flips = {
 	if = {
 		limit = {
 			owner = { has_country_flag = taric_option_b }
+			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 		}
 		change_religion = owner
 		change_culture = taric
@@ -18,10 +19,12 @@ taric_hidden_event_flips = {
 				remove_province_modifier = taric_minorities
 				owner = { country_event = { id = gerudia.29 } }
 			}
+			set_province_flag = taric_cagodic_no_redo_flip_flag
 		}
 	}
 	if = {
 		limit = {
+			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			NOT = { owner = { has_country_flag = taric_option_b } }
 			OR = {
 				owner = { has_country_flag = taric_option_c }
@@ -55,12 +58,14 @@ taric_hidden_event_flips = {
 				remove_province_modifier = taric_minorities
 				owner = { country_event = { id = gerudia.29 } }
 			}
+			set_province_flag = taric_cagodic_no_redo_flip_flag
 		}
 	}
 }
 cagodic_hidden_event_flips = {
 	if = {
 		limit = {
+			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			owner = { has_country_flag = cagodic_option_b }
 		}
 		change_religion = owner
@@ -78,10 +83,12 @@ cagodic_hidden_event_flips = {
 				remove_province_modifier = cagodic_minorities
 				owner = { country_event = { id = gerudia.30 } }
 			}
+			set_province_flag = taric_cagodic_no_redo_flip_flag
 		}
 	}
 	if = {
 		limit = {
+			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			NOT = { owner = { has_country_flag = cagodic_option_b } }
 			OR = {
 				owner = { has_country_flag = cagodic_option_c }
@@ -115,6 +122,7 @@ cagodic_hidden_event_flips = {
 				remove_province_modifier = cagodic_minorities
 				owner = { country_event = { id = gerudia.30 } }
 			}
+			set_province_flag = taric_cagodic_no_redo_flip_flag
 		}
 	}
 }

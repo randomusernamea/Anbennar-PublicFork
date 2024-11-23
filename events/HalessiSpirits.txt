@@ -11630,18 +11630,19 @@ province_event = {	#Temple Corrupted
 							country_event = { id = spirits.612 days = 365 }
 						}
 					}
-					else_if = {
-						limit = { check_variable = { which = devouring_path_flavor_counter value = 1 } }
-						if = {
-							limit = {
-								num_of_owned_provinces_with = {
-									value = 5
-									has_province_modifier = corrupted_temple_complex
-								}
-							}
-							country_event = { id = spirits.611 days = 365 }
-						}
-					}
+					### Uncomment below when Bonbonny returns and rewrites event
+					#else_if = {
+					#	limit = { check_variable = { which = devouring_path_flavor_counter value = 1 } }
+					#	if = {
+					#		limit = {
+					#			num_of_owned_provinces_with = {
+					#				value = 5
+					#				has_province_modifier = corrupted_temple_complex
+					#			}
+					#		}
+					#		country_event = { id = spirits.611 days = 365 }
+					#	}
+					#}
 					else = { country_event = { id = spirits.610 days = 365 } }
 				}
 
