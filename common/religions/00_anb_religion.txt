@@ -1001,7 +1001,7 @@ faithless = {
 		allowed_conversion = {
 		}
 		country = {
-			republican_tradition = 0.25
+			republican_tradition = 0.3
 			trade_efficiency = 0.1
 		}
 		country_as_secondary = {
@@ -4589,10 +4589,10 @@ taychendi = {
 			change_religion = oren_nayiru_reformed
 			add_prestige = -100
 
-			add_country_modifier = {
-				name = "conversion_zeal"
-				duration = 3650
-			}
+			# add_country_modifier = {
+			# 	name = "conversion_zeal"
+			# 	duration = 3650
+			# }
 		}
 
 		heretic = { NOGOD }
@@ -4618,10 +4618,10 @@ taychendi = {
 			change_religion = gods_of_the_taychend_reformed
 			add_prestige = -100
 
-			add_country_modifier = {
-				name = "conversion_zeal"
-				duration = 3650
-			}
+			# add_country_modifier = {
+			# 	name = "conversion_zeal"
+			# 	duration = 3650
+			# }
 		}
 
 		heretic = { NOGOD }
