@@ -1703,11 +1703,11 @@ gronstunad_3 = {
 					OR = {
 						AND = {
 							province_id = 4300
-							NOT = { has_building = ramparts }
+							has_building = ramparts
 						}
 						AND = {
 							province_id = 4302
-							NOT = { has_manpower_building_trigger = yes }
+							has_manpower_building_trigger = yes
 						}
 					}
 					has_fort_building_trigger = yes
