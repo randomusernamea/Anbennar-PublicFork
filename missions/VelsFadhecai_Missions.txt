@@ -2072,37 +2072,6 @@ velsfadhecai_missions_3b = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = vf_massown_tt
-				AND = {
-					dolindha_region = {
-						type = all
-						OR = {
-							country_or_non_sovereign_subject_holds = ROOT
-							is_empty = yes
-						}
-					}
-					sarda_region = {
-						type = all
-						OR = {
-							country_or_non_sovereign_subject_holds = ROOT
-							is_empty = yes
-						}
-					}
-					rzenta_region = {
-						type = all
-						OR = {
-							country_or_non_sovereign_subject_holds = ROOT
-							is_empty = yes
-						}
-					}
-					epednan_expanse_region = {
-						type = all
-						OR = {
-							country_or_non_sovereign_subject_holds = ROOT
-							is_empty = yes
-							is_in_capital_area = no
-						}
-					}
-				}
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 100
 					region = dolindha_region
