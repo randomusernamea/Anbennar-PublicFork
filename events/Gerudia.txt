@@ -2125,6 +2125,7 @@ province_event = { #province flip controller
 			}
 		}
 		is_city = yes
+		NOT = { is_year = 1495 }
 	}
 	immediate = {
 		set_province_flag = taric_cagodic_no_duplicate_event_flag

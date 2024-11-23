@@ -1,6 +1,7 @@
 taric_hidden_event_flips = {
 	if = {
 		limit = {
+			NOT = { is_year = 1495 }
 			owner = { has_country_flag = taric_option_b }
 			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 		}
@@ -24,6 +25,7 @@ taric_hidden_event_flips = {
 	}
 	if = {
 		limit = {
+			NOT = { is_year = 1495 }
 			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			NOT = { owner = { has_country_flag = taric_option_b } }
 			OR = {
@@ -43,7 +45,7 @@ taric_hidden_event_flips = {
 					exists = Z91
 				}
 			}
-			owner = { release = Z91 }
+			owner = { release_with_religion_and_culture = Z91 }
 		}
 		else = {
 			cede_province = Z91
@@ -65,6 +67,7 @@ taric_hidden_event_flips = {
 cagodic_hidden_event_flips = {
 	if = {
 		limit = {
+			NOT = { is_year = 1495 }
 			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			owner = { has_country_flag = cagodic_option_b }
 		}
@@ -88,6 +91,7 @@ cagodic_hidden_event_flips = {
 	}
 	if = {
 		limit = {
+			NOT = { is_year = 1495 }
 			NOT = { has_province_flag = taric_cagodic_no_redo_flip_flag }
 			NOT = { owner = { has_country_flag = cagodic_option_b } }
 			OR = {
@@ -107,7 +111,7 @@ cagodic_hidden_event_flips = {
 					exists = Z92
 				}
 			}
-			owner = { release = Z92 }
+			owner = { release_with_religion_and_culture = Z92 }
 		}
 		else = {
 			cede_province = Z92
