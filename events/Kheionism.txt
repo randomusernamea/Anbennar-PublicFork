@@ -618,40 +618,112 @@ country_event = {
 			if = {
 				limit = { has_kheionist_deity = { deity = maederitic_rule } }
 				holy_order = maederitic_rule_order_level_3
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = schaal_onitheia } }
 				holy_order = schaal_onitheia_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = teachings_of_varamelas } }
 				holy_order = teachings_of_varamelas_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			
 			else_if = {
 				limit = { has_kheionist_deity = { deity = dictats_of_isparokaeus } }
 				holy_order = dictats_of_isparokaeus_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = archatiradist_doctrine } }
 				holy_order = archatiradist_doctrine_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = anagbheism } }
 				holy_order = anagbheism_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			
 			else_if = {
 				limit = { has_kheionist_deity = { deity = axierophonic_mandate } }
 				holy_order = axierophonic_mandate_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = drivos_rochos } }
 				holy_order = drivos_rochos_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_laskaris_creed_order_flag
 			}
 			else_if = {
 				limit = { has_kheionist_deity = { deity = laskaris_creed } }
 				holy_order = laskaris_creed_order_level_3
+				clr_province_flag = has_maederitic_rule_order_flag
+				clr_province_flag = has_schaal_onitheia_order_flag
+				clr_province_flag = has_teachings_of_varamelas_order_flag
+				clr_province_flag = has_dictats_of_isparokaeus_order_flag
+				clr_province_flag = has_archatiradist_doctrine_order_flag
+				clr_province_flag = has_anagbheism_order_flag
+				clr_province_flag = has_axierophonic_mandate_order_flag
+				clr_province_flag = has_drivos_rochos_order_flag
 			}
 		}
 	}
