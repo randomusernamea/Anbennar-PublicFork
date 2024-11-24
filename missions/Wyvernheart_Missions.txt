@@ -912,7 +912,7 @@ wyvernheart_column_3 = {
 				fire = 1
 				manuever = 3
 				siege = 1
-				trait = glory_seeker_personality
+				trait = war_wizard_personality #MAGICREWORK
 			}
 		} 
 	}
@@ -2458,7 +2458,6 @@ wyvernheart_column_5_endgame = {
 				tooltip = wyvernheart_E10_trigger_tt
 				west_castanor_region = {
 					type = all
-					is_state = yes
 					OR = {
 						area = rohibon_area
 						area = valefort_area
@@ -2467,10 +2466,13 @@ wyvernheart_column_5_endgame = {
 						area = taran_plains_area
 						area = verteben_area
 						area = upcreek_area
-						any_province_in_state = {
-							AND = {
-								has_building = mage_tower
-								base_manpower = 6
+						AND = {
+							is_state = yes
+							any_province_in_state = {
+								AND = {
+									has_building = mage_tower
+									base_manpower = 6
+								}
 							}
 						}
 					}
@@ -2483,10 +2485,13 @@ wyvernheart_column_5_endgame = {
 						area = sarwood_area
 						area = clouded_wood_area
 						area = nortessord_area
-						any_province_in_state = {
-							AND = {
-								has_building = mage_tower
-								base_manpower = 6
+						AND = {
+							is_state = yes
+							any_province_in_state = {
+								AND = {
+									has_building = mage_tower
+									base_manpower = 6
+								}
 							}
 						}
 					}
@@ -2498,10 +2503,13 @@ wyvernheart_column_5_endgame = {
 						area = dinesck_area
 						area = serpentshead_area
 						area = northern_greatwoods_area
-						any_province_in_state = {
-							AND = {
-								has_building = mage_tower
-								base_manpower = 6
+						AND = {
+							is_state = yes
+							any_province_in_state = {
+								AND = {
+									has_building = mage_tower
+									base_manpower = 6
+								}
 							}
 						}
 					}
