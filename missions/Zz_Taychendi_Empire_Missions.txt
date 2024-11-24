@@ -636,16 +636,7 @@ J84_1_missions = {
 		}
 
 		trigger = {
-			if = {
-				limit = {
-					calc_true_if = {
-						amount = 10
-						effelai_superregion = {
-							type = all
-							trade_goods = naval_supplies
-						}
-					}
-				}
+			OR = {
 				num_of_owned_provinces_with = {
 					value = 10
 					trade_goods = naval_supplies
@@ -654,8 +645,6 @@ J84_1_missions = {
 					has_manpower_building_trigger = yes
 					has_forcelimit_building_trigger = yes
 				}
-			}
-			else = {
 				effelai_superregion = {
 					type = all
 					OR = {
@@ -3415,7 +3404,10 @@ J84_4_missions = {
 						name = J84_vanburian_steel_foundries
 						duration = -1
 					}
-					change_trade_goods = iron
+					if = {
+						limit = { NOT = { province_id = 2172 } } #Rionfort
+						change_trade_goods = iron
+					}
 				}
 			}
 		}
@@ -3593,7 +3585,10 @@ J84_5_missions = {
 						NOT = { owned_by = ROOT }
 					}
 				}
-				is_capital_of = H00 #Saerraeg
+				AND = {
+					region = chendhya_region
+					owned_by = H00 #Saerraeg
+				}
 				AND = {
 					OR = {
 						province_id = 2568 #Rakkabuttai
@@ -3647,7 +3642,13 @@ J84_5_missions = {
 					controlled_by = REB
 				}
 			}
-			NOT = { exists = H00 } #Saerraeg
+			H00 = { #Saerraeg
+				NOT = {
+					any_owned_province = {
+						region = chendhya_region
+					}
+				}
+			}
 			OR = {
 				AND = {
 					NOT = { accepted_culture = chendhyan }
@@ -3782,7 +3783,7 @@ J84_5_missions = {
 					}
 					ROOT = {
 						NOT = {
-							num_of_owned_provinces_with = {
+							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 								value = 3
 								OR = {
 									region = mteibas_valley_region
@@ -3819,7 +3820,7 @@ J84_5_missions = {
 				has_production_building_trigger = yes
 				religion = gods_of_the_taychend_reformed
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 3
 				OR = {
 					region = mteibas_valley_region
@@ -3863,31 +3864,37 @@ J84_5_missions = {
 				}
 			}
 			hidden_effect = {
-				every_owned_province = {
-					limit = {
-						OR = {
-							region = mteibas_valley_region
-							region = chendhya_region
-						}
-						num_of_units_in_province = {
-							amount = 5
-							who = ROOT
-							type = cavalry
-						}
-						trade_goods = livestock
-						has_manpower_building_trigger = yes
-						has_production_building_trigger = yes
-						religion = gods_of_the_taychend_reformed
-					}
-					add_province_modifier = {
-						name = J84_valley_raider_camps
-						duration = -1
-					}
-					kill_units = {
-						amount = 5
-						who = ROOT
-						type = cavalry
-					}
+				for = {
+					amount = 8
+					effect = "
+						random_province = {
+							limit = {
+								country_or_non_sovereign_subject_holds = ROOT
+								OR = {
+									region = mteibas_valley_region
+									region = chendhya_region
+								}
+								num_of_units_in_province = {
+									amount = 5
+									who = ROOT
+									type = cavalry
+								}
+								trade_goods = livestock
+								has_manpower_building_trigger = yes
+								has_production_building_trigger = yes
+								religion = gods_of_the_taychend_reformed
+								NOT = { has_province_modifier = J84_valley_raider_camps }
+							}
+							add_province_modifier = {
+								name = J84_valley_raider_camps
+								duration = -1
+							}
+							kill_units = {
+								amount = 5
+								who = ROOT
+								type = cavalry
+							}
+						}"
 				}
 			}
 			devand_region = { add_permanent_claim = ROOT }
@@ -3905,7 +3912,7 @@ J84_5_missions = {
 			OR = {
 				AND = {
 					region = devand_region
-					is_island = no
+					NOT = { province_group = cleaved_sea_islands }
 					NOT = { owned_by = ROOT }
 				}
 				AND = {
@@ -3931,7 +3938,7 @@ J84_5_missions = {
 				type = all
 				OR = {
 					owned_by = ROOT
-					is_island = yes
+					province_group = cleaved_sea_islands
 				}
 			}
 			2680 = { #Apikhoxi
@@ -4351,6 +4358,7 @@ J84_5_missions = {
 				AND = {
 					owned_by = ROOT
 					trade_goods = slaves
+					region = amadia_region
 					NOT = {
 						AND = {
 							has_production_building_trigger = yes
@@ -4378,7 +4386,8 @@ J84_5_missions = {
 					share = 75
 				}
 			}
-			all_owned_province = {
+			amadia_region = {
+				type = all
 				OR = {
 					NOT = { trade_goods = slaves }
 					AND = {
