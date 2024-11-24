@@ -602,68 +602,44 @@ country_event = {
 	option = {
         name = kheionism.2.c
 		ai_chance = { factor = 1 }
-		if = {
-			limit = { has_kheionist_deity = { deity = maederitic_rule } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+		every_owned_province = {
+			limit = { has_kheionist_holy_order_flag = yes }
+			if = {
+				limit = { has_kheionist_deity = { deity = maederitic_rule } }
 				holy_order = maederitic_rule_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = schaal_onitheia } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = schaal_onitheia } }
 				holy_order = schaal_onitheia_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = teachings_of_varamelas } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = teachings_of_varamelas } }
 				holy_order = teachings_of_varamelas_order_level_3
 			}
-		}
-		
-		else_if = {
-			limit = { has_kheionist_deity = { deity = dictats_of_isparokaeus } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			
+			else_if = {
+				limit = { has_kheionist_deity = { deity = dictats_of_isparokaeus } }
 				holy_order = dictats_of_isparokaeus_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = archatiradist_doctrine } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = archatiradist_doctrine } }
 				holy_order = archatiradist_doctrine_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = anagbheism } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = anagbheism } }
 				holy_order = anagbheism_order_level_3
 			}
-		}
-		
-		else_if = {
-			limit = { has_kheionist_deity = { deity = axierophonic_mandate } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			
+			else_if = {
+				limit = { has_kheionist_deity = { deity = axierophonic_mandate } }
 				holy_order = axierophonic_mandate_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = drivos_rochos } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = drivos_rochos } }
 				holy_order = drivos_rochos_order_level_3
 			}
-		}
-		else_if = {
-			limit = { has_kheionist_deity = { deity = laskaris_creed } }
-			every_owned_province = {
-				limit = { has_kheionist_holy_order_flag = yes }
+			else_if = {
+				limit = { has_kheionist_deity = { deity = laskaris_creed } }
 				holy_order = laskaris_creed_order_level_3
 			}
 		}
