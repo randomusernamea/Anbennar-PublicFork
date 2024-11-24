@@ -331,16 +331,3 @@ has_kheionist_deity_of_level = {
 		}
 	}
 }
-
-has_kheionist_holy_order_flag = {
-	OR = {
-		has_province_flag = has_maederitic_rule_order_flag
-		has_province_flag = has_schaal_onitheia_order_flag
-		has_province_flag = has_teachings_of_varamelas_order_flag
-		has_province_flag = has_dictats_of_isparokaeus_order_flag
-		has_province_flag = has_archatiradist_doctrine_order_flag
-		has_province_flag = has_anagbheism_order_flag
-		has_province_flag = has_axierophonic_mandate_order_flag
-		has_province_flag = has_drivos_rochos_order_flag
-	}
-}

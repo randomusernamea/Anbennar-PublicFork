@@ -603,7 +603,18 @@ country_event = {
         name = kheionism.2.c
 		ai_chance = { factor = 1 }
 		every_owned_province = {
-			limit = { has_kheionist_holy_order_flag = yes }
+			limit = { 
+				OR = {
+					has_province_flag = has_maederitic_rule_order_flag
+					has_province_flag = has_schaal_onitheia_order_flag
+					has_province_flag = has_teachings_of_varamelas_order_flag
+					has_province_flag = has_dictats_of_isparokaeus_order_flag
+					has_province_flag = has_archatiradist_doctrine_order_flag
+					has_province_flag = has_anagbheism_order_flag
+					has_province_flag = has_axierophonic_mandate_order_flag
+					has_province_flag = has_drivos_rochos_order_flag
+				}
+			}
 			if = {
 				limit = { has_kheionist_deity = { deity = maederitic_rule } }
 				holy_order = maederitic_rule_order_level_3
