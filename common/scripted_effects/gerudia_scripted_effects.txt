@@ -45,7 +45,7 @@ taric_hidden_event_flips = {
 					exists = Z91
 				}
 			}
-			owner = { release_with_religion_and_culture = Z91 }
+			owner = { release_with_religion_and_culture = { tag = Z91 religion = ROOT culture = taric } }
 		}
 		else = {
 			cede_province = Z91
@@ -111,7 +111,7 @@ cagodic_hidden_event_flips = {
 					exists = Z92
 				}
 			}
-			owner = { release_with_religion_and_culture = Z92 }
+			owner = { release_with_religion_and_culture = { tag = Z92 religion = ROOT culture = cagodic } }
 		}
 		else = {
 			cede_province = Z92
