@@ -169,7 +169,7 @@ seismic_sense = {
 			}
 		}
 		OR = {
-			all_owned_province = { all_neighbor_province = { is_city = yes } }
+			all_owned_province = { NOT = { has_empty_adjacent_province = yes } }
 			custom_trigger_tooltip = {
 				tooltip = used_seismic_sense_tt
 				NOT = { has_country_flag = seismic_sense_flag }
