@@ -542,10 +542,12 @@ raithtall_2 = {
 		trigger = {
 			NOT = {
 				eordand_superregion = {
-					owner = { religion = eordellon }
-					AND = {
-						religion = eordellon
-						is_city = yes
+					OR = {
+						owner = { religion = eordellon }
+						AND = {
+							religion = eordellon
+							is_city = yes
+						}
 					}
 				}
 			}
@@ -874,10 +876,8 @@ raithtall_3 = {
 		
 		effect = {
 			every_owned_province = {
-				if = {
-					limit = { is_core = H10 }
-					add_local_autonomy = -30
-				}
+				limit = { is_core = H10 }
+				add_local_autonomy = -30
 			}
 
 			add_mercantilism = 5
@@ -984,7 +984,7 @@ raithtall_3 = {
 				}
 				calc_true_if = {
 					amount = 2
-					any_subject_country = {
+					all_subject_country = {
 						OR = {
 							culture = peitar
 							culture = snecboth
@@ -1000,14 +1000,13 @@ raithtall_3 = {
 			}
 			else_if = {
 				limit = {
-					eordand_superregion = {
-						owner = {
-							OR = {
-								culture = peitar
-								culture = snecboth
-								culture = selphereg
-								culture = caamas
-							}
+					any_known_country = {
+						capital_scope = { superregion = eordand_superregion }
+						OR = {
+							culture = peitar
+							culture = snecboth
+							culture = selphereg
+							culture = caamas
 						}
 					}
 				}
@@ -1221,10 +1220,8 @@ raithtall_4 = {
 		
 		effect = {
 			every_owned_province = {
-				if = {
-					limit = { is_core = H14 }
-					add_local_autonomy = -30
-				}
+				limit = { is_core = H14 }
+				add_local_autonomy = -30
 			}
 			
 			define_advisor = {
@@ -1382,10 +1379,12 @@ raithtall_4 = {
 		trigger = {
 			NOT = {
 				eordand_superregion = {
-					any_country = { religion = winter_court }
-					any_province = {
-						religion = winter_court
-						is_city = yes
+					OR = {
+						owner = { religion = winter_court }
+						AND = {
+							religion = winter_court
+							is_city = yes
+						}
 					}
 				}
 			}
@@ -1429,37 +1428,35 @@ raithtall_4 = {
 			custom_tooltip = raithtall_snecboth_boost_tt
 			hidden_effect = {
 				randrunnse_region = {
-					if = {
-						limit = {
-							country_or_subject_holds = ROOT
-							OR = {
-								culture = snecboth
-								culture = tuathak
-							}
-							is_state = yes
-							NOT = { has_province_flag = raithtall_snecboth_boost }
+					limit = {
+						country_or_subject_holds = ROOT
+						OR = {
+							culture = snecboth
+							culture = tuathak
 						}
+						is_state = yes
+						NOT = { has_province_flag = raithtall_snecboth_boost }
+					}
+					if = {
+						limit = { is_statists_in_power = yes }
 						if = {
-							limit = { is_statists_in_power = yes }
-							if = {
-								limit = { is_prosperous = yes }
-								ROOT = { add_treasury = 20 }
-							}
-							else = {
-								add_prosperity = 15
-							}
-							every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
+							limit = { is_prosperous = yes }
+							ROOT = { add_treasury = 20 }
 						}
 						else = {
-							if = {
-								limit = { is_prosperous = yes }
-								ROOT = { add_treasury = 25 }
-							}
-							else = {
-								add_prosperity = 20
-							}
-							every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
+							add_prosperity = 15
 						}
+						every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
+					}
+					else = {
+						if = {
+							limit = { is_prosperous = yes }
+							ROOT = { add_treasury = 25 }
+						}
+						else = {
+							add_prosperity = 20
+						}
+						every_province_in_state = { set_province_flag = raithtall_snecboth_boost }
 					}
 				}
 			}
@@ -1574,14 +1571,9 @@ raithtall_5 = {
 		trigger = {
 			NOT = {
 				eordand_superregion = {
-					any_country = {
-						religion = winter_court
+					religion = winter_court
+					OR = {
 						land_forcelimit = ROOT
-					}
-				}
-				eordand_superregion = {
-					any_country = {
-						religion = winter_court 
 						army_size = ROOT
 					}
 				}
