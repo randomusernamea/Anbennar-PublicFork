@@ -18,8 +18,8 @@ country_event = {
 			}
 		}
 		custom_tooltip = raithtall_iadth_tt
-		eordand_superregion = {
-			if = {
+		hidden_effect = {
+			eordand_superregion = {
 				limit = { is_core = H09 }
 				if = {
 					limit = {
@@ -242,13 +242,15 @@ country_event = {
 	title = flavor_raithtall.9.t
 	desc = flavor_raithtall.9.d
 	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
 	
 	is_triggered_only = yes
 	
 	immediate = {
 		add_country_modifier = {
 			name = raithtall_superb_harvest
-			duration = 91
+			duration = 122
 		}
 	}
 	

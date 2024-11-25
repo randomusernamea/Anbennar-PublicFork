@@ -15,9 +15,11 @@ raithtall_1 = {
 		provinces_to_highlight = {
 			province_id = 2003
 			NOT = {
-				owned_by = ROOT
-				is_core = ROOT
-				religion = autumn_court
+				AND = {
+					owned_by = ROOT
+					is_core = ROOT
+					religion = autumn_court
+				}
 			}
 		}
 		
@@ -47,8 +49,10 @@ raithtall_1 = {
 			area = domandrod_gladeway_4_area
 			OR = {
 				NOT = {
-					owned_by = ROOT
-					is_core = ROOT
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
 				}
 				domandrod_gladeway_4_area = { has_production_building_trigger = no }
 			}
@@ -75,13 +79,13 @@ raithtall_1 = {
 
 			iadth_area = {
 				add_permanent_province_modifier = {
-					name = raithtall_golden_groves
+					name = raithtall_golden_acres
 					duration = -1
 				}
 			}
 			raithlos_area = {
 				add_permanent_province_modifier = {
-					name = raithtall_golden_groves
+					name = raithtall_golden_acres
 					duration = -1
 				}
 			}
@@ -137,18 +141,25 @@ raithtall_1 = {
 			
 			NOT = {
 				any_owned_province = {
-					AND = {
-						is_core = H08
-						culture = peitar
-						has_fort_building_trigger = yes
-					}
+					is_core = H08
+					culture = peitar
+					has_fort_building_trigger = yes
 				}
 			}
 		}
 		
 		effect = {
-			every_owned_province = {
-				if = {
+			custom_tooltip = raithtall_disarmed_population_tt1
+			tooltip = {
+    			add_base_manpower = -1
+				add_base_production = 1
+				add_province_modifier = {
+					name = raithtall_disarmed_population
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
 					limit = { religion = eordellon }
 					add_base_manpower = -1
 					add_base_production = 1
@@ -156,13 +167,9 @@ raithtall_1 = {
 						name = raithtall_disarmed_population
 						duration = 5475
 					}
-					custom_tooltip = raithtall_disarmed_population_tt
 				}
 			}
-			if = {
-				limit = { any_owned_province = { religion = eordellon } }
-				custom_tooltip = raithtall_disarmed_population_tt
-			}
+			custom_tooltip = raithtall_disarmed_population_tt2
 
 			if = {
 				limit = {
@@ -245,8 +252,10 @@ raithtall_2 = {
 				AND = {
 					province_id = 2014
 					NOT = {
-						owned_by = ROOT
-						has_tax_building_trigger = yes
+						AND = {
+							owned_by = ROOT
+							has_tax_building_trigger = yes
+						}
 					}
 				}
 				AND = {
@@ -330,15 +339,16 @@ raithtall_2 = {
 		effect = {
 			2049 = { add_permanent_claim = ROOT }
 
-			every_owned_province = {
-				if = {
+			custom_tooltip = raithtall_discipline_arakeprun_tt
+			hidden_effect = {
+				every_owned_province = {
 					limit = {
 						OR = {
 							is_core = H01
 							is_core = H04
 						}
 					}
-					add_nationalism = -2.5
+					add_nationalism = -5
 				}
 			}
 
@@ -518,8 +528,10 @@ raithtall_2 = {
 								}
 							}
 							NOT = {
-								has_tax_building_trigger = yes
-								development = 12
+								AND = {
+									has_tax_building_trigger = yes
+									development = 12
+								}
 							}
 						}
 					}
@@ -530,20 +542,14 @@ raithtall_2 = {
 		trigger = {
 			NOT = {
 				eordand_superregion = {
-					any_country = { religion = eordellon }
-					any_province = {
+					owner = { religion = eordellon }
+					AND = {
 						religion = eordellon
 						is_city = yes
 					}
 				}
 			}
 
-			num_of_owned_provinces_with = {
-				value = 5
-				culture = peitar
-				has_tax_building_trigger = yes
-				development = 12
-			}
 			if = {
 				limit = {
 					calc_true_if = {
@@ -714,9 +720,11 @@ raithtall_3 = {
 		provinces_to_highlight = {
 			province_id = 2014
 			NOT = {
-				owned_by = ROOT
-				religion = autumn_court
-				development = 12
+				AND = {
+					owned_by = ROOT
+					religion = autumn_court
+					development = 12
+				}
 			}
 		}
 		
@@ -774,9 +782,11 @@ raithtall_3 = {
 				AND = {
 					province_id = 1118
 					NOT = {
-						owned_by = H11
-						has_production_building_trigger = yes
-						base_production = 6
+						AND = {
+							owned_by = H11
+							has_production_building_trigger = yes
+							base_production = 6
+						}
 					}
 				}
 			}
@@ -832,8 +842,10 @@ raithtall_3 = {
 				AND = {
 					province_id = 2159
 					NOT = {
-						owned_by = ROOT
-						has_trade_building_trigger = yes
+						AND = {
+							owned_by = ROOT
+							has_trade_building_trigger = yes
+						}
 					}
 				}
 
@@ -923,7 +935,7 @@ raithtall_3 = {
 		effect = {
 			add_country_modifier = {
 				name = raithtall_superb_harvest
-				duration = 91
+				duration = 122
 			}
 			custom_tooltip = raithtall_superb_harvest_tt
 			hidden_effect = {
@@ -959,15 +971,14 @@ raithtall_3 = {
 				limit = {
 					calc_true_if = {
 						amount = 2
-						eordand_superregion = {
-							any_country = {
-								OR = {
-									culture = peitar
-									culture = snecboth
-									culture = selphereg
-									culture = caamas
-								}
+						all_known_country = {
+							OR = {
+								culture = peitar
+								culture = snecboth
+								culture = selphereg
+								culture = caamas
 							}
+							capital_scope = { superregion = eordand_superregion }
 						}
 					}
 				}
@@ -990,7 +1001,7 @@ raithtall_3 = {
 			else_if = {
 				limit = {
 					eordand_superregion = {
-						any_country = {
+						owner = {
 							OR = {
 								culture = peitar
 								culture = snecboth
@@ -1058,7 +1069,7 @@ raithtall_3 = {
 							owned_by = ROOT
 							development = 10
 							is_prosperous = yes
-							has_province_modifier = raithtall_golden_groves
+							has_province_modifier = raithtall_golden_acres
 						}
 					}
 				}
@@ -1071,41 +1082,12 @@ raithtall_3 = {
 		}
 		
 		trigger = {
-			if = {
-				limit = {
-					has_global_modifier_value = {
-						which = num_accepted_cultures
-						value = 4
-					}
-				}
+			calc_true_if = {
+				amount = 2
 				accepted_culture = selphereg
 				accepted_culture = caamas
 				accepted_culture = snecboth
 				accepted_culture = peitar
-			}
-			else_if = {
-				limit = {
-					has_global_modifier_value = {
-						which = num_accepted_cultures
-						value = 3
-					}
-				}
-				calc_true_if = {
-					amount = 3
-					accepted_culture = selphereg
-					accepted_culture = caamas
-					accepted_culture = snecboth
-					accepted_culture = peitar
-				}
-			}
-			else = {
-				calc_true_if = {
-					amount = 2
-					accepted_culture = selphereg
-					accepted_culture = caamas
-					accepted_culture = snecboth
-					accepted_culture = peitar
-				}
 			}
 
 			#TODO - Add x favors with Gloam Knight requirement once patron system is in
@@ -1115,14 +1097,14 @@ raithtall_3 = {
 				owned_by = ROOT
 				development = 10
 				is_prosperous = yes
-				has_province_modifier = raithtall_golden_groves
+				has_province_modifier = raithtall_golden_acres
 			}
 			iadth_area = {
 				type = all
 				owned_by = ROOT
 				development = 10
 				is_prosperous = yes
-				has_province_modifier = raithtall_golden_groves
+				has_province_modifier = raithtall_golden_acres
 			}
 
 			NOT = { any_subject_country = { liberty_desire = 50 } }
@@ -1183,7 +1165,7 @@ raithtall_3 = {
 			}
 
 			custom_tooltip = raithtall_yearly_harvest_tt
-			hidden_effect = { set_global_flag = raithtall_yearly_harvest_flag }
+			hidden_effect = { set_country_flag = raithtall_yearly_harvest_flag }
 		}
 	}
 }
@@ -1209,8 +1191,10 @@ raithtall_4 = {
 				AND = {
 					province_id = 1969
 					NOT = {
-						owned_by = ROOT
-						has_tax_building_trigger = yes
+						AND = {
+							owned_by = ROOT
+							has_tax_building_trigger = yes
+						}
 					}
 				}
 
@@ -1616,22 +1600,11 @@ raithtall_5 = {
 					culture = snecboth
 				}
 
-				if = {
-					limit = {
-						check_variable = {
-							which = raithtall_winter_battle_won
-							value = 8
-						}
-					}
-					custom_trigger_tooltip = {
-						tooltip = raithtall_0_winter_battles_won_tt	
-						always = yes
-					}
-				}
-				else = {
-					custom_trigger_tooltip = {
-						tooltip = raithtall_0_winter_battles_won_tt	
-						always = no
+				custom_trigger_tooltip = {
+					tooltip = raithtall_winter_battles_won_tt
+					check_variable = {
+						which = raithtall_winter_battle_won
+						value = 8
 					}
 				}
 			}
@@ -1644,14 +1617,11 @@ raithtall_5 = {
 			}
 			hidden_effect = {
 				eordand_superregion = {
-					type = all
-					if = {
-						limit = {
-							religion = winter_court
-							is_city = yes
-						}
-						add_permanent_claim = ROOT
+					limit = {
+						religion = winter_court
+						is_city = yes
 					}
+					add_permanent_claim = ROOT
 				}
 			}
 			custom_tooltip = raithtall_winter_claims_tt
@@ -1673,10 +1643,12 @@ raithtall_5 = {
 				AND = {
 					province_id = 1775
 					NOT = {
-						country_or_subject_holds= ROOT
-						num_of_units_in_province = {
-							who = ROOT
-							amount = 10
+						AND = {
+							country_or_subject_holds = ROOT
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 10
+							}
 						}
 					}
 				}
