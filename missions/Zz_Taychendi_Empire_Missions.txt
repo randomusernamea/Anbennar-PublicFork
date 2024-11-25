@@ -3870,23 +3870,7 @@ J84_5_missions = {
 					amount = 8
 					effect = "
 						random_province = {
-							limit = {
-								country_or_non_sovereign_subject_holds = ROOT
-								OR = {
-									region = mteibas_valley_region
-									region = chendhya_region
-								}
-								num_of_units_in_province = {
-									amount = 5
-									who = ROOT
-									type = cavalry
-								}
-								trade_goods = livestock
-								has_manpower_building_trigger = yes
-								has_production_building_trigger = yes
-								religion = gods_of_the_taychend_reformed
-								NOT = { has_province_modifier = J84_valley_raider_camps }
-							}
+							limit = { taychendi_empire_raiders_of_the_moon_prov_reqs = yes }
 							add_province_modifier = {
 								name = J84_valley_raider_camps
 								duration = -1
