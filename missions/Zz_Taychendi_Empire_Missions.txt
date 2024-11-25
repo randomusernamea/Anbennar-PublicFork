@@ -1094,7 +1094,7 @@ J84_2_missions_part_1 = {
 			ROOT = {
 				NOT = {
 					num_of_owned_provinces_with = {
-						value = 10
+						value = 6
 						OR = {
 							trade_goods = grain
 							trade_goods = wine
@@ -1126,7 +1126,7 @@ J84_2_missions_part_1 = {
 				superregion = taychend_superregion 
 			}
 			num_of_owned_provinces_with = {
-				value = 10
+				value = 6
 				OR = {
 					trade_goods = grain
 					trade_goods = wine
@@ -1510,16 +1510,16 @@ J84_2_missions_part_2 = {
 		trigger = {
 			trade_goods_produced_amount = {
 				trade_goods = grain
-				amount = 50
+				amount = 35
 			}
 			OR = {
 				trade_goods_produced_amount = {
 					trade_goods = wine
-					amount = 25
+					amount = 15
 				}
 				trade_goods_produced_amount = {
 					trade_goods = fish
-					amount = 25
+					amount = 15
 				}
 			}
 			OR = {
@@ -2030,7 +2030,7 @@ J84_3_missions = {
 			ROOT = {
 				NOT = {
 					num_of_owned_provinces_with = {
-						value = 10
+						value = 6
 						OR = {
 							trade_goods = slaves
 							trade_goods = iron
@@ -2046,7 +2046,7 @@ J84_3_missions = {
 
 		trigger = {
 			num_of_owned_provinces_with = {
-				value = 10
+				value = 6
 				OR = {
 					trade_goods = slaves
 					trade_goods = iron
@@ -2075,7 +2075,7 @@ J84_3_missions = {
 						value = 50
 					}
 				}
-				custom_tooltip = J84_lose_20_vainglory_yes_tt
+				custom_tooltip = J84_lose_25_vainglory_yes_tt
 				hidden_effect = {
 					add_government_power = {
 						mechanic_type = taychend_vainglory_mechanic
@@ -2084,7 +2084,7 @@ J84_3_missions = {
 					}
 				}
 			}
-			else = { custom_tooltip = J84_lose_20_vainglory_no_tt }
+			else = { custom_tooltip = J84_lose_25_vainglory_no_tt }
 			country_event = {
 				id = taychendi_empire_events.3 #Crazy, Crazy, Crazy
 			}
@@ -2113,7 +2113,7 @@ J84_3_missions = {
 
 		trigger = {
 			num_of_owned_provinces_with = {
-				value = 15
+				value = 8
 				superregion = taychend_superregion
 				development = 30
 				has_tax_building_trigger = yes
@@ -3435,17 +3435,19 @@ J84_4_missions = {
 		}
 
 		trigger = {
-			trade_goods_produced_amount = {
-				trade_goods = iron
-				amount = 25
-			}
-			trade_goods_produced_amount = {
-				trade_goods = copper
-				amount = 25
-			}
-			trade_goods_produced_amount = {
-				trade_goods = slaves
-				amount = 25
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = iron
+					amount = 20
+				}
+				trade_goods_produced_amount = {
+					trade_goods = copper
+					amount = 20
+				}
+				trade_goods_produced_amount = {
+					trade_goods = slaves
+					amount = 20
+				}
 			}
 			production_leader = { trade_goods = precursor_relics }
 			OR = {

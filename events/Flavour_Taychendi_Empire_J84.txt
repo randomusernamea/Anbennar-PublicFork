@@ -1494,6 +1494,14 @@ country_event = {
 				casus_belli = cb_war_for_the_singing_jungle
 				who = ROOT
 			}
+			hidden_effect = {
+				capital_scope = {
+					for = {
+						amount = 80
+						effect = "infantry = ROOT"
+					}
+				}
+			}
 		}
 		custom_tooltip = J84_dont_fuckin_white_peace_tt
 	}
@@ -2169,8 +2177,10 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = { 
-					NOT = { superregion = taychend_superregion } 
-					is_island = no 
+					NOT = { 
+						superregion = taychend_superregion 
+						province_group = taychend_islands
+					} 
 				}
 				save_event_target_as = taychend_vainglory_province_revolt
 			}
@@ -2182,56 +2192,56 @@ country_event = {
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 1 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 1 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 1 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 1 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 1 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 2 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 2 }
 		}
 		random_owned_province = {
 			limit = {
 				region = event_target:taychend_vainglory_province_revolt
-				is_island = no
+				NOT = { province_group = taychend_islands }
 			}
 			spawn_rebels = { type = nationalist_rebels size = 2 }
 		}

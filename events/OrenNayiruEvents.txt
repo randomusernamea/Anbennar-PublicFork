@@ -1417,7 +1417,7 @@ country_event = {
 		else = {
 			random_province = {
 				limit = {
-					is_island = no
+					NOT = { province_group = taychend_islands }
 					superregion = taychend_superregion
 					area_for_scope_province = {
 						type = all
