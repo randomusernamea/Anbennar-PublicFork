@@ -1034,7 +1034,7 @@ F71_3_part2_pre_optional = {
 			}
 			accepted_culture = pyreclaw_gnoll
 			num_of_owned_provinces_with = {
-				value = 10
+				value = 5
 				culture = pyreclaw_gnoll
 				has_manpower_building_trigger = yes
 			}
@@ -1276,26 +1276,32 @@ F71_1_part2 = {
 			OR = {
 				AND = {
 					region = horashesh_region
+					NOT = { religion = ROOT }
 					NOT = {
 						AND = {
-							has_tax_building_trigger = yes
-							has_manpower_building_trigger = yes	
+							OR = {
+								has_tax_building_trigger = yes
+								has_production_building_trigger = yes
+							}
+							has_manpower_building_trigger = yes
 						}
 					}
 				}
 				AND = {
-					OR = {
-						province_id = 5700
-						province_id = 5836
-						province_id = 5872
-						province_id = 5860
-						province_id = 5847
-						province_id = 5840
+					region = horashesh_region
+					NOT = {
+						AND = {
+							religion = ROOT
+							has_tax_building_trigger = yes
+						}
 					}
+				}
+				AND = {
+					province_id = 5840
 					NOT = {
 						AND = {
 							owned_by = ROOT
-							province_has_center_of_trade_of_level = 2
+							province_has_center_of_trade_of_level = 3
 						}
 					}
 				}
@@ -1303,96 +1309,75 @@ F71_1_part2 = {
 		} 
 
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 15
-				region = horashesh_region
-				has_tax_building_trigger = yes
-				has_manpower_building_trigger = yes
-			}
-			5700 = {
-				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
-			}
-			5836 = {
-				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
-			}
-			5872 = {
-				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
-			}
-			5860 = {
-				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
-			}
-			5847 = {
-				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
-			}
 			5840 = {
 				owned_by = ROOT
-				province_has_center_of_trade_of_level = 2
+				province_has_center_of_trade_of_level = 3
+			}
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 10
+					region = horashesh_region
+					NOT = { religion = ROOT }
+					OR = {
+						has_tax_building_trigger = yes
+						has_production_building_trigger = yes
+					}
+					has_manpower_building_trigger = yes
+				}
+				num_of_owned_provinces_with = {
+					value = 10
+					region = horashesh_region
+					religion = ROOT
+					has_tax_building_trigger = yes
+				}
 			}
 		}
 
 		effect = {
 			custom_tooltip = rakkaz_warlock_unlock_missionary_tooltip
 			set_country_flag = rakkaz_warlock_unlock_missionary
-			if = {
-				limit = { 5840 = { province_has_center_of_trade_of_level = 3 }  } 
-				add_treasury = 1000
-			}
-			else = { 5840 = { add_center_of_trade_level = 1 }  } 
-			custom_tooltip = rakkaz_five_most_developed_provinces_horashesh
-			tooltip = {
-				change_religion = ROOT
-				add_or_upgrade_manpower_building = yes
-			}
-			pick_best_provinces = {
-				5 = yes
-				scope = every_owned_province
-				scale = higher_development_than
-				global_trigger = "
-				region = horashesh_region 
-				NOT = { religion = ROOT }
+			custom_tooltip = " "
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_develop_provinces
+				first_limit = "
+					num_of_owned_provinces_with = {
+						value = 10
+						region = horashesh_region
+						NOT = { religion = ROOT }
+						OR = {
+							has_tax_building_trigger = yes
+							has_production_building_trigger = yes
+						}
+						has_manpower_building_trigger = yes
+					}
 				"
-				event_target_name = "rakkaz_religion_horashesh_target"
+				first_effect = "
+					5863 = { 
+						add_base_production = 2
+						add_or_upgrade_production_building = yes 
+					}
+				"
 			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_religion_horashesh_target_1 } 
-				event_target:rakkaz_livestock_horashesh_target_1 = {
-					change_religion = ROOT
-					add_or_upgrade_manpower_building = yes
-				}
+			custom_tooltip = " "
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_convert_provinces
+				first_limit = "
+					num_of_owned_provinces_with = {
+						value = 10
+						region = horashesh_region
+						religion = ROOT
+						has_tax_building_trigger = yes
+					}
+				"
+				first_effect = "
+					5863 = { 
+						add_base_manpower = 2
+						add_or_upgrade_manpower_building = yes 
+					}
+				"
 			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_religion_horashesh_target_2 } 
-				event_target:rakkaz_religion_horashesh_target_2 = {
-					change_religion = ROOT
-					add_or_upgrade_manpower_building = yes
-				}
-			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_religion_horashesh_target_3 } 
-				event_target:rakkaz_religion_horashesh_target_3 = {
-					change_religion = ROOT
-					add_or_upgrade_manpower_building = yes
-				}
-			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_religion_horashesh_target_4 } 
-				event_target:rakkaz_religion_horashesh_target_4 = {
-					change_religion = ROOT
-					add_or_upgrade_manpower_building = yes
-				}
-			}
-			if = {
-				limit = { has_saved_event_target = rakkaz_religion_horashesh_target_5 } 
-				event_target:rakkaz_religion_horashesh_target_5 = {
-					change_religion = ROOT
-					add_or_upgrade_manpower_building = yes
-				}
-			}
+			custom_tooltip = " "
+			custom_tooltip = rakkaz_both_rewards
 		}
 	}
 }
@@ -1473,12 +1458,14 @@ F71_2_part2 = {
 				AND = {
 					owned_by = ROOT
 					is_core = ROOT
-					if = {
-						limit = { has_dlc = Leviathan }
-						num_of_times_expanded_infrastructure = 1
+					OR = {
+						if = {
+							limit = { has_dlc = Leviathan }
+							num_of_times_expanded_infrastructure = 1
+						}
+						else = { development = 15 }
+						has_building = mage_tower
 					}
-					else = { development = 15 }
-					has_building = mage_tower
 					province_has_center_of_trade_of_level = 2
 				}
 			}
@@ -1488,13 +1475,15 @@ F71_2_part2 = {
 			5483 = {
 				owned_by = ROOT
 				is_core = ROOT
-				if = {
-					limit = { has_dlc = Leviathan }
-					num_of_times_expanded_infrastructure = 1
-				}
-				else = { development = 15 }
-				has_building = mage_tower
 				province_has_center_of_trade_of_level = 2
+				OR = {
+					if = {
+						limit = { has_dlc = Leviathan }
+						num_of_times_expanded_infrastructure = 1
+					}
+					else = { development = 15 }
+					has_building = mage_tower
+				}
 			}
 		} 
 
@@ -1643,6 +1632,34 @@ F71_2_part2 = {
 					add_permanent_province_modifier = {
 						name = rakkaz_channeling_suffering
 						duration = 7300
+					}
+				}
+			}
+			complex_dynamic_effect = {
+				first_custom_tooltip = rakkaz_trading_in_slaves
+				first_limit = "
+					trading_bonus = {
+						trade_goods = slaves
+						value = yes
+					}
+				"
+				first_effect = "
+					custom_tooltip = rakkaz_distribute_development_slaves
+					tooltip = { 
+						distribute_development = {
+							amount = 10
+							type = production
+						}
+					}
+				"
+			}
+			hidden_effect = {
+				if = {
+					limit = { trading_bonus = { trade_goods = slaves value = yes } }
+					distribute_development = {
+						amount = 10
+						type = production
+						limit = " trade_goods = slaves "
 					}
 				}
 			}
@@ -1925,8 +1942,6 @@ F71_4_part2 = {
 							}
 						}
 						else = { development = 30 }
-						has_production_building_trigger = yes
-						num_of_times_expanded_infrastructure = 1
 					}
 				}
 			}
@@ -1943,8 +1958,6 @@ F71_4_part2 = {
 					}
 				}
 				else = { development = 30 }
-				has_production_building_trigger = yes
-				num_of_times_expanded_infrastructure = 1
 			}
 		} 
 
@@ -2005,7 +2018,6 @@ F71_4_part2 = {
 				value = 5
 				culture_group = gnollish
 				has_manpower_building_trigger = yes
-				has_forcelimit_building_trigger = yes
 				base_manpower = 5
 			}
 		} 
@@ -2041,7 +2053,7 @@ F71_4_part2 = {
 			has_province_modifier = rakkaz_fighting_pit
 			NOT = {
 				AND = {
-					has_building = ramparts
+					has_building = mage_tower
 					province_has_current_tech_fort_trigger = yes
 				}
 			}
@@ -2055,7 +2067,7 @@ F71_4_part2 = {
 			num_of_owned_provinces_with = {
 				value = 3
 				has_province_modifier = rakkaz_fighting_pit
-				has_building = ramparts
+				has_building = mage_tower
 				province_has_current_tech_fort_trigger = yes
 			}
 		} 
@@ -2197,6 +2209,7 @@ F71_5_part2 = {
 
 		effect = {  
 			custom_tooltip = rakkaz_warlock_unlock_autonomy_tooltip
+			custom_tooltip = " "
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
@@ -3346,7 +3359,8 @@ F71_3_part3 = {
 			custom_tooltip = rakkaz_can_have_three_warlock_pacts_tooltip
 			custom_tooltip = rakkaz_two_most_developed_provinces
 			tooltip = { 
-				upgrade_tax_building = yes
+				add_or_upgrade_tax_building = yes
+				add_or_upgrade_production_building = yes
 				change_trade_goods = slaves
 				rakkaz_add_fighting_pit_modifier = yes
 			} 
@@ -3364,7 +3378,8 @@ F71_3_part3 = {
 			if = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_1 } 
 				event_target:rakkaz_shadowswamp_target_1 = { 
-					upgrade_tax_building = yes
+					add_or_upgrade_tax_building = yes
+					add_or_upgrade_production_building = yes
 					change_trade_goods = slaves
 					rakkaz_add_fighting_pit_modifier = yes
 				} 
@@ -3372,7 +3387,8 @@ F71_3_part3 = {
 			if = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_2 } 
 				event_target:rakkaz_shadowswamp_target_2 = { 
-					upgrade_tax_building = yes
+					add_or_upgrade_tax_building = yes
+					add_or_upgrade_production_building = yes
 					change_trade_goods = slaves
 					rakkaz_add_fighting_pit_modifier = yes
 				} 
