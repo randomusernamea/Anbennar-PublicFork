@@ -43382,3 +43382,51 @@ U35_ideas = {
 	}
 }
 
+# Bloodgroves
+U56_ideas = {
+	start = {
+		naval_forcelimit_modifier = 0.2 
+		army_tradition = 0.5
+	}
+	
+	bonus = {  
+		ship_durability = 0.05
+	}
+	
+	trigger = {
+		tag = U56 # Bloodgroves
+	}
+	free = yes
+	
+	U56_bound_by_blood = { # Bound by Blood. Many call the Bloodgroves home, from the Kwineh Ruinborn, Sornicandi adventurer, Elven reclaimers and other colonizers. These many groups have their own interests and history has often pitted them against each other. The bonds between these groups are fragile, but the common struggle with the curse of the land pushes them to cooperate.
+		promote_culture_cost = -0.25
+		num_accepted_cultures = 2
+	}
+	
+	U56_ganogeh_rangers = { # Ganogeh’s Rangers. After centuries exploring the groves, the Kwineh has gained great knowledge of the land which we use to fight Bloodfeeders. A Ruinborn named Ganogeh created rangers units that protected the frontiers of the Bloodgroves using this knowledge.
+		leader_land_manuever = 1
+		movement_speed = 0.1
+	}
+	
+	U56_vine_coast = { # The Vine Coast. The coast of the Bloodgroves is home to most of the Sornicandi communities where they can be found either lending their naval expertise to our fledgling navy, or working in vineyards. Their Issushi Wine, when mixed with fish and shellfish traditionally eaten by the Kwineh, form the first trace of Bloodgrover culture.
+		navy_tradition_decay = -0.01
+		monthly_splendor = 1
+	}
+	
+	U56_bloodglades = { # Bloodglades. The Bloodgroves attracted many Cannorian elves who created communities living in glades similar to what they did in Cannor. In these Bloodglades, they specialize in getting resources from the Blood Trees be it lumber or dyes and syrup from the sap.
+		production_efficiency = 0.1
+	}
+	
+	U56_reconstruction_of_kwinehcost = { # The Reconstruction of Kwinehcóst. Kwinehcóst has a long history. Originally the only permanent settlement of the Kwineh, it was taken and destroyed by Aelnar. Its reconstruction was a challenge, but it allowed us to learn how to build in the condition of the Bloodgroves. The result is a large city mixing the style of all those that call the Bloodgroves home. 
+		development_cost = -0.15 
+	}
+	
+	U56_suinith = { # Suinith. Elven for Blood Mark. The most common artistic expression of the Bloodgrovers are their Suinith, red tattoo in elven style, inspired by the Kwineh tradition of Blood tattoo.
+		manpower_in_accepted_culture_provinces = 0.2
+	}
+	
+	U56_under_the_weeping_trees = { # Under the Weeping Trees. Regardless of where they came, regardless of what faith they practice, every Bloodgrover has reverence for the Weeping Mother. Be it as a thanks for her help with the bounty of the land, or religious ritual, all  gather under weeping trees to honor her.
+		tolerance_heathen = 2
+	}
+}
+
