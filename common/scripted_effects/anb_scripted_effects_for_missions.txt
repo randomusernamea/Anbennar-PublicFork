@@ -11341,7 +11341,12 @@ ameion_kheionization_effect = {
 		25 = {
 			modifier = {
 				factor = 1.33
-				owner = { religious_ideas = 7 }
+				owner = {
+					OR = { 
+						religious_ideas = 7
+						overlord = { religious_ideas = 7 }
+					}
+				}
 			}
 			modifier = {
 				factor = 2
@@ -11378,25 +11383,45 @@ ameion_kheionization_effect = {
 		}
 		75 = { #Nothing
 			trigger = {
-				NOT = { owner = { religious_ideas = 7 } }
+				owner = {
+					NOT = { 
+						religious_ideas = 7
+						overlord = { religious_ideas = 7 }
+					}
+				}
 				NOT = { development = 20 }
 			}
 		}
 		67 = { #Nothing
 			trigger = {
-				owner = { religious_ideas = 7 }
+				owner = {
+					OR = { 
+						religious_ideas = 7
+						overlord = { religious_ideas = 7 }
+					}
+				}
 				NOT = { development = 20 }
 			}
 		}
 		50 = { #Nothing
 			trigger = {
-				NOT = { owner = { religious_ideas = 7 } }
+				owner = {
+					NOT = {
+						religious_ideas = 7
+						overlord = { religious_ideas = 7 }
+					}
+				}
 				development = 20
 			}
 		}
 		34 = { #Nothing
 			trigger = {
-				owner = { religious_ideas = 7 }
+				owner = {
+					OR = { 
+						religious_ideas = 7
+						overlord = { religious_ideas = 7 }
+					}
+				}
 				development = 20
 			}
 		}
