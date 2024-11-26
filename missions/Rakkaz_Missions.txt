@@ -16,9 +16,11 @@ F71_1_part1 = {
 		position = 3
 		required_missions = { F71_a_hollow_claim } 
 		provinces_to_highlight = {
-			owned_by = ROOT
-			religion = ROOT
-			unrest = 0
+			OR = {
+				area = zeewix_area
+				area = saymas_area
+				area = krahilyn_area
+			}
 		}
 
 		trigger = {
@@ -28,10 +30,12 @@ F71_1_part1 = {
 			}
 			num_of_owned_provinces_with = {
 				value = 15
-				religion = ROOT
+				religion = xhazobkult
 				NOT = { unrest = 0 }
 			}
-			stability = 1
+			zeewix_area = { owned_by = ROOT }
+			saymas_area = { owned_by = ROOT }
+			krahilyn_area = { owned_by = ROOT }
 		}
 
 		effect = {
@@ -46,7 +50,7 @@ F71_1_part1 = {
 					5470 = { province_has_center_of_trade_of_level = 2 }
 				"
 				first_effect = "
-					add_treasury = 100
+					5470 = { add_or_upgrade_trade_building = yes }
 				"
 				second_custom_tooltip = rakkaz_has_100_ducats
 				second_limit = "
@@ -132,7 +136,10 @@ F71_1_part1 = {
 				AND = {
 					owned_by = ROOT
 					is_core = ROOT
-					has_manpower_building_trigger = yes
+					OR = {
+						has_manpower_building_trigger = yes
+						base_manpower = 5
+					}
 				}
 			}
 		}
@@ -146,7 +153,10 @@ F71_1_part1 = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 5
 				culture = fieldstalker_gnoll
-				has_manpower_building_trigger = yes
+				OR = {
+					has_manpower_building_trigger = yes
+					base_manpower = 5
+				}
 			}
 		}
 
@@ -183,7 +193,6 @@ F71_2_part1 = {
 				loyalty = 60
 			}
 			army_size_percentage = 0.9
-			has_mil_advisor = yes
 		}
 
 		effect = {
@@ -233,7 +242,16 @@ F71_2_part1 = {
 				}
 				AND = {
 					province_id = 5481
-					unrest = 0
+					OR = {
+						has_tax_building_trigger = yes
+						if = {
+							limit = { has_dlc = Leviathan }
+							num_of_times_expanded_infrastructure = 1
+						}
+						else = {
+							development = 15
+						}
+					}
 					NOT = { has_tax_building_trigger = yes }
 				}
 				AND = {
@@ -257,7 +275,16 @@ F71_2_part1 = {
 			}
 			5481 = {
 				NOT = { unrest = 0 } 
-				has_tax_building_trigger = yes
+				OR = {
+					has_tax_building_trigger = yes
+					if = {
+						limit = { has_dlc = Leviathan }
+						num_of_times_expanded_infrastructure = 1
+					}
+					else = {
+						development = 15
+					}
+				}
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 2
@@ -270,8 +297,8 @@ F71_2_part1 = {
 			add_patriarch_authority = 0.1
 			5481 = {
 				add_nationalism = -10
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 		}
 	}
@@ -486,6 +513,7 @@ F71_3_part1 = {
 						add_base_tax = 1
 						add_base_production = 1
 						add_base_manpower = 1
+						add_or_upgrade_tax_building = yes
 					}
 				"
 			}
@@ -886,7 +914,10 @@ F71_5_part1 = {
 					}
 					else = { development = 15 }
 					has_tax_building_trigger = yes
-					has_trade_building_trigger = yes
+					OR = {
+						has_trade_building_trigger = yes
+						base_production = 10
+					}
 				}
 			}
 		}
@@ -899,7 +930,10 @@ F71_5_part1 = {
 				}
 				else = { development = 15 }
 				has_tax_building_trigger = yes
-				has_trade_building_trigger = yes
+				OR = {
+					has_trade_building_trigger = yes
+					base_production = 10
+				}
 			}
 		}
 
@@ -1228,8 +1262,8 @@ F71_1_part2 = {
 		effect = {
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_exploitation } 
 			5863 = {
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 		}
 	}
@@ -1466,7 +1500,11 @@ F71_2_part2 = {
 
 		effect = {  
 			unlock_estate_privilege = { estate_privilege = estate_mages_warlock_pact_overcharge }
-			add_prestige_or_monarch_power = { amount = 25 }
+			add_prestige_or_monarch_power = { amount = 20 }
+			5483 = { 
+				change_religion = ROOT
+				change_culture = ROOT
+			}
 		} 
 	}
 
@@ -1525,8 +1563,8 @@ F71_2_part2 = {
 		effect = {  
 			5881 = {
 				add_nationalism = -10
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 			if = { 
 				limit = { religion = xhazobkult }
@@ -3096,8 +3134,8 @@ F71_1_part3 = {
 		effect = {  
 			taneyas_superregion = { add_permanent_claim = ROOT }
 			5921 = {
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 				add_permanent_province_modifier = {
 					name = rakkaz_seat_of_darkness
 					duration = -1
@@ -3214,12 +3252,12 @@ F71_2_part3 = {
 
 		effect = {  
 			5941 = {
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 			5650 = {
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 			add_power_projection = {
 				type = 25_permanent_power_projection
@@ -3309,8 +3347,8 @@ F71_3_part3 = {
 			custom_tooltip = rakkaz_two_most_developed_provinces
 			tooltip = { 
 				upgrade_tax_building = yes
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			} 
 			pick_best_provinces = {
 				2 = yes
@@ -3327,16 +3365,16 @@ F71_3_part3 = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_1 } 
 				event_target:rakkaz_shadowswamp_target_1 = { 
 					upgrade_tax_building = yes
-					rakkaz_add_fighting_pit_modifier = yes
 					change_trade_goods = slaves
+					rakkaz_add_fighting_pit_modifier = yes
 				} 
 			}
 			if = {
 				limit = { has_saved_event_target = rakkaz_shadowswamp_target_2 } 
 				event_target:rakkaz_shadowswamp_target_2 = { 
 					upgrade_tax_building = yes
-					rakkaz_add_fighting_pit_modifier = yes
 					change_trade_goods = slaves
+					rakkaz_add_fighting_pit_modifier = yes
 				} 
 			}
 		} 
@@ -3443,8 +3481,8 @@ F71_4_part3 = {
 				country_event = { id = flavour_rakkaz.22 }
 			}
 			6690 = {
-				rakkaz_add_fighting_pit_modifier = yes
 				change_trade_goods = slaves
+				rakkaz_add_fighting_pit_modifier = yes
 			}
 		} 
 	}
