@@ -13704,6 +13704,10 @@ estate_church_validaunean_syncretism = {
 				religion = gods_of_the_taychend_reformed
 			}
 		}
+		OR = {
+			is_subject = no
+			is_subject_of = J99
+		}
 	}
 	on_granted = {
 		custom_tooltip = estate_church_validaunean_syncretism_effect_tooltip
@@ -13997,6 +14001,15 @@ estate_adventurers_track_vampire_nobility = {
 	max_absolutism = 0
 	is_valid = {
 		has_country_flag = B47_vampire_lords_on_the_run
+		NOT = {
+			AND = {
+				has_country_flag = B47_vampires_caught_borders
+				has_country_flag = B47_vampires_caught_esmaria
+				has_country_flag = B47_vampires_caught_dameshead
+				has_country_flag = B47_vampires_caught_damescrown
+				has_country_flag = B47_vampires_caught_lencenor
+			}
+		}
 	}
 
 	can_select = { always = yes }
