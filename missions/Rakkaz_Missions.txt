@@ -1777,10 +1777,14 @@ F71_3_part2 = {
 		} 
 
 		effect = {  
-			country_event = { id = flavour_rakkaz.9 }
+			set_country_flag = rakkaz_privilege_buff_2
+			custom_tooltip = rakkaz_privilege_buff_2_tooltip
+			custom_tooltip = " "
 			custom_tooltip = rakkaz_level2_advisor_tooltip
 			set_country_flag = rakkaz_level2_advisor
 			set_country_flag = rakkaz_unlock_mission_3
+			custom_tooltip = " "
+			country_event = { id = flavour_rakkaz.9 }
 			custom_tooltip = " "
 			swap_non_generic_missions = yes
 		} 
@@ -2471,6 +2475,8 @@ F71_2_part3_branch1_demon = {
 		effect = { 
 			custom_tooltip = rakkaz_warlock_unlock_demonpower_tooltip 
 			set_country_flag = rakkaz_warlock_unlock_demonpower
+			set_country_flag = rakkaz_privilege_buff_3
+			custom_tooltip = rakkaz_privilege_buff_3_tooltip
 			add_patriarch_authority = 0.25
 		} 
 	}
