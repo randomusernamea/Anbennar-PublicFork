@@ -13704,6 +13704,10 @@ estate_church_validaunean_syncretism = {
 				religion = gods_of_the_taychend_reformed
 			}
 		}
+		OR = {
+			is_subject = no
+			is_subject_of = J99
+		}
 	}
 	on_granted = {
 		custom_tooltip = estate_church_validaunean_syncretism_effect_tooltip
