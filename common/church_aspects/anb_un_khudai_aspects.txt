@@ -5,7 +5,7 @@ cost = 50
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -1
+		shock_damage = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -26,7 +26,7 @@ fire_2 = {
 		}
 		monarch_power = dip
 		modifier = {
-			global_unrest = -1
+			shock_damage = 0.05
 		}
 		ai_will_do = {
 			factor = 15
@@ -48,7 +48,7 @@ cost = 50
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -1
+		improve_relation_modifier = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -67,7 +67,7 @@ cost = 50
 	}
 	monarch_power = dip
 	modifier = {
-		global_unrest = -1
+		improve_relation_modifier = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -85,7 +85,7 @@ cost = 50
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -1
+		production_efficiency = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -103,7 +103,7 @@ cost = 50
 	}
 	monarch_power = dip
 	modifier = {
-		global_unrest = -1
+		production_efficiency = 0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -122,7 +122,7 @@ cost = 50
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -1
+		build_cost = -0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -142,7 +142,7 @@ cost = 50
 	}
 	monarch_power = dip
 	modifier = {
-		global_unrest = -1
+		build_cost = -0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -162,7 +162,7 @@ cost = 50
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -1
+		movement_speed = 0.1
 	}
 	ai_will_do = {
 		factor = 15
@@ -183,7 +183,7 @@ cost = 50
 	}
 	monarch_power = dip 
 	modifier = {
-		global_unrest = -1
+		movement_speed = 0.1
 	}
 	ai_will_do = {
 		factor = 15
@@ -202,7 +202,7 @@ insight_foundations = {
 	}
 	monarch_power = mil
 	modifier = {
-		global_unrest = -1
+		build_time = -0.05
 	}
 	ai_will_do = {
 		factor = 15
@@ -220,7 +220,7 @@ way_between_people = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		global_institution_spread = 0.2
 	}
 	ai_will_do = {
 		factor = 15
@@ -239,7 +239,7 @@ plentiful_harvests = {
 	}
 	monarch_power = mil
 	modifier = {
-		global_unrest = -1
+		global_prosperity_growth = 0.1
 	}
 	ai_will_do = {
 		factor = 15
@@ -261,7 +261,7 @@ pathways = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		caravan_power = 0.1
 	}
 	ai_will_do = {
 		factor = 15
@@ -284,7 +284,7 @@ spark_of_inspiration = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		advisor_pool = 1
 	}
 	ai_will_do = {
 		factor = 15
@@ -305,7 +305,7 @@ fierce_blows = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		prestige_from_land = 0.5
 	}
 	ai_will_do = {
 		factor = 15
@@ -327,7 +327,7 @@ tide_of_fury = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		leader_cost = -0.1
 	}
 	ai_will_do = {
 		factor = 15
@@ -347,7 +347,7 @@ well_made_land = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		state_maintenance_modifier = -0.25
 	}
 	ai_will_do = {
 		factor = 15
@@ -371,7 +371,7 @@ roar_of_pride = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		loot_amount = 0.5
 	}
 	ai_will_do = {
 		factor = 15
@@ -396,7 +396,7 @@ stone_ship = {
 	}
 	monarch_power = mil 
 	modifier = {
-		global_unrest = -1
+		global_ship_repair = 0.1
 	}
 	ai_will_do = {
 		factor = 15
