@@ -43405,7 +43405,7 @@ U56_ideas = {
 		num_accepted_cultures = 2
 	}
 	
-	U56_ganogeh_rangers = { # Ganogeh’s Rangers. After centuries exploring the groves, the Kwineh has gained great knowledge of the land which we use to fight Bloodfeeders. A Ruinborn named Ganogeh created rangers units that protected the frontiers of the Bloodgroves using this knowledge.
+	U56_ganogeh_rangers = { # Ganogehï¿½s Rangers. After centuries exploring the groves, the Kwineh has gained great knowledge of the land which we use to fight Bloodfeeders. A Ruinborn named Ganogeh created rangers units that protected the frontiers of the Bloodgroves using this knowledge.
 		leader_land_manuever = 1
 		movement_speed = 0.1
 	}
@@ -43419,7 +43419,7 @@ U56_ideas = {
 		production_efficiency = 0.1
 	}
 	
-	U56_reconstruction_of_kwinehcost = { # The Reconstruction of Kwinehcóst. Kwinehcóst has a long history. Originally the only permanent settlement of the Kwineh, it was taken and destroyed by Aelnar. Its reconstruction was a challenge, but it allowed us to learn how to build in the condition of the Bloodgroves. The result is a large city mixing the style of all those that call the Bloodgroves home. 
+	U56_reconstruction_of_kwinehcost = { # The Reconstruction of Kwinehcï¿½st. Kwinehcï¿½st has a long history. Originally the only permanent settlement of the Kwineh, it was taken and destroyed by Aelnar. Its reconstruction was a challenge, but it allowed us to learn how to build in the condition of the Bloodgroves. The result is a large city mixing the style of all those that call the Bloodgroves home. 
 		development_cost = -0.15 
 	}
 	
@@ -43535,4 +43535,51 @@ U76_ideas = {
 		cavalry_fire = 0.5
     }
 
+}
+
+#Daraela
+U45_ideas = {
+
+	start = {
+		defensiveness = 0.15
+		idea_cost = -0.1
+	}
+
+	bonus = {
+		land_morale = 0.1
+	}
+
+	trigger = {
+		tag = U45
+	}
+
+	U45_evergreen_halls = {
+		garrison_size = 0.2
+	}
+
+	U45_ekyunimoy_tunnels = {
+		production_efficiency = 0.1
+	}
+
+	U45_hermits_west = {
+		shock_damage = 0.1
+		tolerance_heathen = 1
+	}
+
+	U45_rigaks_hunters = {
+		manpower_in_accepted_culture_provinces = 0.1
+		num_accepted_cultures = 1
+	}
+
+	U45_lands_lost = {
+		colonists = 1
+	}
+
+	U45_good_king_wacaran = {
+		morale_damage_received = -0.1
+	}
+
+	U45_empire_beyond_hills = {
+		trade_efficiency = 0.1
+	}
 }
