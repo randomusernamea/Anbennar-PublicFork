@@ -33,9 +33,9 @@ F71_1_part1 = {
 				religion = xhazobkult
 				NOT = { unrest = 0 }
 			}
-			zeewix_area = { owned_by = ROOT }
-			saymas_area = { owned_by = ROOT }
-			krahilyn_area = { owned_by = ROOT }
+			zeewix_area = { type = all owned_by = ROOT }
+			saymas_area = { type = all owned_by = ROOT }
+			krahilyn_area = { type = all owned_by = ROOT }
 		}
 
 		effect = {
