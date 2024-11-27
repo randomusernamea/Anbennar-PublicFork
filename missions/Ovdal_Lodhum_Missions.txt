@@ -1687,36 +1687,44 @@ lodhum_bulwar_branch_5 = {
 					}
 					if = {
 						limit = { is_subject = yes }
-						add_liberty_desire = 100
-						create_alliance = H77
 						#needs to be 3 or less
-						if = {
-							limit = {
-								religion = bulwari_sun_cult
-								isolationism = 5
-								overlord = { is_chosen_country = yes }
+                        if = { limit = { is_subject_of = ROOT }
+                            add_trust = {
+                                who = ROOT
+                                value = 10
+                            }
+                        }
+                        else = {
+							H77 = {  support_independence_of = F26 }
+							add_liberty_desire = 100
+							if = {
+								limit = {
+									religion = bulwari_sun_cult
+									isolationism = 5
+									overlord = { is_chosen_country = yes }
+								}
+								decrease_nsc_isolation_level = yes
+								decrease_nsc_isolation_level = yes
+								decrease_nsc_isolation_level = yes
+							}	
+							else_if = {
+								limit = { 
+									religion = bulwari_sun_cult
+									isolationism = 4
+									overlord = { is_chosen_country = yes }
+								}
+								decrease_nsc_isolation_level = yes
+								decrease_nsc_isolation_level = yes
 							}
-							decrease_nsc_isolation_level = yes
-							decrease_nsc_isolation_level = yes
-							decrease_nsc_isolation_level = yes
-						}
-						else_if = {
+							else_if = {
 							limit = { 
-								religion = bulwari_sun_cult
-								isolationism = 4
-								overlord = { is_chosen_country = yes }
+									religion = bulwari_sun_cult
+									isolationism = 3
+									overlord = { is_chosen_country = yes }
+								}
+								decrease_nsc_isolation_level = yes
 							}
-							decrease_nsc_isolation_level = yes
-							decrease_nsc_isolation_level = yes
-						}
-						else_if = {
-							limit = { 
-								religion = bulwari_sun_cult
-								isolationism = 3
-								overlord = { is_chosen_country = yes }
-							}
-							decrease_nsc_isolation_level = yes
-						}
+                        }
 					}
 					else = { create_alliance = ROOT }
 				}
