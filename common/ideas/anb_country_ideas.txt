@@ -13386,7 +13386,7 @@ G69_ideas = {
     G69_sack_of_nanru_nakar = { #rezankand sacks nanru nakar, never again
         morale_damage_received = -0.1
     }
-    G69_the_fist_of_the_triple_alliance = { #primary enforcer of the triple alliances will outside the city
+    G69_the_fist_of_the_triple_alliance = { #primary enforcer of the triple alliance's will outside the city
         monarch_military_power = 1
     }
 }
@@ -20544,6 +20544,7 @@ H12_ideas = {
 	}
 	trigger = {
 		tag = H12
+		NOT = { has_country_flag = raithtall_dorcurt_restored }
 	}
 	free = yes
 
@@ -43432,6 +43433,45 @@ U56_ideas = {
 	}
 }
 
+#Dorcurt Ideas
+H12_D_ideas = {
+	start = {
+		infantry_power = 0.1 #Tuathak legions
+		tolerance_own = 2 #bulwark against Peitar and Snecboth invasion
+	}
+	bonus = {
+		shock_damage = 0.1 #study the blade
+	}
+	trigger = {
+		tag = H12
+		has_country_flag = raithtall_dorcurt_restored
+	}
+	free = yes
+	
+	H12_D_shield_of_autumn = { #Telling the story of how the Tuathak first encountered the Golden Acres.
+		manpower_recovery_speed = 0.15
+		war_exhaustion = -0.03
+	}
+	H12_D_gloam_knight = { #The Gloam Knight hunts down those who breaks the rules.
+		global_tax_modifier = 0.1
+		yearly_corruption = -0.1
+	}
+	H12_golden_acres = { #famous Tuathak legion training center
+		drill_gain_modifier = 0.25
+	}
+	H12_hospitality_during_darkest_days = { #Although we hate the cold death of Winter, the way to defeat it is to help the wayward Snecboth
+		global_missionary_strength = 0.015
+	}
+	H12_knofirm_nutcallers = { #Jahainar 'the Mad Artist' spent many years in solitude at the nut orchard
+		power_projection_from_insults = 1
+	}
+	H12_gemstone_forbiddence = { #anti-Einnsag politics, wearing of gems (sourced Einnsag) is illegal
+		global_spy_defence = 0.2
+	}
+	H12_cannorian_tourism = { #advertised for their beautiful year-long autumnal leaves
+		prestige = 1
+	}
+}
 
 
 #Rzenta
