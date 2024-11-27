@@ -5531,26 +5531,9 @@ moveable = 0
 		}
 	}
 	
-	windowType = {
-		name = "automated_missionary_button_entry"
-		backGround=""
-		position = { x=0 y = 0}
-		size = { x= 230 y = 28 }
-		moveable = 0
-		dontRender = ""
-		horizontalBorder= ""
-		verticalBorder= ""
-		fullscreen = no
-
-		guiButtonType = {
-			name = "missionary_icon"
-			position = { x=0 y = 0}
-			spriteType ="GFX_icon_missionary"
-		}
-	}
-
-
-
+	
+	
+	
 	################################################################################################
 	################# Church aspect item (for selection) For Un Khudai
 	windowType = {
@@ -5602,4 +5585,23 @@ moveable = 0
 			Orientation = "LEFT"
 		}
 	}
+	
+	windowType = {
+		name = "automated_missionary_button_entry"
+		backGround=""
+		position = { x=0 y = 0}
+		size = { x= 230 y = 28 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullscreen = no
+
+		guiButtonType = {
+			name = "missionary_icon"
+			position = { x=0 y = 0}
+			spriteType ="GFX_icon_missionary"
+		}
+	}
+
 }
