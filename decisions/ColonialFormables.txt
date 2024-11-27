@@ -585,6 +585,14 @@ country_decisions = {
 		}
 
 		allow = {
+			hidden_trigger = {
+				capital_scope = {
+					OR = {
+						region = epednan_expanse_region
+						region = ekyunimoy_region
+					}
+				}
+			}
 			adm_tech = 18
 			custom_trigger_tooltip = {
 				tooltip = horizona_provinces_TT
