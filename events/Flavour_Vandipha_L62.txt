@@ -501,8 +501,8 @@ country_event = { #Handler Event
 	is_triggered_only = yes
 
 	trigger = {
-		ai = no
 		tag = L62
+		ai = no
 		mission_completed = L62_halessi_diplomacy
 		NOT = { has_country_modifier = L62_minor_slave_shortage }
 		NOT = { has_country_modifier = L62_minor_slave_shortage_upgraded }
