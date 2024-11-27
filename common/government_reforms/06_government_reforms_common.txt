@@ -2608,49 +2608,7 @@ anbennar_T5_human_centaur = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -2679,49 +2637,7 @@ anbennar_T5_human_dwarven = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -2750,49 +2666,7 @@ anbennar_T5_human_elven = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -2822,49 +2696,7 @@ anbennar_T5_human_gnollish = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -2890,49 +2722,7 @@ anbennar_T5_human_gnomish = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -2972,49 +2762,7 @@ anbennar_T5_human_goblin = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3040,49 +2788,7 @@ anbennar_T5_human_half_elven = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3110,49 +2816,7 @@ anbennar_T5_human_half_orcish = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3182,49 +2846,7 @@ anbennar_T5_human_halfling = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3254,49 +2876,7 @@ anbennar_T5_human_harimari = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3323,49 +2903,7 @@ anbennar_T5_human_harpy = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3394,49 +2932,7 @@ anbennar_T5_human_hobgoblin = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3465,49 +2961,7 @@ anbennar_T5_human_human_1 = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3533,49 +2987,7 @@ anbennar_T5_human_human_2 = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3600,49 +3012,7 @@ anbennar_T5_human_kobold = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3671,49 +3041,7 @@ anbennar_T5_human_lizardfolk = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3774,49 +3102,7 @@ anbennar_T5_human_ogre = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3844,49 +3130,7 @@ anbennar_T5_human_orcish = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3916,49 +3160,7 @@ anbennar_T5_human_ruinborn = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -3987,49 +3189,7 @@ anbennar_T5_human_troll = {
 		NOT = { has_adventurer_reform = yes }
 		has_country_modifier = human_military
 		hidden_trigger = {
-			NOT = {
-				AND = {
-					high_tolerance_centaur_race_trigger = yes
-					high_tolerance_dwarven_race_trigger = yes
-					high_tolerance_elven_race_trigger = yes
-					high_tolerance_gnollish_race_trigger = yes
-					high_tolerance_gnomish_race_trigger = yes
-					high_tolerance_goblin_race_trigger = yes
-					high_tolerance_half_elven_race_trigger = yes
-					high_tolerance_half_orcish_race_trigger = yes
-					high_tolerance_halfling_race_trigger = yes
-					high_tolerance_harimari_race_trigger = yes
-					high_tolerance_harpy_race_trigger = yes
-					high_tolerance_hobgoblin_race_trigger = yes
-					high_tolerance_human_race_trigger = yes
-					high_tolerance_kobold_race_trigger = yes
-					high_tolerance_lizardfolk_race_trigger = yes
-					# high_tolerance_mechanim_race_trigger = yes
-					high_tolerance_ogre_race_trigger = yes
-					high_tolerance_orcish_race_trigger = yes
-					high_tolerance_ruinborn_race_trigger = yes
-					high_tolerance_troll_race_trigger = yes
-					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-					fast_owns_num_pops_of_race = { race = elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-					fast_owns_num_pops_of_race = { race = human amount = 1 }
-					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-					fast_owns_num_pops_of_race = { race = troll amount = 1 }
-				}
-			}
+			has_high_tolerance_and_pop_with_all_races = no
 		}
 	}
 	trigger = {
@@ -4060,46 +3220,8 @@ anbennar_T5_human_army_of_halann = {
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = anbennar_T5_human_army_of_halann_tt
-			AND = {
-				high_tolerance_centaur_race_trigger = yes
-				high_tolerance_dwarven_race_trigger = yes
-				high_tolerance_elven_race_trigger = yes
-				high_tolerance_gnollish_race_trigger = yes
-				high_tolerance_gnomish_race_trigger = yes
-				high_tolerance_goblin_race_trigger = yes
-				high_tolerance_half_elven_race_trigger = yes
-				high_tolerance_half_orcish_race_trigger = yes
-				high_tolerance_halfling_race_trigger = yes
-				high_tolerance_harimari_race_trigger = yes
-				high_tolerance_harpy_race_trigger = yes
-				high_tolerance_hobgoblin_race_trigger = yes
-				high_tolerance_human_race_trigger = yes
-				high_tolerance_kobold_race_trigger = yes
-				high_tolerance_lizardfolk_race_trigger = yes
-				# high_tolerance_mechanim_race_trigger = yes
-				high_tolerance_ogre_race_trigger = yes
-				high_tolerance_orcish_race_trigger = yes
-				high_tolerance_ruinborn_race_trigger = yes
-				high_tolerance_troll_race_trigger = yes
-				fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-				fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-				fast_owns_num_pops_of_race = { race = elven amount = 1 }
-				fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-				fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-				fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-				fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-				fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-				fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-				fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-				fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-				fast_owns_num_pops_of_race = { race = human amount = 1 }
-				fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-				fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-				fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-				fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-				fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-				fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-				fast_owns_num_pops_of_race = { race = troll amount = 1 }
+			hidden_trigger = {
+				has_high_tolerance_and_pop_with_all_races = yes
 			}
 		}
 	}
