@@ -2314,6 +2314,8 @@ lodhum_part2_2b = {
 		}
 		
 		effect = {
+			custom_tooltip = ovdal_woodland_thingy
+			hidden_effect = {
 			random_owned_province = {
 				limit = { province_group = hold_province }
 				add_base_tax = 2
@@ -2325,6 +2327,7 @@ lodhum_part2_2b = {
 				add_base_tax = 2
 				add_base_production = 2
 				add_base_manpower = 2
+			}
 			}
 			if = {
 				limit = { has_dlc = "Mandate of Heaven" }
