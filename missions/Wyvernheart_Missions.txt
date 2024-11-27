@@ -675,6 +675,22 @@ wyvernheart_column_2 = {
 			upper_alen_river_banks = { add_permanent_claim = ROOT }
 			241 = { add_permanent_claim = ROOT }
 			343 = { add_permanent_claim = ROOT }
+			hidden_effect = { #THIS IS A TEMP BYPASS UNTIL WE FIX CORINISM AND ITS SPAWNING
+				if = {
+					limit = { is_year = 1500 }
+					country_event = {
+						id = corinite.1
+						days = 3650
+					}
+				}
+				else_if = {
+					limit = { is_year = 1490 }
+					country_event = {
+						id = corinite.1
+						days = 7300
+					}
+				}
+			}
 		}
 	}
 
@@ -1071,7 +1087,10 @@ wyvernheart_column_3 = {
 			}
 			num_of_owned_provinces_with = {
 				value = 10
-				has_orcish_minority_trigger = yes
+				OR = {
+					has_orcish_minority_trigger = yes
+					has_half_orcish_minority_trigger = yes
+				}
 			}
 			729 = {
 				has_building = mage_tower
@@ -1092,11 +1111,29 @@ wyvernheart_column_3 = {
 					effect = "
 						random_owned_province = {
 							limit = {
-								has_orcish_minority_trigger = yes
+								OR = {
+									has_orcish_minority_trigger = yes
+									has_half_orcish_minority_trigger = yes
+								}
 							}
 							remove_orcish_minority_size_effect = yes
+							remove_half_orcish_minority_size_effect = yes
 						}
 					"
+				}
+				if = { #THIS IS A TEMP BYPASS UNTIL WE FIX CORINISM AND ITS SPAWNING
+					limit = { is_year = 1500 }
+					country_event = {
+						id = corinite.1
+						days = 3650
+					}
+				}
+				else_if = {
+					limit = { is_year = 1490 }
+					country_event = {
+						id = corinite.1
+						days = 7300
+					}
 				}
 			}
 		} 
@@ -1979,6 +2016,22 @@ wyvernheart_column_5 = {
 			country_event = {
 				id = flavour_wyvernheart.105
 			}
+			hidden_effect = { #THIS IS A TEMP BYPASS UNTIL WE FIX CORINISM AND ITS SPAWNING
+				if = {
+					limit = { is_year = 1500 }
+					country_event = {
+						id = corinite.1
+						days = 3650
+					}
+				}
+				else_if = {
+					limit = { is_year = 1490 }
+					country_event = {
+						id = corinite.1
+						days = 7300
+					}
+				}
+			}
 		} 
 	}
 
@@ -2054,7 +2107,10 @@ wyvernheart_column_5 = {
 			}
 			num_of_owned_provinces_with = {
 				value = 10
-				has_orcish_minority_trigger = yes
+				OR = {
+					has_orcish_minority_trigger = yes
+					has_half_orcish_minority_trigger = yes
+				}
 			}
 		}
 
@@ -2066,9 +2122,13 @@ wyvernheart_column_5 = {
 					effect = "
 						random_owned_province = {
 							limit = {
-								has_orcish_minority_trigger = yes
+								OR = {
+									has_orcish_minority_trigger = yes
+									has_half_orcish_minority_trigger = yes
+								}
 							}
 							remove_orcish_minority_size_effect = yes
+							remove_half_orcish_minority_size_effect = yes
 						}
 					"
 				}
@@ -2380,9 +2440,14 @@ wyvernheart_column_3_endgame = {
 		trigger = {
 			escann_proper = {
 				type = all
-				owned_by = ROOT
-				is_core = ROOT
-				culture = ROOT
+				OR = {
+					province_id = 896
+					AND = {
+						owned_by = ROOT
+						is_core = ROOT
+						culture = ROOT
+					}
+				}
 			}
 			NOT = { is_at_war = yes }
 			NOT = { num_of_rebel_armies = 1 }
