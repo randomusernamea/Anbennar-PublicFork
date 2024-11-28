@@ -125,6 +125,12 @@ province_event = {
 		}
 	}
 	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			anb_colony_becomes_human = yes
+		}
+	}
 	
 	option = {
 		name = anb_half_elves.2.a
@@ -162,6 +168,12 @@ province_event = {
 	}
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+			anb_colony_becomes_human = yes
+		}
+	}
+
 	option = {
 		name = anb_half_elves.3.a
 		ai_chance = {
