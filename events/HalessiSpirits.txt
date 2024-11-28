@@ -11626,6 +11626,7 @@ province_event = {	#Temple Corrupted
 									has_province_modifier = corrupted_temple_complex
 								}
 							}
+							change_variable = { which = devouring_path_flavor_counter value = 1 }
 							if = { #Summer festival, I know it looks ugly but it's not bad performance-wise
 								limit = { is_month = 11 }
 								country_event = { id = spirits.613 days = 213 }
@@ -11684,7 +11685,7 @@ province_event = {	#Temple Corrupted
 									has_province_modifier = corrupted_temple_complex
 								}
 							}
-							#country_event = { id = spirits.611 days = 365 }
+							country_event = { id = spirits.611 days = 365 }
 							hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } }
 						}
 					}
@@ -11949,8 +11950,6 @@ country_event = { #All Ancestors' Day
 	picture = FEAST_eventPicture
 
 	is_triggered_only = yes
-
-	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
 
 	option = {
 		name = spirits.613.a
