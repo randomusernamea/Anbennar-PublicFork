@@ -1416,22 +1416,7 @@ country_event = {
 		add_adm_power = -50
 		add_dip_power = -50
 		add_mil_power = -50
-		if = {
-			limit = { has_institution = feudalism }
-			2388 = { add_institution_embracement = { which = feudalism value = 100 }
-		}
-		if = {
-			limit = { has_institution = renaissance }
-			2388 = { add_institution_embracement = { which = renaissance value = 100 }
-		}
-		if = {
-			limit = { has_institution = new_world_i }
-			2388 = { add_institution_embracement = { which = new_world_i value = 100 }
-		}
-		if = {
-			limit = { has_institution = printing_press }
-			2388 = { add_institution_embracement = { which = printing_press value = 100 }
-		}
+		2388 = { give_all_embraced_institutions_to_province_effect = { tag = ROOT } }
 	}
 	option = {
 		name = flavor_ameion.30.b
