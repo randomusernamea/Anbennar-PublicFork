@@ -133,7 +133,7 @@ arawkelin_1 = {
 		position = 4
 		
 		provinces_to_highlight = {
-			culture = forest_yan
+			culture = naamjyut
 			has_owner_religion = no
 			owned_by = ROOT
 		}
@@ -141,7 +141,7 @@ arawkelin_1 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 3
-				culture = forest_yan
+				culture = naamjyut
 				has_owner_religion = yes
 			}
 			adm_power = 200
@@ -150,7 +150,7 @@ arawkelin_1 = {
 		effect = {
 			ringlet_isles_region = {
 				limit = {
-					culture = forest_yan
+					culture = naamjyut
 					owned_by = ROOT
 				}
 				change_culture = yan_kelino
@@ -264,12 +264,8 @@ arawkelin_1 = {
 		position = 8
 		
 		trigger = {
-			tag = Y20
-			alliance_with = ROOT
-			has_opinion = {
-				who = ROOT
-				value = 200
-			}
+			alliance_with = Y20
+			reverse_has_opinion = { who = Y20 value = 200 }
 		}
 		
 		effect = {
@@ -293,14 +289,13 @@ arawkelin_1 = {
 		position = 9
 		
 		trigger = {
-			OR = {
-				tag = A01
-				tag = A16
-				has_reform = wine_lord_reform
-			}
-			has_opinion = {
-				who = ROOT
-				value = 150
+			any_known_country = {
+				OR = {
+					tag = A01
+					tag = A16
+					has_reform = wine_lord_reform
+				}
+				has_opinion = { who = ROOT value = 150 }
 			}
 		}
 		
@@ -643,10 +638,10 @@ arawkelin_2 = {
 					OR = {
 						NOT = { mil_tech = ROOT }
 						capital_scope = {
-							NOT = { superregion = south_haless_superregion }
+							NOT = { superregion = vimdatrong_superregion }
 							NOT = { superregion = yanshen_superregion }
 							NOT = { superregion = rahen_superregion }
-							NOT = { superregion = north_haless_superregion }
+							NOT = { superregion = gozengun_superregion }
 						}
 					}
 				}
@@ -786,7 +781,8 @@ arawkelin_3 = {
 				region = lupulan_rainforest_region
 				OR = {
 					religion = mystic_accord
-					religion = righteous_path
+					religion = accretive_path
+					religion = transmutative_path
 				}
 			}
 		}
@@ -796,7 +792,8 @@ arawkelin_3 = {
 				value = 30
 				region = lupulan_rainforest_region
 				NOT = {
-					religion = righteous_path
+					religion = accretive_path
+					religion = transmutative_path
 					religion = mystic_accord
 				}
 			}
@@ -830,7 +827,8 @@ arawkelin_3 = {
 				region = lupulan_rainforest_region
 				OR = {
 					religion = mystic_accord
-					religion = righteous_path
+					religion = accretive_path
+					religion = transmutative_path
 				}
 			}
 		}
@@ -843,7 +841,8 @@ arawkelin_3 = {
 				value = 40
 				region = lupulan_rainforest_region
 				NOT = {
-					religion = righteous_path
+					religion = accretive_path
+					religion = transmutative_path
 					religion = mystic_accord
 				}
 			}
@@ -1066,8 +1065,6 @@ arawkelin_4 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 3
-				has_terrain = jungle
-				region = lupulan_rainforest_region
 				has_province_modifier = arawkelin_deforestation_in_progress
 			}
 			arawkelin_area = {
@@ -1473,11 +1470,14 @@ arawkelin_5 = {
 			4716 = {
 				center_of_trade = 2
 			}
-			lupulan_rainforest_region = {
-				limit = {
-					owned_by = Y72
+			custom_tooltip = Y65_conquer_kuta_tt
+			hidden_effect = { 
+				lupulan_rainforest_region = {
+					limit = {
+						owned_by = Y72
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
 		}
 	}

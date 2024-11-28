@@ -513,89 +513,7 @@ estate_shinukhorchi_build_manufactory_in_y = {
 	}
     task_requirements = {
 		event_target:agenda_province = {
-			custom_trigger_tooltip = {
-				tooltip = has_manufactory_trigger_tooltip
-				OR = {
-					if = {
-						limit = {
-							OR = {
-								trade_goods = naval_supplies
-								trade_goods = fish
-								trade_goods = salt
-							}
-						}
-						has_building = wharf
-					}
-					else_if = {
-						limit = {
-							OR = {
-								trade_goods = copper
-								trade_goods = iron
-							}
-						}
-						has_building = weapons
-					}
-					else_if = {
-						limit = {
-							OR = {
-								trade_goods = wool
-								trade_goods = cloth
-								trade_goods = silk
-								trade_goods = dyes
-							}
-						}
-						has_building = textile
-					}
-					else_if = {
-						limit = {
-							OR = {
-								trade_goods = ivory
-								trade_goods = slaves
-								trade_goods = spices
-								trade_goods = cloves
-								trade_goods = fur
-								trade_goods = incense
-							}
-						}
-						has_building = tradecompany
-					}
-					else_if = {
-						limit = {
-							OR = {
-								trade_goods = grain
-								trade_goods = livestock
-								trade_goods = wine
-							}
-						}
-						has_building = farm_estate
-					}
-					else_if = {
-						limit = {
-							OR = {
-								trade_goods = paper
-								trade_goods = gems
-								trade_goods = tropical_wood
-								trade_goods = glass
-								trade_goods = chinaware
-							}
-						}
-						has_building = mills
-					}
-					else_if = {
-						limit = {
-							trade_goods = coal
-						}
-						has_building = furnace
-					}
-					else = {
-						has_building = plantations
-					}
-					has_building = ramparts
-					has_building = soldier_households
-					has_building = impressment_offices
-					has_building = state_house
-				}
-			}
+			has_manufactory_trigger = yes
 		}
     }
     task_completed_effect = {
@@ -758,6 +676,7 @@ estate_shinukhorchi_convert_province_x = {
 			NOT = { has_province_modifier = religious_zeal_at_conv }
 			NOT = { has_province_modifier = expelled_minority }
 			NOT = { has_province_modifier = religious_migration }
+			NOT = { has_province_modifier = ahati_aakheta_base }
 			NOT = { religion = secondary }
 			has_missionary = no
 			missionary_strength = 0.01
@@ -818,6 +737,7 @@ estate_shinukhorchi_convert_province_x = {
 				NOT = { has_province_modifier = religious_zeal_at_conv }
 				NOT = { has_province_modifier = expelled_minority }
 				NOT = { has_province_modifier = religious_migration }
+				NOT = { has_province_modifier = ahati_aakheta_base }
 				NOT = { religion = secondary }
 				has_missionary = no
 			}
@@ -830,6 +750,7 @@ estate_shinukhorchi_convert_province_x = {
 				NOT = { has_province_modifier = religious_zeal_at_conv }
 				NOT = { has_province_modifier = expelled_minority }
 				NOT = { has_province_modifier = religious_migration }
+				NOT = { has_province_modifier = ahati_aakheta_base }
 				NOT = { religion = secondary }
 				has_missionary = no
 				development = 10
@@ -1094,7 +1015,8 @@ estate_shinukhorchi_crush_religious_revolts = {
 			has_spawned_rebels = saanorgegh_rebels
 			has_spawned_rebels = godlost_rebels
 			has_spawned_rebels = goblinic_shamanism_rebels
-			has_spawned_rebels = righteous_path_rebels
+			has_spawned_rebels = accretive_path_rebels
+			has_spawned_rebels = transmutative_path_rebels
 			has_spawned_rebels = high_philosophy_rebels
 		}
 
@@ -5009,6 +4931,11 @@ estate_khelorvalshi_conquer_precursor_relics = {
 				trade_goods = precursor_relics
 				has_discovered = ROOT
 			}
+			any_owned_province = { #any_neighbor_country includes neighboring tribal land, but any_neighbor_province doesn't - check we have an actual province bordering
+				any_neighbor_province = {
+					owned_by = ROOT
+				}
+			}
 			ROOT = {
 				knows_country = prev
 			}
@@ -5058,6 +4985,11 @@ estate_khelorvalshi_conquer_precursor_relics = {
 				any_owned_province = { #No need for this agenda if covered by a mission
 					trade_goods = precursor_relics
 					has_discovered = ROOT
+				}
+				any_owned_province = { #any_neighbor_country includes neighboring tribal land, but any_neighbor_province doesn't - check we have an actual province bordering
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
 				}
 				ROOT = {
 					knows_country = prev

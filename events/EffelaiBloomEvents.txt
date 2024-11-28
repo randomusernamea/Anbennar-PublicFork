@@ -102,7 +102,7 @@ country_event = {
 				}
 				change_variable = {
 					which = effelai_bloom_attunement
-					value = 1
+					value = 2
 				}
 				random_list = {
 					85 = {
@@ -509,8 +509,6 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	major = yes
-	
 	immediate = {
 		hidden_effect = {
 			effelai_superregion = {
@@ -676,6 +674,7 @@ country_event = {
 			capital_scope = {
 				is_effelai_network_province = yes
 			}
+			NOT = { tag = J84 } #Taychendi Empire is locked to the Burn Path
 		}
 		set_country_flag = effelai_attuned_path
 		country_event = {
@@ -687,6 +686,18 @@ country_event = {
 	#Burned Path
 	option = {
 		name = effelai_bloom.3.b
+		trigger=  {
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				overlord = {
+					NOT = { 
+						has_reform = effelai_alianaiarat_reform
+					}
+				}
+			}
+		}
 
 		ai_chance = {
 			factor = 70
@@ -708,12 +719,26 @@ country_event = {
 					is_effelai_network_province = yes
 				}
 			}
+			NOT = { tag = J84 } #Taychendi Empire is locked to the Burn Path
 		}
 		set_country_flag = effelai_wants_attuned_path
 	}
 	#Dormancy Path
 	option = {
 		name = effelai_bloom.3.e
+		trigger=  {
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				overlord = {
+					NOT = { 
+						has_reform = effelai_alianaiarat_reform
+					}
+				}
+			}
+			NOT = { tag = J84 } #Taychendi Empire is locked to the Burn Path
+		}
 
 		ai_chance = {
 			factor = 20
@@ -765,6 +790,18 @@ country_event = {
 	#Burned Path
 	option = {
 		name = effelai_bloom.4.b
+		trigger=  {
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				overlord = {
+					NOT = { 
+						has_reform = effelai_alianaiarat_reform
+					}
+				}
+			}
+		}
 		ai_chance = {
 			factor = 80
 		}
@@ -813,6 +850,18 @@ country_event = {
 	#Burned Path
 	option = {
 		name = effelai_bloom.5.b
+		trigger=  {
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				overlord = {
+					NOT = { 
+						has_reform = effelai_alianaiarat_reform
+					}
+				}
+			}
+		}
 		ai_chance = {
 			factor = 80
 		}
@@ -916,6 +965,9 @@ country_event = { #Enough of the effelai has been calmed it returns to dormancy
 		name = effelai_bloom.91.a
 		clr_global_flag = effelai_blooming_happening
 		set_global_flag = effelai_blooming_over
+		remove_country_modifier = J84_plants_vs_warlords
+		remove_country_modifier = J84_artificer_aided_colonisation
+		remove_country_modifier = J84_artificery_unleashed
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -1933,9 +1985,11 @@ country_event = { #you can now begin attuning your land to the effelai
 	option = {
 		name = effelai_bloom.320.a
 		set_country_flag = effelai_bloom_begin_attuning_provinces
-		set_variable = {
-			which = effelai_bloom_attunement
-			value = 0
+		hidden_effect = {
+			set_variable = {
+				which = effelai_bloom_attunement
+				value = 10
+			}
 		}
 		add_country_modifier = {
 			name = effelai_attunement_tier_1
@@ -2319,14 +2373,6 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = {
-		hidden_effect = {
-			country_event = {
-				id = effelai_bloom.2
-				days = 3652
-			}
-		}
-	}
 	#Take the offer and Attune
 	option = {
 		name = effelai_bloom.371.a
@@ -2450,9 +2496,6 @@ country_event = {
 		}
 		hidden_effect = {
 			effelai_check_attunement_tier = yes
-			change_government = theocracy
-			add_government_reform = effelai_alianaiarat_reform
-			change_government_reform_progress = 200
 			set_country_flag = effelai_attuned_path
 			add_country_modifier = {
 				name = effelai_attunement_tier_1
@@ -3076,6 +3119,9 @@ country_event = { #Effelai burned so hard it returns to being dormant
 		}
 		set_global_flag = effelai_blooming_over
 		clr_global_flag = effelai_blooming_happening
+		remove_country_modifier = J84_plants_vs_warlords
+		remove_country_modifier = J84_artificer_aided_colonisation
+		remove_country_modifier = J84_artificery_unleashed
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -3174,6 +3220,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							}
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 					}
@@ -3184,6 +3232,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							}
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 						save_event_target_as = effelai_target_country
@@ -3301,6 +3351,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							has_country_flag = effelai_has_effelai_province
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 					}
@@ -3309,6 +3361,8 @@ country_event = { #Gov Mechanic: Incite Thralls
 							has_country_flag = effelai_has_effelai_province
 							NOT = {
 								is_subject_of = ROOT
+								mission_completed = G52_shattering_crescendo #Ameion MT
+								overlord = { mission_completed = G52_shattering_crescendo }
 							}
 						}
 						save_event_target_as = effelai_target_country

@@ -74,6 +74,28 @@ estate_ahati_noble_titles = {
 	}
 }
 
+estate_ahati_khet_guards = {
+	icon = privilege_recruit_rajput_general
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = -0.05
+	influence = 0.05
+	land_share = 0
+	is_valid = {
+		NOT = { has_disaster = ahati_disaster }
+	}
+	benefits = {
+		meritocracy = 0.15
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 2
+			NOT = { meritocracy = 50 }
+		}
+	}
+}
+
 estate_ahati_meritocratic_recruitment = {
 	icon = privilege_recruit_minister
 	max_absolutism = 0
@@ -152,23 +174,13 @@ estate_ahati_support_north = {
 		NOT = { empire_of_china_reform_passed = unite_brotherhoods_reform }
 		if = {
 			limit = { has_estate_privilege = estate_ahati_support_north }
-			owns_all_provinces = {
-				OR = {
-					area = lower_sorrow_area
-					area = mothers_delta_area
-				}
-			}
+			owns_core_province = 466
 		}
 		NOT = { has_disaster = ahati_disaster }
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_ahati_support_south }
-		owns_all_provinces = {
-			OR = {
-				area = lower_sorrow_area
-				area = mothers_delta_area
-			}
-		}
+		owns_core_province = 466
 	}
 	on_granted = {
 		custom_tooltip = estate_ahati_support_tooltip
@@ -177,7 +189,7 @@ estate_ahati_support_north = {
 		yearly_army_professionalism = 0.005
 	}
 	modifier_by_land_ownership = {
-		defensiveness = 0.2
+		defensiveness = 0.3
 	}
 	ai_will_do = {
 		factor = 5
@@ -199,23 +211,13 @@ estate_ahati_support_south = {
 		NOT = { empire_of_china_reform_passed = unite_brotherhoods_reform }
 		if = {
 			limit = { has_estate_privilege = estate_ahati_support_south }
-			owns_all_provinces = {
-				OR = {
-					area = golkora_stretch_area
-					area = hapmot_area
-				}
-			}
+			owns_core_province = 483
 		}
 		NOT = { has_disaster = ahati_disaster }
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_ahati_support_north }
-		owns_all_provinces = {
-			OR = {
-				area = golkora_stretch_area
-				area = hapmot_area
-			}
-		}
+		owns_core_province = 483
 	}
 	on_granted = {
 		custom_tooltip = estate_ahati_support_tooltip
@@ -250,25 +252,13 @@ estate_ahati_support_brotherhoods = {
 		empire_of_china_reform_passed = unite_brotherhoods_reform
 		if = {
 			limit = { has_estate_privilege = estate_ahati_support_brotherhoods }
-			owns_all_provinces = {
-				OR = {
-					area = lower_sorrow_area
-					area = mothers_delta_area
-					area = golkora_stretch_area
-					area = hapmot_area
-				}
-			}
+			owns_core_province = 466
+			owns_core_province = 483
 		}
 	}
 	can_select = {
-		owns_all_provinces = {
-			OR = {
-				area = lower_sorrow_area
-				area = mothers_delta_area
-				area = golkora_stretch_area
-				area = hapmot_area
-			}
-		}
+		owns_core_province = 466
+		owns_core_province = 483
 	}
 	on_granted = {
 		custom_tooltip = estate_adventurers_generous_quest_rewards_aw_increase_tooltip
@@ -278,7 +268,7 @@ estate_ahati_support_brotherhoods = {
 		global_foreign_trade_power = 0.1
 	}
 	modifier_by_land_ownership = {
-		defensiveness = 0.2
+		defensiveness = 0.3
 		trade_efficiency = 0.3
 	}
 	mechanics = { exempt_from_seize_land }
@@ -842,7 +832,7 @@ estate_ahati_unruly_subjects = {
 	icon = privilege_serf
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
-	loyalty = -0.5
+	loyalty = -0.05
 	influence = 0.1
 	is_valid = {
 		has_disaster = ahati_disaster

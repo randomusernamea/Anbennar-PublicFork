@@ -51,6 +51,7 @@ country_decisions = {
 			is_part_of_hre = yes
 			NOT = { government_rank = 2 }
 			NOT = { has_reform = monastic_order_reform }
+			NOT = { has_reform = secular_order_reform }
 		}
 		allow = {
 			is_subject = no
@@ -72,9 +73,17 @@ country_decisions = {
 	force_reelection = {
 		major = yes
 		potential = {
-			has_government_attribute = can_force_election
+			OR = {
+				has_government_attribute = can_force_election
+				religion = kheionism
+			}
+			NOT = { has_reform = ameion_republic }
 		}
 		allow = {
+			if = { #For visibility
+				limit = { religion = kheionism }
+				religion = kheionism
+			}
 			republican_tradition = 55
 			custom_trigger_tooltip = {
 				tooltip = force_reelection_tt
@@ -96,6 +105,12 @@ country_decisions = {
 				limit = { has_reform = pentapandemonium_reform } 
 				country_event = {
 					id = allclan.1000
+				}
+			}
+			else_if = {
+				limit = { has_reform = besolaki_chaotic_republicanism }
+				country_event = {
+					id = besolaki_events.100
 				}
 			}
 			else_if = {

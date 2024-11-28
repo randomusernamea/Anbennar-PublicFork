@@ -1,4 +1,4 @@
-
+#By JellyCow :D
 newshire_missions_1 = {
 	slot = 1
 	ai = yes
@@ -17,13 +17,13 @@ newshire_missions_1 = {
 		
 		provinces_to_highlight = {
 			is_capital = yes
-			owner = { culture_group = halfling }
+			owner = { is_cannorian_halfling_primary_culture = yes }
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		
 		trigger = {
 			any_known_country = {
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 				has_opinion = {
 					who = ROOT
 					value = 120
@@ -259,7 +259,10 @@ newshire_missions_2 = {
 		}
 		
 		trigger = {
-			culture = newfoot_halfling
+			OR = {
+				primary_culture = newfoot_halfling
+				ruler_culture = newfoot_halfling
+			}
 			owns_core_province = 766
 			766 = {
 				development = 12
@@ -520,7 +523,10 @@ newshire_missions_2 = {
 		
 		effect = {
 			add_treasury = -75
-			country_event = { id = flavor_newshire.9 }
+			add_country_modifier = {
+				name = newshire_unspoken_insults
+				duration = -1
+			}
 		}
 	}
 }
@@ -1446,7 +1452,7 @@ newshire_missions_4 = {
 			add_mil_power = -150
 			add_country_modifier = {
 				name = newshire_mobilising
-				duration = 14600
+				duration = 5475
 			}
 		}
 	}

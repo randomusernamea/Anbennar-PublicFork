@@ -15,12 +15,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4119
+			is_state_core = 4119
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I01 culture = kronium capital_id = 4119 }
@@ -46,12 +47,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4208
+			is_state_core = 4208
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I02 culture = quartz capital_id = 4208 }
@@ -77,12 +79,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4020
+			is_state_core = 4020
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I03 culture = sapphire capital_id = 4020 }
@@ -108,12 +111,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4147
+			is_state_core = 4147
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I04 culture = ramsteel capital_id = 4147 }
@@ -139,12 +143,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4236
+			is_state_core = 4236
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I05 culture = mithril capital_id = 4236 }
@@ -170,12 +175,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2931
+			is_state_core = 2931
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I06 culture = dagrite capital_id = 2931 }
@@ -201,12 +207,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2863
+			is_state_core = 2863
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I07 culture = agate capital_id = 2863 }
@@ -232,12 +239,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2868
+			is_state_core = 2868
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I08 culture = platinum capital_id = 2868 }
@@ -263,12 +271,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4056
+			is_state_core = 4056
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I09 culture = opal capital_id = 4056 }
@@ -294,12 +303,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2963
+			is_state_core = 2963
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I10 culture = lead capital_id = 2963 }
@@ -325,12 +335,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2942
+			is_state_core = 2942
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I11 culture = marble capital_id = 2942 }
@@ -356,12 +367,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4238
+			is_state_core = 4238
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I12 culture = cobalt capital_id = 4238 }
@@ -387,12 +399,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4100
+			is_state_core = 4100
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I13 culture = flint capital_id = 4100 }
@@ -418,12 +431,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4217
+			is_state_core = 4217
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I14 culture = titanium capital_id = 4217 }
@@ -449,12 +463,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4078
+			is_state_core = 4078
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I15 culture = pyrite capital_id = 4078 }
@@ -480,12 +495,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4039
+			is_state_core = 4039
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I16 culture = basalt capital_id = 4039 }
@@ -519,12 +535,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4218
+			is_state_core = 4218
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I17 culture = topaz capital_id = 4218 }
@@ -550,12 +567,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4265
+			is_state_core = 4265
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I18 culture = peridot capital_id = 4265 }
@@ -581,12 +599,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4284
+			is_state_core = 4284
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I19 culture = granite capital_id = 4284 }
@@ -612,12 +631,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4266
+			is_state_core = 4266
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I20 culture = amethyst capital_id = 4266 }
@@ -658,12 +678,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4350
+			is_state_core = 4350
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I21 culture = emerald capital_id = 4350 }
@@ -689,16 +710,17 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4311
+			is_state_core = 4311
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I22 culture = jade capital_id = 4311 }
-			# swap_non_generic_missions = yes
+			swap_non_generic_missions = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -737,12 +759,9 @@ country_decisions = {
 				value = 10
 				is_core = ROOT
 				is_city = yes
-				OR = {
-					has_terrain = dwarven_hold
-					has_terrain = dwarven_hold_surface
-				}
+				province_group = hold_province
 			}
-			special_formation_trigger = yes
+			dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			change_tag = I23
@@ -788,12 +807,10 @@ country_decisions = {
 				limit = { ai = yes }
 				is_year = 1600
 			}
+			NOT = { has_country_flag = H76_skip_aul_dwarov }
 		}
 		provinces_to_highlight = {
-			OR = {
-				has_terrain = dwarven_hold
-				has_terrain = dwarven_hold_surface
-			}
+			province_group = hold_province
 			continent = serpentspine
 		}
 		allow = {
@@ -811,13 +828,10 @@ country_decisions = {
 				value = 25
 				is_core = ROOT
 				is_city = yes
-				OR = {
-					has_terrain = dwarven_hold
-					has_terrain = dwarven_hold_surface
-				}
+				province_group = hold_province
 			}
-			owns_core_province = 4119
-			special_formation_trigger = yes
+			is_state_core = 4119
+			dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			if = { #tell players they will lose ice-smiths
@@ -876,12 +890,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4323
+			is_state_core = 4323
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = I25 culture = malachite capital_id = 4323 }
@@ -907,12 +922,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4247
+			is_state_core = 4247
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = H79 culture = amber capital_id = 4247 }
@@ -938,12 +954,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2914
+			is_state_core = 2914
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = F47 culture = gold capital_id = 2914 }
@@ -969,12 +986,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4124
+			is_state_core = 4124
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = H78 culture = citrine capital_id = 4124 }
@@ -1000,12 +1018,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 2973
+			is_state_core = 2973
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = H77 culture = garnet capital_id = 2973 }
@@ -1031,12 +1050,13 @@ country_decisions = {
 			NOT = { is_core = ROOT }
 		}
 		allow = {
-			owns_core_province = 4093
+			is_state_core = 4093
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
 			adm_tech = 7	#around 1500
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			num_of_cities = 3
-            special_formation_trigger = yes
+            dwarovar_special_formation_trigger = yes
 		}
 		effect = {
 			adventurer_hold_formation = { tag = H76 culture = diamond capital_id = 4093 }

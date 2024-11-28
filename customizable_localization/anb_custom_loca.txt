@@ -252,6 +252,58 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetHoldInfrastructureTitle
+	random = no
+
+	text = {
+		localisation_key = build_magma_forge_title
+		trigger = { has_province_modifier = hold_foundry }
+	}
+	text = {
+		localisation_key = build_artificier_hall_title
+		trigger = { has_province_modifier = hold_city }
+	}
+	text = {
+		localisation_key = build_engineer_manufactory_title
+		trigger = { has_province_modifier = hold_artisan }
+	}
+	text = {
+		localisation_key = build_high_gardens_title
+		trigger = { has_province_modifier = hold_farm }
+	}
+	text = {
+		localisation_key = build_military_academy_title
+		trigger = { has_province_modifier = hold_military }
+	}
+}
+
+defined_text = {
+	name = GetHoldInfrastructureDesc
+	random = no
+
+	text = {
+		localisation_key = build_magma_forge_desc
+		trigger = { has_province_modifier = hold_foundry }
+	}
+	text = {
+		localisation_key = build_artificier_hall_desc
+		trigger = { has_province_modifier = hold_city }
+	}
+	text = {
+		localisation_key = build_engineer_manufactory_desc
+		trigger = { has_province_modifier = hold_artisan }
+	}
+	text = {
+		localisation_key = build_high_gardens_desc
+		trigger = { has_province_modifier = hold_farm }
+	}
+	text = {
+		localisation_key = build_military_academy_desc
+		trigger = { has_province_modifier = hold_military }
+	}
+}
+
+defined_text = {
     name = FederationStanding
 	random = no
 
@@ -951,117 +1003,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = KoboldHoard
-	random = no
-	
-	text = {
-		localisation_key = KoboldHoard1
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 75000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard2
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 60000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard3
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 50000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard4
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 40000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard5
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 30000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard6
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 25000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard7
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 20000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard8
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 15000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard9
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 10000 } }
-		}
-	}
-	
-	
-	text = {
-		localisation_key = KoboldHoard10
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 7500 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard11
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 5000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard12
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 3000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard13
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 1500 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard14
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 500 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard15
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 0 } }
-		}
-	}
-}
-
-defined_text = {
     name = CavernOfInterest
 	random = no
 	
@@ -1623,11 +1564,18 @@ defined_text = {
 defined_text = {
     name = dig_percent_loc
     random = no
-	text = {
-		localisation_key = dig_percent_plus			
-		trigger = {
-			if = {
-                limit = { is_capital = yes }
+    text = {
+        localisation_key = dig_percent_plus         
+        trigger = {
+            if = {
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1659,13 +1607,20 @@ defined_text = {
                     }
                 }
             }
-		}
-	}
-	text = {
-		localisation_key = dig_percent_minus			
-		trigger = {
-			if = {
-                limit = { is_capital = yes }
+        }
+    }
+    text = {
+        localisation_key = dig_percent_minus            
+        trigger = {
+            if = {
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1701,14 +1656,14 @@ defined_text = {
                     }
                 }
             }
-		}
-	}
-	text = {
-		localisation_key = dig_percent_zero			
-		trigger = {
-			always = yes
-		}
-	}
+        }
+    }
+    text = {
+        localisation_key = dig_percent_zero         
+        trigger = {
+            always = yes
+        }
+    }
 }
 
 defined_text = {
@@ -1718,7 +1673,14 @@ defined_text = {
         localisation_key = value_100            
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1757,7 +1719,14 @@ defined_text = {
         localisation_key = value_99         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1795,7 +1764,14 @@ defined_text = {
         localisation_key = value_98         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1833,7 +1809,14 @@ defined_text = {
         localisation_key = value_97         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1871,7 +1854,14 @@ defined_text = {
         localisation_key = value_96         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1909,7 +1899,14 @@ defined_text = {
         localisation_key = value_95         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1947,7 +1944,14 @@ defined_text = {
         localisation_key = value_94         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -1985,7 +1989,14 @@ defined_text = {
         localisation_key = value_93         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2023,7 +2034,14 @@ defined_text = {
         localisation_key = value_92         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2061,7 +2079,14 @@ defined_text = {
         localisation_key = value_91         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2099,7 +2124,14 @@ defined_text = {
         localisation_key = value_90         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2137,7 +2169,14 @@ defined_text = {
         localisation_key = value_89         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2175,7 +2214,14 @@ defined_text = {
         localisation_key = value_88         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2213,7 +2259,14 @@ defined_text = {
         localisation_key = value_87         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2251,7 +2304,14 @@ defined_text = {
         localisation_key = value_86         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2289,7 +2349,14 @@ defined_text = {
         localisation_key = value_85         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2327,7 +2394,14 @@ defined_text = {
         localisation_key = value_84         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2365,7 +2439,14 @@ defined_text = {
         localisation_key = value_83         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2403,7 +2484,14 @@ defined_text = {
         localisation_key = value_82         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2441,7 +2529,14 @@ defined_text = {
         localisation_key = value_81         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2479,7 +2574,14 @@ defined_text = {
         localisation_key = value_80         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2517,7 +2619,14 @@ defined_text = {
         localisation_key = value_79         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2555,7 +2664,14 @@ defined_text = {
         localisation_key = value_78         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2593,7 +2709,14 @@ defined_text = {
         localisation_key = value_77         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2631,7 +2754,14 @@ defined_text = {
         localisation_key = value_76         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2669,7 +2799,14 @@ defined_text = {
         localisation_key = value_75         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2707,7 +2844,14 @@ defined_text = {
         localisation_key = value_74         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2745,7 +2889,14 @@ defined_text = {
         localisation_key = value_73         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2783,7 +2934,14 @@ defined_text = {
         localisation_key = value_72         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2821,7 +2979,14 @@ defined_text = {
         localisation_key = value_71         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2859,7 +3024,14 @@ defined_text = {
         localisation_key = value_70         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2897,7 +3069,14 @@ defined_text = {
         localisation_key = value_69         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2935,7 +3114,14 @@ defined_text = {
         localisation_key = value_68         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -2973,7 +3159,14 @@ defined_text = {
         localisation_key = value_67         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3011,7 +3204,14 @@ defined_text = {
         localisation_key = value_66         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3049,7 +3249,14 @@ defined_text = {
         localisation_key = value_65         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3087,7 +3294,14 @@ defined_text = {
         localisation_key = value_64         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3125,7 +3339,14 @@ defined_text = {
         localisation_key = value_63         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3163,7 +3384,14 @@ defined_text = {
         localisation_key = value_62         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3201,7 +3429,14 @@ defined_text = {
         localisation_key = value_61         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3239,7 +3474,14 @@ defined_text = {
         localisation_key = value_60         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3277,7 +3519,14 @@ defined_text = {
         localisation_key = value_59         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3315,7 +3564,14 @@ defined_text = {
         localisation_key = value_58         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3353,7 +3609,14 @@ defined_text = {
         localisation_key = value_57         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3391,7 +3654,14 @@ defined_text = {
         localisation_key = value_56         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3429,7 +3699,14 @@ defined_text = {
         localisation_key = value_55         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3467,7 +3744,14 @@ defined_text = {
         localisation_key = value_54         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3505,7 +3789,14 @@ defined_text = {
         localisation_key = value_53         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3543,7 +3834,14 @@ defined_text = {
         localisation_key = value_52         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3581,7 +3879,14 @@ defined_text = {
         localisation_key = value_51         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3619,7 +3924,14 @@ defined_text = {
         localisation_key = value_50         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3657,7 +3969,14 @@ defined_text = {
         localisation_key = value_49         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3695,7 +4014,14 @@ defined_text = {
         localisation_key = value_48         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3733,7 +4059,14 @@ defined_text = {
         localisation_key = value_47         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3771,7 +4104,14 @@ defined_text = {
         localisation_key = value_46         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3809,7 +4149,14 @@ defined_text = {
         localisation_key = value_45         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3847,7 +4194,14 @@ defined_text = {
         localisation_key = value_44         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3885,7 +4239,14 @@ defined_text = {
         localisation_key = value_43         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3923,7 +4284,14 @@ defined_text = {
         localisation_key = value_42         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3961,7 +4329,14 @@ defined_text = {
         localisation_key = value_41         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -3999,7 +4374,14 @@ defined_text = {
         localisation_key = value_40         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4037,7 +4419,14 @@ defined_text = {
         localisation_key = value_39         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4075,7 +4464,14 @@ defined_text = {
         localisation_key = value_38         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4113,7 +4509,14 @@ defined_text = {
         localisation_key = value_37         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4151,7 +4554,14 @@ defined_text = {
         localisation_key = value_36         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4189,7 +4599,14 @@ defined_text = {
         localisation_key = value_35         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4227,7 +4644,14 @@ defined_text = {
         localisation_key = value_34         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4265,7 +4689,14 @@ defined_text = {
         localisation_key = value_33         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4303,7 +4734,14 @@ defined_text = {
         localisation_key = value_32         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4341,7 +4779,14 @@ defined_text = {
         localisation_key = value_31         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4379,7 +4824,14 @@ defined_text = {
         localisation_key = value_30         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4417,7 +4869,14 @@ defined_text = {
         localisation_key = value_29         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4455,7 +4914,14 @@ defined_text = {
         localisation_key = value_28         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4493,7 +4959,14 @@ defined_text = {
         localisation_key = value_27         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4531,7 +5004,14 @@ defined_text = {
         localisation_key = value_26         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4569,7 +5049,14 @@ defined_text = {
         localisation_key = value_25         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4607,7 +5094,14 @@ defined_text = {
         localisation_key = value_24         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4645,7 +5139,14 @@ defined_text = {
         localisation_key = value_23         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4683,7 +5184,14 @@ defined_text = {
         localisation_key = value_22         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4721,7 +5229,14 @@ defined_text = {
         localisation_key = value_21         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4759,7 +5274,14 @@ defined_text = {
         localisation_key = value_20         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4797,7 +5319,14 @@ defined_text = {
         localisation_key = value_19         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4835,7 +5364,14 @@ defined_text = {
         localisation_key = value_18         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4873,7 +5409,14 @@ defined_text = {
         localisation_key = value_17         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4911,7 +5454,14 @@ defined_text = {
         localisation_key = value_16         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4949,7 +5499,14 @@ defined_text = {
         localisation_key = value_15         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -4987,7 +5544,14 @@ defined_text = {
         localisation_key = value_14         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5025,7 +5589,14 @@ defined_text = {
         localisation_key = value_13         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5063,7 +5634,14 @@ defined_text = {
         localisation_key = value_12         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5101,7 +5679,14 @@ defined_text = {
         localisation_key = value_11         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5139,7 +5724,14 @@ defined_text = {
         localisation_key = value_10         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5177,7 +5769,14 @@ defined_text = {
         localisation_key = value_9          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5215,7 +5814,14 @@ defined_text = {
         localisation_key = value_8          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5253,7 +5859,14 @@ defined_text = {
         localisation_key = value_7          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5291,7 +5904,14 @@ defined_text = {
         localisation_key = value_6          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5329,7 +5949,14 @@ defined_text = {
         localisation_key = value_5          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5367,7 +5994,14 @@ defined_text = {
         localisation_key = value_4          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5405,7 +6039,14 @@ defined_text = {
         localisation_key = value_3          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5443,7 +6084,14 @@ defined_text = {
         localisation_key = value_2          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5492,7 +6140,14 @@ defined_text = {
         localisation_key = value_1          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5530,7 +6185,14 @@ defined_text = {
         localisation_key = value_2          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5568,7 +6230,14 @@ defined_text = {
         localisation_key = value_3          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5606,7 +6275,14 @@ defined_text = {
         localisation_key = value_4          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5644,7 +6320,14 @@ defined_text = {
         localisation_key = value_5          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5682,7 +6365,14 @@ defined_text = {
         localisation_key = value_6          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5720,7 +6410,14 @@ defined_text = {
         localisation_key = value_7          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5758,7 +6455,14 @@ defined_text = {
         localisation_key = value_8          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5796,7 +6500,14 @@ defined_text = {
         localisation_key = value_9          
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5834,7 +6545,14 @@ defined_text = {
         localisation_key = value_10         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5872,7 +6590,14 @@ defined_text = {
         localisation_key = value_11         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5910,7 +6635,14 @@ defined_text = {
         localisation_key = value_12         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5948,7 +6680,14 @@ defined_text = {
         localisation_key = value_13         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -5986,7 +6725,14 @@ defined_text = {
         localisation_key = value_14         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6024,7 +6770,14 @@ defined_text = {
         localisation_key = value_15         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6062,7 +6815,14 @@ defined_text = {
         localisation_key = value_16         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6100,7 +6860,14 @@ defined_text = {
         localisation_key = value_17         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6138,7 +6905,14 @@ defined_text = {
         localisation_key = value_18         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6176,7 +6950,14 @@ defined_text = {
         localisation_key = value_19         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6214,7 +6995,14 @@ defined_text = {
         localisation_key = value_20         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6252,7 +7040,14 @@ defined_text = {
         localisation_key = value_21         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6290,7 +7085,14 @@ defined_text = {
         localisation_key = value_22         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6328,7 +7130,14 @@ defined_text = {
         localisation_key = value_23         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6366,7 +7175,14 @@ defined_text = {
         localisation_key = value_24         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6404,7 +7220,14 @@ defined_text = {
         localisation_key = value_25         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6442,7 +7265,14 @@ defined_text = {
         localisation_key = value_26         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6480,7 +7310,14 @@ defined_text = {
         localisation_key = value_27         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6518,7 +7355,14 @@ defined_text = {
         localisation_key = value_28         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6556,7 +7400,14 @@ defined_text = {
         localisation_key = value_29         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6594,7 +7445,14 @@ defined_text = {
         localisation_key = value_30         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6632,7 +7490,14 @@ defined_text = {
         localisation_key = value_31         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6670,7 +7535,14 @@ defined_text = {
         localisation_key = value_32         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6708,7 +7580,14 @@ defined_text = {
         localisation_key = value_33         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6746,7 +7625,14 @@ defined_text = {
         localisation_key = value_34         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6784,7 +7670,14 @@ defined_text = {
         localisation_key = value_35         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6822,7 +7715,14 @@ defined_text = {
         localisation_key = value_36         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6860,7 +7760,14 @@ defined_text = {
         localisation_key = value_37         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6898,7 +7805,14 @@ defined_text = {
         localisation_key = value_38         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6936,7 +7850,14 @@ defined_text = {
         localisation_key = value_39         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -6974,7 +7895,14 @@ defined_text = {
         localisation_key = value_40         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7012,7 +7940,14 @@ defined_text = {
         localisation_key = value_41         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7050,7 +7985,14 @@ defined_text = {
         localisation_key = value_42         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7088,7 +8030,14 @@ defined_text = {
         localisation_key = value_43         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7126,7 +8075,14 @@ defined_text = {
         localisation_key = value_44         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7164,7 +8120,14 @@ defined_text = {
         localisation_key = value_45         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7202,7 +8165,14 @@ defined_text = {
         localisation_key = value_46         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7240,7 +8210,14 @@ defined_text = {
         localisation_key = value_47         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7278,7 +8255,14 @@ defined_text = {
         localisation_key = value_48         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7316,7 +8300,14 @@ defined_text = {
         localisation_key = value_49         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7354,7 +8345,14 @@ defined_text = {
         localisation_key = value_50         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7392,7 +8390,14 @@ defined_text = {
         localisation_key = value_51         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7430,7 +8435,14 @@ defined_text = {
         localisation_key = value_52         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7468,7 +8480,14 @@ defined_text = {
         localisation_key = value_53         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7506,7 +8525,14 @@ defined_text = {
         localisation_key = value_54         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7544,7 +8570,14 @@ defined_text = {
         localisation_key = value_55         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7582,7 +8615,14 @@ defined_text = {
         localisation_key = value_56         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7620,7 +8660,14 @@ defined_text = {
         localisation_key = value_57         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7658,7 +8705,14 @@ defined_text = {
         localisation_key = value_58         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7696,7 +8750,14 @@ defined_text = {
         localisation_key = value_59         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7734,7 +8795,14 @@ defined_text = {
         localisation_key = value_60         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7772,7 +8840,14 @@ defined_text = {
         localisation_key = value_61         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7810,7 +8885,14 @@ defined_text = {
         localisation_key = value_62         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7848,7 +8930,14 @@ defined_text = {
         localisation_key = value_63         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7886,7 +8975,14 @@ defined_text = {
         localisation_key = value_64         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7924,7 +9020,14 @@ defined_text = {
         localisation_key = value_65         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -7962,7 +9065,14 @@ defined_text = {
         localisation_key = value_66         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8000,7 +9110,14 @@ defined_text = {
         localisation_key = value_67         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8038,7 +9155,14 @@ defined_text = {
         localisation_key = value_68         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8076,7 +9200,14 @@ defined_text = {
         localisation_key = value_69         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8114,7 +9245,14 @@ defined_text = {
         localisation_key = value_70         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8152,7 +9290,14 @@ defined_text = {
         localisation_key = value_71         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8190,7 +9335,14 @@ defined_text = {
         localisation_key = value_72         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8228,7 +9380,14 @@ defined_text = {
         localisation_key = value_73         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8266,7 +9425,14 @@ defined_text = {
         localisation_key = value_74         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8304,7 +9470,14 @@ defined_text = {
         localisation_key = value_75         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8342,7 +9515,14 @@ defined_text = {
         localisation_key = value_76         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8380,7 +9560,14 @@ defined_text = {
         localisation_key = value_77         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8418,7 +9605,14 @@ defined_text = {
         localisation_key = value_78         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8456,7 +9650,14 @@ defined_text = {
         localisation_key = value_79         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8494,7 +9695,14 @@ defined_text = {
         localisation_key = value_80         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8532,7 +9740,14 @@ defined_text = {
         localisation_key = value_81         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8570,7 +9785,14 @@ defined_text = {
         localisation_key = value_82         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8608,7 +9830,14 @@ defined_text = {
         localisation_key = value_83         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8646,7 +9875,14 @@ defined_text = {
         localisation_key = value_84         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8684,7 +9920,14 @@ defined_text = {
         localisation_key = value_85         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8722,7 +9965,14 @@ defined_text = {
         localisation_key = value_86         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8760,7 +10010,14 @@ defined_text = {
         localisation_key = value_87         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8798,7 +10055,14 @@ defined_text = {
         localisation_key = value_88         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8836,7 +10100,14 @@ defined_text = {
         localisation_key = value_89         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8874,7 +10145,14 @@ defined_text = {
         localisation_key = value_90         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8912,7 +10190,14 @@ defined_text = {
         localisation_key = value_91         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8950,7 +10235,14 @@ defined_text = {
         localisation_key = value_92         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -8988,7 +10280,14 @@ defined_text = {
         localisation_key = value_93         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9026,7 +10325,14 @@ defined_text = {
         localisation_key = value_94         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9064,7 +10370,14 @@ defined_text = {
         localisation_key = value_95         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9102,7 +10415,14 @@ defined_text = {
         localisation_key = value_96         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9140,7 +10460,14 @@ defined_text = {
         localisation_key = value_97         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9178,7 +10505,14 @@ defined_text = {
         localisation_key = value_98         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -9216,7 +10550,14 @@ defined_text = {
         localisation_key = value_99         
         trigger = {
             if = {
-                limit = { is_capital = yes }
+                limit = {
+                    is_capital = yes
+                    NOT = {
+                        has_province_modifier = ruined_hold
+                        has_province_modifier = partially_ruined_hold
+                        has_province_modifier = damaged_hold
+                    }
+                }
                 variable_arithmetic_trigger = {
                     export_to_variable = {
                         which = cProgress
@@ -11671,9 +13012,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = ruler_school_necromany_tt
+		localisation_key = ruler_school_necromancy_tt
 		trigger = {
-			has_ruler_flag = ruler_studying_necromany
+			has_ruler_flag = ruler_studying_necromancy
 		}
 	}
 	text = {
@@ -11701,7 +13042,7 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = magic_experience_niggative
+		localisation_key = magic_experience_negative
 		trigger = {
 			NOT = { check_variable = { experienceModifier = 0 } }
 		}
@@ -12456,7 +13797,6 @@ defined_text = {
 	text = { localisation_key = FlagF56 trigger = { tag = F56 } }
 	text = { localisation_key = FlagF57 trigger = { tag = F57 } }
 	text = { localisation_key = FlagF58 trigger = { tag = F58 } }
-	# text = { localisation_key = FlagF59 trigger = { tag = F59 } }
 	# text = { localisation_key = FlagF60 trigger = { tag = F60 } }
 	# text = { localisation_key = FlagF61 trigger = { tag = F61 } }
 	# text = { localisation_key = FlagF62 trigger = { tag = F62 } }
@@ -12507,11 +13847,11 @@ defined_text = {
 	text = { localisation_key = FlagG07 trigger = { tag = G07 } }
 	text = { localisation_key = FlagG08 trigger = { tag = G08 } }
 	text = { localisation_key = FlagG09 trigger = { tag = G09 } }
-	text = { localisation_key = FlagG10 trigger = { tag = G10 } }
-	text = { localisation_key = FlagG11 trigger = { tag = G11 } }
-	text = { localisation_key = FlagG12 trigger = { tag = G12 } }
-	text = { localisation_key = FlagG13 trigger = { tag = G13 } }
-	text = { localisation_key = FlagG14 trigger = { tag = G14 } }
+	#text = { localisation_key = FlagG10 trigger = { tag = G10 } }
+	#text = { localisation_key = FlagG11 trigger = { tag = G11 } }
+	#text = { localisation_key = FlagG12 trigger = { tag = G12 } }
+	#text = { localisation_key = FlagG13 trigger = { tag = G13 } }
+	#text = { localisation_key = FlagG14 trigger = { tag = G14 } }
 	text = { localisation_key = FlagG15 trigger = { tag = G15 } }
 	text = { localisation_key = FlagG16 trigger = { tag = G16 } }
 	text = { localisation_key = FlagG17 trigger = { tag = G17 } }
@@ -12958,7 +14298,6 @@ defined_text = {
 	# text = { localisation_key = FlagL57 trigger = { tag = L57 } }
 	# text = { localisation_key = FlagL58 trigger = { tag = L58 } }
 	# text = { localisation_key = FlagL59 trigger = { tag = L59 } }
-	# text = { localisation_key = FlagL60 trigger = { tag = L60 } }
 	# text = { localisation_key = FlagL61 trigger = { tag = L61 } }
 	# text = { localisation_key = FlagL62 trigger = { tag = L62 } }
 	# text = { localisation_key = FlagL63 trigger = { tag = L63 } }
@@ -14980,16 +16319,17 @@ defined_text = {
 defined_text = {
 	name = GetHonsaiDecayrate
 	random = no
-	text = {
-		localisation_key = honsai_decay_aspect_tt
-		trigger = {
-			has_church_aspect = honsai_the_ghostemperor
-		}
-	}
+	#text = {
+	#	localisation_key = honsai_decay_aspect_tt
+	#	trigger = {
+	#		has_church_aspect = honsai_the_ghostemperor
+	#	}
+	#}
 	text = {
 		localisation_key = honsai_decay_normal_tt
 		trigger = {
-			NOT = { has_church_aspect = honsai_the_ghostemperor }
+			always = yes
+			#NOT = { has_church_aspect = honsai_the_ghostemperor }
 		}
 	}
 }
@@ -16217,5 +17557,1636 @@ defined_text = {
 		trigger = {
 			has_church_aspect = malu_practice_1
 		}
+	}
+}
+
+defined_text = {
+	name = minor_eclipse_operation_loc
+	random = no
+	text = {
+		localisation_key = minor_eclipse_operation_1
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_1
+                NOT = {
+                    any_country = {
+                        has_country_flag = F35_minor_eclipse_2_enabled
+                        has_country_flag = azkabar_eclipse_enabled
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = minor_eclipse_operation_2
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_2
+                NOT = {
+                    any_country = {
+                        has_country_flag = F35_minor_eclipse_3_enabled
+                        has_country_flag = azkabar_eclipse_enabled
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = minor_eclipse_operation_3
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_3
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = eclipse_headquarter_loc
+	random = no
+	text = {
+		localisation_key = eclipse_headquarters_subject_1
+		trigger = {
+			FROM = {
+                is_subject = yes
+                overlord = {
+                    has_country_flag = F35_minor_eclipse_1_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    NOT = { has_country_flag = eclipse_headquarter_1 has_country_flag = eclipse_headquarter_2 has_country_flag = eclipse_headquarter_3 }
+                    AND = {
+                        has_country_flag = eclipse_headquarter_1
+                        NOT = {
+                            overlord = {
+                                has_country_flag = F35_minor_eclipse_2_enabled
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = eclipse_headquarters_subject_2
+		trigger = {
+			FROM = {
+                is_subject = yes
+                overlord = {
+                    has_country_flag = F35_minor_eclipse_2_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    AND = {
+                        has_country_flag = eclipse_headquarter_1
+                        NOT = { has_country_flag = eclipse_headquarter_2 }
+                    }
+                    AND = {
+                        has_country_flag = eclipse_headquarter_2
+                        NOT = {
+                            overlord = {
+                                has_country_flag = F35_minor_eclipse_3_enabled
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = eclipse_headquarters_subject_3
+		trigger = {
+			FROM = {
+                is_subject = yes
+                overlord = {
+                    has_country_flag = F35_minor_eclipse_3_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    has_country_flag = eclipse_headquarter_2
+                    has_country_flag = eclipse_headquarter_3
+                }
+            }
+		}
+	}
+    text = {
+		localisation_key = eclipse_headquarters_independent_1
+		trigger = {
+			FROM = {
+                NOT = {
+                    AND = {
+                        is_subject = yes
+                        overlord = {
+                            has_country_flag = azkabar_eclipse_enabled
+                        }
+                    }
+                }
+                ROOT = {
+                    has_country_flag = F35_minor_eclipse_1_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    NOT = { has_country_flag = eclipse_headquarter_1 has_country_flag = eclipse_headquarter_2 has_country_flag = eclipse_headquarter_3 }
+                    AND = {
+                        has_country_flag = eclipse_headquarter_1
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = F35_minor_eclipse_2_enabled
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = eclipse_headquarters_independent_2
+		trigger = {
+			FROM = {
+                NOT = {
+                    AND = {
+                        is_subject = yes
+                        overlord = {
+                            has_country_flag = azkabar_eclipse_enabled
+                        }
+                    }
+                }
+                ROOT = {
+                    has_country_flag = F35_minor_eclipse_2_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    AND = {
+                        has_country_flag = eclipse_headquarter_1
+                        NOT = { has_country_flag = eclipse_headquarter_2 }
+                    }
+                    AND = {
+                        has_country_flag = eclipse_headquarter_2
+                        NOT = {
+                            ROOT = {
+                                has_country_flag = F35_minor_eclipse_3_enabled
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = eclipse_headquarters_independent_3
+		trigger = {
+			FROM = {
+                NOT = {
+                    AND = {
+                        is_subject = yes
+                        overlord = {
+                            has_country_flag = azkabar_eclipse_enabled
+                        }
+                    }
+                }
+                ROOT = {
+                    has_country_flag = F35_minor_eclipse_3_enabled
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+                OR = {
+                    has_country_flag = eclipse_headquarter_3
+                    has_country_flag = eclipse_headquarter_2
+                }
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = max_eclipse_headquarters_level
+	random = no
+	text = {
+		localisation_key = F35_eclipse_headquarter_1
+		trigger = {
+            ROOT = {
+                has_country_flag = azkabar_eclipse_enabled
+                has_country_flag = F35_minor_eclipse_1_enabled
+                NOT = {
+                    has_country_flag = F35_minor_eclipse_2_enabled
+                    has_country_flag = F35_minor_eclipse_3_enabled
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_eclipse_headquarter_2
+		trigger = {
+            ROOT = {
+                has_country_flag = azkabar_eclipse_enabled
+                has_country_flag = F35_minor_eclipse_2_enabled
+                NOT = {
+                    has_country_flag = F35_minor_eclipse_3_enabled
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_eclipse_headquarter_3
+		trigger = {
+            ROOT = {
+                has_country_flag = azkabar_eclipse_enabled
+                has_country_flag = F35_minor_eclipse_3_enabled
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = current_eclipse_headquarters_level
+	random = no
+	text = {
+		localisation_key = F35_eclipse_headquarter_none
+		trigger = {
+			FROM = {
+                NOT = {
+                    has_country_flag = eclipse_headquarter_1
+                    has_country_flag = eclipse_headquarter_2
+                    has_country_flag = eclipse_headquarter_3
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_eclipse_headquarter_1
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_1
+                NOT = {
+                    has_country_flag = eclipse_headquarter_2
+                    has_country_flag = eclipse_headquarter_3
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_eclipse_headquarter_2
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_2
+                NOT = {
+                    has_country_flag = eclipse_headquarter_3
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_eclipse_headquarter_3
+		trigger = {
+			FROM = {
+                has_country_flag = eclipse_headquarter_3
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = major_eclipse_operation_modifier_loc
+	random = no
+	text = {
+		localisation_key = major_eclipse_operation_1
+		trigger = {
+			NOT = {
+                OR = {
+                    ROOT = { has_country_flag = azkabar_eclipse_enabled has_country_flag = azkabar_major_eclipse_2 }
+                    ROOT = { has_country_flag = azkabar_eclipse_enabled has_country_flag = azkabar_major_eclipse_3 }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = major_eclipse_operation_2
+		trigger = {
+			NOT = {
+                ROOT = { has_country_flag = azkabar_eclipse_enabled has_country_flag = azkabar_major_eclipse_3 }
+            }
+            ROOT = { has_country_flag = azkabar_eclipse_enabled has_country_flag = azkabar_major_eclipse_2 }
+		}
+	}
+	text = {
+		localisation_key = major_eclipse_operation_3
+		trigger = {
+			ROOT = { has_country_flag = azkabar_eclipse_enabled has_country_flag = azkabar_major_eclipse_3 }
+		}
+	}
+}
+
+defined_text = {
+	name = current_major_eclipse_operation_level
+	random = no
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_0
+		trigger = {
+            FROM = {
+                NOT = {
+                    OR = {
+                        has_country_modifier = F35_eclipse_operation_major_1
+                        has_country_modifier = F35_eclipse_operation_major_2
+                        has_country_modifier = F35_eclipse_operation_major_3
+                    }
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_1
+		trigger = {
+            FROM = {
+                has_country_modifier = F35_eclipse_operation_major_1
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_2
+		trigger = {
+            FROM = {
+                has_country_modifier = F35_eclipse_operation_major_2
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_3
+		trigger = {
+            FROM = {
+                has_country_modifier = F35_eclipse_operation_major_3
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = max_major_eclipse_operation_level
+	random = no
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_1
+		trigger = {
+			ROOT = {
+                has_country_flag = azkabar_eclipse_enabled
+                has_country_flag = azkabar_major_eclipse_1
+                NOT = {
+                    has_country_flag = azkabar_major_eclipse_2
+                    has_country_flag = azkabar_major_eclipse_3
+                }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_2
+		trigger = {
+			ROOT = {
+                has_country_flag = azkabar_eclipse_enabled
+                has_country_flag = azkabar_major_eclipse_1
+                has_country_flag = azkabar_major_eclipse_2
+                NOT = { has_country_flag = azkabar_major_eclipse_3 }
+            }
+		}
+	}
+	text = {
+		localisation_key = F35_current_eclipse_operation_major_3
+		trigger = {
+			ROOT = { has_country_flag = azkabar_major_eclipse_3 has_country_flag = azkabar_eclipse_enabled }
+		}
+	}
+}
+
+defined_text = {
+	name = major_eclipse_operation_target
+	random = no
+	text = {
+		localisation_key = major_eclipse_operation_target_yes
+		trigger = {
+            FROM = {
+                has_country_flag = target_of_a_major_eclipse_operation
+            }
+		}
+	}
+	text = {
+		localisation_key = major_eclipse_operation_target_no
+		trigger = {
+            FROM = {
+                NOT = { has_country_flag = target_of_a_major_eclipse_operation }
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = major_eclipse_operation_subject_trust
+	random = no
+	text = {
+		localisation_key = major_eclipse_operation_target_trust
+		trigger = {
+            FROM = {
+                is_subject = yes
+                overlord = {
+                    has_country_flag = azkabar_eclipse_enabled
+                }
+            }
+		}
+	}
+}
+
+defined_text = {
+	name = ArgOrdstunGromdhalGuild
+	random = no
+	
+	text = {
+		localisation_key = gromdhal_guild_basic
+		trigger = {
+			NOT = {
+                    has_country_flag = H76_guild_curtailed
+                    has_country_flag = H76_guild_enhanced
+            }
+		}
+	}
+
+	text = {
+		localisation_key = gromdhal_guild_curtailed
+		trigger = {
+			has_country_flag = H76_guild_curtailed
+		}
+	}
+	
+	text = {
+		localisation_key = gromdhal_guild_enhanced
+		trigger = {
+			has_country_flag = H76_guild_enhanced
+		}
+	}
+}
+
+defined_text = {
+	name = EscanniRefugeesIntegrate10
+	random = no
+	
+	text = {
+		localisation_key = EscanniIntegrate10_3target
+		trigger = {
+			has_saved_event_target = escanni_effect_target_3
+			has_saved_event_target = escanni_effect_target_2
+		}
+	}
+
+	text = {
+		localisation_key = EscanniIntegrate10_2target
+		trigger = {
+            NOT = { has_saved_event_target = escanni_effect_target_3 }
+            has_saved_event_target = escanni_effect_target_2
+        }
+	}
+	
+	text = {
+		localisation_key = EscanniIntegrate10_1target
+		trigger = {
+            NOT = { has_saved_event_target = escanni_effect_target_3 }
+            NOT = { has_saved_event_target = escanni_effect_target_2 }
+		}
+	}
+}
+
+defined_text = {
+	name = KoboldTrapsDynamicIntro
+	random = no
+	
+	text = {
+		localisation_key = kobold_quote_1
+		trigger = { 189 = { has_province_flag = kobold_name_1 } }
+	}
+	text = {
+		localisation_key = kobold_quote_2
+		trigger = { 189 = { has_province_flag = kobold_name_2 } }
+	}
+	text = {
+		localisation_key = kobold_quote_3
+		trigger = { 189 = { has_province_flag = kobold_name_3 } }
+	}
+	text = {
+		localisation_key = kobold_quote_4
+		trigger = { 189 = { has_province_flag = kobold_name_4 } }
+	}
+	text = {
+		localisation_key = kobold_quote_5
+		trigger = { 189 = { has_province_flag = kobold_name_5 } }
+	}
+	text = {
+		localisation_key = kobold_quote_6
+		trigger = { 189 = { has_province_flag = kobold_name_6 } }
+	}
+	text = {
+		localisation_key = kobold_quote_7
+		trigger = { 189 = { has_province_flag = kobold_name_7 } }
+	}
+	text = {
+		localisation_key = kobold_quote_8
+		trigger = { 189 = { has_province_flag = kobold_name_8 } }
+	}
+	text = {
+		localisation_key = kobold_quote_9
+		trigger = { 189 = { has_province_flag = kobold_name_9 } }
+	}
+	text = {
+		localisation_key = kobold_quote_10
+		trigger = { 189 = { has_province_flag = kobold_name_10 } }
+	}
+	text = {
+		localisation_key = kobold_quote_11
+		trigger = { 189 = { has_province_flag = kobold_name_11 } }
+	}
+	text = {
+		localisation_key = kobold_quote_12
+		trigger = { 189 = { has_province_flag = kobold_name_12 } }
+	}
+	text = {
+		localisation_key = kobold_quote_13
+		trigger = { 189 = { has_province_flag = kobold_name_13 } }
+	}
+	text = {
+		localisation_key = kobold_quote_14
+		trigger = { 189 = { has_province_flag = kobold_name_14 } }
+	}
+	text = {
+		localisation_key = kobold_quote_15
+		trigger = { 189 = { has_province_flag = kobold_name_15 } }
+	}
+	text = {
+		localisation_key = kobold_quote_16
+		trigger = { 189 = { has_province_flag = kobold_name_16 } }
+	}
+	text = {
+		localisation_key = kobold_quote_17
+		trigger = { 189 = { has_province_flag = kobold_name_17 } }
+	}
+	text = {
+		localisation_key = kobold_quote_18
+		trigger = { 189 = { has_province_flag = kobold_name_18 } }
+	}
+	text = {
+		localisation_key = kobold_quote_19
+		trigger = { 189 = { has_province_flag = kobold_name_19 } }
+	}
+	text = {
+		localisation_key = kobold_quote_20
+		trigger = { 189 = { has_province_flag = kobold_name_20 } }
+	}
+	text = {
+		localisation_key = kobold_quote_21
+		trigger = { 189 = { has_province_flag = kobold_name_21 } }
+	}
+}
+
+defined_text = {
+	name = KoboldTrapsDynamicTooltip
+	random = no
+	
+	text = {
+		localisation_key = trap_mastery_basic_tt
+		trigger = {
+            NOT = {
+                check_variable = {
+                    which = trap_mastery_counter
+                    value = 5
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = trap_mastery_lvl_1_tt
+		trigger = {
+            NOT = {
+                check_variable = {
+                    which = trap_mastery_counter
+                    value = 20
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = trap_mastery_lvl_2_tt
+		trigger = {
+            NOT = {
+                check_variable = {
+                    which = trap_mastery_counter
+                    value = 40
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = trap_mastery_lvl_3_tt
+		trigger = {
+            check_variable = {
+                which = trap_mastery_counter
+                value = 40
+            }
+        }
+	}
+}
+defined_text = {
+	name = ShadowPactFirstPortent
+	random = no
+	
+	text = {
+		localisation_key = shadow_pact_sorcerer_ritual_adm
+		trigger = { has_church_aspect = shadow_pact_sorcerer_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_wraith_ritual_adm
+		trigger = { has_church_aspect = shadow_pact_wraith_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_three_urns_ritual_ritual_adm
+		trigger = { has_church_aspect = shadow_pact_three_urns_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_silat_ritual_adm
+		trigger = { has_church_aspect = shadow_pact_silat_adm }
+    }
+    text = {
+		localisation_key = shadow_pact_tree_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_tree_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_flame_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_flame_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_flayed_man_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_flayed_man_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_meteor_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_meteor_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_tyrant_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_tyrant_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_sleeper_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_sleeper_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_burden_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_burden_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_time_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_time_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_defiant_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_defiant_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_madness_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_madness_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_golem_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_golem_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_vulture_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_vulture_adm }
+	}
+    text = {
+		localisation_key = shadow_pact_mother_ritual_adm
+        trigger = { has_church_aspect = shadow_pact_mother_adm }
+	}
+}
+defined_text = {
+	name = ShadowPactSecondPortent
+	random = no
+	
+	text = {
+		localisation_key = shadow_pact_sorcerer_ritual_dip
+		trigger = { has_church_aspect = shadow_pact_sorcerer_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_wraith_ritual_dip
+		trigger = { has_church_aspect = shadow_pact_wraith_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_three_urns_ritual_dip
+		trigger = { has_church_aspect = shadow_pact_three_urns_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_silat_ritual_dip
+		trigger = { has_church_aspect = shadow_pact_silat_dip }
+    }
+    text = {
+		localisation_key = shadow_pact_tree_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_tree_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_flame_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_flame_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_flayed_man_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_flayed_man_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_meteor_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_meteor_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_tyrant_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_tyrant_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_sleeper_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_sleeper_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_burden_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_burden_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_time_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_time_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_defiant_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_defiant_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_madness_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_madness_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_golem_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_golem_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_vulture_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_vulture_dip }
+	}
+    text = {
+		localisation_key = shadow_pact_mother_ritual_dip
+        trigger = { has_church_aspect = shadow_pact_mother_dip }
+	}
+}
+defined_text = {
+	name = ShadowPactThirdPortent
+	random = no
+	
+	text = {
+		localisation_key = shadow_pact_sorcerer_ritual_mil
+		trigger = { has_church_aspect = shadow_pact_sorcerer_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_wraith_ritual_mil
+		trigger = { has_church_aspect = shadow_pact_wraith_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_three_urns_ritual_mil
+		trigger = { has_church_aspect = shadow_pact_three_urns_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_silat_ritual_mil
+		trigger = { has_church_aspect = shadow_pact_silat_mil }
+    }
+    text = {
+		localisation_key = shadow_pact_tree_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_tree_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_flame_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_flame_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_flayed_man_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_flayed_man_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_meteor_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_meteor_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_tyrant_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_tyrant_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_sleeper_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_sleeper_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_burden_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_burden_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_time_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_time_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_defiant_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_defiant_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_madness_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_madness_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_golem_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_golem_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_vulture_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_vulture_mil }
+	}
+    text = {
+		localisation_key = shadow_pact_mother_ritual_mil
+        trigger = { has_church_aspect = shadow_pact_mother_mil }
+	}
+}
+defined_text = {
+	name = GetBimLauAppeaseDecisionName
+	random = no
+
+	text = {
+		localisation_key = appease_spirits_bim_lau_foreigner_title
+		trigger = {
+			NOT = {
+				religion_group = raheni
+				religion_group = halessi
+			}
+		}
+	}
+	text = {
+		localisation_key = appease_spirits_bim_lau_too_late_title
+		trigger = { has_country_flag = bim_lau_spirits_angry }
+	}
+	text = {
+		localisation_key = appease_spirits_bim_lau_title
+	}
+}
+defined_text = {
+	name = GetBimLauAppeaseDecisionDesc
+	random = no
+
+	text = {
+		localisation_key = appease_spirits_bim_lau_foreigner_desc
+		trigger = {
+			NOT = {
+				religion_group = raheni
+				religion_group = halessi
+			}
+		}
+	}
+	text = {
+		localisation_key = appease_spirits_bim_lau_too_late_desc
+		trigger = { has_country_flag = bim_lau_spirits_angry }
+	}
+	text = {
+		localisation_key = appease_spirits_bim_lau_desc
+	}
+}
+defined_text = {
+	name = GetBimLauRestoreNecropolisDecisionName
+	random = no
+
+	text = {
+		localisation_key = restore_bim_lau_necropolis_2_title
+		trigger = { 4565 = { has_province_modifier = Y51_necropolis_repairs } }
+	}
+	text = { localisation_key = restore_bim_lau_necropolis_1_title }
+}
+defined_text = {
+	name = GetBimLauRestoreNecropolisDecisionDesc
+	random = no
+
+	text = {
+		localisation_key = restore_bim_lau_necropolis_2_desc
+		trigger = { 4565 = { has_province_modifier = Y51_necropolis_repairs } }
+	}
+	text = { localisation_key = restore_bim_lau_necropolis_1_desc }
+}
+
+defined_text = {
+	name = GetDegarikesDesc
+	random = no
+
+	text = {
+		localisation_key = degarikes_taychendi
+		trigger = { culture_group = taychendi_ruinborn_elf }
+	}
+
+	text = {
+		localisation_key = degarikes_eltibhari
+		trigger = { culture_group = eltibhari_ruinborn_elf }
+	}
+	
+	text = {
+		localisation_key = degarikes_devandi
+		trigger = { culture_group = devandi_ruinborn_elf }
+	}
+
+	text = {
+		localisation_key = degarikes_oktikheion
+		trigger = { tag = G47 }
+	}
+	
+	text = {
+		localisation_key = degarikes_kheionai
+		trigger = { NOT = { tag = G47 } }
+	}
+}
+
+defined_text = {
+	name = GetI03EnableDisableObservatoryTitle
+	random = no
+
+	text = {
+		localisation_key = vazhatun_disable_astronomy_title
+		trigger = { has_country_modifier = vazhatun_astronomy_enabled }
+	}
+	text = { localisation_key = vazhatun_enable_astronomy_title }
+}
+
+defined_text = {
+	name = GetBalrijinElectionStatusTitle
+	random = no
+
+	text = {
+		localisation_key = Y85_resume_elections_decision_title
+		trigger = { has_ruler_modifier = Y85_suspended_election }
+	}
+
+	text = { localisation_key = Y85_suspend_elections_decision_title }
+}
+defined_text = {
+	name = GetBalrijinElectionStatusDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_resume_elections_decision_desc
+		trigger = { has_ruler_modifier = Y85_suspended_election }
+	}
+
+	text = { localisation_key = Y85_suspend_elections_decision_desc }
+}
+defined_text = {
+	name = GetBalrijinSmoulderingHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_smouldering_hq_desc
+		trigger = { has_country_flag = Y85_smouldering_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetBalrijinKindledHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_kindled_hq_desc
+		trigger = { has_country_flag = Y85_kindled_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetBalrijinTeemingHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_teeming_hq_desc
+		trigger = { has_country_flag = Y85_teeming_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetBalrijinGoldenHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_golden_hq_desc
+		trigger = { has_country_flag = Y85_golden_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetBalrijinKnowingHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_knowing_hq_desc
+		trigger = { has_country_flag = Y85_knowing_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetBalrijinGraspingHQDesc
+	random = no
+
+	text = {
+		localisation_key = Y85_grasping_hq_desc
+		trigger = { has_country_flag = Y85_grasping_hq_allowed_flag }
+	}
+
+	text = { localisation_key = commandNormalColour }
+}
+defined_text = {
+	name = GetEborthilFirstLineDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_the_first_line_desc
+		trigger = { NOT = { has_country_flag = tefori_protection } }
+	}
+	text = { localisation_key = blank }
+}
+defined_text = {
+	name = GetEborthilSpaceClearedOutDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_clear_out_space_desc
+		trigger = { has_country_flag = eborthil_space_cleared_out_unlock_flag }
+	}
+	text = { localisation_key = blank }
+}
+defined_text = {
+	name = GetEborthilTheDelianBatteryDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_the_delian_battery_desc
+		trigger = { has_country_flag = eborthil_delian_battery_unlock_flag }
+	}
+	text = { localisation_key = blank }
+}
+defined_text = {
+	name = GetEborthilTowerOfTefDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_tower_of_tef_desc
+		trigger = { has_country_flag = eborthil_tower_of_tef_unlock_flag }
+	}
+	text = { localisation_key = blank }
+}
+defined_text = {
+	name = GetEborthilTunnelSystemsDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_tunnel_systems_desc
+		trigger = { has_country_flag = eborthil_tunnel_systems_unlock_flag }
+	}
+	text = { localisation_key = blank }
+}
+defined_text = {
+	name = GetEborthilTorefCitadelDesc
+	random = no
+
+	text = {
+		localisation_key = eborthil_toref_citadel_desc
+		trigger = { has_country_flag = eborthil_toref_citadel_unlock_flag }
+	}
+	text = { localisation_key = blank }
+}
+
+
+defined_text = {
+	name = GetEstatesKorashiButtonName
+	random = no
+
+	text = {
+		localisation_key = command_estates_korashi_button_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_estates_korashi_button_1
+	}
+}
+defined_text = {
+	name = GetEstatesKorashiButtonDesc
+	random = no
+
+	text = {
+		localisation_key = command_estates_korashi_button_desc_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_estates_korashi_button_desc_1
+	}
+}
+defined_text = {
+	name = GetKorashiForgeButtonName
+	random = no
+
+	text = {
+		localisation_key = command_korashi_forge_button_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_korashi_forge_button_1
+	}
+}
+defined_text = {
+	name = GetKorashiForgeButtonDesc
+	random = no
+
+	text = {
+		localisation_key = command_korashi_forge_button_desc_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_korashi_forge_button_desc_1
+	}
+}
+defined_text = {
+	name = GetPopulaceKorashiButtonName
+	random = no
+
+	text = {
+		localisation_key = command_populace_korashi_button_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_populace_korashi_button_1
+	}
+}
+defined_text = {
+	name = GetPopulaceKorashiButtonDesc
+	random = no
+
+	text = {
+		localisation_key = command_populace_korashi_button_desc_2
+		trigger = { has_country_flag = command_end_of_raheni_magic_flag }
+	}
+	text = {
+		localisation_key = command_populace_korashi_button_desc_1
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetSchoolTarget1
+	random = no
+	
+	text = {
+		localisation_key = ruler_school_abjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_abjuration }
+	}
+	text = {
+		localisation_key = ruler_school_conjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_conjuration }
+	}
+	text = {
+		localisation_key = ruler_school_divination_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_divination }
+	}
+	text = {
+		localisation_key = ruler_school_enchantment_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_enchantment }
+	}
+	text = {
+		localisation_key = ruler_school_evocation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_evocation }
+	}
+	text = {
+		localisation_key = ruler_school_illusion_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_illusion }
+	}
+	text = {
+		localisation_key = ruler_school_necromancy_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_necromancy }
+	}
+	text = {
+		localisation_key = ruler_school_transmutation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_transmutation }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetSchoolTarget2
+	random = no
+	
+	text = {
+		localisation_key = ruler_school_abjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_abjuration }
+	}
+	text = {
+		localisation_key = ruler_school_conjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_conjuration }
+	}
+	text = {
+		localisation_key = ruler_school_divination_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_divination }
+	}
+	text = {
+		localisation_key = ruler_school_enchantment_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_enchantment }
+	}
+	text = {
+		localisation_key = ruler_school_evocation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_evocation }
+	}
+	text = {
+		localisation_key = ruler_school_illusion_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_illusion }
+	}
+	text = {
+		localisation_key = ruler_school_necromancy_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_necromancy }
+	}
+	text = {
+		localisation_key = ruler_school_transmutation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_transmutation }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetFloodbornAgeScaling
+	random = no
+	text = {
+		localisation_key = wyvernheart_monarchy_under_40
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                NOT = { ruler_age = 40 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_monarchy_over_40
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                ruler_age = 40
+                NOT = { ruler_age = 50 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_monarchy_over_50
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                ruler_age = 50
+                NOT = { ruler_age = 60 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_theocracy_under_60
+		trigger = {
+                has_reform = floodborn_council_reform_theocracy
+                NOT = { ruler_age = 60 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_60
+		trigger = {
+                ruler_age = 60
+                NOT = { ruler_age = 70 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_70
+		trigger = {
+                ruler_age = 70
+                NOT = { ruler_age = 80 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_80
+		trigger = {
+                ruler_age = 80
+                NOT = { ruler_age = 90 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_90
+		trigger = {
+                ruler_age = 90
+                NOT = { ruler_age = 100 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_100
+		trigger = {
+                ruler_age = 100
+        }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetFloodbornPowerScaling
+	random = no
+	text = {
+		localisation_key = wyvernheart_minus_0
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    NOT = { ruler_age = 40 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    NOT = { ruler_age = 60 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_1
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 40
+                    NOT = { ruler_age = 50 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 60
+                    NOT = { ruler_age = 70 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_2
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 50
+                    NOT = { ruler_age = 60 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 70
+                    NOT = { ruler_age = 80 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_45
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 60
+                    NOT = { ruler_age = 70 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 80
+                    NOT = { ruler_age = 90 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_7
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 70
+                    NOT = { ruler_age = 80 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 90
+                    NOT = { ruler_age = 100 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_95
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 80
+            NOT = { ruler_age = 90 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_15
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 90
+            NOT = { ruler_age = 100 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_2
+		trigger = {
+            has_reform = floodborn_council_reform_theocracy
+            ruler_age = 100
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_65
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 100
+        }
+	}
+}
+
+
+defined_text = {
+	name = KoboldInitialSetup
+	random = no
+
+	text = {
+		localisation_key = kobold_glidewing_membranes_loc
+		trigger = { has_country_flag = kobildzan_glidewing_membranes }
+	}
+    text = {
+		localisation_key = kobold_claws_of_power_loc
+		trigger = { has_country_flag = kobildzan_claws_of_power }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldPrecursorEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_detachable_extra_limbs_loc
+		trigger = { has_country_flag = kobildzan_detachable_extra_limbs }
+	}
+    text = {
+		localisation_key = kobold_ogre_sized_kobolds_loc
+		trigger = { has_country_flag = kobildzan_ogre_sized_kobolds }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldEliteEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_malliath_chosen_disciples_loc
+		trigger = { has_country_flag = kobildzan_malliaths_chosen_disciples }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldCivilizationalEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_hyperdigestion_loc
+		trigger = { has_country_flag = kobildzan_hyperdigestion }
+	}
+    text = {
+		localisation_key = kobold_dragonfire_sacs_loc
+		trigger = { has_country_flag = kobildzan_dragonfire_sacs }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldAlterationEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_biocompatibility_loc
+		trigger = { has_country_flag = kobildzan_biocompatibility }
+	}
+    text = {
+		localisation_key = kobold_intercontinental_ballistic_kobolds_loc
+		trigger = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldBodyEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_mana_attunement_glands_loc
+		trigger = { has_country_flag = kobildzan_mana_attunement_glands }
+	}
+    text = {
+		localisation_key = kobold_ebonsteel_shieldscales_loc
+		trigger = { has_country_flag = kobildzan_ebonsteel_shieldscales }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldFinalEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_the_body_gestalt_loc
+		trigger = {
+            AND = {
+                has_country_flag = kobildzan_the_protean_form
+                has_country_flag = kobildzan_the_holiest_flesh
+            }     
+        }
+	}
+
+	text = {
+		localisation_key = kobold_the_protean_form_loc
+		trigger = { has_country_flag = kobildzan_the_protean_form }
+	}
+    text = {
+		localisation_key = kobold_the_holiest_flesh_loc
+		trigger = { has_country_flag = kobildzan_the_holiest_flesh }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = GetSlavesDesc
+	random = no
+
+	text = {
+		localisation_key = L62_prestigious_slave1
+		trigger = { has_country_flag = L62_prestigious_slave_1 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave2
+		trigger = { has_country_flag = L62_prestigious_slave_2 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave3
+		trigger = { has_country_flag = L62_prestigious_slave_3 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave4
+		trigger = { has_country_flag = L62_prestigious_slave_4 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave5
+		trigger = { has_country_flag = L62_prestigious_slave_5 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave6
+		trigger = { has_country_flag = L62_prestigious_slave_6 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave7
+		trigger = { has_country_flag = L62_prestigious_slave_7 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave8
+		trigger = { has_country_flag = L62_prestigious_slave_8 }
+	}
+
+    text = {
+		localisation_key = L62_labourers
+		trigger = { 
+            NOT = {
+                OR = {
+                    has_country_flag = L62_prestigious_slave_1
+                    has_country_flag = L62_prestigious_slave_2
+                    has_country_flag = L62_prestigious_slave_3
+                    has_country_flag = L62_prestigious_slave_4
+                    has_country_flag = L62_prestigious_slave_5
+                    has_country_flag = L62_prestigious_slave_6
+                    has_country_flag = L62_prestigious_slave_7
+                    has_country_flag = L62_prestigious_slave_8
+                }
+            }
+        }
 	}
 }

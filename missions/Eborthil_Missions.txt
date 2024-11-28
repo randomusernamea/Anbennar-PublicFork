@@ -920,7 +920,7 @@ A47_navy = {
 				add_center_of_trade_level = 1
 			}
 			496 = {
-				add_center_of_trade_level = 1
+				center_of_trade = 1
 			}
 			452 = {
 				add_province_modifier = {
@@ -1268,6 +1268,7 @@ A47_development = {
 			add_mil_power = -100
 			custom_tooltip = eborthil_unlock_defensive_decisions
 			set_country_flag = eborthil_reinforce_the_home_isles
+			set_country_flag = eborthil_space_cleared_out_unlock_flag
 		}
 	}
 	

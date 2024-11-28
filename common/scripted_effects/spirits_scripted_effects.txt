@@ -20,13 +20,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				dhurasidheni_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -49,13 +51,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				bubhagama_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -78,13 +82,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sharaja_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -107,13 +113,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sighajisbid_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -136,13 +144,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				dhenijansar_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -165,13 +175,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				mindanan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -194,13 +206,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sardika_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -223,13 +237,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				ghundagar_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -252,13 +268,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sramaya_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -281,13 +299,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				maharaaja_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -310,13 +330,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sarnavan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -339,13 +361,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				tughayasa_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -368,13 +392,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sarilavhan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -397,13 +423,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				khadisrapur_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -426,13 +454,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				ghatasak_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -455,13 +485,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				sir_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -484,13 +516,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				bimlau_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -513,13 +547,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				khabtei_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -542,13 +578,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				mahoang_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -571,13 +609,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				lapnam_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -600,13 +640,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				khirnadhiman_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -629,13 +671,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				jiangshengdian_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -658,13 +702,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				samabok_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -687,13 +733,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				zyuhung_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -716,13 +764,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				luoyi_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -745,13 +795,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				yanchung_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -774,13 +826,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				lanjincun_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -803,13 +857,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				tianlou_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -832,13 +888,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				damaogong_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -861,13 +919,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				jondang_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -890,13 +950,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				keoaden_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -919,13 +981,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				brenulan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -948,13 +1012,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				phangban_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -977,13 +1043,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				prukakhin_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -1006,13 +1074,15 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 						}
 					}
 				}
-				4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = derelict_temple_complex }
 				shanyutian_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 	}
@@ -1037,7 +1107,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1063,7 +1133,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1089,7 +1159,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1115,7 +1185,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1141,7 +1211,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1167,7 +1237,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1193,7 +1263,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1219,7 +1289,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1245,7 +1315,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1271,7 +1341,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1297,7 +1367,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1323,7 +1393,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1349,7 +1419,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1375,7 +1445,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1401,7 +1471,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1427,7 +1497,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1453,7 +1523,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1479,7 +1549,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1505,7 +1575,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1531,7 +1601,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1557,7 +1627,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1583,7 +1653,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1609,7 +1679,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1635,7 +1705,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1661,7 +1731,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1687,7 +1757,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1713,7 +1783,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1739,7 +1809,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1765,7 +1835,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1791,7 +1861,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1817,7 +1887,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1843,7 +1913,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1869,7 +1939,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1895,7 +1965,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1921,7 +1991,7 @@ upgrade_temple_wards = { #Always fired in a temple province scope after the prov
 						remove_province_modifier = rending_unhindered_spirits
 					}
 				}
-				4871 = { change_variable = { which = globalWardStrength value = 1 } }
+				update_global_ward_strength = yes
 			}
 			else_if = {
 				limit = { has_province_modifier = damaged_temple_complex }
@@ -1958,11 +2028,23 @@ damage_temple_effect_small = {
 		downgrade_temple_wards = yes
 		setup_temple_restoration_speed = yes
 	}
-	else = {
+	else_if = {
+		limit = { 
+			NOT = { has_province_modifier = corrupted_temple_complex has_province_modifier = corrupted_temple_complex_inactive } 
+		}
 		remove_province_modifier = derelict_temple_complex
 		add_permanent_province_modifier = {
 			name = ruined_temple_complex
 			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			province_id = 4925
+		}
+		add_great_project_tier = {
+		    type = temple_of_undying_flame
+		    tier = -1
 		}
 	}
 }
@@ -1972,41 +2054,41 @@ corrupt_temple_wards = { #Always fired in a temple province scope, clears other 
 	trigger_switch = {
 		on_trigger = province_id
 		
-		4438 = { dhurasidheni_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4450 = { bubhagama_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4397 = { sharaja_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4469 = { sighajisbid_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4411 = { dhenijansar_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4384 = { mindanan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4380 = { sardika_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4417 = { ghundagar_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4420 = { sramaya_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4488 = { maharaaja_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4510 = { sarnavan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4527 = { tughayasa_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4630 = { sarilavhan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4465 = { khadisrapur_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4546 = { ghatasak_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4633 = { sir_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4565 = { bimlau_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4580 = { khabtei_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4764 = { mahoang_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4941 = { lapnam_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4499 = { khirnadhiman_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4811 = { jiangshengdian_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4951 = { samabok_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4839 = { zyuhung_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4949 = { luoyi_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4859 = { yanchung_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4930 = { lanjincun_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4871 = { tianlou_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4979 = { damaogong_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4925 = { jondang_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4955 = { keoaden_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4964 = { brenulan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4396 = { phangban_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4570 = { prukakhin_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
-		4618 = { shanyutian_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } 4871 = { subtract_variable = { which = globalWardStrength value = 3 } } }
+		4438 = { dhurasidheni_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4450 = { bubhagama_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4397 = { sharaja_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4469 = { sighajisbid_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4411 = { dhenijansar_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4384 = { mindanan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4380 = { sardika_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4417 = { ghundagar_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4420 = { sramaya_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4488 = { maharaaja_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4510 = { sarnavan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4527 = { tughayasa_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4630 = { sarilavhan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4465 = { khadisrapur_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4546 = { ghatasak_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4633 = { sir_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4565 = { bimlau_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4580 = { khabtei_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4764 = { mahoang_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4941 = { lapnam_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4499 = { khirnadhiman_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4811 = { jiangshengdian_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4951 = { samabok_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4839 = { zyuhung_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4949 = { luoyi_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4859 = { yanchung_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4930 = { lanjincun_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4871 = { tianlou_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4979 = { damaogong_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4925 = { jondang_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4955 = { keoaden_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4964 = { brenulan_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4396 = { phangban_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4570 = { prukakhin_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
+		4618 = { shanyutian_temple_area = { clr_province_flag = pristine_wards clr_province_flag = damaged_wards set_province_flag = corrupted_wards } update_global_ward_strength = yes }
 	}
 }
 
@@ -2014,22 +2096,27 @@ ruin_temple = { #Always fired in a temple province scope, clears every ward + se
 	if = {
 		limit = { has_province_modifier = temple_complex }
 		remove_province_modifier = temple_complex
-		4871 = { subtract_variable = { which = globalWardStrength value = 2 } }
+		hidden_effect = { update_global_ward_strength = yes }
 	}
 	else_if = {
 		limit = { has_province_modifier = damaged_temple_complex }
 		remove_province_modifier = damaged_temple_complex
-		4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+		hidden_effect = { update_global_ward_strength = yes }
 	}
 	else_if = {
 		limit = { has_province_modifier = derelict_temple_complex }
 		remove_province_modifier = derelict_temple_complex
-		4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+		hidden_effect = { update_global_ward_strength = yes }
 	}
 	else_if = {
 		limit = { has_province_modifier = corrupted_temple_complex }
-		remove_province_triggered_modifier = corrupted_temple_complex
-		4871 = { change_variable = { which = globalWardStrength value = 1 } }
+		remove_province_modifier = corrupted_temple_complex
+		hidden_effect = { update_global_ward_strength = yes }
+	}
+	else_if = {
+		limit = { has_province_modifier = corrupted_temple_complex_inactive }
+		remove_province_modifier = corrupted_temple_complex_inactive
+		hidden_effect = { update_global_ward_strength = yes }
 	}
 	add_permanent_province_modifier = { name = ruined_temple_complex duration = -1 }
 	hidden_effect = {
@@ -2084,12 +2171,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2099,12 +2186,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2114,12 +2201,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2129,12 +2216,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2144,12 +2231,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2159,12 +2246,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2174,12 +2261,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2189,12 +2276,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2204,12 +2291,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2219,12 +2306,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2234,12 +2321,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2249,12 +2336,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2264,12 +2351,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2279,12 +2366,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2294,12 +2381,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2309,12 +2396,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2324,12 +2411,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2339,12 +2426,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2354,12 +2441,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2369,12 +2456,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2384,12 +2471,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2399,12 +2486,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2414,12 +2501,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2429,12 +2516,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2444,12 +2531,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2459,12 +2546,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2474,12 +2561,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2489,12 +2576,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2504,12 +2591,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2519,12 +2606,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2534,12 +2621,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2549,12 +2636,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2564,12 +2651,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2579,12 +2666,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2594,12 +2681,12 @@ purify_temple_wards = { #Always fired in a temple province scope, clears corrupt
 				if = {
 					limit = { ROOT = { has_province_flag = was_temple_complex } }
 					set_province_flag = pristine_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 				else_if = {
 					limit = { ROOT = { has_province_flag = was_damaged_temple_complex } }
 					set_province_flag = damaged_wards
-					4871 = { change_variable = { which = globalWardStrength value = 3 } }
+					update_global_ward_strength = yes
 				}
 			}
 		}
@@ -2620,6 +2707,22 @@ define_temple_to_restore = {
 			is_core = ROOT 
 		}
 		calculate_temple_restoration = yes
+	}
+	every_subject_country = {
+		every_owned_province = {
+			limit = {
+				OR = { 
+					has_province_modifier = damaged_temple_complex
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}
+			calculate_temple_restoration_overlord = yes
+		}
 	}
 	random_owned_province = {
 		limit = { 
@@ -2722,6 +2825,529 @@ define_temple_to_restore = {
 		set_province_flag = restore_@ROOT
 		save_event_target_as = restore6
 		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_7_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore7
+		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_8_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore8
+		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_9_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore9
+		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_10_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore10
+		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_11_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore11
+		setup_temple_restoration_speed = yes
+	}
+	random_owned_province = {
+		limit = { 
+			OR = { 
+				has_province_modifier = damaged_temple_complex 
+				has_province_modifier = derelict_temple_complex 
+			} 
+			NOT = { has_province_flag = restore_@ROOT } 
+			NOT = { has_province_flag = temple_being_plundered } 
+			NOT = { has_province_modifier = temple_restoration_efforts } 
+			is_city = yes 
+			is_core = ROOT 
+		}
+		set_province_flag = option_restore_12_@ROOT
+		set_province_flag = restore_@ROOT
+		save_event_target_as = restore12
+		setup_temple_restoration_speed = yes
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}
+			set_province_flag = option_restore_13_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore13
+			setup_temple_restoration_speed = yes
+		}
+	}
+	
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_14_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore14
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_15_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore15
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_16_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore16
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_17_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore17
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_18_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore18
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_19_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore19
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_20_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore20
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_21_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore21
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_22_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore22
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_23_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore23
+			setup_temple_restoration_speed = yes
+		}
+	}
+	random_subject_country = {
+		limit = {
+			AND = {
+				has_country_flag = owns_high_temple
+				any_owned_province = {
+					OR = {
+						has_province_modifier = damaged_temple_complex
+						has_province_modifier = derelict_temple_complex
+					}
+					NOT = { has_province_flag = restore_@ROOT }
+					NOT = { has_province_flag = temple_being_plundered }
+					NOT = { has_province_modifier = temple_restoration_efforts }
+					is_city = yes 
+					is_core = PREV
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				OR = { 
+					has_province_modifier = damaged_temple_complex 
+					has_province_modifier = derelict_temple_complex 
+				} 
+				NOT = { has_province_flag = restore_@ROOT } 
+				NOT = { has_province_flag = temple_being_plundered } 
+				NOT = { has_province_modifier = temple_restoration_efforts } 
+				is_city = yes 
+				is_core = PREV 
+			}		
+			set_province_flag = option_restore_24_@ROOT
+			set_province_flag = restore_@ROOT
+			save_event_target_as = restore24
+			setup_temple_restoration_speed = yes
+		}
 	}
 }
 
@@ -2841,8 +3467,9 @@ begin_temple_restoration = {	#The province event removes temple_restoration_effo
 		if = { limit = { is_variable_equal = { which = RestorationSpeed value = 1 } } add_permanent_province_modifier = { name = temple_restoration_efforts duration = 10950 } hidden_effect = { province_event = { id = spirits.004 days = 10949 } } }
 	}
 	hidden_effect = {
-		calculate_temple_restoration = yes
-		owner = {
+		[[owner_restorer] calculate_temple_restoration = yes ]
+		[[overlord_restorer] calculate_temple_restoration_overlord = yes ]
+		PREV = {
 			change_variable = {
 				which = NumTemplesRestoring #adding it for real
 				value = 1
@@ -2856,6 +3483,7 @@ begin_temple_restoration = {	#The province event removes temple_restoration_effo
 }
 
 calculate_temple_restoration = {
+	
 	owner = {
 		export_to_variable = {
 			which = CurrentTreasury
@@ -2971,17 +3599,35 @@ calculate_temple_restoration = {
 			which = TreasuryCost
 			which = PREV
 		}
-		change_variable = {
-			which = NumTemplesRestoring
-			value = 1
+		set_variable = {
+			which = TimesMultiplied
+			value = 0
 		}
-		multiply_variable = {
-			which = PowerCost
-			which = NumTemplesRestoring
-		}
-		multiply_variable = {
-			which = TreasuryCost
-			which = NumTemplesRestoring
+		while = {
+			limit = { #add 25% per restoration in progress
+				check_variable = {
+					which = NumTemplesRestoring
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = TimesMultiplied
+						which = NumTemplesRestoring
+					}
+				}
+			}
+			multiply_variable = {
+				which = PowerCost
+				value = 1.25
+			}
+			multiply_variable = {
+				which = TreasuryCost
+				value = 1.25
+			}
+			change_variable = {
+				which = TimesMultiplied
+				value = 1
+			}
 		}
 		set_variable = {
 			which = AdmPowerCost
@@ -3012,11 +3658,185 @@ calculate_temple_restoration = {
 		which = TreasuryCost
 		which = owner
 	}
-	owner = { #we were just checking the cost
-		subtract_variable = {
-			which = NumTemplesRestoring
-			value = 1
+}
+
+calculate_temple_restoration_overlord = {
+	
+	owner = { overlord = { save_event_target_as = restorer } }
+	
+	event_target:restorer = {
+		export_to_variable = {
+			which = CurrentTreasury
+			value = treasury
 		}
+		export_to_variable = {
+			which = CurrentAdmPower
+			value = trigger_value:adm_power
+		}
+		export_to_variable = {
+			which = CurrentDipPower
+			value = trigger_value:dip_power
+		}
+		export_to_variable = {
+			which = CurrentMilPower
+			value = trigger_value:mil_power
+		}
+	}
+	set_variable = { #copy country variables to province
+		which = CurrentTreasury
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = CurrentAdmPower
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = CurrentDipPower
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = CurrentMilPower
+		which = event_target:restorer
+	}
+	if = {
+		limit = { has_province_modifier = damaged_temple_complex }
+		set_variable = {
+			which = PowerCost
+			value = 50
+		}
+		set_variable = {
+			which = TreasuryCost
+			value = 100
+		}
+	}
+	else_if = {
+		limit = { has_province_modifier = derelict_temple_complex }
+		set_variable = {
+			which = PowerCost
+			value = 50
+		}
+		set_variable = {
+			which = TreasuryCost
+			value = 250
+		}
+	}
+	if = {
+		limit = { event_target:restorer = { corruption = 5 } }
+		multiply_variable = {
+			which = TreasuryCost
+			value = 2
+		}
+	}
+	else_if = {
+		limit = { event_target:restorer = { corruption = 3 } }
+		multiply_variable = {
+			which = TreasuryCost
+			value = 1.5
+		}
+	}
+	else_if = {
+		limit = { event_target:restorer = { corruption = 1 } }
+		multiply_variable = {
+			which = TreasuryCost
+			value = 1.25
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				#Add half-cost flags and stuff here
+				event_target:restorer = { has_country_flag = command_oni_temple_stewardship_flag }
+			}
+		}
+		divide_variable = {
+			which = TreasuryCost
+			value = 2
+		}
+		divide_variable = {
+			which = PowerCost
+			value = 2
+		}
+	}
+	if = { #AI doesnt pay real cost
+		limit = {
+			event_target:restorer = { ai = yes }
+		}
+		set_variable = {
+			which = TreasuryCost
+			value = 100
+		}
+		set_variable = {
+			which = PowerCost
+			value = 25
+		}
+	}
+	event_target:restorer = { #copy province variables to country, do variable math
+		set_variable = {
+			which = PowerCost
+			which = PREV
+		}
+		set_variable = {
+			which = TreasuryCost
+			which = PREV
+		}
+		set_variable = {
+			which = TimesMultiplied
+			value = 0
+		}
+		while = {
+			limit = { #add 25% per restoration in progress
+				check_variable = {
+					which = NumTemplesRestoring
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = TimesMultiplied
+						which = NumTemplesRestoring
+					}
+				}
+			}
+			multiply_variable = {
+				which = PowerCost
+				value = 1.25
+			}
+			multiply_variable = {
+				which = TreasuryCost
+				value = 1.25
+			}
+			change_variable = {
+				which = TimesMultiplied
+				value = 1
+			}
+		}
+		set_variable = {
+			which = AdmPowerCost
+			which = PowerCost
+		}
+		set_variable = {
+			which = DipPowerCost
+			which = PowerCost
+		}
+		set_variable = {
+			which = MilPowerCost
+			which = PowerCost
+		}	
+	}
+	set_variable = { #copy owner values to province
+		which = AdmPowerCost
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = DipPowerCost
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = MilPowerCost
+		which = event_target:restorer
+	}
+	set_variable = {
+		which = TreasuryCost
+		which = event_target:restorer
 	}
 }
 
@@ -3034,7 +3854,7 @@ end_temple_quest = {
 	event_target:temple_quest_target = { clr_province_flag = temple_being_quested }
 	add_country_modifier = {
 		name = temple_quest_cooldown
-		duration = 730
+		duration = 365
 		hidden = yes
 	}
 }
@@ -3189,114 +4009,114 @@ discover_heart_chamber = {
 
 define_temple_to_corrupt = {
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}
 		set_province_flag = option_corrupt_1_@ROOT
 		set_province_flag = corrupt_@ROOT
 		save_event_target_as = corrupt1
 	}
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}		
 		set_province_flag = option_corrupt_2_@ROOT
 		set_province_flag = corrupt_@ROOT
 		save_event_target_as = corrupt2
 	}
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}		
 		set_province_flag = option_corrupt_3_@ROOT
 		set_province_flag = corrupt_@ROOT
 		save_event_target_as = corrupt3
 	}
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}		
 		set_province_flag = option_corrupt_4_@ROOT
 		set_province_flag = corrupt_@ROOT
 		save_event_target_as = corrupt4
 	}
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}		
 		set_province_flag = option_corrupt_5_@ROOT
 		set_province_flag = corrupt_@ROOT
 		save_event_target_as = corrupt5
 	}
 	random_owned_province = {
-		limit = { 
-			OR = { 
+		limit = {
+			province_group = temple_province_group
+			OR = {
 				has_province_modifier = temple_complex 
 				has_province_modifier = damaged_temple_complex 
 				has_province_modifier = derelict_temple_complex 
-			} 
-			NOT = { has_province_flag = corrupt_@ROOT } 
-			NOT = { has_province_modifier = corrupted_temple_complex } 
-			NOT = { has_province_modifier = rite_of_corruption } 
-			NOT = { has_province_modifier = azjakuma_rite_of_corruption } 
-			has_province_modifier = temple_heart_discovered 
-			is_city = yes 
-			is_core = ROOT 
+			}
+			NOT = { has_province_flag = corrupt_@ROOT }
+			NOT = { has_province_modifier = rite_of_corruption }
+			NOT = { has_province_modifier = azjakuma_rite_of_corruption }
+			has_province_modifier = temple_heart_discovered
+			is_city = yes
+			is_core = ROOT
 		}		
 		set_province_flag = option_corrupt_6_@ROOT
 		set_province_flag = corrupt_@ROOT
@@ -3304,71 +4124,8 @@ define_temple_to_corrupt = {
 	}
 }
 
-define_temple_to_summon = {
-	if = { #allows summoning at the same corrupted temple complex
-		limit = {
-			any_owned_province = {  
-				has_active_triggered_province_modifier = corrupted_temple_complex
-				has_province_modifier = lhp_summon_same_temple
-			}
-		}
-		random_owned_province = {
-			limit = {
-				has_active_triggered_province_modifier = corrupted_temple_complex
-				has_province_modifier = lhp_summon_same_temple
-			}
-			set_province_flag = option_summon_1_@ROOT
-			set_province_flag = summon_@ROOT
-			save_event_target_as = summon1
-		}
-	}
-	else = {
-		random_owned_province = {
-			limit = {
-				has_active_triggered_province_modifier = corrupted_temple_complex
-				NOT = { has_province_flag = summon_@ROOT }
-				is_core = ROOT
-			}
-			set_province_flag = option_summon_1_@ROOT
-			set_province_flag = summon_@ROOT
-			save_event_target_as = summon1
-		}
-	}
-	random_owned_province = {
-		limit = { has_active_triggered_province_modifier = corrupted_temple_complex NOT = { has_province_flag = summon_@ROOT } is_core = ROOT }
-		set_province_flag = option_summon_2_@ROOT
-		set_province_flag = summon_@ROOT
-		save_event_target_as = summon2
-	}
-	random_owned_province = {
-		limit = { has_active_triggered_province_modifier = corrupted_temple_complex NOT = { has_province_flag = summon_@ROOT } is_core = ROOT }
-		set_province_flag = option_summon_3_@ROOT
-		set_province_flag = summon_@ROOT
-		save_event_target_as = summon3
-	}
-	random_owned_province = {
-		limit = { has_active_triggered_province_modifier = corrupted_temple_complex NOT = { has_province_flag = summon_@ROOT } is_core = ROOT }
-		set_province_flag = option_summon_4_@ROOT
-		set_province_flag = summon_@ROOT
-		save_event_target_as = summon4
-	}
-	random_owned_province = {
-		limit = { has_active_triggered_province_modifier = corrupted_temple_complex NOT = { has_province_flag = summon_@ROOT } is_core = ROOT }
-		set_province_flag = option_summon_5_@ROOT
-		set_province_flag = summon_@ROOT
-		save_event_target_as = summon5
-	}
-	random_owned_province = {
-		limit = { has_active_triggered_province_modifier = corrupted_temple_complex NOT = { has_province_flag = summon_@ROOT } is_core = ROOT }
-		set_province_flag = option_summon_6_@ROOT
-		set_province_flag = summon_@ROOT
-		save_event_target_as = summon6
-	}
-}
-
 begin_temple_corruption = { # province scope
 	owner = { 
-		add_church_power = -100
 		add_adm_power = -50
 		add_dip_power = -50
 		add_mil_power = -50
@@ -3388,46 +4145,10 @@ begin_temple_corruption = { # province scope
 	hidden_effect = { province_event = { id = spirits.603 days = 1824 } } # Completion of temple corruption
 }
 
-lefthand_spirit_bind_effect = {	#Province scope
-	hidden_effect = {
-		if = {
-			limit = { has_province_flag = minor_spirit_bound }
-			change_variable = { which = CorruptedHeartMana value = 1 }
-			clr_province_flag = minor_spirit_bound
-		}
-		else_if = {
-			limit = { has_province_flag = spirit_bound }
-			change_variable = { which = CorruptedHeartMana value = 2 }
-			clr_province_flag = spirit_bound
-		}
-		else_if = {
-			limit = { has_province_flag = powerful_spirit_bound }
-			change_variable = { which = CorruptedHeartMana value = 3 }
-			clr_province_flag = powerful_spirit_bound
-		}
-		if = { #clamp
-			limit = { check_variable = { which = CorruptedHeartMana value = 11 } }
-			set_variable = { which = CorruptedHeartMana value = 10 }
-		}
-		if = {	#Sends Drain menu if Heart is full
-			limit = { 
-				check_variable = { which = CorruptedHeartMana value = 10 }
-				NOT = {
-					owner = { has_country_flag = in_heart_drain_menu }
-					owner = { has_country_flag = temple_summoning_menu_open }
-					owner = { has_country_modifier = corrupted_heart_drain_cooldown }
-				}
-			}
-			# save_event_target_as = corrupted_temple_drain_target
-			owner = { country_event = { id = spirits.607 } }	#Drain Menu
-		}
-	}
-}
-
 define_temple_to_purify = {
 	random_owned_province = {
-		limit = { 
-			has_province_modifier = corrupted_temple_complex 
+		limit = {
+			has_province_modifier = corrupted_temple_complex_inactive
 			NOT = { has_province_flag = purify_@ROOT } 
 			NOT = { has_province_modifier = rite_of_purification } 
 			is_city = yes 
@@ -3439,7 +4160,7 @@ define_temple_to_purify = {
 	}
 	random_owned_province = {
 		limit = { 
-			has_province_modifier = corrupted_temple_complex 
+			has_province_modifier = corrupted_temple_complex_inactive
 			NOT = { has_province_flag = purify_@ROOT } 
 			NOT = { has_province_modifier = rite_of_purification } 
 			is_city = yes 
@@ -3451,7 +4172,7 @@ define_temple_to_purify = {
 	}
 	random_owned_province = {
 		limit = { 
-			has_province_modifier = corrupted_temple_complex 
+			has_province_modifier = corrupted_temple_complex_inactive
 			NOT = { has_province_flag = purify_@ROOT } 
 			NOT = { has_province_modifier = rite_of_purification } 
 			is_city = yes 
@@ -3462,14 +4183,14 @@ define_temple_to_purify = {
 		save_event_target_as = purify3
 	}
 	random_owned_province = {
-		limit = { has_province_modifier = corrupted_temple_complex NOT = { has_province_flag = purify_@ROOT } NOT = { has_province_modifier = rite_of_purification } is_city = yes is_core = ROOT }
+		limit = { has_province_modifier = corrupted_temple_complex_inactive NOT = { has_province_flag = purify_@ROOT } NOT = { has_province_modifier = rite_of_purification } is_city = yes is_core = ROOT }
 		set_province_flag = option_purify_4_@ROOT
 		set_province_flag = purify_@ROOT
 		save_event_target_as = purify4
 	}
 	random_owned_province = {
 		limit = { 
-			has_province_modifier = corrupted_temple_complex 
+			has_province_modifier = corrupted_temple_complex_inactive 
 			NOT = { has_province_flag = purify_@ROOT } 
 			NOT = { has_province_modifier = rite_of_purification } 
 			is_city = yes 
@@ -3481,7 +4202,7 @@ define_temple_to_purify = {
 	}
 	random_owned_province = {
 		limit = { 
-			has_province_modifier = corrupted_temple_complex 
+			has_province_modifier = corrupted_temple_complex_inactive 
 			NOT = { has_province_flag = purify_@ROOT } 
 			NOT = { has_province_modifier = rite_of_purification } 
 			is_city = yes 
@@ -3495,7 +4216,7 @@ define_temple_to_purify = {
 
 begin_temple_purification = {
 	if = {
-		limit = { owner = { religion = righteous_path } }
+		limit = { owner = { OR = { religion = accretive_path religion = transmutative_path } } }
 		owner = { add_church_power = -100 }
 	}
 	owner = { 
@@ -3510,47 +4231,47 @@ begin_temple_purification = {
 
 define_temple_to_plunder = {
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_1_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder1
 	}
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_2_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder2
 	}
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_3_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder3
 	}
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_4_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder4
 	}
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_5_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder5
 	}
 	random_owned_province = {
-		limit = { OR = { has_province_modifier = temple_complex has_province_modifier = damaged_temple_complex has_province_modifier = derelict_temple_complex has_province_modifier = corrupted_temple_complex has_province_modifier = ruined_temple_complex } NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
+		limit = { province_group = temple_province_group NOT = { has_province_flag = plunder_@ROOT has_province_flag = temple_being_plundered has_province_flag = already_plundered } is_city = yes is_core = ROOT }
 		set_province_flag = option_plunder_6_@ROOT
 		set_province_flag = plunder_@ROOT
 		save_event_target_as = plunder6
 	}
 }
 
-start_plundering_temple = {	#Sets to Derelict if not already Derelict/Ruined, changes trade goods to relics
+start_plundering_temple = {	#Sets to Derelict if not already Derelict/Ruined, changes trade goods to relics. DVP cannot use
 	if = { limit = { has_province_modifier = temple_complex } remove_province_modifier = temple_complex }
 	else_if = { limit = { has_province_modifier = damaged_temple_complex } remove_province_modifier = damaged_temple_complex }
-	else_if = { limit = { has_province_modifier = corrupted_temple_complex } remove_province_triggered_modifier = corrupted_temple_complex }
+	else_if = { limit = { has_province_modifier = corrupted_temple_complex_inactive } remove_province_modifier = corrupted_temple_complex_inactive }
 	if = { limit = { NOT = { has_province_modifier = derelict_temple_complex has_province_modifier = ruined_temple_complex } } add_permanent_province_modifier = { name = derelict_temple_complex duration = -1 } }
 	owner = {	
 		add_adm_power = -50
@@ -3582,30 +4303,6 @@ start_plundering_temple = {	#Sets to Derelict if not already Derelict/Ruined, ch
 			set_province_flag = permanent_precursor_relics
 		}
 		set_province_flag = already_plundered #can't plunder again
-	}
-}
-
-lhp_heart_drain_choose_option = {
-	hidden_effect = {
-		clr_country_flag = in_heart_drain_menu
-		clr_country_flag = in_deeper_heart_drain_menu
-		event_target:corrupted_temple_drain_target = {
-			set_variable = { which = CorruptedHeartMana value = 0 }
-		}
-		if = {
-			limit = {
-				NOT = { has_country_flag = remove_temple_corruption_cooldown }
-			}
-			add_country_modifier = { #Cooldown for balance concerns
-				name = corrupted_heart_drain_cooldown
-				duration = 1825
-				hidden = yes
-			}
-			country_event = { id = spirits.607 days = 1826 } 	#Check if you have any full Hearts after cooldown is up
-		}
-		else = {
-			country_event = { id = spirits.607 days = 30 } 	#Check if you have any full Hearts in a month
-		}
 	}
 }
 
@@ -3761,6 +4458,200 @@ spirit_mil_shock_dmg = {
 					name = spirit_mil_5
 					duration = -1
 				}
+			}
+		}
+	}
+}
+
+remove_rending_highlight = {
+	clr_country_flag = hokuma_highlight
+	clr_country_flag = yanhe_highlight
+	clr_country_flag = kharunyana_highlight
+	clr_country_flag = phokhao_highlight
+	clr_country_flag = hengdu_bowu_highlight
+	clr_country_flag = cinulau_highlight
+	clr_country_flag = lupulan_highlight
+	clr_country_flag = dhenbasana_highlight
+	clr_country_flag = marutha_highlight
+	clr_country_flag = gehet_ketine_highlight
+	clr_country_flag = hukai_telebei_highlight
+	clr_country_flag = huszien_highlight
+	clr_country_flag = tughayasa_highlight
+}
+
+update_global_ward_strength = {
+	4871 = { set_variable = { which = globalWardStrength value = 0 } }
+	temple_province_group = {
+		if = {
+			limit = { has_province_modifier = temple_complex }
+			4871 = { change_variable = { which = globalWardStrength value = 3 } }
+		}
+		else_if = {
+			limit = { has_province_modifier = damaged_temple_complex }
+			4871 = { change_variable = { which = globalWardStrength value = 2 } }
+		}
+		else_if = {
+			limit = { has_province_modifier = derelict_temple_complex }
+			4871 = { change_variable = { which = globalWardStrength value = 1 } }
+		}
+		else_if = {
+			limit = { OR = { has_province_modifier = corrupted_temple_complex has_province_modifier = corrupted_temple_complex_inactive } }
+			4871 = { subtract_variable = { which = globalWardStrength value = 1 } }
+		}
+	}
+	update_visvatma = yes
+}
+
+update_visvatma = {
+	if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 102
+				}
+			}
+		}
+		apply_visvatma = { num = 10 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 92
+				}
+			}
+		}
+		apply_visvatma = { num = 9 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 82
+				}
+			}
+		}
+		apply_visvatma = { num = 8 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 72
+				}
+			}
+		}
+		apply_visvatma = { num = 7 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 62
+				}
+			}
+		}
+		apply_visvatma = { num = 6 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 52
+				}
+			}
+		}
+		apply_visvatma = { num = 5 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 42
+				}
+			}
+		}
+		apply_visvatma = { num = 4 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 32
+				}
+			}
+		}
+		apply_visvatma = { num = 3 }
+	}
+	else_if = {
+		limit = {
+			4871 = {
+				check_variable = {
+					which = globalWardStrength
+					value = 22
+				}
+			}
+		}
+		apply_visvatma = { num = 2 }
+	}
+	else = {
+		apply_visvatma = { num = 1 }
+	}
+}	
+
+apply_visvatma = {
+	every_country = {
+		limit = {
+			religion_group = raheni
+		}
+		remove_country_modifier = visvatma_10_modifier
+		remove_country_modifier = visvatma_9_modifier
+		remove_country_modifier = visvatma_8_modifier
+		remove_country_modifier = visvatma_7_modifier
+		remove_country_modifier = visvatma_6_modifier
+		remove_country_modifier = visvatma_5_modifier
+		remove_country_modifier = visvatma_4_modifier
+		remove_country_modifier = visvatma_3_modifier
+		remove_country_modifier = visvatma_2_modifier
+		remove_country_modifier = visvatma_1_modifier
+		add_country_modifier = {
+			name = visvatma_$num$_modifier
+			duration = -1
+		}
+	}
+}
+
+dvp_gain_ae_with_accretive_and_transmutative_paths = {
+	custom_tooltip = dvp_gain_ae_with_accretive_and_transmutative_paths_tt
+	tooltip = {
+		random_country = {
+			add_aggressive_expansion = {
+				who = ROOT
+				value = $value$
+				apply_calc = no
+			}
+		}
+	}
+	hidden_effect = {
+		every_known_country = {
+			limit = {
+				OR = {
+					religion = accretive_path
+					religion = transmutative_path
+				}
+			}
+			add_aggressive_expansion = {
+				who = ROOT
+				value = $value$
+				apply_calc = no
 			}
 		}
 	}

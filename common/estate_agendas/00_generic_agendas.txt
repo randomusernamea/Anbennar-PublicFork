@@ -6,6 +6,7 @@ estate_church_build_temple_in_y = {
 		any_owned_province = {
 			is_state_core = root
 			NOT = { has_building = cathedral }
+			has_any_blorc_camp = no #anbennar
 			OR = {
 				AND = {
 					NOT = { has_building = temple }
@@ -74,6 +75,7 @@ estate_church_build_temple_in_y = {
 			limit = {
 				is_state_core = root
 				NOT = { has_building = cathedral }
+				has_any_blorc_camp = no #anbennar
 				OR = {
 					AND = {
 						NOT = { has_building = temple }
@@ -521,8 +523,10 @@ estate_brahmins_build_temple_in_y = {
 estate_nobles_build_army_building_in_y = {
 	can_select = {
 		mil_tech = 6
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			OR = {
 				NOT = { has_building = training_fields }
 				NOT = { has_building = conscription_center }
@@ -651,6 +655,7 @@ estate_nobles_build_army_building_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				OR = {
 					NOT = { has_building = training_fields }
 					NOT = { has_building = conscription_center }
@@ -930,6 +935,7 @@ estate_rajput_build_army_building_in_y = {
 		mil_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			OR = {
 				NOT = { has_building = training_fields }
 				NOT = { has_building = conscription_center }
@@ -1058,6 +1064,7 @@ estate_rajput_build_army_building_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				OR = {
 					NOT = { has_building = training_fields }
 					NOT = { has_building = conscription_center }
@@ -2537,6 +2544,7 @@ estate_maratha_build_army_building_in_y = {
 
 estate_nobles_build_fort_building_in_y = {
 	can_select = {
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			OR = {
 				AND = {
@@ -5730,6 +5738,7 @@ estate_burghers_build_trade_building_in_y = {
 		dip_tech = 4
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			NOT = { has_building = stock_exchange }
 			OR = {
 				AND = {
@@ -5845,6 +5854,7 @@ estate_burghers_build_trade_building_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = stock_exchange }
 				OR = {
 					AND = {
@@ -6078,6 +6088,7 @@ estate_burghers_build_port_building_in_y = {
 		dip_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			has_port = yes
 			OR = {
 				NOT = { has_building = grand_shipyard }
@@ -6133,6 +6144,7 @@ estate_burghers_build_port_building_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				has_port = yes
 				OR = {
 					NOT = { has_building = grand_shipyard }
@@ -6411,6 +6423,7 @@ estate_burghers_build_production_building_in_y = {
 		adm_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			NOT = { has_building = counting_house }
 			OR = {
 				AND = {
@@ -6501,6 +6514,7 @@ estate_burghers_build_production_building_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = counting_house }
 				OR = {
 					AND = {
@@ -8600,8 +8614,10 @@ estate_vaisyas_build_production_building_in_y = {
 
 estate_nobles_build_manufactory_in_y = {
 	can_select = {
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			root_can_build_manufactory_here_trigger = yes
 			has_nobles_trade_good_trigger = yes
 		}
@@ -8634,6 +8650,7 @@ estate_nobles_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				root_can_build_manufactory_here_trigger = yes
 				has_nobles_trade_good_trigger = yes
 			}
@@ -8642,6 +8659,7 @@ estate_nobles_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 5
 				root_can_build_manufactory_here_trigger = yes
 				has_nobles_trade_good_trigger = yes
@@ -8651,6 +8669,7 @@ estate_nobles_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 10
 				root_can_build_manufactory_here_trigger = yes
 				has_nobles_trade_good_trigger = yes
@@ -8679,89 +8698,7 @@ estate_nobles_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -8883,89 +8820,7 @@ estate_rajput_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -9087,89 +8942,7 @@ estate_maratha_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -9215,6 +8988,7 @@ estate_burghers_build_manufactory_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			root_can_build_manufactory_here_trigger = yes
 			has_burghers_trade_good_trigger = yes
 		}
@@ -9247,6 +9021,7 @@ estate_burghers_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				root_can_build_manufactory_here_trigger = yes
 				has_burghers_trade_good_trigger = yes
 			}
@@ -9255,6 +9030,7 @@ estate_burghers_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 5
 				root_can_build_manufactory_here_trigger = yes
 				has_burghers_trade_good_trigger = yes
@@ -9264,6 +9040,7 @@ estate_burghers_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 10
 				root_can_build_manufactory_here_trigger = yes
 				has_burghers_trade_good_trigger = yes
@@ -9292,89 +9069,7 @@ estate_burghers_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -9496,89 +9191,7 @@ estate_vaisyas_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -9700,89 +9313,7 @@ estate_vaisyas_build_manufactory_in_y = {
 # 		}
 # 		else = {
 # 			event_target:agenda_province = {
-# 				custom_trigger_tooltip = {
-# 					tooltip = has_manufactory_trigger_tooltip
-# 					OR = {
-# 						if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = naval_supplies
-# 									trade_goods = fish
-# 									trade_goods = salt
-# 								}
-# 							}
-# 							has_building = wharf
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = copper
-# 									trade_goods = iron
-# 								}
-# 							}
-# 							has_building = weapons
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = wool
-# 									trade_goods = cloth
-# 									trade_goods = silk
-# 									trade_goods = dyes
-# 								}
-# 							}
-# 							has_building = textile
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = ivory
-# 									trade_goods = slaves
-# 									trade_goods = spices
-# 									trade_goods = cloves
-# 									trade_goods = fur
-# 									trade_goods = incense
-# 								}
-# 							}
-# 							has_building = tradecompany
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = grain
-# 									trade_goods = livestock
-# 									trade_goods = wine
-# 								}
-# 							}
-# 							has_building = farm_estate
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								OR = {
-# 									trade_goods = paper
-# 									trade_goods = gems
-# 									trade_goods = tropical_wood
-# 									trade_goods = glass
-# 									trade_goods = chinaware
-# 								}
-# 							}
-# 							has_building = mills
-# 						}
-# 						else_if = {
-# 							limit = {
-# 								trade_goods = coal
-# 							}
-# 							has_building = furnace
-# 						}
-# 						else = {
-# 							has_building = plantations
-# 						}
-# 						has_building = ramparts
-# 						has_building = soldier_households
-# 						has_building = impressment_offices
-# 						has_building = state_house
-# 					}
-# 				}
+# 				has_manufactory_trigger = yes
 # 			}
 # 		}
 #     }
@@ -9827,6 +9358,7 @@ estate_church_build_manufactory_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			root_can_build_manufactory_here_trigger = yes
 			has_church_trade_good_trigger = yes
 		}
@@ -9863,6 +9395,7 @@ estate_church_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				root_can_build_manufactory_here_trigger = yes
 				has_church_trade_good_trigger = yes
 			}
@@ -9871,6 +9404,7 @@ estate_church_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 5
 				root_can_build_manufactory_here_trigger = yes
 				has_church_trade_good_trigger = yes
@@ -9880,6 +9414,7 @@ estate_church_build_manufactory_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				base_production = 10
 				root_can_build_manufactory_here_trigger = yes
 				has_church_trade_good_trigger = yes
@@ -9907,91 +9442,7 @@ estate_church_build_manufactory_in_y = {
 			}
 		}
 		else = {
-			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
-			}
+			has_manufactory_trigger = yes
 		}
     }
     task_completed_effect = {
@@ -10116,89 +9567,7 @@ estate_brahmins_build_manufactory_in_y = {
 		}
 		else = {
 			event_target:agenda_province = {
-				custom_trigger_tooltip = {
-					tooltip = has_manufactory_trigger_tooltip
-					OR = {
-						if = {
-							limit = {
-								OR = {
-									trade_goods = naval_supplies
-									trade_goods = fish
-									trade_goods = salt
-								}
-							}
-							has_building = wharf
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = copper
-									trade_goods = iron
-								}
-							}
-							has_building = weapons
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = wool
-									trade_goods = cloth
-									trade_goods = silk
-									trade_goods = dyes
-								}
-							}
-							has_building = textile
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = ivory
-									trade_goods = slaves
-									trade_goods = spices
-									trade_goods = cloves
-									trade_goods = fur
-									trade_goods = incense
-								}
-							}
-							has_building = tradecompany
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = grain
-									trade_goods = livestock
-									trade_goods = wine
-								}
-							}
-							has_building = farm_estate
-						}
-						else_if = {
-							limit = {
-								OR = {
-									trade_goods = paper
-									trade_goods = gems
-									trade_goods = tropical_wood
-									trade_goods = glass
-									trade_goods = chinaware
-								}
-							}
-							has_building = mills
-						}
-						else_if = {
-							limit = {
-								trade_goods = coal
-							}
-							has_building = furnace
-						}
-						else = {
-							has_building = plantations
-						}
-						has_building = ramparts
-						has_building = soldier_households
-						has_building = impressment_offices
-						has_building = state_house
-					}
-				}
+				has_manufactory_trigger = yes
 			}
 		}
     }
@@ -10249,6 +9618,7 @@ estate_church_build_university_in_y = {
 		adm_tech = 17
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			NOT = { has_building = university }
 			OR = {
 				development = 10
@@ -10286,6 +9656,7 @@ estate_church_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 10
 			}
@@ -10294,6 +9665,7 @@ estate_church_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 15
 			}
@@ -10302,6 +9674,7 @@ estate_church_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 20
 			}
@@ -10310,6 +9683,7 @@ estate_church_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				is_capital = yes
 			}
@@ -10510,8 +9884,10 @@ estate_nobles_build_university_in_y = {
 	can_select = {
 		government = monarchy
 		adm_tech = 17
+		NOT = { wyvernheart_is_floodborn_council = yes }
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			NOT = { has_building = university }
 			OR = {
 				development = 10
@@ -10549,6 +9925,7 @@ estate_nobles_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 10
 			}
@@ -10557,6 +9934,7 @@ estate_nobles_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 15
 			}
@@ -10565,6 +9943,7 @@ estate_nobles_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 20
 			}
@@ -10573,6 +9952,7 @@ estate_nobles_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				is_capital = yes
 			}
@@ -10905,6 +10285,7 @@ estate_burghers_build_university_in_y = {
 		adm_tech = 17
 		any_owned_province = {
 			is_state_core = root
+			has_any_blorc_camp = no #anbennar
 			NOT = { has_building = university }
 			OR = {
 				development = 10
@@ -10942,6 +10323,7 @@ estate_burghers_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 10
 			}
@@ -10950,6 +10332,7 @@ estate_burghers_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 15
 			}
@@ -10958,6 +10341,7 @@ estate_burghers_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				development = 20
 			}
@@ -10966,6 +10350,7 @@ estate_burghers_build_university_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				has_any_blorc_camp = no #anbennar
 				NOT = { has_building = university }
 				is_capital = yes
 			}
@@ -11312,6 +10697,7 @@ estate_church_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						area_for_scope_province = {
 							is_capital_of = root
 						}
@@ -11323,6 +10709,7 @@ estate_church_develop_x = {
 				trigger = {
 					any_owned_province = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -11340,6 +10727,7 @@ estate_church_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -11360,6 +10748,7 @@ estate_church_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 					}
 					save_event_target_as = agenda_province
 				}
@@ -11635,6 +11024,7 @@ estate_nobles_develop_x = {
 		capital_scope = {
 			is_state_core = root
 		}
+		NOT = { wyvernheart_is_floodborn_council = yes }
 	}
 	pre_effect = {
 		random_list = {
@@ -11642,6 +11032,7 @@ estate_nobles_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						area_for_scope_province = {
 							is_capital_of = root
 						}
@@ -11653,6 +11044,7 @@ estate_nobles_develop_x = {
 				trigger = {
 					any_owned_province = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -11670,6 +11062,7 @@ estate_nobles_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -11690,6 +11083,7 @@ estate_nobles_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 					}
 					save_event_target_as = agenda_province
 				}
@@ -12083,6 +11477,7 @@ estate_burghers_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						area_for_scope_province = {
 							is_capital_of = root
 						}
@@ -12094,6 +11489,7 @@ estate_burghers_develop_x = {
 				trigger = {
 					any_owned_province = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -12111,6 +11507,7 @@ estate_burghers_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 						OR = {
 							AND = {
 								religion = root
@@ -12131,6 +11528,7 @@ estate_burghers_develop_x = {
 				random_owned_province = {
 					limit = {
 						is_state_core = root
+						has_any_blorc_camp = no #anbennar
 					}
 					save_event_target_as = agenda_province
 				}

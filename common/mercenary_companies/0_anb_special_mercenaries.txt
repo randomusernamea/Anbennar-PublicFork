@@ -97,7 +97,7 @@ merc_verkalgulan_the_golden_shield_company = {
 	cavalry_weight = 0
     artillery_weight = 0.5
 	cavalry_cap = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { group_dwarves_sprite_pack }
     trigger = {
 		OR = {
 			has_country_modifier = verkalgulan_the_golden_shield_company
@@ -136,7 +136,7 @@ merc_verkalgulan_the_citadel_cannonneers = {
 	cavalry_weight = 0
     artillery_weight = 0.7
 	cavalry_cap = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { group_dwarves_sprite_pack }
     trigger = {
 		OR = {
 			has_country_modifier = verkalgulan_the_golden_shield_company
@@ -175,7 +175,7 @@ merc_verkalgulan_the_kings_gate_banners = {
 	cavalry_weight = 0
     artillery_weight = 0.5
 	cavalry_cap = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { group_dwarves_sprite_pack }
     trigger = {
 		OR = {
 			has_country_modifier = verkalgulan_the_golden_shield_company
@@ -256,7 +256,7 @@ merc_bloodfield_riders = {
 	cavalry_weight = 0.4
     artillery_weight = 0.2
 	cavalry_cap = 20
-	sprites = { dlc056_mlo_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+	sprites = { dlc056_mlo_sprite_pack }
     trigger = {
 		has_unlocked_merc_company = { merc_company = merc_bloodfield_riders }
 	}
@@ -451,8 +451,9 @@ merc_bloody_tusks = {
 	cavalry_weight = 0.2
 	cavalry_cap = 4
 	home_province = 4570
-	sprites = { asiangfx_sprite_pack }
+	sprites = { bom_sprite_pack }
 	trigger = {
+		NOT = { has_global_flag = bloody_tusks_unavailable }
 		NOT = { has_country_modifier = centaur_military }
 	}
 	cost_modifier = 0.9
@@ -465,18 +466,19 @@ merc_bloody_tusks = {
 }
 
 merc_stone_army = {
-	regiments_per_development = 0.05
+	regiments_per_development = 0.08
 	artillery_weight = 0.4
-	cavalry_weight = 0.1
+	cavalry_weight = 0.2
 	cavalry_cap = 4
 	home_province = 4914
-	sprites = { asiangfx_sprite_pack }
+	sprites = { yan_sprite_pack }
 	trigger = {
 		NOT = { has_country_modifier = monstrous_nation }
 		NOT = { has_country_modifier = centaur_military }
 		NOT = { has_global_flag = remove_stone_army }
+		NOT = { has_country_flag = gushuokguan_stone_army_tier_2 }
 	}
-	cost_modifier = 1.5
+	cost_modifier = 1
 	modifier = {
 		discipline = 0.05
 		land_morale = 0.1
@@ -490,7 +492,7 @@ merc_sirtani_raiders = {
 	cavalry_weight = 0.4
 	cavalry_cap = 12
 	home_province = 4740
-	sprites = { asiangfx_sprite_pack }
+	sprites = { sirtana_sprite_pack }
 	trigger = {
 		NOT = { has_country_modifier = monstrous_nation }
 		NOT = { has_country_modifier = centaur_military }
@@ -508,11 +510,14 @@ merc_wandering_wind = {
 	cavalry_weight = 0
 	cavalry_cap = 0
 	home_province = 4559
-	sprites = { asiangfx_sprite_pack }
+	sprites = { xia_sprite_pack }
 	trigger = {
 		NOT = { has_country_modifier = monstrous_nation }
 		NOT = { has_country_modifier = centaur_military }
-		religion = righteous_path
+		OR = {
+			religion = accretive_path
+			religion = transmutative_path
+		}
 	}
 	cost_modifier = 1
 	modifier = {
@@ -530,7 +535,7 @@ merc_guvira_chonri = {
 	sprites = { asiangfx_sprite_pack }
 	trigger = {
 		NOT = { has_country_modifier = centaur_military }
-		religion = lefthand_path
+		religion = devouring_path
 	}
 	cost_modifier = 1.3
 	modifier = {
@@ -545,7 +550,7 @@ merc_dishonoured = {
 	cavalry_weight = 0.2
 	cavalry_cap = 4
 	home_province = 4941
-	sprites = { asiangfx_sprite_pack }
+	sprites = { hobgoblin_sprite_pack }
 	trigger = {
 		custom_trigger_tooltip  = {
 			tooltip = command_retribution_tooltip
@@ -603,7 +608,7 @@ merc_malacnari_cannorian_artillery = {
 	cavalry_weight = 0
 	cavalry_cap = 0
     artillery_weight = 1
-	sprites = { westerngfx_sprite_pack }
+	sprites = { easterngfx_sprite_pack }
     trigger = {
 		has_unlocked_merc_company = { merc_company = merc_malacnari_cannorian_artillery }
 		owns_core_province = 1165
@@ -659,7 +664,7 @@ merc_wardens_of_the_white_wall = {
     regiments_per_development = 0.01
     home_province = 755
 	artillery_weight = 0.4
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
+	sprites = { castanor_sprite_pack }
     trigger = {
 		has_unlocked_merc_company = { merc_company = merc_wardens_of_the_white_wall }
 	}
@@ -674,15 +679,16 @@ merc_wardens_of_the_white_wall = {
 # Castanorian Legions
 # Dragonflame Legion
 merc_castanorian_legion_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.1
 	cavalry_cap = 6
 	artillery_weight = 0.34
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    mercenary_desc_key = DRAGONFLAME_LEGION_MERC_DESC
+	sprites = { castanor_sprite_pack }
+	mercenary_desc_key = DRAGONFLAME_LEGION_MERC_DESC
 	trigger = {
-		has_country_flag = castanorian_legion_option_1_unlocked
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_1_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -695,14 +701,15 @@ merc_castanorian_legion_1 = {
 }
 # Sword Legion
 merc_castanorian_legion_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.1
 	cavalry_cap = 6
 	artillery_weight = 0.41
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_2_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_2_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -715,14 +722,15 @@ merc_castanorian_legion_2 = {
 }
 # Shield Legion
 merc_castanorian_legion_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.1
 	cavalry_cap = 6
 	artillery_weight = 0.41
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_3_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_3_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -734,14 +742,15 @@ merc_castanorian_legion_3 = {
 }
 # Giantsbane Legion
 merc_castanorian_legion_4 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.1
 	cavalry_cap = 6
 	artillery_weight = 0.34
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_4_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_4_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -755,12 +764,13 @@ merc_castanorian_legion_4 = {
 }
 # Bridgeburners
 merc_castanorian_legion_5 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	artillery_weight = 0.5
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_5_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_5_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -773,14 +783,15 @@ merc_castanorian_legion_5 = {
 }
 # Thundersworn
 merc_castanorian_legion_6 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.27
 	cavalry_cap = 16
 	artillery_weight = 0.34
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_6_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_6_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -795,13 +806,14 @@ merc_castanorian_legion_6 = {
 
 # Magebound
 merc_castanorian_legion_7 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0.1
 	cavalry_cap = 4
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_7_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_7_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -816,12 +828,13 @@ merc_castanorian_legion_7 = {
 
 # Hordebreaker
 merc_castanorian_legion_8 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	artillery_weight = 0.42
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
-		has_country_flag = castanorian_legion_option_8_unlocked
+	sprites = { castanor_sprite_pack }
+	trigger = {
 		tag = B32
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
+		has_country_flag = castanorian_legion_option_8_unlocked
 	}
 	cost_modifier = 0
 	modifier = {
@@ -837,11 +850,12 @@ merc_mithril_company = {
 	cavalry_weight = 0.1
 	cavalry_cap = 2
     artillery_weight = 0.2
-	sprites = { westerngfx_sprite_pack }
+	sprites = { group_dwarves_sprite_pack }
     trigger = {
 		NOT = { has_global_flag = mithril_company_hired } #Allows it to only exist once.
 		NOT = { is_rival = I05 }
 		NOT = { tag = I05 }
+		NOT = { war_with = I05 }
 		OR = {
 			AND = {
 				has_country_modifier = dwarven_administration
@@ -923,6 +937,7 @@ merc_order_of_the_zenith = {
 	sprites = { muslimgfx_sprite_pack }
     trigger = {
 		NOT = { has_country_modifier = centaur_military }
+		religion = bulwari_sun_cult
 		has_country_flag = order_of_the_zenith
 	}
 	modifier = {
@@ -976,7 +991,7 @@ merc_elizna_elven_legionnaires = {
 	cavalry_weight = 0.25
 	cavalry_cap = 4
     artillery_weight = 0
-	sprites = { dlc056_mlo_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+	sprites = { sun_elf_sprite_pack }
     trigger = {
 		NOT = { has_country_modifier = centaur_military }
 		has_unlocked_merc_company = { merc_company = merc_elizna_elven_legionnaires }
@@ -991,10 +1006,11 @@ merc_elizna_elven_legionnaires = {
 }
 
 merc_esthil_wightknights = {
-    regiments_per_development = 0.005
+	regiments_per_development = 0.005
 	cavalry_weight = 1
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	sprites = { castanor_sprite_pack }
+	trigger = {
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		has_unlocked_merc_company = { merc_company = merc_esthil_wightknights }
 	}
 	cost_modifier = 0
@@ -1009,10 +1025,11 @@ merc_esthil_wightknights = {
 }
 
 merc_esthil_dread_legion = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	cavalry_weight = 0
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	sprites = { castanor_sprite_pack }
+	trigger = {
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		has_unlocked_merc_company = { merc_company = merc_esthil_dread_legion }
 	}
 	cost_modifier = 0
@@ -1025,10 +1042,11 @@ merc_esthil_dread_legion = {
 }
 
 merc_esthil_pale_legion = {
-    regiments_per_development = 0.001
+	regiments_per_development = 0.001
 	cavalry_weight = 0
-	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	sprites = { castanor_sprite_pack }
+	trigger = {
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		has_unlocked_merc_company = { merc_company = merc_esthil_pale_legion }
 	}
 	cost_modifier = 0
@@ -1047,7 +1065,7 @@ merc_wood_elven_hunters = {
 	cavalry_weight = 0
 	cavalry_cap = 0
     artillery_weight = 0.1
-	sprites = { westerngfx_sprite_pack }
+	sprites = { moon_elf_sprite_pack }
     trigger = {
 		has_unlocked_merc_company = { merc_company = merc_wood_elven_hunters }
 	}
@@ -1079,13 +1097,14 @@ merc_tittubaltu_army = {
 
 #Moredhal Devil Legions
 merc_kazraiel_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 750
 	cavalry_weight = 0
 	artillery_weight = 0
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		cannwood_area = {
 			has_province_modifier = moredhal_agrador_temple_one
 		}
@@ -1098,13 +1117,14 @@ merc_kazraiel_1 = {
 	}
 }
 merc_kazraiel_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 750
 	cavalry_weight = 0
 	artillery_weight = 0
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		cannwood_area = {
 			has_province_modifier = moredhal_agrador_temple_two
 		}
@@ -1117,13 +1137,14 @@ merc_kazraiel_2 = {
 	}
 }
 merc_kazraiel_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 750
 	cavalry_weight = 0
 	artillery_weight = 0
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		cannwood_area = {
 			has_province_modifier = moredhal_agrador_temple_three
 		}
@@ -1136,13 +1157,14 @@ merc_kazraiel_3 = {
 	}
 }
 merc_ildran_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 865
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		865 = {
 			has_province_modifier = moredhal_ardent_temple_one
 		}
@@ -1157,13 +1179,14 @@ merc_ildran_1 = {
 	}
 }
 merc_ildran_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 865
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		865 = {
 			has_province_modifier = moredhal_ardent_temple_two
 		}
@@ -1178,13 +1201,14 @@ merc_ildran_2 = {
 	}
 }
 merc_ildran_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 865
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		865 = {
 			has_province_modifier = moredhal_ardent_temple_three
 		}
@@ -1199,13 +1223,14 @@ merc_ildran_3 = {
 	}
 }
 merc_hedine_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 337
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		337 = {
 			has_province_modifier = moredhal_alenath_temple_one
 		}
@@ -1218,13 +1243,14 @@ merc_hedine_1 = {
 	}
 }
 merc_hedine_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 337
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		337 = {
 			has_province_modifier = moredhal_alenath_temple_two
 		}
@@ -1237,13 +1263,14 @@ merc_hedine_2 = {
 	}
 }
 merc_hedine_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 337
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		337 = {
 			has_province_modifier = moredhal_alenath_temple_three
 		}
@@ -1256,13 +1283,14 @@ merc_hedine_3 = {
 	}
 }
 merc_mesner_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 352
 	cavalry_weight = 0.1
 	artillery_weight = 0.3
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		352 = {
 			has_province_modifier = moredhal_ibevar_temple_one
 		}
@@ -1277,13 +1305,14 @@ merc_mesner_1 = {
 	}
 }
 merc_mesner_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 352
 	cavalry_weight = 0.1
 	artillery_weight = 0.3
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		352 = {
 			has_province_modifier = moredhal_ibevar_temple_two
 		}
@@ -1298,13 +1327,14 @@ merc_mesner_2 = {
 	}
 }
 merc_mesner_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 352
 	cavalry_weight = 0.1
 	artillery_weight = 0.3
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		352 = {
 			has_province_modifier = moredhal_ibevar_temple_three
 		}
@@ -1319,13 +1349,14 @@ merc_mesner_3 = {
 	}
 }
 merc_forsara_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 249
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		249 = {
 			has_province_modifier = moredhal_aramar_temple_one
 		}
@@ -1339,13 +1370,14 @@ merc_forsara_1 = {
 	}
 }
 merc_forsara_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 249
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		249 = {
 			has_province_modifier = moredhal_aramar_temple_two
 		}
@@ -1359,13 +1391,14 @@ merc_forsara_2 = {
 	}
 }
 merc_forsara_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 249
 	cavalry_weight = 0.2
 	artillery_weight = 0.2
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		249 = {
 			has_province_modifier = moredhal_aramar_temple_three
 		}
@@ -1379,13 +1412,14 @@ merc_forsara_3 = {
 	}
 }
 merc_ibberal_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 919
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		919 = {
 			has_province_modifier = moredhal_rhinmond_temple_one
 		}
@@ -1398,13 +1432,14 @@ merc_ibberal_1 = {
 	}
 }
 merc_ibberal_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 919
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		919 = {
 			has_province_modifier = moredhal_rhinmond_temple_two
 		}
@@ -1417,13 +1452,14 @@ merc_ibberal_2 = {
 	}
 }
 merc_ibberal_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 919
 	cavalry_weight = 0
 	artillery_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		919 = {
 			has_province_modifier = moredhal_rhinmond_temple_three
 		}
@@ -1436,12 +1472,13 @@ merc_ibberal_3 = {
 	}
 }
 merc_canturian_1 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 428
 	cavalry_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		428 = {
 			has_province_modifier = moredhal_rackman_temple_one
 		}
@@ -1456,12 +1493,13 @@ merc_canturian_1 = {
 	}
 }
 merc_canturian_2 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 428
 	cavalry_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		428 = {
 			has_province_modifier = moredhal_rackman_temple_two
 		}
@@ -1476,12 +1514,13 @@ merc_canturian_2 = {
 	}
 }
 merc_canturian_3 = {
-    regiments_per_development = 0.1
+	regiments_per_development = 0.1
 	home_province = 428
 	cavalry_weight = 0.5
 	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack castanor_sprite_pack westerngfx_sprite_pack }
-    trigger = {
+	trigger = {
 		tag = B62
+		hidden_trigger = { ai = no } # necessary as the AI crashes when attempting to disband mercs with cost_modifier of 0
 		428 = {
 			has_province_modifier = moredhal_rackman_temple_three
 		}
@@ -1502,7 +1541,7 @@ merc_sunlight_lancers = {
 	cavalry_weight = 1
 	artillery_weight = 0
 	home_province = 4789
-	sprites = { asiangfx_sprite_pack }
+	sprites = { moon_elf_sprite_pack }
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = sunlight_lancers_founded
@@ -1526,7 +1565,7 @@ merc_risbeko_junglers = {
 	cavalry_cap = 0
 	artillery_weight = 0
 	home_province = 4798
-	sprites = { asiangfx_sprite_pack }
+	sprites = { bom_sprite_pack }
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = risbeko_junglers_founded
@@ -1570,7 +1609,7 @@ merc_swallows = {
 	artillery_weight = 0.3
 	cavalry_cap = 6
 	home_province = 4797
-	sprites = { asiangfx_sprite_pack }
+	sprites = { hobgoblin_sprite_pack }
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = swallows_founded
@@ -1595,7 +1634,7 @@ merc_dekk_daulophs = {
 	artillery_weight = 0.3
 	cavalry_cap = 10
 	home_province = 4795
-	sprites = { asiangfx_sprite_pack }
+	sprites = { bom_sprite_pack }
 	trigger = {
 		OR = {
 			custom_trigger_tooltip = {
@@ -1617,7 +1656,7 @@ merc_dekk_daulophs = {
 merc_teplin_tigers = {
     regiments_per_development = 0.04
 	home_province = 4796
-	sprites = { asiangfx_sprite_pack }
+	sprites = { harimari_sprite_pack }
     trigger = {
 		custom_trigger_tooltip = {
 			tooltip = teplin_tigers_founded
@@ -1636,7 +1675,7 @@ merc_teplin_tigers = {
 merc_bloodfists = {
     regiments_per_development = 0.06
 	home_province = 4605
-	sprites = { asiangfx_sprite_pack }
+	sprites = { brown_orc_sprite_pack }
     trigger = {
 		custom_trigger_tooltip = {
 			tooltip = bloodfists_founded
@@ -1677,7 +1716,7 @@ merc_golden_lancers = {
 	cavalry_weight = 1
 	artillery_weight = 0
 	home_province = 4856
-	sprites = { asiangfx_sprite_pack }
+	sprites = { yan_sprite_pack }
     trigger = {
 		custom_trigger_tooltip = {
 			tooltip = golden_lancers_founded
@@ -1718,7 +1757,7 @@ merc_harmonist_militia = {
 	cavalry_weight = 0.25
 	cavalry_cap = 4
 	artillery_weight = 0.31
-	sprites = { dlc005_usa_sprite_pack westerngfx_sprite_pack }
+	sprites = { dlc005_usa_sprite_pack }
 	trigger = { 
 		has_country_flag = trollsbay_concord_member
 		has_unlocked_merc_company = { merc_company = merc_harmonist_militia }
@@ -1739,7 +1778,7 @@ merc_dvospyarnik = {
 	regiments_per_development = 0.06
 	home_province = 1148 #Arvezal
 	cavalry_weight = 0.20
-	sprites = { westerngfx_sprite_pack }
+	sprites = { new_havoral_sprite_pack }
 	trigger = {
 		has_country_flag = H57_men_of_the_twin_spears_flag
 		owns = 1148
@@ -1757,7 +1796,7 @@ merc_eigenrac_riders = {
 	regiments_per_development = 0.06
 	cavalry_weight = 1
 	artillery_weight = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { moon_elf_sprite_pack }
     trigger = {
 		custom_trigger_tooltip = {
 			tooltip = merc_eigenrac_riders_founded
@@ -1777,7 +1816,7 @@ merc_gemradcurt_everwinter_knights = {
 	regiments_per_development = 0.06
 	cavalry_weight = 1
 	artillery_weight = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { moon_elf_sprite_pack }
     trigger = {
 		custom_trigger_tooltip = {
 			tooltip = merc_gemradcurt_everwinter_knights_founded
@@ -1839,7 +1878,7 @@ merc_steam_baron_engineering_corps = {
 	cavalry_weight = 0
 	artillery_weight = 0
 	cavalry_cap = 0
-	sprites = { westerngfx_sprite_pack }
+	sprites = { group_dwarves_sprite_pack }
 	trigger = {
 		has_unlocked_merc_company = { merc_company = merc_steam_baron_engineering_corps }
 		NOT = {
@@ -1873,5 +1912,194 @@ merc_corintari = {
 		manpower_recovery_speed = 0.5
 		reinforce_speed = 0.33
 	}
+}
 
+# Deepwoods Orc Rangers Merc
+merc_deepwoods_orc_rangers = {
+	regiments_per_development = 0.05
+	home_province = 3046
+	cavalry_weight = 0.1
+	sprites = { green_orc_sprite_pack }
+	trigger = {
+		has_country_flag = unlocked_deepwoods_orcs_rangers
+	}
+	cost_modifier = 0.50
+	modifier = {
+		shock_damage_received = -0.1
+		movement_speed = 0.2
+	}
+}
+
+merc_karakhanbari_grenadiers = { 
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST 
+	mercenary_desc_key = FREE_OF_FORCELIMIT_COST 
+	regiments_per_development = 0.05 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0.2
+	counts_towards_force_limit = no
+	sprites = { karakhanbar_sprite_pack } 
+	trigger = { 
+		has_country_flag = karakhanbar_might_makes_right_effect_mercenary_idea_reward_flag 
+	} 
+	cost_modifier = 0.50 
+	modifier = { 
+		fire_damage = 0.2 
+	} 
+} 
+ 
+merc_karakhanbari_elven_rangers = { 
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0 
+	sprites = { moon_elf_sprite_pack } 
+	trigger = { 
+		has_country_flag = karakhanbar_elven_mercenaries 
+	} 
+	cost_modifier = 0.75 
+	modifier = { 
+		discipline = 0.1 
+		movement_speed = 0.1 
+		manpower_recovery_speed = -0.25 
+	} 
+}
+
+# Eordand Religion Mercs
+merc_eordand_storm_elemental = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 1 
+	trigger = { 
+		has_country_flag = eordand_storm_elemental 
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		infantry_shock = 1 
+		artillery_fire = -1 
+		artillery_shock = 2
+	} 
+}
+
+merc_eordand_fire_elemental = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0 
+	trigger = { 
+		has_country_flag = eordand_fire_elemental 
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		infantry_fire = 1
+		shock_damage_received = 0.20 
+	} 
+}
+
+merc_eordand_glacial_elemental = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0 
+	trigger = { 
+		has_country_flag = eordand_glacial_elemental 
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		shock_damage = -0.1
+		fire_damage = -0.1
+		morale_damage_received = -0.20
+		shock_damage_received = -0.20 
+		fire_damage_received = -0.20 
+	} 
+}
+
+merc_eordand_autumn_redcap = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0 
+	trigger = { 
+		has_country_flag = eordand_autumn_redcap
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		infantry_shock = 1
+		fire_damage_received = 0.20 
+	} 
+}
+
+merc_eordand_eordellon_redcap = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 0 
+	cavalry_cap = 0 
+	artillery_weight = 0 
+	trigger = { 
+		has_country_flag = eordand_eordellon_redcap
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		infantry_shock = 1
+		fire_damage_received = 0.20 
+	} 
+}
+
+merc_eordand_boreal_wolf = { 
+	regiments_per_development = 0.03 
+	cavalry_weight = 1
+	artillery_weight = 0 
+	trigger = { 
+		has_country_flag = eordand_boreal_wolf
+	} 
+	cost_modifier = 0.5 
+	modifier = { 
+		manpower_recovery_speed = -2
+		morale_damage = 0.1
+		cav_to_inf_ratio = 1
+		cavalry_power = 0.20 
+		morale_damage_received = 0.15
+	} 
+}
+
+merc_border_guards = {
+	regiments_per_development = 0.03
+	home_province = 316
+	cavalry_weight = 0
+	cavalry_cap = 0
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		has_global_flag = merc_border_guards_enabled
+		owns = 316
+	}
+	cost_modifier = 0.50
+	modifier = {
+		shock_damage_received = -0.15
+		movement_speed = 0.2
+	}
+}
+
+#Maghargama
+merc_wolfguard = {
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	regiments_per_development = 0.1
+	home_province = 5253
+	cavalry_weight = 0.1
+	cavalry_cap = 0.2
+	artillery_weight = 0.5
+	sprites = { triunicgfx_sprite_pack }
+	trigger = {
+		has_country_flag = I90_unlock_wolfguard
+	}
+	cost_modifier = 0.6
+	modifier = {
+		loot_amount = 0.4
+		shock_damage = 0.15
+	}
 }

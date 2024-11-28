@@ -1122,7 +1122,10 @@ country_event = {
 		}
 		trigger = {
 			has_estate = estate_church
-			religion = righteous_path
+			OR = {
+				religion = accretive_path
+				religion = transmutative_path
+			}
 			estate_loyalty = {
 				estate = estate_church
 				loyalty = 60
@@ -1672,6 +1675,13 @@ country_event = {
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 	
 	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_estate_privilege = estate_eunuchs_anb_tutors
+			has_estate_privilege = estate_dragon_command_utilize_eunuch_expertise
+		}
+	}
 	
 	option = {
 		name = eunuchs_estate_anb_events.13.a #Adm

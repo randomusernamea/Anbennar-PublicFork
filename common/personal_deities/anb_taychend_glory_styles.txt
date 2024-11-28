@@ -4,7 +4,10 @@ taychend_glory_1 = {
 	governing_capacity_modifier = -0.5
 	
 	potential = {
-		religion = gods_of_the_taychend
+		OR = {
+			religion = gods_of_the_taychend
+			religion = oren_nayiru
+		}
 	}
 	sprite = 120
 	
@@ -19,7 +22,10 @@ taychend_glory_2 = {
 	governing_capacity_modifier = -0.375
 	
 	potential = {
-		religion = gods_of_the_taychend
+		OR = {
+			religion = gods_of_the_taychend
+			religion = oren_nayiru
+		}
 	}
 	sprite = 121
 	
@@ -33,7 +39,10 @@ taychend_glory_3 = {
 	governing_capacity_modifier = -0.25
 	
 	potential = {
-		religion = gods_of_the_taychend
+		OR = {
+			religion = gods_of_the_taychend
+			religion = oren_nayiru
+		}
 	}
 	sprite = 122
 	
@@ -48,7 +57,10 @@ taychend_glory_4 = {
 	governing_capacity_modifier = -0.125
 	
 	potential = {
-		religion = gods_of_the_taychend
+		OR = {
+			religion = gods_of_the_taychend
+			religion = oren_nayiru
+		}
 	}
 	sprite = 123
 	
@@ -62,7 +74,10 @@ taychend_glory_5 = {
 	reduced_liberty_desire = 25
 	
 	potential = {
-		religion = gods_of_the_taychend
+		OR = {
+			religion = gods_of_the_taychend
+			religion = oren_nayiru
+		}
 	}
 	sprite = 124
 	
@@ -99,26 +114,13 @@ taychend_style_prosperous = {
 	}
 }
 
-taychend_style_steel = {
-	province_warscore_cost = -0.15
-	 	harsh_treatment_cost = -0.25
-	
-	potential = {
-		religion = gods_of_the_taychend_reformed
-	}
-	sprite = 1
-	
-	ai_will_do = {
-		factor = 1
-	}
-}
-
 taychend_style_patron = {
 	prestige = 1
 	advisor_pool = 1
 	
 	potential = {
 		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_patron_ruler_style_flag
 	}
 	sprite = 1
 	
@@ -133,6 +135,7 @@ taychend_style_eminence = {
 	
 	potential = {
 		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_eminence_ruler_style_flag
 	}
 	sprite = 1
 	
@@ -155,3 +158,75 @@ taychend_style_conqueror = {
 	}
 }
 
+taychend_style_dreamer = {
+	global_unrest = 3
+	diplomatic_reputation = -3
+	artificers_capacity = 50
+	
+	potential = {
+		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_dreamer_ruler_style_flag
+	}
+	effect = {
+		hidden_effect = { 
+			mission_reward_artifice_points_50 = yes
+		}
+	}
+	removed_effect = {
+		hidden_effect = { 
+			debuff_artifice_points_50 = yes
+		}
+	}
+	sprite = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+taychend_style_dynast = {
+	global_missionary_strength = 0.02
+	legitimacy = 1
+	
+	potential = {
+		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_dynast_ruler_style_flag
+	}
+	sprite = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+taychend_style_universalist = {
+	missionaries = 2
+	global_missionary_strength = 0.05
+	monthly_taychend_vainglory_power = -0.3
+	
+	potential = {
+		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_universalist_ruler_style_flag
+	}
+	sprite = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+taychend_style_vainglorious = {
+	monthly_taychend_vainglory_power = 1
+	global_unrest = 5
+	diplomatic_reputation = -6
+	
+	potential = {
+		religion = gods_of_the_taychend_reformed
+		has_country_flag = enabled_vainglorious_ruler_style_flag
+	}
+	sprite = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

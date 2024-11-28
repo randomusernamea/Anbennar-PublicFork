@@ -17,6 +17,7 @@ country_decisions = {
 			NOT = { tag = Z01 }	#Anbennar
 			NOT = { tag = A01 }	#Lorent
 			NOT = { primary_culture = iochander } #Not Iochand or Iochander Southroy
+			NOT = { primary_culture = carnetori } #Not Carneter
 			is_colonial_nation = no
 			OR = {
 				is_former_colonial_nation = no
@@ -71,6 +72,9 @@ country_decisions = {
 					NOT = { owned_by = ROOT }
 				}
 				add_permanent_claim = A01
+			}
+			country_event = {
+				id = anb_half_elves.1
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"

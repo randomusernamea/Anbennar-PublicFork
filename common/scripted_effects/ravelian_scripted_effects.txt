@@ -85,6 +85,10 @@ setup_the_rectorate_in_ravelian_province = {
 			}
 		}
 		set_ruler_culture = event_target:ravelian_province
+		hidden_effect = {
+			clear_fast_ruler_flags = yes
+			update_ruler_racial_flag = yes
+		}
 		set_ruler_religion = ravelian
 		capital_scope = {
 			change_religion = ravelian
@@ -154,6 +158,28 @@ convert_all_lodges_and_societies_no_cardinals = {
 			}
 			change_religion = ravelian
 			remove_province_modifier = ravelian_society
+		}
+	}
+}
+
+add_or_upgrade_lodge = {
+	custom_tooltip = ravelian_chapter_lodge_add_or_upgrade_tt
+	hidden_effect = {
+		if = {
+			limit = {
+				has_province_modifier = ravelian_lodge
+			}
+			remove_province_modifier = ravelian_lodge
+			add_permanent_province_modifier = {
+				name = ravelian_society
+				duration = -1
+			}
+		}
+		else = {
+			add_permanent_province_modifier = {
+				name = ravelian_lodge
+				duration = -1
+			}
 		}
 	}
 }
