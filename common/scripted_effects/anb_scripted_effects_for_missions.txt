@@ -18011,6 +18011,8 @@ kherka_remove_faction_flags = {
 
 #Rakkaz
 rakkaz_add_fighting_pit_modifier = {
+	change_religion = ROOT
+	change_culture = ROOT
 	if = {
 		limit = { owner = { 
 			has_country_flag = rakkaz_fighting_pit_more_cav_unlocked 
