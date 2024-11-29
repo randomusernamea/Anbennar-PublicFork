@@ -1687,44 +1687,36 @@ lodhum_bulwar_branch_5 = {
 					}
 					if = {
 						limit = { is_subject = yes }
+						add_liberty_desire = 100
+						create_alliance = H77
 						#needs to be 3 or less
-                        if = { limit = { is_subject_of = ROOT }
-                            add_trust = {
-                                who = ROOT
-                                value = 10
-                            }
-                        }
-                        else = {
-							ROOT = {  support_independence_of = F26 }
-							add_liberty_desire = 100
-							if = {
-								limit = {
-									religion = bulwari_sun_cult
-									isolationism = 5
-									overlord = { is_chosen_country = yes }
-								}
-								decrease_nsc_isolation_level = yes
-								decrease_nsc_isolation_level = yes
-								decrease_nsc_isolation_level = yes
-							}	
-							else_if = {
-								limit = { 
-									religion = bulwari_sun_cult
-									isolationism = 4
-									overlord = { is_chosen_country = yes }
-								}
-								decrease_nsc_isolation_level = yes
-								decrease_nsc_isolation_level = yes
+						if = {
+							limit = {
+								religion = bulwari_sun_cult
+								isolationism = 5
+								overlord = { is_chosen_country = yes }
 							}
-							else_if = {
+							decrease_nsc_isolation_level = yes
+							decrease_nsc_isolation_level = yes
+							decrease_nsc_isolation_level = yes
+						}
+						else_if = {
 							limit = { 
-									religion = bulwari_sun_cult
-									isolationism = 3
-									overlord = { is_chosen_country = yes }
-								}
-								decrease_nsc_isolation_level = yes
+								religion = bulwari_sun_cult
+								isolationism = 4
+								overlord = { is_chosen_country = yes }
 							}
-                        }
+							decrease_nsc_isolation_level = yes
+							decrease_nsc_isolation_level = yes
+						}
+						else_if = {
+							limit = { 
+								religion = bulwari_sun_cult
+								isolationism = 3
+								overlord = { is_chosen_country = yes }
+							}
+							decrease_nsc_isolation_level = yes
+						}
 					}
 					else = { create_alliance = ROOT }
 				}
@@ -2314,20 +2306,17 @@ lodhum_part2_2b = {
 		}
 		
 		effect = {
-			custom_tooltip = ovdal_woodland_thingy
-			hidden_effect = {
-				random_owned_province = {
-					limit = { province_group = hold_province }
-					add_base_tax = 2
-					add_base_production = 2
-					add_base_manpower = 2
-				}
-				random_owned_province = {
-					limit = { province_group = hold_province }
-					add_base_tax = 2
-					add_base_production = 2
-					add_base_manpower = 2
-				}
+			random_owned_province = {
+				limit = { province_group = hold_province }
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			random_owned_province = {
+				limit = { province_group = hold_province }
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
 			}
 			if = {
 				limit = { has_dlc = "Mandate of Heaven" }
