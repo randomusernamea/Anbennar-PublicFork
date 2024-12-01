@@ -398,14 +398,28 @@ H76_3_first = {
 	has_country_shield = yes
 	potential = { tag = H76 }
 
+	#This mission is considered too difficult for the AI and has a decision that helps the AI complete it.
+	#If you change this mission please change the accompanying decision.
 	H76_breaking_the_mold = {
 		icon = mission_dwarf
 		position = 1
 
 		trigger = {
-			army_size_percentage = 0.95
-			has_mil_advisor = yes
-			have_cast_scry_dissidents = yes
+			if = {
+				limit = {ai = no }
+				army_size_percentage = 0.95
+				has_mil_advisor = yes
+				have_cast_scry_dissidents = yes
+			}
+			else {
+				army_size_percentage = 0.8
+				has_mil_advisor = yes
+				has_estate = estate_mages 
+				estate_influence = {
+					estate = estate_burghers
+					influence = 15
+				}
+			}
 		}
 
 		effect = {
@@ -440,8 +454,8 @@ H76_3_first = {
 				else = {
 					increase_remnant_react = { normal = yes }
 				}
+
 			}
-			
 		}
 	}
 
@@ -664,11 +678,22 @@ H76_3_first = {
 				has_global_flag = faceting_happened
 			}
 			H76_ideas = 2
-			4093 = {
-				base_production = 20
-				province_has_center_of_trade_of_level = 3
-				has_multiple_manufactory_trigger = { VAL = 2 }
+			if = {
+				limit = { ai = no }
+				4093 = {
+					base_production = 20
+					province_has_center_of_trade_of_level = 3
+					has_multiple_manufactory_trigger = { VAL = 2 }
+				}
 			}
+			else = {
+				4093 = {
+					base_production = 20
+					province_has_center_of_trade_of_level = 3
+					development = 75
+				}
+			}
+			
 		}
 
 		effect = {
@@ -855,11 +880,13 @@ H76_4_first = {
 				is_core = ROOT
 			}
 			if = {
-				limit = { has_dlc = "Leviathan" }
+				limit = { 
+					has_dlc = "Leviathan"
+					ai = no
+				}
 				4093 = { num_of_times_expanded_infrastructure = 2 }
 			}
-			else = { treasury = 200 }
-		}
+			else = { 4093 = {development = 50}}
 
 		effect = {
 			define_conquistador = {
